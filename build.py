@@ -94,7 +94,9 @@ def write(path, content):
 
 def ph(p, size, cap=None):
     c = f' data-caption="{cap}"' if cap else ''
-    return f'<div class="ph" data-wiki="{e(WIKI[p["id"]])}" data-size="{size}" data-alt="{e(p["tr"])} ({e(short_la(p))})"{c}><span class="ph-mark">{e(short_la(p))}</span></div>'
+    taxon = POWO.get(p['id']) or short_la(p)
+    if p['id'] == 'sinekmantari': taxon = 'Amanita muscaria'
+    return f'<div class="ph" data-taxon="{e(taxon)}" data-size="{size}" data-alt="{e(p["tr"])} ({e(short_la(p))})"{c}><span class="ph-mark">{e(short_la(p))}</span></div>'
 
 def refs(p):
     pid = p['id']; items = []
