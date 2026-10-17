@@ -32,7 +32,8 @@
   }
   function search(q, w, n){
     return j(CM + 'action=query&generator=search&gsrnamespace=6&gsrlimit=' + (n || 20) + '&gsrsearch=' + encodeURIComponent(q) + '&' + II(w))
-      .then(function(r){ return pagesOf(r).filter(ok).map(pack); }).catch(function(){ return []; });
+      .then(function(r){ var t = (q.match(/"([^"]+)"/) || [])[1]; t = t ? t.toLowerCase() : '';
+        return pagesOf(r).filter(function(p){ if (!ok(p)) return false; if (!t) return true; var m = p.imageinfo[0].extmetadata || {}; return (p.title + ' ' + (m.Categories && m.Categories.value || '')).toLowerCase().indexOf(t) > -1; }).map(pack); }).catch(function(){ return []; });
   }
   function byFiles(files, w){
     return j(CM + 'action=query&' + II(w) + '&titles=' + encodeURIComponent(files.map(function(f){ return 'File:' + f; }).join('|')))
