@@ -1,6 +1,6 @@
 import json, os, shutil, html, re, urllib.parse, datetime
 HERE = os.path.dirname(os.path.abspath(__file__))
-from refs import WIKI, POWO, NCCIH, EMA, OTHER
+from refs import WIKI, POWO, NCCIH, EMA, OTHER, FILES
 
 BASE = 'https://bitkitabani.com'
 OUT = os.path.join(HERE, 'site')
@@ -47,7 +47,7 @@ def head(title, desc, path, extra=''):
 <meta property="og:description" content="{e(desc)}">
 <meta property="og:url" content="{url}">
 <meta property="og:locale" content="tr_TR">
-<meta name="theme-color" content="#2E5A44">
+<meta name="theme-color" content="#A3271B">
 {FAV}
 {FONTS}
 <link rel="stylesheet" href="/assets/style.css">
@@ -59,9 +59,10 @@ def head(title, desc, path, extra=''):
 
 def nav(cur):
     a = lambda href, label, key: f'<a href="{href}"{" aria-current=\"page\"" if cur == key else ""}>{label}</a>'
-    return f'''<div class="site-nav"><a class="logo" href="/">Bitki <em>Tabanı</em></a><nav>{a("/", "Katalog", "home")}{a("/kopruler/", "Kültür köprüleri", "br")}{a("/hakkinda/", "Hakkında", "about")}</nav></div>'''
+    return f'''<div class="motif" aria-hidden="true"></div><div class="site-nav"><a class="logo" href="/">Bitki <em>Tabanı</em></a><nav>{a("/", "Katalog", "home")}{a("/kopruler/", "Kültür köprüleri", "br")}{a("/hakkinda/", "Hakkında", "about")}</nav></div>'''
 
-FOOT = '''<footer class="site">
+FOOT = '''<div class="motif indigo" aria-hidden="true"></div>
+<footer class="site">
   <div>
     <h3>Bu site nedir</h3>
     <p>Bilgi ve merak için hazırlanmış bir derlemedir; tedavi önerisi değildir. Bir bitkiyi kullanmadan önce, özellikle ilaç kullanıyorsan, hamileysen ya da emziriyorsan bir hekime veya eczacıya danış.</p>
@@ -96,7 +97,8 @@ def ph(p, size, cap=None):
     c = f' data-caption="{cap}"' if cap else ''
     taxon = POWO.get(p['id']) or short_la(p)
     if p['id'] == 'sinekmantari': taxon = 'Amanita muscaria'
-    return f'<div class="ph" data-taxon="{e(taxon)}" data-size="{size}" data-alt="{e(p["tr"])} ({e(short_la(p))})"{c}><span class="ph-mark">{e(short_la(p))}</span></div>'
+    fattr = f' data-file="{e(FILES[p["id"]])}"' if p['id'] in FILES else ''
+    return f'<div class="ph" data-taxon="{e(taxon)}"{fattr} data-size="{size}" data-alt="{e(p["tr"])} ({e(short_la(p))})"{c}><span class="ph-mark">{e(short_la(p))}</span></div>'
 
 def refs(p):
     pid = p['id']; items = []
@@ -105,9 +107,8 @@ def refs(p):
     if pid in NCCIH:
         items.append(('NCCIH', 'ABD Ulusal Tamamlayıcı ve Bütünleştirici Sağlık Merkezi: kullanım ve güvenlik özeti', f'https://www.nccih.nih.gov/health/{NCCIH[pid]}'))
     for label, url in OTHER.get(pid, []):
-        items.append(('Araştırma', label, url))
-    w = WIKI[pid]
-    items.append(('Ansiklopedi', f'Wikipedia: {w.replace("_"," ")}', f'https://en.wikipedia.org/wiki/{w}'))
+        kind = 'Resmî kaynak' if ('fda.gov' in url or 'unodc.org' in url or 'nobelprize.org' in url) else 'Araştırma'
+        items.append((kind, label, url))
     name = POWO.get(pid, short_la(p))
     if name:
         items.append(('Botanik kayıt', f'Kew Plants of the World Online: {name}', 'https://powo.science.kew.org/results?q=' + urllib.parse.quote(name)))
@@ -226,13 +227,31 @@ about = '''<header class="page-head"><span class="eyebrow">Hakkında</span><h1>B
 <section class="sec"><h2>Kayıtlar nasıl hazırlanıyor</h2><p>Her kayıt; geleneksel kullanımı, hazırlama biçimini, bilimin bugün ne söylediğini ve güvenlik notlarını içerir. Kanıt düzeyi Avrupa İlaç Ajansı (EMA/HMPC) monografileri, ABD NCCIH özetleri, Cochrane derlemeleri ve hakemli literatüre göre belirlenir. Kaynaklar her bitkinin sayfasının sonunda listelenir.</p></section>
 <section class="sec"><h2>Önemli not</h2><p>Bu site tıbbi tavsiye vermez. Burada anlatılan geleneksel kullanımlar bir öneri değil, kültürel bir kayıttır. Zehirli ve yasal kısıtlı bitkiler, tarihleri ve riskleri anlaşılsın diye yer alır. Herhangi bir bitkiyi kullanmadan önce bir hekime ya da eczacıya danış.</p></section>
 <section class="sec"><h2>Yerel bilgiye saygı</h2><p>Kayıtlardaki geleneksel bilgi, onu kuşaklar boyunca koruyan toplulukların mirasıdır. Bitki Tabanı bu bilginin kaynağını görünür kılmayı ve aşırı toplanan türler konusunda farkındalık yaratmayı amaçlar.</p></section>
-<section class="sec"><h2>Görseller</h2><p>Fotoğraflar Wikimedia Commons’tan özgür lisanslarla kullanılır; yazar ve lisans bilgisi her fotoğrafın altında yazar.</p></section>'''
+<section class="sec"><h2>Renklerimiz ve motifimiz</h2><p>Sitenin renkleri, Anadolu ile Amazon ve And Dağları’nın ortak boya geleneklerinden geliyor. Motif ise Anadolu kilimlerindeki göz ve baklava desenini, Shipibo halkının kené çizgileri ve And dokumalarının basamaklı baklavasıyla birleştiriyor.</p>
+<div class="palette">
+<div class="swatch"><i style="background:var(--accent)"></i><b>Kırmızı</b><span>Anadolu’da kök boya ve kırmız böceği (“kırmızı” kelimesi buradan gelir); And’larda koşnil, Amazon’da achiote.</span></div>
+<div class="swatch"><i style="background:var(--indigo)"></i><b>Çivit</b><span>Anadolu kilimlerinin çivit mavisi; Amazon’da huito meyvesiyle yapılan lacivert beden boyası.</span></div>
+<div class="swatch"><i style="background:var(--ochre)"></i><b>Safran</b><span>Anadolu’da safran ve cehri sarısı; And dokumalarının toprak sarısı tonları.</span></div>
+<div class="swatch"><i style="background:var(--paper);border:1px solid var(--rule)"></i><b>Yün</b><span>Boyanmamış yünün doğal rengi; iki coğrafyada da dokumanın zemini.</span></div>
+</div></section>
+<section class="sec"><h2>Görseller</h2><p>Fotoğraflar Wikimedia Commons’tan özgür lisanslarla kullanılır. Hepsi aynı dikey kadrajda, bitkiyi tanıtan kısma yakın çekimdir; yazar ve lisans bilgisi her fotoğrafın altında yazar.</p></section>'''
 write('/hakkinda/', page('Hakkında | Bitki Tabanı', 'Bitki Tabanı’nın amacı, kayıtların nasıl hazırlandığı ve kaynak yaklaşımı.', '/hakkinda/', about, 'about', narrow=True))
+
+
+# ---------- fotoğraf seçim sayfası (gizli) ----------
+def taxon_of(p):
+    t = POWO.get(p['id']) or short_la(p)
+    return 'Amanita muscaria' if p['id'] == 'sinekmantari' else t
+rows = ''.join(f'<section class="pick-row" data-id="{p["id"]}" data-taxon="{e(taxon_of(p))}"><h2>{acc(p["no"])} · {e(p["tr"])} <span class="latin">{e(taxon_of(p))}</span></h2><div class="cands"><p class="muted">Adaylar yükleniyor…</p></div></section>' for p in P)
+secim = f'''<header class="page-head"><span class="eyebrow">Yalnızca yönetici için</span><h1>Fotoğraf seçimi</h1><p>Her bitki için bitkiyi en iyi tanıtan yakın çekime tıkla. Seçimlerin bu tarayıcıda saklanır. Bitince alttaki listeyi kopyalayıp Claude’a gönder.</p></header>
+{rows}
+<div class="result-box"><div class="row"><span id="done"></span><button type="button" id="copy">Listeyi kopyala</button><span id="copied"></span></div><textarea id="result" readonly aria-label="Seçim listesi"></textarea></div>'''
+write('/secim/', page('Fotoğraf seçimi | Bitki Tabanı', 'Fotoğraf seçimi', '/secim/', secim, '', '<script src="/assets/photo.js" defer></script><script src="/assets/secim.js" defer></script>', extra='<meta name="robots" content="noindex, nofollow">'))
 
 # ---------- 404, robots, sitemap, favicon ----------
 nf = '<header class="page-head"><span class="eyebrow">404</span><h1>Bu sayfa bulunamadı</h1><p>Aradığın kayıt taşınmış ya da hiç olmamış olabilir. <a href="/">Kataloğa dön</a> ve oradan ara.</p></header>'
 open(os.path.join(OUT,'404.html'),'w',encoding='utf-8').write(page('Sayfa bulunamadı | Bitki Tabanı','Sayfa bulunamadı.','/404.html',nf,'', narrow=True))
-open(os.path.join(OUT,'robots.txt'),'w').write(f'User-agent: *\nAllow: /\n\nSitemap: {BASE}/sitemap.xml\n')
+open(os.path.join(OUT,'robots.txt'),'w').write(f'User-agent: *\nAllow: /\nDisallow: /secim/\n\nSitemap: {BASE}/sitemap.xml\n')
 urls = ['/', '/kopruler/', '/hakkinda/'] + [f'/{p["id"]}/' for p in P]
 open(os.path.join(OUT,'sitemap.xml'),'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url><loc>{BASE}{u}</loc><lastmod>{TODAY}</lastmod></url>\n' for u in urls) + '</urlset>\n')
 os.makedirs(os.path.join(OUT,'assets'), exist_ok=True)
