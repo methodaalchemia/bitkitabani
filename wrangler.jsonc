@@ -1,0 +1,10 @@
+{
+  // Bitki Tabanı: statik site, yayın klasörü ./site
+  "name": "bitkitabani",
+  "compatibility_date": "2025-09-01",
+  "assets": {
+    "directory": "./site",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  }
+}

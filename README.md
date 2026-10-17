@@ -7,4 +7,4 @@
 - `assets/`: stil ve tarayıcı betikleri
 - `build.py`: `python3 build.py` komutu `site/` klasörünü yeniden üretir
 
-Cloudflare Pages ayarı: derleme komutu yok, yayın klasörü `site`.
+Cloudflare Workers: `wrangler.jsonc` siteyi `site/` klasöründen yayınlar; GitHub’a her gönderimde otomatik yayın.
