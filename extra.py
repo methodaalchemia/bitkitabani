@@ -246,3 +246,16 @@ YASAL = {
 'mapacho': ('kisitli', 'Maraş otu gibi ürünlerin satışı tütün mevzuatına tabidir.'),
 }
 YASAL_AD = {'yasak': 'Türkiye’de yasak', 'kisitli': 'Türkiye’de kısıtlı', 'lisansli': 'Türkiye’de lisanslı'}
+
+# Kültür köprüleri haritası: köprü sırasına göre uç noktalar (boylam, enlem, etiket, bölge)
+BR_GEO = [
+ [(35.5, 39.0, 'Anadolu: üzerlik', 'anadolu'), (-73.25, -3.75, 'Amazon: ayahuasca', 'amazon')],
+ [(32.5, 38.0, 'Anadolu: sedef otu', 'anadolu'), (-71.97, -13.53, 'And: ruda', 'and')],
+ [(28.6, 36.97, 'Köyceğiz: sığla', 'anadolu'), (-80.3, -2.0, 'Ekvador kıyısı: palo santo', 'and')],
+ [(40.5, 40.5, 'Anadolu: ısırgan', 'anadolu'), (-77.5, -9.5, 'And: ortiga', 'and')],
+ [(36.9, 37.6, 'Kahramanmaraş: salep', 'anadolu'), (-75.9, -11.2, 'Junín platosu: maca', 'and')],
+ [(31.0, 39.5, 'Anadolu: banotu', 'anadolu'), (-75.5, 1.0, 'Amazon: toé', 'amazon')],
+ [(32.0, 37.0, 'Toroslar: ardıç', 'anadolu'), (74.6, 42.9, 'Kırgızistan: arça', 'asya'), (-117.0, 33.0, 'Kaliforniya: ak adaçayı', 'kamerika')],
+ [(37.2, 37.9, 'Kahramanmaraş: Maraş otu', 'anadolu'), (-74.0, -6.0, 'Amazon: mapacho', 'amazon')],
+ [(105.0, 34.0, 'Asya: pelin, artemisinin', 'asya'), (-79.0, -3.0, 'And: kınakına', 'and')],
+]

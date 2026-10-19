@@ -228,3 +228,24 @@ header.top,.page-head,.sheet-head{border-bottom:2px solid var(--ink)}
 .hint{margin:-12px 0 0;font-size:var(--t-sm);color:var(--muted);max-width:70ch}
 .ph img{opacity:1}
 figure.photo figcaption a{color:var(--muted)}
+
+/* Kültür köprüleri haritası */
+.mapwrap{margin:0;display:flex;flex-direction:column;gap:6px;background:var(--sheet);border:1px solid var(--rule);padding:12px}
+.mapwrap figcaption{font-family:var(--f-mono);font-size:var(--t-xs);color:var(--muted)}
+.map{width:100%;height:auto;display:block;max-width:100%}
+.map .land{fill:var(--accent-soft);stroke:var(--rule);stroke-width:.6}
+.map .line{fill:none;stroke:var(--accent);stroke-width:1.8;stroke-linecap:round;opacity:.55;transition:opacity .2s,stroke-width .2s}
+.map .end{stroke:var(--sheet);stroke-width:1.5}
+.map .lbl{font-family:var(--f-body);font-size:13px;fill:var(--ink);paint-order:stroke;stroke:var(--sheet);stroke-width:4px;stroke-linejoin:round;opacity:0;pointer-events:none;transition:opacity .2s}
+.map .num circle{fill:var(--sheet);stroke:var(--accent);stroke-width:1.6}
+.map .num text{font-family:var(--f-mono);font-size:12px;font-weight:700;fill:var(--accent)}
+.map .arc{cursor:pointer}
+.map.focus .arc{opacity:.12}
+.map.focus .arc.on{opacity:1}
+.map .arc.on .line{opacity:1;stroke-width:3}
+.map .arc.on .lbl{opacity:1}
+.map .arc.on .num circle{fill:var(--accent)} .map .arc.on .num text{fill:var(--sheet)}
+.bridge.on{border-color:var(--accent);box-shadow:inset 4px 0 0 var(--accent)}
+.bn{display:inline-flex;align-items:center;justify-content:center;width:1.6em;height:1.6em;border-radius:50%;border:1.6px solid var(--accent);color:var(--accent);font-family:var(--f-mono);font-size:.8em;margin-right:8px;vertical-align:.12em}
+@media (prefers-reduced-motion: reduce){.map .line,.map .lbl{transition:none}}
+@media (max-width:640px){.map .lbl{font-size:17px;stroke-width:5px}.mapwrap{padding:6px}}

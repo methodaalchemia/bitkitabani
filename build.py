@@ -1,7 +1,8 @@
 import json, os, shutil, html, re, urllib.parse, datetime
 HERE = os.path.dirname(os.path.abspath(__file__))
 from refs import WIKI, POWO, NCCIH, EMA, OTHER, FILES
-from extra import EK, KORUMA, YASAL, YASAL_AD
+from extra import EK, KORUMA, YASAL, YASAL_AD, BR_GEO
+import mapgeo, math
 IMG = json.load(open(os.path.join(HERE, 'images.json'), encoding='utf-8')) if os.path.exists(os.path.join(HERE, 'images.json')) else {}
 
 BASE = 'https://bitkitabani.com'
@@ -271,13 +272,50 @@ write('/index.html', page('Bitki Tabanı: şifalı ve ritüel bitkiler veri taba
 # ---------- köprüler ----------
 def mini(p):
     return f'<a class="mini" href="/{p["id"]}/"><span class="where">{"".join(dot(r) for r in p["bolge"])} {e(" · ".join(REG[r]["ad"] for r in p["bolge"]))}</span><b>{e(p["tr"])}</b><span class="latin">{e(p["la"])}</span></a>'
+def bridge_map():
+    x0 = mapgeo.project(-128, 0)[0]; x1 = mapgeo.project(128, 0)[0]
+    y0 = mapgeo.project(0, 66)[1]; y1 = mapgeo.project(0, -42)[1]
+    K = [0.10, 0.30, 0.20, 0.42, 0.14, 0.36, 0.24, 0.50, 0.06]
+    T = [0.50, 0.40, 0.60, 0.40, 0.66, 0.46, 0.55, 0.20, 0.62]
+    out = [f'<svg class="map" viewBox="{x0:.0f} {y0:.0f} {x1 - x0:.0f} {y1 - y0:.0f}" role="img" aria-labelledby="mapTitle"><title id="mapTitle">Kültür köprüleri haritası: Anadolu, Orta Asya, And Dağları, Amazon ve Kaliforniya arasındaki bitki bağlantıları</title>',
+           f'<path class="land" d="{mapgeo.land_path()}"/>']
+    for i, pts in enumerate(BR_GEO, 1):
+        P0 = mapgeo.project(*pts[0][:2])
+        g = [f'<g class="arc" data-i="{i}">']
+        labels, mids = [], []
+        for j, pt in enumerate(pts[1:]):
+            P1 = mapgeo.project(*pt[:2])
+            dx, dy = P1[0] - P0[0], P1[1] - P0[1]
+            d = math.hypot(dx, dy) or 1
+            nx, ny = -dy / d, dx / d
+            if ny > 0: nx, ny = -nx, -ny          # yay hep kuzeye doğru kabarsın
+            k = K[(i - 1) % len(K)] + 0.06 * j
+            C = ((P0[0] + P1[0]) / 2 + nx * d * k, (P0[1] + P1[1]) / 2 + ny * d * k)
+            g.append(f'<path class="line" d="M{P0[0]} {P0[1]} Q{C[0]:.1f} {C[1]:.1f} {P1[0]} {P1[1]}"/>')
+            t = T[(i - 1) % len(T)]
+            mids.append(((1-t)**2 * P0[0] + 2*(1-t)*t * C[0] + t*t * P1[0], (1-t)**2 * P0[1] + 2*(1-t)*t * C[1] + t*t * P1[1]))
+        for pt in pts:
+            x, y = mapgeo.project(*pt[:2])
+            g.append(f'<circle class="end" cx="{x}" cy="{y}" r="4.5" style="fill:var({REG[pt[3]]["c"]})"/>')
+            anchor = 'start' if (x < x0 + 140 or x > 420) and not x > x1 - 160 else 'end'
+            dxl = -9 if anchor == 'end' else 9
+            g.append(f'<text class="lbl" x="{x + dxl}" y="{y + 4}" text-anchor="{anchor}">{e(pt[2])}</text>')
+        mx, my = mids[0]
+        g.append(f'<a href="#kopru-{i}" class="num" aria-label="Köprü {i}"><circle cx="{mx:.1f}" cy="{my:.1f}" r="11"/><text x="{mx:.1f}" y="{my + 4:.1f}" text-anchor="middle">{i}</text></a>')
+        g.append('</g>')
+        out.append(''.join(g))
+    out.append('</svg>')
+    return ''.join(out)
+
 items = []
-for b in BR:
+for i, b in enumerate(BR, 1):
     a = byId[b['a']]; c = byId.get(b.get('b')) if b.get('b') else None
-    txt = f'<div class="txt"><h2>{e(b["t"])}</h2><p>{e(b["d"])}</p></div>'
-    items.append(f'<article class="bridge">{mini(a)}<span class="arrow" aria-hidden="true">↔</span>{mini(c)}{txt}</article>' if c else f'<article class="bridge single">{mini(a)}<span class="note">Aynı bitki, birden fazla kültür</span>{txt}</article>')
-br = f'''<header class="page-head"><span class="eyebrow">{len(BR)} karşılaştırma</span><h1>Kültür köprüleri</h1><p>Birbirinden binlerce kilometre uzaktaki kültürler, çoğu zaman aynı molekülleri ya da aynı bitkiyi benzer dertlere kullanmış. Bu sayfa o kesişimleri bir araya getiriyor.</p></header><div class="bridges">{"".join(items)}</div>'''
-write('/kopruler/', page('Kültür köprüleri: Anadolu, And ve Amazon bitkileri | Bitki Tabanı', 'Anadolu ile And Dağları ve Amazon’un bitki geleneklerini karşılaştıran kültür köprüleri: üzerlik ve ayahuasca, sedef otu ve ruda, sığla ve palo santo.', '/kopruler/', br, 'br'))
+    txt = f'<div class="txt"><h2><span class="bn">{i}</span>{e(b["t"])}</h2><p>{e(b["d"])}</p></div>'
+    items.append(f'<article class="bridge" id="kopru-{i}" data-i="{i}" tabindex="-1">{mini(a)}<span class="arrow" aria-hidden="true">↔</span>{mini(c)}{txt}</article>' if c else f'<article class="bridge single" id="kopru-{i}" data-i="{i}" tabindex="-1">{mini(a)}<span class="note">Aynı bitki, birden fazla kültür</span>{txt}</article>')
+br = f'''<header class="page-head"><span class="eyebrow">{len(BR)} karşılaştırma</span><h1>Kültür köprüleri</h1><p>Birbirinden binlerce kilometre uzaktaki kültürler, çoğu zaman aynı molekülleri ya da aynı bitkiyi benzer dertlere kullanmış. Haritadaki her yay bir köprü; üzerine gel ya da aşağıdaki listeden birini seç.</p></header>
+<figure class="mapwrap">{bridge_map()}<figcaption>Harita: Natural Earth (kamu malı), Natural Earth izdüşümü. Noktalar bölgeyi temsil eder, kesin toplama yerini değil.</figcaption></figure>
+<div class="bridges">{"".join(items)}</div>'''
+write('/kopruler/', page('Kültür köprüleri haritası: Anadolu, And ve Amazon bitkileri | Bitki Tabanı', 'Anadolu ile And Dağları ve Amazon’un bitki geleneklerini bir harita üzerinde karşılaştıran kültür köprüleri: üzerlik ve ayahuasca, sedef otu ve ruda, salep ve maca.', '/kopruler/', br, 'br', '<script src="/assets/kopruler.js" defer></script>'))
 
 # ---------- hakkında ----------
 about = '''<header class="page-head"><span class="eyebrow">Hakkında</span><h1>Bitki Tabanı nedir?</h1></header>
