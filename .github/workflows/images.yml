@@ -1,0 +1,24 @@
+name: Görselleri eşitle ve siteyi derle
+on:
+  push:
+    branches: [main]
+    paths: ['refs.py', 'data.json', 'build.py', 'assets/**', 'tools/**', '.github/workflows/images.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: images
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: python3 tools/fetch_images.py
+      - run: python3 build.py
+      - name: Değişiklikleri kaydet
+        run: |
+          git config user.name "bitkitabani-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add img images.json site
+          if git diff --cached --quiet; then echo "değişiklik yok"; else git commit -m "Görseller ve site güncellendi [bot]" && git push; fi
