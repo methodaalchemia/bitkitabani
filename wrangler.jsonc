@@ -12,7 +12,7 @@
   },
   "vars": {
     // Google Cloud Console > APIs & Services > Credentials > OAuth client ID (Web). Boşsa giriş kapalıdır.
-    "GOOGLE_CLIENT_ID": ""
+    "GOOGLE_CLIENT_ID": "437365792568-00ajl9g880m3e2du0h952cvpvcgct9ks.apps.googleusercontent.com"
   },
   "durable_objects": {
     "bindings": [{ "name": "USERS", "class_name": "UserStore" }]
