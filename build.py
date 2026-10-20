@@ -2,6 +2,9 @@ import json, os, shutil, html, re, urllib.parse, datetime
 HERE = os.path.dirname(os.path.abspath(__file__))
 from refs import WIKI, POWO, NCCIH, EMA, OTHER, FILES
 from extra import EK, KORUMA, YASAL, YASAL_AD, BR_GEO, ALT
+from etkilesim import ETK
+AUTHOR = {'@type': 'Person', 'name': 'Edanaz Tınmazlar', 'url': 'https://bitkitabani.com/yontem/#hazirlayan', 'jobTitle': 'Sanatçı ve şifalı bitkiler uzmanı'}
+BIO = 'Edanaz Tınmazlar, sanatçı ve şifalı bitkiler uzmanı. Beyaz yakalı hayatından şifa arayışına düştü ve kendini bitkilerin benzersiz dünyasını anlamaya çalışırken buldu. Dünyanın birçok ülkesinde gezip yaşadıktan sonra Türkiye’ye döndü; köklerini anlamayı ve anlatmayı kendine görev edindi.'
 import mapgeo, math
 IMG = json.load(open(os.path.join(HERE, 'images.json'), encoding='utf-8')) if os.path.exists(os.path.join(HERE, 'images.json')) else {}
 
@@ -212,10 +215,14 @@ for i, p in enumerate(P):
     prev, nxt = P[i-1], P[(i+1) % len(P)]
     title = (f'{p["tr"]}: nedir, etkileri ve zehirlilik riski' if p['guv'] == 'yuksek' else f'{p["tr"]}: faydaları, kullanımı ve yan etkileri')
     if len(title) < 44: title += ' | Bitki Tabanı'
-    ld = {"@context":"https://schema.org","@type":"Article","headline":f'{p["tr"]} ({short_la(p)})',"inLanguage":"tr","about":{"@type":"Taxon","name":short_la(p),"alternateName":[p['tr']] + [x.strip() for x in p['diger'].split(',')][:4],"taxonRank":"species","parentTaxon":{"@type":"Taxon","name":p['fam'].split(' ')[0],"taxonRank":"family"}},"description":desc_for(p),"author":{"@type":"Organization","name":"Bitki Tabanı"},"isPartOf":{"@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/"},"dateModified":CONTENT_DATE,"url":f'{BASE}/{pid}/',"image":(f'{BASE}/img/{pid}-960.jpg' if pid in IMG else None),"publisher":{"@type":"Organization","name":"Bitki Tabanı","url":BASE+"/"}}
+    ld = {"@context":"https://schema.org","@type":"Article","headline":f'{p["tr"]} ({short_la(p)})',"inLanguage":"tr","about":{"@type":"Taxon","name":short_la(p),"alternateName":[p['tr']] + [x.strip() for x in p['diger'].split(',')][:4],"taxonRank":"species","parentTaxon":{"@type":"Taxon","name":p['fam'].split(' ')[0],"taxonRank":"family"}},"description":desc_for(p),"author":AUTHOR,"isPartOf":{"@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/"},"dateModified":CONTENT_DATE,"url":f'{BASE}/{pid}/',"image":(f'{BASE}/img/{pid}-960.jpg' if pid in IMG else None),"publisher":{"@type":"Organization","name":"Bitki Tabanı","url":BASE+"/"}}
     crumbs = {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana sayfa","item":BASE+"/"},{"@type":"ListItem","position":2,"name":"Katalog","item":BASE+"/katalog/"},{"@type":"ListItem","position":3,"name":p['tr'],"item":f'{BASE}/{pid}/'}]}
     uses = ''.join(f'<div class="use"><div class="who">{e(w)}</div><p>{e(t)}</p></div>' for w, t in p['kul'])
     relhtml = ''
+    etkhtml = ''
+    if pid in ETK:
+        rows_ = ''.join(f'<tr><th scope="row">{e(g)}</th><td>{e(w)}</td></tr>' for g, w in ETK[pid])
+        etkhtml = f'<section class="sec"><h2>İlaç etkileşimleri</h2><div class="tablewrap"><table class="cmp etk"><thead><tr><th scope="col">İlaç ya da madde</th><th scope="col">Neden önemli</th></tr></thead><tbody>{rows_}</tbody></table></div><p class="muted-s">Bu liste eksiksiz değildir. Düzenli ilaç kullanıyorsan {e(p["tr"])} denemeden önce eczacına ya da hekimine sor.</p></section>'
     def _sim(q):
         return 2 * len(set(q['bolge']) & set(p['bolge'])) + len(set(q['kat']) & set(p['kat'])) + (2 if q['fam'] == p['fam'] else 0)
     similar = sorted((q for q in P if q['id'] != pid and q['id'] not in rel), key=lambda q: (-_sim(q), q['no']))[:3]
@@ -273,6 +280,7 @@ for i, p in enumerate(P):
   <section class="sec"><h2>Hazırlama</h2><p>{e(p["haz"])}</p></section>
   <section class="sec"><h2>Bilim ne diyor</h2><p>{e(p["bilim"])}</p></section>
   <section class="sec"><h2>Güvenlik</h2><div class="callout {p["guv"]}"><div class="lvl">{GUV[p["guv"]]}</div><p>{e(p["guvNot"])}</p></div></section>
+  {etkhtml}
   {yas}
   {korhtml}
   {relhtml}
@@ -281,7 +289,7 @@ for i, p in enumerate(P):
   {contrib(p)}
   <section class="sec"><h2>Kaynaklar</h2>{refs(p)}</section>
   <aside class="disclaimer" role="note"><b>Tıbbi tavsiye değildir.</b> Bu sayfa geleneksel kullanımları kültürel bir kayıt olarak anlatır ve bilimsel bilgiyi özetler; teşhis ya da tedavi önerisi değildir. {e(p["tr"])} ya da başka bir bitkiyi kullanmadan önce, özellikle ilaç kullanıyorsan, hamileysen, emziriyorsan ya da bir hastalığın varsa hekimine veya eczacına danış. Zehirlenme şüphesinde Ulusal Zehir Danışma Merkezi’ni (UZEM) <b>114</b> numaradan ara.</aside>
-  <p class="updated">Son gözden geçirme: <time datetime="{CONTENT_DATE}">{DATE_TXT}</time></p>
+  <p class="updated">Hazırlayan: <a href="/yontem/#hazirlayan">Edanaz Tınmazlar</a> · Son gözden geçirme: <time datetime="{CONTENT_DATE}">{DATE_TXT}</time></p>
   <div class="sheet-foot">
     <div class="learnbox"><button type="button" class="learn" id="learnBtn" data-id="{pid}" aria-pressed="false">Öğrendim olarak işaretle</button><span class="muted-s">Bu tarayıcıda saklanır. <a href="/hesap/">Google ile giriş yaparsan</a> bütün cihazlarında görünür.</span><span class="muted-s streak" id="streakNote"></span></div>
     <div class="pager"><a href="/{prev["id"]}/">← {e(prev["tr"])}</a><a href="/{nxt["id"]}/">{e(nxt["tr"])} →</a></div>
@@ -447,7 +455,7 @@ for i, br_ in enumerate(BR, 1):
 <section class="sec"><h2>Diğer köprüler</h2><ul class="otherlist">{others}</ul></section>
 <div class="sheet-foot"><a class="cta" href="/kopruler/">Bütün köprüler ve harita →</a><div class="pager"><a href="/kopruler/{slug_of(prev_)}/">← {e(prev_["t"])}</a><a href="/kopruler/{slug_of(next_)}/">{e(next_["t"])} →</a></div></div>
 </article>'''
-    ldb = [{"@context":"https://schema.org","@type":"Article","headline":br_['t'],"description":br_['d'],"inLanguage":"tr","url":f'{BASE}/kopruler/{slug}/',"dateModified":CONTENT_DATE,
+    ldb = [{"@context":"https://schema.org","@type":"Article","author":AUTHOR,"headline":br_['t'],"description":br_['d'],"inLanguage":"tr","url":f'{BASE}/kopruler/{slug}/',"dateModified":CONTENT_DATE,
             "about":[{"@type":"Taxon","name":short_la(q),"alternateName":q['tr']} for q in ps],"isPartOf":{"@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/"},
             "image":[f'{BASE}/img/{q["id"]}-960.jpg' for q in ps if q['id'] in IMG]},
            {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana sayfa","item":BASE+"/"},{"@type":"ListItem","position":2,"name":"Kültür köprüleri","item":BASE+"/kopruler/"},{"@type":"ListItem","position":3,"name":br_['t'],"item":f'{BASE}/kopruler/{slug}/'}]}]
@@ -458,6 +466,7 @@ for i, br_ in enumerate(BR, 1):
 # ---------- hakkında ----------
 about = '''<header class="page-head"><span class="eyebrow">Hakkında</span><h1>Bitki Tabanı nedir?</h1></header>
 <section class="sec"><p>Bitki Tabanı, farklı kültürlerde şifa ve ritüel için kullanılan bitkileri bir araya getiren bağımsız bir etnobotanik kayıt defteridir. Amacı merak uyandırmak ve geleneksel bilgiyi bugünkü bilimsel bilgiyle yan yana koymak.</p></section>
+<section class="sec"><h2>Kim hazırlıyor</h2><p>''' + BIO + ''' <a href="/yontem/">Kayıtları nasıl hazırladığını oku →</a></p></section>
 <section class="sec"><h2>Ticari değil</h2><p>Bitki Tabanı hiçbir ürün, bitki, takviye ya da tören satmaz; inziva veya ayahuasca seremonisi düzenlemez, bunlara yönlendirmez ve reklam almaz. Kayıtlarda adı geçen hiçbir marka ya da satıcıyla bağı yoktur.</p></section>
 <section class="sec"><h2>İletişim</h2><p>Bir hata gördüysen ya da yöresel bir kullanım biliyorsan <a href="mailto:iletisim@bitkitabani.com">iletisim@bitkitabani.com</a> adresine yaz.</p></section>
 <section class="sec"><h2>Kayıtlar nasıl hazırlanıyor</h2><p>Ayrıntılı kurallar <a href="/yontem/">Yöntem</a> sayfasında. Her kayıt; geleneksel kullanımı, hazırlama biçimini, bilimin bugün ne söylediğini ve güvenlik notlarını içerir. Kanıt düzeyi Avrupa İlaç Ajansı (EMA/HMPC) monografileri, ABD NCCIH özetleri, Cochrane derlemeleri ve hakemli literatüre göre belirlenir. Kaynaklar her bitkinin sayfasının sonunda listelenir.</p></section>
@@ -600,6 +609,7 @@ write('/gizlilik/', page('Gizlilik | Bitki Tabanı', 'Bitki Tabanı hangi bilgil
 # ---------- yöntem ----------
 yt = """
 <header class="page-head"><span class="eyebrow">Yöntem</span><h1>Kayıtları nasıl hazırlıyoruz?</h1><p>Bitki Tabanı bağımsız, ticari olmayan bir projedir. Her kayıt aynı kurallarla hazırlanır; bu sayfa o kuralları açıkça yazar ki neye ne kadar güvenebileceğini bil.</p></header>
+<section class="sec" id="hazirlayan"><h2>Kim hazırlıyor</h2><p>""" + BIO + """</p><p>Bitki Tabanı’ndaki her kayıt onun tarafından hazırlanır ve aşağıdaki kurallarla kaynaklara dayandırılır.</p></section>
 <section class="sec"><h2>Hangi kaynakları kullanıyoruz</h2><ol class="srclist">
 <li><b>Resmî bitkisel ilaç değerlendirmeleri:</b> Avrupa İlaç Ajansı Bitkisel Ürünler Komitesi (EMA/HMPC) monografları ve ABD Ulusal Tamamlayıcı ve Bütünleştirici Sağlık Merkezi (NCCIH) özetleri.</li>
 <li><b>Sistematik derlemeler ve klinik çalışmalar:</b> Cochrane derlemeleri ve PubMed’de dizinlenen hakemli dergiler.</li>
