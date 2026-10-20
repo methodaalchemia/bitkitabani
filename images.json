@@ -11,6 +11,18 @@
   "w": 960,
   "w500": 500
  },
+ "acai": {
+  "artist": "Jéssica Karoline Alves Portugal",
+  "auto": true,
+  "file": "Fruto do açaí.jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Fruto_do_a%C3%A7a%C3%AD.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "achiote": {
   "artist": "Leonardo Ré-Jorge",
   "file": "Bixa orellana fruit open.jpg",
@@ -78,6 +90,30 @@
   "w": 960,
   "w500": 500
  },
+ "altinkok": {
+  "artist": "ElenaLitera",
+  "auto": true,
+  "file": "Алматинский комплексный заказник, Чимбулачка, родиола розовая (1).jpg",
+  "h": 640,
+  "h500": 333,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%D0%90%D0%BB%D0%BC%D0%B0%D1%82%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81%D0%BD%D1%8B%D0%B9_%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%BD%D0%B8%D0%BA,_%D0%A7%D0%B8%D0%BC%D0%B1%D1%83%D0%BB%D0%B0%D1%87%D0%BA%D0%B0,_%D1%80%D0%BE%D0%B4%D0%B8%D0%BE%D0%BB%D0%B0_%D1%80%D0%BE%D0%B7%D0%BE%D0%B2%D0%B0%D1%8F_(1).jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "andiroba": {
+  "artist": "Forest and Kim Starr",
+  "auto": true,
+  "file": "Starr-120606-6854-Carapa guianensis-leaves-Kahanu Garden NTBG Hana-Maui (25118070266).jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY 3.0 us",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0/us/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Starr-120606-6854-Carapa_guianensis-leaves-Kahanu_Garden_NTBG_Hana-Maui_(25118070266).jpg",
+  "w": 960,
+  "w500": 500
+ },
  "ardic": {
   "artist": "Vyacheslav Argenberg",
   "file": "Караул-Оба, ветки, Крым, Karaul Oba, Crimea.jpg",
@@ -119,6 +155,18 @@
   "license": "CC BY 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Rosmarinus_officinalis_in_Vieussan.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "camucamu": {
+  "artist": "Túllio M Franca",
+  "auto": true,
+  "file": "Fruto de Camucamu.jpg",
+  "h": 1707,
+  "h500": 889,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Fruto_de_Camucamu.jpg",
   "w": 960,
   "w500": 500
  },
@@ -180,6 +228,18 @@
   "w": 960,
   "w500": 500
  },
+ "chiricsanango": {
+  "artist": "photographer_katya_kochetkova",
+  "auto": true,
+  "file": "Брунфельсия широколистная.jpg",
+  "h": 1441,
+  "h500": 751,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%D0%91%D1%80%D1%83%D0%BD%D1%84%D0%B5%D0%BB%D1%8C%D1%81%D0%B8%D1%8F_%D1%88%D0%B8%D1%80%D0%BE%D0%BA%D0%BE%D0%BB%D0%B8%D1%81%D1%82%D0%BD%D0%B0%D1%8F.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "chuchuhuasi": {
   "artist": "Daniela Yañez Espichan/Archivo Centro Takiwasi",
   "file": "Corteza de Chuchuhuasi (Maytenus macrocarpa) cortada en el Centro Takiwasi, 2010.jpg",
@@ -200,6 +260,18 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Achillea_millefolium_vallee-de-grace-amiens_80_22062007_1.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "copaiba": {
+  "artist": "Mateusbotanica2020",
+  "auto": true,
+  "file": "Copaifera langsdorffii flores.jpg",
+  "h": 1707,
+  "h500": 889,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Copaifera_langsdorffii_flores.jpg",
   "w": 960,
   "w500": 500
  },
@@ -245,6 +317,18 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Mallow_January_2008-1.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "efedra": {
+  "artist": "Frank Vincentz",
+  "auto": true,
+  "file": "Pollença - Ma-2210 - Cap de Formentor - Ephedra fragilis 05 ies.jpg",
+  "h": 640,
+  "h500": 333,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Pollen%C3%A7a_-_Ma-2210_-_Cap_de_Formentor_-_Ephedra_fragilis_05_ies.jpg",
   "w": 960,
   "w500": 500
  },
@@ -441,6 +525,18 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Gew%C3%B6hnlicher_L%C3%B6wenzahn.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "karayilan": {
+  "artist": "H. Zell",
+  "auto": true,
+  "file": "Actaea racemosa 002.JPG",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Actaea_racemosa_002.JPG",
   "w": 960,
   "w500": 500
  },
@@ -855,6 +951,18 @@
   "w": 960,
   "w500": 500
  },
+ "sarimsak": {
+  "artist": "Ermell",
+  "auto": true,
+  "file": "Knoblauch (Allium sativum)-20200621-RM-085344.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Knoblauch_(Allium_sativum)-20200621-RM-085344.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "sedef": {
   "artist": "Robert Flogaus-Faust",
   "file": "Ruta graveolens RF.jpg",
@@ -863,6 +971,18 @@
   "license": "CC BY 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Ruta_graveolens_RF.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "sigirkuyrugu": {
+  "artist": "Agnes Monkelbaan",
+  "auto": true,
+  "file": "Plaun las Steilas. 19-09-2022. (actm.) 08.jpg",
+  "h": 960,
+  "h500": 500,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Plaun_las_Steilas._19-09-2022._(actm.)_08.jpg",
   "w": 960,
   "w500": 500
  },
@@ -885,6 +1005,30 @@
   "license": "CC BY 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Fliegenpilz_fly_agaric_Amanita_muscaria.JPG",
+  "w": 960,
+  "w500": 500
+ },
+ "sumak": {
+  "artist": "No machine-readable author provided. BourrinOman assumed (based on copyright claims).",
+  "auto": true,
+  "file": "Fleur sumac.jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "Public domain",
+  "licenseUrl": "",
+  "page": "https://commons.wikimedia.org/wiki/File:Fleur_sumac.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "tatula": {
+  "artist": "Velvet",
+  "auto": true,
+  "file": "Neuville champ choux datura.jpg",
+  "h": 642,
+  "h500": 334,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Neuville_champ_choux_datura.jpg",
   "w": 960,
   "w500": 500
  },
@@ -990,6 +1134,18 @@
   "license": "CC BY 3.0 us",
   "licenseUrl": "https://creativecommons.org/licenses/by/3.0/us/deed.en",
   "page": "https://commons.wikimedia.org/wiki/File:Starr-140925-1977-Curcuma_longa-flowering_habit-Pali_o_Waipio_Huelo-Maui_(25128294462).jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "zeytin": {
+  "artist": "Palauenc05",
+  "auto": true,
+  "file": "Lun Olivenbaum Bonsai.jpg",
+  "h": 1005,
+  "h500": 523,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Lun_Olivenbaum_Bonsai.jpg",
   "w": 960,
   "w500": 500
  }
