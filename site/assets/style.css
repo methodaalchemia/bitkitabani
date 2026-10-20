@@ -267,3 +267,19 @@ figure.photo figcaption a{color:var(--muted)}
 .chip.zero{opacity:.45}
 .sec .card h2{font-family:var(--f-display);font-size:var(--t-xl);font-weight:700;text-transform:none;letter-spacing:0;color:var(--ink);display:block}
 .sec .card h2::before,.sec .card h2::after{content:none}
+/* köprü sayfaları, günün bitkisi */
+.tablewrap{overflow-x:auto;margin:8px 0}
+table.cmp{width:100%;border-collapse:collapse;font-size:var(--t-sm)}
+table.cmp th,table.cmp td{border-bottom:1px solid var(--rule);padding:8px 10px;text-align:left;vertical-align:top}
+table.cmp thead th{font-family:var(--f-display);font-size:var(--t-md)}
+table.cmp tbody th{font-family:var(--f-mono);font-weight:400;color:var(--muted);white-space:nowrap}
+.otherlist{columns:2;gap:24px;padding-left:18px}.otherlist li{margin:4px 0;break-inside:avoid}
+@media (max-width:640px){.otherlist{columns:1}}
+.daylist{list-style:none;padding:0}.daylist li{display:flex;gap:12px;flex-wrap:wrap;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--rule)}
+.mono-d{font-family:var(--f-mono);font-size:var(--t-sm);color:var(--muted);min-width:190px}
+.todaybox{display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.cta.small{font-size:12px}
+.brlinks{display:flex;flex-direction:column;gap:8px;margin:16px 0}
+.grid.sim{grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}
+.txt h2 a{color:inherit;text-decoration:none}.txt h2 a:hover{color:var(--accent)}
+.grid.sim .card{max-width:260px}

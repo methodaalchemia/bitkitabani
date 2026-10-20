@@ -13,6 +13,23 @@ for i, p in enumerate(P): p['no'] = i + 1
 GUV['yuksek'] = 'Yüksek risk'
 byId = {p['id']: p for p in P}
 TODAY = datetime.date.today().isoformat()
+def _git_date():
+    try:
+        import subprocess
+        out = subprocess.run(['git', 'log', '-1', '--format=%cs', '--', 'data.json', 'extra.py', 'refs.py', 'build.py'], cwd=HERE, capture_output=True, text=True, timeout=10).stdout.strip()
+        return out or TODAY
+    except Exception:
+        return TODAY
+CONTENT_DATE = _git_date()
+try:
+    from zoneinfo import ZoneInfo
+    LOCAL_DAY = datetime.datetime.now(ZoneInfo('Europe/Istanbul')).date()
+except Exception:
+    LOCAL_DAY = datetime.date.today()
+AYLAR = ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık']
+GUNLER = ['Pazartesi','Salı','Çarşamba','Perşembe','Cuma','Cumartesi','Pazar']
+def tr_date(d): return f'{d.day} {AYLAR[d.month-1]} {d.year}, {GUNLER[d.weekday()]}'
+def slug_of(br): return br['a'] + ('-' + br['b'] if br.get('b') else '')
 e = lambda s: html.escape(str(s), quote=True)
 
 def related(pid):
@@ -144,15 +161,35 @@ def desc_for(p):
     d = f'{p["tr"]} ({short_la(p)}): {first}. Bilimsel kanıt: {KANIT[p["kanit"]]["ad"].lower()}. Güvenlik notları ve kaynaklar.'
     return d if len(d) <= 160 else d[:157].rsplit(' ', 1)[0] + '…'
 
+def card(p):
+    s = ' '.join([p['tr'], p['la'], p['diger'], p['fam'], p['kisim'], p['haz'], p['bilim'], p['ilginc']] + [x for u in p['kul'] for x in u] + [KAT[k] for k in p['kat']])
+    return f'''<a class="card" href="/{p["id"]}/" data-id="{p["id"]}" data-bolge="{" ".join(p["bolge"])}" data-kat="{" ".join(p["kat"])}" data-kanit="{p["kanit"]}" data-guv="{p["guv"]}" data-durum="{" ".join(([YASAL[p["id"]][0] if YASAL[p["id"]][0]=="yasak" else "kisitli"] if p["id"] in YASAL else []) + (["koruma"] if KORUMA.get(p["id"], {}).get("rozet") else []))}" data-s="{e(s)}">
+  {ph(p, 500)}
+  <div class="body">
+    <div class="row"><span class="acc">{acc(p["no"])}</span><span class="regs">{"".join(dot(r) for r in p["bolge"])}</span></div>
+    <h2>{e(p["tr"])}</h2>
+    <div class="latin">{e(p["la"])}</div>
+    <div class="fam" lang="la">{e(p["fam"])}</div>
+    {tags(p)}
+    <div class="foot"><span class="ev" aria-label="Kanıt düzeyi: {KANIT[p["kanit"]]["ad"]}">{pips(p["kanit"])} Kanıt: {KANIT[p["kanit"]]["ad"]}</span><span class="sf {p["guv"]}">{GUV[p["guv"]]}</span></div>
+  </div>
+</a>'''
+
 # ---------- bitki sayfaları ----------
 for i, p in enumerate(P):
     pid = p['id']; rel = related(pid)
     prev, nxt = P[i-1], P[(i+1) % len(P)]
     title = f'{p["tr"]} ({short_la(p)}): kullanımı, bilim ve güvenlik | Bitki Tabanı'
-    ld = {"@context":"https://schema.org","@type":"Article","headline":f'{p["tr"]} ({short_la(p)})',"inLanguage":"tr","about":{"@type":"Taxon","name":short_la(p),"alternateName":[p['tr']] + [x.strip() for x in p['diger'].split(',')][:4],"taxonRank":"species","parentTaxon":{"@type":"Taxon","name":p['fam'].split(' ')[0],"taxonRank":"family"}},"description":desc_for(p),"author":{"@type":"Organization","name":"Bitki Tabanı"},"isPartOf":{"@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/"},"dateModified":TODAY,"url":f'{BASE}/{pid}/',"image":(f'{BASE}/img/{pid}-960.jpg' if pid in IMG else None),"publisher":{"@type":"Organization","name":"Bitki Tabanı","url":BASE+"/"}}
+    ld = {"@context":"https://schema.org","@type":"Article","headline":f'{p["tr"]} ({short_la(p)})',"inLanguage":"tr","about":{"@type":"Taxon","name":short_la(p),"alternateName":[p['tr']] + [x.strip() for x in p['diger'].split(',')][:4],"taxonRank":"species","parentTaxon":{"@type":"Taxon","name":p['fam'].split(' ')[0],"taxonRank":"family"}},"description":desc_for(p),"author":{"@type":"Organization","name":"Bitki Tabanı"},"isPartOf":{"@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/"},"dateModified":CONTENT_DATE,"url":f'{BASE}/{pid}/',"image":(f'{BASE}/img/{pid}-960.jpg' if pid in IMG else None),"publisher":{"@type":"Organization","name":"Bitki Tabanı","url":BASE+"/"}}
     crumbs = {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana sayfa","item":BASE+"/"},{"@type":"ListItem","position":2,"name":"Katalog","item":BASE+"/katalog/"},{"@type":"ListItem","position":3,"name":p['tr'],"item":f'{BASE}/{pid}/'}]}
     uses = ''.join(f'<div class="use"><div class="who">{e(w)}</div><p>{e(t)}</p></div>' for w, t in p['kul'])
     relhtml = ''
+    def _sim(q):
+        return 2 * len(set(q['bolge']) & set(p['bolge'])) + len(set(q['kat']) & set(p['kat'])) + (2 if q['fam'] == p['fam'] else 0)
+    similar = sorted((q for q in P if q['id'] != pid and q['id'] not in rel), key=lambda q: (-_sim(q), q['no']))[:3]
+    simhtml = '<section class="sec"><h2>Benzer bitkiler</h2><div class="grid sim">' + ''.join(card(q) for q in similar) + '</div></section>'
+    mybridges = [(i, x) for i, x in enumerate(BR, 1) if pid in (x['a'], x.get('b'))]
+    brlinks = ''.join(f'<a class="cta" href="/kopruler/{slug_of(x)}/">Karşılaştırmayı oku: {e(x["t"])} →</a>' for i, x in mybridges)
     if rel:
         relhtml = '<section class="sec"><h2>Kültür köprüsü</h2><div class="related">' + ''.join(f'<a class="chip" href="/{r}/">{"".join(dot(x) for x in byId[r]["bolge"])}{e(byId[r]["tr"])}</a>' for r in rel) + '</div></section>'
     ek = EK.get(pid, {})
@@ -206,6 +243,8 @@ for i, p in enumerate(P):
   {korhtml}
   <p class="fact">{e(p["ilginc"])}</p>
   {relhtml}
+  {('<p class="brlinks">' + brlinks + '</p>') if brlinks else ''}
+  {simhtml}
   <section class="sec"><h2>Kaynaklar</h2>{refs(p)}</section>
   <aside class="disclaimer" role="note"><b>Tıbbi tavsiye değildir.</b> Bu sayfa geleneksel kullanımları kültürel bir kayıt olarak anlatır ve bilimsel bilgiyi özetler; teşhis ya da tedavi önerisi değildir. {e(p["tr"])} ya da başka bir bitkiyi kullanmadan önce, özellikle ilaç kullanıyorsan, hamileysen, emziriyorsan ya da bir hastalığın varsa hekimine veya eczacına danış. Zehirlenme şüphesinde Ulusal Zehir Danışma Merkezi’ni (UZEM) <b>114</b> numaradan ara.</aside>
   <div class="sheet-foot">
@@ -218,22 +257,10 @@ for i, p in enumerate(P):
     write(f'/{pid}/', page(title, desc_for(p), f'/{pid}/', body, 'plant', '<script src="/assets/plant.js" defer></script>', narrow=True, extra=extra, image=(f'{BASE}/img/{pid}-960.jpg' if pid in IMG else None)))
 
 # ---------- katalog ----------
-def card(p):
-    s = ' '.join([p['tr'], p['la'], p['diger'], p['fam'], p['kisim'], p['haz'], p['bilim'], p['ilginc']] + [x for u in p['kul'] for x in u] + [KAT[k] for k in p['kat']])
-    return f'''<a class="card" href="/{p["id"]}/" data-id="{p["id"]}" data-bolge="{" ".join(p["bolge"])}" data-kat="{" ".join(p["kat"])}" data-kanit="{p["kanit"]}" data-guv="{p["guv"]}" data-durum="{" ".join(([YASAL[p["id"]][0] if YASAL[p["id"]][0]=="yasak" else "kisitli"] if p["id"] in YASAL else []) + (["koruma"] if KORUMA.get(p["id"], {}).get("rozet") else []))}" data-s="{e(s)}">
-  {ph(p, 500)}
-  <div class="body">
-    <div class="row"><span class="acc">{acc(p["no"])}</span><span class="regs">{"".join(dot(r) for r in p["bolge"])}</span></div>
-    <h2>{e(p["tr"])}</h2>
-    <div class="latin">{e(p["la"])}</div>
-    <div class="fam" lang="la">{e(p["fam"])}</div>
-    {tags(p)}
-    <div class="foot"><span class="ev" aria-label="Kanıt düzeyi: {KANIT[p["kanit"]]["ad"]}">{pips(p["kanit"])} Kanıt: {KANIT[p["kanit"]]["ad"]}</span><span class="sf {p["guv"]}">{GUV[p["guv"]]}</span></div>
-  </div>
-</a>'''
 
 def cnt(fn): return sum(1 for p in P if fn(p))
 regs = [(k, v) for k, v in REG.items() if cnt(lambda p: k in p['bolge']) >= 3]
+REG_LIST = ', '.join(v['ad'].split(' ve ')[0] for k, v in regs[:-1]) + ' ve ' + regs[-1][1]['ad']
 durum = [('yasak', 'Türkiye’de yasak', lambda p: YASAL.get(p['id'], ('',))[0] == 'yasak'),
          ('kisitli', 'Türkiye’de kısıtlı veya lisanslı', lambda p: YASAL.get(p['id'], ('',))[0] in ('kisitli', 'lisansli')),
          ('koruma', 'Koruma gerektiren', lambda p: bool(KORUMA.get(p['id'], {}).get('rozet')))]
@@ -271,16 +298,16 @@ write('/katalog/', page(f'Bitki kataloğu: {len(P)} şifalı ve ritüel bitki | 
 # ---------- köprüler ----------
 def mini(p):
     return f'<a class="mini" href="/{p["id"]}/"><span class="where">{"".join(dot(r) for r in p["bolge"])} {e(" · ".join(REG[r]["ad"] for r in p["bolge"]))}</span><b>{e(p["tr"])}</b><span class="latin">{e(p["la"])}</span></a>'
-def bridge_map():
+def bridge_map(only=None):
     x0 = mapgeo.project(-128, 0)[0]; x1 = mapgeo.project(128, 0)[0]
     y0 = mapgeo.project(0, 66)[1]; y1 = mapgeo.project(0, -42)[1]
     K = [0.10, 0.30, 0.20, 0.42, 0.14, 0.36, 0.24, 0.50, 0.06, 0.26, 0.46, 0.18, 0.34, 0.04, 0.22, 0.40]
     T = [0.50, 0.40, 0.60, 0.40, 0.66, 0.46, 0.55, 0.20, 0.62, 0.16, 0.72, 0.68, 0.88, 0.45, 0.25, 0.58]
-    out = [f'<svg class="map" viewBox="{x0:.0f} {y0:.0f} {x1 - x0:.0f} {y1 - y0:.0f}" role="img" aria-labelledby="mapTitle"><title id="mapTitle">Kültür köprüleri haritası: Anadolu, Orta Asya, And Dağları, Amazon ve Kaliforniya arasındaki bitki bağlantıları</title>',
+    out = [f'<svg class="map{" focus" if only else ""}" viewBox="{x0:.0f} {y0:.0f} {x1 - x0:.0f} {y1 - y0:.0f}" role="img" aria-labelledby="mapTitle{only or ''}"><title id="mapTitle{only or ''}">Kültür köprüleri haritası: Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika arasındaki bitki bağlantıları</title>',
            f'<path class="land" d="{mapgeo.land_path()}"/>']
     for i, pts in enumerate(BR_GEO, 1):
         P0 = mapgeo.project(*pts[0][:2])
-        g = [f'<g class="arc" data-i="{i}">']
+        g = [f'<g class="arc{" on" if only == i else ""}" data-i="{i}">']
         labels, mids = [], []
         for j, pt in enumerate(pts[1:]):
             P1 = mapgeo.project(*pt[:2])
@@ -300,7 +327,7 @@ def bridge_map():
             dxl = -9 if anchor == 'end' else 9
             g.append(f'<text class="lbl" x="{x + dxl}" y="{y + 4}" text-anchor="{anchor}">{e(pt[2])}</text>')
         mx, my = mids[0]
-        g.append(f'<a href="#kopru-{i}" class="num" aria-label="Köprü {i}"><circle cx="{mx:.1f}" cy="{my:.1f}" r="11"/><text x="{mx:.1f}" y="{my + 4:.1f}" text-anchor="middle">{i}</text></a>')
+        g.append(f'<a href="/kopruler/{slug_of(BR[i-1])}/" class="num" aria-label="Köprü {i}: {e(BR[i-1]["t"])}"><circle cx="{mx:.1f}" cy="{my:.1f}" r="11"/><text x="{mx:.1f}" y="{my + 4:.1f}" text-anchor="middle">{i}</text></a>')
         g.append('</g>')
         out.append(''.join(g))
     out.append('</svg>')
@@ -309,12 +336,51 @@ def bridge_map():
 items = []
 for i, b in enumerate(BR, 1):
     a = byId[b['a']]; c = byId.get(b.get('b')) if b.get('b') else None
-    txt = f'<div class="txt"><h2><span class="bn">{i}</span>{e(b["t"])}</h2><p>{e(b["d"])}</p></div>'
+    txt = f'<div class="txt"><h2><span class="bn">{i}</span><a href="/kopruler/{slug_of(b)}/">{e(b["t"])}</a></h2><p>{e(b["d"])}</p><p><a class="cta" href="/kopruler/{slug_of(b)}/">Karşılaştırmayı oku →</a></p></div>'
     items.append(f'<article class="bridge" id="kopru-{i}" data-i="{i}" tabindex="-1">{mini(a)}<span class="arrow" aria-hidden="true">↔</span>{mini(c)}{txt}</article>' if c else f'<article class="bridge single" id="kopru-{i}" data-i="{i}" tabindex="-1">{mini(a)}<span class="note">Aynı bitki, birden fazla kültür</span>{txt}</article>')
 br = f'''<header class="page-head"><span class="eyebrow">{len(BR)} karşılaştırma</span><h1>Kültür köprüleri</h1><p>Birbirinden binlerce kilometre uzaktaki kültürler, çoğu zaman aynı molekülleri ya da aynı bitkiyi benzer dertlere kullanmış. Haritadaki her yay bir köprü; üzerine gel ya da aşağıdaki listeden birini seç.</p></header>
 <figure class="mapwrap">{bridge_map()}<figcaption>Harita: Natural Earth (kamu malı), Natural Earth izdüşümü. Noktalar bölgeyi temsil eder, kesin toplama yerini değil.</figcaption></figure>
 <div class="bridges">{"".join(items)}</div>'''
-write('/kopruler/', page('Kültür köprüleri haritası: Anadolu, And ve Amazon bitkileri | Bitki Tabanı', 'Anadolu ile And Dağları ve Amazon’un bitki geleneklerini bir harita üzerinde karşılaştıran kültür köprüleri: üzerlik ve ayahuasca, sedef otu ve ruda, salep ve maca.', '/kopruler/', br, 'br', '<script src="/assets/kopruler.js" defer></script>'))
+write('/kopruler/', page(f'Kültür köprüleri haritası: {len(BR)} bitki karşılaştırması | Bitki Tabanı', f'{REG_LIST} arasındaki {len(BR)} kültür köprüsü: üzerlik ve ayahuasca, efedra ve koka, salep ve maca gibi bitkileri yan yana karşılaştır.', '/kopruler/', br, 'br', '<script src="/assets/kopruler.js" defer></script>'))
+
+# ---------- köprü karşılaştırma sayfaları ----------
+def cmp_rows(ps):
+    yas = lambda q: YASAL_AD[YASAL[q['id']][0]] if q['id'] in YASAL else 'Özel bir kısıt yok'
+    rows = [('Latince adı', lambda q: f'<i>{e(q["la"])}</i>'), ('Familya', lambda q: e(q['fam'])), ('Bölge', lambda q: ', '.join(e(REG[r]['ad']) for r in q['bolge'])),
+            ('Kullanılan kısım', lambda q: e(q['kisim'])), ('Kullanım', lambda q: ', '.join(KAT[k] for k in q['kat'])), ('Bilimsel kanıt', lambda q: KANIT[q['kanit']]['ad']),
+            ('Güvenlik', lambda q: f'<span class="sf {q["guv"]}">{GUV[q["guv"]]}</span>'), ('Türkiye’de yasal durum', yas)]
+    head = '<tr><th scope="col"></th>' + ''.join(f'<th scope="col"><a href="/{q["id"]}/">{e(q["tr"])}</a></th>' for q in ps) + '</tr>'
+    body = ''.join('<tr><th scope="row">' + lab + '</th>' + ''.join(f'<td>{fn(q)}</td>' for q in ps) + '</tr>' for lab, fn in rows)
+    return f'<div class="tablewrap"><table class="cmp"><thead>{head}</thead><tbody>{body}</tbody></table></div>'
+
+for i, br_ in enumerate(BR, 1):
+    slug = slug_of(br_); a = byId[br_['a']]; c = byId.get(br_.get('b')) if br_.get('b') else None
+    ps = [a] + ([c] if c else [])
+    title_names = f'{a["tr"]} ve {c["tr"]}' if c else a['tr']
+    blocks = ''
+    for q in ps:
+        uses = ''.join(f'<div class="use"><div class="who">{e(w)}</div><p>{e(t)}</p></div>' for w, t in q['kul'])
+        blocks += f'<section class="sec"><h2>{e(q["tr"])}</h2><div class="uses">{uses}</div><p><b>Bilim:</b> {e(q["bilim"])}</p><p><b>Güvenlik:</b> {e(q["guvNot"])}</p><p><a class="cta" href="/{q["id"]}/">{e(q["tr"])} sayfasının tamamı →</a></p></section>'
+    others = ''.join(f'<li><a href="/kopruler/{slug_of(x)}/">{e(x["t"])}</a></li>' for x in BR if x is not br_)
+    prev_, next_ = BR[i-2], BR[i % len(BR)]
+    body = f'''
+<nav class="crumbs" aria-label="Konum"><a href="/">Ana sayfa</a><span>/</span><a href="/kopruler/">Kültür köprüleri</a><span>/</span><span>{e(br_["t"])}</span></nav>
+<article class="sheet">
+<header class="page-head"><span class="eyebrow">Kültür köprüsü {i} · {e(title_names)}</span><h1>{e(br_["t"])}</h1><p>{e(br_["d"])}</p></header>
+<figure class="mapwrap">{bridge_map(only=i)}<figcaption>Harita: Natural Earth (kamu malı). Noktalar bölgeyi temsil eder, kesin toplama yerini değil.</figcaption></figure>
+<section class="sec"><h2>Yan yana</h2>{cmp_rows(ps)}</section>
+{blocks}
+<aside class="disclaimer" role="note"><b>Tıbbi tavsiye değildir.</b> Bu sayfa geleneksel kullanımları kültürel bir kayıt olarak karşılaştırır; teşhis ya da tedavi önerisi değildir. Herhangi bir bitkiyi kullanmadan önce hekimine ya da eczacına danış. Zehirlenme şüphesinde Ulusal Zehir Danışma Merkezi’ni (UZEM) <b>114</b> numaradan ara.</aside>
+<section class="sec"><h2>Diğer köprüler</h2><ul class="otherlist">{others}</ul></section>
+<div class="sheet-foot"><a class="cta" href="/kopruler/">Bütün köprüler ve harita →</a><div class="pager"><a href="/kopruler/{slug_of(prev_)}/">← {e(prev_["t"])}</a><a href="/kopruler/{slug_of(next_)}/">{e(next_["t"])} →</a></div></div>
+</article>'''
+    ldb = [{"@context":"https://schema.org","@type":"Article","headline":br_['t'],"description":br_['d'],"inLanguage":"tr","url":f'{BASE}/kopruler/{slug}/',"dateModified":CONTENT_DATE,
+            "about":[{"@type":"Taxon","name":short_la(q),"alternateName":q['tr']} for q in ps],"isPartOf":{"@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/"},
+            "image":[f'{BASE}/img/{q["id"]}-960.jpg' for q in ps if q['id'] in IMG]},
+           {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana sayfa","item":BASE+"/"},{"@type":"ListItem","position":2,"name":"Kültür köprüleri","item":BASE+"/kopruler/"},{"@type":"ListItem","position":3,"name":br_['t'],"item":f'{BASE}/kopruler/{slug}/'}]}]
+    desc = (f'{title_names}: ' + br_['d'])[:157]
+    write(f'/kopruler/{slug}/', page(f'{br_["t"]}: {title_names} | Bitki Tabanı', desc, f'/kopruler/{slug}/', body, 'br', narrow=True,
+          extra=''.join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>' for x in ldb), image=(f'{BASE}/img/{a["id"]}-960.jpg' if a['id'] in IMG else None)))
 
 # ---------- hakkında ----------
 about = '''<header class="page-head"><span class="eyebrow">Hakkında</span><h1>Bitki Tabanı nedir?</h1></header>
@@ -352,6 +418,10 @@ write('/secim/', page('Fotoğraf seçimi | Bitki Tabanı', 'Fotoğraf seçimi', 
 
 # ---------- ana sayfa ----------
 pool = [p for p in P if p['guv'] != 'yuksek']
+def day_pick(d): return pool[(d - datetime.date(1970, 1, 1)).days % len(pool)]
+today_p = day_pick(LOCAL_DAY)
+LEDE = f'{REG_LIST}’dan {len(P)} şifalı ve ritüel bitkisi. Her kayıtta geleneksel kullanım, bilimin söyledikleri, güvenlik notu ve kaynaklar bir arada.'
+
 REG_TXT = {'anadolu':'Nazar tütsüsünden kına gecesine, Anadolu’nun şifa ve ritüel otları.','asya':'İskit tütsülerinden Sibirya şamanlarına, bozkırın ve taygaların bitkileri.',
            'and':'Koka yaprağından kantuta çiçeğine, And Dağları’nın kutsal bitkileri.','amazon':'Ayahuasca sarmaşığından huito boyasına, yağmur ormanının öğretmen bitkileri.',
            'kamerika':'Ak adaçayından peyoteye, Kuzey Amerika yerli halklarının bitkileri.'}
@@ -361,28 +431,49 @@ home = f'''
   <div class="brand">
     <span class="eyebrow">Etnobotanik kayıt defteri</span>
     <h1 class="wordmark">Bitki <em>Tabanı</em></h1>
-    <p class="lede">Anadolu’dan And Dağları’na, Amazon’dan Sibirya’ya {len(P)} şifalı ve ritüel bitkisi. Her kayıtta geleneksel kullanım, bilimin söyledikleri, güvenlik notu ve kaynaklar bir arada.</p>
+    <p class="lede">{LEDE}</p>
     <p><a class="cta" href="/katalog/">Kataloğa git →</a></p>
   </div>
-  <a class="today" id="today" href="/{pool[0]["id"]}/" data-pool="{e(json.dumps([[p["id"], p["tr"], p["la"]] for p in pool], ensure_ascii=False))}"><span class="eyebrow">Bugünün bitkisi</span><b id="todayName">{e(pool[0]["tr"])}</b><i id="todayLatin">{e(pool[0]["la"])}</i></a>
+  <div class="todaybox"><a class="today" id="today" href="/{today_p["id"]}/" data-pool="{e(json.dumps([[p["id"], p["tr"], p["la"]] for p in pool], ensure_ascii=False))}"><span class="eyebrow">Bugünün bitkisi</span><b id="todayName">{e(today_p["tr"])}</b><i id="todayLatin">{e(today_p["la"])}</i></a><a class="cta small" href="/gunun-bitkisi/">Geçmiş günlerin bitkileri →</a></div>
 </header>
 <section class="sec"><h2>Bölgelere göre</h2><div class="regs-grid">{regcards}</div></section>
 <section class="sec"><h2>Öne çıkanlar</h2><div class="grid">{"".join(card(byId[i]) for i in FEATURED if i in byId)}</div><p><a class="cta" href="/katalog/">Bütün {len(P)} bitkiyi gör →</a></p></section>
-<section class="sec"><h2>Kültür köprüleri</h2><p>Birbirinden binlerce kilometre uzaktaki kültürler, çoğu zaman aynı molekülleri ya da aynı bitkiyi benzer dertlere kullanmış. {len(BR)} köprüyü haritada gör.</p><a class="mapwrap maplink" href="/kopruler/" aria-label="Kültür köprüleri haritasına git">{bridge_map()}</a></section>
+<section class="sec"><h2>Kültür köprüleri</h2><p>Birbirinden binlerce kilometre uzaktaki kültürler, çoğu zaman aynı molekülleri ya da aynı bitkiyi benzer dertlere kullanmış. {len(BR)} köprüyü haritada gör.</p><div class="mapwrap">{bridge_map()}</div><p><a class="cta" href="/kopruler/">Bütün köprüleri ve karşılaştırmaları gör →</a></p></section>
 '''
 ldsite = {"@context":"https://schema.org","@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/","inLanguage":"tr","description":"Şifalı ve ritüel bitkiler için Türkçe etnobotanik kayıt defteri."}
-write('/index.html', page('Bitki Tabanı: şifalı ve ritüel bitkiler veri tabanı', f'Anadolu’dan And Dağları’na {len(P)} şifalı ve ritüel bitkisi: geleneksel kullanım, bilimsel kanıt, güvenlik notları ve kaynaklar.', '/', home, 'home', '<script src="/assets/home.js" defer></script>', extra=f'<script type="application/ld+json">{json.dumps(ldsite, ensure_ascii=False)}</script>'))
+write('/index.html', page('Bitki Tabanı: şifalı ve ritüel bitkiler veri tabanı', f'{REG_LIST}’dan {len(P)} şifalı ve ritüel bitkisi: geleneksel kullanım, bilimsel kanıt, güvenlik ve kaynaklar.', '/', home, 'home', '<script src="/assets/home.js" defer></script>', extra=f'<script type="application/ld+json">{json.dumps(ldsite, ensure_ascii=False)}</script>'))
+
+# ---------- günün bitkisi arşivi ----------
+days = [LOCAL_DAY - datetime.timedelta(days=n) for n in range(14)]
+tp = today_p
+past = ''.join(f'<li><span class="mono-d">{tr_date(d)}</span><a href="/{day_pick(d)["id"]}/">{e(day_pick(d)["tr"])}</a> <i class="latin">{e(short_la(day_pick(d)))}</i></li>' for d in days[1:])
+gb = f'''
+<nav class="crumbs" aria-label="Konum"><a href="/">Ana sayfa</a><span>/</span><span>Günün bitkisi</span></nav>
+<header class="page-head"><span class="eyebrow">{tr_date(LOCAL_DAY)}</span><h1>Günün bitkisi: {e(tp["tr"])}</h1><p>Her gün katalogdan bir bitki öne çıkıyor. Ölümcül zehirli ya da yüksek riskli bitkiler bu döngüye alınmaz.</p></header>
+<div class="grid sim">{card(tp)}</div>
+<section class="sec"><h2>Bugün okumak için</h2><p>{e(tp["kul"][0][1])}</p><p class="fact">{e(tp["ilginc"])}</p><p><a class="cta" href="/{tp["id"]}/">{e(tp["tr"])} sayfasının tamamı →</a></p></section>
+<section class="sec"><h2>Son iki hafta</h2><ul class="daylist">{past}</ul></section>
+'''
+write('/gunun-bitkisi/', page(f'Günün bitkisi: {tp["tr"]} | Bitki Tabanı', f'Bugünün bitkisi {tp["tr"]} ({short_la(tp)}) ve son iki haftanın bitkileri.', '/gunun-bitkisi/', gb, '', narrow=True,
+      image=(f'{BASE}/img/{tp["id"]}-960.jpg' if tp['id'] in IMG else None)))
 
 # ---------- 404, robots, sitemap, favicon ----------
 nf = '<header class="page-head"><span class="eyebrow">404</span><h1>Bu sayfa bulunamadı</h1><p>Aradığın kayıt taşınmış ya da hiç olmamış olabilir. <a href="/">Kataloğa dön</a> ve oradan ara.</p></header>'
 open(os.path.join(OUT,'404.html'),'w',encoding='utf-8').write(page('Sayfa bulunamadı | Bitki Tabanı','Sayfa bulunamadı.','/404.html',nf,'', narrow=True))
 open(os.path.join(OUT,'robots.txt'),'w').write(f'User-agent: *\nAllow: /\nDisallow: /secim/\nDisallow: /*?\n\nSitemap: {BASE}/sitemap.xml\n')
-urls = ['/', '/katalog/', '/kopruler/', '/hakkinda/'] + [f'/{p["id"]}/' for p in P]
-open(os.path.join(OUT,'sitemap.xml'),'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url><loc>{BASE}{u}</loc><lastmod>{TODAY}</lastmod></url>\n' for u in urls) + '</urlset>\n')
+urls = ['/', '/katalog/', '/kopruler/', '/gunun-bitkisi/', '/hakkinda/'] + [f'/kopruler/{slug_of(x)}/' for x in BR] + [f'/{p["id"]}/' for p in P]
+open(os.path.join(OUT,'sitemap.xml'),'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url><loc>{BASE}{u}</loc><lastmod>{(LOCAL_DAY.isoformat() if u in ('/', '/gunun-bitkisi/') else CONTENT_DATE)}</lastmod></url>\n' for u in urls) + '</urlset>\n')
 os.makedirs(os.path.join(OUT,'assets'), exist_ok=True)
 for f in os.listdir(os.path.join(HERE, 'assets')):
     shutil.copy(os.path.join(HERE, 'assets', f), os.path.join(OUT, 'assets', f))
 if os.path.isdir(os.path.join(HERE, 'img')):
     shutil.copytree(os.path.join(HERE, 'img'), os.path.join(OUT, 'img'), dirs_exist_ok=True)
+open(os.path.join(OUT, '_headers'), 'w').write('''/*
+  Cache-Control: public, max-age=0, must-revalidate
+/assets/*
+  Cache-Control: public, max-age=3600
+/img/*
+  Cache-Control: public, max-age=2592000
+''')
 print('ok', len(urls), 'sayfa')
 
