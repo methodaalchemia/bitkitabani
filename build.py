@@ -1,7 +1,7 @@
 import json, os, shutil, html, re, urllib.parse, datetime
 HERE = os.path.dirname(os.path.abspath(__file__))
 from refs import WIKI, POWO, NCCIH, EMA, OTHER, FILES
-from extra import EK, KORUMA, YASAL, YASAL_AD, BR_GEO
+from extra import EK, KORUMA, YASAL, YASAL_AD, BR_GEO, ALT
 import mapgeo, math
 IMG = json.load(open(os.path.join(HERE, 'images.json'), encoding='utf-8')) if os.path.exists(os.path.join(HERE, 'images.json')) else {}
 
@@ -67,7 +67,7 @@ def head(title, desc, path, extra='', image=None):
 
 def nav(cur):
     a = lambda href, label, key: f'<a href="{href}"{" aria-current=\"page\"" if cur == key else ""}>{label}</a>'
-    return f'''<div class="motif" aria-hidden="true"></div><div class="site-nav"><a class="logo" href="/">Bitki <em>Tabanı</em></a><nav>{a("/", "Katalog", "home")}{a("/kopruler/", "Kültür köprüleri", "br")}{a("/hakkinda/", "Hakkında", "about")}</nav></div>'''
+    return f'''<div class="motif" aria-hidden="true"></div><div class="site-nav"><a class="logo" href="/">Bitki <em>Tabanı</em></a><nav>{a("/katalog/", "Katalog", "kat")}{a("/kopruler/", "Kültür köprüleri", "br")}{a("/hakkinda/", "Hakkında", "about")}</nav></div>'''
 
 FOOT = '''<div class="motif indigo" aria-hidden="true"></div>
 <footer class="site">
@@ -108,7 +108,7 @@ def ph(p, size, eager=False):
         return f'<div class="ph"><span class="ph-mark">{e(short_la(p))}</span></div>'
     w, h = (m['w'], m['h']) if size == 960 else (m.get('w500', 500), m.get('h500', 667))
     load = 'fetchpriority="high"' if eager else 'loading="lazy"'
-    return f'<div class="ph loaded"><img src="/img/{p["id"]}-{size}.jpg" width="{w}" height="{h}" alt="{e(p["tr"])} ({e(short_la(p))})" {load} decoding="async"></div>'
+    return f'<div class="ph loaded"><img src="/img/{p["id"]}-{size}.jpg" width="{w}" height="{h}" alt="{e(p["tr"])} ({e(short_la(p))}): {e(ALT.get(p["id"], "bitki"))}" {load} decoding="async"></div>'
 
 def credit(p):
     m = IMG.get(p['id'])
@@ -149,8 +149,8 @@ for i, p in enumerate(P):
     pid = p['id']; rel = related(pid)
     prev, nxt = P[i-1], P[(i+1) % len(P)]
     title = f'{p["tr"]} ({short_la(p)}): kullanımı, bilim ve güvenlik | Bitki Tabanı'
-    ld = {"@context":"https://schema.org","@type":"Article","headline":f'{p["tr"]} ({short_la(p)})',"inLanguage":"tr","about":{"@type":"Thing","name":p['la'],"alternateName":p['tr']},"isPartOf":{"@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/"},"dateModified":TODAY,"url":f'{BASE}/{pid}/',"image":(f'{BASE}/img/{pid}-960.jpg' if pid in IMG else None),"publisher":{"@type":"Organization","name":"Bitki Tabanı","url":BASE+"/"}}
-    crumbs = {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Katalog","item":BASE+"/"},{"@type":"ListItem","position":2,"name":p['tr'],"item":f'{BASE}/{pid}/'}]}
+    ld = {"@context":"https://schema.org","@type":"Article","headline":f'{p["tr"]} ({short_la(p)})',"inLanguage":"tr","about":{"@type":"Taxon","name":short_la(p),"alternateName":[p['tr']] + [x.strip() for x in p['diger'].split(',')][:4],"taxonRank":"species","parentTaxon":{"@type":"Taxon","name":p['fam'].split(' ')[0],"taxonRank":"family"}},"description":desc_for(p),"author":{"@type":"Organization","name":"Bitki Tabanı"},"isPartOf":{"@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/"},"dateModified":TODAY,"url":f'{BASE}/{pid}/',"image":(f'{BASE}/img/{pid}-960.jpg' if pid in IMG else None),"publisher":{"@type":"Organization","name":"Bitki Tabanı","url":BASE+"/"}}
+    crumbs = {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana sayfa","item":BASE+"/"},{"@type":"ListItem","position":2,"name":"Katalog","item":BASE+"/katalog/"},{"@type":"ListItem","position":3,"name":p['tr'],"item":f'{BASE}/{pid}/'}]}
     uses = ''.join(f'<div class="use"><div class="who">{e(w)}</div><p>{e(t)}</p></div>' for w, t in p['kul'])
     relhtml = ''
     if rel:
@@ -180,7 +180,7 @@ for i, p in enumerate(P):
     </dl></section>
   <section class="sec"><h2>Karıştırma riski</h2><div class="callout orta"><p>{e(ek["karisma"])}</p></div></section>'''
     body = f'''
-<nav class="crumbs" aria-label="Konum"><a href="/">Katalog</a><span>/</span><span>{e(p["tr"])}</span></nav>
+<nav class="crumbs" aria-label="Konum"><a href="/">Ana sayfa</a><span>/</span><a href="/katalog/">Katalog</a><span>/</span><span>{e(p["tr"])}</span></nav>
 <article class="sheet">
   <header class="sheet-head">
     <div class="titles">
@@ -207,8 +207,9 @@ for i, p in enumerate(P):
   <p class="fact">{e(p["ilginc"])}</p>
   {relhtml}
   <section class="sec"><h2>Kaynaklar</h2>{refs(p)}</section>
+  <aside class="disclaimer" role="note"><b>Tıbbi tavsiye değildir.</b> Bu sayfa geleneksel kullanımları kültürel bir kayıt olarak anlatır ve bilimsel bilgiyi özetler; teşhis ya da tedavi önerisi değildir. {e(p["tr"])} ya da başka bir bitkiyi kullanmadan önce, özellikle ilaç kullanıyorsan, hamileysen, emziriyorsan ya da bir hastalığın varsa hekimine veya eczacına danış. Zehirlenme şüphesinde Ulusal Zehir Danışma Merkezi’ni (UZEM) <b>114</b> numaradan ara.</aside>
   <div class="sheet-foot">
-    <button type="button" class="learn" id="learnBtn" data-id="{pid}" aria-pressed="false">Öğrendim olarak işaretle</button>
+    <div class="learnbox"><button type="button" class="learn" id="learnBtn" data-id="{pid}" aria-pressed="false">Öğrendim olarak işaretle</button><span class="muted-s">Yalnızca bu tarayıcıda saklanır; başka cihazda görünmez.</span></div>
     <div class="pager"><a href="/{prev["id"]}/">← {e(prev["tr"])}</a><a href="/{nxt["id"]}/">{e(nxt["tr"])} →</a></div>
   </div>
 </article>
@@ -242,32 +243,30 @@ groups = [('bolge','Bölge',[(k,v['ad'],dot(k),cnt(lambda p,k=k: k in p['bolge']
           ('guv','Güvenlik',[(k,v,f'<span class="dot" style="background:var(--s-{k})"></span>',cnt(lambda p,k=k: p['guv']==k)) for k,v in GUV.items()]),
           ('durum','Yasal ve koruma',[(k,v,'',cnt(fn)) for k,v,fn in durum])]
 filters = ''.join(f'<div class="fgroup"><span>{lab}</span><div class="chips">' + ''.join(f'<button type="button" class="chip" data-g="{g}" data-k="{k}" aria-pressed="false">{ic}{e(v)} <span class="n">{n}</span></button>' for k,v,ic,n in opts) + '</div></div>' for g,lab,opts in groups)
-home = f'''
-<header class="top">
-  <div class="brand">
-    <span class="eyebrow">Etnobotanik kayıt defteri</span>
-    <h1 class="wordmark">Bitki <em>Tabanı</em></h1>
-    <p class="lede">Anadolu’dan And Dağları’na, Amazon’dan Sibirya’ya {len(P)} şifalı ve ritüel bitkisi. Her kayıtta geleneksel kullanım, bilimin söyledikleri, güvenlik notu ve kaynaklar bir arada.</p>
-  </div>
-  <a class="today" id="today" href="/{P[1]["id"]}/"><span class="eyebrow">Bugünün bitkisi</span><b id="todayName">{e(P[1]["tr"])}</b><i id="todayLatin">{e(P[1]["la"])}</i></a>
-</header>
-<div class="stats"><span><strong>{len(P)}</strong> bitki</span><span><strong>{len(regs)}</strong> bölge</span><span><strong>{len(BR)}</strong> kültür köprüsü</span><span title="Okuduğun bitkileri sayfalarındaki “Öğrendim” düğmesiyle işaretle">Öğrendiklerim <strong id="learnedCount">0</strong>/{len(P)}</span></div>
-<p class="hint">Okuduğun bitkileri, sayfalarının sonundaki <b>Öğrendim</b> düğmesiyle işaretleyebilirsin. İlerlemen yalnızca bu tarayıcıda saklanır; hesap gerekmez.</p>
+FEATURED = ['uzerlik','ayahuasca','salep','maca','kantaron','koka','kina','huito','safran','guarana','sigla','peyote']
+learn_note = '<p class="hint" id="learnHint"><b>Öğrendiklerim</b> sayacı, bitki sayfalarının sonundaki “Öğrendim” düğmesiyle işaretlediğin bitkileri gösterir. Bu bilgi yalnızca şu an kullandığın tarayıcıda saklanır: başka bir cihazdan girersen, başka bir tarayıcı kullanırsan ya da tarayıcı verilerini silersen görünmez. Hesap ya da kayıt gerekmez.</p>'
+katalog = f'''
+<nav class="crumbs" aria-label="Konum"><a href="/">Ana sayfa</a><span>/</span><span>Katalog</span></nav>
+<header class="page-head"><span class="eyebrow">{len(P)} kayıt</span><h1>Bitki kataloğu</h1><p>Bütün bitkileri bölgeye, kullanıma, kanıt düzeyine, güvenliğe ve yasal duruma göre süz. Seçtiğin filtreler adres çubuğuna yazılır; bağlantıyı paylaşabilirsin.</p></header>
+<div class="stats"><span><strong>{len(P)}</strong> bitki</span><span><strong>{len(regs)}</strong> bölge</span><span><strong>{len(BR)}</strong> kültür köprüsü</span><span>Öğrendiklerim <strong id="learnedCount">0</strong>/{len(P)} <span class="muted-s">(bu tarayıcıda)</span></span></div>
+{learn_note}
 <section style="display:flex;flex-direction:column;gap:18px" aria-label="Katalog">
   <div class="controls">
     <label class="search" for="q">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="2" fill="none"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-      <input id="q" type="search" placeholder="Bitki, Latince ad, kullanım ara… (ör. nazar, öksürük, tütsü)" autocomplete="off">
+      <input id="q" type="search" placeholder="Bitki, Latince ad, kullanım ara… (ör. nazar, öksürük, tütsü)" autocomplete="off" aria-label="Bitki ara">
     </label>
     <div class="fgroups">{filters}</div>
   </div>
-  <div class="resultbar"><span id="count">{len(P)} / {len(P)} kayıt gösteriliyor</span><button class="linkbtn" id="reset" type="button" hidden>Filtreleri temizle</button></div>
+  <div class="resultbar"><span id="count" aria-live="polite">{len(P)} / {len(P)} kayıt gösteriliyor</span><button class="linkbtn" id="reset" type="button" hidden>Filtreleri temizle</button></div>
   <div class="grid">{"".join(card(p) for p in P)}</div>
   <div class="empty" id="empty" hidden>Bu arama ve filtrelerle eşleşen bitki yok. Bir filtreyi kaldırmayı ya da farklı bir kelime denemeyi dene.</div>
 </section>
 '''
-ldsite = {"@context":"https://schema.org","@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/","inLanguage":"tr"}
-write('/index.html', page('Bitki Tabanı: şifalı ve ritüel bitkiler veri tabanı', f'Anadolu’dan And Dağları’na {len(P)} şifalı ve ritüel bitkisi: geleneksel kullanım, bilimsel kanıt, güvenlik notları ve kaynaklar.', '/', home, 'home', '<script src="/assets/catalog.js" defer></script>', extra=f'<script type="application/ld+json">{json.dumps(ldsite, ensure_ascii=False)}</script>'))
+ld_kat = [{"@context":"https://schema.org","@type":"CollectionPage","name":"Bitki kataloğu","url":BASE+"/katalog/","inLanguage":"tr","isPartOf":{"@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/"},
+           "mainEntity":{"@type":"ItemList","numberOfItems":len(P),"itemListElement":[{"@type":"ListItem","position":i+1,"url":f'{BASE}/{p["id"]}/',"name":p['tr']} for i,p in enumerate(P)]}},
+          {"@context":"https://schema.org","@type":"Dataset","name":"Bitki Tabanı: şifalı ve ritüel bitkiler veri seti","description":f"Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika’dan {len(P)} şifalı ve ritüel bitkisinin geleneksel kullanımı, bilimsel kanıt düzeyi, güvenlik, koruma ve yasal durumu.","url":BASE+"/katalog/","inLanguage":"tr","creator":{"@type":"Organization","name":"Bitki Tabanı","url":BASE+"/"},"keywords":["şifalı bitkiler","etnobotanik","geleneksel tıp","Anadolu","Amazon","And Dağları"],"variableMeasured":["Geleneksel kullanım","Kanıt düzeyi","Güvenlik","Koruma durumu","Türkiye’de yasal durum"],"isAccessibleForFree":True}]
+write('/katalog/', page(f'Bitki kataloğu: {len(P)} şifalı ve ritüel bitki | Bitki Tabanı', f'{len(P)} şifalı ve ritüel bitkiyi bölgeye, kullanıma, bilimsel kanıta, güvenliğe ve Türkiye’deki yasal duruma göre süz.', '/katalog/', katalog, 'kat', '<script src="/assets/catalog.js" defer></script>', extra=''.join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>' for x in ld_kat)))
 
 # ---------- köprüler ----------
 def mini(p):
@@ -350,11 +349,35 @@ secim = f'''<header class="page-head"><span class="eyebrow">Yalnızca yönetici 
 <div class="result-box"><div class="row"><span id="done"></span><button type="button" id="copy">Listeyi kopyala</button><span id="copied"></span></div><textarea id="result" readonly aria-label="Seçim listesi"></textarea></div>'''
 write('/secim/', page('Fotoğraf seçimi | Bitki Tabanı', 'Fotoğraf seçimi', '/secim/', secim, '', '<script src="/assets/photo.js" defer></script><script src="/assets/secim.js" defer></script>', extra='<meta name="robots" content="noindex, nofollow">'))
 
+
+# ---------- ana sayfa ----------
+pool = [p for p in P if p['guv'] != 'yuksek']
+REG_TXT = {'anadolu':'Nazar tütsüsünden kına gecesine, Anadolu’nun şifa ve ritüel otları.','asya':'İskit tütsülerinden Sibirya şamanlarına, bozkırın ve taygaların bitkileri.',
+           'and':'Koka yaprağından kantuta çiçeğine, And Dağları’nın kutsal bitkileri.','amazon':'Ayahuasca sarmaşığından huito boyasına, yağmur ormanının öğretmen bitkileri.',
+           'kamerika':'Ak adaçayından peyoteye, Kuzey Amerika yerli halklarının bitkileri.'}
+regcards = ''.join(f'<a class="regcard" href="/katalog/?bolge={k}"><span class="where">{dot(k)} {e(v["ad"])}</span><b>{cnt(lambda p,k=k: k in p["bolge"])} bitki</b><span>{e(REG_TXT.get(k,""))}</span></a>' for k,v in regs)
+home = f'''
+<header class="top">
+  <div class="brand">
+    <span class="eyebrow">Etnobotanik kayıt defteri</span>
+    <h1 class="wordmark">Bitki <em>Tabanı</em></h1>
+    <p class="lede">Anadolu’dan And Dağları’na, Amazon’dan Sibirya’ya {len(P)} şifalı ve ritüel bitkisi. Her kayıtta geleneksel kullanım, bilimin söyledikleri, güvenlik notu ve kaynaklar bir arada.</p>
+    <p><a class="cta" href="/katalog/">Kataloğa git →</a></p>
+  </div>
+  <a class="today" id="today" href="/{pool[0]["id"]}/" data-pool="{e(json.dumps([[p["id"], p["tr"], p["la"]] for p in pool], ensure_ascii=False))}"><span class="eyebrow">Bugünün bitkisi</span><b id="todayName">{e(pool[0]["tr"])}</b><i id="todayLatin">{e(pool[0]["la"])}</i></a>
+</header>
+<section class="sec"><h2>Bölgelere göre</h2><div class="regs-grid">{regcards}</div></section>
+<section class="sec"><h2>Öne çıkanlar</h2><div class="grid">{"".join(card(byId[i]) for i in FEATURED if i in byId)}</div><p><a class="cta" href="/katalog/">Bütün {len(P)} bitkiyi gör →</a></p></section>
+<section class="sec"><h2>Kültür köprüleri</h2><p>Birbirinden binlerce kilometre uzaktaki kültürler, çoğu zaman aynı molekülleri ya da aynı bitkiyi benzer dertlere kullanmış. {len(BR)} köprüyü haritada gör.</p><a class="mapwrap maplink" href="/kopruler/" aria-label="Kültür köprüleri haritasına git">{bridge_map()}</a></section>
+'''
+ldsite = {"@context":"https://schema.org","@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/","inLanguage":"tr","description":"Şifalı ve ritüel bitkiler için Türkçe etnobotanik kayıt defteri."}
+write('/index.html', page('Bitki Tabanı: şifalı ve ritüel bitkiler veri tabanı', f'Anadolu’dan And Dağları’na {len(P)} şifalı ve ritüel bitkisi: geleneksel kullanım, bilimsel kanıt, güvenlik notları ve kaynaklar.', '/', home, 'home', '<script src="/assets/home.js" defer></script>', extra=f'<script type="application/ld+json">{json.dumps(ldsite, ensure_ascii=False)}</script>'))
+
 # ---------- 404, robots, sitemap, favicon ----------
 nf = '<header class="page-head"><span class="eyebrow">404</span><h1>Bu sayfa bulunamadı</h1><p>Aradığın kayıt taşınmış ya da hiç olmamış olabilir. <a href="/">Kataloğa dön</a> ve oradan ara.</p></header>'
 open(os.path.join(OUT,'404.html'),'w',encoding='utf-8').write(page('Sayfa bulunamadı | Bitki Tabanı','Sayfa bulunamadı.','/404.html',nf,'', narrow=True))
-open(os.path.join(OUT,'robots.txt'),'w').write(f'User-agent: *\nAllow: /\nDisallow: /secim/\n\nSitemap: {BASE}/sitemap.xml\n')
-urls = ['/', '/kopruler/', '/hakkinda/'] + [f'/{p["id"]}/' for p in P]
+open(os.path.join(OUT,'robots.txt'),'w').write(f'User-agent: *\nAllow: /\nDisallow: /secim/\nDisallow: /*?\n\nSitemap: {BASE}/sitemap.xml\n')
+urls = ['/', '/katalog/', '/kopruler/', '/hakkinda/'] + [f'/{p["id"]}/' for p in P]
 open(os.path.join(OUT,'sitemap.xml'),'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url><loc>{BASE}{u}</loc><lastmod>{TODAY}</lastmod></url>\n' for u in urls) + '</urlset>\n')
 os.makedirs(os.path.join(OUT,'assets'), exist_ok=True)
 for f in os.listdir(os.path.join(HERE, 'assets')):

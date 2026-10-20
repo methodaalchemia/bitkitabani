@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /secim/
+Disallow: /*?
 
 Sitemap: https://bitkitabani.com/sitemap.xml

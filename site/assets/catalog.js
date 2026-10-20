@@ -19,17 +19,26 @@
     var words = state.q ? norm(state.q).split(/\s+/) : [], n = 0;
     cards.forEach(function(c){
       var ok = words.every(function(w){ return c._s.indexOf(w) > -1; })
-        && hit(state.bolge, c.dataset.bolge.split(' '))
-        && hit(state.kat, c.dataset.kat.split(' '))
-        && hit(state.kanit, [c.dataset.kanit])
-        && hit(state.guv, [c.dataset.guv])
-        && hit(state.durum, (c.dataset.durum || '').split(' '));
+        && G.every(function(g){ return hit(state[g], vals(c, g)); });
       c.hidden = !ok; if (ok) n++;
     });
+    updateCounts(words);
     document.getElementById('count').textContent = n + ' / ' + cards.length + ' kayıt gösteriliyor';
     document.getElementById('empty').hidden = n > 0;
     document.getElementById('reset').hidden = !(state.q || G.some(function(g){ return any(state[g]); }));
     writeUrl();
+  }
+  function vals(c, g){ return g === 'kanit' || g === 'guv' ? [c.dataset[g]] : (c.dataset[g] || '').split(' '); }
+  function updateCounts(words){
+    var base = cards.filter(function(c){ return words.every(function(w){ return c._s.indexOf(w) > -1; }); });
+    document.querySelectorAll('.chip[data-g]').forEach(function(b){
+      var g = b.dataset.g, k = b.dataset.k;
+      var n = base.filter(function(c){
+        return G.every(function(o){ return o === g || hit(state[o], vals(c, o)); }) && vals(c, g).indexOf(k) > -1;
+      }).length;
+      var el = b.querySelector('.n'); if (el) el.textContent = n;
+      b.classList.toggle('zero', n === 0 && b.getAttribute('aria-pressed') !== 'true');
+    });
   }
   // Filtreleri adres çubuğuna yaz, böylece filtrelenmiş görünüm paylaşılabilir
   function writeUrl(){
@@ -39,7 +48,13 @@
       G.forEach(function(g){ var v = Object.keys(state[g]).filter(function(k){ return state[g][k]; }); if (v.length) u.set(g, v.join(',')); });
       var s = u.toString();
       history.replaceState(null, '', location.pathname + (s ? '?' + s : ''));
+      markNoindex();
     }catch(e){}
+  }
+  function markNoindex(){
+    var m = document.querySelector('meta[name="robots"]');
+    if (location.search) { if (!m) { m = document.createElement('meta'); m.name = 'robots'; document.head.appendChild(m); } m.content = 'noindex, follow'; }
+    else if (m) m.parentNode.removeChild(m);
   }
   function readUrl(){
     try{
@@ -65,7 +80,7 @@
   });
 
   // Bugünün bitkisi: tarihe göre sabit; yüksek riskli bitkiler rotasyona girmez
-  var pool = cards.filter(function(c){ return c.dataset.guv !== 'yuksek'; });
+  var pool = cards.filter(function(c){ return c.dataset.guv !== 'yuksek'; }); if (!pool.length) pool = cards;
   var d = new Date(), idx = Math.floor(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / 864e5) % pool.length;
   var t = pool[idx], tl = document.getElementById('today');
   if (t && tl) {
