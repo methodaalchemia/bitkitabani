@@ -1,6 +1,6 @@
 import json, os, shutil, html, re, urllib.parse, datetime
 HERE = os.path.dirname(os.path.abspath(__file__))
-from refs import WIKI, POWO, NCCIH, EMA, OTHER, FILES
+from refs import WIKI, POWO, NCCIH, EMA, OTHER, FILES, BAYTOP
 from extra import EK, KORUMA, YASAL, YASAL_AD, BR_GEO, ALT
 from etkilesim import ETK
 from derin import D as DERIN
@@ -164,10 +164,12 @@ def refs(p):
     for label, url in OTHER.get(pid, []):
         kind = 'Resmî kaynak' if ('fda.gov' in url or 'unodc.org' in url or 'nobelprize.org' in url) else 'Araştırma'
         items.append((kind, label, url))
+    if 'anadolu' in p['bolge'] and any('Anadolu' in w for w, _ in p['kul']):
+        items.append(('Kitap', BAYTOP, ''))
     name = POWO.get(pid, short_la(p))
     if name:
         items.append(('Botanik kayıt', f'Kew Plants of the World Online: {name}', 'https://powo.science.kew.org/results?q=' + urllib.parse.quote(name)))
-    return '<ol class="refs">' + ''.join(f'<li><span class="kind">{e(k)}</span><a href="{e(u)}" target="_blank" rel="noopener">{e(t)}</a></li>' for k, t, u in items) + '</ol>'
+    return '<ol class="refs">' + ''.join((f'<li><span class="kind">{e(k)}</span><a href="{e(u)}" target="_blank" rel="noopener">{e(t)}</a></li>' if u else f'<li><span class="kind">{e(k)}</span><cite>{e(t)}</cite></li>') for k, t, u in items) + '</ol>'
 
 def desc_for(p):
     first = p['kul'][0][1].split('. ')[0].rstrip('.')
