@@ -21,7 +21,7 @@ for line in open(os.path.join(ROOT, 'tools', 'cand.txt'), encoding='utf-8'):
         titles += [h['title'][5:] for h in r.get('query', {}).get('search', []) if h['title'][5:] not in titles]
     lst = []
     for f in titles:
-        if len(lst) >= 16: break
+        if len(lst) >= 12: break
         j = get('https://commons.wikimedia.org/w/api.php?format=json&action=query&prop=imageinfo&iiprop=url|mime|size|extmetadata&iiextmetadatafilter=Categories|ImageDescription&iiurlwidth=400&titles=' + urllib.parse.quote('File:' + f))
         ii = (list(j['query']['pages'].values())[0].get('imageinfo') or [{}])[0]
         if ii.get('mime') not in ('image/jpeg', 'image/webp') or (ii.get('width') or 0) < 800: continue
