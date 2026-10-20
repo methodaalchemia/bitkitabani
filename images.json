@@ -461,13 +461,14 @@
   "w500": 500
  },
  "isirgan": {
-  "artist": "Charles J. Sharp",
-  "file": "Peacock (Aglais io) caterpillars on stinging nettle (Urtica dioica) Ruggeller Riet.jpg",
-  "h": 640,
-  "h500": 333,
+  "artist": "Skalle-Per Hedenhös",
+  "auto": false,
+  "file": "Brännässla (Urtica Dioica).jpg",
+  "h": 1440,
+  "h500": 750,
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Peacock_(Aglais_io)_caterpillars_on_stinging_nettle_(Urtica_dioica)_Ruggeller_Riet.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Br%C3%A4nn%C3%A4ssla_(Urtica_Dioica).jpg",
   "w": 960,
   "w500": 500
  },
