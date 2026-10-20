@@ -289,3 +289,13 @@ table.cmp tbody th{font-family:var(--f-mono);font-weight:400;color:var(--muted);
 .sheet-head .intro{font-size:var(--t-md);line-height:1.6;margin:14px 0 4px;max-width:46ch;color:var(--ink)}
 .sheet-head .meta{grid-template-columns:1fr 1fr;margin:12px 0 0;border-top:1px solid var(--rule);padding-top:14px}
 @media (max-width:720px){.sheet-head .meta{grid-template-columns:1fr 1fr}}
+/* içindekiler, tarih, familya */
+.toc{margin:20px 0 4px;padding:14px 16px;border:1px solid var(--rule);background:var(--sheet)}
+.toc ol{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px 18px}
+.toc a{font-family:var(--f-mono);font-size:var(--t-sm);color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+.toc a:hover{color:var(--accent);border-color:var(--accent)}
+.sec[id]{scroll-margin-top:16px}
+.updated{font-family:var(--f-mono);font-size:var(--t-xs);color:var(--muted);margin:14px 0 0}
+.sheet-head .eyebrow a{color:inherit;text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:3px}
+.sheet-head .eyebrow a:hover{color:var(--accent)}
+.famlist{line-height:2}.famlist a{color:var(--ink)}
