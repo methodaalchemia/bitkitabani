@@ -1,0 +1,25 @@
+name: Fotoğraf adaylarını topla
+on:
+  push:
+    branches: [main]
+    paths: ['tools/cand.txt']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  cand:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: python3 tools/candidates.py
+      - name: Adayları ayrı dala yaz
+        run: |
+          git config user.name "bitkitabani-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git checkout --orphan candidates
+          git rm -rq --cached .
+          git add cand
+          git commit -qm "Fotoğraf adayları [bot]"
+          git push -f origin candidates

@@ -299,3 +299,22 @@ table.cmp tbody th{font-family:var(--f-mono);font-weight:400;color:var(--muted);
 .sheet-head .eyebrow a{color:inherit;text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:3px}
 .sheet-head .eyebrow a:hover{color:var(--accent)}
 .famlist{line-height:2}.famlist a{color:var(--ink)}
+/* bilmece ve seri */
+.streak{font-family:var(--f-mono);font-size:12px;color:var(--ochre);margin:0}
+.learnbox .streak{display:block;color:var(--ochre)}
+.clues{list-style:none;padding:0;margin:20px 0;display:flex;flex-direction:column;gap:10px}
+.clue{border:1px solid var(--rule);border-left:4px solid var(--ochre);background:var(--sheet);padding:12px 16px}
+.clue p{margin:6px 0 0}
+.clue.img img{display:block;margin-top:8px;width:min(100%,260px);height:auto;aspect-ratio:3/4;object-fit:cover;border:1px solid var(--rule)}
+.guess .row{display:flex;gap:8px;margin-top:6px}
+.guess input{flex:1;min-width:0;font:inherit;padding:10px 12px;border:1px solid var(--rule);background:var(--sheet);color:var(--ink)}
+.guess input:focus{outline:2px solid var(--accent);outline-offset:1px}
+.guesses{list-style:none;padding:0;margin:12px 0}
+.guesses li{display:flex;gap:10px;flex-wrap:wrap;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--rule)}
+.guesses span{font-family:var(--f-mono);font-size:12px;padding:1px 6px;border:1px solid var(--rule)}
+.guesses .hit{color:var(--sheet);background:#3c7a45;border-color:#3c7a45}
+.guesses .near{color:var(--ochre);border-color:var(--ochre)}
+.guesses .miss{color:var(--muted)}
+.gameend{margin:18px 0;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.gameend .verdict{font-family:var(--f-display);font-size:var(--t-lg);margin:0}
+.gameend .sq{font-size:1.4rem;letter-spacing:2px;margin:0}

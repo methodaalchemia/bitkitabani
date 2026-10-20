@@ -63,6 +63,7 @@ def head(title, desc, path, extra='', image=None):
 <title>{e(title)}</title>
 <meta name="description" content="{e(desc)}">
 <link rel="canonical" href="{url}">
+<link rel="alternate" type="application/rss+xml" title="Bitki Tabanı: günün bitkisi" href="/gunun-bitkisi/rss.xml">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Bitki Tabanı">
 <meta property="og:title" content="{e(title)}">
@@ -269,14 +270,14 @@ for i, p in enumerate(P):
   <aside class="disclaimer" role="note"><b>Tıbbi tavsiye değildir.</b> Bu sayfa geleneksel kullanımları kültürel bir kayıt olarak anlatır ve bilimsel bilgiyi özetler; teşhis ya da tedavi önerisi değildir. {e(p["tr"])} ya da başka bir bitkiyi kullanmadan önce, özellikle ilaç kullanıyorsan, hamileysen, emziriyorsan ya da bir hastalığın varsa hekimine veya eczacına danış. Zehirlenme şüphesinde Ulusal Zehir Danışma Merkezi’ni (UZEM) <b>114</b> numaradan ara.</aside>
   <p class="updated">Son gözden geçirme: <time datetime="{CONTENT_DATE}">{DATE_TXT}</time></p>
   <div class="sheet-foot">
-    <div class="learnbox"><button type="button" class="learn" id="learnBtn" data-id="{pid}" aria-pressed="false">Öğrendim olarak işaretle</button><span class="muted-s">Yalnızca bu tarayıcıda saklanır; başka cihazda görünmez.</span></div>
+    <div class="learnbox"><button type="button" class="learn" id="learnBtn" data-id="{pid}" aria-pressed="false">Öğrendim olarak işaretle</button><span class="muted-s">Yalnızca bu tarayıcıda saklanır; başka cihazda görünmez.</span><span class="muted-s streak" id="streakNote"></span></div>
     <div class="pager"><a href="/{prev["id"]}/">← {e(prev["tr"])}</a><a href="/{nxt["id"]}/">{e(nxt["tr"])} →</a></div>
   </div>
 </article>
 '''
     body = toc_and_ids(body)
     extra = f'<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script><script type="application/ld+json">{json.dumps(crumbs, ensure_ascii=False)}</script>'
-    write(f'/{pid}/', page(title, desc_for(p), f'/{pid}/', body, 'plant', '<script src="/assets/plant.js" defer></script>', narrow=True, extra=extra, image=(f'{BASE}/img/{pid}-960.jpg' if pid in IMG else None)))
+    write(f'/{pid}/', page(title, desc_for(p), f'/{pid}/', body, 'plant', '<script src="/assets/streak.js" defer></script><script src="/assets/plant.js" defer></script>', narrow=True, extra=extra, image=(f'{BASE}/img/{pid}-960.jpg' if pid in IMG else None)))
 
 # ---------- familya sayfaları ----------
 FAM_URLS = []
@@ -494,7 +495,7 @@ home = f'''
     <p class="lede">{LEDE}</p>
     <p><a class="cta" href="/katalog/">Kataloğa git →</a></p>
   </div>
-  <div class="todaybox"><a class="today" id="today" href="/{today_p["id"]}/" data-pool="{e(json.dumps([[p["id"], p["tr"], p["la"]] for p in pool], ensure_ascii=False))}"><span class="eyebrow">Bugünün bitkisi</span><b id="todayName">{e(today_p["tr"])}</b><i id="todayLatin">{e(today_p["la"])}</i></a><a class="cta small" href="/gunun-bitkisi/">Geçmiş günlerin bitkileri →</a></div>
+  <div class="todaybox"><a class="today" id="today" href="/{today_p["id"]}/" data-pool="{e(json.dumps([[p["id"], p["tr"], p["la"]] for p in pool], ensure_ascii=False))}"><span class="eyebrow">Bugünün bitkisi</span><b id="todayName">{e(today_p["tr"])}</b><i id="todayLatin">{e(today_p["la"])}</i></a><a class="cta small" href="/oyun/">Günün bilmecesini çöz →</a><a class="cta small" href="/gunun-bitkisi/">Geçmiş günlerin bitkileri →</a><p class="streak" id="streak" hidden></p></div>
 </header>
 <section class="sec"><h2>Bölgelere göre</h2><div class="regs-grid">{regcards}</div></section>
 {f'<section class="sec"><h2>Şu an mevsiminde</h2><p>{AYLAR[LOCAL_DAY.month-1]} ayında Anadolu’da toplama mevsimi olan bitkiler. Koruma altındaki ve yasal kısıtlı türler bu listeye alınmaz.</p><div class="grid">' + "".join(card(p) for p in season[:8]) + '</div></section>' if season else ''}
@@ -502,7 +503,7 @@ home = f'''
 <section class="sec"><h2>Kültür köprüleri</h2><p>Birbirinden binlerce kilometre uzaktaki kültürler, çoğu zaman aynı molekülleri ya da aynı bitkiyi benzer dertlere kullanmış. {len(BR)} köprüyü haritada gör.</p><div class="mapwrap">{bridge_map()}</div><p><a class="cta" href="/kopruler/">Bütün köprüleri ve karşılaştırmaları gör →</a></p></section>
 '''
 ldsite = {"@context":"https://schema.org","@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/","inLanguage":"tr","description":"Şifalı ve ritüel bitkiler için Türkçe etnobotanik kayıt defteri."}
-write('/index.html', page('Bitki Tabanı: şifalı ve ritüel bitkiler veri tabanı', f'{REG_LIST}’dan {len(P)} şifalı ve ritüel bitkisi: geleneksel kullanım, bilimsel kanıt, güvenlik ve kaynaklar.', '/', home, 'home', '<script src="/assets/home.js" defer></script>', extra=f'<script type="application/ld+json">{json.dumps(ldsite, ensure_ascii=False)}</script>'))
+write('/index.html', page('Bitki Tabanı: şifalı ve ritüel bitkiler veri tabanı', f'{REG_LIST}’dan {len(P)} şifalı ve ritüel bitkisi: geleneksel kullanım, bilimsel kanıt, güvenlik ve kaynaklar.', '/', home, 'home', '<script src="/assets/streak.js" defer></script><script src="/assets/home.js" defer></script>', extra=f'<script type="application/ld+json">{json.dumps(ldsite, ensure_ascii=False)}</script>'))
 
 # ---------- günün bitkisi arşivi ----------
 days = [LOCAL_DAY - datetime.timedelta(days=n) for n in range(14)]
@@ -513,17 +514,61 @@ gb = f'''
 <header class="page-head"><span class="eyebrow">{tr_date(LOCAL_DAY)}</span><h1>Günün bitkisi: {e(tp["tr"])}</h1><p>Her gün katalogdan bir bitki öne çıkıyor. Ölümcül zehirli ya da yüksek riskli bitkiler bu döngüye alınmaz.</p></header>
 <div class="grid sim">{card(tp)}</div>
 <section class="sec"><h2>Bugün okumak için</h2><p>{e(tp["kul"][0][1])}</p><p class="fact">{e(tp["ilginc"])}</p><p><a class="cta" href="/{tp["id"]}/">{e(tp["tr"])} sayfasının tamamı →</a></p></section>
+<section class="sec"><h2>Her gün</h2><p><a class="cta" href="/oyun/">Günün bilmecesini çöz →</a></p><p><a class="cta" href="/gunun-bitkisi/rss.xml">RSS ile takip et →</a> <span class="muted-s">Bir RSS okuyucusu (Feedly, NetNewsWire gibi) her sabah yeni bitkiyi getirir; bildirim ya da e-posta yok.</span></p></section>
 <section class="sec"><h2>Son iki hafta</h2><ul class="daylist">{past}</ul></section>
 '''
 write('/gunun-bitkisi/', page(f'Günün bitkisi: {tp["tr"]} | Bitki Tabanı', f'Bugünün bitkisi {tp["tr"]} ({short_la(tp)}) ve son iki haftanın bitkileri.', '/gunun-bitkisi/', gb, '', narrow=True,
       image=(f'{BASE}/img/{tp["id"]}-960.jpg' if tp['id'] in IMG else None)))
 
+# ---------- RSS ----------
+from email.utils import format_datetime
+items = ''
+for d in days:
+    q = day_pick(d); dt = datetime.datetime(d.year, d.month, d.day, 0, 5, tzinfo=datetime.timezone(datetime.timedelta(hours=3)))
+    items += f'<item><title>{e(tr_date(d))}: {e(q["tr"])} ({e(short_la(q))})</title><link>{BASE}/{q["id"]}/</link><guid isPermaLink="false">{BASE}/gunun-bitkisi/#{d.isoformat()}</guid><pubDate>{format_datetime(dt)}</pubDate><description>{e(q["kul"][0][1])} {e(q["ilginc"])}</description></item>'
+os.makedirs(os.path.join(OUT, 'gunun-bitkisi'), exist_ok=True)
+open(os.path.join(OUT, 'gunun-bitkisi', 'rss.xml'), 'w', encoding='utf-8').write(f'<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>Bitki Tabanı: günün bitkisi</title><link>{BASE}/gunun-bitkisi/</link><description>Her gün bir şifalı ya da ritüel bitkisi.</description><language>tr</language>{items}</channel></rss>')
+
+# ---------- günün bilmecesi ----------
+def mask(txt, p):
+    words = set()
+    for src in [p['tr'], p['diger'], p['la'].split()[0]]:
+        for w in _re.split(r'[\s,;/()]+', src):
+            w = w.strip('.’\'"')
+            if len(w) >= 3 and w.lower() not in ('ve', 'otu', 'ağacı', 'kökü', 'çiçeği', 'yaprağı', 'tohumu'): words.add(w)
+    for w in sorted(words, key=len, reverse=True):
+        txt = _re.sub(r'(?i)\b' + _re.escape(w) + r'\w*', '＿＿＿', txt)
+        txt = _re.sub(r'\b' + _re.escape(w.replace('i', 'İ').replace('ı', 'I').upper()[:1] + w[1:]) + r'\w*', '＿＿＿', txt)
+    return txt
+gp = []
+for q in P:
+    c = [['Bölge ve kullanım', ', '.join(REG[r]['ad'] for r in q['bolge']) + ' · ' + ', '.join(KAT[k] for k in q['kat'])],
+         ['Kullanılan kısım', q['kisim']],
+         ['Familya', q['fam'] + (f' ({FAM_TR[q["fam"]]})' if q['fam'] in FAM_TR else '')],
+         ['Geleneksel kullanım', mask(q['kul'][0][0] + ': ' + q['kul'][0][1], q)],
+         ['İlginç bilgi', mask(q['ilginc'], q)]]
+    if q['id'] in IMG: c.append(['img', f'/img/{q["id"]}-500.jpg'])
+    gp.append({'id': q['id'], 'tr': q['tr'], 'la': short_la(q), 'fam': q['fam'], 'bolge': q['bolge'], 'c': c})
+opts = ''.join(f'<option value="{e(q["tr"])}">' for q in sorted(P, key=lambda q: q['tr']))
+oy = f'''
+<nav class="crumbs" aria-label="Konum"><a href="/">Ana sayfa</a><span>/</span><span>Günün bilmecesi</span></nav>
+<header class="page-head"><span class="eyebrow">Her gün yeni bir bitki</span><h1>Günün bilmecesi</h1><p>Katalogdaki {len(P)} bitkiden biri saklı. İlk ipucuyla tahmin et; her yanlış tahminde yeni bir ipucu açılır. Altı hakkın var. Sarı kare, tahminin bölge ya da familya olarak yakın olduğunu gösterir.</p></header>
+<div id="game">
+<ol class="clues" id="clues"><li class="clue"><p>Bilmece yükleniyor… JavaScript kapalıysa <a href="/gunun-bitkisi/">günün bitkisine</a> bakabilirsin.</p></li></ol>
+<form id="guessForm" class="guess" autocomplete="off"><label for="guessInput" class="eyebrow">Tahminin</label><div class="row"><input id="guessInput" list="plantNames" placeholder="Bitki adı yaz, listeden seç" required><button type="submit" class="learn">Tahmin et</button></div><p class="muted-s"><span id="left"></span> <span id="gameMsg" role="status"></span></p><datalist id="plantNames">{opts}</datalist></form>
+<ul class="guesses" id="guesses"></ul>
+<div class="gameend" id="gameEnd" hidden></div>
+</div>
+<p class="muted-s">Tahminlerin ve serin yalnızca bu tarayıcıda saklanır.</p>
+<script type="application/json" id="gameData">{json.dumps({"p": gp, "ay": AYLAR}, ensure_ascii=False)}</script>'''
+write('/oyun/', page('Günün bilmecesi: bitkiyi ipuçlarından bul | Bitki Tabanı', f'Her gün katalogdaki {len(P)} şifalı ve ritüel bitkisinden biri saklı. İpuçlarından bul, sonucunu paylaş.', '/oyun/', oy, '', '<script src="/assets/streak.js" defer></script><script src="/assets/oyun.js" defer></script>', narrow=True))
+
 # ---------- 404, robots, sitemap, favicon ----------
 nf = '<header class="page-head"><span class="eyebrow">404</span><h1>Bu sayfa bulunamadı</h1><p>Aradığın kayıt taşınmış ya da adres yanlış yazılmış olabilir.</p></header><section class="sec" id="nfs" hidden><h2>Bunu mu arıyordun?</h2><ul class="otherlist" id="nfList"></ul></section><p><a class="cta" id="nfSearch" href="/katalog/">Katalogda ara →</a></p>' + f'<script type="application/json" id="nfData">{json.dumps([[p["id"], p["tr"], p["la"]] for p in P] + [["kopruler/" + slug_of(x), x["t"], ""] for x in BR], ensure_ascii=False)}</script><script src="/assets/404.js" defer></script>'
 open(os.path.join(OUT,'404.html'),'w',encoding='utf-8').write(page('Sayfa bulunamadı | Bitki Tabanı','Sayfa bulunamadı.','/404.html',nf,'', narrow=True))
 open(os.path.join(OUT,'robots.txt'),'w').write(f'User-agent: *\nAllow: /\nDisallow: /secim/\nDisallow: /*?\n\nSitemap: {BASE}/sitemap.xml\n')
-urls = ['/', '/katalog/', '/kopruler/', '/gunun-bitkisi/', '/hakkinda/'] + [f'/kopruler/{slug_of(x)}/' for x in BR] + FAM_URLS + [f'/{p["id"]}/' for p in P]
-open(os.path.join(OUT,'sitemap.xml'),'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url><loc>{BASE}{u}</loc><lastmod>{(LOCAL_DAY.isoformat() if u in ('/', '/gunun-bitkisi/') else CONTENT_DATE)}</lastmod></url>\n' for u in urls) + '</urlset>\n')
+urls = ['/', '/katalog/', '/kopruler/', '/gunun-bitkisi/', '/oyun/', '/hakkinda/'] + [f'/kopruler/{slug_of(x)}/' for x in BR] + FAM_URLS + [f'/{p["id"]}/' for p in P]
+open(os.path.join(OUT,'sitemap.xml'),'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url><loc>{BASE}{u}</loc><lastmod>{(LOCAL_DAY.isoformat() if u in ('/', '/gunun-bitkisi/', '/oyun/') else CONTENT_DATE)}</lastmod></url>\n' for u in urls) + '</urlset>\n')
 os.makedirs(os.path.join(OUT,'assets'), exist_ok=True)
 for f in os.listdir(os.path.join(HERE, 'assets')):
     shutil.copy(os.path.join(HERE, 'assets', f), os.path.join(OUT, 'assets', f))
