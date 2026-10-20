@@ -1,1 +1,1 @@
-okaliptus | Eucalyptus globulus | flower
+# id | arama terimi | ek kelimeler

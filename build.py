@@ -227,6 +227,15 @@ for i, p in enumerate(P):
     relhtml = ''
     etkhtml = ''
     derhtml = ''; faqld = None
+    trl = p['tr'].replace('I', 'ı').replace('İ', 'i')
+    def _first(t): 
+        s = t.split('. ')[0].rstrip('.'); return s + '.'
+    regs_txt = ', '.join(REG[r]['ad'] for r in p['bolge'])
+    q_nedir = (f'{p["tr"]} nedir?', f'{p["tr"]} ({short_la(p)}), {p["fam"]} familyasından bir bitkidir. Kullanıldığı gelenekler: {regs_txt}. Kullanılan kısmı: {p["kisim"].lower()}.')
+    q_ne = (f'{p["tr"]} ne işe yarar?', f'Geleneksel kullanımı: {_first(p["kul"][0][1])} Bilimsel kanıt düzeyi: {KANIT[p["kanit"]]["ad"].lower()}. {_first(p["bilim"])}')
+    q_guv = (f'{p["tr"]} güvenli mi?', f'Güvenlik etiketi: {GUV[p["guv"]].lower()}. {p["guvNot"]}' + (' Yasal durum: ' + YASAL_AD[YASAL[pid][0]] + '.' if pid in YASAL else ''))
+    kisaca = [q_nedir, q_ne, q_guv]
+    kisahtml = '<section class="kisaca" aria-label="Kısaca"><span class="eyebrow">Kısaca</span>' + ''.join(f'<div class="qa"><h2 class="q">{e(q)}</h2><p>{e(a)}</p></div>' for q, a in kisaca) + '</section>'
     if pid in DERIN:
         dd = DERIN[pid]
         rows_ = ''.join(f'<tr><th scope="row">{e(i)}</th><td><span class="kv {k}">{KAN_AD[k]}</span></td><td>{e(n)}</td></tr>' for i, k, n in dd['iddia'])
@@ -288,6 +297,7 @@ for i, p in enumerate(P):
     </div>
     <figure class="photo">{ph(p, 960, eager=True)}<figcaption>{credit(p)}</figcaption></figure>
   </header>
+  {kisahtml}
   <!--TOC-->
   <section class="sec"><h2>Geleneksel kullanım</h2><div class="uses">{uses}</div></section>
   {dogada}
@@ -312,7 +322,9 @@ for i, p in enumerate(P):
 </article>
 '''
     body = toc_and_ids(body)
-    if faqld: crumbs = [crumbs, faqld]
+    allqa = kisaca + (DERIN[pid]['sss'] if pid in DERIN else [])
+    faqld = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q, a in allqa]}
+    crumbs = [crumbs, faqld]
     extra = f'<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script><script type="application/ld+json">{json.dumps(crumbs, ensure_ascii=False)}</script>'
     write(f'/{pid}/', page(title, desc_for(p), f'/{pid}/', body, 'plant', '<script src="/assets/streak.js" defer></script><script src="/assets/plant.js" defer></script>', narrow=True, extra=extra, image=(f'{BASE}/img/{pid}-960.jpg' if pid in IMG else None)))
 
@@ -654,9 +666,30 @@ write('/yontem/', page('Yöntem: kayıtları nasıl hazırlıyoruz | Bitki Taban
 # ---------- 404, robots, sitemap, favicon ----------
 nf = '<header class="page-head"><span class="eyebrow">404</span><h1>Bu sayfa bulunamadı</h1><p>Aradığın kayıt taşınmış ya da adres yanlış yazılmış olabilir.</p></header><section class="sec" id="nfs" hidden><h2>Bunu mu arıyordun?</h2><ul class="otherlist" id="nfList"></ul></section><p><a class="cta" id="nfSearch" href="/katalog/">Katalogda ara →</a></p>' + f'<script type="application/json" id="nfData">{json.dumps([[p["id"], p["tr"], p["la"]] for p in P] + [["kopruler/" + slug_of(x), x["t"], ""] for x in BR], ensure_ascii=False)}</script><script src="/assets/404.js" defer></script>'
 open(os.path.join(OUT,'404.html'),'w',encoding='utf-8').write(page('Sayfa bulunamadı | Bitki Tabanı','Sayfa bulunamadı.','/404.html',nf,'', narrow=True))
-open(os.path.join(OUT,'robots.txt'),'w').write(f'User-agent: *\nAllow: /\nDisallow: /secim/\nDisallow: /api/\nDisallow: /hesap/\nDisallow: /*?\n\nSitemap: {BASE}/sitemap.xml\n')
+_rules = 'Allow: /\nDisallow: /secim/\nDisallow: /api/\nDisallow: /hesap/\nDisallow: /*?\n'
+_ai = ['Googlebot', 'Google-Extended', 'Bingbot', 'GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'PerplexityBot', 'Perplexity-User', 'ClaudeBot', 'Claude-SearchBot', 'Claude-User', 'Applebot', 'Applebot-Extended', 'DuckAssistBot', 'meta-externalagent', 'CCBot']
+open(os.path.join(OUT,'robots.txt'),'w').write('# Bitki Tabanı arama motorlarına ve yapay zekâ asistanlarına açıktır; alıntı yaparken kaynak göster.\n# Özet: ' + BASE + '/llms.txt\n\n' + ''.join(f'User-agent: {a}\n' for a in _ai) + _rules + '\nUser-agent: *\n' + _rules + f'\nSitemap: {BASE}/sitemap.xml\n')
 urls = ['/', '/katalog/', '/kopruler/', '/gunun-bitkisi/', '/oyun/', '/hakkinda/', '/yontem/', '/gizlilik/'] + [f'/kopruler/{slug_of(x)}/' for x in BR] + FAM_URLS + [f'/{p["id"]}/' for p in P]
 open(os.path.join(OUT,'sitemap.xml'),'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url><loc>{BASE}{u}</loc><lastmod>{(LOCAL_DAY.isoformat() if u in ('/', '/gunun-bitkisi/', '/oyun/') else CONTENT_DATE)}</lastmod></url>\n' for u in urls) + '</urlset>\n')
+# ---------- llms.txt: yapay zekâ asistanları için özet ve tam metin ----------
+def _md_plant(p, full=False):
+    pid = p['id']; L = [f'## {p["tr"]} ({short_la(p)})', '', f'URL: {BASE}/{pid}/', f'Familya: {p["fam"]} · Bölge: {", ".join(REG[r]["ad"] for r in p["bolge"])} · Kullanılan kısım: {p["kisim"]}',
+        f'Bilimsel kanıt: {KANIT[p["kanit"]]["ad"]} · Güvenlik: {GUV[p["guv"]]}' + (f' · Türkiye’de: {YASAL_AD[YASAL[pid][0]]}' if pid in YASAL else ''), '']
+    if not full:
+        return L[:4] + ['']
+    L += ['### Geleneksel kullanım'] + [f'- {w}: {t}' for w, t in p['kul']] + ['', '### Hazırlama', p['haz'], '', '### Bilim ne diyor', p['bilim'], '', '### Güvenlik', p['guvNot'], '']
+    if pid in ETK: L += ['### İlaç etkileşimleri'] + [f'- {g}: {w}' for g, w in ETK[pid]] + ['']
+    if pid in DERIN: L += ['### İddialar ve kanıt'] + [f'- {i}: {KAN_AD[k]}. {n}' for i, k, n in DERIN[pid]['iddia']] + ['']
+    ek = EK.get(pid, {})
+    if ek: L += ['### Doğada', f'Nerede yetişir: {ek.get("yetisme","")}', f'Toplama mevsimi: {ek.get("mevsim","")}', f'Yöresel adlar: {ek.get("yoresel","")}', f'Karıştırma riski: {ek.get("karisma","")}', '']
+    L += ['### İlginç bilgi', p['ilginc'], '']
+    return L
+_head = ['# Bitki Tabanı', '', f'> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: {len(P)} bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.', '',
+         'Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.', '', '## Sayfalar', f'- [Katalog]({BASE}/katalog/): bütün bitkiler, bölge, kullanım, kanıt ve güvenliğe göre', f'- [Kültür köprüleri]({BASE}/kopruler/): farklı kültürlerde benzer kullanılan bitkilerin karşılaştırması',
+         f'- [Yöntem]({BASE}/yontem/): kaynaklar, kanıt düzeyleri ve güvenlik etiketleri nasıl belirlenir', f'- [Tam metin]({BASE}/llms-full.txt): bütün kayıtların düz metin hâli', '', '## Bitkiler']
+open(os.path.join(OUT, 'llms.txt'), 'w', encoding='utf-8').write('\n'.join(_head + [f'- [{p["tr"]} ({short_la(p)})]({BASE}/{p["id"]}/): {GUV[p["guv"]]}, kanıt: {KANIT[p["kanit"]]["ad"].lower()}' for p in P]) + '\n\n## Kültür köprüleri\n' + '\n'.join(f'- [{x["t"]}]({BASE}/kopruler/{slug_of(x)}/): {x["d"]}' for x in BR) + '\n')
+open(os.path.join(OUT, 'llms-full.txt'), 'w', encoding='utf-8').write('\n'.join(_head[:5] + ['Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.', ''] + [l for p in P for l in _md_plant(p, True)]))
+
 os.makedirs(os.path.join(OUT,'assets'), exist_ok=True)
 for f in os.listdir(os.path.join(HERE, 'assets')):
     shutil.copy(os.path.join(HERE, 'assets', f), os.path.join(OUT, 'assets', f))
