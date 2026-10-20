@@ -272,7 +272,7 @@ ALT = {
  'alic':'beyaz çiçek kümeleri','ardic':'dal ve mavimsi kozalak meyveleri','ayahuasca':'pembe ve beyaz çiçek kümesi','banotu':'damarlı sarımsı çiçek',
  'biberiye':'açık mor çiçekli dallar','chacruna':'parlak yeşil yapraklar','chanca':'küçük yapraklı dallar','chuchuhuasi':'kesilmiş kabuk parçaları',
  'corekotu':'beyaz çiçek','defne':'yapraklar ve olgun siyah meyveler','ebegumeci':'mor çizgili pembe çiçekler','guayusa':'yukarıdan görünen yaprakları',
- 'hashas':'çiçek ve tohum kapsülleri','hayit':'mor çiçek başakları','ihlamur':'sarımsı çiçek salkımları','isirgan':'yapraklar üzerinde tavus kelebeği tırtılları',
+ 'hashas':'çiçek ve tohum kapsülleri','hayit':'mor çiçek başakları','ihlamur':'sarımsı çiçek salkımları','isirgan':'tüylü, dişli yapraklar ve sarkık çiçek salkımları',
  'kakao':'dalda sarı meyve','kantaron':'sarı çiçekler ve tomurcuklar','karahindiba':'sarı çiçek','kekik':'beyaz ve pembe çiçekler','kinin':'yapraklı dallar',
  'koka':'yapraklı dallar','kusburnu':'açık pembe çiçek','lavanta':'mor çiçek başakları','maca':'yaprak rozeti','mapacho':'çiçekli bitki','matico':'eklemli gövde ve yapraklar',
  'melisa':'kırışık yeşil yapraklar','meyan':'meyve kapsülleri','muna':'çiçekli dal','murver':'mor yapraklı bahçe çeşidi ve pembe çiçekler','palosanto':'ağaç',
