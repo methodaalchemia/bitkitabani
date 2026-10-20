@@ -276,7 +276,7 @@ def bridge_map():
     x0 = mapgeo.project(-128, 0)[0]; x1 = mapgeo.project(128, 0)[0]
     y0 = mapgeo.project(0, 66)[1]; y1 = mapgeo.project(0, -42)[1]
     K = [0.10, 0.30, 0.20, 0.42, 0.14, 0.36, 0.24, 0.50, 0.06, 0.26, 0.46, 0.18, 0.34, 0.04, 0.22, 0.40]
-    T = [0.50, 0.40, 0.60, 0.40, 0.66, 0.46, 0.55, 0.20, 0.62, 0.16, 0.72, 0.56, 0.88, 0.45, 0.25, 0.58]
+    T = [0.50, 0.40, 0.60, 0.40, 0.66, 0.46, 0.55, 0.20, 0.62, 0.16, 0.72, 0.68, 0.88, 0.45, 0.25, 0.58]
     out = [f'<svg class="map" viewBox="{x0:.0f} {y0:.0f} {x1 - x0:.0f} {y1 - y0:.0f}" role="img" aria-labelledby="mapTitle"><title id="mapTitle">Kültür köprüleri haritası: Anadolu, Orta Asya, And Dağları, Amazon ve Kaliforniya arasındaki bitki bağlantıları</title>',
            f'<path class="land" d="{mapgeo.land_path()}"/>']
     for i, pts in enumerate(BR_GEO, 1):

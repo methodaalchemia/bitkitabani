@@ -7,7 +7,8 @@ sys.path.insert(0, ROOT)
 from refs import FILES, POWO
 import json as _j
 _D = _j.load(open(os.path.join(ROOT, 'data.json'), encoding='utf-8'))
-BAD = re.compile(r'illustrat|drawing|k[öo]e?hler|medizinal-pflanzen|botanical (art|plate|print)|\bplate\b|tafel|lithograph|engraving|woodcut|painting|watercolou?r|herbari|exsiccat|\bmaps?\b|distribution|diagram|molecule|stamp|coin|logo|bottle|drink|beverage|powder|capsule|svg|specimen|museum', re.I)
+BAD = re.compile(r'illustrat|drawing|k[öo]e?hler|medizinal-pflanzen|botanical (art|plate|print)|\bplate\b|tafel|lithograph|engraving|woodcut|painting|watercolou?r|herbari|exsiccat|\bmaps?\b|distribution|diagram|molecule|stamp|coin|logo|bottle|drink|beverage|powder|capsule|svg|specimen|museum|montage|collage|mhnt|landscape|panorama|habitat|forest|plantation|market|óleo|\\boil\\b|bowl|bottle', re.I)
+GOOD = re.compile(r'flower|flor|blüte|fleur|fruit|fruto|frucht|leaf|leaves|hoja|blatt|blossom|close|macro|inflorescence|bloom|berries|berry', re.I)
 
 UA = 'BitkiTabani/1.0 (https://bitkitabani.com; image sync)'
 OUT = os.path.join(ROOT, 'img')
@@ -42,17 +43,17 @@ def auto_pick(taxon):
         hits = r.get('query', {}).get('search', [])
         if hits:
             c = get('https://www.wikidata.org/w/api.php?format=json&action=wbgetclaims&property=P18&entity=' + hits[0]['title'])
-            cands += [x['mainsnak']['datavalue']['value'] for x in c.get('claims', {}).get('P18', []) if 'datavalue' in x['mainsnak']]
+            cands += [('p18', x['mainsnak']['datavalue']['value']) for x in c.get('claims', {}).get('P18', []) if 'datavalue' in x['mainsnak']]
     except Exception as e:
         print('  wikidata hatası', e)
-    for q in ['"' + taxon + '" incategory:Quality_images', '"' + taxon + '" filetype:bitmap -illustration -drawing -herbarium']:
+    for src, q in [('qi', '"' + taxon + '" incategory:Quality_images'), ('gen', '"' + taxon + '" filetype:bitmap -illustration -drawing -herbarium')]:
         try:
-            r = get('https://commons.wikimedia.org/w/api.php?format=json&action=query&list=search&srnamespace=6&srlimit=15&srsearch=' + urllib.parse.quote(q))
-            cands += [h['title'][5:] for h in r.get('query', {}).get('search', [])]
+            r = get('https://commons.wikimedia.org/w/api.php?format=json&action=query&list=search&srnamespace=6&srlimit=20&srsearch=' + urllib.parse.quote(q))
+            cands += [(src, h['title'][5:]) for h in r.get('query', {}).get('search', [])]
         except Exception as e:
             print('  arama hatası', e)
-    seen = set()
-    for f in cands:
+    seen, scored = set(), []
+    for rank, (src, f) in enumerate(cands):
         if f in seen: continue
         seen.add(f)
         j = get('https://commons.wikimedia.org/w/api.php?format=json&action=query&prop=imageinfo&iiprop=mime|size|extmetadata&iiextmetadatafilter=Categories|ImageDescription&titles=' + urllib.parse.quote('File:' + f))
@@ -63,8 +64,10 @@ def auto_pick(taxon):
         text = ' '.join([f, m.get('Categories', {}).get('value', ''), m.get('ImageDescription', {}).get('value', '')])
         if BAD.search(text): continue
         if taxon.split()[0].lower() not in text.lower(): continue
-        return f
-    return None
+        score = (3 if src == 'qi' else 0) + (2 if GOOD.search(text) else 0) + (1 if (ii.get('height') or 0) >= (ii.get('width') or 1) else 0) - rank * 0.01
+        scored.append((score, f))
+    scored.sort(reverse=True)
+    return scored[0][1] if scored else None
 
 WANT = dict(FILES)
 for p in _D['P']:

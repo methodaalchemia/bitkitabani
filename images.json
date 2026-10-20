@@ -11,18 +11,6 @@
   "w": 960,
   "w500": 500
  },
- "acai": {
-  "artist": "Vihelik",
-  "auto": true,
-  "file": "Euterpe oleracea salu.jpg",
-  "h": 720,
-  "h500": 375,
-  "license": "Public domain",
-  "licenseUrl": "",
-  "page": "https://commons.wikimedia.org/wiki/File:Euterpe_oleracea_salu.jpg",
-  "w": 960,
-  "w500": 500
- },
  "achiote": {
   "artist": "Leonardo Ré-Jorge",
   "file": "Bixa orellana fruit open.jpg",
@@ -90,30 +78,6 @@
   "w": 960,
   "w500": 500
  },
- "altinkok": {
-  "artist": "Alpsdake",
-  "auto": true,
-  "file": "Rhodiola rosea (Montage s3).jpg",
-  "h": 960,
-  "h500": 500,
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Rhodiola_rosea_(Montage_s3).jpg",
-  "w": 960,
-  "w500": 500
- },
- "andiroba": {
-  "artist": "Marcelo Henrique da Silva Reis",
-  "auto": true,
-  "file": "Óleo de andiroba.jpg",
-  "h": 720,
-  "h500": 375,
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:%C3%93leo_de_andiroba.jpg",
-  "w": 960,
-  "w500": 500
- },
  "ardic": {
   "artist": "Vyacheslav Argenberg",
   "file": "Караул-Оба, ветки, Крым, Karaul Oba, Crimea.jpg",
@@ -155,18 +119,6 @@
   "license": "CC BY 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Rosmarinus_officinalis_in_Vieussan.jpg",
-  "w": 960,
-  "w500": 500
- },
- "camucamu": {
-  "artist": "LeRoc",
-  "auto": true,
-  "file": "Camu-camu.JPG",
-  "h": 1280,
-  "h500": 667,
-  "license": "CC BY-SA 3.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Camu-camu.JPG",
   "w": 960,
   "w500": 500
  },
@@ -228,18 +180,6 @@
   "w": 960,
   "w500": 500
  },
- "chiricsanango": {
-  "artist": "mauroguanandi",
-  "auto": true,
-  "file": "Brunfelsia grandiflora.jpg",
-  "h": 720,
-  "h500": 375,
-  "license": "CC BY 2.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Brunfelsia_grandiflora.jpg",
-  "w": 960,
-  "w500": 500
- },
  "chuchuhuasi": {
   "artist": "Daniela Yañez Espichan/Archivo Centro Takiwasi",
   "file": "Corteza de Chuchuhuasi (Maytenus macrocarpa) cortada en el Centro Takiwasi, 2010.jpg",
@@ -260,18 +200,6 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Achillea_millefolium_vallee-de-grace-amiens_80_22062007_1.jpg",
-  "w": 960,
-  "w500": 500
- },
- "copaiba": {
-  "artist": "Mauroguanandi",
-  "auto": true,
-  "file": "Copaicaaclimacao.JPG",
-  "h": 720,
-  "h500": 375,
-  "license": "Public domain",
-  "licenseUrl": "",
-  "page": "https://commons.wikimedia.org/wiki/File:Copaicaaclimacao.JPG",
   "w": 960,
   "w500": 500
  },
@@ -317,18 +245,6 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Mallow_January_2008-1.jpg",
-  "w": 960,
-  "w500": 500
- },
- "efedra": {
-  "artist": "alexlomas on Flickr",
-  "auto": true,
-  "file": "Ephedra sinica alexlomas.jpg",
-  "h": 1278,
-  "h500": 665,
-  "license": "CC BY 2.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Ephedra_sinica_alexlomas.jpg",
   "w": 960,
   "w500": 500
  },
@@ -525,18 +441,6 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Gew%C3%B6hnlicher_L%C3%B6wenzahn.jpg",
-  "w": 960,
-  "w500": 500
- },
- "karayilan": {
-  "artist": "No machine-readable author provided. Valérie75 assumed (based on copyright claims).",
-  "auto": true,
-  "file": "Cimicifuga racemosa 002.jpg",
-  "h": 720,
-  "h500": 375,
-  "license": "CC BY-SA 3.0",
-  "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
-  "page": "https://commons.wikimedia.org/wiki/File:Cimicifuga_racemosa_002.jpg",
   "w": 960,
   "w500": 500
  },
@@ -951,18 +855,6 @@
   "w": 960,
   "w500": 500
  },
- "sarimsak": {
-  "artist": "Ermell",
-  "auto": true,
-  "file": "Knoblauch (Allium sativum)-20200621-RM-085344.jpg",
-  "h": 720,
-  "h500": 375,
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Knoblauch_(Allium_sativum)-20200621-RM-085344.jpg",
-  "w": 960,
-  "w500": 500
- },
  "sedef": {
   "artist": "Robert Flogaus-Faust",
   "file": "Ruta graveolens RF.jpg",
@@ -971,18 +863,6 @@
   "license": "CC BY 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Ruta_graveolens_RF.jpg",
-  "w": 960,
-  "w500": 500
- },
- "sigirkuyrugu": {
-  "artist": "4028mdk09",
-  "auto": true,
-  "file": "Kleinblütige Königskerze.JPG",
-  "h": 1280,
-  "h500": 667,
-  "license": "CC BY-SA 3.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Kleinbl%C3%BCtige_K%C3%B6nigskerze.JPG",
   "w": 960,
   "w500": 500
  },
@@ -1005,30 +885,6 @@
   "license": "CC BY 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Fliegenpilz_fly_agaric_Amanita_muscaria.JPG",
-  "w": 960,
-  "w500": 500
- },
- "sumak": {
-  "artist": "Dedda71",
-  "auto": true,
-  "file": "Sommacco.jpg",
-  "h": 720,
-  "h500": 375,
-  "license": "CC BY-SA 3.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Sommacco.jpg",
-  "w": 960,
-  "w500": 500
- },
- "tatula": {
-  "artist": "Didier Descouens",
-  "auto": true,
-  "file": "Datura stramonium MHNT.BOT.2004.0.263a.jpg",
-  "h": 836,
-  "h500": 436,
-  "license": "CC BY-SA 3.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Datura_stramonium_MHNT.BOT.2004.0.263a.jpg",
   "w": 960,
   "w500": 500
  },
@@ -1134,18 +990,6 @@
   "license": "CC BY 3.0 us",
   "licenseUrl": "https://creativecommons.org/licenses/by/3.0/us/deed.en",
   "page": "https://commons.wikimedia.org/wiki/File:Starr-140925-1977-Curcuma_longa-flowering_habit-Pali_o_Waipio_Huelo-Maui_(25128294462).jpg",
-  "w": 960,
-  "w500": 500
- },
- "zeytin": {
-  "artist": "Hans Hillewaert",
-  "auto": true,
-  "file": "El Perelló - Old olive tree.jpg",
-  "h": 720,
-  "h500": 375,
-  "license": "CC BY-SA 3.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-  "page": "https://commons.wikimedia.org/wiki/File:El_Perell%C3%B3_-_Old_olive_tree.jpg",
   "w": 960,
   "w500": 500
  }
