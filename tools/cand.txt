@@ -1,7 +1,1 @@
-# id | arama terimi | ek kelimeler
-kediotu | Valeriana officinalis | flowers
-ginkgo | Ginkgo biloba | leaves
-aloe | Aloe vera | leaves
-okaliptus | Eucalyptus globulus | leaves
-keciboynuzu | Ceratonia siliqua | fruit
-kirmizikaraagac | Ulmus rubra | leaves
+okaliptus | Eucalyptus globulus | flower
