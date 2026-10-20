@@ -98,7 +98,7 @@ FOOT = '''<div class="motif indigo" aria-hidden="true"></div>
     <h3>Bu site nedir</h3>
     <p>Bilgi ve merak için hazırlanmış bir derlemedir; tedavi önerisi değildir. Bir bitkiyi kullanmadan önce, özellikle ilaç kullanıyorsan, hamileysen ya da emziriyorsan bir hekime veya eczacıya danış.</p>
     <p>Fotoğraflar Wikimedia Commons’tan özgür lisanslarla alınmıştır; yazarı ve lisansı her bitkinin sayfasında yazılıdır.</p>
-    <p><a href="/hesap/">Hesap</a> · <a href="/gizlilik/">Gizlilik</a></p>
+    <p><a href="/yontem/">Yöntem</a> · <a href="/hesap/">Hesap</a> · <a href="/gizlilik/">Gizlilik</a> · <a href="mailto:iletisim@bitkitabani.com">İletişim</a></p>
   </div>
   <div class="legend">
     <h3>Kanıt düzeyi</h3>
@@ -210,7 +210,8 @@ def toc_and_ids(html):
 for i, p in enumerate(P):
     pid = p['id']; rel = related(pid)
     prev, nxt = P[i-1], P[(i+1) % len(P)]
-    title = f'{p["tr"]} ({short_la(p)}): kullanımı, bilim ve güvenlik | Bitki Tabanı'
+    title = (f'{p["tr"]}: nedir, etkileri ve zehirlilik riski' if p['guv'] == 'yuksek' else f'{p["tr"]}: faydaları, kullanımı ve yan etkileri')
+    if len(title) < 44: title += ' | Bitki Tabanı'
     ld = {"@context":"https://schema.org","@type":"Article","headline":f'{p["tr"]} ({short_la(p)})',"inLanguage":"tr","about":{"@type":"Taxon","name":short_la(p),"alternateName":[p['tr']] + [x.strip() for x in p['diger'].split(',')][:4],"taxonRank":"species","parentTaxon":{"@type":"Taxon","name":p['fam'].split(' ')[0],"taxonRank":"family"}},"description":desc_for(p),"author":{"@type":"Organization","name":"Bitki Tabanı"},"isPartOf":{"@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/"},"dateModified":CONTENT_DATE,"url":f'{BASE}/{pid}/',"image":(f'{BASE}/img/{pid}-960.jpg' if pid in IMG else None),"publisher":{"@type":"Organization","name":"Bitki Tabanı","url":BASE+"/"}}
     crumbs = {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana sayfa","item":BASE+"/"},{"@type":"ListItem","position":2,"name":"Katalog","item":BASE+"/katalog/"},{"@type":"ListItem","position":3,"name":p['tr'],"item":f'{BASE}/{pid}/'}]}
     uses = ''.join(f'<div class="use"><div class="who">{e(w)}</div><p>{e(t)}</p></div>' for w, t in p['kul'])
@@ -459,7 +460,7 @@ about = '''<header class="page-head"><span class="eyebrow">Hakkında</span><h1>B
 <section class="sec"><p>Bitki Tabanı, farklı kültürlerde şifa ve ritüel için kullanılan bitkileri bir araya getiren bağımsız bir etnobotanik kayıt defteridir. Amacı merak uyandırmak ve geleneksel bilgiyi bugünkü bilimsel bilgiyle yan yana koymak.</p></section>
 <section class="sec"><h2>Ticari değil</h2><p>Bitki Tabanı hiçbir ürün, bitki, takviye ya da tören satmaz; inziva veya ayahuasca seremonisi düzenlemez, bunlara yönlendirmez ve reklam almaz. Kayıtlarda adı geçen hiçbir marka ya da satıcıyla bağı yoktur.</p></section>
 <section class="sec"><h2>İletişim</h2><p>Bir hata gördüysen ya da yöresel bir kullanım biliyorsan <a href="mailto:iletisim@bitkitabani.com">iletisim@bitkitabani.com</a> adresine yaz.</p></section>
-<section class="sec"><h2>Kayıtlar nasıl hazırlanıyor</h2><p>Her kayıt; geleneksel kullanımı, hazırlama biçimini, bilimin bugün ne söylediğini ve güvenlik notlarını içerir. Kanıt düzeyi Avrupa İlaç Ajansı (EMA/HMPC) monografileri, ABD NCCIH özetleri, Cochrane derlemeleri ve hakemli literatüre göre belirlenir. Kaynaklar her bitkinin sayfasının sonunda listelenir.</p></section>
+<section class="sec"><h2>Kayıtlar nasıl hazırlanıyor</h2><p>Ayrıntılı kurallar <a href="/yontem/">Yöntem</a> sayfasında. Her kayıt; geleneksel kullanımı, hazırlama biçimini, bilimin bugün ne söylediğini ve güvenlik notlarını içerir. Kanıt düzeyi Avrupa İlaç Ajansı (EMA/HMPC) monografileri, ABD NCCIH özetleri, Cochrane derlemeleri ve hakemli literatüre göre belirlenir. Kaynaklar her bitkinin sayfasının sonunda listelenir.</p></section>
 <section class="sec"><h2>Önemli not</h2><p>Bu site tıbbi tavsiye vermez. Burada anlatılan geleneksel kullanımlar bir öneri değil, kültürel bir kayıttır. Zehirli ve yasal kısıtlı bitkiler, tarihleri ve riskleri anlaşılsın diye yer alır. Herhangi bir bitkiyi kullanmadan önce bir hekime ya da eczacıya danış.</p></section>
 <section class="sec"><h2>Yerel bilgiye saygı</h2><p>Kayıtlardaki geleneksel bilgi, onu kuşaklar boyunca koruyan toplulukların mirasıdır. Bitki Tabanı bu bilginin kaynağını görünür kılmayı ve aşırı toplanan türler konusunda farkındalık yaratmayı amaçlar.</p></section>
 <section class="sec"><h2>Renklerimiz ve motifimiz</h2><p>Sitenin renkleri, Anadolu ile Amazon ve And Dağları’nın ortak boya geleneklerinden geliyor. Motif ise Anadolu kilimlerindeki göz ve baklava desenini, Shipibo halkının kené çizgileri ve And dokumalarının basamaklı baklavasıyla birleştiriyor.</p>
@@ -596,11 +597,38 @@ gz = '''
 '''
 write('/gizlilik/', page('Gizlilik | Bitki Tabanı', 'Bitki Tabanı hangi bilgileri saklar: giriş yapmazsan hiçbirini; Google ile girişte yalnızca hesap kimlik numaranı ve ilerlemeni.', '/gizlilik/', gz, '', narrow=True))
 
+# ---------- yöntem ----------
+yt = """
+<header class="page-head"><span class="eyebrow">Yöntem</span><h1>Kayıtları nasıl hazırlıyoruz?</h1><p>Bitki Tabanı bağımsız, ticari olmayan bir projedir. Her kayıt aynı kurallarla hazırlanır; bu sayfa o kuralları açıkça yazar ki neye ne kadar güvenebileceğini bil.</p></header>
+<section class="sec"><h2>Hangi kaynakları kullanıyoruz</h2><ol class="srclist">
+<li><b>Resmî bitkisel ilaç değerlendirmeleri:</b> Avrupa İlaç Ajansı Bitkisel Ürünler Komitesi (EMA/HMPC) monografları ve ABD Ulusal Tamamlayıcı ve Bütünleştirici Sağlık Merkezi (NCCIH) özetleri.</li>
+<li><b>Sistematik derlemeler ve klinik çalışmalar:</b> Cochrane derlemeleri ve PubMed’de dizinlenen hakemli dergiler.</li>
+<li><b>Bitki adı ve sınıflandırma:</b> Kew Kraliyet Botanik Bahçeleri’nin Plants of the World Online (POWO) veri tabanı.</li>
+<li><b>Koruma ve ticaret:</b> IUCN Kırmızı Liste ve CITES.</li>
+<li><b>Yasal durum:</b> resmî mevzuat ve BM Uyuşturucu ve Suç Ofisi (UNODC) yayınları.</li>
+<li><b>Geleneksel kullanım:</b> etnobotanik saha çalışmaları ve akademik kitaplar; Anadolu için Turhan Baytop’un <i>Türkiye’de Bitkiler ile Tedavi</i> kitabı temel başvuru kaynağıdır.</li>
+</ol><p>Vikipedi, haber siteleri, aktar ve takviye satıcılarının sayfaları kaynak olarak kullanılmaz.</p></section>
+<section class="sec"><h2>Kanıt düzeyleri</h2><dl class="meta wide">
+<div><dt>Klinik</dt><dd>Kontrollü insan çalışmaları ya da resmî olarak onaylanmış bir ilaç kullanımı var.</dd></div>
+<div><dt>Sınırlı</dt><dd>Küçük ya da az sayıda insan çalışması var; sonuçlar umut verici ama kesin değil.</dd></div>
+<div><dt>Geleneksel</dt><dd>Kullanım kültürel olarak belgelenmiş, ama insan çalışması yok ya da çok az. Bu, bitkinin işe yaramadığı anlamına gelmez; yalnızca bilimin henüz bilmediğini söyler.</dd></div>
+</dl></section>
+<section class="sec"><h2>Güvenlik etiketleri</h2><dl class="meta wide">
+<div><dt>Genelde güvenli</dt><dd>Ölçülü ve geleneksel biçimde kullanıldığında ciddi yan etki bildirilmemiş.</dd></div>
+<div><dt>Dikkat</dt><dd>İlaç etkileşimi, doz ya da belirli gruplar (hamileler, çocuklar, kronik hastalar) için risk var.</dd></div>
+<div><dt>Yüksek risk</dt><dd>Zehirli ya da ciddi yan etkileri olan bitkiler. Kültürel ve tarihî önemleri için yer alırlar; kullanım önerisi değildir.</dd></div>
+</dl><p>Yasal durum, güvenlik etiketinden ayrı gösterilir: bir bitki yasak olmadan zehirli, zehirli olmadan yasak olabilir.</p></section>
+<section class="sec"><h2>Geleneksel bilgiye yaklaşım</h2><p>Geleneksel kullanımlar, onları yaşatan toplulukların adıyla ve bağlamıyla anlatılır; “Amazon yerlileri” gibi genellemeler yerine Shipibo, Huichol gibi somut adlar kullanılır. Kutsal ve törensel kullanımlar bir tavsiye olarak değil, kültürel bir kayıt olarak yazılır.</p></section>
+<section class="sec"><h2>Güncelleme ve düzeltme</h2><p>Her sayfanın altında son gözden geçirme tarihi yazar. Bir hata görürsen ya da yöresel bir kullanım biliyorsan <a href="mailto:iletisim@bitkitabani.com">iletisim@bitkitabani.com</a> adresine yaz; düzeltmeler kaynağıyla birlikte kontrol edilip eklenir.</p></section>
+<section class="sec"><h2>Bağımsızlık</h2><p>Bitki Tabanı ürün satmaz, reklam almaz, satış ortaklığı (affiliate) bağlantısı kullanmaz ve hiçbir şirketten destek almaz.</p></section>
+"""
+write('/yontem/', page('Yöntem: kayıtları nasıl hazırlıyoruz | Bitki Tabanı', 'Bitki Tabanı hangi kaynakları kullanır, kanıt düzeylerini ve güvenlik etiketlerini nasıl belirler, hataları nasıl düzeltir.', '/yontem/', yt, 'about', narrow=True))
+
 # ---------- 404, robots, sitemap, favicon ----------
 nf = '<header class="page-head"><span class="eyebrow">404</span><h1>Bu sayfa bulunamadı</h1><p>Aradığın kayıt taşınmış ya da adres yanlış yazılmış olabilir.</p></header><section class="sec" id="nfs" hidden><h2>Bunu mu arıyordun?</h2><ul class="otherlist" id="nfList"></ul></section><p><a class="cta" id="nfSearch" href="/katalog/">Katalogda ara →</a></p>' + f'<script type="application/json" id="nfData">{json.dumps([[p["id"], p["tr"], p["la"]] for p in P] + [["kopruler/" + slug_of(x), x["t"], ""] for x in BR], ensure_ascii=False)}</script><script src="/assets/404.js" defer></script>'
 open(os.path.join(OUT,'404.html'),'w',encoding='utf-8').write(page('Sayfa bulunamadı | Bitki Tabanı','Sayfa bulunamadı.','/404.html',nf,'', narrow=True))
 open(os.path.join(OUT,'robots.txt'),'w').write(f'User-agent: *\nAllow: /\nDisallow: /secim/\nDisallow: /api/\nDisallow: /hesap/\nDisallow: /*?\n\nSitemap: {BASE}/sitemap.xml\n')
-urls = ['/', '/katalog/', '/kopruler/', '/gunun-bitkisi/', '/oyun/', '/hakkinda/', '/gizlilik/'] + [f'/kopruler/{slug_of(x)}/' for x in BR] + FAM_URLS + [f'/{p["id"]}/' for p in P]
+urls = ['/', '/katalog/', '/kopruler/', '/gunun-bitkisi/', '/oyun/', '/hakkinda/', '/yontem/', '/gizlilik/'] + [f'/kopruler/{slug_of(x)}/' for x in BR] + FAM_URLS + [f'/{p["id"]}/' for p in P]
 open(os.path.join(OUT,'sitemap.xml'),'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url><loc>{BASE}{u}</loc><lastmod>{(LOCAL_DAY.isoformat() if u in ('/', '/gunun-bitkisi/', '/oyun/') else CONTENT_DATE)}</lastmod></url>\n' for u in urls) + '</urlset>\n')
 os.makedirs(os.path.join(OUT,'assets'), exist_ok=True)
 for f in os.listdir(os.path.join(HERE, 'assets')):
