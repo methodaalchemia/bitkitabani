@@ -225,15 +225,16 @@ for i, p in enumerate(P):
       <h1>{e(p["tr"])}</h1>
       <span class="latin">{e(p["la"])}</span>
       <div class="badges"><span class="ev">{pips(p["kanit"])} Kanıt: {KANIT[p["kanit"]]["ad"]}</span><span class="sf {p["guv"]}">{GUV[p["guv"]]}</span>{tags(p).replace('<div class="tags">','').replace('</div>','')}</div>
-    </div>
-    <figure class="photo">{ph(p, 960, eager=True)}<figcaption>{credit(p)}</figcaption></figure>
-  </header>
-  <dl class="meta">
+      <p class="intro">{e(p["ilginc"])}</p>
+      <dl class="meta">
     <div><dt>Diğer adlar</dt><dd>{e(p["diger"])}</dd></div>
     <div><dt>Kullanılan kısım</dt><dd>{e(p["kisim"])}</dd></div>
     <div><dt>Bölge</dt><dd>{"<br>".join(dot(r) + " " + e(REG[r]["ad"]) for r in p["bolge"])}</dd></div>
     <div><dt>Kullanım</dt><dd>{", ".join(KAT[k] for k in p["kat"])}</dd></div>
   </dl>
+    </div>
+    <figure class="photo">{ph(p, 960, eager=True)}<figcaption>{credit(p)}</figcaption></figure>
+  </header>
   <section class="sec"><h2>Geleneksel kullanım</h2><div class="uses">{uses}</div></section>
   {dogada}
   <section class="sec"><h2>Hazırlama</h2><p>{e(p["haz"])}</p></section>
@@ -241,7 +242,6 @@ for i, p in enumerate(P):
   <section class="sec"><h2>Güvenlik</h2><div class="callout {p["guv"]}"><div class="lvl">{GUV[p["guv"]]}</div><p>{e(p["guvNot"])}</p></div></section>
   {yas}
   {korhtml}
-  <p class="fact">{e(p["ilginc"])}</p>
   {relhtml}
   {('<p class="brlinks">' + brlinks + '</p>') if brlinks else ''}
   {simhtml}
