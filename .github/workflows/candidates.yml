@@ -20,6 +20,7 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git checkout --orphan candidates
           git rm -rq --cached .
+          [ -d cand ] && [ -n "$(ls -A cand)" ] || exit 0
           git add cand
           git commit -qm "Fotoğraf adayları [bot]"
           git push -f origin candidates
