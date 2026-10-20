@@ -330,3 +330,13 @@ table.cmp tbody th{font-family:var(--f-mono);font-weight:400;color:var(--muted);
 .contrib h2{font-family:var(--f-display);font-size:var(--t-lg);margin:0 0 6px}
 .contrib p{margin:6px 0}
 table.etk tbody th{white-space:normal;font-family:var(--f-body);color:var(--ink);font-weight:600;width:42%}
+/* kanıt tablosu, hatalar, sss */
+.kv{font-family:var(--f-mono);font-size:12px;padding:1px 6px;border:1px solid var(--rule);white-space:nowrap}
+.kv.klinik{color:#2f6b3a;border-color:#2f6b3a}.kv.sinirli{color:var(--ochre);border-color:var(--ochre)}
+.kv.geleneksel{color:var(--indigo);border-color:var(--indigo)}.kv.yok{color:var(--accent);border-color:var(--accent)}
+table.kanit tbody th{width:36%}
+.hatalar{padding-left:20px}.hatalar li{margin:6px 0}
+.faq details{border-bottom:1px solid var(--rule);padding:10px 0}
+.faq summary{cursor:pointer;font-weight:600}
+.faq details p{margin:8px 0 0}
+.social a{color:inherit}
