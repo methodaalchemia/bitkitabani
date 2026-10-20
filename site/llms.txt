@@ -9,6 +9,7 @@ Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 - [Kültür köprüleri](https://bitkitabani.com/kopruler/): farklı kültürlerde benzer kullanılan bitkilerin karşılaştırması
 - [Yöntem](https://bitkitabani.com/yontem/): kaynaklar, kanıt düzeyleri ve güvenlik etiketleri nasıl belirlenir
 - [Tam metin](https://bitkitabani.com/llms-full.txt): bütün kayıtların düz metin hâli
+- [English edition](https://bitkitabani.com/en/): the same database in English
 
 ## Bitkiler
 - [Üzerlik (Peganum harmala)](https://bitkitabani.com/uzerlik/): Yüksek risk, kanıt: geleneksel

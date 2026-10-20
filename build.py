@@ -688,7 +688,7 @@ def _md_plant(p, full=False):
     return L
 _head = ['# Bitki Tabanı', '', f'> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: {len(P)} bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.', '',
          'Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.', '', '## Sayfalar', f'- [Katalog]({BASE}/katalog/): bütün bitkiler, bölge, kullanım, kanıt ve güvenliğe göre', f'- [Kültür köprüleri]({BASE}/kopruler/): farklı kültürlerde benzer kullanılan bitkilerin karşılaştırması',
-         f'- [Yöntem]({BASE}/yontem/): kaynaklar, kanıt düzeyleri ve güvenlik etiketleri nasıl belirlenir', f'- [Tam metin]({BASE}/llms-full.txt): bütün kayıtların düz metin hâli', '', '## Bitkiler']
+         f'- [Yöntem]({BASE}/yontem/): kaynaklar, kanıt düzeyleri ve güvenlik etiketleri nasıl belirlenir', f'- [Tam metin]({BASE}/llms-full.txt): bütün kayıtların düz metin hâli', f'- [English edition]({BASE}/en/): the same database in English', '', '## Bitkiler']
 open(os.path.join(OUT, 'llms.txt'), 'w', encoding='utf-8').write('\n'.join(_head + [f'- [{p["tr"]} ({short_la(p)})]({BASE}/{p["id"]}/): {GUV[p["guv"]]}, kanıt: {KANIT[p["kanit"]]["ad"].lower()}' for p in P]) + '\n\n## Kültür köprüleri\n' + '\n'.join(f'- [{x["t"]}]({BASE}/kopruler/{slug_of(x)}/): {x["d"]}' for x in BR) + '\n')
 open(os.path.join(OUT, 'llms-full.txt'), 'w', encoding='utf-8').write('\n'.join(_head[:5] + ['Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.', ''] + [l for p in P for l in _md_plant(p, True)]))
 
