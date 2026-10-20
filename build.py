@@ -138,7 +138,8 @@ def ph(p, size, eager=False):
         return f'<div class="ph"><span class="ph-mark">{e(short_la(p))}</span></div>'
     w, h = (m['w'], m['h']) if size == 960 else (m.get('w500', 500), m.get('h500', 667))
     load = 'fetchpriority="high"' if eager else 'loading="lazy"'
-    return f'<div class="ph loaded"><img src="/img/{p["id"]}-{size}.jpg" width="{w}" height="{h}" alt="{e(p["tr"])} ({e(short_la(p))}): {e(ALT.get(p["id"], "bitki"))}" {load} decoding="async"></div>'
+    src = f'<source type="image/webp" srcset="/img/{p["id"]}-{size}.webp">' if os.path.exists(os.path.join(HERE, 'img', f'{p["id"]}-{size}.webp')) else ''
+    return f'<div class="ph loaded"><picture>{src}<img src="/img/{p["id"]}-{size}.jpg" width="{w}" height="{h}" alt="{e(p["tr"])} ({e(short_la(p))}): {e(ALT.get(p["id"], "bitki"))}" {load} decoding="async"></picture></div>'
 
 def credit(p):
     m = IMG.get(p['id'])
@@ -366,7 +367,7 @@ groups = [('bolge','Bölge',[(k,v['ad'],dot(k),cnt(lambda p,k=k: k in p['bolge']
           ('durum','Yasal ve koruma',[(k,v,'',cnt(fn)) for k,v,fn in durum])]
 filters = ''.join(f'<div class="fgroup"><span>{lab}</span><div class="chips">' + ''.join(f'<button type="button" class="chip" data-g="{g}" data-k="{k}" aria-pressed="false">{ic}{e(v)} <span class="n">{n}</span></button>' for k,v,ic,n in opts) + '</div></div>' for g,lab,opts in groups)
 FEATURED = ['uzerlik','ayahuasca','salep','maca','kantaron','koka','kina','huito','safran','guarana','sigla','peyote']
-learn_note = '<p class="hint" id="learnHint"><b>Öğrendiklerim</b> sayacı, bitki sayfalarının sonundaki “Öğrendim” düğmesiyle işaretlediğin bitkileri gösterir. Bu bilgi yalnızca şu an kullandığın tarayıcıda saklanır: başka bir cihazdan girersen, başka bir tarayıcı kullanırsan ya da tarayıcı verilerini silersen görünmez. Hesap ya da kayıt gerekmez.</p>'
+learn_note = '<p class="hint" id="learnHint"><b>Öğrendiklerim</b> sayacı, bitki sayfalarının sonundaki “Öğrendim” düğmesiyle işaretlediğin bitkileri gösterir. Giriş yapmadan da çalışır; o zaman yalnızca bu tarayıcıda saklanır. <a href="/hesap/">Google ile giriş yaparsan</a> bütün cihazlarında görünür.</p>'
 katalog = f'''
 <nav class="crumbs" aria-label="Konum"><a href="/">Ana sayfa</a><span>/</span><span>Katalog</span></nav>
 <header class="page-head"><span class="eyebrow">{len(P)} kayıt</span><h1>Bitki kataloğu</h1><p>Bütün bitkileri bölgeye, kullanıma, kanıt düzeyine, güvenliğe ve yasal duruma göre süz. Seçtiğin filtreler adres çubuğuna yazılır; bağlantıyı paylaşabilirsin.</p></header>

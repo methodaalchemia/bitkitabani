@@ -18,6 +18,7 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: '3.12' }
       - run: python3 tools/fetch_images.py
+      - run: pip install pillow && python3 tools/webp.py
       - run: python3 build.py
       - name: Değişiklikleri kaydet
         run: |
