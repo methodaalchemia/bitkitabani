@@ -275,8 +275,8 @@ def mini(p):
 def bridge_map():
     x0 = mapgeo.project(-128, 0)[0]; x1 = mapgeo.project(128, 0)[0]
     y0 = mapgeo.project(0, 66)[1]; y1 = mapgeo.project(0, -42)[1]
-    K = [0.10, 0.30, 0.20, 0.42, 0.14, 0.36, 0.24, 0.50, 0.06]
-    T = [0.50, 0.40, 0.60, 0.40, 0.66, 0.46, 0.55, 0.20, 0.62]
+    K = [0.10, 0.30, 0.20, 0.42, 0.14, 0.36, 0.24, 0.50, 0.06, 0.26, 0.46, 0.18, 0.34, 0.04, 0.22, 0.40]
+    T = [0.50, 0.40, 0.60, 0.40, 0.66, 0.46, 0.55, 0.20, 0.62, 0.16, 0.72, 0.56, 0.88, 0.45, 0.25, 0.58]
     out = [f'<svg class="map" viewBox="{x0:.0f} {y0:.0f} {x1 - x0:.0f} {y1 - y0:.0f}" role="img" aria-labelledby="mapTitle"><title id="mapTitle">Kültür köprüleri haritası: Anadolu, Orta Asya, And Dağları, Amazon ve Kaliforniya arasındaki bitki bağlantıları</title>',
            f'<path class="land" d="{mapgeo.land_path()}"/>']
     for i, pts in enumerate(BR_GEO, 1):
@@ -337,9 +337,15 @@ write('/hakkinda/', page('Hakkında | Bitki Tabanı', 'Bitki Tabanı’nın amac
 # ---------- fotoğraf seçim sayfası (gizli) ----------
 def taxon_of(p):
     t = POWO.get(p['id']) or short_la(p)
+    t = re.sub(r'\s+ve diğer.*$', '', t)
     return 'Amanita muscaria' if p['id'] == 'sinekmantari' else t
-rows = ''.join(f'<section class="pick-row" data-id="{p["id"]}" data-taxon="{e(taxon_of(p))}"><h2>{acc(p["no"])} · {e(p["tr"])} <span class="latin">{e(taxon_of(p))}</span></h2><div class="cands"><p class="muted">Adaylar yükleniyor…</p></div></section>' for p in P)
-secim = f'''<header class="page-head"><span class="eyebrow">Yalnızca yönetici için</span><h1>Fotoğraf seçimi</h1><p>Her bitki için bitkiyi en iyi tanıtan yakın çekime tıkla. Seçimlerin bu tarayıcıda saklanır. Bitince alttaki listeyi kopyalayıp Claude’a gönder.</p></header>
+order = sorted(P, key=lambda p: (p['id'] in FILES, p['no']))
+def pickrow(p):
+    m = IMG.get(p['id'], {})
+    durum = 'Elle seçildi' if p['id'] in FILES else ('Otomatik seçildi, onay bekliyor' if m else 'Fotoğraf yok')
+    return f'<section class="pick-row" data-id="{p["id"]}" data-taxon="{e(taxon_of(p))}"><h2>{acc(p["no"])} · {e(p["tr"])} <span class="latin">{e(taxon_of(p))}</span> <span class="lg">{durum}</span></h2><div class="cands"><p class="muted">Adaylar yükleniyor…</p></div></section>'
+rows = ''.join(pickrow(p) for p in order)
+secim = f'''<header class="page-head"><span class="eyebrow">Yalnızca yönetici için</span><h1>Fotoğraf seçimi</h1><p>Otomatik seçilen fotoğraflar en üstte. Beğenmediğin bitki için daha iyi bir yakın çekime tıkla; beğendiklerine dokunmana gerek yok. Seçimlerin bu tarayıcıda saklanır. Bitince alttaki listeyi kopyalayıp Claude’a gönder.</p></header>
 {rows}
 <div class="result-box"><div class="row"><span id="done"></span><button type="button" id="copy">Listeyi kopyala</button><span id="copied"></span></div><textarea id="result" readonly aria-label="Seçim listesi"></textarea></div>'''
 write('/secim/', page('Fotoğraf seçimi | Bitki Tabanı', 'Fotoğraf seçimi', '/secim/', secim, '', '<script src="/assets/photo.js" defer></script><script src="/assets/secim.js" defer></script>', extra='<meta name="robots" content="noindex, nofollow">'))

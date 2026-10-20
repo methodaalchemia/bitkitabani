@@ -4,7 +4,10 @@ import json, os, re, sys, time, urllib.parse, urllib.request, html
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
-from refs import FILES
+from refs import FILES, POWO
+import json as _j
+_D = _j.load(open(os.path.join(ROOT, 'data.json'), encoding='utf-8'))
+BAD = re.compile(r'illustrat|drawing|k[öo]e?hler|medizinal-pflanzen|botanical (art|plate|print)|\bplate\b|tafel|lithograph|engraving|woodcut|painting|watercolou?r|herbari|exsiccat|\bmaps?\b|distribution|diagram|molecule|stamp|coin|logo|bottle|drink|beverage|powder|capsule|svg|specimen|museum', re.I)
 
 UA = 'BitkiTabani/1.0 (https://bitkitabani.com; image sync)'
 OUT = os.path.join(ROOT, 'img')
@@ -27,8 +30,53 @@ def clean(h):
     t = re.sub(r'<[^>]+>', ' ', h or '')
     return re.sub(r'\s+', ' ', html.unescape(t)).strip()[:140]
 
+def taxon_of(p):
+    t = POWO.get(p['id']) or p['la'].split(',')[0].strip()
+    return re.sub(r'\s+ve diğer.*$', '', t)
+
+def auto_pick(taxon):
+    """Wikidata P18, sonra Commons 'Quality images' araması; yalnızca gerçek fotoğraflar."""
+    cands = []
+    try:
+        r = get('https://www.wikidata.org/w/api.php?format=json&action=query&list=search&srlimit=1&srsearch=' + urllib.parse.quote('haswbstatement:"P225=' + taxon + '"'))
+        hits = r.get('query', {}).get('search', [])
+        if hits:
+            c = get('https://www.wikidata.org/w/api.php?format=json&action=wbgetclaims&property=P18&entity=' + hits[0]['title'])
+            cands += [x['mainsnak']['datavalue']['value'] for x in c.get('claims', {}).get('P18', []) if 'datavalue' in x['mainsnak']]
+    except Exception as e:
+        print('  wikidata hatası', e)
+    for q in ['"' + taxon + '" incategory:Quality_images', '"' + taxon + '" filetype:bitmap -illustration -drawing -herbarium']:
+        try:
+            r = get('https://commons.wikimedia.org/w/api.php?format=json&action=query&list=search&srnamespace=6&srlimit=15&srsearch=' + urllib.parse.quote(q))
+            cands += [h['title'][5:] for h in r.get('query', {}).get('search', [])]
+        except Exception as e:
+            print('  arama hatası', e)
+    seen = set()
+    for f in cands:
+        if f in seen: continue
+        seen.add(f)
+        j = get('https://commons.wikimedia.org/w/api.php?format=json&action=query&prop=imageinfo&iiprop=mime|size|extmetadata&iiextmetadatafilter=Categories|ImageDescription&titles=' + urllib.parse.quote('File:' + f))
+        page = list(j['query']['pages'].values())[0]
+        ii = (page.get('imageinfo') or [{}])[0]
+        if ii.get('mime') not in ('image/jpeg', 'image/webp') or (ii.get('width') or 0) < 800: continue
+        m = ii.get('extmetadata', {})
+        text = ' '.join([f, m.get('Categories', {}).get('value', ''), m.get('ImageDescription', {}).get('value', '')])
+        if BAD.search(text): continue
+        if taxon.split()[0].lower() not in text.lower(): continue
+        return f
+    return None
+
+WANT = dict(FILES)
+for p in _D['P']:
+    if p['id'] in WANT: continue
+    if meta.get(p['id'], {}).get('auto') and meta[p['id']].get('file'):
+        WANT[p['id']] = meta[p['id']]['file']; continue
+    f = auto_pick(taxon_of(p))
+    print('otomatik seçim:', p['id'], '→', f)
+    if f: WANT[p['id']] = f; meta.setdefault(p['id'], {})['auto'] = True
+
 changed = 0
-for pid, fname in FILES.items():
+for pid, fname in WANT.items():
     big = os.path.join(OUT, f'{pid}-960.jpg'); small = os.path.join(OUT, f'{pid}-500.jpg')
     if meta.get(pid, {}).get('file') == fname and os.path.exists(big) and os.path.exists(small):
         continue
@@ -45,6 +93,7 @@ for pid, fname in FILES.items():
         if w == 960:
             m = ii.get('extmetadata', {})
             meta[pid] = {
+                'auto': pid not in FILES,
                 'file': fname,
                 'page': ii.get('descriptionurl'),
                 'w': ii.get('thumbwidth') or ii.get('width'), 'h': ii.get('thumbheight') or ii.get('height'),
@@ -59,6 +108,6 @@ for pid, fname in FILES.items():
     changed += 1
 
 for pid in list(meta):
-    if pid not in FILES: meta.pop(pid)
+    if pid not in WANT: meta.pop(pid)
 json.dump(meta, open(META, 'w', encoding='utf-8'), ensure_ascii=False, indent=1, sort_keys=True)
 print('bitti; güncellenen:', changed, 'toplam:', len(meta))

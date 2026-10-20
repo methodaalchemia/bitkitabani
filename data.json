@@ -5,7 +5,7 @@
    "c": "--r-anadolu"
   },
   "asya": {
-   "ad": "Orta Asya ve Sibirya",
+   "ad": "Asya ve Sibirya",
    "c": "--r-asya"
   },
   "and": {
@@ -1566,6 +1566,1578 @@
    "guvNot": "Dumanı kapalı alanda solunum yollarını tahriş edebilir. Gebelikte iç kullanımı önerilmez.",
    "yasal": "Ticari talep yabandan izinsiz toplamayı artırdı. Yerli topluluklar bitkinin kendi geleneklerinden koparılarak satılmasına karşı çıkıyor; yetiştirme ürün ya da yerel alternatifler tercih edilmeli.",
    "ilginc": "Anadolu’da ardıç, Orta Asya’da arça, Kaliforniya’da ak adaçayı: üç ayrı coğrafyada insanlar evi ve bedeni dumanla arındırır."
+  },
+  {
+   "id": "nane",
+   "tr": "Nane",
+   "la": "Mentha × piperita, M. spicata",
+   "fam": "Lamiaceae",
+   "diger": "Bahçe nanesi, tıbbi nane, hierbabuena (İspanyolca)",
+   "bolge": [
+    "anadolu",
+    "and"
+   ],
+   "kat": [
+    "sifa",
+    "besin"
+   ],
+   "kisim": "Yaprak",
+   "kul": [
+    [
+     "Anadolu",
+     "Mide bulantısı, gaz ve hazımsızlık için çayı içilir; yemeklere, ayrana ve cacığa katılır. Kurusu kışın soğuk algınlığında buharla solunur."
+    ],
+    [
+     "And",
+     "Hierbabuena, Peru ve Bolivya’da mide ağrısı ve gaz için en sık demlenen otlardandır."
+    ]
+   ],
+   "haz": "Taze ya da kuru yaprak kapağı kapalı demlenir; uçucu yağı seyreltilerek şakaklara sürülür.",
+   "bilim": "Nane yağı (Mentha × piperita) kapsülleri, birçok kontrollü çalışmada huzursuz bağırsak sendromunun belirtilerini plaseboya göre azaltmıştır. EMA nane yaprağını hazımsızlık ve gaz için geleneksel kullanımda tanır.",
+   "kanit": "klinik",
+   "guv": "dusuk",
+   "guvNot": "Genelde güvenlidir. Reflüyü artırabilir. Saf nane yağı bebeklerin ve küçük çocukların yüzüne sürülmemelidir; solunum durmasına yol açabilir.",
+   "ilginc": "Yunan mitolojisinde Minthe adlı peri, kıskanç Persephone tarafından naneye dönüştürülür; bitkinin Latince adı buradan gelir."
+  },
+  {
+   "id": "zeytin",
+   "tr": "Zeytin yaprağı",
+   "la": "Olea europaea",
+   "fam": "Oleaceae",
+   "diger": "Zeytin, olive leaf",
+   "bolge": [
+    "anadolu"
+   ],
+   "kat": [
+    "sifa",
+    "besin",
+    "ritual"
+   ],
+   "kisim": "Yaprak, meyve, yağ",
+   "kul": [
+    [
+     "Anadolu",
+     "Yaprakları kaynatılıp tansiyon ve şeker için içilir; zeytinyağı yaraya, yanığa ve kulak ağrısına damlatılır. Zeytin dalı bereket ve barışın simgesidir."
+    ],
+    [
+     "Antik Akdeniz",
+     "Atina’nın kutsal ağacıdır; Olimpiyat galiplerine yabani zeytin dalından taç verilirdi."
+    ]
+   ],
+   "haz": "Kuru yaprak 10–15 dakika kaynatılır; standart yaprak ekstresi de kullanılır.",
+   "bilim": "Yaprak, oleuropein adlı bir fenol bakımından zengindir. Birkaç kontrollü çalışmada yaprak ekstresi hafif yüksek tansiyonda küçük düşüşler göstermiştir. EMA zeytin yaprağını hafif sistolik hipertansiyonda geleneksel kullanımda tanır.",
+   "kanit": "sinirli",
+   "guv": "dusuk",
+   "guvNot": "Genelde güvenlidir. Tansiyon ve şeker ilaçlarıyla birlikte etkisi artabilir.",
+   "ilginc": "Türkiye’nin bazı köylerinde 1.000 yaşını geçmiş, hâlâ meyve veren zeytin ağaçları bulunur."
+  },
+  {
+   "id": "sumak",
+   "tr": "Sumak",
+   "la": "Rhus coriaria",
+   "fam": "Anacardiaceae",
+   "diger": "Somak, Sicilian sumac",
+   "bolge": [
+    "anadolu"
+   ],
+   "kat": [
+    "besin",
+    "sifa"
+   ],
+   "kisim": "Meyve",
+   "kul": [
+    [
+     "Anadolu",
+     "Kırmızı meyveleri öğütülüp kebap, salata ve içli köftede ekşi baharat olarak kullanılır. Halk arasında ishal ve ağız yaraları için meyvesi kaynatılır."
+    ],
+    [
+     "Orta Doğu",
+     "Zahter karışımının temel bileşenidir; ekşiliği için limon yerine kullanılır."
+    ]
+   ],
+   "haz": "Meyveler kurutulup öğütülür; şerbeti yapılır.",
+   "bilim": "Meyvesi tanen ve organik asitler bakımından zengindir. Küçük klinik çalışmalarda kan şekeri ve kolesterolde hafif düşüşler bildirilmiştir; kanıt sınırlıdır.",
+   "kanit": "sinirli",
+   "guv": "dusuk",
+   "guvNot": "Baharat olarak güvenlidir. Kaju ve Antep fıstığı alerjisi olanlarda çapraz alerji görülebilir.",
+   "ilginc": "Romalılar limon Avrupa’ya yaygınlaşmadan önce yemeklerini sumakla ekşitirdi."
+  },
+  {
+   "id": "nar",
+   "tr": "Nar",
+   "la": "Punica granatum",
+   "fam": "Lythraceae",
+   "diger": "Pomegranate, granada",
+   "bolge": [
+    "anadolu"
+   ],
+   "kat": [
+    "besin",
+    "sifa",
+    "ritual"
+   ],
+   "kisim": "Meyve, kabuk, çiçek",
+   "kul": [
+    [
+     "Anadolu",
+     "Bereket ve bolluğun simgesidir; yeni eve taşınınca ya da yılbaşında nar kırılır. Kabuğu ishal için kaynatılır; ekşisi yemeklerde kullanılır."
+    ],
+    [
+     "Antik Akdeniz",
+     "Persephone’nin yediği nar taneleri onu yer altına bağlar; mevsimlerin döngüsü bu mitle anlatılır."
+    ]
+   ],
+   "haz": "Meyve taze yenir ya da suyu sıkılır; kabuk kurutulup kaynatılır; nar ekşisi suyu koyulaştırılarak yapılır.",
+   "bilim": "Polifenol bakımından zengindir. Küçük çalışmalarda nar suyunun tansiyonu hafifçe düşürdüğü bildirilmiştir; prostat kanseri gibi iddialar için kanıt yetersizdir.",
+   "kanit": "sinirli",
+   "guv": "dusuk",
+   "guvNot": "Meyve güvenlidir. Kabuk ve kök kabuğu yüksek dozda zehirlidir. Nar suyu bazı ilaçların yıkımını etkileyebilir.",
+   "ilginc": "Bir narda ortalama 600 civarında tane bulunur; Anadolu’da “her narda bir cennet tanesi vardır” denir."
+  },
+  {
+   "id": "yarpuz",
+   "tr": "Yarpuz",
+   "la": "Mentha pulegium",
+   "fam": "Lamiaceae",
+   "diger": "Yabani nane, pennyroyal, poleo",
+   "bolge": [
+    "anadolu",
+    "and"
+   ],
+   "kat": [
+    "sifa",
+    "zehir"
+   ],
+   "kisim": "Yaprak",
+   "kul": [
+    [
+     "Anadolu",
+     "Dere kenarlarından toplanıp soğuk algınlığı ve mide için demlenir; yemeklere nane yerine katılır."
+    ],
+    [
+     "Avrupa ve Latin Amerika",
+     "Tarih boyunca adet söktürücü ve düşük yaptırıcı olarak kullanılmıştır; bu kullanım ölümlere yol açmıştır."
+    ]
+   ],
+   "haz": "Çok az miktarda demlenir. Uçucu yağı kesinlikle içilmez.",
+   "bilim": "Uçucu yağı yüksek oranda pulegon içerir. Pulegon karaciğer ve böbrek için zehirlidir; yağın içilmesiyle ölümler bildirilmiştir.",
+   "kanit": "geleneksel",
+   "guv": "yuksek",
+   "guvNot": "Uçucu yağ az miktarda bile ölümcül karaciğer hasarı yapabilir. Gebelikte kesinlikle kullanılmamalıdır. Çay olarak da uzun süre ve yoğun içilmemelidir.",
+   "ilginc": "And’ların muñası ile Anadolu’nun yarpuzu aynı molekülü, pulegonu taşır; iki dağ kültürü benzer kokulu otları benzer dertlere kullanır."
+  },
+  {
+   "id": "civanpercemi",
+   "tr": "Civanperçemi",
+   "la": "Achillea millefolium",
+   "fam": "Asteraceae",
+   "diger": "Barsama otu, yarrow, milenrama",
+   "bolge": [
+    "anadolu",
+    "kamerika"
+   ],
+   "kat": [
+    "sifa"
+   ],
+   "kisim": "Çiçekli toprak üstü kısım",
+   "kul": [
+    [
+     "Anadolu",
+     "Yara ve kesiklerde kanamayı durdurmak için ezilip sürülür; mide ve adet sancısı için demlenir."
+    ],
+    [
+     "Kuzey Amerika",
+     "Birçok yerli halk yaprağını yara, diş ağrısı ve ateş için kullanır."
+    ]
+   ],
+   "haz": "Çiçekli dallar demlenir; taze yaprak ezilip yaraya konur.",
+   "bilim": "EMA, civanperçemini iştahsızlık, hazımsızlık, adet sancısı ve küçük yaralar için geleneksel kullanımda tanır. İnsan çalışması azdır.",
+   "kanit": "geleneksel",
+   "guv": "orta",
+   "guvNot": "Papatyagil alerjisi olanlarda alerji yapabilir. Gebelikte kullanılmamalıdır.",
+   "ilginc": "Latince adı Achillea, efsaneye göre yaralı askerlerini bu bitkiyle tedavi eden Akhilleus’tan gelir."
+  },
+  {
+   "id": "okseotu",
+   "tr": "Ökse otu",
+   "la": "Viscum album",
+   "fam": "Santalaceae",
+   "diger": "Gökçe, burç, mistletoe",
+   "bolge": [
+    "anadolu"
+   ],
+   "kat": [
+    "ritual",
+    "sifa",
+    "zehir"
+   ],
+   "kisim": "Yapraklı dal",
+   "kul": [
+    [
+     "Anadolu",
+     "Halk arasında tansiyon ve şeker için dalları demlenir. Yapışkan meyvelerinden kuş tutmak için ökse yapılırdı; adı buradan gelir."
+    ],
+    [
+     "Avrupa",
+     "Romalı yazar Plinius, Galya druidlerinin meşe üzerindeki ökse otunu altın orakla törenle kestiğini anlatır."
+    ]
+   ],
+   "haz": "Yalnızca doktor gözetiminde standart preparatlar kullanılır.",
+   "bilim": "Avrupa’da ökse otu ekstreleri kanser hastalarında tamamlayıcı tedavi olarak enjeksiyonla kullanılır. Yaşam kalitesine etkisi üzerine çalışmalar vardır, ama kanser tedavisi olarak etkinliği kanıtlanmamıştır.",
+   "kanit": "sinirli",
+   "guv": "yuksek",
+   "guvNot": "Meyveleri ve yüksek dozları zehirlidir; özellikle çocuklar için tehlikelidir. Tansiyonu düşürebilir.",
+   "ilginc": "Ökse otu kendi yaprağıyla fotosentez yapar ama suyunu ve tuzlarını üzerinde yaşadığı ağaçtan alır; yarı asalak bir bitkidir."
+  },
+  {
+   "id": "kapari",
+   "tr": "Kapari",
+   "la": "Capparis spinosa",
+   "fam": "Capparaceae",
+   "diger": "Kebere, gebere, caper",
+   "bolge": [
+    "anadolu"
+   ],
+   "kat": [
+    "besin",
+    "sifa"
+   ],
+   "kisim": "Tomurcuk, meyve, kök",
+   "kul": [
+    [
+     "Anadolu",
+     "Tomurcukları salamura edilip yemeklerde kullanılır. Halk arasında kökü romatizma ve dalak için kaynatılır."
+    ],
+    [
+     "Orta Asya",
+     "Uygur halk tıbbında kapari meyvesi eklem ağrıları için kullanılır."
+    ]
+   ],
+   "haz": "Tomurcuklar tuzlanıp salamura yapılır.",
+   "bilim": "Rutin ve kaempferol gibi flavonoitler içerir. Laboratuvar çalışmaları dışında insan çalışması çok azdır.",
+   "kanit": "geleneksel",
+   "guv": "dusuk",
+   "guvNot": "Yiyecek olarak güvenlidir.",
+   "ilginc": "Türkiye dünyanın en büyük kapari ihracatçıları arasındadır; kaparinin büyük kısmı yabandan toplanır."
+  },
+  {
+   "id": "hatmi",
+   "tr": "Hatmi",
+   "la": "Althaea officinalis",
+   "fam": "Malvaceae",
+   "diger": "Tıbbi hatmi, marshmallow",
+   "bolge": [
+    "anadolu"
+   ],
+   "kat": [
+    "sifa"
+   ],
+   "kisim": "Kök, yaprak, çiçek",
+   "kul": [
+    [
+     "Anadolu",
+     "Kökü ve çiçeği kuru öksürük, boğaz ve mide tahrişi için soğuk suda bekletilerek içilir."
+    ],
+    [
+     "Avrupa",
+     "Kökündeki müsilaj 19. yüzyılda şekerle çırpılarak ilk “marshmallow” şekerlemesi yapıldı."
+    ]
+   ],
+   "haz": "Kök soğuk suda birkaç saat bekletilir; ısıtılmaz.",
+   "bilim": "Kökü yüksek oranda müsilaj içerir; bu madde boğaz ve mide yüzeyini kaplar. EMA hatmi kökünü ağız-boğaz tahrişi ve kuru öksürük için geleneksel kullanımda tanır.",
+   "kanit": "geleneksel",
+   "guv": "dusuk",
+   "guvNot": "Genelde güvenlidir. Müsilaj diğer ilaçların emilimini geciktirebilir; araya bir saat konmalıdır.",
+   "ilginc": "İngilizce “marshmallow” adı, bitkinin bataklık (marsh) kenarında yetişen ebegümeci (mallow) akrabası olmasından gelir."
+  },
+  {
+   "id": "kizilcik",
+   "tr": "Kızılcık",
+   "la": "Cornus mas",
+   "fam": "Cornaceae",
+   "diger": "Kızılcık ağacı, cornelian cherry",
+   "bolge": [
+    "anadolu"
+   ],
+   "kat": [
+    "besin",
+    "sifa"
+   ],
+   "kisim": "Meyve",
+   "kul": [
+    [
+     "Anadolu",
+     "Meyvesinden marmelat, şurup, tarhana ve pestil yapılır. Halk arasında ishal ve ateşli hastalıklarda şerbeti içilir."
+    ],
+    [
+     "Kafkasya ve Balkanlar",
+     "Kurutulmuş kızılcık kışın vitamin kaynağı olarak saklanır."
+    ]
+   ],
+   "haz": "Meyve kaynatılarak şurup ya da marmelat yapılır; kurutulur.",
+   "bilim": "Antosiyanin ve C vitamini bakımından zengindir. Küçük çalışmalarda kan yağlarında hafif iyileşmeler bildirilmiştir.",
+   "kanit": "sinirli",
+   "guv": "dusuk",
+   "guvNot": "Yiyecek olarak güvenlidir.",
+   "ilginc": "Kızılcık ağaçları baharda yapraklanmadan önce sarı çiçek açar; dağlarda baharın ilk habercilerindendir."
+  },
+  {
+   "id": "sarimsak",
+   "tr": "Sarımsak",
+   "la": "Allium sativum",
+   "fam": "Amaryllidaceae",
+   "diger": "Ajo, garlic",
+   "bolge": [
+    "anadolu",
+    "and"
+   ],
+   "kat": [
+    "besin",
+    "sifa",
+    "tutsu"
+   ],
+   "kisim": "Soğan (diş)",
+   "kul": [
+    [
+     "Anadolu",
+     "Nazara ve kötü ruhlara karşı kapı ve beşik başına asılır. Soğuk algınlığı ve tansiyon için çiğ yenir."
+    ],
+    [
+     "And",
+     "Peru ve Bolivya’da ajo, limpia törenlerinde ve nazara karşı yanında taşınır; soğuk algınlığına karşı yenir."
+    ]
+   ],
+   "haz": "Çiğ olarak ezilip yenir; ezildikten sonra 10 dakika bekletilmesi etken maddeyi artırır.",
+   "bilim": "Ezilince allisin oluşur. Meta-analizler sarımsak preparatlarının tansiyonu ve kolesterolü hafifçe düşürdüğünü gösteriyor. NCCIH bu etkilerin küçük olduğunu belirtir.",
+   "kanit": "klinik",
+   "guv": "dusuk",
+   "guvNot": "Yiyecek olarak güvenlidir. Yüksek doz kan sulandırıcıların etkisini artırabilir; ameliyattan önce bırakılmalıdır.",
+   "ilginc": "Sarımsak hem Anadolu’da hem And’larda nazara karşı taşınır; iki kıtada aynı bitki aynı göreve atanmış."
+  },
+  {
+   "id": "cemen",
+   "tr": "Çemen otu",
+   "la": "Trigonella foenum-graecum",
+   "fam": "Fabaceae",
+   "diger": "Boy otu, fenugreek, alholva",
+   "bolge": [
+    "anadolu",
+    "asya"
+   ],
+   "kat": [
+    "besin",
+    "sifa"
+   ],
+   "kisim": "Tohum",
+   "kul": [
+    [
+     "Anadolu",
+     "Tohumu öğütülüp pastırmanın kaplaması olan çemenin temelini oluşturur. Halk arasında emziren annelerde süt artırmak ve şeker için kullanılır."
+    ],
+    [
+     "Güney Asya",
+     "Ayurveda’da sindirim ve şeker için kullanılır; köri karışımlarının bileşenidir."
+    ]
+   ],
+   "haz": "Tohum kavrulup öğütülür ya da suda bekletilir.",
+   "bilim": "Tohumlarda bol lif ve saponin bulunur. Bazı çalışmalarda kan şekerinde düşüş görülmüştür; NCCIH kanıtın kesin olmadığını belirtir. EMA tohumunu iştahsızlık ve hafif cilt iltihabı için geleneksel kullanımda tanır.",
+   "kanit": "sinirli",
+   "guv": "orta",
+   "guvNot": "Gebelikte yüksek dozda kullanılmamalıdır. Şeker ve kan sulandırıcı ilaçların etkisini artırabilir. Fıstık ve nohut alerjisi olanlarda alerji yapabilir.",
+   "ilginc": "Çemen yiyenlerin terine ve idrarına akçaağaç şurubu gibi tatlı bir koku geçer."
+  },
+  {
+   "id": "kimyon",
+   "tr": "Kimyon",
+   "la": "Cuminum cyminum",
+   "fam": "Apiaceae",
+   "diger": "Cumin, comino",
+   "bolge": [
+    "anadolu",
+    "and"
+   ],
+   "kat": [
+    "besin",
+    "sifa"
+   ],
+   "kisim": "Tohum (meyve)",
+   "kul": [
+    [
+     "Anadolu",
+     "Köfte, sucuk ve kuru baklagil yemeklerinin baharatıdır. Gaz ve hazımsızlık için tohumları demlenir."
+    ],
+    [
+     "And",
+     "İspanyollarla gelen comino, Peru mutfağının temel baharatlarından biri olmuştur."
+    ]
+   ],
+   "haz": "Tohum kavrulup öğütülür; demlenir.",
+   "bilim": "Kuminaldehit içerir. Huzursuz bağırsak ve kilo yönetimi üzerine küçük çalışmalar vardır; kanıt zayıftır.",
+   "kanit": "sinirli",
+   "guv": "dusuk",
+   "guvNot": "Baharat olarak güvenlidir.",
+   "ilginc": "Türkiye dünyanın önde gelen kimyon üreticilerinden biridir; üretimin önemli kısmı Konya, Afyonkarahisar ve Burdur’dan gelir."
+  },
+  {
+   "id": "keten",
+   "tr": "Keten tohumu",
+   "la": "Linum usitatissimum",
+   "fam": "Linaceae",
+   "diger": "Keten, flaxseed, linaza",
+   "bolge": [
+    "anadolu",
+    "and"
+   ],
+   "kat": [
+    "besin",
+    "sifa"
+   ],
+   "kisim": "Tohum, lif",
+   "kul": [
+    [
+     "Anadolu",
+     "Kabızlık için tohum suda bekletilir; tohum lapası çıbanlara konurdu. Lifinden keten dokunur."
+    ],
+    [
+     "And",
+     "Linaza, Peru’da mide ve kabızlık için suyu çekilerek içilir; sokaklarda sabah içeceği olarak satılır."
+    ]
+   ],
+   "haz": "Tohum öğütülüp yemeğe katılır ya da suda bekletilir; bol su ile alınmalıdır.",
+   "bilim": "Lif, müsilaj ve alfa-linolenik asit bakımından zengindir. EMA keten tohumunu kabızlık için iyi yerleşmiş kullanımda tanır. Bazı çalışmalarda kolesterol ve tansiyonda hafif düşüş görülmüştür.",
+   "kanit": "klinik",
+   "guv": "dusuk",
+   "guvNot": "Az su ile alınırsa bağırsak tıkanıklığı yapabilir. Çiğ tohum az miktarda siyanür oluşturan madde içerir; ölçülü tüketilmelidir.",
+   "ilginc": "Keten insanlığın en eski dokuma liflerindendir; Anadolu’da Neolitik çağdan keten kumaş parçaları bulunmuştur."
+  },
+  {
+   "id": "kudretnari",
+   "tr": "Kudret narı",
+   "la": "Momordica charantia",
+   "fam": "Cucurbitaceae",
+   "diger": "Acı kavun, bitter melon, sorosi (Amazon)",
+   "bolge": [
+    "anadolu",
+    "amazon"
+   ],
+   "kat": [
+    "sifa",
+    "besin"
+   ],
+   "kisim": "Meyve",
+   "kul": [
+    [
+     "Anadolu",
+     "Olgun meyvesi zeytinyağında bekletilir; bu yağ mide ülseri ve yaralar için içilir ya da sürülür."
+    ],
+    [
+     "Amazon",
+     "Peru Amazonu’nda sorosi yaprakları ateş, sıtma ve şeker için demlenir."
+    ]
+   ],
+   "haz": "Olgun meyve zeytinyağına doldurulup güneşte bekletilir.",
+   "bilim": "Bazı küçük çalışmalarda kan şekerini düşürdüğü görülmüştür; sistematik derlemeler kanıtın yetersiz ve tutarsız olduğunu belirtir.",
+   "kanit": "sinirli",
+   "guv": "orta",
+   "guvNot": "Şeker ilaçlarıyla birlikte kan şekerini tehlikeli düşürebilir. Gebelikte kullanılmamalıdır. Kırmızı tohum kabuğu çocuklarda zehirlenmeye yol açmıştır.",
+   "ilginc": "Aynı bitki Anadolu’da zeytinyağıyla ülser ilacı, Amazon’da sıtma çayı olarak kullanılıyor."
+  },
+  {
+   "id": "zakkum",
+   "tr": "Zakkum",
+   "la": "Nerium oleander",
+   "fam": "Apocynaceae",
+   "diger": "Ağı ağacı, oleander, adelfa",
+   "bolge": [
+    "anadolu"
+   ],
+   "kat": [
+    "zehir",
+    "sifa"
+   ],
+   "kisim": "Yaprak (yalnızca tarihsel)",
+   "kul": [
+    [
+     "Anadolu",
+     "Halk arasında yaprakları kaynatılarak hemoroid, cilt hastalıkları ve kansere karşı kullanılmıştır. Bu kullanımlar ölümcül zehirlenmelere yol açmıştır."
+    ],
+    [
+     "Akdeniz",
+     "Kıyılarda ve yol ortalarında süs bitkisi olarak yaygındır."
+    ]
+   ],
+   "haz": "Hiçbir şekilde hazırlanmamalı ve içilmemelidir.",
+   "bilim": "Oleandrin gibi kalp glikozitleri içerir; bunlar kalp ritmini bozar. Kanser için kullanımı üzerine yapılan çalışmalar fayda göstermemiştir.",
+   "kanit": "geleneksel",
+   "guv": "yuksek",
+   "guvNot": "Bitkinin her parçası ölümcül zehirlidir. Yaprağın birkaç tanesi bile tehlikelidir. Dalları mangalda yakmak ya da şiş olarak kullanmak da zehirlenmeye yol açabilir.",
+   "ilginc": "Zakkum dallarını şiş ya da mangal odunu olarak kullanmak bile zehirlenmeye yol açabilir; pikniklerde dikkat edilmesi gerekir."
+  },
+  {
+   "id": "sigirkuyrugu",
+   "tr": "Sığırkuyruğu",
+   "la": "Verbascum thapsus ve diğer türler",
+   "fam": "Scrophulariaceae",
+   "diger": "Mullein, gordolobo",
+   "bolge": [
+    "anadolu",
+    "kamerika"
+   ],
+   "kat": [
+    "sifa"
+   ],
+   "kisim": "Çiçek, yaprak",
+   "kul": [
+    [
+     "Anadolu",
+     "Çiçekleri öksürük ve bronşit için demlenir; zeytinyağında bekletilen çiçek yağı kulak ağrısına damlatılır."
+    ],
+    [
+     "Kuzey Amerika",
+     "Avrupa’dan gelen bitkinin yaprakları yerli halklarca solunum yolları için içilip tütsülendi."
+    ]
+   ],
+   "haz": "Çiçek demlenir ve ince bir bezden mutlaka süzülür.",
+   "bilim": "Müsilaj ve saponin içerir. EMA çiçeğini öksürük ve boğaz tahrişi için geleneksel kullanımda tanır. İnsan çalışması azdır.",
+   "kanit": "geleneksel",
+   "guv": "dusuk",
+   "guvNot": "Genelde güvenlidir. Yaprak ve çiçek tüyleri boğazı tahriş eder; çay süzülmeden içilmemelidir.",
+   "ilginc": "Türkiye’de 200’den fazla Verbascum türü yetişir ve bunların çoğu yalnızca Türkiye’de bulunan endemik türlerdir."
+  },
+  {
+   "id": "kokboya",
+   "tr": "Kök boya",
+   "la": "Rubia tinctorum",
+   "fam": "Rubiaceae",
+   "diger": "Kızılkök, madder, rubia",
+   "bolge": [
+    "anadolu"
+   ],
+   "kat": [
+    "ritual",
+    "sifa"
+   ],
+   "kisim": "Kök",
+   "kul": [
+    [
+     "Anadolu",
+     "Kökünden halı ve kilimlerin kırmızısı elde edilir; bu boya “Türk kırmızısı” adıyla dünyaya yayıldı. Halk arasında böbrek taşı için kaynatıldığı da olur."
+    ],
+    [
+     "Avrupa",
+     "18. yüzyılda Türk kırmızısı boyama tekniği Avrupa’da sırrı çözülmeye çalışılan bir sanayi bilgisiydi."
+    ]
+   ],
+   "haz": "Kök kurutulup öğütülür ve boya banyosunda kullanılır.",
+   "bilim": "Alizarin ve lusidin içerir. Lusidin genotoksiktir; bu nedenle kök boya ilaç olarak kullanılmamaktadır.",
+   "kanit": "geleneksel",
+   "guv": "orta",
+   "guvNot": "İçilmesi önerilmez; bazı bileşenleri hayvan çalışmalarında kansere yol açmıştır. İdrarı ve sütü kırmızıya boyar.",
+   "ilginc": "Kök boya yiyen hayvanların kemikleri pembeleşir; 18. yüzyılda kemik büyümesi bu yolla incelendi."
+  },
+  {
+   "id": "kina",
+   "tr": "Kına",
+   "la": "Lawsonia inermis",
+   "fam": "Lythraceae",
+   "diger": "Hınna, henna",
+   "bolge": [
+    "anadolu"
+   ],
+   "kat": [
+    "ritual",
+    "sifa"
+   ],
+   "kisim": "Yaprak",
+   "kul": [
+    [
+     "Anadolu",
+     "Kına gecesinde gelinin ellerine kına yakılır; askere gidenlere, kurbanlık koçlara da kına yakılır. Kına adanmışlığı ve vedayı simgeler."
+    ],
+    [
+     "Kuzey Afrika ve Güney Asya",
+     "Mehndi adıyla düğünlerde ellere ve ayaklara desenler çizilir."
+    ]
+   ],
+   "haz": "Kuru yaprak tozu su ya da limonla hamur yapılıp cilde ve saça sürülür.",
+   "bilim": "Rengini lavson adlı maddeden alır. Cildin üst katmanındaki keratine bağlanarak birkaç hafta kalır. Tıbbi kullanımlar için insan çalışması azdır.",
+   "kanit": "geleneksel",
+   "guv": "orta",
+   "guvNot": "Doğal kına genelde güvenlidir. “Siyah kına” denen ürünlere eklenen PPD boyası ağır alerji ve kalıcı iz bırakabilir. G6PD eksikliği olan bebeklerde kına kullanılmamalıdır.",
+   "ilginc": "Kına ile Amazon halklarının huito boyası iki kıtada aynı işi görür: bedeni boyayarak bir geçiş törenini işaretlemek."
+  },
+  {
+   "id": "gucigdemi",
+   "tr": "Güz çiğdemi",
+   "la": "Colchicum autumnale ve diğer türler",
+   "fam": "Colchicaceae",
+   "diger": "Acı çiğdem, kolşikum",
+   "bolge": [
+    "anadolu"
+   ],
+   "kat": [
+    "zehir",
+    "sifa"
+   ],
+   "kisim": "Soğan ve tohum (yalnızca ilaç sanayisi)",
+   "kul": [
+    [
+     "Anadolu",
+     "Halk arasında romatizma ve gut için kullanılmış, bu da zehirlenmelere yol açmıştır. Sonbaharda çayırlarda yapraksız açan pembe-mor çiçekleriyle bilinir."
+    ],
+    [
+     "Antik Anadolu",
+     "Adını, zehirli otlarıyla ünlü Kolhis (Doğu Karadeniz kıyıları) bölgesinden alır."
+    ]
+   ],
+   "haz": "Hiçbir şekilde ev ilacı olarak hazırlanmamalıdır.",
+   "bilim": "Bitkiden elde edilen kolşisin, gut ve Ailevi Akdeniz Ateşi’nin (FMF) bugün de temel ilacıdır. Ancak bitkideki miktar ayarlanamadığı için bitki kendisi ölümcüldür.",
+   "kanit": "klinik",
+   "guv": "yuksek",
+   "guvNot": "Bütün bitki ölümcül zehirlidir. Yaprakları yabani sarımsak ya da pırasaya, çiçekleri safrana benzetilerek zehirlenmeler yaşanır. Belirtiler saatler sonra başlar.",
+   "ilginc": "Türkiye’de sık görülen Ailevi Akdeniz Ateşi’nin (FMF) ilacı kolşisin, bu çiçekten keşfedilmiştir."
+  },
+  {
+   "id": "tatula",
+   "tr": "Tatula",
+   "la": "Datura stramonium",
+   "fam": "Solanaceae",
+   "diger": "Boru çiçeği, şeytan elması, jimsonweed, chamico",
+   "bolge": [
+    "anadolu",
+    "and",
+    "kamerika"
+   ],
+   "kat": [
+    "zehir",
+    "ritual"
+   ],
+   "kisim": "Yaprak, tohum (toplanmamalı)",
+   "kul": [
+    [
+     "Anadolu",
+     "Eskiden astım için yaprakları sigara gibi içilirdi. Tohumlarının yanlışlıkla yenmesiyle çocuklarda zehirlenmeler görülür."
+    ],
+    [
+     "And ve Kuzey Amerika",
+     "And’larda chamico adıyla büyü ve kehanet törenlerinde, Kuzey Amerika’da bazı yerli halkların erginlik törenlerinde kullanılmıştır."
+    ]
+   ],
+   "haz": "Hazırlanması ve kullanılması önerilmez.",
+   "bilim": "Atropin, hiyosiyamin ve skopolamin içerir. Etkisi toé ve banotu ile aynıdır.",
+   "kanit": "geleneksel",
+   "guv": "yuksek",
+   "guvNot": "Bütün bitki ölümcül zehirlidir. Sanrı, yüksek ateş, kalp çarpıntısı ve koma yapabilir. Ergenlerde “doğal uyuşturucu” diye denenmesiyle ölümler bildirilmiştir.",
+   "ilginc": "İngilizce adı jimsonweed, 1676’da Virginia’daki Jamestown’da yemeklerine karışan bu bitki yüzünden günlerce kendinden geçen İngiliz askerlerinden gelir."
+  },
+  {
+   "id": "cehri",
+   "tr": "Cehri",
+   "la": "Rhamnus petiolaris ve diğer türler",
+   "fam": "Rhamnaceae",
+   "diger": "Boya dikeni, Persian berry",
+   "bolge": [
+    "anadolu"
+   ],
+   "kat": [
+    "ritual",
+    "sifa"
+   ],
+   "kisim": "Meyve, kabuk",
+   "kul": [
+    [
+     "Anadolu",
+     "Ham meyvelerinden halı ve kilimlerin canlı sarısı elde edilir; sarı, çivitle karıştırılınca yeşil olur. Kabuğu halk arasında müshil olarak kullanılır."
+    ],
+    [
+     "Avrupa",
+     "Akrabası Rhamnus cathartica ve kabuk (Frangula) uzun süre müshil olarak kullanıldı."
+    ]
+   ],
+   "haz": "Meyveler kurutulup boya banyosunda kullanılır.",
+   "bilim": "Antrakinon içerir; bunlar bağırsağı uyararak müshil etkisi yapar. EMA akrabası Frangula kabuğunu kısa süreli kabızlık için tanır.",
+   "kanit": "geleneksel",
+   "guv": "orta",
+   "guvNot": "Müshil etkisi güçlüdür; uzun süre kullanılırsa bağırsak tembelliği ve tuz kaybı yapar. Gebelikte kullanılmamalıdır.",
+   "ilginc": "Kilimlerdeki yeşilin çoğu tek bir boyadan değil, önce cehri sarısı sonra çivit mavisiyle iki kez boyanmasından gelir."
+  },
+  {
+   "id": "altinkok",
+   "tr": "Altın kök",
+   "la": "Rhodiola rosea",
+   "fam": "Crassulaceae",
+   "diger": "Kızıl kök, roseroot, arctic root",
+   "bolge": [
+    "asya"
+   ],
+   "kat": [
+    "sifa"
+   ],
+   "kisim": "Kök",
+   "kul": [
+    [
+     "Sibirya ve Altaylar",
+     "Altay halkları kökü güç ve uzun ömür için kullanır; eskiden çeyiz olarak verildiği anlatılır."
+    ],
+    [
+     "İskandinavya",
+     "Vikinglerin yorgunluğa karşı kullandığı rivayet edilir."
+    ]
+   ],
+   "haz": "Kök kurutulup demlenir ya da standart ekstre olarak alınır.",
+   "bilim": "Rosavin ve salidrozit içerir. Yorgunluk ve hafif depresyon üzerine küçük kontrollü çalışmalar vardır; NCCIH kanıtın yetersiz olduğunu belirtir.",
+   "kanit": "sinirli",
+   "guv": "orta",
+   "guvNot": "Uykusuzluk ve huzursuzluk yapabilir. Antidepresanlarla birlikte kullanımı konusunda yeterli veri yoktur.",
+   "ilginc": "Kökü kesildiğinde gül gibi kokar; Latince adı rosea buradan gelir."
+  },
+  {
+   "id": "efedra",
+   "tr": "Efedra",
+   "la": "Ephedra sinica, E. major ve diğerleri",
+   "fam": "Ephedraceae",
+   "diger": "Ma huang, deniz üzümü, oman çayı",
+   "bolge": [
+    "asya",
+    "anadolu"
+   ],
+   "kat": [
+    "sifa",
+    "ritual",
+    "zehir"
+   ],
+   "kisim": "Yeşil sap",
+   "kul": [
+    [
+     "Asya",
+     "Çin tıbbında ma huang adıyla en az 2.000 yıldır astım, öksürük ve soğuk algınlığı için kullanılır."
+    ],
+    [
+     "Orta Asya",
+     "Zerdüştlerin kutsal içeceği haoma ve Hint Vedalarının somasının efedra olabileceği tartışılır."
+    ]
+   ],
+   "haz": "Sap kaynatılır; günümüzde yalnızca ilaç sanayisi kullanır.",
+   "bilim": "Efedrin ve psödoefedrin içerir; bunlar bronşları açar ve kalbi uyarır. ABD’de efedralı zayıflama ürünleri ciddi kalp sorunları nedeniyle 2004’te yasaklandı.",
+   "kanit": "klinik",
+   "guv": "yuksek",
+   "guvNot": "Tansiyonu ve kalp hızını tehlikeli artırabilir; inme, kalp krizi ve ölümler bildirilmiştir.",
+   "yasal": "Efedrin, uyuşturucu üretiminde kullanılabildiği için birçok ülkede denetlenen bir öncül maddedir.",
+   "ilginc": "Efedrin, 1885’te Japon kimyager Nagai Nagayoshi tarafından ma huangdan saflaştırıldı; bugün de soğuk algınlığı ilaçlarında bulunur."
+  },
+  {
+   "id": "kenevir",
+   "tr": "Kenevir",
+   "la": "Cannabis sativa",
+   "fam": "Cannabaceae",
+   "diger": "Kendir, hemp, marijuana",
+   "bolge": [
+    "asya",
+    "anadolu"
+   ],
+   "kat": [
+    "ritual",
+    "sifa",
+    "besin"
+   ],
+   "kisim": "Lif, tohum, çiçek",
+   "kul": [
+    [
+     "Orta Asya",
+     "Herodot, İskitlerin kenevir tohumlarını kızgın taşlara atıp dumanında yıkandığını anlatır; Altay’daki Pazırık kurganlarında kenevir tohumu dolu kaplar bulunmuştur."
+    ],
+    [
+     "Anadolu",
+     "Lifinden ip, çuval ve kumaş dokunur; tohumu kavrulup çerez olarak yenir. Kastamonu, Samsun ve Rize kendir dokumalarıyla bilinir."
+    ]
+   ],
+   "haz": "Lif için sapları suda çürütülür; tohum kavrulur ya da yağı çıkarılır.",
+   "bilim": "THC ve CBD gibi kannabinoidler içerir. Kannabinoid ilaçlar kemoterapi bulantısı ve bazı epilepsi türlerinde kullanılmak üzere onaylıdır. Kenevir kullanımı psikoz riski ve bağımlılıkla ilişkilidir.",
+   "kanit": "klinik",
+   "guv": "orta",
+   "guvNot": "THC içeren ürünler gençlerde psikoz riskini artırabilir ve bağımlılık yapar. Tohum ve lif güvenlidir.",
+   "yasal": "Birçok ülkede THC içeren ürünler yasaktır; bazı ülkelerde tıbbi ya da kişisel kullanım yasaldır.",
+   "ilginc": "Türkçe “kendir” ve “kenevir” aynı köktendir; kenevir kelimesi Avrupa dillerine (cannabis, hemp) de bu eski kökten geçmiştir."
+  },
+  {
+   "id": "cay",
+   "tr": "Çay",
+   "la": "Camellia sinensis",
+   "fam": "Theaceae",
+   "diger": "Yeşil çay, siyah çay, tea",
+   "bolge": [
+    "asya",
+    "anadolu"
+   ],
+   "kat": [
+    "besin",
+    "sifa",
+    "ritual"
+   ],
+   "kisim": "Yaprak",
+   "kul": [
+    [
+     "Asya",
+     "Çin’de binlerce yıldır içilir; Japon çay töreni bir meditasyon pratiği olarak gelişmiştir."
+    ],
+    [
+     "Anadolu",
+     "Rize ve Doğu Karadeniz’de 1940’lardan beri yetiştirilir. Türkiye, kişi başı çay tüketiminde dünyada ilk sıralardadır; çay misafirliğin simgesidir."
+    ]
+   ],
+   "haz": "Yaprak kaynamış suyla demlenir; yeşil çay daha düşük ısıda demlenir.",
+   "bilim": "Kafein, L-teanin ve kateşinler içerir. Gözlem çalışmalarında düzenli çay içimi kalp-damar hastalıklarında daha düşük riskle ilişkilidir; yeşil çay ekstresinin zayıflatıcı etkisi küçüktür.",
+   "kanit": "sinirli",
+   "guv": "dusuk",
+   "guvNot": "İçecek olarak güvenlidir. Yüksek doz yeşil çay ekstresi kapsülleri karaciğer hasarı vakalarıyla ilişkilendirilmiştir. Çok sıcak içilmesi yemek borusu için risklidir.",
+   "ilginc": "Doğu Karadeniz’de çay, toprağı asitli ve yağışlı olduğu için tutundu; ilk fidanlar Rize’ye Gürcistan’dan getirildi."
+  },
+  {
+   "id": "isgin",
+   "tr": "Işgın",
+   "la": "Rheum ribes",
+   "fam": "Polygonaceae",
+   "diger": "Uçkun, yabani ravent, rhubarb",
+   "bolge": [
+    "anadolu",
+    "asya"
+   ],
+   "kat": [
+    "besin",
+    "sifa"
+   ],
+   "kisim": "Gövde (sap), kök",
+   "kul": [
+    [
+     "Doğu Anadolu",
+     "Baharın ilk günlerinde toplanan sapları soyulup tuzla çiğ yenir; ekşi tadıyla Van, Bitlis ve Hakkâri’nin bahar sofrasının parçasıdır. Kökü halk arasında müshil olarak kullanılır."
+    ],
+    [
+     "İran ve Orta Asya",
+     "Kökü ve sapları şeker ve sindirim şikâyetleri için kullanılır."
+    ]
+   ],
+   "haz": "Saplar soyulup çiğ yenir, turşusu ya da reçeli yapılır.",
+   "bilim": "Kökü antrakinon içerir ve müshil etkisi vardır. EMA akrabası Çin raventi (Rheum palmatum) kökünü kısa süreli kabızlık için tanır.",
+   "kanit": "geleneksel",
+   "guv": "orta",
+   "guvNot": "Yapraklar yüksek oranda okzalik asit içerir ve zehirlidir; yalnızca sap yenir. Böbrek taşı olanlar dikkatli olmalıdır.",
+   "ilginc": "Işgın Doğu Anadolu’da baharın simgesidir; mevsiminde yollarda demet demet satılır."
+  },
+  {
+   "id": "zerdecal",
+   "tr": "Zerdeçal",
+   "la": "Curcuma longa",
+   "fam": "Zingiberaceae",
+   "diger": "Hint safranı, turmeric, cúrcuma",
+   "bolge": [
+    "asya"
+   ],
+   "kat": [
+    "besin",
+    "sifa",
+    "ritual"
+   ],
+   "kisim": "Rizom (kök sap)",
+   "kul": [
+    [
+     "Güney Asya",
+     "Hindistan’da düğünlerden önce gelin ve damadın bedenine zerdeçal sürülür (haldi töreni). Ayurveda’da iltihap ve sindirim için kullanılır."
+    ],
+    [
+     "Anadolu",
+     "Zerde tatlısına ve pilavlara renk vermek için safranın ucuz ikamesi olarak kullanılır."
+    ]
+   ],
+   "haz": "Kök kurutulup öğütülür; karabiber ve yağla birlikte alındığında emilimi artar.",
+   "bilim": "Kurkumin içerir. Bazı küçük çalışmalarda diz kireçlenmesi ağrısında fayda görülmüştür; NCCIH çoğu iddia için kanıtın zayıf olduğunu belirtir. Kurkumin vücutta zayıf emilir.",
+   "kanit": "sinirli",
+   "guv": "orta",
+   "guvNot": "Baharat olarak güvenlidir. Yüksek doz kapsüllerle karaciğer hasarı vakaları bildirilmiştir. Kan sulandırıcılarla etkileşebilir; safra taşı olanlar dikkatli olmalıdır.",
+   "ilginc": "Ucuz zerdeçalın rengini canlandırmak için kurşun kromat boyası katıldığı ortaya çıkmış; Bangladeş’te bu yüzden kurşun zehirlenmeleri yaşanmıştır."
+  },
+  {
+   "id": "yabaniigde",
+   "tr": "Yaban iğdesi",
+   "la": "Hippophae rhamnoides",
+   "fam": "Elaeagnaceae",
+   "diger": "Deniz topalak, sea buckthorn, chatsargana (Moğolca)",
+   "bolge": [
+    "asya",
+    "anadolu"
+   ],
+   "kat": [
+    "besin",
+    "sifa"
+   ],
+   "kisim": "Meyve, yağ",
+   "kul": [
+    [
+     "Orta Asya ve Sibirya",
+     "Moğolistan ve Tibet’te meyvesi kış için saklanır; yağı yanık ve yaralara sürülür."
+    ],
+    [
+     "Anadolu",
+     "Erzurum, Kars ve Artvin’de dere kenarlarında yetişir; meyvesinden reçel ve şurup yapılır."
+    ]
+   ],
+   "haz": "Meyveler dondurulup toplanır; suyu sıkılır, yağı çekilir.",
+   "bilim": "C vitamini, karotenoitler ve doymamış yağ asitleri bakımından zengindir. Kuru göz ve cilt üzerine küçük çalışmalar vardır.",
+   "kanit": "sinirli",
+   "guv": "dusuk",
+   "guvNot": "Yiyecek olarak güvenlidir.",
+   "ilginc": "Bir rivayete göre Antik Yunan’da bu çalının yapraklarını yiyen atların tüyleri parlardı; Latince adı “parlayan at” anlamına gelir."
+  },
+  {
+   "id": "ginseng",
+   "tr": "Ginseng",
+   "la": "Panax ginseng",
+   "fam": "Araliaceae",
+   "diger": "Kore ginsengi, insan kökü",
+   "bolge": [
+    "asya"
+   ],
+   "kat": [
+    "sifa",
+    "ritual"
+   ],
+   "kisim": "Kök",
+   "kul": [
+    [
+     "Doğu Asya",
+     "Çin ve Kore’de 2.000 yıldır güç, uzun ömür ve yaşlılık için kullanılır; insana benzeyen kökler en değerli sayılır."
+    ],
+    [
+     "Sibirya",
+     "Ussuri bölgesinde yabani ginseng arayan avcılar, kökü buldukları yerde dua eder ve kırmızı iple işaretlerdi."
+    ]
+   ],
+   "haz": "Kök kurutulur ya da buharda pişirilerek “kırmızı ginseng” yapılır; çay ya da ekstre olarak kullanılır.",
+   "bilim": "Ginsenozitler içerir. Bazı çalışmalarda kan şekeri ve bağışıklık üzerinde küçük etkiler bulunmuştur; NCCIH kanıtın sınırlı olduğunu belirtir.",
+   "kanit": "sinirli",
+   "guv": "orta",
+   "guvNot": "Uykusuzluk yapabilir. Kan sulandırıcılar ve şeker ilaçlarıyla etkileşebilir.",
+   "ilginc": "Adamotu gibi ginseng de insan biçimli kökü nedeniyle kutsal sayılır; iki uzak kültür aynı biçime aynı gücü yüklemiş."
+  },
+  {
+   "id": "huito",
+   "tr": "Huito",
+   "la": "Genipa americana",
+   "fam": "Rubiaceae",
+   "diger": "Jagua, genipapo",
+   "bolge": [
+    "amazon"
+   ],
+   "kat": [
+    "ritual",
+    "besin",
+    "sifa"
+   ],
+   "kisim": "Ham meyve",
+   "kul": [
+    [
+     "Amazon",
+     "Ham meyvenin suyu bedene sürülür; birkaç saat içinde lacivert-siyaha döner ve iki hafta kalır. Törenlerde, avda ve korunmak için desenler çizilir."
+    ],
+    [
+     "Amazon",
+     "Olgun meyvesi yenir, şerbeti ve likörü yapılır."
+    ]
+   ],
+   "haz": "Ham meyve rendelenir ve suyu sıkılır; suyla çizilen desen birkaç saatte koyulaşır.",
+   "bilim": "Rengini genipin adlı maddeden alır; genipin derideki proteinlerle tepkimeye girerek mavi-siyah renk oluşturur. Bugün gıda boyası olarak da kullanılıyor.",
+   "kanit": "geleneksel",
+   "guv": "dusuk",
+   "guvNot": "Genelde güvenlidir; nadiren alerji yapabilir.",
+   "ilginc": "Anadolu’da kına, Amazon’da huito: iki kıtada bedeni geçici olarak boyamak törenin parçası."
+  },
+  {
+   "id": "guarana",
+   "tr": "Guaraná",
+   "la": "Paullinia cupana",
+   "fam": "Sapindaceae",
+   "diger": "Warana",
+   "bolge": [
+    "amazon"
+   ],
+   "kat": [
+    "besin",
+    "ritual",
+    "sifa"
+   ],
+   "kisim": "Tohum",
+   "kul": [
+    [
+     "Amazon",
+     "Sateré-Mawé halkı tohumları kavurup macun yapar, kurutup çubuk hâline getirir; çubuk balık dilinden yapılmış bir törpüyle rendelenip suya karıştırılır."
+    ],
+    [
+     "Brezilya",
+     "Bugün Brezilya’nın en çok satılan gazlı içeceklerinden birine adını verir."
+    ]
+   ],
+   "haz": "Tohum kavrulup toz edilir ve suyla içilir.",
+   "bilim": "Tohumlarında kahve çekirdeğinden daha yüksek oranda kafein bulunur. Dikkat ve yorgunluk üzerine küçük çalışmalar vardır.",
+   "kanit": "sinirli",
+   "guv": "orta",
+   "guvNot": "Yüksek kafein içerir; kalp ritmi sorunları, kaygı ve uykusuzluk yaşayanlar dikkatli olmalıdır. Enerji içeceklerinde başka uyarıcılarla birleşebilir.",
+   "ilginc": "Sateré-Mawé efsanesine göre ilk guaraná, öldürülen bir çocuğun gözlerinden yeşermiştir; açılan meyve gerçekten göze benzer."
+  },
+  {
+   "id": "camucamu",
+   "tr": "Camu camu",
+   "la": "Myrciaria dubia",
+   "fam": "Myrtaceae",
+   "diger": "Cacari, camu-camu",
+   "bolge": [
+    "amazon"
+   ],
+   "kat": [
+    "besin",
+    "sifa"
+   ],
+   "kisim": "Meyve",
+   "kul": [
+    [
+     "Amazon",
+     "Peru Amazonu’nda nehir kıyısındaki çalılardan kayıkla toplanır; suyu ve dondurması yapılır."
+    ],
+    [
+     "Peru bugün",
+     "Toz hâlinde C vitamini kaynağı olarak dünyaya ihraç edilir."
+    ]
+   ],
+   "haz": "Meyve suyu sıkılır ya da kurutulup toz yapılır.",
+   "bilim": "Bilinen en yüksek C vitamini içeren meyvelerdendir; portakalın kat kat üzerinde. Küçük bir çalışmada sigara içenlerde oksidatif stres göstergelerini azalttığı bildirilmiştir.",
+   "kanit": "sinirli",
+   "guv": "dusuk",
+   "guvNot": "Yiyecek olarak güvenlidir.",
+   "ilginc": "Anadolu’nun kuşburnu ile Amazon’un camu camusu, iki kıtanın C vitamini deposu sayılır."
+  },
+  {
+   "id": "acai",
+   "tr": "Açaí",
+   "la": "Euterpe oleracea",
+   "fam": "Arecaceae",
+   "diger": "Açaí palmiyesi, huasaí",
+   "bolge": [
+    "amazon"
+   ],
+   "kat": [
+    "besin"
+   ],
+   "kisim": "Meyve",
+   "kul": [
+    [
+     "Amazon",
+     "Brezilya’nın Pará eyaletinde açaí lapası balık ve manyok unuyla günlük ana yemektir."
+    ],
+    [
+     "Bugün",
+     "Dondurulmuş açaí kâseleri dünya genelinde “süper gıda” olarak pazarlanıyor."
+    ]
+   ],
+   "haz": "Meyve ılık suda yumuşatılıp ezilir ve süzülür; hemen tüketilmelidir.",
+   "bilim": "Antosiyanin bakımından zengindir. NCCIH, kilo verme ve diğer sağlık iddiaları için güvenilir kanıt bulunmadığını belirtir.",
+   "kanit": "geleneksel",
+   "guv": "dusuk",
+   "guvNot": "Taze işlenmiş meyve doğru hijyenle hazırlanmazsa Chagas hastalığı bulaşabilir; Brezilya’da bu yolla vakalar bildirilmiştir.",
+   "ilginc": "Açaí’ye olan küresel talep, Amazon nehir ağzındaki köylerin geçim kaynağını ve ormanın yapısını değiştirdi."
+  },
+  {
+   "id": "yopo",
+   "tr": "Yopo",
+   "la": "Anadenanthera peregrina",
+   "fam": "Fabaceae",
+   "diger": "Cohoba, paricá; akrabası vilca (A. colubrina)",
+   "bolge": [
+    "amazon",
+    "and"
+   ],
+   "kat": [
+    "ritual",
+    "zehir"
+   ],
+   "kisim": "Tohum",
+   "kul": [
+    [
+     "Amazon ve Orinoko",
+     "Kavrulmuş tohum tozu, bir kemik boruyla burna üflenir; şamanlar ruhlarla iletişim ve şifa için kullanır."
+    ],
+    [
+     "And",
+     "Akrabası vilca, And’larda en az 4.000 yıllık arkeolojik buluntularda enfiye takımlarıyla birlikte bulunur."
+    ]
+   ],
+   "haz": "Tohumlar kavrulur, ezilir ve kireçle karıştırılarak enfiye yapılır.",
+   "bilim": "Bufotenin, DMT ve 5-MeO-DMT içerir. Etkileri kısa ve yoğundur; insan üzerinde kontrollü çalışma yoktur.",
+   "kanit": "geleneksel",
+   "guv": "yuksek",
+   "guvNot": "Kusma, kalp hızlanması ve tansiyon yükselmesi yapabilir. Kalp hastalığı ve psikiyatrik geçmişi olanlar için tehlikelidir.",
+   "yasal": "İçerdiği DMT ve bufotenin birçok ülkede kontrollü maddedir.",
+   "ilginc": "Kolomb’un yanındaki rahip Ramón Pané, Karayipler’deki Taíno halkının cohoba törenini anlatan ilk Avrupalıdır; cohoba bu bitkiden yapılıyordu."
+  },
+  {
+   "id": "chiricsanango",
+   "tr": "Chiric sanango",
+   "la": "Brunfelsia grandiflora",
+   "fam": "Solanaceae",
+   "diger": "Manaka",
+   "bolge": [
+    "amazon"
+   ],
+   "kat": [
+    "ritual",
+    "zehir",
+    "sifa"
+   ],
+   "kisim": "Kök",
+   "kul": [
+    [
+     "Amazon",
+     "Peru Amazonu’nda şifacıların “öğretmen bitkileri” arasındadır. Kökü romatizma ve soğuk kaynaklı ağrılar için içilir; adı Ketçuacada “üşüten” anlamına gelir."
+    ],
+    [
+     "Amazon",
+     "Bazı ayahuasca hazırlıklarına katıldığı bildirilir."
+    ]
+   ],
+   "haz": "Kök kabuğu alkolde ya da suda bekletilir.",
+   "bilim": "Skopoletin ve bazı alkaloitler içerir. Laboratuvarda iltihap giderici etkiler görülmüştür; insan çalışması yoktur. Brunfelsia türleri hayvanlarda nöbetlere yol açar.",
+   "kanit": "geleneksel",
+   "guv": "yuksek",
+   "guvNot": "Titreme, üşüme, kas seğirmesi ve nöbet yapabilir. Köpekler için bilinen ölümcül zehirlenmeler vardır.",
+   "ilginc": "Çiçekleri mor açar, sonra açık mora ve beyaza döner; İngilizcede bu yüzden “dün, bugün ve yarın” bitkisi denir."
+  },
+  {
+   "id": "kinoa",
+   "tr": "Kinoa",
+   "la": "Chenopodium quinoa",
+   "fam": "Amaranthaceae",
+   "diger": "Quinua, kinva",
+   "bolge": [
+    "and"
+   ],
+   "kat": [
+    "besin",
+    "ritual"
+   ],
+   "kisim": "Tohum",
+   "kul": [
+    [
+     "And",
+     "İnkalar kinoaya “ana tohum” (chisaya mama) derdi; ekim mevsiminin ilk tohumunu imparatorun altın bir kazmayla ektiği anlatılır."
+    ],
+    [
+     "And bugün",
+     "Titikaka Gölü çevresinde çorba, ekmek ve içeceklerde temel besindir."
+    ]
+   ],
+   "haz": "Tohumlar acı saponinlerden arınması için iyice yıkanıp haşlanır.",
+   "bilim": "Bütün temel amino asitleri içeren, glütensiz bir tohumdur. Tıbbi iddialar için insan çalışması sınırlıdır.",
+   "kanit": "geleneksel",
+   "guv": "dusuk",
+   "guvNot": "Yiyecek olarak güvenlidir. İyi yıkanmazsa saponinler mideyi rahatsız edebilir.",
+   "ilginc": "Kinoa, Anadolu’da yabani olarak yetişen sirken otunun (Chenopodium album) yakın akrabasıdır."
+  },
+  {
+   "id": "kantuta",
+   "tr": "Kantuta",
+   "la": "Cantua buxifolia",
+   "fam": "Polemoniaceae",
+   "diger": "İnkaların kutsal çiçeği, qantu",
+   "bolge": [
+    "and"
+   ],
+   "kat": [
+    "ritual",
+    "sifa"
+   ],
+   "kisim": "Çiçek, yaprak",
+   "kul": [
+    [
+     "And",
+     "İnkaların kutsal çiçeğidir; törenlerde yollara serilir ve Güneş’e sunulurdu. Bugün Peru’nun ve Bolivya’nın ulusal çiçeğidir."
+    ],
+    [
+     "And halk tıbbı",
+     "Yaprakları öksürük ve sarılık için demlenir."
+    ]
+   ],
+   "haz": "Çiçek ve yaprak demlenir.",
+   "bilim": "Tıbbi kullanımları üzerine bilimsel çalışma çok azdır.",
+   "kanit": "geleneksel",
+   "guv": "dusuk",
+   "guvNot": "Bilinen ciddi bir zehirliliği yoktur, ama tıbbi kullanım için güvenlik verisi de yoktur.",
+   "ilginc": "Bolivya bayrağının üç rengi (kırmızı, sarı, yeşil), kantuta çiçeğinin renkleriyle ilişkilendirilir."
+  },
+  {
+   "id": "yacon",
+   "tr": "Yacón",
+   "la": "Smallanthus sonchifolius",
+   "fam": "Asteraceae",
+   "diger": "Yer elması (And), llaqon",
+   "bolge": [
+    "and"
+   ],
+   "kat": [
+    "besin",
+    "sifa"
+   ],
+   "kisim": "Kök yumru",
+   "kul": [
+    [
+     "And",
+     "Tatlı ve sulu yumrusu meyve gibi çiğ yenir; yolculukta susuzluğu giderir. Yaprakları halk arasında şeker için demlenir."
+    ],
+    [
+     "And",
+     "Arkeolojik kazılarda Moche ve Nazca dönemine ait seramiklerde yacón tasvirleri bulunmuştur."
+    ]
+   ],
+   "haz": "Yumru çiğ yenir ya da şurubu yapılır.",
+   "bilim": "Fruktooligosakkarit (FOS) bakımından zengindir; bu lifler kan şekerini az yükseltir. Küçük çalışmalarda kabızlıkta fayda görülmüştür.",
+   "kanit": "sinirli",
+   "guv": "dusuk",
+   "guvNot": "Yiyecek olarak güvenlidir. Fazlası gaz ve şişkinlik yapar. Yaprak çayının uzun süreli güvenliği bilinmez.",
+   "ilginc": "Yacón yumruları hasattan sonra birkaç gün güneşte bekletilince daha da tatlanır."
+  },
+  {
+   "id": "sachainchi",
+   "tr": "Sacha inchi",
+   "la": "Plukenetia volubilis",
+   "fam": "Euphorbiaceae",
+   "diger": "Orman fıstığı, İnka fıstığı",
+   "bolge": [
+    "amazon"
+   ],
+   "kat": [
+    "besin"
+   ],
+   "kisim": "Tohum",
+   "kul": [
+    [
+     "Amazon",
+     "Peru Amazonu’nda kavrulmuş tohumlar yenir, yağı çıkarılır; bazı halklar yağı cilde sürer."
+    ],
+    [
+     "Peru bugün",
+     "Omega-3 kaynağı olarak dünyaya ihraç edilir."
+    ]
+   ],
+   "haz": "Tohumlar mutlaka kavrularak yenir.",
+   "bilim": "Alfa-linolenik asit (omega-3) ve protein bakımından zengindir. Küçük bir çalışmada kolesterolde hafif iyileşme bildirilmiştir.",
+   "kanit": "sinirli",
+   "guv": "orta",
+   "guvNot": "Çiğ tohumlar ve yapraklar zehirli alkaloitler içerebilir; yalnızca kavrulmuş tohum yenmelidir.",
+   "ilginc": "Meyvesi yıldız biçimlidir; bu yüzden “yıldız fıstığı” diye de anılır."
+  },
+  {
+   "id": "molle",
+   "tr": "Molle",
+   "la": "Schinus molle",
+   "fam": "Anacardiaceae",
+   "diger": "Peru biber ağacı, pembe biber",
+   "bolge": [
+    "and"
+   ],
+   "kat": [
+    "ritual",
+    "sifa",
+    "besin"
+   ],
+   "kisim": "Meyve, yaprak, reçine",
+   "kul": [
+    [
+     "And",
+     "İnkalar molle meyvelerinden mayalanmış bir içki (chicha de molle) yapardı. Yaprakları limpia törenlerinde bedene sürülür, romatizma için banyoya konur."
+    ],
+    [
+     "And",
+     "Wari döneminde Cerro Baúl’da büyük ölçekli molle birası üretimi yapıldığı arkeolojik olarak belgelenmiştir."
+    ]
+   ],
+   "haz": "Meyveler suda bekletilip mayalandırılır; yapraklar kaynatılıp banyo suyuna katılır.",
+   "bilim": "Yaprak yağı laboratuvarda antibakteriyel ve böcek kovucu etki gösterir. İnsan çalışması yoktur.",
+   "kanit": "geleneksel",
+   "guv": "orta",
+   "guvNot": "Meyveler fazla yenirse mideyi bozabilir. Kaju ve mango alerjisi olanlarda alerji yapabilir.",
+   "ilginc": "Pembe biber diye satılan baharat bu ağacın meyvesidir; gerçek biberle akraba değildir."
+  },
+  {
+   "id": "copaiba",
+   "tr": "Copaiba",
+   "la": "Copaifera officinalis, C. langsdorffii",
+   "fam": "Fabaceae",
+   "diger": "Copaiba balsamı, kupayiwa",
+   "bolge": [
+    "amazon"
+   ],
+   "kat": [
+    "sifa"
+   ],
+   "kisim": "Gövde reçinesi (yağ)",
+   "kul": [
+    [
+     "Amazon",
+     "Gövdeye açılan delikten akan yağlı reçine yaralara, cilt hastalıklarına ve boğaz ağrısına sürülür; birkaç damla içilir."
+    ],
+    [
+     "Avrupa",
+     "17. yüzyıldan itibaren Avrupa eczanelerinde idrar yolu iltihapları için kullanıldı."
+    ]
+   ],
+   "haz": "Reçine doğrudan sürülür ya da birkaç damla alınır.",
+   "bilim": "Beta-karyofilen gibi seskiterpenler içerir. Laboratuvar ve hayvan çalışmalarında iltihap giderici ve yara iyileştirici etkiler görülmüştür; insan çalışması azdır.",
+   "kanit": "sinirli",
+   "guv": "orta",
+   "guvNot": "İçilmesi mide bulantısı ve ishal yapabilir. Ciltte alerji yapabilir.",
+   "ilginc": "Bir copaiba ağacı yıllarca, ağaca zarar vermeden reçine verebilir; bu yüzden sürdürülebilir orman ürünlerinin örneği sayılır."
+  },
+  {
+   "id": "andiroba",
+   "tr": "Andiroba",
+   "la": "Carapa guianensis",
+   "fam": "Meliaceae",
+   "diger": "Crabwood, tangare",
+   "bolge": [
+    "amazon"
+   ],
+   "kat": [
+    "sifa"
+   ],
+   "kisim": "Tohum yağı, kabuk",
+   "kul": [
+    [
+     "Amazon",
+     "Tohumlarından elde edilen acı yağ, böcek ısırıkları, eklem ağrıları ve yaralar için sürülür; sivrisinek kovucu olarak kullanılır."
+    ],
+    [
+     "Amazon",
+     "Yağ, mumlarla karıştırılıp sivrisinek kovucu mum yapılır."
+    ]
+   ],
+   "haz": "Tohumlar kaynatılıp birkaç hafta bekletilir, sonra yağ süzülür.",
+   "bilim": "Limonoitler içerir. Laboratuvarda böcek kovucu ve iltihap giderici etkiler görülmüştür; insan çalışması azdır.",
+   "kanit": "geleneksel",
+   "guv": "dusuk",
+   "guvNot": "Haricen genelde güvenlidir. İçilmez.",
+   "ilginc": "Andiroba, nem ve böceklere dayanıklı odunu nedeniyle Amazon’da “orman maunu” olarak da bilinir."
+  },
+  {
+   "id": "abuta",
+   "tr": "Abuta",
+   "la": "Cissampelos pareira",
+   "fam": "Menispermaceae",
+   "diger": "Ebelerin otu, barbasco",
+   "bolge": [
+    "amazon"
+   ],
+   "kat": [
+    "sifa",
+    "zehir"
+   ],
+   "kisim": "Kök, yaprak",
+   "kul": [
+    [
+     "Amazon",
+     "Peru ve Brezilya’da “ebelerin otu” olarak bilinir; adet sancısı, doğum sonrası kanama ve kadın sağlığı için kullanılır."
+    ],
+    [
+     "Amazon",
+     "Bazı akraba türler ok zehirlerinde (curare) kullanılmıştır."
+    ]
+   ],
+   "haz": "Kök kaynatılır.",
+   "bilim": "Tetrandrin benzeri izokinolin alkaloitleri içerir. Laboratuvar ve hayvan çalışmalarında kas gevşetici ve iltihap giderici etkiler görülmüştür; insan çalışması yoktur.",
+   "kanit": "geleneksel",
+   "guv": "orta",
+   "guvNot": "Rahim üzerinde etkili olabilir; gebelikte kullanılmamalıdır. Tansiyonu düşürebilir.",
+   "ilginc": "Curare ok zehiri hazırlığında kullanılan bitkilerin bir kısmı abuta ile aynı familyadandır."
+  },
+  {
+   "id": "aguaymanto",
+   "tr": "Altın çilek",
+   "la": "Physalis peruviana",
+   "fam": "Solanaceae",
+   "diger": "Aguaymanto, Peru çileği, goldenberry",
+   "bolge": [
+    "and"
+   ],
+   "kat": [
+    "besin",
+    "sifa"
+   ],
+   "kisim": "Meyve",
+   "kul": [
+    [
+     "And",
+     "Kâğıt gibi bir kılıfın içindeki turuncu meyvesi taze yenir; halk arasında göz ve boğaz için iyi sayılır."
+    ],
+    [
+     "Türkiye",
+     "Son yıllarda “altın çilek” adıyla Türkiye’de de yetiştirilip satılıyor."
+    ]
+   ],
+   "haz": "Meyve taze ya da kurutulmuş olarak yenir.",
+   "bilim": "Karotenoit ve C vitamini içerir. Tıbbi iddialar için insan çalışması yoktur.",
+   "kanit": "geleneksel",
+   "guv": "orta",
+   "guvNot": "Olgun meyve güvenlidir. Ham meyve, yaprak ve kılıf zehirli solanin içerir.",
+   "ilginc": "Anadolu’da kendiliğinden yetişen güvey feneri (Physalis alkekengi) ile akrabadır."
+  },
+  {
+   "id": "pauarco",
+   "tr": "Pau d’arco",
+   "la": "Handroanthus impetiginosus",
+   "fam": "Bignoniaceae",
+   "diger": "Tahibo, lapacho, pembe trompet ağacı",
+   "bolge": [
+    "amazon"
+   ],
+   "kat": [
+    "sifa"
+   ],
+   "kisim": "İç kabuk",
+   "kul": [
+    [
+     "Amazon ve Güney Amerika",
+     "İç kabuğu ateş, enfeksiyonlar ve cilt hastalıkları için kaynatılır."
+    ],
+    [
+     "Bugün",
+     "Kanser tedavisi iddiasıyla pazarlanmış, bu iddialar kanıtlanmamıştır."
+    ]
+   ],
+   "haz": "İç kabuk kaynatılır.",
+   "bilim": "Lapakol içerir. 1970’lerde kanser için yapılan bir çalışma, etkili dozun zehirli yan etkilere yol açması nedeniyle durduruldu.",
+   "kanit": "geleneksel",
+   "guv": "orta",
+   "guvNot": "Yüksek doz bulantı, kusma ve kanamaya yol açabilir. Kan sulandırıcılarla kullanılmamalıdır.",
+   "ilginc": "Kuru mevsimde yapraksız dallarını pembe çiçeklerle kaplayan ağaç, Brezilya ve Paraguay’ın ulusal ağaçları arasındadır."
+  },
+  {
+   "id": "ekinezya",
+   "tr": "Ekinezya",
+   "la": "Echinacea purpurea, E. angustifolia",
+   "fam": "Asteraceae",
+   "diger": "Kirpi otu, purple coneflower",
+   "bolge": [
+    "kamerika"
+   ],
+   "kat": [
+    "sifa"
+   ],
+   "kisim": "Kök, çiçekli toprak üstü kısım",
+   "kul": [
+    [
+     "Kuzey Amerika",
+     "Büyük Ovalar halkları kökünü yılan ısırığı, diş ağrısı ve yaralar için çiğner ya da sürerdi."
+    ],
+    [
+     "Bugün",
+     "Avrupa ve Türkiye’de soğuk algınlığı için en çok satılan bitkisel ürünlerdendir."
+    ]
+   ],
+   "haz": "Kök ya da çiçekli dallar demlenir; standart ekstreler kullanılır.",
+   "bilim": "NCCIH’e göre soğuk algınlığını önlemede ya da kısaltmada küçük bir etkisi olabilir, ama sonuçlar tutarsızdır. EMA E. purpurea toprak üstü kısmını soğuk algınlığının kısa süreli tedavisi için tanır.",
+   "kanit": "sinirli",
+   "guv": "dusuk",
+   "guvNot": "Papatyagil alerjisi olanlarda alerji yapabilir. Otoimmün hastalığı olanlar dikkatli olmalıdır.",
+   "ilginc": "Çiçeğinin ortasındaki dikenli koni kirpiyi andırır; Latince adı Yunanca kirpi (ekhinos) kelimesinden gelir."
+  },
+  {
+   "id": "peyote",
+   "tr": "Peyote",
+   "la": "Lophophora williamsii",
+   "fam": "Cactaceae",
+   "diger": "Peyotl, hikuli",
+   "bolge": [
+    "kamerika"
+   ],
+   "kat": [
+    "ritual",
+    "zehir"
+   ],
+   "kisim": "Gövde (düğme)",
+   "kul": [
+    [
+     "Kuzey Amerika",
+     "Meksika’da Huichol (Wixárika) halkı her yıl Wirikuta çölüne peyote hacına gider. ABD ve Kanada’da Native American Church törenlerinde kutsal bitki olarak kullanılır."
+    ],
+    [
+     "Tarih",
+     "Teksas’taki mağaralarda yaklaşık 5.700 yıllık peyote örnekleri bulunmuştur."
+    ]
+   ],
+   "haz": "Gövdenin tepesi (düğme) kurutulup çiğnenir ya da çayı yapılır.",
+   "bilim": "Meskalin içerir. San Pedro ile aynı etken maddeyi taşır. Kontrollü klinik çalışma çok azdır.",
+   "kanit": "geleneksel",
+   "guv": "yuksek",
+   "guvNot": "Şiddetli bulantı, kusma, kalp hızlanması ve psikiyatrik riskler taşır.",
+   "yasal": "Meskalin birçok ülkede kontrollü maddedir. ABD’de Native American Church üyelerinin dini kullanımı yasal olarak korunur.",
+   "ilginc": "Bir peyote kaktüsünün çiçek açacak büyüklüğe ulaşması 10 yıldan fazla sürebilir."
+  },
+  {
+   "id": "karayilan",
+   "tr": "Karayılan otu",
+   "la": "Actaea racemosa",
+   "fam": "Ranunculaceae",
+   "diger": "Black cohosh, yılan kökü; eski adı Cimicifuga racemosa",
+   "bolge": [
+    "kamerika"
+   ],
+   "kat": [
+    "sifa"
+   ],
+   "kisim": "Kök ve rizom",
+   "kul": [
+    [
+     "Kuzey Amerika",
+     "Cherokee ve diğer yerli halklar kökünü kadın sağlığı, romatizma ve yılan ısırığı için kullanırdı."
+    ],
+    [
+     "Bugün",
+     "Avrupa’da menopoz belirtileri için en çok kullanılan bitkisel ilaçlardandır."
+    ]
+   ],
+   "haz": "Standart kök ekstresi olarak kullanılır.",
+   "bilim": "EMA, kök ekstresini sıcak basması gibi menopoz belirtileri için iyi yerleşmiş kullanımda tanır. NCCIH çalışmaların sonuçlarının tutarsız olduğunu belirtir.",
+   "kanit": "sinirli",
+   "guv": "orta",
+   "guvNot": "Nadir de olsa karaciğer hasarı vakaları bildirilmiştir; karaciğer hastalığı olanlar kullanmamalıdır.",
+   "ilginc": "Kokusu böcekleri uzaklaştırdığı için eski Latince adı Cimicifuga, “tahtakurusu kovan” anlamına gelir."
+  },
+  {
+   "id": "cucepalmiye",
+   "tr": "Cüce palmiye",
+   "la": "Serenoa repens",
+   "fam": "Arecaceae",
+   "diger": "Saw palmetto, testere palmiyesi",
+   "bolge": [
+    "kamerika"
+   ],
+   "kat": [
+    "sifa",
+    "besin"
+   ],
+   "kisim": "Meyve",
+   "kul": [
+    [
+     "Kuzey Amerika",
+     "Florida’daki Seminole halkı meyvesini besin olarak yerdi."
+    ],
+    [
+     "Bugün",
+     "Meyve ekstresi iyi huylu prostat büyümesine bağlı idrar şikâyetleri için yaygın olarak kullanılır."
+    ]
+   ],
+   "haz": "Meyve ekstresi kapsül olarak alınır.",
+   "bilim": "Büyük ve iyi tasarlanmış çalışmalar, cüce palmiye ekstresinin prostat büyümesine bağlı idrar belirtilerinde plasebodan üstün olmadığını göstermiştir. EMA bazı ekstreler için bu kullanımı tanır.",
+   "kanit": "sinirli",
+   "guv": "dusuk",
+   "guvNot": "Genelde güvenlidir; mide şikâyetleri yapabilir.",
+   "ilginc": "Ürünlerin çoğu Florida’da yabandan toplanan meyvelerden yapılır; toplama izne tabidir."
   }
  ],
  "BR": [
@@ -1619,6 +3191,47 @@
    "b": "kinin",
    "t": "Sıtmayı yenen iki gelenek",
    "d": "And’ların kınakına kabuğu ve Asya’nın pelin otu, modern sıtma tedavisinin iki temel taşı oldu."
+  },
+  {
+   "a": "kina",
+   "t": "Bedene yazılan boya",
+   "d": "Anadolu’da kına gecesinde ellere kına, Amazon’da törenlerde bedene huito sürülür. İki boya da birkaç hafta kalan geçici bir işarettir.",
+   "b": "huito"
+  },
+  {
+   "a": "kokboya",
+   "t": "Kırmızının iki kaynağı",
+   "d": "Anadolu halılarının kırmızısı kök boyadan, Amazon halklarının yüz boyası achioteden gelir. Bu sitenin ana rengi de bu ortak kırmızıdır.",
+   "b": "achiote"
+  },
+  {
+   "a": "kusburnu",
+   "t": "İki kıtanın C vitamini deposu",
+   "d": "Anadolu’nun kuşburnu ile Amazon’un camu camusu, kışa ve yağmur mevsimine karşı halkların C vitamini kaynağıdır.",
+   "b": "camucamu"
+  },
+  {
+   "a": "efedra",
+   "t": "Yorgunluğa karşı yaprak ve sap",
+   "d": "Asya’nın efedrası ve And’ların kokası, uyarıcı alkaloitleriyle yorgunluğa ve yüksekliğe karşı kullanıldı; ikisinden de modern ilaçlar doğdu.",
+   "b": "koka"
+  },
+  {
+   "a": "kudretnari",
+   "t": "Bir meyve, iki ilaç",
+   "d": "Kudret narı Anadolu’da zeytinyağıyla ülser ilacı, Amazon’da sorosi adıyla sıtma çayıdır."
+  },
+  {
+   "a": "ginseng",
+   "t": "İnsan biçimli kökler",
+   "d": "Doğu Asya’nın ginsengi ve Akdeniz’in adamotu, insana benzeyen kökleri yüzünden büyülü ve kutsal sayıldı.",
+   "b": "adamotu"
+  },
+  {
+   "a": "peyote",
+   "t": "Meskalinin iki kaktüsü",
+   "d": "Kuzey Amerika’nın peyotesi ile And’ların San Pedro’su aynı molekülü taşır ve iki kıtada binlerce yıllık törenlerin merkezindedir.",
+   "b": "sanpedro"
   }
  ],
  "EXTRA": {
@@ -1633,19 +3246,39 @@
    "toe"
   ],
   "banotu": [
-   "adamotu"
+   "adamotu",
+   "tatula"
   ],
   "toe": [
-   "adamotu"
+   "adamotu",
+   "tatula"
   ],
   "muna": [
-   "kekik"
+   "kekik",
+   "yarpuz"
   ],
   "palosanto": [
    "ardic"
   ],
   "sedef": [
    "uzerlik"
+  ],
+  "tatula": [
+   "toe",
+   "banotu"
+  ],
+  "yarpuz": [
+   "muna",
+   "nane"
+  ],
+  "safran": [
+   "gucigdemi"
+  ],
+  "gucigdemi": [
+   "safran"
+  ],
+  "civanpercemi": [
+   "akadacayi"
   ]
  }
 }
