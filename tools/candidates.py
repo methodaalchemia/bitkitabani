@@ -13,11 +13,12 @@ get, BAD = ns['get'], ns['BAD']
 out = os.path.join(ROOT, 'cand'); os.makedirs(out, exist_ok=True)
 for line in open(os.path.join(ROOT, 'tools', 'cand.txt'), encoding='utf-8'):
     if '|' not in line or line.startswith('#'): continue
-    pid, term = [x.strip() for x in line.split('|', 1)]
+    parts = [x.strip() for x in line.split('|')]
+    pid, term = parts[0], parts[1]; extra = parts[2] if len(parts) > 2 else ''
     d = os.path.join(out, pid); os.makedirs(d, exist_ok=True)
     titles = []
-    for q in ['"' + term + '" incategory:Quality_images', '"' + term + '" filetype:bitmap -illustration -drawing -herbarium']:
-        r = get('https://commons.wikimedia.org/w/api.php?format=json&action=query&list=search&srnamespace=6&srlimit=30&srsearch=' + urllib.parse.quote(q))
+    for q in ['"' + term + '" ' + extra + ' incategory:Quality_images', '"' + term + '" ' + extra + ' filetype:bitmap -illustration -drawing -herbarium', '"' + term + '" filetype:bitmap -illustration -drawing -herbarium']:
+        r = get('https://commons.wikimedia.org/w/api.php?format=json&action=query&list=search&srnamespace=6&srlimit=40&srsearch=' + urllib.parse.quote(q))
         titles += [h['title'][5:] for h in r.get('query', {}).get('search', []) if h['title'][5:] not in titles]
     lst = []
     for f in titles:
@@ -26,7 +27,8 @@ for line in open(os.path.join(ROOT, 'tools', 'cand.txt'), encoding='utf-8'):
         ii = (list(j['query']['pages'].values())[0].get('imageinfo') or [{}])[0]
         if ii.get('mime') not in ('image/jpeg', 'image/webp') or (ii.get('width') or 0) < 800: continue
         m = ii.get('extmetadata', {})
-        if BAD.search(' '.join([f, m.get('Categories', {}).get('value', ''), m.get('ImageDescription', {}).get('value', '')])): continue
+        txt = ' '.join([f, m.get('Categories', {}).get('value', ''), m.get('ImageDescription', {}).get('value', '')])
+        if BAD.search(txt) or term.lower() not in txt.lower().replace('_', ' '): continue
         n = len(lst) + 1
         open(os.path.join(d, f'{n:02d}.jpg'), 'wb').write(get(ii['thumburl'], binary=True))
         lst.append({'n': n, 'file': f, 'w': ii.get('width'), 'h': ii.get('height')})

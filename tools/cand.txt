@@ -1,20 +1,7 @@
-# id | arama terimi
-zencefil | Zingiber officinale
-kediotu | Valeriana officinalis
-ginkgo | Ginkgo biloba
-aloe | Aloe vera
-tarcin | Cinnamomum verum
-karanfil | Syzygium aromaticum
-okaliptus | Eucalyptus globulus
-ashwagandha | Withania somnifera
-keciboynuzu | Ceratonia siliqua
-hibiskus | Hibiscus sabdariffa
-sinameki | Senna alexandrina
-mersin | Myrtus communis
-enginar | Cynara cardunculus
-devedikeni | Silybum marianum
-altinmuhur | Hydrastis canadensis
-tatliot | Hierochloe odorata
-ayiuzumu | Arctostaphylos uva-ursi
-kirmizikaraagac | Ulmus rubra
-kankoku | Sanguinaria canadensis
+# id | arama terimi | ek kelimeler
+kediotu | Valeriana officinalis | flowers
+ginkgo | Ginkgo biloba | leaves
+aloe | Aloe vera | leaves
+okaliptus | Eucalyptus globulus | leaves
+keciboynuzu | Ceratonia siliqua | fruit
+kirmizikaraagac | Ulmus rubra | leaves
