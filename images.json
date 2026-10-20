@@ -90,6 +90,18 @@
   "w": 960,
   "w500": 500
  },
+ "altinkok": {
+  "artist": "WildBoar",
+  "auto": false,
+  "file": "Rhodiola rosea flowers.JPG",
+  "h": 874,
+  "h500": 455,
+  "license": "Public domain",
+  "licenseUrl": "",
+  "page": "https://commons.wikimedia.org/wiki/File:Rhodiola_rosea_flowers.JPG",
+  "w": 960,
+  "w500": 500
+ },
  "andiroba": {
   "artist": "Forest and Kim Starr",
   "auto": true,
@@ -305,6 +317,18 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Mallow_January_2008-1.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "efedra": {
+  "artist": "Le.Loup.Gris",
+  "auto": false,
+  "file": "Ephedra distachya berries 1.jpg",
+  "h": 1283,
+  "h500": 668,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ephedra_distachya_berries_1.jpg",
   "w": 960,
   "w500": 500
  },
@@ -927,6 +951,18 @@
   "w": 960,
   "w500": 500
  },
+ "sarimsak": {
+  "artist": "Ivar Leidus",
+  "auto": false,
+  "file": "Garlic bulbs and cloves.jpg",
+  "h": 640,
+  "h500": 333,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Garlic_bulbs_and_cloves.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "sedef": {
   "artist": "Robert Flogaus-Faust",
   "file": "Ruta graveolens RF.jpg",
@@ -935,6 +971,18 @@
   "license": "CC BY 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Ruta_graveolens_RF.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "sigirkuyrugu": {
+  "artist": "Bernard DUPONT",
+  "auto": false,
+  "file": "Mollein (Verbascum thapsus) yellow flowers.jpg",
+  "h": 1240,
+  "h500": 646,
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Mollein_(Verbascum_thapsus)_yellow_flowers.jpg",
   "w": 960,
   "w500": 500
  },
@@ -969,6 +1017,18 @@
   "license": "Public domain",
   "licenseUrl": "",
   "page": "https://commons.wikimedia.org/wiki/File:Fleur_sumac.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "tatula": {
+  "artist": "Júlio Reis",
+  "auto": false,
+  "file": "Datura stramonium white flower.jpg",
+  "h": 960,
+  "h500": 500,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Datura_stramonium_white_flower.jpg",
   "w": 960,
   "w500": 500
  },
@@ -1074,6 +1134,18 @@
   "license": "CC BY 3.0 us",
   "licenseUrl": "https://creativecommons.org/licenses/by/3.0/us/deed.en",
   "page": "https://commons.wikimedia.org/wiki/File:Starr-140925-1977-Curcuma_longa-flowering_habit-Pali_o_Waipio_Huelo-Maui_(25128294462).jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "zeytin": {
+  "artist": "Aracuano",
+  "auto": false,
+  "file": "Olive fruit on the branch (2007).jpg",
+  "h": 638,
+  "h500": 332,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Olive_fruit_on_the_branch_(2007).jpg",
   "w": 960,
   "w500": 500
  }
