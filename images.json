@@ -90,6 +90,18 @@
   "w": 960,
   "w500": 500
  },
+ "aloe": {
+  "artist": "Forest and Kim Starr",
+  "auto": false,
+  "file": "Starr-030523-0060-Aloe vera-leaves-State nursery Kahului-Maui (24266958239).jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY 3.0 us",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0/us/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Starr-030523-0060-Aloe_vera-leaves-State_nursery_Kahului-Maui_(24266958239).jpg",
+  "w": 960,
+  "w500": 500
+ },
  "altinkok": {
   "artist": "WildBoar",
   "auto": false,
@@ -99,6 +111,18 @@
   "license": "Public domain",
   "licenseUrl": "",
   "page": "https://commons.wikimedia.org/wiki/File:Rhodiola_rosea_flowers.JPG",
+  "w": 960,
+  "w500": 500
+ },
+ "altinmuhur": {
+  "artist": "Cephas",
+  "auto": false,
+  "file": "Hydrastis canadensis JRVdH 02.jpg",
+  "h": 640,
+  "h500": 333,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Hydrastis_canadensis_JRVdH_02.jpg",
   "w": 960,
   "w500": 500
  },
@@ -125,6 +149,18 @@
   "w": 960,
   "w500": 500
  },
+ "ashwagandha": {
+  "artist": "SAplants",
+  "auto": false,
+  "file": "Withania somnifera 1DS-II 3-7489.jpg",
+  "h": 1440,
+  "h500": 750,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Withania_somnifera_1DS-II_3-7489.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "ayahuasca": {
   "artist": "Vojtěch Zavadil",
   "file": "3209-Banisteriopsis caapi-Teplice BZ.jpg",
@@ -133,6 +169,18 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:3209-Banisteriopsis_caapi-Teplice_BZ.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "ayiuzumu": {
+  "artist": "Robert Flogaus-Faust",
+  "auto": false,
+  "file": "Arctostaphylos uva-ursi 3 RF.jpg",
+  "h": 1233,
+  "h500": 642,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Arctostaphylos_uva-ursi_3_RF.jpg",
   "w": 960,
   "w500": 500
  },
@@ -309,6 +357,18 @@
   "w": 960,
   "w500": 500
  },
+ "devedikeni": {
+  "artist": "Frank Schulenburg",
+  "auto": false,
+  "file": "Silybum marianum at Mount Burdell Open Space Preserve.jpg",
+  "h": 960,
+  "h500": 500,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Silybum_marianum_at_Mount_Burdell_Open_Space_Preserve.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "ebegumeci": {
   "artist": "Alvesgaspar",
   "file": "Mallow January 2008-1.jpg",
@@ -341,6 +401,30 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Echinacea_purpurea_Feldanbau.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "enginar": {
+  "artist": "Jebulon",
+  "auto": false,
+  "file": "Cynara cardunculus var. scolymus in Jardin des Plante de Paris.jpg",
+  "h": 1443,
+  "h500": 751,
+  "license": "CC0",
+  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Cynara_cardunculus_var._scolymus_in_Jardin_des_Plante_de_Paris.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "ginkgo": {
+  "artist": "Fernando Losada Rodríguez",
+  "auto": false,
+  "file": "Ginkgo biloba.004 - Ponferrada.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ginkgo_biloba.004_-_Ponferrada.jpg",
   "w": 960,
   "w500": 500
  },
@@ -425,6 +509,18 @@
   "w": 960,
   "w500": 500
  },
+ "hibiskus": {
+  "artist": "Aris riyanto",
+  "auto": false,
+  "file": "Arya - hibiscus sabdariffa in bulak Lor Jatibarang 2019.jpg",
+  "h": 1707,
+  "h500": 889,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Arya_-_hibiscus_sabdariffa_in_bulak_Lor_Jatibarang_2019.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "huito": {
   "artist": "Dorcas Queen",
   "auto": true,
@@ -483,6 +579,18 @@
   "w": 960,
   "w500": 500
  },
+ "kankoku": {
+  "artist": "Agnieszka Kwiecień, Nova",
+  "auto": false,
+  "file": "Sanguinaria canadensis Sangwinaria kanadyjska 2021-04-05 03.jpg",
+  "h": 1281,
+  "h500": 667,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Sanguinaria_canadensis_Sangwinaria_kanadyjska_2021-04-05_03.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "kantaron": {
   "artist": "Didier Descouens",
   "file": "(MHNT) Hypericum perforatum flower and buttons.jpg",
@@ -529,6 +637,18 @@
   "w": 960,
   "w500": 500
  },
+ "karanfil": {
+  "artist": "tinofrey",
+  "auto": false,
+  "file": "Syzygium aromaticum on tree.jpg",
+  "h": 640,
+  "h500": 333,
+  "license": "Public domain",
+  "licenseUrl": "",
+  "page": "https://commons.wikimedia.org/wiki/File:Syzygium_aromaticum_on_tree.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "karayilan": {
   "artist": "H. Zell",
   "auto": true,
@@ -538,6 +658,30 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Actaea_racemosa_002.JPG",
+  "w": 960,
+  "w500": 500
+ },
+ "keciboynuzu": {
+  "artist": "Zeynel Cebeci",
+  "auto": false,
+  "file": "Ceratonia siliqua - Carob 04.jpg",
+  "h": 1233,
+  "h500": 642,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ceratonia_siliqua_-_Carob_04.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "kediotu": {
+  "artist": "Ivar Leidus",
+  "auto": false,
+  "file": "Valeriana officinalis - Niitvälja.jpg",
+  "h": 1344,
+  "h500": 700,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Valeriana_officinalis_-_Niitv%C3%A4lja.jpg",
   "w": 960,
   "w500": 500
  },
@@ -620,6 +764,18 @@
   "license": "Public domain",
   "licenseUrl": "",
   "page": "https://commons.wikimedia.org/wiki/File:Quinua.JPG",
+  "w": 960,
+  "w500": 500
+ },
+ "kirmizikaraagac": {
+  "artist": "Famartin",
+  "auto": false,
+  "file": "2023-08-14 15 47 24 Leaves on a broken Slippery Elm branch from a severe thunderstorm the prior morning along Willis Drive in the Mountainview section of Ewing Township, Mercer County, New Jersey.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:2023-08-14_15_47_24_Leaves_on_a_broken_Slippery_Elm_branch_from_a_severe_thunderstorm_the_prior_morning_along_Willis_Drive_in_the_Mountainview_section_of_Ewing_Township,_Mercer_County,_New_Jersey.jpg",
   "w": 960,
   "w500": 500
  },
@@ -736,6 +892,18 @@
   "w": 960,
   "w500": 500
  },
+ "mersin": {
+  "artist": "Burkhard Mücke",
+  "auto": false,
+  "file": "Myrtenblüte (Myrtus communis).JPG",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Myrtenbl%C3%BCte_(Myrtus_communis).JPG",
+  "w": 960,
+  "w500": 500
+ },
  "meyan": {
   "artist": "Юрий Данилевский",
   "file": "Glycyrrhiza glabra Y01.jpg",
@@ -802,6 +970,18 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Punica_granatum_004.JPG",
+  "w": 960,
+  "w500": 500
+ },
+ "okaliptus": {
+  "artist": "Forest and Kim Starr",
+  "auto": false,
+  "file": "Starr-090317-5073-Eucalyptus globulus-flowers and leaves-Haleakala Ranch Olinda-Maui (24830632722).jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY 3.0 us",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0/us/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Starr-090317-5073-Eucalyptus_globulus-flowers_and_leaves-Haleakala_Ranch_Olinda-Maui_(24830632722).jpg",
   "w": 960,
   "w500": 500
  },
@@ -998,6 +1178,18 @@
   "w": 960,
   "w500": 500
  },
+ "sinameki": {
+  "artist": "Krzysztof Ziarnek, Kenraiz",
+  "auto": false,
+  "file": "Senna alexandrina kz01.jpg",
+  "h": 1344,
+  "h500": 700,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Senna_alexandrina_kz01.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "sinekmantari": {
   "artist": "Holger Krisp",
   "file": "Fliegenpilz fly agaric Amanita muscaria.JPG",
@@ -1018,6 +1210,30 @@
   "license": "Public domain",
   "licenseUrl": "",
   "page": "https://commons.wikimedia.org/wiki/File:Fleur_sumac.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "tarcin": {
+  "artist": "Prof Ranga Sai",
+  "auto": false,
+  "file": "Cinnamon bark.jpg",
+  "h": 478,
+  "h500": 249,
+  "license": "CC0",
+  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Cinnamon_bark.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "tatliot": {
+  "artist": "Agnieszka Kwiecień, Nova",
+  "auto": false,
+  "file": "Hierochloe odorata Turówka wonna 2021-04-24 01.jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Hierochloe_odorata_Tur%C3%B3wka_wonna_2021-04-24_01.jpg",
   "w": 960,
   "w500": 500
  },
@@ -1123,6 +1339,18 @@
   "license": "CC BY 2.5",
   "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
   "page": "https://commons.wikimedia.org/wiki/File:Nerium_oleander_Ouarzazate_wild1.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "zencefil": {
+  "artist": "Zv0486~commonswiki",
+  "auto": false,
+  "file": "Ingwerknolle treibt bald aus.jpg",
+  "h": 640,
+  "h500": 334,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ingwerknolle_treibt_bald_aus.jpg",
   "w": 960,
   "w500": 500
  },
