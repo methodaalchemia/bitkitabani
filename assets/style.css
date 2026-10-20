@@ -326,3 +326,6 @@ table.cmp tbody th{font-family:var(--f-mono);font-weight:400;color:var(--muted);
 .site-nav nav a{white-space:nowrap}
 @media (max-width:420px){.site-nav nav{gap:6px 14px}}
 #acct .stats{margin-bottom:8px}
+.contrib{margin:28px 0;padding:16px 18px;border:1px dashed var(--ochre);background:var(--sheet)}
+.contrib h2{font-family:var(--f-display);font-size:var(--t-lg);margin:0 0 6px}
+.contrib p{margin:6px 0}

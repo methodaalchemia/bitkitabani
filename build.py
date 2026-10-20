@@ -192,6 +192,11 @@ def fam_link(p):
     f = p['fam']
     return f'<a href="/familya/{fam_slug(f)}/" lang="la">{e(f)}</a>' if FAMC[f] >= 2 else f'<span lang="la">{e(f)}</span>'
 DATE_TXT = tr_date(datetime.date.fromisoformat(CONTENT_DATE)).rsplit(',', 1)[0]
+CONTACT = 'iletisim@bitkitabani.com'
+def contrib(p):
+    subj = urllib.parse.quote(f'Bitki Tabanı: {p["tr"]} için yöresel kullanım')
+    body = urllib.parse.quote(f'Bitki: {p["tr"]} ({short_la(p)})\nYöre (il, ilçe, köy ya da topluluk): \nBitkinin oradaki adı: \nNasıl ve ne için kullanılır: \nBunu kimden ya da nereden öğrendin: \nAdının sitede yazılmasını ister misin (evet/hayır): \n')
+    return f'<aside class="contrib"><h2>Yöresel bir kullanım biliyor musun?</h2><p>Annenden, köyünden ya da bir ustadan duyduğun bir kullanım buraya eklenebilir. Gelen her not okunur, kaynağıyla birlikte kontrol edildikten sonra eklenir.</p><p><a class="cta" href="mailto:{CONTACT}?subject={subj}&amp;body={body}">Not gönder →</a> <span class="muted-s">{CONTACT}</span></p></aside>'
 def toc_and_ids(html):
     items = []
     def sub(m):
@@ -272,6 +277,7 @@ for i, p in enumerate(P):
   {relhtml}
   {('<p class="brlinks">' + brlinks + '</p>') if brlinks else ''}
   {simhtml}
+  {contrib(p)}
   <section class="sec"><h2>Kaynaklar</h2>{refs(p)}</section>
   <aside class="disclaimer" role="note"><b>Tıbbi tavsiye değildir.</b> Bu sayfa geleneksel kullanımları kültürel bir kayıt olarak anlatır ve bilimsel bilgiyi özetler; teşhis ya da tedavi önerisi değildir. {e(p["tr"])} ya da başka bir bitkiyi kullanmadan önce, özellikle ilaç kullanıyorsan, hamileysen, emziriyorsan ya da bir hastalığın varsa hekimine veya eczacına danış. Zehirlenme şüphesinde Ulusal Zehir Danışma Merkezi’ni (UZEM) <b>114</b> numaradan ara.</aside>
   <p class="updated">Son gözden geçirme: <time datetime="{CONTENT_DATE}">{DATE_TXT}</time></p>
@@ -452,6 +458,7 @@ for i, br_ in enumerate(BR, 1):
 about = '''<header class="page-head"><span class="eyebrow">Hakkında</span><h1>Bitki Tabanı nedir?</h1></header>
 <section class="sec"><p>Bitki Tabanı, farklı kültürlerde şifa ve ritüel için kullanılan bitkileri bir araya getiren bağımsız bir etnobotanik kayıt defteridir. Amacı merak uyandırmak ve geleneksel bilgiyi bugünkü bilimsel bilgiyle yan yana koymak.</p></section>
 <section class="sec"><h2>Ticari değil</h2><p>Bitki Tabanı hiçbir ürün, bitki, takviye ya da tören satmaz; inziva veya ayahuasca seremonisi düzenlemez, bunlara yönlendirmez ve reklam almaz. Kayıtlarda adı geçen hiçbir marka ya da satıcıyla bağı yoktur.</p></section>
+<section class="sec"><h2>İletişim</h2><p>Bir hata gördüysen ya da yöresel bir kullanım biliyorsan <a href="mailto:iletisim@bitkitabani.com">iletisim@bitkitabani.com</a> adresine yaz.</p></section>
 <section class="sec"><h2>Kayıtlar nasıl hazırlanıyor</h2><p>Her kayıt; geleneksel kullanımı, hazırlama biçimini, bilimin bugün ne söylediğini ve güvenlik notlarını içerir. Kanıt düzeyi Avrupa İlaç Ajansı (EMA/HMPC) monografileri, ABD NCCIH özetleri, Cochrane derlemeleri ve hakemli literatüre göre belirlenir. Kaynaklar her bitkinin sayfasının sonunda listelenir.</p></section>
 <section class="sec"><h2>Önemli not</h2><p>Bu site tıbbi tavsiye vermez. Burada anlatılan geleneksel kullanımlar bir öneri değil, kültürel bir kayıttır. Zehirli ve yasal kısıtlı bitkiler, tarihleri ve riskleri anlaşılsın diye yer alır. Herhangi bir bitkiyi kullanmadan önce bir hekime ya da eczacıya danış.</p></section>
 <section class="sec"><h2>Yerel bilgiye saygı</h2><p>Kayıtlardaki geleneksel bilgi, onu kuşaklar boyunca koruyan toplulukların mirasıdır. Bitki Tabanı bu bilginin kaynağını görünür kılmayı ve aşırı toplanan türler konusunda farkındalık yaratmayı amaçlar.</p></section>
