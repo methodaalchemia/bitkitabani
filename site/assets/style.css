@@ -318,3 +318,11 @@ table.cmp tbody th{font-family:var(--f-mono);font-weight:400;color:var(--muted);
 .gameend{margin:18px 0;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
 .gameend .verdict{font-family:var(--f-display);font-size:var(--t-lg);margin:0}
 .gameend .sq{font-size:1.4rem;letter-spacing:2px;margin:0}
+/* hesap */
+.btnrow{display:flex;gap:10px;flex-wrap:wrap}
+.learn.danger{color:var(--accent);border-color:var(--accent)}
+#gbtn{min-height:44px;margin:8px 0}
+.site-nav nav{flex-wrap:wrap;row-gap:6px}
+.site-nav nav a{white-space:nowrap}
+@media (max-width:420px){.site-nav nav{gap:6px 14px}}
+#acct .stats{margin-bottom:8px}

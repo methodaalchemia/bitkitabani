@@ -22,6 +22,11 @@ def _git_date():
         return TODAY
 CONTENT_DATE = _git_date()
 try:
+    _wr = re.sub(r'^\s*//.*$', '', open(os.path.join(HERE, 'wrangler.jsonc'), encoding='utf-8').read(), flags=re.M)
+    GOOGLE_CLIENT_ID = json.loads(_wr).get('vars', {}).get('GOOGLE_CLIENT_ID', '')
+except Exception:
+    GOOGLE_CLIENT_ID = ''
+try:
     from zoneinfo import ZoneInfo
     LOCAL_DAY = datetime.datetime.now(ZoneInfo('Europe/Istanbul')).date()
 except Exception:
@@ -85,7 +90,7 @@ def head(title, desc, path, extra='', image=None):
 
 def nav(cur):
     a = lambda href, label, key: f'<a href="{href}"{" aria-current=\"page\"" if cur == key else ""}>{label}</a>'
-    return f'''<div class="motif" aria-hidden="true"></div><div class="site-nav"><a class="logo" href="/">Bitki <em>Tabanı</em></a><nav>{a("/katalog/", "Katalog", "kat")}{a("/kopruler/", "Kültür köprüleri", "br")}{a("/hakkinda/", "Hakkında", "about")}</nav></div>'''
+    return f'''<div class="motif" aria-hidden="true"></div><div class="site-nav"><a class="logo" href="/">Bitki <em>Tabanı</em></a><nav>{a("/katalog/", "Katalog", "kat")}{a("/kopruler/", "Kültür köprüleri", "br")}{a("/hakkinda/", "Hakkında", "about")}{a("/hesap/", "Hesap", "acct")}</nav></div>'''
 
 FOOT = '''<div class="motif indigo" aria-hidden="true"></div>
 <footer class="site">
@@ -93,6 +98,7 @@ FOOT = '''<div class="motif indigo" aria-hidden="true"></div>
     <h3>Bu site nedir</h3>
     <p>Bilgi ve merak için hazırlanmış bir derlemedir; tedavi önerisi değildir. Bir bitkiyi kullanmadan önce, özellikle ilaç kullanıyorsan, hamileysen ya da emziriyorsan bir hekime veya eczacıya danış.</p>
     <p>Fotoğraflar Wikimedia Commons’tan özgür lisanslarla alınmıştır; yazarı ve lisansı her bitkinin sayfasında yazılıdır.</p>
+    <p><a href="/hesap/">Hesap</a> · <a href="/gizlilik/">Gizlilik</a></p>
   </div>
   <div class="legend">
     <h3>Kanıt düzeyi</h3>
@@ -113,7 +119,7 @@ FOOT = '''<div class="motif indigo" aria-hidden="true"></div>
 
 def page(title, desc, path, body, cur, scripts='', narrow=False, extra='', image=None):
     h = head(title, desc, path, extra, image).replace('{narrow}', ' narrow' if narrow else '')
-    return h + nav(cur) + body + FOOT + scripts + '\n</body>\n</html>\n'
+    return h + nav(cur) + body + FOOT + '<script src="/assets/streak.js" defer></script><script src="/assets/sync.js" defer></script>' + scripts.replace('<script src="/assets/streak.js" defer></script>', '') + '\n</body>\n</html>\n'
 
 def write(path, content):
     full = os.path.join(OUT, path.strip('/'), 'index.html') if not path.endswith('.html') and not '.' in path.split('/')[-1] else os.path.join(OUT, path.strip('/'))
@@ -270,7 +276,7 @@ for i, p in enumerate(P):
   <aside class="disclaimer" role="note"><b>Tıbbi tavsiye değildir.</b> Bu sayfa geleneksel kullanımları kültürel bir kayıt olarak anlatır ve bilimsel bilgiyi özetler; teşhis ya da tedavi önerisi değildir. {e(p["tr"])} ya da başka bir bitkiyi kullanmadan önce, özellikle ilaç kullanıyorsan, hamileysen, emziriyorsan ya da bir hastalığın varsa hekimine veya eczacına danış. Zehirlenme şüphesinde Ulusal Zehir Danışma Merkezi’ni (UZEM) <b>114</b> numaradan ara.</aside>
   <p class="updated">Son gözden geçirme: <time datetime="{CONTENT_DATE}">{DATE_TXT}</time></p>
   <div class="sheet-foot">
-    <div class="learnbox"><button type="button" class="learn" id="learnBtn" data-id="{pid}" aria-pressed="false">Öğrendim olarak işaretle</button><span class="muted-s">Yalnızca bu tarayıcıda saklanır; başka cihazda görünmez.</span><span class="muted-s streak" id="streakNote"></span></div>
+    <div class="learnbox"><button type="button" class="learn" id="learnBtn" data-id="{pid}" aria-pressed="false">Öğrendim olarak işaretle</button><span class="muted-s">Bu tarayıcıda saklanır. <a href="/hesap/">Google ile giriş yaparsan</a> bütün cihazlarında görünür.</span><span class="muted-s streak" id="streakNote"></span></div>
     <div class="pager"><a href="/{prev["id"]}/">← {e(prev["tr"])}</a><a href="/{nxt["id"]}/">{e(nxt["tr"])} →</a></div>
   </div>
 </article>
@@ -334,7 +340,7 @@ learn_note = '<p class="hint" id="learnHint"><b>Öğrendiklerim</b> sayacı, bit
 katalog = f'''
 <nav class="crumbs" aria-label="Konum"><a href="/">Ana sayfa</a><span>/</span><span>Katalog</span></nav>
 <header class="page-head"><span class="eyebrow">{len(P)} kayıt</span><h1>Bitki kataloğu</h1><p>Bütün bitkileri bölgeye, kullanıma, kanıt düzeyine, güvenliğe ve yasal duruma göre süz. Seçtiğin filtreler adres çubuğuna yazılır; bağlantıyı paylaşabilirsin.</p></header>
-<div class="stats"><span><strong>{len(P)}</strong> bitki</span><span><strong>{len(regs)}</strong> bölge</span><span><strong>{len(BR)}</strong> kültür köprüsü</span><span>Öğrendiklerim <strong id="learnedCount">0</strong>/{len(P)} <span class="muted-s">(bu tarayıcıda)</span></span></div>
+<div class="stats"><span><strong>{len(P)}</strong> bitki</span><span><strong>{len(regs)}</strong> bölge</span><span><strong>{len(BR)}</strong> kültür köprüsü</span><span>Öğrendiklerim <strong id="learnedCount">0</strong>/{len(P)} <span class="muted-s">(<a href="/hesap/">giriş yaparsan</a> her cihazda)</span></span></div>
 {learn_note}
 <section style="display:flex;flex-direction:column;gap:18px" aria-label="Katalog">
   <div class="controls">
@@ -563,11 +569,31 @@ oy = f'''
 <script type="application/json" id="gameData">{json.dumps({"p": gp, "ay": AYLAR}, ensure_ascii=False)}</script>'''
 write('/oyun/', page('Günün bilmecesi: bitkiyi ipuçlarından bul | Bitki Tabanı', f'Her gün katalogdaki {len(P)} şifalı ve ritüel bitkisinden biri saklı. İpuçlarından bul, sonucunu paylaş.', '/oyun/', oy, '', '<script src="/assets/streak.js" defer></script><script src="/assets/oyun.js" defer></script>', narrow=True))
 
+# ---------- hesap ve gizlilik ----------
+hz = f'''
+<header class="page-head"><span class="eyebrow">Hesap</span><h1>İlerlemeni sakla</h1><p>Google hesabınla giriş yaparsan öğrendiğin bitkiler, serin ve bilmece sonuçların hesabında saklanır; telefonda da bilgisayarda da aynısını görürsün. Giriş yapmadan da her şey çalışır, yalnızca bu tarayıcıda kalır.</p></header>
+<div id="acct" data-client="{e(GOOGLE_CLIENT_ID)}">
+<div class="stats"><span>Öğrendiklerim <strong id="stLearned">0</strong></span><span>Seri <strong id="stStreak">0</strong> gün</span><span>Bilmece <strong id="stGames">0</strong> gün</span></div>
+<section class="sec" id="acctOut"><h2>Giriş</h2>{'<div id="gbtn"></div>' if GOOGLE_CLIENT_ID else '<p>Google ile giriş çok yakında açılacak.</p>'}<p class="muted-s">Yalnızca Google hesap kimlik numaran saklanır; e-postan, adın ve fotoğrafın saklanmaz. Ayrıntılar <a href="/gizlilik/">gizlilik</a> sayfasında.</p></section>
+<section class="sec" id="acctIn" hidden><h2>Giriş yapıldı</h2><p>İlerlemen bu hesapla eşitleniyor.</p><p class="btnrow"><button type="button" class="learn" id="logout">Çıkış yap</button> <button type="button" class="learn danger" id="del">Hesabımdaki veriyi sil</button></p></section>
+<p class="muted-s" id="acctMsg" role="status"></p>
+</div>'''
+write('/hesap/', page('Hesap | Bitki Tabanı', 'Google ile giriş yaparak öğrendiğin bitkileri, serini ve bilmece sonuçlarını bütün cihazlarında sakla.', '/hesap/', hz, 'acct', '<script src="/assets/hesap.js" defer></script>', narrow=True,
+      extra='<meta name="robots" content="noindex, follow">'))
+gz = '''
+<header class="page-head"><span class="eyebrow">Gizlilik</span><h1>Hangi bilgileri saklıyoruz?</h1><p>Kısaca: çok az. Bitki Tabanı reklam ve izleme aracı kullanmaz, kimseye veri satmaz.</p></header>
+<section class="sec"><h2>Giriş yapmazsan</h2><p>Öğrendiğin bitkiler, serin ve bilmece tahminlerin yalnızca kendi tarayıcının hafızasında (localStorage) durur. Bize hiçbir şey gelmez. Tarayıcı verilerini silersen bunlar da silinir.</p></section>
+<section class="sec"><h2>Google ile giriş yaparsan</h2><p>Google bize senin adına bir kimlik belgesi gönderir. Bunun içinden yalnızca Google hesap kimlik numaranı (rastgele görünen bir sayı) saklarız. E-posta adresin, adın ve profil fotoğrafın saklanmaz.</p><p>Bu numarayla birlikte şunları saklarız: öğrendim olarak işaretlediğin bitkiler, serinin günleri ve bilmece tahminlerin. Oturumunu hatırlamak için tarayıcına yalnızca bu iş için kullanılan, 180 gün geçerli bir çerez yazılır.</p><p>Veriler Cloudflare’in sunucularında tutulur. Google ile girişte Google’ın kendi <a href="https://policies.google.com/privacy?hl=tr" rel="noopener">gizlilik politikası</a> geçerlidir.</p></section>
+<section class="sec"><h2>Silme</h2><p><a href="/hesap/">Hesap</a> sayfasındaki “Hesabımdaki veriyi sil” düğmesi saklanan bütün ilerlemeni hemen siler. Google hesabından da Bitki Tabanı’nın erişimini dilediğin zaman kaldırabilirsin.</p></section>
+<section class="sec"><h2>Haklarına dair</h2><p>6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında verilerin hakkında bilgi isteme, düzeltme ve silme hakların vardır. Yukarıdaki silme düğmesi bu hakkı tek tıkla kullanmanı sağlar.</p></section>
+'''
+write('/gizlilik/', page('Gizlilik | Bitki Tabanı', 'Bitki Tabanı hangi bilgileri saklar: giriş yapmazsan hiçbirini; Google ile girişte yalnızca hesap kimlik numaranı ve ilerlemeni.', '/gizlilik/', gz, '', narrow=True))
+
 # ---------- 404, robots, sitemap, favicon ----------
 nf = '<header class="page-head"><span class="eyebrow">404</span><h1>Bu sayfa bulunamadı</h1><p>Aradığın kayıt taşınmış ya da adres yanlış yazılmış olabilir.</p></header><section class="sec" id="nfs" hidden><h2>Bunu mu arıyordun?</h2><ul class="otherlist" id="nfList"></ul></section><p><a class="cta" id="nfSearch" href="/katalog/">Katalogda ara →</a></p>' + f'<script type="application/json" id="nfData">{json.dumps([[p["id"], p["tr"], p["la"]] for p in P] + [["kopruler/" + slug_of(x), x["t"], ""] for x in BR], ensure_ascii=False)}</script><script src="/assets/404.js" defer></script>'
 open(os.path.join(OUT,'404.html'),'w',encoding='utf-8').write(page('Sayfa bulunamadı | Bitki Tabanı','Sayfa bulunamadı.','/404.html',nf,'', narrow=True))
-open(os.path.join(OUT,'robots.txt'),'w').write(f'User-agent: *\nAllow: /\nDisallow: /secim/\nDisallow: /*?\n\nSitemap: {BASE}/sitemap.xml\n')
-urls = ['/', '/katalog/', '/kopruler/', '/gunun-bitkisi/', '/oyun/', '/hakkinda/'] + [f'/kopruler/{slug_of(x)}/' for x in BR] + FAM_URLS + [f'/{p["id"]}/' for p in P]
+open(os.path.join(OUT,'robots.txt'),'w').write(f'User-agent: *\nAllow: /\nDisallow: /secim/\nDisallow: /api/\nDisallow: /hesap/\nDisallow: /*?\n\nSitemap: {BASE}/sitemap.xml\n')
+urls = ['/', '/katalog/', '/kopruler/', '/gunun-bitkisi/', '/oyun/', '/hakkinda/', '/gizlilik/'] + [f'/kopruler/{slug_of(x)}/' for x in BR] + FAM_URLS + [f'/{p["id"]}/' for p in P]
 open(os.path.join(OUT,'sitemap.xml'),'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url><loc>{BASE}{u}</loc><lastmod>{(LOCAL_DAY.isoformat() if u in ('/', '/gunun-bitkisi/', '/oyun/') else CONTENT_DATE)}</lastmod></url>\n' for u in urls) + '</urlset>\n')
 os.makedirs(os.path.join(OUT,'assets'), exist_ok=True)
 for f in os.listdir(os.path.join(HERE, 'assets')):
