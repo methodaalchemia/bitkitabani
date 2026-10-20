@@ -669,7 +669,9 @@ open(os.path.join(OUT,'404.html'),'w',encoding='utf-8').write(page('Sayfa buluna
 _rules = 'Allow: /\nDisallow: /secim/\nDisallow: /api/\nDisallow: /hesap/\nDisallow: /*?\n'
 _ai = ['Googlebot', 'Google-Extended', 'Bingbot', 'GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'PerplexityBot', 'Perplexity-User', 'ClaudeBot', 'Claude-SearchBot', 'Claude-User', 'Applebot', 'Applebot-Extended', 'DuckAssistBot', 'meta-externalagent', 'CCBot']
 open(os.path.join(OUT,'robots.txt'),'w').write('# Bitki Tabanı arama motorlarına ve yapay zekâ asistanlarına açıktır; alıntı yaparken kaynak göster.\n# Özet: ' + BASE + '/llms.txt\n\n' + ''.join(f'User-agent: {a}\n' for a in _ai) + _rules + '\nUser-agent: *\n' + _rules + f'\nSitemap: {BASE}/sitemap.xml\n')
-urls = ['/', '/katalog/', '/kopruler/', '/gunun-bitkisi/', '/oyun/', '/hakkinda/', '/yontem/', '/gizlilik/'] + [f'/kopruler/{slug_of(x)}/' for x in BR] + FAM_URLS + [f'/{p["id"]}/' for p in P]
+import build_en
+EN_URLS = build_en.run(globals())
+urls = ['/', '/katalog/', '/kopruler/', '/gunun-bitkisi/', '/oyun/', '/hakkinda/', '/yontem/', '/gizlilik/'] + [f'/kopruler/{slug_of(x)}/' for x in BR] + FAM_URLS + [f'/{p["id"]}/' for p in P] + EN_URLS
 open(os.path.join(OUT,'sitemap.xml'),'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url><loc>{BASE}{u}</loc><lastmod>{(LOCAL_DAY.isoformat() if u in ('/', '/gunun-bitkisi/', '/oyun/') else CONTENT_DATE)}</lastmod></url>\n' for u in urls) + '</urlset>\n')
 # ---------- llms.txt: yapay zekâ asistanları için özet ve tam metin ----------
 def _md_plant(p, full=False):

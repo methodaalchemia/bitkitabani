@@ -23,7 +23,7 @@
       c.hidden = !ok; if (ok) n++;
     });
     updateCounts(words);
-    document.getElementById('count').textContent = n + ' / ' + cards.length + ' kayıt gösteriliyor';
+    var ce = document.getElementById('count'), tpl = ce.getAttribute('data-tpl'); ce.textContent = tpl ? tpl.replace('{n}', n).replace('{t}', cards.length) : n + ' / ' + cards.length + ' kayıt gösteriliyor';
     document.getElementById('empty').hidden = n > 0;
     document.getElementById('reset').hidden = !(state.q || G.some(function(g){ return any(state[g]); }));
     writeUrl();
