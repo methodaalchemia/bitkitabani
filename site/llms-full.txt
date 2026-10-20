@@ -3195,7 +3195,7 @@ Familya: Caprifoliaceae · Bölge: Anadolu ve Akdeniz · Kullanılan kısım: K�
 Bilimsel kanıt: Sınırlı · Güvenlik: Genelde güvenli
 
 ### Geleneksel kullanım
-- Anadolu: Kökü uykusuzluk ve sinirlilik için demlenir; halk arasında “sinir otu” diye de bilinir.
+- Anadolu: Kökü uykusuzluk ve sinirlilik için demlenir.
 - Avrupa: Antik Yunan’dan beri uyku ve sinir için kullanılır; iki dünya savaşı sırasında hava saldırılarının yarattığı korkuya karşı verildiği anlatılır.
 
 ### Hazırlama
@@ -3210,7 +3210,7 @@ Genelde güvenlidir; sabah sersemliği ve baş ağrısı yapabilir. Alkol, uyku 
 ### Doğada
 Nerede yetişir: Kuzey ve Doğu Anadolu’nun nemli çayırları ve dere kenarları.
 Toplama mevsimi: Kökler sonbaharda, Eylül–Ekim’de sökülür.
-Yöresel adlar: kediotu, sinir otu, pisikotu
+Yöresel adlar: kediotu, valeryan
 Karıştırma riski: Aynı adla satılan başka Valeriana türleri olabilir. Beyaz şemsiye çiçekleri zehirli baldıranla karıştırılmamalı; kediotu yapraklarının karşılıklı dizilişi ve kökün keskin kokusu ayırt ettirir.
 
 ### İlginç bilgi
@@ -3280,7 +3280,7 @@ Yöresel adlar: aloe, sarısabır, sabır otu
 Karıştırma riski: Süs olarak yetiştirilen bazı Aloe ve Agave türleri benzer görünür; jel yalnızca Aloe vera’dan alınmalıdır.
 
 ### İlginç bilgi
-“Sabır” kelimesi bu bitkiden gelir: Arapça sabir, aloenin acı özsuyunun adıdır.
+Aloenin Arapça adı “sabir”dir; Türkçedeki “sarısabır” adı buradan gelir.
 
 ## Tarçın (Cinnamomum verum)
 
@@ -3461,7 +3461,7 @@ Birkaç kontrollü çalışma ve meta-analiz, hibiskus çayının tansiyonu hafi
 ### Doğada
 Nerede yetişir: Tropik ve subtropik bölgeler; Türkiye’de ticari olarak yetişmez.
 Toplama mevsimi: Çanaklar çiçeklenmeden sonra, sonbaharda etlenince toplanır.
-Yöresel adlar: hibiskus, rozella, Mekke gülü
+Yöresel adlar: hibiskus, rozella, karkade
 Karıştırma riski: Süs olarak yetiştirilen ağaç hatmi (Hibiscus syriacus) ve Çin gülü (H. rosa-sinensis) farklı türlerdir; çay için kullanılan, H. sabdariffa’nın etli kırmızı çanağıdır.
 
 ### İlginç bilgi
@@ -3475,7 +3475,7 @@ Bilimsel kanıt: Klinik · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
 - Anadolu: Osmanlı’dan beri aktarlarda en çok satılan müshillerdendir; adı “Mekke’nin senası” anlamına gelir. Son yıllarda zayıflama çaylarına da karıştırılır.
-- Arap tıbbı: İbn Sina’nın Kanun’unda müshil olarak anlatılır; Hac yolu üzerinden İslam dünyasına yayıldı.
+- Ortaçağ İslam tıbbı: Ortaçağ Arap ve Fars hekimleri müshil olarak kullanmış; Hac yolu üzerinden İslam dünyasına yayılmıştır.
 
 ### Hazırlama
 Yaprak ya da bakla soğuk ya da ılık suda bekletilir; kısa süreli kullanılır.
@@ -3522,11 +3522,11 @@ Yaprak çayı ve meyve genelde güvenlidir. Uçucu yağı içilmemeli, bebekleri
 ### Doğada
 Nerede yetişir: Ege, Akdeniz ve Marmara’nın kıyı makileri; dere yatakları.
 Toplama mevsimi: Yapraklar yaz başında, meyveler Kasım–Aralık’ta toplanır.
-Yöresel adlar: mersin, murt, hambeles, merselik
+Yöresel adlar: mersin, murt, hambeles
 Karıştırma riski: Mor meyveleri bazı zehirli maki meyveleriyle karıştırılmamalıdır; mersinin yaprakları ezilince belirgin, hoş bir koku verir.
 
 ### İlginç bilgi
-Mersin ili adını bu bitkiden almıştır; antik Myrtos ve Osmanlı döneminde “mersinlik” denen çalılıklar kıyıyı kaplıyordu.
+Mersin ilinin adının bu bitkiden geldiği yaygın olarak kabul edilir; başka bir görüşe göre ad, bölgede yaşamış Mersinoğulları boyundan gelir.
 
 ## Enginar (Cynara cardunculus var. scolymus)
 
@@ -3578,7 +3578,7 @@ Genelde güvenlidir; ishal ve mide şikâyetleri yapabilir. Papatyagil alerjisi 
 ### Doğada
 Nerede yetişir: Türkiye genelinde tarla kenarları, yol kenarları ve boş araziler.
 Toplama mevsimi: Tohumlar Temmuz–Ağustos’ta, başlar kuruyup pamukçuk açınca toplanır.
-Yöresel adlar: deve dikeni, meryem ana dikeni, alaca dikeni, sütlü diken
+Yöresel adlar: deve dikeni, Meryem Ana dikeni
 Karıştırma riski: Türkiye’de “deve dikeni” adı birçok dikenli bitki için kullanılır. Silybum’u, yapraklarındaki belirgin beyaz damarlar ayırt ettirir.
 
 ### İlginç bilgi
@@ -3658,7 +3658,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 Yaprak soğuk suda bekletilerek ya da kısa demlenerek hazırlanır; en fazla bir hafta kullanılır.
 
 ### Bilim ne diyor
-EMA ayı üzümü yaprağını hafif idrar yolu enfeksiyonu belirtilerinde, hekim enfeksiyonu dışladıktan sonra kısa süreli geleneksel kullanımda tanır. Arbutin vücutta hidrokinona dönüşür. Bir İsviçre çalışmasında antibiyotik yerine kullanımı önerilmemiştir.
+EMA ayı üzümü yaprağını hafif idrar yolu enfeksiyonu belirtilerinde, hekim enfeksiyonu dışladıktan sonra kısa süreli geleneksel kullanımda tanır. Arbutin vücutta hidrokinona dönüşür. Almanya’da yapılan bir karşılaştırmalı çalışmada (REGATTA) antibiyotik kadar etkili bulunmamıştır.
 
 ### Güvenlik
 Bir haftadan uzun ve yılda beş kezden fazla kullanılmamalıdır; hidrokinon karaciğere zarar verebilir. Gebelikte, emzirmede, 18 yaş altında ve böbrek hastalığında kullanılmamalıdır. İdrarı yeşil-kahverengiye boyar.

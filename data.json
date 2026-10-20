@@ -3186,7 +3186,7 @@
    "kul": [
     [
      "Anadolu",
-     "Kökü uykusuzluk ve sinirlilik için demlenir; halk arasında “sinir otu” diye de bilinir."
+     "Kökü uykusuzluk ve sinirlilik için demlenir."
     ],
     [
      "Avrupa",
@@ -3260,7 +3260,7 @@
    "kanit": "sinirli",
    "guv": "orta",
    "guvNot": "Jel cilde sürüldüğünde genelde güvenlidir. Yaprak özsuyu ishal, kramp ve potasyum kaybına yol açar; içilmesi önerilmez. Gebelikte ağızdan kullanılmamalıdır.",
-   "ilginc": "“Sabır” kelimesi bu bitkiden gelir: Arapça sabir, aloenin acı özsuyunun adıdır."
+   "ilginc": "Aloenin Arapça adı “sabir”dir; Türkçedeki “sarısabır” adı buradan gelir."
   },
   {
    "id": "tarcin",
@@ -3422,7 +3422,7 @@
    "tr": "Hibiskus",
    "la": "Hibiscus sabdariffa",
    "fam": "Malvaceae",
-   "diger": "Rozella, Mekke gülü, karkade, flor de jamaica",
+   "diger": "Rozella, karkade, flor de jamaica, bissap",
    "bolge": [
     "kamerika"
    ],
@@ -3467,8 +3467,8 @@
      "Osmanlı’dan beri aktarlarda en çok satılan müshillerdendir; adı “Mekke’nin senası” anlamına gelir. Son yıllarda zayıflama çaylarına da karıştırılır."
     ],
     [
-     "Arap tıbbı",
-     "İbn Sina’nın Kanun’unda müshil olarak anlatılır; Hac yolu üzerinden İslam dünyasına yayıldı."
+     "Ortaçağ İslam tıbbı",
+     "Ortaçağ Arap ve Fars hekimleri müshil olarak kullanmış; Hac yolu üzerinden İslam dünyasına yayılmıştır."
     ]
    ],
    "haz": "Yaprak ya da bakla soğuk ya da ılık suda bekletilir; kısa süreli kullanılır.",
@@ -3508,7 +3508,7 @@
    "kanit": "geleneksel",
    "guv": "dusuk",
    "guvNot": "Yaprak çayı ve meyve genelde güvenlidir. Uçucu yağı içilmemeli, bebeklerin ve küçük çocukların yüzüne sürülmemelidir.",
-   "ilginc": "Mersin ili adını bu bitkiden almıştır; antik Myrtos ve Osmanlı döneminde “mersinlik” denen çalılıklar kıyıyı kaplıyordu."
+   "ilginc": "Mersin ilinin adının bu bitkiden geldiği yaygın olarak kabul edilir; başka bir görüşe göre ad, bölgede yaşamış Mersinoğulları boyundan gelir."
   },
   {
    "id": "enginar",
@@ -3546,7 +3546,7 @@
    "tr": "Deve dikeni",
    "la": "Silybum marianum",
    "fam": "Asteraceae",
-   "diger": "Meryem Ana dikeni, milk thistle, şevketi bostan (yanlış)",
+   "diger": "Meryem Ana dikeni, milk thistle",
    "bolge": [
     "anadolu"
    ],
@@ -3659,7 +3659,7 @@
     ]
    ],
    "haz": "Yaprak soğuk suda bekletilerek ya da kısa demlenerek hazırlanır; en fazla bir hafta kullanılır.",
-   "bilim": "EMA ayı üzümü yaprağını hafif idrar yolu enfeksiyonu belirtilerinde, hekim enfeksiyonu dışladıktan sonra kısa süreli geleneksel kullanımda tanır. Arbutin vücutta hidrokinona dönüşür. Bir İsviçre çalışmasında antibiyotik yerine kullanımı önerilmemiştir.",
+   "bilim": "EMA ayı üzümü yaprağını hafif idrar yolu enfeksiyonu belirtilerinde, hekim enfeksiyonu dışladıktan sonra kısa süreli geleneksel kullanımda tanır. Arbutin vücutta hidrokinona dönüşür. Almanya’da yapılan bir karşılaştırmalı çalışmada (REGATTA) antibiyotik kadar etkili bulunmamıştır.",
    "kanit": "sinirli",
    "guv": "orta",
    "guvNot": "Bir haftadan uzun ve yılda beş kezden fazla kullanılmamalıdır; hidrokinon karaciğere zarar verebilir. Gebelikte, emzirmede, 18 yaş altında ve böbrek hastalığında kullanılmamalıdır. İdrarı yeşil-kahverengiye boyar.",
