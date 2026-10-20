@@ -1,4 +1,28 @@
 {
+ "abuta": {
+  "artist": "Krish Dulal",
+  "auto": true,
+  "file": "Cissampelos pareira NP.JPG",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Cissampelos_pareira_NP.JPG",
+  "w": 960,
+  "w500": 500
+ },
+ "acai": {
+  "artist": "Vihelik",
+  "auto": true,
+  "file": "Euterpe oleracea salu.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "Public domain",
+  "licenseUrl": "",
+  "page": "https://commons.wikimedia.org/wiki/File:Euterpe_oleracea_salu.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "achiote": {
   "artist": "Leonardo Ré-Jorge",
   "file": "Bixa orellana fruit open.jpg",
@@ -32,6 +56,18 @@
   "w": 960,
   "w500": 500
  },
+ "aguaymanto": {
+  "artist": "fir0002 flagstaffotos [at] gmail.com Canon 20D + Tamron 28-75mm f/2.8",
+  "auto": true,
+  "file": "Gooseberry flower.jpg",
+  "h": 807,
+  "h500": 420,
+  "license": "GFDL 1.2",
+  "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+  "page": "https://commons.wikimedia.org/wiki/File:Gooseberry_flower.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "akadacayi": {
   "artist": "HLWolfe",
   "file": "White sage.jpg",
@@ -51,6 +87,30 @@
   "license": "CC BY 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:20260508_Crataegus_04.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "altinkok": {
+  "artist": "Alpsdake",
+  "auto": true,
+  "file": "Rhodiola rosea (Montage s3).jpg",
+  "h": 960,
+  "h500": 500,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Rhodiola_rosea_(Montage_s3).jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "andiroba": {
+  "artist": "Marcelo Henrique da Silva Reis",
+  "auto": true,
+  "file": "Óleo de andiroba.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%C3%93leo_de_andiroba.jpg",
   "w": 960,
   "w500": 500
  },
@@ -98,6 +158,54 @@
   "w": 960,
   "w500": 500
  },
+ "camucamu": {
+  "artist": "LeRoc",
+  "auto": true,
+  "file": "Camu-camu.JPG",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Camu-camu.JPG",
+  "w": 960,
+  "w500": 500
+ },
+ "cay": {
+  "artist": "AxelBoldt at en.wikipedia",
+  "auto": true,
+  "file": "Csinensis.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "Public domain",
+  "licenseUrl": "",
+  "page": "https://commons.wikimedia.org/wiki/File:Csinensis.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "cehri": {
+  "artist": "Franz Xaver",
+  "auto": true,
+  "file": "Rhamnus cathartica 1.jpg",
+  "h": 640,
+  "h500": 333,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Rhamnus_cathartica_1.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "cemen": {
+  "artist": "Yak",
+  "auto": true,
+  "file": "Junger Bockshornklee.jpg",
+  "h": 1126,
+  "h500": 586,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Junger_Bockshornklee.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "chacruna": {
   "artist": "Anthony Baratier",
   "file": "Feuilles de Psychotria viridis.jpg",
@@ -120,6 +228,18 @@
   "w": 960,
   "w500": 500
  },
+ "chiricsanango": {
+  "artist": "mauroguanandi",
+  "auto": true,
+  "file": "Brunfelsia grandiflora.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Brunfelsia_grandiflora.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "chuchuhuasi": {
   "artist": "Daniela Yañez Espichan/Archivo Centro Takiwasi",
   "file": "Corteza de Chuchuhuasi (Maytenus macrocarpa) cortada en el Centro Takiwasi, 2010.jpg",
@@ -131,6 +251,30 @@
   "w": 960,
   "w500": 500
  },
+ "civanpercemi": {
+  "artist": "O. Pichard",
+  "auto": true,
+  "file": "Achillea millefolium vallee-de-grace-amiens 80 22062007 1.jpg",
+  "h": 1434,
+  "h500": 747,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Achillea_millefolium_vallee-de-grace-amiens_80_22062007_1.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "copaiba": {
+  "artist": "Mauroguanandi",
+  "auto": true,
+  "file": "Copaicaaclimacao.JPG",
+  "h": 720,
+  "h500": 375,
+  "license": "Public domain",
+  "licenseUrl": "",
+  "page": "https://commons.wikimedia.org/wiki/File:Copaicaaclimacao.JPG",
+  "w": 960,
+  "w500": 500
+ },
  "corekotu": {
   "artist": "H. Zell",
   "file": "Nigella sativa 003.JPG",
@@ -139,6 +283,18 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Nigella_sativa_003.JPG",
+  "w": 960,
+  "w500": 500
+ },
+ "cucepalmiye": {
+  "artist": "Ted Bodner, Southern Weed Science Society, United States",
+  "auto": true,
+  "file": "Serenoa repens USDA1.jpg",
+  "h": 1386,
+  "h500": 722,
+  "license": "CC BY 3.0 us",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0/us/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Serenoa_repens_USDA1.jpg",
   "w": 960,
   "w500": 500
  },
@@ -164,6 +320,54 @@
   "w": 960,
   "w500": 500
  },
+ "efedra": {
+  "artist": "alexlomas on Flickr",
+  "auto": true,
+  "file": "Ephedra sinica alexlomas.jpg",
+  "h": 1278,
+  "h500": 665,
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ephedra_sinica_alexlomas.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "ekinezya": {
+  "artist": "Burkhard Mücke",
+  "auto": true,
+  "file": "Echinacea purpurea Feldanbau.jpg",
+  "h": 1519,
+  "h500": 791,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Echinacea_purpurea_Feldanbau.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "ginseng": {
+  "artist": "FloraFarm GmbH / Katharina Lohrie",
+  "auto": true,
+  "file": "Ginsengpflanze.jpg",
+  "h": 960,
+  "h500": 500,
+  "license": "CC BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ginsengpflanze.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "guarana": {
+  "artist": "Geoff Gallice from Gainesville, FL, USA",
+  "auto": true,
+  "file": "Flickr - ggallice - Guaraná (1).jpg",
+  "h": 640,
+  "h500": 333,
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Flickr_-_ggallice_-_Guaran%C3%A1_(1).jpg",
+  "w": 960,
+  "w500": 500
+ },
  "guayusa": {
   "artist": "Anna Premo",
   "file": "View of Ilex guayusa from above.jpg",
@@ -172,6 +376,18 @@
   "license": "FAL",
   "licenseUrl": "http://artlibre.org/licence/lal/en",
   "page": "https://commons.wikimedia.org/wiki/File:View_of_Ilex_guayusa_from_above.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "gucigdemi": {
+  "artist": "Stemonitis",
+  "auto": true,
+  "file": "Colchicum autumnale.jpg",
+  "h": 1013,
+  "h500": 528,
+  "license": "Public domain",
+  "licenseUrl": "",
+  "page": "https://commons.wikimedia.org/wiki/File:Colchicum_autumnale.jpg",
   "w": 960,
   "w500": 500
  },
@@ -186,6 +402,18 @@
   "w": 960,
   "w500": 500
  },
+ "hatmi": {
+  "artist": "",
+  "auto": true,
+  "file": "Althea officinalis flor.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Althea_officinalis_flor.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "hayit": {
   "artist": "Stan Shebs",
   "file": "Vitex agnus-castus flowers.jpg",
@@ -197,6 +425,18 @@
   "w": 960,
   "w500": 500
  },
+ "huito": {
+  "artist": "Dorcas Queen",
+  "auto": true,
+  "file": "Genipapo.jpg",
+  "h": 640,
+  "h500": 333,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Genipapo.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "ihlamur": {
   "artist": "Joanna Boisse",
   "file": "Atlas roslin pl Lipa srebrzysta 7298 8090.jpg",
@@ -205,6 +445,18 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Atlas_roslin_pl_Lipa_srebrzysta_7298_8090.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "isgin": {
+  "artist": "Zeynel Cebeci",
+  "auto": true,
+  "file": "Rheum ribes - Işgın 04.jpg",
+  "h": 673,
+  "h500": 351,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Rheum_ribes_-_I%C5%9Fg%C4%B1n_04.jpg",
   "w": 960,
   "w500": 500
  },
@@ -241,6 +493,30 @@
   "w": 960,
   "w500": 500
  },
+ "kantuta": {
+  "artist": "No machine-readable author provided. Ghiz~commonswiki assumed (based on copyright claims).",
+  "auto": true,
+  "file": "Kantutas Cuzco.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "GFDL",
+  "licenseUrl": "http://www.gnu.org/copyleft/fdl.html",
+  "page": "https://commons.wikimedia.org/wiki/File:Kantutas_Cuzco.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "kapari": {
+  "artist": "IssamBarhoumi",
+  "auto": true,
+  "file": "Capparis spinosa Ichkeul National Parc.jpg",
+  "h": 742,
+  "h500": 387,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Capparis_spinosa_Ichkeul_National_Parc.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "karahindiba": {
   "artist": "Thomas Wolf ( Der Wolf im Wald )",
   "file": "Gewöhnlicher Löwenzahn.jpg",
@@ -249,6 +525,18 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Gew%C3%B6hnlicher_L%C3%B6wenzahn.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "karayilan": {
+  "artist": "No machine-readable author provided. Valérie75 assumed (based on copyright claims).",
+  "auto": true,
+  "file": "Cimicifuga racemosa 002.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Cimicifuga_racemosa_002.jpg",
   "w": 960,
   "w500": 500
  },
@@ -263,6 +551,54 @@
   "w": 960,
   "w500": 500
  },
+ "kenevir": {
+  "artist": "Chmee2",
+  "auto": true,
+  "file": "Cannabis sativa plant (4).JPG",
+  "h": 640,
+  "h500": 333,
+  "license": "CC BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Cannabis_sativa_plant_(4).JPG",
+  "w": 960,
+  "w500": 500
+ },
+ "keten": {
+  "artist": "H. Zell",
+  "auto": true,
+  "file": "Linum usitatissimum 001.JPG",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Linum_usitatissimum_001.JPG",
+  "w": 960,
+  "w500": 500
+ },
+ "kimyon": {
+  "artist": "Sanjay Acharya",
+  "auto": true,
+  "file": "Seeds of Cumin.jpg",
+  "h": 640,
+  "h500": 333,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Seeds_of_Cumin.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "kina": {
+  "artist": "Dinesh Valke from Thane, India",
+  "auto": true,
+  "file": "Lawsonia inermis (3709419835).jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Lawsonia_inermis_(3709419835).jpg",
+  "w": 960,
+  "w500": 500
+ },
  "kinin": {
   "artist": "James Steakley",
   "file": "Cinchona officinalis (DITSL).JPG",
@@ -274,6 +610,30 @@
   "w": 960,
   "w500": 500
  },
+ "kinoa": {
+  "artist": "Maurice Chédel",
+  "auto": true,
+  "file": "Quinua.JPG",
+  "h": 626,
+  "h500": 326,
+  "license": "Public domain",
+  "licenseUrl": "",
+  "page": "https://commons.wikimedia.org/wiki/File:Quinua.JPG",
+  "w": 960,
+  "w500": 500
+ },
+ "kizilcik": {
+  "artist": "B.navez",
+  "auto": true,
+  "file": "CornusMas Fruits 01.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:CornusMas_Fruits_01.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "koka": {
   "artist": "Danna Guevara",
   "file": "Coca (Erythroxylum coca) en Meta (Colombia) 2.jpg",
@@ -282,6 +642,30 @@
   "license": "CC BY 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Coca_(Erythroxylum_coca)_en_Meta_(Colombia)_2.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "kokboya": {
+  "artist": "Carstor",
+  "auto": true,
+  "file": "Rubia tinctorum flowers.jpg",
+  "h": 1046,
+  "h500": 545,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Rubia_tinctorum_flowers.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "kudretnari": {
+  "artist": "Fahim Shahriyar Rifat",
+  "auto": true,
+  "file": "Momordica charantia (flower).jpg",
+  "h": 960,
+  "h500": 500,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Momordica_charantia_(flower).jpg",
   "w": 960,
   "w500": 500
  },
@@ -362,6 +746,18 @@
   "w": 960,
   "w500": 500
  },
+ "molle": {
+  "artist": "Charles Gadbois",
+  "auto": true,
+  "file": "Arequipa - Canyon de Colca 123 Schinus molle 1.JPG",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Arequipa_-_Canyon_de_Colca_123_Schinus_molle_1.JPG",
+  "w": 960,
+  "w500": 500
+ },
  "muna": {
   "artist": "Lidsay Brito",
   "file": "Muña creciendo de manera silvestre en la quebrada de Aquilpo.jpg",
@@ -381,6 +777,42 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Sambucus_Nigra_%27Guincho_Purple%27._Locatie,_Tuinen_Mien_Ruys_02.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "nane": {
+  "artist": "Kızıl",
+  "auto": true,
+  "file": "Mentha × piperita–IMG 6075.jpg",
+  "h": 960,
+  "h500": 500,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Mentha_%C3%97_piperita%E2%80%93IMG_6075.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "nar": {
+  "artist": "H. Zell",
+  "auto": true,
+  "file": "Punica granatum 004.JPG",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Punica_granatum_004.JPG",
+  "w": 960,
+  "w500": 500
+ },
+ "okseotu": {
+  "artist": "George Chernilevsky",
+  "auto": true,
+  "file": "Viscum album 2026 G1.jpg",
+  "h": 960,
+  "h500": 500,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Viscum_album_2026_G1.jpg",
   "w": 960,
   "w500": 500
  },
@@ -406,6 +838,18 @@
   "w": 960,
   "w500": 500
  },
+ "pauarco": {
+  "artist": "Giles Laurent",
+  "auto": true,
+  "file": "055 Pink Ipê tree in Mato Grosso Photo by Giles Laurent.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:055_Pink_Ip%C3%AA_tree_in_Mato_Grosso_Photo_by_Giles_Laurent.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "pelin": {
   "artist": "Tournasol7",
   "file": "Artemisia absinthium in Aveyron (2).jpg",
@@ -417,6 +861,18 @@
   "w": 960,
   "w500": 500
  },
+ "peyote": {
+  "artist": "",
+  "auto": true,
+  "file": "Peyote Cactus.jpg",
+  "h": 637,
+  "h500": 332,
+  "license": "Public domain",
+  "licenseUrl": "",
+  "page": "https://commons.wikimedia.org/wiki/File:Peyote_Cactus.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "rezene": {
   "artist": "Dianakc",
   "file": "Foeniculum vulgare flower.JPG",
@@ -425,6 +881,18 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Foeniculum_vulgare_flower.JPG",
+  "w": 960,
+  "w500": 500
+ },
+ "sachainchi": {
+  "artist": "The lifted lorax",
+  "auto": true,
+  "file": "Plukenetia volubilis.JPG",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Plukenetia_volubilis.JPG",
   "w": 960,
   "w500": 500
  },
@@ -483,6 +951,18 @@
   "w": 960,
   "w500": 500
  },
+ "sarimsak": {
+  "artist": "Ermell",
+  "auto": true,
+  "file": "Knoblauch (Allium sativum)-20200621-RM-085344.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Knoblauch_(Allium_sativum)-20200621-RM-085344.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "sedef": {
   "artist": "Robert Flogaus-Faust",
   "file": "Ruta graveolens RF.jpg",
@@ -491,6 +971,18 @@
   "license": "CC BY 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Ruta_graveolens_RF.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "sigirkuyrugu": {
+  "artist": "4028mdk09",
+  "auto": true,
+  "file": "Kleinblütige Königskerze.JPG",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Kleinbl%C3%BCtige_K%C3%B6nigskerze.JPG",
   "w": 960,
   "w500": 500
  },
@@ -513,6 +1005,30 @@
   "license": "CC BY 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Fliegenpilz_fly_agaric_Amanita_muscaria.JPG",
+  "w": 960,
+  "w500": 500
+ },
+ "sumak": {
+  "artist": "Dedda71",
+  "auto": true,
+  "file": "Sommacco.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Sommacco.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "tatula": {
+  "artist": "Didier Descouens",
+  "auto": true,
+  "file": "Datura stramonium MHNT.BOT.2004.0.263a.jpg",
+  "h": 836,
+  "h500": 436,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Datura_stramonium_MHNT.BOT.2004.0.263a.jpg",
   "w": 960,
   "w500": 500
  },
@@ -546,6 +1062,90 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Peganum_harmala_Baikonur_04.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "yabaniigde": {
+  "artist": "Виталий Уайлд",
+  "auto": true,
+  "file": "Hippophae (Novogrudinina).jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Hippophae_(Novogrudinina).jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "yacon": {
+  "artist": "Carlo Brescia",
+  "auto": true,
+  "file": "Flor de yacón en el Criba, Cusco.jpg",
+  "h": 638,
+  "h500": 332,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Flor_de_yac%C3%B3n_en_el_Criba,_Cusco.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "yarpuz": {
+  "artist": "Raffi Kojian",
+  "auto": true,
+  "file": "Gardenology.org-IMG 2751 rbgs11jan.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Gardenology.org-IMG_2751_rbgs11jan.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "yopo": {
+  "artist": "The Drug Users Bible",
+  "auto": true,
+  "file": "Yopo Seeds - 27803874598.jpg",
+  "h": 540,
+  "h500": 281,
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Yopo_Seeds_-_27803874598.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "zakkum": {
+  "artist": "",
+  "auto": true,
+  "file": "Nerium oleander Ouarzazate wild1.jpg",
+  "h": 721,
+  "h500": 375,
+  "license": "CC BY 2.5",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:Nerium_oleander_Ouarzazate_wild1.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "zerdecal": {
+  "artist": "Forest and Kim Starr",
+  "auto": true,
+  "file": "Starr-140925-1977-Curcuma longa-flowering habit-Pali o Waipio Huelo-Maui (25128294462).jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY 3.0 us",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0/us/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Starr-140925-1977-Curcuma_longa-flowering_habit-Pali_o_Waipio_Huelo-Maui_(25128294462).jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "zeytin": {
+  "artist": "Hans Hillewaert",
+  "auto": true,
+  "file": "El Perelló - Old olive tree.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:El_Perell%C3%B3_-_Old_olive_tree.jpg",
   "w": 960,
   "w500": 500
  }
