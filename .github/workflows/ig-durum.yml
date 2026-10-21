@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Durumu ayrı dala yaz
         run: |
-          curl -sS https://bitkitabani.com/api/ig-durum > /tmp/durum.json; cat /tmp/durum.json
+          curl -sS https://bitkitabani.com/api/ig-durum > /tmp/durum.json; N=$(python3 -c "import json;print(json.load(open('/tmp/durum.json'))['sayi'])"); curl -sS -o /dev/null -w '{"ig_post_json":%{http_code},"type":"%{content_type}"}' https://bitkitabani.com/ig/p/$N/post.json >> /tmp/durum.json; cat /tmp/durum.json
           git config user.name "bitkitabani-bot"; git config user.email "actions@users.noreply.github.com"
           git checkout --orphan durum; git rm -rq --cached .; cp /tmp/durum.json durum.json
           git add durum.json; git commit -qm "Instagram durumu [bot]"; git push -f origin durum
