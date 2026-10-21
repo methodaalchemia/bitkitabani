@@ -1,1 +1,31 @@
 # id | arama terimi | ek kelimeler
+dagcayi | Sideritis | flower
+atkestanesi | Aesculus hippocastanum | flower
+ceviz | Juglans regia | leaves
+incir | Ficus carica | fruit
+feslegen | Ocimum basilicum | plant
+anason | Pimpinella anisum | flower
+turunc | Citrus aurantium | fruit
+hodan | Borago officinalis | flower
+goji | Lycium barbarum | fruit
+reishi | Ganoderma lucidum |
+gelincik | Papaver rhoeas | flower
+sogut | Salix alba | leaves
+pasiflora | Passiflora incarnata | flower
+karabas | Lavandula stoechas | flower
+neem | Azadirachta indica | leaves
+graviola | Annona muricata | fruit
+mahlep | Prunus mahaleb |
+yildizanason | Illicium verum | fruit
+gotukola | Centella asiatica | leaves
+tulsi | Ocimum tenuiflorum |
+lotus | Nelumbo nucifera | flower
+hamamelis | Hamamelis virginiana | flower
+turnayemisi | Vaccinium macrocarpon | fruit
+paico | Dysphania ambrosioides |
+sassafras | Sassafras albidum | leaves
+kiwicha | Amaranthus caudatus |
+huayruro | Ormosia coccinea | seeds
+fitolakka | Phytolacca americana | berries
+mayiselmasi | Podophyllum peltatum | flower
+ajosacha | Mansoa alliacea | flower
