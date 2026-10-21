@@ -123,6 +123,7 @@ async function igPost(env) {
   }
   const day = trDay(), hour = trHour(), n = st.n || 0;
   const launching = n < LAUNCH;
+  if (st.pauseUntil && Date.now() < st.pauseUntil) return { skipped: 'istek sınırı; bekleniyor' };
   if (launching) {
     if (hour < 9 || hour >= 23) return { skipped: 'gece' };
     if (st.lastAt && Date.now() - st.lastAt < 28 * 60e3) return { skipped: 'yarım saat dolmadı' };
@@ -135,6 +136,15 @@ async function igPost(env) {
     const post = await pr.json();
     const tok = await igToken(env, st);
     if (!st.uid) st.uid = (await igJson(await fetch(IG + '/me?fields=user_id,username&access_token=' + encodeURIComponent(tok)))).user_id;
+    // Aynı post zaten çıkmış mı? (Önceki denemede paylaşım olup yanıt hata dönmüş olabilir.)
+    const head = (post.caption || '').split('\n').find(x => x.trim()) || '';
+    const recent = await igJson(await fetch(IG + '/me/media?fields=id,caption&limit=5&access_token=' + encodeURIComponent(tok)));
+    const dup = (recent.data || []).find(m => (m.caption || '').split('\n').find(x => x.trim()) === head);
+    if (dup) {
+      st.n = n + 1; st.last = day; st.lastAt = Date.now(); st.lastId = dup.id; st.lastPlant = post.id; st.error = null; st.errorAt = null;
+      await call(env, 'ig:state', 'put', st);
+      return { n: st.n, skipped: 'zaten paylaşılmış' };
+    }
     const form = o => { const f = new URLSearchParams(o); f.set('access_token', tok); return { method: 'POST', body: f }; };
     const kids = [];
     for (let i = 0; i < post.images.length; i++) {
@@ -145,11 +155,11 @@ async function igPost(env) {
       kids.push(r.id);
     }
     const box = (await igJson(await fetch(IG + '/' + st.uid + '/media', form({ media_type: 'CAROUSEL', children: kids.join(','), caption: post.caption })))).id;
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 4; i++) {
+      await new Promise(r => setTimeout(r, 5000));
       const s = await igJson(await fetch(IG + '/' + box + '?fields=status_code&access_token=' + encodeURIComponent(tok)));
       if (s.status_code === 'FINISHED') break;
       if (s.status_code === 'ERROR') throw new Error('Instagram görselleri işleyemedi');
-      await new Promise(r => setTimeout(r, 3000));
     }
     const pub = await igJson(await fetch(IG + '/' + st.uid + '/media_publish', form({ creation_id: box })));
     st.n = n + 1; st.last = day; st.lastAt = Date.now(); st.lastId = pub.id; st.lastPlant = post.id; st.error = null; st.errorAt = null;
@@ -168,6 +178,7 @@ async function igPost(env) {
     }
   } catch (e) {
     st.error = String(e.message || e).slice(0, 300); st.errorAt = new Date().toISOString();
+    if (/limit/i.test(st.error)) st.pauseUntil = Date.now() + 2 * 3600e3;   // istek sınırına takılınca 2 saat bekle
   }
   await call(env, 'ig:state', 'put', st);
   return { n: st.n || 0, error: st.error };
