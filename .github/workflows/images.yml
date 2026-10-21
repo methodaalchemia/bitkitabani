@@ -26,7 +26,16 @@ jobs:
             n=$(basename "$f" | sed 's/%5B/[/;s/%5D/]/'); [ -f "$n" ] || curl -sSfL -o "$n" "https://raw.githubusercontent.com/google/fonts/main/ofl/$f" || true
           done
       - run: python3 build.py
-      - run: python3 tools/ig.py
+      - name: Instagram postları
+        continue-on-error: true
+        run: python3 tools/ig.py
+      - name: Instagram dosyalarını ayrı dala yaz (geçmiş tutulmaz)
+        continue-on-error: true
+        run: |
+          [ -f igout/state.json ] || exit 0
+          cd igout && git init -q && git checkout -q -b igmedia && git add -A
+          git -c user.name="bitkitabani-bot" -c user.email="actions@users.noreply.github.com" commit -qm "Instagram dosyaları [bot]"
+          git push -fq "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" igmedia
       - name: Değişiklikleri kaydet
         run: |
           git config user.name "bitkitabani-bot"

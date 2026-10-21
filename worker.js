@@ -84,6 +84,17 @@ async function session(req, env) {
 // Gerekli gizli değişken: IG_TOKEN (Instagram API with Instagram Login, uzun ömürlü token).
 // Token 60 gün geçerlidir; 20 günde bir kendiliğinden yenilenir ve Durable Object'te saklanır.
 const IG = 'https://graph.instagram.com/v23.0';
+// Instagram görselleri ve videoları sitede değil, geçmişi tutulmayan igmedia dalında durur (depo şişmesin diye).
+const IGRAW = 'https://raw.githubusercontent.com/methodaalchemia/bitkitabani/igmedia/';
+async function igAsset(path) {
+  if (!path || path.endsWith('/')) path += 'index.html';
+  if (path.includes('..')) return new Response('yok', { status: 404 });
+  const r = await fetch(IGRAW + path, { cf: { cacheTtl: 300, cacheEverything: true } });
+  if (!r.ok) return new Response('yok', { status: 404 });
+  const ext = path.split('.').pop();
+  const ct = { jpg: 'image/jpeg', mp4: 'video/mp4', json: 'application/json; charset=utf-8', html: 'text/html; charset=utf-8' }[ext] || 'application/octet-stream';
+  return new Response(r.body, { headers: { 'content-type': ct, 'cache-control': 'public, max-age=300', 'x-robots-tag': 'noindex' } });
+}
 function trDay(d = new Date()) { return new Date(d.getTime() + 3 * 3600e3).toISOString().slice(0, 10); }
 async function igJson(r) { const j = await r.json().catch(() => ({})); if (!r.ok || j.error) throw new Error((j.error && j.error.message) || ('HTTP ' + r.status)); return j; }
 async function igToken(env, st) {
@@ -102,6 +113,14 @@ const LAUNCH = 14; // 12 post + yeni stille yeniden paylaşılan ilk 2
 function trHour(d = new Date()) { return new Date(d.getTime() + 3 * 3600e3).getUTCHours(); }
 async function igPost(env) {
   const st = (await call(env, 'ig:state', 'get')) || {};
+  if (st.reelPending && st.token) {   // video işlenince yayımla
+    try {
+      const s = await igJson(await fetch(IG + '/' + st.reelPending + '?fields=status_code&access_token=' + encodeURIComponent(st.token)));
+      if (s.status_code === 'FINISHED') { await igJson(await fetch(IG + '/' + st.uid + '/media_publish', { method: 'POST', body: new URLSearchParams({ creation_id: st.reelPending, access_token: st.token }) })); st.reelPending = null; st.reels = (st.reels || 0) + 1; }
+      else if (s.status_code === 'ERROR' || Date.now() - st.reelAt > 6 * 3600e3) { st.reelError = 'video işlenemedi'; st.reelPending = null; }
+    } catch (e) { st.reelError = String(e.message || e).slice(0, 200); st.reelPending = null; }
+    await call(env, 'ig:state', 'put', st);
+  }
   const day = trDay(), hour = trHour(), n = st.n || 0;
   const launching = n < LAUNCH;
   if (launching) {
@@ -111,14 +130,20 @@ async function igPost(env) {
     if (hour < 19 || st.last === day) return { skipped: 'bugün sırası değil' };
   }
   try {
-    const pr = await env.ASSETS.fetch(new Request('https://bitkitabani.com/ig/p/' + n + '/post.json'));
+    const pr = await igAsset('p/' + n + '/post.json');
     if (!pr.ok) throw new Error(n + '. post bulunamadı; gece derlemesi bekleniyor');
     const post = await pr.json();
     const tok = await igToken(env, st);
     if (!st.uid) st.uid = (await igJson(await fetch(IG + '/me?fields=user_id,username&access_token=' + encodeURIComponent(tok)))).user_id;
     const form = o => { const f = new URLSearchParams(o); f.set('access_token', tok); return { method: 'POST', body: f }; };
     const kids = [];
-    for (const u of post.images) kids.push((await igJson(await fetch(IG + '/' + st.uid + '/media', form({ image_url: u, is_carousel_item: 'true' })))).id);
+    for (let i = 0; i < post.images.length; i++) {
+      const base = { image_url: post.images[i], is_carousel_item: 'true' };
+      let r;
+      try { r = await igJson(await fetch(IG + '/' + st.uid + '/media', form(post.alts && post.alts[i] && !st.noAlt ? { ...base, alt_text: post.alts[i].slice(0, 1000) } : base))); }
+      catch (e) { if (!/alt_text/i.test(String(e.message))) throw e; st.noAlt = true; r = await igJson(await fetch(IG + '/' + st.uid + '/media', form(base))); }
+      kids.push(r.id);
+    }
     const box = (await igJson(await fetch(IG + '/' + st.uid + '/media', form({ media_type: 'CAROUSEL', children: kids.join(','), caption: post.caption })))).id;
     for (let i = 0; i < 10; i++) {
       const s = await igJson(await fetch(IG + '/' + box + '?fields=status_code&access_token=' + encodeURIComponent(tok)));
@@ -128,6 +153,19 @@ async function igPost(env) {
     }
     const pub = await igJson(await fetch(IG + '/' + st.uid + '/media_publish', form({ creation_id: box })));
     st.n = n + 1; st.last = day; st.lastAt = Date.now(); st.lastId = pub.id; st.lastPlant = post.id; st.error = null; st.errorAt = null;
+    // Günlük postlarda: hikâye (takipçilere duyuru) ve deneme Reels (önce takip etmeyenlere gösterilir)
+    if (!launching && post.story) {
+      try {
+        const sid = (await igJson(await fetch(IG + '/' + st.uid + '/media', form({ media_type: 'STORIES', image_url: post.story })))).id;
+        await igJson(await fetch(IG + '/' + st.uid + '/media_publish', form({ creation_id: sid }))); st.storyError = null;
+      } catch (e) { st.storyError = String(e.message || e).slice(0, 200); }
+    }
+    if (!launching && post.reel) {
+      try {
+        const rid = (await igJson(await fetch(IG + '/' + st.uid + '/media', form({ media_type: 'REELS', video_url: post.reel, caption: post.caption, trial_params: JSON.stringify({ graduation_strategy: 'SS_PERFORMANCE' }) })))).id;
+        st.reelPending = rid; st.reelAt = Date.now(); st.reelError = null;
+      } catch (e) { st.reelError = String(e.message || e).slice(0, 200); }
+    }
   } catch (e) {
     st.error = String(e.message || e).slice(0, 300); st.errorAt = new Date().toISOString();
   }
@@ -137,10 +175,11 @@ async function igPost(env) {
 export default {
   async fetch(req, env) {
     const url = new URL(req.url);
+    if (url.pathname.startsWith('/ig/')) return igAsset(url.pathname.slice(4));
     if (!url.pathname.startsWith('/api/')) return env.ASSETS.fetch(req);
     if (url.pathname === '/api/ig-durum' && req.method === 'GET') {
       const st = (await call(env, 'ig:state', 'get')) || {};
-      return json({ token: !!(env.IG_TOKEN || st.token), sayi: st.n || 0, sonPaylasim: st.last || null, bitki: st.lastPlant || null, hata: st.error || null, hataZamani: st.errorAt || null, tokenYenilendi: st.tokenAt ? new Date(st.tokenAt).toISOString() : null, bugun: trDay() });
+      return json({ token: !!(env.IG_TOKEN || st.token), sayi: st.n || 0, reels: st.reels || 0, reelHata: st.reelError || null, hikayeHata: st.storyError || null, altMetin: !st.noAlt, sonPaylasim: st.last || null, bitki: st.lastPlant || null, hata: st.error || null, hataZamani: st.errorAt || null, tokenYenilendi: st.tokenAt ? new Date(st.tokenAt).toISOString() : null, bugun: trDay() });
     }
     if (req.method !== 'GET' && req.headers.get('x-bt') !== '1') return json({ error: 'csrf' }, 403);
     try {

@@ -150,3 +150,48 @@ def caption2(p, label):
         f'Kaynaklarıyla tamamı: bitkitabani.com/{p["id"]} (bağlantı profilde)', '',
         ' '.join(m.get('etiket') or [base.hashtag(p['tr']), '#şifalıbitkiler', '#bitkiçayı', '#doğalyaşam', '#etnobotanik'])]
     return '\n'.join(lines)[:2150]
+
+def alts2(p):
+    """Her slayt için alternatif metin (görme engelliler ve Instagram araması için)."""
+    m = text_for(p)
+    return [f'{p["tr"]} ({p["la"]}) fotoğrafı. {m["kapak"]}',
+            f'{p["tr"]} kısaca: ' + '; '.join(f'{a}: {b}' for a, b in m['kisaca']),
+            f'{m["hikaye"][0]}. {m["hikaye"][1]}', f'Gelenek: {m["gelenek"][0]}. {m["gelenek"][1]}',
+            f'Bilim ne diyor: {m["bilim"][0]}. {m["bilim"][1]}', 'Dikkat: ' + '; '.join(m['dikkat']) + '. ' + m.get('dikkat_not', ''),
+            f'{m["nasil"][0]}: {m["nasil"][1]}', f'{m["kaydet"]} Her gün yeni bir bitki: bitkitabani.com/{p["id"]}']
+
+def story(p, cover):
+    """Hikâye görseli (1080×1920): bulanık arka plan üstünde kapak slaydı ve 'yeni gönderi' notu."""
+    SW, SH = 1080, 1920
+    bg = cover.resize((int(SH * cover.width / cover.height), SH), Image.LANCZOS).filter(ImageFilter.GaussianBlur(30))
+    l = (bg.width - SW) // 2; bg = bg.crop((l, 0, l + SW, SH))
+    bg.paste(Image.new('RGB', (SW, SH), (12, 18, 14)), (0, 0), Image.new('L', (SW, SH), 110))
+    card = cover.resize((864, 1080), Image.LANCZOS); bg.paste(card, ((SW - 864) // 2, 380))
+    d = ImageDraw.Draw(bg)
+    t = up('Yeni gönderi'); f = sans_b(40); d.text(((SW - d.textlength(t, font=f)) / 2, 270), t, font=f, fill=(240, 226, 196))
+    t = 'Profilde, kaydırarak oku'; f = sans(44); d.text(((SW - d.textlength(t, font=f)) / 2, 1520), t, font=f, fill=(255, 255, 255))
+    t = '@bitkitabani'; f = serif(52, 800); d.text(((SW - d.textlength(t, font=f)) / 2, 1600), t, font=f, fill=(255, 255, 255))
+    return bg
+
+def reel(ims, img_path=None, out='reel.mp4', sec=3.0):
+    """Slaytlardan 9:16 sessiz kısa video (Reels). ffmpeg yoksa False döner."""
+    import shutil, subprocess, tempfile
+    if not shutil.which('ffmpeg'): return False
+    SW, SH = 1080, 1920
+    base_bg = photo(img_path, SW, SH, blur=30) or Image.new('RGB', (SW, SH), LEAF)
+    base_bg.paste(Image.new('RGB', (SW, SH), (12, 18, 14)), (0, 0), Image.new('L', (SW, SH), 120))
+    tmp = tempfile.mkdtemp()
+    lst = []
+    for i, im in enumerate(ims):
+        fr = base_bg.copy(); fr.paste(im, (0, (SH - H) // 2))
+        pth = os.path.join(tmp, f'{i}.png'); fr.save(pth); lst.append(pth)
+    with open(os.path.join(tmp, 'l.txt'), 'w') as f:
+        for i, pth in enumerate(lst): f.write(f"file '{pth}'\nduration {sec + (1 if i in (0, len(lst) - 1) else 0)}\n")
+        f.write(f"file '{lst[-1]}'\n")
+    r = subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', os.path.join(tmp, 'l.txt'),
+                        '-f', 'lavfi', '-i', 'anullsrc=r=44100:cl=stereo', '-shortest',
+                        '-vf', 'fps=30,format=yuv420p', '-c:v', 'libx264', '-preset', 'medium', '-crf', '23', '-c:a', 'aac', '-b:a', '64k',
+                        '-movflags', '+faststart', out], capture_output=True, text=True)
+    shutil.rmtree(tmp, ignore_errors=True)
+    if r.returncode != 0: print('reel hatası:', r.stderr[:300]); return False
+    return True

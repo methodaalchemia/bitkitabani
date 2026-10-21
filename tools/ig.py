@@ -199,15 +199,15 @@ def sequence(data):
 REPOST = ['zencefil', 'zerdecal']
 
 def posted_count():
-    """Kaç post paylaşıldığını sitenin kendisinden öğren (GitHub Actions’ta çalışır); olmazsa son bilinen değer."""
-    st = os.path.join(ROOT, 'site', 'ig', 'state.json')
+    """Kaç post paylaşıldığını sitenin kendisinden öğren (GitHub Actions’ta çalışır).
+    Öğrenilemezse None döner ve hiçbir şey üretilmez; yanlış sıradan post üretmekten iyidir."""
+    if os.environ.get('IG_N'): return int(os.environ['IG_N'])   # yerelde deneme için
     try:
         import urllib.request
-        with urllib.request.urlopen(urllib.request.Request(BASE + '/api/ig-durum', headers={'User-Agent': 'BitkiTabani-build'}), timeout=15) as r:
+        with urllib.request.urlopen(urllib.request.Request(BASE + '/api/ig-durum', headers={'User-Agent': 'BitkiTabani-build'}), timeout=20) as r:
             return int(json.loads(r.read()).get('sayi') or 0)
-    except Exception:
-        try: return int(json.load(open(st)).get('n', 0))
-        except Exception: return 0
+    except Exception as e:
+        print('ig: paylaşım durumu alınamadı, postlar üretilmedi:', e); return None
 
 PAGE_CSS = 'body{margin:0;padding:16px;background:#F1EADD;color:#1C2140;font-family:system-ui,sans-serif;max-width:1180px;margin:auto}h1{font-family:Georgia,serif}.post{background:#FBF6EC;border:1px solid #DCCFBA;border-radius:12px;padding:16px;margin:0 0 24px}.when{color:#5D5866;margin-top:0}.strip{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px}.strip img{width:216px;height:auto;border-radius:6px;display:block}textarea{width:100%;font:inherit;margin:12px 0 8px;border:1px solid #DCCFBA;border-radius:8px;padding:8px;background:#fff;color:inherit}button{font:inherit;padding:8px 14px;border-radius:8px;border:1px solid #A3271B;background:#A3271B;color:#fff}@media (prefers-color-scheme:dark){body{background:#15131E;color:#F0E7D8}.post{background:#1E1A29;border-color:#3A3247}textarea{background:#15131E}}'
 
@@ -224,9 +224,12 @@ def main():
     P = {p['id']: p for p in data['p']}
     seq = sequence(data)
     n0 = posted_count()
-    out_root = os.path.join(ROOT, 'site', 'ig')
-    if os.path.isdir(out_root):
-        import shutil; shutil.rmtree(out_root)
+    import shutil
+    old = os.path.join(ROOT, 'site', 'ig')            # eski yer; dosyalar artık igmedia dalında
+    if os.path.isdir(old): shutil.rmtree(old)
+    if n0 is None: return
+    out_root = os.path.join(ROOT, 'igout')
+    if os.path.isdir(out_root): shutil.rmtree(out_root)
     os.makedirs(out_root)
     json.dump({'n': n0, 'day': day.isoformat()}, open(os.path.join(out_root, 'state.json'), 'w'))
     cards = []
@@ -247,7 +250,13 @@ def main():
             im.save(os.path.join(od, f'{i}.jpg'), 'JPEG', quality=82, optimize=True, progressive=False)
             urls.append(f'{BASE}/ig/p/{n}/{i}.jpg')
         cap = ig2.caption2(p, label)
-        json.dump({'n': n, 'id': pid, 'caption': cap, 'images': urls}, open(os.path.join(od, 'post.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+        extra = {}
+        if n >= LAUNCH + len(REPOST):                     # günlük postlarda hikâye ve deneme Reels
+            ig2.story(p, ims[0]).save(os.path.join(od, 'story.jpg'), 'JPEG', quality=85)
+            extra['story'] = f'{BASE}/ig/p/{n}/story.jpg'
+            if ig2.reel(ims, img_path=os.path.join(ROOT, 'img', f'{pid}-960.jpg') if p['img'] else None, out=os.path.join(od, 'reel.mp4')):
+                extra['reel'] = f'{BASE}/ig/p/{n}/reel.mp4'
+        json.dump({'n': n, 'id': pid, 'caption': cap, 'images': urls, 'alts': ig2.alts2(p), **extra}, open(os.path.join(od, 'post.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
         thumbs = ''.join(f'<a href="p/{n}/{i}.jpg" download><img src="p/{n}/{i}.jpg" alt="Slayt {i}" width="216" height="270" loading="lazy"></a>' for i in range(1, len(ims) + 1))
         when = f'Açılış postu {n - 1}/{LAUNCH}' if 2 <= n < LAUNCH + len(REPOST) else ('Sıradaki' if n == n0 else 'Sonra')
         cards.append(f'<section class="post"><h2>{n + 1}. post: {html.escape(p["tr"])}</h2><p class="when">{when}</p><div class="strip">{thumbs}</div>'
