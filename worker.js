@@ -98,7 +98,7 @@ async function igToken(env, st) {
   return tok;
 }
 // Açılış: ilk 12 post (profilde 4 sıra) aynı gün yarım saat arayla; sonra her akşam 19:00'dan itibaren günde bir post.
-const LAUNCH = 12;
+const LAUNCH = 14; // 12 post + yeni stille yeniden paylaşılan ilk 2
 function trHour(d = new Date()) { return new Date(d.getTime() + 3 * 3600e3).getUTCHours(); }
 async function igPost(env) {
   const st = (await call(env, 'ig:state', 'get')) || {};

@@ -193,7 +193,10 @@ def sequence(data):
     while pending:
         pick = next((x for x in pending if min_i(x) <= i), None) or pending[0]
         seq.append(pick); pending.remove(pick); i += 1
-    return seq
+    # İlk iki post (zencefil, zerdeçal) eski stilde çıktı; açılışın sonunda (13. ve 14. sıra) yeni stille yeniden paylaşılır.
+    return seq[:LAUNCH] + REPOST + seq[LAUNCH:]
+
+REPOST = ['zencefil', 'zerdecal']
 
 def posted_count():
     """Kaç post paylaşıldığını sitenin kendisinden öğren (GitHub Actions’ta çalışır); olmazsa son bilinen değer."""
@@ -208,9 +211,12 @@ def posted_count():
 
 PAGE_CSS = 'body{margin:0;padding:16px;background:#F1EADD;color:#1C2140;font-family:system-ui,sans-serif;max-width:1180px;margin:auto}h1{font-family:Georgia,serif}.post{background:#FBF6EC;border:1px solid #DCCFBA;border-radius:12px;padding:16px;margin:0 0 24px}.when{color:#5D5866;margin-top:0}.strip{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px}.strip img{width:216px;height:auto;border-radius:6px;display:block}textarea{width:100%;font:inherit;margin:12px 0 8px;border:1px solid #DCCFBA;border-radius:8px;padding:8px;background:#fff;color:inherit}button{font:inherit;padding:8px 14px;border-radius:8px;border:1px solid #A3271B;background:#A3271B;color:#fff}@media (prefers-color-scheme:dark){body{background:#15131E;color:#F0E7D8}.post{background:#1E1A29;border-color:#3A3247}textarea{background:#15131E}}'
 
-PAUSED = True   # stil yenilenirken paylaşım durduruldu; True iken post dosyası üretilmez, worker paylaşamaz
+PAUSED = False   # True yapılırsa post dosyası üretilmez ve worker paylaşamaz
 
 def main():
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    global ig2
+    import ig2
     data = json.load(open(os.path.join(ROOT, '.cache', 'ig_input.json'), encoding='utf-8'))
     global K, G, R
     K, G, R = data['kanit'], data['guv'], data['reg']
@@ -227,7 +233,7 @@ def main():
     if PAUSED:
         open(os.path.join(out_root, 'index.html'), 'w', encoding='utf-8').write('<!doctype html><meta charset="utf-8"><meta name="robots" content="noindex"><p>Instagram paylaşımı şu an durduruldu.</p>')
         print('ig: durduruldu'); return
-    for n in range(n0, n0 + (LAUNCH + 2 if n0 < LAUNCH else 3)):
+    for n in range(n0, n0 + (LAUNCH + 4 if n0 < LAUNCH + len(REPOST) else 3)):
         pid = seq[n % len(seq)]                  # liste bitince başa döner
         if pid not in P:
             print('ig: henüz yayında değil, atlandı:', n, pid); continue
@@ -235,20 +241,20 @@ def main():
         yd = data['yeni'].get(pid)
         label = 'Yeni eklendi' if yd and (day - datetime.date.fromisoformat(yd)).days < 7 else 'Şifalı bitkiler'
         od = os.path.join(out_root, 'p', str(n)); os.makedirs(od, exist_ok=True)
-        ims = slides(p, os.path.join(ROOT, 'img', f'{pid}-960.jpg') if p['img'] else None, label)
+        ims = ig2.slides2(p, os.path.join(ROOT, 'img', f'{pid}-960.jpg') if p['img'] else None, label)
         urls = []
         for i, im in enumerate(ims, 1):
             im.save(os.path.join(od, f'{i}.jpg'), 'JPEG', quality=82, optimize=True, progressive=False)
             urls.append(f'{BASE}/ig/p/{n}/{i}.jpg')
-        cap = caption(p, label)
+        cap = ig2.caption2(p, label)
         json.dump({'n': n, 'id': pid, 'caption': cap, 'images': urls}, open(os.path.join(od, 'post.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
         thumbs = ''.join(f'<a href="p/{n}/{i}.jpg" download><img src="p/{n}/{i}.jpg" alt="Slayt {i}" width="216" height="270" loading="lazy"></a>' for i in range(1, len(ims) + 1))
-        when = f'Açılış postu {n + 1}/{LAUNCH}' if n < LAUNCH else ('Sıradaki' if n == n0 else 'Sonra')
+        when = f'Açılış postu {n - 1}/{LAUNCH}' if 2 <= n < LAUNCH + len(REPOST) else ('Sıradaki' if n == n0 else 'Sonra')
         cards.append(f'<section class="post"><h2>{n + 1}. post: {html.escape(p["tr"])}</h2><p class="when">{when}</p><div class="strip">{thumbs}</div>'
                      f'<textarea readonly rows="10">{html.escape(cap)}</textarea>'
                      '<button type="button" onclick="navigator.clipboard.writeText(this.previousElementSibling.value);this.textContent=\'Kopyalandı\'">Açıklamayı kopyala</button></section>')
         print('ig:', n, pid, label)
-    intro = (f'Otomatik paylaşım açıldığı gün ilk {LAUNCH} post yarım saat arayla paylaşılır (profilde 4 sıra); sonra her akşam 19:00’da bir post.' if n0 < LAUNCH
+    intro = (f'Açılışta {LAUNCH} post yarım saat arayla paylaşılır (profilde 4 sıra); sonra her akşam 19:00’da bir post.' if n0 < LAUNCH + len(REPOST)
              else f'Şimdiye kadar {n0} post paylaşıldı. Her akşam 19:00’da sıradaki paylaşılır.')
     page = ('<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
             '<meta name="robots" content="noindex, nofollow"><title>Instagram postları | Bitki Tabanı</title><style>' + PAGE_CSS + '</style></head>'

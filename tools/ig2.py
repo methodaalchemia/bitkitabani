@@ -5,6 +5,22 @@ from PIL import Image, ImageDraw, ImageFilter
 import ig as base
 from ig_metin import M
 
+KAN = {'klinik': 'Kanıtı güçlü', 'sinirli': 'Kanıt sınırlı', 'geleneksel': 'Yalnızca geleneksel bilgi'}
+def sentences(t): return [x.strip() for x in re.split(r'(?<=[.!?])\s+', t.strip()) if x.strip()]
+def auto(p):
+    """Elle yazılmış metni olmayan bitki için katalog verisinden sade bir metin."""
+    k = p['kul'][0]; g = sentences(p['guvNot'])
+    return dict(
+        kapak=(f'{p["tr"]} neye iyi gelir?' if p['guv'] == 'dusuk' else 'Şifa mı, risk mi?'),
+        kisaca=[('Nereden', ', '.join(x[0] for x in p['kul'][:2])), ('Geleneksel kullanım', sentences(k[1])[0][:90]), ('Kanıt', KAN.get(p['kanit'], ''))],
+        hikaye=('Bunu çok kişi bilmiyor', p['ilginc']),
+        gelenek=(k[0], ' '.join(sentences(k[1])[:2])),
+        bilim=(KAN.get(p['kanit'], 'Bilim ne diyor?'), ' '.join(sentences(p['bilim'])[:2])),
+        dikkat=g[:3] or ['Bilinen önemli bir risk yok'], dikkat_not='',
+        nasil=('Daha fazlası sitede', 'Hazırlanışı, kaynakları ve ilaç etkileşimleri bitkitabani.com’da.'),
+        kaydet='Kaydet, sonra lazım olur.', soru=f'{p["tr"]} hakkında ne biliyorsun?')
+def text_for(p): return M.get(p['id']) or auto(p)
+
 W, H = 1080, 1350
 CREAM = (244, 238, 227); INK = (31, 43, 36); MUTED = (98, 104, 96); LEAF = (46, 92, 64); CLAY = (176, 74, 46); LINE = (214, 204, 186)
 serif, serif_i, sans, sans_b = base.serif, base.serif_i, base.sans, base.sans_b
@@ -53,7 +69,7 @@ def eyebrow(d, y, t, col=CLAY):
     d.text((PAD, y), up(t), font=sans_b(32), fill=col); return y + 64
 
 def slides2(p, img_path, label):
-    m = M[p['id']]; T = 8; out = []
+    m = text_for(p); T = 8; out = []
     # 1. kapak: tam fotoğraf, büyük soru
     im = photo(img_path, W, H) or Image.new('RGB', (W, H), LEAF)
     im = shade(im, 0.05, 0.86); d = ImageDraw.Draw(im)
@@ -96,7 +112,7 @@ def slides2(p, img_path, label):
         out.append(im)
     # 6. dikkat
     im, d = card(6, T); y = eyebrow(d, max(150, 470 - 70 * len(m['dikkat'])), 'Dikkat', CLAY)
-    d.text((PAD, y), 'Önce hekimine sor:', font=serif(80, 800), fill=INK); y += 140
+    d.text((PAD, y), 'Önce hekimine sor:' if p['id'] in M else 'Bilmen gerekenler:', font=serif(80, 800), fill=INK); y += 140
     for it in m['dikkat']:
         d.ellipse([PAD, y + 22, PAD + 18, y + 40], fill=CLAY)
         y += wrap_block(d, (PAD + 44, y), it, [sans(50), sans(44)], W - 2 * PAD - 44, 140, INK, gap=1.3) + 26
@@ -125,7 +141,7 @@ def slides2(p, img_path, label):
     return out
 
 def caption2(p, label):
-    m = M[p['id']]
+    m = text_for(p)
     first = f'{p["tr"]}: {m["kapak"][0].lower() + m["kapak"][1:]} {m.get("emoji", "🌿")}'
     lines = ([('🆕 Bugün Bitki Tabanı’na eklendi.'), ''] if label.startswith('Yeni') else []) + [
         first, '', m['bilim'][0] + '. ' + m['bilim'][1].split('. ')[0].rstrip('.') + '.', '',
