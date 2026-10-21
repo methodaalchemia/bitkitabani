@@ -25,6 +25,7 @@ dict(yayin='2026-10-31', id='reishi', tr='Reishi mantarı', la='Ganoderma lucidu
 
 dict(yayin='2026-11-01', id='muskat', tr='Muskat', la='Myristica fragrans', fam='Myristicaceae',
  diger='Küçük Hindistan cevizi, nutmeg, besbase (tohum zarı)', bolge=['asya'], kat=['besin', 'sifa', 'zehir'], kisim='Tohum ve tohum zarı (besbase)', taxon='Myristica fragrans',
+ foto='Myristica fragrans (Muscadier 1).jpg',
  kul=[['Endonezya', 'Anavatanı Banda Adaları’dır. 1621’de Hollanda Doğu Hindistan Şirketi muskat tekelini ele geçirmek için Banda halkının büyük bölümünü öldürdü ya da sürdü.'],
       ['Osmanlı, Arap dünyası ve Avrupa', 'Osmanlı macunlarına ve şerbetlerine katılırdı; Ortaçağ Avrupası’nda vebaya karşı koruduğuna inanılan pahalı bir baharattı. Bugün beşamel, köfte ve kurabiyelerde kullanılır.']],
  haz='Bütün tohum kullanmadan hemen önce rendelenir; bir yemek için bir tutam yeterlidir.',

@@ -120,7 +120,9 @@ def cover(p, photo, total, label):
     for r in p['bolge']:
         name = R[r]; f = sans_b(28); tw = d.textlength(name, font=f)
         d.ellipse([x, y + 8, x + 22, y + 30], fill=REGC.get(r, C['accent'])); d.text((x + 32, y + 2), name, font=f, fill=C['ink']); x += tw + 70
-    d.text((80, H - 74), 'Kaydır →', font=mono(30), fill=C['accent'])
+    d.text((80, H - 74), 'Kaydır', font=mono(30), fill=C['accent'])
+    ax = 80 + d.textlength('Kaydır', font=mono(30)) + 14; ay = H - 56
+    d.line([(ax, ay), (ax + 34, ay)], fill=C['accent'], width=3); d.polygon([(ax + 34, ay - 8), (ax + 46, ay), (ax + 34, ay + 8)], fill=C['accent'])
     u = 'bitkitabani.com'; d.text((W - 80 - d.textlength(u, font=mono(28)), H - 72), u, font=mono(28), fill=C['muted'])
     return im
 

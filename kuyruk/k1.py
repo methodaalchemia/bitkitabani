@@ -140,6 +140,7 @@ dict(yayin='2026-10-27', id='turunc', tr='Turunç', la='Citrus × aurantium', fa
 
 dict(yayin='2026-10-28', id='kakule', tr='Kakule', la='Elettaria cardamomum', fam='Zingiberaceae',
  diger='Kardamom, hel, cardamom, elaichi', bolge=['asya'], kat=['besin', 'sifa'], kisim='Meyve kapsülü ve tohumları', taxon='Elettaria cardamomum',
+ foto='Cardamom pods - Green BNC.jpg',
  kul=[['Hindistan ve Sri Lanka', 'Ayurveda’da sindirimi kolaylaştıran “ısıtıcı” baharatlardandır; masala çayına ve tatlılara katılır, ağız kokusuna karşı tanesi çiğnenir.'],
       ['Arap dünyası ve Anadolu', 'Arap kahvesi kakuleyle demlenir; Güneydoğu Anadolu’da ve Hatay’da da kahveye kakule katılır. Osmanlı mutfağında şerbet ve macunlarda kullanılırdı.']],
  haz='Kabuklu tane hafifçe ezilip çaya, kahveye ya da yemeğe katılır; tohumlar tek başına çiğnenebilir.',
