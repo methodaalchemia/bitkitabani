@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 119 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 120 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -3734,3 +3734,31 @@ Karıştırma riski: Türkiye’de yetişmez; asıl risk internetten satılan me
 
 ### İlginç bilgi
 Erken ilkbaharda açan beyaz çiçeği yalnızca birkaç gün dayanır; tohumlarını karıncalar taşıyarak yayar.
+
+## Dağ çayı (Sideritis türleri)
+
+URL: https://bitkitabani.com/dagcayi/
+Familya: Lamiaceae · Bölge: Anadolu ve Akdeniz · Kullanılan kısım: Çiçekli toprak üstü kısımlar
+Bilimsel kanıt: Geleneksel · Güvenlik: Genelde güvenli
+
+### Geleneksel kullanım
+- Anadolu: Toroslar’da ve Batı Anadolu yaylalarında yaz sonunda toplanan çiçekli dalları kış çayı olarak demlenir. Soğuk algınlığında, öksürükte ve mide rahatsızlığında içilir; birçok yörede “adaçayı” diye anılır.
+- Balkanlar ve Yunanistan: Yunanistan’da “dağ çayı”, Bulgaristan’da Pirin dağlarının çayı olarak bilinir; köylerde kışlık olarak her evde bulunur.
+
+### Hazırlama
+Bir avuç kurutulmuş çiçekli dal kaynamış suda 5–10 dakika demlenir; isteğe göre limon ve bal eklenir.
+
+### Bilim ne diyor
+EMA dağ çayını soğuk algınlığına bağlı öksürüğü ve hafif mide-bağırsak şikâyetlerini rahatlatmada geleneksel kullanımda tanır; bu tanıma klinik çalışmaya değil, uzun kullanım geçmişine dayanır. Laboratuvarda antioksidan ve iltihap giderici etkiler gösterilmiştir. İnsanlarda yapılmış az sayıda küçük çalışma vardır; bunlar dikkat ve bilişsel işlevler üzerine sınırlı sonuçlar verir.
+
+### Güvenlik
+Çay olarak genelde güvenli kabul edilir. Yeterli veri olmadığı için hamilelikte, emzirirken ve küçük çocuklarda kullanılması önerilmez. Yabanda aşırı toplama bazı endemik türleri tehdit eder; kültürü yapılmış bitkiden üretilen çay tercih edilmelidir.
+
+### Doğada
+Nerede yetişir: Toroslar, Ege ve İç Anadolu dağlarının kayalık, kurak yamaçları; çoğunlukla 1000 metrenin üstü.
+Toplama mevsimi: Çiçekli dallar Haziran–Ağustos’ta, çiçekler tam açmışken toplanır.
+Yöresel adlar: dağ çayı, yayla çayı, adaçayı (Toroslar’da)
+Karıştırma riski: Toroslar’da “adaçayı” adıyla satılan çayın çoğu aslında dağ çayıdır. Gerçek adaçayının (Salvia) yaprakları daha geniş, kokusu daha keskindir; dağ çayının yaprakları gümüşi tüylü, çiçekleri sarı ya da beyazdır.
+
+### İlginç bilgi
+Türkiye, Sideritis cinsinin dünyadaki en zengin merkezlerinden biridir; burada yetişen türlerin çoğu yalnızca Anadolu’da bulunur.

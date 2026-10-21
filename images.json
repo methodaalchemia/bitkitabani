@@ -126,6 +126,18 @@
   "w": 960,
   "w500": 500
  },
+ "anason": {
+  "artist": "Metin GÜLEŞCİ",
+  "auto": false,
+  "file": "Anason Çiçeği.jpg",
+  "h": 640,
+  "h500": 333,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Anason_%C3%87i%C3%A7e%C4%9Fi.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "andiroba": {
   "artist": "Forest and Kim Starr",
   "auto": true,
@@ -158,6 +170,18 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Withania_somnifera_1DS-II_3-7489.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "atkestanesi": {
+  "artist": "Ввласенко",
+  "auto": false,
+  "file": "Chestnut inflorescences (Aésculus hippocástanum).jpg",
+  "h": 1267,
+  "h500": 660,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Chestnut_inflorescences_(A%C3%A9sculus_hippoc%C3%A1stanum).jpg",
   "w": 960,
   "w500": 500
  },
@@ -254,6 +278,18 @@
   "w": 960,
   "w500": 500
  },
+ "ceviz": {
+  "artist": "JLPC",
+  "auto": false,
+  "file": "Noyer feuilles&fruits été FR 2012.jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Noyer_feuilles%26fruits_%C3%A9t%C3%A9_FR_2012.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "chacruna": {
   "artist": "Anthony Baratier",
   "file": "Feuilles de Psychotria viridis.jpg",
@@ -346,6 +382,18 @@
   "w": 960,
   "w500": 500
  },
+ "dagcayi": {
+  "artist": "Rumen Evtimov",
+  "auto": false,
+  "file": "Mursalski chai.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Mursalski_chai.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "defne": {
   "artist": "Petro Stelte",
   "file": "Laurus-nobilis-Sitia-Crete.jpg",
@@ -416,6 +464,42 @@
   "w": 960,
   "w500": 500
  },
+ "feslegen": {
+  "artist": "Netha Hussain",
+  "auto": false,
+  "file": "Basil plant in a pot 01.jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Basil_plant_in_a_pot_01.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "fitolakka": {
+  "artist": "Cbaile19",
+  "auto": false,
+  "file": "Phytolacca americana, 2020-09-25, Beechview, 02.jpg",
+  "h": 1440,
+  "h500": 750,
+  "license": "CC0",
+  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Phytolacca_americana,_2020-09-25,_Beechview,_02.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "gelincik": {
+  "artist": "Dietmar Rabich",
+  "auto": false,
+  "file": "Dülmen, Fröbelstraße, Mohn am Feldrand -- 2021 -- 9174.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:D%C3%BClmen,_Fr%C3%B6belstra%C3%9Fe,_Mohn_am_Feldrand_--_2021_--_9174.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "ginkgo": {
   "artist": "Fernando Losada Rodríguez",
   "auto": false,
@@ -437,6 +521,42 @@
   "license": "CC BY 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Ginsengpflanze.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "goji": {
+  "artist": "Sten Porse",
+  "auto": false,
+  "file": "Lycium-barbarum-fruits.JPG",
+  "h": 691,
+  "h500": 360,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Lycium-barbarum-fruits.JPG",
+  "w": 960,
+  "w500": 500
+ },
+ "gotukola": {
+  "artist": "Renaudsechet",
+  "auto": false,
+  "file": "Bai bua bo ใบบัวบก Centella asiatica.jpg",
+  "h": 773,
+  "h500": 403,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Bai_bua_bo_%E0%B9%83%E0%B8%9A%E0%B8%9A%E0%B8%B1%E0%B8%A7%E0%B8%9A%E0%B8%81_Centella_asiatica.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "graviola": {
+  "artist": "Vinayaraj",
+  "auto": false,
+  "file": "Annona muricata young fruit at Peravoor (3).jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Annona_muricata_young_fruit_at_Peravoor_(3).jpg",
   "w": 960,
   "w500": 500
  },
@@ -472,6 +592,18 @@
   "license": "Public domain",
   "licenseUrl": "",
   "page": "https://commons.wikimedia.org/wiki/File:Colchicum_autumnale.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "hamamelis": {
+  "artist": "",
+  "auto": false,
+  "file": "Hamamelis virginiana FlowersLeaves BotGardBln0906.JPG",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Hamamelis_virginiana_FlowersLeaves_BotGardBln0906.JPG",
   "w": 960,
   "w500": 500
  },
@@ -521,6 +653,18 @@
   "w": 960,
   "w500": 500
  },
+ "hodan": {
+  "artist": "Fabrizio Tampieri",
+  "auto": false,
+  "file": "Borago officinalis 003-1.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Borago_officinalis_003-1.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "huito": {
   "artist": "Dorcas Queen",
   "auto": true,
@@ -541,6 +685,18 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Atlas_roslin_pl_Lipa_srebrzysta_7298_8090.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "incir": {
+  "artist": "JLPC",
+  "auto": false,
+  "file": "Figuier commun FR 2012.jpg",
+  "h": 1369,
+  "h500": 713,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Figuier_commun_FR_2012.jpg",
   "w": 960,
   "w500": 500
  },
@@ -576,6 +732,18 @@
   "license": "CC BY 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:20260317_Theobroma_cacao_01.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "kakule": {
+  "artist": "Prathyush Thomas",
+  "auto": true,
+  "file": "Cardamom pods - Green BNC.jpg",
+  "h": 640,
+  "h500": 333,
+  "license": "GFDL 1.2",
+  "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+  "page": "https://commons.wikimedia.org/wiki/File:Cardamom_pods_-_Green_BNC.jpg",
   "w": 960,
   "w500": 500
  },
@@ -623,6 +791,18 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Capparis_spinosa_Ichkeul_National_Parc.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "karabas": {
+  "artist": "Hans Hillewaert",
+  "auto": false,
+  "file": "Lavandula stoechas (flower).jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Lavandula_stoechas_(flower).jpg",
   "w": 960,
   "w500": 500
  },
@@ -779,6 +959,18 @@
   "w": 960,
   "w500": 500
  },
+ "kiwicha": {
+  "artist": "Tubifex",
+  "auto": false,
+  "file": "3836 - Amaranthus caudatus (Zieramaranth).JPG",
+  "h": 1444,
+  "h500": 752,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:3836_-_Amaranthus_caudatus_(Zieramaranth).JPG",
+  "w": 960,
+  "w500": 500
+ },
  "kizilcik": {
   "artist": "B.navez",
   "auto": true,
@@ -848,6 +1040,18 @@
   "w": 960,
   "w500": 500
  },
+ "lotus": {
+  "artist": "Photo by and (c)2007 Derek Ramsey ( Ram-Man )",
+  "auto": false,
+  "file": "Lotus Nelumbo nucifera Flower Large 3264px.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "GFDL 1.2",
+  "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+  "page": "https://commons.wikimedia.org/wiki/File:Lotus_Nelumbo_nucifera_Flower_Large_3264px.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "maca": {
   "artist": "Vahe Martirosyan",
   "file": "Lepidium meyenii.jpg",
@@ -856,6 +1060,18 @@
   "license": "CC BY 2.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
   "page": "https://commons.wikimedia.org/wiki/File:Lepidium_meyenii.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "mahlep": {
+  "artist": "",
+  "auto": false,
+  "file": "Prunus mahaleb2.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Prunus_mahaleb2.jpg",
   "w": 960,
   "w500": 500
  },
@@ -878,6 +1094,18 @@
   "license": "CC BY 3.0 us",
   "licenseUrl": "https://creativecommons.org/licenses/by/3.0/us/deed.en",
   "page": "https://commons.wikimedia.org/wiki/File:Starr-021122-0064-Piper_aduncum-stems-Nahiku-Maui_(24257849110).jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "mayiselmasi": {
+  "artist": "Famartin",
+  "auto": false,
+  "file": "2020-04-26 17 05 49 A Mayapple flower along a walking path in the Franklin Glen section of Chantilly, Fairfax County, Virginia.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:2020-04-26_17_05_49_A_Mayapple_flower_along_a_walking_path_in_the_Franklin_Glen_section_of_Chantilly,_Fairfax_County,_Virginia.jpg",
   "w": 960,
   "w500": 500
  },
@@ -949,6 +1177,18 @@
   "w": 960,
   "w500": 500
  },
+ "muskat": {
+  "artist": "Terrence Coombes",
+  "auto": true,
+  "file": "Nutmeg ready.jpg",
+  "h": 1237,
+  "h500": 644,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Nutmeg_ready.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "nane": {
   "artist": "Kızıl",
   "auto": true,
@@ -970,6 +1210,18 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Punica_granatum_004.JPG",
+  "w": 960,
+  "w500": 500
+ },
+ "neem": {
+  "artist": "Kevinsooryan",
+  "auto": false,
+  "file": "Azadirachta indica, leaves & fruits.JPG",
+  "h": 640,
+  "h500": 333,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Azadirachta_indica,_leaves_%26_fruits.JPG",
   "w": 960,
   "w500": 500
  },
@@ -997,6 +1249,18 @@
   "w": 960,
   "w500": 500
  },
+ "paico": {
+  "artist": "阿宏",
+  "auto": false,
+  "file": "Dysphania ambrosioides 188663001.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Dysphania_ambrosioides_188663001.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "palosanto": {
   "artist": "Haplochromis",
   "file": "Bursera graveolens.jpg",
@@ -1016,6 +1280,18 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Kamomillasaunio_(Matricaria_recutita).JPG",
+  "w": 960,
+  "w500": 500
+ },
+ "pasiflora": {
+  "artist": "H. Zell",
+  "auto": false,
+  "file": "Passiflora incarnata 003.JPG",
+  "h": 721,
+  "h500": 376,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Passiflora_incarnata_003.JPG",
   "w": 960,
   "w500": 500
  },
@@ -1051,6 +1327,18 @@
   "license": "Public domain",
   "licenseUrl": "",
   "page": "https://commons.wikimedia.org/wiki/File:Peyote_Cactus.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "reishi": {
+  "artist": "Eric Steinert",
+  "auto": false,
+  "file": "Ganoderma lucidum 01.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Ganoderma_lucidum_01.jpg",
   "w": 960,
   "w500": 500
  },
@@ -1144,6 +1432,18 @@
   "w": 960,
   "w500": 500
  },
+ "sassafras": {
+  "artist": "Randy Everette",
+  "auto": false,
+  "file": "Sassafras Leaves June Nbg (261691941).jpeg",
+  "h": 681,
+  "h500": 355,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Sassafras_Leaves_June_Nbg_(261691941).jpeg",
+  "w": 960,
+  "w500": 500
+ },
  "sedef": {
   "artist": "Robert Flogaus-Faust",
   "file": "Ruta graveolens RF.jpg",
@@ -1198,6 +1498,18 @@
   "license": "CC BY 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Fliegenpilz_fly_agaric_Amanita_muscaria.JPG",
+  "w": 960,
+  "w500": 500
+ },
+ "sogut": {
+  "artist": "MPF",
+  "auto": false,
+  "file": "Salix alba leaves.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Salix_alba_leaves.jpg",
   "w": 960,
   "w500": 500
  },
@@ -1260,6 +1572,42 @@
   "w": 960,
   "w500": 500
  },
+ "tulsi": {
+  "artist": "Joydeep",
+  "auto": false,
+  "file": "Ocimum tenuiflorum 24 08 2012.JPG",
+  "h": 1281,
+  "h500": 667,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ocimum_tenuiflorum_24_08_2012.JPG",
+  "w": 960,
+  "w500": 500
+ },
+ "turnayemisi": {
+  "artist": "Ayotte, Gilles, 1948-",
+  "auto": false,
+  "file": "Vaccinium macrocarpon 15-p.bot-vacci.macro-17.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Vaccinium_macrocarpon_15-p.bot-vacci.macro-17.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "turunc": {
+  "artist": "Zeynel Cebeci",
+  "auto": false,
+  "file": "Turunç - Citrus aurantium 02.JPG",
+  "h": 1395,
+  "h500": 727,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Turun%C3%A7_-_Citrus_aurantium_02.JPG",
+  "w": 960,
+  "w500": 500
+ },
  "unadegato": {
   "artist": "Kristi Denby/Archivo Centro Takiwasi",
   "file": "Corteza y espina curva de uña de gato (Uncaria tomentosa).jpg",
@@ -1315,6 +1663,18 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Gardenology.org-IMG_2751_rbgs11jan.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "yildizanason": {
+  "artist": "Sanjay Acharya",
+  "auto": false,
+  "file": "Dried Star Anise Fruit Seeds.jpg",
+  "h": 640,
+  "h500": 333,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Dried_Star_Anise_Fruit_Seeds.jpg",
   "w": 960,
   "w500": 500
  },
