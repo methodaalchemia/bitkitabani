@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 120 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 121 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -3762,3 +3762,35 @@ Karıştırma riski: Toroslar’da “adaçayı” adıyla satılan çayın ço�
 
 ### İlginç bilgi
 Türkiye, Sideritis cinsinin dünyadaki en zengin merkezlerinden biridir; burada yetişen türlerin çoğu yalnızca Anadolu’da bulunur.
+
+## At kestanesi (Aesculus hippocastanum)
+
+URL: https://bitkitabani.com/atkestanesi/
+Familya: Sapindaceae · Bölge: Anadolu ve Akdeniz · Kullanılan kısım: Tohum (standart ekstre), kabuk
+Bilimsel kanıt: Klinik · Güvenlik: Dikkat
+
+### Geleneksel kullanım
+- Osmanlı ve İstanbul: Adının, Osmanlıların tohumu öksüren ve solunum sıkıntısı çeken atlara vermesinden geldiği anlatılır. İstanbul’un parklarına, saray ve yalı bahçelerine dikilen ağaçlardandır.
+- Avrupa: Tohum ekstresi 20. yüzyılda bacaktaki toplardamar yetmezliğinde (şişlik, ağırlık, kramp) kullanılan bir bitkisel ilaç oldu; Almanya’da ve Orta Avrupa’da yaygın olarak kullanılır.
+
+### Hazırlama
+Evde hazırlanmaz. Kullanılan biçim, zehirli eskulini arındırılmış ve aesin (escin) miktarı ayarlanmış standart tohum ekstresidir.
+
+### Bilim ne diyor
+Cochrane derlemesi (2012), standart at kestanesi tohumu ekstresinin kronik toplardamar yetmezliğinde bacak ağrısını, şişliği ve kaşıntıyı kısa süreli kullanımda plaseboya göre azalttığını bulmuştur; bir çalışmada etkisi kompresyon çorabına yakındır. EMA standart ekstreyi bu kullanımda tanır. Uzun süreli etki ve güvenlik için daha büyük çalışmalar gerekir.
+
+### Güvenlik
+Çiğ tohum, kabuk, yaprak ve çiçekler zehirlidir; yenen kestaneyle karıştırılıp yenmesi kusma, ishal ve baş dönmesine yol açar. Yalnızca arındırılmış standart ekstre kullanılır. Mide bulantısı ve kaşıntı yapabilir. Kan sulandırıcı kullananlar, böbrek ya da karaciğer hastaları ve hamileler kullanmadan önce hekime danışmalıdır.
+
+### İlaç etkileşimleri
+- Kan sulandırıcılar (varfarin, aspirin, klopidogrel): Kanama riskini artırabileceği düşünülür; birlikte kullanım hekim kontrolünde olmalıdır.
+- Şeker ilaçları: Kan şekerini düşürebileceğine dair hayvan verileri vardır; şeker düzenli izlenmelidir.
+
+### Doğada
+Nerede yetişir: Balkanların dağ ormanlarından gelir; İstanbul’da ve Türkiye’nin pek çok kentinde park ve cadde ağacıdır.
+Toplama mevsimi: Çiçekler Nisan–Mayıs’ta açar; tohumlar Eylül–Ekim’de düşer.
+Yöresel adlar: at kestanesi, atkestanesi
+Karıştırma riski: Parlak kahverengi tohumu yenen kestaneye (Castanea sativa) benzer. Yenen kestanenin kabuğu sık, ince dikenlidir ve tohumunun ucu sivridir; at kestanesinin kabuğu seyrek, kalın dikenli, tohumu yuvarlak ve uçsuzdur.
+
+### İlginç bilgi
+At kestanesi Batı Avrupa’ya 1576’da İstanbul’dan götürüldü; Batı dillerindeki “at kestanesi” adı da Osmanlıların tohumu öksüren atlara verdiği anlatısından gelir.
