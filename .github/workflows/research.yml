@@ -1,0 +1,27 @@
+name: Kaynak araştırması
+on:
+  push:
+    branches: [main]
+    paths: ['tools/research.txt']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: python3 tools/research.py
+      - name: Sonucu ayrı dala yaz
+        run: |
+          git config user.name "bitkitabani-bot"
+          git config user.email "actions@users.noreply.github.com"
+          cp research/sonuc.json /tmp/sonuc.json
+          git checkout --orphan research
+          git rm -rq --cached .
+          mkdir -p research && cp /tmp/sonuc.json research/sonuc.json
+          git add research/sonuc.json
+          git commit -qm "Kaynak araştırması [bot]"
+          git push -f origin research
