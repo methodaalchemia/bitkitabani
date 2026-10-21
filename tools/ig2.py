@@ -5,20 +5,23 @@ from PIL import Image, ImageDraw, ImageFilter
 import ig as base
 from ig_metin import M
 
-KAN = {'klinik': 'Kanıtı güçlü', 'sinirli': 'Kanıt sınırlı', 'geleneksel': 'Yalnızca geleneksel bilgi'}
+KAN = {'klinik': 'Kanıtı güçlü', 'sinirli': 'Kanıtı sınırlı', 'geleneksel': 'Yalnızca geleneksel bilgiye dayanıyor'}
 def sentences(t): return [x.strip() for x in re.split(r'(?<=[.!?])\s+', t.strip()) if x.strip()]
 def auto(p):
-    """Elle yazılmış metni olmayan bitki için katalog verisinden sade bir metin."""
+    """Elle yazılmış metni olmayan bitki için katalog verisinden düzgün cümlelerle bir metin.
+    Haftalık görev, sıraya yaklaşan her bitki için ig_metin.py'ye elle metin ekler; bu yalnızca yedektir."""
     k = p['kul'][0]; g = sentences(p['guvNot'])
+    kap = 'Neye iyi gelir, kimler dikkat etmeli?' if p['guv'] == 'dusuk' else 'Şifa mı, risk mi?'
     return dict(
-        kapak=(f'{p["tr"]} neye iyi gelir?' if p['guv'] == 'dusuk' else 'Şifa mı, risk mi?'),
-        kisaca=[('Nereden', ', '.join(x[0] for x in p['kul'][:2])), ('Geleneksel kullanım', sentences(k[1])[0][:90]), ('Kanıt', KAN.get(p['kanit'], ''))],
-        hikaye=('Bunu çok kişi bilmiyor', p['ilginc']),
+        ilk=f'{p["tr"]}: {kap[0].lower() + kap[1:]} 🌿', kapak=kap,
+        aciklama=' '.join(sentences(p['ilginc'])[:1] + sentences(p['bilim'])[:1]),
+        kisaca=[('Kökeni', ', '.join(x[0] for x in p['kul'][:2])), ('Geleneksel kullanımı', sentences(k[1])[0][:90]), ('Bilimsel kanıt', KAN.get(p['kanit'], ''))],
+        hikaye=('Az bilinen bir gerçek', p['ilginc']),
         gelenek=(k[0], ' '.join(sentences(k[1])[:2])),
         bilim=(KAN.get(p['kanit'], 'Bilim ne diyor?'), ' '.join(sentences(p['bilim'])[:2])),
-        dikkat=g[:3] or ['Bilinen önemli bir risk yok'], dikkat_not='',
-        nasil=('Daha fazlası sitede', 'Hazırlanışı, kaynakları ve ilaç etkileşimleri bitkitabani.com’da.'),
-        kaydet='Kaydet, sonra lazım olur.', soru=f'{p["tr"]} hakkında ne biliyorsun?')
+        dikkat=g[:3] or ['Bilinen önemli bir riski yoktur'], dikkat_not='',
+        nasil=('Ayrıntılar sitede', 'Hazırlanışı, kaynakları ve ilaç etkileşimleri bitkitabani.com’da yer alıyor.'),
+        kaydet='Daha sonra okumak için kaydedin.', soru=f'{p["tr"]} hakkında neler biliyorsunuz?')
 def text_for(p): return M.get(p['id']) or auto(p)
 
 W, H = 1080, 1350
@@ -79,7 +82,7 @@ def slides2(p, img_path, label):
     d.text((PAD, 760), up(p['tr']), font=sans_b(40), fill=(240, 226, 196))
     wrap_block(d, (PAD, 820), m['kapak'], [serif(108, 800), serif(96, 800), serif(84, 800)], W - 2 * PAD, 340, (255, 255, 255), gap=1.06)
     d.text((PAD, H - 92), 'bitkitabani', font=serif(34, 700), fill=(236, 230, 218))
-    t = 'kaydır'; f = sans_b(30); tx = W - PAD - d.textlength(t, font=f) - 56
+    t = 'kaydırın'; f = sans_b(30); tx = W - PAD - d.textlength(t, font=f) - 56
     d.text((tx, H - 92), t, font=f, fill=(236, 230, 218))
     ax, ay = W - PAD - 44, H - 74
     d.line([(ax, ay), (ax + 40, ay)], fill=(236, 230, 218), width=4); d.polygon([(ax + 40, ay - 10), (ax + 54, ay), (ax + 40, ay + 10)], fill=(236, 230, 218))
@@ -96,12 +99,12 @@ def slides2(p, img_path, label):
     # 3. hikâye: bulanık fotoğraf üstünde
     im = photo(img_path, W, H, blur=18) or Image.new('RGB', (W, H), LEAF)
     im = shade(im, 0.55, 0.75); d = ImageDraw.Draw(im); chrome(d, 3, T, dark=True)
-    y = eyebrow(d, 360, 'Biliyor muydun?', (240, 226, 196))
+    y = eyebrow(d, 360, 'Biliyor muydunuz?', (240, 226, 196))
     h = wrap_block(d, (PAD, y), m['hikaye'][0], [serif(92, 800), serif(80, 800), serif(70, 800)], W - 2 * PAD, 320, (255, 255, 255), gap=1.08)
     wrap_block(d, (PAD, y + h + 40), m['hikaye'][1], [sans(48), sans(44), sans(40)], W - 2 * PAD, 420, (236, 230, 218), gap=1.38)
     out.append(im)
     # 4. gelenek, 5. bilim
-    for n, key, eb in ((4, 'gelenek', 'Gelenek'), (5, 'bilim', 'Bilim ne diyor?')):
+    for n, key, eb in ((4, 'gelenek', 'Geleneksel kullanım'), (5, 'bilim', 'Bilim ne diyor?')):
         def draw(d, y0):
             y = eyebrow(d, y0, eb, LEAF if key == 'bilim' else CLAY)
             h = wrap_block(d, (PAD, y), m[key][0], [serif(88, 800), serif(76, 800), serif(66, 800)], W - 2 * PAD, 300, INK, gap=1.1)
@@ -112,7 +115,7 @@ def slides2(p, img_path, label):
         out.append(im)
     # 6. dikkat
     im, d = card(6, T); y = eyebrow(d, max(150, 470 - 70 * len(m['dikkat'])), 'Dikkat', CLAY)
-    d.text((PAD, y), 'Önce hekimine sor:' if p['id'] in M else 'Bilmen gerekenler:', font=serif(80, 800), fill=INK); y += 140
+    d.text((PAD, y), 'Kimler dikkat etmeli?' if p['id'] in M else 'Bilmeniz gerekenler', font=serif(80, 800), fill=INK); y += 140
     for it in m['dikkat']:
         d.ellipse([PAD, y + 22, PAD + 18, y + 40], fill=CLAY)
         y += wrap_block(d, (PAD + 44, y), it, [sans(50), sans(44)], W - 2 * PAD - 44, 140, INK, gap=1.3) + 26
@@ -133,30 +136,30 @@ def slides2(p, img_path, label):
         mask = Image.new('L', (300, 300), 0); ImageDraw.Draw(mask).ellipse([0, 0, 300, 300], fill=255); im.paste(ph, ((W - 300) // 2, 170), mask)
     y = 530
     y += wrap_block(d, (PAD, y), m['kaydet'], [serif(80, 800), serif(70, 800)], W - 2 * PAD, 220, INK, gap=1.1, align='center') + 40
-    y += wrap_block(d, (PAD, y), 'Her gün yeni bir bitki için takip et.', [sans(46)], W - 2 * PAD, 120, INK, align='center') + 50
+    y += wrap_block(d, (PAD, y), 'Her gün yeni bir bitki için takip edin.', [sans(46)], W - 2 * PAD, 120, INK, align='center') + 50
     t = f'bitkitabani.com/{p["id"]}'; f = sans_b(40); d.text(((W - d.textlength(t, font=f)) / 2, y), t, font=f, fill=CLAY); y += 64
-    t = 'Kaynaklar ve fazlası sitede'; f = sans(36); d.text(((W - d.textlength(t, font=f)) / 2, y), t, font=f, fill=MUTED)
-    wrap_block(d, (PAD, H - 230), 'Bilgi amaçlıdır, tıbbi tavsiye değildir.' + (f' Fotoğraf: {p["foto"][:60]}' if p.get('foto') else ''), [sans(26)], W - 2 * PAD, 100, MUTED, align='center')
+    t = 'Kaynaklarıyla birlikte tamamı sitede'; f = sans(36); d.text(((W - d.textlength(t, font=f)) / 2, y), t, font=f, fill=MUTED)
+    wrap_block(d, (PAD, H - 230), 'Bilgilendirme amaçlıdır; tıbbi tavsiye yerine geçmez.' + (f' Fotoğraf: {p["foto"][:60]}' if p.get('foto') else ''), [sans(26)], W - 2 * PAD, 100, MUTED, align='center')
     out.append(im)
     return out
 
 def caption2(p, label):
     m = text_for(p)
-    first = f'{p["tr"]}: {m["kapak"][0].lower() + m["kapak"][1:]} {m.get("emoji", "🌿")}'
-    lines = ([('🆕 Bugün Bitki Tabanı’na eklendi.'), ''] if label.startswith('Yeni') else []) + [
-        first, '', m['bilim'][0] + '. ' + m['bilim'][1].split('. ')[0].rstrip('.') + '.', '',
-        'Kaydırarak oku: nereden geliyor, bilim ne diyor, kimler dikkat etmeli.', '',
-        m['soru'] + ' Yorumlara yaz 👇', '',
-        f'Kaynaklarıyla tamamı: bitkitabani.com/{p["id"]} (bağlantı profilde)', '',
+    lines = (['🆕 Bugün Bitki Tabanı’na eklendi.', ''] if label.startswith('Yeni') else []) + [
+        m.get('ilk') or f'{p["tr"]}: {m["kapak"]}', '', m.get('aciklama', ''), '',
+        'Kaydırarak bitkinin hikâyesini, bilimin ne söylediğini ve kimlerin dikkat etmesi gerektiğini okuyabilirsiniz.', '',
+        m['soru'] + ' Yorumlarda buluşalım. 👇', '',
+        f'Kaynaklarıyla birlikte tamamı: bitkitabani.com/{p["id"]} (bağlantı profilde)', '',
+        'Bilgilendirme amaçlıdır; tıbbi tavsiye yerine geçmez.', '',
         ' '.join(m.get('etiket') or [base.hashtag(p['tr']), '#şifalıbitkiler', '#bitkiçayı', '#doğalyaşam', '#etnobotanik'])]
-    return '\n'.join(lines)[:2150]
+    return '\n'.join(x for i, x in enumerate(lines) if x or (i and lines[i - 1]))[:2150]
 
 def alts2(p):
     """Her slayt için alternatif metin (görme engelliler ve Instagram araması için)."""
     m = text_for(p)
     return [f'{p["tr"]} ({p["la"]}) fotoğrafı. {m["kapak"]}',
             f'{p["tr"]} kısaca: ' + '; '.join(f'{a}: {b}' for a, b in m['kisaca']),
-            f'{m["hikaye"][0]}. {m["hikaye"][1]}', f'Gelenek: {m["gelenek"][0]}. {m["gelenek"][1]}',
+            f'{m["hikaye"][0]}. {m["hikaye"][1]}', f'Geleneksel kullanım: {m["gelenek"][0]}. {m["gelenek"][1]}',
             f'Bilim ne diyor: {m["bilim"][0]}. {m["bilim"][1]}', 'Dikkat: ' + '; '.join(m['dikkat']) + '. ' + m.get('dikkat_not', ''),
             f'{m["nasil"][0]}: {m["nasil"][1]}', f'{m["kaydet"]} Her gün yeni bir bitki: bitkitabani.com/{p["id"]}']
 
