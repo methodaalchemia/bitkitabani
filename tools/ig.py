@@ -208,6 +208,8 @@ def posted_count():
 
 PAGE_CSS = 'body{margin:0;padding:16px;background:#F1EADD;color:#1C2140;font-family:system-ui,sans-serif;max-width:1180px;margin:auto}h1{font-family:Georgia,serif}.post{background:#FBF6EC;border:1px solid #DCCFBA;border-radius:12px;padding:16px;margin:0 0 24px}.when{color:#5D5866;margin-top:0}.strip{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px}.strip img{width:216px;height:auto;border-radius:6px;display:block}textarea{width:100%;font:inherit;margin:12px 0 8px;border:1px solid #DCCFBA;border-radius:8px;padding:8px;background:#fff;color:inherit}button{font:inherit;padding:8px 14px;border-radius:8px;border:1px solid #A3271B;background:#A3271B;color:#fff}@media (prefers-color-scheme:dark){body{background:#15131E;color:#F0E7D8}.post{background:#1E1A29;border-color:#3A3247}textarea{background:#15131E}}'
 
+PAUSED = True   # stil yenilenirken paylaşım durduruldu; True iken post dosyası üretilmez, worker paylaşamaz
+
 def main():
     data = json.load(open(os.path.join(ROOT, '.cache', 'ig_input.json'), encoding='utf-8'))
     global K, G, R
@@ -222,6 +224,9 @@ def main():
     os.makedirs(out_root)
     json.dump({'n': n0, 'day': day.isoformat()}, open(os.path.join(out_root, 'state.json'), 'w'))
     cards = []
+    if PAUSED:
+        open(os.path.join(out_root, 'index.html'), 'w', encoding='utf-8').write('<!doctype html><meta charset="utf-8"><meta name="robots" content="noindex"><p>Instagram paylaşımı şu an durduruldu.</p>')
+        print('ig: durduruldu'); return
     for n in range(n0, n0 + (LAUNCH + 2 if n0 < LAUNCH else 3)):
         pid = seq[n % len(seq)]                  # liste bitince başa döner
         if pid not in P:
