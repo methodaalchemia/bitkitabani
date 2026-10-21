@@ -391,3 +391,7 @@ ol.start{padding-left:22px}ol.start li{margin:8px 0}
 @media (max-width:720px){.newband{grid-template-columns:1fr}.nb-side{border-left:0;padding-left:0;border-top:1px dashed var(--rule);padding-top:12px}.nb-main{grid-template-columns:110px minmax(0,1fr)}.nb-main .ph{width:110px}}
 .newb{display:inline-block;margin-left:8px;font-family:var(--f-mono);font-size:11px;padding:1px 6px;background:var(--accent);color:var(--sheet);vertical-align:middle;letter-spacing:.05em}
 .igcta{font-family:var(--f-mono);font-size:var(--t-sm);margin:6px 0 0}
+/* dar kartlarda alt satır taşmasın */
+.card .foot{flex-wrap:wrap;row-gap:6px}
+.card .sf{max-width:100%;white-space:normal}
+@media (max-width:520px){.grid.sim{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.grid.sim .card .body{padding:12px}.grid.sim .card h2{font-size:1.25rem}.grid.sim .card .fam{display:none}}
