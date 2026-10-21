@@ -1,0 +1,10 @@
+name: Instagram durumu
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  durum:
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl -sS https://bitkitabani.com/api/ig-durum; echo
