@@ -390,3 +390,4 @@ ol.start{padding-left:22px}ol.start li{margin:8px 0}
 .teaser{border-left:3px solid var(--ochre);padding:6px 12px;margin:0;background:var(--paper)}
 @media (max-width:720px){.newband{grid-template-columns:1fr}.nb-side{border-left:0;padding-left:0;border-top:1px dashed var(--rule);padding-top:12px}.nb-main{grid-template-columns:110px minmax(0,1fr)}.nb-main .ph{width:110px}}
 .newb{display:inline-block;margin-left:8px;font-family:var(--f-mono);font-size:11px;padding:1px 6px;background:var(--accent);color:var(--sheet);vertical-align:middle;letter-spacing:.05em}
+.igcta{font-family:var(--f-mono);font-size:var(--t-sm);margin:6px 0 0}
