@@ -2,9 +2,15 @@ name: Instagram durumu
 on:
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 jobs:
   durum:
     runs-on: ubuntu-latest
     steps:
-      - run: curl -sS https://bitkitabani.com/api/ig-durum; echo
+      - uses: actions/checkout@v4
+      - name: Durumu ayrı dala yaz
+        run: |
+          curl -sS https://bitkitabani.com/api/ig-durum > /tmp/durum.json; cat /tmp/durum.json
+          git config user.name "bitkitabani-bot"; git config user.email "actions@users.noreply.github.com"
+          git checkout --orphan durum; git rm -rq --cached .; cp /tmp/durum.json durum.json
+          git add durum.json; git commit -qm "Instagram durumu [bot]"; git push -f origin durum
