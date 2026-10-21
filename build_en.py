@@ -30,6 +30,7 @@ def run(G):
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="robots" content="max-image-preview:large, max-snippet:-1">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{e(title)}</title>
 <meta name="description" content="{e(desc)}">

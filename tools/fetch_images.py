@@ -117,6 +117,20 @@ for pid, fname in WANT.items():
         time.sleep(1)
     changed += 1
 
+# Paylaşım önizlemesi ve Google Discover için 1280 px sürüm (Discover en az 1200 px ister)
+for pid, fname in WANT.items():
+    big = os.path.join(OUT, f'{pid}-1280.jpg')
+    if os.path.exists(big) and meta.get(pid, {}).get('b1280') == fname: continue
+    try:
+        j = get('https://commons.wikimedia.org/w/api.php?format=json&action=query&prop=imageinfo&iiprop=url|size&iiurlwidth=1280&titles=' + urllib.parse.quote('File:' + fname))
+        ii = list(j['query']['pages'].values())[0]['imageinfo'][0]
+        if (ii.get('thumbwidth') or ii.get('width') or 0) < 1200: continue
+        open(big, 'wb').write(get(ii.get('thumburl') or ii['url'], binary=True))
+        meta.setdefault(pid, {})['b1280'] = fname
+        print('1280:', pid); time.sleep(1)
+    except Exception as e:
+        print('1280 alınamadı:', pid, e)
+
 for pid in list(meta):
     if pid not in WANT: meta.pop(pid)
 json.dump(meta, open(META, 'w', encoding='utf-8'), ensure_ascii=False, indent=1, sort_keys=True)
