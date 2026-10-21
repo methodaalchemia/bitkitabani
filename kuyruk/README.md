@@ -29,7 +29,7 @@ Bu klasördeki bitkiler, `yayin` tarihlerinde siteye kendiliğinden eklenir. Git
 
 ## Instagram
 
-`tools/ig.py`, her gün bir bitki için 6 slayt ve açıklama metni üretir. Paylaşımı `worker.js` yapar: her akşam 19:00'da, `IG_TOKEN` gizli değişkeni Cloudflare'de tanımlıysa.
+`tools/ig.py`, her post için 6 slayt ve açıklama metni üretir. Paylaşımı `worker.js` yapar; bunun için Cloudflare'de `IG_TOKEN` gizli değişkeni tanımlı olmalı. Açılış günü ilk 12 post yarım saat arayla paylaşılır (profilde 4 sıra). Sonra her akşam 19:00'da bir post paylaşılır.
 
 - Sıra `IG_ORDER`'dadır: önce en çok arananlar, sonra kataloğun geri kalanı.
 - Yüksek riskli ve yasal kısıtlı bitkiler Instagram'a konmaz.

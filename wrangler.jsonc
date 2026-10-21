@@ -18,6 +18,7 @@
     "bindings": [{ "name": "USERS", "class_name": "UserStore" }]
   },
   "migrations": [{ "tag": "v1", "new_sqlite_classes": ["UserStore"] }],
-  // Instagram paylaşımı: her akşam 19:00 (TR); başarısız olursa 20:00 ve 21:00'de yeniden dener. IG_TOKEN gizli değişkeni gerekir.
-  "triggers": { "crons": ["0 16 * * *", "0 17 * * *", "0 18 * * *"] }
+  // Instagram paylaşımı (IG_TOKEN gizli değişkeni gerekir): yarım saatte bir bakar. Açılış günü 12 post yarım saat arayla,
+  // sonra her akşam 19:00'dan itibaren günde bir post; başarısız olursa yarım saat sonra yeniden dener.
+  "triggers": { "crons": ["*/30 * * * *"] }
 }

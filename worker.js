@@ -97,13 +97,22 @@ async function igToken(env, st) {
   st.token = tok; st.tokenAt = at;
   return tok;
 }
-async function igPost(env, force) {
+// Açılış: ilk 12 post (profilde 4 sıra) aynı gün yarım saat arayla; sonra her akşam 19:00'dan itibaren günde bir post.
+const LAUNCH = 12;
+function trHour(d = new Date()) { return new Date(d.getTime() + 3 * 3600e3).getUTCHours(); }
+async function igPost(env) {
   const st = (await call(env, 'ig:state', 'get')) || {};
-  const day = trDay();
-  if (st.last === day && !force) return { skipped: 'zaten paylaşıldı', day };
+  const day = trDay(), hour = trHour(), n = st.n || 0;
+  const launching = n < LAUNCH;
+  if (launching) {
+    if (hour < 9 || hour >= 23) return { skipped: 'gece' };
+    if (st.lastAt && Date.now() - st.lastAt < 28 * 60e3) return { skipped: 'yarım saat dolmadı' };
+  } else {
+    if (hour < 19 || st.last === day) return { skipped: 'bugün sırası değil' };
+  }
   try {
-    const pr = await env.ASSETS.fetch(new Request('https://bitkitabani.com/ig/' + day + '/post.json'));
-    if (!pr.ok) throw new Error('bugünün postu bulunamadı (' + day + ')');
+    const pr = await env.ASSETS.fetch(new Request('https://bitkitabani.com/ig/p/' + n + '/post.json'));
+    if (!pr.ok) throw new Error(n + '. post bulunamadı; gece derlemesi bekleniyor');
     const post = await pr.json();
     const tok = await igToken(env, st);
     if (!st.uid) st.uid = (await igJson(await fetch(IG + '/me?fields=user_id,username&access_token=' + encodeURIComponent(tok)))).user_id;
@@ -118,12 +127,12 @@ async function igPost(env, force) {
       await new Promise(r => setTimeout(r, 3000));
     }
     const pub = await igJson(await fetch(IG + '/' + st.uid + '/media_publish', form({ creation_id: box })));
-    st.last = day; st.lastId = pub.id; st.lastPlant = post.id; st.error = null; st.errorAt = null;
+    st.n = n + 1; st.last = day; st.lastAt = Date.now(); st.lastId = pub.id; st.lastPlant = post.id; st.error = null; st.errorAt = null;
   } catch (e) {
     st.error = String(e.message || e).slice(0, 300); st.errorAt = new Date().toISOString();
   }
   await call(env, 'ig:state', 'put', st);
-  return { day, last: st.last, error: st.error };
+  return { n: st.n || 0, error: st.error };
 }
 export default {
   async fetch(req, env) {
@@ -131,7 +140,7 @@ export default {
     if (!url.pathname.startsWith('/api/')) return env.ASSETS.fetch(req);
     if (url.pathname === '/api/ig-durum' && req.method === 'GET') {
       const st = (await call(env, 'ig:state', 'get')) || {};
-      return json({ token: !!(env.IG_TOKEN || st.token), sonPaylasim: st.last || null, bitki: st.lastPlant || null, hata: st.error || null, hataZamani: st.errorAt || null, tokenYenilendi: st.tokenAt ? new Date(st.tokenAt).toISOString() : null, bugun: trDay() });
+      return json({ token: !!(env.IG_TOKEN || st.token), sayi: st.n || 0, sonPaylasim: st.last || null, bitki: st.lastPlant || null, hata: st.error || null, hataZamani: st.errorAt || null, tokenYenilendi: st.tokenAt ? new Date(st.tokenAt).toISOString() : null, bugun: trDay() });
     }
     if (req.method !== 'GET' && req.headers.get('x-bt') !== '1') return json({ error: 'csrf' }, 403);
     try {

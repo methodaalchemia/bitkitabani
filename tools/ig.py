@@ -1,8 +1,8 @@
 """Instagram kaydırmalı postları: her gün bir bitki, 6 slayt (1080×1350 JPEG) ve açıklama metni.
 
-build.py'den sonra çalışır: .cache/ig_input.json dosyasını okur, bugünün ve sonraki iki günün postunu
-site/ig/<tarih>/ altına yazar (1.jpg … 6.jpg, post.json) ve site/ig/index.html önizleme sayfasını üretir.
-Paylaşımı worker.js yapar (her akşam 19:00, IG_TOKEN gerekir).
+build.py'den sonra çalışır: .cache/ig_input.json dosyasını okur, sıradaki 14 postu (paylaşılmış post sayısından başlayarak)
+site/ig/p/<n>/ altına yazar (1.jpg … 6.jpg, post.json) ve site/ig/index.html önizleme sayfasını üretir.
+Paylaşımı worker.js yapar: açılış günü 12 post yarım saat arayla, sonra her akşam 19:00'da bir post (IG_TOKEN gerekir).
 
 Sıra: Türkiye’de en çok arandığını tahmin ettiğimiz bitkilerden başlar (IG_ORDER), sonra kataloğun geri kalanı.
 Yüksek riskli ve Türkiye’de yasak/kısıtlı bitkiler Instagram’a konmaz. Kuyruktaki bitkiler yayın gününden önce paylaşılmaz.
@@ -12,7 +12,6 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = 'https://bitkitabani.com'
-IG_START = datetime.date(2026, 10, 21)   # ilk post günü; bundan sonraki her gün sıradaki bitki
 IG_ORDER = ['zencefil', 'zerdecal', 'adacayi', 'ihlamur', 'papatya', 'isirgan', 'dagcayi', 'nane', 'kekik', 'biberiye', 'lavanta', 'corekotu',
             'atkestanesi', 'tarcin', 'ekinezya', 'ashwagandha', 'melisa', 'kantaron', 'ceviz', 'rezene', 'karanfil', 'aloe', 'incir', 'kusburnu',
             'feslegen', 'ginkgo', 'anason', 'sarimsak', 'keten', 'turunc', 'meyan', 'defne', 'kakule', 'enginar', 'devedikeni', 'hodan', 'kediotu',
@@ -178,47 +177,77 @@ def caption(p, label):
     if label.startswith('Yeni'): lines.insert(0, '🆕 Bugün Bitki Tabanı’na eklendi.\n')
     return '\n'.join(lines)[:2150]
 
-def schedule(data, upto):
+LAUNCH = 12                               # açılışta aynı gün paylaşılan post sayısı (4 sıra)
+EARLIEST = datetime.date(2026, 10, 21)    # açılışın en erken günü; kuyruktaki bitkiler buna göre yerleştirilir
+
+def sequence(data):
+    """Post sırası: n. post hangi bitki? Sabit ve tekrar üretilebilir.
+    Kuyruktaki bir bitki, açılış en erken gün yapılsa bile yayın gününden önce sıraya gelmeyecek kadar geride durur."""
     P = {p['id']: p for p in data['p']}
     rel = {q[0]: datetime.date.fromisoformat(q[1]) for q in data['kuyruk']}
-    ok = lambda pid, d: pid in P and P[pid]['guv'] != 'yuksek' and P[pid]['yasal'] not in ('yasak', 'kisitli') and rel.get(pid, datetime.date.min) <= d
+    allowed = lambda pid: pid in P and P[pid]['guv'] != 'yuksek' and P[pid]['yasal'] not in ('yasak', 'kisitli')
     order = IG_ORDER + [p['id'] for p in data['p'] if p['id'] not in IG_ORDER] + [q[0] for q in data['kuyruk'] if q[0] not in IG_ORDER]
-    done, plan, d = set(), {}, IG_START
-    while d <= upto:
-        pick = next((x for x in order if x not in done and ok(x, d)), None)
-        if pick is None: done = set(); pick = next((x for x in order if ok(x, d)), None)   # liste bitince başa dön
-        plan[d] = pick; done.add(pick); d += datetime.timedelta(days=1)
-    return plan
+    order = [x for x in dict.fromkeys(order) if allowed(x) or (x in rel and x not in P)]
+    min_i = lambda x: (LAUNCH - 1 + max(0, (rel[x] - EARLIEST).days)) if x in rel else 0
+    seq, pending, i = [], list(order), 0
+    while pending:
+        pick = next((x for x in pending if min_i(x) <= i), None) or pending[0]
+        seq.append(pick); pending.remove(pick); i += 1
+    return seq
+
+def posted_count():
+    """Kaç post paylaşıldığını sitenin kendisinden öğren (GitHub Actions’ta çalışır); olmazsa son bilinen değer."""
+    st = os.path.join(ROOT, 'site', 'ig', 'state.json')
+    try:
+        import urllib.request
+        with urllib.request.urlopen(urllib.request.Request(BASE + '/api/ig-durum', headers={'User-Agent': 'BitkiTabani-build'}), timeout=15) as r:
+            return int(json.loads(r.read()).get('sayi') or 0)
+    except Exception:
+        try: return int(json.load(open(st)).get('n', 0))
+        except Exception: return 0
+
+PAGE_CSS = 'body{margin:0;padding:16px;background:#F1EADD;color:#1C2140;font-family:system-ui,sans-serif;max-width:1180px;margin:auto}h1{font-family:Georgia,serif}.post{background:#FBF6EC;border:1px solid #DCCFBA;border-radius:12px;padding:16px;margin:0 0 24px}.when{color:#5D5866;margin-top:0}.strip{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px}.strip img{width:216px;height:auto;border-radius:6px;display:block}textarea{width:100%;font:inherit;margin:12px 0 8px;border:1px solid #DCCFBA;border-radius:8px;padding:8px;background:#fff;color:inherit}button{font:inherit;padding:8px 14px;border-radius:8px;border:1px solid #A3271B;background:#A3271B;color:#fff}@media (prefers-color-scheme:dark){body{background:#15131E;color:#F0E7D8}.post{background:#1E1A29;border-color:#3A3247}textarea{background:#15131E}}'
 
 def main():
     data = json.load(open(os.path.join(ROOT, '.cache', 'ig_input.json'), encoding='utf-8'))
     global K, G, R
     K, G, R = data['kanit'], data['guv'], data['reg']
     day = datetime.date.fromisoformat(data['day'])
-    days = [day + datetime.timedelta(days=i) for i in range(3)]
-    plan = schedule(data, days[-1])
     P = {p['id']: p for p in data['p']}
-    out_root = os.path.join(ROOT, 'site', 'ig'); os.makedirs(out_root, exist_ok=True)
-    cards = ''
-    for d in days:
-        if d < IG_START: continue
-        pid = plan[d]; p = P[pid]
-        label = 'Yeni eklendi' if data['yeni'].get(pid) == d.isoformat() else 'Şifalı bitkiler'
-        od = os.path.join(out_root, d.isoformat()); os.makedirs(od, exist_ok=True)
+    seq = sequence(data)
+    n0 = posted_count()
+    out_root = os.path.join(ROOT, 'site', 'ig')
+    if os.path.isdir(out_root):
+        import shutil; shutil.rmtree(out_root)
+    os.makedirs(out_root)
+    json.dump({'n': n0, 'day': day.isoformat()}, open(os.path.join(out_root, 'state.json'), 'w'))
+    cards = []
+    for n in range(n0, n0 + (LAUNCH + 2 if n0 < LAUNCH else 3)):
+        pid = seq[n % len(seq)]                  # liste bitince başa döner
+        if pid not in P:
+            print('ig: henüz yayında değil, atlandı:', n, pid); continue
+        p = P[pid]
+        yd = data['yeni'].get(pid)
+        label = 'Yeni eklendi' if yd and (day - datetime.date.fromisoformat(yd)).days < 7 else 'Şifalı bitkiler'
+        od = os.path.join(out_root, 'p', str(n)); os.makedirs(od, exist_ok=True)
         ims = slides(p, os.path.join(ROOT, 'img', f'{pid}-960.jpg') if p['img'] else None, label)
         urls = []
         for i, im in enumerate(ims, 1):
-            im.save(os.path.join(od, f'{i}.jpg'), 'JPEG', quality=88, optimize=True, progressive=False)
-            urls.append(f'{BASE}/ig/{d.isoformat()}/{i}.jpg')
+            im.save(os.path.join(od, f'{i}.jpg'), 'JPEG', quality=82, optimize=True, progressive=False)
+            urls.append(f'{BASE}/ig/p/{n}/{i}.jpg')
         cap = caption(p, label)
-        json.dump({'date': d.isoformat(), 'id': pid, 'caption': cap, 'images': urls}, open(os.path.join(od, 'post.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
-        thumbs = ''.join(f'<a href="{d.isoformat()}/{i}.jpg" download><img src="{d.isoformat()}/{i}.jpg" alt="Slayt {i}" width="216" height="270" loading="lazy"></a>' for i in range(1, len(ims) + 1))
-        cards += f'''<section class="post"><h2>{d.day}.{d.month:02d}.{d.year} · {html.escape(p["tr"])}</h2><p class="when">{"Bugün" if d == day else "Sonraki"} · her akşam 19:00’da kendiliğinden paylaşılır.</p><div class="strip">{thumbs}</div>
-<textarea readonly rows="10">{html.escape(cap)}</textarea><button type="button" onclick="navigator.clipboard.writeText(this.previousElementSibling.value);this.textContent='Kopyalandı'">Açıklamayı kopyala</button></section>'''
-        print('ig:', d, pid, label)
-    page = f'''<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Instagram postları | Bitki Tabanı</title>
-<style>body{{margin:0;padding:16px;background:#F1EADD;color:#1C2140;font-family:system-ui,sans-serif;max-width:1180px;margin:auto}}h1{{font-family:Georgia,serif}}.post{{background:#FBF6EC;border:1px solid #DCCFBA;border-radius:12px;padding:16px;margin:0 0 24px}}.when{{color:#5D5866;margin-top:0}}.strip{{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px}}.strip img{{width:216px;height:auto;border-radius:6px;display:block}}textarea{{width:100%;font:inherit;margin:12px 0 8px;border:1px solid #DCCFBA;border-radius:8px;padding:8px;background:#fff;color:inherit}}button{{font:inherit;padding:8px 14px;border-radius:8px;border:1px solid #A3271B;background:#A3271B;color:#fff}}@media (prefers-color-scheme:dark){{body{{background:#15131E;color:#F0E7D8}}.post{{background:#1E1A29;border-color:#3A3247}}textarea{{background:#15131E}}}}</style></head>
-<body><h1>Instagram postları</h1><p>Bugünün ve sonraki iki günün kaydırmalı postları. Görsele dokununca indirilir. Otomatik paylaşım açıkken bir şey yapmana gerek yok.</p>{cards}</body></html>'''
+        json.dump({'n': n, 'id': pid, 'caption': cap, 'images': urls}, open(os.path.join(od, 'post.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+        thumbs = ''.join(f'<a href="p/{n}/{i}.jpg" download><img src="p/{n}/{i}.jpg" alt="Slayt {i}" width="216" height="270" loading="lazy"></a>' for i in range(1, len(ims) + 1))
+        when = f'Açılış postu {n + 1}/{LAUNCH}' if n < LAUNCH else ('Sıradaki' if n == n0 else 'Sonra')
+        cards.append(f'<section class="post"><h2>{n + 1}. post: {html.escape(p["tr"])}</h2><p class="when">{when}</p><div class="strip">{thumbs}</div>'
+                     f'<textarea readonly rows="10">{html.escape(cap)}</textarea>'
+                     '<button type="button" onclick="navigator.clipboard.writeText(this.previousElementSibling.value);this.textContent=\'Kopyalandı\'">Açıklamayı kopyala</button></section>')
+        print('ig:', n, pid, label)
+    intro = (f'Otomatik paylaşım açıldığı gün ilk {LAUNCH} post yarım saat arayla paylaşılır (profilde 4 sıra); sonra her akşam 19:00’da bir post.' if n0 < LAUNCH
+             else f'Şimdiye kadar {n0} post paylaşıldı. Her akşam 19:00’da sıradaki paylaşılır.')
+    page = ('<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+            '<meta name="robots" content="noindex, nofollow"><title>Instagram postları | Bitki Tabanı</title><style>' + PAGE_CSS + '</style></head>'
+            f'<body><h1>Instagram postları</h1><p>{intro} Görsele dokununca indirilir.</p>' + ''.join(cards) + '</body></html>')
     open(os.path.join(out_root, 'index.html'), 'w', encoding='utf-8').write(page)
 
 if __name__ == '__main__':
