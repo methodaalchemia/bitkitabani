@@ -1178,14 +1178,14 @@
   "w500": 500
  },
  "muskat": {
-  "artist": "Terrence Coombes",
-  "auto": true,
-  "file": "Nutmeg ready.jpg",
-  "h": 1237,
-  "h500": 644,
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Nutmeg_ready.jpg",
+  "artist": "Fpalli",
+  "auto": false,
+  "file": "Myristica fragrans (Muscadier 1).jpg",
+  "h": 638,
+  "h500": 332,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Myristica_fragrans_(Muscadier_1).jpg",
   "w": 960,
   "w500": 500
  },
