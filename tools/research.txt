@@ -1,84 +1,29 @@
 # id | pubmed sorgusu   ya da   URL adres
-dagcayi | Sideritis[ti] AND review[pt]
-dagcayi | Sideritis clinical trial
-atkestanesi | horse chestnut seed extract chronic venous insufficiency
-ceviz | Juglans regia leaf review
-ceviz | walnut consumption cardiovascular meta-analysis
-incir | Ficus carica review phytochemistry pharmacology
-incir | fig leaf phytophotodermatitis
-feslegen | Ocimum basilicum review pharmacology
-feslegen | estragole basil genotoxicity
-anason | Pimpinella anisum review
-turunc | bitter orange p-synephrine safety review
-turunc | Citrus aurantium review
-hodan | borage pyrrolizidine alkaloids
-hodan | Borago officinalis review
-goji | Lycium barbarum warfarin
-goji | Lycium barbarum review clinical
-reishi | Ganoderma lucidum cancer treatment Cochrane
-reishi | Ganoderma lucidum hepatotoxicity
-gelincik | Papaver rhoeas review
-gelincik | Papaver rhoeas poisoning
-sogut | willow bark extract systematic review
-pasiflora | Passiflora incarnata anxiety systematic review
-pasiflora | Passiflora preoperative anxiety
-karabas | Lavandula stoechas review
-neem | neem oil poisoning children
-neem | Azadirachta indica review
-graviola | Annona muricata atypical parkinsonism
-graviola | Annona muricata review
-mahlep | Prunus mahaleb
-yildizanason | star anise Illicium anisatum infants toxicity
-yildizanason | Illicium verum shikimic acid oseltamivir
-gotukola | Centella asiatica systematic review
-gotukola | Centella asiatica hepatotoxicity
-tulsi | Ocimum sanctum systematic review clinical
-lotus | Nelumbo nucifera review
-hamamelis | Hamamelis virginiana review
-turnayemisi | cranberries preventing urinary tract infections Cochrane
-paico | Dysphania ambrosioides review
-paico | Chenopodium ambrosioides ascaridole poisoning
-sassafras | sassafras safrole
-kiwicha | Amaranthus caudatus review
-huayruro | Ormosia
-fitolakka | Phytolacca americana poisoning
-mayiselmasi | Podophyllum peltatum podophyllotoxin etoposide
-ajosacha | Mansoa alliacea
-URL https://www.ema.europa.eu/en/medicines/herbal/sideritis-herba
-URL https://www.ema.europa.eu/en/medicines/herbal/hippocastani-semen
-URL https://www.ema.europa.eu/en/medicines/herbal/juglandis-folium
-URL https://www.ema.europa.eu/en/medicines/herbal/anisi-fructus
-URL https://www.ema.europa.eu/en/medicines/herbal/anisi-aetheroleum
-URL https://www.ema.europa.eu/en/medicines/herbal/aurantii-amari-epicarpium-et-mesocarpium
-URL https://www.ema.europa.eu/en/medicines/herbal/aurantii-amari-flos
-URL https://www.ema.europa.eu/en/medicines/herbal/passiflorae-herba
+kakule | cardamom supplementation meta-analysis
+kakule | Elettaria cardamomum review
+muskat | nutmeg poisoning myristicin
+muskat | Myristica fragrans review
+tulsi | Tulsi Ocimum sanctum herb for all reasons
+tulsi | Tulsi clinical efficacy safety systematic review
+gelincik | Papaver rhoeas traditional uses phytochemistry
+gelincik | Papaver rhoeas alkaloids rhoeadine
+atkestanesi | Aesculus hippocastanum poisoning
+ceviz | juglone toxicity Juglans
+incir | early domesticated fig Jordan Valley parthenocarpic
+lotus | Nelumbo nucifera seed 1300 years germination
+mahlep | Prunus mahaleb seed composition coumarin
+fitolakka | Phytolacca americana invasive Turkey
+reishi | Ganoderma lucidum review
+karabas | Lavandula stoechas camphor fenchone toxicity
+sogut | salicin aspirin history willow
+hamamelis | witch hazel hamamelitannin
+gotukola | Centella asiatica venous insufficiency
+URL https://www.ema.europa.eu/en/medicines/herbal/myristicae-semen
+URL https://www.ema.europa.eu/en/medicines/herbal/cardamomi-fructus
+URL https://www.ema.europa.eu/en/medicines/herbal/boldi-folium
+URL https://www.ema.europa.eu/en/medicines/herbal/aurantii-amari-epicarpium-mesocarpium
+URL https://www.ema.europa.eu/en/medicines/herbal/aurantii-amari-floris-aetheroleum
 URL https://www.ema.europa.eu/en/medicines/herbal/salicis-cortex
-URL https://www.ema.europa.eu/en/medicines/herbal/anisi-stellati-fructus
-URL https://www.ema.europa.eu/en/medicines/herbal/centellae-asiaticae-herba
-URL https://www.ema.europa.eu/en/medicines/herbal/rhoeados-flos
-URL https://www.ema.europa.eu/en/medicines/herbal/hamamelidis-folium
-URL https://www.ema.europa.eu/en/medicines/herbal/hamamelidis-cortex
-URL https://www.ema.europa.eu/en/medicines/herbal/hamamelidis-aqua
-URL https://www.ema.europa.eu/en/medicines/herbal/hamamelidis-folium-et-cortex-aut-ramunculus-destillatum
-URL https://www.ema.europa.eu/en/medicines/herbal/vaccinii-macrocarpi-fructus
-URL https://www.ema.europa.eu/en/medicines/herbal/lavandulae-flos
-URL https://www.ema.europa.eu/en/medicines/herbal/basilici-herba
-URL https://www.ema.europa.eu/en/medicines/herbal/fici-folium
-URL https://www.nccih.nih.gov/health/passionflower
-URL https://www.nccih.nih.gov/health/horse-chestnut
-URL https://www.nccih.nih.gov/health/bitter-orange
-URL https://www.nccih.nih.gov/health/cranberry
-URL https://www.nccih.nih.gov/health/goji
-URL https://www.nccih.nih.gov/health/reishi-mushroom
-URL https://www.nccih.nih.gov/health/willow-bark
-URL https://www.nccih.nih.gov/health/gotu-kola
-URL https://www.nccih.nih.gov/health/holy-basil
-URL https://www.nccih.nih.gov/health/neem
-URL https://www.nccih.nih.gov/health/witch-hazel
-URL https://www.nccih.nih.gov/health/borage
-URL https://www.nccih.nih.gov/health/star-anise
-URL https://www.nccih.nih.gov/health/asian-mushrooms
-URL https://www.cancer.gov/about-cancer/treatment/cam/hp/mushrooms-pdq
-URL https://www.fda.gov/consumers/consumer-updates/fda-advises-public-not-consume-star-anise-tea
-URL https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-189/subpart-C/section-189.180
-URL https://ihbt.ferid.org.tr
+URL https://www.nccih.nih.gov/health/herbsataglance
+URL https://www.efsa.europa.eu/en/efsajournal/pub/5909
+URL https://www.fda.gov/food/cfsan-constituent-updates/fda-advises-public-not-consume-star-anise-tea
