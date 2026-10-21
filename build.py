@@ -37,7 +37,34 @@ try:
     LOCAL_DAY = datetime.datetime.now(ZoneInfo('Europe/Istanbul')).date()
 except Exception:
     LOCAL_DAY = datetime.date.today()
-AYLAR = ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık']
+if os.environ.get('BT_DAY'): LOCAL_DAY = datetime.date.fromisoformat(os.environ['BT_DAY'])   # deneme için
+
+# ---------- yayın kuyruğu: her gün bir yeni bitki (kuyruk/ klasörü) ----------
+import kuyruk as _K
+YENI, EN_NEW, ETK_EN_NEW, KUYRUK_LEFT = {}, {}, {}, []
+for _q in _K.Q:
+    _d = datetime.date.fromisoformat(_q['yayin'])
+    if _q['id'] in byId: continue
+    if _d > LOCAL_DAY: KUYRUK_LEFT.append(_q); continue
+    _q = dict(_q); _id = _q['id']; YENI[_id] = _d
+    EK[_id] = _q.pop('ek'); POWO[_id] = _q.pop('taxon')
+    EN_NEW[_id] = _q.pop('en')
+    if _q.get('etk_en'): ETK_EN_NEW[_id] = _q['etk_en']
+    if _q.get('etk'): ETK[_id] = _q['etk']
+    if _q.get('ema'): EMA[_id] = _q['ema']
+    if _q.get('nccih'): NCCIH[_id] = _q['nccih']
+    if _q.get('kaynak'): OTHER.setdefault(_id, []).extend(_q['kaynak'])
+    if _q.get('koruma'): KORUMA[_id] = _q['koruma']
+    if _q.get('yasal'): YASAL[_id] = _q['yasal']
+    EXTRA[_id] = list(_q.get('rel', []))
+    for _r in _q.get('rel', []):
+        if _r in byId or _r in YENI: EXTRA.setdefault(_r, []).append(_id)
+    for _k in ('etk', 'etk_en', 'ema', 'nccih', 'kaynak', 'koruma', 'yasal', 'rel', 'yayin', 'foto', 'ig'): _q.pop(_k, None)
+    P.append(_q); byId[_id] = _q
+for i, p in enumerate(P): p['no'] = i + 1
+NEWEST = sorted(YENI, key=lambda k: YENI[k], reverse=True)
+def is_new(pid, days=7): return pid in YENI and (LOCAL_DAY - YENI[pid]).days < days
+AYLAR =['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık']
 GUNLER = ['Pazartesi','Salı','Çarşamba','Perşembe','Cuma','Cumartesi','Pazar']
 def tr_date(d): return f'{d.day} {AYLAR[d.month-1]} {d.year}, {GUNLER[d.weekday()]}'
 def slug_of(br): return br['a'] + ('-' + br['b'] if br.get('b') else '')
@@ -60,7 +87,8 @@ def pips(k):
     return '<span class="pips" aria-hidden="true">' + ''.join(f'<i class="{"on" if i <= n else ""}"></i>' for i in (1,2,3)) + '</span>'
 short_la = lambda p: p['la'].split(',')[0].strip()
 
-FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;0,700;0,800;1,400;1,500&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Courier+Prime:wght@400;700&display=swap">'
+FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;0,700;0,800;1,400&family=Alegreya+Sans:ital,wght@0,400;0,700;1,400&family=Courier+Prime&display=swap">'
+FONTS = '<script>try{var t=localStorage.getItem("bt-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>' + FONTS
 FAV = '<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">'
 
 def head(title, desc, path, extra='', image=None):
@@ -74,7 +102,7 @@ def head(title, desc, path, extra='', image=None):
 <title>{e(title)}</title>
 <meta name="description" content="{e(desc)}">
 <link rel="canonical" href="{url}">
-<link rel="alternate" type="application/rss+xml" title="Bitki Tabanı: günün bitkisi" href="/gunun-bitkisi/rss.xml">
+<link rel="alternate" type="application/rss+xml" title="Bitki Tabanı: günün bitkisi" href="/gunun-bitkisi/rss.xml"><link rel="alternate" type="application/rss+xml" title="Bitki Tabanı: yeni eklenen bitkiler" href="/yeni/rss.xml">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Bitki Tabanı">
 <meta property="og:title" content="{e(title)}">
@@ -96,7 +124,7 @@ def head(title, desc, path, extra='', image=None):
 
 def nav(cur):
     a = lambda href, label, key: f'<a href="{href}"{" aria-current=\"page\"" if cur == key else ""}>{label}</a>'
-    return f'''<div class="motif" aria-hidden="true"></div><div class="site-nav"><a class="logo" href="/">Bitki <em>Tabanı</em></a><nav>{a("/katalog/", "Katalog", "kat")}{a("/kopruler/", "Kültür köprüleri", "br")}{a("/hakkinda/", "Hakkında", "about")}{a("/hesap/", "Hesap", "acct")}</nav></div>'''
+    return f'''<div class="motif" aria-hidden="true"></div><div class="site-nav"><a class="logo" href="/">Bitki <em>Tabanı</em></a><nav>{a("/katalog/", "Katalog", "kat")}{a("/yeni/", "Yeni", "yeni")}{a("/kopruler/", "Kültür köprüleri", "br")}{a("/hakkinda/", "Hakkında", "about")}{a("/hesap/", "Hesap", "acct")}<button type="button" class="themebtn" data-l="tr" aria-label="Açık ya da koyu tema">◐</button></nav></div>'''
 
 FOOT = '''<div class="motif indigo" aria-hidden="true"></div>
 <footer class="site">
@@ -104,7 +132,7 @@ FOOT = '''<div class="motif indigo" aria-hidden="true"></div>
     <h3>Bu site nedir</h3>
     <p>Bilgi ve merak için hazırlanmış bir derlemedir; tedavi önerisi değildir. Bir bitkiyi kullanmadan önce, özellikle ilaç kullanıyorsan, hamileysen ya da emziriyorsan bir hekime veya eczacıya danış.</p>
     <p>Fotoğraflar Wikimedia Commons’tan özgür lisanslarla alınmıştır; yazarı ve lisansı her bitkinin sayfasında yazılıdır.</p>
-    <p><a href="/yontem/">Yöntem</a> · <a href="/hesap/">Hesap</a> · <a href="/gizlilik/">Gizlilik</a> · <a href="mailto:iletisim@bitkitabani.com">İletişim</a></p>
+    <p><a href="/yeni/">Yeni eklenenler</a> · <a href="https://www.instagram.com/bitkitabani/" rel="noopener">Instagram</a> · <a href="/yontem/">Yöntem</a> · <a href="/hesap/">Hesap</a> · <a href="/gizlilik/">Gizlilik</a> · <a href="mailto:iletisim@bitkitabani.com">İletişim</a></p>
   </div>
   <div class="legend">
     <h3>Kanıt düzeyi</h3>
@@ -125,7 +153,7 @@ FOOT = '''<div class="motif indigo" aria-hidden="true"></div>
 
 def page(title, desc, path, body, cur, scripts='', narrow=False, extra='', image=None):
     h = head(title, desc, path, extra, image).replace('{narrow}', ' narrow' if narrow else '')
-    return h + nav(cur) + body + FOOT + '<script src="/assets/streak.js" defer></script><script src="/assets/sync.js" defer></script>' + scripts.replace('<script src="/assets/streak.js" defer></script>', '') + '\n</body>\n</html>\n'
+    return h + nav(cur) + body + FOOT + '<script src="/assets/theme.js" defer></script><script src="/assets/streak.js" defer></script><script src="/assets/sync.js" defer></script>' + scripts.replace('<script src="/assets/streak.js" defer></script>', '') + '\n</body>\n</html>\n'
 
 def write(path, content):
     full = os.path.join(OUT, path.strip('/'), 'index.html') if not path.endswith('.html') and not '.' in path.split('/')[-1] else os.path.join(OUT, path.strip('/'))
@@ -182,7 +210,7 @@ def card(p):
     return f'''<a class="card" href="/{p["id"]}/" data-id="{p["id"]}" data-bolge="{" ".join(p["bolge"])}" data-kat="{" ".join(p["kat"])}" data-kanit="{p["kanit"]}" data-guv="{p["guv"]}" data-durum="{" ".join(([YASAL[p["id"]][0] if YASAL[p["id"]][0]=="yasak" else "kisitli"] if p["id"] in YASAL else []) + (["koruma"] if KORUMA.get(p["id"], {}).get("rozet") else []))}" data-s="{e(s)}">
   {ph(p, 500)}
   <div class="body">
-    <div class="row"><span class="acc">{acc(p["no"])}</span><span class="regs">{"".join(dot(r) for r in p["bolge"])}</span></div>
+    <div class="row"><span class="acc">{acc(p["no"])}{'<span class="newb">Yeni</span>' if is_new(p["id"]) else ''}</span><span class="regs">{"".join(dot(r) for r in p["bolge"])}</span></div>
     <h2>{e(p["tr"])}</h2>
     <div class="latin">{e(p["la"])}</div>
     <div class="fam" lang="la">{e(p["fam"])}</div>
@@ -221,7 +249,7 @@ for i, p in enumerate(P):
     prev, nxt = P[i-1], P[(i+1) % len(P)]
     title = (f'{p["tr"]}: nedir, etkileri ve zehirlilik riski' if p['guv'] == 'yuksek' else f'{p["tr"]}: faydaları, kullanımı ve yan etkileri')
     if len(title) < 44: title += ' | Bitki Tabanı'
-    ld = {"@context":"https://schema.org","@type":"Article","headline":f'{p["tr"]} ({short_la(p)})',"inLanguage":"tr","about":{"@type":"Taxon","name":short_la(p),"alternateName":[p['tr']] + [x.strip() for x in p['diger'].split(',')][:4],"taxonRank":"species","parentTaxon":{"@type":"Taxon","name":p['fam'].split(' ')[0],"taxonRank":"family"}},"description":desc_for(p),"author":AUTHOR,"isPartOf":{"@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/"},"dateModified":CONTENT_DATE,"url":f'{BASE}/{pid}/',"image":(f'{BASE}/img/{pid}-960.jpg' if pid in IMG else None),"publisher":{"@type":"Organization","name":"Bitki Tabanı","url":BASE+"/"}}
+    ld = {"@context":"https://schema.org","@type":"Article","headline":f'{p["tr"]} ({short_la(p)})',"inLanguage":"tr","about":{"@type":"Taxon","name":short_la(p),"alternateName":[p['tr']] + [x.strip() for x in p['diger'].split(',')][:4],"taxonRank":"species","parentTaxon":{"@type":"Taxon","name":p['fam'].split(' ')[0],"taxonRank":"family"}},"description":desc_for(p),"author":AUTHOR,"isPartOf":{"@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/"},"dateModified":(max(CONTENT_DATE, YENI[pid].isoformat()) if pid in YENI else CONTENT_DATE),**({"datePublished":YENI[pid].isoformat()} if pid in YENI else {}),"url":f'{BASE}/{pid}/',"image":(f'{BASE}/img/{pid}-960.jpg' if pid in IMG else None),"publisher":{"@type":"Organization","name":"Bitki Tabanı","url":BASE+"/"}}
     crumbs = {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana sayfa","item":BASE+"/"},{"@type":"ListItem","position":2,"name":"Katalog","item":BASE+"/katalog/"},{"@type":"ListItem","position":3,"name":p['tr'],"item":f'{BASE}/{pid}/'}]}
     uses = ''.join(f'<div class="use"><div class="who">{e(w)}</div><p>{e(t)}</p></div>' for w, t in p['kul'])
     relhtml = ''
@@ -314,7 +342,7 @@ for i, p in enumerate(P):
   {contrib(p)}
   <section class="sec"><h2>Kaynaklar</h2>{refs(p)}</section>
   <aside class="disclaimer" role="note"><b>Tıbbi tavsiye değildir.</b> Bu sayfa geleneksel kullanımları kültürel bir kayıt olarak anlatır ve bilimsel bilgiyi özetler; teşhis ya da tedavi önerisi değildir. {e(p["tr"])} ya da başka bir bitkiyi kullanmadan önce, özellikle ilaç kullanıyorsan, hamileysen, emziriyorsan ya da bir hastalığın varsa hekimine veya eczacına danış. Zehirlenme şüphesinde Ulusal Zehir Danışma Merkezi’ni (UZEM) <b>114</b> numaradan ara.</aside>
-  <p class="updated">Hazırlayan: <a href="/yontem/#hazirlayan">Edanaz Tınmazlar</a> · Son gözden geçirme: <time datetime="{CONTENT_DATE}">{DATE_TXT}</time></p>
+  <p class="updated">Hazırlayan: <a href="/yontem/#hazirlayan">Edanaz Tınmazlar</a> · {('Eklendi: <time datetime="' + YENI[pid].isoformat() + '">' + tr_date(YENI[pid]).rsplit(',', 1)[0] + '</time> · ') if pid in YENI else ''}Son gözden geçirme: <time datetime="{CONTENT_DATE}">{DATE_TXT}</time></p>
   <div class="sheet-foot">
     <div class="learnbox"><button type="button" class="learn" id="learnBtn" data-id="{pid}" aria-pressed="false">Öğrendim olarak işaretle</button><span class="muted-s">Bu tarayıcıda saklanır. <a href="/hesap/">Google ile giriş yaparsan</a> bütün cihazlarında görünür.</span><span class="muted-s streak" id="streakNote"></span></div>
     <div class="pager"><a href="/{prev["id"]}/">← {e(prev["tr"])}</a><a href="/{nxt["id"]}/">{e(nxt["tr"])} →</a></div>
@@ -391,7 +419,7 @@ katalog = f'''
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="2" fill="none"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       <input id="q" type="search" placeholder="Bitki, Latince ad, kullanım ara… (ör. nazar, öksürük, tütsü)" autocomplete="off" aria-label="Bitki ara">
     </label>
-    <div class="fgroups">{filters}</div>
+    <details class="fbox" open><summary>Filtreler</summary><div class="fgroups">{filters}</div></details>
   </div>
   <div class="resultbar"><span id="count" aria-live="polite">{len(P)} / {len(P)} kayıt gösteriliyor</span><button class="linkbtn" id="reset" type="button" hidden>Filtreleri temizle</button></div>
   <div class="grid">{"".join(card(p) for p in P)}</div>
@@ -530,7 +558,9 @@ write('/secim/', page('Fotoğraf seçimi | Bitki Tabanı', 'Fotoğraf seçimi', 
 
 # ---------- ana sayfa ----------
 pool = [p for p in P if p['guv'] != 'yuksek']
-def day_pick(d): return pool[(d - datetime.date(1970, 1, 1)).days % len(pool)]
+def day_pick(d):
+    pl = [p for p in pool if YENI.get(p['id'], datetime.date.min) <= d]
+    return pl[(d - datetime.date(1970, 1, 1)).days % len(pl)]
 today_p = day_pick(LOCAL_DAY)
 LEDE = f'{REG_LIST}’dan {len(P)} şifalı ve ritüel bitkisi. Her kayıtta geleneksel kullanım, bilimin söyledikleri, güvenlik notu ve kaynaklar bir arada.'
 
@@ -538,6 +568,24 @@ REG_TXT = {'anadolu':'Nazar tütsüsünden kına gecesine, Anadolu’nun şifa v
            'and':'Koka yaprağından kantuta çiçeğine, And Dağları’nın kutsal bitkileri.','amazon':'Ayahuasca sarmaşığından huito boyasına, yağmur ormanının öğretmen bitkileri.',
            'kamerika':'Ak adaçayından peyoteye, Kuzey Amerika yerli halklarının bitkileri.'}
 regcards = ''.join(f'<a class="regcard" href="/katalog/?bolge={k}"><span class="where">{dot(k)} {e(v["ad"])}</span><b>{cnt(lambda p,k=k: k in p["bolge"])} bitki</b><span>{e(REG_TXT.get(k,""))}</span></a>' for k,v in regs)
+
+# ---------- her gün yeni bitki: ana sayfa bandı ----------
+IG_URL = 'https://www.instagram.com/bitkitabani/'
+NEXT_Q = min(KUYRUK_LEFT, key=lambda q: q['yayin']) if KUYRUK_LEFT else None
+def teaser():
+    if not NEXT_Q: return ''
+    nd = datetime.date.fromisoformat(NEXT_Q['yayin'])
+    when = 'Yarın' if (nd - LOCAL_DAY).days == 1 else tr_date(nd).rsplit(',', 1)[0]
+    return f'<p class="teaser"><b>{when}:</b> {e(REG[NEXT_Q["bolge"][0]]["ad"])} bölgesinden yeni bir bitki geliyor.</p>'
+def newband():
+    if not NEWEST: return ''
+    np_ = byId[NEWEST[0]]; d0 = YENI[np_['id']]
+    lab = 'Bugün eklendi' if d0 == LOCAL_DAY else 'Dün eklendi' if (LOCAL_DAY - d0).days == 1 else 'Son eklenen · ' + tr_date(d0).rsplit(',', 1)[0]
+    prev = ''.join(f'<li><a href="/{i}/">{e(byId[i]["tr"])}</a> <span class="mono-d">{YENI[i].day} {AYLAR[YENI[i].month-1]}</span></li>' for i in NEWEST[1:5])
+    return f"""<section class="newband" aria-labelledby="nbh">
+  <a class="nb-main" href="/{np_["id"]}/">{ph(np_, 500)}<span class="nb-txt"><span class="eyebrow">{lab}</span><b id="nbh">{e(np_["tr"])}</b><i>{e(short_la(np_))}</i><span class="nb-fact">{e(np_["ilginc"])}</span><span class="cta small">Sayfayı oku →</span></span></a>
+  <div class="nb-side"><p class="nb-say"><b>Her gün yeni bir bitki.</b> Katalog her gece bir kayıt büyüyor.</p>{teaser()}{('<ul class="nb-list">' + prev + '</ul>') if prev else ''}<p class="nb-links"><a href="/yeni/">Bütün yeni eklenenler →</a><a href="{IG_URL}" rel="noopener">Instagram’da her gün →</a><a href="/yeni/rss.xml">RSS</a></p></div>
+</section>"""
 home = f'''
 <header class="top">
   <div class="brand">
@@ -548,13 +596,40 @@ home = f'''
   </div>
   <div class="todaybox"><a class="today" id="today" href="/{today_p["id"]}/" data-pool="{e(json.dumps([[p["id"], p["tr"], p["la"]] for p in pool], ensure_ascii=False))}"><span class="eyebrow">Bugünün bitkisi</span><b id="todayName">{e(today_p["tr"])}</b><i id="todayLatin">{e(today_p["la"])}</i></a><a class="cta small" href="/oyun/">Günün bilmecesini çöz →</a><a class="cta small" href="/gunun-bitkisi/">Geçmiş günlerin bitkileri →</a><p class="streak" id="streak" hidden></p></div>
 </header>
+{newband()}
 <section class="sec"><h2>Bölgelere göre</h2><div class="regs-grid">{regcards}</div></section>
 {f'<section class="sec"><h2>Şu an mevsiminde</h2><p>{AYLAR[LOCAL_DAY.month-1]} ayında Anadolu’da toplama mevsimi olan bitkiler. Koruma altındaki ve yasal kısıtlı türler bu listeye alınmaz.</p><div class="grid">' + "".join(card(p) for p in season[:8]) + '</div></section>' if season else ''}
+<section class="sec"><h2>Nereden başlamalı?</h2><p>{len(P)} bitki çok gelebilir. Siteyi tanımak için bu beşiyle başla:</p><ol class="start">
+<li><a href="/papatya/"><b>Papatya</b></a>: herkesin bildiği bir çayın arkasındaki bilim; “Faydaları ne kadar kanıtlı?” tablosunu da gösterir.</li>
+<li><a href="/kantaron/"><b>Sarı kantaron</b></a>: kanıtı güçlü ama ilaç etkileşimleri ciddi; bir bitkinin neden hem şifa hem risk olabildiğini anlatır.</li>
+<li><a href="/uzerlik/"><b>Üzerlik</b></a>: nazar dumanından ayahuascaya uzanan bir kültür köprüsü.</li>
+<li><a href="/salep/"><b>Salep</b></a>: sevdiğimiz bir içeceğin yabani orkidelere bedeli.</li>
+<li><a href="/koka/"><b>Koka</b></a>: And’larda kutsal bir yaprak, başka yerde yasak bir madde.</li>
+</ol></section>
 <section class="sec"><h2>Öne çıkanlar</h2><div class="grid">{"".join(card(byId[i]) for i in FEATURED if i in byId)}</div><p><a class="cta" href="/katalog/">Bütün {len(P)} bitkiyi gör →</a></p></section>
 <section class="sec"><h2>Kültür köprüleri</h2><p>Birbirinden binlerce kilometre uzaktaki kültürler, çoğu zaman aynı molekülleri ya da aynı bitkiyi benzer dertlere kullanmış. {len(BR)} köprüyü haritada gör.</p><div class="mapwrap">{bridge_map()}</div><p><a class="cta" href="/kopruler/">Bütün köprüleri ve karşılaştırmaları gör →</a></p></section>
 '''
 ldsite = {"@context":"https://schema.org","@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/","inLanguage":"tr","description":"Şifalı ve ritüel bitkiler için Türkçe etnobotanik kayıt defteri."}
 write('/index.html', page('Bitki Tabanı: şifalı ve ritüel bitkiler veri tabanı', f'{REG_LIST}’dan {len(P)} şifalı ve ritüel bitkisi: geleneksel kullanım, bilimsel kanıt, güvenlik ve kaynaklar.', '/', home, 'home', '<script src="/assets/streak.js" defer></script><script src="/assets/home.js" defer></script>', extra=f'<script type="application/ld+json">{json.dumps(ldsite, ensure_ascii=False)}</script>'))
+
+
+# ---------- /yeni/: her gün eklenen bitkiler ----------
+nl = ''.join(f'<li><span class="mono-d">{tr_date(YENI[i])}</span><a href="/{i}/">{e(byId[i]["tr"])}</a> <i class="latin">{e(short_la(byId[i]))}</i></li>' for i in NEWEST)
+yn = f"""
+<nav class="crumbs" aria-label="Konum"><a href="/">Ana sayfa</a><span>/</span><span>Yeni eklenenler</span></nav>
+<header class="page-head"><span class="eyebrow">Her gün yeni bir bitki</span><h1>Yeni eklenenler</h1><p>Bitki Tabanı her gece yarısı bir kayıt büyüyor. Her yeni bitki öteki kayıtlar gibi geleneksel kullanım, bilimsel kanıt, güvenlik notu ve kaynaklarla gelir. Şu an katalogda {len(P)} bitki var.</p></header>
+{teaser()}
+{('<div class="grid">' + ''.join(card(byId[i]) for i in NEWEST[:12]) + '</div>') if NEWEST else '<p>İlk yeni bitki bu gece geliyor.</p>'}
+<section class="sec"><h2>Takip et</h2><p><a class="cta" href="{IG_URL}" rel="noopener">Instagram’da her gün bir bitki →</a></p><p><a class="cta" href="/yeni/rss.xml">RSS ile takip et →</a> <span class="muted-s">Bir RSS okuyucusu her yeni bitkiyi getirir; bildirim ya da e-posta yok.</span></p></section>
+{('<section class="sec"><h2>Bütün liste</h2><ul class="daylist">' + nl + '</ul></section>') if nl else ''}
+"""
+write('/yeni/', page(f'Yeni eklenen bitkiler | Bitki Tabanı', f'Bitki Tabanı’na her gün yeni bir şifalı ya da ritüel bitki ekleniyor. Son eklenenler ve tarihleri.', '/yeni/', yn, 'yeni', image=(f'{BASE}/img/{NEWEST[0]}-960.jpg' if NEWEST and NEWEST[0] in IMG else None)))
+from email.utils import format_datetime as _fd
+_it = ''
+for i in NEWEST[:30]:
+    q = byId[i]; d = YENI[i]; dt = datetime.datetime(d.year, d.month, d.day, 0, 5, tzinfo=datetime.timezone(datetime.timedelta(hours=3)))
+    _it += f'<item><title>Yeni bitki: {e(q["tr"])} ({e(short_la(q))})</title><link>{BASE}/{i}/</link><guid>{BASE}/{i}/</guid><pubDate>{_fd(dt)}</pubDate><description>{e(q["ilginc"])} {e(q["kul"][0][1])}</description></item>'
+open(os.path.join(OUT, 'yeni', 'rss.xml'), 'w', encoding='utf-8').write(f'<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>Bitki Tabanı: yeni eklenen bitkiler</title><link>{BASE}/yeni/</link><description>Her gün kataloğa eklenen yeni bitki.</description><language>tr</language>{_it}</channel></rss>')
 
 # ---------- günün bitkisi arşivi ----------
 days = [LOCAL_DAY - datetime.timedelta(days=n) for n in range(14)]
@@ -605,6 +680,7 @@ oy = f'''
 <nav class="crumbs" aria-label="Konum"><a href="/">Ana sayfa</a><span>/</span><span>Günün bilmecesi</span></nav>
 <header class="page-head"><span class="eyebrow">Her gün yeni bir bitki</span><h1>Günün bilmecesi</h1><p>Katalogdaki {len(P)} bitkiden biri saklı. İlk ipucuyla tahmin et; her yanlış tahminde yeni bir ipucu açılır. Altı hakkın var. Sarı kare, tahminin bölge ya da familya olarak yakın olduğunu gösterir.</p></header>
 <div id="game">
+<div class="gprog" id="gprog" aria-live="polite"></div>
 <ol class="clues" id="clues"><li class="clue"><p>Bilmece yükleniyor… JavaScript kapalıysa <a href="/gunun-bitkisi/">günün bitkisine</a> bakabilirsin.</p></li></ol>
 <form id="guessForm" class="guess" autocomplete="off"><label for="guessInput" class="eyebrow">Tahminin</label><div class="row"><input id="guessInput" list="plantNames" placeholder="Bitki adı yaz, listeden seç" required><button type="submit" class="learn">Tahmin et</button></div><p class="muted-s"><span id="left"></span> <span id="gameMsg" role="status"></span></p><datalist id="plantNames">{opts}</datalist></form>
 <ul class="guesses" id="guesses"></ul>
@@ -658,6 +734,7 @@ yt = """
 <div><dt>Yüksek risk</dt><dd>Zehirli ya da ciddi yan etkileri olan bitkiler. Kültürel ve tarihî önemleri için yer alırlar; kullanım önerisi değildir.</dd></div>
 </dl><p>Yasal durum, güvenlik etiketinden ayrı gösterilir: bir bitki yasak olmadan zehirli, zehirli olmadan yasak olabilir.</p></section>
 <section class="sec"><h2>Geleneksel bilgiye yaklaşım</h2><p>Geleneksel kullanımlar, onları yaşatan toplulukların adıyla ve bağlamıyla anlatılır; “Amazon yerlileri” gibi genellemeler yerine Shipibo, Huichol gibi somut adlar kullanılır. Kutsal ve törensel kullanımlar bir tavsiye olarak değil, kültürel bir kayıt olarak yazılır.</p></section>
+<section class="sec"><h2>Nasıl doğrulanıyor</h2><p>Her kayıt bir kişi tarafından hazırlanır; şu an bağımsız bir uzman ya da eczacı kayıtları gözden geçirmiyor. Bu yüzden her iddia, sayfanın altında listelenen kaynağa bağlanır ve okuyan herkes onu kendisi kontrol edebilir. Tıbbi bilgiler resmî değerlendirmelerden (EMA, NCCIH) ve sistematik derlemelerden alınır; kaynağı olmayan sağlık iddiası yazılmaz. Bir eczacı ya da farmakognozi uzmanı gözden geçirmeye katılırsa adı bu sayfada ve ilgili kayıtlarda belirtilecek.</p></section>
 <section class="sec"><h2>Güncelleme ve düzeltme</h2><p>Her sayfanın altında son gözden geçirme tarihi yazar. Bir hata görürsen ya da yöresel bir kullanım biliyorsan <a href="mailto:iletisim@bitkitabani.com">iletisim@bitkitabani.com</a> adresine yaz; düzeltmeler kaynağıyla birlikte kontrol edilip eklenir.</p></section>
 <section class="sec"><h2>Bağımsızlık</h2><p>Bitki Tabanı ürün satmaz, reklam almaz, satış ortaklığı (affiliate) bağlantısı kullanmaz ve hiçbir şirketten destek almaz.</p></section>
 """
@@ -671,8 +748,8 @@ _ai = ['Googlebot', 'Google-Extended', 'Bingbot', 'GPTBot', 'OAI-SearchBot', 'Ch
 open(os.path.join(OUT,'robots.txt'),'w').write('# Bitki Tabanı arama motorlarına ve yapay zekâ asistanlarına açıktır; alıntı yaparken kaynak göster.\n# Özet: ' + BASE + '/llms.txt\n\n' + ''.join(f'User-agent: {a}\n' for a in _ai) + _rules + '\nUser-agent: *\n' + _rules + f'\nSitemap: {BASE}/sitemap.xml\n')
 import build_en
 EN_URLS = build_en.run(globals())
-urls = ['/', '/katalog/', '/kopruler/', '/gunun-bitkisi/', '/oyun/', '/hakkinda/', '/yontem/', '/gizlilik/'] + [f'/kopruler/{slug_of(x)}/' for x in BR] + FAM_URLS + [f'/{p["id"]}/' for p in P] + EN_URLS
-open(os.path.join(OUT,'sitemap.xml'),'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url><loc>{BASE}{u}</loc><lastmod>{(LOCAL_DAY.isoformat() if u in ('/', '/gunun-bitkisi/', '/oyun/') else CONTENT_DATE)}</lastmod></url>\n' for u in urls) + '</urlset>\n')
+urls = ['/', '/katalog/', '/kopruler/', '/gunun-bitkisi/', '/yeni/', '/oyun/', '/hakkinda/', '/yontem/', '/gizlilik/'] + [f'/kopruler/{slug_of(x)}/' for x in BR] + FAM_URLS + [f'/{p["id"]}/' for p in P] + EN_URLS
+open(os.path.join(OUT,'sitemap.xml'),'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url><loc>{BASE}{u}</loc><lastmod>{(LOCAL_DAY.isoformat() if u in ('/', '/gunun-bitkisi/', '/oyun/', '/yeni/', '/katalog/', '/en/', '/en/catalog/') else max(CONTENT_DATE, YENI[u.strip('/').split('/')[-1]].isoformat()) if u.strip('/').split('/')[-1] in YENI else CONTENT_DATE)}</lastmod></url>\n' for u in urls) + '</urlset>\n')
 # ---------- llms.txt: yapay zekâ asistanları için özet ve tam metin ----------
 def _md_plant(p, full=False):
     pid = p['id']; L = [f'## {p["tr"]} ({short_la(p)})', '', f'URL: {BASE}/{pid}/', f'Familya: {p["fam"]} · Bölge: {", ".join(REG[r]["ad"] for r in p["bolge"])} · Kullanılan kısım: {p["kisim"]}',
@@ -703,6 +780,21 @@ open(os.path.join(OUT, '_headers'), 'w').write('''/*
   Cache-Control: public, max-age=3600
 /img/*
   Cache-Control: public, max-age=2592000
+/robots.txt
+  Content-Type: text/plain; charset=utf-8
+/llms.txt
+  Content-Type: text/plain; charset=utf-8
+/llms-full.txt
+  Content-Type: text/plain; charset=utf-8
 ''')
+# ---------- Instagram postları için veri (tools/ig.py okur; yayımlanmaz) ----------
+os.makedirs(os.path.join(HERE, '.cache'), exist_ok=True)
+json.dump({'day': LOCAL_DAY.isoformat(), 'yeni': {k: v.isoformat() for k, v in YENI.items()},
+           'kuyruk': [[q['id'], q['yayin']] for q in _K.Q],
+           'kanit': {k: v['ad'] for k, v in KANIT.items()}, 'guv': GUV, 'reg': {k: v['ad'] for k, v in REG.items()},
+           'p': [dict(id=p['id'], no=p['no'], tr=p['tr'], la=short_la(p), fam=p['fam'], bolge=p['bolge'], kat=p['kat'], kul=p['kul'], bilim=p['bilim'], kanit=p['kanit'],
+                      guv=p['guv'], guvNot=p['guvNot'], ilginc=p['ilginc'], yasal=(YASAL[p['id']][0] if p['id'] in YASAL else None), img=(p['id'] in IMG),
+                      foto=((IMG[p['id']].get('artist') or '') + (' · ' + IMG[p['id']].get('license', '') if IMG[p['id']].get('license') else '')) if p['id'] in IMG else '') for p in P]},
+          open(os.path.join(HERE, '.cache', 'ig_input.json'), 'w', encoding='utf-8'), ensure_ascii=False)
 print('ok', len(urls), 'sayfa')
 

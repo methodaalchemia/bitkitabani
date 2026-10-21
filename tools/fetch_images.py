@@ -7,6 +7,13 @@ sys.path.insert(0, ROOT)
 from refs import FILES, POWO
 import json as _j
 _D = _j.load(open(os.path.join(ROOT, 'data.json'), encoding='utf-8'))
+# Yayın kuyruğundaki bitkilerin fotoğrafları da önceden hazırlanır
+import kuyruk as _K
+_have = {p['id'] for p in _D['P']}
+for _q in _K.Q:
+    if _q.get('foto'): FILES[_q['id']] = _q['foto']
+    POWO.setdefault(_q['id'], _q['taxon'])
+    if _q['id'] not in _have: _D['P'].append({'id': _q['id'], 'la': _q['la']})
 BAD = re.compile(r'illustrat|drawing|k[öo]e?hler|medizinal-pflanzen|botanical (art|plate|print)|\bplate\b|tafel|lithograph|engraving|woodcut|painting|watercolou?r|herbari|exsiccat|\bmaps?\b|distribution|diagram|molecule|stamp|coin|logo|bottle|drink|beverage|powder|capsule|svg|specimen|museum|montage|collage|mhnt|landscape|panorama|habitat|forest|plantation|market|óleo|\\boil\\b|bowl|bottle', re.I)
 GOOD = re.compile(r'flower|flor|blüte|fleur|fruit|fruto|frucht|leaf|leaves|hoja|blatt|blossom|close|macro|inflorescence|bloom|berries|berry', re.I)
 

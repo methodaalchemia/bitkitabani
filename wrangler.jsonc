@@ -17,5 +17,7 @@
   "durable_objects": {
     "bindings": [{ "name": "USERS", "class_name": "UserStore" }]
   },
-  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["UserStore"] }]
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["UserStore"] }],
+  // Instagram paylaşımı: her akşam 19:00 (TR); başarısız olursa 20:00 ve 21:00'de yeniden dener. IG_TOKEN gizli değişkeni gerekir.
+  "triggers": { "crons": ["0 16 * * *", "0 17 * * *", "0 18 * * *"] }
 }

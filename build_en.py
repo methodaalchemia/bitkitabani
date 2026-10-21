@@ -15,6 +15,8 @@ def run(G):
     from etk_en import ETK_EN
     from derin_en import D_EN
     from misc_en import ALT_EN, KORUMA_EN, YASAL_EN, YASAL_AD_EN, BR_EN, REG_EN, KAT_EN, KANIT_EN, GUV_EN, KAN_AD_EN, BIO_EN
+    EN.update(G.get('EN_NEW', {})); ETK_EN.update(G.get('ETK_EN_NEW', {}))
+    YENI, NEWEST, LOCAL_DAY = G['YENI'], G['NEWEST'], G['LOCAL_DAY']
     missing = [p['id'] for p in P if p['id'] not in EN]
     assert not missing, ('missing English entries', missing)
     byId = {p['id']: p for p in P}
@@ -55,14 +57,14 @@ def run(G):
 '''
     def nav(cur, tr_path):
         a = lambda href, label, key: f'<a href="{href}"{" aria-current=\"page\"" if cur == key else ""}>{label}</a>'
-        return f'''<div class="motif" aria-hidden="true"></div><div class="site-nav"><a class="logo" href="/en/">Bitki <em>Tabanı</em></a><nav>{a("/en/catalog/", "Catalog", "kat")}{a("/en/bridges/", "Culture bridges", "br")}{a("/en/about/", "About", "about")}<a href="{tr_path}" lang="tr" hreflang="tr">Türkçe</a></nav></div>'''
+        return f'''<div class="motif" aria-hidden="true"></div><div class="site-nav"><a class="logo" href="/en/">Bitki <em>Tabanı</em></a><nav>{a("/en/catalog/", "Catalog", "kat")}{a("/en/bridges/", "Culture bridges", "br")}{a("/en/about/", "About", "about")}<a href="/en/account/"{" aria-current=\"page\"" if cur == "acct" else ""}>Account</a><a href="{tr_path}" lang="tr" hreflang="tr">Türkçe</a><button type="button" class="themebtn" data-l="en" aria-label="Light or dark theme">◐</button></nav></div>'''
     FOOT = '''<div class="motif indigo" aria-hidden="true"></div>
 <footer class="site">
   <div>
     <h3>About this site</h3>
     <p>A compilation made for knowledge and curiosity; it is not medical advice. Before using any plant, especially if you take medicines, are pregnant or breastfeeding, talk to a doctor or pharmacist.</p>
     <p>Photos are from Wikimedia Commons under free licences; the author and licence are given on each plant’s page.</p>
-    <p><a href="/en/about/">About and method</a> · <a href="/">Türkçe</a> · <a href="mailto:iletisim@bitkitabani.com">Contact</a></p>
+    <p><a href="/en/about/">About and method</a> · <a href="/en/account/">Account</a> · <a href="/en/privacy/">Privacy</a> · <a href="/">Türkçe</a> · <a href="mailto:iletisim@bitkitabani.com">Contact</a></p>
   </div>
   <div class="legend">
     <h3>Evidence level</h3>
@@ -82,7 +84,7 @@ def run(G):
 '''
     def page(title, desc, path, tr_path, body, cur, scripts='', narrow=False, extra='', image=None):
         h = head(title, desc, path, tr_path, extra, image).replace('{narrow}', ' narrow' if narrow else '')
-        return h + nav(cur, tr_path) + body + FOOT + scripts + '\n</body>\n</html>\n'
+        return h + nav(cur, tr_path) + body + FOOT + '<script src="/assets/theme.js" defer></script><script src="/assets/streak.js" defer></script><script src="/assets/sync.js" defer></script>' + scripts + '\n</body>\n</html>\n'
 
     def ph(p, size, eager=False):
         m = IMG.get(p['id'])
@@ -267,7 +269,7 @@ def run(G):
   <div class="controls">
     <label class="search" for="q"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="2" fill="none"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       <input id="q" type="search" placeholder="Search plants, Latin names, uses… (e.g. evil eye, cough, incense)" autocomplete="off" aria-label="Search plants"></label>
-    <div class="fgroups">{filters}</div>
+    <details class="fbox" open><summary>Filters</summary><div class="fgroups">{filters}</div></details>
   </div>
   <div class="resultbar"><span id="count" aria-live="polite" data-tpl="Showing {{n}} of {{t}} entries">Showing {len(P)} of {len(P)} entries</span><button class="linkbtn" id="reset" type="button" hidden>Clear filters</button></div>
   <div class="grid">{"".join(card(p) for p in srt)}</div>
@@ -322,15 +324,41 @@ def run(G):
 <section class="sec"><h2>Sources we use</h2><ol class="srclist"><li><b>Official herbal assessments:</b> monographs of the European Medicines Agency’s Committee on Herbal Medicinal Products (EMA/HMPC) and summaries of the US National Center for Complementary and Integrative Health (NCCIH).</li><li><b>Systematic reviews and clinical trials:</b> Cochrane reviews and peer-reviewed journals indexed in PubMed.</li><li><b>Names and classification:</b> Kew’s Plants of the World Online (POWO).</li><li><b>Conservation and trade:</b> the IUCN Red List and CITES.</li><li><b>Legal status:</b> official legislation and UNODC publications.</li><li><b>Traditional use:</b> ethnobotanical field studies and academic books; for Anatolia, Turhan Baytop’s <i>Türkiye’de Bitkiler ile Tedavi</i>.</li></ol><p>Wikipedia, news sites, and pages of herb shops and supplement sellers are not used as sources.</p></section>
 <section class="sec"><h2>Evidence levels</h2><dl class="meta wide"><div><dt>Clinical</dt><dd>Controlled human trials or an officially approved medicinal use.</dd></div><div><dt>Limited</dt><dd>Small or few human studies; promising but not conclusive.</dd></div><div><dt>Traditional</dt><dd>Use is culturally documented, but there are no or very few human studies. This does not mean the plant does not work; it means science does not yet know.</dd></div></dl></section>
 <section class="sec"><h2>Safety labels</h2><dl class="meta wide"><div><dt>Generally safe</dt><dd>No serious side effects reported with moderate, traditional use.</dd></div><div><dt>Caution</dt><dd>Risk of drug interactions, dosing problems or harm to certain groups (pregnancy, children, chronic illness).</dd></div><div><dt>High risk</dt><dd>Poisonous plants or plants with serious side effects. They are here for their cultural and historical importance, not as a recommendation.</dd></div></dl><p>Legal status is shown separately from safety: a plant can be poisonous without being illegal, and illegal without being poisonous.</p></section>
+<section class="sec"><h2>How entries are checked</h2><p>Each entry is written by one person; at the moment no independent expert or pharmacist reviews them. That is why every claim is tied to a source listed at the bottom of the page, so any reader can check it. Medical information comes from official assessments (EMA, NCCIH) and systematic reviews; health claims without a source are not written. If a pharmacist or pharmacognosy expert joins as a reviewer, their name will be shown here and on the entries they review.</p></section>
 <section class="sec"><h2>Respect for traditional knowledge</h2><p>Traditional uses are described with the names and context of the communities that keep them alive, using specific names such as Shipibo or Huichol rather than generalisations. Sacred and ceremonial uses are recorded as culture, not as advice.</p></section>
 <section class="sec"><h2>Independence</h2><p>Bitki Tabanı sells nothing, carries no ads, uses no affiliate links and takes no money from any company. Corrections are welcome at <a href="mailto:iletisim@bitkitabani.com">iletisim@bitkitabani.com</a>.</p></section>'''
     write('/en/about/', page('About and method | Bitki Tabanı', 'Who writes Bitki Tabanı, which sources it uses, and how evidence levels and safety labels are set.', '/en/about/', '/yontem/', about, 'about', narrow=True))
+
+    # ---------- account and privacy ----------
+    hz = f"""<header class="page-head"><span class="eyebrow">Account</span><h1>Keep your progress</h1><p>Sign in with Google and the plants you have learned, your streak and your riddle results are saved to your account, so you see the same progress on your phone and computer. Everything also works without signing in; it then stays in this browser only.</p></header>
+<div id="acct" data-client="{e(G['GOOGLE_CLIENT_ID'])}" data-lang="en">
+<div class="stats"><span>Learned <strong id="stLearned">0</strong></span><span>Streak <strong id="stStreak">0</strong> days</span><span>Riddles <strong id="stGames">0</strong> days</span></div>
+<section class="sec" id="acctOut"><h2>Sign in</h2><div id="gbtn"></div><p class="muted-s">Only your Google account ID is stored; your email, name and photo are not. Details on the <a href="/en/privacy/">privacy</a> page.</p></section>
+<section class="sec" id="acctIn" hidden><h2>Signed in</h2><p>Your progress is syncing with this account.</p><p class="btnrow"><button type="button" class="learn" id="logout">Sign out</button> <button type="button" class="learn danger" id="del">Delete my account data</button></p></section>
+<p class="muted-s" id="acctMsg" role="status"></p>
+</div>"""
+    write('/en/account/', page('Account | Bitki Tabanı', 'Sign in with Google to keep the plants you have learned, your streak and riddle results on all your devices.', '/en/account/', '/hesap/', hz, 'acct', '<script src="/assets/hesap.js" defer></script>', narrow=True, extra='<meta name="robots" content="noindex, follow">'))
+    pv = """<header class="page-head"><span class="eyebrow">Privacy</span><h1>What do we store?</h1><p>In short: very little. Bitki Tabanı shows no ads, does not track you across sites and sells no data.</p></header>
+<section class="sec"><h2>Visit counts</h2><p>We use Cloudflare Web Analytics to see how many people read which page. It sets no cookies, does not identify you and does not track you across sites; it keeps only aggregate numbers (for example how often a page was viewed and which country visitors came from).</p></section>
+<section class="sec"><h2>If you do not sign in</h2><p>The plants you mark as learned, your streak and your riddle guesses stay only in your own browser’s storage (localStorage). Nothing reaches us. If you clear your browser data, they are gone.</p></section>
+<section class="sec"><h2>If you sign in with Google</h2><p>Google sends us an identity token on your behalf. From it we keep only your Google account ID (a random-looking number). Your email address, name and profile photo are not stored.</p><p>With that ID we store the plants you marked as learned, the days of your streak and your riddle guesses. A cookie valid for 180 days, used only for this, remembers your session.</p><p>Data is kept on Cloudflare’s servers. Google’s own <a href="https://policies.google.com/privacy" rel="noopener">privacy policy</a> applies to Google sign-in.</p></section>
+<section class="sec"><h2>Deletion</h2><p>The “Delete my account data” button on the <a href="/en/account/">Account</a> page deletes all stored progress immediately. You can also remove Bitki Tabanı’s access from your Google account at any time.</p></section>
+<section class="sec"><h2>Your rights</h2><p>Under Türkiye’s Personal Data Protection Law (KVKK, No. 6698) you have the right to ask about, correct and delete your data. The delete button lets you exercise that right in one click.</p></section>"""
+    write('/en/privacy/', page('Privacy | Bitki Tabanı', 'What Bitki Tabanı stores: nothing if you do not sign in; with Google sign-in, only your account ID and your progress.', '/en/privacy/', '/gizlilik/', pv, '', narrow=True))
 
     # ---------- home ----------
     REG_TXT = {'anadolu': 'Smoke against the evil eye, Anatolian folk healing and plants of the Mediterranean.', 'asya': 'Shamanic smoke of the steppe, Chinese medicine and the roots of Siberia.',
                'and': 'Coca leaf, the San Pedro cactus and cleansing herbs of the high Andes.', 'amazon': 'Ayahuasca, huito body paint and the forest’s teacher plants.', 'kamerika': 'White sage, peyote and the healing plants of the prairies.'}
     regcards = ''.join(f'<a class="regcard" href="/en/catalog/?bolge={k}"><span class="eyebrow">{dot(k)} {e(REG_EN[k])}</span><b>{cnt(lambda p,k=k: k in p["bolge"])} plants</b><span>{REG_TXT[k]}</span></a>' for k in regs)
     FEAT = ['uzerlik','ayahuasca','salep','maca','kantaron','koka','kina','huito','safran','guarana','sigla','peyote']
+    AYL = ['January','February','March','April','May','June','July','August','September','October','November','December']
+    newband_en = ''
+    if NEWEST:
+        q = byId[NEWEST[0]]; d0 = YENI[q['id']]
+        lab = 'Added today' if d0 == LOCAL_DAY else 'Added yesterday' if (LOCAL_DAY - d0).days == 1 else f'Latest addition · {d0.day} {AYL[d0.month-1]}'
+        prev = ''.join(f'<li><a href="/en/{i}/">{e(EN[i]["name"])}</a> <span class="mono-d">{YENI[i].day} {AYL[YENI[i].month-1][:3]}</span></li>' for i in NEWEST[1:5])
+        im = f'<div class="ph"><img src="/img/{q["id"]}-500.jpg" alt="" width="500" height="667" loading="lazy"></div>' if q['id'] in IMG else ''
+        newband_en = f'''<section class="newband"><a class="nb-main" href="/en/{q["id"]}/">{im}<span class="nb-txt"><span class="eyebrow">{lab}</span><b>{e(EN[q["id"]]["name"])}</b><i>{e(short_la(q))}</i><span class="nb-fact">{e(EN[q["id"]]["fact"])}</span><span class="cta small">Read the entry →</span></span></a><div class="nb-side"><p class="nb-say"><b>A new plant every day.</b> The catalog grows by one entry every night.</p>{('<ul class="nb-list">' + prev + '</ul>') if prev else ''}<p class="nb-links"><a href="https://www.instagram.com/bitkitabani/" rel="noopener">Daily on Instagram →</a></p></div></section>'''
     home = f'''
 <header class="top">
   <div class="brand">
@@ -341,6 +369,13 @@ def run(G):
   </div>
 </header>
 <section class="sec"><h2>By region</h2><div class="regs-grid">{regcards}</div></section>
+{newband_en}<section class="sec"><h2>Where to start</h2><p>{len(P)} plants can be a lot. Start with these five to get to know the site:</p><ol class="start">
+<li><a href="/en/papatya/"><b>Chamomile</b></a>: the science behind a tea everyone knows, with its “How strong is the evidence?” table.</li>
+<li><a href="/en/kantaron/"><b>St John’s wort</b></a>: strong evidence but serious drug interactions; why a plant can be both remedy and risk.</li>
+<li><a href="/en/uzerlik/"><b>Syrian rue</b></a>: a culture bridge from evil-eye smoke in Anatolia to ayahuasca in the Amazon.</li>
+<li><a href="/en/salep/"><b>Salep orchids</b></a>: what a beloved winter drink costs wild orchids.</li>
+<li><a href="/en/koka/"><b>Coca</b></a>: a sacred leaf in the Andes, a banned substance elsewhere.</li>
+</ol></section>
 <section class="sec"><h2>Featured</h2><div class="grid">{"".join(card(byId[i]) for i in FEAT if i in byId)}</div><p><a class="cta" href="/en/catalog/">See all {len(P)} plants →</a></p></section>
 <section class="sec"><h2>Culture bridges</h2><p>Cultures thousands of kilometres apart have often used the same molecules, or the same plant, for similar troubles. See {len(BR)} bridges on the map.</p><div class="mapwrap">{map_en()}</div><p><a class="cta" href="/en/bridges/">See all bridges and comparisons →</a></p></section>'''
     ldw = {"@context":"https://schema.org","@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/en/","inLanguage":"en","description":"A sourced, non-commercial ethnobotanical database of healing and ritual plants across cultures."}

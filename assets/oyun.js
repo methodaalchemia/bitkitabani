@@ -39,6 +39,11 @@
       return '<li><b>' + esc(g.tr) + '</b>' + hints + '</li>';
     }).join('');
     document.getElementById('left').textContent = over() ? '' : (MAX - guesses.length) + ' hakkın kaldı';
+    var pr = document.getElementById('gprog');
+    if (pr) {
+      var dots = ''; for (var k = 0; k < MAX; k++) { var g2 = guesses[k]; dots += '<i class="' + (g2 === undefined ? (k === guesses.length && !over() ? 'now' : '') : g2 === ans.id ? 'hit' : 'miss') + '"></i>'; }
+      pr.innerHTML = '<span>' + (over() ? (won() ? 'Bulundu' : 'Bitti') : 'İpucu ' + open + '/' + ans.c.length + ' · Tahmin ' + (guesses.length + 1) + '/' + MAX) + '</span><span class="dots" aria-hidden="true">' + dots + '</span>';
+    }
     form.hidden = over();
     if (over()) {
       var w = won();

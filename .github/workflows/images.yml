@@ -2,7 +2,7 @@ name: Görselleri eşitle ve siteyi derle
 on:
   push:
     branches: [main]
-    paths: ['refs.py', 'data.json', 'extra.py', 'build.py', 'build_en.py', 'en/**', 'etkilesim.py', 'derin.py', 'assets/**', 'tools/**', '.github/workflows/images.yml']
+    paths: ['refs.py', 'data.json', 'extra.py', 'build.py', 'build_en.py', 'en/**', 'etkilesim.py', 'derin.py', 'assets/**', 'tools/**', 'kuyruk/**', '.github/workflows/images.yml']
   workflow_dispatch:
   schedule:
     - cron: '5 21 * * *'
@@ -19,10 +19,17 @@ jobs:
         with: { python-version: '3.12' }
       - run: python3 tools/fetch_images.py
       - run: pip install pillow && python3 tools/webp.py
+      - name: Yazı tipleri (Instagram slaytları için, OFL lisanslı)
+        run: |
+          mkdir -p tools/fonts; cd tools/fonts
+          for f in "alegreya/Alegreya%5Bwght%5D.ttf" "alegreya/Alegreya-Italic%5Bwght%5D.ttf" "alegreyasans/AlegreyaSans-Regular.ttf" "alegreyasans/AlegreyaSans-Bold.ttf" "courierprime/CourierPrime-Regular.ttf" "alegreya/OFL.txt"; do
+            n=$(basename "$f" | sed 's/%5B/[/;s/%5D/]/'); [ -f "$n" ] || curl -sSfL -o "$n" "https://raw.githubusercontent.com/google/fonts/main/ofl/$f" || true
+          done
       - run: python3 build.py
+      - run: python3 tools/ig.py
       - name: Değişiklikleri kaydet
         run: |
           git config user.name "bitkitabani-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add img images.json site
+          git add img images.json site tools/fonts
           if git diff --cached --quiet; then echo "değişiklik yok"; else git commit -m "Görseller ve site güncellendi [bot]" && git push; fi

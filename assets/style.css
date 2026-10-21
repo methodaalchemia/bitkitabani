@@ -345,3 +345,48 @@ table.kanit tbody th{width:36%}
 .kisaca{margin:22px 0 0;padding:16px 18px;border-left:4px solid var(--accent);background:var(--sheet);display:grid;gap:10px}
 .kisaca .qa h2.q{font-family:var(--f-display);font-size:var(--t-md);margin:0;letter-spacing:0;text-transform:none;color:var(--ink)}
 .kisaca .qa p{margin:4px 0 0;line-height:1.55}
+/* tema düğmesi */
+.themebtn{font:inherit;font-size:1rem;line-height:1;background:none;border:1px solid var(--rule);color:var(--ink);border-radius:999px;width:32px;height:32px;cursor:pointer;flex:none}
+.themebtn:hover{border-color:var(--accent)}
+.site-nav nav{align-items:center}
+/* dar ekranda menü tek satır, yana kaydırılır */
+@media (max-width:640px){
+  .site-nav{flex-wrap:nowrap;gap:10px}
+  .site-nav .logo{flex:none}
+  .site-nav nav{flex-wrap:nowrap;overflow-x:auto;gap:14px;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:4px 2px;min-width:0;mask-image:linear-gradient(to right,#000 85%,transparent)}
+  .site-nav nav::-webkit-scrollbar{display:none}
+}
+/* katalog filtreleri kutusu */
+details.fbox>summary{cursor:pointer;font-family:var(--f-mono);font-size:var(--t-sm);padding:8px 0;list-style:none}
+details.fbox>summary::-webkit-details-marker{display:none}
+details.fbox>summary::before{content:"▸ ";color:var(--accent)}
+details.fbox[open]>summary::before{content:"▾ "}
+@media (min-width:721px){details.fbox>summary{display:none}}
+/* nereden başlamalı */
+ol.start{padding-left:22px}ol.start li{margin:8px 0}
+/* bilmece ilerleme */
+.gprog{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;background:var(--sheet);border:1px solid var(--rule);border-left:4px solid var(--ochre);padding:10px 14px;margin:0 0 14px;font-family:var(--f-mono);font-size:var(--t-sm)}
+.gprog:empty{display:none}
+.gprog .dots{display:flex;gap:6px}
+.gprog .dots i{width:14px;height:14px;border-radius:50%;border:2px solid var(--muted);display:block}
+.gprog .dots i.hit{background:var(--s-dusuk);border-color:var(--s-dusuk)}
+.gprog .dots i.miss{background:var(--accent);border-color:var(--accent)}
+.gprog .dots i.now{border-color:var(--ink);box-shadow:0 0 0 2px var(--accent-soft)}
+/* her gün yeni bitki */
+.newband{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:18px;margin:28px 0;padding:16px;background:var(--sheet);border:1px solid var(--rule);border-top:4px solid var(--accent)}
+.nb-main{display:grid;grid-template-columns:160px minmax(0,1fr);gap:16px;text-decoration:none;color:inherit;align-items:start}
+.nb-main .ph{aspect-ratio:3/4;width:160px;overflow:hidden}
+.nb-main .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.nb-txt{display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.nb-txt b{font-family:var(--f-display);font-size:var(--t-xl);line-height:1.1}
+.nb-txt i{font-family:var(--f-display);color:var(--muted)}
+.nb-fact{line-height:1.5}
+.nb-main:hover b{color:var(--accent)}
+.nb-side{display:flex;flex-direction:column;gap:8px;border-left:1px dashed var(--rule);padding-left:18px}
+.nb-say{margin:0}
+.nb-list{list-style:none;padding:0;margin:0}.nb-list li{display:flex;justify-content:space-between;gap:8px;padding:5px 0;border-bottom:1px solid var(--rule)}
+.nb-list .mono-d{min-width:0}
+.nb-links{display:flex;flex-wrap:wrap;gap:6px 16px;margin:4px 0 0;font-family:var(--f-mono);font-size:var(--t-sm)}
+.teaser{border-left:3px solid var(--ochre);padding:6px 12px;margin:0;background:var(--paper)}
+@media (max-width:720px){.newband{grid-template-columns:1fr}.nb-side{border-left:0;padding-left:0;border-top:1px dashed var(--rule);padding-top:12px}.nb-main{grid-template-columns:110px minmax(0,1fr)}.nb-main .ph{width:110px}}
+.newb{display:inline-block;margin-left:8px;font-family:var(--f-mono);font-size:11px;padding:1px 6px;background:var(--accent);color:var(--sheet);vertical-align:middle;letter-spacing:.05em}

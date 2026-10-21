@@ -78,10 +78,61 @@ async function session(req, env) {
   return { sid, sub: s.sub };
 }
 
+
+// ---------- Instagram: her akşam günün kaydırmalı postunu paylaş ----------
+// Görseller ve açıklama derlemede site/ig/<tarih>/ altına yazılır (tools/ig.py).
+// Gerekli gizli değişken: IG_TOKEN (Instagram API with Instagram Login, uzun ömürlü token).
+// Token 60 gün geçerlidir; 20 günde bir kendiliğinden yenilenir ve Durable Object'te saklanır.
+const IG = 'https://graph.instagram.com/v23.0';
+function trDay(d = new Date()) { return new Date(d.getTime() + 3 * 3600e3).toISOString().slice(0, 10); }
+async function igJson(r) { const j = await r.json().catch(() => ({})); if (!r.ok || j.error) throw new Error((j.error && j.error.message) || ('HTTP ' + r.status)); return j; }
+async function igToken(env, st) {
+  let tok = st.token, at = st.tokenAt || 0;
+  if (env.IG_TOKEN && env.IG_TOKEN !== st.seed) { tok = env.IG_TOKEN; at = Date.now(); st.seed = env.IG_TOKEN; } // yeni token girildiyse onu kullan
+  if (!tok) throw new Error('IG_TOKEN tanımlı değil');
+  if (Date.now() - at > 20 * 864e5) {
+    const j = await igJson(await fetch('https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=' + encodeURIComponent(tok)));
+    tok = j.access_token; at = Date.now();
+  }
+  st.token = tok; st.tokenAt = at;
+  return tok;
+}
+async function igPost(env, force) {
+  const st = (await call(env, 'ig:state', 'get')) || {};
+  const day = trDay();
+  if (st.last === day && !force) return { skipped: 'zaten paylaşıldı', day };
+  try {
+    const pr = await env.ASSETS.fetch(new Request('https://bitkitabani.com/ig/' + day + '/post.json'));
+    if (!pr.ok) throw new Error('bugünün postu bulunamadı (' + day + ')');
+    const post = await pr.json();
+    const tok = await igToken(env, st);
+    if (!st.uid) st.uid = (await igJson(await fetch(IG + '/me?fields=user_id,username&access_token=' + encodeURIComponent(tok)))).user_id;
+    const form = o => { const f = new URLSearchParams(o); f.set('access_token', tok); return { method: 'POST', body: f }; };
+    const kids = [];
+    for (const u of post.images) kids.push((await igJson(await fetch(IG + '/' + st.uid + '/media', form({ image_url: u, is_carousel_item: 'true' })))).id);
+    const box = (await igJson(await fetch(IG + '/' + st.uid + '/media', form({ media_type: 'CAROUSEL', children: kids.join(','), caption: post.caption })))).id;
+    for (let i = 0; i < 10; i++) {
+      const s = await igJson(await fetch(IG + '/' + box + '?fields=status_code&access_token=' + encodeURIComponent(tok)));
+      if (s.status_code === 'FINISHED') break;
+      if (s.status_code === 'ERROR') throw new Error('Instagram görselleri işleyemedi');
+      await new Promise(r => setTimeout(r, 3000));
+    }
+    const pub = await igJson(await fetch(IG + '/' + st.uid + '/media_publish', form({ creation_id: box })));
+    st.last = day; st.lastId = pub.id; st.lastPlant = post.id; st.error = null; st.errorAt = null;
+  } catch (e) {
+    st.error = String(e.message || e).slice(0, 300); st.errorAt = new Date().toISOString();
+  }
+  await call(env, 'ig:state', 'put', st);
+  return { day, last: st.last, error: st.error };
+}
 export default {
   async fetch(req, env) {
     const url = new URL(req.url);
     if (!url.pathname.startsWith('/api/')) return env.ASSETS.fetch(req);
+    if (url.pathname === '/api/ig-durum' && req.method === 'GET') {
+      const st = (await call(env, 'ig:state', 'get')) || {};
+      return json({ token: !!(env.IG_TOKEN || st.token), sonPaylasim: st.last || null, bitki: st.lastPlant || null, hata: st.error || null, hataZamani: st.errorAt || null, tokenYenilendi: st.tokenAt ? new Date(st.tokenAt).toISOString() : null, bugun: trDay() });
+    }
     if (req.method !== 'GET' && req.headers.get('x-bt') !== '1') return json({ error: 'csrf' }, 403);
     try {
       if (url.pathname === '/api/login' && req.method === 'POST') {
@@ -117,5 +168,8 @@ export default {
     } catch (e) {
       return json({ error: 'hata' }, 400);
     }
+  },
+  async scheduled(event, env, ctx) {
+    if (env.IG_TOKEN) ctx.waitUntil(igPost(env));
   },
 };
