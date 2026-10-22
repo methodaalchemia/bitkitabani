@@ -58,14 +58,14 @@ def run(G):
 '''
     def nav(cur, tr_path):
         a = lambda href, label, key: f'<a href="{href}"{" aria-current=\"page\"" if cur == key else ""}>{label}</a>'
-        return f'''<div class="motif" aria-hidden="true"></div><div class="site-nav"><a class="logo" href="/en/">Bitki <em>Tabanı</em></a><nav>{a("/en/catalog/", "Catalog", "kat")}{a("/en/bridges/", "Culture bridges", "br")}{a("/en/about/", "About", "about")}<a href="/en/account/"{" aria-current=\"page\"" if cur == "acct" else ""}>Account</a><a href="{tr_path}" lang="tr" hreflang="tr">Türkçe</a><button type="button" class="themebtn" data-l="en" aria-label="Light or dark theme">◐</button></nav></div>'''
+        return f'''<div class="motif" aria-hidden="true"></div><div class="site-nav"><a class="logo" href="/en/">Bitki <em>Tabanı</em></a><nav>{a("/en/catalog/", "Catalog", "kat")}{a("/en/guides/", "Guides", "guides")}{a("/en/bridges/", "Culture bridges", "br")}{a("/en/about/", "About", "about")}<a href="/en/account/"{" aria-current=\"page\"" if cur == "acct" else ""}>Account</a><a href="{tr_path}" lang="tr" hreflang="tr">Türkçe</a><button type="button" class="themebtn" data-l="en" aria-label="Light or dark theme">◐</button></nav></div>'''
     FOOT = '''<div class="motif indigo" aria-hidden="true"></div>
 <footer class="site">
   <div>
     <h3>About this site</h3>
     <p>A compilation made for knowledge and curiosity; it is not medical advice. Before using any plant, especially if you take medicines, are pregnant or breastfeeding, talk to a doctor or pharmacist.</p>
     <p>Photos are from Wikimedia Commons under free licences; the author and licence are given on each plant’s page.</p>
-    <p><a href="/en/about/">About and method</a> · <a href="/en/account/">Account</a> · <a href="/en/privacy/">Privacy</a> · <a href="/">Türkçe</a> · <a href="mailto:iletisim@bitkitabani.com">Contact</a></p>
+    <p><a href="/en/guides/">Guides</a> · <a href="/en/about/">About and method</a> · <a href="/en/account/">Account</a> · <a href="/en/privacy/">Privacy</a> · <a href="/">Türkçe</a> · <a href="mailto:iletisim@bitkitabani.com">Contact</a></p>
   </div>
   <div class="legend">
     <h3>Evidence level</h3>
@@ -381,6 +381,37 @@ def run(G):
 <section class="sec"><h2>Culture bridges</h2><p>Cultures thousands of kilometres apart have often used the same molecules, or the same plant, for similar troubles. See {len(BR)} bridges on the map.</p><div class="mapwrap">{map_en()}</div><p><a class="cta" href="/en/bridges/">See all bridges and comparisons →</a></p></section>'''
     ldw = {"@context":"https://schema.org","@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/en/","inLanguage":"en","description":"A sourced, non-commercial ethnobotanical database of healing and ritual plants across cultures."}
     write('/en/', page('Bitki Tabanı: medicinal and ritual plants across cultures', f'{len(P)} healing and ritual plants from Anatolia, Asia, the Andes, the Amazon and North America: traditional use, scientific evidence, safety and sources.', '/en/', '/', home, 'home', extra=f'<script type="application/ld+json">{json.dumps(ldw, ensure_ascii=False)}</script>'))
+
+    # ---------- condition guides (/en/guides/) ----------
+    from rehber_en import R_EN
+    KONULAR = G['KONULAR']; KS = {'klinik': 0, 'sinirli': 1, 'geleneksel': 2, 'yok': 3}
+    DIS = '<aside class="disclaimer" role="note"><b>Not medical advice.</b> This page brings together entries from the catalog and summarises the science; it is not a diagnosis or treatment recommendation. Before using any plant, especially if you take medicines, are pregnant, breastfeeding or have a health condition, talk to your doctor or pharmacist.</aside>'
+    live = [k for k in KONULAR if k['slug'] in R_EN and sum(1 for x, _ in k['bitkiler'] if x in byId) >= 2]
+    def gitem(p, note):
+        th = f'<img src="/img/{p["id"]}-500.jpg" alt="" width="96" height="128" loading="lazy" decoding="async">' if p['id'] in IMG else '<span class="rb-ph"></span>'
+        return f'<article class="rb-item" id="{p["id"]}"><a class="rb-img" href="/en/{p["id"]}/" tabindex="-1" aria-hidden="true">{th}</a><div class="rb-txt"><h3><a href="/en/{p["id"]}/">{e(name(p))}</a> <i class="latin">{e(short_la(p))}</i></h3><p class="rb-meta"><span class="ev">{pips(p["kanit"])} Evidence: {KANIT_EN[p["kanit"]]}</span><span class="sf {p["guv"]}">{GUV_EN[p["guv"]]}</span></p><p>{e(note)}</p><p class="rb-more"><a href="/en/{p["id"]}/">{e(name(p))}: safety, interactions and sources →</a></p></div></article>'
+    for k in live:
+        r = R_EN[k['slug']]; path = f'/en/guides/{r["slug"]}/'
+        ps = sorted([byId[x] for x, _ in k['bitkiler'] if x in byId and x in r['notes']], key=lambda p: KS[p['kanit']])
+        others = ''.join(f'<li><a href="/en/guides/{R_EN[x["slug"]]["slug"]}/">{e(R_EN[x["slug"]]["kisa"])}</a></li>' for x in live if x is not k)
+        body = f'''<nav class="crumbs" aria-label="Breadcrumb"><a href="/en/">Home</a><span>/</span><a href="/en/guides/">Guides</a><span>/</span><span>{e(r["kisa"])}</span></nav>
+<article class="sheet">
+<header class="page-head"><span class="eyebrow">Condition guide · {len(ps)} plants</span><h1>{e(r["baslik"])}</h1><p>{e(r["giris"])}</p></header>
+<section class="kisaca"><h2>In short</h2><p>{e(r["ozet"])}</p></section>
+<section class="sec"><h2>The plants, strongest evidence first</h2><div class="rb-list">{"".join(gitem(p, r["notes"][p["id"]]) for p in ps)}</div></section>
+<aside class="warnbox" role="note"><b>When to see a doctor:</b> {e(r["uyari"])}</aside>
+{DIS}
+<section class="sec"><h2>Other guides</h2><ul class="otherlist">{others}</ul></section>
+</article>'''
+        ld = [{"@context":"https://schema.org","@type":"Article","headline":r['baslik'],"description":r['aciklama'],"inLanguage":"en","url":BASE+path,"author":AUTHOR,"dateModified":CONTENT_DATE},
+              {"@context":"https://schema.org","@type":"ItemList","name":r['baslik'],"itemListElement":[{"@type":"ListItem","position":i+1,"url":f'{BASE}/en/{p["id"]}/',"name":name(p)} for i, p in enumerate(ps)]}]
+        img = next((f'{BASE}/img/{p["id"]}-960.jpg' for p in ps if p['id'] in IMG), None)
+        write(path, page(f'{r["baslik"]} | Bitki Tabanı', r['aciklama'], path, f'/rehber/{k["slug"]}/', body, 'guides', narrow=True, extra=''.join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>' for x in ld), image=img))
+    gl = ''.join(f'<li><a href="/en/guides/{R_EN[k["slug"]]["slug"]}/"><b>{e(R_EN[k["slug"]]["kisa"])}</b></a><span>{e(R_EN[k["slug"]]["aciklama"])}</span></li>' for k in live)
+    hub = f'''<nav class="crumbs" aria-label="Breadcrumb"><a href="/en/">Home</a><span>/</span><span>Guides</span></nav>
+<header class="page-head"><span class="eyebrow">Guides</span><h1>Which herb for which complaint? With the evidence and the risks</h1><p>Plants from the catalog grouped by complaint. In each guide the plants are ranked from the strongest evidence down, each with its safety label and a link to its page.</p></header>
+<section class="sec"><ul class="guidelist">{gl}</ul></section>{DIS}'''
+    write('/en/guides/', page('Which herb for which complaint? Medicinal plant guides | Bitki Tabanı', 'Herbs for sleep, cough, indigestion, colds, anxiety and more: evidence levels, safety notes and drug interactions.', '/en/guides/', '/rehber/', hub, 'guides', narrow=True))
 
     # ---------- hreflang on Turkish pages ----------
     for en_path, tr_path in PAIRS.items():
