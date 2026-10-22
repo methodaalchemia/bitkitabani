@@ -4,6 +4,10 @@ on:
     branches: [main]
     paths: ['refs.py', 'data.json', 'extra.py', 'build.py', 'build_en.py', 'en/**', 'etkilesim.py', 'derin.py', 'assets/**', 'tools/**', 'kuyruk/**', '.github/workflows/images.yml']
   workflow_dispatch:
+    inputs:
+      indexnow_all:
+        description: 'Bütün adresleri IndexNow ile gönder'
+        default: '0'
   schedule:
     - cron: '5 21 * * *'
 permissions:
@@ -42,3 +46,8 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git add img images.json site tools/fonts
           if git diff --cached --quiet; then echo "değişiklik yok"; else git commit -m "Görseller ve site güncellendi [bot]" && git push; fi
+      - name: IndexNow bildirimi (yayına alınması için kısa bekleme)
+        continue-on-error: true
+        env:
+          ALL: ${{ github.event.inputs.indexnow_all }}
+        run: sleep 120 && python3 tools/indexnow.py

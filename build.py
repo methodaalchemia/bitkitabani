@@ -77,6 +77,7 @@ from karsilastirma import KARS
 GLINKS = {}
 def _glinks():
     for k in KONULAR:
+        if sum(1 for x, _ in k['bitkiler'] if x in byId) < 2: continue
         for pid, _ in k['bitkiler']:
             if pid in byId: GLINKS.setdefault(pid, []).append((f'/rehber/{k["slug"]}/', 'Rehber: ' + k['kisa']))
     for t in TARIFLER:
@@ -1046,5 +1047,11 @@ json.dump({'day': LOCAL_DAY.isoformat(), 'yeni': {k: v.isoformat() for k, v in Y
                       guv=p['guv'], guvNot=p['guvNot'], ilginc=p['ilginc'], yasal=(YASAL[p['id']][0] if p['id'] in YASAL else None), img=(p['id'] in IMG),
                       foto=((IMG[p['id']].get('artist') or '') + (' · ' + IMG[p['id']].get('license', '') if IMG[p['id']].get('license') else '')) if p['id'] in IMG else '') for p in P]},
           open(os.path.join(HERE, '.cache', 'ig_input.json'), 'w', encoding='utf-8'), ensure_ascii=False)
+# ---------- IndexNow: yeni sayfaları Bing ve Yandex'e bildir (tools/indexnow.py gönderir) ----------
+INDEXNOW_KEY = '23b565a8462d297646dd69b30ae82bcf'
+open(os.path.join(OUT, INDEXNOW_KEY + '.txt'), 'w').write(INDEXNOW_KEY)
+_today = [i for i in YENI if YENI[i] == LOCAL_DAY]
+_inx = ['/', '/yeni/', '/gunun-bitkisi/', '/katalog/', '/rehber/', '/tarif/'] + [f'/{i}/' for i in _today] + [u for i in _today for u, _ in GLINKS.get(i, [])]
+json.dump({'key': INDEXNOW_KEY, 'urls': sorted(set(BASE + u for u in _inx))}, open(os.path.join(HERE, '.cache', 'indexnow.json'), 'w'))
 print('ok', len(urls), 'sayfa')
 
