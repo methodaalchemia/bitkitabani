@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 121 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 122 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -3794,3 +3794,31 @@ Karıştırma riski: Parlak kahverengi tohumu yenen kestaneye (Castanea sativa) 
 
 ### İlginç bilgi
 At kestanesi Batı Avrupa’ya 1576’da İstanbul’dan götürüldü; Batı dillerindeki “at kestanesi” adı da Osmanlıların tohumu öksüren atlara verdiği anlatısından gelir.
+
+## Ceviz (Juglans regia)
+
+URL: https://bitkitabani.com/ceviz/
+Familya: Juglandaceae · Bölge: Anadolu ve Akdeniz, Asya ve Sibirya · Kullanılan kısım: Meyve (iç), yaprak, yeşil kabuk
+Bilimsel kanıt: Klinik · Güvenlik: Genelde güvenli
+
+### Geleneksel kullanım
+- Anadolu: Yeşil ceviz kabuğu ve yaprakları yün ve halı için kahverengi boya verir; kınayla birlikte saçı koyulaştırmak için de sürülür. Yeşil cevizden reçel yapılır. Yaprak çayı halk arasında kan şekeri ve egzama için içilir.
+- İran ve Orta Asya: Ceviz yaprağı İran halk hekimliğinde şekere karşı kullanılan bitkilerin başında gelir. Kafkasya’da cevizli soslar ve yeşil ceviz reçeli mutfağın temelidir.
+
+### Hazırlama
+Kurutulmuş yapraktan bir tatlı kaşığı bir bardak suda 10 dakika demlenir ya da kaynatılıp dıştan kompres yapılır. Meyvesi çiğ ya da kavrularak yenir.
+
+### Bilim ne diyor
+Cevizin kendisi iyi araştırılmıştır: kontrollü çalışmaların meta-analizi (2018), düzenli ceviz yemenin toplam ve LDL kolesterolü düşürdüğünü göstermiştir. Yaprak için kanıt daha zayıftır; EMA ceviz yaprağını yalnızca hafif cilt iltihaplarında ve aşırı terlemede dıştan geleneksel kullanımda tanır. Yaprak ekstresinin tip 2 diyabette kan şekerine etkisini inceleyen az sayıda küçük çalışma vardır.
+
+### Güvenlik
+Ceviz alerjisi olanlar için ağır alerji riski taşır. Yeşil kabuktaki juglon cildi kahverengiye boyar ve tahriş edebilir. Yaprak çayının uzun süreli ve yüksek miktarda içilmesi için güvenlik verisi yoktur; hamilelikte önerilmez.
+
+### Doğada
+Nerede yetişir: Bütün Anadolu’da bahçe ve köy ağacıdır; yabani hâli Kafkasya’dan Orta Asya’ya uzanan dağ ormanlarında yetişir.
+Toplama mevsimi: Yeşil reçellik ceviz Haziran’da, kabuğu sertleşmeden; yapraklar Haziran–Temmuz’da; meyve Eylül–Ekim’de toplanır.
+Yöresel adlar: ceviz, koz, goz
+Karıştırma riski: Siyah ceviz (Juglans nigra) ayrı bir türdür; kabuğu daha kalın, içi daha sert tatlıdır.
+
+### İlginç bilgi
+Ceviz ağacının kökünden ve yapraklarından toprağa geçen juglon başka bitkilerin büyümesini engeller; bu yüzden ceviz altında domates gibi bitkiler zor yetişir.

@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 121 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 122 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 
@@ -133,6 +133,7 @@ Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 - [Kan kökü (Sanguinaria canadensis)](https://bitkitabani.com/kankoku/): Yüksek risk, kanıt: geleneksel
 - [Dağ çayı (Sideritis türleri)](https://bitkitabani.com/dagcayi/): Genelde güvenli, kanıt: geleneksel
 - [At kestanesi (Aesculus hippocastanum)](https://bitkitabani.com/atkestanesi/): Dikkat, kanıt: klinik
+- [Ceviz (Juglans regia)](https://bitkitabani.com/ceviz/): Genelde güvenli, kanıt: klinik
 
 ## Kültür köprüleri
 - [Aynı molekül, iki ayrı ritüel](https://bitkitabani.com/kopruler/uzerlik-ayahuasca/): İkisi de harmin ve harmalin taşır. Anadolu’da bu alkaloitler nazar dumanında yanar; Amazon’da tören içeceğinin omurgasını oluşturur.

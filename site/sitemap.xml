@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  <url><loc>https://bitkitabani.com/</loc><lastmod>2026-10-22</lastmod></url>
-  <url><loc>https://bitkitabani.com/katalog/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://bitkitabani.com/</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://bitkitabani.com/katalog/</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://bitkitabani.com/kopruler/</loc><lastmod>2026-10-22</lastmod></url>
-  <url><loc>https://bitkitabani.com/gunun-bitkisi/</loc><lastmod>2026-10-22</lastmod></url>
-  <url><loc>https://bitkitabani.com/yeni/</loc><lastmod>2026-10-22</lastmod></url>
-  <url><loc>https://bitkitabani.com/oyun/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://bitkitabani.com/gunun-bitkisi/</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://bitkitabani.com/yeni/</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://bitkitabani.com/oyun/</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://bitkitabani.com/hakkinda/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://bitkitabani.com/yontem/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://bitkitabani.com/gizlilik/</loc><lastmod>2026-10-22</lastmod></url>
@@ -165,6 +165,7 @@
   <url><loc>https://bitkitabani.com/kankoku/</loc><lastmod>2026-10-22</lastmod><image:image><image:loc>https://bitkitabani.com/img/kankoku-1280.jpg</image:loc></image:image></url>
   <url><loc>https://bitkitabani.com/dagcayi/</loc><lastmod>2026-10-22</lastmod><image:image><image:loc>https://bitkitabani.com/img/dagcayi-1280.jpg</image:loc></image:image></url>
   <url><loc>https://bitkitabani.com/atkestanesi/</loc><lastmod>2026-10-22</lastmod><image:image><image:loc>https://bitkitabani.com/img/atkestanesi-1280.jpg</image:loc></image:image></url>
+  <url><loc>https://bitkitabani.com/ceviz/</loc><lastmod>2026-10-23</lastmod><image:image><image:loc>https://bitkitabani.com/img/ceviz-1280.jpg</image:loc></image:image></url>
   <url><loc>https://bitkitabani.com/rehber/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://bitkitabani.com/rehber/uyku/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://bitkitabani.com/rehber/oksuruk/</loc><lastmod>2026-10-22</lastmod></url>
@@ -206,7 +207,7 @@
   <url><loc>https://bitkitabani.com/karsilastirma/ekinezya-ve-murver/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://bitkitabani.com/karsilastirma/kekik-ve-adacayi/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://bitkitabani.com/karsilastirma/sinameki-ve-keten/</loc><lastmod>2026-10-22</lastmod></url>
-  <url><loc>https://bitkitabani.com/en/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://bitkitabani.com/en/</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://bitkitabani.com/en/about/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://bitkitabani.com/en/abuta/</loc><lastmod>2026-10-22</lastmod><image:image><image:loc>https://bitkitabani.com/img/abuta-1280.jpg</image:loc></image:image></url>
   <url><loc>https://bitkitabani.com/en/acai/</loc><lastmod>2026-10-22</lastmod><image:image><image:loc>https://bitkitabani.com/img/acai-1280.jpg</image:loc></image:image></url>
@@ -246,10 +247,11 @@
   <url><loc>https://bitkitabani.com/en/bridges/sigla-palosanto/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://bitkitabani.com/en/bridges/uzerlik-ayahuasca/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://bitkitabani.com/en/camucamu/</loc><lastmod>2026-10-22</lastmod><image:image><image:loc>https://bitkitabani.com/img/camucamu-1280.jpg</image:loc></image:image></url>
-  <url><loc>https://bitkitabani.com/en/catalog/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://bitkitabani.com/en/catalog/</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://bitkitabani.com/en/cay/</loc><lastmod>2026-10-22</lastmod><image:image><image:loc>https://bitkitabani.com/img/cay-1280.jpg</image:loc></image:image></url>
   <url><loc>https://bitkitabani.com/en/cehri/</loc><lastmod>2026-10-22</lastmod><image:image><image:loc>https://bitkitabani.com/img/cehri-1280.jpg</image:loc></image:image></url>
   <url><loc>https://bitkitabani.com/en/cemen/</loc><lastmod>2026-10-22</lastmod><image:image><image:loc>https://bitkitabani.com/img/cemen-1280.jpg</image:loc></image:image></url>
+  <url><loc>https://bitkitabani.com/en/ceviz/</loc><lastmod>2026-10-23</lastmod><image:image><image:loc>https://bitkitabani.com/img/ceviz-1280.jpg</image:loc></image:image></url>
   <url><loc>https://bitkitabani.com/en/chacruna/</loc><lastmod>2026-10-22</lastmod><image:image><image:loc>https://bitkitabani.com/img/chacruna-1280.jpg</image:loc></image:image></url>
   <url><loc>https://bitkitabani.com/en/chanca/</loc><lastmod>2026-10-22</lastmod><image:image><image:loc>https://bitkitabani.com/img/chanca-1280.jpg</image:loc></image:image></url>
   <url><loc>https://bitkitabani.com/en/chiricsanango/</loc><lastmod>2026-10-22</lastmod><image:image><image:loc>https://bitkitabani.com/img/chiricsanango-1280.jpg</image:loc></image:image></url>
