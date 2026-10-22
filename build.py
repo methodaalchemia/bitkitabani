@@ -973,7 +973,7 @@ _pin = []
 _d0 = datetime.datetime.fromisoformat(CONTENT_DATE + 'T09:00:00+03:00')
 def _pitem(title, url, desc, pid, when):
     f = f'{pid}-1280.jpg' if os.path.exists(os.path.join(HERE, 'img', f'{pid}-1280.jpg')) else f'{pid}-960.jpg'
-    return f'<item><title>{e(title)}</title><link>{BASE}{url}</link><guid>{BASE}{url}</guid><pubDate>{_fdp(when)}</pubDate><description>{e(desc)}</description><enclosure url="{BASE}/img/{f}" type="image/jpeg" length="0"/></item>'
+    return f'<item><title>{e(title)}</title><link>{BASE}{url}</link><guid>{BASE}{url}</guid><pubDate>{_fdp(when)}</pubDate><description>{e(f'<img src="{BASE}/img/{f}" alt="{title}"/><p>{desc}</p>')}</description><enclosure url="{BASE}/img/{f}" type="image/jpeg" length="0"/><media:content url="{BASE}/img/{f}" medium="image" type="image/jpeg"/></item>'
 for i in NEWEST[:20]:
     if i in IMG:
         q = byId[i]; d = YENI[i]
@@ -983,7 +983,7 @@ for t in LIVE_T:
 for k in LIVE_K:
     pid = next((x for x, _ in k['bitkiler'] if x in byId and x in IMG), None)
     if pid: _pin.append(_pitem(k['baslik'], f'/rehber/{k["slug"]}/', k['ozet'], pid, _d0))
-open(os.path.join(OUT, 'pinterest.xml'), 'w', encoding='utf-8').write(f'<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>Bitki Tabanı</title><link>{BASE}/</link><description>Şifalı bitkiler: tarifler, rehberler ve yeni eklenen bitkiler.</description><language>tr</language>{"".join(_pin)}</channel></rss>')
+open(os.path.join(OUT, 'pinterest.xml'), 'w', encoding='utf-8').write(f'<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>Bitki Tabanı</title><link>{BASE}/</link><description>Şifalı bitkiler: tarifler, rehberler ve yeni eklenen bitkiler.</description><language>tr</language>{"".join(_pin)}</channel></rss>')
 
 # ---------- 404, robots, sitemap, favicon ----------
 nf = '<header class="page-head"><span class="eyebrow">404</span><h1>Bu sayfa bulunamadı</h1><p>Aradığın kayıt taşınmış ya da adres yanlış yazılmış olabilir.</p></header><section class="sec" id="nfs" hidden><h2>Bunu mu arıyordun?</h2><ul class="otherlist" id="nfList"></ul></section><p><a class="cta" id="nfSearch" href="/katalog/">Katalogda ara →</a></p>' + f'<script type="application/json" id="nfData">{json.dumps([[p["id"], p["tr"], p["la"]] for p in P] + [["kopruler/" + slug_of(x), x["t"], ""] for x in BR], ensure_ascii=False)}</script><script src="/assets/404.js" defer></script>'
