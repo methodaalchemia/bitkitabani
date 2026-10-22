@@ -128,7 +128,7 @@ async function igPost(env) {
     if (hour < 9 || hour >= 23) return { skipped: 'gece' };
     if (st.lastAt && Date.now() - st.lastAt < 28 * 60e3) return { skipped: 'yarım saat dolmadı' };
   } else {
-    if (hour < 19 || st.last === day) return { skipped: 'bugün sırası değil' };
+    if (hour < 19 || st.lastDaily === day) return { skipped: 'bugün sırası değil' };   // açılış postu olan gün de akşam günlük post çıkar
   }
   try {
     const pr = await igAsset('p/' + n + '/post.json');
@@ -142,6 +142,7 @@ async function igPost(env) {
     const dup = (recent.data || []).find(m => (m.caption || '').split('\n').find(x => x.trim()) === head);
     if (dup) {
       st.n = n + 1; st.last = day; st.lastAt = Date.now(); st.lastId = dup.id; st.lastPlant = post.id; st.error = null; st.errorAt = null;
+      if (!launching) st.lastDaily = day;
       await call(env, 'ig:state', 'put', st);
       return { n: st.n, skipped: 'zaten paylaşılmış' };
     }
@@ -163,6 +164,7 @@ async function igPost(env) {
     }
     const pub = await igJson(await fetch(IG + '/' + st.uid + '/media_publish', form({ creation_id: box })));
     st.n = n + 1; st.last = day; st.lastAt = Date.now(); st.lastId = pub.id; st.lastPlant = post.id; st.error = null; st.errorAt = null;
+    if (!launching) st.lastDaily = day;
     // Günlük postlarda: hikâye (takipçilere duyuru) ve deneme Reels (önce takip etmeyenlere gösterilir)
     if (!launching && post.story) {
       try {
