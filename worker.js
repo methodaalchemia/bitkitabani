@@ -96,7 +96,7 @@ async function igAsset(path) {
   return new Response(r.body, { headers: { 'content-type': ct, 'cache-control': 'public, max-age=300', 'x-robots-tag': 'noindex' } });
 }
 function trDay(d = new Date()) { return new Date(d.getTime() + 3 * 3600e3).toISOString().slice(0, 10); }
-async function igJson(r) { const j = await r.json().catch(() => ({})); if (!r.ok || j.error) throw new Error((j.error && j.error.message) || ('HTTP ' + r.status)); return j; }
+async function igJson(r) { const j = await r.json().catch(() => ({})); if (!r.ok || j.error) { const x = j.error || {}; throw new Error([x.message || ('HTTP ' + r.status), x.error_user_msg, x.code && ('kod ' + x.code + (x.error_subcode ? '/' + x.error_subcode : ''))].filter(Boolean).join(' · ')); } return j; }
 async function igToken(env, st) {
   let tok = st.token, at = st.tokenAt || 0;
   if (env.IG_TOKEN && env.IG_TOKEN !== st.seed) { tok = env.IG_TOKEN; at = Date.now(); st.seed = env.IG_TOKEN; } // yeni token girildiyse onu kullan
@@ -217,6 +217,7 @@ async function thPost(env) {
   else if (hour >= 10 && st.slot.sabah !== day) job = 'sabah';
   else if (hour >= 14 && st.slot.ogle !== day) job = 'ogle';
   if (!job) return { skipped: 'sırası değil' };
+  st.step = null;
   try {
     let tok = st.token, at = st.tokenAt || 0;
     if (env.TH_TOKEN && env.TH_TOKEN !== st.seed) { tok = env.TH_TOKEN; at = Date.now(); st.seed = env.TH_TOKEN; }
@@ -234,8 +235,11 @@ async function thPost(env) {
       text += '\n\nDevamı ve kaynaklar: bitkitabani.com/' + post.id + '/';
       const form = o => { const f = new URLSearchParams(o); f.set('access_token', tok); return { method: 'POST', body: f }; };
       const kids = [];
+      st.step = 'görsel';
       for (const u of post.images.slice(0, 10)) kids.push((await igJson(await fetch(TH + '/me/threads', form({ media_type: 'IMAGE', image_url: u, is_carousel_item: 'true' })))).id);
+      st.step = 'albüm';
       const box = (await igJson(await fetch(TH + '/me/threads', form({ media_type: 'CAROUSEL', children: kids.join(','), text })))).id;
+      st.step = 'yayın';
       for (let i = 0; i < 6; i++) {
         await new Promise(r => setTimeout(r, 5000));
         const s = await igJson(await fetch(TH + '/' + box + '?fields=status&access_token=' + encodeURIComponent(tok)));
@@ -254,7 +258,7 @@ async function thPost(env) {
     }
     st.n = (st.n || 0) + 1; st.error = null;
   } catch (e) {
-    st.error = job + ': ' + String(e.message || e).slice(0, 280); st.errorAt = new Date().toISOString();
+    st.error = job + (st.step ? '/' + st.step : '') + ': ' + String(e.message || e).slice(0, 280); st.errorAt = new Date().toISOString();
     if (/limit/i.test(st.error)) st.pauseUntil = Date.now() + 2 * 3600e3;
     const fk = 'fails_' + job;
     st[fk] = (st.lastFailDay === day ? (st[fk] || 0) : 0) + 1; st.lastFailDay = day;
