@@ -75,8 +75,8 @@ def abone(kaynak, baslik='Her pazar, haftanın bitkileri e-postanızda', alt='Ye
     return f'''<section class="abone" aria-labelledby="ab-{kaynak[:20]}"><h2 id="ab-{kaynak[:20]}">{baslik}</h2><p>{alt}</p>
 <form class="abone-form" data-kaynak="{e(kaynak)}" novalidate><label class="vh" for="ab-e-{kaynak[:20]}">E-posta adresi</label><div class="row"><input id="ab-e-{kaynak[:20]}" type="email" name="email" placeholder="e-posta adresiniz" autocomplete="email" required><button type="submit" class="learn">Kaydol</button></div>
 <input type="text" name="hp" tabindex="-1" autocomplete="off" class="vh" aria-hidden="true">
-<label class="chk"><input type="checkbox" name="riza" required> E-posta adresimin haftalık bülten için saklanmasına ve bana e-posta gönderilmesine izin veriyorum. <a href="/gizlilik/#bulten">Ayrıntılar</a></label>
-<label class="chk"><input type="checkbox" name="duyuru"> İsteğe bağlı: Bitki Tabanı’nın atölye, doğa yürüyüşü ve gezi gibi duyurularını da almak istiyorum.</label>
+<label class="chk"><input type="checkbox" name="riza" required><span>E-posta adresimin haftalık bülten için saklanmasına ve bana e-posta gönderilmesine izin veriyorum. <a href="/gizlilik/#bulten">Ayrıntılar</a></span></label>
+<label class="chk"><input type="checkbox" name="duyuru"><span>İsteğe bağlı: Bitki Tabanı’nın atölye, doğa yürüyüşü ve gezi gibi duyurularını da almak istiyorum.</span></label>
 <p class="muted-s abone-msg" role="status"></p></form></section>'''
 
 # ---------- rehber, tarif ve karşılaştırma bağlantıları (bitki sayfalarına da eklenir) ----------
