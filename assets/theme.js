@@ -25,3 +25,12 @@ var sh=b.querySelector('.sb-share');if(!navigator.share)sh.hidden=true;
 sh.addEventListener('click',function(){navigator.share({title:t,url:u}).catch(function(){})});
 b.querySelector('.sb-copy').addEventListener('click',function(){(navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(function(){m.textContent='Bağlantı kopyalandı.'},function(){m.textContent=u})});
 b.querySelector('.sb-print').addEventListener('click',function(){window.print()});});})();
+
+/* Kaydırınca üst menüye gölge; menü dışına tıklayınca ya da Esc ile kapanır */
+(function(){
+  var n=document.querySelector('.site-nav');if(!n)return;
+  var f=function(){n.classList.toggle('scrolled',window.scrollY>8)};
+  window.addEventListener('scroll',f,{passive:true});f();
+  document.addEventListener('click',function(ev){var m=document.querySelector('details.menu[open]');if(m&&!m.contains(ev.target))m.removeAttribute('open')});
+  document.addEventListener('keydown',function(ev){if(ev.key==='Escape'){var m=document.querySelector('details.menu[open]');if(m)m.removeAttribute('open')}});
+})();
