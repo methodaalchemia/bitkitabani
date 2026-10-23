@@ -331,6 +331,39 @@ def ek_postlar(data, day, out_root, days=7):
         out[key] = {'tur': tur, 'id': pid, 'images': urls, 'caption': cap, 'threads': th[:495], 'alts': [f'{p["tr"]} ({p["la"]}) fotoğrafı.', '', '']}
     json.dump(out, open(os.path.join(out_root, 'ek.json'), 'w', encoding='utf-8'), ensure_ascii=False)
 
+def bulten(data, day, out_root):
+    """Haftalık e-posta bülteni (pazar 10:00'da Worker gönderir): haftanın yeni bitkileri + bir rehber + bir tarif."""
+    sys.path.insert(0, ROOT)
+    from rehber import KONULAR
+    from tarif import TARIFLER
+    P = {p['id']: p for p in data['p']}
+    sun = day + datetime.timedelta(days=(6 - day.weekday()) % 7)
+    hafta = f'{sun.isocalendar()[0]}-W{sun.isocalendar()[1]:02d}'
+    yeni = sorted([(d, i) for i, d in data['yeni'].items() if i in P and sun - datetime.timedelta(days=7) < datetime.date.fromisoformat(d) <= sun])
+    ks = [k for k in KONULAR if sum(1 for x, _ in k['bitkiler'] if x in P) >= 2]
+    ts = [t for t in TARIFLER if t['bitki'] in P]
+    wk = sun.toordinal() // 7
+    k = ks[wk % len(ks)] if ks else None; t = ts[(wk * 3) % len(ts)] if ts else None
+    h = lambda x: html.escape(x or '')
+    img = lambda i: f'<img src="{BASE}/img/{i}-500.jpg" width="120" alt="" style="float:right;margin:0 0 8px 14px;border:0;max-width:30%">' if P.get(i, {}).get('img') else ''
+    parts, txt = [], []
+    if yeni:
+        parts.append('<h2 style="font-size:19px;margin:22px 0 8px">Bu hafta kataloğa eklenenler</h2>')
+        for d, i in yeni:
+            p = P[i]
+            parts.append(f'<div style="overflow:hidden;margin:0 0 16px">{img(i)}<p style="margin:0;font-size:17px"><a href="{BASE}/{i}/" style="color:#A3271B;font-weight:bold">{h(p["tr"])}</a> <i style="color:#5D5866">{h(p["la"])}</i></p><p style="margin:6px 0 0;font-family:Arial,sans-serif;font-size:14px;line-height:1.5">{h(p["ilginc"])}</p></div>')
+            txt.append(f'- {p["tr"]}: {BASE}/{i}/')
+    if k:
+        parts.append(f'<h2 style="font-size:19px;margin:24px 0 8px">Haftanın rehberi</h2><p style="margin:0;font-size:17px"><a href="{BASE}/rehber/{k["slug"]}/" style="color:#A3271B;font-weight:bold">{h(k["baslik"])}</a></p><p style="margin:6px 0 0;font-family:Arial,sans-serif;font-size:14px;line-height:1.5">{h(k["ozet"])}</p>')
+        txt.append(f'Haftanın rehberi: {k["baslik"]} {BASE}/rehber/{k["slug"]}/')
+    if t:
+        parts.append(f'<h2 style="font-size:19px;margin:24px 0 8px">Haftanın tarifi</h2><div style="overflow:hidden">{img(t["bitki"])}<p style="margin:0;font-size:17px"><a href="{BASE}/tarif/{t["slug"]}/" style="color:#A3271B;font-weight:bold">{h(t["ad"])}</a></p><p style="margin:6px 0 0;font-family:Arial,sans-serif;font-size:14px;line-height:1.5">{h(t["kisa"])}</p></div>')
+        txt.append(f'Haftanın tarifi: {t["ad"]} {BASE}/tarif/{t["slug"]}/')
+    giris = f'<p style="font-size:17px;line-height:1.55">Merhaba, bu hafta Bitki Tabanı’na {len(yeni)} yeni bitki eklendi.</p>' if yeni else '<p style="font-size:17px;line-height:1.55">Merhaba, bu haftanın seçkisi:</p>'
+    konu = (f'Bu hafta: {", ".join(P[i]["tr"] for _, i in yeni[:3])}' + (' ve dahası' if len(yeni) > 3 else '')) if yeni else f'Haftanın rehberi: {k["baslik"] if k else ""}'
+    json.dump({'hafta': hafta, 'konu': 'Bitki Tabanı · ' + konu, 'html': giris + ''.join(parts), 'text': 'Bitki Tabanı bu hafta\n\n' + '\n'.join(txt)},
+              open(os.path.join(out_root, 'bulten.json'), 'w', encoding='utf-8'), ensure_ascii=False)
+
 def main():
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     global ig2
@@ -354,6 +387,8 @@ def main():
     except Exception as ex: print('threads planı yazılamadı:', ex)
     try: ek_postlar(data, day, out_root)
     except Exception as ex: print('ek postlar yazılamadı:', ex)
+    try: bulten(data, day, out_root)
+    except Exception as ex: print('bülten yazılamadı:', ex)
     try: aylik(data, day, out_root)
     except Exception as ex: print('aylık post yazılamadı:', ex)
     cards = []

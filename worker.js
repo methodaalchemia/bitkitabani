@@ -341,6 +341,87 @@ async function ekPost(env) {
     await call(env, 'th:state', 'put', th);
   }
 }
+// ---------- E-posta bülteni: çift onaylı kayıt, haftalık otomatik gönderim (Resend) ----------
+// Gerekli gizli değişken: RESEND_KEY. Saklanan: e-posta adresi, rıza tarihi, duyuru tercihi, kaynak sayfa. Başka bir şey saklanmaz.
+const MAIL_FROM = 'Bitki Tabanı <bulten@bitkitabani.com>';
+const SITE = 'https://bitkitabani.com';
+async function sendMail(env, to, subject, html, text) {
+  const key = env.RESEND_KEY || env.RESEND_Key;
+  if (!key) throw new Error('RESEND_KEY tanımlı değil');
+  const r = await fetch('https://api.resend.com/emails', { method: 'POST', headers: { authorization: 'Bearer ' + key, 'content-type': 'application/json' },
+    body: JSON.stringify({ from: MAIL_FROM, to: [to], subject, html, text, headers: { 'List-Unsubscribe': '<' + SITE + '/api/abone/cik?t=' + (html.match(/cik\?t=([a-f0-9]+)/) || [])[1] + '>' } }) });
+  if (!r.ok) throw new Error('Resend ' + r.status + ' ' + (await r.text()).slice(0, 200));
+}
+const hex = n => [...crypto.getRandomValues(new Uint8Array(n))].map(b => b.toString(16).padStart(2, '0')).join('');
+const esc = s => String(s || '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+function mailWrap(inner, t) {
+  return `<!doctype html><html lang="tr"><body style="margin:0;background:#F1EADD;font-family:Georgia,serif;color:#1C2140"><div style="max-width:560px;margin:0 auto;padding:28px 22px">
+<p style="font-size:22px;font-weight:bold;margin:0 0 18px">Bitki <i style="color:#A3271B">Tabanı</i></p>${inner}
+<hr style="border:0;border-top:1px solid #DCCFBA;margin:28px 0 14px"><p style="font-family:Arial,sans-serif;font-size:12px;color:#5D5866;line-height:1.5">Bu e-postayı bitkitabani.com’da bültene kaydolduğunuz için alıyorsunuz. Bilgilendirme amaçlıdır; tıbbi tavsiye yerine geçmez.<br><a href="${SITE}/api/abone/cik?t=${t}" style="color:#5D5866">Bültenden çık</a> · <a href="${SITE}/gizlilik/" style="color:#5D5866">Gizlilik</a></p></div></body></html>`;
+}
+async function confirmMail(env, email, t) {
+  const link = `${SITE}/api/abone/onay?t=${t}`;
+  const inner = `<p style="font-size:17px;line-height:1.55">Merhaba,</p><p style="font-size:17px;line-height:1.55">Bitki Tabanı bültenine kaydolmak için aşağıdaki düğmeye tıklayın. Tıklamazsanız adresiniz listeye eklenmez ve 7 gün sonra silinir.</p>
+<p style="margin:26px 0"><a href="${link}" style="background:#A3271B;color:#fff;text-decoration:none;padding:13px 22px;border-radius:999px;font-family:Arial,sans-serif;font-size:15px">Kaydımı onayla</a></p>
+<p style="font-family:Arial,sans-serif;font-size:13px;color:#5D5866">Düğme çalışmazsa bu adresi tarayıcınıza yapıştırın:<br>${link}</p>`;
+  await sendMail(env, email, 'Bitki Tabanı bülteni: kaydınızı onaylayın', mailWrap(inner, t), `Bitki Tabanı bültenine kaydolmak için bu bağlantıyı açın: ${link}`);
+}
+async function aboneApi(req, env, url) {
+  const L = (await call(env, 'abone:list', 'get')) || {};
+  if (url.pathname === '/api/abone' && req.method === 'POST') {
+    const b = await req.json().catch(() => ({}));
+    if (b.hp) return json({ ok: true });   // bot tuzağı
+    const email = String(b.email || '').trim().toLowerCase();
+    if (!/^[^\s@<>]{1,64}@[^\s@<>]{1,190}\.[a-z]{2,}$/.test(email)) return json({ error: 'Geçerli bir e-posta adresi yazın.' }, 400);
+    if (!b.riza) return json({ error: 'Kayıt için onay kutusunu işaretleyin.' }, 400);
+    const now = new Date().toISOString(); const old = L[email];
+    if (old && old.on) { old.d = !!b.duyuru || old.d; await call(env, 'abone:list', 'put', L); return json({ ok: true, zaten: true }); }
+    if (old && old.sent && Date.now() - Date.parse(old.sent) < 10 * 60e3) return json({ ok: true });   // art arda gönderme yok
+    const t = (old && old.t) || hex(16);
+    L[email] = { t, on: false, d: !!b.duyuru, at: now, src: String(b.kaynak || '').slice(0, 80), sent: null };
+    try { await confirmMail(env, email, t); L[email].sent = now; } catch (e) { L[email].err = String(e.message || e).slice(0, 120); }
+    await call(env, 'abone:list', 'put', L);
+    return json({ ok: true });
+  }
+  const t = url.searchParams.get('t') || '';
+  const email = Object.keys(L).find(k => L[k].t === t && /^[a-f0-9]{32}$/.test(t));
+  if (url.pathname === '/api/abone/onay') {
+    if (email) { L[email].on = true; L[email].onay = new Date().toISOString(); await call(env, 'abone:list', 'put', L); }
+    return Response.redirect(SITE + (email ? '/bulten/onaylandi/' : '/bulten/'), 302);
+  }
+  if (url.pathname === '/api/abone/cik') {
+    if (email) { delete L[email]; await call(env, 'abone:list', 'put', L); }   // çıkınca adres tamamen silinir
+    if (req.method === 'POST') return new Response('ok');   // e-posta istemcilerinin tek tık çıkışı
+    return Response.redirect(SITE + '/bulten/ayrildiniz/', 302);
+  }
+  return json({ error: 'yok' }, 404);
+}
+// Pazar 10:00'dan sonra haftalık bülten; bekleyen onay e-postaları ve 7 günü geçen onaysız kayıtlar da burada işlenir.
+async function bultenCron(env) {
+  if (!(env.RESEND_KEY || env.RESEND_Key)) return;
+  const L = (await call(env, 'abone:list', 'get')) || {}; let changed = false;
+  for (const [e, a] of Object.entries(L)) {
+    if (!a.on && Date.now() - Date.parse(a.at) > 7 * 864e5) { delete L[e]; changed = true; continue; }
+    if (!a.on && !a.sent) { try { await confirmMail(env, e, a.t); a.sent = new Date().toISOString(); a.err = null; } catch (x) { a.err = String(x.message || x).slice(0, 120); } changed = true; }
+  }
+  const day = trDay(), hour = trHour(), dow = new Date(Date.now() + 3 * 3600e3).getUTCDay();
+  const st = (await call(env, 'bulten:state', 'get')) || {};
+  if (dow === 0 && hour >= 10 && st.last !== day) {
+    const pr = await igAsset('bulten.json');
+    if (pr.ok) {
+      const B = await pr.json(); let n = 0;
+      const todo = Object.entries(L).filter(([e, a]) => a.on && a.lastWeek !== B.hafta).slice(0, 90);   // günlük gönderim sınırının altında kal
+      for (const [e, a] of todo) {
+        try { await sendMail(env, e, B.konu, mailWrap(B.html, a.t), B.text + `\n\nBültenden çıkmak için: ${SITE}/api/abone/cik?t=${a.t}`); a.lastWeek = B.hafta; n++; changed = true; }
+        catch (x) { st.err = String(x.message || x).slice(0, 160); break; }
+      }
+      if (Object.values(L).every(a => !a.on || a.lastWeek === B.hafta)) st.last = day;   // kalanlar bir sonraki çalışmada
+      st.sayi = (st.sayi || 0) + n;
+      await call(env, 'bulten:state', 'put', st);
+    }
+  }
+  if (changed) await call(env, 'abone:list', 'put', L);
+}
 export default {
   async fetch(req, env) {
     const url = new URL(req.url);
@@ -349,9 +430,12 @@ export default {
     if (url.pathname === '/api/ig-durum' && req.method === 'GET') {
       const st = (await call(env, 'ig:state', 'get')) || {};
       const th = (await call(env, 'th:state', 'get')) || {};
-      return json({ threads: { token: !!(env.TH_TOKEN || env.TH_Token || th.token), sayi: th.n || 0, son: th.last || null, sabah: (th.slot || {}).sabah || null, ogle: (th.slot || {}).ogle || null, bitki: th.plant || null, hata: th.error || null, hataZamani: th.errorAt || null }, token: !!(env.IG_TOKEN || st.token), sayi: st.n || 0, reels: st.reels || 0, reelHata: st.reelError || null, hikayeHata: st.storyError || null, altMetin: !st.noAlt, aylik: st.aylik || null, ek: st.ek || null, ekSayi: st.ekSayi || 0, ekHata: st.ekError || null, aylikHata: st.aylikError || null, sonPaylasim: st.last || null, bitki: st.lastPlant || null, hata: st.error || null, hataZamani: st.errorAt || null, tokenYenilendi: st.tokenAt ? new Date(st.tokenAt).toISOString() : null, bugun: trDay() });
+      const AL = (await call(env, 'abone:list', 'get')) || {}; const bs = (await call(env, 'bulten:state', 'get')) || {};
+      return json({ bulten: { anahtar: !!(env.RESEND_KEY || env.RESEND_Key), onayli: Object.values(AL).filter(a => a.on).length, bekleyen: Object.values(AL).filter(a => !a.on).length, duyuru: Object.values(AL).filter(a => a.on && a.d).length, gonderilen: bs.sayi || 0, hata: bs.err || Object.values(AL).map(a => a.err).find(Boolean) || null }, threads: { token: !!(env.TH_TOKEN || env.TH_Token || th.token), sayi: th.n || 0, son: th.last || null, sabah: (th.slot || {}).sabah || null, ogle: (th.slot || {}).ogle || null, bitki: th.plant || null, hata: th.error || null, hataZamani: th.errorAt || null }, token: !!(env.IG_TOKEN || st.token), sayi: st.n || 0, reels: st.reels || 0, reelHata: st.reelError || null, hikayeHata: st.storyError || null, altMetin: !st.noAlt, aylik: st.aylik || null, ek: st.ek || null, ekSayi: st.ekSayi || 0, ekHata: st.ekError || null, aylikHata: st.aylikError || null, sonPaylasim: st.last || null, bitki: st.lastPlant || null, hata: st.error || null, hataZamani: st.errorAt || null, tokenYenilendi: st.tokenAt ? new Date(st.tokenAt).toISOString() : null, bugun: trDay() });
     }
+    if (url.pathname.startsWith('/api/abone/') && (req.method === 'GET' || url.pathname === '/api/abone/cik')) return aboneApi(req, env, url);
     if (req.method !== 'GET' && req.headers.get('x-bt') !== '1') return json({ error: 'csrf' }, 403);
+    if (url.pathname === '/api/abone') return aboneApi(req, env, url);
     try {
       if (url.pathname === '/api/login' && req.method === 'POST') {
         if (!env.GOOGLE_CLIENT_ID) return json({ error: 'kapalı' }, 503);
@@ -389,5 +473,6 @@ export default {
   },
   async scheduled(event, env, ctx) {
     if (env.IG_TOKEN) ctx.waitUntil(igPost(env).then(() => (env.TH_TOKEN || env.TH_Token) ? thPost(env) : null).then(() => aylikPost(env)).then(() => ekPost(env)));
+    ctx.waitUntil(bultenCron(env).catch(() => null));
   },
 };

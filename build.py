@@ -70,6 +70,15 @@ def tr_date(d): return f'{d.day} {AYLAR[d.month-1]} {d.year}, {GUNLER[d.weekday(
 def slug_of(br): return br['a'] + ('-' + br['b'] if br.get('b') else '')
 e = lambda s: html.escape(str(s), quote=True)
 
+# ---------- bülten kayıt kutusu ----------
+def abone(kaynak, baslik='Her pazar, haftanın bitkileri e-postanızda', alt='Yeni eklenen bitkiler, bir rehber ve bir tarif; haftada bir e-posta. Kaydolunca yazdırılabilir “Bitki–ilaç etkileşimi kartı” ve “Hamilelikte dikkat listesi” de gelir.'):
+    return f'''<section class="abone" aria-labelledby="ab-{kaynak[:20]}"><h2 id="ab-{kaynak[:20]}">{baslik}</h2><p>{alt}</p>
+<form class="abone-form" data-kaynak="{e(kaynak)}" novalidate><label class="vh" for="ab-e-{kaynak[:20]}">E-posta adresi</label><div class="row"><input id="ab-e-{kaynak[:20]}" type="email" name="email" placeholder="e-posta adresiniz" autocomplete="email" required><button type="submit" class="learn">Kaydol</button></div>
+<input type="text" name="hp" tabindex="-1" autocomplete="off" class="vh" aria-hidden="true">
+<label class="chk"><input type="checkbox" name="riza" required> E-posta adresimin haftalık bülten için saklanmasına ve bana e-posta gönderilmesine izin veriyorum. <a href="/gizlilik/#bulten">Ayrıntılar</a></label>
+<label class="chk"><input type="checkbox" name="duyuru"> İsteğe bağlı: Bitki Tabanı’nın atölye, doğa yürüyüşü ve gezi gibi duyurularını da almak istiyorum.</label>
+<p class="muted-s abone-msg" role="status"></p></form></section>'''
+
 # ---------- rehber, tarif ve karşılaştırma bağlantıları (bitki sayfalarına da eklenir) ----------
 from rehber import KONULAR
 from tarif import TARIFLER
@@ -150,7 +159,7 @@ def head(title, desc, path, extra='', image=None):
 
 MENU = [('Keşfet', [('/katalog/', 'Katalog', 'kat'), ('/yeni/', 'Yeni eklenenler', 'yeni'), ('/gunun-bitkisi/', 'Günün bitkisi', 'gun'), ('/oyun/', 'Günün bilmecesi', 'oyun'), ('/kopruler/', 'Kültür köprüleri', 'br')]),
         ('Rehberler', [('/rehber/', 'Derde göre bitkiler', 'rehber'), ('/tarif/', 'Çay tarifleri', 'tarif'), ('/karsilastirma/', 'Karşılaştırmalar', 'kars'), ('/rehber/ilac-etkilesimi/', 'İlaç etkileşimi', 'etk'), ('/rehber/hamilelik-emzirme/', 'Hamilelik ve emzirme', 'gebe'), ('/toplama-takvimi/', 'Toplama takvimi', 'takvim'), ('/yoresel-adlar/', 'Yöresel adlar', 'adlar')]),
-        ('Bitki Tabanı', [('/hakkinda/', 'Hakkında', 'about'), ('/yontem/', 'Yöntem', 'yontem'), ('https://www.instagram.com/bitkitabani/', 'Instagram', 'ig'), ('/hesap/', 'Hesap', 'acct'), ('/gizlilik/', 'Gizlilik', 'priv'), ('mailto:iletisim@bitkitabani.com', 'İletişim', 'mail')])]
+        ('Bitki Tabanı', [('/bulten/', 'Bülten', 'bulten'), ('/hakkinda/', 'Hakkında', 'about'), ('/yontem/', 'Yöntem', 'yontem'), ('https://www.instagram.com/bitkitabani/', 'Instagram', 'ig'), ('/hesap/', 'Hesap', 'acct'), ('/gizlilik/', 'Gizlilik', 'priv'), ('mailto:iletisim@bitkitabani.com', 'İletişim', 'mail')])]
 def nav(cur):
     a = lambda href, label, key: f'<a href="{href}"{" aria-current=\"page\"" if cur == key else ""}{" rel=\"noopener\"" if href.startswith("http") else ""}>{label}</a>'
     groups = ''.join(f'<div class="mgrp"><b>{g}</b>' + ''.join(a(h, l, k) for h, l, k in items) + '</div>' for g, items in MENU)
@@ -185,7 +194,7 @@ FOOTNAV = '<nav class="footnav" aria-label="Site haritası">' + ''.join(f'<div><
 FOOT = FOOT.replace('<!--FOOTNAV-->', FOOTNAV)
 def page(title, desc, path, body, cur, scripts='', narrow=False, extra='', image=None):
     h = head(title, desc, path, extra, image).replace('{narrow}', ' narrow' if narrow else '')
-    return h + nav(cur) + body + FOOT + '<script src="/assets/theme.js" defer></script><script src="/assets/streak.js" defer></script><script src="/assets/sync.js" defer></script>' + scripts.replace('<script src="/assets/streak.js" defer></script>', '') + '\n</body>\n</html>\n'
+    return h + nav(cur) + body + FOOT + '<script src="/assets/theme.js" defer></script><script src="/assets/streak.js" defer></script><script src="/assets/sync.js" defer></script>' + ('<script src="/assets/bulten.js" defer></script>' if 'abone-form' in body and 'bulten.js' not in scripts else '') + scripts.replace('<script src="/assets/streak.js" defer></script>', '') + '\n</body>\n</html>\n'
 
 _BIG = re.compile(re.escape(BASE) + r'/img/([a-z0-9]+)-960\.jpg')
 def _big(m):   # paylaşım önizlemesi ve Google Discover için 1280 px görsel (varsa)
@@ -376,6 +385,7 @@ for i, p in enumerate(P):
   {korhtml}
   {relhtml}
   {('<p class="brlinks">' + brlinks + '</p>') if brlinks else ''}
+  {abone('bitki:' + pid)}
   {simhtml}
   {contrib(p)}
   <section class="sec"><h2>Kaynaklar</h2>{refs(p)}</section>
@@ -660,7 +670,7 @@ yn = f"""
 <header class="page-head"><span class="eyebrow">Her gün yeni bir bitki</span><h1>Yeni eklenenler</h1><p>Bitki Tabanı her gece yarısı bir kayıt büyüyor. Her yeni bitki öteki kayıtlar gibi geleneksel kullanım, bilimsel kanıt, güvenlik notu ve kaynaklarla gelir. Şu an katalogda {len(P)} bitki var.</p></header>
 {teaser()}
 {('<div class="grid">' + ''.join(card(byId[i]) for i in NEWEST[:12]) + '</div>') if NEWEST else '<p>İlk yeni bitki bu gece geliyor.</p>'}
-<section class="sec"><h2>Takip et</h2><p><a class="cta" href="{IG_URL}" rel="noopener">Instagram’da her gün bir bitki →</a></p><p><a class="cta" href="/yeni/rss.xml">RSS ile takip et →</a> <span class="muted-s">Bir RSS okuyucusu her yeni bitkiyi getirir; bildirim ya da e-posta yok.</span></p></section>
+{abone("yeni")}<section class="sec"><h2>Takip et</h2><p><a class="cta" href="{IG_URL}" rel="noopener">Instagram’da her gün bir bitki →</a></p><p><a class="cta" href="/yeni/rss.xml">RSS ile takip et →</a> <span class="muted-s">Bir RSS okuyucusu her yeni bitkiyi getirir; bildirim ya da e-posta yok.</span></p></section>
 {('<section class="sec"><h2>Bütün liste</h2><ul class="daylist">' + nl + '</ul></section>') if nl else ''}
 """
 write('/yeni/', page(f'Yeni eklenen bitkiler | Bitki Tabanı', f'Bitki Tabanı’na her gün yeni bir şifalı ya da ritüel bitki ekleniyor. Son eklenenler ve tarihleri.', '/yeni/', yn, 'yeni', image=(f'{BASE}/img/{NEWEST[0]}-960.jpg' if NEWEST and NEWEST[0] in IMG else None)))
@@ -746,6 +756,7 @@ gz = '''
 <section class="sec"><h2>Ziyaret sayıları</h2><p>Kaç kişinin hangi sayfayı okuduğunu görmek için Cloudflare Web Analytics kullanıyoruz. Bu araç çerez yazmaz, seni tanımlamaz ve siteler arasında izlemez; yalnızca toplu sayılar (ör. bir sayfanın kaç kez görüntülendiği, ziyaretçilerin hangi ülkeden geldiği) tutar.</p></section>
 <section class="sec"><h2>Giriş yapmazsan</h2><p>Öğrendiğin bitkiler, serin ve bilmece tahminlerin yalnızca kendi tarayıcının hafızasında (localStorage) durur. Bize hiçbir şey gelmez. Tarayıcı verilerini silersen bunlar da silinir.</p></section>
 <section class="sec"><h2>Google ile giriş yaparsan</h2><p>Google bize senin adına bir kimlik belgesi gönderir. Bunun içinden yalnızca Google hesap kimlik numaranı (rastgele görünen bir sayı) saklarız. E-posta adresin, adın ve profil fotoğrafın saklanmaz.</p><p>Bu numarayla birlikte şunları saklarız: öğrendim olarak işaretlediğin bitkiler, serinin günleri ve bilmece tahminlerin. Oturumunu hatırlamak için tarayıcına yalnızca bu iş için kullanılan, 180 gün geçerli bir çerez yazılır.</p><p>Veriler Cloudflare’in sunucularında tutulur. Google ile girişte Google’ın kendi <a href="https://policies.google.com/privacy?hl=tr" rel="noopener">gizlilik politikası</a> geçerlidir.</p></section>
+<section class="sec" id="bulten"><h2>Bülten</h2><p>Bültene kaydolursan yalnızca e-posta adresin, kayıt ve onay tarihi, kaydolduğun sayfa ve isteğe bağlı duyuru tercihin saklanır. Kayıt çift onaylıdır: gelen e-postadaki bağlantıya tıklamadıkça listeye eklenmezsin; onaylanmayan adresler 7 gün sonra silinir. E-postalar Resend aracılığıyla gönderilir. Her e-postadaki “Bültenden çık” bağlantısı adresini listeden hemen ve tamamen siler. Adresin kimseyle paylaşılmaz, satılmaz ve reklam için kullanılmaz. Duyuru kutusunu işaretlediysen, bülten dışında atölye, doğa yürüyüşü ya da gezi gibi Bitki Tabanı etkinliklerinin duyurularını da alırsın.</p></section>
 <section class="sec"><h2>Silme</h2><p><a href="/hesap/">Hesap</a> sayfasındaki “Hesabımdaki veriyi sil” düğmesi saklanan bütün ilerlemeni hemen siler. Google hesabından da Bitki Tabanı’nın erişimini dilediğin zaman kaldırabilirsin.</p></section>
 <section class="sec"><h2>Haklarına dair</h2><p>6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında verilerin hakkında bilgi isteme, düzeltme ve silme hakların vardır. Yukarıdaki silme düğmesi bu hakkı tek tıkla kullanmanı sağlar.</p></section>
 '''
@@ -826,6 +837,7 @@ for k in LIVE_K:
 <section class="sec"><h2>Bitkiler, kanıtı en güçlü olandan başlayarak</h2><div class="rb-list">{"".join(rb_item(p, n) for p, n in ps)}</div></section>
 <aside class="warnbox" role="note"><b>Ne zaman hekime gitmeli?</b> {e(k["uyari"])}</aside>
 {extra_links}
+{abone('rehber:' + k['slug'])}
 {DISCL}
 {UPD}
 <section class="sec"><h2>Diğer rehberler</h2>{other_guides(k["slug"])}</section>
@@ -927,6 +939,7 @@ for t in LIVE_T:
 <p class="fact">{e(t["ipucu"])}</p>
 <aside class="warnbox" role="note"><b>Kimler dikkat etmeli?</b> {e(p["guvNot"])}{(' <a href="/' + p["id"] + '/">İlaç etkileşimleri bitkinin sayfasında.</a>') if p["id"] in ETK else ''}</aside>
 <p><a class="cta" href="/{p["id"]}/">{e(p["tr"])}: bilim ne diyor, ilaç etkileşimleri ve kaynaklar →</a></p>
+{abone('tarif:' + t['slug'])}
 {DISCL}
 <section class="sec"><h2>Diğer tarifler</h2><ul class="otherlist">{"".join(f'<li><a href="/tarif/{x["slug"]}/">{e(x["ad"])}</a></li>' for x in others)}</ul><p><a class="cta" href="/tarif/">Bütün tarifler →</a></p></section>
 </article>'''
@@ -1047,6 +1060,28 @@ for k in LIVE_K:
     pid = next((x for x, _ in k['bitkiler'] if x in byId and x in IMG), None)
     if pid: _pin.append(_pitem(k['baslik'], f'/rehber/{k["slug"]}/', k['ozet'], pid, _d0))
 open(os.path.join(OUT, 'pinterest.xml'), 'w', encoding='utf-8').write(f'<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>Bitki Tabanı</title><link>{BASE}/</link><description>Şifalı bitkiler: tarifler, rehberler ve yeni eklenen bitkiler.</description><language>tr</language>{"".join(_pin)}</channel></rss>')
+
+# ---------- bülten sayfaları ve kayıt hediyeleri ----------
+_bscript = '<script src="/assets/bulten.js" defer></script>'
+write('/bulten/', page('Bitki Tabanı bülteni: her pazar haftanın bitkileri | Bitki Tabanı', 'Haftada bir e-posta: yeni eklenen şifalı bitkiler, bir rehber ve bir tarif. Kaydolunca yazdırılabilir bitki–ilaç etkileşimi kartı hediye.', '/bulten/',
+      f'''<header class="page-head"><span class="eyebrow">Bülten</span><h1>Her pazar, haftanın bitkileri</h1><p>Haftada yalnızca bir e-posta: o hafta kataloğa eklenen bitkiler, bir “derde göre” rehber ve bir çay tarifi. Reklam yok, adresiniz kimseyle paylaşılmaz, tek tıkla çıkabilirsiniz.</p></header>
+<section class="sec"><h2>Kaydolunca hediye</h2><ul class="otherlist"><li><b>Bitki–ilaç etkileşimi kartı:</b> kan sulandırıcı, tansiyon, şeker ilacı ya da antidepresan kullananların dikkat etmesi gereken bitkiler, tek sayfada.</li><li><b>Hamilelikte dikkat listesi:</b> hamilelikte ve emzirirken kullanılmaması gereken bitkiler, buzdolabına asılacak boyutta.</li></ul></section>
+{abone('bulten-sayfasi', 'Bültene kaydolun', 'E-posta adresinizi yazın; gelen e-postadaki bağlantıya tıklayınca kaydınız tamamlanır.')}''', '', narrow=True, scripts=_bscript))
+write('/bulten/onaylandi/', page('Kaydınız tamamlandı | Bitki Tabanı', 'Bitki Tabanı bültenine kaydınız tamamlandı.', '/bulten/onaylandi/',
+      '''<header class="page-head"><span class="eyebrow">Bülten</span><h1>Teşekkürler, kaydınız tamamlandı 🌿</h1><p>İlk bülten pazar günü gelecek. Söz verdiğimiz iki hediye burada; yazdırmak için sayfayı açıp tarayıcınızın “Yazdır” ya da “PDF olarak kaydet” seçeneğini kullanın.</p></header>
+<section class="sec"><p><a class="cta" href="/indir/etkilesim-karti/">Bitki–ilaç etkileşimi kartı →</a></p><p><a class="cta" href="/indir/hamilelik-listesi/">Hamilelikte dikkat listesi →</a></p></section>''', '', narrow=True, extra='<meta name="robots" content="noindex, follow">'))
+write('/bulten/ayrildiniz/', page('Bültenden ayrıldınız | Bitki Tabanı', 'Bitki Tabanı bülteninden ayrıldınız.', '/bulten/ayrildiniz/',
+      '<header class="page-head"><span class="eyebrow">Bülten</span><h1>Bültenden ayrıldınız</h1><p>E-posta adresiniz listemizden tamamen silindi; bir daha e-posta almayacaksınız. Fikrinizi değiştirirseniz <a href="/bulten/">yeniden kaydolabilirsiniz</a>.</p></header>', '', narrow=True, extra='<meta name="robots" content="noindex, follow">'))
+_kart = ''.join(f'<div class="kart-g"><h2>{e(ad)}</h2><p>{", ".join(e(byId[pid]["tr"]) for pid, _, _ in sorted(etk_by[c], key=lambda x: _trkey(byId[x[0]]["tr"])))}</p></div>' for c, ad, _ in ILAC if etk_by[c] and c != 'tum')
+write('/indir/etkilesim-karti/', page('Bitki–ilaç etkileşimi kartı (yazdırılabilir) | Bitki Tabanı', 'Yazdırılabilir bitki–ilaç etkileşimi kartı.', '/indir/etkilesim-karti/',
+      f'''<article class="kart"><header><p class="eyebrow">Bitki Tabanı · yazdırılabilir kart</p><h1>Bu ilacı kullanıyorsanız, bu bitkilere dikkat</h1><p>Aşağıdaki bitkilerle, yanındaki ilaç grubu arasında etkileşim bildirilmiştir. Liste eksiksiz değildir; bir bitkisel ürüne başlamadan önce eczacınıza sorun. İlacınızı kendi başınıza bırakmayın.</p></header>
+<div class="kart-grid">{_kart}</div><footer><p>Ayrıntılar ve kaynaklar: bitkitabani.com/rehber/ilac-etkilesimi · Zehir Danışma: 114 · Tıbbi tavsiye değildir.</p></footer></article>
+<p class="noprint"><button type="button" class="learn" onclick="window.print()">Yazdır / PDF olarak kaydet</button></p>''', '', narrow=True, extra='<meta name="robots" content="noindex, follow">'))
+write('/indir/hamilelik-listesi/', page('Hamilelikte dikkat listesi (yazdırılabilir) | Bitki Tabanı', 'Yazdırılabilir hamilelikte dikkat listesi.', '/indir/hamilelik-listesi/',
+      f'''<article class="kart"><header><p class="eyebrow">Bitki Tabanı · yazdırılabilir liste</p><h1>Hamilelikte ve emzirirken dikkat edilecek bitkiler</h1><p>Bu bitkilerin güvenlik notunda hamilelik ya da emzirme için ayrıca uyarı vardır. Listede olmayan bir bitki de güvenli demek değildir; yemekteki miktarı aşan her bitkisel ürün için hekiminize danışın.</p></header>
+<ul class="kart-list">{"".join(f'<li><b>{e(p["tr"])}</b>: {e(t)}</li>' for p, t in preg)}</ul><footer><p>Ayrıntılar ve kaynaklar: bitkitabani.com/rehber/hamilelik-emzirme · Tıbbi tavsiye değildir.</p></footer></article>
+<p class="noprint"><button type="button" class="learn" onclick="window.print()">Yazdır / PDF olarak kaydet</button></p>''', '', narrow=True, extra='<meta name="robots" content="noindex, follow">'))
+GUIDE_URLS.append('/bulten/')
 
 # ---------- 404, robots, sitemap, favicon ----------
 nf = '<header class="page-head"><span class="eyebrow">404</span><h1>Bu sayfa bulunamadı</h1><p>Aradığın kayıt taşınmış ya da adres yanlış yazılmış olabilir.</p></header><section class="sec" id="nfs" hidden><h2>Bunu mu arıyordun?</h2><ul class="otherlist" id="nfList"></ul></section><p><a class="cta" id="nfSearch" href="/katalog/">Katalogda ara →</a></p>' + f'<script type="application/json" id="nfData">{json.dumps([[p["id"], p["tr"], p["la"]] for p in P] + [["kopruler/" + slug_of(x), x["t"], ""] for x in BR], ensure_ascii=False)}</script><script src="/assets/404.js" defer></script>'
