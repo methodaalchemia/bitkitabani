@@ -237,6 +237,7 @@ async function thPost(env) {
       const kids = [];
       st.step = 'görsel';
       for (const u of post.images.slice(0, 10)) kids.push((await igJson(await fetch(TH + '/me/threads', form({ media_type: 'IMAGE', image_url: u, is_carousel_item: 'true' })))).id);
+      await new Promise(r => setTimeout(r, 12000));
       st.step = 'albüm';
       const box = (await igJson(await fetch(TH + '/me/threads', form({ media_type: 'CAROUSEL', children: kids.join(','), text })))).id;
       st.step = 'yayın';
@@ -303,12 +304,13 @@ async function ekPost(env) {
   const ig = (await call(env, 'ig:state', 'get')) || {};
   const th = (await call(env, 'th:state', 'get')) || {};
   const thOn = !!(env.TH_TOKEN || env.TH_Token) && th.token;
-  if (ig.ek === day && (!thOn || (th.slot || {}).ek === day)) return;
+  if ((ig.ek === day || day < '2026-11-16') && (!thOn || (th.slot || {}).ek === day)) return;
   const pr = await igAsset('ek.json');
   if (!pr.ok) return;
   const a = (await pr.json())[day];
   if (!a) return;
-  if (ig.ek !== day && ig.token && ig.uid && !(ig.pauseUntil && Date.now() < ig.pauseUntil)) {
+  // Yeni hesap: Instagram çok sık paylaşımı kısıtlıyor; ek postlar Instagram'da 16 Kasım'dan sonra başlar (Threads'te hemen).
+  if (day >= '2026-11-16' && ig.ek !== day && ig.token && ig.uid && !(ig.pauseUntil && Date.now() < ig.pauseUntil)) {
     try {
       const form = o => { const f = new URLSearchParams(o); f.set('access_token', ig.token); return { method: 'POST', body: f }; };
       const kids = [];
@@ -330,6 +332,7 @@ async function ekPost(env) {
       const form = o => { const f = new URLSearchParams(o); f.set('access_token', th.token); return { method: 'POST', body: f }; };
       const kids = [];
       for (const u of a.images) kids.push((await igJson(await fetch(TH + '/me/threads', form({ media_type: 'IMAGE', image_url: u, is_carousel_item: 'true' })))).id);
+      await new Promise(r => setTimeout(r, 12000));   // görseller işlenmeden albüm kurulamıyor
       const box = (await igJson(await fetch(TH + '/me/threads', form({ media_type: 'CAROUSEL', children: kids.join(','), text: a.threads })))).id;
       await new Promise(r => setTimeout(r, 10000));
       await igJson(await fetch(TH + '/me/threads_publish', form({ creation_id: box })));
