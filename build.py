@@ -4,6 +4,7 @@ from refs import WIKI, POWO, NCCIH, EMA, OTHER, FILES, BAYTOP
 from extra import EK, KORUMA, YASAL, YASAL_AD, BR_GEO, ALT
 from etkilesim import ETK
 from derin import D as DERIN
+from gozden import KISI as GZ_KISI, SAYFALAR as GZ
 KAN_AD = {'klinik': 'Klinik kanıt', 'sinirli': 'Sınırlı kanıt', 'geleneksel': 'Yalnızca geleneksel', 'yok': 'Kanıt yok'}
 AUTHOR = {'@type': 'Person', 'name': 'Edanaz Tınmazlar', 'url': 'https://bitkitabani.com/yontem/#hazirlayan', 'jobTitle': 'Sanatçı ve şifalı bitkiler uzmanı', 'sameAs': ['https://www.linkedin.com/in/edanaz-tinmazlar-%E6%B8%B8%E5%AD%90%E6%84%8F-588285110/', 'https://www.instagram.com/teda.naz/']}
 SOCIAL = '<span class="social"><a href="https://www.linkedin.com/in/edanaz-tinmazlar-%E6%B8%B8%E5%AD%90%E6%84%8F-588285110/" rel="me noopener">LinkedIn</a> · <a href="https://www.instagram.com/teda.naz/" rel="me noopener">Instagram</a></span>'
@@ -69,6 +70,11 @@ GUNLER = ['Pazartesi','Salı','Çarşamba','Perşembe','Cuma','Cumartesi','Pazar
 def tr_date(d): return f'{d.day} {AYLAR[d.month-1]} {d.year}, {GUNLER[d.weekday()]}'
 def slug_of(br): return br['a'] + ('-' + br['b'] if br.get('b') else '')
 e = lambda s: html.escape(str(s), quote=True)
+
+# ---------- paylaş / yazdır çubuğu ----------
+def sharebar(title, path):
+    u = urllib.parse.quote(BASE + path, safe=''); t = urllib.parse.quote(title, safe='')
+    return f'''<div class="sharebar noprint" data-url="{BASE}{path}" data-title="{e(title)}"><button type="button" class="sb-share">Paylaş</button><a class="sb-wa" href="https://wa.me/?text={t}%20{u}" rel="noopener" target="_blank">WhatsApp</a><button type="button" class="sb-copy">Bağlantıyı kopyala</button><button type="button" class="sb-print">Yazdır</button><span class="sb-msg muted-s" role="status"></span></div>'''
 
 # ---------- bülten kayıt kutusu ----------
 def abone(kaynak, baslik='Her pazar, haftanın bitkileri e-postanızda', alt='Yeni eklenen bitkiler, bir rehber ve bir tarif; haftada bir e-posta. Kaydolunca yazdırılabilir “Bitki–ilaç etkileşimi kartı” ve “Hamilelikte dikkat listesi” de gelir.'):
@@ -251,9 +257,13 @@ def desc_for(p):
          else f'{p["tr"]} ({short_la(p)}): {first}. Bilimsel kanıt: {KANIT[p["kanit"]]["ad"].lower()}. Güvenlik notları ve kaynaklar.')
     return d if len(d) <= 160 else d[:157].rsplit(' ', 1)[0] + '…'
 
+KISIM = [('yaprak', 'Yaprak', r'yaprak'), ('cicek', 'Çiçek', r'çiçek'), ('kok', 'Kök ve yumru', r'kök|rizom|yumru|soğan'), ('tohum', 'Tohum ve meyve', r'tohum|meyve|bakla|kozalak|tane'),
+         ('kabuk', 'Kabuk ve odun', r'kabuk|odun|gövde'), ('herba', 'Toprak üstü kısımlar', r'toprak üstü|dal|herba|bütün bitki'), ('recine', 'Reçine, yağ ve özsu', r'reçine|yağ|sakız|özsu|lateks|jel|süt'), ('mantar', 'Mantar', r'mantar|şapka|miselyum')]
+def kisim_of(p): return ' '.join(k for k, _, rx in KISIM if re.search(rx, p['kisim'].lower()))
+def ay_of(p): return ' '.join(f'a{m}' for m in sorted(months_of(EK.get(p['id'], {}).get('mevsim', '')))) if 'months_of' in globals() else ''
 def card(p):
     s = ' '.join([p['tr'], p['la'], p['diger'], p['fam'], p['kisim'], p['haz'], p['bilim'], p['ilginc']] + [x for u in p['kul'] for x in u] + [KAT[k] for k in p['kat']])
-    return f'''<a class="card" href="/{p["id"]}/" data-id="{p["id"]}" data-bolge="{" ".join(p["bolge"])}" data-kat="{" ".join(p["kat"])}" data-kanit="{p["kanit"]}" data-guv="{p["guv"]}" data-durum="{" ".join(([YASAL[p["id"]][0] if YASAL[p["id"]][0]=="yasak" else "kisitli"] if p["id"] in YASAL else []) + (["koruma"] if KORUMA.get(p["id"], {}).get("rozet") else []))}" data-s="{e(s)}">
+    return f'''<a class="card" href="/{p["id"]}/" data-id="{p["id"]}" data-bolge="{" ".join(p["bolge"])}" data-kat="{" ".join(p["kat"])}" data-kanit="{p["kanit"]}" data-guv="{p["guv"]}" data-kisim="{kisim_of(p)}" data-ay="{ay_of(p)}" data-durum="{" ".join(([YASAL[p["id"]][0] if YASAL[p["id"]][0]=="yasak" else "kisitli"] if p["id"] in YASAL else []) + (["koruma"] if KORUMA.get(p["id"], {}).get("rozet") else []))}" data-s="{e(s)}">
   {ph(p, 500)}
   <div class="body">
     <div class="row"><span class="acc">{acc(p["no"])}{'<span class="newb">Yeni</span>' if is_new(p["id"]) else ''}</span><span class="regs">{"".join(dot(r) for r in p["bolge"])}</span></div>
@@ -295,7 +305,7 @@ for i, p in enumerate(P):
     prev, nxt = P[i-1], P[(i+1) % len(P)]
     title = (f'{p["tr"]}: nedir, etkileri ve zehirlilik riski' if p['guv'] == 'yuksek' else f'{p["tr"]} nedir, ne işe yarar? Faydaları ve zararları')
     if len(title) < 44: title += ' | Bitki Tabanı'
-    ld = {"@context":"https://schema.org","@type":"Article","headline":f'{p["tr"]} ({short_la(p)})',"inLanguage":"tr","about":{"@type":"Taxon","name":short_la(p),"alternateName":[p['tr']] + [x.strip() for x in p['diger'].split(',')][:4],"taxonRank":"species","parentTaxon":{"@type":"Taxon","name":p['fam'].split(' ')[0],"taxonRank":"family"}},"description":desc_for(p),"author":AUTHOR,"isPartOf":{"@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/"},"dateModified":(max(CONTENT_DATE, YENI[pid].isoformat()) if pid in YENI else CONTENT_DATE),**({"datePublished":YENI[pid].isoformat()} if pid in YENI else {}),"url":f'{BASE}/{pid}/',"image":(f'{BASE}/img/{pid}-960.jpg' if pid in IMG else None),"publisher":{"@type":"Organization","name":"Bitki Tabanı","url":BASE+"/","logo":BASE+"/assets/logo-512.png","sameAs":["https://www.instagram.com/bitkitabani/"]}}
+    ld = {"@context":"https://schema.org","@type":"Article","headline":f'{p["tr"]} ({short_la(p)})',"inLanguage":"tr","about":{"@type":"Taxon","name":short_la(p),"alternateName":[p['tr']] + [x.strip() for x in p['diger'].split(',')][:4],"taxonRank":"species","parentTaxon":{"@type":"Taxon","name":p['fam'].split(' ')[0],"taxonRank":"family"}},"description":desc_for(p),"author":AUTHOR,"isPartOf":{"@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/"},"dateModified":(max(CONTENT_DATE, YENI[pid].isoformat()) if pid in YENI else CONTENT_DATE),**({"datePublished":YENI[pid].isoformat()} if pid in YENI else {}),**({"reviewedBy":{"@type":"Person","name":GZ_KISI['ad'],"jobTitle":GZ_KISI.get('unvan','Eczacı')},"lastReviewed":GZ[pid]} if GZ_KISI and pid in GZ else {}),"url":f'{BASE}/{pid}/',"image":(f'{BASE}/img/{pid}-960.jpg' if pid in IMG else None),"publisher":{"@type":"Organization","name":"Bitki Tabanı","url":BASE+"/","logo":BASE+"/assets/logo-512.png","sameAs":["https://www.instagram.com/bitkitabani/"]}}
     crumbs = {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana sayfa","item":BASE+"/"},{"@type":"ListItem","position":2,"name":"Katalog","item":BASE+"/katalog/"},{"@type":"ListItem","position":3,"name":p['tr'],"item":f'{BASE}/{pid}/'}]}
     uses = ''.join(f'<div class="use"><div class="who">{e(w)}</div><p>{e(t)}</p></div>' for w, t in p['kul'])
     relhtml = ''
@@ -372,6 +382,7 @@ for i, p in enumerate(P):
     </div>
     <figure class="photo">{ph(p, 960, eager=True)}<figcaption>{credit(p)}</figcaption></figure>
   </header>
+  {sharebar(p['tr'] + ': ne işe yarar, kanıtı ve güvenliği', '/' + pid + '/')}
   {kisahtml}
   <!--TOC-->
   <section class="sec"><h2>Geleneksel kullanım</h2><div class="uses">{uses}</div></section>
@@ -390,7 +401,7 @@ for i, p in enumerate(P):
   {contrib(p)}
   <section class="sec"><h2>Kaynaklar</h2>{refs(p)}</section>
   <aside class="disclaimer" role="note"><b>Tıbbi tavsiye değildir.</b> Bu sayfa geleneksel kullanımları kültürel bir kayıt olarak anlatır ve bilimsel bilgiyi özetler; teşhis ya da tedavi önerisi değildir. {e(p["tr"])} ya da başka bir bitkiyi kullanmadan önce, özellikle ilaç kullanıyorsan, hamileysen, emziriyorsan ya da bir hastalığın varsa hekimine veya eczacına danış. Zehirlenme şüphesinde Ulusal Zehir Danışma Merkezi’ni (UZEM) <b>114</b> numaradan ara.</aside>
-  <p class="updated">Hazırlayan: <a href="/yontem/#hazirlayan">Edanaz Tınmazlar</a> · {('Eklendi: <time datetime="' + YENI[pid].isoformat() + '">' + tr_date(YENI[pid]).rsplit(',', 1)[0] + '</time> · ') if pid in YENI else ''}Son gözden geçirme: <time datetime="{CONTENT_DATE}">{DATE_TXT}</time></p>
+  <p class="updated">Hazırlayan: <a href="/yontem/#hazirlayan">Edanaz Tınmazlar</a> · {('Gözden geçiren: <a href="/yontem/#gozden">' + e(GZ_KISI['ad']) + '</a> (<time datetime="' + GZ[pid] + '">' + tr_date(datetime.date.fromisoformat(GZ[pid])).rsplit(',', 1)[0] + '</time>) · ') if GZ_KISI and pid in GZ else ''}{('Eklendi: <time datetime="' + YENI[pid].isoformat() + '">' + tr_date(YENI[pid]).rsplit(',', 1)[0] + '</time> · ') if pid in YENI else ''}Son gözden geçirme: <time datetime="{CONTENT_DATE}">{DATE_TXT}</time></p>
   <p class="igcta">Her gün yeni bir bitki: <a href="https://www.instagram.com/bitkitabani/" rel="noopener">Instagram’da @bitkitabani</a></p>
   <div class="sheet-foot">
     <div class="learnbox"><button type="button" class="learn" id="learnBtn" data-id="{pid}" aria-pressed="false">Öğrendim olarak işaretle</button><span class="muted-s">Bu tarayıcıda saklanır. <a href="/hesap/">Google ile giriş yaparsan</a> bütün cihazlarında görünür.</span><span class="muted-s streak" id="streakNote"></span></div>
@@ -453,7 +464,9 @@ groups = [('bolge','Bölge',[(k,v['ad'],dot(k),cnt(lambda p,k=k: k in p['bolge']
           ('kat','Kullanım',[(k,v,'',cnt(lambda p,k=k: k in p['kat'])) for k,v in KAT.items()]),
           ('kanit','Kanıt düzeyi',[(k,v['ad'],pips(k),cnt(lambda p,k=k: p['kanit']==k)) for k,v in KANIT.items()]),
           ('guv','Güvenlik',[(k,v,f'<span class="dot" style="background:var(--s-{k})"></span>',cnt(lambda p,k=k: p['guv']==k)) for k,v in GUV.items()]),
-          ('durum','Yasal ve koruma',[(k,v,'',cnt(fn)) for k,v,fn in durum])]
+          ('durum','Yasal ve koruma',[(k,v,'',cnt(fn)) for k,v,fn in durum]),
+          ('kisim','Kullanılan kısım',[(k,v,'',cnt(lambda p,k=k: k in kisim_of(p).split())) for k,v,_ in KISIM]),
+          ('ay','Toplama ayı',[(f'a{m}',AYLAR[m-1],'',cnt(lambda p,m=m: f'a{m}' in ay_of(p).split())) for m in range(1, 13)])]
 filters = ''.join(f'<div class="fgroup"><span>{lab}</span><div class="chips">' + ''.join(f'<button type="button" class="chip" data-g="{g}" data-k="{k}" aria-pressed="false">{ic}{e(v)} <span class="n">{n}</span></button>' for k,v,ic,n in opts) + '</div></div>' for g,lab,opts in groups)
 FEATURED = ['uzerlik','ayahuasca','salep','maca','kantaron','koka','kina','huito','safran','guarana','sigla','peyote']
 learn_note = '<p class="hint" id="learnHint"><b>Öğrendiklerim</b> sayacı, bitki sayfalarının sonundaki “Öğrendim” düğmesiyle işaretlediğin bitkileri gösterir. Giriş yapmadan da çalışır; o zaman yalnızca bu tarayıcıda saklanır. <a href="/hesap/">Google ile giriş yaparsan</a> bütün cihazlarında görünür.</p>'
@@ -763,6 +776,7 @@ gz = '''
 write('/gizlilik/', page('Gizlilik | Bitki Tabanı', 'Bitki Tabanı hangi bilgileri saklar: giriş yapmazsan hiçbirini; Google ile girişte yalnızca hesap kimlik numaranı ve ilerlemeni.', '/gizlilik/', gz, '', narrow=True))
 
 # ---------- yöntem ----------
+GZ_HTML = (f'<section class="sec" id="gozden"><h2>Uzman gözden geçirmesi</h2><p><b>{e(GZ_KISI["ad"])}</b>, {e(GZ_KISI.get("unvan", "Eczacı"))}. {e(GZ_KISI.get("aciklama", ""))}</p><p>Gözden geçirilen sayfalarda güvenlik notları, ilaç etkileşimleri ve kullanım bilgileri bir eczacı tarafından kontrol edilmiştir; kontrol tarihi her sayfanın altında yazar. Şu ana kadar {len(GZ)} bitki sayfası gözden geçirildi.</p></section>') if GZ_KISI else ''
 yt = """
 <header class="page-head"><span class="eyebrow">Yöntem</span><h1>Kayıtları nasıl hazırlıyoruz?</h1><p>Bitki Tabanı bağımsız, ticari olmayan bir projedir. Her kayıt aynı kurallarla hazırlanır; bu sayfa o kuralları açıkça yazar ki neye ne kadar güvenebileceğini bil.</p></header>
 <section class="sec" id="hazirlayan"><h2>Kim hazırlıyor</h2><p>""" + BIO + """</p><p>""" + SOCIAL + """</p><p>Bitki Tabanı’ndaki her kayıt onun tarafından hazırlanır ve aşağıdaki kurallarla kaynaklara dayandırılır.</p></section>
@@ -785,7 +799,7 @@ yt = """
 <div><dt>Yüksek risk</dt><dd>Zehirli ya da ciddi yan etkileri olan bitkiler. Kültürel ve tarihî önemleri için yer alırlar; kullanım önerisi değildir.</dd></div>
 </dl><p>Yasal durum, güvenlik etiketinden ayrı gösterilir: bir bitki yasak olmadan zehirli, zehirli olmadan yasak olabilir.</p></section>
 <section class="sec"><h2>Geleneksel bilgiye yaklaşım</h2><p>Geleneksel kullanımlar, onları yaşatan toplulukların adıyla ve bağlamıyla anlatılır; “Amazon yerlileri” gibi genellemeler yerine Shipibo, Huichol gibi somut adlar kullanılır. Kutsal ve törensel kullanımlar bir tavsiye olarak değil, kültürel bir kayıt olarak yazılır.</p></section>
-<section class="sec"><h2>Nasıl doğrulanıyor</h2><p>Her kayıt bir kişi tarafından hazırlanır; şu an bağımsız bir uzman ya da eczacı kayıtları gözden geçirmiyor. Bu yüzden her iddia, sayfanın altında listelenen kaynağa bağlanır ve okuyan herkes onu kendisi kontrol edebilir. Tıbbi bilgiler resmî değerlendirmelerden (EMA, NCCIH) ve sistematik derlemelerden alınır; kaynağı olmayan sağlık iddiası yazılmaz. Bir eczacı ya da farmakognozi uzmanı gözden geçirmeye katılırsa adı bu sayfada ve ilgili kayıtlarda belirtilecek.</p></section>
+""" + GZ_HTML + """<section class="sec"><h2>Nasıl doğrulanıyor</h2><p>Her kayıt bir kişi tarafından hazırlanır""" + ('' if GZ_KISI else '; şu an bağımsız bir uzman ya da eczacı kayıtları gözden geçirmiyor') + """. Bu yüzden her iddia, sayfanın altında listelenen kaynağa bağlanır ve okuyan herkes onu kendisi kontrol edebilir. Tıbbi bilgiler resmî değerlendirmelerden (EMA, NCCIH) ve sistematik derlemelerden alınır; kaynağı olmayan sağlık iddiası yazılmaz. Bir eczacı ya da farmakognozi uzmanı gözden geçirmeye katılırsa adı bu sayfada ve ilgili kayıtlarda belirtilecek.</p></section>
 <section class="sec"><h2>Güncelleme ve düzeltme</h2><p>Her sayfanın altında son gözden geçirme tarihi yazar. Bir hata görürsen ya da yöresel bir kullanım biliyorsan <a href="mailto:iletisim@bitkitabani.com">iletisim@bitkitabani.com</a> adresine yaz; düzeltmeler kaynağıyla birlikte kontrol edilip eklenir.</p></section>
 <section class="sec"><h2>Bağımsızlık</h2><p>Bitki Tabanı ürün satmaz, reklam almaz, satış ortaklığı (affiliate) bağlantısı kullanmaz ve hiçbir şirketten destek almaz.</p></section>
 """
@@ -833,6 +847,7 @@ for k in LIVE_K:
     body = f'''{crumbs(('/rehber/', 'Rehberler'), (path, k['kisa']))}
 <article class="sheet">
 <header class="page-head"><span class="eyebrow">Derde göre rehber · {len(ps)} bitki</span><h1>{e(k["baslik"])}</h1><p>{e(k["giris"])}</p></header>
+{sharebar(k['baslik'], path)}
 <section class="kisaca"><h2>Kısaca</h2><p>{e(k["ozet"])}</p></section>
 <section class="sec"><h2>Bitkiler, kanıtı en güçlü olandan başlayarak</h2><div class="rb-list">{"".join(rb_item(p, n) for p, n in ps)}</div></section>
 <aside class="warnbox" role="note"><b>Ne zaman hekime gitmeli?</b> {e(k["uyari"])}</aside>
@@ -933,6 +948,7 @@ for t in LIVE_T:
 <article class="sheet">
 <header class="page-head"><span class="eyebrow">Tarif · {e(p["tr"])}</span><h1>{e(t["ad"])}</h1><p>{e(t["kisa"])}</p>
 <p class="tarif-meta"><span>Hazırlık: <b>{t["hazirlik"]} dk</b></span><span>Toplam: <b>{t["toplam"]} dk</b></span><span>Verim: <b>{e(t["verim"])}</b></span></p></header>
+{sharebar(t['ad'] + ' nasıl yapılır?', path)}
 {img}
 <section class="sec"><h2>Malzemeler</h2><ul class="malz">{"".join(f'<li>{e(m)}</li>' for m in t["malzeme"])}</ul></section>
 <section class="sec"><h2>Hazırlanışı</h2><ol class="adim">{"".join(f'<li>{e(a)}</li>' for a in t["adim"])}</ol></section>
@@ -966,6 +982,7 @@ for c in LIVE_C:
 <article class="sheet">
 <header class="page-head"><span class="eyebrow">Karşılaştırma</span><h1>{e(c["baslik"])}</h1><p>{e(c["giris"])}</p></header>
 <div class="vs">{''.join(f'<a href="/{q["id"]}/" class="vs-p">{ph(q, 500)}<b>{e(q["tr"])}</b><i>{e(short_la(q))}</i></a>' for q in (a, b))}</div>
+{sharebar(c['baslik'], path)}
 <section class="sec"><h2>Yan yana</h2>{cmp_rows([a, b])}</section>
 <section class="sec"><h2>Başlıca farklar</h2><ul class="farklar">{"".join(f'<li>{e(x)}</li>' for x in c["fark"])}</ul></section>
 <section class="kisaca"><h2>Hangisi, ne zaman?</h2><p>{e(c["sonuc"])}</p></section>

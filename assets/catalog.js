@@ -11,8 +11,8 @@
   });
   var el = document.getElementById('learnedCount'); if (el) el.textContent = learned.length;
 
-  var G = ['bolge','kat','kanit','guv','durum'];
-  var state = { q:'', bolge:{}, kat:{}, kanit:{}, guv:{}, durum:{} };
+  var G = ['bolge','kat','kanit','guv','durum','kisim','ay'];
+  var state = { q:'', bolge:{}, kat:{}, kanit:{}, guv:{}, durum:{}, kisim:{}, ay:{} };
   function any(o){ return Object.keys(o).some(function(k){ return o[k]; }); }
   function hit(o, vals){ return !any(o) || vals.some(function(v){ return o[v]; }); }
   function render(){
@@ -74,7 +74,7 @@
   readUrl();
   q.addEventListener('input', function(){ state.q = q.value.trim(); render(); });
   document.getElementById('reset').addEventListener('click', function(){
-    state = { q:'', bolge:{}, kat:{}, kanit:{}, guv:{}, durum:{} }; q.value = '';
+    state = { q:'', bolge:{}, kat:{}, kanit:{}, guv:{}, durum:{}, kisim:{}, ay:{} }; q.value = '';
     document.querySelectorAll('.chip[data-g]').forEach(function(c){ c.setAttribute('aria-pressed','false'); });
     render();
   });
