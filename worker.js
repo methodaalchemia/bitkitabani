@@ -296,6 +296,51 @@ async function aylikPost(env) {
     await call(env, 'th:state', 'put', th);
   }
 }
+// ---------- Haftalık ek postlar (Pzt/Çar/Cum öğlen): Instagram + Threads albüm ----------
+async function ekPost(env) {
+  const day = trDay(), hour = trHour();
+  if (hour < 12 || hour >= 22) return;
+  const ig = (await call(env, 'ig:state', 'get')) || {};
+  const th = (await call(env, 'th:state', 'get')) || {};
+  const thOn = !!(env.TH_TOKEN || env.TH_Token) && th.token;
+  if (ig.ek === day && (!thOn || (th.slot || {}).ek === day)) return;
+  const pr = await igAsset('ek.json');
+  if (!pr.ok) return;
+  const a = (await pr.json())[day];
+  if (!a) return;
+  if (ig.ek !== day && ig.token && ig.uid && !(ig.pauseUntil && Date.now() < ig.pauseUntil)) {
+    try {
+      const form = o => { const f = new URLSearchParams(o); f.set('access_token', ig.token); return { method: 'POST', body: f }; };
+      const kids = [];
+      for (let i = 0; i < a.images.length; i++) kids.push((await igJson(await fetch(IG + '/' + ig.uid + '/media', form({ image_url: a.images[i], is_carousel_item: 'true', ...(a.alts && a.alts[i] && !ig.noAlt ? { alt_text: a.alts[i] } : {}) })))).id);
+      const box = (await igJson(await fetch(IG + '/' + ig.uid + '/media', form({ media_type: 'CAROUSEL', children: kids.join(','), caption: a.caption })))).id;
+      await new Promise(r => setTimeout(r, 8000));
+      await igJson(await fetch(IG + '/' + ig.uid + '/media_publish', form({ creation_id: box })));
+      ig.ek = day; ig.ekError = null; ig.ekSayi = (ig.ekSayi || 0) + 1;
+    } catch (e) {
+      ig.ekError = String(e.message || e).slice(0, 200);
+      if (/limit/i.test(ig.ekError)) ig.pauseUntil = Date.now() + 2 * 3600e3;
+      ig.ekFails = (ig.ekFailDay === day ? (ig.ekFails || 0) : 0) + 1; ig.ekFailDay = day; if (ig.ekFails >= 3) ig.ek = day;
+    }
+    await call(env, 'ig:state', 'put', ig);
+  }
+  if (thOn && (th.slot || {}).ek !== day) {
+    th.slot = th.slot || {};
+    try {
+      const form = o => { const f = new URLSearchParams(o); f.set('access_token', th.token); return { method: 'POST', body: f }; };
+      const kids = [];
+      for (const u of a.images) kids.push((await igJson(await fetch(TH + '/me/threads', form({ media_type: 'IMAGE', image_url: u, is_carousel_item: 'true' })))).id);
+      const box = (await igJson(await fetch(TH + '/me/threads', form({ media_type: 'CAROUSEL', children: kids.join(','), text: a.threads })))).id;
+      await new Promise(r => setTimeout(r, 10000));
+      await igJson(await fetch(TH + '/me/threads_publish', form({ creation_id: box })));
+      th.slot.ek = day; th.n = (th.n || 0) + 1;
+    } catch (e) {
+      th.error = 'ek: ' + String(e.message || e).slice(0, 200); th.errorAt = new Date().toISOString();
+      th.ekFails = (th.ekFailDay === day ? (th.ekFails || 0) : 0) + 1; th.ekFailDay = day; if (th.ekFails >= 3) th.slot.ek = day;
+    }
+    await call(env, 'th:state', 'put', th);
+  }
+}
 export default {
   async fetch(req, env) {
     const url = new URL(req.url);
@@ -304,7 +349,7 @@ export default {
     if (url.pathname === '/api/ig-durum' && req.method === 'GET') {
       const st = (await call(env, 'ig:state', 'get')) || {};
       const th = (await call(env, 'th:state', 'get')) || {};
-      return json({ threads: { token: !!(env.TH_TOKEN || env.TH_Token || th.token), sayi: th.n || 0, son: th.last || null, sabah: (th.slot || {}).sabah || null, ogle: (th.slot || {}).ogle || null, bitki: th.plant || null, hata: th.error || null, hataZamani: th.errorAt || null }, token: !!(env.IG_TOKEN || st.token), sayi: st.n || 0, reels: st.reels || 0, reelHata: st.reelError || null, hikayeHata: st.storyError || null, altMetin: !st.noAlt, aylik: st.aylik || null, aylikHata: st.aylikError || null, sonPaylasim: st.last || null, bitki: st.lastPlant || null, hata: st.error || null, hataZamani: st.errorAt || null, tokenYenilendi: st.tokenAt ? new Date(st.tokenAt).toISOString() : null, bugun: trDay() });
+      return json({ threads: { token: !!(env.TH_TOKEN || env.TH_Token || th.token), sayi: th.n || 0, son: th.last || null, sabah: (th.slot || {}).sabah || null, ogle: (th.slot || {}).ogle || null, bitki: th.plant || null, hata: th.error || null, hataZamani: th.errorAt || null }, token: !!(env.IG_TOKEN || st.token), sayi: st.n || 0, reels: st.reels || 0, reelHata: st.reelError || null, hikayeHata: st.storyError || null, altMetin: !st.noAlt, aylik: st.aylik || null, ek: st.ek || null, ekSayi: st.ekSayi || 0, ekHata: st.ekError || null, aylikHata: st.aylikError || null, sonPaylasim: st.last || null, bitki: st.lastPlant || null, hata: st.error || null, hataZamani: st.errorAt || null, tokenYenilendi: st.tokenAt ? new Date(st.tokenAt).toISOString() : null, bugun: trDay() });
     }
     if (req.method !== 'GET' && req.headers.get('x-bt') !== '1') return json({ error: 'csrf' }, 403);
     try {
@@ -343,6 +388,6 @@ export default {
     }
   },
   async scheduled(event, env, ctx) {
-    if (env.IG_TOKEN) ctx.waitUntil(igPost(env).then(() => (env.TH_TOKEN || env.TH_Token) ? thPost(env) : null).then(() => aylikPost(env)));
+    if (env.IG_TOKEN) ctx.waitUntil(igPost(env).then(() => (env.TH_TOKEN || env.TH_Token) ? thPost(env) : null).then(() => aylikPost(env)).then(() => ekPost(env)));
   },
 };

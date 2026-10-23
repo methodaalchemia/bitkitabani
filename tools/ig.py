@@ -272,6 +272,65 @@ def aylik(data, day, out_root):
     json.dump({'ay': key, 'image': f'{BASE}/ig/aylik/{key}.jpg', 'caption': cap, 'threads': th[:495],
                'alt': f'{AYDA[m-1]} toplanan şifalı bitkilerin listesi: {names}.'}, open(os.path.join(out_root, 'aylik.json'), 'w', encoding='utf-8'), ensure_ascii=False)
 
+def ek_postlar(data, day, out_root, days=7):
+    """Haftalık ek postlar (Instagram + Threads, öğlen): Pazartesi 'Doğru mu, efsane mi?', Çarşamba 'Bunu karıştırmayın', Cuma 'Bu hangi bitki?'."""
+    import ig2
+    P = {p['id']: p for p in data['p']}
+    ok = lambda p: p['img'] and p['guv'] != 'yuksek' and not p['yasal']
+    claims = [(pid, c) for pid in sorted(data.get('derin', {})) if pid in P and ok(P[pid]) for c in data['derin'][pid]]
+    kar = [(pid, t) for pid, t in sorted(data.get('karisma', {}).items()) if pid in P and ok(P[pid]) and re.search(r'karıştırıl|karıştırma|ile karış|sanıl|diye satıl', t) and not re.search(r'zor karış|karışmaz|karıştırılmaz', t)]
+    pop = {x: i for i, x in enumerate(IG_ORDER)}
+    kar.sort(key=lambda x: pop.get(x[0], 999))
+    quiz = [p for p in sorted(data['p'], key=lambda p: (pop.get(p['id'], 999), p['no'])) if ok(p)]
+    imgp = lambda pid: os.path.join(ROOT, 'img', f'{pid}-960.jpg')
+    def photo_slide(pid, eyebrow, title, sub=None):
+        im = ig2.photo(imgp(pid), W, H) or Image.new('RGB', (W, H), C['ink'])
+        im = ig2.shade(im, 0.08, 0.88); d = ImageDraw.Draw(im)
+        d.text((ig2.PAD, 700), up(eyebrow), font=sans_b(38), fill=(240, 226, 196))
+        y = 760 + ig2.wrap_block(d, (ig2.PAD, 760), title, [serif(96, 800), serif(84, 800), serif(72, 800), serif(62, 800)], W - 2 * ig2.PAD, 420, (255, 255, 255), gap=1.06)
+        if sub: ig2.wrap_block(d, (ig2.PAD, min(y + 24, H - 250)), sub, [sans(46), sans(40), sans(36)], W - 2 * ig2.PAD, 160, (236, 230, 218))
+        d.text((ig2.PAD, H - 92), 'bitkitabani', font=serif(34, 700), fill=(236, 230, 218))
+        return im
+    def paper_slide(p, eyebrow, title, body, n, total):
+        im, d = frame(p, n, total)
+        y = heading(d, 190, eyebrow, title)
+        block(d, (80, y + 20), body, [sans(62), sans(56), sans(50), sans(44), sans(38)], W - 160, H - y - 230, C['ink'], gap=1.34)
+        return im
+    def cta_slide(p, n, total):
+        return paper_slide(p, 'Devamı sitede', f'{p["tr"]} hakkında bilmeniz gerekenler', f'Bilimin söyledikleri, kimlerin dikkat etmesi gerektiği, ilaç etkileşimleri ve kaynaklar: bitkitabani.com/{p["id"]}\n\nKaydedin, lazım olunca bulun. 🔖', n, total)
+    out = {}
+    for dd in (day + datetime.timedelta(days=i) for i in range(days)):
+        wd, wk = dd.weekday(), dd.isocalendar()[1] + dd.year * 53
+        if wd == 0 and claims:
+            pid, (iddia, k, note) = claims[(wk * 7) % len(claims)]; p = P[pid]; tur = 'efsane'
+            verdict = data['kanad'].get(k, k)
+            ims = [photo_slide(pid, f'{p["tr"]} · Doğru mu, efsane mi?', f'“{iddia}”', 'Sizce doğru mu? Kaydırın. 👉'),
+                   paper_slide(p, 'Bilim ne diyor?', verdict, f'İddia: “{iddia}”\n\n{note}', 2, 3), cta_slide(p, 3, 3)]
+            cap = (f'“{p["tr"]}: {iddia[0].lower() + iddia[1:]}.” Doğru mu, efsane mi? 🤔\n\nBilimin cevabı: {verdict.lower()}. {note}\n\n'
+                   f'Bu iddiayı daha önce duymuş muydunuz? Yorumlarda buluşalım. 👇\n\nKaynaklarıyla birlikte tamamı: bitkitabani.com/{pid} (bağlantı profilde)\n\nBilgilendirme amaçlıdır; tıbbi tavsiye yerine geçmez.\n\n#doğrumuefsanemi #şifalıbitkiler #{re.sub(r"[^a-zçğıöşü]", "", p["tr"].lower())} #bilim')
+        elif wd == 2 and kar:
+            pid, t = kar[wk % min(len(kar), 40)]; p = P[pid]; tur = 'karisma'
+            ims = [photo_slide(pid, 'Bunu karıştırmayın', p['tr'], f'{p["la"]} · Nasıl ayırt edilir? Kaydırın. 👉'),
+                   paper_slide(p, 'Karıştırma riski', f'{p["tr"]} nasıl tanınır?', t, 2, 3), cta_slide(p, 3, 3)]
+            cap = (f'{p["tr"]}: bunu karıştırmayın! ⚠️\n\n{t}\n\nToplarken ya da satın alırken Latince adına ({p["la"]}) bakmak en güvenli yoldur.\n\n'
+                   f'Siz hiç karıştırdınız mı? Yorumlarda buluşalım. 👇\n\nTamamı: bitkitabani.com/{pid} (bağlantı profilde)\n\n#karıştırmayın #şifalıbitkiler #{re.sub(r"[^a-zçğıöşü]", "", p["tr"].lower())} #doğa')
+        elif wd == 4 and quiz:
+            p = quiz[(wk * 3) % min(len(quiz), 60)]; pid = p['id']; tur = 'bilmece'
+            hint = f'İpucu: {p["fam"]} familyasından; kullanılan kısmı {p.get("kisim", "").lower() or "bilinmiyor"}.' if p.get('kisim') else f'İpucu: {p["fam"]} familyasından.'
+            ims = [photo_slide(pid, 'Bu hangi bitki?', 'Bu hangi bitki?', hint + ' Tahmininizi yorumlara yazın, sonra kaydırın. 👉'),
+                   paper_slide(p, 'Cevap', p['tr'], f'{p["la"]}\n\n{p["ilginc"]}', 2, 3), cta_slide(p, 3, 3)]
+            cap = (f'Bu hangi bitki? 🌿\n\n{hint}\n\nÖnce tahmininizi yorumlara yazın, cevap ikinci slaytta. 👇\n\n'
+                   f'Her gün yeni bir bilmece: bitkitabani.com/oyun (bağlantı profilde)\n\n#buhangibitki #bilmece #şifalıbitkiler #doğa')
+        else:
+            continue
+        key = dd.isoformat(); od = os.path.join(out_root, 'ek', key); os.makedirs(od, exist_ok=True)
+        urls = []
+        for i, im in enumerate(ims, 1):
+            im.convert('RGB').save(os.path.join(od, f'{i}.jpg'), 'JPEG', quality=84, optimize=True); urls.append(f'{BASE}/ig/ek/{key}/{i}.jpg')
+        th = cap.split('\n\n#')[0].replace(' (bağlantı profilde)', '/')
+        out[key] = {'tur': tur, 'id': pid, 'images': urls, 'caption': cap, 'threads': th[:495], 'alts': [f'{p["tr"]} ({p["la"]}) fotoğrafı.', '', '']}
+    json.dump(out, open(os.path.join(out_root, 'ek.json'), 'w', encoding='utf-8'), ensure_ascii=False)
+
 def main():
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     global ig2
@@ -293,6 +352,8 @@ def main():
     json.dump({'n': n0, 'day': day.isoformat()}, open(os.path.join(out_root, 'state.json'), 'w'))
     try: json.dump(threads_plan(data, day), open(os.path.join(out_root, 'threads.json'), 'w', encoding='utf-8'), ensure_ascii=False)
     except Exception as ex: print('threads planı yazılamadı:', ex)
+    try: ek_postlar(data, day, out_root)
+    except Exception as ex: print('ek postlar yazılamadı:', ex)
     try: aylik(data, day, out_root)
     except Exception as ex: print('aylık post yazılamadı:', ex)
     cards = []
