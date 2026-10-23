@@ -178,7 +178,7 @@ def story(p, cover):
 
 def reel(ims, img_path=None, out='reel.mp4', sec=3.2, p=None):
     """9:16 hareketli kısa video (Reels): tam ekran fotoğrafla açılış sorusu, yavaş yakınlaşan slaytlar,
-    yumuşak geçişler ve kapanışta site çağrısı. Sessiz (müzik/ses yok). ffmpeg yoksa False döner."""
+    yumuşak geçişler, kapanışta site çağrısı ve arka planda kendi ürettiğimiz sakin bir ambiyans müziği. ffmpeg yoksa False döner."""
     import shutil, subprocess, tempfile
     if not shutil.which('ffmpeg'): return False
     SW, SH, FPS, T = 1080, 1920, 30, 0.45
@@ -213,7 +213,15 @@ def reel(ims, img_path=None, out='reel.mp4', sec=3.2, p=None):
     last, off = 'v0', scenes[0][1]
     for n in range(1, len(scenes)):
         o = f'x{n}'; fl.append(f"[{last}][v{n}]xfade=transition=fade:duration={T}:offset={off - T:.2f}[{o}]"); last = o; off += scenes[n][1] - T
-    args += ['-f', 'lavfi', '-i', 'anullsrc=r=44100:cl=stereo', '-filter_complex', ';'.join(fl), '-map', f'[{last}]', '-map', f'{len(scenes)}:a', '-shortest',
+    total = off   # video süresi
+    import random as _r
+    rr = _r.Random((p or {}).get('id', 'x'))
+    chord = rr.choice([(110, 220, 261.63, 329.63), (73.42, 146.83, 220, 293.66), (82.41, 164.81, 246.94, 329.63), (98, 196, 246.94, 293.66)])
+    expr = '+'.join(f'{a:.3f}*sin(2*PI*{f}*t)*(0.65+0.35*sin(2*PI*{m:.3f}*t+{ph:.2f}))' for f, a, m, ph in
+                    [(chord[0], .10, .07, 0), (chord[1], .07, .11, 1), (chord[2], .05, .13, 2), (chord[3], .04, .09, 3), (chord[3] * 2, .012, .21, 4)])
+    audio = (f"aevalsrc='{expr}|{expr}':s=44100:d={total:.2f},lowpass=f=1600,aecho=0.8:0.6:420|830:0.22|0.15,"
+             f"afade=t=in:d=2,afade=t=out:st={max(0, total - 2.5):.2f}:d=2.5,volume=1.6")   # kendi ürettiğimiz sakin bir ambiyans: telif sorunu yok
+    args += ['-f', 'lavfi', '-i', audio, '-filter_complex', ';'.join(fl), '-map', f'[{last}]', '-map', f'{len(scenes)}:a', '-shortest',
              '-c:v', 'libx264', '-preset', 'medium', '-crf', '23', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '64k', '-movflags', '+faststart', out]
     r = subprocess.run(args, capture_output=True, text=True)
     shutil.rmtree(tmp, ignore_errors=True)

@@ -112,7 +112,7 @@ async function igToken(env, st) {
 const LAUNCH = 14; // 12 post + yeni stille yeniden paylaşılan ilk 2
 function trHour(d = new Date()) { return new Date(d.getTime() + 3 * 3600e3).getUTCHours(); }
 function trH(d = new Date()) { const x = new Date(d.getTime() + 3 * 3600e3); return x.getUTCHours() + x.getUTCMinutes() / 60; }   // ondalıklı saat (20.5 = 20:30)
-// Paylaşım saatleri (Türkiye): akşam 20:30 günlük bitki; öğlen 12:30 ek postlar; Threads 08:30 kavram, 12:30 'Biliyor muydunuz?', 17:30 rehber/tarif/sembol.
+// Paylaşım saatleri (Türkiye): akşam 20:30 günlük bitki; öğlen 12:30 ek postlar; Threads 08:30 kavram, 12:30 'Biliyor muydunuz?', 15:00 yöresel ad sorusu, 17:30 rehber/tarif/sembol, 21:30 soru.
 async function igPost(env) {
   const st = (await call(env, 'ig:state', 'get')) || {};
   if (st.reelPending && st.token) {   // video işlenince yayımla
@@ -196,6 +196,7 @@ async function igPost(env) {
 // Gerekli gizli değişken: TH_TOKEN (Threads API, uzun ömürlü token). 20 günde bir kendiliğinden yenilenir.
 const TH = 'https://graph.threads.net/v1.0';
 async function thPublish(tok, o) {   // tek görselli ya da yalnızca metin Threads postu
+  if (!/#\S/.test(o.text)) o = { ...o, text: (o.text + '\n\n#şifalıbitkiler').slice(0, 500) };   // Threads'te tek konu etiketi
   const form = x => { const f = new URLSearchParams(x); f.set('access_token', tok); return { method: 'POST', body: f }; };
   const box = (await igJson(await fetch(TH + '/me/threads', form(o.image ? { media_type: 'IMAGE', image_url: o.image, text: o.text } : { media_type: 'TEXT', text: o.text })))).id;
   for (let i = 0; i < 6; i++) {
@@ -218,7 +219,9 @@ async function thPost(env) {
   if ((ig.n || 0) >= LAUNCH && ig.last === day && ig.lastPlant && ig.lastPlant !== st.plant && st.last !== day + ':' + ig.lastPlant) job = 'gunluk';
   else if (trH() >= 8.4 && st.slot.kavram !== day) job = 'kavram';
   else if (trH() >= 12.4 && st.slot.sabah !== day) job = 'sabah';
+  else if (trH() >= 14.9 && st.slot.ad !== day) job = 'ad';
   else if (trH() >= 17.4 && st.slot.ogle !== day) job = 'ogle';
+  else if (trH() >= 21.4 && trH() < 23.5 && st.slot.soru !== day) job = 'soru';
   if (!job) return { skipped: 'sırası değil' };
   st.step = null;
   try {
@@ -235,7 +238,7 @@ async function thPost(env) {
       let text = '';
       for (const x of body.slice(0, 3)) if ((text + '\n\n' + x).length < 440) text += (text ? '\n\n' : '') + x;
       if (!text) text = body[0].slice(0, 440);
-      text += '\n\nDevamı ve kaynaklar: bitkitabani.com/' + post.id + '/';
+      text += '\n\nDevamı ve kaynaklar: bitkitabani.com/' + post.id + '/\n\n#şifalıbitkiler';
       const form = o => { const f = new URLSearchParams(o); f.set('access_token', tok); return { method: 'POST', body: f }; };
       const kids = [];
       st.step = 'görsel';
@@ -336,7 +339,7 @@ async function ekPost(env) {
       const kids = [];
       for (const u of a.images) kids.push((await igJson(await fetch(TH + '/me/threads', form({ media_type: 'IMAGE', image_url: u, is_carousel_item: 'true' })))).id);
       await new Promise(r => setTimeout(r, 12000));   // görseller işlenmeden albüm kurulamıyor
-      const box = (await igJson(await fetch(TH + '/me/threads', form({ media_type: 'CAROUSEL', children: kids.join(','), text: a.threads })))).id;
+      const box = (await igJson(await fetch(TH + '/me/threads', form({ media_type: 'CAROUSEL', children: kids.join(','), text: (a.threads + (/#\S/.test(a.threads) ? '' : '\n\n#şifalıbitkiler')).slice(0, 500) })))).id;
       await new Promise(r => setTimeout(r, 10000));
       await igJson(await fetch(TH + '/me/threads_publish', form({ creation_id: box })));
       th.slot.ek = day; th.n = (th.n || 0) + 1;

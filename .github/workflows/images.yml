@@ -29,6 +29,11 @@ jobs:
           for f in "alegreya/Alegreya%5Bwght%5D.ttf" "alegreya/Alegreya-Italic%5Bwght%5D.ttf" "alegreyasans/AlegreyaSans-Regular.ttf" "alegreyasans/AlegreyaSans-Bold.ttf" "alegreyasans/AlegreyaSans-Italic.ttf" "courierprime/CourierPrime-Regular.ttf" "alegreya/OFL.txt"; do
             n=$(basename "$f" | sed 's/%5B/[/;s/%5D/]/'); [ -f "$n" ] || curl -sSfL -o "$n" "https://raw.githubusercontent.com/google/fonts/main/ofl/$f" || true
           done
+      - name: Sosyal medya simgeleri (Simple Icons, CC0)
+        continue-on-error: true
+        run: |
+          mkdir -p assets/icons
+          for n in instagram threads pinterest facebook bluesky telegram rss whatsapp; do [ -f assets/icons/$n.svg ] || curl -sSfL -o assets/icons/$n.svg "https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/icons/$n.svg" || true; done
       - name: Site yazı tipleri (WOFF2)
         continue-on-error: true
         run: pip install fonttools brotli && python3 tools/fonts_web.py
@@ -50,7 +55,7 @@ jobs:
         run: |
           git config user.name "bitkitabani-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add img images.json site tools/fonts assets/fonts
+          git add img images.json site tools/fonts assets/fonts assets/icons
           if git diff --cached --quiet; then echo "değişiklik yok"; else git commit -m "Görseller ve site güncellendi [bot]" && (git push || (git pull --rebase -X theirs && git push)); fi
       - name: IndexNow bildirimi (yayına alınması için kısa bekleme)
         if: always()

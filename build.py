@@ -72,10 +72,26 @@ def tr_date(d): return f'{d.day} {AYLAR[d.month-1]} {d.year}, {GUNLER[d.weekday(
 def slug_of(br): return br['a'] + ('-' + br['b'] if br.get('b') else '')
 e = lambda s: html.escape(str(s), quote=True)
 
+# ---------- simgeler (basit çizgi simgeleri) ----------
+IC = {'share': 'M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7 M12 3v13 M7 8l5-5 5 5', 'link': 'M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1 M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1',
+      'print': 'M6 9V3h12v6 M6 18H4v-7h16v7h-2 M6 14h12v7H6z', 'chat': 'M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.9A8 8 0 1 1 21 12z',
+      'uyku': 'M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z', 'oksuruk': 'M3 8h11a3 3 0 1 0-3-3 M3 12h15a3 3 0 1 1-3 3 M3 16h7', 'bogaz-agrisi': 'M12 3s6 7 6 11a6 6 0 0 1-12 0c0-4 6-11 6-11z',
+      'mide-hazimsizlik': 'M5 19c0-8 5-14 14-14 0 9-6 14-14 14z M5 19l8-8', 'bulanti': 'M3 9c3-3 6 3 9 0s6 3 9 0 M3 15c3-3 6 3 9 0s6 3 9 0', 'soguk-alginligi': 'M12 2v20 M3.5 7l17 10 M20.5 7l-17 10',
+      'kaygi-stres': 'M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10z', 'eklem-agrisi': 'M8 8l8 8 M5 9a2 2 0 1 1 1.5-3.5A2 2 0 1 1 9 4 M19 15a2 2 0 1 1-1.5 3.5A2 2 0 1 1 15 20',
+      'kabizlik': 'M12 4v14 M7 13l5 5 5-5', 'idrar-yolu': 'M8 4s4 5 4 8a4 4 0 0 1-8 0c0-3 4-8 4-8z M16 10s3 3.5 3 6a3 3 0 0 1-6 0c0-2.5 3-6 3-6z', 'kolesterol-tansiyon': 'M3 12h4l2-5 4 10 2-5h6',
+      'cilt-yara': 'M8 3l13 13-5 5L3 8z M10 10l4 4', 'bacak-damar': 'M8 3c0 6 4 6 4 12s-2 6-2 6 M16 3c0 4-3 6-3 9', 'adet': 'M12 3a9 9 0 1 0 0 18 9 9 0 1 0 0-18z M12 3v18',
+      'prostat': 'M12 3l7 3v6c0 5-3 8-7 9-4-1-7-4-7-9V6z', 'hafiza': 'M12 3v4 M12 17v4 M3 12h4 M17 12h4 M6 6l2.5 2.5 M15.5 15.5L18 18 M6 18l2.5-2.5 M15.5 8.5L18 6',
+      'etk': 'M8 16l8-8a3.5 3.5 0 0 1 5 5l-8 8a3.5 3.5 0 0 1-5-5z M12 12l4 4', 'gebe': 'M12 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4z M12 9v4c3 0 4 2 4 4s-2 4-4 4 M12 13v8',
+      'tarif': 'M5 10h12v5a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5z M17 11h2a2 2 0 0 1 0 4h-2 M9 3c0 2 2 2 2 4 M13 3c0 2 2 2 2 4', 'takvim': 'M4 6h16v14H4z M4 10h16 M8 3v5 M16 3v5',
+      'adlar': 'M4 5h16 M4 10h10 M4 15h16 M4 20h8', 'kars': 'M8 4v16 M16 4v16 M4 8h8 M12 16h8'}
+def ico(n, cls='ico'):
+    return f'<svg class="{cls}" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{IC[n]}"/></svg>' if n in IC else ''
+
 # ---------- paylaş / yazdır çubuğu ----------
 def sharebar(title, path):
     u = urllib.parse.quote(BASE + path, safe=''); t = urllib.parse.quote(title, safe='')
-    return f'''<div class="sharebar noprint" data-url="{BASE}{path}" data-title="{e(title)}"><button type="button" class="sb-share">Paylaş</button><a class="sb-wa" href="https://wa.me/?text={t}%20{u}" rel="noopener" target="_blank">WhatsApp</a><button type="button" class="sb-copy">Bağlantıyı kopyala</button><button type="button" class="sb-print">Yazdır</button><span class="sb-msg muted-s" role="status"></span></div>'''
+    wa = _icon('whatsapp', '') if os.path.exists(os.path.join(HERE, 'assets', 'icons', 'whatsapp.svg')) else ico('chat')
+    return f'''<div class="sharebar noprint" data-url="{BASE}{path}" data-title="{e(title)}"><button type="button" class="sb-share" title="Paylaş" aria-label="Paylaş">{ico('share')}</button><a class="sb-wa" href="https://wa.me/?text={t}%20{u}" rel="noopener" target="_blank" title="WhatsApp’ta paylaş" aria-label="WhatsApp’ta paylaş">{wa}</a><button type="button" class="sb-copy" title="Bağlantıyı kopyala" aria-label="Bağlantıyı kopyala">{ico('link')}</button><button type="button" class="sb-print" title="Yazdır" aria-label="Yazdır">{ico('print')}</button><span class="sb-msg muted-s" role="status"></span></div>'''
 
 # ---------- bülten kayıt kutusu ----------
 def abone(kaynak, baslik='Ücretsiz e-posta kursu: Şifalı bitkilere başlangıç', alt='7 gün boyunca her sabah kısa, görsel bir ders: kanıtı okumak, doğru demlemek, güvenli kullanmak, doğada toplamak. Sonra her pazar haftanın bitkileri. Yazdırılabilir “Bitki–ilaç etkileşimi kartı” da hediye.', kurs=True):
@@ -206,6 +222,15 @@ FOOT = '''<div class="motif indigo" aria-hidden="true"></div>
 '''
 
 FOOTNAV = '<nav class="footnav" aria-label="Site haritası">' + ''.join(f'<div><h3>{g}</h3><ul>' + ''.join(f'<li><a href="{h}"' + (' rel="noopener"' if h.startswith('http') else '') + f'>{l}</a></li>' for h, l, k in items) + '</ul></div>' for g, items in MENU) + '</nav>'
+SOSYAL = [('instagram', 'Instagram', 'https://www.instagram.com/bitkitabani/'), ('threads', 'Threads', 'https://www.threads.net/@bitkitabani'),
+          ('rss', 'RSS', '/yeni/rss.xml')]   # Facebook ve Pinterest adresleri gelince eklenecek
+def _icon(n, label):
+    f = os.path.join(HERE, 'assets', 'icons', n + '.svg')
+    if os.path.exists(f):
+        svg = re.sub(r'<title>.*?</title>', '', open(f, encoding='utf-8').read())
+        return svg.replace('<svg ', '<svg aria-hidden="true" focusable="false" fill="currentColor" width="22" height="22" ', 1)
+    return f'<span class="sicon-t">{label}</span>'
+FOOTNAV += '<div class="sosyal" aria-label="Sosyal medya">' + ''.join(f'<a href="{u}" title="{l}" aria-label="Bitki Tabanı {l}"' + (' rel="noopener" target="_blank"' if u.startswith('http') else '') + f'>{_icon(n, l)}</a>' for n, l, u in SOSYAL) + '</div>'
 FOOT = FOOT.replace('<!--FOOTNAV-->', FOOTNAV)
 def page(title, desc, path, body, cur, scripts='', narrow=False, extra='', image=None):
     h = head(title, desc, path, extra, image).replace('{narrow}', ' narrow' if narrow else '')
@@ -668,7 +693,7 @@ home = f'''
   <div class="todaybox"><a class="today" id="today" href="/{today_p["id"]}/" data-pool="{e(json.dumps([[p["id"], p["tr"], p["la"]] for p in pool], ensure_ascii=False))}"><span class="eyebrow">Bugünün bitkisi</span><b id="todayName">{e(today_p["tr"])}</b><i id="todayLatin">{e(today_p["la"])}</i></a><a class="cta small" href="/oyun/">Günün bilmecesini çöz →</a><a class="cta small" href="/gunun-bitkisi/">Geçmiş günlerin bitkileri →</a><p class="streak" id="streak" hidden></p></div>
 </header>
 {newband()}
-<section class="sec"><h2>Derde göre</h2><p>Uykudan öksürüğe, mideden kaygıya: şikâyetlere göre bitkiler, kanıtı en güçlü olandan başlayarak. Kullandığın bir ilaç varsa önce <a href="/rehber/ilac-etkilesimi/">etkileşim aracına</a> bak.</p><div class="related">{''.join(f'<a class="chip" href="/rehber/{k["slug"]}/">{e(k["kisa"])}</a>' for k in KONULAR if sum(1 for x, _ in k['bitkiler'] if x in byId) >= 2)}<a class="chip" href="/rehber/hamilelik-emzirme/">Hamilelik ve emzirme</a><a class="chip" href="/tarif/">Çay tarifleri</a></div></section>
+<section class="sec"><h2>Derde göre</h2><p>Uykudan öksürüğe, mideden kaygıya: şikâyetlere göre bitkiler, kanıtı en güçlü olandan başlayarak. Kullandığın bir ilaç varsa önce <a href="/rehber/ilac-etkilesimi/">etkileşim aracına</a> bak.</p><div class="icongrid">{''.join(f'<a href="/rehber/{k["slug"]}/">{ico(k["slug"], "ico-b")}<span>{e(k["kisa"])}</span></a>' for k in KONULAR if sum(1 for x, _ in k['bitkiler'] if x in byId) >= 2)}<a href="/rehber/ilac-etkilesimi/">{ico('etk', 'ico-b')}<span>İlaç etkileşimi</span></a><a href="/rehber/hamilelik-emzirme/">{ico('gebe', 'ico-b')}<span>Hamilelik</span></a><a href="/tarif/">{ico('tarif', 'ico-b')}<span>Çay tarifleri</span></a></div></section>
 <section class="sec"><h2>Bölgelere göre</h2><div class="regs-grid">{regcards}</div></section>
 {f'<section class="sec"><h2>Şu an mevsiminde</h2><p>{AYLAR[LOCAL_DAY.month-1]} ayında Anadolu’da toplama mevsimi olan bitkiler. Koruma altındaki ve yasal kısıtlı türler bu listeye alınmaz.</p><div class="grid">' + "".join(card(p) for p in season[:8]) + '</div></section>' if season else ''}
 <section class="sec"><h2>Nereden başlamalı?</h2><p>{len(P)} bitki çok gelebilir. Siteyi tanımak için bu beşiyle başla:</p><ol class="start">
@@ -1203,7 +1228,7 @@ write(path, page(f'Şifalı bitki toplama takvimi: {AYLAR[_cur-1]} ayında hangi
 GUIDE_URLS.append(path)
 
 # --- rehber ana sayfası ---
-gl = ''.join(f'<li><a href="/rehber/{k["slug"]}/"><b>{e(k["kisa"])}</b></a><span>{e(k["aciklama"])}</span></li>' for k in LIVE_K)
+gl = ''.join(f'<li class="gi"><a href="/rehber/{k["slug"]}/">{ico(k["slug"], "ico-b")}<b>{e(k["kisa"])}</b></a><span>{e(k["aciklama"])}</span></li>' for k in LIVE_K)
 hub = f'''{crumbs(('/rehber/', 'Rehberler'))}
 <header class="page-head"><span class="eyebrow">Rehberler</span><h1>Hangi derde hangi bitki? Kanıtıyla ve riskleriyle</h1><p>Katalogdaki bitkileri şikâyetlere göre bir araya getirdik. Her rehberde bitkiler kanıtı en güçlü olandan başlayarak sıralanır; her birinin yanında güvenlik etiketi ve sayfasına bağlantı bulunur.</p></header>
 <section class="sec"><h2>Güvenlik</h2><ul class="guidelist"><li><a href="/rehber/ilac-etkilesimi/"><b>İlaç etkileşimi aracı</b></a><span>Kullandığın ilaç grubunu seç, katalogda o ilaçla etkileşimi bildirilen bitkileri gör.</span></li><li><a href="/rehber/hamilelik-emzirme/"><b>Hamilelik ve emzirme</b></a><span>Hamilelikte ve emzirirken kullanılmaması ya da dikkatle kullanılması gereken bitkiler.</span></li></ul></section>
@@ -1325,7 +1350,7 @@ os.makedirs(os.path.join(HERE, '.cache'), exist_ok=True)
 json.dump({'day': LOCAL_DAY.isoformat(), 'yeni': {k: v.isoformat() for k, v in YENI.items()},
            'kuyruk': [[q['id'], q['yayin']] for q in _K.Q],
            'kanit': {k: v['ad'] for k, v in KANIT.items()}, 'guv': GUV, 'reg': {k: v['ad'] for k, v in REG.items()}, 'takvim': {m: [q['id'] for q in sorted(_cal[m], key=lambda q: _trkey(q['tr']))] for m in _cal}, 'derin': {k: [list(x) for x in v['iddia']] for k, v in DERIN.items() if k in byId}, 'karisma': {k: v.get('karisma', '') for k, v in EK.items() if k in byId and v.get('karisma')}, 'kanad': KAN_AD,
-           'p': [dict(id=p['id'], no=p['no'], tr=p['tr'], la=short_la(p), fam=p['fam'], kisim=p['kisim'], bolge=p['bolge'], kat=p['kat'], kul=p['kul'], bilim=p['bilim'], kanit=p['kanit'],
+           'p': [dict(id=p['id'], no=p['no'], tr=p['tr'], la=short_la(p), fam=p['fam'], kisim=p['kisim'], yoresel=EK.get(p['id'], {}).get('yoresel', ''), bolge=p['bolge'], kat=p['kat'], kul=p['kul'], bilim=p['bilim'], kanit=p['kanit'],
                       guv=p['guv'], guvNot=p['guvNot'], ilginc=p['ilginc'], yasal=(YASAL[p['id']][0] if p['id'] in YASAL else None), img=(p['id'] in IMG),
                       foto=((IMG[p['id']].get('artist') or '') + (' · ' + IMG[p['id']].get('license', '') if IMG[p['id']].get('license') else '')) if p['id'] in IMG else '') for p in P]},
           open(os.path.join(HERE, '.cache', 'ig_input.json'), 'w', encoding='utf-8'), ensure_ascii=False)

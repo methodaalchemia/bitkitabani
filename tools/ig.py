@@ -7,7 +7,7 @@ Paylaşımı worker.js yapar: açılış günü 12 post yarım saat arayla, sonr
 Sıra: Türkiye’de en çok arandığını tahmin ettiğimiz bitkilerden başlar (IG_ORDER), sonra kataloğun geri kalanı.
 Yüksek riskli ve Türkiye’de yasak/kısıtlı bitkiler Instagram’a konmaz. Kuyruktaki bitkiler yayın gününden önce paylaşılmaz.
 """
-import json, os, re, sys, datetime, textwrap, html
+import json, os, re, sys, datetime, textwrap, html, math
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -244,6 +244,20 @@ def threads_plan(data, day, days=4):
         p = pool[(k * 37) % len(pool)]
         fact = f"Biliyor muydunuz? 🌿\n\n{p['ilginc']}\n\n{p['tr']} ({p['la']}) hakkında daha fazlası: bitkitabani.com/{p['id']}/"
         out[dd.isoformat()] = {'sabah': dict(text=fact[:495], image=img(p['id'])), 'ogle': dict(text=extra[k % len(extra)]['text'][:495], image=extra[k % len(extra)]['image'])}
+        def _adl(q): return [x.strip() for x in re.sub(r'\([^)]*\)', '', q.get('yoresel') or '').split(',') if x.strip() and x.strip().lower() != q['tr'].lower()]
+        yor = [q for q in pool if 'anadolu' in q['bolge'] and len(_adl(q)) >= 2]
+        if yor:
+            q = yor[(k * 13) % len(yor)]
+            adlar = ', '.join(_adl(q)[:5])
+            out[dd.isoformat()]['ad'] = dict(text=f"Sizin yörenizde buna ne denir? 🌿\n\n{q['tr']} ({q['la']}) Anadolu’da farklı adlarla anılıyor: {adlar}.\n\nSizin yörenizde hangi adla bilinir? Yazın, sözlüğümüze ekleyelim. 👇"[:495], image=img(q['id']))
+        try:
+            sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+            from ig_metin import M as _IGM
+            sor = [(i, v['soru']) for i, v in _IGM.items() if v.get('soru') and i in P]
+            if sor:
+                i_, sq = sor[(k * 7) % len(sor)]
+                out[dd.isoformat()]['soru'] = dict(text=f"{sq} 👇", image=None)
+        except Exception as ex: print('soru threads:', ex)
         try:
             from kavramlar import KAVRAMLAR
             kv = next((x for x in KAVRAMLAR if x['yayin'] == dd.isoformat() and x['bitki'] in P), None)
@@ -284,6 +298,34 @@ def aylik(data, day, out_root):
     th = f'{AYDA[m-1]} doğada neler var? 🌿\n\nAnadolu’da bu ay toplama mevsimi olan şifalı bitkiler: {names}.\n\nAy ay bütün takvim: bitkitabani.com/toplama-takvimi/'
     json.dump({'ay': key, 'image': f'{BASE}/ig/aylik/{key}.jpg', 'caption': cap, 'threads': th[:495],
                'alt': f'{AYDA[m-1]} toplanan şifalı bitkilerin listesi: {names}.'}, open(os.path.join(out_root, 'aylik.json'), 'w', encoding='utf-8'), ensure_ascii=False)
+
+def motif_image(mo, seed=None):
+    """Sembol paylaşım görseli (1080x1350): el çizimi görünümlü tek renk motif, ad ve kısa anlam."""
+    import random
+    r = random.Random(seed or mo['slug'])
+    im = Image.new('RGB', (W, H), C['sheet']); d = ImageDraw.Draw(im)
+    S, ox, oy = 7.0, (W - 700) // 2, 150
+    def P(x, y): return (ox + x * S, oy + y * S)
+    def wob(pts, amp):
+        out = []
+        for (x0, y0), (x1, y1) in zip(pts, pts[1:]):
+            n = max(2, int(math.hypot(x1 - x0, y1 - y0) / 3))
+            for k in range(n):
+                t = k / n; out.append((x0 + (x1 - x0) * t + r.uniform(-amp, amp), y0 + (y1 - y0) * t + r.uniform(-amp, amp)))
+        out.append(pts[-1]); return out
+    for p in mo.get('dolu', []): d.polygon([P(*q) for q in wob(p, .4)], fill=C['ink'])
+    for p in mo['cizim']:
+        q = [P(*x) for x in wob(p, .5)]
+        d.line(q, fill=C['ink'], width=22, joint='curve')
+        for x, y in (q[0], q[-1]): d.ellipse([x - 11, y - 11, x + 11, y + 11], fill=C['ink'])
+    for p in mo['cizim']: d.line([P(*x) for x in wob(p, .9)], fill=C['ink'], width=6)
+    d.text((80, 900), up(mo['bolge']), font=mono(28), fill=C['muted'])
+    d.text((80, 945), mo['ad'], font=serif(96), fill=C['ink'])
+    block(d, (80, 1070), mo['kisa'], [sans(44), sans(40), sans(36)], W - 160, 150, C['ink'])
+    d.line([(80, H - 110), (W - 80, H - 110)], fill=C['rule'], width=2)
+    d.text((80, H - 86), 'Semboller', font=serif(34), fill=C['ink'])
+    u = 'bitkitabani.com'; d.text((W - 80 - d.textlength(u, font=mono(28)), H - 80), u, font=mono(28), fill=C['accent'])
+    return im
 
 def ek_postlar(data, day, out_root, days=7):
     """Haftalık ek postlar (Instagram + Threads, öğlen): Pazartesi 'Doğru mu, efsane mi?', Çarşamba 'Bunu karıştırmayın', Cuma 'Bu hangi bitki?'."""
@@ -334,6 +376,19 @@ def ek_postlar(data, day, out_root, days=7):
                    paper_slide(p, 'Cevap', p['tr'], f'{p["la"]}\n\n{p["ilginc"]}', 2, 3), cta_slide(p, 3, 3)]
             cap = (f'Bu hangi bitki? 🌿\n\n{hint}\n\nÖnce tahmininizi yorumlara yazın, cevap ikinci slaytta. 👇\n\n'
                    f'Her gün yeni bir bilmece: bitkitabani.com/oyun (bağlantı profilde)\n\n#buhangibitki #bilmece #şifalıbitkiler #doğa')
+        elif wd == 5:
+            try:
+                from motifler import MOTIFLER
+            except Exception: MOTIFLER = []
+            if not MOTIFLER: continue
+            mo = MOTIFLER[wk % len(MOTIFLER)]; tur = 'sembol'
+            bt = [x for x, _ in mo['bitkiler'] if x in P]
+            p = P[bt[0]] if bt else next(iter(P.values())); pid = mo['slug']
+            anlam = re.sub(r'\s*\[\d+\]', '', mo['anlam'])
+            bag = ('\n\nBağlantılı bitki: ' + P[bt[0]]['tr'] + '. ' + dict(mo['bitkiler'])[bt[0]]) if bt else ''
+            ims = [motif_image(mo), paper_slide(p, 'Ne anlatır?', mo['ad'], anlam[:420] + bag[:200], 2, 2)]
+            cap = (f'Bir sembol: {mo["ad"]} ({mo["bolge"]})\n\n{anlam}{bag}\n\nSizin evinizde, kiliminizde bu motif var mı? Yorumlarda buluşalım. 👇\n\n'
+                   f'Kaynaklarıyla: bitkitabani.com/semboller/{mo["slug"]} (bağlantı profilde)\n\n#semboller #kilimmotifleri #etnobotanik #kültür')
         else:
             continue
         key = dd.isoformat(); od = os.path.join(out_root, 'ek', key); os.makedirs(od, exist_ok=True)
@@ -341,7 +396,7 @@ def ek_postlar(data, day, out_root, days=7):
         for i, im in enumerate(ims, 1):
             im.convert('RGB').save(os.path.join(od, f'{i}.jpg'), 'JPEG', quality=84, optimize=True); urls.append(f'{BASE}/ig/ek/{key}/{i}.jpg')
         th = cap.split('\n\n#')[0].replace(' (bağlantı profilde)', '/')
-        out[key] = {'tur': tur, 'id': pid, 'images': urls, 'caption': cap, 'threads': th[:495], 'alts': [f'{p["tr"]} ({p["la"]}) fotoğrafı.', '', '']}
+        out[key] = {'tur': tur, 'id': pid, 'images': urls, 'caption': cap, 'threads': th[:495], 'alts': ([f'{mo["ad"]} motifinin el çizimi.', ''] if tur == 'sembol' else [f'{p["tr"]} ({p["la"]}) fotoğrafı.', '', ''])}
     json.dump(out, open(os.path.join(out_root, 'ek.json'), 'w', encoding='utf-8'), ensure_ascii=False)
 
 def bulten(data, day, out_root):
