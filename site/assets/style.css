@@ -445,3 +445,16 @@ details.menu[open] .burger::before{top:0;transform:rotate(45deg)}details.menu[op
 .harfler{display:flex;flex-wrap:wrap;gap:6px 10px;font-family:var(--f-mono);font-size:var(--t-sm);border-bottom:1px solid var(--rule);padding-bottom:12px}
 .harfler a{text-decoration:none}
 ul.adlar{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px;line-height:1.5}
+/* bülten kutusu */
+.abone{background:var(--sheet);border:1.5px solid var(--ink);padding:20px 22px;margin:8px 0}
+.abone h2{font-size:var(--t-lg);margin:0 0 6px}.abone>p{margin:0 0 12px;color:var(--muted)}
+.abone .row{display:flex;gap:8px;flex-wrap:wrap}.abone input[type=email]{flex:1 1 220px;font:inherit;padding:10px 12px;border:1.5px solid var(--ink);background:var(--paper);color:var(--ink);min-width:0}
+.abone .chk{display:flex;gap:8px;align-items:flex-start;font-size:var(--t-sm);margin-top:10px;line-height:1.45}.abone .chk input{margin-top:3px;flex:none}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* yazdırılabilir kartlar */
+.kart{background:#fff;color:#1C2140;padding:24px;border:1.5px solid #1C2140}.kart h1{font-size:1.7rem;margin:4px 0 8px}.kart header p{font-size:.92rem}
+.kart-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 18px;margin-top:14px}.kart-g h2{font-size:1rem;margin:0 0 2px;color:#A3271B}.kart-g p{margin:0;font-size:.88rem;line-height:1.4}
+.kart-list{columns:2;column-gap:22px;font-size:.86rem;line-height:1.4;padding-left:1.1em}.kart-list li{break-inside:avoid;margin-bottom:6px}
+.kart footer{border-top:1px solid #ccc;margin-top:16px;padding-top:8px;font-size:.78rem}
+@media (max-width:560px){.kart-grid{grid-template-columns:1fr}.kart-list{columns:1}}
+@media print{.site-nav,.motif,footer.site,.noprint,.crumbs{display:none!important}body{background:#fff}.kart{border:0;padding:0}}
