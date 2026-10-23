@@ -482,3 +482,13 @@ details.harf{border-bottom:1px solid var(--rule)}details.harf>summary{cursor:poi
 details.harf>summary::-webkit-details-marker{display:none}details.harf>summary b{font-family:var(--f-display);font-size:1.3rem;min-width:1.4em}
 details.harf>summary::after{content:"+";margin-left:auto;font-family:var(--f-mono);color:var(--accent)}details.harf[open]>summary::after{content:"–"}
 ul.adlar2{list-style:none;padding:0 0 12px;margin:0;columns:2 260px;column-gap:28px;font-size:var(--t-sm);line-height:1.5}ul.adlar2 li{break-inside:avoid;margin-bottom:4px}
+/* semboller: el çizimi motifler */
+.motif-svg{display:block;width:100%;height:auto;color:var(--ink)}
+.motifgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+.motifcard{display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 12px;background:var(--sheet);border:1px solid var(--rule);text-decoration:none;color:var(--ink);text-align:center}
+.motifcard:hover{border-color:var(--ink)}.motifcard .motif-svg{width:96px}.motifcard b{font-family:var(--f-display);font-size:1.15rem}
+.motif-head{display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px;align-items:center;border-bottom:1.5px solid var(--ink);padding-bottom:20px}
+.motif-art{background:var(--sheet);border:1px solid var(--rule);padding:18px}.motif-head h1{font-size:clamp(2.2rem,6vw,3.2rem)}
+@media(max-width:560px){.motif-head{grid-template-columns:1fr}.motif-art{max-width:220px}}
+.motif-mini{display:flex;flex-wrap:wrap;gap:12px}.motif-mini a{display:flex;flex-direction:column;align-items:center;gap:4px;width:92px;text-decoration:none;color:var(--ink);font-size:var(--t-sm);text-align:center}.motif-mini .motif-svg{width:64px}
+.motif-filtre{margin:6px 0 4px}
