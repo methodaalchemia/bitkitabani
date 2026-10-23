@@ -89,6 +89,7 @@ def abone(kaynak, baslik='Ücretsiz e-posta kursu: Şifalı bitkilere başlangı
 from rehber import KONULAR
 from tarif import TARIFLER
 from karsilastirma import KARS
+from semboller import SEMBOLLER
 GLINKS = {}
 def _glinks():
     for k in KONULAR:
@@ -97,6 +98,10 @@ def _glinks():
             if pid in byId: GLINKS.setdefault(pid, []).append((f'/rehber/{k["slug"]}/', 'Rehber: ' + k['kisa']))
     for t in TARIFLER:
         if t['bitki'] in byId: GLINKS.setdefault(t['bitki'], []).append((f'/tarif/{t["slug"]}/', 'Tarif: ' + t['ad']))
+    for sm in SEMBOLLER:
+        if sum(1 for x, _ in sm['bitkiler'] if x in byId) >= 3:
+            for x, _ in sm['bitkiler']:
+                if x in byId: GLINKS.setdefault(x, []).append((f'/semboller/{sm["slug"]}/', 'Sembol: ' + sm['ad']))
     for c in KARS:
         if c['a'] in byId and c['b'] in byId:
             for x in (c['a'], c['b']): GLINKS.setdefault(x, []).append((f'/karsilastirma/{c["a"]}-ve-{c["b"]}/', c['baslik']))
@@ -163,7 +168,7 @@ def head(title, desc, path, extra='', image=None):
 <div class="wrap{{narrow}}">
 '''
 
-MENU = [('Keşfet', [('/katalog/', 'Katalog', 'kat'), ('/yeni/', 'Yeni eklenenler', 'yeni'), ('/gunun-bitkisi/', 'Günün bitkisi', 'gun'), ('/oyun/', 'Günün bilmecesi', 'oyun'), ('/kopruler/', 'Kültür köprüleri', 'br')]),
+MENU = [('Keşfet', [('/katalog/', 'Katalog', 'kat'), ('/yeni/', 'Yeni eklenenler', 'yeni'), ('/gunun-bitkisi/', 'Günün bitkisi', 'gun'), ('/oyun/', 'Günün bilmecesi', 'oyun'), ('/kopruler/', 'Kültür köprüleri', 'br'), ('/semboller/', 'Semboller', 'sembol')]),
         ('Rehberler', [('/rehber/', 'Derde göre bitkiler', 'rehber'), ('/tarif/', 'Çay tarifleri', 'tarif'), ('/karsilastirma/', 'Karşılaştırmalar', 'kars'), ('/rehber/ilac-etkilesimi/', 'İlaç etkileşimi', 'etk'), ('/rehber/hamilelik-emzirme/', 'Hamilelik ve emzirme', 'gebe'), ('/toplama-takvimi/', 'Toplama takvimi', 'takvim'), ('/yoresel-adlar/', 'Yöresel adlar', 'adlar')]),
         ('Bitki Tabanı', [('/kurs/', 'Ücretsiz e-posta kursu', 'kurs'), ('/bulten/', 'Bülten', 'bulten'), ('/hakkinda/', 'Hakkında', 'about'), ('/yontem/', 'Yöntem', 'yontem'), ('https://www.instagram.com/bitkitabani/', 'Instagram', 'ig'), ('/hesap/', 'Hesap', 'acct'), ('/gizlilik/', 'Gizlilik', 'priv'), ('mailto:iletisim@bitkitabani.com', 'İletişim', 'mail')])]
 def nav(cur):
@@ -1002,6 +1007,36 @@ kl = ''.join(f'<li><a href="/karsilastirma/{c["a"]}-ve-{c["b"]}/"><b>{e(c["basli
 write('/karsilastirma/', page('Bitki karşılaştırmaları: hangisi, ne zaman? | Bitki Tabanı', 'Zencefil mi zerdeçal mı, adaçayı mı dağ çayı mı? Sık karıştırılan şifalı bitkiler kanıt, kullanım ve güvenlik açısından yan yana.', '/karsilastirma/',
       f'{crumbs(("/karsilastirma/", "Karşılaştırmalar"))}<header class="page-head"><span class="eyebrow">{len(LIVE_C)} karşılaştırma</span><h1>Hangisi, ne zaman?</h1><p>Sık karıştırılan ya da aynı dert için kullanılan bitkiler yan yana: kanıt düzeyi, güvenlik ve başlıca farklar.</p></header><section class="sec"><ul class="guidelist">{kl}</ul></section>{DISCL}', 'kars', narrow=True, extra=lds(crumb_ld(('/karsilastirma/', 'Karşılaştırmalar')))))
 GUIDE_URLS.append('/karsilastirma/')
+
+# --- semboller ---
+LIVE_S = [sm for sm in SEMBOLLER if sum(1 for x, _ in sm['bitkiler'] if x in byId) >= 3]
+def sym_item(p, note):
+    th = f'<img src="/img/{p["id"]}-500.jpg" alt="" width="96" height="128" loading="lazy" decoding="async">' if p['id'] in IMG else '<span class="rb-ph"></span>'
+    return f'''<article class="rb-item"><a class="rb-img" href="/{p["id"]}/" tabindex="-1" aria-hidden="true">{th}</a><div class="rb-txt"><h3><a href="/{p["id"]}/">{e(p["tr"])}</a> <i class="latin">{e(short_la(p))}</i></h3>
+<p class="rb-meta"><span class="regs">{"".join(dot(r) for r in p["bolge"])}</span> {e(", ".join(REG[r]["ad"] for r in p["bolge"]))}{(' · <span class="sf yuksek">' + GUV["yuksek"] + '</span>') if p["guv"] == "yuksek" else ''}</p><p>{e(note)}</p></div></article>'''
+for sm in LIVE_S:
+    ps = [(byId[x], n) for x, n in sm['bitkiler'] if x in byId]
+    path = f'/semboller/{sm["slug"]}/'
+    regs_n = len({r for p, _ in ps for r in p['bolge']})
+    others = ''.join(f'<li><a href="/semboller/{o["slug"]}/"><span class="sym-i" aria-hidden="true">{o["simge"]}</span> {e(o["ad"])}</a></li>' for o in LIVE_S if o is not sm)
+    body = f'''{crumbs(('/semboller/', 'Semboller'), (path, sm['ad']))}
+<article class="sheet">
+<header class="page-head"><span class="eyebrow"><span class="sym-i" aria-hidden="true">{sm["simge"]}</span> Sembol · {len(ps)} bitki · {regs_n} bölge</span><h1>{e(sm["ad"])}</h1><p>{e(sm["giris"])}</p></header>
+{sharebar(sm['ad'] + ': bitkiler ve kültürler', path)}
+<section class="sec"><h2>Bu anlamı taşıyan bitkiler</h2><div class="rb-list">{"".join(sym_item(p, n) for p, n in ps)}</div></section>
+<aside class="disclaimer" role="note"><b>Kültürel kayıt.</b> Ritüel ve sembolik kullanımlar, onları yaşatan toplulukların mirası olarak anlatılır; kullanım önerisi değildir. Listedeki bazı bitkiler zehirlidir ya da Türkiye’de yasal kısıtlıdır; ayrıntılar ve kaynaklar her bitkinin sayfasında.</aside>
+<section class="sec"><h2>Diğer semboller</h2><ul class="otherlist">{others}</ul></section>
+</article>'''
+    write(path, page(f'{sm["ad"]}: kültürlerde bitkilerin sembolik anlamı | Bitki Tabanı', (sm['giris'][:150].rsplit(' ', 1)[0] + '…'), path, body, 'sembol', narrow=True,
+          extra=lds({"@context":"https://schema.org","@type":"Article","headline":sm['ad'],"inLanguage":"tr","url":BASE+path,"author":AUTHOR,"dateModified":CONTENT_DATE}, crumb_ld(('/semboller/', 'Semboller'), (path, sm['ad']))),
+          image=next((f'{BASE}/img/{p["id"]}-960.jpg' for p, _ in ps if p['id'] in IMG), None)))
+    GUIDE_URLS.append(path)
+_sc = ''.join(f'<a class="symcard" href="/semboller/{sm["slug"]}/"><span class="sym-big" aria-hidden="true">{sm["simge"]}</span><b>{e(sm["ad"])}</b><span class="muted-s">{", ".join(e(byId[x]["tr"]) for x, _ in sm["bitkiler"] if x in byId)}</span></a>' for sm in LIVE_S)
+write('/semboller/', page('Bitkilerin sembolik anlamları: koruma, arınma, görü, bereket | Bitki Tabanı', 'Farklı kültürlerde bitkilerin taşıdığı ortak anlamlar: nazar ve koruma, arınma ve tütsü, geçiş törenleri, görü ve kehanet, kutsal ağaçlar, bereket.', '/semboller/',
+      f'''{crumbs(('/semboller/', 'Semboller'))}<header class="page-head"><span class="eyebrow">Semboller · {len(LIVE_S)} anlam</span><h1>Bitkiler ve anlamları</h1><p>Birbirinden binlerce kilometre uzaktaki kültürler, çoğu zaman aynı anlamı bir bitkiye yüklemiş: kötü gözden korunmak, bir mekânı arındırmak, bir hayat evresini işaretlemek, görünmeyenle konuşmak. Her sembolde, o anlamı taşıyan bitkileri farklı coğrafyalardan yan yana getirdik.</p></header>
+<div class="symgrid">{_sc}</div>
+<aside class="disclaimer" role="note"><b>Kültürel kayıt.</b> Ritüel ve sembolik kullanımlar, onları yaşatan toplulukların mirası olarak anlatılır; kullanım önerisi değildir.</aside>''', 'sembol', narrow=True, extra=lds(crumb_ld(('/semboller/', 'Semboller')))))
+GUIDE_URLS.insert(0, '/semboller/')
 
 # --- yöresel ve diğer adlar sözlüğü ---
 import unicodedata as _ud
