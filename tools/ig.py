@@ -236,7 +236,7 @@ def main():
     if PAUSED:
         open(os.path.join(out_root, 'index.html'), 'w', encoding='utf-8').write('<!doctype html><meta charset="utf-8"><meta name="robots" content="noindex"><p>Instagram paylaşımı şu an durduruldu.</p>')
         print('ig: durduruldu'); return
-    for n in range(n0, n0 + (LAUNCH + 4 if n0 < LAUNCH + len(REPOST) else 3)):
+    for n in range(max(0, n0 - 1), n0 + (LAUNCH + 4 if n0 < LAUNCH + len(REPOST) else 3)):   # bir önceki de dursun (telafi gerekirse)
         pid = seq[n % len(seq)]                  # liste bitince başa döner
         if pid not in P:
             print('ig: henüz yayında değil, atlandı:', n, pid); continue
