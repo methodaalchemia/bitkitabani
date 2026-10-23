@@ -142,7 +142,7 @@ def head(title, desc, path, extra='', image=None):
 '''
 
 MENU = [('Keşfet', [('/katalog/', 'Katalog', 'kat'), ('/yeni/', 'Yeni eklenenler', 'yeni'), ('/gunun-bitkisi/', 'Günün bitkisi', 'gun'), ('/oyun/', 'Günün bilmecesi', 'oyun'), ('/kopruler/', 'Kültür köprüleri', 'br')]),
-        ('Rehberler', [('/rehber/', 'Derde göre bitkiler', 'rehber'), ('/tarif/', 'Çay tarifleri', 'tarif'), ('/karsilastirma/', 'Karşılaştırmalar', 'kars'), ('/rehber/ilac-etkilesimi/', 'İlaç etkileşimi', 'etk'), ('/rehber/hamilelik-emzirme/', 'Hamilelik ve emzirme', 'gebe')]),
+        ('Rehberler', [('/rehber/', 'Derde göre bitkiler', 'rehber'), ('/tarif/', 'Çay tarifleri', 'tarif'), ('/karsilastirma/', 'Karşılaştırmalar', 'kars'), ('/rehber/ilac-etkilesimi/', 'İlaç etkileşimi', 'etk'), ('/rehber/hamilelik-emzirme/', 'Hamilelik ve emzirme', 'gebe'), ('/toplama-takvimi/', 'Toplama takvimi', 'takvim'), ('/yoresel-adlar/', 'Yöresel adlar', 'adlar')]),
         ('Bitki Tabanı', [('/hakkinda/', 'Hakkında', 'about'), ('/yontem/', 'Yöntem', 'yontem'), ('https://www.instagram.com/bitkitabani/', 'Instagram', 'ig'), ('/hesap/', 'Hesap', 'acct'), ('/gizlilik/', 'Gizlilik', 'priv'), ('mailto:iletisim@bitkitabani.com', 'İletişim', 'mail')])]
 def nav(cur):
     a = lambda href, label, key: f'<a href="{href}"{" aria-current=\"page\"" if cur == key else ""}{" rel=\"noopener\"" if href.startswith("http") else ""}>{label}</a>'
@@ -231,7 +231,8 @@ def refs(p):
 
 def desc_for(p):
     first = p['kul'][0][1].split('. ')[0].rstrip('.')
-    d = f'{p["tr"]} ({short_la(p)}): {first}. Bilimsel kanıt: {KANIT[p["kanit"]]["ad"].lower()}. Güvenlik notları ve kaynaklar.'
+    d = (f'{p["tr"]} ({short_la(p)}) ne işe yarar? {first}. Bilimsel kanıtı, zararları ve kimlerin kullanmaması gerektiği.' if p['guv'] != 'yuksek'
+         else f'{p["tr"]} ({short_la(p)}): {first}. Bilimsel kanıt: {KANIT[p["kanit"]]["ad"].lower()}. Güvenlik notları ve kaynaklar.')
     return d if len(d) <= 160 else d[:157].rsplit(' ', 1)[0] + '…'
 
 def card(p):
@@ -276,7 +277,7 @@ def toc_and_ids(html):
 for i, p in enumerate(P):
     pid = p['id']; rel = related(pid)
     prev, nxt = P[i-1], P[(i+1) % len(P)]
-    title = (f'{p["tr"]}: nedir, etkileri ve zehirlilik riski' if p['guv'] == 'yuksek' else f'{p["tr"]}: faydaları, kullanımı ve yan etkileri')
+    title = (f'{p["tr"]}: nedir, etkileri ve zehirlilik riski' if p['guv'] == 'yuksek' else f'{p["tr"]} nedir, ne işe yarar? Faydaları ve zararları')
     if len(title) < 44: title += ' | Bitki Tabanı'
     ld = {"@context":"https://schema.org","@type":"Article","headline":f'{p["tr"]} ({short_la(p)})',"inLanguage":"tr","about":{"@type":"Taxon","name":short_la(p),"alternateName":[p['tr']] + [x.strip() for x in p['diger'].split(',')][:4],"taxonRank":"species","parentTaxon":{"@type":"Taxon","name":p['fam'].split(' ')[0],"taxonRank":"family"}},"description":desc_for(p),"author":AUTHOR,"isPartOf":{"@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/"},"dateModified":(max(CONTENT_DATE, YENI[pid].isoformat()) if pid in YENI else CONTENT_DATE),**({"datePublished":YENI[pid].isoformat()} if pid in YENI else {}),"url":f'{BASE}/{pid}/',"image":(f'{BASE}/img/{pid}-960.jpg' if pid in IMG else None),"publisher":{"@type":"Organization","name":"Bitki Tabanı","url":BASE+"/","logo":BASE+"/assets/logo-512.png","sameAs":["https://www.instagram.com/bitkitabani/"]}}
     crumbs = {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana sayfa","item":BASE+"/"},{"@type":"ListItem","position":2,"name":"Katalog","item":BASE+"/katalog/"},{"@type":"ListItem","position":3,"name":p['tr'],"item":f'{BASE}/{pid}/'}]}
@@ -290,8 +291,8 @@ for i, p in enumerate(P):
     regs_txt = ', '.join(REG[r]['ad'] for r in p['bolge'])
     q_nedir = (f'{p["tr"]} nedir?', f'{p["tr"]} ({short_la(p)}), {p["fam"]} familyasından bir bitkidir. Kullanıldığı gelenekler: {regs_txt}. Kullanılan kısmı: {p["kisim"].lower()}.')
     q_ne = (f'{p["tr"]} ne işe yarar?', f'Geleneksel kullanımı: {_first(p["kul"][0][1])} Bilimsel kanıt düzeyi: {KANIT[p["kanit"]]["ad"].lower()}. {_first(p["bilim"])}')
-    q_guv = (f'{p["tr"]} güvenli mi?', f'Güvenlik etiketi: {GUV[p["guv"]].lower()}. {p["guvNot"]}' + (' Yasal durum: ' + YASAL_AD[YASAL[pid][0]] + '.' if pid in YASAL else ''))
-    kisaca = [q_nedir, q_ne, q_guv]
+    q_guv = (f'{p["tr"]} zararlı mı, kimler kullanmamalı?' if p['guv'] != 'yuksek' else f'{p["tr"]} güvenli mi?', f'Güvenlik etiketi: {GUV[p["guv"]].lower()}. {p["guvNot"]}' + (' Yasal durum: ' + YASAL_AD[YASAL[pid][0]] + '.' if pid in YASAL else ''))
+    kisaca = [q_nedir, q_ne, q_guv] + ([(f'{p["tr"]} nasıl kullanılır?', p['haz'])] if p.get('haz') and p['guv'] != 'yuksek' else [])
     kisahtml = '<section class="kisaca" aria-label="Kısaca"><span class="eyebrow">Kısaca</span>' + ''.join(f'<div class="qa"><h2 class="q">{e(q)}</h2><p>{e(a)}</p></div>' for q, a in kisaca) + '</section>'
     if pid in DERIN:
         dd = DERIN[pid]
@@ -965,12 +966,56 @@ write('/karsilastirma/', page('Bitki karşılaştırmaları: hangisi, ne zaman? 
       f'{crumbs(("/karsilastirma/", "Karşılaştırmalar"))}<header class="page-head"><span class="eyebrow">{len(LIVE_C)} karşılaştırma</span><h1>Hangisi, ne zaman?</h1><p>Sık karıştırılan ya da aynı dert için kullanılan bitkiler yan yana: kanıt düzeyi, güvenlik ve başlıca farklar.</p></header><section class="sec"><ul class="guidelist">{kl}</ul></section>{DISCL}', 'kars', narrow=True, extra=lds(crumb_ld(('/karsilastirma/', 'Karşılaştırmalar')))))
 GUIDE_URLS.append('/karsilastirma/')
 
+# --- yöresel ve diğer adlar sözlüğü ---
+import unicodedata as _ud
+_TRA = 'abcçdefgğhıijklmnoöprsştuüvyz'
+def _trkey(w): return [(-1 if c == ' ' else _TRA.index(c) if c in _TRA else 100 + ord(c)) for c in w.replace('I', 'ı').replace('İ', 'i').lower()]
+def _cap(w): return (w[0].replace('i', 'İ').replace('ı', 'I').upper() + w[1:]) if w else w
+_BAD = re.compile(r'\b(akrabası|türleri|türü|denir|olarak|adıyla|anlamına|bilinir|ve|ile|gibi|da|de)\b', re.I)
+_names = {}
+for p in P:
+    if p['guv'] == 'yuksek' and False: pass
+    srcs = [p['diger']] + [EK.get(p['id'], {}).get('yoresel', '')]
+    for src in srcs:
+        for n in re.split(r'[,;/]', re.sub(r'\([^)]*\)', '', src or '')):
+            n = n.strip().strip('.').strip()
+            if 2 < len(n) < 32 and len(n.split()) <= 3 and not _BAD.search(n) and not re.search(r'[A-Z][a-z]+ [a-z]+$', n) and n.replace('I', 'ı').replace('İ', 'i').lower() != p['tr'].replace('I', 'ı').replace('İ', 'i').lower():
+                _names.setdefault(n.replace('I', 'ı').replace('İ', 'i').lower(), (_cap(n), set()))[1].add(p['id'])
+_rows = sorted(_names.values(), key=lambda x: _trkey(x[0]))
+_groups = {}
+for n, ids in _rows:
+    L = n.replace('i', 'İ').replace('ı', 'I').upper()[0] if n else '#'
+    _groups.setdefault(L, []).append((n, ids))
+_letters = ''.join(f'<a href="#harf-{_ud.normalize("NFKD", L).encode("ascii", "ignore").decode() or "x"}{i}">{L}</a>' for i, L in enumerate(_groups))
+_sec = ''.join(f'<section class="sec" id="harf-{_ud.normalize("NFKD", L).encode("ascii", "ignore").decode() or "x"}{i}"><h2>{L}</h2><ul class="adlar">' + ''.join(f'<li><b>{e(n)}</b> → ' + ', '.join(f'<a href="/{x}/">{e(byId[x]["tr"])}</a>' for x in sorted(ids)) + '</li>' for n, ids in items) + '</ul></section>' for i, (L, items) in enumerate(_groups.items()))
+path = '/yoresel-adlar/'
+write(path, page('Şifalı bitkilerin yöresel ve yabancı adları: hangi ad hangi bitki? | Bitki Tabanı', f'{len(_rows)} yöresel, halk arasındaki ve yabancı bitki adı A’dan Z’ye: her ad, katalogdaki doğru bitkiye bağlanır. Benzer adlı bitkileri karıştırmamak için.', path,
+      f'''{crumbs(('/rehber/', 'Rehberler'), (path, 'Yöresel adlar'))}<header class="page-head"><span class="eyebrow">Sözlük · {len(_rows)} ad</span><h1>Yöresel adlar: hangi ad hangi bitki?</h1><p>Aynı bitki Anadolu’nun farklı yörelerinde farklı adlarla anılır; bazen de aynı ad birbirinden çok farklı iki bitkiye verilir. Aşağıda katalogdaki bitkilerin yöresel, halk arasındaki ve başka dillerdeki adları A’dan Z’ye sıralı; her ad, bitkinin kendi sayfasına bağlanır.</p></header>
+<nav class="harfler" aria-label="Harfler">{_letters}</nav>{_sec}
+<aside class="warnbox" role="note"><b>Karıştırmayın:</b> Bir ad birden fazla bitkiye bağlanıyorsa, o bitkiler halk arasında aynı adla anılıyor demektir. Toplarken ya da satın alırken Latince adına ve bitkinin sayfasındaki “karıştırma riski” notuna bakın.</aside>''', 'rehber', narrow=True, extra=lds(crumb_ld(('/rehber/', 'Rehberler'), (path, 'Yöresel adlar')))))
+GUIDE_URLS.append(path)
+
+# --- toplama takvimi (ay ay) ---
+_cal = {m: [] for m in range(1, 13)}
+for p in P:
+    if 'anadolu' in p['bolge'] and p['guv'] != 'yuksek' and p['id'] not in YASAL and not KORUMA.get(p['id'], {}).get('rozet') and p['id'] in EK:
+        for m in months_of(EK[p['id']].get('mevsim', '')): _cal[m].append(p)
+_cur = LOCAL_DAY.month
+_order = [(_cur + i - 1) % 12 + 1 for i in range(12)]
+_cs = ''.join(f'<section class="sec" id="ay-{m}"><h2>{AYLAR[m-1]}{" (bu ay)" if m == _cur else ""}</h2>' + ('<ul class="adlar">' + ''.join(f'<li><a href="/{q["id"]}/"><b>{e(q["tr"])}</b></a> · {e(EK[q["id"]]["mevsim"])}</li>' for q in sorted(_cal[m], key=lambda q: _trkey(q["tr"]))) + '</ul>' if _cal[m] else '<p class="muted-s">Bu ay katalogda toplama mevsimi olan bir bitki yok.</p>') + '</section>' for m in _order)
+path = '/toplama-takvimi/'
+write(path, page(f'Şifalı bitki toplama takvimi: {AYLAR[_cur-1]} ayında hangi bitkiler toplanır? | Bitki Tabanı', f'Anadolu’da ay ay toplanan şifalı bitkiler. {AYLAR[_cur-1]} ayında toplama mevsimi olan {len(_cal[_cur])} bitki ve yılın geri kalanı.', path,
+      f'''{crumbs(('/rehber/', 'Rehberler'), (path, 'Toplama takvimi'))}<header class="page-head"><span class="eyebrow">Ay ay · {AYLAR[_cur-1]} başta</span><h1>Şifalı bitki toplama takvimi</h1><p>Anadolu’da yetişen bitkilerin toplama mevsimleri, kayıtlardaki “Doğada” bilgisinden derlendi. Liste her ay kendiliğinden içinde bulunduğumuz aydan başlar. Koruma altındaki, yasal kısıtlı ve yüksek riskli bitkiler bu listeye alınmaz.</p></header>
+<aside class="warnbox" role="note"><b>Toplarken:</b> Yalnızca kesin tanıdığınız bitkileri, yol kenarından ve ilaçlanmış alanlardan uzakta toplayın; bir bitkinin tamamını değil bir kısmını alın ki yeniden büyüyebilsin.</aside>{_cs}''', 'rehber', narrow=True, extra=lds(crumb_ld(('/rehber/', 'Rehberler'), (path, 'Toplama takvimi')))))
+GUIDE_URLS.append(path)
+
 # --- rehber ana sayfası ---
 gl = ''.join(f'<li><a href="/rehber/{k["slug"]}/"><b>{e(k["kisa"])}</b></a><span>{e(k["aciklama"])}</span></li>' for k in LIVE_K)
 hub = f'''{crumbs(('/rehber/', 'Rehberler'))}
 <header class="page-head"><span class="eyebrow">Rehberler</span><h1>Hangi derde hangi bitki? Kanıtıyla ve riskleriyle</h1><p>Katalogdaki bitkileri şikâyetlere göre bir araya getirdik. Her rehberde bitkiler kanıtı en güçlü olandan başlayarak sıralanır; her birinin yanında güvenlik etiketi ve sayfasına bağlantı bulunur.</p></header>
 <section class="sec"><h2>Güvenlik</h2><ul class="guidelist"><li><a href="/rehber/ilac-etkilesimi/"><b>İlaç etkileşimi aracı</b></a><span>Kullandığın ilaç grubunu seç, katalogda o ilaçla etkileşimi bildirilen bitkileri gör.</span></li><li><a href="/rehber/hamilelik-emzirme/"><b>Hamilelik ve emzirme</b></a><span>Hamilelikte ve emzirirken kullanılmaması ya da dikkatle kullanılması gereken bitkiler.</span></li></ul></section>
 <section class="sec"><h2>Derde göre</h2><ul class="guidelist">{gl}</ul></section>
+<section class="sec"><h2>Doğada</h2><ul class="guidelist"><li><a href="/toplama-takvimi/"><b>Toplama takvimi</b></a><span>Anadolu’da ay ay toplanan şifalı bitkiler.</span></li><li><a href="/yoresel-adlar/"><b>Yöresel adlar sözlüğü</b></a><span>Halk arasındaki adlardan doğru bitkiye.</span></li></ul></section>
 <section class="sec"><h2>Karşılaştırmalar</h2><ul class="otherlist">{"".join(f'<li><a href="/karsilastirma/{c["a"]}-ve-{c["b"]}/">{e(c["baslik"])}</a></li>' for c in LIVE_C)}</ul></section>
 <section class="sec"><h2>Tarifler</h2><ul class="otherlist">{"".join(f'<li><a href="/tarif/{t["slug"]}/">{e(t["ad"])}</a></li>' for t in LIVE_T)}</ul></section>
 {DISCL}'''
