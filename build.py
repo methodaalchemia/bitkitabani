@@ -141,17 +141,21 @@ def head(title, desc, path, extra='', image=None):
 <div class="wrap{{narrow}}">
 '''
 
+MENU = [('Keşfet', [('/katalog/', 'Katalog', 'kat'), ('/yeni/', 'Yeni eklenenler', 'yeni'), ('/gunun-bitkisi/', 'Günün bitkisi', 'gun'), ('/oyun/', 'Günün bilmecesi', 'oyun'), ('/kopruler/', 'Kültür köprüleri', 'br')]),
+        ('Rehberler', [('/rehber/', 'Derde göre bitkiler', 'rehber'), ('/tarif/', 'Çay tarifleri', 'tarif'), ('/karsilastirma/', 'Karşılaştırmalar', 'kars'), ('/rehber/ilac-etkilesimi/', 'İlaç etkileşimi', 'etk'), ('/rehber/hamilelik-emzirme/', 'Hamilelik ve emzirme', 'gebe')]),
+        ('Bitki Tabanı', [('/hakkinda/', 'Hakkında', 'about'), ('/yontem/', 'Yöntem', 'yontem'), ('https://www.instagram.com/bitkitabani/', 'Instagram', 'ig'), ('/hesap/', 'Hesap', 'acct'), ('/gizlilik/', 'Gizlilik', 'priv'), ('mailto:iletisim@bitkitabani.com', 'İletişim', 'mail')])]
 def nav(cur):
-    a = lambda href, label, key: f'<a href="{href}"{" aria-current=\"page\"" if cur == key else ""}>{label}</a>'
-    return f'''<div class="motif" aria-hidden="true"></div><div class="site-nav"><a class="logo" href="/">Bitki <em>Tabanı</em></a><nav>{a("/katalog/", "Katalog", "kat")}{a("/yeni/", "Yeni", "yeni")}{a("/rehber/", "Rehberler", "rehber")}{a("/kopruler/", "Kültür köprüleri", "br")}{a("/hakkinda/", "Hakkında", "about")}{a("/hesap/", "Hesap", "acct")}<button type="button" class="themebtn" data-l="tr" aria-label="Açık ya da koyu tema">◐</button></nav></div>'''
+    a = lambda href, label, key: f'<a href="{href}"{" aria-current=\"page\"" if cur == key else ""}{" rel=\"noopener\"" if href.startswith("http") else ""}>{label}</a>'
+    groups = ''.join(f'<div class="mgrp"><b>{g}</b>' + ''.join(a(h, l, k) for h, l, k in items) + '</div>' for g, items in MENU)
+    return f'''<div class="motif" aria-hidden="true"></div><div class="site-nav"><a class="logo" href="/">Bitki <em>Tabanı</em></a><nav class="topnav" aria-label="Ana bölümler">{a("/katalog/", "Katalog", "kat")}{a("/rehber/", "Rehberler", "rehber")}{a("/tarif/", "Tarifler", "tarif")}{a("/yeni/", "Yeni", "yeni")}</nav><div class="navr"><button type="button" class="themebtn" data-l="tr" aria-label="Açık ya da koyu tema">◐</button><details class="menu"><summary aria-label="Menü"><span class="burger" aria-hidden="true"></span><span class="mlab">Menü</span></summary><nav class="menu-panel" aria-label="Site menüsü">{groups}<div class="mgrp lang"><!--LANG--></div></nav></details></div></div>'''
 
 FOOT = '''<div class="motif indigo" aria-hidden="true"></div>
 <footer class="site">
+  <!--FOOTNAV-->
   <div>
     <h3>Bu site nedir</h3>
     <p>Bilgi ve merak için hazırlanmış bir derlemedir; tedavi önerisi değildir. Bir bitkiyi kullanmadan önce, özellikle ilaç kullanıyorsan, hamileysen ya da emziriyorsan bir hekime veya eczacıya danış.</p>
     <p>Fotoğraflar Wikimedia Commons’tan özgür lisanslarla alınmıştır; yazarı ve lisansı her bitkinin sayfasında yazılıdır.</p>
-    <p><a href="/yeni/">Yeni eklenenler</a> · <a href="/rehber/">Rehberler</a> · <a href="/tarif/">Tarifler</a> · <a href="/rehber/ilac-etkilesimi/">İlaç etkileşimi</a> · <a href="https://www.instagram.com/bitkitabani/" rel="noopener">Instagram</a> · <a href="/yontem/">Yöntem</a> · <a href="/hesap/">Hesap</a> · <a href="/gizlilik/">Gizlilik</a> · <a href="mailto:iletisim@bitkitabani.com">İletişim</a></p>
   </div>
   <div class="legend">
     <h3>Kanıt düzeyi</h3>
@@ -170,6 +174,8 @@ FOOT = '''<div class="motif indigo" aria-hidden="true"></div>
 </div>
 '''
 
+FOOTNAV = '<nav class="footnav" aria-label="Site haritası">' + ''.join(f'<div><h3>{g}</h3><ul>' + ''.join(f'<li><a href="{h}"' + (' rel="noopener"' if h.startswith('http') else '') + f'>{l}</a></li>' for h, l, k in items) + '</ul></div>' for g, items in MENU) + '</nav>'
+FOOT = FOOT.replace('<!--FOOTNAV-->', FOOTNAV)
 def page(title, desc, path, body, cur, scripts='', narrow=False, extra='', image=None):
     h = head(title, desc, path, extra, image).replace('{narrow}', ' narrow' if narrow else '')
     return h + nav(cur) + body + FOOT + '<script src="/assets/theme.js" defer></script><script src="/assets/streak.js" defer></script><script src="/assets/sync.js" defer></script>' + scripts.replace('<script src="/assets/streak.js" defer></script>', '') + '\n</body>\n</html>\n'
@@ -842,7 +848,7 @@ body = f'''{crumbs(('/rehber/', 'Rehberler'), (path, 'Hamilelik ve emzirme'))}
 {UPD}
 <section class="sec"><h2>Diğer rehberler</h2>{other_guides("")}</section>
 </article>'''
-write(path, page('Hamilelikte ve emzirirken dikkat edilmesi gereken bitkiler | Bitki Tabanı', f'Hamilelikte ve emzirirken kullanılmaması ya da dikkatle kullanılması gereken {len(preg)} şifalı bitki ve uyarıları: adaçayı, rezene, sinameki, hayıt ve diğerleri.', path, body, 'rehber', narrow=True,
+write(path, page('Hamilelikte ve emzirirken dikkat edilmesi gereken bitkiler | Bitki Tabanı', f'Hamilelikte ve emzirirken kullanılmaması ya da dikkatle kullanılması gereken {len(preg)} şifalı bitki ve uyarıları: adaçayı, rezene, sinameki, hayıt ve diğerleri.', path, body, 'gebe', narrow=True,
       extra=lds({"@context":"https://schema.org","@type":"Article","headline":"Hamilelikte ve emzirirken dikkat edilmesi gereken bitkiler","inLanguage":"tr","url":BASE+path,"author":AUTHOR,"dateModified":CONTENT_DATE}, crumb_ld(('/rehber/', 'Rehberler'), (path, 'Hamilelik ve emzirme')))))
 GUIDE_URLS.append(path)
 
@@ -893,7 +899,7 @@ body = f'''{crumbs(('/rehber/', 'Rehberler'), (path, 'İlaç etkileşimi'))}
 {UPD}
 <section class="sec"><h2>Diğer rehberler</h2>{other_guides("")}</section>
 </article>'''
-write(path, page('Bitki ve ilaç etkileşimi: hangi bitki hangi ilaçla sorun çıkarır? | Bitki Tabanı', f'Kan sulandırıcı, tansiyon, şeker, antidepresan ve doğum kontrol hapı gibi ilaçlarla etkileşen {nplants} şifalı bitki. İlaç grubunu seç, etkileşimleri gör.', path, body, 'rehber', '<script src="/assets/etkilesim.js" defer></script>', narrow=True,
+write(path, page('Bitki ve ilaç etkileşimi: hangi bitki hangi ilaçla sorun çıkarır? | Bitki Tabanı', f'Kan sulandırıcı, tansiyon, şeker, antidepresan ve doğum kontrol hapı gibi ilaçlarla etkileşen {nplants} şifalı bitki. İlaç grubunu seç, etkileşimleri gör.', path, body, 'etk', '<script src="/assets/etkilesim.js" defer></script>', narrow=True,
       extra=lds({"@context":"https://schema.org","@type":"Article","headline":"Bitki ve ilaç etkileşimi","inLanguage":"tr","url":BASE+path,"author":AUTHOR,"dateModified":CONTENT_DATE}, crumb_ld(('/rehber/', 'Rehberler'), (path, 'İlaç etkileşimi')))))
 GUIDE_URLS.append(path)
 
@@ -912,7 +918,7 @@ for t in LIVE_T:
 <section class="sec"><h2>Hazırlanışı</h2><ol class="adim">{"".join(f'<li>{e(a)}</li>' for a in t["adim"])}</ol></section>
 <p class="fact">{e(t["ipucu"])}</p>
 <aside class="warnbox" role="note"><b>Kimler dikkat etmeli?</b> {e(p["guvNot"])}{(' <a href="/' + p["id"] + '/">İlaç etkileşimleri bitkinin sayfasında.</a>') if p["id"] in ETK else ''}</aside>
-<section class="sec"><h2>{e(p["tr"])} hakkında</h2><p>{e(p["bilim"])}</p><p><a class="cta" href="/{p["id"]}/">{e(p["tr"])} sayfasının tamamı →</a></p></section>
+<p><a class="cta" href="/{p["id"]}/">{e(p["tr"])}: bilim ne diyor, ilaç etkileşimleri ve kaynaklar →</a></p>
 {DISCL}
 <section class="sec"><h2>Diğer tarifler</h2><ul class="otherlist">{"".join(f'<li><a href="/tarif/{x["slug"]}/">{e(x["ad"])}</a></li>' for x in others)}</ul><p><a class="cta" href="/tarif/">Bütün tarifler →</a></p></section>
 </article>'''
@@ -920,12 +926,12 @@ for t in LIVE_T:
           "prepTime":iso_min(t['hazirlik']),"totalTime":iso_min(t['toplam']),"recipeYield":t['verim'],"recipeCategory":"İçecek" if 'corba' not in t['slug'] else 'Çorba',"recipeCuisine":"Türk",
           "keywords":f'{p["tr"]}, {short_la(p)}, bitki çayı',"recipeIngredient":t['malzeme'],"recipeInstructions":[{"@type":"HowToStep","text":a} for a in t['adim']]}
     if p['id'] in IMG: ld['image'] = [f'{BASE}/img/{p["id"]}-960.jpg']
-    write(path, page(f'{t["ad"]} nasıl yapılır? | Bitki Tabanı', (t['kisa'] + f' Malzemeler, ölçüler ve kimlerin dikkat etmesi gerektiği.')[:158], path, body, 'rehber', narrow=True,
+    write(path, page(f'{t["ad"]} nasıl yapılır? | Bitki Tabanı', (t['kisa'] + f' Malzemeler, ölçüler ve kimlerin dikkat etmesi gerektiği.')[:158], path, body, 'tarif', narrow=True,
           extra=lds(ld, crumb_ld(('/tarif/', 'Tarifler'), (path, t['ad']))), image=gimage([p['id']])))
     GUIDE_URLS.append(path)
 tl = ''.join(f'<a class="card" href="/tarif/{t["slug"]}/">{ph(byId[t["bitki"]], 500)}<div class="body"><h2>{e(t["ad"])}</h2><p class="muted-s">{e(t["kisa"])}</p><div class="foot"><span class="ev">{t["toplam"]} dk · {e(t["verim"])}</span></div></div></a>' for t in LIVE_T)
 write('/tarif/', page('Bitki çayı tarifleri: ölçüleri ve demleme süreleriyle | Bitki Tabanı', f'Ihlamur, papatya, zencefil, kuşburnu ve {len(LIVE_T)-4} bitki çayı ve tarifi: ölçüler, demleme süreleri ve kimlerin dikkat etmesi gerektiği.', '/tarif/',
-      f'{crumbs(("/tarif/", "Tarifler"))}<header class="page-head"><span class="eyebrow">{len(LIVE_T)} tarif</span><h1>Bitki çayları ve tarifler</h1><p>Katalogdaki bitkilerin geleneksel hazırlanışları: ölçüler, demleme süreleri ve her tarifin altında kimlerin dikkat etmesi gerektiği.</p></header><div class="grid">{tl}</div>{DISCL}', 'rehber',
+      f'{crumbs(("/tarif/", "Tarifler"))}<header class="page-head"><span class="eyebrow">{len(LIVE_T)} tarif</span><h1>Bitki çayları ve tarifler</h1><p>Katalogdaki bitkilerin geleneksel hazırlanışları: ölçüler, demleme süreleri ve her tarifin altında kimlerin dikkat etmesi gerektiği.</p></header><div class="grid">{tl}</div>{DISCL}', 'tarif',
       extra=lds(crumb_ld(('/tarif/', 'Tarifler')))))
 GUIDE_URLS.append('/tarif/')
 
@@ -942,18 +948,22 @@ for c in LIVE_C:
 <section class="sec"><h2>Yan yana</h2>{cmp_rows([a, b])}</section>
 <section class="sec"><h2>Başlıca farklar</h2><ul class="farklar">{"".join(f'<li>{e(x)}</li>' for x in c["fark"])}</ul></section>
 <section class="kisaca"><h2>Hangisi, ne zaman?</h2><p>{e(c["sonuc"])}</p></section>
-<section class="sec"><h2>Bilim ne diyor?</h2>{"".join(f'<p><b>{e(q["tr"])}:</b> {e(q["bilim"])}</p>' for q in (a, b))}</section>
-<section class="sec"><h2>Güvenlik</h2>{"".join(f'<p><b>{e(q["tr"])}:</b> {e(q["guvNot"])}</p>' for q in (a, b))}{('<h3>İlaç etkileşimleri</h3>' + ets) if ets else ''}</section>
+<section class="sec"><h2>Ayrıntılar</h2><p>Bilimsel kanıtın tamamı, güvenlik notları, ilaç etkileşimleri ve kaynaklar her bitkinin kendi sayfasında:</p><p class="brlinks">{"".join(f'<a class="cta" href="/{q["id"]}/">{e(q["tr"])} →</a> ' for q in (a, b))}</p></section>
 {DISCL}
 {UPD}
 <section class="sec"><h2>Diğer karşılaştırmalar</h2><ul class="otherlist">{"".join(f'<li><a href="/karsilastirma/{x["a"]}-ve-{x["b"]}/">{e(x["baslik"])}</a></li>' for x in LIVE_C if x is not c)}</ul></section>
 </article>'''
     desc = f'{a["tr"]} ve {b["tr"]} arasındaki farklar: bilimsel kanıt, kullanım, güvenlik ve ilaç etkileşimleri yan yana.'
-    write(path, page(f'{c["baslik"]} | Bitki Tabanı', desc, path, body, 'rehber', narrow=True,
+    write(path, page(f'{c["baslik"]} | Bitki Tabanı', desc, path, body, 'kars', narrow=True,
           extra=lds({"@context":"https://schema.org","@type":"Article","headline":c['baslik'],"description":desc,"inLanguage":"tr","url":BASE+path,"author":AUTHOR,"dateModified":CONTENT_DATE,
                      "about":[{"@type":"Taxon","name":short_la(q),"alternateName":q['tr']} for q in (a, b)],"image":[f'{BASE}/img/{q["id"]}-960.jpg' for q in (a, b) if q['id'] in IMG]},
                     crumb_ld(('/rehber/', 'Rehberler'), (path, c['baslik']))), image=gimage([a['id'], b['id']])))
     GUIDE_URLS.append(path)
+
+kl = ''.join(f'<li><a href="/karsilastirma/{c["a"]}-ve-{c["b"]}/"><b>{e(c["baslik"])}</b></a><span>{e(c["sonuc"])}</span></li>' for c in LIVE_C)
+write('/karsilastirma/', page('Bitki karşılaştırmaları: hangisi, ne zaman? | Bitki Tabanı', 'Zencefil mi zerdeçal mı, adaçayı mı dağ çayı mı? Sık karıştırılan şifalı bitkiler kanıt, kullanım ve güvenlik açısından yan yana.', '/karsilastirma/',
+      f'{crumbs(("/karsilastirma/", "Karşılaştırmalar"))}<header class="page-head"><span class="eyebrow">{len(LIVE_C)} karşılaştırma</span><h1>Hangisi, ne zaman?</h1><p>Sık karıştırılan ya da aynı dert için kullanılan bitkiler yan yana: kanıt düzeyi, güvenlik ve başlıca farklar.</p></header><section class="sec"><ul class="guidelist">{kl}</ul></section>{DISCL}', 'kars', narrow=True, extra=lds(crumb_ld(('/karsilastirma/', 'Karşılaştırmalar')))))
+GUIDE_URLS.append('/karsilastirma/')
 
 # --- rehber ana sayfası ---
 gl = ''.join(f'<li><a href="/rehber/{k["slug"]}/"><b>{e(k["kisa"])}</b></a><span>{e(k["aciklama"])}</span></li>' for k in LIVE_K)

@@ -56,16 +56,20 @@ def run(G):
 <body>
 <div class="wrap{{narrow}}">
 '''
+    MENU_EN = [('Explore', [('/en/catalog/', 'Catalog', 'kat'), ('/en/bridges/', 'Culture bridges', 'br')]),
+               ('Guides', [('/en/guides/', 'Herbs by complaint', 'guides'), ('/en/recipes/', 'Herbal tea recipes', 'recipes')]),
+               ('Bitki Tabanı', [('/en/about/', 'About and method', 'about'), ('https://www.instagram.com/bitkitabani/', 'Instagram', 'ig'), ('/en/account/', 'Account', 'acct'), ('/en/privacy/', 'Privacy', 'priv'), ('mailto:iletisim@bitkitabani.com', 'Contact', 'mail')])]
     def nav(cur, tr_path):
-        a = lambda href, label, key: f'<a href="{href}"{" aria-current=\"page\"" if cur == key else ""}>{label}</a>'
-        return f'''<div class="motif" aria-hidden="true"></div><div class="site-nav"><a class="logo" href="/en/">Bitki <em>Tabanı</em></a><nav>{a("/en/catalog/", "Catalog", "kat")}{a("/en/guides/", "Guides", "guides")}{a("/en/bridges/", "Culture bridges", "br")}{a("/en/about/", "About", "about")}<a href="/en/account/"{" aria-current=\"page\"" if cur == "acct" else ""}>Account</a><a href="{tr_path}" lang="tr" hreflang="tr">Türkçe</a><button type="button" class="themebtn" data-l="en" aria-label="Light or dark theme">◐</button></nav></div>'''
+        a = lambda href, label, key: f'<a href="{href}"{" aria-current=\"page\"" if cur == key else ""}{" rel=\"noopener\"" if href.startswith("http") else ""}>{label}</a>'
+        groups = ''.join(f'<div class="mgrp"><b>{g}</b>' + ''.join(a(h, l, k) for h, l, k in items) + '</div>' for g, items in MENU_EN)
+        return f'''<div class="motif" aria-hidden="true"></div><div class="site-nav"><a class="logo" href="/en/">Bitki <em>Tabanı</em></a><nav class="topnav" aria-label="Main sections">{a("/en/catalog/", "Catalog", "kat")}{a("/en/guides/", "Guides", "guides")}{a("/en/recipes/", "Recipes", "recipes")}<a href="{tr_path}" lang="tr" hreflang="tr">Türkçe</a></nav><div class="navr"><button type="button" class="themebtn" data-l="en" aria-label="Light or dark theme">◐</button><details class="menu"><summary aria-label="Menu"><span class="burger" aria-hidden="true"></span><span class="mlab">Menu</span></summary><nav class="menu-panel" aria-label="Site menu">{groups}<div class="mgrp lang"><a href="{tr_path}" lang="tr" hreflang="tr">Türkçe</a></div></nav></details></div></div>'''
     FOOT = '''<div class="motif indigo" aria-hidden="true"></div>
 <footer class="site">
+  <!--FOOTNAV-->
   <div>
     <h3>About this site</h3>
     <p>A compilation made for knowledge and curiosity; it is not medical advice. Before using any plant, especially if you take medicines, are pregnant or breastfeeding, talk to a doctor or pharmacist.</p>
     <p>Photos are from Wikimedia Commons under free licences; the author and licence are given on each plant’s page.</p>
-    <p><a href="/en/guides/">Guides</a> · <a href="/en/recipes/">Recipes</a> · <a href="/en/about/">About and method</a> · <a href="/en/account/">Account</a> · <a href="/en/privacy/">Privacy</a> · <a href="/">Türkçe</a> · <a href="mailto:iletisim@bitkitabani.com">Contact</a></p>
   </div>
   <div class="legend">
     <h3>Evidence level</h3>
@@ -83,6 +87,7 @@ def run(G):
 </footer>
 </div>
 '''
+    FOOT = FOOT.replace('<!--FOOTNAV-->', '<nav class="footnav" aria-label="Site map">' + ''.join(f'<div><h3>{g}</h3><ul>' + ''.join(f'<li><a href="{h}"' + (' rel="noopener"' if h.startswith('http') else '') + f'>{l}</a></li>' for h, l, k in items) + '</ul></div>' for g, items in MENU_EN) + '</nav>')
     def page(title, desc, path, tr_path, body, cur, scripts='', narrow=False, extra='', image=None):
         h = head(title, desc, path, tr_path, extra, image).replace('{narrow}', ' narrow' if narrow else '')
         return h + nav(cur, tr_path) + body + FOOT + '<script src="/assets/theme.js" defer></script><script src="/assets/streak.js" defer></script><script src="/assets/sync.js" defer></script>' + scripts + '\n</body>\n</html>\n'
@@ -432,18 +437,18 @@ def run(G):
 <section class="sec"><h2>Method</h2><ol class="adim">{"".join(f"<li>{e(a)}</li>" for a in r["adim"])}</ol></section>
 <p class="fact">{e(r["ipucu"])}</p>
 <aside class="warnbox" role="note"><b>Who should be careful?</b> {e(x["safety"])}</aside>
-<section class="sec"><h2>About {e(name(p))}</h2><p>{e(x["science"])}</p><p><a class="cta" href="/en/{p["id"]}/">Full {e(name(p))} page →</a></p></section>
+<p><a class="cta" href="/en/{p["id"]}/">{e(name(p))}: the science, drug interactions and sources →</a></p>
 {DIS}
 <section class="sec"><h2>More recipes</h2><ul class="otherlist">{others}</ul></section>
 </article>'''
         rl = {"@context":"https://schema.org","@type":"Recipe","name":r['ad'],"description":r['kisa'],"inLanguage":"en","author":AUTHOR,"datePublished":CONTENT_DATE,"prepTime":f'PT{t["hazirlik"]}M',"totalTime":f'PT{t["toplam"]}M',
               "recipeYield":r['verim'],"recipeCategory":"Soup" if 'soup' in r['slug'] else "Drink","keywords":f'{name(p)}, {short_la(p)}, herbal tea',"recipeIngredient":r['malzeme'],"recipeInstructions":[{"@type":"HowToStep","text":a} for a in r['adim']]}
         if p['id'] in IMG: rl['image'] = [f'{BASE}/img/{p["id"]}-960.jpg']
-        write(path, page(f'How to make {r["ad"].lower() if not r["ad"].startswith(("Mountain","Cardamom")) else r["ad"]} | Bitki Tabanı', (r['kisa'] + ' Ingredients, amounts and who should be careful.')[:158], path, f'/tarif/{t["slug"]}/', body, 'guides', narrow=True, extra=ld(rl), image=(f'{BASE}/img/{p["id"]}-960.jpg' if p['id'] in IMG else None)))
+        write(path, page(f'How to make {r["ad"].lower() if not r["ad"].startswith(("Mountain","Cardamom")) else r["ad"]} | Bitki Tabanı', (r['kisa'] + ' Ingredients, amounts and who should be careful.')[:158], path, f'/tarif/{t["slug"]}/', body, 'recipes', narrow=True, extra=ld(rl), image=(f'{BASE}/img/{p["id"]}-960.jpg' if p['id'] in IMG else None)))
     if TL:
         cards = ''.join(f'<a class="card" href="/en/recipes/{T_EN[t["slug"]]["slug"]}/">{ph(byId[t["bitki"]], 500)}<div class="body"><h2>{e(T_EN[t["slug"]]["ad"])}</h2><p class="muted-s">{e(T_EN[t["slug"]]["kisa"])}</p><div class="foot"><span class="ev">{t["toplam"]} min · {e(T_EN[t["slug"]]["verim"])}</span></div></div></a>' for t in TL)
         write('/en/recipes/', page('Herbal tea recipes with amounts and steeping times | Bitki Tabanı', f'{len(TL)} herbal teas and recipes: linden, chamomile, ginger, rose hip and more, with amounts, steeping times and who should be careful.', '/en/recipes/', '/tarif/',
-              f'<nav class="crumbs" aria-label="Breadcrumb"><a href="/en/">Home</a><span>/</span><span>Recipes</span></nav><header class="page-head"><span class="eyebrow">{len(TL)} recipes</span><h1>Herbal teas and recipes</h1><p>Traditional preparations of plants from the catalog: amounts, steeping times, and under every recipe, who should be careful.</p></header><div class="grid">{cards}</div>{DIS}', 'guides'))
+              f'<nav class="crumbs" aria-label="Breadcrumb"><a href="/en/">Home</a><span>/</span><span>Recipes</span></nav><header class="page-head"><span class="eyebrow">{len(TL)} recipes</span><h1>Herbal teas and recipes</h1><p>Traditional preparations of plants from the catalog: amounts, steeping times, and under every recipe, who should be careful.</p></header><div class="grid">{cards}</div>{DIS}', 'recipes'))
     import unicodedata
     def _sl(t): return re.sub(r'[^a-z0-9]+', '-', unicodedata.normalize('NFKD', t.split('(')[0].lower()).encode('ascii', 'ignore').decode()).strip('-')
     def cpath(c): return f'/en/compare/{_sl(name(byId[c["a"]]))}-vs-{_sl(name(byId[c["b"]]))}/'
@@ -464,8 +469,7 @@ def run(G):
 <section class="sec"><h2>Side by side</h2><div class="tablewrap"><table class="cmp"><thead>{th}</thead><tbody>{tb}</tbody></table></div></section>
 <section class="sec"><h2>Key differences</h2><ul class="farklar">{"".join(f"<li>{e(x)}</li>" for x in r["fark"])}</ul></section>
 <section class="kisaca"><h2>Which one, when?</h2><p>{e(r["sonuc"])}</p></section>
-<section class="sec"><h2>What the science says</h2>{"".join(f'<p><b>{e(name(q))}:</b> {e(EN[q["id"]]["science"])}</p>' for q in ps)}</section>
-<section class="sec"><h2>Safety</h2>{"".join(f'<p><b>{e(name(q))}:</b> {e(EN[q["id"]]["safety"])}</p>' for q in ps)}{("<h3>Drug interactions</h3>" + ets) if ets else ""}</section>
+<section class="sec"><h2>Details</h2><p>The full evidence, safety notes, drug interactions and sources are on each plant’s own page:</p><p class="brlinks">{"".join(f'<a class="cta" href="/en/{q["id"]}/">{e(name(q))} →</a> ' for q in ps)}</p></section>
 {DIS}
 <section class="sec"><h2>Other comparisons</h2><ul class="otherlist">{others}</ul></section>
 </article>'''
@@ -485,6 +489,6 @@ def run(G):
         tag = f'<link rel="alternate" hreflang="tr" href="{BASE}{tr_path}">\n<link rel="alternate" hreflang="en" href="{BASE}{en_path}">\n<link rel="alternate" hreflang="x-default" href="{BASE}{tr_path}">\n'
         h = h.replace('<link rel="canonical"', tag + '<link rel="canonical"', 1)
         h = h.replace('{a("/hesap/"', '{a("/hesap/"')
-        h = h.replace('<a href="/hesap/">Hesap</a></nav>', f'<a href="/hesap/">Hesap</a><a href="{en_path}" lang="en" hreflang="en">English</a></nav>', 1)
+        h = h.replace('<!--LANG-->', f'<a href="{en_path}" lang="en" hreflang="en">English</a>', 1)
         open(f, 'w', encoding='utf-8').write(h)
     return sorted(PAIRS)

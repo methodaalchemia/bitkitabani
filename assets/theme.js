@@ -15,3 +15,7 @@
   var fb = document.querySelector('details.fbox');
   if (fb && window.matchMedia && window.matchMedia('(max-width: 720px)').matches && !/[?&](bolge|kat|kanit|guv|durum)=/.test(location.search)) fb.open = false;
 })();
+/* Menü: dışarı tıklayınca ya da Esc ile kapanır */
+(function(){var m=document.querySelector('details.menu');if(!m)return;
+document.addEventListener('click',function(e){if(m.open&&!m.contains(e.target))m.open=false});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&m.open){m.open=false;m.querySelector('summary').focus()}});})();
