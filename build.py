@@ -77,11 +77,11 @@ def sharebar(title, path):
     return f'''<div class="sharebar noprint" data-url="{BASE}{path}" data-title="{e(title)}"><button type="button" class="sb-share">Paylaş</button><a class="sb-wa" href="https://wa.me/?text={t}%20{u}" rel="noopener" target="_blank">WhatsApp</a><button type="button" class="sb-copy">Bağlantıyı kopyala</button><button type="button" class="sb-print">Yazdır</button><span class="sb-msg muted-s" role="status"></span></div>'''
 
 # ---------- bülten kayıt kutusu ----------
-def abone(kaynak, baslik='Her pazar, haftanın bitkileri e-postanızda', alt='Yeni eklenen bitkiler, bir rehber ve bir tarif; haftada bir e-posta. Kaydolunca yazdırılabilir “Bitki–ilaç etkileşimi kartı” ve “Hamilelikte dikkat listesi” de gelir.'):
+def abone(kaynak, baslik='Ücretsiz e-posta kursu: Şifalı bitkilere başlangıç', alt='7 gün boyunca her sabah kısa, görsel bir ders: kanıtı okumak, doğru demlemek, güvenli kullanmak, doğada toplamak. Sonra her pazar haftanın bitkileri. Yazdırılabilir “Bitki–ilaç etkileşimi kartı” da hediye.', kurs=True):
     return f'''<section class="abone" aria-labelledby="ab-{kaynak[:20]}"><h2 id="ab-{kaynak[:20]}">{baslik}</h2><p>{alt}</p>
-<form class="abone-form" data-kaynak="{e(kaynak)}" novalidate><label class="vh" for="ab-e-{kaynak[:20]}">E-posta adresi</label><div class="row"><input id="ab-e-{kaynak[:20]}" type="email" name="email" placeholder="e-posta adresiniz" autocomplete="email" required><button type="submit" class="learn">Kaydol</button></div>
+<form class="abone-form" data-kaynak="{e(kaynak)}"{' data-kurs="1"' if kurs else ''} novalidate><label class="vh" for="ab-e-{kaynak[:20]}">E-posta adresi</label><div class="row"><input id="ab-e-{kaynak[:20]}" type="email" name="email" placeholder="e-posta adresiniz" autocomplete="email" required><button type="submit" class="learn">{'Kursa başla' if kurs else 'Kaydol'}</button></div>
 <input type="text" name="hp" tabindex="-1" autocomplete="off" class="vh" aria-hidden="true">
-<label class="chk"><input type="checkbox" name="riza" required><span>E-posta adresimin haftalık bülten için saklanmasına ve bana e-posta gönderilmesine izin veriyorum. <a href="/gizlilik/#bulten">Ayrıntılar</a></span></label>
+<label class="chk"><input type="checkbox" name="riza" required><span>{'E-posta adresimin 7 günlük kurs ve ardından haftalık bülten için saklanmasına ve bana e-posta gönderilmesine izin veriyorum.' if kurs else 'E-posta adresimin haftalık bülten için saklanmasına ve bana e-posta gönderilmesine izin veriyorum.'} <a href="/gizlilik/#bulten">Ayrıntılar</a></span></label>
 <label class="chk"><input type="checkbox" name="duyuru"><span>İsteğe bağlı: Bitki Tabanı’nın atölye, doğa yürüyüşü ve gezi gibi duyurularını da almak istiyorum.</span></label>
 <p class="muted-s abone-msg" role="status"></p></form></section>'''
 
@@ -165,7 +165,7 @@ def head(title, desc, path, extra='', image=None):
 
 MENU = [('Keşfet', [('/katalog/', 'Katalog', 'kat'), ('/yeni/', 'Yeni eklenenler', 'yeni'), ('/gunun-bitkisi/', 'Günün bitkisi', 'gun'), ('/oyun/', 'Günün bilmecesi', 'oyun'), ('/kopruler/', 'Kültür köprüleri', 'br')]),
         ('Rehberler', [('/rehber/', 'Derde göre bitkiler', 'rehber'), ('/tarif/', 'Çay tarifleri', 'tarif'), ('/karsilastirma/', 'Karşılaştırmalar', 'kars'), ('/rehber/ilac-etkilesimi/', 'İlaç etkileşimi', 'etk'), ('/rehber/hamilelik-emzirme/', 'Hamilelik ve emzirme', 'gebe'), ('/toplama-takvimi/', 'Toplama takvimi', 'takvim'), ('/yoresel-adlar/', 'Yöresel adlar', 'adlar')]),
-        ('Bitki Tabanı', [('/bulten/', 'Bülten', 'bulten'), ('/hakkinda/', 'Hakkında', 'about'), ('/yontem/', 'Yöntem', 'yontem'), ('https://www.instagram.com/bitkitabani/', 'Instagram', 'ig'), ('/hesap/', 'Hesap', 'acct'), ('/gizlilik/', 'Gizlilik', 'priv'), ('mailto:iletisim@bitkitabani.com', 'İletişim', 'mail')])]
+        ('Bitki Tabanı', [('/kurs/', 'Ücretsiz e-posta kursu', 'kurs'), ('/bulten/', 'Bülten', 'bulten'), ('/hakkinda/', 'Hakkında', 'about'), ('/yontem/', 'Yöntem', 'yontem'), ('https://www.instagram.com/bitkitabani/', 'Instagram', 'ig'), ('/hesap/', 'Hesap', 'acct'), ('/gizlilik/', 'Gizlilik', 'priv'), ('mailto:iletisim@bitkitabani.com', 'İletişim', 'mail')])]
 def nav(cur):
     a = lambda href, label, key: f'<a href="{href}"{" aria-current=\"page\"" if cur == key else ""}{" rel=\"noopener\"" if href.startswith("http") else ""}>{label}</a>'
     groups = ''.join(f'<div class="mgrp"><b>{g}</b>' + ''.join(a(h, l, k) for h, l, k in items) + '</div>' for g, items in MENU)
@@ -1083,9 +1083,16 @@ _bscript = '<script src="/assets/bulten.js" defer></script>'
 write('/bulten/', page('Bitki Tabanı bülteni: her pazar haftanın bitkileri | Bitki Tabanı', 'Haftada bir e-posta: yeni eklenen şifalı bitkiler, bir rehber ve bir tarif. Kaydolunca yazdırılabilir bitki–ilaç etkileşimi kartı hediye.', '/bulten/',
       f'''<header class="page-head"><span class="eyebrow">Bülten</span><h1>Her pazar, haftanın bitkileri</h1><p>Haftada yalnızca bir e-posta: o hafta kataloğa eklenen bitkiler, bir “derde göre” rehber ve bir çay tarifi. Reklam yok, adresiniz kimseyle paylaşılmaz, tek tıkla çıkabilirsiniz.</p></header>
 <section class="sec"><h2>Kaydolunca hediye</h2><ul class="otherlist"><li><b>Bitki–ilaç etkileşimi kartı:</b> kan sulandırıcı, tansiyon, şeker ilacı ya da antidepresan kullananların dikkat etmesi gereken bitkiler, tek sayfada.</li><li><b>Hamilelikte dikkat listesi:</b> hamilelikte ve emzirirken kullanılmaması gereken bitkiler, buzdolabına asılacak boyutta.</li></ul></section>
-{abone('bulten-sayfasi', 'Bültene kaydolun', 'E-posta adresinizi yazın; gelen e-postadaki bağlantıya tıklayınca kaydınız tamamlanır.')}''', '', narrow=True, scripts=_bscript))
+{abone('bulten-sayfasi', 'Bültene kaydolun', 'E-posta adresinizi yazın; gelen e-postadaki bağlantıya tıklayınca kaydınız tamamlanır.', kurs=False)}
+<p>Yeni başlıyorsanız: <a href="/kurs/">7 günlük ücretsiz e-posta kursu “Şifalı bitkilere başlangıç” →</a></p>''', '', narrow=True, scripts=_bscript))
+from kurs import DERSLER
+write('/kurs/', page('Ücretsiz e-posta kursu: Şifalı bitkilere başlangıç | Bitki Tabanı', '7 gün boyunca her sabah kısa ve görsel bir ders: kanıtı okumak, doğru demlemek, güvenli kullanmak, doğada toplamak ve kültürler arası bağlar. Ücretsiz.', '/kurs/',
+      f'''<header class="page-head"><span class="eyebrow">Ücretsiz · 7 gün · e-posta</span><h1>Şifalı bitkilere başlangıç</h1><p>Yedi gün boyunca her sabah e-postanıza kısa, görsel bir ders ve küçük bir görev gelir. Sonunda bir bitki çayını bilinçli seçmeyi, güvenli kullanmayı ve internette okuduğunuz bir iddiayı kontrol etmeyi öğrenmiş olursunuz.</p></header>
+<section class="sec"><h2>Dersler</h2><ol class="start">{"".join(f'<li><b>{e(d["baslik"])}</b>: {e(d["ozet"])}</li>' for d in DERSLER)}</ol></section>
+{abone('kurs-sayfasi', 'Kursa kaydolun', 'E-posta adresinizi yazın; gelen e-postadaki bağlantıya tıklayınca ilk ders hemen gelir.')}''', '', narrow=True))
+GUIDE_URLS.append('/kurs/')
 write('/bulten/onaylandi/', page('Kaydınız tamamlandı | Bitki Tabanı', 'Bitki Tabanı bültenine kaydınız tamamlandı.', '/bulten/onaylandi/',
-      '''<header class="page-head"><span class="eyebrow">Bülten</span><h1>Teşekkürler, kaydınız tamamlandı 🌿</h1><p>İlk bülten pazar günü gelecek. Söz verdiğimiz iki hediye burada; yazdırmak için sayfayı açıp tarayıcınızın “Yazdır” ya da “PDF olarak kaydet” seçeneğini kullanın.</p></header>
+      '''<header class="page-head"><span class="eyebrow">Bülten</span><h1>Teşekkürler, kaydınız tamamlandı 🌿</h1><p>Kursa kaydolduysanız ilk ders birkaç dakika içinde e-postanızda; değilseniz ilk bülten pazar günü gelecek. Söz verdiğimiz iki hediye burada; yazdırmak için sayfayı açıp tarayıcınızın “Yazdır” ya da “PDF olarak kaydet” seçeneğini kullanın.</p></header>
 <section class="sec"><p><a class="cta" href="/indir/etkilesim-karti/">Bitki–ilaç etkileşimi kartı →</a></p><p><a class="cta" href="/indir/hamilelik-listesi/">Hamilelikte dikkat listesi →</a></p></section>''', '', narrow=True, extra='<meta name="robots" content="noindex, follow">'))
 write('/bulten/ayrildiniz/', page('Bültenden ayrıldınız | Bitki Tabanı', 'Bitki Tabanı bülteninden ayrıldınız.', '/bulten/ayrildiniz/',
       '<header class="page-head"><span class="eyebrow">Bülten</span><h1>Bültenden ayrıldınız</h1><p>E-posta adresiniz listemizden tamamen silindi; bir daha e-posta almayacaksınız. Fikrinizi değiştirirseniz <a href="/bulten/">yeniden kaydolabilirsiniz</a>.</p></header>', '', narrow=True, extra='<meta name="robots" content="noindex, follow">'))

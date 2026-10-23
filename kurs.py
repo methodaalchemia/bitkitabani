@@ -1,0 +1,68 @@
+# "Şifalı bitkilere başlangıç": 7 günlük ücretsiz e-posta kursu. Her gün bir ders; bilgiler katalogdaki kaynaklı kayıtlara dayanır.
+# Alanlar: baslik, ozet (kapak görselindeki alt satır), bitkiler (görselde ve metinde geçen katalog id'leri),
+# paragraflar (e-postanın gövdesi), gorev (günün küçük görevi), link (görevin bağlantısı, site içi yol)
+
+DERSLER = [
+dict(baslik='Şifalı bitki nedir, neye ne kadar güvenebiliriz?', ozet='Kanıt düzeylerini okumayı öğrenin',
+ bitkiler=['lavanta', 'papatya', 'dagcayi'],
+ paragraflar=[
+  'Bitki Tabanı’na hoş geldiniz! Önümüzdeki yedi gün boyunca her sabah kısa bir ders gelecek. Sonunda bir bitki çayını bilinçli seçmeyi, güvenli kullanmayı ve “internette okuduğunuz” bir iddiayı kontrol etmeyi öğrenmiş olacaksınız.',
+  'İlk ders en önemlisi: bir bitkinin “işe yaradığı” söylendiğinde, bunun arkasında ne tür bir bilgi olduğuna bakmak. Bitki Tabanı’nda her bitkinin yanında üç düzeyden biri yazar.',
+  '<b>Klinik kanıt:</b> Kontrollü insan çalışmaları ya da onaylı bir ilaç kullanımı var. Örneğin ağızdan alınan standart lavanta yağı kapsülleri, birçok çalışmada kaygıda plasebodan üstün bulundu.',
+  '<b>Sınırlı kanıt:</b> Küçük ya da az sayıda insan çalışması var. Papatyanın kaygı üzerine çalışmaları buna örnek: sonuçlar olumlu ama kesin değil.',
+  '<b>Yalnızca geleneksel:</b> Kullanım yüzyıllardır belgelenmiş, ama insan çalışması yok ya da çok az. Dağ çayı böyle; Avrupa İlaç Ajansı onu uzun kullanım geçmişine dayanarak tanıyor. Bu, işe yaramadığı anlamına gelmez; yalnızca bilimin henüz bilmediğini söyler.'],
+ gorev='Evinizde en sık içtiğiniz bitki çayının sayfasını açın ve kanıt düzeyine bakın.', link='/katalog/'),
+dict(baslik='Mutfağınızdaki eczane', ozet='Beş tanıdık bitki, bilim ne diyor?',
+ bitkiler=['nane', 'zencefil', 'ihlamur', 'kekik', 'papatya'],
+ paragraflar=[
+  'Şifalı bitkilerin çoğu zaten mutfağınızda. Bugün beş tanıdık bitkiye ve bilimin onlar hakkında bildiklerine bakalım.',
+  '<b>Nane:</b> Nane yağı kapsülleri, huzursuz bağırsak belirtilerini birçok çalışmada plasebodan daha fazla azalttı. Ama reflüsü olanlarda şikâyeti artırabilir.',
+  '<b>Zencefil:</b> Taşıt tutmasına bağlı bulantıda Avrupa’da kabul görüyor. Bulantı, bitkilerin kanıtının en güçlü olduğu alanlardan biri.',
+  '<b>Ihlamur:</b> Soğuk algınlığı belirtilerinde ve hafif streste geleneksel olarak kabul görüyor; klinik çalışması az. Kaynatılmaz, demlenir.',
+  '<b>Kekik:</b> Balgamlı öksürükte geleneksel bitkisel ilaç olarak tanınıyor. İçindeki timol ve karvakrol laboratuvarda güçlü antimikrobiyal etki gösteriyor.',
+  '<b>Papatya:</b> Hafif sindirim şikâyetlerinde ve ağız-boğaz iltihabında kabul görüyor. Papatyagillere alerjisi olanlar dikkat etmeli.'],
+ gorev='Bu beşinden birini bu akşam tarifine uygun hazırlayın.', link='/tarif/'),
+dict(baslik='Demlemek mi, kaynatmak mı?', ozet='Doğru hazırlamak, etkiyi değiştirir',
+ bitkiler=['ihlamur', 'tarcin', 'kusburnu'],
+ paragraflar=[
+  'Aynı bitki, yanlış hazırlanınca hem tadını hem de içindeki maddelerin önemli bir kısmını kaybedebilir. Temel kural basit.',
+  '<b>Çiçek ve yaprak demlenir.</b> Ihlamur, papatya, nane, melisa gibi yumuşak kısımlar kaynamış suya konur ve 5–10 dakika bekletilir. Kaynatılınca ıhlamur acılaşır, kokusu kaçar.',
+  '<b>Kök, kabuk ve sert tohum kaynatılır.</b> Zencefil dilimleri ya da tarçın çubuğu 10 dakika hafif ateşte tutulur; bu sert dokular demlemeyle yeterince açılmaz.',
+  '<b>Ağzı kapalı demleyin.</b> Uçucu yağlar buharla kaçar; bardağın üstüne bir tabak koymak kokuyu ve etkiyi korur.',
+  '<b>Bazı bitkiler özel ilgi ister.</b> Kuşburnu kaynatılırsa C vitamininin büyük kısmı kaybolur; ayrıca çekirdek çevresindeki tüyler mutlaka süzülmelidir.'],
+ gorev='Bir sonraki çayınızı ağzı kapalı demleyin ve farkı tadın.', link='/tarif/ihlamur-cayi/'),
+dict(baslik='Doğal demek güvenli demek değil', ozet='Zehirli benzerler, doz ve ilaç etkileşimleri',
+ bitkiler=['atkestanesi', 'kantaron', 'karabas'],
+ paragraflar=[
+  'Bitkiler de ilaçlar gibi etken maddeler içerir. Bu yüzden faydalı olabilirler, ama aynı nedenle zarar da verebilirler.',
+  '<b>Karıştırma:</b> At kestanesinin tohumu zehirlidir; yenen kestaneyle karıştırılıp yenmesi kusma ve ishale yol açar. İlaç olarak kullanılan, zehirli maddesi arındırılmış standart ekstredir.',
+  '<b>İlaç etkileşimi:</b> Sarı kantaron, doğum kontrol hapı ve kan sulandırıcılar dahil pek çok ilacın etkisini azaltır. Düzenli ilaç kullanıyorsanız, bir bitkisel ürüne başlamadan önce eczacınıza sorun.',
+  '<b>Tür farkı:</b> Karabaş otu lavantanın akrabasıdır, ama uçucu yağı çok miktarda kâfur içerir; ağızdan alınmamalı ve çocukların yüzüne sürülmemelidir.',
+  '<b>Hamilelik ve emzirme:</b> Birçok bitki için bu dönemde güvenli olduğunu gösteren yeterli veri yoktur. Yemekteki miktarı aşan her bitkisel ürün için hekime danışın.'],
+ gorev='Kullandığınız bir ilaç varsa, etkileşim aracında ilaç grubunuzu seçin.', link='/rehber/ilac-etkilesimi/'),
+dict(baslik='Bir iddiayı nasıl kontrol edersiniz?', ozet='Laboratuvar, hayvan ve insan çalışması arasındaki fark',
+ bitkiler=['zerdecal', 'ginkgo', 'turnayemisi'],
+ paragraflar=[
+  '“Bilimsel olarak kanıtlandı” cümlesini her yerde görüyoruz. Bugün bunun arkasına bakmayı öğreneceğiz.',
+  '<b>Laboratuvarda:</b> Hücre kültüründe görülen bir etki, insanda aynısının olacağı anlamına gelmez. Zerdeçalın etken maddesi kurkumin laboratuvarda güçlü; ama vücutta zayıf emilir ve insanlarda sonuçlar tutarsız.',
+  '<b>Büyük çalışmalar:</b> Ginkgo yıllarca hafıza için önerildi; ancak büyük bir ABD çalışması, yaşlılarda demansı önlemediğini gösterdi.',
+  '<b>Derlemeler:</b> En güvenilir bilgi, birçok çalışmayı birlikte değerlendiren derlemelerden gelir. Cochrane derlemesi, turna yemişinin tekrarlayan idrar yolu enfeksiyonu riskini azalttığını buldu; ama var olan enfeksiyonu tedavi etmez.',
+  'Bitki Tabanı’nda her sağlık bilgisinin kaynağı sayfanın altında listelenir: Avrupa İlaç Ajansı, ABD’nin NCCIH’i, Cochrane ve hakemli dergiler. Kaynağı olmayan sağlık iddiası yazılmaz.'],
+ gorev='Sık duyduğunuz bir iddiayı bir bitki sayfasının “Faydaları ne kadar kanıtlı?” tablosunda bulun.', link='/zerdecal/'),
+dict(baslik='Doğada toplarken', ozet='Tanımak, korumak ve doğru zamanda toplamak',
+ bitkiler=['salep', 'isirgan', 'dagcayi'],
+ paragraflar=[
+  'Kendi topladığınız bir bitkiyle demlenen çayın tadı başkadır. Ama doğada toplamanın üç kuralı var.',
+  '<b>Kesin tanıyın.</b> Yalnızca emin olduğunuz bitkiyi toplayın. Halk arasındaki adlar yanıltabilir; aynı ad farklı bitkilere verilebilir. En güvenlisi Latince adına bakmaktır.',
+  '<b>Korunan türlere dokunmayın.</b> Salep yabani orkidelerin yumrusundan yapılır ve aşırı toplanma bu türleri tehdit eder. Dağ çayının bazı türleri de endemiktir; kültürü yapılmış bitkiyi tercih edin.',
+  '<b>Doğru zamanda ve ölçülü toplayın.</b> Isırgan baharda, çiçeklenmeden önce en körpedir. Bir bitkinin tamamını değil bir kısmını alın; yol kenarından ve ilaçlanmış alanlardan uzak durun.'],
+ gorev='Toplama takviminde bu ay doğada neler olduğuna bakın.', link='/toplama-takvimi/'),
+dict(baslik='Aynı bitki, farklı kültürler', ozet='Binlerce kilometre uzaktaki benzer bilgiler',
+ bitkiler=['uzerlik', 'ayahuasca', 'kina'],
+ paragraflar=[
+  'Son ders, Bitki Tabanı’nın kalbinden: birbirinden çok uzak kültürler, çoğu zaman aynı molekülleri ya da aynı bitkiyi benzer amaçlarla kullanmış.',
+  'Anadolu’da nazara karşı yakılan üzerlik ile Amazon’da törenlerde kullanılan ayahuasca, aynı alkaloit grubunu paylaşır. Anadolu’nun kına gecesi ile Amazon halklarının huito boyası da iki kıtada aynı işi görür: bedeni boyayarak bir geçiş törenini işaretlemek.',
+  'Bu bilgiler, onları kuşaklar boyunca koruyan toplulukların mirasıdır. Bitki Tabanı’nda geleneksel kullanımlar bir öneri olarak değil, kültürel bir kayıt olarak, kaynağıyla ve topluluğun adıyla anlatılır.',
+  'Kurs burada bitiyor, ama yolculuk devam ediyor: her pazar haftanın yeni bitkileri, bir rehber ve bir tarif e-postanıza gelecek. Bir sorunuz ya da yöresel bir bilginiz varsa bu e-postayı yanıtlamanız yeterli.'],
+ gorev='Kültür köprüleri haritasında size en ilginç gelen köprüyü okuyun.', link='/kopruler/'),
+]

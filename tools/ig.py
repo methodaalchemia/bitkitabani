@@ -364,6 +364,39 @@ def bulten(data, day, out_root):
     json.dump({'hafta': hafta, 'konu': 'Bitki Tabanı · ' + konu, 'html': giris + ''.join(parts), 'text': 'Bitki Tabanı bu hafta\n\n' + '\n'.join(txt)},
               open(os.path.join(out_root, 'bulten.json'), 'w', encoding='utf-8'), ensure_ascii=False)
 
+def kurs(data, out_root):
+    """7 günlük e-posta kursunun görselleri (1200x630) ve e-posta gövdeleri -> igout/kurs.json, igout/kurs/<n>.jpg"""
+    sys.path.insert(0, ROOT)
+    from kurs import DERSLER
+    import ig2
+    P = {p['id']: p for p in data['p']}
+    os.makedirs(os.path.join(out_root, 'kurs'), exist_ok=True)
+    out = []
+    for n, dd in enumerate(DERSLER, 1):
+        KW, KH = 1200, 630
+        im = Image.new('RGB', (KW, KH), C['paper']); d = ImageDraw.Draw(im)
+        ids = [i for i in dd['bitkiler'] if i in P and P[i]['img']][:3]
+        pw = 420 if ids else 0
+        if ids:   # sağda fotoğraf şeridi
+            h = KH // len(ids)
+            for j, i in enumerate(ids):
+                ph = ig2.photo(os.path.join(ROOT, 'img', f'{i}-960.jpg'), pw, h + 1)
+                if ph: im.paste(ph, (KW - pw, j * h))
+        x = 60; d.rectangle([0, 0, 14, KH], fill=C['accent'])
+        d.text((x, 54), up(f'Şifalı bitkilere başlangıç · Gün {n}/7'), font=sans_b(26), fill=C['accent'])
+        y = 104 + block(d, (x, 104), dd['baslik'], [serif(64), serif(56), serif(48)], KW - pw - 2 * x, 300, C['ink'], gap=1.1)
+        block(d, (x, y + 18), dd['ozet'], [sans(34), sans(30)], KW - pw - 2 * x, 120, C['muted'])
+        d.text((x, KH - 70), 'bitkitabani.com', font=mono(28), fill=C['accent'])
+        im.save(os.path.join(out_root, 'kurs', f'{n}.jpg'), 'JPEG', quality=85, optimize=True)
+        img = f'<img src="{BASE}/ig/kurs/{n}.jpg" width="516" alt="{html.escape(dd["baslik"])}" style="display:block;width:100%;max-width:516px;height:auto;border:0;margin:0 0 18px">'
+        body = ''.join(f'<p style="font-size:17px;line-height:1.6;margin:0 0 14px">{p}</p>' for p in dd['paragraflar'])
+        thumbs = ''.join(f'<a href="{BASE}/{i}/" style="display:inline-block;width:31%;margin:0 1% 8px 0;text-decoration:none;color:#1C2140;font-family:Arial,sans-serif;font-size:13px;vertical-align:top"><img src="{BASE}/img/{i}-500.jpg" alt="" style="display:block;width:100%;height:auto;border:0;margin-bottom:4px">{html.escape(P[i]["tr"])}</a>' for i in ids)
+        gorev = f'<div style="background:#EAD9C6;border-left:4px solid #A3271B;padding:14px 16px;margin:18px 0"><p style="margin:0 0 6px;font-family:Arial,sans-serif;font-size:12px;letter-spacing:.1em;color:#A3271B">BUGÜNÜN GÖREVİ</p><p style="margin:0;font-size:17px">{html.escape(dd["gorev"])}</p><p style="margin:12px 0 0"><a href="{BASE}{dd["link"]}" style="background:#A3271B;color:#fff;text-decoration:none;padding:10px 18px;border-radius:999px;font-family:Arial,sans-serif;font-size:14px;display:inline-block">Hadi bakalım →</a></p></div>'
+        sonraki = f'<p style="font-family:Arial,sans-serif;font-size:13px;color:#5D5866">Yarın: {html.escape(DERSLER[n]["baslik"])}</p>' if n < len(DERSLER) else ''
+        txt = re.sub(r'<[^>]+>', '', '\n\n'.join(dd['paragraflar'])) + f'\n\nBugünün görevi: {dd["gorev"]} {BASE}{dd["link"]}'
+        out.append({'n': n, 'konu': f'Gün {n}/7 · {dd["baslik"]}', 'html': img + body + (f'<div style="margin:6px 0 4px">{thumbs}</div>' if thumbs else '') + gorev + sonraki, 'text': txt})
+    json.dump(out, open(os.path.join(out_root, 'kurs.json'), 'w', encoding='utf-8'), ensure_ascii=False)
+
 def main():
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     global ig2
@@ -387,6 +420,8 @@ def main():
     except Exception as ex: print('threads planı yazılamadı:', ex)
     try: ek_postlar(data, day, out_root)
     except Exception as ex: print('ek postlar yazılamadı:', ex)
+    try: kurs(data, out_root)
+    except Exception as ex: print('kurs yazılamadı:', ex)
     try: bulten(data, day, out_root)
     except Exception as ex: print('bülten yazılamadı:', ex)
     try: aylik(data, day, out_root)
