@@ -468,3 +468,7 @@ ul.adlar{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;g
   details{display:block}details>*{display:block!important}
   .sec{break-inside:avoid-page}h2{break-after:avoid}
 }
+.symgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.symcard{display:flex;flex-direction:column;gap:6px;border:1.5px solid var(--ink);background:var(--sheet);padding:18px;text-decoration:none;color:var(--ink)}
+.symcard:hover{border-color:var(--accent)}.symcard b{font-family:var(--f-display);font-size:1.25rem}
+.sym-big{font-size:2rem;color:var(--accent);line-height:1}.sym-i{color:var(--accent)}
