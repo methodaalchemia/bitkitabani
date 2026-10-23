@@ -90,6 +90,7 @@ from rehber import KONULAR
 from tarif import TARIFLER
 from karsilastirma import KARS
 from semboller import SEMBOLLER
+from yazilar import YAZILAR
 GLINKS = {}
 def _glinks():
     for k in KONULAR:
@@ -168,7 +169,7 @@ def head(title, desc, path, extra='', image=None):
 <div class="wrap{{narrow}}">
 '''
 
-MENU = [('Keşfet', [('/katalog/', 'Katalog', 'kat'), ('/yeni/', 'Yeni eklenenler', 'yeni'), ('/gunun-bitkisi/', 'Günün bitkisi', 'gun'), ('/oyun/', 'Günün bilmecesi', 'oyun'), ('/kopruler/', 'Kültür köprüleri', 'br'), ('/semboller/', 'Semboller', 'sembol')]),
+MENU = [('Keşfet', [('/katalog/', 'Katalog', 'kat'), ('/yeni/', 'Yeni eklenenler', 'yeni'), ('/gunun-bitkisi/', 'Günün bitkisi', 'gun'), ('/oyun/', 'Günün bilmecesi', 'oyun'), ('/kopruler/', 'Kültür köprüleri', 'br'), ('/semboller/', 'Semboller', 'sembol'), ('/yazilar/', 'Yazılar', 'yazi')]),
         ('Rehberler', [('/rehber/', 'Derde göre bitkiler', 'rehber'), ('/tarif/', 'Çay tarifleri', 'tarif'), ('/karsilastirma/', 'Karşılaştırmalar', 'kars'), ('/rehber/ilac-etkilesimi/', 'İlaç etkileşimi', 'etk'), ('/rehber/hamilelik-emzirme/', 'Hamilelik ve emzirme', 'gebe'), ('/toplama-takvimi/', 'Toplama takvimi', 'takvim'), ('/yoresel-adlar/', 'Yöresel adlar', 'adlar')]),
         ('Bitki Tabanı', [('/kurs/', 'Ücretsiz e-posta kursu', 'kurs'), ('/bulten/', 'Bülten', 'bulten'), ('/hakkinda/', 'Hakkında', 'about'), ('/yontem/', 'Yöntem', 'yontem'), ('https://www.instagram.com/bitkitabani/', 'Instagram', 'ig'), ('/hesap/', 'Hesap', 'acct'), ('/gizlilik/', 'Gizlilik', 'priv'), ('mailto:iletisim@bitkitabani.com', 'İletişim', 'mail')])]
 def nav(cur):
@@ -1035,8 +1036,44 @@ _sc = ''.join(f'<a class="symcard" href="/semboller/{sm["slug"]}/"><span class="
 write('/semboller/', page('Bitkilerin sembolik anlamları: koruma, arınma, görü, bereket | Bitki Tabanı', 'Farklı kültürlerde bitkilerin taşıdığı ortak anlamlar: nazar ve koruma, arınma ve tütsü, geçiş törenleri, görü ve kehanet, kutsal ağaçlar, bereket.', '/semboller/',
       f'''{crumbs(('/semboller/', 'Semboller'))}<header class="page-head"><span class="eyebrow">Semboller · {len(LIVE_S)} anlam</span><h1>Bitkiler ve anlamları</h1><p>Birbirinden binlerce kilometre uzaktaki kültürler, çoğu zaman aynı anlamı bir bitkiye yüklemiş: kötü gözden korunmak, bir mekânı arındırmak, bir hayat evresini işaretlemek, görünmeyenle konuşmak. Her sembolde, o anlamı taşıyan bitkileri farklı coğrafyalardan yan yana getirdik.</p></header>
 <div class="symgrid">{_sc}</div>
+<p><a class="cta" href="/yazilar/">Şamanizm, ritüel bitkiler ve kadim bilgi üzerine yazılar →</a></p>
 <aside class="disclaimer" role="note"><b>Kültürel kayıt.</b> Ritüel ve sembolik kullanımlar, onları yaşatan toplulukların mirası olarak anlatılır; kullanım önerisi değildir.</aside>''', 'sembol', narrow=True, extra=lds(crumb_ld(('/semboller/', 'Semboller')))))
 GUIDE_URLS.insert(0, '/semboller/')
+
+# --- kavram yazıları ---
+def _trlow(t): return t.replace('I', 'ı').replace('İ', 'i').lower()
+def _ylink(m):
+    pid = m.group(1)
+    return f'<a href="/{pid}/">{e(_trlow(byId[pid]["tr"]))}</a>' if pid in byId else pid
+def _yp(t):
+    t = e(t)
+    t = re.sub(r'\{([a-z0-9]+)\}', _ylink, t)
+    return re.sub(r'\[(\d+)\]', lambda m: f'<sup><a href="#k{m.group(1)}">[{m.group(1)}]</a></sup>', t)
+for y in YAZILAR:
+    path = f'/yazilar/{y["slug"]}/'
+    secs = ''.join(f'<section class="sec"><h2>{e(h)}</h2>' + ''.join(f'<p>{_yp(p)}</p>' for p in ps) + '</section>' for h, ps in y['bolumler'])
+    kay = '<ol class="refs">' + ''.join((f'<li id="k{i}"><a href="{e(u)}" target="_blank" rel="noopener">{e(t)}</a></li>' if u else f'<li id="k{i}"><cite>{e(t)}</cite></li>') for i, (t, u) in enumerate(y['kaynaklar'], 1)) + '</ol>'
+    bit = ''.join(f'<a class="chip" href="/{x}/">{"".join(dot(r) for r in byId[x]["bolge"])}{e(byId[x]["tr"])}</a>' for x in y['bitkiler'] if x in byId)
+    sem = ''.join(f'<li><a href="/semboller/{sm["slug"]}/"><span class="sym-i" aria-hidden="true">{sm["simge"]}</span> {e(sm["ad"])}</a></li>' for sm in LIVE_S if sm['slug'] in y['semboller'])
+    body = f'''{crumbs(('/yazilar/', 'Yazılar'), (path, y['baslik']))}
+<article class="sheet yazi">
+<header class="page-head"><span class="eyebrow">Yazı · {tr_date(datetime.date.fromisoformat(y["tarih"])).rsplit(",", 1)[0]}</span><h1>{e(y["baslik"])}</h1><p class="lede">{e(y["giris"])}</p></header>
+{sharebar(y['baslik'], path)}
+{secs}
+{('<section class="sec"><h2>Yazıda geçen bitkiler</h2><div class="related">' + bit + '</div></section>') if bit else ''}
+{('<section class="sec"><h2>İlgili semboller</h2><ul class="otherlist">' + sem + '</ul></section>') if sem else ''}
+<section class="sec"><h2>Kaynaklar</h2>{kay}</section>
+<p class="updated">Yazan: <a href="/yontem/#hazirlayan">Edanaz Tınmazlar</a> · <time datetime="{y["tarih"]}">{tr_date(datetime.date.fromisoformat(y["tarih"])).rsplit(",", 1)[0]}</time></p>
+{abone('yazi:' + y['slug'])}
+</article>'''
+    write(path, page(f'{y["baslik"]} | Bitki Tabanı', y['aciklama'], path, body, 'yazi', narrow=True,
+          extra=lds({"@context":"https://schema.org","@type":"Article","headline":y['baslik'],"description":y['aciklama'],"inLanguage":"tr","url":BASE+path,"author":AUTHOR,"datePublished":y['tarih'],"dateModified":y['tarih'],"citation":[t for t, u in y['kaynaklar']]}, crumb_ld(('/yazilar/', 'Yazılar'), (path, y['baslik']))),
+          image=next((f'{BASE}/img/{x}-960.jpg' for x in y['bitkiler'] if x in IMG), None)))
+    GUIDE_URLS.append(path)
+_yl = ''.join(f'<li><a href="/yazilar/{y["slug"]}/"><b>{e(y["baslik"])}</b></a><span>{e(y["aciklama"])}</span></li>' for y in sorted(YAZILAR, key=lambda y: y['tarih'], reverse=True))
+write('/yazilar/', page('Yazılar: şamanizm, ritüel bitkiler ve kadim bilgi | Bitki Tabanı', 'Şamanizm, animizm, tütsü gelenekleri ve bitkilerle kurulan kadim ilişki üzerine kaynaklı yazılar.', '/yazilar/',
+      f'''{crumbs(('/yazilar/', 'Yazılar'))}<header class="page-head"><span class="eyebrow">Yazılar</span><h1>Bitkiler, ritüeller ve kadim bilgi</h1><p>Şamanizmden tütsü geleneklerine, kutsal ağaçlardan bitki “öğretmenlere”: bitkilerle kurulan kadim ilişki üzerine kaynaklı yazılar.</p></header><section class="sec"><ul class="guidelist">{_yl}</ul></section>''', 'yazi', narrow=True))
+GUIDE_URLS.insert(0, '/yazilar/')
 
 # --- yöresel ve diğer adlar sözlüğü ---
 import unicodedata as _ud
