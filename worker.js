@@ -172,7 +172,7 @@ async function igPost(env) {
     st.n = n + 1; st.last = day; st.lastAt = Date.now(); st.lastId = pub.id; st.lastPlant = post.id; st.error = null; st.errorAt = null;
     if (!launching && !st.catchup) st.lastDaily = day;
     st.catchup = false;
-    // Günlük postlarda: hikâye (takipçilere duyuru) ve deneme Reels (önce takip etmeyenlere gösterilir)
+    // Günlük postlarda: hikâye (takipçilere duyuru) ve Reels (profilde ve akışta görünür)
     if (!launching && post.story) {
       try {
         const sid = (await igJson(await fetch(IG + '/' + st.uid + '/media', form({ media_type: 'STORIES', image_url: post.story })))).id;
@@ -181,7 +181,7 @@ async function igPost(env) {
     }
     if (!launching && post.reel) {
       try {
-        const rid = (await igJson(await fetch(IG + '/' + st.uid + '/media', form({ media_type: 'REELS', video_url: post.reel, caption: post.caption, trial_params: JSON.stringify({ graduation_strategy: 'SS_PERFORMANCE' }) })))).id;
+        const rid = (await igJson(await fetch(IG + '/' + st.uid + '/media', form({ media_type: 'REELS', video_url: post.reel, caption: post.caption, share_to_feed: 'true' })))).id;
         st.reelPending = rid; st.reelAt = Date.now(); st.reelError = null;
       } catch (e) { st.reelError = String(e.message || e).slice(0, 200); }
     }
