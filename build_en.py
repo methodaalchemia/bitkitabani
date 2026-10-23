@@ -57,7 +57,7 @@ def run(G):
 <div class="wrap{{narrow}}">
 '''
     MENU_EN = [('Explore', [('/en/catalog/', 'Catalog', 'kat'), ('/en/bridges/', 'Culture bridges', 'br')]),
-               ('Guides', [('/en/guides/', 'Herbs by complaint', 'guides'), ('/en/recipes/', 'Herbal tea recipes', 'recipes')]),
+               ('Guides', [('/en/guides/', 'Herbs by complaint', 'guides'), ('/en/recipes/', 'Herbal tea recipes', 'recipes'), ('/en/concepts/', 'Concept of the day', 'concepts')]),
                ('Bitki Tabanı', [('/en/about/', 'About and method', 'about'), ('https://www.instagram.com/bitkitabani/', 'Instagram', 'ig'), ('/en/account/', 'Account', 'acct'), ('/en/privacy/', 'Privacy', 'priv'), ('mailto:iletisim@bitkitabani.com', 'Contact', 'mail')])]
     def nav(cur, tr_path):
         a = lambda href, label, key: f'<a href="{href}"{" aria-current=\"page\"" if cur == key else ""}{" rel=\"noopener\"" if href.startswith("http") else ""}>{label}</a>'
@@ -479,6 +479,30 @@ def run(G):
     GUIDE_EXTRA = (('<section class="sec"><h2>Comparisons</h2><ul class="otherlist">' + ''.join(f'<li><a href="{cpath(c)}">{e(K_EN[c["a"] + "-" + c["b"]]["baslik"])}</a></li>' for c in KL) + '</ul></section>') if KL else '') + \
                   (('<section class="sec"><h2>Recipes</h2><ul class="otherlist">' + ''.join(f'<li><a href="/en/recipes/{T_EN[t["slug"]]["slug"]}/">{e(T_EN[t["slug"]]["ad"])}</a></li>' for t in TL) + '</ul></section>') if TL else '')
     write('/en/guides/', page('Which herb for which complaint? Medicinal plant guides | Bitki Tabanı', 'Herbs for sleep, cough, indigestion, colds, anxiety and more: evidence levels, safety notes, drug interactions, comparisons and recipes.', '/en/guides/', '/rehber/', hub.replace(DIS, GUIDE_EXTRA + DIS), 'guides', narrow=True))
+
+    # ---------- daily concepts (/en/concepts/) ----------
+    from kavram_en import K_EN
+    KV = [k for k in G['KAV'] if k['slug'] in K_EN]
+    def _lnk(m):
+        pid = m.group(1)
+        return f'<a href="/en/{pid}/">{e(name(byId[pid]))}</a>' if pid in byId else pid
+    def _p(t):
+        t = re.sub(r'\{([a-z0-9]+)\}', _lnk, e(t))
+        return re.sub(r'\[(\d+)\]', lambda m: f'<sup><a href="#k{m.group(1)}">[{m.group(1)}]</a></sup>', t)
+    for k in KV:
+        r = K_EN[k['slug']]; p = byId[k['bitki']]; path = f'/en/concepts/{r["slug"]}/'
+        card_ = f'<a class="kavbitki" href="/en/{p["id"]}/">{ph(p, 500)}<span><span class="eyebrow">The concept’s plant</span><b>{e(name(p))}</b><i>{e(short_la(p))}</i><span class="muted-s">{e(EN[p["id"]]["fact"])}</span><span class="cta small">Plant page →</span></span></a>'
+        kay = '<ol class="refs">' + ''.join((f'<li id="k{j}"><a href="{e(u)}" target="_blank" rel="noopener">{e(t)}</a></li>' if u else f'<li id="k{j}"><cite>{e(t)}</cite></li>') for j, (t, u) in enumerate(k['kaynaklar'], 1)) + '</ol>'
+        body = f'''<nav class="crumbs" aria-label="Breadcrumb"><a href="/en/">Home</a><span>/</span><a href="/en/concepts/">Concepts</a><span>/</span><span>{e(r["ad"])}</span></nav>
+<article class="sheet yazi"><header class="page-head"><span class="eyebrow">Concept of the day</span><h1>{e(r["ad"])}</h1><p class="lede">{e(r["kisa"])}</p></header>
+{card_}<section class="sec">{"".join(f"<p>{_p(x)}</p>" for x in r["metin"])}</section>
+<section class="sec"><h2>Sources</h2>{kay}</section>
+<aside class="disclaimer" role="note"><b>A cultural record.</b> Rituals and beliefs are described as the heritage of the communities that keep them alive; this is not a recommendation for use.</aside></article>'''
+        write(path, page(f'What is {r["ad"]}? | Bitki Tabanı', r['kisa'], path, f'/kavram/{k["slug"]}/', body, 'concepts', narrow=True,
+              extra=f'<script type="application/ld+json">{json.dumps({"@context":"https://schema.org","@type":"DefinedTerm","name":r["ad"],"description":r["kisa"],"url":BASE+path}, ensure_ascii=False)}</script>', image=(f'{BASE}/img/{p["id"]}-960.jpg' if p['id'] in IMG else None)))
+    kl = ''.join(f'<li><a href="/en/concepts/{K_EN[k["slug"]]["slug"]}/"><b>{e(K_EN[k["slug"]]["ad"])}</b></a><span>{e(K_EN[k["slug"]]["kisa"])} · Plant: <a href="/en/{k["bitki"]}/">{e(name(byId[k["bitki"]]))}</a></span></li>' for k in sorted(KV, key=lambda k: K_EN[k['slug']]['ad']))
+    write('/en/concepts/', page('Concepts: shamanism, ritual and ancestral knowledge | Bitki Tabanı', 'A concept a day, each paired with a plant: animism, the kam, the evil eye, Pachamama, limpia, teacher plants and more.', '/en/concepts/', '/kavram/',
+          f'<nav class="crumbs" aria-label="Breadcrumb"><a href="/en/">Home</a><span>/</span><span>Concepts</span></nav><header class="page-head"><span class="eyebrow">A concept and a plant every day</span><h1>Concepts</h1><p>From shamanism to folk belief, from ritual to ancestral knowledge: a short, sourced concept every day, each paired with a plant.</p></header>' + (f'<section class="sec"><ul class="guidelist">{kl}</ul></section>' if kl else '<p>The first concept arrives tomorrow.</p>'), 'concepts', narrow=True))
 
     # ---------- hreflang on Turkish pages ----------
     for en_path, tr_path in PAIRS.items():
