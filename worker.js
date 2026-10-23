@@ -194,6 +194,7 @@ async function igPost(env) {
 // Gerekli gizli değişken: TH_TOKEN (Threads API, uzun ömürlü token). 20 günde bir kendiliğinden yenilenir.
 const TH = 'https://graph.threads.net/v1.0';
 async function thPost(env) {
+  env = { ...env, TH_TOKEN: env.TH_TOKEN || env.TH_Token };   // panelde 'TH_Token' olarak da eklenebilir
   const ig = (await call(env, 'ig:state', 'get')) || {};
   const st = (await call(env, 'th:state', 'get')) || {};
   const day = trDay();
@@ -243,7 +244,7 @@ export default {
     if (url.pathname === '/api/ig-durum' && req.method === 'GET') {
       const st = (await call(env, 'ig:state', 'get')) || {};
       const th = (await call(env, 'th:state', 'get')) || {};
-      return json({ threads: { token: !!(env.TH_TOKEN || th.token), sayi: th.n || 0, son: th.last || null, bitki: th.plant || null, hata: th.error || null, hataZamani: th.errorAt || null }, token: !!(env.IG_TOKEN || st.token), sayi: st.n || 0, reels: st.reels || 0, reelHata: st.reelError || null, hikayeHata: st.storyError || null, altMetin: !st.noAlt, sonPaylasim: st.last || null, bitki: st.lastPlant || null, hata: st.error || null, hataZamani: st.errorAt || null, tokenYenilendi: st.tokenAt ? new Date(st.tokenAt).toISOString() : null, bugun: trDay() });
+      return json({ threads: { token: !!(env.TH_TOKEN || env.TH_Token || th.token), sayi: th.n || 0, son: th.last || null, bitki: th.plant || null, hata: th.error || null, hataZamani: th.errorAt || null }, token: !!(env.IG_TOKEN || st.token), sayi: st.n || 0, reels: st.reels || 0, reelHata: st.reelError || null, hikayeHata: st.storyError || null, altMetin: !st.noAlt, sonPaylasim: st.last || null, bitki: st.lastPlant || null, hata: st.error || null, hataZamani: st.errorAt || null, tokenYenilendi: st.tokenAt ? new Date(st.tokenAt).toISOString() : null, bugun: trDay() });
     }
     if (req.method !== 'GET' && req.headers.get('x-bt') !== '1') return json({ error: 'csrf' }, 403);
     try {
@@ -282,6 +283,6 @@ export default {
     }
   },
   async scheduled(event, env, ctx) {
-    if (env.IG_TOKEN) ctx.waitUntil(igPost(env).then(() => env.TH_TOKEN ? thPost(env) : null));
+    if (env.IG_TOKEN) ctx.waitUntil(igPost(env).then(() => (env.TH_TOKEN || env.TH_Token) ? thPost(env) : null));
   },
 };
