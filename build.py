@@ -162,6 +162,15 @@ def head(title, desc, path, extra='', image=None):
 <html lang="tr">
 <head>
 <meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BMP0ECQ163"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){{dataLayer.push(arguments);}}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BMP0ECQ163');
+</script>
 <meta name="robots" content="max-image-preview:large, max-snippet:-1">
 <meta name="p:domain_verify" content="e3e9bfbe0eae8412bc7dead5c2e3540e"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -822,7 +831,7 @@ write('/hesap/', page('Hesap | Bitki Tabanı', 'Google ile giriş yaparak öğre
       extra='<meta name="robots" content="noindex, follow">'))
 gz = '''
 <header class="page-head"><span class="eyebrow">Gizlilik</span><h1>Hangi bilgileri saklıyoruz?</h1><p>Kısaca: çok az. Bitki Tabanı reklam göstermez, seni siteler arasında izlemez ve kimseye veri satmaz.</p></header>
-<section class="sec"><h2>Ziyaret sayıları</h2><p>Kaç kişinin hangi sayfayı okuduğunu görmek için Cloudflare Web Analytics kullanıyoruz. Bu araç çerez yazmaz, seni tanımlamaz ve siteler arasında izlemez; yalnızca toplu sayılar (ör. bir sayfanın kaç kez görüntülendiği, ziyaretçilerin hangi ülkeden geldiği) tutar.</p></section>
+<section class="sec"><h2>Ziyaret sayıları</h2><p>Kaç kişinin hangi sayfayı okuduğunu görmek için Cloudflare Web Analytics ve Google Analytics kullanıyoruz. Cloudflare Web Analytics çerez yazmaz ve yalnızca toplu sayılar tutar.</p><p>Google Analytics, ziyaretleri ayırt etmek için tarayıcına çerez yazar ve hangi sayfaları açtığın, siteye nereden geldiğin, cihaz türün ve yaklaşık konumun (ülke, şehir) gibi bilgileri Google’a gönderir. Bu bilgileri yalnızca toplu raporlar olarak görürüz; seni kişi olarak tanımlamak için kullanmayız. Google’ın verileri nasıl işlediği için <a href="https://policies.google.com/technologies/partner-sites?hl=tr" rel="noopener">Google’ın açıklamasına</a> bakabilirsin. İstemezsen tarayıcının çerez ayarlarından ya da Google’ın <a href="https://tools.google.com/dlpage/gaoptout?hl=tr" rel="noopener">devre dışı bırakma eklentisiyle</a> engelleyebilirsin.</p></section>
 <section class="sec"><h2>Giriş yapmazsan</h2><p>Öğrendiğin bitkiler, serin ve bilmece tahminlerin yalnızca kendi tarayıcının hafızasında (localStorage) durur. Bize hiçbir şey gelmez. Tarayıcı verilerini silersen bunlar da silinir.</p></section>
 <section class="sec"><h2>Google ile giriş yaparsan</h2><p>Google bize senin adına bir kimlik belgesi gönderir. Bunun içinden yalnızca Google hesap kimlik numaranı (rastgele görünen bir sayı) saklarız. E-posta adresin, adın ve profil fotoğrafın saklanmaz.</p><p>Bu numarayla birlikte şunları saklarız: öğrendim olarak işaretlediğin bitkiler, serinin günleri ve bilmece tahminlerin. Oturumunu hatırlamak için tarayıcına yalnızca bu iş için kullanılan, 180 gün geçerli bir çerez yazılır.</p><p>Veriler Cloudflare’in sunucularında tutulur. Google ile girişte Google’ın kendi <a href="https://policies.google.com/privacy?hl=tr" rel="noopener">gizlilik politikası</a> geçerlidir.</p></section>
 <section class="sec" id="bulten"><h2>Bülten</h2><p>Bültene kaydolursan yalnızca e-posta adresin, kayıt ve onay tarihi, kaydolduğun sayfa ve isteğe bağlı duyuru tercihin saklanır. Kayıt çift onaylıdır: gelen e-postadaki bağlantıya tıklamadıkça listeye eklenmezsin; onaylanmayan adresler 7 gün sonra silinir. E-postalar Resend aracılığıyla gönderilir. Her e-postadaki “Bültenden çık” bağlantısı adresini listeden hemen ve tamamen siler. Adresin kimseyle paylaşılmaz, satılmaz ve reklam için kullanılmaz. Duyuru kutusunu işaretlediysen, bülten dışında atölye, doğa yürüyüşü ya da gezi gibi Bitki Tabanı etkinliklerinin duyurularını da alırsın.</p></section>
