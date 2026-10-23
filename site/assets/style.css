@@ -508,3 +508,10 @@ li.gi a{display:inline-flex;align-items:center;gap:10px}
 .olay.aktif{background:var(--accent-soft);padding:18px 12px}.olay-t b{font-family:var(--f-mono);font-size:var(--t-sm);color:var(--accent)}.olay h2{margin:0 0 6px}
 .olay-mo{display:flex;gap:8px;margin:8px 0}.motif-mini-a{display:block;width:46px;color:var(--ink)}
 @media(max-width:520px){.olay{grid-template-columns:1fr;gap:4px}}
+/* Yapışkan üst menü: sayfa aşağı kaydıkça başlık hep tepede kalır */
+html{scroll-padding-top:84px}
+.site-nav{position:sticky;top:0;z-index:60;background:var(--paper);padding-top:12px;margin-top:-12px;transition:box-shadow .2s}
+.site-nav.scrolled{box-shadow:0 6px 16px -10px rgba(0,0,0,.35)}
+.gprog{top:64px}
+.menu-panel{max-height:calc(100vh - 90px);max-height:calc(100dvh - 90px);overflow-y:auto;overscroll-behavior:contain}
+.site-nav nav.menu-panel{align-items:start}
