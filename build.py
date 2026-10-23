@@ -1139,11 +1139,17 @@ for n, ids in _rows:
     L = n.replace('i', 'İ').replace('ı', 'I').upper()[0] if n else '#'
     _groups.setdefault(L, []).append((n, ids))
 _letters = ''.join(f'<a href="#harf-{_ud.normalize("NFKD", L).encode("ascii", "ignore").decode() or "x"}{i}">{L}</a>' for i, L in enumerate(_groups))
-_sec = ''.join(f'<section class="sec" id="harf-{_ud.normalize("NFKD", L).encode("ascii", "ignore").decode() or "x"}{i}"><h2>{L}</h2><ul class="adlar">' + ''.join(f'<li><b>{e(n)}</b> → ' + ', '.join(f'<a href="/{x}/">{e(byId[x]["tr"])}</a>' for x in sorted(ids)) + '</li>' for n, ids in items) + '</ul></section>' for i, (L, items) in enumerate(_groups.items()))
+_sec = ''.join(f'<details class="harf" id="harf-{_ud.normalize("NFKD", L).encode("ascii", "ignore").decode() or "x"}{i}"><summary><b>{L}</b> <span class="muted-s">{len(items)} ad</span></summary><ul class="adlar2">' + ''.join(f'<li data-s="{e(n.lower())}"><b>{e(n)}</b> <span aria-hidden="true">→</span> ' + ', '.join(f'<a href="/{x}/">{e(byId[x]["tr"])}</a>' for x in sorted(ids)) + '</li>' for n, ids in items) + '</ul></details>' for i, (L, items) in enumerate(_groups.items()))
 path = '/yoresel-adlar/'
 write(path, page('Şifalı bitkilerin yöresel ve yabancı adları: hangi ad hangi bitki? | Bitki Tabanı', f'{len(_rows)} yöresel, halk arasındaki ve yabancı bitki adı A’dan Z’ye: her ad, katalogdaki doğru bitkiye bağlanır. Benzer adlı bitkileri karıştırmamak için.', path,
       f'''{crumbs(('/rehber/', 'Rehberler'), (path, 'Yöresel adlar'))}<header class="page-head"><span class="eyebrow">Sözlük · {len(_rows)} ad</span><h1>Yöresel adlar: hangi ad hangi bitki?</h1><p>Aynı bitki Anadolu’nun farklı yörelerinde farklı adlarla anılır; bazen de aynı ad birbirinden çok farklı iki bitkiye verilir. Aşağıda katalogdaki bitkilerin yöresel, halk arasındaki ve başka dillerdeki adları A’dan Z’ye sıralı; her ad, bitkinin kendi sayfasına bağlanır.</p></header>
-<nav class="harfler" aria-label="Harfler">{_letters}</nav>{_sec}
+<div class="adara"><input type="search" id="adq" placeholder="Bir ad yazın (ör. kömeç, akpüren)" aria-label="Adlarda ara"><span class="muted-s" id="adn" role="status"></span></div>
+<nav class="harfler" aria-label="Harfler">{_letters}</nav><div class="harfler-list">{_sec}</div>
+<script>(function(){{var q=document.getElementById('adq'),n=document.getElementById('adn'),D=document.querySelectorAll('details.harf');
+function low(t){{return t.replace(/I/g,'ı').replace(/İ/g,'i').toLowerCase()}}
+q.addEventListener('input',function(){{var t=low(q.value.trim()),c=0;D.forEach(function(d){{var k=0;d.querySelectorAll('li').forEach(function(li){{var v=!t||low(li.textContent).indexOf(t)>-1;li.hidden=!v;if(v)k++}});d.hidden=!k;d.open=!!t&&k>0;c+=k}});n.textContent=t?c+' sonuç':''}});
+document.querySelectorAll('.harfler a').forEach(function(a){{a.addEventListener('click',function(){{var d=document.querySelector(a.getAttribute('href'));if(d)d.open=true}})}});
+if(location.hash){{var d=document.querySelector(location.hash);if(d&&d.tagName==='DETAILS')d.open=true}}}})();</script>
 <aside class="warnbox" role="note"><b>Karıştırmayın:</b> Bir ad birden fazla bitkiye bağlanıyorsa, o bitkiler halk arasında aynı adla anılıyor demektir. Toplarken ya da satın alırken Latince adına ve bitkinin sayfasındaki “karıştırma riski” notuna bakın.</aside>''', 'rehber', narrow=True, extra=lds(crumb_ld(('/rehber/', 'Rehberler'), (path, 'Yöresel adlar')))))
 GUIDE_URLS.append(path)
 
