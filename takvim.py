@@ -1,0 +1,37 @@
+# Ritüel ve mevsim takvimi. Her olay, tarihinden birkaç gün önce ana sayfanın üstünde görünür; olay günü Threads'e gönderi gider.
+# tarih: 'AA-GG' (her yıl aynı gün) ya da ay: 'AA' (bütün ay). once: kaç gün önceden gösterileceği.
+# metin yalnızca kaynağın söylediğini içerir; mevsim başlangıçları astronomiktir.
+
+OLAYLAR = [
+dict(slug='nevruz', ad='Nevruz', tarih='03-21', once=7,
+ kisa='“Yeni gün”: ateş, demir ve filizlenen tohumlarla baharın gelişi.',
+ metin='Nevruz, Farsçada “yeni gün” demektir ve Orta Asya’dan Balkanlar’a kadar pek çok toplulukta 21 Mart’ta kutlanır. Ateşin üzerinden atlanır, bazı Türk topluluklarında demir ateşte dövülür; buğday ve mercimek gibi tahıllar filizlendirilip boyanmış yumurtalarla Nevruz sofralarına konur [1].',
+ bitkiler=[], motifler=['yildiz', 'su-yolu'], kavram='nevruz', link=('/toplama-takvimi/', 'Baharda doğada neler var?'),
+ kaynaklar=[('Şinasi Gündüz, “Nevruz”, TDV İslâm Ansiklopedisi, 2007', 'https://islamansiklopedisi.org.tr/nevruz')]),
+dict(slug='hidrellez', ad='Hıdrellez', tarih='05-06', once=7,
+ kisa='Hızır ile İlyas’ın buluştuğu gün; dilekler gül ağacının dibine.',
+ metin='Hıdrellez, 6 Mayıs’ta Hızır ile İlyas’ın buluştuğuna inanılan ve yazın başlangıcı sayılan bir halk bayramıdır. Kutlamalar “hıdırlık” denen yeşil mesire yerlerinde yapılır; dilekler kâğıda yazılıp gül ağaçlarının dibine konur, genç kızlar dileklerini manilerle söyler [1].',
+ bitkiler=[], motifler=['hayat-agaci', 'kupe'], kavram='hidrellez', link=('/toplama-takvimi/', 'Mayısta doğada neler var?'),
+ kaynaklar=[('Ahmet Yaşar Ocak, “Hıdrellez”, TDV İslâm Ansiklopedisi, 1998', 'https://islamansiklopedisi.org.tr/hidrellez')]),
+dict(slug='yaz-gundonumu', ad='Yaz gündönümü', tarih='06-21', once=3,
+ kisa='Yılın en uzun günü: toplama mevsiminin doruğu.',
+ metin='21 Haziran civarında Kuzey Yarımküre’de yılın en uzun günü yaşanır. Anadolu’da pek çok şifalı bitkinin toplama mevsimi bu haftalarda doruğa ulaşır.',
+ bitkiler=['kantaron', 'ihlamur', 'lavanta'], motifler=['yildiz'], kavram=None, link=('/toplama-takvimi/', 'Haziranda toplanan bitkiler'), kaynaklar=[]),
+dict(slug='pachamama-ayi', ad='Pachamama ayı', tarih='08', once=0,
+ kisa='And’larda toprak ananın “beslendiği” ay.',
+ metin='And’larda toprak ana Pachamama’nın “yiyip içmesi” gerektiğine inanılır. Peru’dan bir ritüel ustasının ailesi, ağustosta koka yaprakları, mısır, tohumlar ve karanfil yapraklarıyla hazırlanan “despacho” adağını sunar; karşılığında toprağın onları beslediğine ve koruduğuna inanılır [1].',
+ bitkiler=['koka', 'kinoa', 'molle'], motifler=['chakana'], kavram='pachamama', link=('/kavram/pachamama/', 'Pachamama nedir?'),
+ kaynaklar=[('Rufino Turpo, “An Offering to the Pachamama”, Smithsonian Folklife Festival, 2015', 'https://festival.si.edu/blog/2015/an-offering-to-pachamama/')]),
+dict(slug='sonbahar-esitligi', ad='Sonbahar ekinoksu', tarih='09-22', once=3,
+ kisa='Gece ile gündüzün eşitlendiği gün: kök ve meyve toplama zamanı.',
+ metin='22–23 Eylül civarında gece ile gündüz eşitlenir ve sonbahar başlar. Anadolu’da kuşburnu, alıç ve ardıç meyvesi gibi sonbahar ürünlerinin toplama zamanıdır.',
+ bitkiler=['kusburnu', 'alic', 'ardic'], motifler=['bereket'], kavram=None, link=('/toplama-takvimi/', 'Eylülde toplanan bitkiler'), kaynaklar=[]),
+dict(slug='kis-gundonumu', ad='Kış gündönümü', tarih='12-21', once=3,
+ kisa='Yılın en uzun gecesi: kış çaylarının mevsimi.',
+ metin='21 Aralık civarında Kuzey Yarımküre’de yılın en uzun gecesi yaşanır; bundan sonra günler yeniden uzamaya başlar. Ihlamurun, dağ çayının ve kuşburnunun mutfaklara yerleştiği mevsimdir.',
+ bitkiler=['ihlamur', 'dagcayi', 'kusburnu'], motifler=['hayat-agaci', 'yildiz'], kavram=None, link=('/rehber/soguk-alginligi/', 'Soğuk algınlığına iyi gelen bitkiler'), kaynaklar=[]),
+dict(slug='ilkbahar-esitligi', ad='İlkbahar ekinoksu', tarih='03-20', once=0,
+ kisa='Gece ile gündüz eşitleniyor: doğa uyanıyor.',
+ metin='20 Mart civarında gece ile gündüz eşitlenir ve ilkbahar başlar. Isırganın körpe yapraklarını toplama zamanı yaklaşır.',
+ bitkiler=['isirgan', 'ebegumeci'], motifler=['su-yolu'], kavram=None, link=('/toplama-takvimi/', 'Baharda doğada neler var?'), kaynaklar=[]),
+]

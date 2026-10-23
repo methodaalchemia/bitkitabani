@@ -188,7 +188,7 @@ def head(title, desc, path, extra='', image=None):
 <div class="wrap{{narrow}}">
 '''
 
-MENU = [('Keşfet', [('/katalog/', 'Katalog', 'kat'), ('/yeni/', 'Yeni eklenenler', 'yeni'), ('/gunun-bitkisi/', 'Günün bitkisi', 'gun'), ('/oyun/', 'Günün bilmecesi', 'oyun'), ('/kopruler/', 'Kültür köprüleri', 'br'), ('/semboller/', 'Semboller', 'sembol'), ('/kavram/', 'Günün kavramı', 'kavram'), ('/yazilar/', 'Yazılar', 'yazi')]),
+MENU = [('Keşfet', [('/katalog/', 'Katalog', 'kat'), ('/yeni/', 'Yeni eklenenler', 'yeni'), ('/gunun-bitkisi/', 'Günün bitkisi', 'gun'), ('/oyun/', 'Günün bilmecesi', 'oyun'), ('/kopruler/', 'Kültür köprüleri', 'br'), ('/semboller/', 'Semboller', 'sembol'), ('/kavram/', 'Günün kavramı', 'kavram'), ('/takvim/', 'Ritüel takvimi', 'takvim'), ('/yazilar/', 'Yazılar', 'yazi')]),
         ('Rehberler', [('/rehber/', 'Derde göre bitkiler', 'rehber'), ('/tarif/', 'Çay tarifleri', 'tarif'), ('/karsilastirma/', 'Karşılaştırmalar', 'kars'), ('/rehber/ilac-etkilesimi/', 'İlaç etkileşimi', 'etk'), ('/rehber/hamilelik-emzirme/', 'Hamilelik ve emzirme', 'gebe'), ('/toplama-takvimi/', 'Toplama takvimi', 'takvim'), ('/yoresel-adlar/', 'Yöresel adlar', 'adlar')]),
         ('Bitki Tabanı', [('/kurs/', 'Ücretsiz e-posta kursu', 'kurs'), ('/bulten/', 'Bülten', 'bulten'), ('/hakkinda/', 'Hakkında', 'about'), ('/yontem/', 'Yöntem', 'yontem'), ('https://www.instagram.com/bitkitabani/', 'Instagram', 'ig'), ('/hesap/', 'Hesap', 'acct'), ('/gizlilik/', 'Gizlilik', 'priv'), ('mailto:iletisim@bitkitabani.com', 'İletişim', 'mail')])]
 def nav(cur):
@@ -682,6 +682,27 @@ def newband():
   <a class="nb-main" href="/{np_["id"]}/">{ph(np_, 500)}<span class="nb-txt"><span class="eyebrow">{lab}</span><b id="nbh">{e(np_["tr"])}</b><i>{e(short_la(np_))}</i><span class="nb-fact">{e(np_["ilginc"])}</span><span class="cta small">Sayfayı oku →</span></span></a>
   <div class="nb-side"><p class="nb-say"><b>Her gün yeni bir bitki.</b> Katalog her gece bir kayıt büyüyor.</p>{teaser()}{('<ul class="nb-list">' + prev + '</ul>') if prev else ''}<p class="nb-links"><a href="/yeni/">Bütün yeni eklenenler →</a><a href="{IG_URL}" rel="noopener">Instagram’da her gün →</a><a href="/yeni/rss.xml">RSS</a></p></div>
 </section>"""
+# ---------- ritüel ve mevsim takvimi ----------
+from takvim import OLAYLAR
+def olay_tarihi(o, yil):
+    if len(o['tarih']) == 2: return datetime.date(yil, int(o['tarih']), 1), datetime.date(yil, int(o['tarih']) % 12 + 1, 1) - datetime.timedelta(days=1) if o['tarih'] != '12' else datetime.date(yil, 12, 31)
+    m, d = map(int, o['tarih'].split('-')); g = datetime.date(yil, m, d); return g, g
+def aktif_olay(gun):
+    for o in OLAYLAR:
+        bas, son = olay_tarihi(o, gun.year)
+        if bas - datetime.timedelta(days=o['once']) <= gun <= son: return o, bas
+    return None, None
+AKTIF, AKTIF_T = aktif_olay(LOCAL_DAY)
+def _olink(o):
+    u, t = o['link']
+    if u.startswith('/kavram/') and not any(u == f'/kavram/{k["slug"]}/' for k in KAV): return ('/toplama-takvimi/', 'Bu ay doğada neler var?')
+    return u, t
+def takvim_band():
+    if not AKTIF: return ''
+    o = AKTIF; ne = 'bugün' if AKTIF_T == LOCAL_DAY else ('bu ay' if len(o['tarih']) == 2 else f'{AKTIF_T.day} {AYLAR[AKTIF_T.month - 1]}')
+    bt = ''.join(f'<a class="chip" href="/{x}/">{e(byId[x]["tr"])}</a>' for x in o['bitkiler'] if x in byId)
+    return f'<section class="takvimband"><span class="eyebrow">Takvim · {ne}</span><h2><a href="/takvim/#{o["slug"]}">{e(o["ad"])}</a></h2><p>{e(o["kisa"])}</p>{("<div class=related>" + bt + "</div>") if bt else ""}<p><a class="cta small" href="{_olink(o)[0]}">{e(_olink(o)[1])} →</a></p></section>'
+
 home = f'''
 <header class="top">
   <div class="brand">
@@ -692,6 +713,7 @@ home = f'''
   </div>
   <div class="todaybox"><a class="today" id="today" href="/{today_p["id"]}/" data-pool="{e(json.dumps([[p["id"], p["tr"], p["la"]] for p in pool], ensure_ascii=False))}"><span class="eyebrow">Bugünün bitkisi</span><b id="todayName">{e(today_p["tr"])}</b><i id="todayLatin">{e(today_p["la"])}</i></a><a class="cta small" href="/oyun/">Günün bilmecesini çöz →</a><a class="cta small" href="/gunun-bitkisi/">Geçmiş günlerin bitkileri →</a><p class="streak" id="streak" hidden></p></div>
 </header>
+{takvim_band()}
 {newband()}
 <section class="sec"><h2>Derde göre</h2><p>Uykudan öksürüğe, mideden kaygıya: şikâyetlere göre bitkiler, kanıtı en güçlü olandan başlayarak. Kullandığın bir ilaç varsa önce <a href="/rehber/ilac-etkilesimi/">etkileşim aracına</a> bak.</p><div class="icongrid">{''.join(f'<a href="/rehber/{k["slug"]}/">{ico(k["slug"], "ico-b")}<span>{e(k["kisa"])}</span></a>' for k in KONULAR if sum(1 for x, _ in k['bitkiler'] if x in byId) >= 2)}<a href="/rehber/ilac-etkilesimi/">{ico('etk', 'ico-b')}<span>İlaç etkileşimi</span></a><a href="/rehber/hamilelik-emzirme/">{ico('gebe', 'ico-b')}<span>Hamilelik</span></a><a href="/tarif/">{ico('tarif', 'ico-b')}<span>Çay tarifleri</span></a></div></section>
 <section class="sec"><h2>Bölgelere göre</h2><div class="regs-grid">{regcards}</div></section>
@@ -1177,6 +1199,26 @@ if True:
 {('<section class="sec"><h2>Bugünün kavramı</h2><p><a class="cta" href="/kavram/' + KAV_TODAY["slug"] + '/">' + e(KAV_TODAY["ad"]) + ' →</a></p>' + kav_plant(KAV_TODAY) + '</section>') if KAV_TODAY else ''}
 {('<section class="sec"><h2>A’dan Z’ye</h2><ul class="guidelist">' + _kl + '</ul></section>') if _kl else '<p>İlk kavram yarın sabah burada.</p>'}''', 'kavram', narrow=True))
     GUIDE_URLS.insert(0, '/kavram/')
+
+# --- takvim sayfası ---
+_ol = []
+for o in OLAYLAR:
+    bas, son = olay_tarihi(o, LOCAL_DAY.year)
+    if son < LOCAL_DAY: bas, son = olay_tarihi(o, LOCAL_DAY.year + 1)
+    _ol.append((bas, o))
+_ol.sort(key=lambda x: x[0])
+def _olay_html(bas, o):
+    tarih = AYLAR[bas.month - 1] + ' boyunca' if len(o['tarih']) == 2 else f'{bas.day} {AYLAR[bas.month - 1]}'
+    bt = ''.join(f'<a class="chip" href="/{x}/">{e(byId[x]["tr"])}</a>' for x in o['bitkiler'] if x in byId)
+    mo = ''.join(f'<a class="motif-mini-a" href="/semboller/{m["slug"]}/" title="{e(m["ad"])}">{motif_svg(m)}</a>' for m in MOTIFLER if m['slug'] in o['motifler'])
+    kv = next((k for k in KAV if k['slug'] == o.get('kavram')), None)
+    kay = ''.join(f' <a href="{e(u)}" target="_blank" rel="noopener">[{i}]</a>' for i, (t, u) in enumerate(o['kaynaklar'], 1))
+    metin = re.sub(r'\s*\[\d+\]', '', o['metin'])
+    return f'''<article class="olay{' aktif' if AKTIF is o else ''}" id="{o["slug"]}"><div class="olay-t"><b>{tarih}</b></div><div><h2>{e(o["ad"])}</h2><p>{e(metin)}{kay}</p>{('<div class="related">' + bt + '</div>') if bt else ''}{('<div class="olay-mo">' + mo + '</div>') if mo else ''}<p class="muted-s">{('<a href="/kavram/' + kv["slug"] + '/">Kavram: ' + e(kv["ad"]) + '</a> · ') if kv else ''}<a href="{_olink(o)[0]}">{e(_olink(o)[1])}</a></p></div></article>'''
+write('/takvim/', page('Ritüel ve mevsim takvimi: Nevruz, Hıdrellez, gündönümleri | Bitki Tabanı', 'Nevruz, Hıdrellez, gündönümleri, ekinokslar ve And’larda Pachamama ayı: yılın ritüel ve mevsim takvimi, bitkileri ve sembolleriyle.', '/takvim/',
+      f'''{crumbs(('/takvim/', 'Takvim'))}<header class="page-head"><span class="eyebrow">Ritüel ve mevsim takvimi</span><h1>Yılın dönüm noktaları</h1><p>Bayramlar, gündönümleri ve doğadaki büyük değişimler; her biri kendi bitkileri ve sembolleriyle. Takvim her gün kendiliğinden yaklaşan olaydan başlar.</p></header>
+<div class="olaylar">{"".join(_olay_html(b, o) for b, o in _ol)}</div>''', 'takvim', narrow=True, extra=lds(crumb_ld(('/takvim/', 'Takvim')))))
+GUIDE_URLS.append('/takvim/')
 
 # --- yöresel ve diğer adlar sözlüğü ---
 import unicodedata as _ud

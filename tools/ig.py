@@ -245,6 +245,14 @@ def threads_plan(data, day, days=4):
         fact = f"Biliyor muydunuz? 🌿\n\n{p['ilginc']}\n\n{p['tr']} ({p['la']}) hakkında daha fazlası: bitkitabani.com/{p['id']}/"
         out[dd.isoformat()] = {'sabah': dict(text=fact[:495], image=img(p['id'])), 'ogle': dict(text=extra[k % len(extra)]['text'][:495], image=extra[k % len(extra)]['image'])}
         def _adl(q): return [x.strip() for x in re.sub(r'\([^)]*\)', '', q.get('yoresel') or '').split(',') if x.strip() and x.strip().lower() != q['tr'].lower()]
+        try:
+            from takvim import OLAYLAR
+            ol = next((o for o in OLAYLAR if o['tarih'] == dd.strftime('%m-%d') or (o['tarih'] == dd.strftime('%m') and dd.day == 1)), None)
+            if ol:
+                bt = [x for x in ol['bitkiler'] if x in P]
+                metin = re.sub(r'\s*\[\d+\]', '', ol['metin'])
+                out[dd.isoformat()]['sabah'] = dict(text=(f"Bugün {ol['ad']} 🌿\n\n{metin}" + (f"\n\nMevsimin bitkileri: {', '.join(P[x]['tr'] for x in bt)}." if bt else '') + "\n\nTakvim: bitkitabani.com/takvim/")[:495], image=img(bt[0]) if bt else None)
+        except Exception as ex: print('takvim threads:', ex)
         yor = [q for q in pool if 'anadolu' in q['bolge'] and len(_adl(q)) >= 2]
         if yor:
             q = yor[(k * 13) % len(yor)]
