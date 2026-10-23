@@ -213,7 +213,7 @@ async function thPost(env) {
   if (st.pauseUntil && Date.now() < st.pauseUntil) return { skipped: 'bekleniyor' };
   // Hangi post sırada? Günlük bitki (Instagram'dan sonra), sabah 10'da 'Biliyor muydunuz?', öğleden sonra 14'te rehber/tarif.
   let job = null;
-  if ((ig.n || 0) >= LAUNCH && ig.last === day && st.last !== day) job = 'gunluk';
+  if ((ig.n || 0) >= LAUNCH && ig.last === day && ig.lastPlant && ig.lastPlant !== st.plant && st.last !== day + ':' + ig.lastPlant) job = 'gunluk';
   else if (hour >= 10 && st.slot.sabah !== day) job = 'sabah';
   else if (hour >= 14 && st.slot.ogle !== day) job = 'ogle';
   if (!job) return { skipped: 'sırası değil' };
@@ -243,7 +243,7 @@ async function thPost(env) {
         if (s.status === 'ERROR') throw new Error('Threads görselleri işleyemedi');
       }
       await igJson(await fetch(TH + '/me/threads_publish', form({ creation_id: box })));
-      st.last = day; st.plant = post.id;
+      st.last = day + ':' + post.id; st.plant = post.id;
     } else {
       const pr = await igAsset('threads.json');
       if (!pr.ok) throw new Error('threads.json bulunamadı');
@@ -258,7 +258,7 @@ async function thPost(env) {
     if (/limit/i.test(st.error)) st.pauseUntil = Date.now() + 2 * 3600e3;
     const fk = 'fails_' + job;
     st[fk] = (st.lastFailDay === day ? (st[fk] || 0) : 0) + 1; st.lastFailDay = day;
-    if (st[fk] >= 3) { if (job === 'gunluk') st.last = day; else st.slot[job] = day; }   // aynı iş için günde en fazla 3 deneme
+    if (st[fk] >= 3) { if (job === 'gunluk') st.plant = ig.lastPlant; else st.slot[job] = day; }   // aynı iş için günde en fazla 3 deneme
   }
   await call(env, 'th:state', 'put', st);
   return { n: st.n || 0, error: st.error };
@@ -271,7 +271,7 @@ export default {
     if (url.pathname === '/api/ig-durum' && req.method === 'GET') {
       const st = (await call(env, 'ig:state', 'get')) || {};
       const th = (await call(env, 'th:state', 'get')) || {};
-      return json({ threads: { token: !!(env.TH_TOKEN || env.TH_Token || th.token), sayi: th.n || 0, son: th.last || null, bitki: th.plant || null, hata: th.error || null, hataZamani: th.errorAt || null }, token: !!(env.IG_TOKEN || st.token), sayi: st.n || 0, reels: st.reels || 0, reelHata: st.reelError || null, hikayeHata: st.storyError || null, altMetin: !st.noAlt, sonPaylasim: st.last || null, bitki: st.lastPlant || null, hata: st.error || null, hataZamani: st.errorAt || null, tokenYenilendi: st.tokenAt ? new Date(st.tokenAt).toISOString() : null, bugun: trDay() });
+      return json({ threads: { token: !!(env.TH_TOKEN || env.TH_Token || th.token), sayi: th.n || 0, son: th.last || null, sabah: (th.slot || {}).sabah || null, ogle: (th.slot || {}).ogle || null, bitki: th.plant || null, hata: th.error || null, hataZamani: th.errorAt || null }, token: !!(env.IG_TOKEN || st.token), sayi: st.n || 0, reels: st.reels || 0, reelHata: st.reelError || null, hikayeHata: st.storyError || null, altMetin: !st.noAlt, sonPaylasim: st.last || null, bitki: st.lastPlant || null, hata: st.error || null, hataZamani: st.errorAt || null, tokenYenilendi: st.tokenAt ? new Date(st.tokenAt).toISOString() : null, bugun: trDay() });
     }
     if (req.method !== 'GET' && req.headers.get('x-bt') !== '1') return json({ error: 'csrf' }, 403);
     try {
