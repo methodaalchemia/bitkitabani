@@ -240,6 +240,38 @@ def threads_plan(data, day, days=4):
         out[dd.isoformat()] = {'sabah': dict(text=fact[:495], image=img(p['id'])), 'ogle': dict(text=extra[k % len(extra)]['text'][:495], image=extra[k % len(extra)]['image'])}
     return out
 
+AYDA = ['Ocak’ta', 'Şubat’ta', 'Mart’ta', 'Nisan’da', 'Mayıs’ta', 'Haziran’da', 'Temmuz’da', 'Ağustos’ta', 'Eylül’de', 'Ekim’de', 'Kasım’da', 'Aralık’ta']
+def aylik(data, day, out_root):
+    """Ayın ilk günü Instagram ve Threads için 'Bu ay doğada' postu (toplama takvimine yönlendirir)."""
+    m = day.month; ids = data.get('takvim', {}).get(str(m)) or data.get('takvim', {}).get(m) or []
+    P = {p['id']: p for p in data['p']}
+    ps = [P[i] for i in ids if i in P][:10]
+    if len(ps) < 3: return
+    im = Image.new('RGB', (W, H), C['paper']); d = ImageDraw.Draw(im)
+    motif(d, 34, C['accent'])
+    d.text((80, 96), 'BİTKİ TABANI · TOPLAMA TAKVİMİ', font=mono(28), fill=C['muted'])
+    y = heading(d, 170, 'Bu ay doğada', f'{AYDA[m-1]} hangi şifalı bitkiler toplanır?')
+    d.text((80, y), 'Anadolu’da bu ay toplama mevsimi olan bitkiler:', font=sans(36), fill=C['muted']); y += 80
+    col = (W - 160) // 2
+    for i, p in enumerate(ps):
+        x = 80 + (i % 2) * col; yy = y + (i // 2) * 112
+        d.text((x, yy), p['tr'], font=serif(44), fill=C['ink'])
+        d.text((x, yy + 50), p['la'][:26], font=serif_i(28), fill=C['muted'])
+    d.line([(80, H - 120), (W - 80, H - 120)], fill=C['rule'], width=2)
+    d.text((80, H - 96), 'Ay ay bütün takvim', font=serif(34), fill=C['ink'])
+    u = 'bitkitabani.com/toplama-takvimi'; d.text((W - 80 - d.textlength(u, font=mono(28)), H - 90), u, font=mono(28), fill=C['accent'])
+    os.makedirs(os.path.join(out_root, 'aylik'), exist_ok=True)
+    key = day.strftime('%Y-%m')
+    im.save(os.path.join(out_root, 'aylik', key + '.jpg'), quality=90)
+    names = ', '.join(p['tr'] for p in ps)
+    cap = (f'{AYDA[m-1]} doğada neler var? 🌿\n\nAnadolu’da bu ay toplama mevsimi olan şifalı bitkiler: {names}.\n\n'
+           'Toplarken yalnızca kesin tanıdığınız bitkileri, yol kenarından ve ilaçlanmış alanlardan uzakta toplayın; bitkinin tamamını değil, bir kısmını alın ki yeniden büyüyebilsin.\n\n'
+           'Bu ay siz hangisini topluyorsunuz? Yorumlarda buluşalım. 👇\n\nAy ay bütün takvim: bitkitabani.com/toplama-takvimi (bağlantı profilde)\n\n'
+           '#şifalıbitkiler #toplamatakvimi #doğa #etnobotanik #bitkiçayı')
+    th = f'{AYDA[m-1]} doğada neler var? 🌿\n\nAnadolu’da bu ay toplama mevsimi olan şifalı bitkiler: {names}.\n\nAy ay bütün takvim: bitkitabani.com/toplama-takvimi/'
+    json.dump({'ay': key, 'image': f'{BASE}/ig/aylik/{key}.jpg', 'caption': cap, 'threads': th[:495],
+               'alt': f'{AYDA[m-1]} toplanan şifalı bitkilerin listesi: {names}.'}, open(os.path.join(out_root, 'aylik.json'), 'w', encoding='utf-8'), ensure_ascii=False)
+
 def main():
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     global ig2
@@ -261,6 +293,8 @@ def main():
     json.dump({'n': n0, 'day': day.isoformat()}, open(os.path.join(out_root, 'state.json'), 'w'))
     try: json.dump(threads_plan(data, day), open(os.path.join(out_root, 'threads.json'), 'w', encoding='utf-8'), ensure_ascii=False)
     except Exception as ex: print('threads planı yazılamadı:', ex)
+    try: aylik(data, day, out_root)
+    except Exception as ex: print('aylık post yazılamadı:', ex)
     cards = []
     if PAUSED:
         open(os.path.join(out_root, 'index.html'), 'w', encoding='utf-8').write('<!doctype html><meta charset="utf-8"><meta name="robots" content="noindex"><p>Instagram paylaşımı şu an durduruldu.</p>')

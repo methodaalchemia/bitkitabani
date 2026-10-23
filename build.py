@@ -106,6 +106,13 @@ short_la = lambda p: p['la'].split(',')[0].strip()
 
 FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;0,700;0,800;1,400&family=Alegreya+Sans:ital,wght@0,400;0,700;1,400&family=Courier+Prime&display=swap">'
 FONTS = '<script>try{var t=localStorage.getItem("bt-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>' + FONTS
+if os.path.exists(os.path.join(HERE, 'assets', 'fonts', 'alegreya.woff2')):   # yazı tipleri siteden: Google'a bağlantı yok, daha hızlı açılış
+    _ff = [('Alegreya', 'alegreya', '400 900', 'normal'), ('Alegreya', 'alegreya-italic', '400 900', 'italic'), ('Alegreya Sans', 'alegreya-sans', '400', 'normal'),
+           ('Alegreya Sans', 'alegreya-sans-bold', '700', 'normal'), ('Alegreya Sans', 'alegreya-sans-italic', '400', 'italic'), ('Courier Prime', 'courier-prime', '400', 'normal')]
+    FONTS = ('<script>try{var t=localStorage.getItem("bt-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>'
+             '<link rel="preload" href="/assets/fonts/alegreya-sans.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/assets/fonts/alegreya.woff2" as="font" type="font/woff2" crossorigin>'
+             '<style>' + ''.join(f'@font-face{{font-family:"{fam}";src:url(/assets/fonts/{f}.woff2) format("woff2");font-weight:{w};font-style:{st};font-display:swap}}' for fam, f, w, st in _ff
+                                 if os.path.exists(os.path.join(HERE, 'assets', 'fonts', f + '.woff2'))) + '</style>')
 FAV = '<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">'
 
 def head(title, desc, path, extra='', image=None):
@@ -1077,13 +1084,17 @@ open(os.path.join(OUT, 'llms-full.txt'), 'w', encoding='utf-8').write('\n'.join(
 
 os.makedirs(os.path.join(OUT,'assets'), exist_ok=True)
 for f in os.listdir(os.path.join(HERE, 'assets')):
-    shutil.copy(os.path.join(HERE, 'assets', f), os.path.join(OUT, 'assets', f))
+    _src = os.path.join(HERE, 'assets', f)
+    if os.path.isdir(_src): shutil.copytree(_src, os.path.join(OUT, 'assets', f), dirs_exist_ok=True)
+    else: shutil.copy(_src, os.path.join(OUT, 'assets', f))
 if os.path.isdir(os.path.join(HERE, 'img')):
     shutil.copytree(os.path.join(HERE, 'img'), os.path.join(OUT, 'img'), dirs_exist_ok=True)
 open(os.path.join(OUT, '_headers'), 'w').write('''/*
   Cache-Control: public, max-age=0, must-revalidate
 /assets/*
   Cache-Control: public, max-age=3600
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
 /img/*
   Cache-Control: public, max-age=2592000
 /robots.txt
@@ -1097,7 +1108,7 @@ open(os.path.join(OUT, '_headers'), 'w').write('''/*
 os.makedirs(os.path.join(HERE, '.cache'), exist_ok=True)
 json.dump({'day': LOCAL_DAY.isoformat(), 'yeni': {k: v.isoformat() for k, v in YENI.items()},
            'kuyruk': [[q['id'], q['yayin']] for q in _K.Q],
-           'kanit': {k: v['ad'] for k, v in KANIT.items()}, 'guv': GUV, 'reg': {k: v['ad'] for k, v in REG.items()},
+           'kanit': {k: v['ad'] for k, v in KANIT.items()}, 'guv': GUV, 'reg': {k: v['ad'] for k, v in REG.items()}, 'takvim': {m: [q['id'] for q in sorted(_cal[m], key=lambda q: _trkey(q['tr']))] for m in _cal},
            'p': [dict(id=p['id'], no=p['no'], tr=p['tr'], la=short_la(p), fam=p['fam'], bolge=p['bolge'], kat=p['kat'], kul=p['kul'], bilim=p['bilim'], kanit=p['kanit'],
                       guv=p['guv'], guvNot=p['guvNot'], ilginc=p['ilginc'], yasal=(YASAL[p['id']][0] if p['id'] in YASAL else None), img=(p['id'] in IMG),
                       foto=((IMG[p['id']].get('artist') or '') + (' · ' + IMG[p['id']].get('license', '') if IMG[p['id']].get('license') else '')) if p['id'] in IMG else '') for p in P]},

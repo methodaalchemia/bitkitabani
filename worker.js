@@ -267,6 +267,35 @@ async function thPost(env) {
   await call(env, 'th:state', 'put', st);
   return { n: st.n || 0, error: st.error };
 }
+// ---------- Ayın ilk günü: 'Bu ay doğada' postu (Instagram tek görsel + Threads) ----------
+async function aylikPost(env) {
+  const day = trDay(), hour = trHour();
+  if (day.slice(8) !== '01' || hour < 12) return;
+  const key = day.slice(0, 7);
+  const ig = (await call(env, 'ig:state', 'get')) || {};
+  const th = (await call(env, 'th:state', 'get')) || {};
+  if (ig.aylik === key && (!(env.TH_TOKEN || env.TH_Token) || (th.slot || {}).aylik === key)) return;
+  const pr = await igAsset('aylik.json');
+  if (!pr.ok) return;
+  const a = await pr.json();
+  if (a.ay !== key) return;
+  if (ig.aylik !== key && ig.token && ig.uid && !(ig.pauseUntil && Date.now() < ig.pauseUntil)) {
+    try {
+      const form = o => { const f = new URLSearchParams(o); f.set('access_token', ig.token); return { method: 'POST', body: f }; };
+      const box = (await igJson(await fetch(IG + '/' + ig.uid + '/media', form({ image_url: a.image, caption: a.caption, alt_text: a.alt })))).id;
+      await new Promise(r => setTimeout(r, 8000));
+      await igJson(await fetch(IG + '/' + ig.uid + '/media_publish', form({ creation_id: box })));
+      ig.aylik = key; ig.aylikError = null;
+    } catch (e) { ig.aylikError = String(e.message || e).slice(0, 200); ig.aylikFails = (ig.aylikFails || 0) + 1; if (ig.aylikFails >= 3) { ig.aylik = key; ig.aylikFails = 0; } }
+    await call(env, 'ig:state', 'put', ig);
+  }
+  if ((env.TH_TOKEN || env.TH_Token) && th.token && (th.slot || {}).aylik !== key) {
+    th.slot = th.slot || {};
+    try { await thPublish(th.token, { text: a.threads, image: a.image }); th.slot.aylik = key; }
+    catch (e) { th.error = 'aylik: ' + String(e.message || e).slice(0, 200); th.errorAt = new Date().toISOString(); th.aylikFails = (th.aylikFails || 0) + 1; if (th.aylikFails >= 3) { th.slot.aylik = key; th.aylikFails = 0; } }
+    await call(env, 'th:state', 'put', th);
+  }
+}
 export default {
   async fetch(req, env) {
     const url = new URL(req.url);
@@ -275,7 +304,7 @@ export default {
     if (url.pathname === '/api/ig-durum' && req.method === 'GET') {
       const st = (await call(env, 'ig:state', 'get')) || {};
       const th = (await call(env, 'th:state', 'get')) || {};
-      return json({ threads: { token: !!(env.TH_TOKEN || env.TH_Token || th.token), sayi: th.n || 0, son: th.last || null, sabah: (th.slot || {}).sabah || null, ogle: (th.slot || {}).ogle || null, bitki: th.plant || null, hata: th.error || null, hataZamani: th.errorAt || null }, token: !!(env.IG_TOKEN || st.token), sayi: st.n || 0, reels: st.reels || 0, reelHata: st.reelError || null, hikayeHata: st.storyError || null, altMetin: !st.noAlt, sonPaylasim: st.last || null, bitki: st.lastPlant || null, hata: st.error || null, hataZamani: st.errorAt || null, tokenYenilendi: st.tokenAt ? new Date(st.tokenAt).toISOString() : null, bugun: trDay() });
+      return json({ threads: { token: !!(env.TH_TOKEN || env.TH_Token || th.token), sayi: th.n || 0, son: th.last || null, sabah: (th.slot || {}).sabah || null, ogle: (th.slot || {}).ogle || null, bitki: th.plant || null, hata: th.error || null, hataZamani: th.errorAt || null }, token: !!(env.IG_TOKEN || st.token), sayi: st.n || 0, reels: st.reels || 0, reelHata: st.reelError || null, hikayeHata: st.storyError || null, altMetin: !st.noAlt, aylik: st.aylik || null, aylikHata: st.aylikError || null, sonPaylasim: st.last || null, bitki: st.lastPlant || null, hata: st.error || null, hataZamani: st.errorAt || null, tokenYenilendi: st.tokenAt ? new Date(st.tokenAt).toISOString() : null, bugun: trDay() });
     }
     if (req.method !== 'GET' && req.headers.get('x-bt') !== '1') return json({ error: 'csrf' }, 403);
     try {
@@ -314,6 +343,6 @@ export default {
     }
   },
   async scheduled(event, env, ctx) {
-    if (env.IG_TOKEN) ctx.waitUntil(igPost(env).then(() => (env.TH_TOKEN || env.TH_Token) ? thPost(env) : null));
+    if (env.IG_TOKEN) ctx.waitUntil(igPost(env).then(() => (env.TH_TOKEN || env.TH_Token) ? thPost(env) : null).then(() => aylikPost(env)));
   },
 };
