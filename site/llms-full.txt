@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 122 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 123 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -3822,3 +3822,31 @@ Karıştırma riski: Siyah ceviz (Juglans nigra) ayrı bir türdür; kabuğu dah
 
 ### İlginç bilgi
 Ceviz ağacının kökünden ve yapraklarından toprağa geçen juglon başka bitkilerin büyümesini engeller; bu yüzden ceviz altında domates gibi bitkiler zor yetişir.
+
+## İncir (Ficus carica)
+
+URL: https://bitkitabani.com/incir/
+Familya: Moraceae · Bölge: Anadolu ve Akdeniz · Kullanılan kısım: Meyve, yaprak, süt (lateks)
+Bilimsel kanıt: Sınırlı · Güvenlik: Genelde güvenli
+
+### Geleneksel kullanım
+- Anadolu: Kuru incir kabızlıkta yenir; dal ve yapraktan akan süt halk arasında siğil üzerine sürülür. Aydın’da dişi ağaçlara erkek incir (ilek) dalları asılır; bu “ilekleme” ile küçük bir yaban arısı tozlaşmayı sağlar. Aydın ve İzmir incirleri yüzyıllardır Akdeniz’e satılır.
+- Akdeniz ve Ortadoğu: Kur’an’daki Tîn suresi incir ve zeytin üzerine yemin ederek başlar; Eski Ahit’te ve Yunan mitolojisinde de incir bereketin simgesidir.
+
+### Hazırlama
+Taze ya da kuru yenir; kabızlık için kuru incir akşamdan suda bekletilip sabah yenir. Süt yalnızca dıştan ve dikkatle kullanılır.
+
+### Bilim ne diyor
+Kuru incir lif bakımından zengindir; kabızlıkta faydasını gösteren birkaç küçük klinik çalışma vardır. Yaprak ekstresinin kan şekeri ve kolesterol üzerine etkileri daha çok hayvan çalışmalarında görülmüştür. Siğilde incir sütünü dondurma tedavisiyle karşılaştıran küçük bir çalışma umut verici sonuç vermiştir, ama kanıt sınırlıdır.
+
+### Güvenlik
+Meyvesi güvenlidir. Yaprak ve dallardaki süt furokumarin içerir; cilde değdikten sonra güneşe çıkılırsa ağır yanığa benzeyen fitofotodermatit yapar. İncir yaprağını bronzlaştırıcı olarak kullananlarda ciddi yanıklar bildirilmiştir. Kuru incirin şekeri ve kalorisi yüksektir.
+
+### Doğada
+Nerede yetişir: Ege ve Akdeniz kıyıları, Güneydoğu ve Karadeniz’in sıcak vadileri; kayalıklarda ve duvar diplerinde kendiliğinden de çıkar.
+Toplama mevsimi: Meyve Ağustos–Eylül’de olgunlaşır; yapraklar yaz boyunca toplanabilir.
+Yöresel adlar: incir, yemiş; erkek incire ilek denir
+Karıştırma riski: Süs için yetiştirilen kauçuk ve benjamin gibi Ficus türlerinin meyvesi yenmez; onların sütü de cildi tahriş eder.
+
+### İlginç bilgi
+Ürdün Vadisi’nde bulunan 11.400 yıllık incirler, incirin buğdaydan yaklaşık bin yıl önce evcilleştirilmiş olabileceğini düşündürür.
