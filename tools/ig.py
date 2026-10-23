@@ -246,6 +246,13 @@ def threads_plan(data, day, days=4):
         p = pool[(k * 37) % len(pool)]
         fact = f"Biliyor muydunuz? 🌿\n\n{p['ilginc']}\n\n{p['tr']} ({p['la']}) hakkında daha fazlası: bitkitabani.com/{p['id']}/"
         out[dd.isoformat()] = {'sabah': dict(text=fact[:495], image=img(p['id'])), 'ogle': dict(text=extra[k % len(extra)]['text'][:495], image=extra[k % len(extra)]['image'])}
+        try:
+            from kavramlar import KAVRAMLAR
+            kv = next((x for x in KAVRAMLAR if x['yayin'] == dd.isoformat() and x['bitki'] in P), None)
+            if kv:
+                kb = P[kv['bitki']]
+                out[dd.isoformat()]['kavram'] = dict(text=(f"Günün kavramı: {kv['ad']} ✦\n\n{kv['kisa']}\n\nGünün bitkisi: {kb['tr']} ({kb['la']})\n\nKaynaklarıyla: bitkitabani.com/kavram/{kv['slug']}/")[:495], image=img(kb['id']))
+        except Exception as ex: print('kavram threads:', ex)
     return out
 
 AYDA = ['Ocak’ta', 'Şubat’ta', 'Mart’ta', 'Nisan’da', 'Mayıs’ta', 'Haziran’da', 'Temmuz’da', 'Ağustos’ta', 'Eylül’de', 'Ekim’de', 'Kasım’da', 'Aralık’ta']

@@ -472,3 +472,7 @@ ul.adlar{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;g
 .symcard{display:flex;flex-direction:column;gap:6px;border:1.5px solid var(--ink);background:var(--sheet);padding:18px;text-decoration:none;color:var(--ink)}
 .symcard:hover{border-color:var(--accent)}.symcard b{font-family:var(--f-display);font-size:1.25rem}
 .sym-big{font-size:2rem;color:var(--accent);line-height:1}.sym-i{color:var(--accent)}
+.kavbitki{display:grid;grid-template-columns:140px minmax(0,1fr);gap:16px;border:1.5px solid var(--ink);background:var(--sheet);padding:14px;text-decoration:none;color:var(--ink);align-items:center}
+.kavbitki>span{display:flex;flex-direction:column;gap:4px}.kavbitki b{font-family:var(--f-display);font-size:1.4rem}.kavbitki i{color:var(--muted)}
+.kavbitki .ph,.kavbitki .ph img{width:140px;height:auto;aspect-ratio:3/4;object-fit:cover}
+@media(max-width:520px){.kavbitki{grid-template-columns:96px minmax(0,1fr)}.kavbitki .ph,.kavbitki .ph img{width:96px}}

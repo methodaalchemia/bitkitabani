@@ -111,6 +111,8 @@ async function igToken(env, st) {
 // Açılış: ilk 12 post (profilde 4 sıra) aynı gün yarım saat arayla; sonra her akşam 19:00'dan itibaren günde bir post.
 const LAUNCH = 14; // 12 post + yeni stille yeniden paylaşılan ilk 2
 function trHour(d = new Date()) { return new Date(d.getTime() + 3 * 3600e3).getUTCHours(); }
+function trH(d = new Date()) { const x = new Date(d.getTime() + 3 * 3600e3); return x.getUTCHours() + x.getUTCMinutes() / 60; }   // ondalıklı saat (20.5 = 20:30)
+// Paylaşım saatleri (Türkiye): akşam 20:30 günlük bitki; öğlen 12:30 ek postlar; Threads 08:30 kavram, 12:30 'Biliyor muydunuz?', 17:30 rehber/tarif/sembol.
 async function igPost(env) {
   const st = (await call(env, 'ig:state', 'get')) || {};
   if (st.reelPending && st.token) {   // video işlenince yayımla
@@ -130,7 +132,7 @@ async function igPost(env) {
     if (st.lastAt && Date.now() - st.lastAt < 28 * 60e3) return { skipped: 'yarım saat dolmadı' };
   } else {
     if (st.catchup) { if (hour < 9) return { skipped: 'gece' }; }   // kaçırılan postu sabah telafi et
-    else if (hour < 19 || st.lastDaily === day) return { skipped: 'bugün sırası değil' };   // açılış postu olan gün de akşam günlük post çıkar
+    else if (trH() < 20.4 || st.lastDaily === day) return { skipped: 'bugün sırası değil' };   // açılış postu olan gün de akşam günlük post çıkar
   }
   try {
     const pr = await igAsset('p/' + n + '/post.json');
@@ -214,8 +216,9 @@ async function thPost(env) {
   // Hangi post sırada? Günlük bitki (Instagram'dan sonra), sabah 10'da 'Biliyor muydunuz?', öğleden sonra 14'te rehber/tarif.
   let job = null;
   if ((ig.n || 0) >= LAUNCH && ig.last === day && ig.lastPlant && ig.lastPlant !== st.plant && st.last !== day + ':' + ig.lastPlant) job = 'gunluk';
-  else if (hour >= 10 && st.slot.sabah !== day) job = 'sabah';
-  else if (hour >= 14 && st.slot.ogle !== day) job = 'ogle';
+  else if (trH() >= 8.4 && st.slot.kavram !== day) job = 'kavram';
+  else if (trH() >= 12.4 && st.slot.sabah !== day) job = 'sabah';
+  else if (trH() >= 17.4 && st.slot.ogle !== day) job = 'ogle';
   if (!job) return { skipped: 'sırası değil' };
   st.step = null;
   try {
@@ -271,7 +274,7 @@ async function thPost(env) {
 // ---------- Ayın ilk günü: 'Bu ay doğada' postu (Instagram tek görsel + Threads) ----------
 async function aylikPost(env) {
   const day = trDay(), hour = trHour();
-  if (day.slice(8) !== '01' || hour < 12) return;
+  if (day.slice(8) !== '01' || trH() < 12.4) return;
   const key = day.slice(0, 7);
   const ig = (await call(env, 'ig:state', 'get')) || {};
   const th = (await call(env, 'th:state', 'get')) || {};
@@ -300,7 +303,7 @@ async function aylikPost(env) {
 // ---------- Haftalık ek postlar (Pzt/Çar/Cum öğlen): Instagram + Threads albüm ----------
 async function ekPost(env) {
   const day = trDay(), hour = trHour();
-  if (hour < 12 || hour >= 22) return;
+  if (trH() < 12.4 || hour >= 22) return;
   const ig = (await call(env, 'ig:state', 'get')) || {};
   const th = (await call(env, 'th:state', 'get')) || {};
   const thOn = !!(env.TH_TOKEN || env.TH_Token) && th.token;
@@ -449,7 +452,7 @@ export default {
       const st = (await call(env, 'ig:state', 'get')) || {};
       const th = (await call(env, 'th:state', 'get')) || {};
       const AL = (await call(env, 'abone:list', 'get')) || {}; const bs = (await call(env, 'bulten:state', 'get')) || {};
-      return json({ bulten: { anahtar: !!(env.RESEND_KEY || env.RESEND_Key), onayli: Object.values(AL).filter(a => a.on).length, kursta: Object.values(AL).filter(a => a.on && typeof a.kurs === 'number' && a.kurs < 7).length, bekleyen: Object.values(AL).filter(a => !a.on).length, duyuru: Object.values(AL).filter(a => a.on && a.d).length, gonderilen: bs.sayi || 0, hata: bs.err || Object.values(AL).map(a => a.err).find(Boolean) || null }, threads: { token: !!(env.TH_TOKEN || env.TH_Token || th.token), sayi: th.n || 0, son: th.last || null, sabah: (th.slot || {}).sabah || null, ogle: (th.slot || {}).ogle || null, bitki: th.plant || null, hata: th.error || null, hataZamani: th.errorAt || null }, token: !!(env.IG_TOKEN || st.token), sayi: st.n || 0, reels: st.reels || 0, reelHata: st.reelError || null, hikayeHata: st.storyError || null, altMetin: !st.noAlt, aylik: st.aylik || null, ek: st.ek || null, ekSayi: st.ekSayi || 0, ekHata: st.ekError || null, aylikHata: st.aylikError || null, sonPaylasim: st.last || null, bitki: st.lastPlant || null, hata: st.error || null, hataZamani: st.errorAt || null, tokenYenilendi: st.tokenAt ? new Date(st.tokenAt).toISOString() : null, bugun: trDay() });
+      return json({ bulten: { anahtar: !!(env.RESEND_KEY || env.RESEND_Key), onayli: Object.values(AL).filter(a => a.on).length, kursta: Object.values(AL).filter(a => a.on && typeof a.kurs === 'number' && a.kurs < 7).length, bekleyen: Object.values(AL).filter(a => !a.on).length, duyuru: Object.values(AL).filter(a => a.on && a.d).length, gonderilen: bs.sayi || 0, hata: bs.err || Object.values(AL).map(a => a.err).find(Boolean) || null }, threads: { token: !!(env.TH_TOKEN || env.TH_Token || th.token), sayi: th.n || 0, son: th.last || null, kavram: (th.slot || {}).kavram || null, sabah: (th.slot || {}).sabah || null, ogle: (th.slot || {}).ogle || null, bitki: th.plant || null, hata: th.error || null, hataZamani: th.errorAt || null }, token: !!(env.IG_TOKEN || st.token), sayi: st.n || 0, reels: st.reels || 0, reelHata: st.reelError || null, hikayeHata: st.storyError || null, altMetin: !st.noAlt, aylik: st.aylik || null, ek: st.ek || null, ekSayi: st.ekSayi || 0, ekHata: st.ekError || null, aylikHata: st.aylikError || null, sonPaylasim: st.last || null, bitki: st.lastPlant || null, hata: st.error || null, hataZamani: st.errorAt || null, tokenYenilendi: st.tokenAt ? new Date(st.tokenAt).toISOString() : null, bugun: trDay() });
     }
     if (url.pathname.startsWith('/api/abone/') && (req.method === 'GET' || url.pathname === '/api/abone/cik')) return aboneApi(req, env, url);
     if (req.method !== 'GET' && req.headers.get('x-bt') !== '1') return json({ error: 'csrf' }, 403);

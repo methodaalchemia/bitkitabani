@@ -91,6 +91,9 @@ from tarif import TARIFLER
 from karsilastirma import KARS
 from semboller import SEMBOLLER
 from yazilar import YAZILAR
+from kavramlar import KAVRAMLAR
+KAV = sorted([k for k in KAVRAMLAR if datetime.date.fromisoformat(k['yayin']) <= LOCAL_DAY and k['bitki'] in byId], key=lambda k: k['yayin'])
+KAV_TODAY = KAV[-1] if KAV else None
 GLINKS = {}
 def _glinks():
     for k in KONULAR:
@@ -169,7 +172,7 @@ def head(title, desc, path, extra='', image=None):
 <div class="wrap{{narrow}}">
 '''
 
-MENU = [('Keşfet', [('/katalog/', 'Katalog', 'kat'), ('/yeni/', 'Yeni eklenenler', 'yeni'), ('/gunun-bitkisi/', 'Günün bitkisi', 'gun'), ('/oyun/', 'Günün bilmecesi', 'oyun'), ('/kopruler/', 'Kültür köprüleri', 'br'), ('/semboller/', 'Semboller', 'sembol'), ('/yazilar/', 'Yazılar', 'yazi')]),
+MENU = [('Keşfet', [('/katalog/', 'Katalog', 'kat'), ('/yeni/', 'Yeni eklenenler', 'yeni'), ('/gunun-bitkisi/', 'Günün bitkisi', 'gun'), ('/oyun/', 'Günün bilmecesi', 'oyun'), ('/kopruler/', 'Kültür köprüleri', 'br'), ('/semboller/', 'Semboller', 'sembol'), ('/kavram/', 'Günün kavramı', 'kavram'), ('/yazilar/', 'Yazılar', 'yazi')]),
         ('Rehberler', [('/rehber/', 'Derde göre bitkiler', 'rehber'), ('/tarif/', 'Çay tarifleri', 'tarif'), ('/karsilastirma/', 'Karşılaştırmalar', 'kars'), ('/rehber/ilac-etkilesimi/', 'İlaç etkileşimi', 'etk'), ('/rehber/hamilelik-emzirme/', 'Hamilelik ve emzirme', 'gebe'), ('/toplama-takvimi/', 'Toplama takvimi', 'takvim'), ('/yoresel-adlar/', 'Yöresel adlar', 'adlar')]),
         ('Bitki Tabanı', [('/kurs/', 'Ücretsiz e-posta kursu', 'kurs'), ('/bulten/', 'Bülten', 'bulten'), ('/hakkinda/', 'Hakkında', 'about'), ('/yontem/', 'Yöntem', 'yontem'), ('https://www.instagram.com/bitkitabani/', 'Instagram', 'ig'), ('/hesap/', 'Hesap', 'acct'), ('/gizlilik/', 'Gizlilik', 'priv'), ('mailto:iletisim@bitkitabani.com', 'İletişim', 'mail')])]
 def nav(cur):
@@ -1074,6 +1077,46 @@ _yl = ''.join(f'<li><a href="/yazilar/{y["slug"]}/"><b>{e(y["baslik"])}</b></a><
 write('/yazilar/', page('Yazılar: şamanizm, ritüel bitkiler ve kadim bilgi | Bitki Tabanı', 'Şamanizm, animizm, tütsü gelenekleri ve bitkilerle kurulan kadim ilişki üzerine kaynaklı yazılar.', '/yazilar/',
       f'''{crumbs(('/yazilar/', 'Yazılar'))}<header class="page-head"><span class="eyebrow">Yazılar</span><h1>Bitkiler, ritüeller ve kadim bilgi</h1><p>Şamanizmden tütsü geleneklerine, kutsal ağaçlardan bitki “öğretmenlere”: bitkilerle kurulan kadim ilişki üzerine kaynaklı yazılar.</p></header><section class="sec"><ul class="guidelist">{_yl}</ul></section>''', 'yazi', narrow=True))
 GUIDE_URLS.insert(0, '/yazilar/')
+
+# --- günün kavramı ---
+def kav_plant(k):
+    p = byId[k['bitki']]
+    return f'''<a class="kavbitki" href="/{p["id"]}/">{ph(p, 500)}<span><span class="eyebrow">Kavramın bitkisi</span><b>{e(p["tr"])}</b><i>{e(short_la(p))}</i><span class="muted-s">{e(p["ilginc"])}</span><span class="cta small">Bitkinin sayfası →</span></span></a>'''
+for i, k in enumerate(KAV):
+    path = f'/kavram/{k["slug"]}/'
+    d = datetime.date.fromisoformat(k['yayin'])
+    secs = ''.join(f'<p>{_yp(p)}</p>' for p in k['metin'])
+    kay = '<ol class="refs">' + ''.join((f'<li id="k{j}"><a href="{e(u)}" target="_blank" rel="noopener">{e(t)}</a></li>' if u else f'<li id="k{j}"><cite>{e(t)}</cite></li>') for j, (t, u) in enumerate(k['kaynaklar'], 1)) + '</ol>'
+    bit = ''.join(f'<a class="chip" href="/{x}/">{"".join(dot(r) for r in byId[x]["bolge"])}{e(byId[x]["tr"])}</a>' for x in k['bitkiler'] if x in byId and x != k['bitki'])
+    sem = ''.join(f'<li><a href="/semboller/{sm["slug"]}/"><span class="sym-i" aria-hidden="true">{sm["simge"]}</span> {e(sm["ad"])}</a></li>' for sm in LIVE_S if sm['slug'] in k['semboller'])
+    yz = ''.join(f'<li><a href="/yazilar/{y["slug"]}/">{e(y["baslik"])}</a></li>' for y in YAZILAR if y['slug'] in k['yazilar'])
+    prev_, next_ = (KAV[i - 1] if i else None), (KAV[i + 1] if i + 1 < len(KAV) else None)
+    body = f'''{crumbs(('/kavram/', 'Kavramlar'), (path, k['ad']))}
+<article class="sheet yazi">
+<header class="page-head"><span class="eyebrow">Günün kavramı · {tr_date(d).rsplit(",", 1)[0]}</span><h1>{e(k["ad"])}</h1><p class="lede">{e(k["kisa"])}</p></header>
+{sharebar(k['ad'] + ': ' + k['kisa'], path)}
+{kav_plant(k)}
+<section class="sec">{secs}</section>
+{('<section class="sec"><h2>İlgili bitkiler</h2><div class="related">' + bit + '</div></section>') if bit else ''}
+{('<section class="sec"><h2>İlgili semboller</h2><ul class="otherlist">' + sem + '</ul></section>') if sem else ''}
+{('<section class="sec"><h2>Daha fazlası</h2><ul class="otherlist">' + yz + '</ul></section>') if yz else ''}
+<section class="sec"><h2>Kaynaklar</h2>{kay}</section>
+<aside class="disclaimer" role="note"><b>Kültürel kayıt.</b> Ritüel ve inançlar, onları yaşatan toplulukların mirası olarak anlatılır; kullanım önerisi değildir.</aside>
+<div class="sheet-foot"><a class="cta" href="/kavram/">Bütün kavramlar →</a><div class="pager">{(f'<a href="/kavram/{prev_["slug"]}/">← {e(prev_["ad"])}</a>') if prev_ else ''}{(f'<a href="/kavram/{next_["slug"]}/">{e(next_["ad"])} →</a>') if next_ else ''}</div></div>
+{abone('kavram:' + k['slug'])}
+</article>'''
+    write(path, page(f'{k["ad"]} nedir? {k["kisa"][:60].rsplit(" ", 1)[0]}… | Bitki Tabanı' if len(k['kisa']) > 60 else f'{k["ad"]} nedir? {k["kisa"]} | Bitki Tabanı', k['kisa'], path, body, 'kavram', narrow=True,
+          extra=lds({"@context":"https://schema.org","@type":"DefinedTerm","name":k['ad'],"description":k['kisa'],"inDefinedTermSet":BASE + '/kavram/',"url":BASE+path},
+                    {"@context":"https://schema.org","@type":"Article","headline":k['ad'],"description":k['kisa'],"inLanguage":"tr","url":BASE+path,"author":AUTHOR,"datePublished":k['yayin'],"citation":[t for t, u in k['kaynaklar']]},
+                    crumb_ld(('/kavram/', 'Kavramlar'), (path, k['ad']))), image=(f'{BASE}/img/{k["bitki"]}-960.jpg' if k['bitki'] in IMG else None)))
+    GUIDE_URLS.append(path)
+if True:
+    _kl = ''.join(f'<li><a href="/kavram/{k["slug"]}/"><b>{e(k["ad"])}</b></a><span>{e(k["kisa"])} · Bitkisi: <a href="/{k["bitki"]}/">{e(byId[k["bitki"]]["tr"])}</a></span></li>' for k in sorted(KAV, key=lambda k: k['ad'].replace('Ç','C~').replace('Ö','O~').replace('Ş','S~').replace('Ü','U~').replace('İ','I~')))
+    write('/kavram/', page('Kavramlar sözlüğü: şamanizm, ritüel ve kadim bilgi | Bitki Tabanı', 'Her gün bir kavram ve onunla eşleşen bir bitki: animizm, kam, nazar, Pachamama, limpia, öğretmen bitkiler ve daha fazlası.', '/kavram/',
+          f'''{crumbs(('/kavram/', 'Kavramlar'))}<header class="page-head"><span class="eyebrow">Her gün bir kavram, bir bitki · {len(KAV)} madde</span><h1>Kavramlar sözlüğü</h1><p>Şamanizmden halk inançlarına, ritüellerden kadim bilgiye: her gün kısa, kaynaklı bir kavram ve onunla eşleşen bir bitki.</p></header>
+{('<section class="sec"><h2>Bugünün kavramı</h2><p><a class="cta" href="/kavram/' + KAV_TODAY["slug"] + '/">' + e(KAV_TODAY["ad"]) + ' →</a></p>' + kav_plant(KAV_TODAY) + '</section>') if KAV_TODAY else ''}
+{('<section class="sec"><h2>A’dan Z’ye</h2><ul class="guidelist">' + _kl + '</ul></section>') if _kl else '<p>İlk kavram yarın sabah burada.</p>'}''', 'kavram', narrow=True))
+    GUIDE_URLS.insert(0, '/kavram/')
 
 # --- yöresel ve diğer adlar sözlüğü ---
 import unicodedata as _ud
