@@ -14,6 +14,7 @@ IMG = json.load(open(os.path.join(HERE, 'images.json'), encoding='utf-8')) if os
 
 BASE = 'https://bitkitabani.com'
 OUT = os.path.join(HERE, 'site')
+shutil.rmtree(OUT, ignore_errors=True)   # her derleme temiz başlar: kaldırılan sayfalar yayında kalmasın
 D = json.load(open(os.path.join(HERE, 'data.json'), encoding='utf-8'))
 REG, KAT, KANIT, GUV, P, BR, EXTRA = D['REG'], D['KAT'], D['KANIT'], D['GUV'], D['P'], D['BR'], D['EXTRA']
 for i, p in enumerate(P): p['no'] = i + 1
@@ -89,7 +90,7 @@ def abone(kaynak, baslik='Ücretsiz e-posta kursu: Şifalı bitkilere başlangı
 from rehber import KONULAR
 from tarif import TARIFLER
 from karsilastirma import KARS
-from semboller import SEMBOLLER
+from motifler import MOTIFLER, TEMALAR, ESKI as MOTIF_ESKI
 from yazilar import YAZILAR
 from kavramlar import KAVRAMLAR
 KAV = sorted([k for k in KAVRAMLAR if datetime.date.fromisoformat(k['yayin']) <= LOCAL_DAY and k['bitki'] in byId], key=lambda k: k['yayin'])
@@ -102,10 +103,9 @@ def _glinks():
             if pid in byId: GLINKS.setdefault(pid, []).append((f'/rehber/{k["slug"]}/', 'Rehber: ' + k['kisa']))
     for t in TARIFLER:
         if t['bitki'] in byId: GLINKS.setdefault(t['bitki'], []).append((f'/tarif/{t["slug"]}/', 'Tarif: ' + t['ad']))
-    for sm in SEMBOLLER:
-        if sum(1 for x, _ in sm['bitkiler'] if x in byId) >= 3:
-            for x, _ in sm['bitkiler']:
-                if x in byId: GLINKS.setdefault(x, []).append((f'/semboller/{sm["slug"]}/', 'Sembol: ' + sm['ad']))
+    for mo in MOTIFLER:
+        for x, _ in mo['bitkiler']:
+            if x in byId: GLINKS.setdefault(x, []).append((f'/semboller/{mo["slug"]}/', 'Sembol: ' + mo['ad']))
     for c in KARS:
         if c['a'] in byId and c['b'] in byId:
             for x in (c['a'], c['b']): GLINKS.setdefault(x, []).append((f'/karsilastirma/{c["a"]}-ve-{c["b"]}/', c['baslik']))
@@ -1012,36 +1012,71 @@ write('/karsilastirma/', page('Bitki karşılaştırmaları: hangisi, ne zaman? 
       f'{crumbs(("/karsilastirma/", "Karşılaştırmalar"))}<header class="page-head"><span class="eyebrow">{len(LIVE_C)} karşılaştırma</span><h1>Hangisi, ne zaman?</h1><p>Sık karıştırılan ya da aynı dert için kullanılan bitkiler yan yana: kanıt düzeyi, güvenlik ve başlıca farklar.</p></header><section class="sec"><ul class="guidelist">{kl}</ul></section>{DISCL}', 'kars', narrow=True, extra=lds(crumb_ld(('/karsilastirma/', 'Karşılaştırmalar')))))
 GUIDE_URLS.append('/karsilastirma/')
 
-# --- semboller ---
-LIVE_S = [sm for sm in SEMBOLLER if sum(1 for x, _ in sm['bitkiler'] if x in byId) >= 3]
-def sym_item(p, note):
-    th = f'<img src="/img/{p["id"]}-500.jpg" alt="" width="96" height="128" loading="lazy" decoding="async">' if p['id'] in IMG else '<span class="rb-ph"></span>'
-    return f'''<article class="rb-item"><a class="rb-img" href="/{p["id"]}/" tabindex="-1" aria-hidden="true">{th}</a><div class="rb-txt"><h3><a href="/{p["id"]}/">{e(p["tr"])}</a> <i class="latin">{e(short_la(p))}</i></h3>
-<p class="rb-meta"><span class="regs">{"".join(dot(r) for r in p["bolge"])}</span> {e(", ".join(REG[r]["ad"] for r in p["bolge"]))}{(' · <span class="sf yuksek">' + GUV["yuksek"] + '</span>') if p["guv"] == "yuksek" else ''}</p><p>{e(note)}</p></div></article>'''
-for sm in LIVE_S:
-    ps = [(byId[x], n) for x, n in sm['bitkiler'] if x in byId]
-    path = f'/semboller/{sm["slug"]}/'
-    regs_n = len({r for p, _ in ps for r in p['bolge']})
-    others = ''.join(f'<li><a href="/semboller/{o["slug"]}/"><span class="sym-i" aria-hidden="true">{o["simge"]}</span> {e(o["ad"])}</a></li>' for o in LIVE_S if o is not sm)
-    body = f'''{crumbs(('/semboller/', 'Semboller'), (path, sm['ad']))}
+# --- semboller: el çizimi tek renk motifler ---
+import random as _rnd
+def motif_svg(mo, size=None, cls='motif-svg'):
+    r = _rnd.Random(mo['slug'])
+    def wob(pts, amp):
+        out = []
+        for (x0, y0), (x1, y1) in zip(pts, pts[1:]):
+            n = max(2, int(math.hypot(x1 - x0, y1 - y0) / 3))
+            for k in range(n):
+                t = k / n; out.append((x0 + (x1 - x0) * t + r.uniform(-amp, amp), y0 + (y1 - y0) * t + r.uniform(-amp, amp)))
+        out.append((pts[-1][0] + r.uniform(-amp, amp), pts[-1][1] + r.uniform(-amp, amp)))
+        return out
+    def path(pts):
+        if len(pts) < 2: return ''
+        d = f'M{pts[0][0]:.1f} {pts[0][1]:.1f}'
+        for (ax, ay), (bx, by) in zip(pts[1:], pts[2:] + [pts[-1]]):
+            d += f' Q{ax:.1f} {ay:.1f} {(ax + bx) / 2:.1f} {(ay + by) / 2:.1f}'
+        return d
+    body = ''.join(f'<path d="{path(wob(p, .45))}" fill="currentColor" stroke="none" opacity=".9"/>' for p in mo.get('dolu', []))
+    body += ''.join(f'<path d="{path(wob(p, .55))}"/>' for p in mo['cizim'])
+    body += ''.join(f'<path d="{path(wob(p, .9))}" stroke-width="1.1" opacity=".55"/>' for p in mo['cizim'])
+    sz = f' width="{size}" height="{size}"' if size else ''
+    return f'<svg class="{cls}" viewBox="-4 -4 108 108"{sz} fill="none" stroke="currentColor" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="{e(mo["ad"])} motifi çizimi">{body}</svg>'
+import math
+def _msrc(t):
+    return re.sub(r'\[(\d+)\]', lambda m: f'<sup><a href="#k{m.group(1)}">[{m.group(1)}]</a></sup>', e(t))
+for mo in MOTIFLER:
+    path = f'/semboller/{mo["slug"]}/'
+    bit = ''.join(f'<li><a href="/{x}/"><b>{e(byId[x]["tr"])}</b></a>: {e(n)}</li>' for x, n in mo['bitkiler'] if x in byId)
+    same = [o for o in MOTIFLER if o['tema'] == mo['tema'] and o is not mo]
+    kay = '<ol class="refs">' + ''.join((f'<li id="k{j}"><a href="{e(u)}" target="_blank" rel="noopener">{e(t)}</a></li>' if u else f'<li id="k{j}"><cite>{e(t)}</cite></li>') for j, (t, u) in enumerate(mo['kaynaklar'], 1)) + '</ol>'
+    body = f'''{crumbs(('/semboller/', 'Semboller'), (path, mo['ad']))}
 <article class="sheet">
-<header class="page-head"><span class="eyebrow"><span class="sym-i" aria-hidden="true">{sm["simge"]}</span> Sembol · {len(ps)} bitki · {regs_n} bölge</span><h1>{e(sm["ad"])}</h1><p>{e(sm["giris"])}</p></header>
-{sharebar(sm['ad'] + ': bitkiler ve kültürler', path)}
-<section class="sec"><h2>Bu anlamı taşıyan bitkiler</h2><div class="rb-list">{"".join(sym_item(p, n) for p, n in ps)}</div></section>
-<aside class="disclaimer" role="note"><b>Kültürel kayıt.</b> Ritüel ve sembolik kullanımlar, onları yaşatan toplulukların mirası olarak anlatılır; kullanım önerisi değildir. Listedeki bazı bitkiler zehirlidir ya da Türkiye’de yasal kısıtlıdır; ayrıntılar ve kaynaklar her bitkinin sayfasında.</aside>
-<section class="sec"><h2>Diğer semboller</h2><ul class="otherlist">{others}</ul></section>
+<header class="motif-head"><div class="motif-art">{motif_svg(mo)}</div><div><span class="eyebrow">{e(mo["bolge"])} · {e(TEMALAR[mo["tema"]])}</span><h1>{e(mo["ad"])}</h1><p class="lede">{e(mo["kisa"])}</p></div></header>
+{sharebar(mo['ad'] + ' motifi: ' + mo['kisa'], path)}
+<section class="sec"><h2>Ne anlatır?</h2><p>{_msrc(mo["anlam"])}</p></section>
+{('<section class="sec"><h2>Bağlantılı bitkiler</h2><ul class="otherlist">' + bit + '</ul></section>') if bit else ''}
+{('<section class="sec"><h2>Aynı temadan</h2><div class="motif-mini">' + ''.join(f'<a href="/semboller/{o["slug"]}/">{motif_svg(o)}<span>{e(o["ad"])}</span></a>' for o in same) + '</div></section>') if same else ''}
+<section class="sec"><h2>Kaynaklar</h2>{kay}</section>
+<aside class="disclaimer" role="note"><b>Kültürel kayıt.</b> Motiflerin anlamları kaynaklarda yazdığı biçimde verilmiştir; aynı motif farklı yörelerde farklı yorumlanabilir.</aside>
+<p class="updated">Çizim: Bitki Tabanı, geleneksel motiften yorumlanmıştır.</p>
 </article>'''
-    write(path, page(f'{sm["ad"]}: kültürlerde bitkilerin sembolik anlamı | Bitki Tabanı', (sm['giris'][:150].rsplit(' ', 1)[0] + '…'), path, body, 'sembol', narrow=True,
-          extra=lds({"@context":"https://schema.org","@type":"Article","headline":sm['ad'],"inLanguage":"tr","url":BASE+path,"author":AUTHOR,"dateModified":CONTENT_DATE}, crumb_ld(('/semboller/', 'Semboller'), (path, sm['ad']))),
-          image=next((f'{BASE}/img/{p["id"]}-960.jpg' for p, _ in ps if p['id'] in IMG), None)))
+    write(path, page(f'{mo["ad"]} motifi: anlamı ve kökeni | Bitki Tabanı', f'{mo["ad"]} ({mo["bolge"]}): {mo["kisa"]} Anlamı, kaynakları ve bağlantılı bitkiler.'[:158], path, body, 'sembol', narrow=True,
+          extra=lds({"@context":"https://schema.org","@type":"Article","headline":mo['ad'] + ' motifi',"description":mo['kisa'],"inLanguage":"tr","url":BASE+path,"author":AUTHOR,"citation":[t for t, u in mo['kaynaklar']]}, crumb_ld(('/semboller/', 'Semboller'), (path, mo['ad'])))))
     GUIDE_URLS.append(path)
-_sc = ''.join(f'<a class="symcard" href="/semboller/{sm["slug"]}/"><span class="sym-big" aria-hidden="true">{sm["simge"]}</span><b>{e(sm["ad"])}</b><span class="muted-s">{", ".join(e(byId[x]["tr"]) for x, _ in sm["bitkiler"] if x in byId)}</span></a>' for sm in LIVE_S)
-write('/semboller/', page('Bitkilerin sembolik anlamları: koruma, arınma, görü, bereket | Bitki Tabanı', 'Farklı kültürlerde bitkilerin taşıdığı ortak anlamlar: nazar ve koruma, arınma ve tütsü, geçiş törenleri, görü ve kehanet, kutsal ağaçlar, bereket.', '/semboller/',
-      f'''{crumbs(('/semboller/', 'Semboller'))}<header class="page-head"><span class="eyebrow">Semboller · {len(LIVE_S)} anlam</span><h1>Bitkiler ve anlamları</h1><p>Birbirinden binlerce kilometre uzaktaki kültürler, çoğu zaman aynı anlamı bir bitkiye yüklemiş: kötü gözden korunmak, bir mekânı arındırmak, bir hayat evresini işaretlemek, görünmeyenle konuşmak. Her sembolde, o anlamı taşıyan bitkileri farklı coğrafyalardan yan yana getirdik.</p></header>
-<div class="symgrid">{_sc}</div>
+_chips = '<button type="button" class="chip" data-t="" aria-pressed="true">Hepsi</button>' + ''.join(f'<button type="button" class="chip" data-t="{k}" aria-pressed="false">{e(v)}</button>' for k, v in TEMALAR.items())
+_sc = ''.join(f'<a class="motifcard" data-t="{mo["tema"]}" href="/semboller/{mo["slug"]}/">{motif_svg(mo)}<b>{e(mo["ad"])}</b><span class="muted-s">{e(mo["bolge"])}</span></a>' for mo in MOTIFLER)
+write('/semboller/', page('Semboller: kilim motiflerinden chakana’ya, anlamları ve kökenleri | Bitki Tabanı', 'Göz, pıtrak, elibelinde, koçboynuzu, hayat ağacı, chakana, kené: Anadolu’dan And’lara geleneksel motifler, anlamları, kaynakları ve bağlantılı bitkiler.', '/semboller/',
+      f'''{crumbs(('/semboller/', 'Semboller'))}<header class="page-head"><span class="eyebrow">Semboller · {len(MOTIFLER)} motif</span><h1>Semboller</h1><p>Kilimlerdeki nazar gözünden And’ların basamaklı haçına, kuşaklar boyunca dokunan, boyanan ve çizilen motifler. Her birini el çizimiyle yeniden çizdik; anlamlarını kaynaklarıyla ve bağlantılı oldukları bitkilerle birlikte anlatıyoruz.</p></header>
+<div class="chips motif-filtre" role="group" aria-label="Temaya göre">{_chips}</div>
+<div class="motifgrid">{_sc}</div>
 <p><a class="cta" href="/yazilar/">Şamanizm, ritüel bitkiler ve kadim bilgi üzerine yazılar →</a></p>
-<aside class="disclaimer" role="note"><b>Kültürel kayıt.</b> Ritüel ve sembolik kullanımlar, onları yaşatan toplulukların mirası olarak anlatılır; kullanım önerisi değildir.</aside>''', 'sembol', narrow=True, extra=lds(crumb_ld(('/semboller/', 'Semboller')))))
+<script>(function(){{var B=document.querySelectorAll('.motif-filtre .chip');B.forEach(function(b){{b.addEventListener('click',function(){{var t=b.dataset.t;B.forEach(function(x){{x.setAttribute('aria-pressed',x===b?'true':'false')}});document.querySelectorAll('.motifcard').forEach(function(c){{c.hidden=!!t&&c.dataset.t!==t}})}})}})}})();</script>''', 'sembol', narrow=True, extra=lds(crumb_ld(('/semboller/', 'Semboller')))))
 GUIDE_URLS.insert(0, '/semboller/')
+_redir = ''.join(f'/semboller/{old}/ /semboller/{news[0]}/ 301\n' for old, news in MOTIF_ESKI.items() if old != news[0])
+def _rel_motifs(slugs):
+    out = []
+    for sl in slugs:
+        for m in MOTIF_ESKI.get(sl, [sl]):
+            mo = next((x for x in MOTIFLER if x['slug'] == m), None)
+            if mo and mo not in out: out.append(mo)
+    return out
+def _motif_list(slugs):
+    ms = _rel_motifs(slugs)
+    return ''.join(f'<li><a href="/semboller/{mo["slug"]}/">{e(mo["ad"])}</a></li>' for mo in ms)
 
 # --- kavram yazıları ---
 def _trlow(t): return t.replace('I', 'ı').replace('İ', 'i').lower()
@@ -1057,7 +1092,7 @@ for y in YAZILAR:
     secs = ''.join(f'<section class="sec"><h2>{e(h)}</h2>' + ''.join(f'<p>{_yp(p)}</p>' for p in ps) + '</section>' for h, ps in y['bolumler'])
     kay = '<ol class="refs">' + ''.join((f'<li id="k{i}"><a href="{e(u)}" target="_blank" rel="noopener">{e(t)}</a></li>' if u else f'<li id="k{i}"><cite>{e(t)}</cite></li>') for i, (t, u) in enumerate(y['kaynaklar'], 1)) + '</ol>'
     bit = ''.join(f'<a class="chip" href="/{x}/">{"".join(dot(r) for r in byId[x]["bolge"])}{e(byId[x]["tr"])}</a>' for x in y['bitkiler'] if x in byId)
-    sem = ''.join(f'<li><a href="/semboller/{sm["slug"]}/"><span class="sym-i" aria-hidden="true">{sm["simge"]}</span> {e(sm["ad"])}</a></li>' for sm in LIVE_S if sm['slug'] in y['semboller'])
+    sem = _motif_list(y['semboller'])
     body = f'''{crumbs(('/yazilar/', 'Yazılar'), (path, y['baslik']))}
 <article class="sheet yazi">
 <header class="page-head"><span class="eyebrow">Yazı · {tr_date(datetime.date.fromisoformat(y["tarih"])).rsplit(",", 1)[0]}</span><h1>{e(y["baslik"])}</h1><p class="lede">{e(y["giris"])}</p></header>
@@ -1088,7 +1123,7 @@ for i, k in enumerate(KAV):
     secs = ''.join(f'<p>{_yp(p)}</p>' for p in k['metin'])
     kay = '<ol class="refs">' + ''.join((f'<li id="k{j}"><a href="{e(u)}" target="_blank" rel="noopener">{e(t)}</a></li>' if u else f'<li id="k{j}"><cite>{e(t)}</cite></li>') for j, (t, u) in enumerate(k['kaynaklar'], 1)) + '</ol>'
     bit = ''.join(f'<a class="chip" href="/{x}/">{"".join(dot(r) for r in byId[x]["bolge"])}{e(byId[x]["tr"])}</a>' for x in k['bitkiler'] if x in byId and x != k['bitki'])
-    sem = ''.join(f'<li><a href="/semboller/{sm["slug"]}/"><span class="sym-i" aria-hidden="true">{sm["simge"]}</span> {e(sm["ad"])}</a></li>' for sm in LIVE_S if sm['slug'] in k['semboller'])
+    sem = _motif_list(k['semboller'])
     yz = ''.join(f'<li><a href="/yazilar/{y["slug"]}/">{e(y["baslik"])}</a></li>' for y in YAZILAR if y['slug'] in k['yazilar'])
     prev_, next_ = (KAV[i - 1] if i else None), (KAV[i + 1] if i + 1 < len(KAV) else None)
     body = f'''{crumbs(('/kavram/', 'Kavramlar'), (path, k['ad']))}
@@ -1269,6 +1304,7 @@ for f in os.listdir(os.path.join(HERE, 'assets')):
     else: shutil.copy(_src, os.path.join(OUT, 'assets', f))
 if os.path.isdir(os.path.join(HERE, 'img')):
     shutil.copytree(os.path.join(HERE, 'img'), os.path.join(OUT, 'img'), dirs_exist_ok=True)
+open(os.path.join(OUT, '_redirects'), 'w').write(_redir)
 open(os.path.join(OUT, '_headers'), 'w').write('''/*
   Cache-Control: public, max-age=0, must-revalidate
 /assets/*

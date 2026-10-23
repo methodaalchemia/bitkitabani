@@ -231,12 +231,10 @@ def threads_plan(data, day, days=4):
     for c in KARS:
         if c['a'] in P and c['b'] in P: extra.append(dict(text=f"{c['baslik']}\n\n{c['sonuc']}\n\nKarşılaştırmanın tamamı: bitkitabani.com/karsilastirma/{c['a']}-ve-{c['b']}/", image=img(c['a'])))
     try:
-        from semboller import SEMBOLLER
-        for sm in SEMBOLLER:
-            ids = [x for x, _ in sm['bitkiler'] if x in P]
-            if len(ids) >= 3:
-                ilk = sm['giris'].split('. ')[0].rstrip('.') + '.'
-                extra.append(dict(text=f"{sm['ad']} {sm['simge']}\n\n{ilk}\n\nBu anlamı taşıyan bitkiler: {', '.join(P[x]['tr'] for x in ids[:6])}.\n\nKültürden kültüre: bitkitabani.com/semboller/{sm['slug']}/", image=img(ids[0])))
+        from motifler import MOTIFLER
+        for mo in MOTIFLER:
+            bt = [x for x, _ in mo['bitkiler'] if x in P]
+            extra.append(dict(text=f"Bir sembol: {mo['ad']} ({mo['bolge']})\n\n{mo['kisa']}" + (f"\n\nBağlantılı bitki: {P[bt[0]]['tr']}" if bt else '') + f"\n\nAnlamı ve kaynakları: bitkitabani.com/semboller/{mo['slug']}/", image=img(bt[0]) if bt else None))
     except Exception as ex: print('semboller threads:', ex)
     # rehber, tarif ve karşılaştırmalar karışık sırayla gelsin
     extra = [x for i, x in sorted(enumerate(extra), key=lambda t: (t[0] * 7) % max(1, len(extra)))]

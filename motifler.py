@@ -1,0 +1,127 @@
+# Semboller: çizilebilen geleneksel motifler (/semboller/<slug>/).
+# Çizimler 100x100'lük bir alanda çizgi listeleri olarak tanımlanır; build.py bunları el çizimi görünümüyle tek renk SVG'ye çevirir.
+# Anlamlar kaynaklarda yazdığı gibi verilir; "yaygın yorum" ile "belgelenmiş anlam" karıştırılmaz.
+# bitkiler: [(id, bağ cümlesi)]: motifin kendisinin o bitkiyi gösterdiği iddia edilmez; bağın türü cümlede açıkça yazar.
+
+import math
+
+def _diamond(cx, cy, r): return [(cx, cy - r), (cx + r, cy), (cx, cy + r), (cx - r, cy), (cx, cy - r)]
+def _spiral(cx, cy, r, turns, start, sgn):
+    pts = []
+    for i in range(int(40 * turns) + 1):
+        t = i / 40; a = start + sgn * t * 2 * math.pi; rr = r * (1 - t / (turns + .4))
+        pts.append((cx + rr * math.cos(a), cy + rr * math.sin(a)))
+    return pts
+
+HAKKARI = ('Hakkâri Kilimi coğrafi işaret tescil belgesi, Türk Patent ve Marka Kurumu, 2023', 'https://ci.turkpatent.gov.tr/Files/GeographicalSigns/8e84210c-6bca-452c-9cf8-17e8df9da440.pdf')
+TDV_SAMAN = ('Harun Güngör, “Şamanizm”, TDV İslâm Ansiklopedisi, 2010', 'https://islamansiklopedisi.org.tr/samanizm')
+
+MOTIFLER = [
+dict(slug='goz', ad='Göz', bolge='Anadolu', tema='koruma',
+ kisa='Kötü bakışa karşı, onu geri çeviren bir göz.',
+ anlam='Hakkâri kilimlerinde göz, nazar ve muska motifleri, zarar veren bakışlardan korunmak ve onları uzaklaştırmak için dokunur [1]. İç içe eşkenar dörtgenler ve ortadaki nokta, kilimde en sık rastlanan nazar biçimlerindendir.',
+ cizim=[_diamond(50, 50, 40), _diamond(50, 50, 24), _diamond(50, 50, 9), [(50, 10), (50, 2)], [(90, 50), (98, 50)], [(50, 90), (50, 98)], [(10, 50), (2, 50)]], dolu=[_diamond(50, 50, 9)],
+ bitkiler=[('uzerlik', 'Anadolu’da nazara karşı kapıya asılan ve tütsüsü yakılan bitki: aynı korumanın bitkideki karşılığı.'), ('sedef', 'Hem Anadolu’da hem And’larda nazara karşı kullanılır.')],
+ kaynaklar=[HAKKARI]),
+dict(slug='pitrak', ad='Pıtrak', bolge='Anadolu', tema='koruma',
+ kisa='Adını yapışkan, dikenli bir bitki tohumundan alan nazar motifi.',
+ anlam='Pıtrak motifi kilimlerde nazarın etkisini gidermek için kullanılır [1]. Adını, giysiye ve hayvan postuna takılan dikenli pıtrak tohumundan alır: dört yöne uzanan çengelli kolları bu tohumu andırır.',
+ cizim=[[(50, 12), (50, 88)], [(12, 50), (88, 50)], [(40, 22), (50, 12), (60, 22)], [(40, 78), (50, 88), (60, 78)], [(22, 40), (12, 50), (22, 60)], [(78, 40), (88, 50), (78, 60)], _diamond(50, 50, 11),
+        [(24, 24), (32, 32)], [(76, 24), (68, 32)], [(24, 76), (32, 68)], [(76, 76), (68, 68)]], dolu=[_diamond(50, 50, 11)],
+ bitkiler=[('uzerlik', 'Nazara karşı kullanılan bitkilerin başında gelir.')],
+ kaynaklar=[HAKKARI]),
+dict(slug='muska', ad='Muska', bolge='Anadolu', tema='koruma',
+ kisa='Üçgen bir muska: koruyucu yazıyı taşıyan nesnenin dokumadaki izi.',
+ anlam='Hakkâri kilimlerinde muska motifi, göz ve nazar motifleriyle birlikte zarar veren bakışlara karşı dokunur [1]. Üçgen biçimi, içine dua yazılıp boyna asılan muskaları anımsatır.',
+ cizim=[[(50, 86), (88, 22), (12, 22), (50, 86)], [(50, 66), (70, 32), (30, 32), (50, 66)], [(42, 22), (42, 10), (58, 10), (58, 22)], [(50, 86), (50, 96)]], dolu=[],
+ bitkiler=[('sarimsak', 'Anadolu’da nazara karşı kapı ve beşik başına asılır: koruyucu olarak taşınan bir başka “muska”.')],
+ kaynaklar=[HAKKARI]),
+dict(slug='cengel', ad='Çengel', bolge='Anadolu', tema='koruma',
+ kisa='Kötü gözü yakalayan kanca; zıtlıkların birleşmesi.',
+ anlam='Çengel motifi nazarı uzaklaştırmak için kullanılır; aynı zamanda zıtlıkların birleşmesini anlatır ve evlilik ile bereketle ilişkilendirilir [1].',
+ cizim=[[(50, 14), (50, 86)], [(50, 30), (66, 30), (66, 42), (58, 42)], [(50, 30), (34, 30), (34, 18), (42, 18)], [(50, 50), (34, 50), (34, 62), (42, 62)], [(50, 50), (66, 50), (66, 38)], [(50, 70), (66, 70), (66, 82), (58, 82)], [(50, 70), (34, 70), (34, 58)]], dolu=[],
+ bitkiler=[('uzerlik', 'Nazara karşı en yaygın bitki.')],
+ kaynaklar=[HAKKARI]),
+dict(slug='akrep', ad='Akrep', bolge='Anadolu', tema='koruma',
+ kisa='Kötülüğe ve dış tehlikelere karşı bekçi.',
+ anlam='Akrep motifi kilimin zemininde, kötülüğe ve dışarıdan gelecek tehlikelere karşı koruyucu olarak yer alır [1].',
+ cizim=[[(50, 8), (50, 92)], _diamond(50, 50, 14), [(36, 50), (22, 40), (16, 46)], [(64, 50), (78, 40), (84, 46)], [(40, 36), (28, 24), (22, 28)], [(60, 36), (72, 24), (78, 28)], [(40, 64), (28, 76), (22, 72)], [(60, 64), (72, 76), (78, 72)], [(50, 8), (58, 14)]], dolu=[],
+ bitkiler=[], kaynaklar=[HAKKARI]),
+dict(slug='kurtagzi', ad='Kurtağzı', bolge='Anadolu', tema='koruma',
+ kisa='İyimserlik ve korunma; ışık ve güneşle ilişkili, cesaretin simgesi.',
+ anlam='Kurtağzı motifi iyimserliğin ve korunmanın simgesidir; ışık ve güneşle, cesaret ve güçle ilişkilendirilir [1].',
+ cizim=[_diamond(50, 50, 40), [(22, 50), (30, 40), (38, 50), (46, 40), (54, 50), (62, 40), (70, 50), (78, 50)], [(22, 50), (30, 60), (38, 50), (46, 60), (54, 50), (62, 60), (70, 50), (78, 50)]], dolu=[],
+ bitkiler=[], kaynaklar=[HAKKARI]),
+dict(slug='elibelinde', ad='Elibelinde', bolge='Anadolu', tema='bereket',
+ kisa='Elleri belinde bir kadın figürü: analık ve doğurganlık.',
+ anlam='Hakkâri’de “Sarya’nın Gülü” diye de anılan elibelinde motifi analığı, doğurganlığı, mutluluğu, neşeyi ve uğuru simgeler [1].',
+ cizim=[_diamond(50, 16, 8), [(50, 24), (50, 34)], [(50, 34), (32, 34), (24, 46), (32, 56), (50, 56)], [(50, 34), (68, 34), (76, 46), (68, 56), (50, 56)], [(50, 56), (26, 90), (74, 90), (50, 56)]], dolu=[_diamond(50, 16, 8)],
+ bitkiler=[('nar', 'Anadolu’da bereket ve bolluğun simgesi olan meyve.')],
+ kaynaklar=[HAKKARI]),
+dict(slug='kocboynuzu', ad='Koçboynuzu', bolge='Anadolu', tema='bereket',
+ kisa='Kıvrılan iki boynuz: bereket, güç ve kahramanlık.',
+ anlam='Koçboynuzu motifi bereket, kahramanlık, güç ve erkeklik sembolü olarak kullanılır [1].',
+ cizim=[[(50, 92), (50, 46)], [(50, 46), (40, 34)] + _spiral(30, 30, 12, 1.1, 0, -1), [(50, 46), (60, 34)] + _spiral(70, 30, 12, 1.1, math.pi, 1)], dolu=[],
+ bitkiler=[('nar', 'Bereketin bitkideki simgesi.')],
+ kaynaklar=[HAKKARI]),
+dict(slug='bereket', ad='Bereket', bolge='Anadolu', tema='bereket',
+ kisa='Bitmeyen bolluk ve sonsuz mutluluk dileği.',
+ anlam='Bereket ve uğur sembolleri sonsuz mutluluk isteğini ifade eder; bolluk, uğur ve yenilenmeyi anlatır [1].',
+ cizim=[_diamond(50, 50, 18), [(50, 32), (50, 22)] + _spiral(50, 14, 7, .9, math.pi / 2, 1), [(50, 68), (50, 78)] + _spiral(50, 86, 7, .9, -math.pi / 2, 1),
+        [(32, 50), (22, 50)] + _spiral(14, 50, 7, .9, 0, 1), [(68, 50), (78, 50)] + _spiral(86, 50, 7, .9, math.pi, 1)], dolu=[_diamond(50, 50, 6)],
+ bitkiler=[('nar', 'Yeni eve taşınınca ya da yılbaşında bereket için kırılır.'), ('zeytin', 'Zeytin dalı bereket ve barışın simgesidir.')],
+ kaynaklar=[HAKKARI]),
+dict(slug='kupe', ad='Küpe', bolge='Anadolu', tema='bereket',
+ kisa='Genç bir kızın evlenme isteği.',
+ anlam='Küpe motifi, genç bir kızın evlenme isteğini dile getirir [1].',
+ cizim=[[(42, 12), (50, 6), (58, 12), (58, 20), (50, 26)], [(50, 26), (50, 36)], _diamond(50, 56, 20), _diamond(50, 56, 8), [(50, 76), (50, 92)]], dolu=[_diamond(50, 56, 8)],
+ bitkiler=[('kina', 'Kına gecesinde gelinin eline yakılır: evliliğe geçişin bitkisi.')],
+ kaynaklar=[HAKKARI]),
+dict(slug='yildiz', ad='Yıldız', bolge='Anadolu', tema='evren',
+ kisa='Köşe sayısıyla anlamı değişen gök işareti.',
+ anlam='Yıldız motifinin anlamı köşe sayısına göre değişir: beş köşeli yıldız mükemmelliği, altı köşeli evliliği, yedi köşeli gökkuşağını simgeler [1].',
+ cizim=[[(50, 8), (62, 38), (92, 50), (62, 62), (50, 92), (38, 62), (8, 50), (38, 38), (50, 8)], [(20, 20), (56, 32), (80, 20), (68, 56), (80, 80), (44, 68), (20, 80), (32, 44), (20, 20)]], dolu=[],
+ bitkiler=[('yildizanason', 'Sekiz kollu yıldız biçimindeki meyvesiyle tanınan baharat.')],
+ kaynaklar=[HAKKARI]),
+dict(slug='su-yolu', ad='Su yolu', bolge='Anadolu', tema='evren',
+ kisa='Akan su: yenilenme, arınma ve süreklilik.',
+ anlam='Su yolu motifi suyu anlatır; su yenilenmenin, arınmanın, hayatın ve sürekliliğin, yeniden doğuşun gerçekleştiği yerin simgesidir [1].',
+ cizim=[[(6, 34), (20, 22), (34, 34), (48, 22), (62, 34), (76, 22), (94, 34)], [(6, 54), (20, 42), (34, 54), (48, 42), (62, 54), (76, 42), (94, 54)], [(6, 74), (20, 62), (34, 74), (48, 62), (62, 74), (76, 62), (94, 74)]], dolu=[],
+ bitkiler=[], kaynaklar=[HAKKARI]),
+dict(slug='carkifelek', ad='Çarkıfelek', bolge='Anadolu', tema='evren',
+ kisa='Rüzgârgülü: dönen kader çarkı.',
+ anlam='Rüzgârgülü ya da çarkıfelek motifi kader çarkını temsil eder ve kilimlerin kenar şeritlerinde görülür [1]. Aynı ad, çiçeği bir çarkı andıran pasifloraya da verilmiştir.',
+ cizim=[_diamond(50, 50, 7)] + [[(50 + (x - 50) * math.cos(t) - (y - 50) * math.sin(t), 50 + (x - 50) * math.sin(t) + (y - 50) * math.cos(t)) for x, y in [(52, 42), (50, 8), (72, 22), (56, 44)]] for t in (0, math.pi / 2, math.pi, 3 * math.pi / 2)], dolu=[_diamond(50, 50, 7)],
+ bitkiler=[('pasiflora', 'Türkçedeki adı çarkıfelek: çiçeğinin çark biçimi motifle aynı adı paylaşır.')],
+ kaynaklar=[HAKKARI]),
+dict(slug='hayat-agaci', ad='Hayat ağacı', bolge='Orta Asya ve Anadolu', tema='evren',
+ kisa='Yeri göğe bağlayan ağaç; kamın göğe çıktığı yol.',
+ anlam='Şamanist dünya görüşünde evren gök, yeryüzü ve yer altı olarak üç kata ayrılır. Özbek kam davullarında çizilen dallar dünya ağacını simgeler; kam davulunun çerçevesi de kayın ya da sedir ağacından yapılır [1]. Türk kültüründe ağaç varlığı, canlılığı ve bereketi temsil eder [2].',
+ cizim=[[(50, 94), (50, 10)], [(42, 20), (50, 10), (58, 20)], [(50, 32), (36, 24), (30, 30)], [(50, 32), (64, 24), (70, 30)], [(50, 50), (30, 40), (22, 48)], [(50, 50), (70, 40), (78, 48)], [(50, 68), (26, 58), (16, 66)], [(50, 68), (74, 58), (84, 66)], [(36, 94), (64, 94)]], dolu=[],
+ bitkiler=[('ardic', 'Orta Asya şamanizminde törenlerden önce yakılan kutsal ağaç: arça.'), ('defne', 'Apollon’un kutsal ağacı.'), ('ginkgo', 'Çin’de tapınak bahçelerine dikilen kutsal ağaç.')],
+ kaynaklar=[TDV_SAMAN, ('Ülkü Gürsoy, “Türk Kültüründe Ağaç Kültü ve Dut Ağacı”, 2013', 'https://dergipark.org.tr/tr/pub/tkhcbva/article/1157366')]),
+dict(slug='chakana', ad='Chakana', bolge='And Dağları', tema='evren',
+ kisa='Basamaklı And haçı: dört yön, bir merkez ve üç dünya.',
+ anlam='Basamaklı haç ya da chakana, And sanatında yaklaşık 4.000 yıl boyunca görülür. Biçimi And evreninin yapısına işaret eder: dört kenarı dört yönü ve bir merkezi, üç basamağı yer altını, yeryüzünü ve göğü anlatır; bu katlar yılan, kedigil ve kondorla ilişkilendirilir [1]. Motifi pi sayısına ya da Güney Haçı’na bağlayan yeni iddialar ise araştırmacıların çoğunca çok şüpheli bulunur [1].',
+ cizim=[[(38, 6), (62, 6), (62, 20), (74, 20), (74, 38), (94, 38), (94, 62), (74, 62), (74, 80), (62, 80), (62, 94), (38, 94), (38, 80), (26, 80), (26, 62), (6, 62), (6, 38), (26, 38), (26, 20), (38, 20), (38, 6)]] + [[(50 + 12 * math.cos(a / 20 * 2 * math.pi), 50 + 12 * math.sin(a / 20 * 2 * math.pi)) for a in range(21)]], dolu=[],
+ bitkiler=[('koka', 'Pachamama’ya sunulan adakların başında gelen yaprak.'), ('kinoa', 'İnkaların “ana tohum” dediği bitki.')],
+ kaynaklar=[('LACMA: Nasca tekstil parçası, M.74.151.14', 'https://collections.lacma.org/object/33910')]),
+dict(slug='kene', ad='Kené', bolge='Amazon', tema='gorü',
+ kisa='Shipibo-Konibo kadınlarının desenleri; ayahuasca görüleriyle bağlantılı.',
+ anlam='Kené, Peru Amazonu’ndaki Shipibo-Konibo halkının, kadınların ürettiği nesnelerin yüzeyini kaplayan geometrik desenleridir. 2008’de ayahuascanın geleneksel kullanımıyla birlikte Peru’nun somut olmayan kültürel mirası ilan edildi. Desenler, ayahuasca törenlerinde görülen “maddi olmayan desenlerle” ilişkilendirilir; bitki ile desen arasındaki bu bağ, iki mirasın birlikte tanınmasını mümkün kılmıştır [1].',
+ cizim=[[(10, 50), (30, 50), (30, 30), (50, 30), (50, 10)], [(90, 50), (70, 50), (70, 70), (50, 70), (50, 90)], [(50, 10), (50, 22), (62, 22), (62, 38), (78, 38), (78, 50), (90, 50)], [(50, 90), (50, 78), (38, 78), (38, 62), (22, 62), (22, 50), (10, 50)], _diamond(50, 50, 10), [(30, 30), (22, 22)], [(70, 70), (78, 78)]], dolu=[],
+ bitkiler=[('ayahuasca', 'Kené ile birlikte Peru’nun kültürel mirası ilan edilen tören bitkisi.'), ('chacruna', 'Ayahuasca içeceğinin “görülerin ışığı” diye anılan bileşeni.'), ('huito', 'Amazon’da bedene desen çizmek için kullanılan meyve.')],
+ kaynaklar=[('Luisa Elvira Belaunde, “Diseños materiales e inmateriales”, Mundo Amazónico 3, 2012', 'https://revistas.unal.edu.co/index.php/imanimundo/article/view/28715')]),
+dict(slug='tanrinin-gozu', ad='Tanrı’nın gözü', bolge='Kuzey Amerika (Meksika)', tema='koruma',
+ kisa='Huichol halkının sikuli’si: beş yaşından küçük çocukları koruyan “göz”.',
+ anlam='Meksika’nın Sierra Madre bölgesinde yaşayan Huichol (Wixárika) halkı, bir kamış çubuğun etrafına renkli yün sararak sikuli denen “Tanrı’nın gözü”nü yapar ve sunaklara koyar. Beş yaşından küçük çocukları koruduğuna inanılır; koruyucu olanların dokuması çok sayıda sembol içerir [1].',
+ cizim=[[(50, 4), (50, 96)], [(4, 50), (96, 50)], _diamond(50, 50, 40), _diamond(50, 50, 30), _diamond(50, 50, 20), _diamond(50, 50, 10)], dolu=[_diamond(50, 50, 10)],
+ bitkiler=[('peyote', 'Huichol halkının her yıl Wirikuta çölüne hacca gittiği kutsal bitki.')],
+ kaynaklar=[('Horniman Museum: sikuli, ojo de dios (HC.1999.1406)', 'https://www.horniman.ac.uk/object/HC.1999.1406')]),
+]
+
+TEMALAR = {'koruma': 'Koruma ve nazar', 'bereket': 'Bereket ve doğurganlık', 'evren': 'Evren, gök ve döngü', 'gorü': 'Görü ve ruhlar dünyası'}
+
+# Eski "anlam" sayfalarından (semboller.py) motiflere geçiş: eski adresler ve eski referanslar buraya yönlenir.
+ESKI = {'koruma-nazar': ['goz', 'pitrak', 'muska'], 'arinma-tutsu': ['su-yolu'], 'gecis-torenleri': ['kupe', 'elibelinde'], 'goru-ruhlar': ['kene', 'hayat-agaci'],
+        'kutsal-agaclar': ['hayat-agaci'], 'bereket': ['bereket', 'kocboynuzu'], 'renk-ve-kimlik': ['kene'], 'paylasim-misafirlik': ['chakana'], 'buyu-ve-tilsim': ['muska']}
