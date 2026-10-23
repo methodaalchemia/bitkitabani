@@ -121,6 +121,7 @@ async function igPost(env) {
     } catch (e) { st.reelError = String(e.message || e).slice(0, 200); st.reelPending = null; }
     await call(env, 'ig:state', 'put', st);
   }
+  if (!st.fix1) { st.fix1 = true; if (st.n === 15 && st.lastPlant === 'atkestanesi') { st.n = 14; st.lastDaily = null; st.catchup = true; } }   // 22 Ekim: yanlışlıkla 'zaten paylaşılmış' sayıldı
   const day = trDay(), hour = trHour(), n = st.n || 0;
   const launching = n < LAUNCH;
   if (st.pauseUntil && Date.now() < st.pauseUntil) return { skipped: 'istek sınırı; bekleniyor' };
@@ -128,7 +129,8 @@ async function igPost(env) {
     if (hour < 9 || hour >= 23) return { skipped: 'gece' };
     if (st.lastAt && Date.now() - st.lastAt < 28 * 60e3) return { skipped: 'yarım saat dolmadı' };
   } else {
-    if (hour < 19 || st.lastDaily === day) return { skipped: 'bugün sırası değil' };   // açılış postu olan gün de akşam günlük post çıkar
+    if (st.catchup) { if (hour < 9) return { skipped: 'gece' }; }   // kaçırılan postu sabah telafi et
+    else if (hour < 19 || st.lastDaily === day) return { skipped: 'bugün sırası değil' };   // açılış postu olan gün de akşam günlük post çıkar
   }
   try {
     const pr = await igAsset('p/' + n + '/post.json');
@@ -137,12 +139,14 @@ async function igPost(env) {
     const tok = await igToken(env, st);
     if (!st.uid) st.uid = (await igJson(await fetch(IG + '/me?fields=user_id,username&access_token=' + encodeURIComponent(tok)))).user_id;
     // Aynı post zaten çıkmış mı? (Önceki denemede paylaşım olup yanıt hata dönmüş olabilir.)
-    const head = (post.caption || '').split('\n').find(x => x.trim()) || '';
+    const key = c => (c || '').split('\n').map(x => x.trim()).filter(x => x && !x.startsWith('🆕')).slice(0, 2).join('|');   // ortak '🆕' satırı karşılaştırılmaz
+    const head = key(post.caption);
     const recent = await igJson(await fetch(IG + '/me/media?fields=id,caption&limit=5&access_token=' + encodeURIComponent(tok)));
-    const dup = (recent.data || []).find(m => (m.caption || '').split('\n').find(x => x.trim()) === head);
+    const dup = (recent.data || []).find(m => key(m.caption) === head);
     if (dup) {
       st.n = n + 1; st.last = day; st.lastAt = Date.now(); st.lastId = dup.id; st.lastPlant = post.id; st.error = null; st.errorAt = null;
-      if (!launching) st.lastDaily = day;
+      if (!launching && !st.catchup) st.lastDaily = day;
+      st.catchup = false;
       await call(env, 'ig:state', 'put', st);
       return { n: st.n, skipped: 'zaten paylaşılmış' };
     }
@@ -164,7 +168,8 @@ async function igPost(env) {
     }
     const pub = await igJson(await fetch(IG + '/' + st.uid + '/media_publish', form({ creation_id: box })));
     st.n = n + 1; st.last = day; st.lastAt = Date.now(); st.lastId = pub.id; st.lastPlant = post.id; st.error = null; st.errorAt = null;
-    if (!launching) st.lastDaily = day;
+    if (!launching && !st.catchup) st.lastDaily = day;
+    st.catchup = false;
     // Günlük postlarda: hikâye (takipçilere duyuru) ve deneme Reels (önce takip etmeyenlere gösterilir)
     if (!launching && post.story) {
       try {
