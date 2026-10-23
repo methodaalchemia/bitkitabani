@@ -176,25 +176,46 @@ def story(p, cover):
     t = '@bitkitabani'; f = serif(52, 800); d.text(((SW - d.textlength(t, font=f)) / 2, 1600), t, font=f, fill=(255, 255, 255))
     return bg
 
-def reel(ims, img_path=None, out='reel.mp4', sec=3.0):
-    """Slaytlardan 9:16 sessiz kısa video (Reels). ffmpeg yoksa False döner."""
+def reel(ims, img_path=None, out='reel.mp4', sec=3.2, p=None):
+    """9:16 hareketli kısa video (Reels): tam ekran fotoğrafla açılış sorusu, yavaş yakınlaşan slaytlar,
+    yumuşak geçişler ve kapanışta site çağrısı. Sessiz (müzik/ses yok). ffmpeg yoksa False döner."""
     import shutil, subprocess, tempfile
     if not shutil.which('ffmpeg'): return False
-    SW, SH = 1080, 1920
+    SW, SH, FPS, T = 1080, 1920, 30, 0.45
     base_bg = photo(img_path, SW, SH, blur=30) or Image.new('RGB', (SW, SH), LEAF)
     base_bg.paste(Image.new('RGB', (SW, SH), (12, 18, 14)), (0, 0), Image.new('L', (SW, SH), 120))
-    tmp = tempfile.mkdtemp()
-    lst = []
-    for i, im in enumerate(ims):
-        fr = base_bg.copy(); fr.paste(im, (0, (SH - H) // 2))
-        pth = os.path.join(tmp, f'{i}.png'); fr.save(pth); lst.append(pth)
-    with open(os.path.join(tmp, 'l.txt'), 'w') as f:
-        for i, pth in enumerate(lst): f.write(f"file '{pth}'\nduration {sec + (1 if i in (0, len(lst) - 1) else 0)}\n")
-        f.write(f"file '{lst[-1]}'\n")
-    r = subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', os.path.join(tmp, 'l.txt'),
-                        '-f', 'lavfi', '-i', 'anullsrc=r=44100:cl=stereo', '-shortest',
-                        '-vf', 'fps=30,format=yuv420p', '-c:v', 'libx264', '-preset', 'medium', '-crf', '23', '-c:a', 'aac', '-b:a', '64k',
-                        '-movflags', '+faststart', out], capture_output=True, text=True)
+    tmp = tempfile.mkdtemp(); scenes = []
+    full = photo(img_path, SW, SH)
+    if full is not None and p is not None:   # açılış: tam ekran fotoğraf + kapak sorusu
+        m = text_for(p)
+        g = Image.new('L', (1, SH))
+        for y in range(SH): g.putpixel((0, y), int(255 * (0.05 + 0.85 * (y / SH) ** 1.5)))
+        op = full.copy(); op.paste(Image.new('RGB', (SW, SH), (12, 18, 14)), (0, 0), g.resize((SW, SH)))
+        d = ImageDraw.Draw(op)
+        d.text((PAD, 1180), up(p['tr']), font=sans_b(44), fill=(240, 226, 196))
+        wrap_block(d, (PAD, 1250), m['kapak'], [serif(112, 800), serif(98, 800), serif(86, 800)], SW - 2 * PAD, 440, (255, 255, 255), gap=1.06)
+        d.text((PAD, SH - 150), 'bitkitabani', font=serif(38, 700), fill=(236, 230, 218))
+        scenes.append((op, 3.6)); start = 1
+    else: start = 0
+    for k, im in enumerate(ims[start:]):
+        fr = base_bg.copy(); fr.paste(im, (0, (SH - H) // 2)); scenes.append((fr, sec + (0.6 if k == len(ims[start:]) - 1 else 0)))
+    end = base_bg.copy(); d = ImageDraw.Draw(end)   # kapanış
+    wrap_block(d, (PAD, 760), 'Kaynaklarıyla birlikte tamamı sitede', [serif(84, 800), serif(72, 800)], SW - 2 * PAD, 260, (255, 255, 255), gap=1.08)
+    d.text((PAD, 1060), 'bitkitabani.com', font=serif(64, 700), fill=(240, 226, 196))
+    d.text((PAD, 1160), 'Her gün yeni bir bitki · @bitkitabani', font=sans_b(36), fill=(236, 230, 218))
+    scenes.append((end, 2.6))
+    args, fl = ['ffmpeg', '-y', '-loglevel', 'error'], []
+    for n, (im, dur) in enumerate(scenes):
+        pth = os.path.join(tmp, f'{n}.png'); im.save(pth); args += ['-i', pth]
+        fr = int(dur * FPS); zin = n % 2 == 0   # sırayla yakınlaş / uzaklaş
+        z = f"1+0.06*on/{fr}" if zin else f"1.06-0.06*on/{fr}"
+        fl.append(f"[{n}:v]scale={SW * 2}:{SH * 2},zoompan=z='{z}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={fr}:s={SW}x{SH}:fps={FPS},setsar=1,format=yuv420p[v{n}]")
+    last, off = 'v0', scenes[0][1]
+    for n in range(1, len(scenes)):
+        o = f'x{n}'; fl.append(f"[{last}][v{n}]xfade=transition=fade:duration={T}:offset={off - T:.2f}[{o}]"); last = o; off += scenes[n][1] - T
+    args += ['-f', 'lavfi', '-i', 'anullsrc=r=44100:cl=stereo', '-filter_complex', ';'.join(fl), '-map', f'[{last}]', '-map', f'{len(scenes)}:a', '-shortest',
+             '-c:v', 'libx264', '-preset', 'medium', '-crf', '23', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '64k', '-movflags', '+faststart', out]
+    r = subprocess.run(args, capture_output=True, text=True)
     shutil.rmtree(tmp, ignore_errors=True)
-    if r.returncode != 0: print('reel hatası:', r.stderr[:300]); return False
+    if r.returncode != 0: print('reel hatası:', r.stderr[-400:]); return False
     return True
