@@ -503,3 +503,8 @@ ul.adlar2{list-style:none;padding:0 0 12px;margin:0;columns:2 260px;column-gap:2
 .icongrid a{display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px 8px;background:var(--sheet);border:1px solid var(--rule);text-decoration:none;color:var(--ink);text-align:center;font-size:var(--t-sm);line-height:1.25}
 .icongrid a:hover{border-color:var(--accent)}
 li.gi a{display:inline-flex;align-items:center;gap:10px}
+.takvimband{border:1.5px solid var(--accent);background:var(--sheet);padding:16px 18px;margin:6px 0 4px}.takvimband h2{margin:4px 0}.takvimband h2 a{text-decoration:none}
+.olaylar{display:flex;flex-direction:column}.olay{display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;border-top:1px solid var(--rule);padding:18px 0}
+.olay.aktif{background:var(--accent-soft);padding:18px 12px}.olay-t b{font-family:var(--f-mono);font-size:var(--t-sm);color:var(--accent)}.olay h2{margin:0 0 6px}
+.olay-mo{display:flex;gap:8px;margin:8px 0}.motif-mini-a{display:block;width:46px;color:var(--ink)}
+@media(max-width:520px){.olay{grid-template-columns:1fr;gap:4px}}
