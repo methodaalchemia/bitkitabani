@@ -223,7 +223,7 @@ FOOT = '''<div class="motif indigo" aria-hidden="true"></div>
 
 FOOTNAV = '<nav class="footnav" aria-label="Site haritası">' + ''.join(f'<div><h3>{g}</h3><ul>' + ''.join(f'<li><a href="{h}"' + (' rel="noopener"' if h.startswith('http') else '') + f'>{l}</a></li>' for h, l, k in items) + '</ul></div>' for g, items in MENU) + '</nav>'
 SOSYAL = [('instagram', 'Instagram', 'https://www.instagram.com/bitkitabani/'), ('threads', 'Threads', 'https://www.threads.net/@bitkitabani'),
-          ('rss', 'RSS', '/yeni/rss.xml')]   # Facebook ve Pinterest adresleri gelince eklenecek
+          ('pinterest', 'Pinterest', 'https://pin.it/XZ6TjREdm'), ('rss', 'RSS', '/yeni/rss.xml')]   # Facebook adresi gelince eklenecek
 def _icon(n, label):
     f = os.path.join(HERE, 'assets', 'icons', n + '.svg')
     if os.path.exists(f):
