@@ -19,3 +19,9 @@
 (function(){var m=document.querySelector('details.menu');if(!m)return;
 document.addEventListener('click',function(e){if(m.open&&!m.contains(e.target))m.open=false});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&m.open){m.open=false;m.querySelector('summary').focus()}});})();
+/* Paylaş / kopyala / yazdır */
+(function(){document.querySelectorAll('.sharebar').forEach(function(b){var u=b.dataset.url,t=b.dataset.title,m=b.querySelector('.sb-msg');
+var sh=b.querySelector('.sb-share');if(!navigator.share)sh.hidden=true;
+sh.addEventListener('click',function(){navigator.share({title:t,url:u}).catch(function(){})});
+b.querySelector('.sb-copy').addEventListener('click',function(){(navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(function(){m.textContent='Bağlantı kopyalandı.'},function(){m.textContent=u})});
+b.querySelector('.sb-print').addEventListener('click',function(){window.print()});});})();
