@@ -492,3 +492,14 @@ ul.adlar2{list-style:none;padding:0 0 12px;margin:0;columns:2 260px;column-gap:2
 @media(max-width:560px){.motif-head{grid-template-columns:1fr}.motif-art{max-width:220px}}
 .motif-mini{display:flex;flex-wrap:wrap;gap:12px}.motif-mini a{display:flex;flex-direction:column;align-items:center;gap:4px;width:92px;text-decoration:none;color:var(--ink);font-size:var(--t-sm);text-align:center}.motif-mini .motif-svg{width:64px}
 .motif-filtre{margin:6px 0 4px}
+.sosyal{grid-column:1/-1;display:flex;gap:14px;align-items:center;padding-bottom:10px}
+.sosyal a{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid var(--rule);border-radius:999px;color:var(--ink);text-decoration:none}
+.sosyal a:hover{border-color:var(--accent);color:var(--accent)}.sosyal svg{width:20px;height:20px}.sicon-t{font-family:var(--f-mono);font-size:.7rem}
+/* simgeler */
+.ico{display:block}.ico-b{width:30px;height:30px;color:var(--accent)}
+.sharebar button,.sharebar a{width:40px;height:40px;padding:0;display:inline-flex;align-items:center;justify-content:center}
+.sharebar svg{width:19px;height:19px}
+.icongrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:10px}
+.icongrid a{display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px 8px;background:var(--sheet);border:1px solid var(--rule);text-decoration:none;color:var(--ink);text-align:center;font-size:var(--t-sm);line-height:1.25}
+.icongrid a:hover{border-color:var(--accent)}
+li.gi a{display:inline-flex;align-items:center;gap:10px}
