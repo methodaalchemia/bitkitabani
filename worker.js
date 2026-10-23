@@ -193,45 +193,72 @@ async function igPost(env) {
 // ---------- Threads: Instagram'daki günlük postun kısa metni ve aynı görselleri ----------
 // Gerekli gizli değişken: TH_TOKEN (Threads API, uzun ömürlü token). 20 günde bir kendiliğinden yenilenir.
 const TH = 'https://graph.threads.net/v1.0';
+async function thPublish(tok, o) {   // tek görselli ya da yalnızca metin Threads postu
+  const form = x => { const f = new URLSearchParams(x); f.set('access_token', tok); return { method: 'POST', body: f }; };
+  const box = (await igJson(await fetch(TH + '/me/threads', form(o.image ? { media_type: 'IMAGE', image_url: o.image, text: o.text } : { media_type: 'TEXT', text: o.text })))).id;
+  for (let i = 0; i < 6; i++) {
+    await new Promise(r => setTimeout(r, 5000));
+    const s = await igJson(await fetch(TH + '/' + box + '?fields=status&access_token=' + encodeURIComponent(tok)));
+    if (s.status === 'FINISHED') break;
+    if (s.status === 'ERROR') throw new Error('Threads görseli işleyemedi');
+  }
+  return igJson(await fetch(TH + '/me/threads_publish', form({ creation_id: box })));
+}
 async function thPost(env) {
   env = { ...env, TH_TOKEN: env.TH_TOKEN || env.TH_Token };   // panelde 'TH_Token' olarak da eklenebilir
   const ig = (await call(env, 'ig:state', 'get')) || {};
   const st = (await call(env, 'th:state', 'get')) || {};
-  const day = trDay();
-  if ((ig.n || 0) < LAUNCH || ig.last !== day || st.last === day) return { skipped: 'sırası değil' };
+  const day = trDay(), hour = trHour();
+  st.slot = st.slot || {};
   if (st.pauseUntil && Date.now() < st.pauseUntil) return { skipped: 'bekleniyor' };
+  // Hangi post sırada? Günlük bitki (Instagram'dan sonra), sabah 10'da 'Biliyor muydunuz?', öğleden sonra 14'te rehber/tarif.
+  let job = null;
+  if ((ig.n || 0) >= LAUNCH && ig.last === day && st.last !== day) job = 'gunluk';
+  else if (hour >= 10 && st.slot.sabah !== day) job = 'sabah';
+  else if (hour >= 14 && st.slot.ogle !== day) job = 'ogle';
+  if (!job) return { skipped: 'sırası değil' };
   try {
     let tok = st.token, at = st.tokenAt || 0;
     if (env.TH_TOKEN && env.TH_TOKEN !== st.seed) { tok = env.TH_TOKEN; at = Date.now(); st.seed = env.TH_TOKEN; }
-    if (Date.now() - at > 20 * 864e5) { tok = (await igJson(await fetch(TH.replace('/v1.0', '') + '/refresh_access_token?grant_type=th_refresh_token&access_token=' + encodeURIComponent(tok)))).access_token; at = Date.now(); }
+    if (Date.now() - at > 20 * 864e5) { tok = (await igJson(await fetch('https://graph.threads.net/refresh_access_token?grant_type=th_refresh_token&access_token=' + encodeURIComponent(tok)))).access_token; at = Date.now(); }
     st.token = tok; st.tokenAt = at;
-    const pr = await igAsset('p/' + (ig.n - 1) + '/post.json');
-    if (!pr.ok) throw new Error('post bulunamadı');
-    const post = await pr.json();
-    const paras = (post.caption || '').split(/\n\s*\n/).map(x => x.trim()).filter(Boolean);
-    const link = 'bitkitabani.com/' + post.id + '/';
-    const body = paras.filter(x => !x.startsWith('🆕') && !x.startsWith('#') && !x.startsWith('Kaydırarak') && !x.startsWith('Kaynaklarıyla') && !x.startsWith('Bilgilendirme'));
-    let text = '';
-    for (const x of body.slice(0, 3)) if ((text + '\n\n' + x).length < 440) text += (text ? '\n\n' : '') + x;
-    if (!text) text = body[0].slice(0, 440);
-    text += '\n\nDevamı ve kaynaklar: ' + link;
-    const form = o => { const f = new URLSearchParams(o); f.set('access_token', tok); return { method: 'POST', body: f }; };
-    const kids = [];
-    for (const u of post.images.slice(0, 10)) kids.push((await igJson(await fetch(TH + '/me/threads', form({ media_type: 'IMAGE', image_url: u, is_carousel_item: 'true' })))).id);
-    const box = (await igJson(await fetch(TH + '/me/threads', form({ media_type: 'CAROUSEL', children: kids.join(','), text })))).id;
-    for (let i = 0; i < 6; i++) {
-      await new Promise(r => setTimeout(r, 5000));
-      const s = await igJson(await fetch(TH + '/' + box + '?fields=status&access_token=' + encodeURIComponent(tok)));
-      if (s.status === 'FINISHED') break;
-      if (s.status === 'ERROR') throw new Error('Threads görselleri işleyemedi');
+    if (job === 'gunluk') {
+      const pr = await igAsset('p/' + (ig.n - 1) + '/post.json');
+      if (!pr.ok) throw new Error('post bulunamadı');
+      const post = await pr.json();
+      const paras = (post.caption || '').split(/\n\s*\n/).map(x => x.trim()).filter(Boolean);
+      const body = paras.filter(x => !x.startsWith('🆕') && !x.startsWith('#') && !x.startsWith('Kaydırarak') && !x.startsWith('Kaynaklarıyla') && !x.startsWith('Bilgilendirme'));
+      let text = '';
+      for (const x of body.slice(0, 3)) if ((text + '\n\n' + x).length < 440) text += (text ? '\n\n' : '') + x;
+      if (!text) text = body[0].slice(0, 440);
+      text += '\n\nDevamı ve kaynaklar: bitkitabani.com/' + post.id + '/';
+      const form = o => { const f = new URLSearchParams(o); f.set('access_token', tok); return { method: 'POST', body: f }; };
+      const kids = [];
+      for (const u of post.images.slice(0, 10)) kids.push((await igJson(await fetch(TH + '/me/threads', form({ media_type: 'IMAGE', image_url: u, is_carousel_item: 'true' })))).id);
+      const box = (await igJson(await fetch(TH + '/me/threads', form({ media_type: 'CAROUSEL', children: kids.join(','), text })))).id;
+      for (let i = 0; i < 6; i++) {
+        await new Promise(r => setTimeout(r, 5000));
+        const s = await igJson(await fetch(TH + '/' + box + '?fields=status&access_token=' + encodeURIComponent(tok)));
+        if (s.status === 'FINISHED') break;
+        if (s.status === 'ERROR') throw new Error('Threads görselleri işleyemedi');
+      }
+      await igJson(await fetch(TH + '/me/threads_publish', form({ creation_id: box })));
+      st.last = day; st.plant = post.id;
+    } else {
+      const pr = await igAsset('threads.json');
+      if (!pr.ok) throw new Error('threads.json bulunamadı');
+      const plan = (await pr.json())[day];
+      if (!plan || !plan[job]) { st.slot[job] = day; throw new Error('bugün için ' + job + ' metni yok'); }
+      await thPublish(tok, plan[job]);
+      st.slot[job] = day;
     }
-    await igJson(await fetch(TH + '/me/threads_publish', form({ creation_id: box })));
-    st.last = day; st.n = (st.n || 0) + 1; st.plant = post.id; st.error = null;
+    st.n = (st.n || 0) + 1; st.error = null;
   } catch (e) {
-    st.error = String(e.message || e).slice(0, 300); st.errorAt = new Date().toISOString();
+    st.error = job + ': ' + String(e.message || e).slice(0, 280); st.errorAt = new Date().toISOString();
     if (/limit/i.test(st.error)) st.pauseUntil = Date.now() + 2 * 3600e3;
-    st.fails = (st.lastFailDay === day ? (st.fails || 0) : 0) + 1; st.lastFailDay = day;
-    if (st.fails >= 3) st.last = day;   // aynı gün en fazla 3 deneme
+    const fk = 'fails_' + job;
+    st[fk] = (st.lastFailDay === day ? (st[fk] || 0) : 0) + 1; st.lastFailDay = day;
+    if (st[fk] >= 3) { if (job === 'gunluk') st.last = day; else st.slot[job] = day; }   // aynı iş için günde en fazla 3 deneme
   }
   await call(env, 'th:state', 'put', st);
   return { n: st.n || 0, error: st.error };

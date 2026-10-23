@@ -213,6 +213,33 @@ PAGE_CSS = 'body{margin:0;padding:16px;background:#F1EADD;color:#1C2140;font-fam
 
 PAUSED = False   # True yapılırsa post dosyası üretilmez ve worker paylaşamaz
 
+def threads_plan(data, day, days=4):
+    """Threads için günde iki ek metin: sabah 'Biliyor muydunuz?', öğleden sonra rehber/tarif/karşılaştırma."""
+    sys.path.insert(0, ROOT)
+    from rehber import KONULAR
+    from tarif import TARIFLER
+    from karsilastirma import KARS
+    P = {p['id']: p for p in data['p']}
+    img = lambda i: f'https://bitkitabani.com/img/{i}-960.jpg' if i in P and P[i]['img'] else None
+    pool = sorted([p for p in data['p'] if p['guv'] != 'yuksek' and not p['yasal'] and p['img'] and len(p['ilginc']) < 330], key=lambda p: p['no'])
+    extra = []
+    for k in KONULAR:
+        ids = [x for x, _ in k['bitkiler'] if x in P]
+        if len(ids) >= 2: extra.append(dict(text=f"{k['baslik']}\n\n{k['ozet']}\n\nRehberin tamamı: bitkitabani.com/rehber/{k['slug']}/", image=img(ids[0])))
+    for t in TARIFLER:
+        if t['bitki'] in P: extra.append(dict(text=f"{t['ad']} nasıl yapılır? ☕\n\n{t['kisa']}\n\nÖlçüler, demleme süresi ve kimlerin dikkat etmesi gerektiği: bitkitabani.com/tarif/{t['slug']}/", image=img(t['bitki'])))
+    for c in KARS:
+        if c['a'] in P and c['b'] in P: extra.append(dict(text=f"{c['baslik']}\n\n{c['sonuc']}\n\nKarşılaştırmanın tamamı: bitkitabani.com/karsilastirma/{c['a']}-ve-{c['b']}/", image=img(c['a'])))
+    # rehber, tarif ve karşılaştırmalar karışık sırayla gelsin
+    extra = [x for i, x in sorted(enumerate(extra), key=lambda t: (t[0] * 7) % max(1, len(extra)))]
+    out = {}
+    for d in range(days):
+        dd = day + datetime.timedelta(days=d); k = dd.toordinal()
+        p = pool[(k * 37) % len(pool)]
+        fact = f"Biliyor muydunuz? 🌿\n\n{p['ilginc']}\n\n{p['tr']} ({p['la']}) hakkında daha fazlası: bitkitabani.com/{p['id']}/"
+        out[dd.isoformat()] = {'sabah': dict(text=fact[:495], image=img(p['id'])), 'ogle': dict(text=extra[k % len(extra)]['text'][:495], image=extra[k % len(extra)]['image'])}
+    return out
+
 def main():
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     global ig2
@@ -232,6 +259,8 @@ def main():
     if os.path.isdir(out_root): shutil.rmtree(out_root)
     os.makedirs(out_root)
     json.dump({'n': n0, 'day': day.isoformat()}, open(os.path.join(out_root, 'state.json'), 'w'))
+    try: json.dump(threads_plan(data, day), open(os.path.join(out_root, 'threads.json'), 'w', encoding='utf-8'), ensure_ascii=False)
+    except Exception as ex: print('threads planı yazılamadı:', ex)
     cards = []
     if PAUSED:
         open(os.path.join(out_root, 'index.html'), 'w', encoding='utf-8').write('<!doctype html><meta charset="utf-8"><meta name="robots" content="noindex"><p>Instagram paylaşımı şu an durduruldu.</p>')
