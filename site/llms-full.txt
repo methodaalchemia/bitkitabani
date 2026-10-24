@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 123 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 124 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -3850,3 +3850,31 @@ Karıştırma riski: Süs için yetiştirilen kauçuk ve benjamin gibi Ficus tü
 
 ### İlginç bilgi
 Ürdün Vadisi’nde bulunan 11.400 yıllık incirler, incirin buğdaydan yaklaşık bin yıl önce evcilleştirilmiş olabileceğini düşündürür.
+
+## Fesleğen (Ocimum basilicum)
+
+URL: https://bitkitabani.com/feslegen/
+Familya: Lamiaceae · Bölge: Anadolu ve Akdeniz, Asya ve Sibirya · Kullanılan kısım: Yaprak, çiçekli dallar
+Bilimsel kanıt: Geleneksel · Güvenlik: Genelde güvenli
+
+### Geleneksel kullanım
+- Anadolu: Pencere önlerinde ve kapı yanlarında saksıda yetiştirilir; kokusunun sineği uzak tuttuğuna inanılır ve türkülerde sevgilinin simgesidir. Doğu Anadolu’da mor reyhandan şerbet ve çay yapılır.
+- Akdeniz ve Hindistan: Rum Ortodoks kiliselerinde kutsal su fesleğen dalıyla serpilir. Hindistan’da fesleğenin akrabası tulsi kutsal bir bitki sayılır.
+
+### Hazırlama
+Taze yapraklar yemeklere ve salatalara katılır; çay için bir tutam taze ya da kuru yaprak 5 dakika demlenir.
+
+### Bilim ne diyor
+Laboratuvar ve hayvan çalışmalarında antimikrobiyal, antioksidan ve iltihap giderici etkiler gösterilmiştir. İnsanlarda yapılmış kaliteli klinik çalışma yok denecek kadar azdır. Fesleğen yağındaki estragol, yüksek dozda hayvanlarda karaciğer kanserine yol açtığı için Avrupa’da yağ ve konsantre ürünlerin uzun süre kullanılması önerilmez; yemeklerdeki miktar sorun sayılmaz.
+
+### Güvenlik
+Yemekte ve çayda güvenlidir. Uçucu yağı ve konsantre takviyeleri estragol içerdiği için hamilelikte, emzirirken ve çocuklarda kullanılmamalıdır. Yaprakları K vitamini bakımından zengindir; varfarin kullananlar birden çok miktarda yememelidir.
+
+### Doğada
+Nerede yetişir: Tek yıllık kültür bitkisidir; bütün Türkiye’de bahçe ve saksıda yetişir, dona dayanıksızdır.
+Toplama mevsimi: Yapraklar Haziran–Eylül’de, çiçeklenmeden hemen önce en kokuludur.
+Yöresel adlar: fesleğen, reyhan, mor reyhan
+Karıştırma riski: Mor reyhan aynı türün koyu renkli bir çeşididir. Tulsi (kutsal fesleğen, Ocimum tenuiflorum) ayrı bir türdür; yaprakları tüylü ve karanfil kokuludur.
+
+### İlginç bilgi
+Fesleğenin Batı dillerindeki adı Yunanca “kraliyet otu” anlamındaki basilikon’dan gelir; Türkçedeki “reyhan” ise Arapçada “güzel kokulu bitki” demektir.
