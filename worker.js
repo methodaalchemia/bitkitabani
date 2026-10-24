@@ -288,32 +288,51 @@ async function fbAuth(env, st) {
   st.page = me.id; st.pageName = me.name; st.token = tok; st.seed = env.FB_TOKEN; st.error = null;
   return st;
 }
-async function fbPost(env) {
+async function fbPost(env) {   // günde en fazla 3 post: 12:30 günün kavramı (ritüel günlerinde takvim), 17:30 rehber/tarif/sembol, ~21:00 günlük bitki
   const ig = (await call(env, 'ig:state', 'get')) || {};
   const st = (await call(env, 'fb:state', 'get')) || {};
   const day = trDay();
+  st.slot = st.slot || {};
   if (st.pauseUntil && Date.now() < st.pauseUntil) return { skipped: 'bekleniyor' };
+  let job = null;
   try {
     await fbAuth(env, st);
-    if (!((ig.n || 0) >= LAUNCH && ig.last === day && ig.lastPlant && ig.lastPlant !== st.plant && Date.now() - (ig.lastAt || 0) > 25 * 60e3 && trH() >= 20.4 && trH() < 23.9)) { await call(env, 'fb:state', 'put', st); return { skipped: 'sırası değil' }; }
-    const pr = await igAsset('p/' + (ig.n - 1) + '/post.json');
-    if (!pr.ok) throw new Error('post bulunamadı');
-    const post = await pr.json();
-    const paras = (post.caption || '').split(/\n\s*\n/).map(x => x.trim()).filter(Boolean);
-    const body = paras.filter(x => !x.startsWith('#') && !x.startsWith('Kaydırarak') && !x.startsWith('Kaynaklarıyla') && !/profil/i.test(x));
-    const message = body.join('\n\n') + '\n\nDevamı ve kaynaklar: https://bitkitabani.com/' + post.id + '/\n\n#şifalıbitkiler #bitkitabanı';
+    if ((ig.n || 0) >= LAUNCH && ig.last === day && ig.lastPlant && ig.lastPlant !== st.plant && Date.now() - (ig.lastAt || 0) > 25 * 60e3 && trH() >= 20.4 && trH() < 23.9) job = 'gunluk';
+    else if (trH() >= 12.4 && trH() < 16 && st.slot.oglen !== day) job = 'oglen';
+    else if (trH() >= 17.4 && trH() < 20 && st.slot.aksam !== day) job = 'aksam';
+    if (!job) { await call(env, 'fb:state', 'put', st); return { skipped: 'sırası değil' }; }
     const form = o => { const f = new URLSearchParams(o); f.set('access_token', st.token); return { method: 'POST', body: f }; };
-    const ids = [];
-    for (const u of post.images.slice(0, 10)) ids.push((await igJson(await fetch(FB + '/' + st.page + '/photos', form({ url: u, published: 'false' })))).id);
-    const o = { message };
-    ids.forEach((id, i) => { o['attached_media[' + i + ']'] = JSON.stringify({ media_fbid: id }); });
-    const r = await igJson(await fetch(FB + '/' + st.page + '/feed', form(o)));
-    st.plant = post.id; st.last = day; st.lastId = r.id; st.n = (st.n || 0) + 1; st.error = null; st.fails = 0;
+    const linkify = t => t.replace(/(^|[\s(])bitkitabani\.com\//g, '$1https://bitkitabani.com/');
+    if (job === 'gunluk') {
+      const pr = await igAsset('p/' + (ig.n - 1) + '/post.json');
+      if (!pr.ok) throw new Error('post bulunamadı');
+      const post = await pr.json();
+      const paras = (post.caption || '').split(/\n\s*\n/).map(x => x.trim()).filter(Boolean);
+      const body = paras.filter(x => !x.startsWith('#') && !x.startsWith('Kaydırarak') && !x.startsWith('Kaynaklarıyla') && !/profil/i.test(x));
+      const message = body.join('\n\n') + '\n\nDevamı ve kaynaklar: https://bitkitabani.com/' + post.id + '/\n\n#şifalıbitkiler #bitkitabanı';
+      const ids = [];
+      for (const u of post.images.slice(0, 10)) ids.push((await igJson(await fetch(FB + '/' + st.page + '/photos', form({ url: u, published: 'false' })))).id);
+      const o = { message };
+      ids.forEach((id, i) => { o['attached_media[' + i + ']'] = JSON.stringify({ media_fbid: id }); });
+      st.lastId = (await igJson(await fetch(FB + '/' + st.page + '/feed', form(o)))).id;
+      st.plant = post.id;
+    } else {
+      st.slot[job] = day;   // hata olsa da aynı slotu gün içinde tekrar deneme (spam olmasın)
+      const pr = await igAsset('threads.json');
+      if (!pr.ok) throw new Error('threads.json bulunamadı');
+      const plan = (await pr.json())[day] || {};
+      const ritual = plan.sabah && /^Bugün /.test(plan.sabah.text);
+      const p = job === 'oglen' ? (ritual ? plan.sabah : (plan.kavram || plan.sabah)) : plan.ogle;
+      if (!p) throw new Error('bugün için ' + job + ' metni yok');
+      const text = linkify(p.text);
+      st.lastId = p.image ? (await igJson(await fetch(FB + '/' + st.page + '/photos', form({ url: p.image, caption: text })))).id
+                          : (await igJson(await fetch(FB + '/' + st.page + '/feed', form({ message: text })))).id;
+    }
+    st.last = day; st.n = (st.n || 0) + 1; st.error = null; st.fails = 0;
   } catch (e) {
-    st.error = String(e.message || e).slice(0, 300); st.errorAt = new Date().toISOString();
+    st.error = (job ? job + ': ' : '') + String(e.message || e).slice(0, 300); st.errorAt = new Date().toISOString();
     if (/limit/i.test(st.error)) st.pauseUntil = Date.now() + 2 * 3600e3;
-    st.fails = (st.failDay === day ? (st.fails || 0) : 0) + 1; st.failDay = day;
-    if (st.fails >= 3) st.plant = ig.lastPlant;   // günde en fazla 3 deneme
+    if (job === 'gunluk') { st.fails = (st.failDay === day ? (st.fails || 0) : 0) + 1; st.failDay = day; if (st.fails >= 3) st.plant = ig.lastPlant; }
   }
   await call(env, 'fb:state', 'put', st);
   return { n: st.n || 0, error: st.error };
@@ -500,7 +519,7 @@ export default {
       const th = (await call(env, 'th:state', 'get')) || {};
       const fb = (await call(env, 'fb:state', 'get')) || {};
       const AL = (await call(env, 'abone:list', 'get')) || {}; const bs = (await call(env, 'bulten:state', 'get')) || {};
-      return json({ facebook: { token: !!env.FB_TOKEN, sayfa: fb.pageName || null, sayi: fb.n || 0, son: fb.last || null, bitki: fb.plant || null, hata: fb.error || null, hataZamani: fb.errorAt || null }, bulten: { anahtar: !!(env.RESEND_KEY || env.RESEND_Key), onayli: Object.values(AL).filter(a => a.on).length, kursta: Object.values(AL).filter(a => a.on && typeof a.kurs === 'number' && a.kurs < 7).length, bekleyen: Object.values(AL).filter(a => !a.on).length, duyuru: Object.values(AL).filter(a => a.on && a.d).length, gonderilen: bs.sayi || 0, hata: bs.err || Object.values(AL).map(a => a.err).find(Boolean) || null }, threads: { token: !!(env.TH_TOKEN || env.TH_Token || th.token), sayi: th.n || 0, son: th.last || null, kavram: (th.slot || {}).kavram || null, sabah: (th.slot || {}).sabah || null, ogle: (th.slot || {}).ogle || null, bitki: th.plant || null, hata: th.error || null, hataZamani: th.errorAt || null }, token: !!(env.IG_TOKEN || st.token), sayi: st.n || 0, reels: st.reels || 0, reelHata: st.reelError || null, hikayeHata: st.storyError || null, altMetin: !st.noAlt, aylik: st.aylik || null, ek: st.ek || null, ekSayi: st.ekSayi || 0, ekHata: st.ekError || null, aylikHata: st.aylikError || null, sonPaylasim: st.last || null, bitki: st.lastPlant || null, hata: st.error || null, hataZamani: st.errorAt || null, tokenYenilendi: st.tokenAt ? new Date(st.tokenAt).toISOString() : null, bugun: trDay() });
+      return json({ facebook: { token: !!env.FB_TOKEN, sayfa: fb.pageName || null, oglen: (fb.slot || {}).oglen || null, aksam: (fb.slot || {}).aksam || null, sayi: fb.n || 0, son: fb.last || null, bitki: fb.plant || null, hata: fb.error || null, hataZamani: fb.errorAt || null }, bulten: { anahtar: !!(env.RESEND_KEY || env.RESEND_Key), onayli: Object.values(AL).filter(a => a.on).length, kursta: Object.values(AL).filter(a => a.on && typeof a.kurs === 'number' && a.kurs < 7).length, bekleyen: Object.values(AL).filter(a => !a.on).length, duyuru: Object.values(AL).filter(a => a.on && a.d).length, gonderilen: bs.sayi || 0, hata: bs.err || Object.values(AL).map(a => a.err).find(Boolean) || null }, threads: { token: !!(env.TH_TOKEN || env.TH_Token || th.token), sayi: th.n || 0, son: th.last || null, kavram: (th.slot || {}).kavram || null, sabah: (th.slot || {}).sabah || null, ogle: (th.slot || {}).ogle || null, bitki: th.plant || null, hata: th.error || null, hataZamani: th.errorAt || null }, token: !!(env.IG_TOKEN || st.token), sayi: st.n || 0, reels: st.reels || 0, reelHata: st.reelError || null, hikayeHata: st.storyError || null, altMetin: !st.noAlt, aylik: st.aylik || null, ek: st.ek || null, ekSayi: st.ekSayi || 0, ekHata: st.ekError || null, aylikHata: st.aylikError || null, sonPaylasim: st.last || null, bitki: st.lastPlant || null, hata: st.error || null, hataZamani: st.errorAt || null, tokenYenilendi: st.tokenAt ? new Date(st.tokenAt).toISOString() : null, bugun: trDay() });
     }
     if (url.pathname.startsWith('/api/abone/') && (req.method === 'GET' || url.pathname === '/api/abone/cik')) return aboneApi(req, env, url);
     if (req.method !== 'GET' && req.headers.get('x-bt') !== '1') return json({ error: 'csrf' }, 403);
