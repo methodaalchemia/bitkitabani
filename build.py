@@ -198,7 +198,7 @@ def head(title, desc, path, extra='', image=None):
 '''
 
 MENU = [('Keşfet', [('/katalog/', 'Katalog', 'kat'), ('/yeni/', 'Yeni eklenenler', 'yeni'), ('/gunun-bitkisi/', 'Günün bitkisi', 'gun'), ('/oyun/', 'Günün bilmecesi', 'oyun'), ('/kopruler/', 'Kültür köprüleri', 'br'), ('/semboller/', 'Semboller', 'sembol'), ('/kavram/', 'Günün kavramı', 'kavram'), ('/takvim/', 'Ritüel takvimi', 'takvim'), ('/yazilar/', 'Yazılar', 'yazi')]),
-        ('Rehberler', [('/rehber/', 'Derde göre bitkiler', 'rehber'), ('/tarif/', 'Çay tarifleri', 'tarif'), ('/karsilastirma/', 'Karşılaştırmalar', 'kars'), ('/rehber/ilac-etkilesimi/', 'İlaç etkileşimi', 'etk'), ('/rehber/hamilelik-emzirme/', 'Hamilelik ve emzirme', 'gebe'), ('/toplama-takvimi/', 'Toplama takvimi', 'takvim'), ('/yoresel-adlar/', 'Yöresel adlar', 'adlar')]),
+        ('Rehberler', [('/bitki-bul/', 'Bana uygun bitki', 'bul'), ('/rehber/', 'Derde göre bitkiler', 'rehber'), ('/tarif/', 'Çay tarifleri', 'tarif'), ('/karsilastirma/', 'Karşılaştırmalar', 'kars'), ('/rehber/ilac-etkilesimi/', 'İlaç etkileşimi', 'etk'), ('/rehber/hamilelik-emzirme/', 'Hamilelik ve emzirme', 'gebe'), ('/toplama-takvimi/', 'Toplama takvimi', 'takvim'), ('/yoresel-adlar/', 'Yöresel adlar', 'adlar')]),
         ('Bitki Tabanı', [('/kurs/', 'Ücretsiz e-posta kursu', 'kurs'), ('/bulten/', 'Bülten', 'bulten'), ('/hakkinda/', 'Hakkında', 'about'), ('/yontem/', 'Yöntem', 'yontem'), ('https://www.instagram.com/bitkitabani/', 'Instagram', 'ig'), ('/hesap/', 'Hesap', 'acct'), ('/gizlilik/', 'Gizlilik', 'priv'), ('mailto:iletisim@bitkitabani.com', 'İletişim', 'mail')])]
 def nav(cur):
     a = lambda href, label, key: f'<a href="{href}"{" aria-current=\"page\"" if cur == key else ""}{" rel=\"noopener\"" if href.startswith("http") else ""}>{label}</a>'
@@ -736,7 +736,7 @@ home = f'''
 </header>
 {takvim_band()}
 {newband()}
-<section class="sec"><h2>Derde göre</h2><p>Uykudan öksürüğe, mideden kaygıya: şikâyetlere göre bitkiler, kanıtı en güçlü olandan başlayarak. Kullandığın bir ilaç varsa önce <a href="/rehber/ilac-etkilesimi/">etkileşim aracına</a> bak.</p><div class="icongrid">{''.join(f'<a href="/rehber/{k["slug"]}/">{ico(k["slug"], "ico-b")}<span>{e(k["kisa"])}</span></a>' for k in KONULAR if sum(1 for x, _ in k['bitkiler'] if x in byId) >= 2)}<a href="/rehber/ilac-etkilesimi/">{ico('etk', 'ico-b')}<span>İlaç etkileşimi</span></a><a href="/rehber/hamilelik-emzirme/">{ico('gebe', 'ico-b')}<span>Hamilelik</span></a><a href="/tarif/">{ico('tarif', 'ico-b')}<span>Çay tarifleri</span></a></div></section>
+<section class="sec"><h2>Derde göre</h2><p>Uykudan öksürüğe, mideden kaygıya: şikâyetlere göre bitkiler, kanıtı en güçlü olandan başlayarak. Kullandığın bir ilaç varsa önce <a href="/rehber/ilac-etkilesimi/">etkileşim aracına</a> bak.</p><p><a class="cta" href="/bitki-bul/">Üç soruda sana uygun bitkiyi bul →</a></p><div class="icongrid">{''.join(f'<a href="/rehber/{k["slug"]}/">{ico(k["slug"], "ico-b")}<span>{e(k["kisa"])}</span></a>' for k in KONULAR if sum(1 for x, _ in k['bitkiler'] if x in byId) >= 2)}<a href="/rehber/ilac-etkilesimi/">{ico('etk', 'ico-b')}<span>İlaç etkileşimi</span></a><a href="/rehber/hamilelik-emzirme/">{ico('gebe', 'ico-b')}<span>Hamilelik</span></a><a href="/tarif/">{ico('tarif', 'ico-b')}<span>Çay tarifleri</span></a></div></section>
 <section class="sec"><h2>Bölgelere göre</h2><div class="regs-grid">{regcards}</div></section>
 {f'<section class="sec"><h2>Şu an mevsiminde</h2><p>{AYLAR[LOCAL_DAY.month-1]} ayında Anadolu’da toplama mevsimi olan bitkiler. Koruma altındaki ve yasal kısıtlı türler bu listeye alınmaz.</p><div class="grid">' + "".join(card(p) for p in season[:8]) + '</div></section>' if season else ''}
 <section class="sec"><h2>Nereden başlamalı?</h2><p>{len(P)} bitki çok gelebilir. Siteyi tanımak için bu beşiyle başla:</p><ol class="start">
@@ -1013,6 +1013,36 @@ body = f'''{crumbs(('/rehber/', 'Rehberler'), (path, 'İlaç etkileşimi'))}
 </article>'''
 write(path, page('Bitki ve ilaç etkileşimi: hangi bitki hangi ilaçla sorun çıkarır? | Bitki Tabanı', f'Kan sulandırıcı, tansiyon, şeker, antidepresan ve doğum kontrol hapı gibi ilaçlarla etkileşen {nplants} şifalı bitki. İlaç grubunu seç, etkileşimleri gör.', path, body, 'etk', '<script src="/assets/etkilesim.js" defer></script>', narrow=True,
       extra=lds({"@context":"https://schema.org","@type":"Article","headline":"Bitki ve ilaç etkileşimi","inLanguage":"tr","url":BASE+path,"author":AUTHOR,"dateModified":CONTENT_DATE}, crumb_ld(('/rehber/', 'Rehberler'), (path, 'İlaç etkileşimi')))))
+GUIDE_URLS.append(path)
+
+# --- bitki bulucu: derde göre, hamilelik ve ilaç durumuna göre süzen sihirbaz (tamamen tarayıcıda) ---
+_tarif_of = {}
+for t in LIVE_T: _tarif_of.setdefault(t['bitki'], t['slug'])
+_preg_ids = {p['id'] for p, _ in preg}
+_BB = {'k': [], 'g': [[c, ad] for c, ad, _ in ILAC if etk_by[c]], 'gk': {c: keys for c, _, keys in ILAC}, 'e': {c: sorted({pid for pid, _, _ in etk_by[c]}) for c, _, _ in ILAC if etk_by[c]}, 'p': {}, 'K': {k: [v['n'], v['ad']] for k, v in KANIT.items()}, 'G': {k: (v['ad'] if isinstance(v, dict) else v) for k, v in GUV.items()}}
+for k in LIVE_K:
+    ids = [(x, n) for x, n in k['bitkiler'] if x in byId]
+    _BB['k'].append({'s': k['slug'], 'a': k['kisa'], 'i': ico(k['slug'], 'ico-b'), 'b': [x for x, _ in ids], 'n': {x: n for x, n in ids}, 'u': k['uyari']})
+    for x, _ in ids:
+        q = byId[x]
+        _BB['p'][x] = {'t': q['tr'], 'l': short_la(q), 'k': q['kanit'], 'g': q['guv'], 'h': x in _preg_ids, 'y': bool(YASAL.get(x)), 'r': _tarif_of.get(x), 'm': x in IMG}
+path = '/bitki-bul/'
+body = f'''{crumbs((path, 'Bitki bulucu'))}
+<article class="sheet">
+<header class="page-head"><span class="eyebrow">Üç soruda</span><h1>Bana uygun bitki hangisi?</h1><p>Derdini seç, birkaç soruyu yanıtla; katalogdan sana uygun bitkileri, kanıtı en güçlü olandan başlayarak listeleyelim. Hamileysen ya da ilaç kullanıyorsan riskli olanlar kendiliğinden elenir.</p></header>
+<div id="bb" class="bb">
+ <section class="bbstep" data-s="1"><h2><span class="bbn">1</span> Derdin ne?</h2><div class="icongrid bbk"></div></section>
+ <section class="bbstep" data-s="2" hidden><h2><span class="bbn">2</span> Hamile misin ya da emziriyor musun?</h2><div class="bbopts"><button type="button" class="chip" data-h="0">Hayır</button><button type="button" class="chip" data-h="1">Evet</button></div></section>
+ <section class="bbstep" data-s="3" hidden><h2><span class="bbn">3</span> Düzenli kullandığın bir ilaç var mı?</h2><p class="muted-s">Birden fazla seçebilirsin.</p><div class="bbopts bbg"><button type="button" class="chip" data-g="yok">İlaç kullanmıyorum</button></div><p><button type="button" class="cta bbgo">Sonuçları göster →</button></p></section>
+ <section class="bbstep" data-s="4" hidden><h2>Bu dert için öne çıkan bitkiler</h2><div class="bbres"></div><p><button type="button" class="linkbtn bbagain">Baştan başla</button></p></section>
+</div>
+<noscript><p>Bu araç JavaScript ile çalışır. <a href="/rehber/">Derde göre bitkiler</a> sayfasından da aynı listelere ulaşabilirsin.</p></noscript>
+{DISCL}
+<section class="sec"><h2>Diğer rehberler</h2>{other_guides("")}</section>
+</article>
+<script id="bbdata" type="application/json">{json.dumps(_BB, ensure_ascii=False).replace("</", "<\\/")}</script>'''
+write(path, page('Bana uygun bitki hangisi? Derde göre bitki bulucu | Bitki Tabanı', 'Derdini seç, hamilelik ve ilaç durumunu belirt: katalogdan sana uygun şifalı bitkiler, kanıtı en güçlü olandan başlayarak. Riskli olanlar kendiliğinden elenir.', path, body, 'bul', scripts='<script src="/assets/bitkibul.js" defer></script>',
+      extra=lds({"@context":"https://schema.org","@type":"WebPage","name":"Bitki bulucu","inLanguage":"tr","url":BASE+path,"author":AUTHOR,"dateModified":CONTENT_DATE})))
 GUIDE_URLS.append(path)
 
 # --- tarifler ---
