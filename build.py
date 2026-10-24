@@ -254,6 +254,18 @@ def write(path, content):
     os.makedirs(os.path.dirname(full), exist_ok=True)
     open(full, 'w', encoding='utf-8').write(content)
 
+_AVG_F = os.path.join(HERE, '.cache', 'avgcolor.json')
+try: _AVGC = json.load(open(_AVG_F))
+except Exception: _AVGC = {}
+def _avg(pid):   # fotoğraf yüklenene kadar kutuda fotoğrafın ortalama rengi görünsün
+    if pid not in _AVGC:
+        try:
+            from PIL import Image
+            im = Image.open(os.path.join(HERE, 'img', f'{pid}-500.jpg')).convert('RGB').resize((1, 1), Image.LANCZOS)
+            _AVGC[pid] = '#%02x%02x%02x' % im.getpixel((0, 0))
+            os.makedirs(os.path.dirname(_AVG_F), exist_ok=True); json.dump(_AVGC, open(_AVG_F, 'w'))
+        except Exception: return ''
+    return f' style="background:{_AVGC[pid]}"'
 def ph(p, size, eager=False):
     m = IMG.get(p['id'])
     if not m:
@@ -261,7 +273,7 @@ def ph(p, size, eager=False):
     w, h = (m['w'], m['h']) if size == 960 else (m.get('w500', 500), m.get('h500', 667))
     load = 'fetchpriority="high"' if eager else 'loading="lazy"'
     src = f'<source type="image/webp" srcset="/img/{p["id"]}-{size}.webp">' if os.path.exists(os.path.join(HERE, 'img', f'{p["id"]}-{size}.webp')) else ''
-    return f'<div class="ph loaded"><picture>{src}<img src="/img/{p["id"]}-{size}.jpg" width="{w}" height="{h}" alt="{e(p["tr"])} ({e(short_la(p))}): {e(ALT.get(p["id"], "bitki"))}" {load} decoding="async"></picture></div>'
+    return f'<div class="ph loaded"{_avg(p["id"])}><picture>{src}<img src="/img/{p["id"]}-{size}.jpg" width="{w}" height="{h}" alt="{e(p["tr"])} ({e(short_la(p))}): {e(ALT.get(p["id"], "bitki"))}" {load} decoding="async"></picture></div>'
 
 def credit(p):
     m = IMG.get(p['id'])
@@ -372,7 +384,7 @@ for i, p in enumerate(P):
         faqld = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q, a in dd['sss']]}
     if pid in ETK:
         rows_ = ''.join(f'<tr><th scope="row">{e(g)}</th><td>{e(w)}</td></tr>' for g, w in ETK[pid])
-        etkhtml = f'<section class="sec"><h2>İlaç etkileşimleri</h2><div class="tablewrap"><table class="cmp etk"><thead><tr><th scope="col">İlaç ya da madde</th><th scope="col">Neden önemli</th></tr></thead><tbody>{rows_}</tbody></table></div><p class="muted-s">Bu liste eksiksiz değildir. Düzenli ilaç kullanıyorsan {e(p["tr"])} denemeden önce eczacına ya da hekimine sor.</p></section>'
+        etkhtml = f'<section class="sec" id="etk"><h2>İlaç etkileşimleri</h2><div class="tablewrap"><table class="cmp etk"><thead><tr><th scope="col">İlaç ya da madde</th><th scope="col">Neden önemli</th></tr></thead><tbody>{rows_}</tbody></table></div><p class="muted-s">Bu liste eksiksiz değildir. Düzenli ilaç kullanıyorsan {e(p["tr"])} denemeden önce eczacına ya da hekimine sor.</p></section>'
     def _sim(q):
         return 2 * len(set(q['bolge']) & set(p['bolge'])) + len(set(q['kat']) & set(p['kat'])) + (2 if q['fam'] == p['fam'] else 0)
     similar = sorted((q for q in P if q['id'] != pid and q['id'] not in rel), key=lambda q: (-_sim(q), q['no']))[:3]
@@ -433,7 +445,7 @@ for i, p in enumerate(P):
   <section class="sec"><h2>Hazırlama</h2><p>{e(p["haz"])}</p></section>
   <section class="sec"><h2>Bilim ne diyor</h2><p>{e(p["bilim"])}</p></section>
   {derhtml}
-  <section class="sec"><h2>Güvenlik</h2><div class="callout {p["guv"]}"><div class="lvl">{GUV[p["guv"]]}</div><p>{e(p["guvNot"])}</p></div></section>
+  <section class="sec"><h2>Güvenlik</h2><div class="callout {p["guv"]}"><div class="lvl">{GUV[p["guv"]]}</div><p>{e(p["guvNot"])}</p></div><div class="safelinks"><a href="{('#etk' if pid in ETK else '/rehber/ilac-etkilesimi/?q=' + urllib.parse.quote(p["tr"]))}">{ico('etk','ico-s')}<span>{'Bu bitkinin ilaç etkileşimleri' if pid in ETK else 'İlaç kullanıyorsan: etkileşim aracı'}</span></a><a href="/rehber/hamilelik-emzirme/">{ico('gebe','ico-s')}<span>Hamilelik ve emzirme</span></a></div></section>
   {etkhtml}
   {yas}
   {korhtml}
@@ -524,7 +536,7 @@ katalog = f'''
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="2" fill="none"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       <input id="q" type="search" placeholder="Bitki, Latince ad, kullanım ara… (ör. nazar, öksürük, tütsü)" autocomplete="off" aria-label="Bitki ara">
     </label>
-    <details class="fbox" open><summary>Filtreler</summary><div class="fgroups">{filters}</div></details>
+    <details class="fbox"><summary>Filtreler <span class="fcount" hidden></span></summary><div class="fgroups">{filters}</div></details>
   </div>
   <div class="resultbar"><span id="count" aria-live="polite">{len(P)} / {len(P)} kayıt gösteriliyor</span><button class="linkbtn" id="reset" type="button" hidden>Filtreleri temizle</button></div>
   <div class="grid">{"".join(card(p) for p in P)}</div>

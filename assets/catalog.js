@@ -26,6 +26,8 @@
     var ce = document.getElementById('count'), tpl = ce.getAttribute('data-tpl'); ce.textContent = tpl ? tpl.replace('{n}', n).replace('{t}', cards.length) : n + ' / ' + cards.length + ' kayıt gösteriliyor';
     document.getElementById('empty').hidden = n > 0;
     document.getElementById('reset').hidden = !(state.q || G.some(function(g){ return any(state[g]); }));
+    var fc = document.querySelector('.fbox .fcount');
+    if (fc) { var k = 0; G.forEach(function(g){ for (var x in state[g]) if (state[g][x]) k++; }); fc.textContent = k; fc.hidden = !k; }
     writeUrl();
   }
   function vals(c, g){ return g === 'kanit' || g === 'guv' ? [c.dataset[g]] : (c.dataset[g] || '').split(' '); }
@@ -90,3 +92,5 @@
   }
   render();
 })();
+
+(function(){var f=document.querySelector('details.fbox');if(f&&window.matchMedia('(min-width: 900px)').matches)f.open=true;})();

@@ -515,3 +515,13 @@ html{scroll-padding-top:84px}
 .gprog{top:64px}
 .menu-panel{max-height:calc(100vh - 90px);max-height:calc(100dvh - 90px);overflow-y:auto;overscroll-behavior:contain}
 .site-nav nav.menu-panel{align-items:start}
+/* Güvenlik bağlantıları, belirgin risk rozetleri, filtre sayacı */
+.safelinks{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.safelinks a{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid var(--rule);border-radius:999px;text-decoration:none;color:var(--ink);background:var(--sheet);font-size:var(--t-sm)}
+.safelinks a:hover{border-color:var(--accent)}.safelinks svg{width:18px;height:18px;color:var(--accent)}
+.sf.yuksek,.lg.yasak{background:var(--s-yuksek);color:#fff;border:1px solid var(--s-yuksek);font-weight:700}
+.sf.yuksek::before,.lg.yasak::before{content:"⚠";font-family:system-ui,sans-serif}
+:root[data-theme="dark"] .sf.yuksek,:root[data-theme="dark"] .lg.yasak{color:#15131E}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .sf.yuksek,:root:not([data-theme="light"]) .lg.yasak{color:#15131E}}
+.fbox>summary .fcount{display:inline-flex;min-width:22px;height:22px;align-items:center;justify-content:center;border-radius:999px;background:var(--accent);color:#fff;font-size:.75rem;margin-left:6px;padding:0 6px}
+.fbox>summary .fcount[hidden]{display:none}

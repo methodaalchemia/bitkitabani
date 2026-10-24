@@ -284,7 +284,7 @@ def run(G):
   <div class="controls">
     <label class="search" for="q"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="2" fill="none"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       <input id="q" type="search" placeholder="Search plants, Latin names, uses… (e.g. evil eye, cough, incense)" autocomplete="off" aria-label="Search plants"></label>
-    <details class="fbox" open><summary>Filters</summary><div class="fgroups">{filters}</div></details>
+    <details class="fbox"><summary>Filters <span class="fcount" hidden></span></summary><div class="fgroups">{filters}</div></details>
   </div>
   <div class="resultbar"><span id="count" aria-live="polite" data-tpl="Showing {{n}} of {{t}} entries">Showing {len(P)} of {len(P)} entries</span><button class="linkbtn" id="reset" type="button" hidden>Clear filters</button></div>
   <div class="grid">{"".join(card(p) for p in srt)}</div>
