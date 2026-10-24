@@ -515,13 +515,22 @@ html{scroll-padding-top:84px}
 .gprog{top:64px}
 .menu-panel{max-height:calc(100vh - 90px);max-height:calc(100dvh - 90px);overflow-y:auto;overscroll-behavior:contain}
 .site-nav nav.menu-panel{align-items:start}
-/* Güvenlik bağlantıları, belirgin risk rozetleri, filtre sayacı */
+/* Güvenlik bağlantıları, filtre sayacı */
 .safelinks{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
 .safelinks a{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid var(--rule);border-radius:999px;text-decoration:none;color:var(--ink);background:var(--sheet);font-size:var(--t-sm)}
 .safelinks a:hover{border-color:var(--accent)}.safelinks svg{width:18px;height:18px;color:var(--accent)}
-.sf.yuksek,.lg.yasak{background:var(--s-yuksek);color:#fff;border:1px solid var(--s-yuksek);font-weight:700}
-.sf.yuksek::before,.lg.yasak::before{content:"⚠";font-family:system-ui,sans-serif}
-:root[data-theme="dark"] .sf.yuksek,:root[data-theme="dark"] .lg.yasak{color:#15131E}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .sf.yuksek,:root:not([data-theme="light"]) .lg.yasak{color:#15131E}}
 .fbox>summary .fcount{display:inline-flex;min-width:22px;height:22px;align-items:center;justify-content:center;border-radius:999px;background:var(--accent);color:#fff;font-size:.75rem;margin-left:6px;padding:0 6px}
 .fbox>summary .fcount[hidden]{display:none}
+/* Bitki bulucu */
+.bbstep{margin:26px 0}.bbstep h2{display:flex;align-items:center;gap:10px;font-size:var(--t-xl)}
+.bbn{display:inline-flex;width:34px;height:34px;border-radius:50%;background:var(--accent);color:#fff;align-items:center;justify-content:center;font-family:var(--f-mono);font-size:1rem;flex:none}
+.bbk a.on{border-color:var(--accent);box-shadow:inset 0 0 0 2px var(--accent)}
+.bbopts{display:flex;flex-wrap:wrap;gap:10px}.bbopts .chip{font-size:var(--t-md);padding:10px 16px}
+.bblist{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:14px}
+.bbitem{display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px;background:var(--sheet);border:1px solid var(--rule);padding:14px}
+.bbitem:not(:has(.bbimg)){grid-template-columns:1fr}
+.bbimg img{width:96px;height:128px;object-fit:cover;display:block}
+.bbitem h3{margin:0 0 4px;font-size:var(--t-lg)}.bbitem h3 i{font-weight:400;color:var(--muted);font-size:var(--t-sm)}
+.bbitem p{margin:6px 0}.bbmeta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:var(--t-sm);color:var(--muted)}
+.bblinks{display:flex;gap:16px;font-family:var(--f-mono);font-size:var(--t-sm)}
+.bbout{margin:16px 0;border:1px dashed var(--rule);padding:10px 14px}.bbout summary{cursor:pointer;font-family:var(--f-mono);font-size:var(--t-sm)}
