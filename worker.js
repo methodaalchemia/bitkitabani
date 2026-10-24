@@ -274,6 +274,50 @@ async function thPost(env) {
   await call(env, 'th:state', 'put', st);
   return { n: st.n || 0, error: st.error };
 }
+// ---------- Facebook sayfası: Instagram'daki günlük bitki postu, aynı görseller ve sitenin bağlantısıyla ----------
+// Gerekli gizli değişken: FB_TOKEN (sayfa token'ı; kullanıcı token'ı verilirse sayfanınki otomatik bulunur).
+const FB = 'https://graph.facebook.com/v23.0';
+async function fbAuth(env, st) {
+  if (st.page && st.seed === env.FB_TOKEN) return st;
+  let tok = env.FB_TOKEN, me = await igJson(await fetch(FB + '/me?fields=id,name&access_token=' + encodeURIComponent(tok)));
+  try {   // kullanıcı token'ıysa yönettiği sayfalardan Bitki Tabanı'nı seç
+    const acc = await igJson(await fetch(FB + '/me/accounts?fields=id,name,access_token&access_token=' + encodeURIComponent(tok)));
+    const p = (acc.data || []).find(x => /bitki/i.test(x.name)) || (acc.data || [])[0];
+    if (p) { tok = p.access_token; me = { id: p.id, name: p.name }; }
+  } catch (e) { /* sayfa token'ı: /me/accounts desteklenmez */ }
+  st.page = me.id; st.pageName = me.name; st.token = tok; st.seed = env.FB_TOKEN; st.error = null;
+  return st;
+}
+async function fbPost(env) {
+  const ig = (await call(env, 'ig:state', 'get')) || {};
+  const st = (await call(env, 'fb:state', 'get')) || {};
+  const day = trDay();
+  if (st.pauseUntil && Date.now() < st.pauseUntil) return { skipped: 'bekleniyor' };
+  try {
+    await fbAuth(env, st);
+    if (!((ig.n || 0) >= LAUNCH && ig.last === day && ig.lastPlant && ig.lastPlant !== st.plant && Date.now() - (ig.lastAt || 0) > 25 * 60e3 && trH() >= 20.4 && trH() < 23.9)) { await call(env, 'fb:state', 'put', st); return { skipped: 'sırası değil' }; }
+    const pr = await igAsset('p/' + (ig.n - 1) + '/post.json');
+    if (!pr.ok) throw new Error('post bulunamadı');
+    const post = await pr.json();
+    const paras = (post.caption || '').split(/\n\s*\n/).map(x => x.trim()).filter(Boolean);
+    const body = paras.filter(x => !x.startsWith('#') && !x.startsWith('Kaydırarak') && !x.startsWith('Kaynaklarıyla') && !/profil/i.test(x));
+    const message = body.join('\n\n') + '\n\nDevamı ve kaynaklar: https://bitkitabani.com/' + post.id + '/\n\n#şifalıbitkiler #bitkitabanı';
+    const form = o => { const f = new URLSearchParams(o); f.set('access_token', st.token); return { method: 'POST', body: f }; };
+    const ids = [];
+    for (const u of post.images.slice(0, 10)) ids.push((await igJson(await fetch(FB + '/' + st.page + '/photos', form({ url: u, published: 'false' })))).id);
+    const o = { message };
+    ids.forEach((id, i) => { o['attached_media[' + i + ']'] = JSON.stringify({ media_fbid: id }); });
+    const r = await igJson(await fetch(FB + '/' + st.page + '/feed', form(o)));
+    st.plant = post.id; st.last = day; st.lastId = r.id; st.n = (st.n || 0) + 1; st.error = null; st.fails = 0;
+  } catch (e) {
+    st.error = String(e.message || e).slice(0, 300); st.errorAt = new Date().toISOString();
+    if (/limit/i.test(st.error)) st.pauseUntil = Date.now() + 2 * 3600e3;
+    st.fails = (st.failDay === day ? (st.fails || 0) : 0) + 1; st.failDay = day;
+    if (st.fails >= 3) st.plant = ig.lastPlant;   // günde en fazla 3 deneme
+  }
+  await call(env, 'fb:state', 'put', st);
+  return { n: st.n || 0, error: st.error };
+}
 // ---------- Ayın ilk günü: 'Bu ay doğada' postu (Instagram tek görsel + Threads) ----------
 async function aylikPost(env) {
   const day = trDay(), hour = trHour();
@@ -454,8 +498,9 @@ export default {
     if (url.pathname === '/api/ig-durum' && req.method === 'GET') {
       const st = (await call(env, 'ig:state', 'get')) || {};
       const th = (await call(env, 'th:state', 'get')) || {};
+      const fb = (await call(env, 'fb:state', 'get')) || {};
       const AL = (await call(env, 'abone:list', 'get')) || {}; const bs = (await call(env, 'bulten:state', 'get')) || {};
-      return json({ bulten: { anahtar: !!(env.RESEND_KEY || env.RESEND_Key), onayli: Object.values(AL).filter(a => a.on).length, kursta: Object.values(AL).filter(a => a.on && typeof a.kurs === 'number' && a.kurs < 7).length, bekleyen: Object.values(AL).filter(a => !a.on).length, duyuru: Object.values(AL).filter(a => a.on && a.d).length, gonderilen: bs.sayi || 0, hata: bs.err || Object.values(AL).map(a => a.err).find(Boolean) || null }, threads: { token: !!(env.TH_TOKEN || env.TH_Token || th.token), sayi: th.n || 0, son: th.last || null, kavram: (th.slot || {}).kavram || null, sabah: (th.slot || {}).sabah || null, ogle: (th.slot || {}).ogle || null, bitki: th.plant || null, hata: th.error || null, hataZamani: th.errorAt || null }, token: !!(env.IG_TOKEN || st.token), sayi: st.n || 0, reels: st.reels || 0, reelHata: st.reelError || null, hikayeHata: st.storyError || null, altMetin: !st.noAlt, aylik: st.aylik || null, ek: st.ek || null, ekSayi: st.ekSayi || 0, ekHata: st.ekError || null, aylikHata: st.aylikError || null, sonPaylasim: st.last || null, bitki: st.lastPlant || null, hata: st.error || null, hataZamani: st.errorAt || null, tokenYenilendi: st.tokenAt ? new Date(st.tokenAt).toISOString() : null, bugun: trDay() });
+      return json({ facebook: { token: !!env.FB_TOKEN, sayfa: fb.pageName || null, sayi: fb.n || 0, son: fb.last || null, bitki: fb.plant || null, hata: fb.error || null, hataZamani: fb.errorAt || null }, bulten: { anahtar: !!(env.RESEND_KEY || env.RESEND_Key), onayli: Object.values(AL).filter(a => a.on).length, kursta: Object.values(AL).filter(a => a.on && typeof a.kurs === 'number' && a.kurs < 7).length, bekleyen: Object.values(AL).filter(a => !a.on).length, duyuru: Object.values(AL).filter(a => a.on && a.d).length, gonderilen: bs.sayi || 0, hata: bs.err || Object.values(AL).map(a => a.err).find(Boolean) || null }, threads: { token: !!(env.TH_TOKEN || env.TH_Token || th.token), sayi: th.n || 0, son: th.last || null, kavram: (th.slot || {}).kavram || null, sabah: (th.slot || {}).sabah || null, ogle: (th.slot || {}).ogle || null, bitki: th.plant || null, hata: th.error || null, hataZamani: th.errorAt || null }, token: !!(env.IG_TOKEN || st.token), sayi: st.n || 0, reels: st.reels || 0, reelHata: st.reelError || null, hikayeHata: st.storyError || null, altMetin: !st.noAlt, aylik: st.aylik || null, ek: st.ek || null, ekSayi: st.ekSayi || 0, ekHata: st.ekError || null, aylikHata: st.aylikError || null, sonPaylasim: st.last || null, bitki: st.lastPlant || null, hata: st.error || null, hataZamani: st.errorAt || null, tokenYenilendi: st.tokenAt ? new Date(st.tokenAt).toISOString() : null, bugun: trDay() });
     }
     if (url.pathname.startsWith('/api/abone/') && (req.method === 'GET' || url.pathname === '/api/abone/cik')) return aboneApi(req, env, url);
     if (req.method !== 'GET' && req.headers.get('x-bt') !== '1') return json({ error: 'csrf' }, 403);
@@ -498,5 +543,6 @@ export default {
   async scheduled(event, env, ctx) {
     if (env.IG_TOKEN) ctx.waitUntil(igPost(env).then(() => (env.TH_TOKEN || env.TH_Token) ? thPost(env) : null).then(() => aylikPost(env)).then(() => ekPost(env)));
     ctx.waitUntil(bultenCron(env).catch(() => null));
+    if (env.FB_TOKEN) ctx.waitUntil(fbPost(env).catch(() => null));
   },
 };
