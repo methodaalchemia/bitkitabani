@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 124 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 125 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -3878,3 +3878,31 @@ Karıştırma riski: Mor reyhan aynı türün koyu renkli bir çeşididir. Tulsi
 
 ### İlginç bilgi
 Fesleğenin Batı dillerindeki adı Yunanca “kraliyet otu” anlamındaki basilikon’dan gelir; Türkçedeki “reyhan” ise Arapçada “güzel kokulu bitki” demektir.
+
+## Anason (Pimpinella anisum)
+
+URL: https://bitkitabani.com/anason/
+Familya: Apiaceae · Bölge: Anadolu ve Akdeniz · Kullanılan kısım: Meyve (tohum diye bilinir)
+Bilimsel kanıt: Geleneksel · Güvenlik: Genelde güvenli
+
+### Geleneksel kullanım
+- Anadolu: Rakının kokusunu veren baharattır; Göller Bölgesi’nde ve Ege’de tarlada yetiştirilir. Anason çayı halk arasında gaz, hazımsızlık ve öksürük için içilir; emziren annelere sütü artırsın diye verilir.
+- Akdeniz: Yunan uzosu, Fransız pastisi ve Levant’ın arakı da anasonla tatlandırılır. Roma’da büyük ziyafetlerin sonunda sindirime yardım etsin diye anasonlu kekler ikram edildiği anlatılır.
+
+### Hazırlama
+Ezilmiş tohumdan bir çay kaşığı bir bardak kaynar suda 10 dakika demlenir; günde 2–3 bardak.
+
+### Bilim ne diyor
+EMA anason meyvesini hafif hazımsızlık, şişkinlik ve gaz ile soğuk algınlığına bağlı öksürükte geleneksel kullanımda tanır. Ana bileşeni anetol, laboratuvarda kas gevşetici ve balgam söktürücü etkiler gösterir. İnsanlarda yapılmış çalışmalar az ve küçüktür; menopozdaki sıcak basmaları ve adet sancısı üzerine birkaç küçük çalışma vardır.
+
+### Güvenlik
+Çay olarak genelde güvenlidir. Havuç ailesinden bitkilere (kereviz, rezene) alerjisi olanlarda alerji yapabilir. Uçucu yağı yoğundur; hamilelikte ve çocuklarda yağ kullanılmamalıdır. Bebeklere anason çayı vermeden önce hekime danışılmalıdır.
+
+### Doğada
+Nerede yetişir: Tek yıllık kültür bitkisidir; Türkiye’de Göller Bölgesi’nde ve Ege’de tarlalarda yetiştirilir.
+Toplama mevsimi: Tohumlar Temmuz–Ağustos’ta, şemsiyeler sararınca hasat edilir.
+Yöresel adlar: anason, anis
+Karıştırma riski: Yıldız anason (Illicium verum) ayrı bir bitkidir; benzer kokuyu aynı anetol verir. Zehirli baldıran da anasonla aynı ailedendir: yabanda toplanan beyaz şemsiyeli bitkiler asla anason diye kullanılmamalıdır.
+
+### İlginç bilgi
+Rakı suyla karışınca beyazlaşır: alkolde çözünen anetol suda çözünmez ve küçük damlacıklar hâlinde ışığı saçar. Buna “uzo etkisi” denir.

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  <url><loc>https://bitkitabani.com/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://bitkitabani.com/katalog/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://bitkitabani.com/</loc><lastmod>2026-10-26</lastmod></url>
+  <url><loc>https://bitkitabani.com/katalog/</loc><lastmod>2026-10-26</lastmod></url>
   <url><loc>https://bitkitabani.com/kopruler/</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://bitkitabani.com/gunun-bitkisi/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://bitkitabani.com/yeni/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://bitkitabani.com/oyun/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://bitkitabani.com/gunun-bitkisi/</loc><lastmod>2026-10-26</lastmod></url>
+  <url><loc>https://bitkitabani.com/yeni/</loc><lastmod>2026-10-26</lastmod></url>
+  <url><loc>https://bitkitabani.com/oyun/</loc><lastmod>2026-10-26</lastmod></url>
   <url><loc>https://bitkitabani.com/hakkinda/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/yontem/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/gizlilik/</loc><lastmod>2026-10-24</lastmod></url>
@@ -168,6 +168,7 @@
   <url><loc>https://bitkitabani.com/ceviz/</loc><lastmod>2026-10-24</lastmod><image:image><image:loc>https://bitkitabani.com/img/ceviz-1280.jpg</image:loc></image:image></url>
   <url><loc>https://bitkitabani.com/incir/</loc><lastmod>2026-10-24</lastmod><image:image><image:loc>https://bitkitabani.com/img/incir-1280.jpg</image:loc></image:image></url>
   <url><loc>https://bitkitabani.com/feslegen/</loc><lastmod>2026-10-25</lastmod><image:image><image:loc>https://bitkitabani.com/img/feslegen-1280.jpg</image:loc></image:image></url>
+  <url><loc>https://bitkitabani.com/anason/</loc><lastmod>2026-10-26</lastmod><image:image><image:loc>https://bitkitabani.com/img/anason-1280.jpg</image:loc></image:image></url>
   <url><loc>https://bitkitabani.com/rehber/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/kavram/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/yazilar/</loc><lastmod>2026-10-24</lastmod></url>
@@ -198,6 +199,7 @@
   <url><loc>https://bitkitabani.com/tarif/kekik-cayi/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/tarif/dag-cayi/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/tarif/rezene-cayi/</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://bitkitabani.com/tarif/anason-cayi/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/tarif/kusburnu-cayi/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/tarif/melisa-cayi/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/tarif/tarcin-cayi/</loc><lastmod>2026-10-24</lastmod></url>
@@ -209,6 +211,7 @@
   <url><loc>https://bitkitabani.com/karsilastirma/adacayi-ve-dagcayi/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/karsilastirma/papatya-ve-melisa/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/karsilastirma/lavanta-ve-kediotu/</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://bitkitabani.com/karsilastirma/rezene-ve-anason/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/karsilastirma/ihlamur-ve-papatya/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/karsilastirma/nane-ve-melisa/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/karsilastirma/ekinezya-ve-murver/</loc><lastmod>2026-10-24</lastmod></url>
@@ -239,12 +242,13 @@
   <url><loc>https://bitkitabani.com/yazilar/samanizm-ve-kam-gelenegi/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/kavram/animizm/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/kavram/kam/</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://bitkitabani.com/kavram/nazar/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/takvim/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/yoresel-adlar/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/toplama-takvimi/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/kurs/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/bulten/</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://bitkitabani.com/en/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://bitkitabani.com/en/</loc><lastmod>2026-10-26</lastmod></url>
   <url><loc>https://bitkitabani.com/en/about/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/en/abuta/</loc><lastmod>2026-10-24</lastmod><image:image><image:loc>https://bitkitabani.com/img/abuta-1280.jpg</image:loc></image:image></url>
   <url><loc>https://bitkitabani.com/en/acai/</loc><lastmod>2026-10-24</lastmod><image:image><image:loc>https://bitkitabani.com/img/acai-1280.jpg</image:loc></image:image></url>
@@ -258,6 +262,7 @@
   <url><loc>https://bitkitabani.com/en/aloe/</loc><lastmod>2026-10-24</lastmod><image:image><image:loc>https://bitkitabani.com/img/aloe-1280.jpg</image:loc></image:image></url>
   <url><loc>https://bitkitabani.com/en/altinkok/</loc><lastmod>2026-10-24</lastmod><image:image><image:loc>https://bitkitabani.com/img/altinkok-1280.jpg</image:loc></image:image></url>
   <url><loc>https://bitkitabani.com/en/altinmuhur/</loc><lastmod>2026-10-24</lastmod><image:image><image:loc>https://bitkitabani.com/img/altinmuhur-1280.jpg</image:loc></image:image></url>
+  <url><loc>https://bitkitabani.com/en/anason/</loc><lastmod>2026-10-26</lastmod><image:image><image:loc>https://bitkitabani.com/img/anason-1280.jpg</image:loc></image:image></url>
   <url><loc>https://bitkitabani.com/en/andiroba/</loc><lastmod>2026-10-24</lastmod><image:image><image:loc>https://bitkitabani.com/img/andiroba-1280.jpg</image:loc></image:image></url>
   <url><loc>https://bitkitabani.com/en/ardic/</loc><lastmod>2026-10-24</lastmod><image:image><image:loc>https://bitkitabani.com/img/ardic-1280.jpg</image:loc></image:image></url>
   <url><loc>https://bitkitabani.com/en/ashwagandha/</loc><lastmod>2026-10-24</lastmod><image:image><image:loc>https://bitkitabani.com/img/ashwagandha-1280.jpg</image:loc></image:image></url>
@@ -284,7 +289,7 @@
   <url><loc>https://bitkitabani.com/en/bridges/sigla-palosanto/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/en/bridges/uzerlik-ayahuasca/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/en/camucamu/</loc><lastmod>2026-10-24</lastmod><image:image><image:loc>https://bitkitabani.com/img/camucamu-1280.jpg</image:loc></image:image></url>
-  <url><loc>https://bitkitabani.com/en/catalog/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://bitkitabani.com/en/catalog/</loc><lastmod>2026-10-26</lastmod></url>
   <url><loc>https://bitkitabani.com/en/cay/</loc><lastmod>2026-10-24</lastmod><image:image><image:loc>https://bitkitabani.com/img/cay-1280.jpg</image:loc></image:image></url>
   <url><loc>https://bitkitabani.com/en/cehri/</loc><lastmod>2026-10-24</lastmod><image:image><image:loc>https://bitkitabani.com/img/cehri-1280.jpg</image:loc></image:image></url>
   <url><loc>https://bitkitabani.com/en/cemen/</loc><lastmod>2026-10-24</lastmod><image:image><image:loc>https://bitkitabani.com/img/cemen-1280.jpg</image:loc></image:image></url>
@@ -296,6 +301,7 @@
   <url><loc>https://bitkitabani.com/en/civanpercemi/</loc><lastmod>2026-10-24</lastmod><image:image><image:loc>https://bitkitabani.com/img/civanpercemi-1280.jpg</image:loc></image:image></url>
   <url><loc>https://bitkitabani.com/en/compare/chamomile-vs-lemon-balm/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/en/compare/echinacea-vs-elder/</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://bitkitabani.com/en/compare/fennel-vs-anise/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/en/compare/ginger-vs-turmeric/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/en/compare/greek-sage-vs-mountain-tea/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/en/compare/lavender-vs-valerian/</loc><lastmod>2026-10-24</lastmod></url>
@@ -305,6 +311,7 @@
   <url><loc>https://bitkitabani.com/en/compare/thyme-and-oregano-vs-greek-sage/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/en/concepts/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/en/concepts/animism/</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://bitkitabani.com/en/concepts/evil-eye/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/en/concepts/kam/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/en/copaiba/</loc><lastmod>2026-10-24</lastmod><image:image><image:loc>https://bitkitabani.com/img/copaiba-1280.jpg</image:loc></image:image></url>
   <url><loc>https://bitkitabani.com/en/corekotu/</loc><lastmod>2026-10-24</lastmod><image:image><image:loc>https://bitkitabani.com/img/corekotu-1280.jpg</image:loc></image:image></url>
@@ -391,6 +398,7 @@
   <url><loc>https://bitkitabani.com/en/peyote/</loc><lastmod>2026-10-24</lastmod><image:image><image:loc>https://bitkitabani.com/img/peyote-1280.jpg</image:loc></image:image></url>
   <url><loc>https://bitkitabani.com/en/privacy/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/en/recipes/</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://bitkitabani.com/en/recipes/anise-tea/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/en/recipes/chamomile-tea/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/en/recipes/cinnamon-tea/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/en/recipes/fennel-tea/</loc><lastmod>2026-10-24</lastmod></url>
