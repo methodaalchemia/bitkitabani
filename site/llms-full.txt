@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 125 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 126 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -3906,3 +3906,36 @@ Karıştırma riski: Yıldız anason (Illicium verum) ayrı bir bitkidir; benzer
 
 ### İlginç bilgi
 Rakı suyla karışınca beyazlaşır: alkolde çözünen anetol suda çözünmez ve küçük damlacıklar hâlinde ışığı saçar. Buna “uzo etkisi” denir.
+
+## Turunç (Citrus × aurantium)
+
+URL: https://bitkitabani.com/turunc/
+Familya: Rutaceae · Bölge: Anadolu ve Akdeniz, Asya ve Sibirya · Kullanılan kısım: Meyve kabuğu, meyve, çiçek
+Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
+
+### Geleneksel kullanım
+- Anadolu: Antalya’dan Hatay’a bahçe ve sokak ağacıdır. Kabuğundan reçel yapılır, ekşi suyu salata ve yemeklerde limon yerine kullanılır. Çiçeklerinden portakal çiçeği suyu damıtılır.
+- Çin ve Avrupa: Çin tıbbında olgunlaşmamış kurusu (zhi shi) hazımsızlıkta kullanılır. İspanya’nın Sevilla kentindeki ağaçların meyveleri İngiltere’de marmelat yapılır; çiçek yağı neroli parfümcülüğün temel kokularındandır.
+
+### Hazırlama
+Kabuktan reçel ya da şekerleme yapılır; kurutulmuş kabuk bir bardak suda 10 dakika demlenir.
+
+### Bilim ne diyor
+Turunç, “yağ yakıcı” zayıflama takviyelerine sinefrin kaynağı olarak eklenir. 2022 tarihli bir sistematik derleme, sinefrinin tek başına kalp hızını ve tansiyonu belirgin artırmadığını, ama kilo kaybına etkisinin de küçük ve belirsiz olduğunu bulmuştur. Kafein ve başka uyarıcılarla birlikte kullanılan ürünlerle çarpıntı ve inme vakaları bildirilmiştir. Kabuğun hazımsızlıkta kullanımı geleneksel bilgiye dayanır.
+
+### Güvenlik
+Meyve ve reçel olarak güvenlidir. Sinefrinli zayıflama takviyeleri, özellikle kafeinle birlikte, çarpıntı, tansiyon yükselmesi ve nadiren inmeyle ilişkilendirilmiştir; kalp hastaları, yüksek tansiyonu olanlar ve hamileler kullanmamalıdır. Kabuk yağı cildi güneşe karşı hassaslaştırabilir. Turunç suyu, greyfurt gibi bazı ilaçların kandaki düzeyini artırabilir.
+
+### İlaç etkileşimleri
+- Kafein ve uyarıcılar: Sinefrinle birlikte kalp hızı ve tansiyon artabilir.
+- Tansiyon ilaçları ve MAO inhibitörleri: Sinefrin tansiyonu yükseltebilir; MAO inhibitörleriyle birlikte tehlikeli olabilir.
+- Bazı kalsiyum kanal blokerleri ve statinler: Turunç suyu, greyfurt gibi bağırsaktaki CYP3A4 enzimini baskılar; felodipin gibi ilaçların düzeyini artırabilir.
+
+### Doğada
+Nerede yetişir: Akdeniz kıyılarında bahçe ve sokak ağacı; portakal ağaçlarına aşı anacı olarak da kullanılır.
+Toplama mevsimi: Çiçekler Mart–Nisan’da açar; meyveler Aralık–Şubat’ta olgunlaşır.
+Yöresel adlar: turunç, acı portakal, narenç
+Karıştırma riski: Tatlı portakala çok benzer; kabuğu daha pürüzlü, içi çekirdekli ve çok ekşidir. Bergamot ayrı bir turunçgildir.
+
+### İlginç bilgi
+Avrupa’ya ilk ulaşan turunçgil tatlı portakal değil, Araplarla Endülüs’e gelen acı portakaldı; Sevilla’nın sokakları bugün hâlâ binlerce turunç ağacıyla doludur.

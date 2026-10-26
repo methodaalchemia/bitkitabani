@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  <url><loc>https://bitkitabani.com/</loc><lastmod>2026-10-26</lastmod></url>
-  <url><loc>https://bitkitabani.com/katalog/</loc><lastmod>2026-10-26</lastmod></url>
+  <url><loc>https://bitkitabani.com/</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://bitkitabani.com/katalog/</loc><lastmod>2026-10-27</lastmod></url>
   <url><loc>https://bitkitabani.com/kopruler/</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://bitkitabani.com/gunun-bitkisi/</loc><lastmod>2026-10-26</lastmod></url>
-  <url><loc>https://bitkitabani.com/yeni/</loc><lastmod>2026-10-26</lastmod></url>
-  <url><loc>https://bitkitabani.com/oyun/</loc><lastmod>2026-10-26</lastmod></url>
+  <url><loc>https://bitkitabani.com/gunun-bitkisi/</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://bitkitabani.com/yeni/</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://bitkitabani.com/oyun/</loc><lastmod>2026-10-27</lastmod></url>
   <url><loc>https://bitkitabani.com/hakkinda/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/yontem/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/gizlilik/</loc><lastmod>2026-10-24</lastmod></url>
@@ -41,6 +41,7 @@
   <url><loc>https://bitkitabani.com/familya/ranunculaceae/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/familya/rosaceae/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/familya/rubiaceae/</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://bitkitabani.com/familya/rutaceae/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/familya/sapindaceae/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/familya/solanaceae/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/familya/zingiberaceae/</loc><lastmod>2026-10-24</lastmod></url>
@@ -169,6 +170,7 @@
   <url><loc>https://bitkitabani.com/incir/</loc><lastmod>2026-10-24</lastmod><image:image><image:loc>https://bitkitabani.com/img/incir-1280.jpg</image:loc></image:image></url>
   <url><loc>https://bitkitabani.com/feslegen/</loc><lastmod>2026-10-25</lastmod><image:image><image:loc>https://bitkitabani.com/img/feslegen-1280.jpg</image:loc></image:image></url>
   <url><loc>https://bitkitabani.com/anason/</loc><lastmod>2026-10-26</lastmod><image:image><image:loc>https://bitkitabani.com/img/anason-1280.jpg</image:loc></image:image></url>
+  <url><loc>https://bitkitabani.com/turunc/</loc><lastmod>2026-10-27</lastmod><image:image><image:loc>https://bitkitabani.com/img/turunc-1280.jpg</image:loc></image:image></url>
   <url><loc>https://bitkitabani.com/rehber/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/kavram/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/yazilar/</loc><lastmod>2026-10-24</lastmod></url>
@@ -243,12 +245,13 @@
   <url><loc>https://bitkitabani.com/kavram/animizm/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/kavram/kam/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/kavram/nazar/</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://bitkitabani.com/kavram/pachamama/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/takvim/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/yoresel-adlar/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/toplama-takvimi/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/kurs/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/bulten/</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://bitkitabani.com/en/</loc><lastmod>2026-10-26</lastmod></url>
+  <url><loc>https://bitkitabani.com/en/</loc><lastmod>2026-10-27</lastmod></url>
   <url><loc>https://bitkitabani.com/en/about/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/en/abuta/</loc><lastmod>2026-10-24</lastmod><image:image><image:loc>https://bitkitabani.com/img/abuta-1280.jpg</image:loc></image:image></url>
   <url><loc>https://bitkitabani.com/en/acai/</loc><lastmod>2026-10-24</lastmod><image:image><image:loc>https://bitkitabani.com/img/acai-1280.jpg</image:loc></image:image></url>
@@ -289,7 +292,7 @@
   <url><loc>https://bitkitabani.com/en/bridges/sigla-palosanto/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/en/bridges/uzerlik-ayahuasca/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/en/camucamu/</loc><lastmod>2026-10-24</lastmod><image:image><image:loc>https://bitkitabani.com/img/camucamu-1280.jpg</image:loc></image:image></url>
-  <url><loc>https://bitkitabani.com/en/catalog/</loc><lastmod>2026-10-26</lastmod></url>
+  <url><loc>https://bitkitabani.com/en/catalog/</loc><lastmod>2026-10-27</lastmod></url>
   <url><loc>https://bitkitabani.com/en/cay/</loc><lastmod>2026-10-24</lastmod><image:image><image:loc>https://bitkitabani.com/img/cay-1280.jpg</image:loc></image:image></url>
   <url><loc>https://bitkitabani.com/en/cehri/</loc><lastmod>2026-10-24</lastmod><image:image><image:loc>https://bitkitabani.com/img/cehri-1280.jpg</image:loc></image:image></url>
   <url><loc>https://bitkitabani.com/en/cemen/</loc><lastmod>2026-10-24</lastmod><image:image><image:loc>https://bitkitabani.com/img/cemen-1280.jpg</image:loc></image:image></url>
@@ -313,6 +316,7 @@
   <url><loc>https://bitkitabani.com/en/concepts/animism/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/en/concepts/evil-eye/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/en/concepts/kam/</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://bitkitabani.com/en/concepts/pachamama/</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://bitkitabani.com/en/copaiba/</loc><lastmod>2026-10-24</lastmod><image:image><image:loc>https://bitkitabani.com/img/copaiba-1280.jpg</image:loc></image:image></url>
   <url><loc>https://bitkitabani.com/en/corekotu/</loc><lastmod>2026-10-24</lastmod><image:image><image:loc>https://bitkitabani.com/img/corekotu-1280.jpg</image:loc></image:image></url>
   <url><loc>https://bitkitabani.com/en/cucepalmiye/</loc><lastmod>2026-10-24</lastmod><image:image><image:loc>https://bitkitabani.com/img/cucepalmiye-1280.jpg</image:loc></image:image></url>
@@ -431,6 +435,7 @@
   <url><loc>https://bitkitabani.com/en/tatliot/</loc><lastmod>2026-10-24</lastmod><image:image><image:loc>https://bitkitabani.com/img/tatliot-1280.jpg</image:loc></image:image></url>
   <url><loc>https://bitkitabani.com/en/tatula/</loc><lastmod>2026-10-24</lastmod><image:image><image:loc>https://bitkitabani.com/img/tatula-1280.jpg</image:loc></image:image></url>
   <url><loc>https://bitkitabani.com/en/toe/</loc><lastmod>2026-10-24</lastmod><image:image><image:loc>https://bitkitabani.com/img/toe-1280.jpg</image:loc></image:image></url>
+  <url><loc>https://bitkitabani.com/en/turunc/</loc><lastmod>2026-10-27</lastmod><image:image><image:loc>https://bitkitabani.com/img/turunc-1280.jpg</image:loc></image:image></url>
   <url><loc>https://bitkitabani.com/en/unadegato/</loc><lastmod>2026-10-24</lastmod><image:image><image:loc>https://bitkitabani.com/img/unadegato-1280.jpg</image:loc></image:image></url>
   <url><loc>https://bitkitabani.com/en/uzerlik/</loc><lastmod>2026-10-24</lastmod><image:image><image:loc>https://bitkitabani.com/img/uzerlik-1280.jpg</image:loc></image:image></url>
   <url><loc>https://bitkitabani.com/en/yabaniigde/</loc><lastmod>2026-10-24</lastmod><image:image><image:loc>https://bitkitabani.com/img/yabaniigde-1280.jpg</image:loc></image:image></url>
