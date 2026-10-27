@@ -64,7 +64,7 @@ jobs:
         run: |
           git config user.name "bitkitabani-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add img images.json site tools/fonts assets/fonts assets/icons; [ -f inat.json ] && git add inat.json
+          git add img images.json site tools/fonts assets/fonts assets/icons; if [ -f inat.json ]; then git add inat.json; fi
           if git diff --cached --quiet; then echo "değişiklik yok"; else git commit -m "Görseller ve site güncellendi [bot]" && (git push || (git pull --rebase -X theirs && git push)); fi
       - name: IndexNow bildirimi (yayına alınması için kısa bekleme)
         if: always()
