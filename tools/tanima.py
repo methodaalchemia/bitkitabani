@@ -52,11 +52,13 @@ def ara(taxon, tur, main_file):
     return best
 
 def cizim(taxon):
-    """Standart çizim: yalnızca aynı türün Köhler's Medizinal-Pflanzen (1887) levhası, yoksa Thomé, Flora von Deutschland (1885).
+    """Standart çizim, aynı türün levhası, sırayla: Köhler's Medizinal-Pflanzen (1887), Thomé, Flora von Deutschland (1885), Medical Botany (Woodville / Stephenson & Churchill), Curtis's Botanical Magazine.
     Akraba tür levhası kullanılmaz (tanımada yanıltır); ikisi de yoksa çizim yok."""
     t = taxon.lower()
     for q, need in [('intitle:"Medizinal-Pflanzen" "' + taxon + '"', lambda x: t in x and 'medizinal-pflanzen' in x),
-                    (taxon + ' Thomé', lambda x: ('illustration ' + t) in x)]:
+                    (taxon + ' Thomé', lambda x: ('illustration ' + t) in x),
+                    ('"' + taxon + '" "Medical Botany"', lambda x: t in x and re.search(r'medical botany|woodville|churchill|stephenson', x)),
+                    ('"' + taxon + '" "Botanical Magazine"', lambda x: t in x and re.search(r'botanical magazine|curtis', x))]:
         r = get('https://commons.wikimedia.org/w/api.php?format=json&action=query&list=search&srnamespace=6&srlimit=8&srsearch=' + urllib.parse.quote(q))
         for h in r.get('query', {}).get('search', []):
             if need(h['title'].lower()): return tek(taxon, h['title'][5:])
