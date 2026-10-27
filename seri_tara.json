@@ -1,0 +1,920 @@
+{
+ "uzerlik": {
+  "taxon": "Peganum harmala",
+  "seriler": {}
+ },
+ "sedef": {
+  "taxon": "Ruta graveolens",
+  "seriler": {
+   "Köhler": "Ruta graveolens - Köhler–s Medizinal-Pflanzen-259.jpg",
+   "Thomé": "Prof. Dr. Thomé's Flora von Deutschland, Österreich und der Schweiz, in Wort und Bild, für Schule und Haus; mit ... Tafeln ... von Walter Müller (Pl. 322) (7982375762).jpg",
+   "Medical Botany": "Illustration from Medical Botany, digitally enhanced from rawpixel's own original plates 122.jpg"
+  }
+ },
+ "sigla": {
+  "taxon": "Liquidambar orientalis",
+  "seriler": {
+   "Köhler": "Liquidambar orientalis - Köhler–s Medizinal-Pflanzen-089.jpg"
+  }
+ },
+ "isirgan": {
+  "taxon": "Urtica dioica",
+  "seriler": {
+   "Thomé": "Illustration Urtica dioica0 clean.jpg",
+   "Lindman": "364 Urtica dioeca.jpg"
+  }
+ },
+ "salep": {
+  "taxon": "Anacamptis morio",
+  "seriler": {
+   "Thomé": "Illustration Orchis morio0.jpg",
+   "Sturm": "Sturm04012 clean.jpg"
+  }
+ },
+ "kekik": {
+  "taxon": "Origanum onites",
+  "seriler": {}
+ },
+ "adacayi": {
+  "taxon": "Salvia fruticosa",
+  "seriler": {}
+ },
+ "ihlamur": {
+  "taxon": "Tilia tomentosa",
+  "seriler": {}
+ },
+ "papatya": {
+  "taxon": "Matricaria chamomilla",
+  "seriler": {
+   "Thomé": "Illustration Matricaria chamomilla0.jpg",
+   "Bentley & Trimen": "Bentley und Trimen.jpg",
+   "Sturm": "Matricaria recutita Sturm13045.jpg",
+   "Lindman": "12 Matricaria chamomilla.jpg"
+  }
+ },
+ "kantaron": {
+  "taxon": "Hypericum perforatum",
+  "seriler": {
+   "Thomé": "Hypericum perforatum i01.jpg",
+   "Medical Botany": "Medical Botany-1790-1-0068-10.png",
+   "Sturm": "Hypericum perforatum (Sturm 06, plate 060) clean.png",
+   "Lindman": "230 Hypericum perforatum.jpg"
+  }
+ },
+ "ebegumeci": {
+  "taxon": "Malva sylvestris",
+  "seriler": {
+   "Köhler": "Malva sylvestris - Köhler–s Medizinal-Pflanzen-222.jpg",
+   "Thomé": "Text-book of structural and physiological botany (1877) (14753800906).jpg",
+   "Sturm": "Malva silvestris Sturm63.jpg"
+  }
+ },
+ "melisa": {
+  "taxon": "Melissa officinalis",
+  "seriler": {
+   "Köhler": "Melissa officinalis - Köhler–s Medizinal-Pflanzen-094.jpg",
+   "Sturm": "Melissa officinalis Sturm55.jpg"
+  }
+ },
+ "biberiye": {
+  "taxon": "Salvia rosmarinus",
+  "seriler": {
+   "Köhler": "Rosmarinus officinalis - Köhler–s Medizinal-Pflanzen-258.jpg",
+   "Medical Botany": "Illustration from Medical Botany, digitally enhanced from rawpixel's own original plates 28.jpg",
+   "Flora de Filipinas": "Rosmarinus officinalis Blanco1.94.jpg"
+  }
+ },
+ "lavanta": {
+  "taxon": "Lavandula angustifolia",
+  "seriler": {
+   "Köhler": "Lavandula angustifolia - Köhler–s Medizinal-Pflanzen-087.jpg",
+   "Thomé": "Illustration Lavandula angustifolia0.jpg",
+   "Medical Botany": "Illustration from Medical Botany, digitally enhanced from rawpixel's own original plates 73.jpg"
+  }
+ },
+ "corekotu": {
+  "taxon": "Nigella sativa",
+  "seriler": {
+   "Köhler": "Nigella sativa - Köhler–s Medizinal-Pflanzen-227.jpg"
+  }
+ },
+ "kusburnu": {
+  "taxon": "Rosa canina",
+  "seriler": {
+   "Thomé": "Illustration Rosa canina1.jpg",
+   "Medical Botany": "Illustration from Medical Botany, digitally enhanced from rawpixel's own original plates 170.jpg"
+  }
+ },
+ "alic": {
+  "taxon": "Crataegus monogyna",
+  "seriler": {
+   "Sturm": "Crataegus monogyna Sturm 08004.jpg"
+  }
+ },
+ "meyan": {
+  "taxon": "Glycyrrhiza glabra",
+  "seriler": {
+   "Köhler": "Glycyrrhiza glabra - Köhler–s Medizinal-Pflanzen-207.jpg",
+   "Bentley & Trimen": "Bentley-Trimen Glycyrrhiza.jpg",
+   "Medical Botany": "Illustrations of medical botany (Plate XXXII) BHL5878526.jpg"
+  }
+ },
+ "rezene": {
+  "taxon": "Foeniculum vulgare",
+  "seriler": {
+   "Köhler": "Foeniculum vulgare - Köhler–s Medizinal-Pflanzen-148.jpg",
+   "Thomé": "Prof. Dr. Thomé's Flora von Deutschland, Österreich und der Schweiz, in Wort und Bild, für Schule und Haus; mit ... Tafeln ... von Walter Müller (Pl. 364) (7982392389).jpg"
+  }
+ },
+ "defne": {
+  "taxon": "Laurus nobilis",
+  "seriler": {
+   "Thomé": "Illustration Laurus nobilis1.jpg"
+  }
+ },
+ "murver": {
+  "taxon": "Sambucus nigra",
+  "seriler": {
+   "Köhler": "Sambucus nigra - Köhler–s Medizinal-Pflanzen-127.jpg",
+   "Thomé": "Illustration Sambucus nigra0.jpg",
+   "Sturm": "Sambucus nigra Sturm12042.jpg",
+   "Lindman": "62 Sambucus nigra.jpg"
+  }
+ },
+ "karahindiba": {
+  "taxon": "Taraxacum officinale",
+  "seriler": {
+   "Köhler": "Taraxacum officinale - Köhler–s Medizinal-Pflanzen-135.jpg",
+   "Thomé": "Illustration Taraxacum officinale0 clean.jpg",
+   "Medical Botany": "Medical Botany 1790-0001 0032.png",
+   "Sturm": "Loewenzahn Sturm41.jpg",
+   "Lindman": "Taraxacum officinale (maskros).jpg"
+  }
+ },
+ "hayit": {
+  "taxon": "Vitex agnus-castus",
+  "seriler": {
+   "Curtis": "Meehans' monthly - a magazine of horticulture, botany and kindred subjects (1899) (14782973142).jpg"
+  }
+ },
+ "sakiz": {
+  "taxon": "Pistacia lentiscus",
+  "seriler": {
+   "Köhler": "Pistacia lentiscus - Köhler–s Medizinal-Pflanzen-110.jpg",
+   "Medical Botany": "Illustration from Medical Botany, digitally enhanced from rawpixel's own original plates 50.jpg"
+  }
+ },
+ "ardic": {
+  "taxon": "Juniperus excelsa",
+  "seriler": {}
+ },
+ "pelin": {
+  "taxon": "Artemisia absinthium",
+  "seriler": {
+   "Thomé": "Illustration Artemisia absinthium0 clean.jpg",
+   "Sturm": "Artemisia absinthium Sturm13031.jpg",
+   "Lindman": "Artemisia absinthium NF.jpg"
+  }
+ },
+ "hashas": {
+  "taxon": "Papaver somniferum",
+  "seriler": {
+   "Köhler": "Papaver somniferum - Köhler–s Medizinal-Pflanzen-102.jpg",
+   "Thomé": "Illustration Papaver somniferum0.jpg",
+   "Medical Botany": "Illustration from Medical Botany, digitally enhanced from rawpixel's own original plates 20.jpg"
+  }
+ },
+ "banotu": {
+  "taxon": "Hyoscyamus niger",
+  "seriler": {
+   "Köhler": "Hyoscyamus niger - Köhler–s Medizinal-Pflanzen-073.jpg",
+   "Thomé": "Prof. Dr. Otto Wilhelm Thomé- Flora von Deutschland Österreich und der Schweiz - Schwarzes Bilsenkraut (Hyoscyamus niger; henbane).JPG",
+   "Bentley & Trimen": "Bentley - Trimen Hyoscyamus.jpg",
+   "Medical Botany": "American medical botany (Pl. XVII) BHL2955754.jpg",
+   "Sturm": "Hyoscyamus niger Sturm10015.jpg",
+   "Lindman": "Drawinghyoscyamusniger.jpg"
+  }
+ },
+ "adamotu": {
+  "taxon": "Mandragora officinarum",
+  "seriler": {
+   "Flora Graeca": "Mandragora officinalis botanical illustration.jpg"
+  }
+ },
+ "safran": {
+  "taxon": "Crocus sativus",
+  "seriler": {
+   "Köhler": "Crocus sativus - Köhler–s Medizinal-Pflanzen-194.jpg",
+   "Thomé": "Illustration Crocus vernus0.jpg",
+   "Bentley & Trimen": "Bentley - Trimen Crocus.jpg",
+   "Medical Botany": "Illustration from Medical Botany, digitally enhanced from rawpixel's own original plates 171.jpg"
+  }
+ },
+ "ayahuasca": {
+  "taxon": "Banisteriopsis caapi",
+  "seriler": {}
+ },
+ "chacruna": {
+  "taxon": "Psychotria viridis",
+  "seriler": {}
+ },
+ "sanpedro": {
+  "taxon": "Echinopsis pachanoi",
+  "seriler": {}
+ },
+ "koka": {
+  "taxon": "Erythroxylum coca",
+  "seriler": {
+   "Köhler": "Erythroxylum coca - Köhler–s Medizinal-Pflanzen-204.jpg",
+   "Bentley & Trimen": "R. Bentley & H. Trimen, Medicinal Plants Wellcome L0019167.jpg"
+  }
+ },
+ "maca": {
+  "taxon": "Lepidium meyenii",
+  "seriler": {}
+ },
+ "muna": {
+  "taxon": "Minthostachys mollis",
+  "seriler": {}
+ },
+ "palosanto": {
+  "taxon": "Bursera graveolens",
+  "seriler": {}
+ },
+ "mapacho": {
+  "taxon": "Nicotiana rustica",
+  "seriler": {
+   "Köhler": "Nicotiana rustica - Köhler–s Medizinal-Pflanzen-226.jpg"
+  }
+ },
+ "unadegato": {
+  "taxon": "Uncaria tomentosa",
+  "seriler": {}
+ },
+ "sangre": {
+  "taxon": "Croton lechleri",
+  "seriler": {}
+ },
+ "chuchuhuasi": {
+  "taxon": "Maytenus macrocarpa",
+  "seriler": {}
+ },
+ "kinin": {
+  "taxon": "Cinchona officinalis",
+  "seriler": {
+   "Köhler": "Cinchona officinalis - Köhler–s Medizinal-Pflanzen-180.jpg",
+   "Thomé": "Text-book of structural and physiological botany (1877) (14773623961).jpg",
+   "Curtis": "Curtis's botanical magazine (8272601122).jpg",
+   "Medical Botany": "Illustrations of medical botany (Plate XLV) BHL5878553.jpg"
+  }
+ },
+ "chanca": {
+  "taxon": "Phyllanthus niruri",
+  "seriler": {}
+ },
+ "toe": {
+  "taxon": "Brugmansia suaveolens",
+  "seriler": {}
+ },
+ "guayusa": {
+  "taxon": "Ilex guayusa",
+  "seriler": {}
+ },
+ "achiote": {
+  "taxon": "Bixa orellana",
+  "seriler": {
+   "Curtis": "Curtis's botanical magazine (Plate 1456) (8246936745).jpg",
+   "Flora de Filipinas": "Bixa orellana Blanco1.231.png"
+  }
+ },
+ "kakao": {
+  "taxon": "Theobroma cacao",
+  "seriler": {
+   "Köhler": "Theobroma cacao - Köhler–s Medizinal-Pflanzen-136.jpg",
+   "Flora de Filipinas": "Theobroma cacao Blanco2.275.jpg",
+   "Jacquin": "Nicolai Josephi Jacquin Selectarum stirpium Americanarum historia Seite I Ausschnitt.jpg"
+  }
+ },
+ "matico": {
+  "taxon": "Piper aduncum",
+  "seriler": {
+   "Köhler": "Köhler's Medizinal-Pflanzen in naturgetreuen Abbildungen mit kurz erläuterndem Texte (Plate 138) (8231735181).jpg"
+  }
+ },
+ "sinekmantari": {
+  "taxon": "Amanita muscaria",
+  "seriler": {
+   "Medical Botany": "Illustration from Medical Botany, digitally enhanced from rawpixel's own original plates 6.jpg"
+  }
+ },
+ "akadacayi": {
+  "taxon": "Salvia apiana",
+  "seriler": {}
+ },
+ "nane": {
+  "taxon": "Mentha piperita",
+  "seriler": {
+   "Köhler": "Mentha × piperita - Köhler–s Medizinal-Pflanzen-095.jpg"
+  }
+ },
+ "zeytin": {
+  "taxon": "Olea europaea",
+  "seriler": {
+   "Köhler": "Olea europaea - Köhler–s Medizinal-Pflanzen-229.jpg",
+   "Thomé": "Illustration Olea europaea0.jpg",
+   "Flora Graeca": "Έγχρωμη απεικόνιση φυτού από το Flora Graeca (1806).jpg",
+   "Medical Botany": "Illustration from Medical Botany, digitally enhanced from rawpixel's own original plates 86.jpg"
+  }
+ },
+ "sumak": {
+  "taxon": "Rhus coriaria",
+  "seriler": {
+   "Medical Botany": "W. Woodville, Medical botany supplement Wellcome L0025233.jpg"
+  }
+ },
+ "nar": {
+  "taxon": "Punica granatum",
+  "seriler": {
+   "Köhler": "Punica granatum - Köhler–s Medizinal-Pflanzen-115.jpg",
+   "Curtis": "Curtis's botanical magazine (No. 634) (8318302504).jpg",
+   "Flora de Filipinas": "Punica granatum Blanco1.211-original.png"
+  }
+ },
+ "yarpuz": {
+  "taxon": "Mentha pulegium",
+  "seriler": {
+   "Medical Botany": "Mentha pulegium.jpg"
+  }
+ },
+ "civanpercemi": {
+  "taxon": "Achillea millefolium",
+  "seriler": {
+   "Köhler": "Achillea millefolium - Köhler–s Medizinal-Pflanzen-149.jpg",
+   "Thomé": "Illustration Achillea millefolium0 clean.jpg",
+   "Medical Botany": "Medical Botany-1790-1-0328.png",
+   "Sturm": "Achillea millefolium Sturm13039.jpg",
+   "Lindman": "Achillea millefolium NF.jpg"
+  }
+ },
+ "okseotu": {
+  "taxon": "Viscum album",
+  "seriler": {
+   "Köhler": "Köhler's Medizinal-Pflanzen in naturgetreuen Abbildungen mit kurz erläuterndem Texte (Plate 29) (7118317417).jpg",
+   "Thomé": "Prof. Dr. Thomé's Flora von Deutschland, Österreich und der Schweiz, in Wort und Bild, für Schule und Haus; mit ... Tafeln ... von Walter Müller (Pl. 460) (7982435201).jpg",
+   "Sturm": "Viscum album Sturm04042.jpg",
+   "Lindman": "363 Viscum album.jpg"
+  }
+ },
+ "kapari": {
+  "taxon": "Capparis spinosa",
+  "seriler": {
+   "Thomé": "Thomé Capparis spinosa clean.jpg",
+   "Curtis": "The Botanical Magazine, Plate 291 (Volume 9, 1795).png",
+   "Flora de Filipinas": "Capparis spinosa Blanco1.179.jpg"
+  }
+ },
+ "hatmi": {
+  "taxon": "Althaea officinalis",
+  "seriler": {
+   "Köhler": "Althaea officinalis - Köhler–s Medizinal-Pflanzen-008.jpg"
+  }
+ },
+ "kizilcik": {
+  "taxon": "Cornus mas",
+  "seriler": {
+   "Thomé": "Cornus mas - Prof. Dr. Thome-s Flora von Deutschland ... (Pl. 391) clean.jpg",
+   "Sturm": "Cornus mas Sturm40.jpg"
+  }
+ },
+ "sarimsak": {
+  "taxon": "Allium sativum",
+  "seriler": {
+   "Bentley & Trimen": "Bentley und Trimen Allium sativum.jpg",
+   "Medical Botany": "Allium sativum Woodwill 1793.jpg"
+  }
+ },
+ "cemen": {
+  "taxon": "Trigonella foenum-graecum",
+  "seriler": {
+   "Köhler": "Trigonella foenum-graecum - Köhler–s Medizinal-Pflanzen-273.jpg",
+   "Thomé": "Prof. Dr. Thomé's Flora von Deutschland, Österreich und der Schweiz, in Wort und Bild, für Schule und Haus; mit ... Tafeln ... von Walter Müller (Pl. 433) (7982423585).jpg"
+  }
+ },
+ "kimyon": {
+  "taxon": "Cuminum cyminum",
+  "seriler": {
+   "Köhler": "Cuminum cyminum - Köhler–s Medizinal-Pflanzen-198.jpg"
+  }
+ },
+ "keten": {
+  "taxon": "Linum usitatissimum",
+  "seriler": {
+   "Köhler": "Linum usitatissimum - Köhler–s Medizinal-Pflanzen-088.jpg",
+   "Thomé": "Prof. Dr. Thomé's Flora von Deutschland, Österreich und der Schweiz, in Wort und Bild, für Schule und Haus; mit ... Tafeln ... von Walter Müller (Pl. 317) (7982373418)a.png",
+   "Medical Botany": "Illustration from Medical Botany, digitally enhanced from rawpixel's own original plates 119.jpg",
+   "Sturm": "Linum usitatissimum Sturm07011.jpg"
+  }
+ },
+ "kudretnari": {
+  "taxon": "Momordica charantia",
+  "seriler": {
+   "Flora de Filipinas": "Momordica charantia Blanco2.357.png"
+  }
+ },
+ "zakkum": {
+  "taxon": "Nerium oleander",
+  "seriler": {
+   "Flora de Filipinas": "Nerium oleander Blanco1.37.jpg",
+   "Jacquin": "Fragmenta botanica, figuris coloratis illustrata (T. 3) BHL287632.jpg"
+  }
+ },
+ "sigirkuyrugu": {
+  "taxon": "Verbascum thapsus",
+  "seriler": {
+   "Medical Botany": "Medical botany Fleuron T084361-15.png",
+   "Lindman": "111 Verbascum thapsus.jpg"
+  }
+ },
+ "kokboya": {
+  "taxon": "Rubia tinctorum",
+  "seriler": {
+   "Köhler": "Rubia tinctorum - Köhler–s Medizinal-Pflanzen-123.jpg",
+   "Thomé": "Illustration Rubia tinctorum1.jpg",
+   "Sturm": "Rubia tinctorum Sturm12048.jpg"
+  }
+ },
+ "kina": {
+  "taxon": "Lawsonia inermis",
+  "seriler": {
+   "Flora de Filipinas": "Lawsonia inermis Blanco1.108.png"
+  }
+ },
+ "gucigdemi": {
+  "taxon": "Colchicum autumnale",
+  "seriler": {
+   "Köhler": "Colchicum autumnale - Köhler–s Medizinal-Pflanzen-044.jpg",
+   "Thomé": "Colchicum autumnale Thome DESC.JPG",
+   "Medical Botany": "Illustration from Medical Botany, digitally enhanced from rawpixel's own original plates 178.jpg",
+   "Sturm": "Colchicum autumnale Sturm27.jpg"
+  }
+ },
+ "tatula": {
+  "taxon": "Datura stramonium",
+  "seriler": {
+   "Köhler": "Datura stramonium - Köhler–s Medizinal-Pflanzen-051.jpg",
+   "Thomé": "Illustration Datura stramonium0.jpg",
+   "Medical Botany": "Datura stramonium, Thorn apple (3528518810).jpg"
+  }
+ },
+ "cehri": {
+  "taxon": "Rhamnus cathartica",
+  "seriler": {
+   "Köhler": "Rhamnus cathartica - Köhler–s Medizinal-Pflanzen-255.jpg",
+   "Medical Botany": "Illustration from Medical Botany, digitally enhanced from rawpixel's own original plates 152.jpg",
+   "Lindman": "240 Rhamnus cathartica.jpg"
+  }
+ },
+ "altinkok": {
+  "taxon": "Rhodiola rosea",
+  "seriler": {}
+ },
+ "efedra": {
+  "taxon": "Ephedra sinica",
+  "seriler": {}
+ },
+ "kenevir": {
+  "taxon": "Cannabis sativa",
+  "seriler": {
+   "Köhler": "Cannabis sativa - Köhler–s Medizinal-Pflanzen-026.jpg",
+   "Thomé": "Illustration Cannabis sativa0 clean.jpg",
+   "Sturm": "Cannabis sativa Sturm04037.jpg"
+  }
+ },
+ "cay": {
+  "taxon": "Camellia sinensis",
+  "seriler": {
+   "Köhler": "Camellia sinensis - Köhler–s Medizinal-Pflanzen-025.jpg",
+   "Curtis": "Curtis's botanical magazine (10596056025).jpg"
+  }
+ },
+ "isgin": {
+  "taxon": "Rheum ribes",
+  "seriler": {}
+ },
+ "zerdecal": {
+  "taxon": "Curcuma longa",
+  "seriler": {
+   "Köhler": "Curcuma longa - Köhler–s Medizinal-Pflanzen-199.jpg",
+   "Jacquin": "Turmeric (Curcuma longa L.); rhizome with flowering stem and Wellcome V0042925.jpg"
+  }
+ },
+ "yabaniigde": {
+  "taxon": "Hippophae rhamnoides",
+  "seriler": {
+   "Thomé": "Prof. Dr. Thomé's Flora von Deutschland, Österreich und der Schweiz, in Wort und Bild, für Schule und Haus; mit ... Tafeln ... von Walter Müller (Pl. 348) (7982385717).jpg",
+   "Sturm": "Hippophae rhamnoides Sturm41.jpg",
+   "Lindman": "243 Hippophae rhamnoides.jpg"
+  }
+ },
+ "ginseng": {
+  "taxon": "Panax ginseng",
+  "seriler": {}
+ },
+ "huito": {
+  "taxon": "Genipa americana",
+  "seriler": {}
+ },
+ "guarana": {
+  "taxon": "Paullinia cupana",
+  "seriler": {
+   "Köhler": "Paullinia cupana - Köhler–s Medizinal-Pflanzen-234.jpg"
+  }
+ },
+ "camucamu": {
+  "taxon": "Myrciaria dubia",
+  "seriler": {}
+ },
+ "acai": {
+  "taxon": "Euterpe oleracea",
+  "seriler": {}
+ },
+ "yopo": {
+  "taxon": "Anadenanthera peregrina",
+  "seriler": {}
+ },
+ "chiricsanango": {
+  "taxon": "Brunfelsia grandiflora",
+  "seriler": {}
+ },
+ "kinoa": {
+  "taxon": "Chenopodium quinoa",
+  "seriler": {}
+ },
+ "kantuta": {
+  "taxon": "Cantua buxifolia",
+  "seriler": {}
+ },
+ "yacon": {
+  "taxon": "Smallanthus sonchifolius",
+  "seriler": {}
+ },
+ "sachainchi": {
+  "taxon": "Plukenetia volubilis",
+  "seriler": {}
+ },
+ "molle": {
+  "taxon": "Schinus molle",
+  "seriler": {
+   "Curtis": "Curtis's botanical magazine (Plate 3339) (8202177281).jpg"
+  }
+ },
+ "copaiba": {
+  "taxon": "Copaifera langsdorffii",
+  "seriler": {
+   "Flora Brasiliensis": "Copaifera langsdorffii et martii FB.jpg"
+  }
+ },
+ "andiroba": {
+  "taxon": "Carapa guianensis",
+  "seriler": {}
+ },
+ "abuta": {
+  "taxon": "Cissampelos pareira",
+  "seriler": {
+   "Medical Botany": "Illustrations of medical botany (Plate VIII) BHL5878478.jpg",
+   "Flora de Filipinas": "Cissampelos pareira Blanco2.432-cropped.jpg"
+  }
+ },
+ "aguaymanto": {
+  "taxon": "Physalis peruviana",
+  "seriler": {}
+ },
+ "pauarco": {
+  "taxon": "Handroanthus impetiginosus",
+  "seriler": {}
+ },
+ "ekinezya": {
+  "taxon": "Echinacea purpurea",
+  "seriler": {
+   "Curtis": "Echinacea purpurea-1787.jpg"
+  }
+ },
+ "peyote": {
+  "taxon": "Lophophora williamsii",
+  "seriler": {
+   "Curtis": "Curtis's Botanical Magazine, Plate 4296 (Volume 73, 1847).png"
+  }
+ },
+ "karayilan": {
+  "taxon": "Actaea racemosa",
+  "seriler": {
+   "Medical Botany": "Illustrations of medical botany (Platte III) BHL5878467.jpg"
+  }
+ },
+ "cucepalmiye": {
+  "taxon": "Serenoa repens",
+  "seriler": {}
+ },
+ "zencefil": {
+  "taxon": "Zingiber officinale",
+  "seriler": {
+   "Köhler": "Zingiber officinale - Köhler–s Medizinal-Pflanzen-146.jpg",
+   "Bentley & Trimen": "1880 Bentley - Trimen.jpg",
+   "Medical Botany": "Amomum Zingiber-Medical Botany 1790-0001 0072.png",
+   "Flora de Filipinas": "Zingiber officinale Blanco1.131.png"
+  }
+ },
+ "kediotu": {
+  "taxon": "Valeriana officinalis",
+  "seriler": {
+   "Köhler": "Valeriana officinalis - Köhler–s Medizinal-Pflanzen-143.jpg",
+   "Thomé": "Illustration Valeriana officinalis0.jpg",
+   "Medical Botany": "Illustration from Medical Botany, digitally enhanced from rawpixel's own original plates 66.jpg",
+   "Sturm": "Valeriana sambucifolia Sturm51.jpg",
+   "Lindman": "Valeriana officinalis vänderot.jpg"
+  }
+ },
+ "ginkgo": {
+  "taxon": "Ginkgo biloba",
+  "seriler": {
+   "Curtis": "The botanical magazine = Shokubutsugaku zasshi (1896) (20213164520).jpg",
+   "Jacquin": "HBV Jacquin-ginkgo 2005-04.jpg"
+  }
+ },
+ "aloe": {
+  "taxon": "Aloe vera",
+  "seriler": {
+   "Medical Botany": "Illustration from Medical Botany, digitally enhanced from rawpixel's own original plates 173.jpg"
+  }
+ },
+ "tarcin": {
+  "taxon": "Cinnamomum verum",
+  "seriler": {
+   "Köhler": "Cinnamomum verum - Köhler–s Medizinal-Pflanzen-182.jpg",
+   "Medical Botany": "Illustration from Medical Botany, digitally enhanced from rawpixel's own original plates 56.jpg"
+  }
+ },
+ "karanfil": {
+  "taxon": "Syzygium aromaticum",
+  "seriler": {
+   "Köhler": "Syzygium aromaticum - Köhler–s Medizinal-Pflanzen-030.jpg",
+   "Curtis": "Curtis's botanical magazine (Plate 2749) (8611143890).jpg",
+   "Medical Botany": "Illustrations of medical botany (Plate XXXVII) BHL5878537.jpg"
+  }
+ },
+ "okaliptus": {
+  "taxon": "Eucalyptus globulus",
+  "seriler": {
+   "Köhler": "Eucalyptus globulus - Köhler–s Medizinal-Pflanzen-147.jpg"
+  }
+ },
+ "ashwagandha": {
+  "taxon": "Withania somnifera",
+  "seriler": {}
+ },
+ "keciboynuzu": {
+  "taxon": "Ceratonia siliqua",
+  "seriler": {
+   "Thomé": "Prof. Dr. Thomé's Flora von Deutschland, Österreich und der Schweiz, in Wort und Bild, für Schule und Haus; mit ... Tafeln ... von Walter Müller (Pl. 455) (7982436064).jpg"
+  }
+ },
+ "hibiskus": {
+  "taxon": "Hibiscus sabdariffa",
+  "seriler": {}
+ },
+ "sinameki": {
+  "taxon": "Senna alexandrina",
+  "seriler": {
+   "Köhler": "Senna alexandrina - Köhler–s Medizinal-Pflanzen-031.jpg",
+   "Medical Botany": "Illustration from Medical Botany, digitally enhanced from rawpixel's own original plates 61.jpg"
+  }
+ },
+ "mersin": {
+  "taxon": "Myrtus communis",
+  "seriler": {
+   "Thomé": "Prof. Dr. Thomé's Flora von Deutschland, Österreich und der Schweiz, in Wort und Bild, für Schule und Haus; mit ... Tafeln ... von Walter Müller (Pl. 345) (7982384873).jpg"
+  }
+ },
+ "enginar": {
+  "taxon": "Cynara cardunculus",
+  "seriler": {}
+ },
+ "devedikeni": {
+  "taxon": "Silybum marianum",
+  "seriler": {
+   "Thomé": "Illustration Silybum marianum0.jpg"
+  }
+ },
+ "altinmuhur": {
+  "taxon": "Hydrastis canadensis",
+  "seriler": {
+   "Köhler": "Hydrastis canadensis - Köhler–s Medizinal-Pflanzen-209.jpg",
+   "Curtis": "Curtis's botanical magazine (8294334132).jpg"
+  }
+ },
+ "tatliot": {
+  "taxon": "Anthoxanthum nitens",
+  "seriler": {
+   "Thomé": "Illustration Phalaris canariensis0.jpg",
+   "Sturm": "Hierochloe spp Sturm7.jpg",
+   "Lindman": "475 Hierochloe odorata.jpg"
+  }
+ },
+ "ayiuzumu": {
+  "taxon": "Arctostaphylos uva-ursi",
+  "seriler": {
+   "Köhler": "Arctostaphylos uva-ursi - Köhler–s Medizinal-Pflanzen-013.jpg",
+   "Thomé": "Illustration Arctostaphylos uva-ursi0.jpg",
+   "Medical Botany": "Illustrations of medical botany (Plate LII) BHL5878568.jpg",
+   "Sturm": "Arctostaphylos uva-ursi Sturm09054.jpg",
+   "Lindman": "145 Arctostaphylos uva ursi.jpg"
+  }
+ },
+ "kirmizikaraagac": {
+  "taxon": "Ulmus rubra",
+  "seriler": {}
+ },
+ "kankoku": {
+  "taxon": "Sanguinaria canadensis",
+  "seriler": {
+   "Curtis": "The Botanical Magazine, Plate 162 (Volume 5, 1792).png",
+   "Medical Botany": "American medical botany (Pl. VII) BHL2955660.jpg"
+  }
+ },
+ "dagcayi": {
+  "taxon": "Sideritis",
+  "seriler": {
+   "Sturm": "Sideritis montana Sturm23.jpg"
+  }
+ },
+ "atkestanesi": {
+  "taxon": "Aesculus hippocastanum",
+  "seriler": {
+   "Medical Botany": "Illustration from Medical Botany, digitally enhanced from rawpixel's own original plates 141.jpg"
+  }
+ },
+ "ceviz": {
+  "taxon": "Juglans regia",
+  "seriler": {
+   "Köhler": "Juglans regia - Köhler–s Medizinal-Pflanzen-081.jpg",
+   "Thomé": "Illustration Juglans regia1.jpg"
+  }
+ },
+ "incir": {
+  "taxon": "Ficus carica",
+  "seriler": {
+   "Thomé": "Illustration Ficus carica0.jpg",
+   "Medical Botany": "Illustration from Medical Botany, digitally enhanced from rawpixel's own original plates 94.jpg"
+  }
+ },
+ "feslegen": {
+  "taxon": "Ocimum basilicum",
+  "seriler": {
+   "Flora de Filipinas": "Ocimum basilicum Blanco2.407.jpg"
+  }
+ },
+ "anason": {
+  "taxon": "Pimpinella anisum",
+  "seriler": {
+   "Medical Botany": "Illustration from Medical Botany, digitally enhanced from rawpixel's own original plates 77.jpg"
+  }
+ },
+ "turunc": {
+  "taxon": "Citrus aurantium",
+  "seriler": {
+   "Flora de Filipinas": "Citrus aurantium Blanco2.304.png"
+  }
+ },
+ "kakule": {
+  "taxon": "Elettaria cardamomum",
+  "seriler": {
+   "Köhler": "Elettaria cardamomum - Köhler–s Medizinal-Pflanzen-057.jpg",
+   "Medical Botany": "Illustration from Medical Botany, digitally enhanced from rawpixel's own original plates 127.jpg"
+  }
+ },
+ "hodan": {
+  "taxon": "Borago officinalis",
+  "seriler": {
+   "Thomé": "Illustration Borago officinalis0.jpg",
+   "Sturm": "Borago officinalis Sturm11007.jpg"
+  }
+ },
+ "goji": {
+  "taxon": "Lycium barbarum",
+  "seriler": {
+   "Thomé": "Illustration Lycium barbarum0.jpg"
+  }
+ },
+ "reishi": {
+  "taxon": "Ganoderma lucidum",
+  "seriler": {}
+ },
+ "muskat": {
+  "taxon": "Myristica fragrans",
+  "seriler": {
+   "Medical Botany": "Illustration from Medical Botany, digitally enhanced from rawpixel's own original plates 108.jpg"
+  }
+ },
+ "gelincik": {
+  "taxon": "Papaver rhoeas",
+  "seriler": {
+   "Köhler": "Papaver rhoeas - Köhler–s Medizinal-Pflanzen-101.jpg",
+   "Medical Botany": "Illustration from Medical Botany, digitally enhanced from rawpixel's own original plates 120.jpg",
+   "Sturm": "Deutschlands flora in abbildungen nach der natur (1806) (14783106763).jpg"
+  }
+ },
+ "sogut": {
+  "taxon": "Salix alba",
+  "seriler": {
+   "Thomé": "Thomé Salix alba clean.jpg",
+   "Sturm": "Salix alba Sturm04023.jpg"
+  }
+ },
+ "pasiflora": {
+  "taxon": "Passiflora incarnata",
+  "seriler": {
+   "Curtis": "Curtis's botanical magazine (Plate 3697) (8387509782).jpg",
+   "Jacquin": "Passiflora rigidula 1844 Joseph Franz Jacquin.jpg"
+  }
+ },
+ "karabas": {
+  "taxon": "Lavandula stoechas",
+  "seriler": {}
+ },
+ "neem": {
+  "taxon": "Azadirachta indica",
+  "seriler": {}
+ },
+ "graviola": {
+  "taxon": "Annona muricata",
+  "seriler": {
+   "Flora de Filipinas": "Annona muricata Blanco1.196.png",
+   "Jacquin": "Nikolaus Joseph von Jacquin - Observationum botanicarum - Annona muricata.jpg"
+  }
+ },
+ "mahlep": {
+  "taxon": "Prunus mahaleb",
+  "seriler": {}
+ },
+ "yildizanason": {
+  "taxon": "Illicium verum",
+  "seriler": {}
+ },
+ "gotukola": {
+  "taxon": "Centella asiatica",
+  "seriler": {}
+ },
+ "tulsi": {
+  "taxon": "Ocimum tenuiflorum",
+  "seriler": {
+   "Flora de Filipinas": "Ocimum sp Blanco2.257.png"
+  }
+ },
+ "lotus": {
+  "taxon": "Nelumbo nucifera",
+  "seriler": {
+   "Curtis": "Curtis's botanical magazine (10594590913).jpg",
+   "Flora de Filipinas": "Nelumbo nucifera Blanco1.158.png"
+  }
+ },
+ "hamamelis": {
+  "taxon": "Hamamelis virginiana",
+  "seriler": {
+   "Köhler": "Hamamelis virginiana - Köhler–s Medizinal-Pflanzen-070.jpg"
+  }
+ },
+ "turnayemisi": {
+  "taxon": "Vaccinium macrocarpon",
+  "seriler": {}
+ },
+ "paico": {
+  "taxon": "Dysphania ambrosioides",
+  "seriler": {
+   "Flora de Filipinas": "Dysphania ambrosioides Blanco1.69.jpg"
+  }
+ },
+ "sassafras": {
+  "taxon": "Sassafras albidum",
+  "seriler": {
+   "Köhler": "Köhler's Medizinal-Pflanzen in naturgetreuen Abbildungen mit kurz erläuterndem Texte (Plate 100) (8231716529).jpg",
+   "Medical Botany": "American medical botany (8294399426).jpg"
+  }
+ },
+ "kiwicha": {
+  "taxon": "Amaranthus caudatus",
+  "seriler": {}
+ },
+ "fitolakka": {
+  "taxon": "Phytolacca americana",
+  "seriler": {
+   "Curtis": "Curtis's botanical magazine (10594463415).jpg"
+  }
+ },
+ "mayiselmasi": {
+  "taxon": "Podophyllum peltatum",
+  "seriler": {
+   "Köhler": "Podophyllum peltatum - Köhler–s Medizinal-Pflanzen-246 0383-caps.jpg",
+   "Medical Botany": "A manual of the medical botany of North America (Plate I) BHL40152146.jpg"
+  }
+ }
+}
