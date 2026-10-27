@@ -1,0 +1,18 @@
+name: Dükkân posterleri (elle)
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  uret:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install -q pillow && python3 tools/dukkan.py
+      - name: Çıktıyı dukkan dalına yaz (geçmiş tutulmaz)
+        run: |
+          cd dukkan && git init -q && git checkout -q -b dukkan && git add -A
+          git -c user.name="bitkitabani-bot" -c user.email="actions@users.noreply.github.com" commit -qm "Dükkân dosyaları [bot]"
+          git push -fq "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" dukkan
