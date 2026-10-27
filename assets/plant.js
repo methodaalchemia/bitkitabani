@@ -11,3 +11,13 @@
   paint();
   var st = document.getElementById('streakNote'); if (st && window.BTStreak) st.textContent = BTStreak.text(BTStreak.count());
 })();
+/* üst galeri: noktalar kaydırmayı izler, noktaya basınca o görsele gider */
+(function(){
+  document.querySelectorAll('.galeri').forEach(function(g){
+    var tr = g.querySelector('.g-track'), ds = g.querySelectorAll('.g-dots button');
+    if (!tr || !ds.length) return;
+    function set(){ var i = Math.round(tr.scrollLeft / tr.clientWidth); ds.forEach(function(d, k){ if (k === i) d.setAttribute('aria-current', 'true'); else d.removeAttribute('aria-current'); }); }
+    tr.addEventListener('scroll', function(){ window.requestAnimationFrame(set); }, { passive: true }); set();
+    ds.forEach(function(d, k){ d.addEventListener('click', function(){ tr.scrollTo({ left: k * tr.clientWidth, behavior: 'smooth' }); }); });
+  });
+})();

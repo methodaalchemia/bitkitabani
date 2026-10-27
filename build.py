@@ -305,6 +305,20 @@ def ph(p, size, eager=False):
     src = f'<source type="image/webp" srcset="/img/{p["id"]}-{size}.webp">' if os.path.exists(os.path.join(HERE, 'img', f'{p["id"]}-{size}.webp')) else ''
     return f'<div class="ph loaded"{_avg(p["id"])}><picture>{src}<img src="/img/{p["id"]}-{size}.jpg" width="{w}" height="{h}" alt="{e(p["tr"])} ({e(short_la(p))}): {e(ALT.get(p["id"], "bitki"))}" {load} decoding="async"></picture></div>'
 
+def galeri(p):
+    """Bitki sayfasının üst görseli: ana fotoğraf + tanıma görselleri (çizim, çiçekli, kurutulmuş).
+    Telefonda yatay kaydırmalı, geniş ekranda büyük ana fotoğraf ve yanında küçük ızgara."""
+    pid = p['id']; ek = []
+    for t in ('cizim', 'cicek', 'kuru'):
+        x = TANIMA.get(f'{pid}:{t}')
+        if isinstance(x, dict) and os.path.exists(os.path.join(HERE, 'img', 'tanima', f'{pid}-{t}.jpg')): ek.append((t, x))
+    ana = f'<figure class="g-ana">{ph(p, 960, eager=True)}<figcaption>{credit(p)}</figcaption></figure>'
+    if not ek: return f'<figure class="photo">{ph(p, 960, eager=True)}<figcaption>{credit(p)}</figcaption></figure>'
+    sl = ''.join(f'<figure class="g-{t}"><div class="ph loaded"><img src="/img/tanima/{pid}-{t}.jpg" alt="{e(p["tr"])}: {TANIMA_AD[t].lower()}" loading="lazy" decoding="async"></div>'
+                 f'<figcaption><b>{TANIMA_AD[t]}</b> · {e(x.get("artist", ""))} · {e(x.get("license", ""))} · <a href="{x["page"]}" target="_blank" rel="noopener">Commons</a></figcaption></figure>' for t, x in ek)
+    dots = ''.join(f'<button type="button" aria-label="{l}"></button>' for l in ['Fotoğraf'] + [TANIMA_AD[t] for t, _ in ek])
+    return f'<div class="photo galeri" data-n="{len(ek) + 1}"><div class="g-track">{ana}{sl}</div><div class="g-dots" aria-hidden="true">{dots}</div></div>'
+
 def credit(p):
     m = IMG.get(p['id'])
     if not m: return ''
@@ -473,13 +487,12 @@ for i, p in enumerate(P):
     <div><dt>Kullanım</dt><dd>{", ".join(KAT[k] for k in p["kat"])}</dd></div>
   </dl>
     </div>
-    <figure class="photo">{ph(p, 960, eager=True)}<figcaption>{credit(p)}</figcaption></figure>
+    {galeri(p)}
   </header>
   {sharebar(p['tr'] + ': ne işe yarar, kanıtı ve güvenliği', '/' + pid + '/')}
   {kisahtml}
   <!--TOC-->
   <section class="sec"><h2>Geleneksel kullanım</h2><div class="uses">{uses}</div></section>
-  {tanima_html(pid)}
   {dogada}
   <section class="sec"><h2>Hazırlama</h2><p>{e(p["haz"])}</p></section>
   <section class="sec"><h2>Bilim ne diyor</h2><p>{e(p["bilim"])}</p></section>
