@@ -1,6 +1,8 @@
 name: Çizim serisi taraması (elle)
 on:
   workflow_dispatch:
+permissions:
+  contents: write
 jobs:
   tara:
     runs-on: ubuntu-latest
@@ -8,6 +10,9 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: '3.12' }
-      - run: pip install -q pillow && python3 tools/seri_tara.py
-      - uses: actions/upload-artifact@v4
-        with: { name: seri-tara, path: seri_tara.json }
+      - run: pip install -q pillow && python3 tools/seri_tara.py | tee seri_tara.log
+      - name: Sonucu seri-tara dalına yaz
+        run: |
+          mkdir out && cp seri_tara.json seri_tara.log out/ && cd out && git init -q && git checkout -q -b seri-tara && git add -A
+          git -c user.name="bitkitabani-bot" -c user.email="actions@users.noreply.github.com" commit -qm "Seri taraması [bot]"
+          git push -fq "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" seri-tara
