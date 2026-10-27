@@ -225,15 +225,20 @@ def head(title, desc, path, extra='', image=None):
 <div class="wrap{{narrow}}">
 '''
 
-MENU = [('Bitkiler', [('/katalog/', 'Katalog', 'kat'), ('/yoresel-adlar/', 'Yöresel adlar sözlüğü', 'adlar'), ('/toplama-takvimi/', 'Doğada bu ay', 'toplama'), ('/kartlar/', 'Yazdırılabilir bitki kartları', 'kartlar')]),
-        ('Şifa', [('/rehber/', 'Bitki bul ve rehberler', 'rehber'), ('/tarif/', 'Çay tarifleri', 'tarif'), ('/karsilastirma/', 'Karşılaştırmalar', 'kars'), ('/rehber/ilac-etkilesimi/', 'İlaç etkileşimi', 'etk'), ('/rehber/hamilelik-emzirme/', 'Hamilelik ve emzirme', 'gebe')]),
-        ('Kültür ve ritüel', [('/kultur/', 'Bölüme genel bakış', 'kultur'), ('/kavram/', 'Kavramlar', 'kavram'), ('/semboller/', 'Semboller', 'sembol'), ('/kopruler/', 'Kültür köprüleri', 'br'), ('/yazilar/', 'Yazılar', 'yazi'), ('/takvim/', 'Ritüel takvimi', 'takvim')]),
-        ('Bugün', [('/gunun-bitkisi/', 'Günün bitkisi', 'gun'), ('/oyun/', 'Günün bilmecesi', 'oyun'), ('/yeni/', 'Yeni eklenenler', 'yeni')]),
-        ('Bitki Tabanı', [('/kurs/', 'Ücretsiz e-posta kursu', 'kurs'), ('/bulten/', 'Bülten', 'bulten'), ('/hakkinda/', 'Hakkında', 'about'), ('/yontem/', 'Yöntem', 'yontem'), ('https://www.instagram.com/bitkitabani/', 'Instagram', 'ig'), ('/hesap/', 'Hesap', 'acct'), ('/gizlilik/', 'Gizlilik', 'priv'), ('mailto:iletisim@bitkitabani.com', 'İletişim', 'mail')])]
+MENU = [('Bitkiler', [('/katalog/', 'Katalog', 'kat'), ('/yoresel-adlar/', 'Yöresel adlar', 'adlar'), ('/toplama-takvimi/', 'Doğada bu ay', 'toplama'), ('/yeni/', 'Yeni eklenenler', 'yeni')]),
+        ('Şifa', [('/rehber/', 'Derde göre bitkiler', 'rehber'), ('/tarif/', 'Çay tarifleri', 'tarif'), ('/karsilastirma/', 'Karşılaştırmalar', 'kars'), ('/rehber/ilac-etkilesimi/', 'İlaç etkileşimi', 'etk')]),
+        ('Kültür', [('/kavram/', 'Kavramlar', 'kavram'), ('/semboller/', 'Semboller', 'sembol'), ('/kopruler/', 'Kültür köprüleri', 'br'), ('/yazilar/', 'Yazılar', 'yazi'), ('/takvim/', 'Ritüel takvimi', 'takvim')]),
+        ('Bitki Tabanı', [('/hakkinda/', 'Hakkında', 'about'), ('/yontem/', 'Yöntem ve kaynaklar', 'yontem'), ('/bulten/', 'Bülten ve e-posta kursu', 'bulten'), ('/kartlar/', 'Yazdırılabilir kartlar', 'kartlar'), ('/hesap/', 'Hesabım', 'acct'), ('mailto:iletisim@bitkitabani.com', 'İletişim', 'mail')])]
+MENU_HUB = {'Bitkiler': '/katalog/', 'Şifa': '/rehber/', 'Kültür': '/kultur/'}
+_TABICO = {'ara': '<circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/>', 'kat': '<path d="M12 21V9"/><path d="M12 13c-4 0-6-3-6-7 4 0 6 3 6 7z"/><path d="M12 11c3 0 5-2 5-5-3 0-5 2-5 5z"/>',
+           'rehber': '<path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/>', 'kultur': '<path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/>', 'gun': '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M5 19l1.5-1.5M17.5 6.5L19 5"/>'}
+def tabbar(cur):
+    it = [('/#ara', 'Ara', 'ara'), ('/katalog/', 'Bitkiler', 'kat'), ('/rehber/', 'Şifa', 'rehber'), ('/kultur/', 'Kültür', 'kultur')]
+    return '<nav class="tabbar" aria-label="Ana bölümler">' + ''.join(f'<a href="{h}"' + (' aria-current="page"' if cur == k else '') + f'><svg viewBox="0 0 24 24" aria-hidden="true">{_TABICO[k]}</svg><span>{l}</span></a>' for h, l, k in it) + '</nav>'
 def nav(cur):
     a = lambda href, label, key: f'<a href="{href}"{" aria-current=\"page\"" if cur == key else ""}{" rel=\"noopener\"" if href.startswith("http") else ""}>{label}</a>'
-    groups = ''.join(f'<div class="mgrp"><b>{g}</b>' + ''.join(a(h, l, k) for h, l, k in items) + '</div>' for g, items in MENU)
-    return f'''<div class="motif" aria-hidden="true"></div><div class="site-nav"><a class="logo" href="/">Bitki <em>Tabanı</em></a><nav class="topnav" aria-label="Ana bölümler">{a("/katalog/", "Bitkiler", "kat")}{a("/rehber/", "Şifa", "rehber")}{a("/kultur/", "Kültür", "kultur")}{a("/gunun-bitkisi/", "Bugün", "gun")}</nav><div class="navr"><button type="button" class="themebtn" data-l="tr" aria-label="Açık ya da koyu tema">◐</button><details class="menu"><summary aria-label="Menü"><span class="burger" aria-hidden="true"></span><span class="mlab">Menü</span></summary><nav class="menu-panel" aria-label="Site menüsü">{groups}<div class="mgrp lang"><!--LANG--></div></nav></details></div></div>'''
+    groups = ''.join(f'<div class="mgrp"><b>' + (f'<a href="{MENU_HUB[g]}">{g} →</a>' if g in MENU_HUB else g) + '</b>' + ''.join(a(h, l, k) for h, l, k in items) + '</div>' for g, items in MENU)
+    return f'''<div class="motif" aria-hidden="true"></div><div class="site-nav"><a class="logo" href="/">Bitki <em>Tabanı</em></a><nav class="topnav" aria-label="Ana bölümler">{a("/katalog/", "Bitkiler", "kat")}{a("/rehber/", "Şifa", "rehber")}{a("/kultur/", "Kültür", "kultur")}</nav><div class="navr"><button type="button" class="themebtn" data-l="tr" aria-label="Açık ya da koyu tema">◐</button><details class="menu"><summary aria-label="Menü"><span class="burger" aria-hidden="true"></span><span class="mlab">Menü</span></summary><nav class="menu-panel" aria-label="Site menüsü">{groups}<div class="mgrp lang"><!--LANG--></div></nav></details></div></div>''' + tabbar(cur)
 
 FOOT = '''<div class="motif indigo" aria-hidden="true"></div>
 <footer class="site">
@@ -402,7 +407,7 @@ def toc_and_ids(html):
         t = m.group(1); sid = _re.sub(r'[^a-z0-9]+', '-', t.lower().translate(str.maketrans('çğıöşüâî', 'cgiosuai'))).strip('-')
         items.append((sid, t)); return f'<section class="sec" id="{sid}"><h2>{t}</h2>'
     html = _re.sub(r'<section class="sec"><h2>([^<]+)</h2>', sub, html)
-    nav_ = '<nav class="toc" aria-label="Bu sayfada"><span class="eyebrow">Bu sayfada</span><ol>' + ''.join(f'<li><a href="#{s}">{t}</a></li>' for s, t in items) + '</ol></nav>'
+    nav_ = '<details class="toc"><summary><span class="eyebrow">Bu sayfada</span> ' + str(len(items)) + ' bölüm</summary><nav aria-label="Bu sayfada"><ol>' + ''.join(f'<li><a href="#{s}">{t}</a></li>' for s, t in items) + '</ol></nav></details>'
     return html.replace('<!--TOC-->', nav_)
 
 # ---------- bitki sayfaları ----------
@@ -425,7 +430,7 @@ for i, p in enumerate(P):
     q_ne = (f'{p["tr"]} ne işe yarar?', f'Geleneksel kullanımı: {_first(p["kul"][0][1])} Bilimsel kanıt düzeyi: {KANIT[p["kanit"]]["ad"].lower()}. {_first(p["bilim"])}')
     q_guv = (f'{p["tr"]} zararlı mı, kimler kullanmamalı?' if p['guv'] != 'yuksek' else f'{p["tr"]} güvenli mi?', f'Güvenlik etiketi: {GUV[p["guv"]].lower()}. {p["guvNot"]}' + (' Yasal durum: ' + YASAL_AD[YASAL[pid][0]] + '.' if pid in YASAL else ''))
     kisaca = [q_nedir, q_ne, q_guv] + ([(f'{p["tr"]} nasıl kullanılır?', p['haz'])] if p.get('haz') and p['guv'] != 'yuksek' else [])
-    kisahtml = '<section class="kisaca" aria-label="Kısaca"><span class="eyebrow">Kısaca</span>' + ''.join(f'<div class="qa"><h2 class="q">{e(q)}</h2><p>{e(a)}</p></div>' for q, a in kisaca) + '</section>'
+    kisahtml = '<details class="kisaca"><summary><span class="eyebrow">30 saniyede</span> ' + e(p['tr']) + ' nedir, ne işe yarar?</summary>' + ''.join(f'<div class="qa"><h2 class="q">{e(q)}</h2><p>{e(a)}</p></div>' for q, a in kisaca) + '</details>'
     if pid in DERIN:
         dd = DERIN[pid]
         rows_ = ''.join(f'<tr><th scope="row">{e(i)}</th><td><span class="kv {k}">{KAN_AD[k]}</span></td><td>{e(n)}</td></tr>' for i, k, n in dd['iddia'])
@@ -580,8 +585,6 @@ learn_note = '<p class="hint" id="learnHint"><b>Öğrendiklerim</b> sayacı, bit
 katalog = f'''
 <nav class="crumbs" aria-label="Konum"><a href="/">Ana sayfa</a><span>/</span><span>Katalog</span></nav>
 <header class="page-head"><span class="eyebrow">{len(P)} kayıt</span><h1>Bitki kataloğu</h1><p>Bütün bitkileri bölgeye, kullanıma, kanıt düzeyine, güvenliğe ve yasal duruma göre süz. Seçtiğin filtreler adres çubuğuna yazılır; bağlantıyı paylaşabilirsin.</p></header>
-<div class="stats"><span><strong>{len(P)}</strong> bitki</span><span><strong>{len(regs)}</strong> bölge</span><span><strong>{len(BR)}</strong> kültür köprüsü</span><span>Öğrendiklerim <strong id="learnedCount">0</strong>/{len(P)} <span class="muted-s">(<a href="/hesap/">giriş yaparsan</a> her cihazda)</span></span></div>
-{learn_note}
 <section style="display:flex;flex-direction:column;gap:18px" aria-label="Katalog">
   <div class="controls">
     <label class="search" for="q">
@@ -594,6 +597,8 @@ katalog = f'''
   <div class="grid">{"".join(card(p) for p in P)}</div>
   <div class="empty" id="empty" hidden>Bu arama ve filtrelerle eşleşen bitki yok. Bir filtreyi kaldırmayı ya da farklı bir kelime denemeyi dene.</div>
 </section>
+<details class="kstats"><summary>İstatistikler ve öğrendiklerim</summary><div class="stats"><span><strong>{len(P)}</strong> bitki</span><span><strong>{len(regs)}</strong> bölge</span><span><strong>{len(BR)}</strong> kültür köprüsü</span><span>Öğrendiklerim <strong id="learnedCount">0</strong>/{len(P)} <span class="muted-s">(<a href="/hesap/">giriş yaparsan</a> her cihazda)</span></span></div>
+{learn_note}</details>
 '''
 ld_kat = [{"@context":"https://schema.org","@type":"CollectionPage","name":"Bitki kataloğu","url":BASE+"/katalog/","inLanguage":"tr","isPartOf":{"@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/"},
            "mainEntity":{"@type":"ItemList","numberOfItems":len(P),"itemListElement":[{"@type":"ListItem","position":i+1,"url":f'{BASE}/{p["id"]}/',"name":p['tr']} for i,p in enumerate(P)]}},
@@ -782,30 +787,31 @@ home = f'''
     <span class="eyebrow">Etnobotanik kayıt defteri</span>
     <h1 class="wordmark">Bitki <em>Tabanı</em></h1>
     <p class="lede">{LEDE}</p>
-    <form class="hsearch" action="/katalog/" method="get" role="search" autocomplete="off">
+    <form class="hsearch" id="ara" action="/katalog/" method="get" role="search" autocomplete="off">
       <input id="hq" name="q" type="search" placeholder="Bitki ara ya da derdini yaz: kantaron, ardıç, uyku tutmuyor…" aria-label="Bitki ara" aria-controls="hqList" aria-autocomplete="list">
       <button type="submit" class="cta">Ara</button>
       <ul id="hqList" class="hq-list" role="listbox" hidden></ul>
     </form>
     <script id="hqData" type="application/json">{json.dumps([[p['id'], p['tr'], short_la(p), p['diger']] for p in P], ensure_ascii=False).replace('</', '<\\/')}</script>
-    <p class="muted-s"><a href="/katalog/">Kataloğa git</a> · <a href="/rehber/#ara">Derdini kendi cümlelerinle yaz</a></p>
   </div>
-  <div class="todaybox"><a class="today" id="today" href="/{today_p["id"]}/" data-pool="{e(json.dumps([[p["id"], p["tr"], p["la"]] for p in pool], ensure_ascii=False))}"><span class="eyebrow">Bugünün bitkisi</span><b id="todayName">{e(today_p["tr"])}</b><i id="todayLatin">{e(today_p["la"])}</i></a><a class="cta small" href="/oyun/">Günün bilmecesini çöz →</a><a class="cta small" href="/gunun-bitkisi/">Geçmiş günlerin bitkileri →</a><p class="streak" id="streak" hidden></p></div>
+  <div class="todaybox"><a class="today" id="today" href="/{today_p["id"]}/" data-pool="{e(json.dumps([[p["id"], p["tr"], p["la"]] for p in pool], ensure_ascii=False))}"><span class="eyebrow">Bugünün bitkisi</span><b id="todayName">{e(today_p["tr"])}</b><i id="todayLatin">{e(today_p["la"])}</i></a><a class="cta small" href="/gunun-bitkisi/">Geçmiş günlerin bitkileri →</a><p class="streak" id="streak" hidden></p></div>
 </header>
 {takvim_band()}
-{newband()}
-<section class="sec"><h2>Derde göre</h2><p>Uykudan öksürüğe, mideden kaygıya: şikâyetlere göre bitkiler, kanıtı en güçlü olandan başlayarak. Kullandığın bir ilaç varsa önce <a href="/rehber/ilac-etkilesimi/">etkileşim aracına</a> bak.</p><p><a class="cta" href="/bitki-bul/">Üç soruda sana uygun bitkiyi bul →</a></p><div class="icongrid">{''.join(f'<a href="/rehber/{k["slug"]}/">{ico(k["slug"], "ico-b")}<span>{e(k["kisa"])}</span></a>' for k in KONULAR if sum(1 for x, _ in k['bitkiler'] if x in byId) >= 2)}<a href="/rehber/ilac-etkilesimi/">{ico('etk', 'ico-b')}<span>İlaç etkileşimi</span></a><a href="/rehber/hamilelik-emzirme/">{ico('gebe', 'ico-b')}<span>Hamilelik</span></a><a href="/tarif/">{ico('tarif', 'ico-b')}<span>Çay tarifleri</span></a></div></section>
-<section class="sec"><h2>Bölgelere göre</h2><div class="regs-grid">{regcards}</div></section>
-{f'<section class="sec"><h2>Şu an mevsiminde</h2><p>{AYLAR[LOCAL_DAY.month-1]} ayında Anadolu’da toplama mevsimi olan bitkiler. Koruma altındaki ve yasal kısıtlı türler bu listeye alınmaz.</p><div class="grid">' + "".join(card(p) for p in season[:8]) + '</div></section>' if season else ''}
-<section class="sec"><h2>Nereden başlamalı?</h2><p>{len(P)} bitki çok gelebilir. Siteyi tanımak için bu beşiyle başla:</p><ol class="start">
-<li><a href="/papatya/"><b>Papatya</b></a>: herkesin bildiği bir çayın arkasındaki bilim; “Faydaları ne kadar kanıtlı?” tablosunu da gösterir.</li>
-<li><a href="/kantaron/"><b>Sarı kantaron</b></a>: kanıtı güçlü ama ilaç etkileşimleri ciddi; bir bitkinin neden hem şifa hem risk olabildiğini anlatır.</li>
-<li><a href="/uzerlik/"><b>Üzerlik</b></a>: nazar dumanından ayahuascaya uzanan bir kültür köprüsü.</li>
+<section class="pillars">
+  <a class="pillar" href="/katalog/"><span class="eyebrow">Bitkiler</span><b>{len(P)} bitki, {len(REG)} bölge</b><span>Anadolu’dan Amazon’a, fotoğrafı, çizimi ve kaynaklarıyla her bitki.</span></a>
+  <div class="pchips">{"".join(f'<a class="chip" href="/katalog/?bolge={k}">{dot(k)} {e(v["ad"])}</a>' for k, v in REG.items())}<a class="chip" href="/toplama-takvimi/">Doğada bu ay →</a></div>
+  <a class="pillar" href="/rehber/"><span class="eyebrow">Şifa</span><b>Hangi derde hangi bitki?</b><span>Kanıtı en güçlü olandan başlayarak; güvenlik ve ilaç etkileşimiyle.</span></a>
+  <div class="pchips">{"".join(f'<a class="chip" href="/rehber/{k["slug"]}/">{e(k["kisa"])}</a>' for k in [k for k in KONULAR if sum(1 for pid, _ in k["bitkiler"] if pid in byId) >= 2][:6])}<a class="chip" href="/bitki-bul/">Üç soruda bul →</a></div>
+  <a class="pillar" href="/kultur/"><span class="eyebrow">Kültür ve ritüel</span><b>Bitkiler yalnızca ilaç değildir</b><span>Şamanizm, animizm, semboller, kutsal ağaçlar ve ritüel takvimi.</span></a>
+  <div class="pchips"><a class="chip" href="/kavram/">Kavramlar</a><a class="chip" href="/semboller/">Semboller</a><a class="chip" href="/kopruler/">Kültür köprüleri</a><a class="chip" href="/yazilar/">Yazılar</a><a class="chip" href="/takvim/">Takvim</a></div>
+</section>
+<section class="sec"><h2>Nereden başlamalı?</h2><ol class="start">
+<li><a href="/papatya/"><b>Papatya</b></a>: herkesin bildiği bir çayın arkasındaki bilim.</li>
+<li><a href="/kantaron/"><b>Sarı kantaron</b></a>: kanıtı güçlü ama ilaç etkileşimleri ciddi.</li>
+<li><a href="/uzerlik/"><b>Üzerlik</b></a>: nazar dumanından ayahuascaya uzanan bir köprü.</li>
 <li><a href="/salep/"><b>Salep</b></a>: sevdiğimiz bir içeceğin yabani orkidelere bedeli.</li>
 <li><a href="/koka/"><b>Koka</b></a>: And’larda kutsal bir yaprak, başka yerde yasak bir madde.</li>
 </ol></section>
-<section class="sec"><h2>Öne çıkanlar</h2><div class="grid">{"".join(card(byId[i]) for i in FEATURED if i in byId)}</div><p><a class="cta" href="/katalog/">Bütün {len(P)} bitkiyi gör →</a></p></section>
-<section class="sec"><h2>Kültür köprüleri</h2><p>Birbirinden binlerce kilometre uzaktaki kültürler, çoğu zaman aynı molekülleri ya da aynı bitkiyi benzer dertlere kullanmış. {len(BR)} köprüyü haritada gör.</p><div class="mapwrap">{bridge_map()}</div><p><a class="cta" href="/kopruler/">Bütün köprüleri ve karşılaştırmaları gör →</a></p></section>
 '''
 ldsite = {"@context":"https://schema.org","@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/","inLanguage":"tr","description":"Şifalı ve ritüel bitkiler için Türkçe etnobotanik kayıt defteri."}
 write('/index.html', page('Bitki Tabanı: şifalı ve ritüel bitkiler veri tabanı', f'{REG_LIST}’dan {len(P)} şifalı ve ritüel bitkisi: geleneksel kullanım, bilimsel kanıt, güvenlik ve kaynaklar.', '/', home, 'home', '<script src="/assets/streak.js" defer></script><script src="/assets/home.js" defer></script>', extra=f'<script type="application/ld+json">{json.dumps(ldsite, ensure_ascii=False)}</script>'))
@@ -838,7 +844,7 @@ gb = f'''
 <header class="page-head"><span class="eyebrow">{tr_date(LOCAL_DAY)}</span><h1>Günün bitkisi: {e(tp["tr"])}</h1><p>Her gün katalogdan bir bitki öne çıkıyor. Ölümcül zehirli ya da yüksek riskli bitkiler bu döngüye alınmaz.</p></header>
 <div class="grid sim">{card(tp)}</div>
 <section class="sec"><h2>Bugün okumak için</h2><p>{e(tp["kul"][0][1])}</p><p class="fact">{e(tp["ilginc"])}</p><p><a class="cta" href="/{tp["id"]}/">{e(tp["tr"])} sayfasının tamamı →</a></p></section>
-<section class="sec"><h2>Her gün</h2><p><a class="cta" href="/oyun/">Günün bilmecesini çöz →</a></p><p><a class="cta" href="/gunun-bitkisi/rss.xml">RSS ile takip et →</a> <span class="muted-s">Bir RSS okuyucusu (Feedly, NetNewsWire gibi) her sabah yeni bitkiyi getirir; bildirim ya da e-posta yok.</span></p></section>
+<section class="sec"><h2>Her gün</h2><p><a class="cta" href="/gunun-bitkisi/rss.xml">RSS ile takip et →</a> <span class="muted-s">Bir RSS okuyucusu (Feedly, NetNewsWire gibi) her sabah yeni bitkiyi getirir; bildirim ya da e-posta yok.</span></p></section>
 <section class="sec"><h2>Son iki hafta</h2><ul class="daylist">{past}</ul></section>
 '''
 write('/gunun-bitkisi/', page(f'Günün bitkisi: {tp["tr"]} | Bitki Tabanı', f'Bugünün bitkisi {tp["tr"]} ({short_la(tp)}) ve son iki haftanın bitkileri.', '/gunun-bitkisi/', gb, '', narrow=True,
@@ -886,7 +892,7 @@ oy = f'''
 </div>
 <p class="muted-s">Tahminlerin ve serin yalnızca bu tarayıcıda saklanır.</p>
 <script type="application/json" id="gameData">{json.dumps({"p": gp, "ay": AYLAR}, ensure_ascii=False)}</script>'''
-write('/oyun/', page('Günün bilmecesi: bitkiyi ipuçlarından bul | Bitki Tabanı', f'Her gün katalogdaki {len(P)} şifalı ve ritüel bitkisinden biri saklı. İpuçlarından bul, sonucunu paylaş.', '/oyun/', oy, '', '<script src="/assets/streak.js" defer></script><script src="/assets/oyun.js" defer></script>', narrow=True))
+pass   # bilmece sayfası kaldırıldı (/oyun/ → / yönlenir)
 
 # ---------- hesap ve gizlilik ----------
 hz = f'''
@@ -1447,7 +1453,7 @@ _ai = ['Googlebot', 'Google-Extended', 'Bingbot', 'GPTBot', 'OAI-SearchBot', 'Ch
 open(os.path.join(OUT,'robots.txt'),'w').write('# Bitki Tabanı arama motorlarına ve yapay zekâ asistanlarına açıktır; alıntı yaparken kaynak göster.\n# Özet: ' + BASE + '/llms.txt\n\n' + ''.join(f'User-agent: {a}\n' for a in _ai) + _rules + '\nUser-agent: *\n' + _rules + f'\nSitemap: {BASE}/sitemap.xml\n')
 import build_en
 EN_URLS = build_en.run(globals())
-urls = ['/', '/katalog/', '/kultur/', '/kopruler/', '/gunun-bitkisi/', '/yeni/', '/oyun/', '/hakkinda/', '/yontem/', '/gizlilik/'] + [f'/kopruler/{slug_of(x)}/' for x in BR] + FAM_URLS + [f'/{p["id"]}/' for p in P] + GUIDE_URLS + EN_URLS
+urls = ['/', '/katalog/', '/kultur/', '/kopruler/', '/gunun-bitkisi/', '/yeni/', '/hakkinda/', '/yontem/', '/gizlilik/'] + [f'/kopruler/{slug_of(x)}/' for x in BR] + FAM_URLS + [f'/{p["id"]}/' for p in P] + GUIDE_URLS + EN_URLS
 def _imgtag(u):   # görsel site haritası: bitki sayfalarına fotoğraflarını ekle
     pid = u.strip('/').split('/')[-1]
     if pid not in IMG or pid not in byId: return ''
@@ -1480,7 +1486,7 @@ for f in os.listdir(os.path.join(HERE, 'assets')):
     else: shutil.copy(_src, os.path.join(OUT, 'assets', f))
 if os.path.isdir(os.path.join(HERE, 'img')):
     shutil.copytree(os.path.join(HERE, 'img'), os.path.join(OUT, 'img'), dirs_exist_ok=True)
-_redir += '/ara/ /rehber/#ara 301\n'
+_redir += '/ara/ /rehber/#ara 301\n/oyun/ / 301\n'
 open(os.path.join(OUT, '_redirects'), 'w').write(_redir)
 open(os.path.join(OUT, '_headers'), 'w').write('''/*
   Cache-Control: public, max-age=0, must-revalidate

@@ -37,3 +37,4 @@
   });
   document.addEventListener('click', function(e){ if (!f.contains(e.target)) L.hidden = true; });
 })();
+(function(){ if (location.hash === '#ara') { var q = document.getElementById('hq'); if (q) { q.focus(); q.scrollIntoView({ block: 'center' }); } } })();

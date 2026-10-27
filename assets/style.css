@@ -548,3 +548,24 @@ html{scroll-padding-top:84px}
 .g-track figcaption{font-size:var(--t-sm);color:var(--muted);margin-top:6px}
 .g-dots{display:flex;justify-content:center;gap:8px;margin-top:8px}.g-dots button{width:8px;height:8px;border-radius:50%;border:0;padding:0;background:var(--rule);cursor:pointer}.g-dots button[aria-current]{background:var(--clay,#a3271b)}
 @media (min-width:900px){.g-track{display:grid;grid-template-columns:repeat(3,1fr);overflow:visible;gap:10px}.g-track>figure:first-child{grid-column:1/-1}.g-track>figure:not(:first-child) .ph{aspect-ratio:1/1}.g-track>figure:not(:first-child) figcaption{font-size:.72rem;line-height:1.35}.g-dots{display:none}}
+/* ---- 2026-10 UX sadeleştirme ---- */
+.tabbar{display:none}
+@media (max-width:899px){
+  .tabbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--bg,#f1eadd);border-top:1px solid var(--rule);padding:6px 4px calc(6px + env(safe-area-inset-bottom));justify-content:space-around}
+  .tabbar a{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:.72rem;color:var(--muted);text-decoration:none;padding:2px 8px;min-width:56px}
+  .tabbar svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+  .tabbar a[aria-current]{color:var(--clay,#a3271b);font-weight:600}
+  body{padding-bottom:72px}
+  .sheet-head{display:flex;flex-direction:column}.sheet-head .titles{display:contents}
+  .sheet-head .titles>*{order:1}.sheet-head .galeri,.sheet-head>.photo{order:2;margin:10px 0 6px}.sheet-head .titles .intro,.sheet-head .titles .meta{order:3}
+}
+.pillars{display:grid;gap:10px;margin:22px 0}
+.pillar{display:grid;gap:4px;padding:16px 18px;border:1px solid var(--rule);border-radius:12px;text-decoration:none;color:inherit;background:var(--paper,#fbf6ec)}
+.pillar b{font-size:1.25rem;font-family:var(--f-serif,Georgia,serif)}.pillar span:last-child{color:var(--muted);font-size:var(--t-sm)}
+.pillar:hover{border-color:var(--clay,#a3271b)}
+.pchips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
+@media (min-width:900px){.pillars{grid-template-columns:repeat(3,1fr);column-gap:16px}.pillars>.pillar{grid-row:1}.pillars>.pchips,.pillars>p{grid-row:2;align-self:start}}
+details.kisaca,details.toc,details.kstats{border:1px solid var(--rule);border-radius:10px;padding:10px 14px;margin:14px 0;background:var(--paper,#fbf6ec)}
+details.kisaca>summary,details.toc>summary,details.kstats>summary{cursor:pointer;font-weight:600;list-style-position:inside}
+details.toc ol{margin:8px 0 0;padding-left:20px;columns:2;column-gap:20px}
+.hsearch button{background:var(--clay,#a3271b);color:#fff;border:0;border-radius:10px;padding:0 20px;font:inherit;font-weight:600;cursor:pointer}
