@@ -53,6 +53,9 @@ async function verifyGoogle(token, clientId) {
   if (claims.exp * 1000 < Date.now()) throw new Error('exp');
   return claims.sub;
 }
+const ADMIN_SHA = '52036425c1c067cf803b39af2caee68b2c97fe22d49901893bb126943b4d6813';   // site sahibinin e-postasının SHA-256 özeti (adres kodda açık yazılmaz)
+async function sha256hex(s) { return [...new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s)))].map(b => b.toString(16).padStart(2, '0')).join(''); }
+function googleClaims(token) { try { return JSON.parse(new TextDecoder().decode(b64url(token.split('.')[1]))); } catch (e) { return {}; } }
 
 // İki cihazdaki ilerlemeyi birleştir: listeler birleşir, bilmecede daha uzun tahmin listesi kalır.
 function merge(a, b) {
@@ -75,7 +78,7 @@ async function session(req, env) {
   const sid = cookieOf(req); if (!sid) return null;
   const s = await call(env, 'sess:' + sid, 'get');
   if (!s || s.exp < Date.now()) return null;
-  return { sid, sub: s.sub };
+  return { sid, sub: s.sub, admin: !!s.admin };
 }
 
 
@@ -260,7 +263,8 @@ async function thPost(env) {
       if (!pr.ok) throw new Error('threads.json bulunamadı');
       const plan = (await pr.json())[day];
       if (!plan || !plan[job]) { st.slot[job] = day; throw new Error('bugün için ' + job + ' metni yok'); }
-      await thPublish(tok, plan[job]);
+      const pub = await thPublish(tok, plan[job]);
+      if (job === 'ad' && pub && pub.id) { st.adIds = st.adIds || {}; st.adIds[pub.id] = { bitki: plan[job].bitki || null, gun: day }; const ks = Object.keys(st.adIds); if (ks.length > 14) delete st.adIds[ks[0]]; }
       st.slot[job] = day;
     }
     st.n = (st.n || 0) + 1; st.error = null;
@@ -509,6 +513,60 @@ async function bultenCron(env) {
   }
   if (changed) await call(env, 'abone:list', 'put', L);
 }
+
+// ---------- Okur katkıları: site formu ve Threads 'yörende ne denir?' yanıtları; site sahibi onaylar ----------
+const KATKI_TUR = { ad: 'Yöresel ad', kullanim: 'Yöresel kullanım', duzeltme: 'Düzeltme' };
+async function katkiEkle(env, k) {
+  const L = (await call(env, 'katki:list', 'get')) || [];
+  if (k.ext && L.some(x => x.ext === k.ext)) return false;
+  L.push({ id: crypto.randomUUID().slice(0, 12), at: new Date().toISOString(), durum: 'bekliyor', ...k });
+  while (L.length > 2000) L.shift();
+  await call(env, 'katki:list', 'put', L); return true;
+}
+async function thYanitlar(env) {   // günde bir: son 'ad' postlarına gelen yanıtlar katkı listesine
+  const st = (await call(env, 'th:state', 'get')) || {};
+  if (!st.token || !st.adIds || st.yanitGun === trDay()) return;
+  st.yanitGun = trDay();
+  for (const [mid, m] of Object.entries(st.adIds)) {
+    try {
+      const r = await igJson(await fetch(TH + '/' + mid + '/replies?fields=id,text,username,timestamp&access_token=' + encodeURIComponent(st.token)));
+      for (const y of r.data || []) if (y.text) await katkiEkle(env, { src: 'threads', ext: 'th:' + y.id, bitki: m.bitki, tur: 'ad', metin: String(y.text).slice(0, 600), ad: y.username ? '@' + y.username : '', yore: '' });
+    } catch (e) { st.yanitHata = String(e.message || e).slice(0, 160); }
+  }
+  await call(env, 'th:state', 'put', st);
+}
+async function katkiApi(req, env, url) {
+  if (url.pathname === '/api/katki' && req.method === 'POST') {
+    const b = await req.json().catch(() => ({}));
+    if (b.hp) return json({ ok: true });   // bot tuzağı
+    const bitki = String(b.bitki || '').replace(/[^a-z0-9]/g, '').slice(0, 40), tur = KATKI_TUR[b.tur] ? b.tur : 'kullanim';
+    const metin = String(b.metin || '').trim().slice(0, 600);
+    if (!bitki || metin.length < 3) return json({ error: 'Lütfen kısa da olsa bir not yazın.' }, 400);
+    const ip = req.headers.get('cf-connecting-ip') || 'x', key = trDay() + ':' + ip;
+    const RL = (await call(env, 'katki:rl', 'get')) || {};
+    for (const k of Object.keys(RL)) if (!k.startsWith(trDay())) delete RL[k];
+    if ((RL[key] = (RL[key] || 0) + 1) > 8) return json({ error: 'Bugün için yeterince not gönderdiniz, teşekkürler.' }, 429);
+    await call(env, 'katki:rl', 'put', RL);
+    await katkiEkle(env, { src: 'form', bitki, tur, metin, yore: String(b.yore || '').slice(0, 80), ad: String(b.ad || '').slice(0, 60), kaynak: String(b.kaynak || '').slice(0, 200) });
+    return json({ ok: true });
+  }
+  if (url.pathname === '/api/katki-onayli' && req.method === 'GET') {   // derleme bunu okur
+    const L = (await call(env, 'katki:list', 'get')) || [];
+    return json(L.filter(x => x.durum === 'onay').map(({ bitki, tur, metin, yore, ad, src, at }) => ({ bitki, tur, metin, yore, ad, src, at })));
+  }
+  const s = await session(req, env);
+  if (!s || !s.admin) return json({ error: 'yetki' }, 403);
+  if (url.pathname === '/api/katki-liste' && req.method === 'GET') return json((await call(env, 'katki:list', 'get')) || []);
+  if (url.pathname === '/api/katki-karar' && req.method === 'POST') {
+    const b = await req.json().catch(() => ({})); const L = (await call(env, 'katki:list', 'get')) || [];
+    const k = L.find(x => x.id === b.id); if (!k) return json({ error: 'yok' }, 404);
+    if (['onay', 'red', 'bekliyor'].includes(b.karar)) k.durum = b.karar;
+    if (typeof b.metin === 'string') k.metin = b.metin.slice(0, 600);
+    if (typeof b.bitki === 'string') k.bitki = b.bitki.replace(/[^a-z0-9]/g, '').slice(0, 40);
+    await call(env, 'katki:list', 'put', L); return json({ ok: true });
+  }
+  return json({ error: 'yok' }, 404);
+}
 export default {
   async fetch(req, env) {
     const url = new URL(req.url);
@@ -530,13 +588,16 @@ export default {
     if (url.pathname.startsWith('/api/abone/') && (req.method === 'GET' || url.pathname === '/api/abone/cik')) return aboneApi(req, env, url);
     if (req.method !== 'GET' && req.headers.get('x-bt') !== '1') return json({ error: 'csrf' }, 403);
     if (url.pathname === '/api/abone') return aboneApi(req, env, url);
+    if (url.pathname.startsWith('/api/katki')) return katkiApi(req, env, url);
     try {
       if (url.pathname === '/api/login' && req.method === 'POST') {
         if (!env.GOOGLE_CLIENT_ID) return json({ error: 'kapalı' }, 503);
         const { credential } = await req.json();
         const sub = await verifyGoogle(String(credential || ''), env.GOOGLE_CLIENT_ID);
         const sid = btoa(String.fromCharCode(...crypto.getRandomValues(new Uint8Array(32)))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '');
-        await call(env, 'sess:' + sid, 'put', { sub, exp: Date.now() + SESSION_DAYS * 864e5 });
+        const gc = googleClaims(String(credential || ''));
+        const admin = !!(gc.email_verified && (await sha256hex(String(gc.email || '').toLowerCase())) === ADMIN_SHA);
+        await call(env, 'sess:' + sid, 'put', { sub, admin, exp: Date.now() + SESSION_DAYS * 864e5 });
         const data = (await call(env, 'user:' + sub, 'get')) || merge();
         return json({ ok: true, data }, 200, { 'set-cookie': setCookie(sid, SESSION_DAYS * 86400) });
       }
@@ -568,6 +629,7 @@ export default {
   async scheduled(event, env, ctx) {
     if (env.IG_TOKEN) ctx.waitUntil(igPost(env).then(() => (env.TH_TOKEN || env.TH_Token) ? thPost(env) : null).then(() => aylikPost(env)).then(() => ekPost(env)));
     ctx.waitUntil(bultenCron(env).catch(() => null));
+    ctx.waitUntil(thYanitlar(env).catch(() => null));
     if (env.FB_TOKEN) ctx.waitUntil(fbPost(env).catch(() => null));
   },
 };

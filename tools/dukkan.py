@@ -86,25 +86,29 @@ def main():
     for m in ('p1', 'p2', 'p3', 'p4'):
         try: EN.update(__import__(m).EN)
         except Exception as e: print('en', m, e)
+    import kuyruk as K
+    for q in K.Q: D.setdefault(q['id'], {'id': q['id'], 'tr': q['tr'], 'la': q['la']}); POWO.setdefault(q['id'], q.get('taxon')); EN.setdefault(q['id'], q.get('en') or {})
     os.makedirs(OUT, exist_ok=True); rapor = []
     for sid, set_en, set_tr, ids in SETLER:
         sdir = os.path.join(OUT, sid); os.makedirs(sdir, exist_ok=True); onizleme, adlar = [], []
         for pid in ids:
-            p = D[pid]; taxon = POWO.get(pid) or p['la'].split(',')[0]; en = EN.get(pid, {}).get('name', p['tr']).split(',')[0].strip().title()
-            lv = levha(taxon)
-            if not lv: rapor.append(f'{pid}: levha yok'); continue
-            plate = Image.open(io.BytesIO(T.get(lv[1], binary=True))).convert('RGB')
-            pdir = os.path.join(sdir, pid); os.makedirs(pdir, exist_ok=True)
-            files = []
-            for ad, w, h in ORANLAR:
-                fn = os.path.join(pdir, f'{pid}_{ad}.jpg'); poster(plate, w, h, taxon, p['tr'], en, lv[2]).save(fn, 'JPEG', quality=90, dpi=(300, 300)); files.append(fn)
-            onz = poster(plate, 1200, 1500, taxon, p['tr'], en, lv[2]); onizleme.append(onz)
-            mockup([onz], os.path.join(pdir, f'{pid}_tanitim.jpg'))
-            with zipfile.ZipFile(os.path.join(pdir, f'{pid}_indir.zip'), 'w', zipfile.ZIP_STORED) as z:
-                for fn in files: z.write(fn, os.path.basename(fn))
-                z.writestr('LISANS.txt', f'Kaynak levha: {lv[0]} ({lv[2]}), kamu malı (public domain).\nDüzenleme: Bitki Tabanı, bitkitabani.com. Kişisel kullanım içindir.')
-            json.dump(ilan(en, p['tr'], taxon, EN.get(pid, {}).get('fact', ''), lv[2]), open(os.path.join(pdir, 'ilan.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
-            adlar.append(en); rapor.append(f'{pid}: {lv[0]}')
+          try:
+              p = D[pid]; taxon = POWO.get(pid) or p['la'].split(',')[0]; en = EN.get(pid, {}).get('name', p['tr']).split(',')[0].strip().title()
+              lv = levha(taxon)
+              if not lv: rapor.append(f'{pid}: levha yok'); continue
+              plate = Image.open(io.BytesIO(T.get(lv[1], binary=True))).convert('RGB')
+              pdir = os.path.join(sdir, pid); os.makedirs(pdir, exist_ok=True)
+              files = []
+              for ad, w, h in ORANLAR:
+                  fn = os.path.join(pdir, f'{pid}_{ad}.jpg'); poster(plate, w, h, taxon, p['tr'], en, lv[2]).save(fn, 'JPEG', quality=90, dpi=(300, 300)); files.append(fn)
+              onz = poster(plate, 1200, 1500, taxon, p['tr'], en, lv[2]); onizleme.append(onz)
+              mockup([onz], os.path.join(pdir, f'{pid}_tanitim.jpg'))
+              with zipfile.ZipFile(os.path.join(pdir, f'{pid}_indir.zip'), 'w', zipfile.ZIP_STORED) as z:
+                  for fn in files: z.write(fn, os.path.basename(fn))
+                  z.writestr('LISANS.txt', f'Kaynak levha: {lv[0]} ({lv[2]}), kamu malı (public domain).\nDüzenleme: Bitki Tabanı, bitkitabani.com. Kişisel kullanım içindir.')
+              json.dump(ilan(en, p['tr'], taxon, EN.get(pid, {}).get('fact', ''), lv[2]), open(os.path.join(pdir, 'ilan.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+              adlar.append(en); rapor.append(f'{pid}: {lv[0]}')
+          except Exception as ex: rapor.append(f'{pid}: HATA {str(ex)[:120]}')
         if onizleme:
             mockup(onizleme[:3], os.path.join(sdir, f'set_{sid}_tanitim_1.jpg')); mockup(onizleme[3:6] or onizleme[:3], os.path.join(sdir, f'set_{sid}_tanitim_2.jpg'))
             json.dump(ilan(None, None, None, '', '', n=len(adlar), set_en=set_en, set_tr=set_tr, adlar=adlar), open(os.path.join(sdir, 'set_ilan.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
