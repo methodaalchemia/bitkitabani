@@ -159,6 +159,20 @@ def notion_paketi(D, EN, POWO):
                      {'en': f"# {ad}\n\nMedicinal and ritual plants with traditional uses, level of scientific evidence, safety notes and sources.\n\n"
                       "## How to use\n- **Plants**: tick what is in your pantry and what you have tried; filter by safety.\n- **My log**: note what you gather, dry and brew.\n\n"
                       "> For information only, not medical advice. Check the safety notes, especially in pregnancy, breastfeeding, for children and with medication.\n\nSources and updates: https://bitkitabani.com/en/"})[0 if dil == 'tr' else 1][dil]
+            if dil == 'tr':   # sitenin farkı: kavramlar (şamanizm, animizm…) ve semboller
+                import kavramlar, motifler
+                ad_ = {p['id']: p['tr'] for p in P}
+                buf = io.StringIO(); w = csv.writer(buf); w.writerow(['Kavram', 'Kısaca', 'Açıklama', 'Bağlantılı bitkiler', 'Kaynaklar', 'Sayfa'])
+                for k in kavramlar.KAVRAMLAR:
+                    w.writerow([k['ad'], k['kisa'], re.sub(r'\s*\[\d+\]', '', k['metin'] if isinstance(k['metin'], str) else ' '.join(k['metin'])), ', '.join(ad_.get(b, b) for b in ([k['bitki']] + list(k.get('bitkiler', [])))),
+                                ' | '.join(x[0] for x in k.get('kaynaklar', [])), f"https://bitkitabani.com/kavram/{k['slug']}/"])
+                z.writestr(f'{ad}/Kavramlar.csv', '\ufeff' + buf.getvalue())
+                buf = io.StringIO(); w = csv.writer(buf); w.writerow(['Sembol', 'Bölge', 'Tema', 'Kısaca', 'Anlamı', 'Bağlantılı bitkiler', 'Kaynaklar', 'Sayfa'])
+                for m in motifler.MOTIFLER:
+                    w.writerow([m['ad'], m['bolge'], m.get('tema', ''), m['kisa'], m.get('anlam', '') if isinstance(m.get('anlam', ''), str) else ' '.join(m['anlam']),
+                                ', '.join(ad_.get(b[0] if isinstance(b, (list, tuple)) else b, '') for b in m.get('bitkiler', [])), ' | '.join(x[0] for x in m.get('kaynaklar', [])), f"https://bitkitabani.com/semboller/{m['slug']}/"])
+                z.writestr(f'{ad}/Semboller.csv', '\ufeff' + buf.getvalue())
+                giris = giris.replace('- **Kayıtlarım**', '- **Kavramlar** ve **Semboller**: şamanizmden animizme, kilim motiflerinden kené desenlerine; bitkilerin kültürel ve ritüel bağlamı, kaynaklarıyla.\n- **Kayıtlarım**')
             z.writestr(f'{ad}.md', giris)
     print('notion paketleri hazır')
 
