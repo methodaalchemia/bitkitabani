@@ -363,7 +363,14 @@ CONTACT = 'iletisim@bitkitabani.com'
 def contrib(p):
     subj = urllib.parse.quote(f'Bitki Tabanı: {p["tr"]} için yöresel kullanım')
     body = urllib.parse.quote(f'Bitki: {p["tr"]} ({short_la(p)})\nYöre (il, ilçe, köy ya da topluluk): \nBitkinin oradaki adı: \nNasıl ve ne için kullanılır: \nBunu kimden ya da nereden öğrendin: \nAdının sitede yazılmasını ister misin (evet/hayır): \n')
-    return f'<aside class="contrib"><h2>Yöresel bir kullanım biliyor musun?</h2><p>Annenden, köyünden ya da bir ustadan duyduğun bir kullanım buraya eklenebilir. Gelen her not okunur, kaynağıyla birlikte kontrol edildikten sonra eklenir.</p><p><a class="cta" href="mailto:{CONTACT}?subject={subj}&amp;body={body}">Not gönder →</a> <span class="muted-s">{CONTACT}</span></p></aside>'
+    return (f'<aside class="contrib" id="katki"><h2>Yöresel bir ad ya da kullanım biliyor musun?</h2><p>Annenden, köyünden ya da bir ustadan duyduğun bir adı ya da kullanımı yaz. Her not okunur; uygun bulunanlar “Okurlardan” başlığıyla, yöresiyle birlikte bu sayfaya eklenir.</p>'
+            f'<form class="katki-form" data-bitki="{p["id"]}"><label>Ne paylaşıyorsun? <select name="tur"><option value="ad">Yöresel ad</option><option value="kullanim" selected>Yöresel kullanım</option><option value="duzeltme">Düzeltme</option></select></label>'
+            f'<label>Notun <textarea name="metin" rows="3" maxlength="600" required placeholder="Örn. Bizim köyde kurutulup kışın çay olarak içilir."></textarea></label>'
+            f'<label>Yöre (il, ilçe, köy ya da topluluk) <input name="yore" maxlength="80"></label>'
+            f'<label>Bunu kimden ya da nereden öğrendin? <input name="kaynak" maxlength="200"></label>'
+            f'<label>Adın (sitede yazılsın istersen) <input name="ad" maxlength="60"></label><input name="hp" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">'
+            f'<button type="submit" class="cta">Gönder</button> <span class="katki-durum muted-s" role="status"></span></form>'
+            f'<p class="muted-s">E-postayla da yazabilirsin: <a href="mailto:{CONTACT}?subject={subj}&amp;body={body}">{CONTACT}</a></p></aside>')
 def toc_and_ids(html):
     items = []
     def sub(m):
@@ -489,7 +496,7 @@ for i, p in enumerate(P):
     faqld = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q, a in allqa]}
     crumbs = [crumbs, faqld]
     extra = f'<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script><script type="application/ld+json">{json.dumps(crumbs, ensure_ascii=False)}</script>'
-    write(f'/{pid}/', page(title, desc_for(p), f'/{pid}/', body, 'plant', '<script src="/assets/streak.js" defer></script><script src="/assets/plant.js" defer></script>', narrow=True, extra=extra, image=(f'{BASE}/img/{pid}-960.jpg' if pid in IMG else None)))
+    write(f'/{pid}/', page(title, desc_for(p), f'/{pid}/', body, 'plant', '<script src="/assets/streak.js" defer></script><script src="/assets/plant.js" defer></script><script src="/assets/katki.js" defer></script>', narrow=True, extra=extra, image=(f'{BASE}/img/{pid}-960.jpg' if pid in IMG else None)))
 
 # ---------- familya sayfaları ----------
 FAM_URLS = []
@@ -1493,6 +1500,11 @@ if _qr:
     _ks = ''.join(_kart(p) for p in P if p['guv'] != 'yuksek')
     write('/kartlar/index.html', page('Yazdırılabilir bitki kartları (QR kodlu) | Bitki Tabanı', 'Aktarlar, pazarlar ve atölyeler için QR kodlu, yazdırılabilir şifalı bitki kartları.', '/kartlar/',
           _KCSS + '<header class="page-head"><h1>Yazdırılabilir bitki kartları</h1><p>Aktar, pazar ve atölyeler için: her kartta bitkinin adı, güvenlik düzeyi, kısa bir bilgi ve okutunca sayfasına götüren bir QR kod var. Yazdır deyin; A4 sayfaya dört kart sığar. Yüksek riskli bitkiler bu listede yok.</p><p class="noprint"><button type="button" onclick="print()">Yazdır</button></p></header><div class="kartlar">' + _ks + '</div>', 'kat'))
+# ---------- okur katkıları onay sayfası (yalnızca site sahibi; dizine eklenmez) ----------
+write('/katki-onay/index.html', page('Katkı onayı | Bitki Tabanı', 'Okur katkıları', '/katki-onay/',
+      '<header class="page-head"><h1>Okur katkıları</h1><p>Site formundan ve Threads yanıtlarından gelen notlar. Onayladıkların bir sonraki derlemede bitki sayfasına “Okurlardan” başlığıyla eklenir. Görmek için <a href="/hesap/">Google ile giriş yap</a>.</p>'
+      '<p><label><input type="checkbox" id="kSadece" checked> Yalnızca bekleyenler</label></p></header><div id="kListe">Yükleniyor…</div>',
+      'kat', '<script src="/assets/katki-onay.js" defer></script>', extra='<meta name="robots" content="noindex">'))
 # ---------- tanıma görselleri kontrol sayfası (dizine eklenmez) ----------
 _rows = ''.join(f'<section class="sec"><h2><a href="/{p["id"]}/">{e(p["tr"])}</a> <small>{e(p["id"])}</small></h2>{tanima_html(p["id"], h2=False) or "<p>Görsel yok.</p>"}'
                 + ''.join(f'<p class="muted-s">{TANIMA_AD[t]}: bulunamadı</p>' for t in ('cizim', 'cicek', 'kuru') if TANIMA.get(f'{p["id"]}:{t}') == 'yok') + '</section>' for p in P)

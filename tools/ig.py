@@ -257,7 +257,7 @@ def threads_plan(data, day, days=4):
         if yor:
             q = yor[(k * 13) % len(yor)]
             adlar = ', '.join(_adl(q)[:5])
-            out[dd.isoformat()]['ad'] = dict(text=f"Sizin yörenizde buna ne denir? 🌿\n\n{q['tr']} ({q['la']}) Anadolu’da farklı adlarla anılıyor: {adlar}.\n\nSizin yörenizde hangi adla bilinir? Yazın, sözlüğümüze ekleyelim. 👇"[:495], image=img(q['id']))
+            out[dd.isoformat()]['ad'] = dict(text=f"Sizin yörenizde buna ne denir? 🌿\n\n{q['tr']} ({q['la']}) Anadolu’da farklı adlarla anılıyor: {adlar}.\n\nSizin yörenizde hangi adla bilinir? Yazın, sözlüğümüze ekleyelim. 👇"[:495], image=img(q['id']), bitki=q['id'])
         try:   # 21:30: kaynaklı halk hekimliği kaydı (eski tek satırlık "…sever misiniz?" soruları etkileşim getirmediği için kaldırıldı)
             from halk import HALK, post_metni
             _H = [x for x in HALK if x.get('post')]

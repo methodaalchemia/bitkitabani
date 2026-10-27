@@ -536,3 +536,4 @@ html{scroll-padding-top:84px}
 .bbout{margin:16px 0;border:1px dashed var(--rule);padding:10px 14px}.bbout summary{cursor:pointer;font-family:var(--f-mono);font-size:var(--t-sm)}
 
 .tanima{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}.tanima figure{margin:0}.tanima img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px;background:var(--paper,#f3eee3);display:block}.tanima .tn-cizim img{object-fit:contain}.tanima figcaption{font-size:var(--t-sm);color:var(--muted);margin-top:6px}
+.katki-form{display:grid;gap:10px;margin:12px 0}.katki-form label{display:grid;gap:4px;font-size:var(--t-sm)}.katki-form textarea,.katki-form input,.katki-form select{font:inherit;padding:8px;border:1px solid var(--rule);border-radius:6px;background:var(--paper,#fff);color:inherit}.katki-form .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
