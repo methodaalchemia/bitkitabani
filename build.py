@@ -20,6 +20,17 @@ REG, KAT, KANIT, GUV, P, BR, EXTRA = D['REG'], D['KAT'], D['KANIT'], D['GUV'], D
 for i, p in enumerate(P): p['no'] = i + 1
 GUV['yuksek'] = 'Yüksek risk'
 byId = {p['id']: p for p in P}
+_TM = os.path.join(HERE, 'img', 'tanima', 'meta.json')
+TANIMA = json.load(open(_TM, encoding='utf-8')) if os.path.exists(_TM) else {}
+TANIMA_AD = {'cizim': 'Botanik çizim', 'cicek': 'Çiçekli hâli', 'kuru': 'Kurutulmuş hâli'}
+def tanima_html(pid, h2=True):
+    figs = []
+    for t in ('cizim', 'cicek', 'kuru'):
+        x = TANIMA.get(f'{pid}:{t}')
+        if isinstance(x, dict) and os.path.exists(os.path.join(HERE, 'img', 'tanima', f'{pid}-{t}.jpg')):
+            figs.append(f'<figure class="tn-{t}"><img src="/img/tanima/{pid}-{t}.jpg" alt="{TANIMA_AD[t]}" loading="lazy" width="400" height="500"><figcaption><b>{TANIMA_AD[t]}</b><br><a href="{x["page"]}" rel="noopener">{e(x.get("artist", ""))}</a> · {e(x.get("license", ""))}</figcaption></figure>')
+    if not figs: return ''
+    return (f'<section class="sec" id="tanima"><h2>Nasıl tanınır?</h2>' if h2 else '') + f'<div class="tanima">{"".join(figs)}</div>' + ('</section>' if h2 else '')
 # kaynaklı halk hekimliği kayıtları (halk.py): bitki sayfasının geleneksel kullanım bölümüne ve kaynaklarına eklenir
 from halk import site_kul as _site_kul
 _hk, _hs = _site_kul()
@@ -449,6 +460,7 @@ for i, p in enumerate(P):
   {kisahtml}
   <!--TOC-->
   <section class="sec"><h2>Geleneksel kullanım</h2><div class="uses">{uses}</div></section>
+  {tanima_html(pid)}
   {dogada}
   <section class="sec"><h2>Hazırlama</h2><p>{e(p["haz"])}</p></section>
   <section class="sec"><h2>Bilim ne diyor</h2><p>{e(p["bilim"])}</p></section>
@@ -1461,5 +1473,11 @@ open(os.path.join(OUT, INDEXNOW_KEY + '.txt'), 'w').write(INDEXNOW_KEY)
 _today = [i for i in YENI if YENI[i] == LOCAL_DAY]
 _inx = ['/', '/yeni/', '/gunun-bitkisi/', '/katalog/', '/rehber/', '/tarif/'] + [f'/{i}/' for i in _today] + [u for i in _today for u, _ in GLINKS.get(i, [])]
 json.dump({'key': INDEXNOW_KEY, 'urls': sorted(set(BASE + u for u in _inx))}, open(os.path.join(HERE, '.cache', 'indexnow.json'), 'w'))
+# ---------- tanıma görselleri kontrol sayfası (dizine eklenmez) ----------
+_rows = ''.join(f'<section class="sec"><h2><a href="/{p["id"]}/">{e(p["tr"])}</a> <small>{e(p["id"])}</small></h2>{tanima_html(p["id"], h2=False) or "<p>Görsel yok.</p>"}'
+                + ''.join(f'<p class="muted-s">{TANIMA_AD[t]}: bulunamadı</p>' for t in ('cizim', 'cicek', 'kuru') if TANIMA.get(f'{p["id"]}:{t}') == 'yok') + '</section>' for p in P)
+write('/tanima-kontrol/index.html', page('Tanıma görselleri kontrolü | Bitki Tabanı', 'Tanıma görselleri kontrol listesi', '/tanima-kontrol/',
+      '<header class="page-head"><h1>Tanıma görselleri: kontrol</h1><p>Beğenmediğin görselin bitki kimliğini ve türünü (çizim, çiçek, kuru) Claude’a yaz; yenisiyle değiştirilir.</p></header>' + _rows,
+      'kat', extra='<meta name="robots" content="noindex">'))
 print('ok', len(urls), 'sayfa')
 
