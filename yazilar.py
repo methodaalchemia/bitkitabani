@@ -27,11 +27,12 @@ dict(slug='samanizm-ve-kam-gelenegi', tarih='2026-10-23',
   ('Bir not', [
    'Şamanizm tek bir din değil, birbirine benzeyen pek çok yerel geleneğin ortak adıdır. Bitki Tabanı’nda bu gelenekler, onları yaşatan toplulukların adıyla ve kaynağıyla, kültürel bir kayıt olarak anlatılır; ritüel kullanım önerisi değildir.'])],
  kaynaklar=[
-  ('Encyclopaedia Britannica: Shamanism', 'https://www.britannica.com/topic/shamanism'),
-  ('Harun Güngör, “Şamanizm”, TDV İslâm Ansiklopedisi, 2010', 'https://islamansiklopedisi.org.tr/samanizm'),
-  ('Abdülkadir İnan, Tarihte ve Bugün Şamanizm, Ankara, 1954', ''),
-  ('Mircea Eliade, Shamanism: Archaic Techniques of Ecstasy (Radloff 1884’ten aktararak), s. 190–197', ''),
-  ('Zeynep Korkmaz, “Eski Türklerdeki Ağaç Kültünün İslami Devirlerdeki Devamı”, Türk Dili Araştırmaları Yıllığı Belleten 51(1), 2003', 'https://tdkbelleten.gov.tr/ozet/718/eng'),
-  ('Ülkü Gürsoy, “Türk Kültüründe Ağaç Kültü ve Dut Ağacı”, Türk Kültürü ve Hacı Bektaş Veli Araştırma Dergisi 61, 2013', 'https://dergipark.org.tr/tr/pub/tkhcbva/article/1157366')],
+  (‘Encyclopaedia Britannica: Shamanism’, ‘https://www.britannica.com/topic/shamanism’),
+  (‘Harun Güngör, “Şamanizm”, TDV İslâm Ansiklopedisi, 2010’, ‘https://islamansiklopedisi.org.tr/samanizm’),
+  (‘Abdülkadir İnan, Tarihte ve Bugün Şamanizm, Ankara, 1954’, ‘’),
+  (‘Mircea Eliade, Shamanism: Archaic Techniques of Ecstasy (Radloff 1884’ten aktararak), s. 190–197’, ‘’),
+  (‘Zeynep Korkmaz, “Eski Türklerdeki Ağaç Kültünün İslami Devirlerdeki Devamı”, Türk Dili Araştırmaları Yıllığı Belleten 51(1), 2003’, ‘https://tdkbelleten.gov.tr/ozet/718/eng’),
+  (‘Ülkü Gürsoy, “Türk Kültüründe Ağaç Kültü ve Dut Ağacı”, Türk Kültürü ve Hacı Bektaş Veli Araştırma Dergisi 61, 2013’, ‘https://dergipark.org.tr/tr/pub/tkhcbva/article/1157366’),
+  (‘İlker Türkmen, “Doğayla Özdeşleşen Şamanizm’de Şifacılık Kültürü”, Lokman Hekim Dergisi Cilt 15 Sayı 2, Mayıs 2025’, ‘https://dergipark.org.tr/tr/pub/mutftd/issue/92009’)],
  bitkiler=['ardic', 'pelin', 'sinekmantari', 'uzerlik'], semboller=['arinma-tutsu', 'goru-ruhlar', 'kutsal-agaclar']),
 ]
