@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 126 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 127 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -3961,3 +3961,31 @@ Karıştırma riski: Tatlı portakala çok benzer; kabuğu daha pürüzlü, içi
 
 ### İlginç bilgi
 Avrupa’ya ilk ulaşan turunçgil tatlı portakal değil, Araplarla Endülüs’e gelen acı portakaldı; Sevilla’nın sokakları bugün hâlâ binlerce turunç ağacıyla doludur.
+
+## Kakule (Elettaria cardamomum)
+
+URL: https://bitkitabani.com/kakule/
+Familya: Zingiberaceae · Bölge: Asya ve Sibirya · Kullanılan kısım: Meyve kapsülü ve tohumları
+Bilimsel kanıt: Sınırlı · Güvenlik: Genelde güvenli
+
+### Geleneksel kullanım
+- Hindistan ve Sri Lanka: Ayurveda’da sindirimi kolaylaştıran “ısıtıcı” baharatlardandır; masala çayına ve tatlılara katılır, ağız kokusuna karşı tanesi çiğnenir.
+- Arap dünyası ve Anadolu: Arap kahvesi kakuleyle demlenir; Güneydoğu Anadolu’da ve Hatay’da da kahveye kakule katılır. Osmanlı mutfağında şerbet ve macunlarda kullanılırdı.
+
+### Hazırlama
+Kabuklu tane hafifçe ezilip çaya, kahveye ya da yemeğe katılır; tohumlar tek başına çiğnenebilir.
+
+### Bilim ne diyor
+Kontrollü çalışmaların meta-analizleri, kakule tozu takviyesinin bazı iltihap göstergelerini ve tansiyonu biraz düşürebildiğini, ama kolesterol ve kan şekeri üzerine etkisinin tutarsız olduğunu bulmuştur. Çalışmaların çoğu küçük ve tek bir ülkede yapılmıştır. Sindirime iyi geldiği inancı geleneksel kullanıma dayanır.
+
+### Güvenlik
+Baharat olarak güvenlidir. Yüksek doz takviyelerin uzun süreli güvenliği iyi bilinmez; hamilelikte yemekteki miktarı aşmamak gerekir. Zencefil ailesinden bitkilere alerjisi olanlarda alerji yapabilir.
+
+### Doğada
+Nerede yetişir: Güney Hindistan’ın Batı Gatlar dağlarındaki nemli ormanlardan gelir; bugün en çok Guatemala’da yetiştirilir.
+Toplama mevsimi: Kapsüller yağmur mevsiminden sonra, yeşilken elle toplanır.
+Yöresel adlar: kakule, hel
+Karıştırma riski: Siyah kakule (Amomum subulatum) ayrı bir bitkidir; daha iri, dumanlı kokuludur ve tuzlu yemeklerde kullanılır.
+
+### İlginç bilgi
+Kakule safran ve vanilyayla birlikte dünyanın en pahalı baharatları arasındadır; kapsülleri olgunlaşmadan, tek tek elle toplanır.
