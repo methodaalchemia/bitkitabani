@@ -111,4 +111,7 @@ def main():
     open(os.path.join(OUT, 'RAPOR.txt'), 'w', encoding='utf-8').write('\n'.join(rapor)); print('\n'.join(rapor))
 
 if __name__ == '__main__':
-    main()
+    import traceback
+    try: main()
+    except Exception:
+        os.makedirs(OUT, exist_ok=True); open(os.path.join(OUT, 'HATA.txt'), 'w').write(traceback.format_exc()); print(traceback.format_exc())
