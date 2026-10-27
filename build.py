@@ -20,6 +20,15 @@ REG, KAT, KANIT, GUV, P, BR, EXTRA = D['REG'], D['KAT'], D['KANIT'], D['GUV'], D
 for i, p in enumerate(P): p['no'] = i + 1
 GUV['yuksek'] = 'Yüksek risk'
 byId = {p['id']: p for p in P}
+INAT = json.load(open(os.path.join(HERE, 'inat.json'), encoding='utf-8')) if os.path.exists(os.path.join(HERE, 'inat.json')) else {}
+AYLAR = ['ocak', 'şubat', 'mart', 'nisan', 'mayıs', 'haziran', 'temmuz', 'ağustos', 'eylül', 'ekim', 'kasım', 'aralık']
+def inat_satir(pid):
+    x = INAT.get(pid) or {}
+    if not x.get('toplam') or x['toplam'] < 5: return ''
+    ay = x['ay']; m = max(ay); yog = [i for i in range(12) if ay[i] >= m * 0.5]
+    bar = ''.join(f'<span title="{AYLAR[i].capitalize()}: {ay[i]}" style="height:{max(2, round(28 * ay[i] / m))}px"></span>' for i in range(12))
+    return (f'<div><dt>Türkiye’de gözlem</dt><dd><span class="inat-bar" aria-hidden="true">{bar}</span> {x["toplam"]} doğrulanmış gözlem; en çok {AYLAR[yog[0]]}–{AYLAR[yog[-1]]} aylarında. '
+            f'<a href="https://www.inaturalist.org/observations?taxon_id={x["taxon_id"]}&amp;place_id=7183&amp;quality_grade=research" rel="noopener">iNaturalist</a></dd></div>')
 _TM = os.path.join(HERE, 'img', 'tanima', 'meta.json')
 TANIMA = json.load(open(_TM, encoding='utf-8')) if os.path.exists(_TM) else {}
 TANIMA_AD = {'cizim': 'Botanik çizim', 'cicek': 'Çiçekli hâli', 'kuru': 'Kurutulmuş hâli'}
@@ -442,6 +451,7 @@ for i, p in enumerate(P):
       <div><dt>Nerede yetişir</dt><dd>{e(ek["yetisme"])}</dd></div>
       <div><dt>Toplama mevsimi</dt><dd>{e(ek["mevsim"])}</dd></div>
       <div><dt>Yöresel adlar</dt><dd>{e(ek["yoresel"])}</dd></div>
+      {inat_satir(pid)}
     </dl></section>
   <section class="sec"><h2>Karıştırma riski</h2><div class="callout orta"><p>{e(ek["karisma"])}</p></div></section>'''
     body = f'''

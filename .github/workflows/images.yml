@@ -37,6 +37,9 @@ jobs:
       - name: Site yazı tipleri (WOFF2)
         continue-on-error: true
         run: pip install fonttools brotli && python3 tools/fonts_web.py
+      - name: iNaturalist gözlem ayları
+        continue-on-error: true
+        run: python3 tools/inat.py
       - name: Tanıma görselleri (çizim, çiçek, kuru)
         continue-on-error: true
         run: pip install -q pillow segno && python3 tools/tanima.py
@@ -61,7 +64,7 @@ jobs:
         run: |
           git config user.name "bitkitabani-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add img images.json site tools/fonts assets/fonts assets/icons
+          git add img images.json site tools/fonts assets/fonts assets/icons; [ -f inat.json ] && git add inat.json
           if git diff --cached --quiet; then echo "değişiklik yok"; else git commit -m "Görseller ve site güncellendi [bot]" && (git push || (git pull --rebase -X theirs && git push)); fi
       - name: IndexNow bildirimi (yayına alınması için kısa bekleme)
         if: always()
