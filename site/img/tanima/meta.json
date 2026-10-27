@@ -47,26 +47,26 @@
   "page": "https://commons.wikimedia.org/wiki/File:Amou%2C_rue_du_Moulin%2C_cressoni%C3%A8re_5_-_20230521.jpg"
  },
  "salep:cizim": "yok",
- "salep:cicek": {
-  "file": "Anacamptis morio 037.jpg",
-  "artist": "Fabrizio Tampieri",
-  "license": "CC BY-SA 4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Anacamptis_morio_037.jpg"
- },
+ "salep:cicek": "yok",
  "salep:kuru": "yok",
  "kekik:cizim": "yok",
  "kekik:cicek": {
-  "file": "Origanum onites à Monemvassia inflorescence 02.jpg",
+  "file": "Origanum onites à Monemvassia inflorescence 01.jpg",
   "artist": "Patrice78500",
   "license": "CC BY-SA 4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Origanum_onites_%C3%A0_Monemvassia_inflorescence_02.jpg"
+  "page": "https://commons.wikimedia.org/wiki/File:Origanum_onites_%C3%A0_Monemvassia_inflorescence_01.jpg"
  },
  "kekik:kuru": "yok",
  "adacayi:cizim": "yok",
  "adacayi:cicek": "yok",
  "adacayi:kuru": "yok",
  "ihlamur:cizim": "yok",
- "ihlamur:cicek": "yok",
+ "ihlamur:cicek": {
+  "file": "Ліпа серабрыстая Tilia tomentosa.jpg",
+  "artist": "Mr. Zabej",
+  "license": "CC BY 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%D0%9B%D1%96%D0%BF%D0%B0_%D1%81%D0%B5%D1%80%D0%B0%D0%B1%D1%80%D1%8B%D1%81%D1%82%D0%B0%D1%8F_Tilia_tomentosa.jpg"
+ },
  "ihlamur:kuru": "yok",
  "papatya:cizim": {
   "file": "Illustration Matricaria chamomilla0.jpg",
@@ -80,12 +80,7 @@
   "license": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:D%C3%BClmen%2C_Brachliegendes_Feld_mit_Wildblumen_--_2021_--_9774.jpg"
  },
- "papatya:kuru": {
-  "file": "Matricariae flos 279171.jpg",
-  "artist": "Rillke",
-  "license": "CC BY-SA 3.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Matricariae_flos_279171.jpg"
- },
+ "papatya:kuru": "yok",
  "kantaron:cizim": {
   "file": "Hypericum perforatum-Medical Botany-1790-1-0068-10.png",
   "artist": "William Woodville",
@@ -174,12 +169,7 @@
   "page": "https://commons.wikimedia.org/wiki/File:Black_cumin_Flower.jpg"
  },
  "corekotu:kuru": "yok",
- "kusburnu:cizim": {
-  "file": "Illustration Rosa canina1.jpg",
-  "artist": "Otto Wilhelm Thomé",
-  "license": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Rosa_canina1.jpg"
- },
+ "kusburnu:cizim": "yok",
  "kusburnu:cicek": {
   "file": "Duinroos (Rosa pimpinellifolia). Locatie. Nationaal Park Lauwersmeer 01.jpg",
   "artist": "Dominicus Johannes Bergsma",
@@ -194,12 +184,7 @@
   "license": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Wei%C3%9Fdornbl%C3%BCte_Crataegus_monogyna_-20220509-RM-104145.jpg"
  },
- "alic:kuru": {
-  "file": "Crataegi1.JPG",
-  "artist": "Maša Sinreih in Valentina Vivod",
-  "license": "CC BY-SA 3.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Crataegi1.JPG"
- },
+ "alic:kuru": "yok",
  "meyan:cizim": {
   "file": "Glycyrrhiza glabra - Köhler–s Medizinal-Pflanzen-207.jpg",
   "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
@@ -245,8 +230,18 @@
   "license": "Public domain",
   "page": "https://commons.wikimedia.org/wiki/File:Sambucus_nigra_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-127.jpg"
  },
- "murver:cicek": "yok",
- "murver:kuru": "yok",
+ "murver:cicek": {
+  "file": "Flowering buds zoom.jpg",
+  "artist": "Maciej Opaliński",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Flowering_buds_zoom.jpg"
+ },
+ "murver:kuru": {
+  "file": "Sambuci flos dried.jpg",
+  "artist": "Rillke",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Sambuci_flos_dried.jpg"
+ },
  "karahindiba:cizim": {
   "file": "Taraxacum officinale - Köhler–s Medizinal-Pflanzen-135.jpg",
   "artist": "Walther Otto Müller",
@@ -261,7 +256,12 @@
  },
  "karahindiba:kuru": "yok",
  "hayit:cizim": "yok",
- "hayit:cicek": "yok",
+ "hayit:cicek": {
+  "file": "Lilac Chaste Tree Flowers.jpg",
+  "artist": "Bamakojon",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Lilac_Chaste_Tree_Flowers.jpg"
+ },
  "hayit:kuru": "yok",
  "sakiz:cizim": {
   "file": "Pistacia lentiscus - Köhler–s Medizinal-Pflanzen-110.jpg",
@@ -293,10 +293,10 @@
  },
  "pelin:kuru": "yok",
  "hashas:cizim": {
-  "file": "Papaver somniferum - Köhler–s Medizinal-Pflanzen-102.jpg",
-  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
-  "license": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Papaver_somniferum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-102.jpg"
+  "file": "W. Woodville \"Medical botany\"; papaver somniferum Wellcome L0012954.jpg",
+  "artist": "Wikimedia Commons",
+  "license": "CC BY 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:W._Woodville_%22Medical_botany%22%3B_papaver_somniferum_Wellcome_L0012954.jpg"
  },
  "hashas:cicek": {
   "file": "Dülmen, Mohnblumenfeld -- 2021 -- 0572.jpg",
@@ -340,7 +340,12 @@
  },
  "safran:kuru": "yok",
  "ayahuasca:cizim": "yok",
- "ayahuasca:cicek": "yok",
+ "ayahuasca:cicek": {
+  "file": "Banisteriopsis caapi flower.jpg",
+  "artist": "Maria Gabriela Yejo",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Banisteriopsis_caapi_flower.jpg"
+ },
  "ayahuasca:kuru": "yok",
  "chacruna:cizim": "yok",
  "chacruna:cicek": {
@@ -351,7 +356,12 @@
  },
  "chacruna:kuru": "yok",
  "sanpedro:cizim": "yok",
- "sanpedro:cicek": "yok",
+ "sanpedro:cicek": {
+  "file": "Echinopsis pachanoi Flower.jpg",
+  "artist": "Aleccuadrall",
+  "license": "CC BY 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Echinopsis_pachanoi_Flower.jpg"
+ },
  "sanpedro:kuru": "yok",
  "koka:cizim": {
   "file": "Erythroxylum coca - Köhler–s Medizinal-Pflanzen-204.jpg",
@@ -432,16 +442,21 @@
   "page": "https://commons.wikimedia.org/wiki/File:09616jfLandscapes_Maronquillo_Flowers_Roads_Rice_San_Rafael_Bulacanfvf_04.JPG"
  },
  "achiote:kuru": "yok",
- "kakao:cizim": "yok",
- "kakao:cicek": {
-  "file": "Cacao flowers at Cau chocolate village Bali.jpg",
-  "artist": "Vitaium",
-  "license": "CC BY-SA 4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Cacao_flowers_at_Cau_chocolate_village_Bali.jpg"
+ "kakao:cizim": {
+  "file": "Theobroma cacao - Köhler–s Medizinal-Pflanzen-136.jpg",
+  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Theobroma_cacao_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-136.jpg"
  },
+ "kakao:cicek": "yok",
  "kakao:kuru": "yok",
  "matico:cizim": "yok",
- "matico:cicek": "yok",
+ "matico:cicek": {
+  "file": "Starr-091104-0654-Piper aduncum-flower spikes and leaves-Nahiku-Maui (24691901290).jpg",
+  "artist": "Forest and Kim Starr",
+  "license": "CC BY 3.0 us",
+  "page": "https://commons.wikimedia.org/wiki/File:Starr-091104-0654-Piper_aduncum-flower_spikes_and_leaves-Nahiku-Maui_%2824691901290%29.jpg"
+ },
  "matico:kuru": "yok",
  "sinekmantari:cizim": "yok",
  "sinekmantari:cicek": {
@@ -472,12 +487,7 @@
   "page": "https://commons.wikimedia.org/wiki/File:Eristalis_arbustorum_%28female%29_on_Peppermint_flowers.jpg"
  },
  "nane:kuru": "yok",
- "zeytin:cizim": {
-  "file": "Illustration Olea europaea0.jpg",
-  "artist": "Wikimedia Commons",
-  "license": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Olea_europaea0.jpg"
- },
+ "zeytin:cizim": "yok",
  "zeytin:cicek": {
   "file": "أزهار شجرة الزيتون Olea europaea.jpg",
   "artist": "Bonnjalal00",
@@ -502,7 +512,12 @@
  },
  "nar:kuru": "yok",
  "yarpuz:cizim": "yok",
- "yarpuz:cicek": "yok",
+ "yarpuz:cicek": {
+  "file": "Mentha pulegium 6869241.jpg",
+  "artist": "Alex Abair",
+  "license": "CC BY 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Mentha_pulegium_6869241.jpg"
+ },
  "yarpuz:kuru": "yok",
  "civanpercemi:cizim": {
   "file": "Achillea millefolium - Köhler–s Medizinal-Pflanzen-149.jpg",
@@ -560,24 +575,9 @@
   "license": "CC BY-SA 2.5",
   "page": "https://commons.wikimedia.org/wiki/File:Althaea_officinalis_-_flower_top_%28aka%29.jpg"
  },
- "hatmi:kuru": {
-  "file": "Navadni slez (Althaea officinalis).jpg",
-  "artist": "Nadaja",
-  "license": "CC BY-SA 3.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Navadni_slez_%28Althaea_officinalis%29.jpg"
- },
- "kizilcik:cizim": {
-  "file": "Illustration Cornus mas0.jpg",
-  "artist": "Wikimedia Commons",
-  "license": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Cornus_mas0.jpg"
- },
- "kizilcik:cicek": {
-  "file": "20230226 125401 Cornus mas L.jpg",
-  "artist": "Sdjurovic",
-  "license": "CC BY-SA 4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:20230226_125401_Cornus_mas_L.jpg"
- },
+ "hatmi:kuru": "yok",
+ "kizilcik:cizim": "yok",
+ "kizilcik:cicek": "yok",
  "kizilcik:kuru": "yok",
  "sarimsak:cizim": "yok",
  "sarimsak:cicek": {
@@ -609,10 +609,10 @@
  "kimyon:cicek": "yok",
  "kimyon:kuru": "yok",
  "keten:cizim": {
-  "file": "Illustration Linum usitatissimum0.jpg",
-  "artist": "Wikimedia Commons",
+  "file": "Linum usitatissimum - Köhler–s Medizinal-Pflanzen-088.jpg",
+  "artist": "Walther Otto Müller",
   "license": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Linum_usitatissimum0.jpg"
+  "page": "https://commons.wikimedia.org/wiki/File:Linum_usitatissimum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-088.jpg"
  },
  "keten:cicek": {
   "file": "Lén fleur.jpg",
@@ -650,12 +650,7 @@
   "license": "CC BY-SA 3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Verbasci_flos_by_Danny_S._-_001.jpg"
  },
- "kokboya:cizim": {
-  "file": "Rubia tinctorum - Köhler–s Medizinal-Pflanzen-123.jpg",
-  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
-  "license": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Rubia_tinctorum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-123.jpg"
- },
+ "kokboya:cizim": "yok",
  "kokboya:cicek": "yok",
  "kokboya:kuru": "yok",
  "kina:cizim": "yok",
@@ -667,7 +662,12 @@
   "license": "Public domain",
   "page": "https://commons.wikimedia.org/wiki/File:Colchicum_autumnale_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-044.jpg"
  },
- "gucigdemi:cicek": "yok",
+ "gucigdemi:cicek": {
+  "file": "Colchicum autumnale2.jpg",
+  "artist": "Várkonyi Tibor",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Colchicum_autumnale2.jpg"
+ },
  "gucigdemi:kuru": "yok",
  "tatula:cizim": {
   "file": "Datura stramonium - Köhler–s Medizinal-Pflanzen-051.jpg",
@@ -675,12 +675,7 @@
   "license": "Public domain",
   "page": "https://commons.wikimedia.org/wiki/File:Datura_stramonium_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-051.jpg"
  },
- "tatula:cicek": {
-  "file": "الداتورا، الاسم العلمي Datura stramonium (83545).jpg",
-  "artist": "هشام أبورجاء",
-  "license": "CC BY-SA 3.0",
-  "page": "https://commons.wikimedia.org/wiki/File:%D8%A7%D9%84%D8%AF%D8%A7%D8%AA%D9%88%D8%B1%D8%A7%D8%8C_%D8%A7%D9%84%D8%A7%D8%B3%D9%85_%D8%A7%D9%84%D8%B9%D9%84%D9%85%D9%8A_Datura_stramonium_%2883545%29.jpg"
- },
+ "tatula:cicek": "yok",
  "tatula:kuru": "yok",
  "cehri:cizim": {
   "file": "Rhamnus cathartica - Köhler–s Medizinal-Pflanzen-255.jpg",
@@ -804,7 +799,12 @@
  },
  "camucamu:kuru": "yok",
  "acai:cizim": "yok",
- "acai:cicek": "yok",
+ "acai:cicek": {
+  "file": "Starr-110330-3785-Euterpe oleracea-flower stalk-Garden of Eden Keanae-Maui (24450055364).jpg",
+  "artist": "Forest and Kim Starr",
+  "license": "CC BY 3.0 us",
+  "page": "https://commons.wikimedia.org/wiki/File:Starr-110330-3785-Euterpe_oleracea-flower_stalk-Garden_of_Eden_Keanae-Maui_%2824450055364%29.jpg"
+ },
  "acai:kuru": "yok",
  "yopo:cizim": "yok",
  "yopo:cicek": "yok",
@@ -864,15 +864,15 @@
  },
  "andiroba:kuru": "yok",
  "abuta:cizim": "yok",
- "abuta:cicek": {
-  "file": "Cissampelos pareira (7426575758).jpg",
-  "artist": "Dinesh Valke from Thane, India",
-  "license": "CC BY-SA 2.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Cissampelos_pareira_%287426575758%29.jpg"
- },
+ "abuta:cicek": "yok",
  "abuta:kuru": "yok",
  "aguaymanto:cizim": "yok",
- "aguaymanto:cicek": "yok",
+ "aguaymanto:cicek": {
+  "file": "Physalis peruviana flower NC4.jpg",
+  "artist": "Macleay Grass Man",
+  "license": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Physalis_peruviana_flower_NC4.jpg"
+ },
  "aguaymanto:kuru": "yok",
  "pauarco:cizim": "yok",
  "pauarco:cicek": {
@@ -883,7 +883,12 @@
  },
  "pauarco:kuru": "yok",
  "ekinezya:cizim": "yok",
- "ekinezya:cicek": "yok",
+ "ekinezya:cicek": {
+  "file": "Coneflower Echinacea - Duluth, MInnesota.jpg",
+  "artist": "ToxicFlame427",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Coneflower_Echinacea_-_Duluth%2C_MInnesota.jpg"
+ },
  "ekinezya:kuru": "yok",
  "peyote:cizim": "yok",
  "peyote:cicek": {
@@ -902,12 +907,7 @@
  },
  "karayilan:kuru": "yok",
  "cucepalmiye:cizim": "yok",
- "cucepalmiye:cicek": {
-  "file": "Saw palmetto & Flower Scarab (6808001896).jpg",
-  "artist": "Bob Peterson from North Palm Beach, Florida, Planet Earth!",
-  "license": "CC BY-SA 2.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Saw_palmetto_%26_Flower_Scarab_%286808001896%29.jpg"
- },
+ "cucepalmiye:cicek": "yok",
  "cucepalmiye:kuru": "yok",
  "zencefil:cizim": {
   "file": "Zingiber officinale - Köhler–s Medizinal-Pflanzen-146.jpg",
@@ -923,10 +923,10 @@
  },
  "zencefil:kuru": "yok",
  "kediotu:cizim": {
-  "file": "Valeriana officinalis - Köhler–s Medizinal-Pflanzen-143.jpg",
-  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "file": "Illustration Valeriana officinalis0.jpg",
+  "artist": "Wikimedia Commons",
   "license": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Valeriana_officinalis_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-143.jpg"
+  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Valeriana_officinalis0.jpg"
  },
  "kediotu:cicek": {
   "file": "Valeriana officinalis inflorescence - Niitvälja.jpg",
@@ -939,20 +939,15 @@
  "ginkgo:cicek": "yok",
  "ginkgo:kuru": "yok",
  "aloe:cizim": "yok",
- "aloe:cicek": {
-  "file": "Aloe vera yellow flowers.jpg",
-  "artist": "LEE 003",
-  "license": "CC BY 4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Aloe_vera_yellow_flowers.jpg"
- },
+ "aloe:cicek": "yok",
  "aloe:kuru": "yok",
- "tarcin:cizim": {
-  "file": "Cinnamomum verum - Köhler–s Medizinal-Pflanzen-182.jpg",
-  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
-  "license": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Cinnamomum_verum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-182.jpg"
+ "tarcin:cizim": "yok",
+ "tarcin:cicek": {
+  "file": "Cinnamomum verum spices.jpg",
+  "artist": "Simon A. Eugster",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Cinnamomum_verum_spices.jpg"
  },
- "tarcin:cicek": "yok",
  "tarcin:kuru": "yok",
  "karanfil:cizim": {
   "file": "Syzygium aromaticum - Köhler–s Medizinal-Pflanzen-030.jpg",
@@ -1041,12 +1036,7 @@
  },
  "mersin:kuru": "yok",
  "enginar:cizim": "yok",
- "enginar:cicek": {
-  "file": "\" 12 - ITALY - artichoke in bloom - BIO high quality food (organic farming).JPG",
-  "artist": "Andrea Pavanello, Milano",
-  "license": "CC BY-SA 3.0 it",
-  "page": "https://commons.wikimedia.org/wiki/File:%22_12_-_ITALY_-_artichoke_in_bloom_-_BIO_high_quality_food_%28organic_farming%29.JPG"
- },
+ "enginar:cicek": "yok",
  "enginar:kuru": "yok",
  "devedikeni:cizim": {
   "file": "Illustration Silybum marianum0.jpg",
@@ -1075,18 +1065,13 @@
  },
  "altinmuhur:kuru": "yok",
  "tatliot:cizim": "yok",
- "tatliot:cicek": {
-  "file": "Anthoxanthum odoratum in flower.jpg",
-  "artist": "Kostka Martin",
-  "license": "CC0",
-  "page": "https://commons.wikimedia.org/wiki/File:Anthoxanthum_odoratum_in_flower.jpg"
- },
+ "tatliot:cicek": "yok",
  "tatliot:kuru": "yok",
  "ayiuzumu:cizim": {
-  "file": "Illustration Arctostaphylos uva-ursi0.jpg",
-  "artist": "Wikimedia Commons",
+  "file": "Arctostaphylos uva-ursi - Köhler–s Medizinal-Pflanzen-013.jpg",
+  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
   "license": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Arctostaphylos_uva-ursi0.jpg"
+  "page": "https://commons.wikimedia.org/wiki/File:Arctostaphylos_uva-ursi_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-013.jpg"
  },
  "ayiuzumu:cicek": {
   "file": "Bearberry Flower.jpg",
@@ -1096,23 +1081,23 @@
  },
  "ayiuzumu:kuru": "yok",
  "kirmizikaraagac:cizim": "yok",
- "kirmizikaraagac:cicek": "yok",
- "kirmizikaraagac:kuru": "yok",
- "kankoku:cizim": {
-  "file": "Sanguinaria canadensis, Curtis's-162.png",
-  "artist": "William Curtis (1746–1799)",
-  "license": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Sanguinaria_canadensis%2C_Curtis%27s-162.png"
+ "kirmizikaraagac:cicek": {
+  "file": "2024-03-26 10 54 16 Elm flowers along Forest Lane in the Mountainview section of Ewing Township, Mercer County, New Jersey.jpg",
+  "artist": "Famartin",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:2024-03-26_10_54_16_Elm_flowers_along_Forest_Lane_in_the_Mountainview_section_of_Ewing_Township%2C_Mercer_County%2C_New_Jersey.jpg"
  },
- "kankoku:cicek": "yok",
+ "kirmizikaraagac:kuru": "yok",
+ "kankoku:cizim": "yok",
+ "kankoku:cicek": {
+  "file": "Sanguinaria canadensis flower with insect.jpg",
+  "artist": "Terry.grignon",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Sanguinaria_canadensis_flower_with_insect.jpg"
+ },
  "kankoku:kuru": "yok",
  "dagcayi:cizim": "yok",
- "dagcayi:cicek": {
-  "file": "DSC 5632 Sideritis montana L.jpg",
-  "artist": "Lalakmus",
-  "license": "CC BY-SA 4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:DSC_5632_Sideritis_montana_L.jpg"
- },
+ "dagcayi:cicek": "yok",
  "dagcayi:kuru": "yok",
  "atkestanesi:cizim": {
   "file": "Illustration Aesculus hippocastanum0 clean.jpg",
@@ -1121,10 +1106,10 @@
   "page": "https://commons.wikimedia.org/wiki/File:Illustration_Aesculus_hippocastanum0_clean.jpg"
  },
  "atkestanesi:cicek": {
-  "file": "Flowers of Aesculus hippocastanum.jpg",
-  "artist": "Krzysztof Golik",
-  "license": "CC BY-SA 4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Flowers_of_Aesculus_hippocastanum.jpg"
+  "file": "Aesculus hippocastanum flowers blooming at night, by baby-bear.org.jpg",
+  "artist": "Natalka Ukraine",
+  "license": "CC BY 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Aesculus_hippocastanum_flowers_blooming_at_night%2C_by_baby-bear.org.jpg"
  },
  "atkestanesi:kuru": "yok",
  "ceviz:cizim": {
@@ -1187,18 +1172,8 @@
   "license": "CC BY-SA 3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Aurantii_amari_flos_031.jpg"
  },
- "kakule:cizim": {
-  "file": "Elettaria cardamomum - Köhler–s Medizinal-Pflanzen-057.jpg",
-  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
-  "license": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Elettaria_cardamomum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-057.jpg"
- },
- "kakule:cicek": {
-  "file": "Elettaria cardamomum Flowers and Blooms.jpg",
-  "artist": "Aviatorjk",
-  "license": "CC BY-SA 4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Elettaria_cardamomum_Flowers_and_Blooms.jpg"
- },
+ "kakule:cizim": "yok",
+ "kakule:cicek": "yok",
  "kakule:kuru": "yok",
  "hodan:cizim": {
   "file": "Illustration Borago officinalis0.jpg",
@@ -1317,7 +1292,12 @@
  "yildizanason:cicek": "yok",
  "yildizanason:kuru": "yok",
  "gotukola:cizim": "yok",
- "gotukola:cicek": "yok",
+ "gotukola:cicek": {
+  "file": "Centella asiatica flowerhead1 (8417485169).jpg",
+  "artist": "Harry Rose from South West Rocks, Australia",
+  "license": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Centella_asiatica_flowerhead1_%288417485169%29.jpg"
+ },
  "gotukola:kuru": "yok",
  "tulsi:cizim": "yok",
  "tulsi:cicek": {
@@ -1375,15 +1355,15 @@
   "license": "Public domain",
   "page": "https://commons.wikimedia.org/wiki/File:Sassafras_albidum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-260.jpg"
  },
- "sassafras:cicek": {
-  "file": "Sassafras Flowers 4-10-2015.JPG",
-  "artist": "KentuckyKevin",
-  "license": "CC BY-SA 4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Sassafras_Flowers_4-10-2015.JPG"
- },
+ "sassafras:cicek": "yok",
  "sassafras:kuru": "yok",
  "kiwicha:cizim": "yok",
- "kiwicha:cicek": "yok",
+ "kiwicha:cicek": {
+  "file": "Flowers at Bateman's - geograph.org.uk - 4185655.jpg",
+  "artist": "Len Williams",
+  "license": "CC BY-SA 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Flowers_at_Bateman%27s_-_geograph.org.uk_-_4185655.jpg"
+ },
  "kiwicha:kuru": {
   "file": "عکس از گل تاج خروس.jpg",
   "artist": "Mostafameraji",
