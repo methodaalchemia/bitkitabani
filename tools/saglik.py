@@ -33,6 +33,12 @@ with concurrent.futures.ThreadPoolExecutor(12) as ex:
     for u, st in ex.map(check, sorted(dis)):
         if not (isinstance(st, int) and st < 400) and st not in (403, 429): bad_ext.append((u, st, dis[u]))   # 403/429: bot engeli, kırık sayılmaz
 lines = []
+# yayın kuyruğu: yeni bitkiler 10 günden az yetecekse uyar
+import datetime
+sys.path.insert(0, HERE); import kuyruk as _K
+_son = max((datetime.date.fromisoformat(q['yayin']) for q in _K.Q), default=datetime.date.today())
+_gun = (_son - datetime.date.today()).days
+if _gun < 10: lines += ['## Yayın kuyruğu azaldı', '', f'- Son yeni bitki {_son.isoformat()} tarihinde yayımlanacak ({max(0, _gun)} gün kaldı). Claude’dan kuyruğa yeni bitki eklemesini isteyin.', '']
 if ic: lines += ['## Kırık iç bağlantılar', ''] + [f'- `{m}` ← {r}' for m, r in sorted(ic)[:100]] + ['']
 if ld: lines += ['## Bozuk yapılandırılmış veri', ''] + [f'- {r}: {e}' for r, e in ld[:50]] + ['']
 if bad_ext: lines += ['## Açılmayan kaynak bağlantıları', ''] + [f'- {u} → {st} (ör. {r})' for u, st, r in bad_ext[:100]] + ['']

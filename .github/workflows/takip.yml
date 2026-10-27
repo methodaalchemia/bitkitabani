@@ -1,0 +1,26 @@
+name: Haftalık yayın takibi
+on:
+  schedule:
+    - cron: '23 6 * * 1'   # pazartesi 09:23 (TR)
+  workflow_dispatch:
+permissions:
+  contents: write
+  issues: write
+jobs:
+  takip:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: python3 tools/takip.py
+      - name: Görülen makaleleri kaydet
+        run: |
+          git config user.name "bitkitabani-bot"; git config user.email "actions@users.noreply.github.com"
+          git add tools/takip_durum.json
+          git diff --cached --quiet || (git commit -qm "Yayın takibi durumu [bot]" && (git push || (git pull --rebase -X theirs && git push)))
+      - name: Yeni yayın varsa kayıt aç
+        if: hashFiles('takip.md') != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh issue create --title "Yeni yayınlar $(date +%Y-%m-%d)" --body-file takip.md
