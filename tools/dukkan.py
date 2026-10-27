@@ -19,23 +19,34 @@ ORANLAR = [('ISO_A4-A3-A2', 3508, 4961), ('4x5_8x10-16x20', 4800, 6000), ('2x3_1
 
 def font(n, s): return ImageFont.truetype(os.path.join(F, n), s)
 def levha(taxon):
-    """Aynı türün Köhler ya da Thomé levhası: (dosya adı, orijinal url, seri adı)"""
+    """Aynı türün Köhler ya da Thomé levhası; Commons'taki bütün kopyalar arasından en yüksek çözünürlüklüsü.
+    Dönüş: (dosya adı, orijinal url, seri adı)"""
     t = taxon.lower()
-    for q, ok, seri in [('intitle:"Medizinal-Pflanzen" "' + taxon + '"', lambda x: t in x and 'medizinal-pflanzen' in x, "Köhler's Medizinal-Pflanzen, 1887"),
-                        (taxon + ' Thomé', lambda x: ('illustration ' + t) in x, 'Thomé, Flora von Deutschland, 1885')]:
-        r = T.get('https://commons.wikimedia.org/w/api.php?format=json&action=query&list=search&srnamespace=6&srlimit=8&srsearch=' + urllib.parse.quote(q))
-        for h in r.get('query', {}).get('search', []):
-            if ok(h['title'].lower()):
-                j = T.get('https://commons.wikimedia.org/w/api.php?format=json&action=query&prop=imageinfo&iiprop=url|size&titles=' + urllib.parse.quote(h['title']))
-                ii = list(j['query']['pages'].values())[0]['imageinfo'][0]
-                return h['title'][5:], ii['url'], seri
+    for sorgular, ok, seri in [
+        (['"' + taxon + '" Medizinal-Pflanzen', '"' + taxon + '" Koehler1887', '"' + taxon + '" "Köhler\'s Medizinal-Pflanzen"'],
+         lambda x: 'medizinal-pflanzen' in x or 'koehler' in x or 'köhler' in x, "Köhler's Medizinal-Pflanzen, 1887"),
+        (['"' + taxon + '" Thomé', '"' + taxon + '" "Flora von Deutschland"'], lambda x: 'thom' in x or 'flora von deutschland' in x, 'Thomé, Flora von Deutschland, 1885')]:
+        aday = {}
+        for q in sorgular:
+            url = ('https://commons.wikimedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=6&gsrlimit=20&gsrsearch=' + urllib.parse.quote(q)
+                   + '&prop=imageinfo&iiprop=url|size|mime|extmetadata&iiextmetadatafilter=ObjectName|ImageDescription|Categories')
+            for pg in T.get(url).get('query', {}).get('pages', {}).values():
+                ii = (pg.get('imageinfo') or [{}])[0]; m = ii.get('extmetadata', {})
+                if ii.get('mime') not in ('image/jpeg', 'image/png', 'image/tiff'): continue
+                text = ' '.join([pg['title'], m.get('ObjectName', {}).get('value', ''), m.get('Categories', {}).get('value', ''), T.plain(m.get('ImageDescription', {}).get('value', ''))]).lower()
+                if t in text and ok(text) and not re.search(r'herbari|specimen|photo|crop|detail|ausschnitt', pg['title'].lower()):
+                    aday[pg['title']] = (ii.get('width', 0), ii['url'])
+        if aday:
+            f, (w, u) = max(aday.items(), key=lambda kv: kv[1][0])
+            if f.lower().endswith(('.tif', '.tiff')): u = u.replace('/commons/', '/commons/thumb/', 1) + '/lossy-page1-3000px-' + f[5:].replace(' ', '_') + '.jpg'
+            print('levha', taxon, w, 'px', f); return f[5:], u, seri
     return None
 
 def poster(plate, w, h, la, tr, en, seri):
     c = Image.new('RGB', (w, h), PAPER); d = ImageDraw.Draw(c); m = int(w * 0.07)
     d.rectangle([m // 2, m // 2, w - m // 2, h - m // 2], outline=(196, 186, 165), width=max(3, w // 900))
     cap = int(h * 0.15); box = (w - 2 * m, h - 2 * m - cap)
-    p = plate.copy(); p.thumbnail(box, Image.LANCZOS)
+    sc = min(box[0] / plate.width, box[1] / plate.height); p = plate.resize((int(plate.width * sc), int(plate.height * sc)), Image.LANCZOS)   # küçükse büyüt
     c.paste(p, ((w - p.width) // 2, m + (box[1] - p.height) // 2))
     y = h - m - cap + int(cap * 0.12)
     for txt, f, col in [(la, font('Alegreya-Italic[wght].ttf', int(w * 0.045)), INK),
