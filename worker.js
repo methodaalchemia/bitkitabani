@@ -567,6 +567,36 @@ async function katkiApi(req, env, url) {
   }
   return json({ error: 'yok' }, 404);
 }
+
+// ---------- Akıllı arama: soru cümlesini bitki metinleriyle anlam olarak karşılaştırır (Workers AI, bge-m3) ----------
+const ARA_MODEL = '@cf/baai/bge-m3';
+function f32b64(a) { const u = new Uint8Array(new Float32Array(a).buffer); let s = ''; for (let i = 0; i < u.length; i += 8192) s += String.fromCharCode(...u.subarray(i, i + 8192)); return btoa(s); }
+function b64f32(s) { const b = Uint8Array.from(atob(s), c => c.charCodeAt(0)); return new Float32Array(b.buffer); }
+async function araVek(env, req, data) {
+  const ver = data.ver; const meta = await call(env, 'ara:meta', 'get');
+  if (meta && meta.ver === ver) { const out = []; for (let k = 0; k < meta.n; k++) out.push(...(await call(env, 'ara:vec:' + k, 'get')).map(b64f32)); return out; }
+  const out = []; let k = 0;
+  for (let i = 0; i < data.p.length; i += 25, k++) {
+    const r = await env.AI.run(ARA_MODEL, { text: data.p.slice(i, i + 25).map(x => x.t) });
+    const vs = r.data.map(v => { const n = Math.hypot(...v); return v.map(x => x / n); });
+    out.push(...vs.map(v => new Float32Array(v))); await call(env, 'ara:vec:' + k, 'put', vs.map(f32b64));
+  }
+  await call(env, 'ara:meta', 'put', { ver, n: k }); return out;
+}
+async function araApi(req, env, url) {
+  const q = String(url.searchParams.get('q') || '').trim().slice(0, 200);
+  if (q.length < 3) return json({ error: 'Biraz daha uzun yaz.' }, 400);
+  if (!env.AI) return json({ error: 'Arama şu an kapalı.' }, 503);
+  const ip = req.headers.get('cf-connecting-ip') || 'x', key = trDay() + ':' + ip;
+  const RL = (await call(env, 'ara:rl', 'get')) || {}; for (const k of Object.keys(RL)) if (!k.startsWith(trDay())) delete RL[k];
+  if ((RL[key] = (RL[key] || 0) + 1) > 80) return json({ error: 'Bugünlük arama sınırına ulaştın, yarın yeniden dene.' }, 429);
+  await call(env, 'ara:rl', 'put', RL);
+  const data = await (await env.ASSETS.fetch(new Request(url.origin + '/ara.json'))).json();
+  const V = await araVek(env, req, data);
+  const qv = (await env.AI.run(ARA_MODEL, { text: [q] })).data[0]; const n = Math.hypot(...qv);
+  const sc = V.map((v, i) => { let s = 0; for (let j = 0; j < v.length; j++) s += v[j] * qv[j] / n; return [s, i]; }).sort((a, b) => b[0] - a[0]).slice(0, 10);
+  return json({ q, sonuc: sc.filter(([s]) => s > 0.35).map(([s, i]) => { const p = data.p[i]; return { id: p.id, tr: p.tr, la: p.la, guv: p.guv, kisa: p.kisa, skor: Math.round(s * 100) / 100 }; }) }, 200, { 'cache-control': 'public, max-age=3600' });
+}
 export default {
   async fetch(req, env) {
     const url = new URL(req.url);
@@ -579,6 +609,7 @@ export default {
       const AL = (await call(env, 'abone:list', 'get')) || {}; const bs = (await call(env, 'bulten:state', 'get')) || {};
       return json({ facebook: { token: !!env.FB_TOKEN, sayfa: fb.pageName || null, oglen: (fb.slot || {}).oglen || null, aksam: (fb.slot || {}).aksam || null, sayi: fb.n || 0, son: fb.last || null, bitki: fb.plant || null, hata: fb.error || null, hataZamani: fb.errorAt || null }, bulten: { anahtar: !!(env.RESEND_KEY || env.RESEND_Key), onayli: Object.values(AL).filter(a => a.on).length, kursta: Object.values(AL).filter(a => a.on && typeof a.kurs === 'number' && a.kurs < 7).length, bekleyen: Object.values(AL).filter(a => !a.on).length, duyuru: Object.values(AL).filter(a => a.on && a.d).length, gonderilen: bs.sayi || 0, hata: bs.err || Object.values(AL).map(a => a.err).find(Boolean) || null }, threads: { token: !!(env.TH_TOKEN || env.TH_Token || th.token), sayi: th.n || 0, son: th.last || null, kavram: (th.slot || {}).kavram || null, sabah: (th.slot || {}).sabah || null, ogle: (th.slot || {}).ogle || null, bitki: th.plant || null, hata: th.error || null, hataZamani: th.errorAt || null }, token: !!(env.IG_TOKEN || st.token), sayi: st.n || 0, reels: st.reels || 0, reelHata: st.reelError || null, hikayeHata: st.storyError || null, altMetin: !st.noAlt, aylik: st.aylik || null, ek: st.ek || null, ekSayi: st.ekSayi || 0, ekHata: st.ekError || null, aylikHata: st.aylikError || null, sonPaylasim: st.last || null, bitki: st.lastPlant || null, hata: st.error || null, hataZamani: st.errorAt || null, tokenYenilendi: st.tokenAt ? new Date(st.tokenAt).toISOString() : null, bugun: trDay() });
     }
+    if (url.pathname === '/api/ara' && req.method === 'GET') return araApi(req, env, url);
     if (url.pathname.startsWith('/api/q/') && req.method === 'GET') {   // QR kart okutması: say ve bitki sayfasına yönlendir
       const id = url.pathname.slice(7).replace(/[^a-z0-9]/g, '').slice(0, 40);
       try { const q = (await call(env, 'qr:sayac', 'get')) || {}; q[id] = (q[id] || 0) + 1; q._toplam = (q._toplam || 0) + 1; await call(env, 'qr:sayac', 'put', q); } catch (e) {}

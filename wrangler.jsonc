@@ -14,6 +14,8 @@
     // Google Cloud Console > APIs & Services > Credentials > OAuth client ID (Web). Boşsa giriş kapalıdır.
     "GOOGLE_CLIENT_ID": "437365792568-00ajl9g880m3e2du0h952cvpvcgct9ks.apps.googleusercontent.com"
   },
+  // Akıllı arama (/api/ara): Workers AI çok dilli gömme modeli
+  "ai": { "binding": "AI" },
   "durable_objects": {
     "bindings": [{ "name": "USERS", "class_name": "UserStore" }]
   },

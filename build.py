@@ -216,7 +216,7 @@ def head(title, desc, path, extra='', image=None):
 <div class="wrap{{narrow}}">
 '''
 
-MENU = [('Keşfet', [('/katalog/', 'Katalog', 'kat'), ('/yeni/', 'Yeni eklenenler', 'yeni'), ('/gunun-bitkisi/', 'Günün bitkisi', 'gun'), ('/oyun/', 'Günün bilmecesi', 'oyun'), ('/kopruler/', 'Kültür köprüleri', 'br'), ('/semboller/', 'Semboller', 'sembol'), ('/kavram/', 'Günün kavramı', 'kavram'), ('/takvim/', 'Ritüel takvimi', 'takvim'), ('/yazilar/', 'Yazılar', 'yazi')]),
+MENU = [('Keşfet', [('/katalog/', 'Katalog', 'kat'), ('/yeni/', 'Yeni eklenenler', 'yeni'), ('/gunun-bitkisi/', 'Günün bitkisi', 'gun'), ('/oyun/', 'Günün bilmecesi', 'oyun'), ('/ara/', 'Akıllı arama', 'ara'), ('/kopruler/', 'Kültür köprüleri', 'br'), ('/semboller/', 'Semboller', 'sembol'), ('/kavram/', 'Günün kavramı', 'kavram'), ('/takvim/', 'Ritüel takvimi', 'takvim'), ('/yazilar/', 'Yazılar', 'yazi')]),
         ('Rehberler', [('/bitki-bul/', 'Bana uygun bitki', 'bul'), ('/rehber/', 'Derde göre bitkiler', 'rehber'), ('/tarif/', 'Çay tarifleri', 'tarif'), ('/karsilastirma/', 'Karşılaştırmalar', 'kars'), ('/rehber/ilac-etkilesimi/', 'İlaç etkileşimi', 'etk'), ('/rehber/hamilelik-emzirme/', 'Hamilelik ve emzirme', 'gebe'), ('/toplama-takvimi/', 'Toplama takvimi', 'takvim'), ('/yoresel-adlar/', 'Yöresel adlar', 'adlar')]),
         ('Bitki Tabanı', [('/kurs/', 'Ücretsiz e-posta kursu', 'kurs'), ('/bulten/', 'Bülten', 'bulten'), ('/hakkinda/', 'Hakkında', 'about'), ('/yontem/', 'Yöntem', 'yontem'), ('https://www.instagram.com/bitkitabani/', 'Instagram', 'ig'), ('/hesap/', 'Hesap', 'acct'), ('/gizlilik/', 'Gizlilik', 'priv'), ('mailto:iletisim@bitkitabani.com', 'İletişim', 'mail')])]
 def nav(cur):
@@ -1500,6 +1500,16 @@ if _qr:
     _ks = ''.join(_kart(p) for p in P if p['guv'] != 'yuksek')
     write('/kartlar/index.html', page('Yazdırılabilir bitki kartları (QR kodlu) | Bitki Tabanı', 'Aktarlar, pazarlar ve atölyeler için QR kodlu, yazdırılabilir şifalı bitki kartları.', '/kartlar/',
           _KCSS + '<header class="page-head"><h1>Yazdırılabilir bitki kartları</h1><p>Aktar, pazar ve atölyeler için: her kartta bitkinin adı, güvenlik düzeyi, kısa bir bilgi ve okutunca sayfasına götüren bir QR kod var. Yazdır deyin; A4 sayfaya dört kart sığar. Yüksek riskli bitkiler bu listede yok.</p><p class="noprint"><button type="button" onclick="print()">Yazdır</button></p></header><div class="kartlar">' + _ks + '</div>', 'kat'))
+# ---------- akıllı arama verisi ve sayfası ----------
+import hashlib as _hl
+_ara = [dict(id=p['id'], tr=p['tr'], la=short_la(p), guv=GUV[p['guv']], kisa=p['kul'][0][1].split('. ')[0][:140],
+             t=f"{p['tr']} ({p['la']}). Diğer adları: {p['diger']}. Kullanım: {', '.join(KAT[k] for k in p['kat'])}. " + ' '.join(f'{w}: {x}' for w, x in p['kul'])[:700] + f" Bilim: {p['bilim'][:300]} Güvenlik: {GUV[p['guv']]}. {p['guvNot'][:300]}") for p in P]
+_ver = _hl.sha1(json.dumps([x['t'] for x in _ara], ensure_ascii=False).encode()).hexdigest()[:12]
+open(os.path.join(OUT, 'ara.json'), 'w', encoding='utf-8').write(json.dumps({'ver': _ver, 'p': _ara}, ensure_ascii=False))
+write('/ara/index.html', page('Akıllı arama: derdini yaz, bitkini bul | Bitki Tabanı', 'Aklındaki soruyu kendi cümlelerinle yaz; Bitki Tabanı ilgili bitkileri kanıt ve güvenlik bilgisiyle listelesin.', '/ara/',
+      '<header class="page-head"><span class="eyebrow">Yapay zekâ destekli</span><h1>Derdini yaz, bitkini bul</h1><p>Aklındaki soruyu kendi cümlelerinle yaz: “uykuya dalmakta zorlanıyorum”, “And’larda yüksekliğe karşı ne kullanılır”, “yaraya sürülen bitkiler”. Sonuçlar anlamca en yakın bitkilerdir; her birinin güvenlik düzeyine ve sayfasındaki uyarılara mutlaka bak. Bu bir tavsiye değildir.</p></header>'
+      '<form id="araForm" class="katki-form"><input id="araQ" name="q" maxlength="200" placeholder="Örn. mideye iyi gelen, hamilelikte riskli olmayan bitkiler" required><button class="cta" type="submit">Ara</button></form><div id="araSonuc" role="status"></div>',
+      'kat', '<script src="/assets/ara.js" defer></script>', narrow=True))
 # ---------- okur katkıları onay sayfası (yalnızca site sahibi; dizine eklenmez) ----------
 write('/katki-onay/index.html', page('Katkı onayı | Bitki Tabanı', 'Okur katkıları', '/katki-onay/',
       '<header class="page-head"><h1>Okur katkıları</h1><p>Site formundan ve Threads yanıtlarından gelen notlar. Onayladıkların bir sonraki derlemede bitki sayfasına “Okurlardan” başlığıyla eklenir. Görmek için <a href="/hesap/">Google ile giriş yap</a>.</p>'
