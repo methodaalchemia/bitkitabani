@@ -40,6 +40,13 @@ def levha(taxon):
             f, (w, u) = max(aday.items(), key=lambda kv: kv[1][0])
             if f.lower().endswith(('.tif', '.tiff')): u = u.replace('/commons/', '/commons/thumb/', 1) + '/lossy-page1-3000px-' + f[5:].replace(' ', '_') + '.jpg'
             print('levha', taxon, w, 'px', f); return f[5:], u, seri
+    for q, ok, seri in [('intitle:"Medizinal-Pflanzen" "' + taxon + '"', lambda x: t in x and 'medizinal-pflanzen' in x, "Köhler's Medizinal-Pflanzen, 1887"),
+                        (taxon + ' Thomé', lambda x: ('illustration ' + t) in x, 'Thomé, Flora von Deutschland, 1885')]:   # yedek: ilk yöntem
+        r = T.get('https://commons.wikimedia.org/w/api.php?format=json&action=query&list=search&srnamespace=6&srlimit=8&srsearch=' + urllib.parse.quote(q))
+        for h in r.get('query', {}).get('search', []):
+            if ok(h['title'].lower()):
+                j = T.get('https://commons.wikimedia.org/w/api.php?format=json&action=query&prop=imageinfo&iiprop=url&titles=' + urllib.parse.quote(h['title']))
+                return h['title'][5:], list(j['query']['pages'].values())[0]['imageinfo'][0]['url'], seri
     return None
 
 def poster(plate, w, h, la, tr, en, seri):
