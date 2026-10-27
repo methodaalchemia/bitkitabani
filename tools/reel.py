@@ -12,7 +12,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 FONTS = os.path.join(HERE, 'fonts')
 VOICE = os.environ.get('REEL_VOICE', 'tr-TR-EmelNeural')
-SW, SH, FPS, XF = 1080, 1920, 30, 0.35
+SW, SH, FPS, XF = 1080, 1920, 30, 0.45
 GAP = 0.28   # cümleler arası sessizlik (sn)
 
 def _sent(t): return [x.strip() for x in re.split(r'(?<=[.!?])\s+', (t or '').strip()) if x.strip()]
@@ -100,6 +100,7 @@ def ass(segs, path, skip_last=True):
             ev.append(f'Dialogue: 0,{_ts(st)},{_ts(en)},Cap,,0,0,0,,{{\\fad(60,40)\\fscx92\\fscy92\\t(0,120,\\fscx100\\fscy100)}}{txt}')
     open(path, 'w', encoding='utf-8').write(head + '\n'.join(ev) + '\n')
 
+
 # ---------- görüntü ----------
 def _font(name, size):
     from PIL import ImageFont
@@ -109,10 +110,12 @@ def _cover(src, w, h):
     l, t = (im.width - w) // 2, max(0, (im.height - h) // 3); return im.crop((l, t, l + w, t + h))
 def _up(t): return t.replace('i', 'İ').replace('ı', 'I').upper()
 
-def frames(p, img_path, tmp):
-    """Tam ekran fotoğraf (2 kat çözünürlükte, hareket için), sabit üst/alt katman ve kapanış kartı."""
-    src = Image.open(img_path).convert('RGB') if img_path and os.path.exists(img_path) else Image.new('RGB', (SW, SH), (46, 92, 64))
-    big = _cover(src, SW * 2, SH * 2); bp = os.path.join(tmp, 'big.jpg'); big.save(bp, quality=90)
+def frames(p, photos, tmp, credits=''):
+    """Her fotoğraf 2 kat çözünürlükte (kaydırma için), sabit üst/alt katman ve kapanış kartı."""
+    srcs = [Image.open(x).convert('RGB') for x in photos if x and os.path.exists(x)] or [Image.new('RGB', (SW, SH), (46, 92, 64))]
+    bps = []
+    for k, src in enumerate(srcs):
+        bp = os.path.join(tmp, f'big{k}.jpg'); _cover(src, SW * 2, SH * 2).save(bp, quality=88); bps.append(bp)
     ov = Image.new('RGBA', (SW, SH), (0, 0, 0, 0)); g = Image.new('L', (1, SH))
     for y in range(SH):
         a = 150 * max(0, 1 - y / 420) ** 1.6 + 175 * max(0, (y - SH * 0.45) / (SH * 0.55)) ** 1.4
@@ -121,21 +124,20 @@ def frames(p, img_path, tmp):
     d = ImageDraw.Draw(ov)
     d.text((80, 110), _up(p['tr']), font=_font('AlegreyaSans-Bold.ttf', 58), fill=(255, 255, 255))
     d.text((80, 182), p['la'], font=_font('AlegreyaSans-Italic.ttf', 40), fill=(236, 226, 205))
-    d.text((80, SH - 130), 'bitkitabani.com', font=_font('AlegreyaSans-Bold.ttf', 42), fill=(240, 226, 196))
+    d.text((80, SH - 150), 'bitkitabani.com', font=_font('AlegreyaSans-Bold.ttf', 42), fill=(240, 226, 196))
+    if credits: d.text((80, SH - 88), ('Fotoğraflar: ' + credits)[:110], font=_font('AlegreyaSans-Regular.ttf', 22), fill=(220, 214, 200))
     op = os.path.join(tmp, 'ov.png'); ov.save(op)
-    end = _cover(src, SW, SH).filter(ImageFilter.GaussianBlur(28)); end.paste(Image.new('RGB', (SW, SH), (12, 18, 14)), (0, 0), Image.new('L', (SW, SH), 150))
+    end = _cover(srcs[0], SW, SH).filter(ImageFilter.GaussianBlur(28)); end.paste(Image.new('RGB', (SW, SH), (12, 18, 14)), (0, 0), Image.new('L', (SW, SH), 150))
     d = ImageDraw.Draw(end); f1, f2 = _font('AlegreyaSans-Bold.ttf', 84), _font('AlegreyaSans-Bold.ttf', 64)
     y = 720
     for ln in ['Kaynaklarıyla', 'birlikte tamamı', 'sitede']: d.text((80, y), ln, font=f1, fill=(255, 255, 255)); y += 100
     d.text((80, y + 40), 'bitkitabani.com', font=f2, fill=(240, 226, 196))
     d.text((80, y + 130), 'Her gün yeni bir bitki · @bitkitabani', font=_font('AlegreyaSans-Regular.ttf', 38), fill=(236, 230, 218))
     ep = os.path.join(tmp, 'end.png'); end.save(ep)
-    return bp, op, ep
+    return bps, op, ep
 
-MOVES = [("1+0.22*on/{N}", "iw/2-(iw/zoom/2)", "ih/2-(ih/zoom/2)"),           # yakınlaş
-         ("1.30", "(iw-iw/zoom)*on/{N}", "ih/2-(ih/zoom/2)"),                 # sağa kay
-         ("1.28-0.22*on/{N}", "iw/2-(iw/zoom/2)", "ih/3-(ih/zoom/3)"),        # uzaklaş
-         ("1.30", "(iw-iw/zoom)*(1-on/{N})", "ih/2-(ih/zoom/2)")]            # sola kay
+# her sahnede görüntü sağdan sola kayar (kamera sağa ilerler), hafif yakınlaşmayla
+MOVE = ("1.22+0.04*on/{N}", "(iw-iw/zoom)*on/{N}", "ih/2-(ih/zoom/2)")
 
 def _ambient(seed, total):
     rr = random.Random(seed)
@@ -145,14 +147,23 @@ def _ambient(seed, total):
     return (f"aevalsrc='{e}|{e}':s=44100:d={total:.2f},lowpass=f=1400,aecho=0.8:0.6:420|830:0.22|0.15,"
             f"afade=t=in:d=1.5,afade=t=out:st={max(0, total - 2):.2f}:d=2")
 
-def make(p, m, img_path, out):
+def make(p, m, img_path, out, photos=None):
     if not shutil.which('ffmpeg'): return False
     tmp = tempfile.mkdtemp()
     try:
         sents = script(p, m)
         segs, spoken, total = voice(sents, tmp)
         total += 0.5
-        bp, op, ep = frames(p, img_path, tmp)
+        credits = ''
+        if photos is None:   # ana fotoğraf + varsa tools/tanima.py'nin seçtiği çiçekli hâl, çizim, kurutulmuş hâl
+            photos, cr = [img_path], []
+            tdir = os.path.join(ROOT, 'img', 'tanima'); tm = os.path.join(tdir, 'meta.json')
+            meta = json.load(open(tm, encoding='utf-8')) if os.path.exists(tm) else {}
+            for tur in ('cicek', 'cizim', 'kuru'):
+                x = meta.get(f"{p['id']}:{tur}"); f = os.path.join(tdir, f"{p['id']}-{tur}.jpg")
+                if isinstance(x, dict) and os.path.exists(f): photos.append(f); cr.append(f"{x.get('artist', '')} ({x.get('license', '')})")
+            credits = '; '.join(dict.fromkeys(cr))
+        bps, op, ep = frames(p, photos, tmp, credits)
         sub = os.path.join(tmp, 'cap.ass'); ass(segs, sub)
         # sahneler: her cümle bir hareket; son cümle kapanış kartı
         cuts = [s[0] for s in segs] + [total]
@@ -162,14 +173,14 @@ def make(p, m, img_path, out):
         for i, (a, b) in enumerate(scenes):
             dur = (b - a) + (XF if i < len(scenes) - 1 else 0); N = max(2, int(dur * FPS))
             last = i == len(scenes) - 1
-            args += ['-i', ep if last else bp]
+            args += ['-i', ep if last else bps[i % len(bps)]]
             if last: fl.append(f"[{i}:v]scale={SW}:{SH},zoompan=z='1+0.03*on/{N}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={N}:s={SW}x{SH}:fps={FPS},setsar=1,format=yuv420p[v{i}]")
             else:
-                z, x, y = (s.format(N=N) for s in MOVES[i % len(MOVES)])
+                z, x, y = (s.format(N=N) for s in MOVE)
                 fl.append(f"[{i}:v]zoompan=z='{z}':x='{x}':y='{y}':d={N}:s={SW}x{SH}:fps={FPS},setsar=1,format=yuv420p[v{i}]")
         cur, off = 'v0', scenes[0][1] - scenes[0][0]
         for i in range(1, len(scenes)):
-            o = f'x{i}'; fl.append(f"[{cur}][v{i}]xfade=transition=fade:duration={XF}:offset={off:.2f}[{o}]"); cur = o; off += scenes[i][1] - scenes[i][0]
+            o = f'x{i}'; fl.append(f"[{cur}][v{i}]xfade=transition={'slideleft' if i < len(scenes) - 1 else 'fade'}:duration={XF}:offset={off:.2f}[{o}]"); cur = o; off += scenes[i][1] - scenes[i][0]
         n = len(scenes); args += ['-i', op]
         subf = sub.replace('\\', '/').replace(':', '\\:'); fdir = FONTS.replace('\\', '/').replace(':', '\\:')
         fl.append(f"[{cur}][{n}:v]overlay=0:0:enable='lt(t,{scenes[-1][0]:.2f})'[ov];[ov]subtitles='{subf}':fontsdir='{fdir}',format=yuv420p[vout]")
