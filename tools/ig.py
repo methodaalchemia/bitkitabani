@@ -260,7 +260,8 @@ def threads_plan(data, day, days=4):
             out[dd.isoformat()]['ad'] = dict(text=f"Sizin yörenizde buna ne denir? 🌿\n\n{q['tr']} ({q['la']}) Anadolu’da farklı adlarla anılıyor: {adlar}.\n\nSizin yörenizde hangi adla bilinir? Yazın, sözlüğümüze ekleyelim. 👇"[:495], image=img(q['id']))
         try:   # 21:30: kaynaklı halk hekimliği kaydı (eski tek satırlık "…sever misiniz?" soruları etkileşim getirmediği için kaldırıldı)
             from halk import HALK, post_metni
-            h = HALK[(k * 7) % len(HALK)]
+            _H = [x for x in HALK if x.get('post')]
+            h = _H[(k * 7) % len(_H)]
             out[dd.isoformat()]['soru'] = dict(text=post_metni(h)[:495], image=img(h['bitki']) if h.get('bitki') else None)
         except Exception as ex: print('halk threads:', ex)
         try:
