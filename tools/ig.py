@@ -258,14 +258,11 @@ def threads_plan(data, day, days=4):
             q = yor[(k * 13) % len(yor)]
             adlar = ', '.join(_adl(q)[:5])
             out[dd.isoformat()]['ad'] = dict(text=f"Sizin yörenizde buna ne denir? 🌿\n\n{q['tr']} ({q['la']}) Anadolu’da farklı adlarla anılıyor: {adlar}.\n\nSizin yörenizde hangi adla bilinir? Yazın, sözlüğümüze ekleyelim. 👇"[:495], image=img(q['id']))
-        try:
-            sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-            from ig_metin import M as _IGM
-            sor = [(i, v['soru']) for i, v in _IGM.items() if v.get('soru') and i in P]
-            if sor:
-                i_, sq = sor[(k * 7) % len(sor)]
-                out[dd.isoformat()]['soru'] = dict(text=f"{sq} 👇", image=None)
-        except Exception as ex: print('soru threads:', ex)
+        try:   # 21:30: kaynaklı halk hekimliği kaydı (eski tek satırlık "…sever misiniz?" soruları etkileşim getirmediği için kaldırıldı)
+            from halk import HALK, post_metni
+            h = HALK[(k * 7) % len(HALK)]
+            out[dd.isoformat()]['soru'] = dict(text=post_metni(h)[:495], image=img(h['bitki']) if h.get('bitki') else None)
+        except Exception as ex: print('halk threads:', ex)
         try:
             from kavramlar import KAVRAMLAR
             kv = next((x for x in KAVRAMLAR if x['yayin'] == dd.isoformat() and x['bitki'] in P), None)

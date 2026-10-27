@@ -20,7 +20,15 @@ REG, KAT, KANIT, GUV, P, BR, EXTRA = D['REG'], D['KAT'], D['KANIT'], D['GUV'], D
 for i, p in enumerate(P): p['no'] = i + 1
 GUV['yuksek'] = 'Yüksek risk'
 byId = {p['id']: p for p in P}
-TODAY = datetime.date.today().isoformat()
+# kaynaklı halk hekimliği kayıtları (halk.py): bitki sayfasının geleneksel kullanım bölümüne ve kaynaklarına eklenir
+from halk import site_kul as _site_kul
+_hk, _hs = _site_kul()
+for _i, _u in _hk.items():
+    if _i in byId: byId[_i]['kul'] = [list(x) for x in byId[_i]['kul']] + [list(x) for x in _u]
+for _i, _s in _hs.items():
+    for _x in _s:
+        if _x not in OTHER.get(_i, []): OTHER.setdefault(_i, []).append(_x)
+TODAY =datetime.date.today().isoformat()
 def _git_date():
     try:
         import subprocess
