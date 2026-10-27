@@ -522,7 +522,12 @@ def main():
         if n >= LAUNCH + len(REPOST):                     # günlük postlarda hikâye ve deneme Reels
             ig2.story(p, ims[0]).save(os.path.join(od, 'story.jpg'), 'JPEG', quality=85)
             extra['story'] = f'{BASE}/ig/p/{n}/story.jpg'
-            if ig2.reel(ims, img_path=os.path.join(ROOT, 'img', f'{pid}-960.jpg') if p['img'] else None, out=os.path.join(od, 'reel.mp4'), p=p):
+            rimg = next((x for x in [os.path.join(ROOT, 'img', f'{pid}-1280.jpg'), os.path.join(ROOT, 'img', f'{pid}-960.jpg')] if p['img'] and os.path.exists(x)), None)
+            try:   # seslendirmeli + altyazılı Reels; olmazsa eski slayt videosu
+                import reel as _reel
+                ok = _reel.make(p, ig2.text_for(p), rimg, os.path.join(od, 'reel.mp4'))
+            except Exception as ex: print('reel (sesli) hatası:', ex); ok = False
+            if ok or ig2.reel(ims, img_path=os.path.join(ROOT, 'img', f'{pid}-960.jpg') if p['img'] else None, out=os.path.join(od, 'reel.mp4'), p=p):
                 extra['reel'] = f'{BASE}/ig/p/{n}/reel.mp4'
         json.dump({'n': n, 'id': pid, 'caption': cap, 'images': urls, 'alts': ig2.alts2(p), **extra}, open(os.path.join(od, 'post.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
         thumbs = ''.join(f'<a href="p/{n}/{i}.jpg" download><img src="p/{n}/{i}.jpg" alt="Slayt {i}" width="216" height="270" loading="lazy"></a>' for i in range(1, len(ims) + 1))

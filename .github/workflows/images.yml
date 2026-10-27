@@ -41,6 +41,9 @@ jobs:
       - name: ffmpeg (Reels videoları için)
         continue-on-error: true
         run: which ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
+      - name: Reels seslendirmesi (edge-tts)
+        continue-on-error: true
+        run: pip install -q edge-tts
       - name: Instagram postları
         continue-on-error: true
         run: python3 tools/ig.py
