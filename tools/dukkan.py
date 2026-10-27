@@ -90,6 +90,71 @@ def ilan(en, tr, la, fact, seri, n=1, set_en=None, set_tr=None, adlar=None):
     return {'etsy': {'title': t_en, 'tags': tags, 'description': body_en, 'price_usd': 4.5 if n == 1 else 14},
             'shopier': {'title': t_tr, 'description': body_tr, 'price_try': 120 if n == 1 else 390}}
 
+_AYI = {m: i + 1 for i, m in enumerate(['ocak', 'şubat', 'mart', 'nisan', 'mayıs', 'haziran', 'temmuz', 'ağustos', 'eylül', 'ekim', 'kasım', 'aralık'])}
+def months_of(txt):
+    t = txt.lower()
+    if 'yıl boyu' in t or 'toplanmamalı' in t or 'önerilmez' in t or 'sonra sökülür' in t: return set()
+    ms = set()
+    for a, c in re.findall(r'(ocak|şubat|mart|nisan|mayıs|haziran|temmuz|ağustos|eylül|ekim|kasım|aralık)\w*\s*[–-]\s*(ocak|şubat|mart|nisan|mayıs|haziran|temmuz|ağustos|eylül|ekim|kasım|aralık)', t):
+        x, y = _AYI[a], _AYI[c]
+        while True:
+            ms.add(x)
+            if x == y: break
+            x = x % 12 + 1
+    for m in re.findall(r'(ocak|şubat|mart|nisan|mayıs|haziran|temmuz|ağustos|eylül|ekim|kasım|aralık)', t): ms.add(_AYI[m])
+    if 'sonbahar' in t: ms |= {9, 10, 11}
+    if 'ilkbahar' in t or re.search(r'(?<!son)bahar', t): ms |= {3, 4, 5}
+    if re.search(r'\byaz', t): ms |= {6, 7, 8}
+    if re.search(r'\bkış', t): ms |= {12, 1, 2}
+    return ms
+
+def notion_paketi(D, EN, POWO):
+    """Notion'a içe aktarılabilir 'Şifalı Bitki Defteri' (TR) ve 'Herbal Plant Journal' (EN) paketleri (Import → Markdown & CSV)."""
+    import csv
+    from extra import EK, KORUMA, YASAL
+    data = json.load(open(os.path.join(ROOT, 'data.json'), encoding='utf-8'))
+    KAT, KANIT, GUV = data['KAT'], data['KANIT'], dict(data['GUV'], yuksek='Yüksek risk')
+    AY = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık']
+    ndir = os.path.join(OUT, 'notion'); os.makedirs(ndir, exist_ok=True)
+    P = data['P']
+    for dil in ('tr', 'en'):
+        ad = 'Şifalı Bitki Defteri' if dil == 'tr' else 'Herbal Plant Journal'
+        zp = os.path.join(ndir, ('Sifali-Bitki-Defteri' if dil == 'tr' else 'Herbal-Plant-Journal') + '.zip')
+        with zipfile.ZipFile(zp, 'w', zipfile.ZIP_DEFLATED) as z:
+            buf = io.StringIO(); w = csv.writer(buf)
+            if dil == 'tr':
+                w.writerow(['Bitki', 'Latince', 'Aile', 'Diğer adlar', 'Kullanılan kısım', 'Kategori', 'Kanıt düzeyi', 'Güvenlik', 'Güvenlik notu', 'Hazırlama', 'Toplama mevsimi', 'Yöresel adlar', 'Geleneksel kullanım', 'Kaynaklı sayfa', 'Evde var', 'Denedim'])
+                for p in P:
+                    ek = EK.get(p['id'], {})
+                    w.writerow([p['tr'], p['la'], p['fam'], p['diger'], p['kisim'], ', '.join(KAT[k] for k in p['kat']), KANIT[p['kanit']]['ad'], GUV[p['guv']], p['guvNot'], p['haz'],
+                                ek.get('mevsim', ''), ek.get('yoresel', ''), ' | '.join(f'{a}: {b}' for a, b in p['kul']), f"https://bitkitabani.com/{p['id']}/", 'No', 'No'])
+            else:
+                w.writerow(['Plant', 'Latin name', 'Family', 'Part used', 'Traditional uses', 'Preparation', 'Science', 'Safety', 'Harvest season', 'Habitat', 'Fun fact', 'Source page', 'In my pantry', 'Tried'])
+                for p in P:
+                    e = EN.get(p['id']) or {}
+                    if not e.get('name'): continue
+                    w.writerow([e['name'], p['la'], p['fam'], e.get('part', ''), ' | '.join(f'{a}: {b}' for a, b in e.get('uses', [])), e.get('prep', ''), e.get('science', ''), e.get('safety', ''),
+                                e.get('season', ''), e.get('habitat', ''), e.get('fact', ''), f"https://bitkitabani.com/en/{p['id']}/", 'No', 'No'])
+            z.writestr(f'{ad}/' + ('Bitkiler.csv' if dil == 'tr' else 'Plants.csv'), '\ufeff' + buf.getvalue())
+            buf = io.StringIO(); w = csv.writer(buf)
+            w.writerow(['Tarih', 'Bitki', 'Ne yaptım (topladım, kuruttum, demledim…)', 'Nerede', 'Notlar'] if dil == 'tr' else ['Date', 'Plant', 'What I did (gathered, dried, brewed…)', 'Where', 'Notes'])
+            z.writestr(f'{ad}/' + ('Kayıtlarım.csv' if dil == 'tr' else 'My log.csv'), '\ufeff' + buf.getvalue())
+            if dil == 'tr':
+                buf = io.StringIO(); w = csv.writer(buf); w.writerow(['Ay', 'Toplanabilecek bitkiler (kaynak: Bitki Tabanı)'])
+                for i, a in enumerate(AY):
+                    w.writerow([a, ', '.join(p['tr'] for p in P if p['guv'] != 'yuksek' and p['id'] not in YASAL and not p.get('yasal') and not KORUMA.get(p['id'], {}).get('rozet') and (i + 1) in months_of(EK.get(p['id'], {}).get('mevsim', '')))])
+                z.writestr(f'{ad}/Toplama Takvimi.csv', '\ufeff' + buf.getvalue())
+            giris = ({'tr': f"# {ad}\n\n{len(P)} şifalı ve ritüel bitki: geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve kaynaklar.\n\n"
+                      "## Nasıl kullanılır\n- **Bitkiler**: Evde olanları ve denediklerini işaretle; Kategori ve Güvenlik sütunlarına göre filtrele.\n"
+                      "- **Toplama Takvimi**: Hangi ay neyin toplanabileceğini gör.\n- **Kayıtlarım**: Topladığın, kuruttuğun ve demlediğin her şeyi not et.\n\n"
+                      "> Bu defter bilgi amaçlıdır, tıbbi tavsiye değildir. Hamilelik, emzirme, çocuklar ve ilaç kullananlar için her bitkinin güvenlik notuna bak; bitkisel bir ürüne başlamadan önce hekimine ya da eczacına danış.\n\n"
+                      "Kaynaklar ve güncellemeler: https://bitkitabani.com"},
+                     {'en': f"# {ad}\n\nMedicinal and ritual plants with traditional uses, level of scientific evidence, safety notes and sources.\n\n"
+                      "## How to use\n- **Plants**: tick what is in your pantry and what you have tried; filter by safety.\n- **My log**: note what you gather, dry and brew.\n\n"
+                      "> For information only, not medical advice. Check the safety notes, especially in pregnancy, breastfeeding, for children and with medication.\n\nSources and updates: https://bitkitabani.com/en/"})[0 if dil == 'tr' else 1][dil]
+            z.writestr(f'{ad}.md', giris)
+    print('notion paketleri hazır')
+
 def main():
     from refs import POWO
     D = {p['id']: p for p in json.load(open(os.path.join(ROOT, 'data.json'), encoding='utf-8'))['P']}
@@ -123,6 +188,8 @@ def main():
         if onizleme:
             mockup(onizleme[:3], os.path.join(sdir, f'set_{sid}_tanitim_1.jpg')); mockup(onizleme[3:6] or onizleme[:3], os.path.join(sdir, f'set_{sid}_tanitim_2.jpg'))
             json.dump(ilan(None, None, None, '', '', n=len(adlar), set_en=set_en, set_tr=set_tr, adlar=adlar), open(os.path.join(sdir, 'set_ilan.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    try: notion_paketi(D, EN, POWO)
+    except Exception as ex: rapor.append('notion HATA ' + str(ex)[:150])
     open(os.path.join(OUT, 'RAPOR.txt'), 'w', encoding='utf-8').write('\n'.join(rapor)); print('\n'.join(rapor))
 
 if __name__ == '__main__':
