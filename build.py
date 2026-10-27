@@ -1473,6 +1473,26 @@ open(os.path.join(OUT, INDEXNOW_KEY + '.txt'), 'w').write(INDEXNOW_KEY)
 _today = [i for i in YENI if YENI[i] == LOCAL_DAY]
 _inx = ['/', '/yeni/', '/gunun-bitkisi/', '/katalog/', '/rehber/', '/tarif/'] + [f'/{i}/' for i in _today] + [u for i in _today for u, _ in GLINKS.get(i, [])]
 json.dump({'key': INDEXNOW_KEY, 'urls': sorted(set(BASE + u for u in _inx))}, open(os.path.join(HERE, '.cache', 'indexnow.json'), 'w'))
+# ---------- QR kartlar: aktar, pazar ve atölyeler için yazdırılabilir bitki kartları ----------
+try:
+    import segno
+    def _qr(u): return segno.make(u, error='m').svg_inline(scale=4, border=1, dark='#1C2140')
+except Exception:
+    _qr = None
+if _qr:
+    def _kart(p):
+        im = f'<img src="/img/{p["id"]}-500.jpg" alt="">' if p['id'] in IMG else ''
+        bil = p['ilginc'].split('. ')[0].rstrip('.') + '.'
+        return (f'<article class="kart"><div class="kart-ust">{im}<div><h2>{e(p["tr"])}</h2><p class="la">{e(short_la(p))}</p>'
+                f'<p class="guv {p["guv"]}">{GUV[p["guv"]]}</p></div></div><p>{e(bil)}</p>'
+                f'<div class="kart-alt">{_qr(BASE + "/api/q/" + p["id"])}<p>Okut: geleneksel kullanımı, bilimsel kanıtı, güvenliği ve kaynakları.<br><b>bitkitabani.com/{p["id"]}/</b></p></div></article>')
+    _KCSS = ('<style>.kartlar{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}.kart{border:1px solid #cfc4ae;border-radius:10px;padding:14px;background:#fbf7ee;color:#1c2140;break-inside:avoid;page-break-inside:avoid}'
+             '.kart-ust{display:flex;gap:12px;align-items:center}.kart-ust img{width:96px;height:96px;object-fit:cover;border-radius:8px}.kart h2{margin:0;font-size:1.3rem}.kart .la{margin:2px 0;font-style:italic}.kart .guv{margin:0;font-size:.8rem}'
+             '.kart-alt{display:flex;gap:12px;align-items:center;font-size:.8rem}.kart-alt svg{width:96px;height:96px;flex:none}'
+             '@media print{header.site,nav,footer,.page-head,.noprint{display:none!important}body{background:#fff}.kartlar{grid-template-columns:1fr 1fr;gap:8mm}.kart{height:95mm;overflow:hidden}}</style>')
+    _ks = ''.join(_kart(p) for p in P if p['guv'] != 'yuksek')
+    write('/kartlar/index.html', page('Yazdırılabilir bitki kartları (QR kodlu) | Bitki Tabanı', 'Aktarlar, pazarlar ve atölyeler için QR kodlu, yazdırılabilir şifalı bitki kartları.', '/kartlar/',
+          _KCSS + '<header class="page-head"><h1>Yazdırılabilir bitki kartları</h1><p>Aktar, pazar ve atölyeler için: her kartta bitkinin adı, güvenlik düzeyi, kısa bir bilgi ve okutunca sayfasına götüren bir QR kod var. Yazdır deyin; A4 sayfaya dört kart sığar. Yüksek riskli bitkiler bu listede yok.</p><p class="noprint"><button type="button" onclick="print()">Yazdır</button></p></header><div class="kartlar">' + _ks + '</div>', 'kat'))
 # ---------- tanıma görselleri kontrol sayfası (dizine eklenmez) ----------
 _rows = ''.join(f'<section class="sec"><h2><a href="/{p["id"]}/">{e(p["tr"])}</a> <small>{e(p["id"])}</small></h2>{tanima_html(p["id"], h2=False) or "<p>Görsel yok.</p>"}'
                 + ''.join(f'<p class="muted-s">{TANIMA_AD[t]}: bulunamadı</p>' for t in ('cizim', 'cicek', 'kuru') if TANIMA.get(f'{p["id"]}:{t}') == 'yok') + '</section>' for p in P)

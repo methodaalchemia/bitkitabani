@@ -39,7 +39,7 @@ jobs:
         run: pip install fonttools brotli && python3 tools/fonts_web.py
       - name: Tanıma görselleri (çizim, çiçek, kuru)
         continue-on-error: true
-        run: pip install -q pillow && python3 tools/tanima.py
+        run: pip install -q pillow segno && python3 tools/tanima.py
       - run: python3 build.py
       - name: ffmpeg (Reels videoları için)
         continue-on-error: true
