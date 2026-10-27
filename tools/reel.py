@@ -22,7 +22,7 @@ def _clean(t):
 def _words(t): return len(t.split())
 
 def script(p, m):
-    """Konuşma metni: soru/kanca, az bilinen gerçek, gelenek, bilim, dikkat, kapanış. ~80 kelimeyi geçmez."""
+    """Konuşma metni: soru/kanca, az bilinen gerçek, gelenek, bilim, dikkat, kapanış. ~58 kelimeyi geçmez (~25-28 sn)."""
     hook = _clean(m.get('ilk') or m.get('kapak') or p['tr'])
     if not hook.lower().startswith(p['tr'].lower().split()[0]): hook = f"{p['tr']}: {hook}"
     parts = [hook]
@@ -38,7 +38,7 @@ def script(p, m):
     end = 'Kaynaklarıyla birlikte tamamı Bitki Tabanı’nda.'
     out, n = [], _words(end)
     for s in parts:   # sırayla ekle, sınırı aşan cümleyi atla (kanca her zaman kalır)
-        if not out or n + _words(s) <= 80: out.append(s); n += _words(s)
+        if not out or n + _words(s) <= 58: out.append(s); n += _words(s)
     return out + [end]
 
 # ---------- ses ----------
