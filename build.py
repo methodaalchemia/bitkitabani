@@ -1485,6 +1485,20 @@ for k in LIVE_K:
     pid = next((x for x, _ in k['bitkiler'] if x in byId and x in IMG), None)
     if pid: _pin.append(_pitem(k['baslik'], f'/rehber/{k["slug"]}/', k['ozet'], pid, _d0))
 open(os.path.join(OUT, 'pinterest.xml'), 'w', encoding='utf-8').write(f'<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>Bitki Tabanı</title><link>{BASE}/</link><description>Şifalı bitkiler: tarifler, rehberler ve yeni eklenen bitkiler.</description><language>tr</language>{"".join(_pin)}</channel></rss>')
+def _pfeed(fn, title, desc, items):
+    open(os.path.join(OUT, fn), 'w', encoding='utf-8').write(f'<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>{e(title)}</title><link>{BASE}/</link><description>{e(desc)}</description><language>tr</language>{"".join(items)}</channel></rss>')
+def _pimg(title, url, desc, img, when):
+    return f'<item><title>{e(title)}</title><link>{BASE}{url}</link><guid>{BASE}{url}#{img.rsplit("/",1)[-1]}</guid><pubDate>{_fdp(when)}</pubDate><description>{e(f'<img src="{BASE}{img}" alt="{title}"/><p>{desc}</p>')}</description><enclosure url="{BASE}{img}" type="image/jpeg" length="0"/><media:content url="{BASE}{img}" medium="image" type="image/jpeg"/></item>'
+# katalogun tamamı (her bitki bir pin)
+_pfeed('pinterest-katalog.xml', 'Bitki Tabanı: şifalı bitkiler kataloğu', 'Her şifalı bitki: ne işe yarar, kanıtı ve uyarıları.',
+       [_pitem(f'{q["tr"]} ({short_la(q)}): ne işe yarar, kimler kullanmamalı?', f'/{q["id"]}/', q['ilginc'], q['id'], _d0) for q in P if q['id'] in IMG])
+# botanik çizimler (Köhler/Thomé levhaları)
+_pfeed('pinterest-cizim.xml', 'Bitki Tabanı: botanik çizimler', 'Köhler ve Thomé’nin 19. yüzyıl tıbbi bitki levhaları.',
+       [_pimg(f'{byId[k.split(":")[0]]["tr"]} botanik çizimi ({short_la(byId[k.split(":")[0]])})', f'/{k.split(":")[0]}/', (v.get('artist') or '') + '. ' + byId[k.split(":")[0]]['ilginc'], f'/img/tanima/{k.split(":")[0]}-cizim.jpg', _d0)
+        for k, v in sorted(TANIMA.items()) if k.endswith(':cizim') and isinstance(v, dict) and k.split(':')[0] in byId])
+# kavramlar ve kültür
+_pfeed('pinterest-kultur.xml', 'Bitki Tabanı: şamanizm, ritüel ve kavramlar', 'Bitkilerle ilgili kavramlar, ritüeller ve semboller.',
+       [_pitem(f'{k["ad"]} nedir? {k["kisa"]}'[:100], f'/kavram/{k["slug"]}/', k['kisa'], k['bitki'], _d0) for k in KAV if k['bitki'] in IMG])
 
 # ---------- bülten sayfaları ve kayıt hediyeleri ----------
 _bscript = '<script src="/assets/bulten.js" defer></script>'

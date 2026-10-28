@@ -541,6 +541,57 @@ async function katkiEkle(env, k) {
   while (L.length > 2000) L.shift();
   await call(env, 'katki:list', 'put', L); return true;
 }
+// Yorum bildirimi: Instagram ve Threads'e gelen yeni yorumlar Telegram botundan site sahibine özel mesajla gelir.
+// Kurulum: sahibi bota "/start 520364" yazar; bot o sohbeti kaydeder. İlk taramada mevcut yorumlar bildirilmeden işaretlenir.
+async function bildirim(env) {
+  const tk = String(env.TG_TOKEN || '').trim().replace(/^bot/i, '').replace(/\s+/g, ''); if (!tk) return;
+  const TG = 'https://api.telegram.org/bot' + tk;
+  const st = (await call(env, 'tg:bildir', 'get')) || { seen: [] };
+  const gonder = (text) => fetch(TG + '/sendMessage', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ chat_id: st.chat, text, parse_mode: 'HTML', link_preview_options: { is_disabled: true } }) });
+  if (!st.chat) {
+    const u = await (await fetch(TG + '/getUpdates?timeout=0&offset=' + (st.offset || 0))).json();
+    for (const x of u.result || []) {
+      st.offset = x.update_id + 1; const m = x.message;
+      if (m && m.chat && m.chat.type === 'private' && /^\/start\s+520364\b/.test(m.text || '')) { st.chat = m.chat.id; await gonder('Tamam 🌿 Instagram ve Threads’e gelen yeni yorumları buradan sana bildireceğim.'); break; }
+    }
+    await call(env, 'tg:bildir', 'put', st);
+    if (!st.chat) return;
+  }
+  if (st.son && Date.now() - st.son < 25 * 60e3) return;
+  st.son = Date.now();
+  const seen = new Set(st.seen || []), yeni = [], esc = x => String(x || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  try {
+    const ig = (await call(env, 'ig:state', 'get')) || {};
+    if (ig.token && ig.uid) {
+      const q = '&access_token=' + encodeURIComponent(ig.token);
+      if (!st.igUser) st.igUser = ((await igJson(await fetch(IG + '/' + ig.uid + '?fields=username' + q))) || {}).username || '';
+      const L = (await igJson(await fetch(IG + '/' + ig.uid + '/media?fields=id,caption,permalink,comments_count&limit=12' + q))).data || [];
+      for (const md of L) if (md.comments_count) {
+        const C = (await igJson(await fetch(IG + '/' + md.id + '/comments?fields=id,text,username,timestamp&limit=50' + q))).data || [];
+        for (const c of C) if (!seen.has('ig:' + c.id)) { seen.add('ig:' + c.id); if (c.username !== st.igUser) yeni.push(['Instagram', c.username, c.text, md.permalink, (md.caption || '').split('\n')[0]]); }
+      }
+    }
+  } catch (e) { st.hata = 'ig: ' + String(e.message || e).slice(0, 120); }
+  try {
+    const th = (await call(env, 'th:state', 'get')) || {};
+    if (th.token) {
+      const q = '&access_token=' + encodeURIComponent(th.token);
+      if (!st.thUser) st.thUser = ((await igJson(await fetch(TH + '/me?fields=username' + q))) || {}).username || '';
+      const L = (await igJson(await fetch(TH + '/me/threads?fields=id,text,permalink&limit=12' + q))).data || [];
+      for (const md of L) {
+        const C = (await igJson(await fetch(TH + '/' + md.id + '/replies?fields=id,text,username,timestamp' + q))).data || [];
+        for (const c of C) if (!seen.has('th:' + c.id)) { seen.add('th:' + c.id); if (c.username !== st.thUser) yeni.push(['Threads', c.username, c.text, md.permalink, (md.text || '').split('\n')[0]]); }
+      }
+    }
+  } catch (e) { st.hata = 'th: ' + String(e.message || e).slice(0, 120); }
+  st.seen = [...seen].slice(-800);
+  if (!st.ilk) { st.ilk = true; await call(env, 'tg:bildir', 'put', st); return; }   // ilk tarama: eski yorumlar bildirilmez
+  if (yeni.length) {
+    const t = '💬 <b>' + yeni.length + ' yeni yorum</b>\n\n' + yeni.slice(0, 15).map(([k, u, x, l, b]) => `<b>${k}</b> · @${esc(u)}\n“${esc(String(x).slice(0, 300))}”\n<a href="${esc(l)}">${esc(b.slice(0, 60)) || 'gönderi'} →</a>`).join('\n\n');
+    await gonder(t);
+  }
+  await call(env, 'tg:bildir', 'put', st);
+}
 async function thYanitlar(env) {   // günde bir: son 'ad' postlarına gelen yanıtlar katkı listesine
   const st = (await call(env, 'th:state', 'get')) || {};
   if (!st.token || !st.adIds || st.yanitGun === trDay()) return;
@@ -887,6 +938,7 @@ export default {
     if (env.IG_TOKEN) ctx.waitUntil(igPost(env).then(() => (env.TH_TOKEN || env.TH_Token) ? thPost(env) : null).then(() => aylikPost(env)).then(() => ekPost(env)));
     ctx.waitUntil(bultenCron(env).catch(() => null));
     ctx.waitUntil(thYanitlar(env).catch(() => null));
+    if (env.TG_TOKEN) ctx.waitUntil(bildirim(env).catch(() => null));
     ctx.waitUntil(istCron(env).catch(() => null));
     if (env.FB_TOKEN) ctx.waitUntil(fbPost(env).catch(() => null));
     if (env.TG_TOKEN && env.TG_CHAT) ctx.waitUntil(tgPost(env).catch(() => null).then(() => tgEk(env)).catch(() => null).then(() => tgArsiv(env)).catch(() => null));
