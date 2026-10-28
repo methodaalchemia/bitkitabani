@@ -616,9 +616,9 @@ async function araApi(req, env, url) {
 
 // ---------- Telegram kanalı ve Bluesky: günlük bitki postu (Instagram'dan sonra, akşam) ----------
 // Gizli değişkenler: TG_TOKEN, TG_CHAT (@kanal) · BSKY_HANDLE, BSKY_PASSWORD (uygulama şifresi)
-async function gunlukPost(env) {   // Instagram'da bugün paylaşılan bitkinin metni ve ilk görseli
+async function gunlukPost(env, zorla) {   // Instagram'da bugün paylaşılan bitkinin metni ve ilk görseli
   const ig = (await call(env, 'ig:state', 'get')) || {};
-  if (!ig.lastPlant || ig.last !== trDay()) return null;
+  if (!ig.lastPlant || !ig.n || (!zorla && ig.last !== trDay())) return null;   // deneme: son paylaşılanı kullan
   const pr = await igAsset('p/' + (ig.n - 1) + '/post.json'); if (!pr.ok) return null;
   const post = await pr.json();
   const paras = (post.caption || '').split(/\n\s*\n/).map(x => x.trim()).filter(x => x && !/^(🆕|#|Kaydırarak|Kaynaklarıyla|Bilgilendirme)/.test(x) && !/profil/i.test(x));
@@ -628,14 +628,14 @@ async function tgPost(env, zorla) {
   const st = (await call(env, 'tg:state', 'get')) || {}; const day = trDay();
   if (!zorla && (st.last === day || trH() < 20.6)) return { skipped: 'sırası değil' };
   try {
-    const g = await gunlukPost(env); if (!g) return { skipped: 'bugün post yok' };
+    const g = await gunlukPost(env, zorla); if (!g) return { skipped: 'bugün post yok' };
     let cap = ''; for (const x of g.paras) if ((cap + '\n\n' + x).length < 860) cap += (cap ? '\n\n' : '') + x;
     const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
     const body = { chat_id: env.TG_CHAT, caption: esc(cap) + `\n\n<a href="${g.url}">Devamı ve kaynaklar: bitkitabani.com</a>`, parse_mode: 'HTML' };
     const r = await fetch('https://api.telegram.org/bot' + env.TG_TOKEN + (g.image ? '/sendPhoto' : '/sendMessage'), { method: 'POST', headers: { 'content-type': 'application/json' },
       body: JSON.stringify(g.image ? { ...body, photo: g.image } : { chat_id: env.TG_CHAT, text: body.caption, parse_mode: 'HTML' }) });
     const j = await r.json(); if (!j.ok) throw new Error(j.description || 'telegram');
-    st.last = day; st.plant = g.id; st.n = (st.n || 0) + 1; st.error = null;
+    if (!zorla) st.last = day; st.plant = g.id; st.n = (st.n || 0) + 1; st.error = null;
   } catch (e) { st.error = String(e.message || e).slice(0, 200); st.errorAt = new Date().toISOString(); if (!zorla) st.last = day; }
   await call(env, 'tg:state', 'put', st); return st;
 }
@@ -644,7 +644,7 @@ async function bskyPost(env, zorla) {
   if (!zorla && (st.last === day || trH() < 20.7)) return { skipped: 'sırası değil' };
   const X = 'https://bsky.social/xrpc/';
   try {
-    const g = await gunlukPost(env); if (!g) return { skipped: 'bugün post yok' };
+    const g = await gunlukPost(env, zorla); if (!g) return { skipped: 'bugün post yok' };
     const ses = await (await fetch(X + 'com.atproto.server.createSession', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ identifier: env.BSKY_HANDLE, password: env.BSKY_PASSWORD }) })).json();
     if (!ses.accessJwt) throw new Error('giriş: ' + (ses.message || 'başarısız'));
     const H = { authorization: 'Bearer ' + ses.accessJwt };
@@ -663,7 +663,7 @@ async function bskyPost(env, zorla) {
     }
     const r = await (await fetch(X + 'com.atproto.repo.createRecord', { method: 'POST', headers: { ...H, 'content-type': 'application/json' }, body: JSON.stringify({ repo: ses.did, collection: 'app.bsky.feed.post', record: rec }) })).json();
     if (!r.uri) throw new Error(r.message || 'bluesky');
-    st.last = day; st.plant = g.id; st.n = (st.n || 0) + 1; st.error = null;
+    if (!zorla) st.last = day; st.plant = g.id; st.n = (st.n || 0) + 1; st.error = null;
   } catch (e) { st.error = String(e.message || e).slice(0, 200); st.errorAt = new Date().toISOString(); if (!zorla) st.last = day; }
   await call(env, 'bsky:state', 'put', st); return st;
 }
