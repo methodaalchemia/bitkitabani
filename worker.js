@@ -210,6 +210,21 @@ async function thPublish(tok, o) {   // tek görselli ya da yalnızca metin Thre
   }
   return igJson(await fetch(TH + '/me/threads_publish', form({ creation_id: box })));
 }
+// Bağlantıyı ana metinden alıp gönderinin altına ilk yorum olarak yazar (Threads ana metindeki bağlantıları daha az gösteriyor).
+function thAyir(text, yedek) {
+  const m = text.match(/(?:https?:\/\/)?bitkitabani\.com\/[^\s)]*/);
+  const url = m ? m[0].replace(/^https?:\/\//, '') : yedek;
+  if (!url) return { text, link: null };
+  const kalan = m ? text.split('\n').filter(l => !l.includes(m[0])).join('\n').replace(/\n{3,}/g, '\n\n').trim() : text;
+  return { text: kalan.length > 40 ? kalan : text, link: kalan.length > 40 ? url : null };
+}
+async function thYorum(tok, parentId, link) {
+  if (!parentId || !link) return;
+  const form = x => { const f = new URLSearchParams(x); f.set('access_token', tok); return { method: 'POST', body: f }; };
+  const box = (await igJson(await fetch(TH + '/me/threads', form({ media_type: 'TEXT', text: 'Kaynaklar ve devamı 👉 ' + link, reply_to_id: parentId })))).id;
+  await new Promise(r => setTimeout(r, 4000));
+  await igJson(await fetch(TH + '/me/threads_publish', form({ creation_id: box })));
+}
 async function thPost(env) {
   env = { ...env, TH_TOKEN: env.TH_TOKEN || env.TH_Token };   // panelde 'TH_Token' olarak da eklenebilir
   const ig = (await call(env, 'ig:state', 'get')) || {};
@@ -241,7 +256,7 @@ async function thPost(env) {
       let text = '';
       for (const x of body.slice(0, 3)) if ((text + '\n\n' + x).length < 440) text += (text ? '\n\n' : '') + x;
       if (!text) text = body[0].slice(0, 440);
-      text += '\n\nDevamı ve kaynaklar: bitkitabani.com/' + post.id + '/\n\n#şifalıbitkiler';
+      text += '\n\n#şifalıbitkiler';
       const form = o => { const f = new URLSearchParams(o); f.set('access_token', tok); return { method: 'POST', body: f }; };
       const kids = [];
       st.step = 'görsel';
@@ -256,14 +271,17 @@ async function thPost(env) {
         if (s.status === 'FINISHED') break;
         if (s.status === 'ERROR') throw new Error('Threads görselleri işleyemedi');
       }
-      await igJson(await fetch(TH + '/me/threads_publish', form({ creation_id: box })));
+      const yay = await igJson(await fetch(TH + '/me/threads_publish', form({ creation_id: box })));
       st.last = day + ':' + post.id; st.plant = post.id;
+      try { await thYorum(tok, yay && yay.id, 'bitkitabani.com/' + post.id + '/'); st.yorumHata = null; } catch (e) { st.yorumHata = String(e.message || e).slice(0, 160); }
     } else {
       const pr = await igAsset('threads.json');
       if (!pr.ok) throw new Error('threads.json bulunamadı');
       const plan = (await pr.json())[day];
       if (!plan || !plan[job]) { st.slot[job] = day; throw new Error('bugün için ' + job + ' metni yok'); }
-      const pub = await thPublish(tok, plan[job]);
+      const ay = thAyir(plan[job].text, plan[job].bitki ? 'bitkitabani.com/' + plan[job].bitki + '/' : null);
+      const pub = await thPublish(tok, { ...plan[job], text: ay.text });
+      try { await thYorum(tok, pub && pub.id, ay.link); st.yorumHata = null; } catch (e) { st.yorumHata = String(e.message || e).slice(0, 160); }
       if (job === 'ad' && pub && pub.id) { st.adIds = st.adIds || {}; st.adIds[pub.id] = { bitki: plan[job].bitki || null, gun: day }; const ks = Object.keys(st.adIds); if (ks.length > 14) delete st.adIds[ks[0]]; }
       st.slot[job] = day;
     }
