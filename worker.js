@@ -78,7 +78,7 @@ async function session(req, env) {
   const sid = cookieOf(req); if (!sid) return null;
   const s = await call(env, 'sess:' + sid, 'get');
   if (!s || s.exp < Date.now()) return null;
-  return { sid, sub: s.sub, admin: !!s.admin };
+  return { sid, sub: s.sub, admin: !!s.admin, ep: s.ep };
 }
 
 
@@ -555,7 +555,8 @@ async function katkiApi(req, env, url) {
     return json(L.filter(x => x.durum === 'onay').map(({ bitki, tur, metin, yore, ad, src, at }) => ({ bitki, tur, metin, yore, ad, src, at })));
   }
   const s = await session(req, env);
-  if (!s || !s.admin) return json({ error: 'yetki' }, 403);
+  if (!s) return json({ error: 'giriş yok', not: 'bitkitabani.com/hesap/ sayfasından Google ile giriş yap' }, 401);
+  if (!s.admin) return json({ error: 'yetki', hesap: s.ep || 'eski oturum: çıkış yapıp yeniden gir' }, 403);
   if (url.pathname === '/api/katki-sosyal-dene' && req.method === 'GET') {   // yönetici: ?k=tg|bsky
     const k = url.searchParams.get('k');
     if (k === 'tg' && env.TG_TOKEN) return json(await tgPost(env, true));
@@ -697,7 +698,8 @@ export default {
         const sid = btoa(String.fromCharCode(...crypto.getRandomValues(new Uint8Array(32)))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '');
         const gc = googleClaims(String(credential || ''));
         const admin = !!(gc.email_verified && (await sha256hex(String(gc.email || '').toLowerCase())) === ADMIN_SHA);
-        await call(env, 'sess:' + sid, 'put', { sub, admin, exp: Date.now() + SESSION_DAYS * 864e5 });
+        const em = String(gc.email || ''), ep = em.slice(0, 2) + '…@' + em.split('@')[1];
+        await call(env, 'sess:' + sid, 'put', { sub, admin, ep, exp: Date.now() + SESSION_DAYS * 864e5 });
         const data = (await call(env, 'user:' + sub, 'get')) || merge();
         return json({ ok: true, data }, 200, { 'set-cookie': setCookie(sid, SESSION_DAYS * 86400) });
       }
