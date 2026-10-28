@@ -94,3 +94,18 @@
 })();
 
 (function(){var f=document.querySelector('details.fbox');if(f&&window.matchMedia('(min-width: 900px)').matches)f.open=true;})();
+/* Katalog sıralaması: katalog sırası, A'dan Z'ye, kanıtı en güçlü */
+(function(){
+  var sel = document.getElementById('sort'); if (!sel) return;
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.card[data-id]')); if (!cards.length) return;
+  var box = cards[0].parentNode, R = { klinik: 0, sinirli: 1, geleneksel: 2 };
+  sel.addEventListener('change', function(){
+    var v = sel.value, c = cards.slice();
+    c.sort(function(a, b){
+      if (v === 'az') return a.dataset.ad.localeCompare(b.dataset.ad, 'tr');
+      if (v === 'kanit') return (R[a.dataset.kanit] - R[b.dataset.kanit]) || (+a.dataset.no - +b.dataset.no);
+      return +a.dataset.no - +b.dataset.no;
+    });
+    c.forEach(function(x){ box.appendChild(x); });
+  });
+})();

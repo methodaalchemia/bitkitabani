@@ -569,3 +569,4 @@ details.kisaca,details.toc,details.kstats{border:1px solid var(--rule);border-ra
 details.kisaca>summary,details.toc>summary,details.kstats>summary{cursor:pointer;font-weight:600;list-style-position:inside}
 details.toc ol{margin:8px 0 0;padding-left:20px;columns:2;column-gap:20px}
 .hsearch button{background:var(--clay,#a3271b);color:#fff;border:0;border-radius:10px;padding:0 20px;font:inherit;font-weight:600;cursor:pointer}
+.resultbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center}.sortsel{margin-left:auto;font-size:var(--t-sm);color:var(--muted)}.sortsel select{font:inherit;margin-left:6px;padding:4px 8px;border:1px solid var(--rule);border-radius:6px;background:var(--paper,#fff);color:inherit}
