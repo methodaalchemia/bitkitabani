@@ -292,6 +292,17 @@ DESCRIPTION:Meyveler Eylül–Ekim’de toplanır. https://bitkitabani.co
 URL:https://bitkitabani.com/hayit/
 END:VEVENT
 BEGIN:VEVENT
+UID:toplama-hodan@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260301
+DTEND;VALUE=DATE:20260302
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Hodan toplama mevsimi
+DESCRIPTION:Yapraklar ilkbaharda\, çiçekler Nisan–Haziran’da toplan
+ ır. https://bitkitabani.com/hodan/
+URL:https://bitkitabani.com/hodan/
+END:VEVENT
+BEGIN:VEVENT
 UID:toplama-ihlamur@bitkitabani.com
 DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260601

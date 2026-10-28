@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 127 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 128 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -3989,3 +3989,36 @@ Karıştırma riski: Siyah kakule (Amomum subulatum) ayrı bir bitkidir; daha ir
 
 ### İlginç bilgi
 Kakule safran ve vanilyayla birlikte dünyanın en pahalı baharatları arasındadır; kapsülleri olgunlaşmadan, tek tek elle toplanır.
+
+## Hodan (Borago officinalis)
+
+URL: https://bitkitabani.com/hodan/
+Familya: Boraginaceae · Bölge: Anadolu ve Akdeniz · Kullanılan kısım: Yaprak, çiçek, tohum yağı
+Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
+
+### Geleneksel kullanım
+- Anadolu: Ege ve Akdeniz’de genç yaprakları ıspanak gibi pişirilir, börek ve gözlemeye katılır; mavi çiçekleri salataları süsler. Halk arasında öksürük ve ateş için çiçek çayı içilir.
+- Avrupa: Ortaçağda hodan çiçeğinin şaraba konup cesaret versin diye haçlı şövalyelerine içirildiği anlatılır. Eski bir Latince sözde hodan kendini “ben hep neşe getiririm” diye tanıtır.
+
+### Hazırlama
+Genç yapraklar az miktarda pişirilerek yenir. Tohumdan elde edilen hodan yağı kapsül olarak satılır.
+
+### Bilim ne diyor
+Hodan tohumu yağı gama-linolenik asit (GLA) bakımından zengindir. Romatoid artritte eklem ağrısını biraz azaltabileceğini gösteren küçük çalışmalar vardır; egzamada ise Cochrane derlemesi faydasını gösterememiştir. Yaprak ve çiçeklerin geleneksel kullanımları için klinik kanıt yoktur.
+
+### Güvenlik
+Yaprak, çiçek ve saplar karaciğere zarar veren pirolizidin alkaloitleri içerir. Ara sıra yemek olarak yenmesi genelde sorun yaratmaz, ama düzenli çay içmek ya da çok miktarda yemek önerilmez. Takviye olarak yalnızca “pirolizidin alkaloitsiz” (PA-free) etiketli tohum yağı kullanılmalıdır. Hamileler, emzirenler, karaciğer hastaları ve çocuklar kullanmamalıdır.
+
+### İlaç etkileşimleri
+- Kan sulandırıcılar: GLA kanama eğilimini artırabilir; yağ kapsülleri ameliyattan önce bırakılmalıdır.
+- Karaciğere yük bindiren ilaçlar: Pirolizidin alkaloitleri karaciğer hasarı riskini artırır.
+- Fenotiyazinler ve bazı nöbet ilaçları: GLA içeren yağlarla nöbet eşiğinin düşebileceğine dair raporlar vardır.
+
+### Doğada
+Nerede yetişir: Ege ve Akdeniz’de tarla kenarları, bahçeler ve boş araziler; tek yıllıktır ve kendiliğinden tohum döker.
+Toplama mevsimi: Yapraklar ilkbaharda, çiçekler Nisan–Haziran’da toplanır.
+Yöresel adlar: hodan, tıbbi hodan
+Karıştırma riski: Aynı aileden karakafes (Symphytum) ve sığırdili (Anchusa) da pirolizidin alkaloidi içerir; karakafes kökü özellikle zararlıdır.
+
+### İlginç bilgi
+Çiçeği beş köşeli bir yıldız şeklindedir; İngilizcede “starflower” diye anılır ve arıcılar için en değerli nektar bitkilerindendir.
