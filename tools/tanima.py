@@ -11,17 +11,21 @@ OUT = os.path.join(ROOT, 'img', 'tanima'); META = os.path.join(OUT, 'meta.json')
 UA = 'BitkiTabani/1.0 (https://bitkitabani.com; identification images)'
 TURLER = ['cizim', 'cicek', 'kuru']
 AD = {'cizim': 'Botanik çizim', 'cicek': 'Çiçekli hâli', 'kuru': 'Kurutulmuş hâli'}
-ELLE = {}   # örn. 'zencefil:kuru': 'Dried ginger.jpg'
+ELLE = {}
+# Elle reddedilenler: bu dosyalar bir daha seçilmez, sıradaki aday aranır
+RED_PID = ''
+RED = {"akadacayi:cicek": ["Flowers (20190911-OPPE-LSC-0804).jpg"], "anason:cicek": ["Anason Çiçeği.jpg"], "ashwagandha:cicek": ["Withania somnifera-2-aruna planta medica-yercaud-saelm-India.JPG"], "dagcayi:cicek": ["DSC 5632 Sideritis montana L.jpg"], "incir:cicek": ["Grüne schneebedeckte Feigen.JPG"], "isgin:cicek": ["Rheum ribes - Işgın 04.jpg"], "kenevir:cicek": ["Cannabis sativa on way from Govindghat to Rishikesh at Valley of Flowers National Park - during LGFC - VOF 2019.jpg"], "kina:cicek": ["Mehndi flowers.jpg"], "kirmizikaraagac:cicek": ["2024-03-26 10 54 16 Elm flowers along Forest Lane in the Mountainview section of Ewing Township, Mercer County, New Jersey.jpg"], "lotus:cicek": ["Smiling girl holding a lotus flower.jpg"], "matico:cicek": ["Starr-090623-1383-Piper aduncum-flower spikes and leaves-Nahiku-Maui (24848400902).jpg"], "nane:cicek": ["Mentha × piperita 548138841.jpg"], "sarimsak:cicek": ["نبات الثوم Allium sativum.jpg"], "tarcin:cicek": ["Cinnamomum verum spices.jpg"], "yabaniigde:cicek": ["Ruhland, Karl-Marx-Str. 6, Heckenpflanzung Südwestansicht, Blutpflaume blühend, Frühling, 01.jpg"], "acai:cicek": ["Starr-110330-3785-Euterpe oleracea-flower stalk-Garden of Eden Keanae-Maui (24450055364).jpg"], "aguaymanto:cicek": ["Physalis peruviana flower NC4.jpg"]}   # örn. 'zencefil:kuru': 'Dried ginger.jpg'
 
 PLATE = r'köhler|kohler|koehler|thomé|thome|illustrat|\bplate\b|tafel|lithograph|engraving|drawing|botanical|flora von|medizinal|sowerby|curtis|blackwell|fuchs'
+EK_KOTU = r'|snow|ruler|seedling|potted|sapling|child|girl|\\bboy\\b|street|house|building|trunk|spice|dried'
 HAYVAN = r'butterfl|bee\b|bees\b|bumble|beetle|insect|wasp|\bfly\b|hoverfl|syrph|moth|spider|\bbug\b|caterpillar|larva|\bant\b|bird|apis\b|bombus|papilio|swallowtail|lepidopt|coleopt|hymenopt|dipter|trichodes|zygaena|\bon (a|an|the) '
 YER = r'street|\brue\b|road|garden|jardin|park\b|field|meadow|habitat|landscape|cressoni|moulin|village|in situ|fresh plant|wild\b'
 Q = {   # arama ifadesi, metinde aranan, metinde olmaması gereken
  'cizim': ('"{t}" (Köhler OR illustration OR plate OR Tafel OR Thomé OR botanical)', PLATE, r'herbari|specimen|photo of|stamp|coin|map'),
  # çiçekli hâl: konusu bitkinin çiçeği; üzerinde böcek/hayvan olan fotoğraflar elenir
- 'cicek': ('"{t}" (flower OR flowers OR inflorescence OR Blüte OR fleur OR blossom) filetype:bitmap', r'flower|blüte|fleur|flor\b|flores|inflorescen|blossom|bloom|anthes', PLATE + r'|herbari|specimen|stamp|map|dried|droge|' + HAYVAN),
+ 'cicek': ('"{t}" (flower OR flowers OR inflorescence OR Blüte OR fleur OR blossom) filetype:bitmap', r'flower|blüte|fleur|flor\b|flores|inflorescen|blossom|bloom|anthes', PLATE + r'|herbari|specimen|stamp|map|dried|droge|' + HAYVAN + EK_KOTU),
  # kurutulmuş hâl: aktarda satıldığı gibi drog (kuru çiçek, yaprak, kök, tohum); sokak, bahçe, tarla fotoğrafları elenir
- 'kuru': ('"{t}" (dried OR getrocknet OR Droge OR drug OR séché OR seco OR spice OR pharmacognosy) filetype:bitmap', r'dried|droge|drug\b|getrocknet|séch|seco\b|secad|kurutul|pharmacogn|herbal drug|apothec|spice|gewürz', PLATE + r'|herbari|specimen|stamp|map|' + HAYVAN + '|' + YER),
+ 'kuru': ('"{t}" (dried OR getrocknet OR Droge OR seca OR seco OR "dry")', r'dried|droge|getrocknet|séch|\bseca\b|\bseco\b|\bdry\b|kurutul', PLATE + r'|herbari|neuch|specimen|stamp|map|dried up|' + HAYVAN + '|' + YER),
 }
 
 def get(url, binary=False):
@@ -44,7 +48,7 @@ def ara(taxon, tur, main_file):
     best = None
     for pg in sorted(pages, key=lambda x: x.get('index', 99)):
         t = pg['title'][5:]; ii = (pg.get('imageinfo') or [{}])[0]; m = ii.get('extmetadata', {})
-        if t == main_file or ii.get('mime') not in ('image/jpeg', 'image/png'): continue
+        if t == main_file or t in RED.get(f'{RED_PID}:{tur}', []) or ii.get('mime') not in ('image/jpeg', 'image/png'): continue
         if (ii.get('width') or 0) < 700 or (ii.get('height') or 0) < 700: continue
         lic = m.get('LicenseShortName', {}).get('value', '')
         if not re.search(r'CC|Public domain|PD|No restrictions', lic, re.I): continue
@@ -68,6 +72,24 @@ def cizim(taxon):
             if need(h['title'].lower()): return tek(taxon, h['title'][5:])
     return None
 
+
+DROG = r'(herba|flos|radix|folium|fructus|semen|cortex|rhizoma|pseudo-fructus|galbulus|bulbus|summitates|strobulus|lignum|stigma|resina|tuber)'
+def kuru(taxon, pid, main_file):
+    """Kurutulmuş hâl: önce Avrupa İlaç Ajansı drog adıyla Commons'taki standart drog fotoğrafları (Matricariae flos, Valerianae radix…),
+    yoksa 'dried/getrocknet/Droge' etiketli fotoğraflar."""
+    from refs import EMA
+    adlar = []
+    for n, _ in EMA.get(pid, []):
+        n = re.sub(r'\s*\(.*?\)', '', n).strip()
+        if re.search(DROG + r'\b', n) and 'aetheroleum' not in n.lower() and 'değerlendirme' not in n: adlar.append(n)
+    for n in adlar:
+        r = get('https://commons.wikimedia.org/w/api.php?format=json&action=query&list=search&srnamespace=6&srlimit=10&srsearch=' + urllib.parse.quote('intitle:"' + n + '"'))
+        for h in r.get('query', {}).get('search', []):
+            f = h['title'][5:]
+            if f.lower().startswith(n.lower()) and re.search(r'\.(jpe?g|png)$', f, re.I) and not re.search(r'herbari|neuch', f, re.I):
+                return tek(taxon, f)
+    return ara(taxon, 'kuru', main_file)
+
 def tek(taxon, f):   # elle seçilen dosya
     j = get('https://commons.wikimedia.org/w/api.php?format=json&action=query&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=1280&iiextmetadatafilter=Artist|LicenseShortName&titles=' + urllib.parse.quote('File:' + f))
     ii = list(j['query']['pages'].values())[0]['imageinfo'][0]; m = ii.get('extmetadata', {})
@@ -85,11 +107,12 @@ def main(only=None):
     for pid, la in plants:
         if only and pid not in only: continue
         taxon = re.sub(r'\s+ve diğer.*$', '', (POWO.get(pid) or la.split(',')[0]).strip())
+        global RED_PID; RED_PID = pid
         for tur in TURLER:
             key = f'{pid}:{tur}'; fn = f'{pid}-{tur}.jpg'
             if key in meta and (meta[key] == 'yok' or os.path.exists(os.path.join(OUT, fn))) and key not in ELLE: continue
             try:
-                b = tek(taxon, ELLE[key]) if key in ELLE else (cizim(taxon) if tur == 'cizim' else ara(taxon, tur, FILES.get(pid, '')))
+                b = tek(taxon, ELLE[key]) if key in ELLE else (cizim(taxon) if tur == 'cizim' else kuru(taxon, pid, FILES.get(pid, '')) if tur == 'kuru' else ara(taxon, tur, FILES.get(pid, '')))
                 if not b: meta[key] = 'yok'; print('tanıma:', key, 'bulunamadı'); continue
                 from PIL import Image
                 import io
