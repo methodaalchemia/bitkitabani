@@ -637,9 +637,10 @@ async function tgPost(env, zorla) {
     let cap = ''; for (const x of g.paras) if ((cap + '\n\n' + x).length < 860) cap += (cap ? '\n\n' : '') + x;
     const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
     const body = { chat_id: env.TG_CHAT, caption: esc(cap) + `\n\n<a href="${g.url}">Devamı ve kaynaklar: bitkitabani.com</a>`, parse_mode: 'HTML' };
-    const r = await fetch('https://api.telegram.org/bot' + env.TG_TOKEN + (g.image ? '/sendPhoto' : '/sendMessage'), { method: 'POST', headers: { 'content-type': 'application/json' },
+    const tk = String(env.TG_TOKEN).trim().replace(/^bot/i, '').replace(/\s+/g, '');   // kopyalarken gelen boşluk/satır sonu temizlenir
+    const r = await fetch('https://api.telegram.org/bot' + tk + (g.image ? '/sendPhoto' : '/sendMessage'), { method: 'POST', headers: { 'content-type': 'application/json' },
       body: JSON.stringify(g.image ? { ...body, photo: g.image } : { chat_id: env.TG_CHAT, text: body.caption, parse_mode: 'HTML' }) });
-    const j = await r.json(); if (!j.ok) throw new Error(j.description || 'telegram');
+    const j = await r.json(); if (!j.ok) throw new Error((j.description || 'telegram') + (j.error_code === 404 ? ' (TG_TOKEN hatalı: BotFather’daki satırın tamamı, 123456:ABC… biçiminde olmalı)' : ''));
     if (!zorla) st.last = day; st.plant = g.id; st.n = (st.n || 0) + 1; st.error = null;
   } catch (e) { st.error = String(e.message || e).slice(0, 200); st.errorAt = new Date().toISOString(); if (!zorla) st.last = day; }
   await call(env, 'tg:state', 'put', st); return st;
