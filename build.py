@@ -267,7 +267,7 @@ FOOT = '''<div class="motif indigo" aria-hidden="true"></div>
 
 FOOTNAV = '<nav class="footnav" aria-label="Site haritası">' + ''.join(f'<div><h3>{g}</h3><ul>' + ''.join(f'<li><a href="{h}"' + (' rel="noopener"' if h.startswith('http') else '') + f'>{l}</a></li>' for h, l, k in items) + '</ul></div>' for g, items in MENU) + '</nav>'
 SOSYAL = [('instagram', 'Instagram', 'https://www.instagram.com/bitkitabani/'), ('threads', 'Threads', 'https://www.threads.net/@bitkitabani'),
-          ('facebook', 'Facebook', 'https://www.facebook.com/share/1C7sPzDxqj/'), ('pinterest', 'Pinterest', 'https://pin.it/XZ6TjREdm'), ('telegram', 'Telegram', 'https://t.me/bitkitabani'), ('rss', 'RSS', '/yeni/rss.xml')]
+          ('facebook', 'Facebook', 'https://www.facebook.com/share/1C7sPzDxqj/'), ('pinterest', 'Pinterest', 'https://www.pinterest.com/bitkitabani/'), ('telegram', 'Telegram', 'https://t.me/bitkitabani'), ('rss', 'RSS', '/yeni/rss.xml')]
 def _icon(n, label):
     f = os.path.join(HERE, 'assets', 'icons', n + '.svg')
     if os.path.exists(f):
@@ -954,6 +954,7 @@ yt = """
 </dl><p>Yasal durum, güvenlik etiketinden ayrı gösterilir: bir bitki yasak olmadan zehirli, zehirli olmadan yasak olabilir.</p></section>
 <section class="sec"><h2>Geleneksel bilgiye yaklaşım</h2><p>Geleneksel kullanımlar, onları yaşatan toplulukların adıyla ve bağlamıyla anlatılır; “Amazon yerlileri” gibi genellemeler yerine Shipibo, Huichol gibi somut adlar kullanılır. Kutsal ve törensel kullanımlar bir tavsiye olarak değil, kültürel bir kayıt olarak yazılır.</p></section>
 """ + GZ_HTML + """<section class="sec"><h2>Nasıl doğrulanıyor</h2><p>Her kayıt bir kişi tarafından hazırlanır""" + ('' if GZ_KISI else '; şu an bağımsız bir uzman ya da eczacı kayıtları gözden geçirmiyor') + """. Bu yüzden her iddia, sayfanın altında listelenen kaynağa bağlanır ve okuyan herkes onu kendisi kontrol edebilir. Tıbbi bilgiler resmî değerlendirmelerden (EMA, NCCIH) ve sistematik derlemelerden alınır; kaynağı olmayan sağlık iddiası yazılmaz. Bir eczacı ya da farmakognozi uzmanı gözden geçirmeye katılırsa adı bu sayfada ve ilgili kayıtlarda belirtilecek.</p></section>
+<section class="sec" id="yapay-zeka"><h2>Yapay zekâ ve otomasyon</h2><p>Sitenin yazılımı, kaynak taramaları ve metin taslaklarının bir kısmı yapay zekâ yardımıyla (Anthropic’in Claude modeli) hazırlanıyor. Görseller Wikimedia Commons’tan kurallara göre otomatik seçiliyor; sosyal medya paylaşımları, sesli videolar ve “derdini yaz” anlam araması da otomatik çalışıyor.</p><p>Yapay zekâ kaynak yerine geçmez: her sağlık bilgisi bağlantısı verilen bir kaynağa dayanır, kanıt ve güvenlik etiketleri yukarıdaki kurallarla belirlenir ve içeriğin sorumluluğu Edanaz Tınmazlar’dadır. Otomatik süreçlerde gözden kaçan bir hata görürsen aşağıdaki adrese yaz; düzeltilir.</p></section>
 <section class="sec"><h2>Güncelleme ve düzeltme</h2><p>Her sayfanın altında son gözden geçirme tarihi yazar. Bir hata görürsen ya da yöresel bir kullanım biliyorsan <a href="mailto:iletisim@bitkitabani.com">iletisim@bitkitabani.com</a> adresine yaz; düzeltmeler kaynağıyla birlikte kontrol edilip eklenir.</p></section>
 <section class="sec"><h2>Bağımsızlık</h2><p>Bitki Tabanı ürün satmaz, reklam almaz, satış ortaklığı (affiliate) bağlantısı kullanmaz ve hiçbir şirketten destek almaz.</p></section>
 """
