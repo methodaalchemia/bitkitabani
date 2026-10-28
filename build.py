@@ -128,7 +128,7 @@ def abone(kaynak, baslik='Ücretsiz e-posta kursu: Şifalı bitkilere başlangı
 <input type="text" name="hp" tabindex="-1" autocomplete="off" class="vh" aria-hidden="true">
 <label class="chk"><input type="checkbox" name="riza" required><span>{'E-posta adresimin 7 günlük kurs ve ardından haftalık bülten için saklanmasına ve bana e-posta gönderilmesine izin veriyorum.' if kurs else 'E-posta adresimin haftalık bülten için saklanmasına ve bana e-posta gönderilmesine izin veriyorum.'} <a href="/gizlilik/#bulten">Ayrıntılar</a></span></label>
 <label class="chk"><input type="checkbox" name="duyuru"><span>İsteğe bağlı: Bitki Tabanı’nın atölye, doğa yürüyüşü ve gezi gibi duyurularını da almak istiyorum.</span></label>
-<p class="muted-s abone-msg" role="status"></p></form></section>'''
+<p class="muted-s abone-msg" role="status"></p></form><p class="tg-cta"><a class="cta" href="https://t.me/bitkitabani" rel="noopener" target="_blank">Telegram kanalında her akşam bir bitki →</a> <span class="muted-s">Bildirimle gelir, e-posta gerekmez.</span></p></section>'''
 
 # ---------- rehber, tarif ve karşılaştırma bağlantıları (bitki sayfalarına da eklenir) ----------
 from rehber import KONULAR
@@ -267,7 +267,7 @@ FOOT = '''<div class="motif indigo" aria-hidden="true"></div>
 
 FOOTNAV = '<nav class="footnav" aria-label="Site haritası">' + ''.join(f'<div><h3>{g}</h3><ul>' + ''.join(f'<li><a href="{h}"' + (' rel="noopener"' if h.startswith('http') else '') + f'>{l}</a></li>' for h, l, k in items) + '</ul></div>' for g, items in MENU) + '</nav>'
 SOSYAL = [('instagram', 'Instagram', 'https://www.instagram.com/bitkitabani/'), ('threads', 'Threads', 'https://www.threads.net/@bitkitabani'),
-          ('facebook', 'Facebook', 'https://www.facebook.com/share/1C7sPzDxqj/'), ('pinterest', 'Pinterest', 'https://pin.it/XZ6TjREdm'), ('rss', 'RSS', '/yeni/rss.xml')]
+          ('facebook', 'Facebook', 'https://www.facebook.com/share/1C7sPzDxqj/'), ('pinterest', 'Pinterest', 'https://pin.it/XZ6TjREdm'), ('telegram', 'Telegram', 'https://t.me/bitkitabani'), ('rss', 'RSS', '/yeni/rss.xml')]
 def _icon(n, label):
     f = os.path.join(HERE, 'assets', 'icons', n + '.svg')
     if os.path.exists(f):
@@ -837,7 +837,7 @@ yn = f"""
 <header class="page-head"><span class="eyebrow">Her gün yeni bir bitki</span><h1>Yeni eklenenler</h1><p>Bitki Tabanı her gece yarısı bir kayıt büyüyor. Her yeni bitki öteki kayıtlar gibi geleneksel kullanım, bilimsel kanıt, güvenlik notu ve kaynaklarla gelir. Şu an katalogda {len(P)} bitki var.</p></header>
 {teaser()}
 {('<div class="grid">' + ''.join(card(byId[i]) for i in NEWEST[:12]) + '</div>') if NEWEST else '<p>İlk yeni bitki bu gece geliyor.</p>'}
-{abone("yeni")}<section class="sec"><h2>Takip et</h2><p><a class="cta" href="{IG_URL}" rel="noopener">Instagram’da her gün bir bitki →</a></p><p><a class="cta" href="/yeni/rss.xml">RSS ile takip et →</a> <span class="muted-s">Bir RSS okuyucusu her yeni bitkiyi getirir; bildirim ya da e-posta yok.</span></p></section>
+{abone("yeni")}<section class="sec"><h2>Takip et</h2><p><a class="cta" href="{IG_URL}" rel="noopener">Instagram’da her gün bir bitki →</a></p><p class="tg-cta"><a class="cta" href="https://t.me/bitkitabani" rel="noopener" target="_blank">Telegram kanalında her akşam bir bitki →</a> <span class="muted-s">Bildirimle gelir, e-posta gerekmez.</span></p><p><a class="cta" href="/yeni/rss.xml">RSS ile takip et →</a> <span class="muted-s">Bir RSS okuyucusu her yeni bitkiyi getirir; bildirim ya da e-posta yok.</span></p></section>
 {('<section class="sec"><h2>Bütün liste</h2><ul class="daylist">' + nl + '</ul></section>') if nl else ''}
 """
 write('/yeni/', page(f'Yeni eklenen bitkiler | Bitki Tabanı', f'Bitki Tabanı’na her gün yeni bir şifalı ya da ritüel bitki ekleniyor. Son eklenenler ve tarihleri.', '/yeni/', yn, 'yeni', image=(f'{BASE}/img/{NEWEST[0]}-960.jpg' if NEWEST and NEWEST[0] in IMG else None)))
@@ -857,7 +857,7 @@ gb = f'''
 <header class="page-head"><span class="eyebrow">{tr_date(LOCAL_DAY)}</span><h1>Günün bitkisi: {e(tp["tr"])}</h1><p>Her gün katalogdan bir bitki öne çıkıyor. Ölümcül zehirli ya da yüksek riskli bitkiler bu döngüye alınmaz.</p></header>
 <div class="grid sim">{card(tp)}</div>
 <section class="sec"><h2>Bugün okumak için</h2><p>{e(tp["kul"][0][1])}</p><p class="fact">{e(tp["ilginc"])}</p><p><a class="cta" href="/{tp["id"]}/">{e(tp["tr"])} sayfasının tamamı →</a></p></section>
-<section class="sec"><h2>Her gün</h2><p><a class="cta" href="/gunun-bitkisi/rss.xml">RSS ile takip et →</a> <span class="muted-s">Bir RSS okuyucusu (Feedly, NetNewsWire gibi) her sabah yeni bitkiyi getirir; bildirim ya da e-posta yok.</span></p></section>
+<section class="sec"><h2>Her gün</h2><p class="tg-cta"><a class="cta" href="https://t.me/bitkitabani" rel="noopener" target="_blank">Telegram kanalında her akşam bir bitki →</a> <span class="muted-s">Bildirimle gelir, e-posta gerekmez.</span></p><p><a class="cta" href="/gunun-bitkisi/rss.xml">RSS ile takip et →</a> <span class="muted-s">Bir RSS okuyucusu (Feedly, NetNewsWire gibi) her sabah yeni bitkiyi getirir; bildirim ya da e-posta yok.</span></p></section>
 <section class="sec"><h2>Son iki hafta</h2><ul class="daylist">{past}</ul></section>
 '''
 write('/gunun-bitkisi/', page(f'Günün bitkisi: {tp["tr"]} | Bitki Tabanı', f'Bugünün bitkisi {tp["tr"]} ({short_la(tp)}) ve son iki haftanın bitkileri.', '/gunun-bitkisi/', gb, '', narrow=True,
