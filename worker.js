@@ -601,17 +601,22 @@ async function araApi(req, env, url) {
   const data = await (await env.ASSETS.fetch(new Request(url.origin + '/ara.json'))).json();
   const V = await araVek(env, req, data);
   const qv = (await env.AI.run(ARA_MODEL, { text: [q] })).data[0]; const n = Math.hypot(...qv);
-  const sc = V.map((v, i) => { let s = 0; for (let j = 0; j < v.length; j++) s += v[j] * qv[j] / n; return [s, i]; }).sort((a, b) => b[0] - a[0]).slice(0, 10);
-  // her sonuç için aranan kelimeleri en çok içeren cümle ve sayfadaki yeri
+  const sem = V.map(v => { let s = 0; for (let j = 0; j < v.length; j++) s += v[j] * qv[j] / n; return s; });
+  // anlam araması + kelime eşleşmesi: aranan kelimelerin hepsini içeren cümlesi olan bitki öne çıkar
   const norm = t => t.toLocaleLowerCase('tr').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ı/g, 'i');
   const kok = t => norm(t).split(/[^a-z0-9]+/).filter(x => x.length >= 3).map(x => x.slice(0, 5));
-  const qk = kok(q);
+  const qk = [...new Set(kok(q))];
   const cumle = p => {
     let best = null, bs = 0;
-    for (const [lab, an, c] of p.c || []) { const ck = kok(c); const s = qk.filter(k => ck.some(x => x.startsWith(k) || k.startsWith(x))).length; if (s > bs) { bs = s; best = { etiket: lab, bolum: an, cumle: c }; } }
-    return best || { etiket: 'Geleneksel kullanım', bolum: 'geleneksel-kullanim', cumle: p.kisa };
+    for (const [lab, an, c] of p.c || []) { const ck = kok(c); const s = qk.filter(k => ck.some(x => x.startsWith(k) || (x.length >= 4 && k.startsWith(x)))).length; if (s > bs) { bs = s; best = { etiket: lab, bolum: an, cumle: c }; } }
+    return { best, kw: qk.length ? bs / qk.length : 0 };
   };
-  return json({ q, sonuc: sc.filter(([s]) => s > 0.35).map(([s, i]) => { const p = data.p[i]; return { id: p.id, tr: p.tr, la: p.la, guv: p.guv, ...cumle(p), skor: Math.round(s * 100) / 100 }; }) }, 200, { 'cache-control': 'public, max-age=3600' });
+  const L = data.p.map((p, i) => { const c = cumle(p); return { i, c, s: sem[i] + 0.4 * c.kw + (c.kw === 1 ? 0.2 : 0), sem: sem[i] }; });
+  const tam = L.some(x => x.c.kw === 1);
+  const sonuc = L.filter(x => tam ? x.c.kw === 1 || (x.sem > 0.5 && x.c.kw >= 0.5) : x.sem > 0.42 || x.c.kw >= 0.5)
+    .sort((a, b) => b.s - a.s).slice(0, 10)
+    .map(x => { const p = data.p[x.i]; return { id: p.id, tr: p.tr, la: p.la, guv: p.guv, ...(x.c.best || { etiket: 'Sayfa', bolum: '', cumle: p.kisa }), skor: Math.round(x.s * 100) / 100 }; });
+  return json({ q, sonuc }, 200, { 'cache-control': 'no-store' });
 }
 
 // ---------- Telegram kanalı ve Bluesky: günlük bitki postu (Instagram'dan sonra, akşam) ----------
@@ -667,6 +672,82 @@ async function bskyPost(env, zorla) {
   } catch (e) { st.error = String(e.message || e).slice(0, 200); st.errorAt = new Date().toISOString(); if (!zorla) st.last = day; }
   await call(env, 'bsky:state', 'put', st); return st;
 }
+// ---------- İstatistik: Instagram ve Threads gönderilerinin erişim/kaydetme/paylaşım sayıları ----------
+// Günde bir kez: 10:00'da Instagram, 11:00'de Threads (istek sınırına takılmamak için ayrı saatlerde). Sonuç /api/istatistik sayfasında.
+async function istCron(env) {
+  const day = trDay(), h = trH();
+  const ist = (await call(env, 'ist:state', 'get')) || { ig: {}, th: {} };
+  const ilk = s => String(s || '').split('\n').map(x => x.trim()).find(Boolean) || '';
+  if (h >= 10 && ist.igGun !== day) {
+    ist.igGun = day;
+    try {
+      const ig = (await call(env, 'ig:state', 'get')) || {}; const tok = ig.token; if (!tok || !ig.uid) throw new Error('Instagram anahtarı yok');
+      const q = '&access_token=' + encodeURIComponent(tok);
+      const prof = await igJson(await fetch(IG + '/' + ig.uid + '?fields=followers_count,media_count' + q));
+      const L = (await igJson(await fetch(IG + '/' + ig.uid + '/media?fields=id,caption,media_type,media_product_type,timestamp,permalink,like_count,comments_count&limit=20' + q))).data || [];
+      const posts = [];
+      for (const m of L) {
+        const met = m.media_product_type === 'REELS' ? 'reach,saved,shares,views,total_interactions' : 'reach,saved,shares,views,total_interactions';
+        let v = {};
+        try { for (const x of (await igJson(await fetch(IG + '/' + m.id + '/insights?metric=' + met + q))).data || []) v[x.name] = (x.values && x.values[0] && x.values[0].value) ?? x.total_value?.value ?? 0; }
+        catch (e) { v.hata = String(e.message || e).slice(0, 120); }
+        posts.push({ id: m.id, t: m.timestamp, tur: m.media_product_type === 'REELS' ? 'Reel' : m.media_type === 'CAROUSEL_ALBUM' ? 'Kaydırmalı' : 'Görsel', baslik: ilk(m.caption).slice(0, 90), link: m.permalink, begeni: m.like_count || 0, yorum: m.comments_count || 0, ...v });
+      }
+      ist.ig = { takipci: prof.followers_count, gonderi: prof.media_count, posts, hata: null };
+      ist.igTakip = (ist.igTakip || []).filter(x => x[0] !== day).concat([[day, prof.followers_count]]).slice(-90);
+    } catch (e) { ist.ig = { ...(ist.ig || {}), hata: String(e.message || e).slice(0, 200) }; }
+    await call(env, 'ist:state', 'put', ist); return;
+  }
+  if (h >= 11 && ist.thGun !== day) {
+    ist.thGun = day;
+    try {
+      const th = (await call(env, 'th:state', 'get')) || {}; const tok = th.token; if (!tok) throw new Error('Threads anahtarı yok');
+      const q = '&access_token=' + encodeURIComponent(tok);
+      let takipci = null;
+      try { const u = await igJson(await fetch(TH + '/me/threads_insights?metric=followers_count' + q)); takipci = ((u.data || [])[0] || {}).total_value?.value ?? null; } catch (e) {}
+      const L = (await igJson(await fetch(TH + '/me/threads?fields=id,text,timestamp,permalink,media_type&limit=25' + q))).data || [];
+      const posts = [];
+      for (const m of L) {
+        let v = {};
+        try { for (const x of (await igJson(await fetch(TH + '/' + m.id + '/insights?metric=views,likes,replies,reposts,quotes,shares' + q))).data || []) v[x.name] = (x.values && x.values[0] && x.values[0].value) ?? x.total_value?.value ?? 0; }
+        catch (e) { v.hata = String(e.message || e).slice(0, 120); }
+        posts.push({ id: m.id, t: m.timestamp, baslik: ilk(m.text).slice(0, 90), link: m.permalink, ...v });
+      }
+      ist.th = { takipci, posts, hata: null };
+      if (takipci != null) ist.thTakip = (ist.thTakip || []).filter(x => x[0] !== day).concat([[day, takipci]]).slice(-90);
+    } catch (e) { ist.th = { ...(ist.th || {}), hata: String(e.message || e).slice(0, 200) }; }
+    await call(env, 'ist:state', 'put', ist);
+  }
+}
+function istSayfa(ist) {
+  const e = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  const n = x => (x == null || x === '' ? '–' : Number(x).toLocaleString('tr-TR'));
+  const tarih = t => t ? new Date(new Date(t).getTime() + 3 * 3600e3).toISOString().slice(5, 16).replace('T', ' ') : '';
+  const degisim = L => { if (!L || L.length < 2) return ''; const a = L[Math.max(0, L.length - 8)][1], b = L[L.length - 1][1]; const d = b - a; return ` <small>(${d >= 0 ? '+' : ''}${d} son 7 gün)</small>`; };
+  const ig = ist.ig || {}, th = ist.th || {};
+  const igP = (ig.posts || []).slice(), thP = (th.posts || []).slice();
+  const igSkor = p => (p.saved || 0) * 3 + (p.shares || 0) * 3 + (p.yorum || 0) * 2 + (p.begeni || 0);
+  const enIyi = igP.slice().sort((a, b) => igSkor(b) - igSkor(a))[0];
+  const thEn = thP.slice().sort((a, b) => (b.views || 0) - (a.views || 0))[0];
+  const ort = (L, k) => L.length ? Math.round(L.reduce((s, p) => s + (p[k] || 0), 0) / L.length) : 0;
+  const turOrt = {}; for (const p of igP) { (turOrt[p.tur] = turOrt[p.tur] || []).push(p); }
+  const igSat = igP.map(p => `<tr><td>${tarih(p.t)}</td><td>${e(p.tur)}</td><td><a href="${e(p.link)}" target="_blank" rel="noopener">${e(p.baslik) || '(başlıksız)'}</a>${p.hata ? `<br><small class=h>${e(p.hata)}</small>` : ''}</td><td>${n(p.reach)}</td><td>${n(p.views)}</td><td>${n(p.begeni)}</td><td>${n(p.yorum)}</td><td><b>${n(p.saved)}</b></td><td><b>${n(p.shares)}</b></td></tr>`).join('');
+  const thSat = thP.map(p => `<tr><td>${tarih(p.t)}</td><td><a href="${e(p.link)}" target="_blank" rel="noopener">${e(p.baslik) || '(görsel)'}</a>${p.hata ? `<br><small class=h>${e(p.hata)}</small>` : ''}</td><td><b>${n(p.views)}</b></td><td>${n(p.likes)}</td><td>${n(p.replies)}</td><td>${n(p.reposts)}</td><td>${n(p.shares)}</td></tr>`).join('');
+  return `<!doctype html><html lang=tr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content=noindex><title>İstatistik · Bitki Tabanı</title>
+<style>:root{--bg:#faf7f2;--fg:#2b2a26;--mut:#776f63;--ac:#a5543a;--ln:#e6dfd4;--card:#fff}@media(prefers-color-scheme:dark){:root{--bg:#1c1b19;--fg:#ece6dc;--mut:#a59d90;--ac:#e08a6a;--ln:#38352f;--card:#252320}}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,-apple-system,sans-serif;padding:16px;max-width:1000px;margin:auto}h1{font-size:22px;margin:4px 0 2px}h2{font-size:18px;margin:28px 0 8px}.mut{color:var(--mut)}a{color:var(--ac)}
+.k{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:14px 0}.k div{background:var(--card);border:1px solid var(--ln);border-radius:10px;padding:10px 12px}.k b{display:block;font-size:22px}
+.tw{overflow-x:auto;border:1px solid var(--ln);border-radius:10px;background:var(--card)}table{border-collapse:collapse;width:100%;font-size:13.5px}td,th{padding:7px 9px;border-bottom:1px solid var(--ln);text-align:left;vertical-align:top}th{position:sticky;top:0;background:var(--card);font-weight:600;white-space:nowrap}td:nth-child(n+4){text-align:right;white-space:nowrap}.h{color:#c0392b}.not{background:var(--card);border-left:3px solid var(--ac);padding:8px 12px;border-radius:6px;margin:10px 0}</style></head><body>
+<h1>İstatistik</h1><div class=mut>Her gün 10:00 (Instagram) ve 11:00 (Threads) güncellenir. Son 20 Instagram, 25 Threads gönderisi. Kaydetme ve paylaşım en değerli sinyallerdir.</div>
+<div class=k><div>Instagram takipçi<b>${n(ig.takipci)}</b>${degisim(ist.igTakip)}</div><div>Threads takipçi<b>${n(th.takipci)}</b>${degisim(ist.thTakip)}</div>
+${Object.entries(turOrt).map(([t, L]) => `<div>${e(t)} ort. erişim<b>${n(ort(L, 'reach'))}</b><small class=mut>${L.length} gönderi</small></div>`).join('')}<div>Threads ort. görüntülenme<b>${n(ort(thP, 'views'))}</b></div></div>
+${enIyi ? `<div class=not>Instagram'da en çok etkileşim alan: <a href="${e(enIyi.link)}" target=_blank>${e(enIyi.baslik)}</a> · ${n(enIyi.saved)} kaydetme, ${n(enIyi.shares)} paylaşım</div>` : ''}
+${thEn ? `<div class=not>Threads'te en çok görülen: <a href="${e(thEn.link)}" target=_blank>${e(thEn.baslik)}</a> · ${n(thEn.views)} görüntülenme</div>` : ''}
+<h2>Instagram</h2>${ig.hata ? `<p class=h>Hata: ${e(ig.hata)}</p>` : ''}<div class=tw><table><tr><th>Tarih</th><th>Tür</th><th>Gönderi</th><th>Erişim</th><th>İzlenme</th><th>Beğeni</th><th>Yorum</th><th>Kaydetme</th><th>Paylaşım</th></tr>${igSat || '<tr><td colspan=9 class=mut>Henüz veri yok.</td></tr>'}</table></div>
+<h2>Threads</h2>${th.hata ? `<p class=h>Hata: ${e(th.hata)}</p>` : ''}<div class=tw><table><tr><th>Tarih</th><th>Gönderi</th><th>Görüntülenme</th><th>Beğeni</th><th>Yanıt</th><th>Yeniden paylaşım</th><th>Paylaşım</th></tr>${thSat || '<tr><td colspan=7 class=mut>Henüz veri yok.</td></tr>'}</table></div>
+<p class=mut><small>Son güncelleme: Instagram ${e(ist.igGun || '–')}, Threads ${e(ist.thGun || '–')}</small></p></body></html>`;
+}
+
 export default {
   async fetch(req, env) {
     const url = new URL(req.url);
@@ -690,6 +771,12 @@ export default {
     if (req.method !== 'GET' && req.headers.get('x-bt') !== '1') return json({ error: 'csrf' }, 403);
     if (url.pathname === '/api/abone') return aboneApi(req, env, url);
     if (url.pathname.startsWith('/api/katki')) return katkiApi(req, env, url);
+    if (url.pathname === '/api/istatistik' || url.pathname === '/api/istatistik-yenile') {
+      const s = await session(req, env);
+      if (!s || !s.admin) return json({ error: s ? 'yetki' : 'giriş yok', not: 'bitkitabani.com/hesap/ sayfasından giriş yap' }, s ? 403 : 401);
+      if (url.pathname === '/api/istatistik-yenile') { const ist = (await call(env, 'ist:state', 'get')) || {}; const k = url.searchParams.get('k') === 'th' ? 'thGun' : 'igGun'; ist[k] = null; if (k === 'thGun') ist.igGun = trDay(); await call(env, 'ist:state', 'put', ist); await istCron(env); return Response.redirect(url.origin + '/api/istatistik', 302); }
+      return new Response(istSayfa((await call(env, 'ist:state', 'get')) || {}), { headers: { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store', 'x-robots-tag': 'noindex' } });
+    }
     try {
       if (url.pathname === '/api/login' && req.method === 'POST') {
         if (!env.GOOGLE_CLIENT_ID) return json({ error: 'kapalı' }, 503);
@@ -732,6 +819,7 @@ export default {
     if (env.IG_TOKEN) ctx.waitUntil(igPost(env).then(() => (env.TH_TOKEN || env.TH_Token) ? thPost(env) : null).then(() => aylikPost(env)).then(() => ekPost(env)));
     ctx.waitUntil(bultenCron(env).catch(() => null));
     ctx.waitUntil(thYanitlar(env).catch(() => null));
+    ctx.waitUntil(istCron(env).catch(() => null));
     if (env.FB_TOKEN) ctx.waitUntil(fbPost(env).catch(() => null));
     if (env.TG_TOKEN && env.TG_CHAT) ctx.waitUntil(tgPost(env).catch(() => null));
     if (env.BSKY_HANDLE && env.BSKY_PASSWORD) ctx.waitUntil(bskyPost(env).catch(() => null));
