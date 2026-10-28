@@ -1462,5 +1462,23 @@
   "page": "https://commons.wikimedia.org/wiki/File:Starr-091104-0655-Piper_aduncum-flower_spikes_and_leaves-Nahiku-Maui_%2824987412245%29.jpg"
  },
  "acai:cicek": "yok",
- "tarcin:cicek": "yok"
+ "tarcin:cicek": "yok",
+ "isirgan:cicek": {
+  "file": "Urtica dioica flower Lille northern France.jpg",
+  "artist": "Lamiot",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Urtica_dioica_flower_Lille_northern_France.jpg"
+ },
+ "melisa:cicek": {
+  "file": "Melissa officinalis 002.JPG",
+  "artist": "H. Zell",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Melissa_officinalis_002.JPG"
+ },
+ "ginseng:cicek": {
+  "file": "Ginseng flower in Changbai Mountain (cropped).jpg",
+  "artist": "Doge24190",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ginseng_flower_in_Changbai_Mountain_%28cropped%29.jpg"
+ }
 }

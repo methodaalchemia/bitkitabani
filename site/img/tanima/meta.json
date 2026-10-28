@@ -471,12 +471,6 @@
   "page": "https://commons.wikimedia.org/wiki/File:Ruta_graveolens_%28Flor_de_ruda_hembra%29.jpg"
  },
  "sigla:cicek": "yok",
- "isirgan:cicek": {
-  "file": "Flower of Lamium album.jpg",
-  "artist": "Valen1988",
-  "license": "CC BY-SA 4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Flower_of_Lamium_album.jpg"
- },
  "salep:cicek": {
   "file": "Anacamptis morio 037.jpg",
   "artist": "Fabrizio Tampieri",
@@ -513,12 +507,6 @@
   "artist": "Krzysztof Golik",
   "license": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Close-up_photographs_of_Malva_sylvestris_flowers.jpg"
- },
- "melisa:cicek": {
-  "file": "香蜂草 Melissa officinalis -香港花展 Hong Kong Flower Show- (9200963900).jpg",
-  "artist": "阿橋 HQ",
-  "license": "CC BY-SA 2.0",
-  "page": "https://commons.wikimedia.org/wiki/File:%E9%A6%99%E8%9C%82%E8%8D%89_Melissa_officinalis_-%E9%A6%99%E6%B8%AF%E8%8A%B1%E5%B1%95_Hong_Kong_Flower_Show-_%289200963900%29.jpg"
  },
  "biberiye:cicek": {
   "file": "Rosmarinus officinalis133095382.jpg",
@@ -793,12 +781,6 @@
   "artist": "Perfectodefecto",
   "license": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Turmeric_Flower.jpg"
- },
- "ginseng:cicek": {
-  "file": "Ginseng flower in Changbai Mountain.jpg",
-  "artist": "Doge24190",
-  "license": "CC BY-SA 4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Ginseng_flower_in_Changbai_Mountain.jpg"
  },
  "huito:cicek": {
   "file": "Genipa americana.jpg",
@@ -1480,5 +1462,23 @@
   "page": "https://commons.wikimedia.org/wiki/File:Starr-091104-0655-Piper_aduncum-flower_spikes_and_leaves-Nahiku-Maui_%2824987412245%29.jpg"
  },
  "acai:cicek": "yok",
- "tarcin:cicek": "yok"
+ "tarcin:cicek": "yok",
+ "isirgan:cicek": {
+  "file": "Urtica dioica flower Lille northern France.jpg",
+  "artist": "Lamiot",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Urtica_dioica_flower_Lille_northern_France.jpg"
+ },
+ "melisa:cicek": {
+  "file": "Melissa officinalis 002.JPG",
+  "artist": "H. Zell",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Melissa_officinalis_002.JPG"
+ },
+ "ginseng:cicek": {
+  "file": "Ginseng flower in Changbai Mountain (cropped).jpg",
+  "artist": "Doge24190",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ginseng_flower_in_Changbai_Mountain_%28cropped%29.jpg"
+ }
 }
