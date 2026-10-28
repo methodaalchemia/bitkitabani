@@ -1340,6 +1340,55 @@ if True:
 {('<section class="sec"><h2>A’dan Z’ye</h2><ul class="guidelist">' + _kl + '</ul></section>') if _kl else '<p>İlk kavram yarın sabah burada.</p>'}''', 'kavram', narrow=True))
     GUIDE_URLS.insert(0, '/kavram/')
 
+# --- takvim bileşeni (ritüel + toplama, aylık ızgara; tıklayınca takvime ekle / paylaş) ---
+_TK_KIS = {'cicek': 'Çiçek', 'yaprak': 'Yaprak', 'herba': 'Toprak üstü', 'kok': 'Kök', 'tohum': 'Meyve ve tohum', 'kabuk': 'Kabuk', 'recine': 'Reçine'}
+def _tk_kisim(p):
+    for k in ('cicek', 'yaprak', 'herba', 'kok', 'tohum', 'kabuk', 'recine'):
+        if k in kisim_of(p).split(): return k
+    return 'herba'
+def _tk_data():
+    ol = [{'s': o['slug'], 'ad': o['ad'], 'kisa': o['kisa'], 'tur': o.get('tur', 'halk'), 't': o['tarih'], 'not': o.get('hazirlik', ''),
+           'b': [[x, byId[x]['tr']] for x in o['bitkiler'] if x in byId], 'l': list(_olink(o))} for o in OLAYLAR]
+    tp = []
+    for p in P:
+        if 'anadolu' in p['bolge'] and p['guv'] != 'yuksek' and p['id'] not in YASAL and not KORUMA.get(p['id'], {}).get('rozet') and p['id'] in EK:
+            ay = sorted(months_of(EK[p['id']].get('mevsim', '')))
+            if ay: tp.append({'id': p['id'], 'ad': p['tr'], 'ay': ay, 'k': _tk_kisim(p), 'm': EK[p['id']]['mevsim'], 'a': 1 if isinstance(TANIMA.get(p['id'] + ':kuru'), dict) else 0})
+    _T = 'abcçdefgğhıijklmnoöprsştuüvyz'
+    tp.sort(key=lambda x: [(-1 if c == ' ' else _T.index(c) if c in _T else 100 + ord(c)) for c in x['ad'].replace('I', 'ı').replace('İ', 'i').lower()])
+    return {'o': ol, 'p': tp, 'k': _TK_KIS}
+TK = _tk_data()
+def takvim_widget(odak):
+    lg = ''.join(f'<span class="tk-lg tk-o-{k}">{v}</span>' for k, v in (('halk', 'Halk bayramı'), ('gok', 'Gökyüzü'), ('and', 'And’lar'))) + ''.join(f'<span class="tk-lg tk-k-{k}">{v}</span>' for k, v in _TK_KIS.items())
+    return ('<section class="tk" data-odak="' + odak + '" aria-label="Takvim">'
+        '<div class="tk-bar"><button class="tk-nav" data-d="-1" aria-label="Önceki ay">‹</button><h2 class="tk-baslik" aria-live="polite"></h2><button class="tk-nav" data-d="1" aria-label="Sonraki ay">›</button><button class="tk-bugun linkbtn">Bugün</button></div>'
+        '<div class="tk-filtre" role="group" aria-label="Göster"><label><input type="checkbox" data-f="o" checked> Ritüeller</label><label><input type="checkbox" data-f="p" checked> Doğada toplananlar</label></div>'
+        '<div class="tk-ay"></div><div class="tk-grid"></div>'
+        '<div class="tk-lgs">' + lg + '</div>'
+        '<p class="tk-abone muted-s">Bütün ritüelleri ve toplama mevsimlerini telefonunun takvimine ekle: <a href="webcal://bitkitabani.com/takvim.ics">Takvime abone ol</a> · <a href="/takvim.ics" download>.ics indir</a></p>'
+        '<dialog class="tk-dlg"><form method="dialog"><button class="tk-x" aria-label="Kapat">×</button></form><div class="tk-ic"></div></dialog>'
+        '<script type="application/json" id="tkData">' + json.dumps(TK, ensure_ascii=False).replace('</', '<\\/') + '</script></section>')
+def _ics_esc(t): return str(t).replace('\\', '\\\\').replace(';', '\\;').replace(',', '\\,').replace('\n', '\\n')
+_ics = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Bitki Tabani//Takvim//TR', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH', 'X-WR-CALNAME:Bitki Tabanı', 'X-WR-TIMEZONE:Europe/Istanbul', 'REFRESH-INTERVAL;VALUE=DURATION:P7D']
+_y0 = LOCAL_DAY.year
+for o in OLAYLAR:
+    _b, _s = olay_tarihi(o, _y0)
+    _ics += ['BEGIN:VEVENT', f'UID:olay-{o["slug"]}@bitkitabani.com', f'DTSTAMP:{_y0}0101T000000Z', f'DTSTART;VALUE=DATE:{_b:%Y%m%d}', f'DTEND;VALUE=DATE:{(_s + datetime.timedelta(days=1)):%Y%m%d}', 'RRULE:FREQ=YEARLY',
+             'SUMMARY:' + _ics_esc(o['ad']), 'DESCRIPTION:' + _ics_esc(o['kisa'] + (' ' + o['hazirlik'] if o.get('hazirlik') else '') + ' ' + BASE + '/takvim/#' + o['slug']), f'URL:{BASE}/takvim/#{o["slug"]}', 'END:VEVENT']
+for x in TK['p']:
+    _m = x['ay'][0]
+    _ics += ['BEGIN:VEVENT', f'UID:toplama-{x["id"]}@bitkitabani.com', f'DTSTAMP:{_y0}0101T000000Z', f'DTSTART;VALUE=DATE:{_y0}{_m:02d}01', f'DTEND;VALUE=DATE:{_y0}{_m:02d}02', 'RRULE:FREQ=YEARLY',
+             'SUMMARY:' + _ics_esc('🌿 ' + x['ad'] + ' toplama mevsimi'), 'DESCRIPTION:' + _ics_esc(x['m'] + ' ' + BASE + '/' + x['id'] + '/'), f'URL:{BASE}/{x["id"]}/', 'END:VEVENT']
+_ics.append('END:VCALENDAR')
+def _fold(l):
+    b = l.encode('utf-8'); out = []
+    while len(b) > 73:
+        i = 73
+        while (b[i] & 0xC0) == 0x80: i -= 1
+        out.append(b[:i].decode('utf-8')); b = b[i:]
+    out.append(b.decode('utf-8')); return '\r\n '.join(out)
+open(os.path.join(OUT, 'takvim.ics'), 'w', encoding='utf-8', newline='').write('\r\n'.join(_fold(l) for l in _ics) + '\r\n')
+
 # --- takvim sayfası ---
 _ol = []
 for o in OLAYLAR:
@@ -1356,8 +1405,9 @@ def _olay_html(bas, o):
     metin = re.sub(r'\s*\[\d+\]', '', o['metin'])
     return f'''<article class="olay{' aktif' if AKTIF is o else ''}" id="{o["slug"]}"><div class="olay-t"><b>{tarih}</b></div><div><h2>{e(o["ad"])}</h2><p>{e(metin)}{kay}</p>{('<div class="related">' + bt + '</div>') if bt else ''}{('<div class="olay-mo">' + mo + '</div>') if mo else ''}<p class="muted-s">{('<a href="/kavram/' + kv["slug"] + '/">Kavram: ' + e(kv["ad"]) + '</a> · ') if kv else ''}<a href="{_olink(o)[0]}">{e(_olink(o)[1])}</a></p></div></article>'''
 write('/takvim/', page('Ritüel ve mevsim takvimi: Nevruz, Hıdrellez, gündönümleri | Bitki Tabanı', 'Nevruz, Hıdrellez, gündönümleri, ekinokslar ve And’larda Pachamama ayı: yılın ritüel ve mevsim takvimi, bitkileri ve sembolleriyle.', '/takvim/',
-      f'''{crumbs(('/takvim/', 'Takvim'))}{takvim_tabs('r')}<header class="page-head"><span class="eyebrow">Ritüel ve mevsim takvimi</span><h1>Yılın dönüm noktaları</h1><p>Bayramlar, gündönümleri ve doğadaki büyük değişimler; her biri kendi bitkileri ve sembolleriyle. Takvim her gün kendiliğinden yaklaşan olaydan başlar.</p></header>
-<div class="olaylar">{"".join(_olay_html(b, o) for b, o in _ol)}</div>''', 'takvim', narrow=True, extra=lds(crumb_ld(('/takvim/', 'Takvim')))))
+      f'''{crumbs(('/takvim/', 'Takvim'))}{takvim_tabs('r')}<header class="page-head"><span class="eyebrow">Ritüel ve mevsim takvimi</span><h1>Yılın dönüm noktaları</h1><p>Bayramlar, gündönümleri ve doğadaki büyük değişimler; her biri kendi bitkileri ve sembolleriyle. Bir olaya dokun: ayrıntısını gör, takvimine ekle ya da paylaş.</p></header>
+{takvim_widget('o')}<h2 class="tk-liste-h">Yaklaşan olaylar</h2>
+<div class="olaylar">{"".join(_olay_html(b, o) for b, o in _ol)}</div>''', 'takvim', '<script src="/assets/takvim.js" defer></script>', narrow=True, extra=lds(crumb_ld(('/takvim/', 'Takvim')))))
 GUIDE_URLS.append('/takvim/')
 
 # --- yöresel ve diğer adlar sözlüğü ---
@@ -1406,7 +1456,7 @@ _cs = ''.join(f'<section class="sec" id="ay-{m}"><h2>{AYLAR[m-1]}{" (bu ay)" if 
 path = '/toplama-takvimi/'
 write(path, page(f'Şifalı bitki toplama takvimi: {AYLAR[_cur-1]} ayında hangi bitkiler toplanır? | Bitki Tabanı', f'Anadolu’da ay ay toplanan şifalı bitkiler. {AYLAR[_cur-1]} ayında toplama mevsimi olan {len(_cal[_cur])} bitki ve yılın geri kalanı.', path,
       f'''{crumbs(('/takvim/', 'Takvim'), (path, 'Doğada bu ay'))}{takvim_tabs('d')}<header class="page-head"><span class="eyebrow">Ay ay · {AYLAR[_cur-1]} başta</span><h1>Şifalı bitki toplama takvimi</h1><p>Anadolu’da yetişen bitkilerin toplama mevsimleri, kayıtlardaki “Doğada” bilgisinden derlendi. Liste her ay kendiliğinden içinde bulunduğumuz aydan başlar. Koruma altındaki, yasal kısıtlı ve yüksek riskli bitkiler bu listeye alınmaz.</p></header>
-<aside class="warnbox" role="note"><b>Toplarken:</b> Yalnızca kesin tanıdığın bitkileri, yol kenarından ve ilaçlanmış alanlardan uzakta topla; bir bitkinin tamamını değil bir kısmını alın ki yeniden büyüyebilsin.</aside>{_cs}''', 'rehber', narrow=True, extra=lds(crumb_ld(('/rehber/', 'Rehberler'), (path, 'Toplama takvimi')))))
+<aside class="warnbox" role="note"><b>Toplarken:</b> Yalnızca kesin tanıdığın bitkileri, yol kenarından ve ilaçlanmış alanlardan uzakta topla; bir bitkinin tamamını değil bir kısmını alın ki yeniden büyüyebilsin.</aside>{takvim_widget('p')}<h2 class="tk-liste-h">Ay ay liste</h2>{_cs}''', 'rehber', '<script src="/assets/takvim.js" defer></script>', narrow=True, extra=lds(crumb_ld(('/rehber/', 'Rehberler'), (path, 'Toplama takvimi')))))
 GUIDE_URLS.append(path)
 
 # --- rehber ana sayfası ---
