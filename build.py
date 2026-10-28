@@ -1359,12 +1359,7 @@ def _tk_data():
     return {'o': ol, 'p': tp, 'k': _TK_KIS}
 TK = _tk_data()
 def takvim_widget(odak):
-    lg = ''.join(f'<span class="tk-lg tk-o-{k}">{v}</span>' for k, v in (('halk', 'Halk bayramı'), ('gok', 'Gökyüzü'), ('and', 'And’lar'))) + ''.join(f'<span class="tk-lg tk-k-{k}">{v}</span>' for k, v in _TK_KIS.items())
-    return ('<section class="tk" data-odak="' + odak + '" aria-label="Takvim">'
-        '<div class="tk-bar"><button class="tk-nav" data-d="-1" aria-label="Önceki ay">‹</button><h2 class="tk-baslik" aria-live="polite"></h2><button class="tk-nav" data-d="1" aria-label="Sonraki ay">›</button><button class="tk-bugun linkbtn">Bugün</button></div>'
-        '<div class="tk-filtre" role="group" aria-label="Göster"><label><input type="checkbox" data-f="o" checked> Ritüeller</label><label><input type="checkbox" data-f="p" checked> Doğada toplananlar</label></div>'
-        '<div class="tk-ay"></div><div class="tk-grid"></div>'
-        '<div class="tk-lgs">' + lg + '</div>'
+    return ('<section class="tk" data-odak="' + odak + '" aria-label="Takvim"><div class="tk-govde"><p class="muted-s">Takvim yükleniyor…</p></div>'
         '<p class="tk-abone muted-s">Bütün ritüelleri ve toplama mevsimlerini telefonunun takvimine ekle: <a href="webcal://bitkitabani.com/takvim.ics">Takvime abone ol</a> · <a href="/takvim.ics" download>.ics indir</a></p>'
         '<dialog class="tk-dlg"><form method="dialog"><button class="tk-x" aria-label="Kapat">×</button></form><div class="tk-ic"></div></dialog>'
         '<script type="application/json" id="tkData">' + json.dumps(TK, ensure_ascii=False).replace('</', '<\\/') + '</script></section>')
@@ -1405,9 +1400,9 @@ def _olay_html(bas, o):
     metin = re.sub(r'\s*\[\d+\]', '', o['metin'])
     return f'''<article class="olay{' aktif' if AKTIF is o else ''}" id="{o["slug"]}"><div class="olay-t"><b>{tarih}</b></div><div><h2>{e(o["ad"])}</h2><p>{e(metin)}{kay}</p>{('<div class="related">' + bt + '</div>') if bt else ''}{('<div class="olay-mo">' + mo + '</div>') if mo else ''}<p class="muted-s">{('<a href="/kavram/' + kv["slug"] + '/">Kavram: ' + e(kv["ad"]) + '</a> · ') if kv else ''}<a href="{_olink(o)[0]}">{e(_olink(o)[1])}</a></p></div></article>'''
 write('/takvim/', page('Ritüel ve mevsim takvimi: Nevruz, Hıdrellez, gündönümleri | Bitki Tabanı', 'Nevruz, Hıdrellez, gündönümleri, ekinokslar ve And’larda Pachamama ayı: yılın ritüel ve mevsim takvimi, bitkileri ve sembolleriyle.', '/takvim/',
-      f'''{crumbs(('/takvim/', 'Takvim'))}{takvim_tabs('r')}<header class="page-head"><span class="eyebrow">Ritüel ve mevsim takvimi</span><h1>Yılın dönüm noktaları</h1><p>Bayramlar, gündönümleri ve doğadaki büyük değişimler; her biri kendi bitkileri ve sembolleriyle. Bir olaya dokun: ayrıntısını gör, takvimine ekle ya da paylaş.</p></header>
-{takvim_widget('o')}<h2 class="tk-liste-h">Yaklaşan olaylar</h2>
-<div class="olaylar">{"".join(_olay_html(b, o) for b, o in _ol)}</div>''', 'takvim', '<script src="/assets/takvim.js" defer></script>', narrow=True, extra=lds(crumb_ld(('/takvim/', 'Takvim')))))
+      f'''{crumbs(('/takvim/', 'Takvim'))}{takvim_tabs('r')}<header class="page-head"><span class="eyebrow">Ritüel ve mevsim takvimi</span><h1>Yılın dönüm noktaları</h1><p>Bayramlar, gündönümleri ve doğadaki büyük değişimler; her biri kendi bitkileri ve sembolleriyle. Çarktaki noktalar yılın dönüm noktaları; birine dokun, takvimine ekle ya da paylaş.</p></header>
+{takvim_widget('o')}<details class="tk-detay" id="ayrinti"><summary>Ayrıntılar, semboller ve kaynaklar</summary>
+<div class="olaylar">{"".join(_olay_html(b, o) for b, o in _ol)}</div></details>''', 'takvim', '<script src="/assets/takvim.js" defer></script>', narrow=True, extra=lds(crumb_ld(('/takvim/', 'Takvim')))))
 GUIDE_URLS.append('/takvim/')
 
 # --- yöresel ve diğer adlar sözlüğü ---
@@ -1456,7 +1451,7 @@ _cs = ''.join(f'<section class="sec" id="ay-{m}"><h2>{AYLAR[m-1]}{" (bu ay)" if 
 path = '/toplama-takvimi/'
 write(path, page(f'Şifalı bitki toplama takvimi: {AYLAR[_cur-1]} ayında hangi bitkiler toplanır? | Bitki Tabanı', f'Anadolu’da ay ay toplanan şifalı bitkiler. {AYLAR[_cur-1]} ayında toplama mevsimi olan {len(_cal[_cur])} bitki ve yılın geri kalanı.', path,
       f'''{crumbs(('/takvim/', 'Takvim'), (path, 'Doğada bu ay'))}{takvim_tabs('d')}<header class="page-head"><span class="eyebrow">Ay ay · {AYLAR[_cur-1]} başta</span><h1>Şifalı bitki toplama takvimi</h1><p>Anadolu’da yetişen bitkilerin toplama mevsimleri, kayıtlardaki “Doğada” bilgisinden derlendi. Liste her ay kendiliğinden içinde bulunduğumuz aydan başlar. Koruma altındaki, yasal kısıtlı ve yüksek riskli bitkiler bu listeye alınmaz.</p></header>
-<aside class="warnbox" role="note"><b>Toplarken:</b> Yalnızca kesin tanıdığın bitkileri, yol kenarından ve ilaçlanmış alanlardan uzakta topla; bir bitkinin tamamını değil bir kısmını alın ki yeniden büyüyebilsin.</aside>{takvim_widget('p')}<h2 class="tk-liste-h">Ay ay liste</h2>{_cs}''', 'rehber', '<script src="/assets/takvim.js" defer></script>', narrow=True, extra=lds(crumb_ld(('/rehber/', 'Rehberler'), (path, 'Toplama takvimi')))))
+<aside class="warnbox" role="note"><b>Toplarken:</b> Yalnızca kesin tanıdığın bitkileri, yol kenarından ve ilaçlanmış alanlardan uzakta topla; bir bitkinin tamamını değil bir kısmını alın ki yeniden büyüyebilsin.</aside>{takvim_widget('p')}<details class="tk-detay"><summary>Ay ay liste</summary>{_cs}</details>''', 'rehber', '<script src="/assets/takvim.js" defer></script>', narrow=True, extra=lds(crumb_ld(('/rehber/', 'Rehberler'), (path, 'Toplama takvimi')))))
 GUIDE_URLS.append(path)
 
 # --- rehber ana sayfası ---
