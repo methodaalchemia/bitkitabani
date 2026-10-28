@@ -6,7 +6,7 @@ from etkilesim import ETK
 from derin import D as DERIN
 from gozden import KISI as GZ_KISI, SAYFALAR as GZ
 KAN_AD = {'klinik': 'Klinik kanıt', 'sinirli': 'Sınırlı kanıt', 'geleneksel': 'Yalnızca geleneksel', 'yok': 'Kanıt yok'}
-AUTHOR = {'@type': 'Person', 'name': 'Edanaz Tınmazlar', 'url': 'https://bitkitabani.com/yontem/#hazirlayan', 'jobTitle': 'Sanatçı ve şifalı bitkiler uzmanı', 'sameAs': ['https://www.linkedin.com/in/edanaz-tinmazlar-%E6%B8%B8%E5%AD%90%E6%84%8F-588285110/', 'https://www.instagram.com/teda.naz/']}
+AUTHOR = {'@type': 'Person', 'name': 'Edanaz Tınmazlar', 'alternateName': 'Edanaz Tinmazlar', 'url': 'https://bitkitabani.com/yontem/#hazirlayan', 'jobTitle': 'Sanatçı ve şifalı bitkiler uzmanı', 'sameAs': ['https://www.linkedin.com/in/edanaz-tinmazlar-%E6%B8%B8%E5%AD%90%E6%84%8F-588285110/', 'https://www.instagram.com/teda.naz/']}
 SOCIAL = '<span class="social"><a href="https://www.linkedin.com/in/edanaz-tinmazlar-%E6%B8%B8%E5%AD%90%E6%84%8F-588285110/" rel="me noopener">LinkedIn</a> · <a href="https://www.instagram.com/teda.naz/" rel="me noopener">Instagram</a></span>'
 BIO = 'Edanaz Tınmazlar, sanatçı ve şifalı bitkiler uzmanı. Beyaz yakalı hayatından şifa arayışına düştü ve kendini bitkilerin benzersiz dünyasını anlamaya çalışırken buldu. Dünyanın birçok ülkesinde gezip yaşadıktan sonra Türkiye’ye döndü; köklerini anlamayı ve anlatmayı kendine görev edindi.'
 import mapgeo, math
@@ -124,7 +124,7 @@ def sharebar(title, path):
 # ---------- bülten kayıt kutusu ----------
 def abone(kaynak, baslik='Ücretsiz e-posta kursu: Şifalı bitkilere başlangıç', alt='7 gün boyunca her sabah kısa, görsel bir ders: kanıtı okumak, doğru demlemek, güvenli kullanmak, doğada toplamak. Sonra her pazar haftanın bitkileri. Yazdırılabilir “Bitki–ilaç etkileşimi kartı” da hediye.', kurs=True):
     return f'''<section class="abone" aria-labelledby="ab-{kaynak[:20]}"><h2 id="ab-{kaynak[:20]}">{baslik}</h2><p>{alt}</p>
-<form class="abone-form" data-kaynak="{e(kaynak)}"{' data-kurs="1"' if kurs else ''} novalidate><label class="vh" for="ab-e-{kaynak[:20]}">E-posta adresi</label><div class="row"><input id="ab-e-{kaynak[:20]}" type="email" name="email" placeholder="e-posta adresiniz" autocomplete="email" required><button type="submit" class="learn">{'Kursa başla' if kurs else 'Kaydol'}</button></div>
+<form class="abone-form" data-kaynak="{e(kaynak)}"{' data-kurs="1"' if kurs else ''} novalidate><label class="vh" for="ab-e-{kaynak[:20]}">E-posta adresi</label><div class="row"><input id="ab-e-{kaynak[:20]}" type="email" name="email" placeholder="e-posta adresin" autocomplete="email" required><button type="submit" class="learn">{'Kursa başla' if kurs else 'Kaydol'}</button></div>
 <input type="text" name="hp" tabindex="-1" autocomplete="off" class="vh" aria-hidden="true">
 <label class="chk"><input type="checkbox" name="riza" required><span>{'E-posta adresimin 7 günlük kurs ve ardından haftalık bülten için saklanmasına ve bana e-posta gönderilmesine izin veriyorum.' if kurs else 'E-posta adresimin haftalık bülten için saklanmasına ve bana e-posta gönderilmesine izin veriyorum.'} <a href="/gizlilik/#bulten">Ayrıntılar</a></span></label>
 <label class="chk"><input type="checkbox" name="duyuru"><span>İsteğe bağlı: Bitki Tabanı’nın atölye, doğa yürüyüşü ve gezi gibi duyurularını da almak istiyorum.</span></label>
@@ -185,7 +185,7 @@ FAV = '<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link re
 
 def head(title, desc, path, extra='', image=None):
     url = BASE + path
-    image = image or BASE + '/img/kantaron-960.jpg'
+    image = image or BASE + '/assets/logo-512.png'
     return f'''<!doctype html>
 <html lang="tr">
 <head>
@@ -285,6 +285,8 @@ def _big(m):   # paylaşım önizlemesi ve Google Discover için 1280 px görsel
     return f'{BASE}/img/{m.group(1)}-1280.jpg' if os.path.exists(os.path.join(HERE, 'img', f'{m.group(1)}-1280.jpg')) else m.group(0)
 def write(path, content):
     content = _BIG.sub(_big, content)
+    if path.strip('/') in byId or (path.startswith('/yazilar/') and path.count('/') > 2) or path.startswith('/rehber/') and path != '/rehber/':   # tekil içerik sayfaları
+        content = content.replace('<meta property="og:type" content="website">', '<meta property="og:type" content="article">', 1)
     full = os.path.join(OUT, path.strip('/'), 'index.html') if not path.endswith('.html') and not '.' in path.split('/')[-1] else os.path.join(OUT, path.strip('/'))
     os.makedirs(os.path.dirname(full), exist_ok=True)
     open(full, 'w', encoding='utf-8').write(content)
@@ -356,9 +358,10 @@ def refs(p):
     return '<ol class="refs">' + ''.join((f'<li><span class="kind">{e(k)}</span><a href="{e(u)}" target="_blank" rel="noopener">{e(t)}</a></li>' if u else f'<li><span class="kind">{e(k)}</span><cite>{e(t)}</cite></li>') for k, t, u in items) + '</ol>'
 
 def desc_for(p):
-    first = p['kul'][0][1].split('. ')[0].rstrip('.')
-    d = (f'{p["tr"]} ({short_la(p)}) ne işe yarar? {first}. Bilimsel kanıtı, zararları ve kimlerin kullanmaması gerektiği.' if p['guv'] != 'yuksek'
-         else f'{p["tr"]} ({short_la(p)}): {first}. Bilimsel kanıt: {KANIT[p["kanit"]]["ad"].lower()}. Güvenlik notları ve kaynaklar.')
+    """Arama sonucu açıklaması: geleneksel iddia değil, önce kanıt ve güvenlik (sayfanın kendi vardığı sonuç)."""
+    bil = p['bilim'].split('. ')[0].rstrip('.')
+    kan = KANIT[p["kanit"]]["ad"].lower()
+    d = f'{p["tr"]} ({short_la(p)}): kanıt düzeyi {kan}, güvenlik {"yüksek risk" if p["guv"] == "yuksek" else GUV[p["guv"]].lower()}. {bil}.'
     return d if len(d) <= 160 else d[:157].rsplit(' ', 1)[0] + '…'
 
 KISIM = [('yaprak', 'Yaprak', r'yaprak'), ('cicek', 'Çiçek', r'çiçek'), ('kok', 'Kök ve yumru', r'kök|rizom|yumru|soğan'), ('tohum', 'Tohum ve meyve', r'tohum|meyve|bakla|kozalak|tane'),
@@ -426,10 +429,11 @@ for i, p in enumerate(P):
     def _first(t): 
         s = t.split('. ')[0].rstrip('.'); return s + '.'
     regs_txt = ', '.join(REG[r]['ad'] for r in p['bolge'])
-    q_nedir = (f'{p["tr"]} nedir?', f'{p["tr"]} ({short_la(p)}), {p["fam"]} familyasından bir bitkidir. Kullanıldığı gelenekler: {regs_txt}. Kullanılan kısmı: {p["kisim"].lower()}.')
-    q_ne = (f'{p["tr"]} ne işe yarar?', f'Geleneksel kullanımı: {_first(p["kul"][0][1])} Bilimsel kanıt düzeyi: {KANIT[p["kanit"]]["ad"].lower()}. {_first(p["bilim"])}')
-    q_guv = (f'{p["tr"]} zararlı mı, kimler kullanmamalı?' if p['guv'] != 'yuksek' else f'{p["tr"]} güvenli mi?', f'Güvenlik etiketi: {GUV[p["guv"]].lower()}. {p["guvNot"]}' + (' Yasal durum: ' + YASAL_AD[YASAL[pid][0]] + '.' if pid in YASAL else ''))
-    kisaca = [q_nedir, q_ne, q_guv] + ([(f'{p["tr"]} nasıl kullanılır?', p['haz'])] if p.get('haz') and p['guv'] != 'yuksek' else [])
+    _kis = p["kisim"].lower(); _fam = p["fam"].split(" ")[0]
+    q_nedir = (f'{p["tr"]} nedir?', f'{p["tr"]} ({short_la(p)}), {_fam} familyasından bir bitkidir. {regs_txt} geleneklerinde en çok {_kis} kullanılır.')
+    q_ne = (f'{p["tr"]} ne işe yarar?', f'Bilimsel kanıt düzeyi {KANIT[p["kanit"]]["ad"].lower()}. {_first(p["bilim"])} Geleneksel kullanımları aşağıda, yöresiyle birlikte anlatılıyor.')
+    q_guv = (f'{p["tr"]} zararlı mı, kimler kullanmamalı?' if p['guv'] != 'yuksek' else f'{p["tr"]} güvenli mi?', f'Güvenlik düzeyi: {GUV[p["guv"]].lower()}. {_first(p["guvNot"])}' + (' Yasal durum: ' + YASAL_AD[YASAL[pid][0]] + '.' if pid in YASAL else '') + ' Ayrıntılar “Güvenlik” bölümünde.')
+    kisaca = [q_nedir, q_ne, q_guv]
     kisahtml = '<details class="kisaca"><summary><span class="eyebrow">30 saniyede</span> ' + e(p['tr']) + ' nedir, ne işe yarar?</summary>' + ''.join(f'<div class="qa"><h2 class="q">{e(q)}</h2><p>{e(a)}</p></div>' for q, a in kisaca) + '</details>'
     if pid in DERIN:
         dd = DERIN[pid]
@@ -441,10 +445,13 @@ for i, p in enumerate(P):
     if pid in ETK:
         rows_ = ''.join(f'<tr><th scope="row">{e(g)}</th><td>{e(w)}</td></tr>' for g, w in ETK[pid])
         etkhtml = f'<section class="sec" id="etk"><h2>İlaç etkileşimleri</h2><div class="tablewrap"><table class="cmp etk"><thead><tr><th scope="col">İlaç ya da madde</th><th scope="col">Neden önemli</th></tr></thead><tbody>{rows_}</tbody></table></div><p class="muted-s">Bu liste eksiksiz değildir. Düzenli ilaç kullanıyorsan {e(p["tr"])} denemeden önce eczacına ya da hekimine sor.</p></section>'
+    _gp = {k['slug'] for k in KONULAR if any(x == pid for x, _ in k['bitkiler'])}
     def _sim(q):
-        return 2 * len(set(q['bolge']) & set(p['bolge'])) + len(set(q['kat']) & set(p['kat'])) + (2 if q['fam'] == p['fam'] else 0)
+        _gq = {k['slug'] for k in KONULAR if any(x == q['id'] for x, _ in k['bitkiler'])}
+        return 4 * len(_gp & _gq) + 2 * len(set(q['kat']) & set(p['kat'])) + (2 if q['fam'] == p['fam'] else 0) + len(set(q['bolge']) & set(p['bolge']))
     similar = sorted((q for q in P if q['id'] != pid and q['id'] not in rel), key=lambda q: (-_sim(q), q['no']))[:3]
-    simhtml = '<section class="sec"><h2>Benzer bitkiler</h2><div class="grid sim">' + ''.join(card(q) for q in similar) + '</div></section>'
+    _rg = [k for k in KONULAR if any(x == pid for x, _ in k['bitkiler']) and sum(1 for y, _ in k['bitkiler'] if y in byId) >= 2]
+    simhtml = (('<p class="brlinks">Bu bitki şu rehberlerde: ' + ' · '.join(f'<a href="/rehber/{k["slug"]}/">{e(k["kisa"])}</a>' for k in _rg) + '</p>') if _rg else '') + '<section class="sec"><h2>Benzer bitkiler</h2><p class="muted-s">Aynı derde kullanılan ya da aynı familyadan bitkiler.</p><div class="grid sim">' + ''.join(card(q) for q in similar) + '</div></section>'
     mybridges = [(i, x) for i, x in enumerate(BR, 1) if pid in (x['a'], x.get('b'))]
     brlinks = ''.join(f'<a class="cta" href="/kopruler/{slug_of(x)}/">Karşılaştırmayı oku: {e(x["t"])} →</a>' for i, x in mybridges)
     brlinks += ''.join(f'<a class="cta" href="{u}">{e(t)} →</a>' for u, t in GLINKS.get(pid, []))
@@ -697,7 +704,7 @@ for i, br_ in enumerate(BR, 1):
 about = '''<header class="page-head"><span class="eyebrow">Hakkında</span><h1>Bitki Tabanı nedir?</h1></header>
 <section class="sec"><p>Bitki Tabanı, farklı kültürlerde şifa ve ritüel için kullanılan bitkileri bir araya getiren bağımsız bir etnobotanik kayıt defteridir. Amacı merak uyandırmak ve geleneksel bilgiyi bugünkü bilimsel bilgiyle yan yana koymak.</p></section>
 <section class="sec"><h2>Kim hazırlıyor</h2><p>''' + BIO + '''</p><p>''' + SOCIAL + ''' · <a href="/yontem/">Kayıtları nasıl hazırladığını oku →</a></p></section>
-<section class="sec"><h2>Ticari değil</h2><p>Bitki Tabanı hiçbir ürün, bitki, takviye ya da tören satmaz; inziva veya ayahuasca seremonisi düzenlemez, bunlara yönlendirmez ve reklam almaz. Kayıtlarda adı geçen hiçbir marka ya da satıcıyla bağı yoktur.</p></section>
+<section class="sec"><h2>Bağımsız</h2><p>Bitki Tabanı’nın bilgi içeriği hiçbir satıcıdan ve şirketten bağımsızdır: bitki, takviye ya da tören satmaz; inziva veya ayahuasca seremonisi düzenlemez, bunlara yönlendirmez ve reklam almaz. İleride düzenlenebilecek atölye ve doğa yürüyüşleri ayrıca duyurulur; sitedeki bilgiyi etkilemez. Kayıtlarda adı geçen hiçbir marka ya da satıcıyla bağı yoktur.</p></section>
 <section class="sec"><h2>İletişim</h2><p>Bir hata gördüysen ya da yöresel bir kullanım biliyorsan <a href="mailto:iletisim@bitkitabani.com">iletisim@bitkitabani.com</a> adresine yaz.</p></section>
 <section class="sec"><h2>Kayıtlar nasıl hazırlanıyor</h2><p>Ayrıntılı kurallar <a href="/yontem/">Yöntem</a> sayfasında. Her kayıt; geleneksel kullanımı, hazırlama biçimini, bilimin bugün ne söylediğini ve güvenlik notlarını içerir. Kanıt düzeyi Avrupa İlaç Ajansı (EMA/HMPC) monografileri, ABD NCCIH özetleri, Cochrane derlemeleri ve hakemli literatüre göre belirlenir. Kaynaklar her bitkinin sayfasının sonunda listelenir.</p></section>
 <section class="sec"><h2>Önemli not</h2><p>Bu site tıbbi tavsiye vermez. Burada anlatılan geleneksel kullanımlar bir öneri değil, kültürel bir kayıttır. Zehirli ve yasal kısıtlı bitkiler, tarihleri ve riskleri anlaşılsın diye yer alır. Herhangi bir bitkiyi kullanmadan önce bir hekime ya da eczacıya danış.</p></section>
@@ -1368,7 +1375,7 @@ function low(t){{return t.replace(/I/g,'ı').replace(/İ/g,'i').toLowerCase()}}
 q.addEventListener('input',function(){{var t=low(q.value.trim()),c=0;D.forEach(function(d){{var k=0;d.querySelectorAll('li').forEach(function(li){{var v=!t||low(li.textContent).indexOf(t)>-1;li.hidden=!v;if(v)k++}});d.hidden=!k;d.open=!!t&&k>0;c+=k}});n.textContent=t?c+' sonuç':''}});
 document.querySelectorAll('.harfler a').forEach(function(a){{a.addEventListener('click',function(){{var d=document.querySelector(a.getAttribute('href'));if(d)d.open=true}})}});
 if(location.hash){{var d=document.querySelector(location.hash);if(d&&d.tagName==='DETAILS')d.open=true}}}})();</script>
-<aside class="warnbox" role="note"><b>Karıştırmayın:</b> Bir ad birden fazla bitkiye bağlanıyorsa, o bitkiler halk arasında aynı adla anılıyor demektir. Toplarken ya da satın alırken Latince adına ve bitkinin sayfasındaki “karıştırma riski” notuna bakın.</aside>''', 'toplama', narrow=True, extra=lds(crumb_ld(('/takvim/', 'Takvim'), (path, 'Yöresel adlar')))))
+<aside class="warnbox" role="note"><b>Karıştırma:</b> Bir ad birden fazla bitkiye bağlanıyorsa, o bitkiler halk arasında aynı adla anılıyor demektir. Toplarken ya da satın alırken Latince adına ve bitkinin sayfasındaki “karıştırma riski” notuna bak.</aside>''', 'toplama', narrow=True, extra=lds(crumb_ld(('/takvim/', 'Takvim'), (path, 'Yöresel adlar')))))
 GUIDE_URLS.append(path)
 
 # --- toplama takvimi (ay ay) ---
@@ -1382,7 +1389,7 @@ _cs = ''.join(f'<section class="sec" id="ay-{m}"><h2>{AYLAR[m-1]}{" (bu ay)" if 
 path = '/toplama-takvimi/'
 write(path, page(f'Şifalı bitki toplama takvimi: {AYLAR[_cur-1]} ayında hangi bitkiler toplanır? | Bitki Tabanı', f'Anadolu’da ay ay toplanan şifalı bitkiler. {AYLAR[_cur-1]} ayında toplama mevsimi olan {len(_cal[_cur])} bitki ve yılın geri kalanı.', path,
       f'''{crumbs(('/takvim/', 'Takvim'), (path, 'Doğada bu ay'))}{takvim_tabs('d')}<header class="page-head"><span class="eyebrow">Ay ay · {AYLAR[_cur-1]} başta</span><h1>Şifalı bitki toplama takvimi</h1><p>Anadolu’da yetişen bitkilerin toplama mevsimleri, kayıtlardaki “Doğada” bilgisinden derlendi. Liste her ay kendiliğinden içinde bulunduğumuz aydan başlar. Koruma altındaki, yasal kısıtlı ve yüksek riskli bitkiler bu listeye alınmaz.</p></header>
-<aside class="warnbox" role="note"><b>Toplarken:</b> Yalnızca kesin tanıdığınız bitkileri, yol kenarından ve ilaçlanmış alanlardan uzakta toplayın; bir bitkinin tamamını değil bir kısmını alın ki yeniden büyüyebilsin.</aside>{_cs}''', 'rehber', narrow=True, extra=lds(crumb_ld(('/rehber/', 'Rehberler'), (path, 'Toplama takvimi')))))
+<aside class="warnbox" role="note"><b>Toplarken:</b> Yalnızca kesin tanıdığın bitkileri, yol kenarından ve ilaçlanmış alanlardan uzakta topla; bir bitkinin tamamını değil bir kısmını alın ki yeniden büyüyebilsin.</aside>{_cs}''', 'rehber', narrow=True, extra=lds(crumb_ld(('/rehber/', 'Rehberler'), (path, 'Toplama takvimi')))))
 GUIDE_URLS.append(path)
 
 # --- rehber ana sayfası ---
@@ -1419,28 +1426,28 @@ open(os.path.join(OUT, 'pinterest.xml'), 'w', encoding='utf-8').write(f'<?xml ve
 # ---------- bülten sayfaları ve kayıt hediyeleri ----------
 _bscript = '<script src="/assets/bulten.js" defer></script>'
 write('/bulten/', page('Bitki Tabanı bülteni: her pazar haftanın bitkileri | Bitki Tabanı', 'Haftada bir e-posta: yeni eklenen şifalı bitkiler, bir rehber ve bir tarif. Kaydolunca yazdırılabilir bitki–ilaç etkileşimi kartı hediye.', '/bulten/',
-      f'''<header class="page-head"><span class="eyebrow">Bülten</span><h1>Her pazar, haftanın bitkileri</h1><p>Haftada yalnızca bir e-posta: o hafta kataloğa eklenen bitkiler, bir “derde göre” rehber ve bir çay tarifi. Reklam yok, adresiniz kimseyle paylaşılmaz, tek tıkla çıkabilirsiniz.</p></header>
+      f'''<header class="page-head"><span class="eyebrow">Bülten</span><h1>Her pazar, haftanın bitkileri</h1><p>Haftada yalnızca bir e-posta: o hafta kataloğa eklenen bitkiler, bir “derde göre” rehber ve bir çay tarifi. Reklam yok, adresin kimseyle paylaşılmaz, tek tıkla çıkabilirsin.</p></header>
 <section class="sec"><h2>Kaydolunca hediye</h2><ul class="otherlist"><li><b>Bitki–ilaç etkileşimi kartı:</b> kan sulandırıcı, tansiyon, şeker ilacı ya da antidepresan kullananların dikkat etmesi gereken bitkiler, tek sayfada.</li><li><b>Hamilelikte dikkat listesi:</b> hamilelikte ve emzirirken kullanılmaması gereken bitkiler, buzdolabına asılacak boyutta.</li></ul></section>
-{abone('bulten-sayfasi', 'Bültene kaydolun', 'E-posta adresinizi yazın; gelen e-postadaki bağlantıya tıklayınca kaydınız tamamlanır.', kurs=False)}
+{abone('bulten-sayfasi', 'Bültene kaydol', 'E-posta adresini yaz; gelen e-postadaki bağlantıya tıklayınca kaydın tamamlanır.', kurs=False)}
 <p>Yeni başlıyorsanız: <a href="/kurs/">7 günlük ücretsiz e-posta kursu “Şifalı bitkilere başlangıç” →</a></p>''', '', narrow=True, scripts=_bscript))
 from kurs import DERSLER
 write('/kurs/', page('Ücretsiz e-posta kursu: Şifalı bitkilere başlangıç | Bitki Tabanı', '7 gün boyunca her sabah kısa ve görsel bir ders: kanıtı okumak, doğru demlemek, güvenli kullanmak, doğada toplamak ve kültürler arası bağlar. Ücretsiz.', '/kurs/',
-      f'''<header class="page-head"><span class="eyebrow">Ücretsiz · 7 gün · e-posta</span><h1>Şifalı bitkilere başlangıç</h1><p>Yedi gün boyunca her sabah e-postanıza kısa, görsel bir ders ve küçük bir görev gelir. Sonunda bir bitki çayını bilinçli seçmeyi, güvenli kullanmayı ve internette okuduğunuz bir iddiayı kontrol etmeyi öğrenmiş olursunuz.</p></header>
+      f'''<header class="page-head"><span class="eyebrow">Ücretsiz · 7 gün · e-posta</span><h1>Şifalı bitkilere başlangıç</h1><p>Yedi gün boyunca her sabah e-postana kısa, görsel bir ders ve küçük bir görev gelir. Sonunda bir bitki çayını bilinçli seçmeyi, güvenli kullanmayı ve internette okuduğun bir iddiayı kontrol etmeyi öğrenmiş olursun.</p></header>
 <section class="sec"><h2>Dersler</h2><ol class="start">{"".join(f'<li><b>{e(d["baslik"])}</b>: {e(d["ozet"])}</li>' for d in DERSLER)}</ol></section>
-{abone('kurs-sayfasi', 'Kursa kaydolun', 'E-posta adresinizi yazın; gelen e-postadaki bağlantıya tıklayınca ilk ders hemen gelir.')}''', '', narrow=True))
+{abone('kurs-sayfasi', 'Kursa kaydol', 'E-posta adresini yaz; gelen e-postadaki bağlantıya tıklayınca ilk ders hemen gelir.')}''', '', narrow=True))
 GUIDE_URLS.append('/kurs/')
-write('/bulten/onaylandi/', page('Kaydınız tamamlandı | Bitki Tabanı', 'Bitki Tabanı bültenine kaydınız tamamlandı.', '/bulten/onaylandi/',
-      '''<header class="page-head"><span class="eyebrow">Bülten</span><h1>Teşekkürler, kaydınız tamamlandı 🌿</h1><p>Kursa kaydolduysanız ilk ders birkaç dakika içinde e-postanızda; değilseniz ilk bülten pazar günü gelecek. Söz verdiğimiz iki hediye burada; yazdırmak için sayfayı açıp tarayıcınızın “Yazdır” ya da “PDF olarak kaydet” seçeneğini kullanın.</p></header>
+write('/bulten/onaylandi/', page('Kaydın tamamlandı | Bitki Tabanı', 'Bitki Tabanı bültenine kaydın tamamlandı.', '/bulten/onaylandi/',
+      '''<header class="page-head"><span class="eyebrow">Bülten</span><h1>Teşekkürler, kaydın tamamlandı 🌿</h1><p>Kursa kaydolduysanız ilk ders birkaç dakika içinde e-postanızda; değilseniz ilk bülten pazar günü gelecek. Söz verdiğimiz iki hediye burada; yazdırmak için sayfayı açıp tarayıcının “Yazdır” ya da “PDF olarak kaydet” seçeneğini kullan.</p></header>
 <section class="sec"><p><a class="cta" href="/indir/etkilesim-karti/">Bitki–ilaç etkileşimi kartı →</a></p><p><a class="cta" href="/indir/hamilelik-listesi/">Hamilelikte dikkat listesi →</a></p></section>''', '', narrow=True, extra='<meta name="robots" content="noindex, follow">'))
-write('/bulten/ayrildiniz/', page('Bültenden ayrıldınız | Bitki Tabanı', 'Bitki Tabanı bülteninden ayrıldınız.', '/bulten/ayrildiniz/',
-      '<header class="page-head"><span class="eyebrow">Bülten</span><h1>Bültenden ayrıldınız</h1><p>E-posta adresiniz listemizden tamamen silindi; bir daha e-posta almayacaksınız. Fikrinizi değiştirirseniz <a href="/bulten/">yeniden kaydolabilirsiniz</a>.</p></header>', '', narrow=True, extra='<meta name="robots" content="noindex, follow">'))
+write('/bulten/ayrildiniz/', page('Bültenden ayrıldın | Bitki Tabanı', 'Bitki Tabanı bülteninden ayrıldın.', '/bulten/ayrildiniz/',
+      '<header class="page-head"><span class="eyebrow">Bülten</span><h1>Bültenden ayrıldın</h1><p>E-posta adresin listemizden tamamen silindi; bir daha e-posta almayacaksın. Fikrini değiştirirseniz <a href="/bulten/">yeniden kaydolabilirsin</a>.</p></header>', '', narrow=True, extra='<meta name="robots" content="noindex, follow">'))
 _kart = ''.join(f'<div class="kart-g"><h2>{e(ad)}</h2><p>{", ".join(e(byId[pid]["tr"]) for pid, _, _ in sorted(etk_by[c], key=lambda x: _trkey(byId[x[0]]["tr"])))}</p></div>' for c, ad, _ in ILAC if etk_by[c] and c != 'tum')
 write('/indir/etkilesim-karti/', page('Bitki–ilaç etkileşimi kartı (yazdırılabilir) | Bitki Tabanı', 'Yazdırılabilir bitki–ilaç etkileşimi kartı.', '/indir/etkilesim-karti/',
-      f'''<article class="kart"><header><p class="eyebrow">Bitki Tabanı · yazdırılabilir kart</p><h1>Bu ilacı kullanıyorsanız, bu bitkilere dikkat</h1><p>Aşağıdaki bitkilerle, yanındaki ilaç grubu arasında etkileşim bildirilmiştir. Liste eksiksiz değildir; bir bitkisel ürüne başlamadan önce eczacınıza sorun. İlacınızı kendi başınıza bırakmayın.</p></header>
+      f'''<article class="kart"><header><p class="eyebrow">Bitki Tabanı · yazdırılabilir kart</p><h1>Bu ilacı kullanıyorsanız, bu bitkilere dikkat</h1><p>Aşağıdaki bitkilerle, yanındaki ilaç grubu arasında etkileşim bildirilmiştir. Liste eksiksiz değildir; bir bitkisel ürüne başlamadan önce eczacına sorun. İlacını kendi başına bırakma.</p></header>
 <div class="kart-grid">{_kart}</div><footer><p>Ayrıntılar ve kaynaklar: bitkitabani.com/rehber/ilac-etkilesimi · Zehir Danışma: 114 · Tıbbi tavsiye değildir.</p></footer></article>
 <p class="noprint"><button type="button" class="learn" onclick="window.print()">Yazdır / PDF olarak kaydet</button></p>''', '', narrow=True, extra='<meta name="robots" content="noindex, follow">'))
 write('/indir/hamilelik-listesi/', page('Hamilelikte dikkat listesi (yazdırılabilir) | Bitki Tabanı', 'Yazdırılabilir hamilelikte dikkat listesi.', '/indir/hamilelik-listesi/',
-      f'''<article class="kart"><header><p class="eyebrow">Bitki Tabanı · yazdırılabilir liste</p><h1>Hamilelikte ve emzirirken dikkat edilecek bitkiler</h1><p>Bu bitkilerin güvenlik notunda hamilelik ya da emzirme için ayrıca uyarı vardır. Listede olmayan bir bitki de güvenli demek değildir; yemekteki miktarı aşan her bitkisel ürün için hekiminize danışın.</p></header>
+      f'''<article class="kart"><header><p class="eyebrow">Bitki Tabanı · yazdırılabilir liste</p><h1>Hamilelikte ve emzirirken dikkat edilecek bitkiler</h1><p>Bu bitkilerin güvenlik notunda hamilelik ya da emzirme için ayrıca uyarı vardır. Listede olmayan bir bitki de güvenli demek değildir; yemekteki miktarı aşan her bitkisel ürün için hekimine danış.</p></header>
 <ul class="kart-list">{"".join(f'<li><b>{e(p["tr"])}</b>: {e(t)}</li>' for p, t in preg)}</ul><footer><p>Ayrıntılar ve kaynaklar: bitkitabani.com/rehber/hamilelik-emzirme · Tıbbi tavsiye değildir.</p></footer></article>
 <p class="noprint"><button type="button" class="learn" onclick="window.print()">Yazdır / PDF olarak kaydet</button></p>''', '', narrow=True, extra='<meta name="robots" content="noindex, follow">'))
 GUIDE_URLS.append('/bulten/')
@@ -1537,7 +1544,7 @@ if _qr:
              '@media print{header.site,nav,footer,.page-head,.noprint{display:none!important}body{background:#fff}.kartlar{grid-template-columns:1fr 1fr;gap:8mm}.kart{height:95mm;overflow:hidden}}</style>')
     _ks = ''.join(_kart(p) for p in P if p['guv'] != 'yuksek')
     write('/kartlar/index.html', page('Yazdırılabilir bitki kartları (QR kodlu) | Bitki Tabanı', 'Aktarlar, pazarlar ve atölyeler için QR kodlu, yazdırılabilir şifalı bitki kartları.', '/kartlar/',
-          _KCSS + '<header class="page-head"><h1>Yazdırılabilir bitki kartları</h1><p>Aktar, pazar ve atölyeler için: her kartta bitkinin adı, güvenlik düzeyi, kısa bir bilgi ve okutunca sayfasına götüren bir QR kod var. Yazdır deyin; A4 sayfaya dört kart sığar. Yüksek riskli bitkiler bu listede yok.</p><p class="noprint"><button type="button" onclick="print()">Yazdır</button></p></header><div class="kartlar">' + _ks + '</div>', 'kat'))
+          _KCSS + '<header class="page-head"><h1>Yazdırılabilir bitki kartları</h1><p>Aktar, pazar ve atölyeler için: her kartta bitkinin adı, güvenlik düzeyi, kısa bir bilgi ve okutunca sayfasına götüren bir QR kod var. Yazdır de; A4 sayfaya dört kart sığar. Yüksek riskli bitkiler bu listede yok.</p><p class="noprint"><button type="button" onclick="print()">Yazdır</button></p></header><div class="kartlar">' + _ks + '</div>', 'kat'))
 # ---------- Kültür ve ritüel ana sayfası ----------
 _kh = [('/kavram/', 'Kavramlar', 'Şamanizm, animizm, Pachamama, Hıdrellez… Her kavram bir bitkiyle, kaynaklarıyla.'),
        ('/semboller/', 'Semboller', 'Kilim motiflerinden Shipibo kené desenlerine: çizilebilir semboller ve anlamları.'),
