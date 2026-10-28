@@ -1472,5 +1472,13 @@
  "sassafras:kuru": "yok",
  "kiwicha:kuru": "yok",
  "fitolakka:kuru": "yok",
- "mayiselmasi:kuru": "yok"
+ "mayiselmasi:kuru": "yok",
+ "matico:cicek": {
+  "file": "Starr-091104-0655-Piper aduncum-flower spikes and leaves-Nahiku-Maui (24987412245).jpg",
+  "artist": "Forest and Kim Starr",
+  "license": "CC BY 3.0 us",
+  "page": "https://commons.wikimedia.org/wiki/File:Starr-091104-0655-Piper_aduncum-flower_spikes_and_leaves-Nahiku-Maui_%2824987412245%29.jpg"
+ },
+ "acai:cicek": "yok",
+ "tarcin:cicek": "yok"
 }

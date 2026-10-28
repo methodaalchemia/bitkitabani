@@ -1242,12 +1242,6 @@
  "guayusa:kuru": "yok",
  "achiote:kuru": "yok",
  "kakao:kuru": "yok",
- "matico:cicek": {
-  "file": "Starr-091104-0654-Piper aduncum-flower spikes and leaves-Nahiku-Maui (24691901290).jpg",
-  "artist": "Forest and Kim Starr",
-  "license": "CC BY 3.0 us",
-  "page": "https://commons.wikimedia.org/wiki/File:Starr-091104-0654-Piper_aduncum-flower_spikes_and_leaves-Nahiku-Maui_%2824691901290%29.jpg"
- },
  "matico:kuru": "yok",
  "sinekmantari:kuru": "yok",
  "akadacayi:cicek": {
@@ -1351,12 +1345,6 @@
  "huito:kuru": "yok",
  "guarana:kuru": "yok",
  "camucamu:kuru": "yok",
- "acai:cicek": {
-  "file": "Starr-110330-3801-Euterpe oleracea-flower stalk-Garden of Eden Keanae-Maui (24453889043).jpg",
-  "artist": "Forest and Kim Starr",
-  "license": "CC BY 3.0 us",
-  "page": "https://commons.wikimedia.org/wiki/File:Starr-110330-3801-Euterpe_oleracea-flower_stalk-Garden_of_Eden_Keanae-Maui_%2824453889043%29.jpg"
- },
  "acai:kuru": "yok",
  "yopo:kuru": "yok",
  "chiricsanango:kuru": "yok",
@@ -1394,12 +1382,6 @@
  },
  "ginkgo:kuru": "yok",
  "aloe:kuru": "yok",
- "tarcin:cicek": {
-  "file": "Cinnamomum verum-1-The regent hill-yercaud-salem-India.JPG",
-  "artist": "Yercaud-elango",
-  "license": "CC BY-SA 4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Cinnamomum_verum-1-The_regent_hill-yercaud-salem-India.JPG"
- },
  "tarcin:kuru": "yok",
  "karanfil:kuru": "yok",
  "okaliptus:kuru": "yok",
@@ -1451,12 +1433,7 @@
  "dagcayi:kuru": "yok",
  "atkestanesi:kuru": "yok",
  "ceviz:kuru": "yok",
- "incir:cicek": {
-  "file": "Diagram of Sex Determination of Ficus Carica.png",
-  "artist": "ওহিদ",
-  "license": "CC BY-SA 4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Diagram_of_Sex_Determination_of_Ficus_Carica.png"
- },
+ "incir:cicek": "yok",
  "incir:kuru": "yok",
  "feslegen:kuru": "yok",
  "anason:cicek": {
@@ -1495,5 +1472,13 @@
  "sassafras:kuru": "yok",
  "kiwicha:kuru": "yok",
  "fitolakka:kuru": "yok",
- "mayiselmasi:kuru": "yok"
+ "mayiselmasi:kuru": "yok",
+ "matico:cicek": {
+  "file": "Starr-091104-0655-Piper aduncum-flower spikes and leaves-Nahiku-Maui (24987412245).jpg",
+  "artist": "Forest and Kim Starr",
+  "license": "CC BY 3.0 us",
+  "page": "https://commons.wikimedia.org/wiki/File:Starr-091104-0655-Piper_aduncum-flower_spikes_and_leaves-Nahiku-Maui_%2824987412245%29.jpg"
+ },
+ "acai:cicek": "yok",
+ "tarcin:cicek": "yok"
 }
