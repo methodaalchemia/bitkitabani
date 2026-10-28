@@ -641,6 +641,7 @@ async function tgPost(env, zorla) {
     const r = await fetch('https://api.telegram.org/bot' + tk + (g.image ? '/sendPhoto' : '/sendMessage'), { method: 'POST', headers: { 'content-type': 'application/json' },
       body: JSON.stringify(g.image ? { ...body, photo: g.image } : { chat_id: env.TG_CHAT, text: body.caption, parse_mode: 'HTML' }) });
     const j = await r.json(); if (!j.ok) throw new Error((j.description || 'telegram') + (j.error_code === 404 ? ' (TG_TOKEN hatalı: BotFather’daki satırın tamamı, 123456:ABC… biçiminde olmalı)' : ''));
+    st.kanal = j.result && j.result.chat ? (j.result.chat.title || '') + ' · ' + (j.result.chat.username ? '@' + j.result.chat.username : 'özel kanal') + ' · mesaj ' + j.result.message_id : null;
     if (!zorla) st.last = day; st.plant = g.id; st.n = (st.n || 0) + 1; st.error = null;
   } catch (e) { st.error = String(e.message || e).slice(0, 200); st.errorAt = new Date().toISOString(); if (!zorla) st.last = day; }
   await call(env, 'tg:state', 'put', st); return st;
