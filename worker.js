@@ -646,6 +646,32 @@ async function tgPost(env, zorla) {
   } catch (e) { st.error = String(e.message || e).slice(0, 200); st.errorAt = new Date().toISOString(); if (!zorla) st.last = day; }
   await call(env, 'tg:state', 'put', st); return st;
 }
+// Telegram arşiv: kanal yeni olduğu için Instagram'daki eski bitki postları gün içinde sırayla (10:00, 11:30, 14:00, 15:30, 19:00, 23:00) gönderilir; arşiv bitince durur.
+async function tgArsiv(env) {
+  const day = trDay(), h = trH(), SL = [10, 11.5, 14, 15.5, 19, 23];
+  const st = (await call(env, 'tg:arsiv', 'get')) || { i: 0, done: {} };
+  const ig = (await call(env, 'ig:state', 'get')) || {};
+  if (!ig.n || st.i >= ig.n - 1) return { skipped: 'arşiv bitti' };
+  const k = SL.find(t => h >= t && h < t + 1.5 && st.done[t] !== day);
+  if (k === undefined) return { skipped: 'sırası değil' };
+  st.done[k] = day;
+  try {
+    const pr = await igAsset('p/' + st.i + '/post.json'); st.i++;
+    if (!pr.ok) throw new Error('post yok');
+    const post = await pr.json();
+    const paras = (post.caption || '').split(/\n\s*\n/).map(x => x.trim()).filter(x => x && !/^(🆕|#|Kaydırarak|Kaynaklarıyla|Bilgilendirme)/.test(x) && !/profil/i.test(x));
+    let cap = ''; for (const x of paras) if ((cap + '\n\n' + x).length < 860) cap += (cap ? '\n\n' : '') + x;
+    const esc = x => x.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    const c = '📚 Arşivden\n\n' + esc(cap) + `\n\n<a href="https://bitkitabani.com/${post.id}/">Devamı ve kaynaklar: bitkitabani.com</a>`;
+    const tk = String(env.TG_TOKEN).trim().replace(/^bot/i, '').replace(/\s+/g, '');
+    const img = (post.images || [])[0];
+    const r = await fetch('https://api.telegram.org/bot' + tk + (img ? '/sendPhoto' : '/sendMessage'), { method: 'POST', headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(img ? { chat_id: env.TG_CHAT, photo: img, caption: c, parse_mode: 'HTML' } : { chat_id: env.TG_CHAT, text: c, parse_mode: 'HTML' }) });
+    const j = await r.json(); if (!j.ok) throw new Error(j.description || 'telegram');
+    st.n = (st.n || 0) + 1; st.error = null;
+  } catch (e) { st.error = String(e.message || e).slice(0, 200); st.errorAt = new Date().toISOString(); }
+  await call(env, 'tg:arsiv', 'put', st); return st;
+}
 // Telegram ek paylaşımlar: Threads planındaki gün içi metinler (kavram 08:30, bilgi 12:30, rehber/tarif 17:30, halk bilgisi 21:40).
 async function tgEk(env) {
   const day = trDay(), h = trH();
@@ -845,7 +871,7 @@ export default {
     ctx.waitUntil(thYanitlar(env).catch(() => null));
     ctx.waitUntil(istCron(env).catch(() => null));
     if (env.FB_TOKEN) ctx.waitUntil(fbPost(env).catch(() => null));
-    if (env.TG_TOKEN && env.TG_CHAT) ctx.waitUntil(tgPost(env).catch(() => null).then(() => tgEk(env)).catch(() => null));
+    if (env.TG_TOKEN && env.TG_CHAT) ctx.waitUntil(tgPost(env).catch(() => null).then(() => tgEk(env)).catch(() => null).then(() => tgArsiv(env)).catch(() => null));
     if (env.BSKY_HANDLE && env.BSKY_PASSWORD) ctx.waitUntil(bskyPost(env).catch(() => null));
   },
 };
