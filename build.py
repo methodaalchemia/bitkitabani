@@ -1510,6 +1510,8 @@ for f in os.listdir(os.path.join(HERE, 'assets')):
     else: shutil.copy(_src, os.path.join(OUT, 'assets', f))
 if os.path.isdir(os.path.join(HERE, 'img')):
     shutil.copytree(os.path.join(HERE, 'img'), os.path.join(OUT, 'img'), dirs_exist_ok=True)
+for f in os.listdir(os.path.join(HERE, 'kok')):   # site köküne olduğu gibi kopyalanan doğrulama dosyaları
+    shutil.copy(os.path.join(HERE, 'kok', f), os.path.join(OUT, f))
 _redir += '/ara/ /rehber/#ara 301\n/oyun/ / 301\n'
 open(os.path.join(OUT, '_redirects'), 'w').write(_redir)
 open(os.path.join(OUT, '_headers'), 'w').write('''/*
