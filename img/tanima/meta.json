@@ -1129,5 +1129,371 @@
   "artist": "Wasrts",
   "license": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Mayapple_flower_2.jpg"
- }
+ },
+ "uzerlik:kuru": "yok",
+ "sedef:kuru": "yok",
+ "sigla:kuru": "yok",
+ "isirgan:kuru": {
+  "file": "Urticae folium 029312.jpg",
+  "artist": "Rillke",
+  "license": "CC BY-SA 3.0 de",
+  "page": "https://commons.wikimedia.org/wiki/File:Urticae_folium_029312.jpg"
+ },
+ "salep:kuru": "yok",
+ "kekik:kuru": {
+  "file": "Thymi herba by Danny S. - 001.jpg",
+  "artist": "Danny Steven S.",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Thymi_herba_by_Danny_S._-_001.jpg"
+ },
+ "adacayi:kuru": "yok",
+ "ihlamur:kuru": {
+  "file": "Tiliae flos by Danny S. - 001.jpg",
+  "artist": "Danny Steven S.",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Tiliae_flos_by_Danny_S._-_001.jpg"
+ },
+ "papatya:kuru": {
+  "file": "Matricariae flos dried.jpg",
+  "artist": "Rillke",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Matricariae_flos_dried.jpg"
+ },
+ "kantaron:kuru": {
+  "file": "Hyperici herba by Danny S. - 001.JPG",
+  "artist": "Danny Steven S.",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Hyperici_herba_by_Danny_S._-_001.JPG"
+ },
+ "ebegumeci:kuru": {
+  "file": "Malvae folium by Danny S. - 001.jpg",
+  "artist": "Danny Steven S.",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Malvae_folium_by_Danny_S._-_001.jpg"
+ },
+ "melisa:kuru": {
+  "file": "Melissae folium 005179.jpg",
+  "artist": "Rillke",
+  "license": "CC BY-SA 3.0 de",
+  "page": "https://commons.wikimedia.org/wiki/File:Melissae_folium_005179.jpg"
+ },
+ "biberiye:kuru": {
+  "file": "Rosmarini folium 098242.jpg",
+  "artist": "Rillke",
+  "license": "CC BY-SA 3.0 de",
+  "page": "https://commons.wikimedia.org/wiki/File:Rosmarini_folium_098242.jpg"
+ },
+ "lavanta:kuru": {
+  "file": "Lavandulae flos dried.jpg",
+  "artist": "Rillke",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Lavandulae_flos_dried.jpg"
+ },
+ "corekotu:kuru": "yok",
+ "kusburnu:kuru": "yok",
+ "alic:kuru": {
+  "file": "Crataegi folium cum flore by Danny S. - 001.jpg",
+  "artist": "Danny Steven S.",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Crataegi_folium_cum_flore_by_Danny_S._-_001.jpg"
+ },
+ "meyan:kuru": {
+  "file": "Liquiritiae radix suessholzwurzel.jpg",
+  "artist": "Alcibiades",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Liquiritiae_radix_suessholzwurzel.jpg"
+ },
+ "rezene:kuru": "yok",
+ "defne:kuru": "yok",
+ "murver:kuru": {
+  "file": "Sambuci flos dried.jpg",
+  "artist": "Rillke",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Sambuci_flos_dried.jpg"
+ },
+ "karahindiba:kuru": "yok",
+ "hayit:kuru": "yok",
+ "sakiz:kuru": "yok",
+ "ardic:kuru": "yok",
+ "pelin:kuru": {
+  "file": "Absinthii herba by Danny S. - 001.JPG",
+  "artist": "Danny Steven S.",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Absinthii_herba_by_Danny_S._-_001.JPG"
+ },
+ "hashas:kuru": "yok",
+ "banotu:kuru": "yok",
+ "adamotu:kuru": "yok",
+ "safran:kuru": "yok",
+ "ayahuasca:kuru": "yok",
+ "chacruna:kuru": "yok",
+ "sanpedro:kuru": "yok",
+ "koka:kuru": "yok",
+ "maca:kuru": "yok",
+ "muna:kuru": "yok",
+ "palosanto:kuru": "yok",
+ "mapacho:kuru": "yok",
+ "unadegato:kuru": "yok",
+ "sangre:kuru": "yok",
+ "chuchuhuasi:kuru": "yok",
+ "kinin:kuru": "yok",
+ "chanca:kuru": "yok",
+ "toe:kuru": "yok",
+ "guayusa:kuru": "yok",
+ "achiote:kuru": "yok",
+ "kakao:kuru": "yok",
+ "matico:cicek": {
+  "file": "Starr-091104-0654-Piper aduncum-flower spikes and leaves-Nahiku-Maui (24691901290).jpg",
+  "artist": "Forest and Kim Starr",
+  "license": "CC BY 3.0 us",
+  "page": "https://commons.wikimedia.org/wiki/File:Starr-091104-0654-Piper_aduncum-flower_spikes_and_leaves-Nahiku-Maui_%2824691901290%29.jpg"
+ },
+ "matico:kuru": "yok",
+ "sinekmantari:kuru": "yok",
+ "akadacayi:cicek": {
+  "file": "Salvia apiana 2c.JPG",
+  "artist": "Consultaplantas",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Salvia_apiana_2c.JPG"
+ },
+ "akadacayi:kuru": "yok",
+ "nane:cicek": {
+  "file": "Mentha × piperita 30223352.jpg",
+  "artist": "Alex Abair",
+  "license": "CC BY 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Mentha_%C3%97_piperita_30223352.jpg"
+ },
+ "nane:kuru": {
+  "file": "Menthae piperitae folium by Danny S. - 001.jpg",
+  "artist": "Danny Steven S.",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Menthae_piperitae_folium_by_Danny_S._-_001.jpg"
+ },
+ "zeytin:kuru": "yok",
+ "sumak:kuru": "yok",
+ "nar:kuru": "yok",
+ "yarpuz:kuru": "yok",
+ "civanpercemi:kuru": {
+  "file": "Millefolii herba 138186.jpg",
+  "artist": "Rillke",
+  "license": "CC BY-SA 3.0 de",
+  "page": "https://commons.wikimedia.org/wiki/File:Millefolii_herba_138186.jpg"
+ },
+ "okseotu:kuru": "yok",
+ "kapari:kuru": "yok",
+ "hatmi:kuru": "yok",
+ "kizilcik:kuru": "yok",
+ "sarimsak:cicek": {
+  "file": "Knoblauch Blüte focus stack-20250713-RM-111019.jpg",
+  "artist": "Reinhold Möller Ermell",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Knoblauch_Bl%C3%BCte_focus_stack-20250713-RM-111019.jpg"
+ },
+ "sarimsak:kuru": "yok",
+ "cemen:kuru": {
+  "file": "Trigonellae foenugraeci semen 075308.jpg",
+  "artist": "Rillke",
+  "license": "CC BY-SA 3.0 de",
+  "page": "https://commons.wikimedia.org/wiki/File:Trigonellae_foenugraeci_semen_075308.jpg"
+ },
+ "kimyon:kuru": "yok",
+ "keten:kuru": {
+  "file": "Lini semen 065152 B.jpg",
+  "artist": "Rillke derivative work: MagentaGreen",
+  "license": "CC BY-SA 3.0 de",
+  "page": "https://commons.wikimedia.org/wiki/File:Lini_semen_065152_B.jpg"
+ },
+ "kudretnari:kuru": "yok",
+ "zakkum:kuru": "yok",
+ "sigirkuyrugu:kuru": "yok",
+ "kokboya:kuru": "yok",
+ "kina:cicek": {
+  "file": "Henna flower buds.jpg",
+  "artist": "SKsiddhartthan",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Henna_flower_buds.jpg"
+ },
+ "kina:kuru": "yok",
+ "gucigdemi:kuru": "yok",
+ "tatula:kuru": "yok",
+ "cehri:kuru": {
+  "file": "Frangulae cortex 060103.jpg",
+  "artist": "Rillke",
+  "license": "CC BY-SA 3.0 de",
+  "page": "https://commons.wikimedia.org/wiki/File:Frangulae_cortex_060103.jpg"
+ },
+ "altinkok:kuru": "yok",
+ "efedra:kuru": "yok",
+ "kenevir:cicek": {
+  "file": "Cannabis sativa on way from Govindghat to Rishikesh at Valley of Flowers National Park - during LGFC - VOF 2019 (6).jpg",
+  "artist": "Vinayaraj",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Cannabis_sativa_on_way_from_Govindghat_to_Rishikesh_at_Valley_of_Flowers_National_Park_-_during_LGFC_-_VOF_2019_%286%29.jpg"
+ },
+ "kenevir:kuru": "yok",
+ "cay:kuru": "yok",
+ "isgin:cicek": {
+  "file": "Rheum ribes - Işgın 01.jpg",
+  "artist": "Zeynel Cebeci",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Rheum_ribes_-_I%C5%9Fg%C4%B1n_01.jpg"
+ },
+ "isgin:kuru": "yok",
+ "zerdecal:kuru": "yok",
+ "yabaniigde:cicek": {
+  "file": "Hippophae rhamnoides flowers kz01.jpg",
+  "artist": "Krzysztof Ziarnek, Kenraiz",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Hippophae_rhamnoides_flowers_kz01.jpg"
+ },
+ "yabaniigde:kuru": "yok",
+ "ginseng:kuru": "yok",
+ "huito:kuru": "yok",
+ "guarana:kuru": "yok",
+ "camucamu:kuru": "yok",
+ "acai:cicek": {
+  "file": "Starr-110330-3801-Euterpe oleracea-flower stalk-Garden of Eden Keanae-Maui (24453889043).jpg",
+  "artist": "Forest and Kim Starr",
+  "license": "CC BY 3.0 us",
+  "page": "https://commons.wikimedia.org/wiki/File:Starr-110330-3801-Euterpe_oleracea-flower_stalk-Garden_of_Eden_Keanae-Maui_%2824453889043%29.jpg"
+ },
+ "acai:kuru": "yok",
+ "yopo:kuru": "yok",
+ "chiricsanango:kuru": "yok",
+ "kinoa:kuru": "yok",
+ "kantuta:kuru": "yok",
+ "yacon:kuru": "yok",
+ "sachainchi:kuru": "yok",
+ "molle:kuru": "yok",
+ "copaiba:kuru": "yok",
+ "andiroba:kuru": "yok",
+ "abuta:kuru": "yok",
+ "aguaymanto:cicek": {
+  "file": "Physalis peruviana (Flower).jpg",
+  "artist": "Ixitixel",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Physalis_peruviana_%28Flower%29.jpg"
+ },
+ "aguaymanto:kuru": "yok",
+ "pauarco:kuru": "yok",
+ "ekinezya:kuru": "yok",
+ "peyote:kuru": "yok",
+ "karayilan:kuru": "yok",
+ "cucepalmiye:kuru": "yok",
+ "zencefil:kuru": {
+  "file": "Zingiberis rhizoma 236333.jpg",
+  "artist": "Rillke",
+  "license": "CC BY-SA 3.0 de",
+  "page": "https://commons.wikimedia.org/wiki/File:Zingiberis_rhizoma_236333.jpg"
+ },
+ "kediotu:kuru": {
+  "file": "Valerianae radix 143.jpg",
+  "artist": "Rillke",
+  "license": "CC BY-SA 3.0 de",
+  "page": "https://commons.wikimedia.org/wiki/File:Valerianae_radix_143.jpg"
+ },
+ "ginkgo:kuru": "yok",
+ "aloe:kuru": "yok",
+ "tarcin:cicek": {
+  "file": "Cinnamomum verum-1-The regent hill-yercaud-salem-India.JPG",
+  "artist": "Yercaud-elango",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Cinnamomum_verum-1-The_regent_hill-yercaud-salem-India.JPG"
+ },
+ "tarcin:kuru": "yok",
+ "karanfil:kuru": "yok",
+ "okaliptus:kuru": "yok",
+ "ashwagandha:cicek": {
+  "file": "Withania somnifera 1DS-II 1-1810.jpg",
+  "artist": "SAplants",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Withania_somnifera_1DS-II_1-1810.jpg"
+ },
+ "ashwagandha:kuru": "yok",
+ "keciboynuzu:kuru": "yok",
+ "hibiskus:kuru": "yok",
+ "sinameki:kuru": {
+  "file": "Sennae folium by Danny S. - 001.jpg",
+  "artist": "Danny Steven S.",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Sennae_folium_by_Danny_S._-_001.jpg"
+ },
+ "mersin:kuru": "yok",
+ "enginar:kuru": "yok",
+ "devedikeni:kuru": {
+  "file": "Silybi mariani fructus by Danny S. - 001.JPG",
+  "artist": "Danny Steven S.",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Silybi_mariani_fructus_by_Danny_S._-_001.JPG"
+ },
+ "altinmuhur:kuru": "yok",
+ "tatliot:kuru": "yok",
+ "ayiuzumu:kuru": {
+  "file": "Uvae ursi folium by Danny S. - 001.jpg",
+  "artist": "Danny Steven S.",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Uvae_ursi_folium_by_Danny_S._-_001.jpg"
+ },
+ "kirmizikaraagac:cicek": {
+  "file": "2024-03-26 10 54 20 Elm flowers along Forest Lane in the Mountainview section of Ewing Township, Mercer County, New Jersey.jpg",
+  "artist": "Famartin",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:2024-03-26_10_54_20_Elm_flowers_along_Forest_Lane_in_the_Mountainview_section_of_Ewing_Township%2C_Mercer_County%2C_New_Jersey.jpg"
+ },
+ "kirmizikaraagac:kuru": "yok",
+ "kankoku:kuru": "yok",
+ "dagcayi:cicek": {
+  "file": "Sideritis pullulans flowers.JPG",
+  "artist": "Eitan Ferman",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Sideritis_pullulans_flowers.JPG"
+ },
+ "dagcayi:kuru": "yok",
+ "atkestanesi:kuru": "yok",
+ "ceviz:kuru": "yok",
+ "incir:cicek": {
+  "file": "Diagram of Sex Determination of Ficus Carica.png",
+  "artist": "ওহিদ",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Diagram_of_Sex_Determination_of_Ficus_Carica.png"
+ },
+ "incir:kuru": "yok",
+ "feslegen:kuru": "yok",
+ "anason:cicek": {
+  "file": "Pimpinella anisum-2-hrs-yercaud-salem-India.jpg",
+  "artist": "Yercaud-elango",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Pimpinella_anisum-2-hrs-yercaud-salem-India.jpg"
+ },
+ "anason:kuru": "yok",
+ "turunc:kuru": "yok",
+ "kakule:kuru": "yok",
+ "hodan:kuru": "yok",
+ "goji:kuru": "yok",
+ "reishi:kuru": "yok",
+ "muskat:kuru": "yok",
+ "gelincik:kuru": "yok",
+ "sogut:kuru": "yok",
+ "pasiflora:kuru": "yok",
+ "karabas:kuru": "yok",
+ "neem:kuru": "yok",
+ "graviola:kuru": "yok",
+ "mahlep:kuru": "yok",
+ "yildizanason:kuru": "yok",
+ "gotukola:kuru": "yok",
+ "tulsi:kuru": "yok",
+ "lotus:cicek": {
+  "file": "Lotus flower up close.jpg",
+  "artist": "PuellaMarina",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Lotus_flower_up_close.jpg"
+ },
+ "lotus:kuru": "yok",
+ "hamamelis:kuru": "yok",
+ "turnayemisi:kuru": "yok",
+ "paico:kuru": "yok",
+ "sassafras:kuru": "yok",
+ "kiwicha:kuru": "yok",
+ "fitolakka:kuru": "yok",
+ "mayiselmasi:kuru": "yok"
 }
