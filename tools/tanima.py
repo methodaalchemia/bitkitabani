@@ -14,10 +14,14 @@ AD = {'cizim': 'Botanik çizim', 'cicek': 'Çiçekli hâli', 'kuru': 'Kurutulmu�
 ELLE = {}   # örn. 'zencefil:kuru': 'Dried ginger.jpg'
 
 PLATE = r'köhler|kohler|koehler|thomé|thome|illustrat|\bplate\b|tafel|lithograph|engraving|drawing|botanical|flora von|medizinal|sowerby|curtis|blackwell|fuchs'
+HAYVAN = r'butterfl|bee\b|bees\b|bumble|beetle|insect|wasp|\bfly\b|hoverfl|syrph|moth|spider|\bbug\b|caterpillar|larva|\bant\b|bird|apis\b|bombus|papilio|swallowtail|lepidopt|coleopt|hymenopt|dipter|trichodes|zygaena|\bon (a|an|the) '
+YER = r'street|\brue\b|road|garden|jardin|park\b|field|meadow|habitat|landscape|cressoni|moulin|village|in situ|fresh plant|wild\b'
 Q = {   # arama ifadesi, metinde aranan, metinde olmaması gereken
  'cizim': ('"{t}" (Köhler OR illustration OR plate OR Tafel OR Thomé OR botanical)', PLATE, r'herbari|specimen|photo of|stamp|coin|map'),
- 'cicek': ('"{t}" (flower OR flowers OR inflorescence OR Blüte OR fleur OR blossom) filetype:bitmap', r'flower|blüte|fleur|flor\b|flores|inflorescen|blossom|bloom|anthes', PLATE + r'|herbari|specimen|stamp|map|dried|droge'),
- 'kuru': ('"{t}" (dried OR droge OR Droge OR getrocknet OR séché OR seco OR "dry" OR drug OR herba OR radix OR rhizoma OR semen OR folium OR flos) filetype:bitmap', r'dried|droge|drug\b|getrocknet|séch|seco|secad|\bdry\b|herba|radix|rhizoma|semen|folium|flos|cortex|fructus|spice|tea\b', PLATE + r'|herbari|specimen|stamp|map|fresh plant|in situ'),
+ # çiçekli hâl: konusu bitkinin çiçeği; üzerinde böcek/hayvan olan fotoğraflar elenir
+ 'cicek': ('"{t}" (flower OR flowers OR inflorescence OR Blüte OR fleur OR blossom) filetype:bitmap', r'flower|blüte|fleur|flor\b|flores|inflorescen|blossom|bloom|anthes', PLATE + r'|herbari|specimen|stamp|map|dried|droge|' + HAYVAN),
+ # kurutulmuş hâl: aktarda satıldığı gibi drog (kuru çiçek, yaprak, kök, tohum); sokak, bahçe, tarla fotoğrafları elenir
+ 'kuru': ('"{t}" (dried OR getrocknet OR Droge OR drug OR séché OR seco OR spice OR pharmacognosy) filetype:bitmap', r'dried|droge|drug\b|getrocknet|séch|seco\b|secad|kurutul|pharmacogn|herbal drug|apothec|spice|gewürz', PLATE + r'|herbari|specimen|stamp|map|' + HAYVAN + '|' + YER),
 }
 
 def get(url, binary=False):

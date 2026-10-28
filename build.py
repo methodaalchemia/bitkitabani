@@ -1577,7 +1577,15 @@ write('/kultur/', page('Kültür ve ritüel: şamanizm, animizm, semboller ve ku
       'kultur', narrow=True, extra=lds(crumb_ld(('/kultur/', 'Kültür ve ritüel')))))
 # ---------- akıllı arama verisi ve sayfası ----------
 import hashlib as _hl
-_ara = [dict(id=p['id'], tr=p['tr'], la=short_la(p), guv=GUV[p['guv']], kisa=p['kul'][0][1].split('. ')[0][:140],
+def _cumleler(p):   # aramada gösterilecek cümleler: (etiket, sayfadaki bölüm, cümle)
+    out = []
+    for w, t in p['kul']:
+        out += [(f'Geleneksel kullanım · {w}', 'geleneksel-kullanim', c) for c in re.split(r'(?<=[.!?])\s+', t) if len(c) > 15]
+    for lab, an, t in [('Bilim ne diyor', 'bilim-ne-diyor', p['bilim']), ('Güvenlik', 'guvenlik', p['guvNot']), ('Hazırlama', 'hazirlama', p['haz']),
+                       ('Doğada', 'dogada', ' '.join(str(EK.get(p['id'], {}).get(x, '')) for x in ('yoresel', 'mevsim')))]:
+        out += [(lab, an, c) for c in re.split(r'(?<=[.!?])\s+', t or '') if len(c) > 15]
+    return [list(x) for x in out]
+_ara = [dict(id=p['id'], tr=p['tr'], la=short_la(p), guv=GUV[p['guv']], kisa=p['kul'][0][1].split('. ')[0][:140], c=_cumleler(p),
              t=f"{p['tr']} ({p['la']}). Diğer adları: {p['diger']}. Kullanım: {', '.join(KAT[k] for k in p['kat'])}. " + ' '.join(f'{w}: {x}' for w, x in p['kul'])[:700] + f" Bilim: {p['bilim'][:300]} Güvenlik: {GUV[p['guv']]}. {p['guvNot'][:300]}") for p in P]
 _ver = _hl.sha1(json.dumps([x['t'] for x in _ara], ensure_ascii=False).encode()).hexdigest()[:12]
 open(os.path.join(OUT, 'ara.json'), 'w', encoding='utf-8').write(json.dumps({'ver': _ver, 'p': _ara}, ensure_ascii=False))

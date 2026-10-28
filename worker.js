@@ -569,7 +569,7 @@ async function katkiApi(req, env, url) {
 }
 
 // ---------- Akıllı arama: soru cümlesini bitki metinleriyle anlam olarak karşılaştırır (Workers AI, bge-m3) ----------
-const ARA_MODEL = '@cf/baai/bge-m3';
+const ARA_MODEL = '@cf/baai/bge-m3';   // gömmeler yalnızca 't' alanından; 'c' cümleleri sonuç açıklaması içindir
 function f32b64(a) { const u = new Uint8Array(new Float32Array(a).buffer); let s = ''; for (let i = 0; i < u.length; i += 8192) s += String.fromCharCode(...u.subarray(i, i + 8192)); return btoa(s); }
 function b64f32(s) { const b = Uint8Array.from(atob(s), c => c.charCodeAt(0)); return new Float32Array(b.buffer); }
 async function araVek(env, req, data) {
@@ -595,7 +595,16 @@ async function araApi(req, env, url) {
   const V = await araVek(env, req, data);
   const qv = (await env.AI.run(ARA_MODEL, { text: [q] })).data[0]; const n = Math.hypot(...qv);
   const sc = V.map((v, i) => { let s = 0; for (let j = 0; j < v.length; j++) s += v[j] * qv[j] / n; return [s, i]; }).sort((a, b) => b[0] - a[0]).slice(0, 10);
-  return json({ q, sonuc: sc.filter(([s]) => s > 0.35).map(([s, i]) => { const p = data.p[i]; return { id: p.id, tr: p.tr, la: p.la, guv: p.guv, kisa: p.kisa, skor: Math.round(s * 100) / 100 }; }) }, 200, { 'cache-control': 'public, max-age=3600' });
+  // her sonuç için aranan kelimeleri en çok içeren cümle ve sayfadaki yeri
+  const norm = t => t.toLocaleLowerCase('tr').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ı/g, 'i');
+  const kok = t => norm(t).split(/[^a-z0-9]+/).filter(x => x.length >= 3).map(x => x.slice(0, 5));
+  const qk = kok(q);
+  const cumle = p => {
+    let best = null, bs = 0;
+    for (const [lab, an, c] of p.c || []) { const ck = kok(c); const s = qk.filter(k => ck.some(x => x.startsWith(k) || k.startsWith(x))).length; if (s > bs) { bs = s; best = { etiket: lab, bolum: an, cumle: c }; } }
+    return best || { etiket: 'Geleneksel kullanım', bolum: 'geleneksel-kullanim', cumle: p.kisa };
+  };
+  return json({ q, sonuc: sc.filter(([s]) => s > 0.35).map(([s, i]) => { const p = data.p[i]; return { id: p.id, tr: p.tr, la: p.la, guv: p.guv, ...cumle(p), skor: Math.round(s * 100) / 100 }; }) }, 200, { 'cache-control': 'public, max-age=3600' });
 }
 export default {
   async fetch(req, env) {
