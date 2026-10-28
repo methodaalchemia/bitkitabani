@@ -556,6 +556,12 @@ async function katkiApi(req, env, url) {
   }
   const s = await session(req, env);
   if (!s || !s.admin) return json({ error: 'yetki' }, 403);
+  if (url.pathname === '/api/katki-sosyal-dene' && req.method === 'GET') {   // yönetici: ?k=tg|bsky
+    const k = url.searchParams.get('k');
+    if (k === 'tg' && env.TG_TOKEN) return json(await tgPost(env, true));
+    if (k === 'bsky' && env.BSKY_HANDLE) return json(await bskyPost(env, true));
+    return json({ error: 'anahtar yok', tg: !!env.TG_TOKEN, bsky: !!env.BSKY_HANDLE });
+  }
   if (url.pathname === '/api/katki-liste' && req.method === 'GET') return json((await call(env, 'katki:list', 'get')) || []);
   if (url.pathname === '/api/katki-karar' && req.method === 'POST') {
     const b = await req.json().catch(() => ({})); const L = (await call(env, 'katki:list', 'get')) || [];
@@ -605,6 +611,60 @@ async function araApi(req, env, url) {
     return best || { etiket: 'Geleneksel kullanım', bolum: 'geleneksel-kullanim', cumle: p.kisa };
   };
   return json({ q, sonuc: sc.filter(([s]) => s > 0.35).map(([s, i]) => { const p = data.p[i]; return { id: p.id, tr: p.tr, la: p.la, guv: p.guv, ...cumle(p), skor: Math.round(s * 100) / 100 }; }) }, 200, { 'cache-control': 'public, max-age=3600' });
+}
+
+// ---------- Telegram kanalı ve Bluesky: günlük bitki postu (Instagram'dan sonra, akşam) ----------
+// Gizli değişkenler: TG_TOKEN, TG_CHAT (@kanal) · BSKY_HANDLE, BSKY_PASSWORD (uygulama şifresi)
+async function gunlukPost(env) {   // Instagram'da bugün paylaşılan bitkinin metni ve ilk görseli
+  const ig = (await call(env, 'ig:state', 'get')) || {};
+  if (!ig.lastPlant || ig.last !== trDay()) return null;
+  const pr = await igAsset('p/' + (ig.n - 1) + '/post.json'); if (!pr.ok) return null;
+  const post = await pr.json();
+  const paras = (post.caption || '').split(/\n\s*\n/).map(x => x.trim()).filter(x => x && !/^(🆕|#|Kaydırarak|Kaynaklarıyla|Bilgilendirme)/.test(x) && !/profil/i.test(x));
+  return { id: post.id, paras, image: (post.images || [])[0], url: 'https://bitkitabani.com/' + post.id + '/', alt: (post.alts || [])[0] || '' };
+}
+async function tgPost(env, zorla) {
+  const st = (await call(env, 'tg:state', 'get')) || {}; const day = trDay();
+  if (!zorla && (st.last === day || trH() < 20.6)) return { skipped: 'sırası değil' };
+  try {
+    const g = await gunlukPost(env); if (!g) return { skipped: 'bugün post yok' };
+    let cap = ''; for (const x of g.paras) if ((cap + '\n\n' + x).length < 860) cap += (cap ? '\n\n' : '') + x;
+    const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    const body = { chat_id: env.TG_CHAT, caption: esc(cap) + `\n\n<a href="${g.url}">Devamı ve kaynaklar: bitkitabani.com</a>`, parse_mode: 'HTML' };
+    const r = await fetch('https://api.telegram.org/bot' + env.TG_TOKEN + (g.image ? '/sendPhoto' : '/sendMessage'), { method: 'POST', headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(g.image ? { ...body, photo: g.image } : { chat_id: env.TG_CHAT, text: body.caption, parse_mode: 'HTML' }) });
+    const j = await r.json(); if (!j.ok) throw new Error(j.description || 'telegram');
+    st.last = day; st.plant = g.id; st.n = (st.n || 0) + 1; st.error = null;
+  } catch (e) { st.error = String(e.message || e).slice(0, 200); st.errorAt = new Date().toISOString(); if (!zorla) st.last = day; }
+  await call(env, 'tg:state', 'put', st); return st;
+}
+async function bskyPost(env, zorla) {
+  const st = (await call(env, 'bsky:state', 'get')) || {}; const day = trDay();
+  if (!zorla && (st.last === day || trH() < 20.7)) return { skipped: 'sırası değil' };
+  const X = 'https://bsky.social/xrpc/';
+  try {
+    const g = await gunlukPost(env); if (!g) return { skipped: 'bugün post yok' };
+    const ses = await (await fetch(X + 'com.atproto.server.createSession', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ identifier: env.BSKY_HANDLE, password: env.BSKY_PASSWORD }) })).json();
+    if (!ses.accessJwt) throw new Error('giriş: ' + (ses.message || 'başarısız'));
+    const H = { authorization: 'Bearer ' + ses.accessJwt };
+    const link = 'bitkitabani.com/' + g.id + '/';
+    let t = g.paras[0] || ''; const room = 290 - link.length - 2;
+    if ([...t].length > room) t = [...t].slice(0, room - 1).join('').replace(/\s+\S*$/, '') + '…';
+    const text = t + '\n\n' + link, enc = new TextEncoder(), start = enc.encode(t + '\n\n').length;
+    const rec = { $type: 'app.bsky.feed.post', text, createdAt: new Date().toISOString(), langs: ['tr'],
+      facets: [{ index: { byteStart: start, byteEnd: start + enc.encode(link).length }, features: [{ $type: 'app.bsky.richtext.facet#link', uri: g.url }] }] };
+    if (g.image) {
+      const img = await fetch(g.image); const buf = await img.arrayBuffer();
+      if (buf.byteLength < 950000) {
+        const up = await (await fetch(X + 'com.atproto.repo.uploadBlob', { method: 'POST', headers: { ...H, 'content-type': img.headers.get('content-type') || 'image/jpeg' }, body: buf })).json();
+        if (up.blob) rec.embed = { $type: 'app.bsky.embed.images', images: [{ image: up.blob, alt: g.alt.slice(0, 900) }] };
+      }
+    }
+    const r = await (await fetch(X + 'com.atproto.repo.createRecord', { method: 'POST', headers: { ...H, 'content-type': 'application/json' }, body: JSON.stringify({ repo: ses.did, collection: 'app.bsky.feed.post', record: rec }) })).json();
+    if (!r.uri) throw new Error(r.message || 'bluesky');
+    st.last = day; st.plant = g.id; st.n = (st.n || 0) + 1; st.error = null;
+  } catch (e) { st.error = String(e.message || e).slice(0, 200); st.errorAt = new Date().toISOString(); if (!zorla) st.last = day; }
+  await call(env, 'bsky:state', 'put', st); return st;
 }
 export default {
   async fetch(req, env) {
@@ -671,5 +731,7 @@ export default {
     ctx.waitUntil(bultenCron(env).catch(() => null));
     ctx.waitUntil(thYanitlar(env).catch(() => null));
     if (env.FB_TOKEN) ctx.waitUntil(fbPost(env).catch(() => null));
+    if (env.TG_TOKEN && env.TG_CHAT) ctx.waitUntil(tgPost(env).catch(() => null));
+    if (env.BSKY_HANDLE && env.BSKY_PASSWORD) ctx.waitUntil(bskyPost(env).catch(() => null));
   },
 };
