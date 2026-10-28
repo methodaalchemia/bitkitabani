@@ -646,6 +646,28 @@ async function tgPost(env, zorla) {
   } catch (e) { st.error = String(e.message || e).slice(0, 200); st.errorAt = new Date().toISOString(); if (!zorla) st.last = day; }
   await call(env, 'tg:state', 'put', st); return st;
 }
+// Telegram ek paylaşımlar: Threads planındaki gün içi metinler (kavram 08:30, bilgi 12:30, rehber/tarif 17:30, halk bilgisi 21:40).
+async function tgEk(env) {
+  const day = trDay(), h = trH();
+  const SL = [['kavram', 8.5], ['sabah', 12.5], ['ogle', 17.5], ['soru', 21.7]];
+  const st = (await call(env, 'tg:ek', 'get')) || {};
+  const job = SL.find(([k, t]) => h >= t && h < t + 2.5 && st[k] !== day);
+  if (!job) return { skipped: 'sırası değil' };
+  st[job[0]] = day;
+  try {
+    const pr = await igAsset('threads.json'); if (!pr.ok) throw new Error('threads.json yok');
+    const plan = ((await pr.json())[day] || {})[job[0]]; if (!plan || !plan.text) throw new Error('metin yok');
+    const esc = x => x.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    let t = esc(plan.text.replace(/\n*(#\S+\s*)+$/u, '').trim()).replace(/(bitkitabani\.com\/[\w\-\/]*)/g, '<a href="https://$1">$1</a>');
+    const tk = String(env.TG_TOKEN).trim().replace(/^bot/i, '').replace(/\s+/g, '');
+    const foto = plan.image && t.length < 1000;
+    const r = await fetch('https://api.telegram.org/bot' + tk + (foto ? '/sendPhoto' : '/sendMessage'), { method: 'POST', headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(foto ? { chat_id: env.TG_CHAT, photo: plan.image, caption: t, parse_mode: 'HTML' } : { chat_id: env.TG_CHAT, text: t, parse_mode: 'HTML', link_preview_options: { is_disabled: false } }) });
+    const j = await r.json(); if (!j.ok) throw new Error(j.description || 'telegram');
+    st.n = (st.n || 0) + 1; st.error = null;
+  } catch (e) { st.error = job[0] + ': ' + String(e.message || e).slice(0, 200); st.errorAt = new Date().toISOString(); }
+  await call(env, 'tg:ek', 'put', st); return st;
+}
 async function bskyPost(env, zorla) {
   const st = (await call(env, 'bsky:state', 'get')) || {}; const day = trDay();
   if (!zorla && (st.last === day || trH() < 20.7)) return { skipped: 'sırası değil' };
@@ -823,7 +845,7 @@ export default {
     ctx.waitUntil(thYanitlar(env).catch(() => null));
     ctx.waitUntil(istCron(env).catch(() => null));
     if (env.FB_TOKEN) ctx.waitUntil(fbPost(env).catch(() => null));
-    if (env.TG_TOKEN && env.TG_CHAT) ctx.waitUntil(tgPost(env).catch(() => null));
+    if (env.TG_TOKEN && env.TG_CHAT) ctx.waitUntil(tgPost(env).catch(() => null).then(() => tgEk(env)).catch(() => null));
     if (env.BSKY_HANDLE && env.BSKY_PASSWORD) ctx.waitUntil(bskyPost(env).catch(() => null));
   },
 };
