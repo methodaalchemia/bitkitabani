@@ -68,3 +68,15 @@ dict(slug='biberiye-cayi', bitki='biberiye', ad='Biberiye çayı', kisa='Bir dal
      adim=['Biberiyeyi bardağa koy.', 'Üzerine kaynamış suyu dök ve ağzını kapat.', '5–10 dakika demlenmeye bırak.', 'Süzüp iç.'],
      hazirlik=1, toplam=11, verim='1 bardak', ipucu='Çay ölçülü miktarda güvenlidir; yoğun uçucu yağı ise epilepside ve gebelikte önerilmez.'),
 ]
+TARIFLER += [
+dict(slug='lavanta-cayi', bitki='lavanta', ad='Lavanta çayı', kisa='Kurutulmuş lavanta çiçekleriyle demlenen, akşamları içilen hafif ve çiçeksi bir çay.',
+     malzeme=['1–2 tatlı kaşığı (1–2 g) kurutulmuş lavanta çiçeği', '1 su bardağı (150 ml) kaynar su', 'İsteğe göre bir çay kaşığı bal'],
+     adim=['Çiçekleri demliğe ya da süzgeçli bir bardağa koy.', 'Üzerine kaynar suyu dök ve kapağını kapat; uçucu yağlar buharla kaçmasın.', '5–10 dakika demle, süz. Yatmadan yarım saat önce iç.'],
+     hazirlik='2', toplam='12', verim='1 bardak',
+     ipucu='Avrupa İlaç Ajansı lavanta çiçeğini hafif stres ve uykuya dalmayı kolaylaştırmak için geleneksel kullanımda tanır. Tadı keskin gelirse melisa ya da ıhlamurla yarı yarıya karıştır. Lavanta uçucu yağı içilmez; çay için yalnızca kurutulmuş çiçek kullan.'),
+dict(slug='kediotu-cayi', bitki='kediotu', ad='Kediotu çayı', kisa='Kurutulmuş kediotu kökünden demlenen, kokusu keskin ama uykudan önce içilen geleneksel çay.',
+     malzeme=['1 tatlı kaşığı (2–3 g) kıyılmış kurutulmuş kediotu kökü', '1 su bardağı (150 ml) kaynar su', 'İsteğe göre bir tutam melisa ya da nane'],
+     adim=['Kökü demliğe koy, üzerine kaynar suyu dök.', 'Kapağı kapalı olarak 10–15 dakika demle.', 'Süz; yatmadan 30–60 dakika önce iç.'],
+     hazirlik='2', toplam='17', verim='1 bardak',
+     ipucu='Avrupa İlaç Ajansı kediotu kökünü hafif sinirsel gerginlik ve uyku sorunlarında tanır; etkisi genellikle 2–4 haftalık düzenli kullanımda belirginleşir. Kokusu keskindir, melisa ya da nane yumuşatır. Alkol ya da uyku ilacıyla birlikte kullanma; içtikten sonra araç kullanma.'),
+]
