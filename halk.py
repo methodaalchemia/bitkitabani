@@ -31,6 +31,9 @@ MERYEM = ('H. B. Ereni, Sevgi Şar, “Meryemana Dikeni Bitkisi: Farmakolojik ve
 TERE = ('İ. Başağaoğlu, G. Kavalalı, “Halk Hekimliğinde Tere Bitkisinin (Lepidium sativum L.) Kullanılması”, Lokman Hekim Dergisi 9(3), 2019', _L + '592053')
 LH = 'Lokman Hekim Dergisi'
 
+EGE = ('Bintuğ Öztürk ve ark., “Türkiye’nin Etnobotanik Veritabanı”, Ege Üniversitesi BAP sonuç raporu, 2020',
+       'https://acikerisim.ege.edu.tr/server/api/core/bitstreams/c2e0e3a1-ac5b-4664-bc34-33187274efea/content')
+
 HALK = [
  dict(kaynak=DOGAN, kisa='Doğan, Lokman Hekim Dergisi, 2023', link='toplama-takvimi/',
   post='Ağrı’nın Diyadin ve Doğubayazıt yörelerinde şifalı otlar nisan ve mayısta, filizlenince toplanmaya başlanıyor. Bilgi verenlere göre otların çoğu ağustosta tohuma geçince gücünü yitiriyor; bu yüzden toplama temmuz sonunda bitiyor. Yağmurlu, çok güneşli ve rüzgârlı günlerde ot toplanmıyor.'),
@@ -141,6 +144,14 @@ HALK = [
   post='Meryemana dikeninin yapraklarındaki beyaz damarlar bir söylenceye bağlanıyor: Meryem bu bitkinin altında İsa’yı emzirirken sütünden bir damla yapraklara düşmüş. Türkiye’de ise bitkinin pek çok adı var: deve kengeri, sütlü kengel, akdiken, mübarek diken, şevkülmeryem.'),
  dict(kaynak=TERE, kisa=f'Başağaoğlu ve Kavalalı, {LH}, 2019', link='rehber/',
   post='Tere (Lepidium sativum) Anadolu’da kerdeme ve cırcır adlarıyla da biliniyor. Halk arasında yaprağı salataya giriyor, tohumu baharat olarak kullanılıyor, ezilmiş tohumu siğile sürülüyor. Aynı kaynak bir uyarı da yapıyor: tohumun fazla alınması vücutta bozukluklara yol açabilir.'),
+dict(kaynak=EGE, kisa='Öztürk ve ark., Türkiye’nin Etnobotanik Veritabanı, 2020', bitki='isirgan',
+  post='1928–2014 arasında Türkiye’de yapılmış 930 etnobotanik çalışma tek bir veritabanında toplandı. En sık kaydedilen bitkiler: ısırgan (178 yayın), kuşburnu (157), ceviz (136), sarı kantaron (112), sinirotu (112) ve ebegümeci (109). Hepsi köy yollarında, bahçe kenarlarında bulunan sıradan bitkiler.'),
+dict(kaynak=EGE, kisa='Öztürk ve ark., Türkiye’nin Etnobotanik Veritabanı, 2020', bitki='kusburnu',
+  post='Kuşburnu için Türkiye’de 60 kadar yöresel ad kayıtlı: itburnu, köpek gülü, it gülü, öküzgötü, şilan, gülburnu, deligül, gelin göbeği, gülbubusu, dikenbaşı… Aynı bitki, her yörede başka bir adla. Sizin yörenizde ne deniyor?'),
+dict(kaynak=EGE, kisa='Öztürk ve ark., Türkiye’nin Etnobotanik Veritabanı, 2020', bitki='kantaron',
+  post='Anadolu’da “yara otu” adı tek bir bitkiye ait değil: Kastamonu’da sarı kantarona, Ankara’da boz otuna, Balıkesir, Bolu ve Giresun’da sinirotuna, Bilecik’te ise Prunella türlerine bu ad veriliyor. Yöresel ad tek başına bitkiyi tanımaya yetmez; Latince adı bu yüzden önemli.'),
+dict(kaynak=EGE, kisa='Öztürk ve ark., Türkiye’nin Etnobotanik Veritabanı, 2020', bitki='isirgan',
+  post='Türkiye’deki halk kayıtlarında bitkilerin en çok başvurulduğu dert hemoroid (367 farklı bitki), ardından mide ağrısı geliyor. Ciltte ise açık ara ilk sırada yara iyileştirme var: 467 bitki, 1.093 kayıt. Bu sayılar etkinliği değil, derdin ne kadar yaygın olduğunu anlatıyor.'),
 ]
 
 def site_kul():

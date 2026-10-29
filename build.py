@@ -42,6 +42,21 @@ def tanima_html(pid, h2=True):
     return (f'<section class="sec" id="tanima"><h2>Nasıl tanınır?</h2>' if h2 else '') + f'<div class="tanima">{"".join(figs)}</div>' + ('</section>' if h2 else '')
 # kaynaklı halk hekimliği kayıtları (halk.py): bitki sayfasının geleneksel kullanım bölümüne ve kaynaklarına eklenir
 from halk import site_kul as _site_kul
+from ege import EGE, KAYNAK as EGE_KAYNAK
+def ege_html(pid, ad):
+    x = EGE.get(pid)
+    if not x: return ''
+    c = []
+    if x.get('genel'):
+        sira, kay, yay = x['genel']
+        c.append(f'Türkiye’de 1928–2014 arasında yapılmış etnobotanik çalışmalarda en sık kaydedilen {sira}. bitki: {yay} yayında {kay} kullanım kaydı.')
+    if x.get('kul'): c.append(f'Tıbbi kullanımı {x["lit"]} yayında kayıtlı. En sık geçen amaçlar (yayın sayısı): {x["kul"]}.')
+    if x.get('alan'):
+        c.append('Halk arasında en sık kullanılan bitkiler sıralamasında: ' + '; '.join(f'{a} için {i}. sırada ({cs} çalışma)' for a, i, k, cs in x['alan']) + '.')
+    if x.get('adlar'): c.append(f'Kayıtlı yöresel adları (çalışma sayısı): {x["adlar"]}.')
+    if x.get('yaraotu'): c.append(f'{x["yaraotu"]}’da “yara otu” adıyla anılıyor.')
+    return ('<aside class="ege"><h3>Türkiye’deki halk kayıtları</h3>' + ''.join(f'<p>{e(t)}</p>' for t in c) +
+            f'<p class="muted-s">Bunlar halk arasında kayıtlı kullanımlardır, etkinlik kanıtı değildir. Kaynak: <a href="{EGE_KAYNAK[1]}" target="_blank" rel="noopener">Türkiye’nin Etnobotanik Veritabanı (Ege Üniversitesi, 2020)</a>; 930 çalışmadan 81.526 kayıt.</p></aside>')
 _hk, _hs = _site_kul()
 for _i, _u in _hk.items():
     if _i in byId: byId[_i]['kul'] = [list(x) for x in byId[_i]['kul']] + [list(x) for x in _u]
@@ -520,7 +535,7 @@ for i, p in enumerate(P):
   {sharebar(p['tr'] + ': ne işe yarar, kanıtı ve güvenliği', '/' + pid + '/')}
   {kisahtml}
   <!--TOC-->
-  <section class="sec"><h2>Geleneksel kullanım</h2><div class="uses">{uses}</div></section>
+  <section class="sec"><h2>Geleneksel kullanım</h2><div class="uses">{uses}</div>{ege_html(pid, p["tr"])}</section>
   {dogada}
   <section class="sec"><h2>Hazırlama</h2><p>{e(p["haz"])}</p></section>
   <section class="sec"><h2>Bilim ne diyor</h2><p>{e(p["bilim"])}</p></section>
