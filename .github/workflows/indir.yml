@@ -4,20 +4,22 @@ on:
     inputs:
       url: { description: 'İndirilecek adres (boşlukla ayrılmış birden çok adres olabilir)', required: true }
       ad: { description: 'Dosya adı (tek adreste) ya da klasör (çoklu)', required: true }
+concurrency: { group: indir, cancel-in-progress: false }
 permissions:
   contents: write
 jobs:
   indir:
     runs-on: ubuntu-latest
     steps:
-      - run: |
+      - env: { URL: '${{ inputs.url }}', AD: '$AD' }
+        run: |
           set -e
           git init -q k && cd k
-          set -- ${{ inputs.url }}
-          if [ $# -eq 1 ]; then curl -sSL --retry 3 -A "Mozilla/5.0" -o "${{ inputs.ad }}" "$1"; else mkdir -p "${{ inputs.ad }}"; for u in "$@"; do n=$(echo "$u" | sed 's#.*/\([^/]*\)/*$#\1#; s#[^A-Za-z0-9._-]#_#g'); curl -sSL --retry 3 -A "Mozilla/5.0" -o "${{ inputs.ad }}/$n.pdf" "$u" || true; sleep 2; done; fi
+          set -- $URL
+          if [ $# -eq 1 ]; then curl -sSL --retry 3 -A "Mozilla/5.0" -o "$AD" "$1"; else mkdir -p "$AD"; for u in "$@"; do n=$(echo "$u" | sed 's#.*/\([^/]*\)/*$#\1#; s#[^A-Za-z0-9._-]#_#g'); curl -sSL --retry 3 -A "Mozilla/5.0" -o "$AD/$n.pdf" "$u" || true; sleep 2; done; fi
           ls -la
           git config user.name bot && git config user.email bot@bitkitabani.com
           git checkout -q -b kaynak
           git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
           git fetch -q origin kaynak && git reset -q --soft origin/kaynak || true
-          git add "${{ inputs.ad }}" && git commit -qm "kaynak: ${{ inputs.ad }}" && git push -q origin kaynak
+          git add "$AD" && git commit -qm "kaynak: $AD" && git push -q origin kaynak
