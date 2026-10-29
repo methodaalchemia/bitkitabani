@@ -635,3 +635,6 @@ button.tk-cz-ad:hover{text-decoration:underline}
 .tk-detay{margin:26px 0;border-top:1px solid var(--rule);padding-top:10px}
 .tk-detay>summary{cursor:pointer;font-family:var(--f-display);font-size:var(--t-lg);padding:6px 0}
 @media (max-width:600px){.tk-cz-r{grid-template-columns:108px repeat(12,minmax(30px,1fr))}.tk-cz-ad{font-size:12.5px;padding:4px 6px}}
+.ege{margin:16px 0 4px;padding:12px 14px;background:var(--sheet);border:1px solid var(--rule);border-left:4px solid var(--ochre)}
+.ege h3{margin:0 0 6px;font-family:var(--f-display);font-size:var(--t-md)}
+.ege p{margin:6px 0;font-size:var(--t-sm)}
