@@ -1,0 +1,22 @@
+name: Kaynak indir
+on:
+  workflow_dispatch:
+    inputs:
+      url: { description: 'İndirilecek adres', required: true }
+      ad: { description: 'Dosya adı', required: true }
+permissions:
+  contents: write
+jobs:
+  indir:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          set -e
+          git init -q k && cd k
+          curl -sSL --retry 3 -A "Mozilla/5.0" -o "${{ inputs.ad }}" "${{ inputs.url }}"
+          ls -la
+          git config user.name bot && git config user.email bot@bitkitabani.com
+          git checkout -q -b kaynak
+          git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          git fetch -q origin kaynak && git reset -q --soft origin/kaynak || true
+          git add "${{ inputs.ad }}" && git commit -qm "kaynak: ${{ inputs.ad }}" && git push -q origin kaynak
