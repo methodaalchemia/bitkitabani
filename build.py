@@ -154,7 +154,7 @@ if 'pasiflora' not in byId:   # çarkıfelek kataloğa girene kadar rehber metin
 from tarif import TARIFLER
 # --- yöre haritası: saha çalışmalarında bitkilerin kaydedildiği iller ---
 import trmap as _TM
-from yore import CALISMALAR as _YC, KAYIT as _YK
+from yore import CALISMALAR as _YC, KAYIT as _YK, DETAY as _YD
 _YCAL = {c['id']: c for c in _YC}
 YORE_BITKI = {}   # bitki id → [çalışma]
 YORE_IL = {}      # il → {'cal': [çalışma], 'bitki': {bitki id: [çalışma]}}
@@ -167,6 +167,10 @@ for _cid, _pid in _YK:
     _d['bitki'].setdefault(_pid, []).append(_c)
 def _ilslug(il): return re.sub(r'[^a-z0-9]+', '-', il.lower().translate(str.maketrans('çğıöşüâîİ', 'cgiosuaii')).replace('i̇', 'i')).strip('-')
 YORE_SAYFA = {il for il, d in YORE_IL.items() if len(d['bitki']) >= 8}   # az kayıtlı iller ince sayfa olmasın diye yayınlanmaz
+def _ydet(c, pid):
+    d = _YD.get(f"{c['id']}:{pid}")
+    if not d: return ''
+    return ' (' + '; '.join(x for x in [('yöresel adları: ' + e(d['ad'])) if d.get('ad') else '', ('kullanım: ' + e(d['kul'])) if d.get('kul') else ''] if x) + ')'
 def _cal_ref(c): return f'<a href="{c["url"]}" target="_blank" rel="noopener">{e(c["yazar"])}, {c["yil"]}</a>'
 def yore_html(pid):
     L = YORE_BITKI.get(pid)
@@ -176,7 +180,7 @@ def yore_html(pid):
     items = []
     for il in sorted(by, key=_trkey0):
         ad = f'<a href="/yore/{_ilslug(il)}/">{e(il)}</a>' if il in YORE_SAYFA else e(il)
-        items.append(f'<li><b>{ad}</b>' + (' (' + ', '.join(e(c['ilce']) for c in by[il] if c['ilce']) + ')' if any(c['ilce'] for c in by[il]) else '') + ' · ' + '; '.join(_cal_ref(c) for c in by[il]) + '</li>')
+        items.append(f'<li><b>{ad}</b>' + (' (' + ', '.join(e(c['ilce']) for c in by[il] if c['ilce']) + ')' if any(c['ilce'] for c in by[il]) else '') + ' · ' + '; '.join(_cal_ref(c) + _ydet(c, pid) for c in by[il]) + '</li>')
     return (f'<aside class="yore-k"><h3>Saha çalışmalarında kaydedildiği yöreler</h3><ul>{"".join(items)}</ul>'
             f'<p class="muted-s"><a href="/yoreler/">Bütün yöreler haritada →</a></p></aside>')
 def halk_kutu(pid, ad):
