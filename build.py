@@ -305,7 +305,7 @@ def head(title, desc, path, extra='', image=None):
 
 MENU = [('Bitkiler', [('/katalog/', 'Katalog', 'kat'), ('/toplama-takvimi/', 'Doğada bu ay', 'toplama'), ('/yoreler/', 'Yöreler ve yöresel adlar', 'yore'), ('/yeni/', 'Yeni eklenenler', 'yeni')]),
         ('Şifa', [('/rehber/', 'Derde göre bitkiler', 'rehber'), ('/tarif/', 'Çay tarifleri', 'tarif'), ('/karsilastirma/', 'Karşılaştırmalar', 'kars'), ('/rehber/ilac-etkilesimi/', 'İlaç etkileşimi', 'etk')]),
-        ('Kültür', [('/kavram/', 'Kavramlar', 'kavram'), ('/semboller/', 'Semboller', 'sembol'), ('/kopruler/', 'Kültür köprüleri', 'br'), ('/yazilar/', 'Yazılar', 'yazi'), ('/takvim/', 'Ritüel takvimi', 'takvim')]),
+        ('Kültür', [('/kavram/', 'Kavramlar', 'kavram'), ('/semboller/', 'Semboller', 'sembol'), ('/kopruler/', 'Kültür köprüleri', 'br'), ('/hikaye/', 'Halk hekimliğinden', 'hikaye'), ('/yazilar/', 'Yazılar', 'yazi'), ('/takvim/', 'Ritüel takvimi', 'takvim')]),
         ('Bitki Tabanı', [('/hakkinda/', 'Hakkında', 'about'), ('/yontem/', 'Yöntem ve kaynaklar', 'yontem'), ('/bulten/', 'Bülten ve e-posta kursu', 'bulten'), ('/kartlar/', 'Yazdırılabilir kartlar', 'kartlar'), ('/hesap/', 'Hesabım', 'acct'), ('mailto:iletisim@bitkitabani.com', 'İletişim', 'mail')])]
 MENU_HUB = {'Bitkiler': '/katalog/', 'Şifa': '/rehber/', 'Kültür': '/kultur/'}
 _TABICO = {'ara': '<circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/>', 'kat': '<path d="M12 21V9"/><path d="M12 13c-4 0-6-3-6-7 4 0 6 3 6 7z"/><path d="M12 11c3 0 5-2 5-5-3 0-5 2-5 5z"/>',
@@ -1524,6 +1524,36 @@ document.querySelectorAll('.harfler a').forEach(function(a){{a.addEventListener(
 if(location.hash){{var d=document.querySelector(location.hash);if(d&&d.tagName==='DETAILS')d.open=true}}}})();</script>
 <aside class="warnbox" role="note"><b>Karıştırma:</b> Bir ad birden fazla bitkiye bağlanıyorsa, o bitkiler halk arasında aynı adla anılıyor demektir. Toplarken ya da satın alırken Latince adına ve bitkinin sayfasındaki “karıştırma riski” notuna bak.</aside></section>'''
 
+# --- halk hekimliğinden hikâyeler: her kaynaklı hikâyenin kendi sayfası (Threads/Instagram gönderileri buraya bağlanır) ---
+from halk import hikayeler as _hik
+HIK = _hik()
+def _hik_bitki(h):
+    if h.get('bitki') in byId: return h['bitki']
+    l = (h.get('link') or '').strip('/')
+    return l if l in byId else None
+def _hik_kart(h):
+    b = _hik_bitki(h)
+    img = f'<img src="/img/{b}-500.jpg" alt="" loading="lazy" width="500" height="333">' if b and b in IMG and os.path.exists(os.path.join(HERE, 'img', f'{b}-500.jpg')) else ''
+    return f'<li class="hk"><a href="/hikaye/{h["slug"]}/">{img}<b>{e(h["baslik"])}</b><span class="muted-s">{e(h.get("yore") or h["kisa"])}</span></a></li>'
+for h in HIK:
+    pth = f'/hikaye/{h["slug"]}/'
+    b = _hik_bitki(h)
+    ilgili = [x for x in HIK if x is not h and (_hik_bitki(x) == b and b)][:3] or [x for x in HIK if x is not h][:3]
+    body = (f'{crumbs(("/hikaye/", "Halk hekimliğinden"), (pth, h["baslik"][:40]))}<article class="hikaye"><header class="page-head"><span class="eyebrow">Halk hekimliğinden{" · " + e(h["yore"]) if h.get("yore") else ""}</span><h1>{e(h["baslik"])}</h1></header>'
+            f'{sharebar(h["baslik"], pth)}<p class="lead">{e(h["post"])}</p>'
+            + f'<p class="muted-s">Kaynak: <a href="{h["kaynak"][1]}" target="_blank" rel="noopener">{e(h["kaynak"][0])}</a>. Bu bir halk kaydıdır, tedavi önerisi değildir.</p>'
+            + (f'<section class="sec"><h2>Bu hikâyenin bitkisi</h2><div class="grid sim">{card(byId[b])}</div></section>' if b else (f'<p><a class="cta" href="/{h["link"]}">Devamı →</a></p>' if h.get('link') else ''))
+            + f'</article>{abone("hikaye-" + h["slug"][:30], "Her hafta bir halk hekimliği hikâyesi", "Anadolu’dan kaynaklı şifa hikâyeleri, bitkileri ve uyarılarıyla; her pazar e-postanda.", kurs=False)}'
+            + f'<section class="sec"><h2>Başka hikâyeler</h2><ul class="hklist">{"".join(_hik_kart(x) for x in ilgili)}</ul><p><a href="/hikaye/">Bütün hikâyeler →</a></p></section>')
+    write(pth, page(f'{h["baslik"]} | Halk hekimliğinden | Bitki Tabanı', h['post'][:155].rsplit(' ', 1)[0] + '…', pth, body, 'hikaye', narrow=True,
+          extra=lds({"@context": "https://schema.org", "@type": "Article", "headline": h["baslik"][:110], "inLanguage": "tr", "url": BASE + pth, "author": AUTHOR, "citation": h["kaynak"][0]}, crumb_ld(("/hikaye/", "Halk hekimliğinden"), (pth, h["baslik"][:40]))),
+          image=(f'{BASE}/img/{b}-960.jpg' if b and b in IMG else None)))
+    GUIDE_URLS.append(pth)
+write('/hikaye/', page('Halk hekimliğinden: Anadolu’nun şifa hikâyeleri | Bitki Tabanı', f'Anadolu’dan {len(HIK)} kaynaklı halk hekimliği hikâyesi: ocaklar, nazar, yayla otları, yöresel şifa gelenekleri ve bitkileri.', '/hikaye/',
+      f'{crumbs(("/hikaye/", "Halk hekimliğinden"))}<header class="page-head"><span class="eyebrow">{len(HIK)} hikâye · her hafta yenisi</span><h1>Halk hekimliğinden</h1><p>Anadolu’nun köylerinden, ocaklarından ve eski tıp metinlerinden kaynaklı şifa hikâyeleri. Her biri bir dergi makalesine ya da saha çalışmasına dayanır ve bir bitkiye bağlanır.</p></header><ul class="hklist">{"".join(_hik_kart(h) for h in reversed(HIK))}</ul>{abone("hikaye-liste", "Her hafta bir halk hekimliği hikâyesi", "Anadolu’dan kaynaklı şifa hikâyeleri, bitkileri ve uyarılarıyla; her pazar e-postanda.", kurs=False)}',
+      'hikaye', narrow=True, extra=lds(crumb_ld(("/hikaye/", "Halk hekimliğinden")))))
+GUIDE_URLS.insert(0, '/hikaye/')
+
 # --- yöre sayfaları ---
 _ils = sorted(YORE_IL, key=_trkey0)
 _yb = sum(len(d['bitki']) for d in YORE_IL.values())
@@ -1602,7 +1632,7 @@ _pfeed('pinterest-cizim.xml', 'Bitki Tabanı: botanik çizimler', 'Köhler ve Th
         for k, v in sorted(TANIMA.items()) if k.endswith(':cizim') and isinstance(v, dict) and k.split(':')[0] in byId])
 # kavramlar ve kültür
 _pfeed('pinterest-kultur.xml', 'Bitki Tabanı: şamanizm, ritüel ve kavramlar', 'Bitkilerle ilgili kavramlar, ritüeller ve semboller.',
-       [_pitem(f'{k["ad"]} nedir? {k["kisa"]}'[:100], f'/kavram/{k["slug"]}/', k['kisa'], k['bitki'], _d0) for k in KAV if k['bitki'] in IMG])
+       [_pitem(f'{k["ad"]} nedir? {k["kisa"]}'[:100], f'/kavram/{k["slug"]}/', k['kisa'], k['bitki'], _d0) for k in KAV if k['bitki'] in IMG] + [_pitem(h['baslik'][:100], f'/hikaye/{h["slug"]}/', h['post'][:300], _hik_bitki(h), _d0) for h in HIK if _hik_bitki(h) in IMG])
 
 # ---------- bülten sayfaları ve kayıt hediyeleri ----------
 _bscript = '<script src="/assets/bulten.js" defer></script>'

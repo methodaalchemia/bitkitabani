@@ -163,6 +163,29 @@ def site_kul():
             if h['kaynak'] not in kay.setdefault(h['bitki'], []): kay[h['bitki']].append(h['kaynak'])
     return kul, kay
 
+import re as _re
+def baslik(h):
+    c = _re.split(r'(?<=[a-zçğıöşü”)][.!?])\s', h['post'].strip())
+    t = c[0].rstrip('.')
+    if len(t) < 30 and len(c) > 1: t = (c[0] + ' ' + c[1]).rstrip('.')
+    if len(t) > 95:
+        for sep in ('; ', ': ', ', '):
+            k = t.rfind(sep, 40, 95)
+            if k > 0: return t[:k]
+        t = t[:92].rsplit(' ', 1)[0] + '…'
+    return t
+def slug(h):
+    t = baslik(h).lower().translate(str.maketrans('çğıöşüâîİ’', 'cgiosuaii ')).replace('i̇', 'i')
+    w = [x for x in _re.sub(r'[^a-z0-9 ]+', ' ', t).split() if len(x) > 2 and x not in ('bir', 'ile', 'icin', 'olan', 'gibi', 'daha', 'bugun', 'yani', 'ama', 'bu', 'var')]
+    return '-'.join(w[:6])
+def hikayeler():
+    out, seen = [], {}
+    for h in HALK:
+        if not h.get('post'): continue
+        sl = slug(h); seen[sl] = seen.get(sl, 0) + 1
+        out.append(dict(h, slug=sl + ('' if seen[sl] == 1 else f'-{seen[sl]}'), baslik=baslik(h)))
+    return out
+_SLUG = {id(h): x['slug'] for h, x in zip([h for h in HALK if h.get('post')], hikayeler())}
 def post_metni(h, P=None):
-    link = h.get('link') or (h['bitki'] + '/')
+    link = 'hikaye/' + _SLUG[id(h)] + '/' if id(h) in _SLUG else (h.get('link') or (h['bitki'] + '/'))
     return f"Halk hekimliğinden 🌿\n\n{h['post']}\n\nKaynak: {h['kisa']}\nbitkitabani.com/{link}\n\n#halkhekimliği"

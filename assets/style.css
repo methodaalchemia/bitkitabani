@@ -651,3 +651,9 @@ button.tk-cz-ad:hover{text-decoration:underline}
 .trmap-w.mini .trmap{max-width:520px}
 .ege h4{margin:12px 0 4px;font-size:var(--t-sm);font-family:var(--f-display)}
 .ege ul{margin:0;padding-left:18px;font-size:var(--t-sm)}
+.hklist{list-style:none;padding:0;margin:12px 0;display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.hk a{display:flex;flex-direction:column;gap:4px;text-decoration:none;color:var(--ink);background:var(--sheet);border:1px solid var(--rule);height:100%}
+.hk img{width:100%;height:150px;object-fit:cover;display:block}
+.hk b{font-family:var(--f-display);font-size:var(--t-md);padding:8px 12px 0;line-height:1.3}.hk span{padding:0 12px 10px}
+.hk a:hover b{text-decoration:underline}
+.hikaye .lead{font-size:1.2rem;line-height:1.6}
