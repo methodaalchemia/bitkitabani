@@ -8,7 +8,7 @@ from gozden import KISI as GZ_KISI, SAYFALAR as GZ
 KAN_AD = {'klinik': 'Klinik kanıt', 'sinirli': 'Sınırlı kanıt', 'geleneksel': 'Yalnızca geleneksel', 'yok': 'Kanıt yok'}
 AUTHOR = {'@type': 'Person', 'name': 'Edanaz Tınmazlar', 'alternateName': 'Edanaz Tinmazlar', 'url': 'https://bitkitabani.com/yontem/#hazirlayan', 'jobTitle': 'Sanatçı ve şifalı bitkiler uzmanı', 'sameAs': ['https://www.linkedin.com/in/edanaz-tinmazlar-%E6%B8%B8%E5%AD%90%E6%84%8F-588285110/', 'https://www.instagram.com/teda.naz/']}
 SOCIAL = '<span class="social"><a href="https://www.linkedin.com/in/edanaz-tinmazlar-%E6%B8%B8%E5%AD%90%E6%84%8F-588285110/" rel="me noopener">LinkedIn</a> · <a href="https://www.instagram.com/teda.naz/" rel="me noopener">Instagram</a></span>'
-BIO = 'Edanaz Tınmazlar, sanatçı ve şifalı bitkiler uzmanı. Beyaz yakalı hayatından şifa arayışına düştü ve kendini bitkilerin benzersiz dünyasını anlamaya çalışırken buldu. Dünyanın birçok ülkesinde gezip yaşadıktan sonra Türkiye’ye döndü; köklerini anlamayı ve anlatmayı kendine görev edindi.'
+BIO = 'Edanaz Tınmazlar, sanatçı; şifalı ve ritüel bitkiler üzerine araştırıyor ve yazıyor. Beyaz yakalı hayatından şifa arayışına düştü ve kendini bitkilerin benzersiz dünyasını anlamaya çalışırken buldu. Dünyanın birçok ülkesinde gezip yaşadıktan sonra Türkiye’ye döndü; köklerini anlamayı ve anlatmayı kendine görev edindi.'
 import mapgeo, math
 IMG = json.load(open(os.path.join(HERE, 'images.json'), encoding='utf-8')) if os.path.exists(os.path.join(HERE, 'images.json')) else {}
 
@@ -132,6 +132,10 @@ def abone(kaynak, baslik='Ücretsiz e-posta kursu: Şifalı bitkilere başlangı
 
 # ---------- rehber, tarif ve karşılaştırma bağlantıları (bitki sayfalarına da eklenir) ----------
 from rehber import KONULAR
+if 'pasiflora' not in byId:   # çarkıfelek kataloğa girene kadar rehber metinlerinde anılmaz
+    for _k in KONULAR:
+        for _f in ('ozet', 'aciklama'):
+            if isinstance(_k.get(_f), str): _k[_f] = _k[_f].replace('Kediotu, melisa ve çarkıfelek', 'Kediotu ve melisa').replace(', çarkıfelek ve ashwagandha', ' ve ashwagandha')
 from tarif import TARIFLER
 from karsilastirma import KARS
 from motifler import MOTIFLER, TEMALAR, ESKI as MOTIF_ESKI
@@ -363,11 +367,18 @@ KANIT_ICIN = {'kantaron': 'depresyonda', 'lavanta': 'kaygıda (kapsül)', 'hayit
               'turnayemisi': 'idrar yolu enfeksiyonunu önlemede', 'mayiselmasi': 'kemoterapide (etoposid)'}
 def kan_txt(p): return KANIT[p["kanit"]]["ad"] + (' · ' + KANIT_ICIN[p['id']] if p['kanit'] == 'klinik' and p['id'] in KANIT_ICIN else '')
 def desc_for(p):
-    """Arama sonucu açıklaması: geleneksel iddia değil, önce kanıt ve güvenlik (sayfanın kendi vardığı sonuç)."""
-    bil = p['bilim'].split('. ')[0].rstrip('.')
-    kan = kan_txt(p).lower()
-    d = f'{p["tr"]} ({short_la(p)}): kanıt düzeyi {kan}, güvenlik {"yüksek risk" if p["guv"] == "yuksek" else GUV[p["guv"]].lower()}. {bil}.'
-    return d if len(d) <= 160 else d[:157].rsplit(' ', 1)[0] + '…'
+    """Arama sonucu açıklaması: doğal cümle; önce kanıt, sonra güvenlik. Kesme işareti (…) olmadan ≤160 karakter."""
+    k = p['kanit']
+    if k == 'klinik': kc = (KANIT_ICIN[p['id']][0].upper() + KANIT_ICIN[p['id']][1:] + ' klinik kanıtı var') if p['id'] in KANIT_ICIN else 'Kontrollü insan çalışmalarıyla desteklenen bir kullanımı var'
+    elif k == 'sinirli': kc = 'Umut verici ama sınırlı insan çalışmaları var'
+    else: kc = 'Kullanımı daha çok geleneğe dayanıyor'
+    g = p['guv']
+    gc = ('zehirli ya da yüksek riskli, kullanım önerisi değildir' if g == 'yuksek' else
+          ('ilaç etkileşimleri nedeniyle dikkat ister' if p['id'] in ETK else 'bazı gruplar için dikkat ister') if g == 'orta' else 'ölçülü kullanımda genelde güvenli')
+    bas = f'{p["tr"]} ({short_la(p)}) ne işe yarar? {kc}; {gc}.'
+    for son in (' Geleneksel kullanımı, kanıtı ve kaynakları.', ' Kanıtı ve kaynakları.', ''):
+        if len(bas + son) <= 160: return bas + son
+    return f'{p["tr"]} ne işe yarar? {kc}; {gc}.'[:160]
 
 KISIM = [('yaprak', 'Yaprak', r'yaprak'), ('cicek', 'Çiçek', r'çiçek'), ('kok', 'Kök ve yumru', r'kök|rizom|yumru|soğan'), ('tohum', 'Tohum ve meyve', r'tohum|meyve|bakla|kozalak|tane'),
          ('kabuk', 'Kabuk ve odun', r'kabuk|odun|gövde'), ('herba', 'Toprak üstü kısımlar', r'toprak üstü|dal|herba|bütün bitki'), ('recine', 'Reçine, yağ ve özsu', r'reçine|yağ|sakız|özsu|lateks|jel|süt'), ('mantar', 'Mantar', r'mantar|şapka|miselyum')]
@@ -412,9 +423,9 @@ def contrib(p):
 def toc_and_ids(html):
     items = []
     def sub(m):
-        t = m.group(1); sid = _re.sub(r'[^a-z0-9]+', '-', t.lower().translate(str.maketrans('çğıöşüâî', 'cgiosuai'))).strip('-')
+        t = m.group(2); sid = m.group(1) or _re.sub(r'[^a-z0-9]+', '-', t.lower().translate(str.maketrans('çğıöşüâî', 'cgiosuai'))).strip('-')
         items.append((sid, t)); return f'<section class="sec" id="{sid}"><h2>{t}</h2>'
-    html = _re.sub(r'<section class="sec"><h2>([^<]+)</h2>', sub, html)
+    html = _re.sub(r'<section class="sec"(?: id="([^"]+)")?><h2>([^<]+)</h2>', sub, html)
     nav_ = '<details class="toc"><summary><span class="eyebrow">Bu sayfada</span> ' + str(len(items)) + ' bölüm</summary><nav aria-label="Bu sayfada"><ol>' + ''.join(f'<li><a href="#{s}">{t}</a></li>' for s, t in items) + '</ol></nav></details>'
     return html.replace('<!--TOC-->', nav_)
 
