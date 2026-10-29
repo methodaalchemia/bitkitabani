@@ -44,31 +44,59 @@ def sar(d, metin, f, gen):
     if cur: sat.append(cur)
     return sat
 
+IMG = json.load(open(os.path.join(HERE, 'images.json'), encoding='utf-8'))
+GDIR = os.path.join(HERE, 'img', 'hikaye-gorsel')
+GK = json.load(open(os.path.join(GDIR, 'kaynak.json'), encoding='utf-8')) if os.path.exists(os.path.join(GDIR, 'kaynak.json')) else {}
+def gorsel(g):
+    """(dosya, künye) — önce hikâyeye özel Commons görseli, sonra katalogdaki bitki fotoğrafı."""
+    if not g: return None, ''
+    if g in GK and os.path.exists(os.path.join(GDIR, g + '.jpg')):
+        k = GK[g]; return os.path.join(GDIR, g + '.jpg'), f"{k['artist']}, {k['license']}"
+    f = os.path.join(HERE, 'img', g + '-1280.jpg')
+    if os.path.exists(f):
+        k = IMG.get(g, {}); return f, (f"{k.get('artist', '')}, {k.get('license', '')}".strip(', ') if k else '')
+    return None, ''
+
+PW = 470   # fotoğraf şeridinin genişliği
 def kapak(h, i):
     hs = int(hashlib.md5(h['slug'].encode()).hexdigest(), 16)
     bg = RENK[i % len(RENK)]; kind = (hs >> 3) % 5; kind2 = (kind + 1 + (hs >> 7) % 4) % 5
     im = Image.new('RGB', (W, H), bg); d = ImageDraw.Draw(im)
-    # büyük soluk motif (sağ alt), konumu hikâyeye göre değişir
+    gf, kunye = gorsel(h.get('gorsel'))
+    tw = W - (PW if gf else 0)
     soluk = tuple(int(int(bg[j:j + 2], 16) * 0.78 + 0xF1 * 0.22) for j in (1, 3, 5))
-    motif(d, kind, 930 + (hs % 120), 500 + (hs >> 11) % 120, 520, soluk, 14)
-    # üst ve alt kilim şeritleri
+    motif(d, kind, tw - 160 + (hs % 80), 520 + (hs >> 11) % 100, 420, soluk, 12)
+    if gf:
+        ph = Image.open(gf).convert('RGB')
+        r = max(PW / ph.width, H / ph.height); ph = ph.resize((int(ph.width * r) + 1, int(ph.height * r) + 1))
+        ox = (ph.width - PW) * ((hs >> 5) % 3) // 2; oy = (ph.height - H) // 2
+        ph = ph.crop((ox, oy, ox + PW, oy + H))
+        if (hs >> 9) % 2: ph = ph.transpose(Image.FLIP_LEFT_RIGHT)
+        im.paste(ph, (tw, 0))
+        # fotoğrafla renk alanı arasında dikey kilim şeridi
+        d.rectangle([tw - 34, 0, tw, H], fill=bg)
+        for y in range(20, H, 46): motif(d, kind2 if (y // 46) % 2 else kind, tw - 17, y, 26, KREM, 2)
+        if kunye:
+            fk = font('AlegreyaSans-Italic.ttf', 18); t = 'Görsel: ' + kunye[:60]
+            x1 = W - 14; x0 = x1 - d.textlength(t, font=fk) - 16
+            d.rectangle([x0, H - 40, x1, H - 12], fill=(0, 0, 0)); d.text((x1 - 8, H - 26), t, font=fk, fill=KREM, anchor='rm')
     for y in (46, H - 46):
-        for x in range(30, W, 60):
+        for x in range(30, tw - 40, 60):
             motif(d, kind2 if (x // 60) % 2 else kind, x, y, 34, KREM, 3)
-    d.line([0, 86, W, 86], fill=KREM, width=2); d.line([0, H - 86, W, H - 86], fill=KREM, width=2)
-    ey = h.get('ust') or 'HALK HEKİMLİĞİNDEN' + (' · ' + h['yore'].upper() if h.get('yore') and len(h['yore']) < 40 else '')
-    d.text((80, 140), ey, font=font('CourierPrime-Regular.ttf', 30), fill=KREM)
-    bas = h['baslik'].rstrip('…')
-    for sz in (78, 70, 62, 54, 48):
+    d.line([0, 86, tw - 34, 86], fill=KREM, width=2); d.line([0, H - 86, tw - 34, H - 86], fill=KREM, width=2)
+    ey = h.get('ust') or 'HALK HEKİMLİĞİNDEN'
+    d.text((70, 140), ey, font=font('CourierPrime-Regular.ttf', 28), fill=KREM)
+    bas = h['baslik'].rstrip('…'); gen = tw - 34 - 140
+    for sz in (96, 86, 76, 68, 60, 52, 46):
         f = font('Alegreya[wght].ttf', sz)
         try: f.set_variation_by_name('Bold')
         except Exception: pass
-        L = sar(d, bas, f, W - 200)
-        if len(L) * sz * 1.18 <= 400: break
-    y = 210
-    for l in L: d.text((80, y), l, font=f, fill=KREM); y += int(sz * 1.18)
-    d.text((80, H - 160), 'Kaynak: ' + h['kisa'], font=font('AlegreyaSans-Italic.ttf', 28), fill=KREM)
-    d.text((W - 80, H - 160), 'bitkitabani.com', font=font('AlegreyaSans-Bold.ttf', 30), fill=KREM, anchor='ra')
+        L = sar(d, bas, f, gen)
+        if len(L) * sz * 1.12 <= 400 and all(d.textlength(l, font=f) <= gen for l in L): break
+    y = 200 + max(0, (400 - len(L) * int(sz * 1.12)) // 2)
+    for l in L: d.text((70, y), l, font=f, fill=KREM); y += int(sz * 1.12)
+    if h.get('yore') and len(h['yore']) < 34: d.text((70, H - 150), h['yore'], font=font('AlegreyaSans-Bold.ttf', 30), fill=KREM)
+    d.text((70, H - 112), 'bitkitabani.com', font=font('AlegreyaSans-Italic.ttf', 24), fill=KREM)
     return im
 
 def main():
@@ -77,9 +105,10 @@ def main():
     eski = json.load(open(idx, encoding='utf-8')) if os.path.exists(idx) else {}
     for i, h in enumerate(H_):
         p = os.path.join(OUT, h['slug'] + '.jpg')
-        if os.path.exists(p) and eski.get(h['slug']) == h['baslik']: continue
+        imza = h['baslik'] + '|' + str(h.get('gorsel')) + '|v2'
+        if os.path.exists(p) and eski.get(h['slug']) == imza: continue
         kapak(h, i).save(p, quality=86, optimize=True); n += 1
-        eski[h['slug']] = h['baslik']
+        eski[h['slug']] = imza
     canli = {h['slug'] for h in H_}
     for f in os.listdir(OUT):
         if f.endswith('.jpg') and f[:-4] not in canli: os.remove(os.path.join(OUT, f)); eski.pop(f[:-4], None)

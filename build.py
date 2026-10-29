@@ -500,7 +500,7 @@ def toc_and_ids(html):
         t = m.group(2); sid = m.group(1) or _re.sub(r'[^a-z0-9]+', '-', t.lower().translate(str.maketrans('çğıöşüâî', 'cgiosuai'))).strip('-')
         items.append((sid, t)); return f'<section class="sec" id="{sid}"><h2>{t}</h2>'
     html = _re.sub(r'<section class="sec"(?: id="([^"]+)")?><h2>([^<]+)</h2>', sub, html)
-    nav_ = '<details class="toc"><summary><span class="eyebrow">Bu sayfada</span> ' + str(len(items)) + ' bölüm</summary><nav aria-label="Bu sayfada"><ol>' + ''.join(f'<li><a href="#{s}">{t}</a></li>' for s, t in items) + '</ol></nav></details>'
+    nav_ = '<div class="toc"><p class="toc-h"><span class="eyebrow">Bu sayfada</span></p><nav aria-label="Bu sayfada"><ol>' + ''.join(f'<li><a href="#{s}">{t}</a></li>' for s, t in items) + '</ol></nav></div>'
     return html.replace('<!--TOC-->', nav_)
 
 # ---------- bitki sayfaları ----------
@@ -524,7 +524,7 @@ for i, p in enumerate(P):
     q_ne = (f'{p["tr"]} ne işe yarar?', f'Bilimsel kanıt düzeyi {KANIT[p["kanit"]]["ad"].lower()}. {_first(p["bilim"])} Geleneksel kullanımları aşağıda, yöresiyle birlikte anlatılıyor.')
     q_guv = (f'{p["tr"]} zararlı mı, kimler kullanmamalı?' if p['guv'] != 'yuksek' else f'{p["tr"]} güvenli mi?', f'Güvenlik düzeyi: {GUV[p["guv"]].lower()}. {_first(p["guvNot"])}' + (' Yasal durum: ' + YASAL_AD[YASAL[pid][0]] + '.' if pid in YASAL else '') + ' Ayrıntılar “Güvenlik” bölümünde.')
     kisaca = [q_nedir, q_ne, q_guv]
-    kisahtml = '<details class="kisaca"><summary><span class="eyebrow">30 saniyede</span> ' + e(p['tr']) + ' nedir, ne işe yarar?</summary>' + ''.join(f'<div class="qa"><h2 class="q">{e(q)}</h2><p>{e(a)}</p></div>' for q, a in kisaca) + '</details>'
+    kisahtml = '<div class="kisaca"><p class="toc-h"><span class="eyebrow">30 saniyede</span> ' + e(p['tr']) + ' nedir, ne işe yarar?</p>' + ''.join(f'<div class="qa"><h2 class="q">{e(q)}</h2><p>{e(a)}</p></div>' for q, a in kisaca) + '</div>'
     if pid in DERIN:
         dd = DERIN[pid]
         rows_ = ''.join(f'<tr><th scope="row">{e(i)}</th><td><span class="kv {k}">{KAN_AD[k]}</span></td><td>{e(n)}</td></tr>' for i, k, n in dd['iddia'])

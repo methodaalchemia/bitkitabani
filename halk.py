@@ -180,12 +180,18 @@ def slug(h):
     t = baslik(h).lower().translate(str.maketrans('çğıöşüâîİ’', 'cgiosuaii ')).replace('i̇', 'i')
     w = [x for x in _re.sub(r'[^a-z0-9 ]+', ' ', t).split() if len(x) > 2 and x not in ('bir', 'ile', 'icin', 'olan', 'gibi', 'daha', 'bugun', 'yani', 'ama', 'bu', 'var')]
     return '-'.join(w[:6])
+try:
+    from kapak_baslik import KB as _KB
+except ImportError:
+    _KB = {}
 def hikayeler():
     out, seen = [], {}
     for h in HALK:
         if not h.get('post'): continue
         sl = slug(h); seen[sl] = seen.get(sl, 0) + 1
-        out.append(dict(h, slug=sl + ('' if seen[sl] == 1 else f'-{seen[sl]}'), baslik=baslik(h)))
+        x = sl + ('' if seen[sl] == 1 else f'-{seen[sl]}')
+        kb = _KB.get(x)
+        out.append(dict(h, slug=x, baslik=kb[0] if kb else baslik(h), uzun=baslik(h), gorsel=kb[1] if kb else None))
     return out
 _SLUG = {id(h): x['slug'] for h, x in zip([h for h in HALK if h.get('post')], hikayeler())}
 def post_metni(h, P=None):
