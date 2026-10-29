@@ -2,7 +2,7 @@ name: Görselleri eşitle ve siteyi derle
 on:
   push:
     branches: [main]
-    paths: ['refs.py', 'halk.py', 'yazilar.py', 'data.json', 'extra.py', 'build.py', 'build_en.py', 'en/**', 'etkilesim.py', 'derin.py', 'assets/**', 'tools/**', 'kuyruk/**', '.github/workflows/images.yml']
+    paths: ['refs.py', 'halk.py', 'yore.py', 'ege.py', 'yazilar.py', 'data.json', 'extra.py', 'build.py', 'build_en.py', 'en/**', 'etkilesim.py', 'derin.py', 'assets/**', 'tools/**', 'kuyruk/**', '.github/workflows/images.yml']
   workflow_dispatch:
     inputs:
       indexnow_all:
@@ -43,6 +43,8 @@ jobs:
       - name: Tanıma görselleri (çizim, çiçek, kuru)
         continue-on-error: true
         run: pip install -q pillow segno && python3 tools/tanima.py
+      - name: Hikâye kapakları
+        run: python3 tools/kapak.py
       - run: python3 build.py
       - name: ffmpeg (Reels videoları için)
         continue-on-error: true

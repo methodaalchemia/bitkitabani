@@ -168,11 +168,13 @@ def baslik(h):
     c = _re.split(r'(?<=[a-zçğıöşü”)][.!?])\s', h['post'].strip())
     t = c[0].rstrip('.')
     if len(t) < 30 and len(c) > 1: t = (c[0] + ' ' + c[1]).rstrip('.')
-    if len(t) > 95:
-        for sep in ('; ', ': ', ', '):
-            k = t.rfind(sep, 40, 95)
+    if len(t) > 130:
+        for sep in ('; ', ': '):
+            k = t.rfind(sep, 40, 130)
             if k > 0: return t[:k]
-        t = t[:92].rsplit(' ', 1)[0] + '…'
+        k = t.rfind(', ', 50, 130)
+        if k > 0: return t[:k]
+        t = t[:127].rsplit(' ', 1)[0] + '…'
     return t
 def slug(h):
     t = baslik(h).lower().translate(str.maketrans('çğıöşüâîİ’', 'cgiosuaii ')).replace('i̇', 'i')
