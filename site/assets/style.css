@@ -649,3 +649,5 @@ button.tk-cz-ad:hover{text-decoration:underline}
 .trmap .il.on{fill:var(--accent)}
 .trmap .nokta{fill:var(--accent);stroke:var(--paper);stroke-width:2;pointer-events:none}
 .trmap-w.mini .trmap{max-width:520px}
+.ege h4{margin:12px 0 4px;font-size:var(--t-sm);font-family:var(--f-display)}
+.ege ul{margin:0;padding-left:18px;font-size:var(--t-sm)}
