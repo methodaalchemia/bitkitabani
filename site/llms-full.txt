@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 128 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 129 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -4022,3 +4022,35 @@ Karıştırma riski: Aynı aileden karakafes (Symphytum) ve sığırdili (Anchus
 
 ### İlginç bilgi
 Çiçeği beş köşeli bir yıldız şeklindedir; İngilizcede “starflower” diye anılır ve arıcılar için en değerli nektar bitkilerindendir.
+
+## Goji (Lycium barbarum)
+
+URL: https://bitkitabani.com/goji/
+Familya: Solanaceae · Bölge: Asya ve Sibirya · Kullanılan kısım: Meyve, kök kabuğu
+Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
+
+### Geleneksel kullanım
+- Çin: Çin tıbbında en az iki bin yıldır meyvesi (gouqizi) karaciğeri ve böbreği beslesin, gözü güçlendirsin diye kullanılır; Ningxia bölgesinin kurutulmuş meyveleri ünlüdür. Kök kabuğu ayrı bir ilaç olarak ateşte kullanılır.
+- Bugün: 2000’lerden sonra “süper gıda” olarak Batı’da ve Türkiye’de yayıldı; Türkiye’de bahçelerde de yetiştiriliyor.
+
+### Hazırlama
+Kurutulmuş meyve olduğu gibi yenir, yoğurda ve çaya katılır; günde bir avuç yaygın bir miktardır.
+
+### Bilim ne diyor
+Goji polisakkaritleri laboratuvar ve hayvan çalışmalarında bağışıklık ve antioksidan etkiler gösterir. İnsanlarda yapılmış küçük çalışmalar göz sağlığı ve genel iyilik hâli üzerine olumlu sonuçlar bildirir, ama çoğu kısa ve düşük kalitelidir. “Yaşlanmayı geciktirir” ve “kansere iyi gelir” iddiaları kanıtlanmamıştır.
+
+### Güvenlik
+Meyve olarak çoğu insan için güvenlidir. Varfarin kullananlarda kanama ve INR yükselmesi vakaları bildirilmiştir. Patlıcangiller ailesindendir; domates ve patlıcan alerjisi olanlarda alerji yapabilir. Kurutulmuş ürünlerde tarım ilacı kalıntısı sorunları bildirildiği için güvenilir kaynaktan alınmalıdır.
+
+### İlaç etkileşimleri
+- Varfarin: Kanama ve INR yükselmesi vakaları bildirilmiştir; birlikte kullanılmamalı ya da INR sık ölçülmelidir.
+- Şeker ve tansiyon ilaçları: Kan şekerini ve tansiyonu düşürebilir; etkiler toplanabilir.
+
+### Doğada
+Nerede yetişir: Kuzeybatı Çin’in kurak bölgelerinden gelir; soğuğa ve kuraklığa dayanıklıdır, Türkiye’de de bahçelerde yetiştirilir.
+Toplama mevsimi: Meyveler Haziran–Ekim arasında, kırmızılaşınca toplanır.
+Yöresel adlar: goji, kurt üzümü
+Karıştırma riski: Küçük, kırmızı, uzunca meyveleri bazı zehirli yabani meyvelerle karıştırılabilir; yabandan meyve toplanmamalıdır. Aynı cinsten Çin kurt üzümü (L. chinense) de goji diye satılır.
+
+### İlginç bilgi
+Goji; domates, patlıcan, biber ve tütünle aynı ailedendir (patlıcangiller).
