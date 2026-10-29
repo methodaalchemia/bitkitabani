@@ -638,3 +638,14 @@ button.tk-cz-ad:hover{text-decoration:underline}
 .ege{margin:16px 0 4px;padding:12px 14px;background:var(--sheet);border:1px solid var(--rule);border-left:4px solid var(--ochre)}
 .ege h3{margin:0 0 6px;font-family:var(--f-display);font-size:var(--t-md)}
 .ege p{margin:6px 0;font-size:var(--t-sm)}
+.yore-k{margin:12px 0 4px;padding:12px 14px;background:var(--sheet);border:1px solid var(--rule);border-left:4px solid var(--r-amazon)}
+.yore-k h3{margin:0 0 6px;font-family:var(--f-display);font-size:var(--t-md)}
+.yore-k ul{margin:0;padding-left:18px;font-size:var(--t-sm)}.yore-k li{margin:3px 0}
+.trmap-w{margin:16px 0}.trmap-w figcaption{font-size:var(--t-xs);color:var(--muted)}
+.trmap{width:100%;height:auto;display:block}
+.trmap .il{fill:color-mix(in srgb,var(--rule) 70%,var(--paper));stroke:var(--paper);stroke-width:1.5}
+.trmap .il.var{fill:color-mix(in srgb,var(--r-amazon) 45%,var(--paper));cursor:pointer}
+.trmap a:hover .il.var,.trmap a:focus .il.var{fill:var(--r-amazon)}
+.trmap .il.on{fill:var(--accent)}
+.trmap .nokta{fill:var(--accent);stroke:var(--paper);stroke-width:2;pointer-events:none}
+.trmap-w.mini .trmap{max-width:520px}
