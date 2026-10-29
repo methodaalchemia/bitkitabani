@@ -11,12 +11,12 @@ jobs:
   indir:
     runs-on: ubuntu-latest
     steps:
-      - env: { URL: '${{ inputs.url }}', AD: '$AD' }
+      - env: { URL: '${{ inputs.url }}', AD: '${{ inputs.ad }}' }
         run: |
           set -e
           git init -q k && cd k
           set -- $URL
-          if [ $# -eq 1 ]; then curl -sSL --retry 3 -A "Mozilla/5.0" -o "$AD" "$1"; else mkdir -p "$AD"; for u in "$@"; do n=$(echo "$u" | sed 's#.*/\([^/]*\)/*$#\1#; s#[^A-Za-z0-9._-]#_#g'); curl -sSL --retry 3 -A "Mozilla/5.0" -o "$AD/$n.pdf" "$u" || true; sleep 2; done; fi
+          if [ $# -eq 1 ]; then mkdir -p "$(dirname "$AD")"; curl -sSL --retry 3 -A "Mozilla/5.0" -o "$AD" "$1"; else mkdir -p "$AD"; for u in "$@"; do n=$(echo "$u" | sed 's#.*/\([^/]*\)/*$#\1#; s#[^A-Za-z0-9._-]#_#g'); curl -sSL --retry 3 -A "Mozilla/5.0" -o "$AD/$n.pdf" "$u" || true; sleep 2; done; fi
           ls -la
           git config user.name bot && git config user.email bot@bitkitabani.com
           git checkout -q -b kaynak
