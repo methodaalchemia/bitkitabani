@@ -179,6 +179,12 @@ def yore_html(pid):
         items.append(f'<li><b>{ad}</b>' + (' (' + ', '.join(e(c['ilce']) for c in by[il] if c['ilce']) + ')' if any(c['ilce'] for c in by[il]) else '') + ' · ' + '; '.join(_cal_ref(c) for c in by[il]) + '</li>')
     return (f'<aside class="yore-k"><h3>Saha çalışmalarında kaydedildiği yöreler</h3><ul>{"".join(items)}</ul>'
             f'<p class="muted-s"><a href="/yoreler/">Bütün yöreler haritada →</a></p></aside>')
+def halk_kutu(pid, ad):
+    a, b = ege_html(pid, ad), yore_html(pid)
+    if a and b:   # tek kutu: önce veritabanı sayıları, sonra yöreler
+        b = b.replace('<aside class="yore-k"><h3>Saha çalışmalarında kaydedildiği yöreler</h3>', '<h4>Saha çalışmalarında kaydedildiği yöreler</h4>').replace('</aside>', '')
+        return a.replace('<p class="muted-s">Bunlar halk', b + '<p class="muted-s">Bunlar halk', 1)
+    return a or b
 def _trkey0(w):
     T = 'abcçdefgğhıijklmnoöprsştuüvyz'
     return [(-1 if c == ' ' else T.index(c) if c in T else 100 + ord(c)) for c in w.replace('I', 'ı').replace('İ', 'i').lower()]
@@ -293,7 +299,7 @@ def head(title, desc, path, extra='', image=None):
 <div class="wrap{{narrow}}">
 '''
 
-MENU = [('Bitkiler', [('/katalog/', 'Katalog', 'kat'), ('/yoresel-adlar/', 'Yöresel adlar', 'adlar'), ('/toplama-takvimi/', 'Doğada bu ay', 'toplama'), ('/yoreler/', 'Yöre haritası', 'yore'), ('/yeni/', 'Yeni eklenenler', 'yeni')]),
+MENU = [('Bitkiler', [('/katalog/', 'Katalog', 'kat'), ('/toplama-takvimi/', 'Doğada bu ay', 'toplama'), ('/yoreler/', 'Yöreler ve yöresel adlar', 'yore'), ('/yeni/', 'Yeni eklenenler', 'yeni')]),
         ('Şifa', [('/rehber/', 'Derde göre bitkiler', 'rehber'), ('/tarif/', 'Çay tarifleri', 'tarif'), ('/karsilastirma/', 'Karşılaştırmalar', 'kars'), ('/rehber/ilac-etkilesimi/', 'İlaç etkileşimi', 'etk')]),
         ('Kültür', [('/kavram/', 'Kavramlar', 'kavram'), ('/semboller/', 'Semboller', 'sembol'), ('/kopruler/', 'Kültür köprüleri', 'br'), ('/yazilar/', 'Yazılar', 'yazi'), ('/takvim/', 'Ritüel takvimi', 'takvim')]),
         ('Bitki Tabanı', [('/hakkinda/', 'Hakkında', 'about'), ('/yontem/', 'Yöntem ve kaynaklar', 'yontem'), ('/bulten/', 'Bülten ve e-posta kursu', 'bulten'), ('/kartlar/', 'Yazdırılabilir kartlar', 'kartlar'), ('/hesap/', 'Hesabım', 'acct'), ('mailto:iletisim@bitkitabani.com', 'İletişim', 'mail')])]
@@ -584,7 +590,7 @@ for i, p in enumerate(P):
   {sharebar(p['tr'] + ': ne işe yarar, kanıtı ve güvenliği', '/' + pid + '/')}
   {kisahtml}
   <!--TOC-->
-  <section class="sec"><h2>Geleneksel kullanım</h2><div class="uses">{uses}</div>{ege_html(pid, p["tr"])}{yore_html(pid)}</section>
+  <section class="sec"><h2>Geleneksel kullanım</h2><div class="uses">{uses}</div>{halk_kutu(pid, p["tr"])}</section>
   {dogada}
   <section class="sec"><h2>Hazırlama</h2><p>{e(p["haz"])}</p></section>
   <section class="sec"><h2>Bilim ne diyor</h2><p>{e(p["bilim"])}</p></section>
@@ -1416,27 +1422,6 @@ if True:
 {('<section class="sec"><h2>A’dan Z’ye</h2><ul class="guidelist">' + _kl + '</ul></section>') if _kl else '<p>İlk kavram yarın sabah burada.</p>'}''', 'kavram', narrow=True))
     GUIDE_URLS.insert(0, '/kavram/')
 
-# --- yöre sayfaları ---
-_ils = sorted(YORE_IL, key=_trkey0)
-_yb = sum(len(d['bitki']) for d in YORE_IL.values())
-_ybody = f'''{crumbs(('/yoreler/', 'Yöreler'))}<header class="page-head"><span class="eyebrow">Yöre haritası · {len(YORE_IL)} il · {len(_YC)} saha çalışması</span><h1>Anadolu’da hangi yörede hangi bitki kullanılıyor?</h1><p>Türkiye’de yapılmış etnobotanik saha çalışmalarında katalogdaki bitkilerin kaydedildiği yöreler. Renkli illere dokun; her kayıt kaynağına bağlıdır. Harita yeni çalışmalar işlendikçe büyüyor.</p></header>
-<figure class="trmap-w">{tr_haritasi()}<figcaption>Harita: Natural Earth (kamu malı). Noktalar saha çalışmasının yapıldığı yeri gösterir. Kişi ve köy adları yayımlanmaz.</figcaption></figure>
-<aside class="warnbox" role="note"><b>Okurken:</b> Bir bitkinin bir yörede kaydedilmiş olması, o kullanımın işe yaradığını göstermez; yalnızca halk arasında bilindiğini gösterir. Kanıt ve güvenlik için bitkinin kendi sayfasına bak.</aside>
-''' + ''.join(f'<section class="sec" id="il-{_ilslug(il)}">' + _il_bolum(il, YORE_IL[il]) + (f'<p><a class="cta small" href="/yore/{_ilslug(il)}/">{e(il)} sayfası →</a></p>' if il in YORE_SAYFA else '') + '</section>' for il in _ils)
-write('/yoreler/', page(f'Yöre haritası: Anadolu’da hangi yörede hangi şifalı bitki kullanılıyor? | Bitki Tabanı', f'Türkiye’de {len(_YC)} etnobotanik saha çalışmasından {len(YORE_IL)} ilde kaydedilmiş şifalı bitkiler, kaynaklarıyla birlikte haritada.', '/yoreler/', _ybody, 'yore', narrow=True, extra=lds(crumb_ld(('/yoreler/', 'Yöreler')))))
-GUIDE_URLS.append('/yoreler/')
-for il in YORE_SAYFA:
-    _p = f'/yore/{_ilslug(il)}/'
-    _d = YORE_IL[il]
-    _ad3 = ', '.join(byId[q]['tr'].lower() for q in sorted(_d['bitki'], key=lambda q: -len(_d['bitki'][q]))[:3])
-    _body = f'''{crumbs(('/yoreler/', 'Yöreler'), (_p, il))}<header class="page-head"><span class="eyebrow">Yöre · {len(_d['bitki'])} bitki · {len(_d['cal'])} saha çalışması</span><h1>{e(il)} yöresinde kullanılan şifalı bitkiler</h1><p>{e(il)}’da yapılmış etnobotanik saha çalışmalarında halk arasında kullanıldığı kaydedilen ve Bitki Tabanı kataloğunda yer alan bitkiler. Her bitkinin kanıtı ve güvenlik notu kendi sayfasında.</p></header>
-<figure class="trmap-w mini">{tr_haritasi(il)}</figure>
-<section class="sec">{_il_bolum(il, _d, 'h2')}</section>
-<aside class="warnbox" role="note"><b>Okurken:</b> Halk arasında kaydedilmiş bir kullanım, bitkinin o derde iyi geldiğini göstermez. İlaç kullanıyorsan, hamileysen ya da emziriyorsan bitkileri kullanmadan önce eczacına danış.</aside>
-<p><a href="/yoreler/">Bütün yöreler →</a></p>'''
-    write(_p, page(f'{il} yöresinde kullanılan şifalı bitkiler | Bitki Tabanı', f'{il}’da etnobotanik saha çalışmalarında kaydedilen {len(_d["bitki"])} şifalı bitki: {_ad3} ve diğerleri. Kaynaklarıyla.', _p, _body, 'yore', narrow=True, extra=lds(crumb_ld(('/yoreler/', 'Yöreler'), (_p, il)))))
-    GUIDE_URLS.append(_p)
-
 # --- takvim bileşeni (ritüel + toplama, aylık ızgara; tıklayınca takvime ekle / paylaş) ---
 _TK_KIS = {'cicek': 'Çiçek', 'yaprak': 'Yaprak', 'herba': 'Toprak üstü', 'kok': 'Kök', 'tohum': 'Meyve ve tohum', 'kabuk': 'Kabuk', 'recine': 'Reçine'}
 def _tk_kisim(p):
@@ -1524,9 +1509,8 @@ for n, ids in _rows:
     _groups.setdefault(L, []).append((n, ids))
 _letters = ''.join(f'<a href="#harf-{_ud.normalize("NFKD", L).encode("ascii", "ignore").decode() or "x"}{i}">{L}</a>' for i, L in enumerate(_groups))
 _sec = ''.join(f'<details class="harf" id="harf-{_ud.normalize("NFKD", L).encode("ascii", "ignore").decode() or "x"}{i}"><summary><b>{L}</b> <span class="muted-s">{len(items)} ad</span></summary><ul class="adlar2">' + ''.join(f'<li data-s="{e(n.lower())}"><b>{e(n)}</b> <span aria-hidden="true">→</span> ' + ', '.join(f'<a href="/{x}/">{e(byId[x]["tr"])}</a>' for x in sorted(ids)) + '</li>' for n, ids in items) + '</ul></details>' for i, (L, items) in enumerate(_groups.items()))
-path = '/yoresel-adlar/'
-write(path, page('Şifalı bitkilerin yöresel ve yabancı adları: hangi ad hangi bitki? | Bitki Tabanı', f'{len(_rows)} yöresel, halk arasındaki ve yabancı bitki adı A’dan Z’ye: her ad, katalogdaki doğru bitkiye bağlanır. Benzer adlı bitkileri karıştırmamak için.', path,
-      f'''{crumbs(('/rehber/', 'Rehberler'), (path, 'Yöresel adlar'))}<header class="page-head"><span class="eyebrow">Sözlük · {len(_rows)} ad</span><h1>Yöresel adlar: hangi ad hangi bitki?</h1><p>Aynı bitki Anadolu’nun farklı yörelerinde farklı adlarla anılır; bazen de aynı ad birbirinden çok farklı iki bitkiye verilir. Aşağıda katalogdaki bitkilerin yöresel, halk arasındaki ve başka dillerdeki adları A’dan Z’ye sıralı; her ad, bitkinin kendi sayfasına bağlanır.</p></header>
+_ADLAR_N = len(_rows)
+_ADLAR_HTML = f'''<section class="sec" id="adlar"><h2>Yöresel adlar: hangi ad hangi bitki?</h2><p>Aynı bitki farklı yörelerde farklı adlarla anılır; bazen de aynı ad birbirinden çok farklı bitkilere verilir. Katalogdaki bitkilerin {len(_rows)} yöresel, halk arasındaki ve yabancı adı A’dan Z’ye; her ad doğru bitkiye bağlanır.</p>
 <div class="adara"><input type="search" id="adq" placeholder="Bir ad yazın (ör. kömeç, akpüren)" aria-label="Adlarda ara"><span class="muted-s" id="adn" role="status"></span></div>
 <nav class="harfler" aria-label="Harfler">{_letters}</nav><div class="harfler-list">{_sec}</div>
 <script>(function(){{var q=document.getElementById('adq'),n=document.getElementById('adn'),D=document.querySelectorAll('details.harf');
@@ -1534,8 +1518,28 @@ function low(t){{return t.replace(/I/g,'ı').replace(/İ/g,'i').toLowerCase()}}
 q.addEventListener('input',function(){{var t=low(q.value.trim()),c=0;D.forEach(function(d){{var k=0;d.querySelectorAll('li').forEach(function(li){{var v=!t||low(li.textContent).indexOf(t)>-1;li.hidden=!v;if(v)k++}});d.hidden=!k;d.open=!!t&&k>0;c+=k}});n.textContent=t?c+' sonuç':''}});
 document.querySelectorAll('.harfler a').forEach(function(a){{a.addEventListener('click',function(){{var d=document.querySelector(a.getAttribute('href'));if(d)d.open=true}})}});
 if(location.hash){{var d=document.querySelector(location.hash);if(d&&d.tagName==='DETAILS')d.open=true}}}})();</script>
-<aside class="warnbox" role="note"><b>Karıştırma:</b> Bir ad birden fazla bitkiye bağlanıyorsa, o bitkiler halk arasında aynı adla anılıyor demektir. Toplarken ya da satın alırken Latince adına ve bitkinin sayfasındaki “karıştırma riski” notuna bak.</aside>''', 'toplama', narrow=True, extra=lds(crumb_ld(('/takvim/', 'Takvim'), (path, 'Yöresel adlar')))))
-GUIDE_URLS.append(path)
+<aside class="warnbox" role="note"><b>Karıştırma:</b> Bir ad birden fazla bitkiye bağlanıyorsa, o bitkiler halk arasında aynı adla anılıyor demektir. Toplarken ya da satın alırken Latince adına ve bitkinin sayfasındaki “karıştırma riski” notuna bak.</aside></section>'''
+
+# --- yöre sayfaları ---
+_ils = sorted(YORE_IL, key=_trkey0)
+_yb = sum(len(d['bitki']) for d in YORE_IL.values())
+_ybody = f'''{crumbs(('/yoreler/', 'Yöreler'))}<header class="page-head"><span class="eyebrow">Yöreler · {len(YORE_IL)} il · {len(_YC)} saha çalışması · {_ADLAR_N} yöresel ad</span><h1>Anadolu’da hangi yörede hangi bitki kullanılıyor?</h1><p>Türkiye’de yapılmış etnobotanik saha çalışmalarında katalogdaki bitkilerin kaydedildiği yöreler. Renkli illere dokun; her kayıt kaynağına bağlıdır. Harita yeni çalışmalar işlendikçe büyüyor.</p></header>
+<figure class="trmap-w">{tr_haritasi()}<figcaption>Harita: Natural Earth (kamu malı). Noktalar saha çalışmasının yapıldığı yeri gösterir. Kişi ve köy adları yayımlanmaz.</figcaption></figure>
+<aside class="warnbox" role="note"><b>Okurken:</b> Bir bitkinin bir yörede kaydedilmiş olması, o kullanımın işe yaradığını göstermez; yalnızca halk arasında bilindiğini gösterir. Kanıt ve güvenlik için bitkinin kendi sayfasına bak.</aside>
+<nav class="tabs" aria-label="Bölümler"><a href="#iller">İller</a><a href="#adlar">Yöresel adlar A–Z</a></nav><div id="iller"></div>''' + ''.join(f'<section class="sec" id="il-{_ilslug(il)}">' + _il_bolum(il, YORE_IL[il]) + (f'<p><a class="cta small" href="/yore/{_ilslug(il)}/">{e(il)} sayfası →</a></p>' if il in YORE_SAYFA else '') + '</section>' for il in _ils) + _ADLAR_HTML
+write('/yoreler/', page(f'Yöreler ve yöresel adlar: Anadolu’da hangi yörede hangi şifalı bitki? | Bitki Tabanı', f'{len(YORE_IL)} ilde saha çalışmalarında kaydedilen şifalı bitkiler haritada ve {_ADLAR_N} yöresel bitki adı A’dan Z’ye: hangi ad hangi bitki, kaynaklarıyla.', '/yoreler/', _ybody, 'yore', narrow=True, extra=lds(crumb_ld(('/yoreler/', 'Yöreler')))))
+GUIDE_URLS.append('/yoreler/')
+for il in YORE_SAYFA:
+    _p = f'/yore/{_ilslug(il)}/'
+    _d = YORE_IL[il]
+    _ad3 = ', '.join(byId[q]['tr'].lower() for q in sorted(_d['bitki'], key=lambda q: -len(_d['bitki'][q]))[:3])
+    _body = f'''{crumbs(('/yoreler/', 'Yöreler'), (_p, il))}<header class="page-head"><span class="eyebrow">Yöre · {len(_d['bitki'])} bitki · {len(_d['cal'])} saha çalışması</span><h1>{e(il)} yöresinde kullanılan şifalı bitkiler</h1><p>{e(il)}’da yapılmış etnobotanik saha çalışmalarında halk arasında kullanıldığı kaydedilen ve Bitki Tabanı kataloğunda yer alan bitkiler. Her bitkinin kanıtı ve güvenlik notu kendi sayfasında.</p></header>
+<figure class="trmap-w mini">{tr_haritasi(il)}</figure>
+<section class="sec">{_il_bolum(il, _d, 'h2')}</section>
+<aside class="warnbox" role="note"><b>Okurken:</b> Halk arasında kaydedilmiş bir kullanım, bitkinin o derde iyi geldiğini göstermez. İlaç kullanıyorsan, hamileysen ya da emziriyorsan bitkileri kullanmadan önce eczacına danış.</aside>
+<p><a href="/yoreler/">Bütün yöreler →</a></p>'''
+    write(_p, page(f'{il} yöresinde kullanılan şifalı bitkiler | Bitki Tabanı', f'{il}’da etnobotanik saha çalışmalarında kaydedilen {len(_d["bitki"])} şifalı bitki: {_ad3} ve diğerleri. Kaynaklarıyla.', _p, _body, 'yore', narrow=True, extra=lds(crumb_ld(('/yoreler/', 'Yöreler'), (_p, il)))))
+    GUIDE_URLS.append(_p)
 
 # --- toplama takvimi (ay ay) ---
 _cal = {m: [] for m in range(1, 13)}
@@ -1668,7 +1672,7 @@ if os.path.isdir(os.path.join(HERE, 'img')):
     shutil.copytree(os.path.join(HERE, 'img'), os.path.join(OUT, 'img'), dirs_exist_ok=True)
 for f in os.listdir(os.path.join(HERE, 'kok')):   # site köküne olduğu gibi kopyalanan doğrulama dosyaları
     shutil.copy(os.path.join(HERE, 'kok', f), os.path.join(OUT, f))
-_redir += '/ara/ /rehber/#ara 301\n/oyun/ / 301\n'
+_redir += '/yoresel-adlar/ /yoreler/#adlar 301\n/ara/ /rehber/#ara 301\n/oyun/ / 301\n'
 open(os.path.join(OUT, '_redirects'), 'w').write(_redir)
 open(os.path.join(OUT, '_headers'), 'w').write('''/*
   Cache-Control: public, max-age=0, must-revalidate
