@@ -152,6 +152,55 @@ if 'pasiflora' not in byId:   # çarkıfelek kataloğa girene kadar rehber metin
         for _f in ('ozet', 'aciklama'):
             if isinstance(_k.get(_f), str): _k[_f] = _k[_f].replace('Kediotu, melisa ve çarkıfelek', 'Kediotu ve melisa').replace(', çarkıfelek ve ashwagandha', ' ve ashwagandha')
 from tarif import TARIFLER
+# --- yöre haritası: saha çalışmalarında bitkilerin kaydedildiği iller ---
+import trmap as _TM
+from yore import CALISMALAR as _YC, KAYIT as _YK
+_YCAL = {c['id']: c for c in _YC}
+YORE_BITKI = {}   # bitki id → [çalışma]
+YORE_IL = {}      # il → {'cal': [çalışma], 'bitki': {bitki id: [çalışma]}}
+for _cid, _pid in _YK:
+    if _pid not in byId: continue
+    _c = _YCAL[_cid]
+    YORE_BITKI.setdefault(_pid, []).append(_c)
+    _d = YORE_IL.setdefault(_c['il'], {'cal': [], 'bitki': {}})
+    if _c not in _d['cal']: _d['cal'].append(_c)
+    _d['bitki'].setdefault(_pid, []).append(_c)
+def _ilslug(il): return re.sub(r'[^a-z0-9]+', '-', il.lower().translate(str.maketrans('çğıöşüâîİ', 'cgiosuaii')).replace('i̇', 'i')).strip('-')
+YORE_SAYFA = {il for il, d in YORE_IL.items() if len(d['bitki']) >= 8}   # az kayıtlı iller ince sayfa olmasın diye yayınlanmaz
+def _cal_ref(c): return f'<a href="{c["url"]}" target="_blank" rel="noopener">{e(c["yazar"])}, {c["yil"]}</a>'
+def yore_html(pid):
+    L = YORE_BITKI.get(pid)
+    if not L: return ''
+    by = {}
+    for c in L: by.setdefault(c['il'], []).append(c)
+    items = []
+    for il in sorted(by, key=_trkey0):
+        ad = f'<a href="/yore/{_ilslug(il)}/">{e(il)}</a>' if il in YORE_SAYFA else e(il)
+        items.append(f'<li><b>{ad}</b>' + (' (' + ', '.join(e(c['ilce']) for c in by[il] if c['ilce']) + ')' if any(c['ilce'] for c in by[il]) else '') + ' · ' + '; '.join(_cal_ref(c) for c in by[il]) + '</li>')
+    return (f'<aside class="yore-k"><h3>Saha çalışmalarında kaydedildiği yöreler</h3><ul>{"".join(items)}</ul>'
+            f'<p class="muted-s"><a href="/yoreler/">Bütün yöreler haritada →</a></p></aside>')
+def _trkey0(w):
+    T = 'abcçdefgğhıijklmnoöprsştuüvyz'
+    return [(-1 if c == ' ' else T.index(c) if c in T else 100 + ord(c)) for c in w.replace('I', 'ı').replace('İ', 'i').lower()]
+def tr_haritasi(vurgu=None):
+    out = [f'<svg class="trmap" viewBox="{" ".join(map(str, _TM.VIEW))}" role="img" aria-label="Türkiye yöre haritası: saha çalışması olan iller renkli">']
+    for il, d in _TM.IL.items():
+        n = len(YORE_IL.get(il, {}).get('bitki', {}))
+        cls = 'il' + (' var' if n else '') + (' on' if il == vurgu else '')
+        if n:
+            href = f'/yore/{_ilslug(il)}/' if il in YORE_SAYFA else f'/yoreler/#il-{_ilslug(il)}'
+            out.append(f'<a href="{href}" aria-label="{e(il)}: {n} bitki"><path class="{cls}" d="{d}"><title>{e(il)}: {n} bitki</title></path></a>')
+        else:
+            out.append(f'<path class="{cls}" d="{d}"><title>{e(il)}</title></path>')
+    for c in _YC:
+        x, y = _TM.P(c['lon'], c['lat'])
+        out.append(f'<circle class="nokta" cx="{x:.0f}" cy="{y:.0f}" r="6"><title>{e(c["il"])}{" · " + e(c["ilce"]) if c["ilce"] else ""}: {e(c["baslik"])}</title></circle>')
+    return ''.join(out) + '</svg>'
+def _il_bolum(il, d, baslik_tag='h2'):
+    bl = sorted(d['bitki'], key=lambda q: _trkey0(byId[q]['tr']))
+    chips = ''.join(f'<a class="chip" href="/{q}/">{e(byId[q]["tr"])}</a>' for q in bl)
+    cal = ''.join(f'<li>{e(c["ilce"] + ": ") if c["ilce"] else ""}<a href="{c["url"]}" target="_blank" rel="noopener">{e(c["baslik"])}</a> · {e(c["yazar"])}, <i>{e(c["dergi"])}</i>, {c["yil"]}</li>' for c in d['cal'])
+    return f'<{baslik_tag}>{e(il)} <small class="muted-s">· {len(bl)} bitki</small></{baslik_tag}><div class="related">{chips}</div><p class="muted-s">Kaynak saha çalışmaları:</p><ul class="srclist">{cal}</ul>'
 from karsilastirma import KARS
 from motifler import MOTIFLER, TEMALAR, ESKI as MOTIF_ESKI
 from yazilar import YAZILAR
@@ -244,7 +293,7 @@ def head(title, desc, path, extra='', image=None):
 <div class="wrap{{narrow}}">
 '''
 
-MENU = [('Bitkiler', [('/katalog/', 'Katalog', 'kat'), ('/yoresel-adlar/', 'Yöresel adlar', 'adlar'), ('/toplama-takvimi/', 'Doğada bu ay', 'toplama'), ('/yeni/', 'Yeni eklenenler', 'yeni')]),
+MENU = [('Bitkiler', [('/katalog/', 'Katalog', 'kat'), ('/yoresel-adlar/', 'Yöresel adlar', 'adlar'), ('/toplama-takvimi/', 'Doğada bu ay', 'toplama'), ('/yoreler/', 'Yöre haritası', 'yore'), ('/yeni/', 'Yeni eklenenler', 'yeni')]),
         ('Şifa', [('/rehber/', 'Derde göre bitkiler', 'rehber'), ('/tarif/', 'Çay tarifleri', 'tarif'), ('/karsilastirma/', 'Karşılaştırmalar', 'kars'), ('/rehber/ilac-etkilesimi/', 'İlaç etkileşimi', 'etk')]),
         ('Kültür', [('/kavram/', 'Kavramlar', 'kavram'), ('/semboller/', 'Semboller', 'sembol'), ('/kopruler/', 'Kültür köprüleri', 'br'), ('/yazilar/', 'Yazılar', 'yazi'), ('/takvim/', 'Ritüel takvimi', 'takvim')]),
         ('Bitki Tabanı', [('/hakkinda/', 'Hakkında', 'about'), ('/yontem/', 'Yöntem ve kaynaklar', 'yontem'), ('/bulten/', 'Bülten ve e-posta kursu', 'bulten'), ('/kartlar/', 'Yazdırılabilir kartlar', 'kartlar'), ('/hesap/', 'Hesabım', 'acct'), ('mailto:iletisim@bitkitabani.com', 'İletişim', 'mail')])]
@@ -535,7 +584,7 @@ for i, p in enumerate(P):
   {sharebar(p['tr'] + ': ne işe yarar, kanıtı ve güvenliği', '/' + pid + '/')}
   {kisahtml}
   <!--TOC-->
-  <section class="sec"><h2>Geleneksel kullanım</h2><div class="uses">{uses}</div>{ege_html(pid, p["tr"])}</section>
+  <section class="sec"><h2>Geleneksel kullanım</h2><div class="uses">{uses}</div>{ege_html(pid, p["tr"])}{yore_html(pid)}</section>
   {dogada}
   <section class="sec"><h2>Hazırlama</h2><p>{e(p["haz"])}</p></section>
   <section class="sec"><h2>Bilim ne diyor</h2><p>{e(p["bilim"])}</p></section>
@@ -1366,6 +1415,27 @@ if True:
 {('<section class="sec"><h2>Bugünün kavramı</h2><p><a class="cta" href="/kavram/' + KAV_TODAY["slug"] + '/">' + e(KAV_TODAY["ad"]) + ' →</a></p>' + kav_plant(KAV_TODAY) + '</section>') if KAV_TODAY else ''}
 {('<section class="sec"><h2>A’dan Z’ye</h2><ul class="guidelist">' + _kl + '</ul></section>') if _kl else '<p>İlk kavram yarın sabah burada.</p>'}''', 'kavram', narrow=True))
     GUIDE_URLS.insert(0, '/kavram/')
+
+# --- yöre sayfaları ---
+_ils = sorted(YORE_IL, key=_trkey0)
+_yb = sum(len(d['bitki']) for d in YORE_IL.values())
+_ybody = f'''{crumbs(('/yoreler/', 'Yöreler'))}<header class="page-head"><span class="eyebrow">Yöre haritası · {len(YORE_IL)} il · {len(_YC)} saha çalışması</span><h1>Anadolu’da hangi yörede hangi bitki kullanılıyor?</h1><p>Türkiye’de yapılmış etnobotanik saha çalışmalarında katalogdaki bitkilerin kaydedildiği yöreler. Renkli illere dokun; her kayıt kaynağına bağlıdır. Harita yeni çalışmalar işlendikçe büyüyor.</p></header>
+<figure class="trmap-w">{tr_haritasi()}<figcaption>Harita: Natural Earth (kamu malı). Noktalar saha çalışmasının yapıldığı yeri gösterir. Kişi ve köy adları yayımlanmaz.</figcaption></figure>
+<aside class="warnbox" role="note"><b>Okurken:</b> Bir bitkinin bir yörede kaydedilmiş olması, o kullanımın işe yaradığını göstermez; yalnızca halk arasında bilindiğini gösterir. Kanıt ve güvenlik için bitkinin kendi sayfasına bak.</aside>
+''' + ''.join(f'<section class="sec" id="il-{_ilslug(il)}">' + _il_bolum(il, YORE_IL[il]) + (f'<p><a class="cta small" href="/yore/{_ilslug(il)}/">{e(il)} sayfası →</a></p>' if il in YORE_SAYFA else '') + '</section>' for il in _ils)
+write('/yoreler/', page(f'Yöre haritası: Anadolu’da hangi yörede hangi şifalı bitki kullanılıyor? | Bitki Tabanı', f'Türkiye’de {len(_YC)} etnobotanik saha çalışmasından {len(YORE_IL)} ilde kaydedilmiş şifalı bitkiler, kaynaklarıyla birlikte haritada.', '/yoreler/', _ybody, 'yore', narrow=True, extra=lds(crumb_ld(('/yoreler/', 'Yöreler')))))
+GUIDE_URLS.append('/yoreler/')
+for il in YORE_SAYFA:
+    _p = f'/yore/{_ilslug(il)}/'
+    _d = YORE_IL[il]
+    _ad3 = ', '.join(byId[q]['tr'].lower() for q in sorted(_d['bitki'], key=lambda q: -len(_d['bitki'][q]))[:3])
+    _body = f'''{crumbs(('/yoreler/', 'Yöreler'), (_p, il))}<header class="page-head"><span class="eyebrow">Yöre · {len(_d['bitki'])} bitki · {len(_d['cal'])} saha çalışması</span><h1>{e(il)} yöresinde kullanılan şifalı bitkiler</h1><p>{e(il)}’da yapılmış etnobotanik saha çalışmalarında halk arasında kullanıldığı kaydedilen ve Bitki Tabanı kataloğunda yer alan bitkiler. Her bitkinin kanıtı ve güvenlik notu kendi sayfasında.</p></header>
+<figure class="trmap-w mini">{tr_haritasi(il)}</figure>
+<section class="sec">{_il_bolum(il, _d, 'h2')}</section>
+<aside class="warnbox" role="note"><b>Okurken:</b> Halk arasında kaydedilmiş bir kullanım, bitkinin o derde iyi geldiğini göstermez. İlaç kullanıyorsan, hamileysen ya da emziriyorsan bitkileri kullanmadan önce eczacına danış.</aside>
+<p><a href="/yoreler/">Bütün yöreler →</a></p>'''
+    write(_p, page(f'{il} yöresinde kullanılan şifalı bitkiler | Bitki Tabanı', f'{il}’da etnobotanik saha çalışmalarında kaydedilen {len(_d["bitki"])} şifalı bitki: {_ad3} ve diğerleri. Kaynaklarıyla.', _p, _body, 'yore', narrow=True, extra=lds(crumb_ld(('/yoreler/', 'Yöreler'), (_p, il)))))
+    GUIDE_URLS.append(_p)
 
 # --- takvim bileşeni (ritüel + toplama, aylık ızgara; tıklayınca takvime ekle / paylaş) ---
 _TK_KIS = {'cicek': 'Çiçek', 'yaprak': 'Yaprak', 'herba': 'Toprak üstü', 'kok': 'Kök', 'tohum': 'Meyve ve tohum', 'kabuk': 'Kabuk', 'recine': 'Reçine'}
