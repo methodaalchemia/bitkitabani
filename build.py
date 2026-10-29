@@ -305,7 +305,7 @@ def head(title, desc, path, extra='', image=None):
 
 MENU = [('Bitkiler', [('/katalog/', 'Katalog', 'kat'), ('/toplama-takvimi/', 'Doğada bu ay', 'toplama'), ('/yoreler/', 'Yöreler ve yöresel adlar', 'yore'), ('/yeni/', 'Yeni eklenenler', 'yeni')]),
         ('Şifa', [('/rehber/', 'Derde göre bitkiler', 'rehber'), ('/tarif/', 'Çay tarifleri', 'tarif'), ('/karsilastirma/', 'Karşılaştırmalar', 'kars'), ('/rehber/ilac-etkilesimi/', 'İlaç etkileşimi', 'etk')]),
-        ('Kültür', [('/kavram/', 'Kavramlar', 'kavram'), ('/semboller/', 'Semboller', 'sembol'), ('/kopruler/', 'Kültür köprüleri', 'br'), ('/hikaye/', 'Halk hekimliğinden', 'hikaye'), ('/yazilar/', 'Yazılar', 'yazi'), ('/takvim/', 'Ritüel takvimi', 'takvim')]),
+        ('Kültür', [('/kavram/', 'Kavramlar', 'kavram'), ('/semboller/', 'Semboller', 'sembol'), ('/kopruler/', 'Kültür köprüleri', 'br'), ('/yazilar/', 'Yazılar ve hikâyeler', 'yazi'), ('/takvim/', 'Ritüel takvimi', 'takvim')]),
         ('Bitki Tabanı', [('/hakkinda/', 'Hakkında', 'about'), ('/yontem/', 'Yöntem ve kaynaklar', 'yontem'), ('/bulten/', 'Bülten ve e-posta kursu', 'bulten'), ('/kartlar/', 'Yazdırılabilir kartlar', 'kartlar'), ('/hesap/', 'Hesabım', 'acct'), ('mailto:iletisim@bitkitabani.com', 'İletişim', 'mail')])]
 MENU_HUB = {'Bitkiler': '/katalog/', 'Şifa': '/rehber/', 'Kültür': '/kultur/'}
 _TABICO = {'ara': '<circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/>', 'kat': '<path d="M12 21V9"/><path d="M12 13c-4 0-6-3-6-7 4 0 6 3 6 7z"/><path d="M12 11c3 0 5-2 5-5-3 0-5 2-5 5z"/>',
@@ -1381,10 +1381,6 @@ for y in YAZILAR:
           extra=lds({"@context":"https://schema.org","@type":"Article","headline":y['baslik'],"description":y['aciklama'],"inLanguage":"tr","url":BASE+path,"author":AUTHOR,"datePublished":y['tarih'],"dateModified":y['tarih'],"citation":[t for t, u in y['kaynaklar']]}, crumb_ld(('/yazilar/', 'Yazılar'), (path, y['baslik']))),
           image=next((f'{BASE}/img/{x}-960.jpg' for x in y['bitkiler'] if x in IMG), None)))
     GUIDE_URLS.append(path)
-_yl = ''.join(f'<li><a href="/yazilar/{y["slug"]}/"><b>{e(y["baslik"])}</b></a><span>{e(y["aciklama"])}</span></li>' for y in sorted(YAZILAR, key=lambda y: y['tarih'], reverse=True))
-write('/yazilar/', page('Yazılar: şamanizm, ritüel bitkiler ve kadim bilgi | Bitki Tabanı', 'Şamanizm, animizm, tütsü gelenekleri ve bitkilerle kurulan kadim ilişki üzerine kaynaklı yazılar.', '/yazilar/',
-      f'''{crumbs(('/yazilar/', 'Yazılar'))}<header class="page-head"><span class="eyebrow">Yazılar</span><h1>Bitkiler, ritüeller ve kadim bilgi</h1><p>Şamanizmden tütsü geleneklerine, kutsal ağaçlardan bitki “öğretmenlere”: bitkilerle kurulan kadim ilişki üzerine kaynaklı yazılar.</p></header><section class="sec"><ul class="guidelist">{_yl}</ul></section>''', 'yazi', narrow=True))
-GUIDE_URLS.insert(0, '/yazilar/')
 
 # --- günün kavramı ---
 def kav_plant(k):
@@ -1539,21 +1535,29 @@ for h in HIK:
     pth = f'/hikaye/{h["slug"]}/'
     b = _hik_bitki(h)
     ilgili = [x for x in HIK if x is not h and (_hik_bitki(x) == b and b)][:3] or [x for x in HIK if x is not h][:3]
-    body = (f'{crumbs(("/hikaye/", "Halk hekimliğinden"), (pth, h["baslik"][:40]))}<article class="hikaye"><header class="page-head"><span class="eyebrow">Halk hekimliğinden{" · " + e(h["yore"]) if h.get("yore") else ""}</span><h1>{e(h["baslik"])}</h1></header>'
+    body = (f'{crumbs(("/yazilar/", "Yazılar"), ("/yazilar/#hikayeler", "Halk hekimliğinden"), (pth, h["baslik"][:40]))}<article class="hikaye"><header class="page-head"><span class="eyebrow">Halk hekimliğinden{" · " + e(h["yore"]) if h.get("yore") else ""}</span><h1>{e(h["baslik"])}</h1></header>'
             + (f'<img class="hk-kapak" src="/img/hikaye/{h["slug"]}.jpg" alt="{e(h["baslik"])}" width="1200" height="800">' if os.path.exists(os.path.join(HERE, 'img', 'hikaye', h['slug'] + '.jpg')) else '')
             + f'{sharebar(h["baslik"], pth)}<p class="lead">{e(h["post"])}</p>'
             + f'<p class="muted-s">Kaynak: <a href="{h["kaynak"][1]}" target="_blank" rel="noopener">{e(h["kaynak"][0])}</a>. Bu bir halk kaydıdır, tedavi önerisi değildir.</p>'
             + (f'<section class="sec"><h2>Bu hikâyenin bitkisi</h2><div class="grid sim">{card(byId[b])}</div></section>' if b else (f'<p><a class="cta" href="/{h["link"]}">Devamı →</a></p>' if h.get('link') else ''))
             + f'</article>{abone("hikaye-" + h["slug"][:30], "Her hafta bir halk hekimliği hikâyesi", "Anadolu’dan kaynaklı şifa hikâyeleri, bitkileri ve uyarılarıyla; her pazar e-postanda.", kurs=False)}'
-            + f'<section class="sec"><h2>Başka hikâyeler</h2><ul class="hklist">{"".join(_hik_kart(x) for x in ilgili)}</ul><p><a href="/hikaye/">Bütün hikâyeler →</a></p></section>')
+            + f'<section class="sec"><h2>Başka hikâyeler</h2><ul class="hklist">{"".join(_hik_kart(x) for x in ilgili)}</ul><p><a href="/yazilar/#hikayeler">Bütün hikâyeler →</a></p></section>')
     write(pth, page(f'{h["baslik"]} | Halk hekimliğinden | Bitki Tabanı', h['post'][:155].rsplit(' ', 1)[0] + '…', pth, body, 'hikaye', narrow=True,
-          extra=lds({"@context": "https://schema.org", "@type": "Article", "headline": h["baslik"][:110], "inLanguage": "tr", "url": BASE + pth, "author": AUTHOR, "citation": h["kaynak"][0]}, crumb_ld(("/hikaye/", "Halk hekimliğinden"), (pth, h["baslik"][:40]))),
+          extra=lds({"@context": "https://schema.org", "@type": "Article", "headline": h["baslik"][:110], "inLanguage": "tr", "url": BASE + pth, "author": AUTHOR, "citation": h["kaynak"][0]}, crumb_ld(("/yazilar/", "Yazılar"), (pth, h["baslik"][:40]))),
           image=(f'{BASE}/img/hikaye/{h["slug"]}.jpg' if os.path.exists(os.path.join(HERE, 'img', 'hikaye', h['slug'] + '.jpg')) else (f'{BASE}/img/{b}-960.jpg' if b and b in IMG else None))))
     GUIDE_URLS.append(pth)
-write('/hikaye/', page('Halk hekimliğinden: Anadolu’nun şifa hikâyeleri | Bitki Tabanı', f'Anadolu’dan {len(HIK)} kaynaklı halk hekimliği hikâyesi: ocaklar, nazar, yayla otları, yöresel şifa gelenekleri ve bitkileri.', '/hikaye/',
-      f'{crumbs(("/hikaye/", "Halk hekimliğinden"))}<header class="page-head"><span class="eyebrow">{len(HIK)} hikâye · her hafta yenisi</span><h1>Halk hekimliğinden</h1><p>Anadolu’nun köylerinden, ocaklarından ve eski tıp metinlerinden kaynaklı şifa hikâyeleri. Her biri bir dergi makalesine ya da saha çalışmasına dayanır ve bir bitkiye bağlanır.</p></header><ul class="hklist">{"".join(_hik_kart(h) for h in reversed(HIK))}</ul>{abone("hikaye-liste", "Her hafta bir halk hekimliği hikâyesi", "Anadolu’dan kaynaklı şifa hikâyeleri, bitkileri ve uyarılarıyla; her pazar e-postanda.", kurs=False)}',
-      'hikaye', narrow=True, extra=lds(crumb_ld(("/hikaye/", "Halk hekimliğinden")))))
-GUIDE_URLS.insert(0, '/hikaye/')
+def _yazi_kart(y):
+    k = f'/img/hikaye/yazi-{y["slug"]}.jpg'
+    img = f'<img src="{k}" alt="" loading="lazy" width="1200" height="800">' if os.path.exists(os.path.join(HERE, k.lstrip('/'))) else ''
+    return f'<li class="hk"><a href="/yazilar/{y["slug"]}/">{img}<b>{e(y["baslik"])}</b><span class="muted-s">Yazı · {e(y["aciklama"][:90])}</span></a></li>'
+_ys = sorted(YAZILAR, key=lambda y: y['tarih'], reverse=True)
+write('/yazilar/', page('Yazılar ve halk hekimliği hikâyeleri: şamanizm, ritüel ve Anadolu’nun şifa gelenekleri | Bitki Tabanı', f'Şamanizm, ritüel bitkiler ve kadim bilgi üzerine yazılar; Anadolu’dan {len(HIK)} kaynaklı halk hekimliği hikâyesi.', '/yazilar/',
+      f'{crumbs(("/yazilar/", "Yazılar"))}<header class="page-head"><span class="eyebrow">{len(_ys)} yazı · {len(HIK)} hikâye · her hafta yenisi</span><h1>Yazılar ve halk hekimliğinden hikâyeler</h1><p>Uzun yazılarda şamanizm, ritüeller ve bitkilerle kurulan kadim ilişki; kısa hikâyelerde Anadolu’nun köylerinden, ocaklarından ve eski tıp metinlerinden kaynaklı şifa gelenekleri. Hepsi bir kaynağa dayanır.</p></header>'
+      f'<nav class="tabs" aria-label="Bölümler"><a href="#yazilar">Yazılar</a><a href="#hikayeler">Halk hekimliğinden</a></nav>'
+      f'<section class="sec" id="yazilar"><h2>Yazılar</h2><ul class="hklist">{"".join(_yazi_kart(y) for y in _ys)}</ul></section>'
+      f'<section class="sec" id="hikayeler"><h2>Halk hekimliğinden</h2><ul class="hklist">{"".join(_hik_kart(h) for h in reversed(HIK))}</ul></section>{abone("hikaye-liste", "Her hafta bir halk hekimliği hikâyesi", "Anadolu’dan kaynaklı şifa hikâyeleri, bitkileri ve uyarılarıyla; her pazar e-postanda.", kurs=False)}',
+      'yazi', narrow=True, extra=lds(crumb_ld(("/yazilar/", "Yazılar")))))
+GUIDE_URLS.insert(0, '/yazilar/')
 
 # --- yöre sayfaları ---
 _ils = sorted(YORE_IL, key=_trkey0)
@@ -1707,7 +1711,7 @@ if os.path.isdir(os.path.join(HERE, 'img')):
     shutil.copytree(os.path.join(HERE, 'img'), os.path.join(OUT, 'img'), dirs_exist_ok=True)
 for f in os.listdir(os.path.join(HERE, 'kok')):   # site köküne olduğu gibi kopyalanan doğrulama dosyaları
     shutil.copy(os.path.join(HERE, 'kok', f), os.path.join(OUT, f))
-_redir += '/yoresel-adlar/ /yoreler/#adlar 301\n/ara/ /rehber/#ara 301\n/oyun/ / 301\n'
+_redir += '/hikaye/ /yazilar/#hikayeler 301\n/yoresel-adlar/ /yoreler/#adlar 301\n/ara/ /rehber/#ara 301\n/oyun/ / 301\n'
 open(os.path.join(OUT, '_redirects'), 'w').write(_redir)
 open(os.path.join(OUT, '_headers'), 'w').write('''/*
   Cache-Control: public, max-age=0, must-revalidate

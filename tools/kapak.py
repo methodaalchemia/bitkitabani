@@ -5,6 +5,7 @@ from PIL import Image, ImageDraw, ImageFont
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, HERE)
 from halk import hikayeler
+from yazilar import YAZILAR
 OUT = os.path.join(HERE, 'img', 'hikaye'); os.makedirs(OUT, exist_ok=True)
 F = os.path.join(HERE, 'tools', 'fonts')
 def font(n, s): return ImageFont.truetype(os.path.join(F, n), s)
@@ -55,7 +56,7 @@ def kapak(h, i):
         for x in range(30, W, 60):
             motif(d, kind2 if (x // 60) % 2 else kind, x, y, 34, KREM, 3)
     d.line([0, 86, W, 86], fill=KREM, width=2); d.line([0, H - 86, W, H - 86], fill=KREM, width=2)
-    ey = 'HALK HEKİMLİĞİNDEN' + (' · ' + h['yore'].upper() if h.get('yore') and len(h['yore']) < 40 else '')
+    ey = h.get('ust') or 'HALK HEKİMLİĞİNDEN' + (' · ' + h['yore'].upper() if h.get('yore') and len(h['yore']) < 40 else '')
     d.text((80, 140), ey, font=font('CourierPrime-Regular.ttf', 30), fill=KREM)
     bas = h['baslik'].rstrip('…')
     for sz in (78, 70, 62, 54, 48):
@@ -71,7 +72,7 @@ def kapak(h, i):
     return im
 
 def main():
-    H_ = hikayeler(); n = 0
+    H_ = hikayeler() + [dict(slug='yazi-' + y['slug'], baslik=y['baslik'], kisa='Edanaz Tınmazlar · ' + str(len(y['kaynaklar'])) + ' kaynak', ust='YAZI · ' + y['tarih'][:4]) for y in YAZILAR]; n = 0
     idx = os.path.join(OUT, 'basliklar.json')
     eski = json.load(open(idx, encoding='utf-8')) if os.path.exists(idx) else {}
     for i, h in enumerate(H_):
