@@ -1527,15 +1527,25 @@ def _hik_bitki(h):
     if h.get('bitki') in byId: return h['bitki']
     l = (h.get('link') or '').strip('/')
     return l if l in byId else None
-ETIKET = [('halk-hekimligi', 'Halk hekimliği'), ('ocaklar', 'Ocaklar ve şifacılar'), ('nazar-ritueller', 'Nazar ve ritüeller'), ('soylenceler', 'Söylenceler'), ('eski-tip', 'Eski tıp metinleri'), ('yoresel-adlar', 'Yöresel adlar'), ('saha', 'Yöreden kayıtlar'), ('samanizm', 'Şamanizm')]
+from halk_tarif import TARIF as HTARIF
+ETIKET = [('halk-hekimligi', 'Halk hekimliği'), ('tarifler', 'Tarifler'), ('ocaklar', 'Ocaklar ve şifacılar'), ('nazar-ritueller', 'Nazar ve ritüeller'), ('soylenceler', 'Söylenceler'), ('eski-tip', 'Eski tıp metinleri'), ('yoresel-adlar', 'Yöresel adlar'), ('saha', 'Yöreden kayıtlar'), ('samanizm', 'Şamanizm')]
 _ET = dict(ETIKET)
 _ETK = [('ocaklar', r'ocağ|\bocak(?:lı|lar|çı)?\b|şifacı|otçu|toplayıp hastalara'), ('nazar-ritueller', r'nazar|dilek|tören|bayram|tütsü|duman|doğum|ritüel|kutsal|bez bağla'), ('soylenceler', r'söylence|efsane|peri|mit|anlatılan'),
         ('eski-tip', r'yüzyıl|hacı paşa|sabuncuoğlu|edviye|saray|mevlân|osmanlı|hitit'), ('yoresel-adlar', r'yöresel ad|adlar|adıyla|adlarıyla|yörede [a-zçğıöşü\-]+\)|“[^”]+” adı')]
 def etiketler(h):
     t = (h['baslik'] + ' ' + (h.get('post') or '')).lower()
-    L = ['halk-hekimligi'] + [k for k, r in _ETK if re.search(r, t)]
+    L = ['halk-hekimligi'] + (['tarifler'] if h.get('slug') in HTARIF else []) + [k for k, r in _ETK if re.search(r, t)]
     if h.get('yore') and not re.search(r'yüzyıl|hitit|antik|söylence', h['yore'].lower()): L.append('saha')
     return L
+def _htarif(sl):
+    out = ''
+    for t in HTARIF.get(sl, []):
+        out += (f'<section class="htarif"><h2><span class="eyebrow">Kaynaktaki tarif</span>{e(t["ad"])}</h2>'
+                f'<div class="ht-g"><div><h3>Malzemeler</h3><ul>{"".join(f"<li>{e(m)}</li>" for m in t["malzeme"])}</ul></div>'
+                f'<div><h3>Hazırlanışı</h3><ol>{"".join(f"<li>{e(a)}</li>" for a in t["adim"])}</ol></div></div>'
+                + (f'<p class="muted-s">{e(t["olcu"])}</p>' if t.get('olcu') else '<p class="muted-s">Kaynakta ölçü verilmiyor; tarif olduğu gibi aktarılmıştır.</p>')
+                + (f'<p class="ht-uyari"><b>Dikkat:</b> {e(t["uyari"])}</p>' if t.get('uyari') else '') + '</section>')
+    return out
 def _etk_html(L): return ''.join(f'<a class="etk" href="/blog/#{k}">#{e(_ET[k])}</a>' for k in L)
 def _hik_kart(h):
     b = _hik_bitki(h)
@@ -1548,6 +1558,7 @@ for h in HIK:
     body = (f'{crumbs(("/blog/", "Blog"), (pth, h["baslik"][:40]))}<article class="hikaye"><header class="page-head"><span class="eyebrow">Halk hekimliğinden{" · " + e(h["yore"]) if h.get("yore") else ""}</span><h1>{e(h["baslik"])}</h1><p class="etks">{_etk_html(etiketler(h))}</p></header>'
             + (f'<img class="hk-kapak" src="/img/hikaye/{h["slug"]}.jpg" alt="{e(h["baslik"])}" width="1200" height="800">' if os.path.exists(os.path.join(HERE, 'img', 'hikaye', h['slug'] + '.jpg')) else '')
             + f'{sharebar(h["baslik"], pth)}<p class="lead">{e(h["post"])}</p>'
+            + _htarif(h['slug'])
             + f'<p class="muted-s">Kaynak: <a href="{h["kaynak"][1]}" target="_blank" rel="noopener">{e(h["kaynak"][0])}</a>. Bu bir halk kaydıdır, tedavi önerisi değildir.</p>'
             + (f'<section class="sec"><h2>Bu hikâyenin bitkisi</h2><div class="grid sim">{card(byId[b])}</div></section>' if b else (f'<p><a class="cta" href="/{h["link"]}">Devamı →</a></p>' if h.get('link') else ''))
             + f'</article>{abone("hikaye-" + h["slug"][:30], "Her hafta bir halk hekimliği hikâyesi", "Anadolu’dan kaynaklı şifa hikâyeleri, bitkileri ve uyarılarıyla; her pazar e-postanda.", kurs=False)}'
