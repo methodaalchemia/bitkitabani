@@ -1563,8 +1563,10 @@ for h in HIK:
             + (f'<section class="sec"><h2>Bu hikâyenin bitkisi</h2><div class="grid sim">{card(byId[b])}</div></section>' if b else (f'<p><a class="cta" href="/{h["link"]}">Devamı →</a></p>' if h.get('link') else ''))
             + f'</article>{abone("hikaye-" + h["slug"][:30], "Her hafta bir halk hekimliği hikâyesi", "Anadolu’dan kaynaklı şifa hikâyeleri, bitkileri ve uyarılarıyla; her pazar e-postanda.", kurs=False)}'
             + f'<section class="sec"><h2>Başka hikâyeler</h2><ul class="hklist">{"".join(_hik_kart(x) for x in ilgili)}</ul><p><a href="/blog/">Bloğun tamamı →</a></p></section>')
-    write(pth, page(f'{h["baslik"]} | Halk hekimliğinden | Bitki Tabanı', h['post'][:155].rsplit(' ', 1)[0] + '…', pth, body, 'hikaye', narrow=True,
-          extra=lds({"@context": "https://schema.org", "@type": "Article", "headline": h["baslik"][:110], "inLanguage": "tr", "url": BASE + pth, "author": AUTHOR, "citation": h["kaynak"][0]}, crumb_ld(("/blog/", "Blog"), (pth, h["baslik"][:40]))),
+    _ut = h.get('uzun') or h['baslik']
+    if len(_ut) > 120: _ut = _ut[:120].rsplit(' ', 1)[0].rstrip(',;:')
+    write(pth, page(f'{_ut} | Bitki Tabanı', h['post'][:155].rsplit(' ', 1)[0] + '…', pth, body, 'hikaye', narrow=True,
+          extra=lds({"@context": "https://schema.org", "@type": "Article", "headline": h["baslik"][:110], "alternativeHeadline": (h.get("uzun") or "")[:200], "inLanguage": "tr", "url": BASE + pth, "image": BASE + "/img/hikaye/" + h["slug"] + ".jpg", "author": AUTHOR, "citation": h["kaynak"][0]}, crumb_ld(("/blog/", "Blog"), (pth, h["baslik"][:40]))),
           image=(f'{BASE}/img/hikaye/{h["slug"]}.jpg' if os.path.exists(os.path.join(HERE, 'img', 'hikaye', h['slug'] + '.jpg')) else (f'{BASE}/img/{b}-960.jpg' if b and b in IMG else None))))
     GUIDE_URLS.append(pth)
 def _yazi_etk(y): return ['samanizm', 'nazar-ritueller', 'soylenceler']
