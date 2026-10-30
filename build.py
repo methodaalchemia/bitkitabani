@@ -297,7 +297,7 @@ def head(title, desc, path, extra='', image=None):
 <meta name="theme-color" content="#A3271B">
 {FAV}
 {FONTS}
-<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="/assets/style.css?v={CSSV}">
 {extra}
 </head>
 <body>
@@ -355,6 +355,11 @@ def _icon(n, label):
     return f'<span class="sicon-t">{label}</span>'
 FOOTNAV += '<div class="sosyal" aria-label="Sosyal medya">' + ''.join(f'<a href="{u}" title="{l}" aria-label="Bitki Tabanı {l}"' + (' rel="noopener" target="_blank"' if u.startswith('http') else '') + f'>{_icon(n, l)}</a>' for n, l, u in SOSYAL) + '</div>'
 FOOT = FOOT.replace('<!--FOOTNAV-->', FOOTNAV)
+import hashlib as _hl
+CSSV = _hl.md5(open(os.path.join(HERE, 'assets', 'style.css'), 'rb').read()).hexdigest()[:8]
+def _de(ad):
+    v = [c for c in ad.lower() if c in 'aıoueöüiâ']; son = v[-1] if v else 'e'
+    return ('t' if ad[-1].lower() in 'fstkçşhp' else 'd') + ('a' if son in 'aıouâ' else 'e')
 def page(title, desc, path, body, cur, scripts='', narrow=False, extra='', image=None):
     h = head(title, desc, path, extra, image).replace('{narrow}', ' narrow' if narrow else '')
     return h + nav(cur) + body + FOOT + '<script src="/assets/theme.js" defer></script><script src="/assets/streak.js" defer></script><script src="/assets/sync.js" defer></script>' + ('<script src="/assets/bulten.js" defer></script>' if 'abone-form' in body and 'bulten.js' not in scripts else '') + scripts.replace('<script src="/assets/streak.js" defer></script>', '') + '\n</body>\n</html>\n'
@@ -1621,12 +1626,12 @@ for il in YORE_SAYFA:
     _p = f'/yore/{_ilslug(il)}/'
     _d = YORE_IL[il]
     _ad3 = ', '.join(byId[q]['tr'].lower() for q in sorted(_d['bitki'], key=lambda q: -len(_d['bitki'][q]))[:3])
-    _body = f'''{crumbs(('/yoreler/', 'Yöreler'), (_p, il))}<header class="page-head"><span class="eyebrow">Yöre · {len(_d['bitki'])} bitki · {len(_d['cal'])} saha çalışması</span><h1>{e(il)} yöresinde kullanılan şifalı bitkiler</h1><p>{e(il)}’da yapılmış etnobotanik saha çalışmalarında halk arasında kullanıldığı kaydedilen ve Bitki Tabanı kataloğunda yer alan bitkiler. Her bitkinin kanıtı ve güvenlik notu kendi sayfasında.</p></header>
-<figure class="trmap-w mini">{tr_haritasi(il)}</figure>
+    _body = f'''{crumbs(('/yoreler/', 'Yöreler'), (_p, il))}<div class="yore-top"><header class="page-head"><span class="eyebrow">Yöre · {len(_d['bitki'])} bitki · {len(_d['cal'])} saha çalışması</span><h1>{e(il)} yöresinde kullanılan şifalı bitkiler</h1><p>{e(il)}’{_de(il)} yapılmış etnobotanik saha çalışmalarında halk arasında kullanıldığı kaydedilen ve Bitki Tabanı kataloğunda yer alan bitkiler. Her bitkinin kanıtı ve güvenlik notu kendi sayfasında.</p></header>
+<figure class="trmap-w mini">{tr_haritasi(il)}</figure></div>
 <section class="sec">{_il_bolum(il, _d, 'h2')}</section>
 <aside class="warnbox" role="note"><b>Okurken:</b> Halk arasında kaydedilmiş bir kullanım, bitkinin o derde iyi geldiğini göstermez. İlaç kullanıyorsan, hamileysen ya da emziriyorsan bitkileri kullanmadan önce eczacına danış.</aside>
 <p><a href="/yoreler/">Bütün yöreler →</a></p>'''
-    write(_p, page(f'{il} yöresinde kullanılan şifalı bitkiler | Bitki Tabanı', f'{il}’da etnobotanik saha çalışmalarında kaydedilen {len(_d["bitki"])} şifalı bitki: {_ad3} ve diğerleri. Kaynaklarıyla.', _p, _body, 'yore', narrow=True, extra=lds(crumb_ld(('/yoreler/', 'Yöreler'), (_p, il)))))
+    write(_p, page(f'{il} yöresinde kullanılan şifalı bitkiler | Bitki Tabanı', f'{il}’{_de(il)} etnobotanik saha çalışmalarında kaydedilen {len(_d["bitki"])} şifalı bitki: {_ad3} ve diğerleri. Kaynaklarıyla.', _p, _body, 'yore', narrow=True, extra=lds(crumb_ld(('/yoreler/', 'Yöreler'), (_p, il)))))
     GUIDE_URLS.append(_p)
 
 # --- toplama takvimi (ay ay) ---
