@@ -152,6 +152,7 @@ if 'pasiflora' not in byId:   # çarkıfelek kataloğa girene kadar rehber metin
         for _f in ('ozet', 'aciklama'):
             if isinstance(_k.get(_f), str): _k[_f] = _k[_f].replace('Kediotu, melisa ve çarkıfelek', 'Kediotu ve melisa').replace(', çarkıfelek ve ashwagandha', ' ve ashwagandha')
 from tarif import TARIFLER
+from titck import M as TITCK, B as TITCK_B, LISTE as TITCK_LISTE
 # --- yöre haritası: saha çalışmalarında bitkilerin kaydedildiği iller ---
 import trmap as _TM
 from yore import CALISMALAR as _YC, KAYIT as _YK, DETAY as _YD
@@ -599,7 +600,7 @@ for i, p in enumerate(P):
   <section class="sec"><h2>Hazırlama</h2><p>{e(p["haz"])}</p></section>
   <section class="sec"><h2>Bilim ne diyor</h2><p>{e(p["bilim"])}</p></section>
   {derhtml}
-  <section class="sec"><h2>Güvenlik</h2><div class="callout {p["guv"]}"><div class="lvl">{GUV[p["guv"]]}</div><p>{e(p["guvNot"])}</p></div><div class="safelinks"><a href="{('#etk' if pid in ETK else '/rehber/ilac-etkilesimi/?q=' + urllib.parse.quote(p["tr"]))}">{ico('etk','ico-s')}<span>{'Bu bitkinin ilaç etkileşimleri' if pid in ETK else 'İlaç kullanıyorsan: etkileşim aracı'}</span></a><a href="/rehber/hamilelik-emzirme/">{ico('gebe','ico-s')}<span>Hamilelik ve emzirme</span></a></div></section>
+  <section class="sec"><h2>Güvenlik</h2><div class="callout {p["guv"]}"><div class="lvl">{GUV[p["guv"]]}</div><p>{e(p["guvNot"])}</p></div><div class="safelinks"><a href="{('#etk' if pid in ETK else '/rehber/ilac-etkilesimi/?q=' + urllib.parse.quote(p["tr"]))}">{ico('etk','ico-s')}<span>{'Bu bitkinin ilaç etkileşimleri' if pid in ETK else 'İlaç kullanıyorsan: etkileşim aracı'}</span></a><a href="/rehber/hamilelik-emzirme/">{ico('gebe','ico-s')}<span>Hamilelik ve emzirme</span></a></div>{(f'<p class="titck">Türkiye İlaç ve Tıbbi Cihaz Kurumu (TİTCK) bu bitki için resmî bir monograf yayımladı: kullanım alanları, dozu, kimlerin kullanmaması gerektiği ve etkileşimleri. <a href="{TITCK_B + TITCK[pid][1]}" target="_blank" rel="noopener">TİTCK monografı ({e(TITCK[pid][0])}, PDF) →</a></p>' if pid in TITCK else '')}</section>
   {etkhtml}
   {yas}
   {korhtml}
