@@ -259,10 +259,12 @@ def threads_plan(data, day, days=4):
             adlar = ', '.join(_adl(q)[:5])
             out[dd.isoformat()]['ad'] = dict(text=f"Sizin yörenizde buna ne denir? 🌿\n\n{q['tr']} ({q['la']}) Anadolu’da farklı adlarla anılıyor: {adlar}.\n\nSizin yörenizde hangi adla bilinir? Yazın, sözlüğümüze ekleyelim. 👇"[:495], image=img(q['id']), bitki=q['id'])
         try:   # 21:30: kaynaklı halk hekimliği kaydı (eski tek satırlık "…sever misiniz?" soruları etkileşim getirmediği için kaldırıldı)
-            from halk import HALK, post_metni
+            from halk import HALK, post_metni, _SLUG
             _H = [x for x in HALK if x.get('post')]
             h = _H[(k * 7) % len(_H)]
-            out[dd.isoformat()]['soru'] = dict(text=post_metni(h)[:495], image=img(h['bitki']) if h.get('bitki') else None)
+            _kp = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'img', 'hikaye', _SLUG.get(id(h), '') + '.jpg')
+            _ki = f"https://bitkitabani.com/img/hikaye/{_SLUG[id(h)]}.jpg" if id(h) in _SLUG and os.path.exists(_kp) else (img(h['bitki']) if h.get('bitki') else None)
+            out[dd.isoformat()]['soru'] = dict(text=post_metni(h)[:495], image=_ki)
         except Exception as ex: print('halk threads:', ex)
         try:
             from kavramlar import KAVRAMLAR
