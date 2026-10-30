@@ -671,3 +671,4 @@ button.cta{-webkit-appearance:none;appearance:none;background:var(--accent);colo
 .grid.sim .card{max-width:none}
 .grid.sim .card .ph{aspect-ratio:4/3}
 .sheet .sec p,.sheet .callout p,.sheet .kisaca p,.sheet .sec .hatalar,.sheet .faq p{max-width:none}
+.katki-link{margin:8px 0 0}.katki-form [hidden]{display:none}

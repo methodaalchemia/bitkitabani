@@ -307,7 +307,7 @@ def head(title, desc, path, extra='', image=None):
 MENU = [('Bitkiler', [('/katalog/', 'Katalog', 'kat'), ('/toplama-takvimi/', 'Doğada bu ay', 'toplama'), ('/yoreler/', 'Yöreler ve yöresel adlar', 'yore'), ('/yeni/', 'Yeni eklenenler', 'yeni')]),
         ('Şifa', [('/rehber/', 'Derde göre bitkiler', 'rehber'), ('/tarif/', 'Çay tarifleri', 'tarif'), ('/karsilastirma/', 'Karşılaştırmalar', 'kars'), ('/rehber/ilac-etkilesimi/', 'İlaç etkileşimi', 'etk')]),
         ('Kültür', [('/kavram/', 'Kavramlar', 'kavram'), ('/semboller/', 'Semboller', 'sembol'), ('/kopruler/', 'Kültür köprüleri', 'br'), ('/blog/', 'Blog', 'yazi'), ('/takvim/', 'Ritüel takvimi', 'takvim')]),
-        ('Bitki Tabanı', [('/hakkinda/', 'Hakkında', 'about'), ('/yontem/', 'Yöntem ve kaynaklar', 'yontem'), ('/bulten/', 'Bülten ve e-posta kursu', 'bulten'), ('/kartlar/', 'Yazdırılabilir kartlar', 'kartlar'), ('/hesap/', 'Hesabım', 'acct'), ('mailto:iletisim@bitkitabani.com', 'İletişim', 'mail')])]
+        ('Bitki Tabanı', [('/hakkinda/', 'Hakkında', 'about'), ('/yontem/', 'Yöntem ve kaynaklar', 'yontem'), ('/bulten/', 'Bülten ve e-posta kursu', 'bulten'), ('/kartlar/', 'Yazdırılabilir kartlar', 'kartlar'), ('/hesap/', 'Hesabım', 'acct'), ('/iletisim/', 'İletişim', 'mail')])]
 MENU_HUB = {'Bitkiler': '/katalog/', 'Şifa': '/rehber/', 'Kültür': '/kultur/'}
 _TABICO = {'ara': '<circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/>', 'kat': '<path d="M12 21V9"/><path d="M12 13c-4 0-6-3-6-7 4 0 6 3 6 7z"/><path d="M12 11c3 0 5-2 5-5-3 0-5 2-5 5z"/>',
            'rehber': '<path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/>', 'kultur': '<path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/>', 'gun': '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M5 19l1.5-1.5M17.5 6.5L19 5"/>'}
@@ -486,6 +486,9 @@ def fam_link(p):
 DATE_TXT = tr_date(datetime.date.fromisoformat(CONTENT_DATE)).rsplit(',', 1)[0]
 CONTACT = 'iletisim@bitkitabani.com'
 def contrib(p):
+    return (f'<p class="katki-link muted-s">{e(p["tr"])} için yöresel bir ad, kullanım ya da bir hata mı biliyorsun? '
+            f'<a href="/iletisim/?konu=kullanim&amp;bitki={p["id"]}&amp;ad={urllib.parse.quote(p["tr"])}">Bize yaz →</a></p>')
+def contrib_eski(p):
     subj = urllib.parse.quote(f'Bitki Tabanı: {p["tr"]} için yöresel kullanım')
     body = urllib.parse.quote(f'Bitki: {p["tr"]} ({short_la(p)})\nYöre (il, ilçe, köy ya da topluluk): \nBitkinin oradaki adı: \nNasıl ve ne için kullanılır: \nBunu kimden ya da nereden öğrendin: \nAdının sitede yazılmasını ister misin (evet/hayır): \n')
     return (f'<aside class="contrib" id="katki"><h2>Yöresel bir ad ya da kullanım biliyor musun?</h2><p>Annenden, köyünden ya da bir ustadan duyduğun bir adı ya da kullanımı yaz. Her not okunur; uygun bulunanlar “Okurlardan” başlığıyla, yöresiyle birlikte bu sayfaya eklenir.</p><details class="katki-ac"><summary class="cta">Not bırak</summary>'
@@ -810,6 +813,20 @@ about = '''<header class="page-head"><span class="eyebrow">Hakkında</span><h1>B
 <div class="swatch"><i style="background:var(--paper);border:1px solid var(--rule)"></i><b>Yün</b><span>Boyanmamış yünün doğal rengi; iki coğrafyada da dokumanın zemini.</span></div>
 </div></section>
 <section class="sec"><h2>Görseller</h2><p>Fotoğraflar Wikimedia Commons’tan özgür lisanslarla kullanılır. Hepsi aynı dikey kadrajda, bitkiyi tanıtan kısma yakın çekimdir; yazar ve lisans bilgisi her fotoğrafın altında yazar.</p></section>'''
+ILETISIM = '''<header class="page-head"><span class="eyebrow">İletişim</span><h1>Bize yaz</h1><p>Soru, öneri, iş birliği, basın ya da bir bitkinin yöresel adı ve kullanımı: hepsi için aşağıdaki formu kullanabilirsin. Her mesaj okunur; yanıt bekliyorsan e-posta adresini yaz.</p></header>
+<section class="sec"><form class="katki-form iletisim-form" data-bitki="">
+<label>Konu <select name="tur"><option value="iletisim">Genel soru ya da öneri</option><option value="isbirligi">İş birliği</option><option value="basin">Basın</option><option value="kullanim">Yöresel kullanım</option><option value="ad">Yöresel ad</option><option value="duzeltme">Hata ya da düzeltme</option></select></label>
+<label>İlgili bitki (varsa) <input name="bitki_ad" maxlength="60" placeholder="Örn. papatya"></label>
+<label>Mesajın <textarea name="metin" rows="6" maxlength="2000" required></textarea></label>
+<label class="yore-alan">Yöre (il, ilçe ya da topluluk) <input name="yore" maxlength="80"></label>
+<label class="yore-alan">Bunu kimden ya da nereden öğrendin? <input name="kaynak" maxlength="200" placeholder="Örn. anneannem, bir kitap, bir makale"></label>
+<label>Adın <input name="ad" maxlength="60"></label>
+<label>E-posta adresin (yanıt için) <input name="eposta" type="email" maxlength="120"></label>
+<input name="hp" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+<button type="submit" class="cta">Gönder</button> <span class="katki-durum muted-s" role="status"></span></form>
+<p class="muted-s">Yöresel bilgiler kaynağıyla birlikte değerlendirilir; yazılı bir kaynakla doğrulanamayan bilgi sitede yayımlanmaz. E-posta adresin yalnızca sana yanıt vermek için kullanılır.</p>
+<p class="muted-s">E-postayla da yazabilirsin: <a href="mailto:iletisim@bitkitabani.com">iletisim@bitkitabani.com</a></p></section>'''
+write('/iletisim/', page('İletişim | Bitki Tabanı', 'Bitki Tabanı ile iletişime geç: soru, öneri, iş birliği, basın ya da yöresel bir bitki adı ve kullanımı.', '/iletisim/', ILETISIM, 'about', '<script src="/assets/katki.js" defer></script>', narrow=True))
 write('/hakkinda/', page('Hakkında | Bitki Tabanı', 'Bitki Tabanı’nın amacı, kayıtların nasıl hazırlandığı ve kaynak yaklaşımı.', '/hakkinda/', about, 'about', narrow=True))
 
 

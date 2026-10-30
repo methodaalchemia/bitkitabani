@@ -533,7 +533,7 @@ async function bultenCron(env) {
 }
 
 // ---------- Okur katkıları: site formu ve Threads 'yörende ne denir?' yanıtları; site sahibi onaylar ----------
-const KATKI_TUR = { ad: 'Yöresel ad', kullanim: 'Yöresel kullanım', duzeltme: 'Düzeltme' };
+const KATKI_TUR = { ad: 'Yöresel ad', kullanim: 'Yöresel kullanım', duzeltme: 'Düzeltme', iletisim: 'İletişim', isbirligi: 'İş birliği', basin: 'Basın' };
 async function katkiEkle(env, k) {
   const L = (await call(env, 'katki:list', 'get')) || [];
   if (k.ext && L.some(x => x.ext === k.ext)) return false;
@@ -608,15 +608,15 @@ async function katkiApi(req, env, url) {
   if (url.pathname === '/api/katki' && req.method === 'POST') {
     const b = await req.json().catch(() => ({}));
     if (b.hp) return json({ ok: true });   // bot tuzağı
-    const bitki = String(b.bitki || '').replace(/[^a-z0-9]/g, '').slice(0, 40), tur = KATKI_TUR[b.tur] ? b.tur : 'kullanim';
-    const metin = String(b.metin || '').trim().slice(0, 600);
-    if (!bitki || metin.length < 3) return json({ error: 'Lütfen kısa da olsa bir not yazın.' }, 400);
+    const bitki = String(b.bitki || '').replace(/[^a-z0-9]/g, '').slice(0, 40) || 'genel', tur = KATKI_TUR[b.tur] ? b.tur : 'kullanim';
+    const metin = String(b.metin || '').trim().slice(0, 2000);
+    if (metin.length < 3) return json({ error: 'Lütfen kısa da olsa bir not yazın.' }, 400);
     const ip = req.headers.get('cf-connecting-ip') || 'x', key = trDay() + ':' + ip;
     const RL = (await call(env, 'katki:rl', 'get')) || {};
     for (const k of Object.keys(RL)) if (!k.startsWith(trDay())) delete RL[k];
     if ((RL[key] = (RL[key] || 0) + 1) > 8) return json({ error: 'Bugün için yeterince not gönderdiniz, teşekkürler.' }, 429);
     await call(env, 'katki:rl', 'put', RL);
-    await katkiEkle(env, { src: 'form', bitki, tur, metin, yore: String(b.yore || '').slice(0, 80), ad: String(b.ad || '').slice(0, 60), kaynak: String(b.kaynak || '').slice(0, 200) });
+    await katkiEkle(env, { src: 'form', bitki, tur, metin, yore: String(b.yore || '').slice(0, 80), ad: String(b.ad || '').slice(0, 60), kaynak: String(b.kaynak || '').slice(0, 200), bitkiAd: String(b.bitki_ad || '').slice(0, 60), eposta: String(b.eposta || '').trim().slice(0, 120) });
     return json({ ok: true });
   }
   if (url.pathname === '/api/katki-onayli' && req.method === 'GET') {   // derleme bunu okur

@@ -1,7 +1,7 @@
 // Site sahibinin katkı onay sayfası. Yalnızca yönetici oturumunda veri döner.
 (() => {
   const box = document.getElementById('kListe'), only = document.getElementById('kSadece');
-  const TUR = { ad: 'Yöresel ad', kullanim: 'Yöresel kullanım', duzeltme: 'Düzeltme' };
+  const TUR = { ad: 'Yöresel ad', kullanim: 'Yöresel kullanım', duzeltme: 'Düzeltme', iletisim: 'İletişim', isbirligi: 'İş birliği', basin: 'Basın' };
   const esc = s => String(s || '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   let L = [];
   async function karar(id, k, extra = {}) {
@@ -13,6 +13,7 @@
     if (!rows.length) { box.innerHTML = '<p>Bekleyen katkı yok.</p>'; return; }
     box.innerHTML = rows.map(x => `<section class="sec kk" data-id="${x.id}"><p class="muted-s">${esc(x.at.slice(0, 10))} · ${x.src === 'threads' ? 'Threads' : 'Site formu'} · ${TUR[x.tur] || ''} · <b>${esc(x.durum)}</b></p>
       <p>Bitki: <input class="kb" value="${esc(x.bitki || '')}" size="14"> ${x.bitki ? `<a href="/${esc(x.bitki)}/">sayfa</a>` : ''}</p>
+      ${x.eposta || x.bitkiAd ? `<p>${x.bitkiAd ? 'Bitki (yazılan): ' + esc(x.bitkiAd) + ' · ' : ''}${x.eposta ? 'Yanıt: <a href="mailto:' + esc(x.eposta) + '">' + esc(x.eposta) + '</a>' : ''}</p>` : ''}
       <textarea class="km" rows="3" style="width:100%">${esc(x.metin)}</textarea>
       <p class="muted-s">Yöre: ${esc(x.yore) || '-'} · Kaynak: ${esc(x.kaynak) || '-'} · Ad: ${esc(x.ad) || '-'}</p>
       <p><button data-k="onay">Onayla</button> <button data-k="red">Reddet</button></p></section>`).join('');
