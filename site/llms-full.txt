@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 129 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 130 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -4054,3 +4054,36 @@ Karıştırma riski: Küçük, kırmızı, uzunca meyveleri bazı zehirli yabani
 
 ### İlginç bilgi
 Goji; domates, patlıcan, biber ve tütünle aynı ailedendir (patlıcangiller).
+
+## Reishi mantarı (Ganoderma lucidum)
+
+URL: https://bitkitabani.com/reishi/
+Familya: Ganodermataceae · Bölge: Asya ve Sibirya · Kullanılan kısım: Mantarın şapkası (meyve gövdesi) ve sporları
+Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
+
+### Geleneksel kullanım
+- Çin: Lingzhi adıyla iki bin yıldır “ölümsüzlük mantarı” sayılır; imparatorluk sanatında ve tapınaklarda uzun ömrün simgesidir. Taoist metinlerde ermişlerin yiyeceği olarak anılır.
+- Japonya ve Kore: Japonya’da reishi, Kore’de yeongji adıyla çayı ve tozu yorgunluk ve bağışıklık için kullanılır.
+
+### Hazırlama
+Sert ve odunsu olduğu için dilimlenip bir saat ya da daha uzun kaynatılır; bugün çoğunlukla toz ya da ekstre kapsül olarak kullanılır.
+
+### Bilim ne diyor
+Cochrane derlemesi (2016), reishinin tek başına kanser tedavisi olarak kullanılmasını destekleyen kanıt bulmamıştır; kemoterapi ya da radyoterapiyle birlikte tümör yanıtını ve bağışıklık göstergelerini biraz iyileştirebileceğine dair düşük kaliteli veriler vardır. Kolesterol, kan şekeri ve tansiyon üzerine yapılan küçük çalışmalarda belirgin bir etki görülmemiştir.
+
+### Güvenlik
+Ağız kuruluğu, mide rahatsızlığı ve döküntü yapabilir. Toz ürünlerle ilişkili ciddi karaciğer hasarı vakaları bildirilmiştir. Kan sulandırıcı kullananlar, kanama bozukluğu olanlar ve ameliyat olacaklar kullanmamalıdır. Kanser tedavisi görenler hekimine danışmadan kullanmamalıdır.
+
+### İlaç etkileşimleri
+- Kan sulandırıcılar ve antiagreganlar: Pıhtılaşmayı yavaşlatabilir; kanama riski artabilir.
+- Tansiyon ve şeker ilaçları: Tansiyonu ve kan şekerini düşürebilir; etkiler toplanabilir.
+- Bağışıklık baskılayıcılar: Bağışıklığı uyarıcı etkisi ilacın etkisini azaltabilir.
+
+### Doğada
+Nerede yetişir: Asya’nın ılıman ormanlarında, meşe gibi yapraklı ağaçların dibinde; Türkiye’de de akraba Ganoderma türleri yetişir.
+Toplama mevsimi: Yabanda yaz ve sonbaharda, ölü ya da zayıf yapraklı ağaç gövdelerinde çıkar.
+Yöresel adlar: reishi, lingzhi
+Karıştırma riski: Avrupa’da yetişen Ganoderma lucidum ile Asya’daki lingzhi (G. lingzhi) genetik olarak farklı türlerdir; piyasadaki ürünlerin etiketi her zaman doğru değildir.
+
+### İlginç bilgi
+Doğada nadir bulunduğu için eskiden yalnızca saraylara ulaşabilirdi; bugün satılan reishinin neredeyse tamamı odun talaşında ya da kütüklerde yetiştirilir.
