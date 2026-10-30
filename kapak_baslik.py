@@ -45,4 +45,13 @@ KB = {
  'kusburnu-turkiye-kadar-yoresel-kayitli': ('Kuşburnunun 60 adı', 'kusburnu'),
  'anadolu-yara-otu-adi-tek-bitkiye': ('Hangi yara otu?', 'kantaron'),
  'turkiye-deki-halk-kayitlarinda-bitkilerin-cok': ('Halkın en çok derdi ne?', 'isirgan'),
+ 'dis-kurdu-inanci-kuzeydogu-anadolu-dis': ('Dişten düşen kurtlar', 'banotu'),
+ 'iki-ayri-agac-tek-karadeniz-taflan': ('Biri defne, biri zehir: iki taflan', 'taflan'),
+ 'tugla-yagi-sakarya-nin-koyunde-romatizma': ('Tuğladan yağ çıkar mı?', 'zeytin'),
+ 'temre-rituel-kuzeybati-anadolu-mantar-kaynakli': ('Temreye cumartesi duası', None),
+ 'kara-hekim-toroslar-cam-ardic-odunundan': ('Toroslar’ın kara hekimi', 'ardic'),
+ 'mekke-tasi-aydin-yilancik-erizipel-ocagi': ('Unda büyüyen Mekke taşı', None),
+ 'yasindaki-kirikci-mugla-arastirmacilarin-gorustugu-yasindaki': ('95 yaşındaki kırıkçı', None),
+ 'agri-kadin-sifaci-adini-koyamadigi-hastaliklar': ('Adı konmayan derde kazan kazan ot', 'isirgan'),
+ 'kastamonu-halk-ilaclarini-bilenlere-bilgiyi-nereden': ('Şifayı kimden öğrendik?', 'kantaron'),
 }

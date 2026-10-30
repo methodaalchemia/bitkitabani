@@ -34,6 +34,12 @@ LH = 'Lokman Hekim Dergisi'
 EGE = ('Bintuğ Öztürk ve ark., “Türkiye’nin Etnobotanik Veritabanı”, Ege Üniversitesi BAP sonuç raporu, 2020',
        'https://acikerisim.ege.edu.tr/server/api/core/bitstreams/c2e0e3a1-ac5b-4664-bc34-33187274efea/content')
 
+TM1 = ('Ekrem Sezik, Mamoru Tabata, Erdem Yeşilada ve ark., “Traditional medicine in Turkey I. Folk medicine in Northeast Anatolia”, Journal of Ethnopharmacology 35, 1991', 'https://doi.org/10.1016/0378-8741(91)90072-L')
+TM2 = ('Ekrem Sezik, Mahmut Zor, Erdem Yeşilada, “Traditional Medicine in Turkey II. Folk Medicine in Kastamonu”, International Journal of Pharmacognosy 30(3), 1992', 'https://doi.org/10.3109/13880209209054005')
+TM5 = ('Erdem Yeşilada, Gisho Honda, Ekrem Sezik ve ark., “Traditional medicine in Turkey V. Folk medicine in the inner Taurus Mountains”, Journal of Ethnopharmacology 46, 1995', 'https://doi.org/10.1016/0378-8741(95)01241-5')
+TM6 = ('Gisho Honda, Erdem Yeşilada, Mamoru Tabata, Ekrem Sezik ve ark., “Traditional medicine in Turkey VI. Folk medicine in West Anatolia”, Journal of Ethnopharmacology 53, 1996', 'https://doi.org/10.1016/S0378-8741(96)01426-2')
+TM8 = ('Ekrem Sezik, Erdem Yeşilada, Mamoru Tabata ve ark., “Traditional medicine in Turkey VIII. Folk medicine in East Anatolia”, Economic Botany 51(3), 1997', 'https://doi.org/10.1007/BF02862090')
+TM9 = ('Erdem Yeşilada, Ekrem Sezik, Gisho Honda ve ark., “Traditional medicine in Turkey IX: Folk medicine in north-west Anatolia”, Journal of Ethnopharmacology 64, 1999', 'https://doi.org/10.1016/S0378-8741(98)00133-0')
 HALK = [
  dict(kaynak=DOGAN, kisa='Doğan, Lokman Hekim Dergisi, 2023', link='toplama-takvimi/',
   post='Ağrı’nın Diyadin ve Doğubayazıt yörelerinde şifalı otlar nisan ve mayısta, filizlenince toplanmaya başlanıyor. Bilgi verenlere göre otların çoğu ağustosta tohuma geçince gücünü yitiriyor; bu yüzden toplama temmuz sonunda bitiyor. Yağmurlu, çok güneşli ve rüzgârlı günlerde ot toplanmıyor.'),
@@ -152,6 +158,24 @@ dict(kaynak=EGE, kisa='Öztürk ve ark., Türkiye’nin Etnobotanik Veritabanı,
   post='Anadolu’da “yara otu” adı tek bir bitkiye ait değil: Kastamonu’da sarı kantarona, Ankara’da boz otuna, Balıkesir, Bolu ve Giresun’da sinirotuna, Bilecik’te ise Prunella türlerine bu ad veriliyor. Yöresel ad tek başına bitkiyi tanımaya yetmez; Latince adı bu yüzden önemli.'),
 dict(kaynak=EGE, kisa='Öztürk ve ark., Türkiye’nin Etnobotanik Veritabanı, 2020', bitki='isirgan',
   post='Türkiye’deki halk kayıtlarında bitkilerin en çok başvurulduğu dert hemoroid (367 farklı bitki), ardından mide ağrısı geliyor. Ciltte ise açık ara ilk sırada yara iyileştirme var: 467 bitki, 1.093 kayıt. Bu sayılar etkinliği değil, derdin ne kadar yaygın olduğunu anlatıyor.'),
+dict(kaynak=TM1, kisa='Sezik ve ark., J Ethnopharmacol, 1991', bitki='banotu', yore='Kuzeydoğu ve Doğu Anadolu',
+  post='Diş kurdu inancı: Kuzeydoğu Anadolu’da diş ağrıyan kişi başını bir battaniyenin altına sokuyor, közün üzerine banotu tohumu serpiliyor ve dumanı ağızdan çekiliyor. Anlatılana göre dişi çürüten küçük kurtlar alttaki su kabına düşüyor. Araştırmacılar diş kurdu inancının kökeninin Anadolu’ya dayandığını not ediyor. Dikkat: banotu zehirlidir, dumanı da tehlikelidir.'),
+dict(kaynak=TM9, kisa='Yeşilada ve ark., J Ethnopharmacol, 1999', bitki='defne', yore='Kuzeybatı Anadolu',
+  post='İki ayrı ağaç, tek ad: Karadeniz’de “taflan” denince çoğunlukla karayemiş (Laurocerasus officinalis) anlaşılıyor. Doğu Karadeniz’den göçenler bu ağacı yeni köylerine de dikmiş. Ama bazı köylerde defneye de “taflan” deniyor ve başka işlerde kullanılıyor. Araştırmacılar uyarıyor: karayemişin yaprağı ve çekirdeği yüksek miktarda zehirlidir; adı aynı diye biri ötekinin yerine kullanılmamalı.'),
+dict(kaynak=TM9, kisa='Yeşilada ve ark., J Ethnopharmacol, 1999', bitki='zeytin', yore='Sakarya',
+  post='Tuğla yağı: Sakarya’nın bir köyünde romatizma ağrısı için iki kuru tuğla dövülüp toz ediliyor, saf zeytinyağıyla tavada kavruluyor, üzerine su ekleniyor. Suyun yüzüne çıkan yağ kaşıkla toplanıyor ve şişede saklanıyor. Kayıtta ürünün adı da bu: tuğla yağı.'),
+dict(kaynak=TM9, kisa='Yeşilada ve ark., J Ethnopharmacol, 1999', yore='Kuzeybatı Anadolu',
+  post='Temre için ritüel: Kuzeybatı Anadolu’da mantar kaynaklı deri hastalığı “temre” için sayısız ritüel var. Bir köyde kalem gibi sivriltilmiş bir funda dalıyla lekenin üstüne dua yazılıyor; başka köylerde lekenin sınırı kızgın iğneyle, kaya tuzuyla ya da arpa sapıyla çiziliyor. Bazı yerlerde bu iş yalnızca cumartesi yapılıyor.'),
+dict(kaynak=TM5, kisa='Yeşilada ve ark., J Ethnopharmacol, 1995', bitki='ardic', yore='İç Toroslar',
+  post='“Kara hekim”: İç Toroslar’da çam ve ardıç odunundan geleneksel yolla çıkarılan katrana, koyu rengi ve iyileştirdiğine inanılan gücü yüzünden kara hekim deniyor. Hasat zamanı güneş çarpana da şöyle bir şey yapılıyor: kişinin bedenine çam katranı ya da sarımsaklı yoğurt sürülüyor, üstü taze yapraklarla örtülüp battaniyeye sarılıyor ve iki üç saat terletiliyor.'),
+dict(kaynak=TM6, kisa='Honda ve ark., J Ethnopharmacol, 1996', yore='Aydın',
+  post='Mekke taşı: Aydın’da yılancık (erizipel) ocağı olan biri, dedesinin yüz yıl önce Mekke’den getirdiği bir “taşla” tanı koyuyordu. Taş yaraya yapışırsa hastalık yılancıktı. Taşı mısır ve buğday unu karışımıyla bir kutuda sakladığını, orada büyüdüğünü söylüyordu. Araştırmacılar taşın büyük olasılıkla bir yumuşakça kabuğu olduğunu düşünüyor; ocak sırrı olduğu için incelemeye vermedi.'),
+dict(kaynak=TM6, kisa='Honda ve ark., J Ethnopharmacol, 1996', yore='Muğla',
+  post='95 yaşındaki kırıkçı: Muğla’da araştırmacıların görüştüğü 95 yaşındaki bir kırıkçı, yerine oturttuğu kemiği burçak tohumu, yumurta sarısı ve rendelenmiş sabundan yaptığı bir karışımla sabitliyordu. Batı Anadolu’da kırık sarmak ya da yılancık tedavisi gibi tek bir derde bakan bu ustalığa da “ocak” deniyor ve çoğunlukla anne babadan geçiyor.'),
+dict(kaynak=TM8, kisa='Sezik ve ark., Economic Botany, 1997', bitki='isirgan', yore='Ağrı',
+  post='Ağrı’da bir kadın şifacı, adını koyamadığı iç hastalıklar için büyük bir kazanda yerel adlarıyla pılınk (dağ nanesi), belhavz (sinir otu), gezgezk (ısırgan) ve gelenkotu kaynatıyor, hasta birkaç gün bu suyla yıkanıyordu. Yanında içmesi için de aynı otlardan ve ebegümecinden bir çay veriyordu. Bilgiyi annesinden almıştı.'),
+dict(kaynak=TM2, kisa='Sezik, Zor, Yeşilada, Int J Pharmacogn, 1992', bitki='kantaron', yore='Kastamonu',
+  post='Kastamonu’da halk ilaçlarını bilenlere bu bilgiyi nereden öğrendiklerini sordular: yüzde 78’i anne babasından ve köyün yaşlılarından, yalnızca yüzde 8,5’i sağlık görevlilerinden. Kayıtlardan biri sarı kantaron: taze çiçekleri dövülüp açık yaraya konuyor, ya da çiçekli otun çayı mide ağrısında günde iki bardak içiliyor.'),
 ]
 
 def site_kul():

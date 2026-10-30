@@ -50,4 +50,10 @@ TARIF = {
        adim=['Yaprak ezilir.', 'Ağrıyan, iltihaplı dişin üzerine konur.', 'Sabaha kadar bekletilir.'],
        uyari='İltihaplı diş yayılabilir; yüzde şişlik ya da ateş varsa beklemeden diş hekimine git.'),
  ],
+ 'tugla-yagi-sakarya-nin-koyunde-romatizma': [
+  dict(ad='Tuğla yağı (kayıttaki hazırlanış)',
+       malzeme=['İki adet tamamen kuru toprak tuğla', 'Saf zeytinyağı', 'Su'],
+       adim=['Tuğlalar dövülüp toz edilir.', 'Toz, zeytinyağıyla tavada kavrulur.', 'Üzerine bir miktar su eklenir.', 'Suyun yüzüne çıkan yağ kaşıkla toplanır ve şişede saklanır; ağrıyan yere sürülür.'],
+       uyari='Bu bir halk kaydıdır, denenmesi önerilmez. Eklem ağrısı uzun sürüyor, şişlik ya da kızarıklık varsa hekime görün.'),
+ ],
 }
