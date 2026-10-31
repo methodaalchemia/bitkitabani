@@ -524,7 +524,7 @@ for i, p in enumerate(P):
     uses = ''.join(f'<div class="use"><div class="who">{e(w)}</div><p>{e(t)}</p></div>' for w, t in p['kul'])
     relhtml = ''
     etkhtml = ''
-    derhtml = ''; faqld = None
+    derhtml = ''; faqld = None; der_fayda = der_hata = der_sss = ''
     trl = p['tr'].replace('I', 'ı').replace('İ', 'i')
     def _first(t): 
         s = t.split('. ')[0].rstrip('.'); return s + '.'
@@ -533,14 +533,16 @@ for i, p in enumerate(P):
     q_nedir = (f'{p["tr"]} nedir?', f'{p["tr"]} ({short_la(p)}), {_fam} familyasından bir bitkidir. {regs_txt} geleneklerinde en çok {_kis} kullanılır.')
     q_ne = (f'{p["tr"]} ne işe yarar?', f'Bilimsel kanıt düzeyi {KANIT[p["kanit"]]["ad"].lower()}. {_first(p["bilim"])} Geleneksel kullanımları aşağıda, yöresiyle birlikte anlatılıyor.')
     q_guv = (f'{p["tr"]} zararlı mı, kimler kullanmamalı?' if p['guv'] != 'yuksek' else f'{p["tr"]} güvenli mi?', f'Güvenlik düzeyi: {GUV[p["guv"]].lower()}. {_first(p["guvNot"])}' + (' Yasal durum: ' + YASAL_AD[YASAL[pid][0]] + '.' if pid in YASAL else '') + ' Ayrıntılar “Güvenlik” bölümünde.')
+    q_guv = (q_guv[0], q_guv[1].replace(' Ayrıntılar “Güvenlik” bölümünde.', ''))
     kisaca = [q_nedir, q_ne, q_guv]
-    kisahtml = '<div class="kisaca"><p class="toc-h"><span class="eyebrow">30 saniyede</span> ' + e(p['tr']) + ' nedir, ne işe yarar?</p>' + ''.join(f'<div class="qa"><h2 class="q">{e(q)}</h2><p>{e(a)}</p></div>' for q, a in kisaca) + '</div>'
+    _kl = ['<a href="#geleneksel-kullanim">Gelenekte nasıl kullanılıyor →</a>', f'<a href="#{"faydalari-ne-kadar-kanitli" if pid in DERIN else "bilim-ne-diyor"}">Kanıtın ayrıntısı →</a>', '<a href="#guvenlik">Güvenlik ayrıntısı →</a>']
+    kisahtml = '<div class="kisaca"><p class="toc-h"><span class="eyebrow">30 saniyede</span> ' + e(p['tr']) + ' nedir, ne işe yarar?</p>' + ''.join(f'<div class="qa"><h2 class="q">{e(q)}</h2><p>{e(a)} {_kl[i]}</p></div>' for i, (q, a) in enumerate(kisaca)) + '</div>'
     if pid in DERIN:
         dd = DERIN[pid]
         rows_ = ''.join(f'<tr><th scope="row">{e(i)}</th><td><span class="kv {k}">{KAN_AD[k]}</span></td><td>{e(n)}</td></tr>' for i, k, n in dd['iddia'])
-        derhtml += f'<section class="sec"><h2>Faydaları ne kadar kanıtlı?</h2><p>{e(p["bilim"])}</p><p class="muted-s">İnternette {e(p["tr"].replace("I","ı").replace("İ","i").lower())} için sık tekrarlanan iddialar ve bilimin bugün söyledikleri.</p><div class="tablewrap"><table class="cmp etk kanit"><thead><tr><th scope="col">İddia</th><th scope="col">Kanıt</th><th scope="col">Açıklama</th></tr></thead><tbody>{rows_}</tbody></table></div></section>'
-        derhtml += '<section class="sec"><h2>Sık yapılan hatalar</h2><ul class="hatalar">' + ''.join(f'<li>{e(h)}</li>' for h in dd['hata']) + '</ul></section>'
-        derhtml += '<section class="sec"><h2>Sık sorulanlar</h2><div class="faq">' + ''.join(f'<details><summary>{e(q)}</summary><p>{e(a)}</p></details>' for q, a in dd['sss']) + '</div></section>'
+        der_fayda = f'<section class="sec"><h2>Faydaları ne kadar kanıtlı?</h2><p>{e(p["bilim"])}</p><p class="muted-s">İnternette {e(p["tr"].replace("I","ı").replace("İ","i").lower())} için sık tekrarlanan iddialar ve bilimin bugün söyledikleri.</p><div class="tablewrap"><table class="cmp etk kanit"><thead><tr><th scope="col">İddia</th><th scope="col">Kanıt</th><th scope="col">Açıklama</th></tr></thead><tbody>{rows_}</tbody></table></div></section>'
+        der_hata = '<section class="sec"><h2>Sık yapılan hatalar</h2><ul class="hatalar">' + ''.join(f'<li>{e(h)}</li>' for h in dd['hata']) + '</ul></section>'
+        der_sss = '<section class="sec"><h2>Sık sorulanlar</h2><div class="faq">' + ''.join(f'<details><summary>{e(q)}</summary><p>{e(a)}</p></details>' for q, a in dd['sss']) + '</div></section>'
         faqld = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q, a in dd['sss']]}
     if pid in ETK:
         rows_ = ''.join(f'<tr><th scope="row">{e(g)}</th><td>{e(w)}</td></tr>' for g, w in ETK[pid])
@@ -554,7 +556,8 @@ for i, p in enumerate(P):
     simhtml = '<section class="sec"><h2>Benzer bitkiler</h2><p class="muted-s">Aynı derde kullanılan ya da aynı familyadan bitkiler.</p><div class="grid sim">' + ''.join(card(q) for q in similar) + '</div></section>'
     mybridges = [(i, x) for i, x in enumerate(BR, 1) if pid in (x['a'], x.get('b'))]
     brlinks = ''.join(f'<a class="chip" href="/kopruler/{slug_of(x)}/">Karşılaştırma: {e(x["t"])}</a>' for i, x in mybridges)
-    brlinks += ''.join(f'<a class="chip" href="{u}">{e(t)}</a>' for u, t in GLINKS.get(pid, []))
+    brlinks += ''.join(f'<a class="chip" href="{u}">{e(t)}</a>' for u, t in GLINKS.get(pid, []) if not t.startswith('Tarif: '))
+    tarifler = ''.join(f'<a class="chip" href="{u}">{e(t)}</a>' for u, t in GLINKS.get(pid, []) if t.startswith('Tarif: '))
     if rel:
         relhtml = '<section class="sec"><h2>Kültür köprüsü</h2><div class="related">' + ''.join(f'<a class="chip" href="/{r}/">{"".join(dot(x) for x in byId[r]["bolge"])}{e(byId[r]["tr"])}</a>' for r in rel) + '</div></section>'
     ek = EK.get(pid, {})
@@ -575,13 +578,12 @@ for i, p in enumerate(P):
         korhtml = f'<section class="sec"><h2>Koruma durumu</h2>{"<dl class=meta>" + "".join(rows) + "</dl>" if rows else ""}<p>{e(kor["not_"])}</p>{alt}</section>'
     dogada = ''
     if ek:
-        dogada = f'''<section class="sec"><h2>Doğada</h2><dl class="meta wide">
+        dogada = f'''<section class="sec"><h2>Doğada ve tanıma</h2><dl class="meta wide">
       <div><dt>Nerede yetişir</dt><dd>{e(ek["yetisme"])}</dd></div>
       <div><dt>Toplama mevsimi</dt><dd>{e(ek["mevsim"])}</dd></div>
       <div><dt>Yöresel adlar</dt><dd>{e(ek["yoresel"])}</dd></div>
       {inat_satir(pid)}
-    </dl></section>
-  <section class="sec"><h2>Karıştırma riski</h2><div class="callout orta"><p>{e(ek["karisma"])}</p></div></section>'''
+    </dl><h3 class="alt-h">Karıştırma riski</h3><div class="callout orta"><p>{e(ek["karisma"])}</p></div></section>'''
     body = f'''
 <nav class="crumbs" aria-label="Konum"><a href="/">Ana sayfa</a><span>/</span><a href="/katalog/">Katalog</a><span>/</span><span>{e(p["tr"])}</span></nav>
 <article class="sheet">
@@ -605,23 +607,23 @@ for i, p in enumerate(P):
   {kisahtml}
   <!--TOC-->
   <section class="sec"><h2>Geleneksel kullanım</h2><div class="uses">{uses}</div>{halk_kutu(pid, p["tr"])}</section>
-  {dogada}
-  <section class="sec"><h2>Hazırlama</h2><p>{e(p["haz"])}</p></section>
-  {'' if pid in DERIN else '<section class="sec"><h2>Bilim ne diyor</h2><p>' + e(p["bilim"]) + '</p></section>'}
-  {derhtml}
+  {der_fayda if pid in DERIN else '<section class="sec"><h2>Bilim ne diyor</h2><p>' + e(p["bilim"]) + '</p></section>'}
   <section class="sec"><h2>Güvenlik</h2><div class="callout {p["guv"]}"><div class="lvl">{GUV[p["guv"]]}</div><p>{e(p["guvNot"])}</p></div><div class="safelinks"><a href="{('#etk' if pid in ETK else '/rehber/ilac-etkilesimi/?q=' + urllib.parse.quote(p["tr"]))}">{ico('etk','ico-s')}<span>{'Bu bitkinin ilaç etkileşimleri' if pid in ETK else 'İlaç kullanıyorsan: etkileşim aracı'}</span></a><a href="/rehber/hamilelik-emzirme/">{ico('gebe','ico-s')}<span>Hamilelik ve emzirme</span></a></div>{(f'<p class="titck">Türkiye İlaç ve Tıbbi Cihaz Kurumu (TİTCK) bu bitki için resmî bir monograf yayımladı: kullanım alanları, dozu, kimlerin kullanmaması gerektiği ve etkileşimleri. <a href="{TITCK_B + TITCK[pid][1]}" target="_blank" rel="noopener">TİTCK monografı ({e(TITCK[pid][0])}, PDF) →</a></p>' if pid in TITCK else '')}</section>
   {etkhtml}
   {yas}
+  <section class="sec"><h2>Nasıl hazırlanır</h2><p>{e(p["haz"])}</p>{('<div class="brlinks" style="margin-top:10px">' + tarifler + '</div>') if tarifler else ''}</section>
+  {dogada}
   {korhtml}
+  {der_hata}
+  {der_sss}
   {relhtml}
-  {('<section class="sec"><h2>Devamını oku</h2><div class="brlinks">' + brlinks + '</div></section>') if brlinks else ''}
-  {abone('bitki:' + pid)}
-  {simhtml}
-  {contrib(p)}
   <section class="sec"><h2>Kaynaklar</h2>{refs(p)}</section>
   <aside class="disclaimer" role="note"><b>Tıbbi tavsiye değildir.</b> Bu sayfa geleneksel kullanımları kültürel bir kayıt olarak anlatır ve bilimsel bilgiyi özetler; teşhis ya da tedavi önerisi değildir. {e(p["tr"])} ya da başka bir bitkiyi kullanmadan önce, özellikle ilaç kullanıyorsan, hamileysen, emziriyorsan ya da bir hastalığın varsa hekimine veya eczacına danış. Zehirlenme şüphesinde Ulusal Zehir Danışma Merkezi’ni (UZEM) <b>114</b> numaradan ara.</aside>
   <p class="updated">Hazırlayan: <a href="/yontem/#hazirlayan">Edanaz Tınmazlar</a> · {('Gözden geçiren: <a href="/yontem/#gozden">' + e(GZ_KISI['ad']) + '</a> (<time datetime="' + GZ[pid] + '">' + tr_date(datetime.date.fromisoformat(GZ[pid])).rsplit(',', 1)[0] + '</time>) · ') if GZ_KISI and pid in GZ else ''}{('Eklendi: <time datetime="' + YENI[pid].isoformat() + '">' + tr_date(YENI[pid]).rsplit(',', 1)[0] + '</time> · ') if pid in YENI else ''}Son gözden geçirme: <time datetime="{CONTENT_DATE}">{DATE_TXT}</time></p>
-  <p class="igcta">Her gün yeni bir bitki: <a href="https://www.instagram.com/bitkitabani/" rel="noopener">Instagram’da @bitkitabani</a></p>
+  {contrib(p)}
+  {abone('bitki:' + pid)}
+  {('<section class="sec"><h2>Devamını oku</h2><div class="brlinks">' + brlinks + '</div></section>') if brlinks else ''}
+  {simhtml}
   <div class="sheet-foot">
     <div class="learnbox"><button type="button" class="learn" id="learnBtn" data-id="{pid}" aria-pressed="false">Öğrendim olarak işaretle</button><span class="muted-s">Bu tarayıcıda saklanır. <a href="/hesap/">Google ile giriş yaparsan</a> bütün cihazlarında görünür.</span><span class="muted-s streak" id="streakNote"></span></div>
     <div class="pager"><a href="/{prev["id"]}/">← {e(prev["tr"])}</a><a href="/{nxt["id"]}/">{e(nxt["tr"])} →</a></div>
