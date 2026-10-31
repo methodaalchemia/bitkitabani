@@ -1806,12 +1806,12 @@ try:
 except Exception:
     _qr = None
 if _qr:
-    def _kart(p):
+    def _kart(p, k=''):
         im = f'<img src="/img/{p["id"]}-500.jpg" alt="">' if p['id'] in IMG else ''
         bil = p['ilginc'].split('. ')[0].rstrip('.') + '.'
         return (f'<article class="kart"><div class="kart-ust">{im}<div><h2>{e(p["tr"])}</h2><p class="la">{e(short_la(p))}</p>'
                 f'<p class="guv {p["guv"]}">{GUV[p["guv"]]}</p></div></div><p>{e(bil)}</p>'
-                f'<div class="kart-alt">{_qr(BASE + "/api/q/" + p["id"])}<p>Okut: geleneksel kullanımı, bilimsel kanıtı, güvenliği ve kaynakları.<br><b>bitkitabani.com/{p["id"]}/</b></p></div></article>')
+                f'<div class="kart-alt">{_qr(BASE + "/api/q/" + p["id"] + (("?k=" + k) if k else ""))}<p>Okut: geleneksel kullanımı, bilimsel kanıtı, güvenliği ve kaynakları.<br><b>bitkitabani.com/{p["id"]}/</b></p></div></article>')
     _KCSS = ('<style>.kartlar{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}.kart{border:1px solid #cfc4ae;border-radius:10px;padding:14px;background:#fbf7ee;color:#1c2140;break-inside:avoid;page-break-inside:avoid}'
              '.kart-ust{display:flex;gap:12px;align-items:center}.kart-ust img{width:96px;height:96px;object-fit:cover;border-radius:8px}.kart h2{margin:0;font-size:1.3rem}.kart .la{margin:2px 0;font-style:italic}.kart .guv{margin:0;font-size:.8rem}'
              '.kart-alt{display:flex;gap:12px;align-items:center;font-size:.8rem}.kart-alt svg{width:96px;height:96px;flex:none}'
@@ -1819,6 +1819,15 @@ if _qr:
     _ks = ''.join(_kart(p) for p in P if p['guv'] != 'yuksek')
     write('/kartlar/index.html', page('Yazdırılabilir bitki kartları (QR kodlu) | Bitki Tabanı', 'Aktarlar, pazarlar ve atölyeler için QR kodlu, yazdırılabilir şifalı bitki kartları.', '/kartlar/',
           _KCSS + '<header class="page-head"><h1>Yazdırılabilir bitki kartları</h1><p>Aktar, pazar ve atölyeler için: her kartta bitkinin adı, güvenlik düzeyi, kısa bir bilgi ve okutunca sayfasına götüren bir QR kod var. Yazdır de; A4 sayfaya dört kart sığar. Yüksek riskli bitkiler bu listede yok.</p><p class="noprint"><button type="button" onclick="print()">Yazdır</button></p></header><div class="kartlar">' + _ks + '</div>', 'kat'))
+    # Aktar başına kart sayfası: QR okutmaları aktar koduyla sayılır (aktar.py). Arama motorlarına kapalı.
+    try:
+        from aktar import AKTAR
+    except Exception:
+        AKTAR = {}
+    for _k, _ad in AKTAR.items():
+        write(f'/kartlar/{_k}/index.html', page(f'{_ad} için bitki kartları | Bitki Tabanı', 'QR kodlu, yazdırılabilir şifalı bitki kartları.', f'/kartlar/{_k}/',
+              _KCSS + f'<header class="page-head"><h1>{e(_ad)} için bitki kartları</h1><p>Rafınıza ya da tezgâhınıza koyabileceğiniz ücretsiz kartlar: her kartta bitkinin adı, güvenlik düzeyi, kısa bir bilgi ve okutunca bitkinin geleneksel kullanımını, bilimsel kanıtını ve güvenlik notunu gösteren bir QR kod var. A4 sayfaya dört kart sığar. İstediğiniz kartları yazdırabilirsiniz.</p><p class="noprint"><button type="button" onclick="print()">Yazdır</button></p></header><div class="kartlar">' + ''.join(_kart(p, _k) for p in P if p['guv'] != 'yuksek') + '</div>',
+              'kat', extra='<meta name="robots" content="noindex, nofollow">'))
 # ---------- Eczaneler için bitki–ilaç etkileşimi kartı (yalnızca Anadolu'da kullanılan bitkiler) ----------
 _ana = lambda pid: 'anadolu' in byId[pid]['bolge']
 _ekart = ''.join(f'<div class="kart-g"><h2>{e(ad)}</h2><p>{", ".join(e(byId[pid]["tr"]) for pid, _, _ in sorted(etk_by[c], key=lambda x: _trkey(byId[x[0]]["tr"])) if _ana(pid))}</p></div>' for c, ad, _ in ILAC if c != 'tum' and any(_ana(pid) for pid, _, _ in etk_by[c]))

@@ -882,8 +882,9 @@ export default {
     if (url.pathname === '/api/ara' && req.method === 'GET') return araApi(req, env, url);
     if (url.pathname.startsWith('/api/q/') && req.method === 'GET') {   // QR kart okutması: say ve bitki sayfasına yönlendir
       const id = url.pathname.slice(7).replace(/[^a-z0-9]/g, '').slice(0, 40);
-      try { const q = (await call(env, 'qr:sayac', 'get')) || {}; q[id] = (q[id] || 0) + 1; q._toplam = (q._toplam || 0) + 1; await call(env, 'qr:sayac', 'put', q); } catch (e) {}
-      return Response.redirect(url.origin + '/' + id + '/?utm_source=qr', 302);
+      const k = (url.searchParams.get('k') || '').replace(/[^a-z0-9-]/g, '').slice(0, 40);
+      try { const q = (await call(env, 'qr:sayac', 'get')) || {}; q[id] = (q[id] || 0) + 1; q._toplam = (q._toplam || 0) + 1; if (k) q['k:' + k] = (q['k:' + k] || 0) + 1; await call(env, 'qr:sayac', 'put', q); } catch (e) {}
+      return Response.redirect(url.origin + '/' + id + '/?utm_source=qr' + (k ? '&utm_campaign=' + k : ''), 302);
     }
     if (url.pathname === '/api/qr-durum' && req.method === 'GET') return json((await call(env, 'qr:sayac', 'get')) || {});
     if (url.pathname.startsWith('/api/abone/') && (req.method === 'GET' || url.pathname === '/api/abone/cik')) return aboneApi(req, env, url);
