@@ -1480,5 +1480,13 @@
   "artist": "Doge24190",
   "license": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Ginseng_flower_in_Changbai_Mountain_%28cropped%29.jpg"
- }
+ },
+ "salviadivinorum:cizim": "yok",
+ "salviadivinorum:cicek": {
+  "file": "Salvia divinorum flower 2.jpg",
+  "artist": "Alexander Abair",
+  "license": "CC BY 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Salvia_divinorum_flower_2.jpg"
+ },
+ "salviadivinorum:kuru": "yok"
 }
