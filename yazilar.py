@@ -3,6 +3,49 @@
 
 YAZILAR = [
     dict(
+        slug='ogreten-bitkiler-dieta-ayahuasca-pastora',
+        tarih='2026-11-01',
+        baslik='Öğreten bitkiler: Amazon’da dieta ve Mazatek dağlarında Pastora’nın yaprağı',
+        aciklama='Peru Amazonu’nda şifacıların “annesi olan bitkiler”le girdiği dieta, mapacho tütününün rüyada görünen annesi, ayahuasca turizminde ritüelin dili ve Meksika’da Salvia divinorum: kaynaklarıyla.',
+        giris='Bazı topluluklarda bitki yalnızca ilaç değildir; bir öğretmendir. Peru Amazonu’nda şifacılar belirli bitkilerin bir “annesi” olduğuna, bu annenin rüyada ve görülerde gelip öğrettiğine inanır. Meksika’nın Mazatek dağlarında ise kutsal bir yaprak, Meryem Ana’yı çağrıştıran bir adla anılır. Bu yazı, bu iki dünyayı saha çalışmalarından aktarıyor.',
+        bolumler=[
+            ('Annesi olan bitkiler', [
+                'Peru’nun doğu-orta Amazon bölgesinde 2003–2008 arasında yapılan bir saha çalışmasında araştırmacılar 29 şifacı, 3 çırak ve 4 bitkiciyle görüştü; bunların bir kısmı Shipibo-Konibo, Ashaninka ve Matsiguenga halklarından, bir kısmı melez (mestizo) topluluklardandı. Şifacılığa hazırlıkta kullanılan 26 familyadan 55 bitki türü kaydedildi [1].',
+                'Yerel olarak bu bitkilere “plantas con madre”, yani annesi olan bitkiler deniyor. İnanışa göre her birinin bir ruhu, bir annesi var; çırak bu bitkileri aldığında anne ona bitkilerin kullanımını, şifanın yolunu ve kutsal bilgiyi öğretiyor [1].',
+            ]),
+            ('Dieta: ormanda yalnız, tuzsuz ve sessiz', [
+                'Bu öğrenmenin yolu “dieta” denen bir perhizden geçer. Dietanın dört temel öğesi vardır: ormanda, usta şifacı dışında kimseyle konuşmadan inzivaya çekilmek; her gün bir ya da birkaç bitki almak; tuz, şeker, yağ, domuz eti, av eti, ekşi yiyecekler, sarımsak, acı sos, alkol ve soğuk içecekleri bırakmak, kimi zaman tamamen oruç tutmak; ve cinsel perhiz [1].',
+                'Usta şifacı bitkileri belli bir sırayla verir. Önce arınma ve temizlenme bitkileri gelir, sonra duyarlılığı ve sezgiyi açan bitkiler, ardından güçlendirenler ve en son koruyan, savunan bitkiler [1]. Amazon’un başka halklarında da şifacı adayları inziva, oruç ve perhizle ruhlar dünyasına ulaşmaya çalışır [1].',
+            ]),
+            ('Tütünün annesi', [
+                'Shipibo-Konibo dilinde “rome” denen ve yörede mapacho olarak bilinen sert tütün (Nicotiana rustica), en güçlü ve en eski bitkilerden sayılır. Bir şifacıya göre mapacho bedendeki olumsuz enerjileri dengeler ve insana kendini temizleyen bir savaşçı olmayı öğretir; annesi rüyada iri yapılı, kısa saçlı, esmer ve gümüş işlemeli bir giysi içinde bir adam olarak görünür [1].',
+                'İki şifacı ise tütünün annesini ikizler olarak anlattı: bu ikizler, şifa şarkıları olan ikaroları ve hastanın üzerine duman üflemeyi öğretiyor [1].',
+            ]),
+            ('Ayahuasquero mu, curandero mu?', [
+                'Bugün Amazon’a, özellikle Peru’nun Iquitos kenti çevresine, ayahuasca törenlerine katılmak için dünyanın dört bir yanından insanlar geliyor. Bu çevrede yapılan bir etnografik çalışma, yerel halkın bir ayrıma dikkat çektiğini gösteriyor: ayahuasca törenleri yöneten biri “ayahuasquero”dur; “curandero” ise pek çok bitkiyle pek çok derdi tedavi edebilen şifacıdır. Görüşülen yerliler, tören yöneten herkesin curandero olmadığını özellikle vurguladı [2].',
+                'Aynı çalışma, turistlere yönelik törenlerde şamanların tören öncesinde ve sırasında yaptığı uzun konuşmaların deneyimi nasıl çerçevelediğini inceliyor. Bu konuşmalar tören alanını gündelik hayattan ayırıyor ve katılımcının yaşadığını nasıl anlamlandıracağını şekillendiriyor [2]. Törenlerde ayrıca kısmen Keçuva ve başka yerli dillerinde söylenen ikarolar da yer alıyor [2].',
+                'Ayahuasca’yı mümkün kılan bitki ikilisinin kimyasını ve neden ilaçlarla tehlikeli etkileşime girdiğini ayrı bir hikâyede anlattık; içeceğin etkisi, sarmaşıktaki maddelerin chacruna yaprağındaki DMT’nin sindirimde parçalanmasını önlemesine dayanıyor [4].',
+            ]),
+            ('Mazatek dağlarında Pastora’nın yaprağı', [
+                'Salvia divinorum yalnızca güney Meksika’da, Mazatek dağlarında doğal olarak yetişen, iri ve kadifemsi yapraklı bir adaçayı türüdür. Mazatekler ona kendi dillerinde “xka pastora” der; bu ad bitkiyi Meryem Ana ile ilişkilendirir [3].',
+                'Bölge dışında bitki neredeyse yalnızca psikoaktif etkisiyle bilinir; ama yörede kullanımı çok daha geniştir. Görüşülen kişiler yapraklarını eklem ağrısında, şişlik ve iltihapta, böcek sokmasında, boğaz ve baş ağrısında dıştan kullanıyor; birkaç taze yapraktan hazırlanan hafif çayı da baş ağrısı, ateş ve genel ağrı için içiyor. Hayvanları tedavi etmek için kullananlar da var [3].',
+                'Mazatekler bitkiyi evlerinin yakınında yetiştirir ama gözden saklar; çünkü o, kurallarına uyulması gereken kutsal bir varlıktır. Araştırmacı ilk gördüğü bitkinin bir kemer gibi eğilmiş olduğunu fark etmiş: bu dağlarda kemer, bir şeyin kutsal olduğunu gösterir. Ölüler Günü sunaklarının çevresine, düğün ve vaftiz evlerinin girişine de kemerler kurulur [3].',
+                'Çalışma, ilaç araştırmalarının bitkiyi yalnızca etken maddesine indirgemesini “soyma”, Mazateklerin onu dualarla, kurallarla ve ilişkilerle sarmasını ise “giydirme” olarak adlandırıyor; bu farkın, bitkiyle bağı olan yerli halklar için etik ve siyasi sonuçları olduğunu vurguluyor [3].',
+            ]),
+            ('Bir not', [
+                'Bu yazı saha çalışmalarının aktardıklarını anlatır; bir deneyim ya da kullanım önerisi değildir. Ayahuasca ve Salvia divinorum güçlü etkileri olan bitkilerdir, pek çok ülkede yasal düzenlemeye tabidir ve ilaçlarla ciddi etkileşimlere girebilir.',
+            ]),
+        ],
+        kaynaklar=[
+            ('Ximena Jauregui ve ark., “Plantas con madre: Plants that teach and guide in the shamanic initiation process in the East-Central Peruvian Amazon”, Journal of Ethnopharmacology 134, 2011', 'https://doi.org/10.1016/j.jep.2011.01.042'),
+            ('Evgenia Fotiou, “The Importance of Ritual Discourse in Framing Ayahuasca Experiences in the Context of Shamanic Tourism”, Anthropology of Consciousness 31(2), 2020', 'https://doi.org/10.1111/anoc.12117'),
+            ('Paja Faudree, “Making Medicine with Salvia divinorum: Competing Approaches and Their Implications”, Medical Anthropology, 2020', 'https://doi.org/10.1080/01459740.2020.1814772'),
+            ('Dennis J. McKenna, G.H.N. Towers, F. Abbott, “Monoamine oxidase inhibitors in South American hallucinogenic plants: tryptamine and β-carboline constituents of ayahuasca”, Journal of Ethnopharmacology 10, 1984', 'https://doi.org/10.1016/0378-8741(84)90003-5'),
+        ],
+        bitkiler=['ayahuasca', 'chacruna', 'mapacho', 'toe'],
+        semboller=['goru-ruhlar'],
+    ),
+    dict(
         slug='kutsal-agaclar-kayin-umay-hayat-agaci',
         tarih='2026-11-01',
         baslik='Kutsal ağaçlar: kayın, Umay ve hayat ağacı',
