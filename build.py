@@ -1,6 +1,7 @@
 import json, os, shutil, html, re, urllib.parse, datetime
 HERE = os.path.dirname(os.path.abspath(__file__))
 from refs import WIKI, POWO, NCCIH, EMA, OTHER, FILES, BAYTOP
+from baytop_kar import KAR as BKAR
 from extra import EK, KORUMA, YASAL, YASAL_AD, BR_GEO, ALT
 from etkilesim import ETK
 from derin import D as DERIN
@@ -435,7 +436,7 @@ def refs(p):
     for label, url in OTHER.get(pid, []):
         kind = 'Resmî kaynak' if ('fda.gov' in url or 'unodc.org' in url or 'nobelprize.org' in url) else 'Araştırma'
         items.append((kind, label, url))
-    if 'anadolu' in p['bolge'] and any('Anadolu' in w for w, _ in p['kul']):
+    if pid in BKAR or ('anadolu' in p['bolge'] and any('Anadolu' in w for w, _ in p['kul'])):
         items.append(('Kitap', BAYTOP, ''))
     name = POWO.get(pid, short_la(p))
     if name:
@@ -583,7 +584,7 @@ for i, p in enumerate(P):
       <div><dt>Toplama mevsimi</dt><dd>{e(ek["mevsim"])}</dd></div>
       <div><dt>Yöresel adlar</dt><dd>{e(ek["yoresel"])}</dd></div>
       {inat_satir(pid)}
-    </dl><h3 class="alt-h">Karıştırma riski</h3><div class="callout orta"><p>{e(ek["karisma"])}</p></div></section>'''
+    </dl><h3 class="alt-h">Karıştırma riski</h3><div class="callout orta"><p>{e(ek["karisma"])}</p>{('<p>' + e(BKAR[pid]) + '</p>') if pid in BKAR else ''}</div></section>'''
     body = f'''
 <nav class="crumbs" aria-label="Konum"><a href="/">Ana sayfa</a><span>/</span><a href="/katalog/">Katalog</a><span>/</span><span>{e(p["tr"])}</span></nav>
 <article class="sheet">
