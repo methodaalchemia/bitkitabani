@@ -205,7 +205,7 @@ dict(kaynak=GUERRA, kisa='Guerra-Doce, Time and Mind, 2015', bitki='efedra', yor
 dict(kaynak=MCKENNA, kisa='McKenna ve ark., J Ethnopharmacol, 1984', bitki='chacruna', yore='Peru Amazonu',
   post='Ayahuasca iki bitkinin birleşimidir: sarmaşığın kabuğu ve chacruna yaprağı. Yapraktaki DMT ağızdan alınınca tek başına etkisizdir, çünkü sindirimdeki MAO enzimi onu parçalar. Sarmaşıktaki harmin ve harmalin bu enzimi geçici olarak durdurur. McKenna ve arkadaşları 1984’te Peru’dan topladıkları sekiz örnekte bu düzeneği inceledi. Bu yüzden ayahuasca bazı ilaçlarla tehlikeli etkileşime girer.'),
 dict(kaynak=HAOMA, kisa='Zarei Karyani ve ark., Ethnobot Res Appl, 2025', bitki='uzerlik', yore='İran, Zerdüşt geleneği',
-  post='Zerdüştlerin en kutsal töreni Yasna’da rahipler “haoma” denen bir içecek hazırlayıp içer; ölümsüzlüğün, arınmanın ve Tanrı’yla bağın simgesidir. Ama haomanın hangi bitkiden yapıldığı hâlâ tartışmalı. En güçlü aday efedra; adı Hint Vedalarındaki “soma” ile akraba. Bazı araştırmacılar ise Anadolu’da nazara karşı tütsülenen üzerliği öne sürüyor: tohumlarında harmin ve harmalin var. Cevap hâlâ belirsiz.'),
+  post='Zerdüştlerin en kutsal töreni Yasna’da rahipler “haoma” denen bir içecek hazırlayıp içer; ölümsüzlüğün, arınmanın ve Tanrı’yla bağın simgesidir. Ama haomanın hangi bitkiden yapıldığı hâlâ tartışmalı. En güçlü aday efedra; adı Hint Vedalarındaki “soma” ile akraba. Bazı araştırmacılar ise Anadolu’da nazara karşı yakılan üzerliği öne sürüyor: tohumlarında harmin ve harmalin var. Cevap hâlâ belirsiz.'),
 ]
 
 def site_kul():
