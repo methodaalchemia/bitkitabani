@@ -30,6 +30,8 @@ SAC = ('Günseli Serarslan, Ayhan Altıntaş, “Şifalı Yağlardan Modern Bili
 MERYEM = ('H. B. Ereni, Sevgi Şar, “Meryemana Dikeni Bitkisi: Farmakolojik ve Folklorik Bir Değerlendirme”, Lokman Hekim Dergisi 10(1), 2020', _L + '631944')
 TERE = ('İ. Başağaoğlu, G. Kavalalı, “Halk Hekimliğinde Tere Bitkisinin (Lepidium sativum L.) Kullanılması”, Lokman Hekim Dergisi 9(3), 2019', _L + '592053')
 LH = 'Lokman Hekim Dergisi'
+BAYTOP3 = ('Turhan Baytop, Türkiye’de Bitkiler ile Tedavi: Geçmişte ve Bugün, 3. baskı (yay. haz. Feza Baytop Günergun), Nobel Tıp Kitabevleri, Ankara, 2021', '')
+BK = 'Baytop, Türkiye’de Bitkiler ile Tedavi, 2021'
 
 EGE = ('Bintuğ Öztürk ve ark., “Türkiye’nin Etnobotanik Veritabanı”, Ege Üniversitesi BAP sonuç raporu, 2020',
        'https://acikerisim.ege.edu.tr/server/api/core/bitstreams/c2e0e3a1-ac5b-4664-bc34-33187274efea/content')
@@ -176,6 +178,16 @@ dict(kaynak=TM8, kisa='Sezik ve ark., Economic Botany, 1997', bitki='isirgan', y
   post='Ağrı’da bir kadın şifacı, adını koyamadığı iç hastalıklar için büyük bir kazanda yerel adlarıyla pılınk (dağ nanesi), belhavz (sinir otu), gezgezk (ısırgan) ve gelenkotu kaynatıyor, hasta birkaç gün bu suyla yıkanıyordu. Yanında içmesi için de aynı otlardan ve ebegümecinden bir çay veriyordu. Bilgiyi annesinden almıştı.'),
 dict(kaynak=TM2, kisa='Sezik, Zor, Yeşilada, Int J Pharmacogn, 1992', bitki='kantaron', yore='Kastamonu',
   post='Kastamonu’da halk ilaçlarını bilenlere bu bilgiyi nereden öğrendiklerini sordular: yüzde 78’i anne babasından ve köyün yaşlılarından, yalnızca yüzde 8,5’i sağlık görevlilerinden. Kayıtlardan biri sarı kantaron: taze çiçekleri dövülüp açık yaraya konuyor, ya da çiçekli otun çayı mide ağrısında günde iki bardak içiliyor.'),
+dict(kaynak=BAYTOP3, kisa=BK, bitki='sarimsak', yore='Antik çağdan Anadolu’ya',
+  post='Orta Çağ’da salgın dönemlerinde hekimler, yüzlerine taktıkları maskeyi sarımsak suyuyla ıslatırmış. Herodot da Keops piramidinde çalışan işçilere soğan, turp ve sarımsak dağıtıldığını yazar. Anadolu’daki eski bir kurt düşürme yöntemi şöyle: soyulmuş bir diş sarımsak, bir parça ekmek kabuğuna iyice sürülür; kokusunu emen ekmek yenir.'),
+dict(kaynak=BAYTOP3, kisa=BK, bitki='keciboynuzu', yore='Antik çağdan bugüne',
+  post='Kuyumcuların “kırat”ı keçiboynuzundan gelir. Bu tohumlar eskiden kuyumculukta ağırlık birimi olarak kullanılmış; kelime, tohuma verilen Arapça kırat ve eski Yunanca keration adından türemiş. Bugün elmas ve zümrüt tartılırken kullanılan bir kırat, 0,2 grama karşılık geliyor.'),
+dict(kaynak=BAYTOP3, kisa=BK, bitki='kokboya', yore='Osmanlı dönemi',
+  post='Avrupa’da “Türk kırmızısı” ya da “Edirne kırmızısı” diye bilinen boya, kökboyanın kökünden elde ediliyordu. 1700’lerde dünyanın kökboya ihtiyacının üçte ikisini tek başına Anadolu karşılıyordu; en iyisi Kırkağaç’taki Bakır çayı ovasından çıkar, “Bakır” diye anılırdı. 1869’da boyanın sentezle üretilmesiyle bu ticaret kısa sürede söndü.'),
+dict(kaynak=BAYTOP3, kisa=BK, bitki='kinin', yore='XVIII. yüzyıl Osmanlı',
+  post='18. yüzyılda Bursalı Ali Münşi, Avrupa kaynaklarından yararlanarak kınakına kabuğu üzerine Türkçe bir monografi yazdı. Sıtmaya karşı kullanılan bu kabuk, Avrupalıların 1513’ten sonra Peru’ya girmesiyle Avrupa’ya ulaşmıştı. 1884’ten sonra asıl üretim, Hollandalıların Doğu Hint Adaları’ndaki bahçelerine kaydı.'),
+dict(kaynak=BAYTOP3, kisa=BK, bitki='turunc', yore='Osmanlı İstanbul’u',
+  post='Osmanlı İstanbul’unda bazı şifalar sokakta satılırdı. Seyyar satıcıların kekik suyu öksürük ve balgama, nane suyu mide bulantısına, turunç çiçeği suyu da yatıştırıcı ve uyku getirici olarak alınırdı. Hepsi çiçekli dallardan su buharıyla damıtılarak elde ediliyordu; turunç çiçeği suyu taze çiçeklerden çıkarılırdı.'),
 ]
 
 def site_kul():

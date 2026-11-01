@@ -1585,7 +1585,7 @@ for h in HIK:
             + (f'<img class="hk-kapak" src="/img/hikaye/{h["slug"]}.jpg" alt="{e(h["baslik"])}" width="1200" height="800">' if os.path.exists(os.path.join(HERE, 'img', 'hikaye', h['slug'] + '.jpg')) else '')
             + f'{sharebar(h["baslik"], pth)}<p class="lead">{e(h["post"])}</p>'
             + _htarif(h['slug'])
-            + f'<p class="muted-s">Kaynak: <a href="{h["kaynak"][1]}" target="_blank" rel="noopener">{e(h["kaynak"][0])}</a>. Bu bir halk kaydıdır, tedavi önerisi değildir.</p>'
+            + (f'<p class="muted-s">Kaynak: <a href="{h["kaynak"][1]}" target="_blank" rel="noopener">{e(h["kaynak"][0])}</a>. Bu bir halk kaydıdır, tedavi önerisi değildir.</p>' if h["kaynak"][1] else f'<p class="muted-s">Kaynak: <cite>{e(h["kaynak"][0])}</cite>. Bu bir halk kaydıdır, tedavi önerisi değildir.</p>')
             + (f'<section class="sec"><h2>Bu hikâyenin bitkisi</h2><div class="grid sim">{card(byId[b])}</div></section>' if b else (f'<p><a class="cta" href="/{h["link"]}">Devamı →</a></p>' if h.get('link') else ''))
             + f'</article>{abone("hikaye-" + h["slug"][:30], "Her hafta bir halk hekimliği hikâyesi", "Anadolu’dan kaynaklı şifa hikâyeleri, bitkileri ve uyarılarıyla; her pazar e-postanda.", kurs=False)}'
             + f'<section class="sec"><h2>Başka hikâyeler</h2><ul class="hklist">{"".join(_hik_kart(x) for x in ilgili)}</ul><p><a href="/blog/">Bloğun tamamı →</a></p></section>')

@@ -100,7 +100,7 @@ _EK_KAYNAK = {
 }
 for _k, _v in _EK_KAYNAK.items():
     OTHER.setdefault(_k, []).extend(_v)
-BAYTOP = 'Baytop T. Türkiye’de Bitkiler ile Tedavi: Geçmişte ve Bugün. 2. baskı. İstanbul: Nobel Tıp Kitabevleri; 1999.'
+BAYTOP = 'Baytop T. Türkiye’de Bitkiler ile Tedavi: Geçmişte ve Bugün. 3. baskı (yay. haz. F. Baytop Günergun). Ankara: Nobel Tıp Kitabevleri; 2021.'
 
 # ---- 101–119 ----
 POWO.update({'zencefil': 'Zingiber officinale', 'kediotu': 'Valeriana officinalis', 'ginkgo': 'Ginkgo biloba', 'aloe': 'Aloe vera', 'tarcin': 'Cinnamomum verum', 'karanfil': 'Syzygium aromaticum', 'okaliptus': 'Eucalyptus globulus', 'ashwagandha': 'Withania somnifera', 'keciboynuzu': 'Ceratonia siliqua', 'hibiskus': 'Hibiscus sabdariffa', 'sinameki': 'Senna alexandrina', 'mersin': 'Myrtus communis', 'enginar': 'Cynara cardunculus', 'devedikeni': 'Silybum marianum', 'altinmuhur': 'Hydrastis canadensis', 'tatliot': 'Anthoxanthum nitens', 'ayiuzumu': 'Arctostaphylos uva-ursi', 'kirmizikaraagac': 'Ulmus rubra', 'kankoku': 'Sanguinaria canadensis'})

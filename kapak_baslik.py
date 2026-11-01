@@ -54,4 +54,9 @@ KB = {
  'yasindaki-kirikci-mugla-arastirmacilarin-gorustugu-yasindaki': ('95 yaşındaki kırıkçı', None),
  'agri-kadin-sifaci-adini-koyamadigi-hastaliklar': ('Adı konmayan derde kazan kazan ot', 'isirgan'),
  'kastamonu-halk-ilaclarini-bilenlere-bilgiyi-nereden': ('Şifayı kimden öğrendik?', 'kantaron'),
+ 'orta-cag-salgin-donemlerinde-hekimler-yuzlerine': ('Sarımsaklı maske', 'sarimsak'),
+ 'kuyumcularin-kirat-keciboynuzundan-gelir': ('Kırat bir tohumdur', 'keciboynuzu'),
+ 'avrupa-turk-kirmizisi-edirne-kirmizisi-diye': ('Dünyayı boyayan kök', 'kokboya'),
+ 'yuzyilda-bursali-ali-munsi-avrupa-kaynaklarindan': ('Kınakına Türkçeye nasıl geldi?', 'kinin'),
+ 'osmanli-istanbul-unda-bazi-sifalar-sokakta': ('Sokakta satılan şifa', 'turunc'),
 }
