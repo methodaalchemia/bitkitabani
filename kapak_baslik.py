@@ -65,4 +65,5 @@ KB = {
  'hakkari-nin-guneyindeki-sanidar-magarasinda-yaklasik': ('60.000 yıllık çiçekli mezar', 'efedra'),
  'ayahuasca-iki-bitkinin-birlesimidir-sarmasigin-kabugu': ('İki bitki, tek içecek', 'chacruna'),
  'zerdustlerin-kutsal-toreni-yasna-rahipler-haoma': ('Haoma hangi bitkiydi?', 'efedra'),
+ 'yuzyilda-sirvan-dan-anadolu-gelen-hekim': ('Sahte ilaç nasıl anlaşılırdı?', 'zerdecal'),
 }
