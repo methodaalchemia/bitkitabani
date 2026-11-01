@@ -3,6 +3,29 @@
 # sade bir dille yazılmıştır; kaynaklar ilgili bitki sayfalarında. Henüz yayına girmemiş bitkiler sayfada görünmez.
 
 KONULAR = [
+    dict(
+        slug='ucucu-yaglar-aromaterapi',
+        baslik='Uçucu yağlar ve aromaterapi: kanıt ne diyor, nerede dikkat?',
+        kisa='Uçucu yağlar',
+        aciklama='Lavanta, turunç, gül, nane ve zencefil yağı: aromaterapinin kaygı, uyku ve bulantıdaki kanıtı ve uçucu yağ kullanırken bilinmesi gereken güvenlik kuralları.',
+        giris='Uçucu yağlar bitkinin kokusunu taşıyan yoğun özlerdir; genellikle koklanarak, seyreltilip masajla ya da banyoda kullanılır. Bazılarının kaygı ve bulantıda işe yarayabileceğini gösteren klinik çalışmalar var; ama yoğun oldukları için yanlış kullanıldığında zarar da verebilirler.',
+        ozet='En çok çalışılan lavanta yağı. Koklanarak ya da masajla kullanıldığında ameliyat öncesi kaygıyı ve uyku sorunlarını azaltabildiğini gösteren klinik çalışmalar ve bir meta-analiz var; turunç ve gül yağı da benzer çalışmalarda yer alıyor. Nane ve zencefil yağının koklanması bulantıda denenmiş. Uçucu yağların iltihabı azalttığına dair bulgular ise çoğunlukla hücre ve hayvan deneylerinden geliyor; insanda yeterli kanıt henüz yok.',
+        bitkiler=[('lavanta', 'Koklanarak ya da masajla kullanıldığında ameliyat öncesi, diş tedavisi ve diyaliz gibi durumlarda kaygıyı azalttığını gösteren çalışmalar var. Ağızdan alınan standart lavanta yağı kapsülleri ise ilaç olarak kaygıda kullanılıyor.'),
+                  ('turunc', 'Turunç (acı portakal) yağı, kaygı çalışmalarında lavanta ile birlikte ya da onunla karşılaştırılarak denendi; bir çalışmada erkeklerde lavanta kadar etkili bulundu.'),
+                  ('nane', 'Nane yağının koklanması, zencefil yağıyla birlikte ya da tek başına, yetişkinlerde bulantıyı hafifletmek için denendi.'),
+                  ('zencefil', 'Zencefil yağının koklanması bulantı çalışmalarında yer alıyor.'),
+                  ('papatya', 'Papatya ve lavanta yağıyla yapılan masaj, yanık tedavisi gören hastalarda kaygı ve uyku kalitesinde iyileşme sağladı.')],
+        uyari='Uçucu yağ yuttuysan, gözüne kaçtıysa ya da ciltte yaygın kızarıklık, nefes darlığı gelişirse hemen sağlık kuruluşuna başvur. Küçük çocuklarda ve hamilelikte kullanmadan önce hekime danış.',
+        ek=[('Uçucu yağ kullanırken güvenlik', [
+                'Uçucu yağlar doğal olsa da alerji, temas dermatiti, ışığa karşı hassasiyet ve göz tahrişi yapabilir. Seyreltilmeden doğrudan cilde sürülmemeli; yeni bir yağı geniş alana sürmeden önce küçük bir bölgede denemek gerekir.',
+                'Turunçgil yağları (limon, bergamot gibi) cilde sürülüp güneşe çıkıldığında kalıcı lekeye yol açabilecek ışık yanıkları yapabilir.',
+                'Uzman önerisi olmadan uçucu yağ içilmemeli: mide-bağırsak sorunlarına ve sinir sisteminin baskılanmasına yol açabilir. Göze kaçarsa bol suyla yıkanmalıdır.',
+                'Uçucu yağlar zamanla havayla bozunur ve zararlı maddeler oluşabilir; ağzı sıkı kapalı, serin ve karanlık yerde saklanmalı, eskimiş yağ kullanılmamalı.']),
+            ('İltihap için uçucu yağlar?', [
+                '2017–2022 arasındaki çalışmaları tarayan sistematik bir derlemede 48 bitki uçucu yağının iltihabı azaltıcı etkisi incelendi. Etkiler hücre ve hayvan deneylerinde gösterildi; ama insanda yapılmış klinik çalışma az olduğu için bu yağların iltihaba karşı etkili ve uzun vadede güvenli olduğu söylenemiyor.'])],
+        kaynaklar=[('Vora ve ark., “Essential oils for clinical aromatherapy: A comprehensive review”, Journal of Ethnopharmacology 330, 2024', 'https://doi.org/10.1016/j.jep.2024.118180'),
+                   ('Zhao ve ark., “Molecular mechanism of the anti-inflammatory effects of plant essential oils: A systematic review”, Journal of Ethnopharmacology 301, 2023', 'https://doi.org/10.1016/j.jep.2022.115829')],
+    ),
 dict(slug='uyku', baslik='Uykuya iyi gelen bitki çayları: hangisinin kanıtı var?', kisa='Uyku',
  aciklama='Lavanta, kediotu, melisa, papatya ve ıhlamur: uykuya iyi geldiği bilinen bitkilerin bilimsel kanıtı, nasıl içildikleri ve kimlerin dikkat etmesi gerektiği.',
  giris='Uykusuz gecelerde akla ilk gelen şey çoğu zaman bir bitki çayıdır. Bu bitkilerin bir kısmının etkisi kontrollü çalışmalarla desteklenirken, bir kısmı yalnızca uzun bir kullanım geçmişine dayanıyor. Aşağıda, uyku ve gevşeme için kullanılan bitkileri kanıtı en güçlü olandan başlayarak sıraladık.',

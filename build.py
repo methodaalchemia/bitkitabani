@@ -1127,6 +1127,8 @@ for k in LIVE_K:
 <section class="kisaca"><h2>Kısaca</h2><p>{e(k["ozet"])}</p></section>
 <section class="sec"><h2>Bitkiler, kanıtı en güçlü olandan başlayarak</h2><div class="rb-list">{"".join(rb_item(p, n) for p, n in ps)}</div></section>
 <aside class="warnbox" role="note"><b>Ne zaman hekime gitmeli?</b> {e(k["uyari"])}</aside>
+{"".join(f'<section class="sec"><h2>{e(h)}</h2>' + "".join(f'<p>{e(x)}</p>' for x in ps_) + '</section>' for h, ps_ in k.get('ek', []))}
+{('<section class="sec"><h2>Kaynaklar</h2><ol class="refs">' + "".join(f'<li><a href="{e(u)}" target="_blank" rel="noopener">{e(t)}</a></li>' for t, u in k['kaynaklar']) + '</ol></section>') if k.get('kaynaklar') else ''}
 {extra_links}
 {_sss_html}
 {abone('rehber:' + k['slug'])}
