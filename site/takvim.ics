@@ -270,6 +270,18 @@ DESCRIPTION:Yapraklar Haziran–Eylül’de\, çiçeklenmeden hemen önce
 URL:https://bitkitabani.com/feslegen/
 END:VEVENT
 BEGIN:VEVENT
+UID:toplama-gelincik@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260301
+DTEND;VALUE=DATE:20260302
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Gelincik toplama mevsimi
+DESCRIPTION:Çiçekler Nisan–Haziran’da açar\; taç yaprakları saba
+ h çiy kalkınca toplanıp gölgede kurutulur. Yapraklar Mart–Nisan’d
+ a toplanır. https://bitkitabani.com/gelincik/
+URL:https://bitkitabani.com/gelincik/
+END:VEVENT
+BEGIN:VEVENT
 UID:toplama-hatmi@bitkitabani.com
 DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260701

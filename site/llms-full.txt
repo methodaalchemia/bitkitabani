@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 131 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 132 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -4119,3 +4119,31 @@ Karıştırma riski: Hindistan cevizi (Cocos nucifera) bambaşka bir bitkidir. B
 
 ### İlginç bilgi
 Hollanda, muskat tekelini korumak için 1667’de Banda Adaları’ndaki küçük Run adasını aldı ve karşılığında Manhattan’ı İngiltere’ye bıraktı.
+
+## Gelincik (Papaver rhoeas)
+
+URL: https://bitkitabani.com/gelincik/
+Familya: Papaveraceae · Bölge: Anadolu ve Akdeniz · Kullanılan kısım: Taç yaprakları, genç yapraklar
+Bilimsel kanıt: Geleneksel · Güvenlik: Genelde güvenli
+
+### Geleneksel kullanım
+- Anadolu: Genç yaprakları ilkbaharda yabani ot olarak toplanır, kavurması ve böreği yapılır. Kurutulmuş taç yapraklarından yapılan çay ve şurup halk arasında öksürük ve uykusuzluk için kullanılır. Adının, kırmızı duvaklı gelini andırmasından geldiği anlatılır.
+- Avrupa: Birinci Dünya Savaşı’nın Flandre tarlalarında açan gelincikler, Kanadalı hekim John McCrae’nin şiiriyle savaşta ölenlerin simgesi oldu; İngiltere ve Kanada’da Kasım’da yakaya gelincik takılır.
+
+### Hazırlama
+Kurutulmuş taç yapraklarından bir çay kaşığı bir bardak suda 10 dakika demlenir. Genç yapraklar çiçeklenmeden önce pişirilerek yenir.
+
+### Bilim ne diyor
+Gelincik afyon haşhaşının akrabasıdır ama morfin içermez; rhoeadin gibi farklı ve çok daha zayıf alkaloitler taşır. Hafif yatıştırıcı ve öksürük kesici etkisi hayvan çalışmalarına ve geleneksel kullanıma dayanır; insanlarda yapılmış klinik çalışma yoktur. Avrupa’da çay karışımlarına daha çok rengi için katılır.
+
+### Güvenlik
+Çay olarak az miktarda genelde güvenli kabul edilir. Taze bitkinin çok miktarda yenmesiyle hayvanlarda zehirlenme bildirilmiştir; insanlar için yeterli veri yoktur. Hamileler, emzirenler ve küçük çocuklar kullanmamalıdır. Yatıştırıcı ilaçlarla birlikte alınmamalıdır.
+
+### Doğada
+Nerede yetişir: Bütün Anadolu’da buğday tarlalarında, yol kenarlarında ve sürülmüş topraklarda.
+Toplama mevsimi: Çiçekler Nisan–Haziran’da açar; taç yaprakları sabah çiy kalkınca toplanıp gölgede kurutulur. Yapraklar Mart–Nisan’da toplanır.
+Yöresel adlar: gelincik, kır haşhaşı
+Karıştırma riski: Afyon haşhaşına (Papaver somniferum) benzer ama daha küçük ve tüylüdür, yaprakları derin parçalıdır; haşhaşın yaprakları mavimsi yeşildir ve sapı sarar.
+
+### İlginç bilgi
+Gelincik tohumları toprakta onlarca yıl canlı kalabilir ve toprak sürülüp ışığa çıkınca çimlenir; savaş alanlarının birden gelincikle kaplanmasının sırrı budur.
