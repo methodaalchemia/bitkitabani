@@ -335,6 +335,8 @@ def motif_image(mo, seed=None):
     u = 'bitkitabani.com'; d.text((W - 80 - d.textlength(u, font=mono(28)), H - 80), u, font=mono(28), fill=C['accent'])
     return im
 
+ONE_CIKAN = ['anadolu-nazara-karsi-tutsulenen-uzerligin-tohumlarinda', 'kuyumcularin-kirat-keciboynuzundan-gelir', 'hakkari-nin-guneyindeki-sanidar-magarasinda-yaklasik',
+             'orta-cag-salgin-donemlerinde-hekimler-yuzlerine', 'peru-amazonu-nda-sifaci-olmak-isteyen', 'avrupa-turk-kirmizisi-edirne-kirmizisi-diye']
 def ek_postlar(data, day, out_root, days=7):
     """Haftalık ek postlar (Instagram + Threads, öğlen): Pazartesi 'Doğru mu, efsane mi?', Çarşamba 'Bunu karıştırmayın', Cuma 'Bu hangi bitki?'."""
     import ig2
@@ -361,6 +363,12 @@ def ek_postlar(data, day, out_root, days=7):
         return im
     def cta_slide(p, n, total):
         return paper_slide(p, 'Devamı sitede', f'{p["tr"]} hakkında bilmeniz gerekenler', f'Bilimin söyledikleri, kimlerin dikkat etmesi gerektiği, ilaç etkileşimleri ve kaynaklar: bitkitabani.com/{p["id"]}\n\nKaydedin, lazım olunca bulun. 🔖', n, total)
+    try:
+        sys.path.insert(0, ROOT); import halk as _halk
+        _H = {h['slug']: h for h in _halk.hikayeler() if (h.get('gorsel') or h.get('bitki')) and os.path.exists(imgp(h.get('gorsel') or h.get('bitki')))}
+        _one = [x for x in ONE_CIKAN if x in _H]
+        hik = [_H[x] for x in _one] + [h for x, h in reversed(list(_H.items())) if x not in _one]
+    except Exception: hik = []
     out = {}
     for dd in (day + datetime.timedelta(days=i) for i in range(days)):
         wd, wk = dd.weekday(), dd.isocalendar()[1] + dd.year * 53
@@ -397,6 +405,14 @@ def ek_postlar(data, day, out_root, days=7):
             ims = [motif_image(mo), paper_slide(p, 'Ne anlatır?', mo['ad'], anlam[:420] + bag[:200], 2, 2)]
             cap = (f'Bir sembol: {mo["ad"]} ({mo["bolge"]})\n\n{anlam}{bag}\n\nSizin evinizde, kiliminizde bu motif var mı? Yorumlarda buluşalım. 👇\n\n'
                    f'Kaynaklarıyla: bitkitabani.com/semboller/{mo["slug"]} (bağlantı profilde)\n\n#semboller #kilimmotifleri #etnobotanik #kültür')
+        elif wd in (1, 6) and hik:
+            h = hik[((wk - (45 + 2026 * 53)) * 2 + (wd == 6)) % len(hik)]; tur = 'hikaye'; pid = h['slug']
+            gid = h.get('gorsel') or h.get('bitki'); p = P.get(h.get('bitki')) or P.get(gid) or next(iter(P.values()))
+            ims = [photo_slide(gid, 'Halk hekimliğinden' + (' · ' + h['yore'] if h.get('yore') else ''), h['baslik'], 'Kaydırın. 👉'),
+                   paper_slide(p, h.get('yore') or 'Bir hikâye', h['baslik'], h['post'], 2, 3),
+                   paper_slide(p, 'Kaynağıyla', 'Hikâyenin tamamı sitede', f'Kaynak: {h["kisa"]}\n\nbitkitabani.com/hikaye/{h["slug"]}\n\nKaydedin, sonra okuyun. 🔖', 3, 3)]
+            cap = (f'{h["baslik"]} 🌿\n\n{h["post"]}\n\nKaynak: {h["kisa"]}\n\nSiz bunu duymuş muydunuz? Yorumlarda buluşalım. 👇\n\n'
+                   f'Tamamı: bitkitabani.com/hikaye/{h["slug"]} (bağlantı profilde)\n\nBir halk kaydıdır; tedavi önerisi değildir.\n\n#halkhekimliği #etnobotanik #şifalıbitkiler #kültür')
         else:
             continue
         key = dd.isoformat(); od = os.path.join(out_root, 'ek', key); os.makedirs(od, exist_ok=True)
