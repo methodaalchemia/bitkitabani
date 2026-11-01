@@ -2,6 +2,48 @@
 # Metindeki [1], [2]… işaretleri kaynak listesindeki sıraya karşılık gelir. Bitki bağlantıları {id} biçiminde yazılır.
 
 YAZILAR = [
+    dict(
+        slug='kutsal-agaclar-kayin-umay-hayat-agaci',
+        tarih='2026-11-01',
+        baslik='Kutsal ağaçlar: kayın, Umay ve hayat ağacı',
+        aciklama='Eski Türklerde göğe uzanan kayın, Umay Ana ile yere inen iki ağaç, beşikteki kayın kökü ve Anadolu’ya ulaşan çaput bağlama geleneği: kaynaklarıyla.',
+        giris='Anadolu’da bir ağaca bez bağlayan, bir ağacın dibinde dilek tutan ya da yaşlı bir çınarın kesilmesine gönlü razı olmayan biri, çok eski bir inancın izini sürüyor olabilir. Eski Türklerde ağaç yalnızca odun ya da gölge değildi; yeri göğe bağlayan bir eksen, soyun başladığı yer ve şamanın göğe çıktığı merdivendi.',
+        bolumler=[
+            ('Yeri göğe bağlayan ağaç', [
+                'Türk mitolojisinde evrenin ortasında duran ve Kutup Yıldızı’na uzanan bir “kozmik ağaç” düşüncesi vardır. Bu ağaç kaynaklarda Demirkazık, Altınkazık, Bay Kayın ya da Evliya ağacı gibi adlarla geçer [1]. Kökleri yeraltına, gövdesi yeryüzüne, dalları göğe uzanır; üç dünyayı birbirine bağlar [2].',
+                'Benzer bir ağaç başka kültürlerde de vardır. İskandinav mitolojisinde evreni taşıyan ağacın adı Yggdrasil’dir. Mezopotamya’da hayat ağacı bolluk ve bereketin, Asurlularda ise imparatorluğun simgesi olmuştur [2]. Türk anlatılarında ise hayat ağacının dallarının en tepesinde çoğu zaman bir kuş, kimi zaman çift başlı bir kartal tüner [1].',
+            ]),
+            ('Neden kayın?', [
+                'Eski Türk anlatılarında en çok anılan kutsal ağaçlar akçam, karaçam, kayın, sedir, çınar, ıhlamur ve servidir; ama bunların başında kayın gelir [1][2]. Altay anlatılarına göre dünya dağının tepesinde bir kayın ağacı yükselir, altındaki kutsal çukurda da hayat suyu bulunur [1].',
+                'Sagay, Altay, Şor ve Teleüt gibi Türk topluluklarının kamlarının, yanlarında kayın ağacı olmadan ayin yapmadıkları bilinir. Kam davullarında güneş, ay ve şimşeğin yanında hemen her zaman bir kayın ağacı resmi bulunur. Ayin sırasında kayının dalları, şamanın göğe çıkmak için kullandığı merdiveni temsil eder [1][3]. Bir kam öldüğünde davulu parçalanıp bir kayın ağacının dalına asılırdı [1].',
+                'Kam dualarında kayına doğrudan seslenilir: altın yapraklı, sekiz gölgeli, dokuz köklü “bay kayın” diye anılır [1]. Sagaylar ve Beltirler gök ya da dağ için sunulan kurbanları kayın ağaçlarının altında yaparlar; Sahalar ise kayınla birlikte karaçamı da kutsal sayar [1].',
+                'Küçük bir botanik not: Orta Asya Türkçelerinde “kayın” huş ağacıdır (Betula). Anadolu’da ise aynı ad başka bir ağaca, ormanlarımızdaki kayına (Fagus) verilir. Yani mitlerdeki ak gövdeli kayın, aslında beyaz kabuklu huştur.',
+            ]),
+            ('Umay Ana ile yere inen iki ağaç', [
+                'Bir Sagay kamı, davulundaki iki kayın resmini şöyle açıklamış: atamız Ülgen’den türediğimizde, bu iki kayın ağacı Umay Ana ile birlikte gökten yere indi [1][3]. Kayının kutsallığı bu yüzden yaratılışla, soyun başlangıcıyla ilişkilidir.',
+                'Umay, eski Türk inancında doğuma yardım eden, bebeği ve anneyi koruyan, kut veren ana figürdür. Tasvirlerinde saç, tarak, iplik, kuş, ok ve yay ile birlikte kayın ağacı da en sık kullanılan simgeler arasındadır; dağ, mağara, ateş ve ocakla birlikte anılır [3].',
+            ]),
+            ('Beşikteki kayın kökü', [
+                'Altaylarda yeni doğan bebeğin beşiğine küçük bir kayın kökü konur, beşik kayın dallarına asılırdı; kayının kökünün bebeği beslediğine inanılırdı. Bebek ölürse kayın kabuğuna sarılıp ağacın kovuğuna yerleştirilirdi. Hakaslar da bebeklerin ruhlarının yeraltına değil, gökteki Ak Süt Göl’e gideceğine inanarak onları kutsal kayının kovuğuna yatırırdı [3].',
+                'Doğum yaklaştığında da kayın işin içindedir: şaman, kadının yattığı çadırın çeşitli yönlerine, kayın kabuğundan kesilmiş güneş, ay ve kuş figürlerinin asılı olduğu at kılından ipler gerer. Teleütlerde çocuk ilk kez beşiğe yatırılmadan önce en yaşlı kadın onu ardıçla tütsüler [3]. Ardıç dumanının arındırıcı gücüne Anadolu’da da bugün hâlâ inanılır.',
+            ]),
+            ('Anadolu’da bugüne kalan izler', [
+                'Türkistan’da akçam, karaçam ve kayın kutsal sayılırken, Anadolu’da bu saygı çama, kavağa, ardıca, sedire, serviye, meşeye, duta, söğüde, elmaya ve özellikle çınara geçmiştir [1]. Ağaçlara renkli çaput bağlamak da bu eski ağaç inancının bugüne ulaşan biçimlerinden biridir [1].',
+                'İslamiyetten sonra hurma, elma, nar ve gül ağaçları öne çıkar. Osmanlı’da düğün ve sünnet alaylarında taşınan süslü “nahıl”, hurma ağacı anlamına gelir [1]. Halk hikâyelerinde çocuğu olmayan karı kocanın bir elmayı paylaşarak yemesi en sık karşılaşılan motiflerdendir; elma murat, evlat ve güzellik simgesidir. Evlerin bahçesine ve mezarlıklara dikilen dut ise gölgesi, meyvesi ve sazlara verdiği odunuyla gündelik hayatın parçasıdır [4].',
+            ]),
+            ('Bir not', [
+                'Bu yazıdaki inanışlar, Türk boylarının farklı dönemlerde derlenmiş anlatılarından ve bu anlatıları inceleyen akademik çalışmalardan aktarılmıştır. Her topluluğun inancı aynı değildir; aktarılan, kaynakların söyledikleridir.',
+            ]),
+        ],
+        kaynaklar=[
+            ('Şeyda Büyükcan Sayılır, “Türklerin Ağaç ile Mitolojik ve Tarihî Bağları Üzerine Bir Değerlendirme”, Genel Türk Tarihi Araştırmaları Dergisi 3(6), 2021', 'https://doi.org/10.53718/gttad.940879'),
+            ('Ülfet Dağ, “Türk ve İskandinav Mitolojisinde Ağaç Sembolizmi”, Millî Folklor 132, 2021', 'https://dergipark.org.tr/tr/pub/millifolklor/article/819200'),
+            ('Reyhan Değirmenci, Türk Mitolojisinde Yüce Ana Arketipi: Umay Üzerine Arketipsel Bir İnceleme, yüksek lisans tezi, Ege Üniversitesi, 2024', ''),
+            ('Ali Berat Alptekin, “Türk Halk Hikâyelerinde Ağaç Motifi Üzerine”, Millî Folklor 76, 2007', ''),
+        ],
+        bitkiler=['ardic', 'sogut', 'zeytin', 'uzerlik'],
+        semboller=['kutsal-agaclar'],
+    ),
 dict(slug='samanizm-ve-kam-gelenegi', tarih='2026-10-23',
  baslik='Şamanizm nedir? Sibirya\'dan Anadolu\'ya kam geleneği',
  aciklama='Şaman kelimesinin kökeni, Türklerde kam geleneği, davul ve kutsal ağaç, ardıç dumanı ve Anadolu\'da bugüne ulaşan izler: kaynaklarıyla.',
