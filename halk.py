@@ -36,6 +36,7 @@ SCHULTES = ('Richard Evans Schultes, “Hallucinogens of Plant Origin”, Scienc
 JAUREGUI = ('Ximena Jauregui ve ark., ““Plantas con madre”: Plants that teach and guide in the shamanic initiation process in the East-Central Peruvian Amazon”, Journal of Ethnopharmacology 134, 2011', 'https://doi.org/10.1016/j.jep.2011.01.042')
 GUERRA = ('Elisa Guerra-Doce, “Psychoactive Substances in Prehistoric Times: Examining the Archaeological Evidence”, Time and Mind 8(1), 2015', 'https://doi.org/10.1080/1751696X.2014.993244')
 MCKENNA = ('Dennis J. McKenna, G.H.N. Towers, F. Abbott, “Monoamine oxidase inhibitors in South American hallucinogenic plants: tryptamine and β-carboline constituents of ayahuasca”, Journal of Ethnopharmacology 10, 1984', 'https://doi.org/10.1016/0378-8741(84)90003-5')
+HAOMA = ('Tayebeh Zarei Karyani, Morteza Yousefzadi, Reza Sheikhakbari-Mehr, “Haoma: unveiling the mysteries of Iran’s sacred Zoroastrian botanical wonder”, Ethnobotany Research and Applications 31, 2025', 'https://ethnobotanyjournal.org/index.php/era/article/view/6824')
 BK = 'Baytop, Türkiye’de Bitkiler ile Tedavi, 2021'
 
 EGE = ('Bintuğ Öztürk ve ark., “Türkiye’nin Etnobotanik Veritabanı”, Ege Üniversitesi BAP sonuç raporu, 2020',
@@ -203,6 +204,8 @@ dict(kaynak=GUERRA, kisa='Guerra-Doce, Time and Mind, 2015', bitki='efedra', yor
   post='Hakkari’nin güneyindeki Şanidar mağarasında, yaklaşık 60.000 yıl önce gömülen bir Neandertal erkeğin çevresinde efedra dahil şifalı bitki polenleri bulundu. Mezar “çiçekli gömü” diye anıldı, bir şamana ait olduğu bile öne sürüldü. Ama bazı araştırmacılar polenleri mağaraya bir kemirgenin, İran kum faresinin taşıdığını düşünüyor. Yani bitkilerin bir ritüelle bırakıldığı kesin değil.'),
 dict(kaynak=MCKENNA, kisa='McKenna ve ark., J Ethnopharmacol, 1984', bitki='chacruna', yore='Peru Amazonu',
   post='Ayahuasca iki bitkinin birleşimidir: sarmaşığın kabuğu ve chacruna yaprağı. Yapraktaki DMT ağızdan alınınca tek başına etkisizdir, çünkü sindirimdeki MAO enzimi onu parçalar. Sarmaşıktaki harmin ve harmalin bu enzimi geçici olarak durdurur. McKenna ve arkadaşları 1984’te Peru’dan topladıkları sekiz örnekte bu düzeneği inceledi. Bu yüzden ayahuasca bazı ilaçlarla tehlikeli etkileşime girer.'),
+dict(kaynak=HAOMA, kisa='Zarei Karyani ve ark., Ethnobot Res Appl, 2025', bitki='uzerlik', yore='İran, Zerdüşt geleneği',
+  post='Zerdüştlerin en kutsal töreni Yasna’da rahipler “haoma” denen bir içecek hazırlayıp içer; ölümsüzlüğün, arınmanın ve Tanrı’yla bağın simgesidir. Ama haomanın hangi bitkiden yapıldığı hâlâ tartışmalı. En güçlü aday efedra; adı Hint Vedalarındaki “soma” ile akraba. Bazı araştırmacılar ise Anadolu’da nazara karşı tütsülenen üzerliği öne sürüyor: tohumlarında harmin ve harmalin var. Cevap hâlâ belirsiz.'),
 ]
 
 def site_kul():
