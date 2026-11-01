@@ -60,4 +60,8 @@ KB = {
  'yuzyilda-bursali-ali-munsi-avrupa-kaynaklarindan': ('Kınakına Türkçeye nasıl geldi?', 'kinin'),
  'osmanli-istanbul-unda-bazi-sifalar-sokakta': ('Sokakta satılan şifa', 'turunc'),
  'manisa-nin-yunt-dagi-koylerinde-arastirmacilar': ('Yunt Dağı’nın üç şifası', 'sigla'),
+ 'anadolu-nazara-karsi-tutsulenen-uzerligin-tohumlarinda': ('Nazar otu ile ayahuasca’nın ortak sırrı', 'ayahuasca'),
+ 'peru-amazonu-nda-sifaci-olmak-isteyen': ('Öğreten bitkiler', 'mapacho'),
+ 'hakkari-nin-guneyindeki-sanidar-magarasinda-yaklasik': ('60.000 yıllık çiçekli mezar', 'efedra'),
+ 'ayahuasca-iki-bitkinin-birlesimidir-sarmasigin-kabugu': ('İki bitki, tek içecek', 'chacruna'),
 }

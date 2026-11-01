@@ -32,6 +32,10 @@ TERE = ('İ. Başağaoğlu, G. Kavalalı, “Halk Hekimliğinde Tere Bitkisinin 
 LH = 'Lokman Hekim Dergisi'
 BAYTOP3 = ('Turhan Baytop, Türkiye’de Bitkiler ile Tedavi: Geçmişte ve Bugün, 3. baskı (yay. haz. Feza Baytop Günergun), Nobel Tıp Kitabevleri, Ankara, 2021', '')
 YUNT = ('Emin Uğurlu, Özcan Seçmen, “Medicinal plants popularly used in the villages of Yunt Mountain (Manisa-Turkey)”, Fitoterapia 79, 2008', 'https://doi.org/10.1016/j.fitote.2007.07.016')
+SCHULTES = ('Richard Evans Schultes, “Hallucinogens of Plant Origin”, Science 163, 1969', 'https://doi.org/10.1126/science.163.3864.245')
+JAUREGUI = ('Ximena Jauregui ve ark., ““Plantas con madre”: Plants that teach and guide in the shamanic initiation process in the East-Central Peruvian Amazon”, Journal of Ethnopharmacology 134, 2011', 'https://doi.org/10.1016/j.jep.2011.01.042')
+GUERRA = ('Elisa Guerra-Doce, “Psychoactive Substances in Prehistoric Times: Examining the Archaeological Evidence”, Time and Mind 8(1), 2015', 'https://doi.org/10.1080/1751696X.2014.993244')
+MCKENNA = ('Dennis J. McKenna, G.H.N. Towers, F. Abbott, “Monoamine oxidase inhibitors in South American hallucinogenic plants: tryptamine and β-carboline constituents of ayahuasca”, Journal of Ethnopharmacology 10, 1984', 'https://doi.org/10.1016/0378-8741(84)90003-5')
 BK = 'Baytop, Türkiye’de Bitkiler ile Tedavi, 2021'
 
 EGE = ('Bintuğ Öztürk ve ark., “Türkiye’nin Etnobotanik Veritabanı”, Ege Üniversitesi BAP sonuç raporu, 2020',
@@ -191,6 +195,14 @@ dict(kaynak=BAYTOP3, kisa=BK, bitki='turunc', yore='Osmanlı İstanbul’u',
   post='Osmanlı İstanbul’unda bazı şifalar sokakta satılırdı. Seyyar satıcıların kekik suyu öksürük ve balgama, nane suyu mide bulantısına, turunç çiçeği suyu da yatıştırıcı ve uyku getirici olarak alınırdı. Hepsi çiçekli dallardan su buharıyla damıtılarak elde ediliyordu; turunç çiçeği suyu taze çiçeklerden çıkarılırdı.'),
 dict(kaynak=YUNT, kisa='Uğurlu ve Seçmen, Fitoterapia, 2008', bitki='sigla', yore='Manisa (Yunt Dağı)',
   post='Manisa’nın Yunt Dağı köylerinde araştırmacılar 55 kişiyle görüştü; bölge halkının çoğu Yörük kökenli. En çok anılan bitki nane oldu: görüşülenlerin üçte ikisi mide ağrısında nane çayını saydı. İkinci sırada sarı kantaron var; yaralara zeytinyağıyla birlikte sürülüyor. Bir köyde de çocukların gece altını ıslatmasına karşı sığla ağacının reçinesi çiğnetiliyor.'),
+dict(kaynak=SCHULTES, kisa='Schultes, Science, 1969', bitki='uzerlik', yore='Anadolu ve Amazon',
+  post='Anadolu’da nazara karşı tütsülenen üzerliğin tohumlarında harmin ve harmalin var. Amazon’da ayahuasca içeceğinin ana bileşeni olan sarmaşığa etkisini veren de aynı alkaloit ailesi. Etnobotanikçi Richard Evans Schultes 1969’da bu ortaklığa dikkat çekti; ama üzerliğin görü almak için kullanıldığına dair kayıtların şüpheli olduğunu da ekledi.'),
+dict(kaynak=JAUREGUI, kisa='Jauregui ve ark., J Ethnopharmacol, 2011', bitki='mapacho', yore='Peru Amazonu (Shipibo-Konibo)',
+  post='Peru Amazonu’nda şifacı olmak isteyen kişi “dieta”ya girer: ormanda yalnız kalır, her gün bir ya da birkaç bitki alır; tuz, şeker, yağ ve alkolden uzak durur. Bu bitkilere “annesi olan bitkiler” denir, çünkü öğrettiklerine inanılır. Shipibo-Konibo şifacılarına göre en güçlülerinden biri mapacho tütünüdür: annesi rüyada iri, esmer, gümüş giysili bir adam olarak görünür.'),
+dict(kaynak=GUERRA, kisa='Guerra-Doce, Time and Mind, 2015', bitki='efedra', yore='Şanidar mağarası (Irak), Orta Paleolitik',
+  post='Hakkari’nin güneyindeki Şanidar mağarasında, yaklaşık 60.000 yıl önce gömülen bir Neandertal erkeğin çevresinde efedra dahil şifalı bitki polenleri bulundu. Mezar “çiçekli gömü” diye anıldı, bir şamana ait olduğu bile öne sürüldü. Ama bazı araştırmacılar polenleri mağaraya bir kemirgenin, İran kum faresinin taşıdığını düşünüyor. Yani bitkilerin bir ritüelle bırakıldığı kesin değil.'),
+dict(kaynak=MCKENNA, kisa='McKenna ve ark., J Ethnopharmacol, 1984', bitki='chacruna', yore='Peru Amazonu',
+  post='Ayahuasca iki bitkinin birleşimidir: sarmaşığın kabuğu ve chacruna yaprağı. Yapraktaki DMT ağızdan alınınca tek başına etkisizdir, çünkü sindirimdeki MAO enzimi onu parçalar. Sarmaşıktaki harmin ve harmalin bu enzimi geçici olarak durdurur. McKenna ve arkadaşları 1984’te Peru’dan topladıkları sekiz örnekte bu düzeneği inceledi. Bu yüzden ayahuasca bazı ilaçlarla tehlikeli etkileşime girer.'),
 ]
 
 def site_kul():
