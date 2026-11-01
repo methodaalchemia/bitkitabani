@@ -31,6 +31,7 @@ MERYEM = ('H. B. Ereni, Sevgi Şar, “Meryemana Dikeni Bitkisi: Farmakolojik ve
 TERE = ('İ. Başağaoğlu, G. Kavalalı, “Halk Hekimliğinde Tere Bitkisinin (Lepidium sativum L.) Kullanılması”, Lokman Hekim Dergisi 9(3), 2019', _L + '592053')
 LH = 'Lokman Hekim Dergisi'
 BAYTOP3 = ('Turhan Baytop, Türkiye’de Bitkiler ile Tedavi: Geçmişte ve Bugün, 3. baskı (yay. haz. Feza Baytop Günergun), Nobel Tıp Kitabevleri, Ankara, 2021', '')
+YUNT = ('Emin Uğurlu, Özcan Seçmen, “Medicinal plants popularly used in the villages of Yunt Mountain (Manisa-Turkey)”, Fitoterapia 79, 2008', 'https://doi.org/10.1016/j.fitote.2007.07.016')
 BK = 'Baytop, Türkiye’de Bitkiler ile Tedavi, 2021'
 
 EGE = ('Bintuğ Öztürk ve ark., “Türkiye’nin Etnobotanik Veritabanı”, Ege Üniversitesi BAP sonuç raporu, 2020',
@@ -188,6 +189,8 @@ dict(kaynak=BAYTOP3, kisa=BK, bitki='kinin', yore='XVIII. yüzyıl Osmanlı',
   post='18. yüzyılda Bursalı Ali Münşi, Avrupa kaynaklarından yararlanarak kınakına kabuğu üzerine Türkçe bir monografi yazdı. Sıtmaya karşı kullanılan bu kabuk, Avrupalıların 1513’ten sonra Peru’ya girmesiyle Avrupa’ya ulaşmıştı. 1884’ten sonra asıl üretim, Hollandalıların Doğu Hint Adaları’ndaki bahçelerine kaydı.'),
 dict(kaynak=BAYTOP3, kisa=BK, bitki='turunc', yore='Osmanlı İstanbul’u',
   post='Osmanlı İstanbul’unda bazı şifalar sokakta satılırdı. Seyyar satıcıların kekik suyu öksürük ve balgama, nane suyu mide bulantısına, turunç çiçeği suyu da yatıştırıcı ve uyku getirici olarak alınırdı. Hepsi çiçekli dallardan su buharıyla damıtılarak elde ediliyordu; turunç çiçeği suyu taze çiçeklerden çıkarılırdı.'),
+dict(kaynak=YUNT, kisa='Uğurlu ve Seçmen, Fitoterapia, 2008', bitki='sigla', yore='Manisa (Yunt Dağı)',
+  post='Manisa’nın Yunt Dağı köylerinde araştırmacılar 55 kişiyle görüştü; bölge halkının çoğu Yörük kökenli. En çok anılan bitki nane oldu: görüşülenlerin üçte ikisi mide ağrısında nane çayını saydı. İkinci sırada sarı kantaron var; yaralara zeytinyağıyla birlikte sürülüyor. Bir köyde de çocukların gece altını ıslatmasına karşı sığla ağacının reçinesi çiğnetiliyor.'),
 ]
 
 def site_kul():

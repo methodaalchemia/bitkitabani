@@ -59,4 +59,5 @@ KB = {
  'avrupa-turk-kirmizisi-edirne-kirmizisi-diye': ('Dünyayı boyayan kök', 'kokboya'),
  'yuzyilda-bursali-ali-munsi-avrupa-kaynaklarindan': ('Kınakına Türkçeye nasıl geldi?', 'kinin'),
  'osmanli-istanbul-unda-bazi-sifalar-sokakta': ('Sokakta satılan şifa', 'turunc'),
+ 'manisa-nin-yunt-dagi-koylerinde-arastirmacilar': ('Yunt Dağı’nın üç şifası', 'sigla'),
 }
