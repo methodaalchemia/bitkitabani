@@ -66,3 +66,18 @@ Z_NEDEN = ['Taking too much of a plant used for treatment',
 Z_KAYNAK = ['Baytop T., Türkiye’de Bitkiler ile Tedavi: Geçmişte ve Bugün (Plant Healing in Turkey: Past and Present), 3rd ed., Nobel Tıp Kitabevleri, 2021',
             'Turkish Ministry of Health, Fitoterapi Uygulaması Kitabı (Phytotherapy Practice Book), 2022 (chapter on poisonous plants)',
             'Baytop T., Baytop A., Mat A., Sun S., Türkiye’de zehirli bitkiler, bitki zehirlenmeleri ve tedavi yöntemleri (Poisonous plants, plant poisonings and their treatment in Turkey), Istanbul University, 1989 (as cited in the phytotherapy book)']
+
+# Baytop mix-up notes (mirrors baytop_kar.py)
+BKAR_EN = {
+ 'hatmi': 'According to Baytop, although medicinal marshmallow grows in Anatolia, its flower is rarely found in trade; what herbalists sell as “marshmallow flower” is mostly hollyhock (Alcea) and other related species.',
+ 'salep': 'According to Baytop, because salep is expensive, the powder is often mixed with wheat flour or starch; other powders are also sold in its place under names such as “common salep” or “artificial salep”. In Konya, the powdered bulbs of some star-of-Bethlehem (Ornithogalum) species have been recorded as a substitute for salep in ice cream.',
+ 'safran': 'According to Baytop, because saffron is so valuable it has long been fraudulently weighted with wax, oil, syrup or honey. Safflower is sometimes sold in its place because of its similar colour.',
+ 'adamotu': 'According to Baytop, in Istanbul’s street markets the roots of black bryony (Tamus communis) or squirting cucumber (Ecballium elaterium) are sometimes sold as mandrake root.',
+ 'ardic': 'According to Baytop, herbalists mostly sell the cones of prickly juniper (Juniperus oxycedrus) in place of common juniper berries.',
+ 'keten': 'According to Baytop, sellers have sometimes been found to supply defatted flaxseed meal instead of ground flaxseed.',
+ 'tarcin': 'According to Baytop, some herbalists sell cubeb pepper in place of cinnamon because they look somewhat alike.',
+ 'papatya': 'According to Baytop, the flowers of some Anatolian Anthemis species are also used as “chamomile”; Istanbul herbalists sell these larger flowers, which do not fall apart, in place of true chamomile, and buyers prefer them because they look showier.',
+ 'meyan': 'According to Baytop, the roots of bitter licorice (Glycyrrhiza echinata) are not valued because of their bitter compounds, but they are gathered and sold mixed with true licorice root.',
+ 'nane': 'According to Baytop, pennyroyal (Mentha pulegium) is sold as “mint” in the markets of Mediterranean towns.',
+ 'gucigdemi': 'According to Baytop, eating an autumn crocus corm by mistake in place of an edible crocus (Crocus) corm causes dangerous poisoning, especially in children. To tell them apart, look at where the stem leaves the corm: in the edible crocus it rises from the very centre, in autumn crocus from the side.',
+}

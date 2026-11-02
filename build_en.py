@@ -14,6 +14,10 @@ def run(G):
         EN.update(importlib.import_module(f'p{n}').EN)
     from etk_en import ETK_EN
     from derin_en import D_EN
+    from guven_en import BKAR_EN
+    from rehber_en import R_EN
+    from tarif_en import T_EN as T_EN2
+    from yazilar_en import Y_EN as Y_EN2
     from misc_en import ALT_EN, KORUMA_EN, YASAL_EN, YASAL_AD_EN, BR_EN, REG_EN, KAT_EN, KANIT_EN, GUV_EN, KAN_AD_EN, BIO_EN
     EN.update(G.get('EN_NEW', {})); ETK_EN.update(G.get('ETK_EN_NEW', {}))
     YENI, NEWEST, LOCAL_DAY = G['YENI'], G['NEWEST'], G['LOCAL_DAY']
@@ -201,7 +205,7 @@ def run(G):
         body_s = sec('Traditional use', f'<div class="uses">{uses}</div>')
         if ek:
             body_s += sec('In nature', f'<dl class="meta wide"><div><dt>Where it grows</dt><dd>{e(x["habitat"])}</dd></div><div><dt>Harvest season</dt><dd>{e(x["season"])}</dd></div><div><dt>Local names</dt><dd>{e(x["local"])}</dd></div></dl>')
-            body_s += sec('Mix-up risk', f'<div class="callout orta"><p>{e(x["confusion"])}</p></div>')
+            body_s += sec('Mix-up risk', f'<div class="callout orta"><p>{e(x["confusion"])}</p>' + (f'<p>{e(BKAR_EN[pid])}</p>' if pid in BKAR_EN else '') + '</div>')
         body_s += sec('Preparation', f'<p>{e(x["prep"])}</p>') + sec('What science says', f'<p>{e(x["science"])}</p>')
         faq = []
         if pid in D_EN:
@@ -226,6 +230,14 @@ def run(G):
         rel = [byId[r] for r in EXTRA.get(pid, []) if r in byId]
         def sim(q): return 2 * len(set(q['bolge']) & set(p['bolge'])) + len(set(q['kat']) & set(p['kat'])) + (2 if q['fam'] == p['fam'] else 0)
         similar = rel[:1] + sorted((q for q in P if q['id'] != pid and q not in rel), key=lambda q: (-sim(q), q['no']))[:3 - len(rel[:1])]
+        if rel:
+            body_s += '<section class="sec"><h2>Related plants in other cultures</h2><div class="related">' + ''.join(f'<a class="chip" href="/en/{q["id"]}/">{"".join(dot(r) for r in q["bolge"])}{e(name(q))}</a>' for q in rel) + '</div></section>'
+        _rm = [(f'/en/guides/{R_EN[k["slug"]]["slug"]}/', 'Guide: ' + R_EN[k['slug']]['kisa']) for k in G['KONULAR'] if k['slug'] in R_EN and any(x == pid for x, _ in k['bitkiler']) and sum(1 for z, _ in k['bitkiler'] if z in byId) >= 2]
+        _rm += [(f'/en/recipes/{T_EN2[t["slug"]]["slug"]}/', 'Recipe: ' + T_EN2[t['slug']]['ad']) for t in G['LIVE_T'] if t['bitki'] == pid and t['slug'] in T_EN2]
+        _rm += [(f'/en/articles/{Y_EN2[y["slug"]]["slug"]}/', 'Article: ' + Y_EN2[y['slug']]['baslik']) for y in G['YAZILAR'] if y['slug'] in Y_EN2 and pid in y['bitkiler']]
+        if p['guv'] == 'yuksek' or pid in BKAR_EN: _rm.append(('/en/guides/poisonous-plants/', 'Poisonous plants and look-alikes'))
+        if _rm:
+            body_s += '<section class="sec"><h2>Read more</h2><div class="brlinks">' + ''.join(f'<a class="chip" href="{u}">{e(t)}</a>' for u, t in _rm) + '</div></section>'
         body_s += f'<section class="sec"><h2>Similar plants</h2><div class="grid sim">{"".join(card(q) for q in similar)}</div></section>'
         body_s += sec('Sources', refs(p))
         meta = f'''<dl class="meta"><div><dt>Other names</dt><dd>{e(x["other"])}</dd></div><div><dt>Part used</dt><dd>{e(x["part"])}</dd></div><div><dt>Region</dt><dd>{"<br>".join(dot(r) + " " + e(REG_EN[r]) for r in p["bolge"])}</dd></div><div><dt>Use</dt><dd>{", ".join(KAT_EN[c] for c in p["kat"])}</dd></div></dl>'''
