@@ -2,6 +2,45 @@
 # Keys are the Turkish slugs; sources and plant lists come from yazilar.py. Plant links are written {id}.
 
 Y_EN = {
+'tarih-oncesinde-bitkiler-arkeoloji': {'slug': 'plants-in-prehistory-archaeology',
+ 'baslik': 'Plants in prehistory: how archaeology reveals our bond with plants',
+ 'aciklama': 'Traces of datura and ephedra in 3,000-year-old locks of hair from Menorca, braziers of burned cannabis in the Pamirs, a thousand-year-old shaman’s bundle in the Andes and the domestication of the poppy in '
+             'the Mediterranean: with sources.',
+ 'giris': 'Plants are mostly invisible in the archaeological record: they are eaten, drunk or burned, and little is left behind. Yet in recent years chemical analysis has learned to read plants used thousands of years '
+          'ago from residues at the bottom of vessels, and even from human hair. This article gathers a few striking examples from open-access research.',
+ 'bolumler': [('Finding invisible plants',
+               ['For a long time researchers inferred plant use from indirect evidence: mortars, snuff kits, pipes, seeds and pollen. In the eastern Mediterranean, opium alkaloids found in small Late Bronze Age juglets '
+                'shaped like upturned poppy capsules supported the idea that the shape advertised the contents [1].',
+                'More direct evidence comes from human remains: plant alkaloids have been detected in the hair of pre-Columbian American mummies, in prehistoric bones from China and in the tooth enamel of Iron Age '
+                'people in Vietnam. Some older findings are considered controversial because their methods were not described well enough [1].']),
+              ('The domestication of the poppy in the Mediterranean',
+               ['According to the authors of the Menorca study, the {hashas} was most likely domesticated in the western Mediterranean in the Early Neolithic: remains of the cultivated form have been found at several '
+                'sites in Italy, southern France and Spain, and the plant then spread quickly across Europe. At Prats in Andorra, a Middle Bronze Age ritual pit from around 1600 BCE yielded charred {tatula} capsules '
+                '[1].']),
+              ('Menorca: locks of hair dyed red',
+               ['In Menorca, in the Balearic Islands, the cave of Es Càrritx was found untouched in 1995. The chamber at its entrance served as a collective tomb for about 600 years, from 1450 to 800 BCE, and held more '
+                'than 200 people. During the last 300 years of the tomb’s use a strange rite took place: the hair of some of the dead was dyed or anointed red, combed, cut and placed in wooden or antler tubes whose lids were carved with '
+                'concentric circles [1].',
+                'Around 800 BCE some of these tubes were hidden in a small chamber deep in the cave and sealed with clay. Analysis of hair from a tube carved from olive wood, with a boxwood lid, found atropine, '
+                'scopolamine and ephedrine. According to the authors the likely sources were a nightshade such as {tatula} and Ephedra fragilis, the island’s only native ephedra; the length of the hair shows the person '
+                'took them for about a year before death [1].',
+                'The cave holds no remains of these plants, so they were used in another setting, not in the funeral rites. The authors note that handling such toxic plants required specialised knowledge of the kind '
+                'typically held by shamans, and link the concentric circles on the lids to eyes, a symbol of “inner vision”, and to the dilated pupils these alkaloids cause. In Menorca today ephedra leaves are still '
+                'used in some remedies, and datura and white henbane (Hyoscyamus albus) were once smoked like cigarettes against asthma [1].']),
+              ('The Pamirs: cannabis burned in braziers',
+               ['Herodotus wrote in the fifth century BCE that people of the Caspian steppe sat in a small tent and burned cannabis on hot stones. A small tent frame and copper vessels with burned stones found in the '
+                'Pazyryk kurgans of the Altai (around 500 BCE) seem to support his account [2].',
+                'At the Jirzankal cemetery in western China, at over 3,000 metres on the Pamir Plateau (about 2,500 years ago), ten wooden braziers holding burned stones were found in eight tombs. Chemical analysis '
+                'showed that {kenevir} had been burned in them and that the plants were high in psychoactive compounds. The authors call it some of the earliest directly dated and scientifically verified evidence for '
+                'ritual cannabis smoking. The cemetery also held glass beads and angular harps typical of western Asia and silk from eastern China: the Pamirs were a crossroads of cultures [2].']),
+              ('The Andes: a shaman’s bundle and a three-thousand-year-old cactus',
+               ['In a roughly 1,000-year-old leather ritual bundle found in a cave in Bolivia, a pouch sewn from three fox snouts held traces of cocaine, DMT, bufotenine and harmine: {koka}, {yopo} and the {ayahuasca} '
+                'vine. None of these plants grew in the area [3].',
+                'In Peru, remains of the {sanpedro} cactus were found at Guitarrero Cave in the Andes in layers dated to 8200–6800 BCE, and the cactus is often depicted in Chavín and Moche art [4]. The tradition lives '
+                'on in the mesa ceremonies of healers in northern Peru today.']),
+              ('A warning',
+               ['Most of the plants in this article are highly poisonous; datura, henbane and ephedra can cause serious poisoning even in small doses. They are described here as a record of the history of humanity’s '
+                'bond with plants.'])]},
 'kuzey-peruda-sifa-mesa-san-pedro-pazar': {'slug': 'healing-in-northern-peru-mesa-san-pedro-market',
  'baslik': 'Healing in northern Peru: the mesa altar, San Pedro and the 510 plants of the market',
  'aciklama': 'From the markets of Trujillo and Chiclayo to the healers’ altars: plant healing in northern Peru today, its thousand-year roots, “seguro” bottles, flower baths and the San Pedro cactus. With sources.',

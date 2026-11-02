@@ -2,6 +2,55 @@
 # Metindeki [1], [2]… işaretleri kaynak listesindeki sıraya karşılık gelir. Bitki bağlantıları {id} biçiminde yazılır.
 
 YAZILAR = [
+{'slug': 'tarih-oncesinde-bitkiler-arkeoloji',
+ 'tarih': '2026-11-04',
+ 'baslik': 'Tarih öncesinde bitkiler: arkeoloji bitkilerle bağımızı nasıl ortaya çıkarıyor?',
+ 'aciklama': 'Menorca’daki 3.000 yıllık saç tutamlarında tatula ve efedra izleri, Pamirlerde kenevir yakılan mangallar, And dağlarında bin yıllık bir şaman kesesi ve Akdeniz’de haşhaşın evcilleştirilmesi: '
+             'kaynaklarıyla.',
+ 'giris': 'Bitkiler arkeolojik kayıtta çoğu zaman görünmez: yenir, içilir, yakılır ve geriye pek bir şey kalmaz. Yine de son yıllarda kimyasal analizler, kap diplerindeki kalıntılardan ve hatta insan saçından binlerce '
+          'yıl önce kullanılan bitkileri okuyabiliyor. Bu yazı, açık erişimli araştırmalardan birkaç çarpıcı örneği bir araya getiriyor.',
+ 'bolumler': [('Görünmeyen bitkileri bulmak',
+               ['Araştırmacılar uzun süre bitki kullanımını dolaylı kanıtlardan çıkardı: havanlar, enfiye takımları, pipolar, tohum ve polen kalıntıları. Doğu Akdeniz’de Geç Tunç Çağı’na ait, ters çevrilmiş haşhaş '
+                'kapsülü biçiminde küçük testilerde afyon alkaloitleri bulunması, bu biçimin içindekini haber verdiği fikrini destekledi [1].',
+                'Daha doğrudan kanıt insan kalıntılarından gelir: Kolomb öncesi Amerika mumyalarının saçında, Çin’de tarih öncesi kemiklerde ve Vietnam’da Demir Çağı insanlarının diş mineinde bitki alkaloitleri '
+                'saptandı. Bazı eski bulgular ise yöntemleri yeterince açıklanmadığı için tartışmalı sayılıyor [1].']),
+              ('Haşhaşın Akdeniz’de evcilleştirilmesi',
+               ['Menorca araştırmasının yazarlarına göre {hashas} büyük olasılıkla Erken Neolitik’te Batı Akdeniz’de evcilleştirildi: ekili türün kalıntıları İtalya, güney Fransa ve İspanya’daki birçok yerleşimde '
+                'bulundu, sonra bitki hızla bütün Avrupa’ya yayıldı. Andorra’da Prats’taki Orta Tunç Çağı’na ait bir ritüel çukurda, MÖ 1600 dolaylarından yanmış {tatula} kapsülleri çıktı [1].']),
+              ('Menorca: kırmızıya boyanmış saç tutamları',
+               ['Balear Adaları’ndaki Menorca’da Es Càrritx mağarası 1995’te el değmemiş olarak bulundu. Mağaranın girişindeki oda MÖ 1450–800 arasında yaklaşık 600 yıl boyunca ortak mezar olarak kullanıldı ve 200’den '
+                'fazla kişiyi barındırdı. Mezarın kullanıldığı son 300 yılda tuhaf bir tören yapıldı: bazı ölülerin saçları kırmızıya boyandı ya da yağlandı, taranıp kesildi ve kapakları iç içe dairelerle oyulmuş tahta ya da '
+                'boynuz tüplere kondu [1].',
+                'MÖ 800 dolaylarında bu tüplerin bir kısmı mağaranın derinlerindeki küçük bir odaya gizlenip üstü kille örtüldü. Zeytin ağacından oyulmuş, şimşir kapaklı bir tüpteki saçta yapılan analizde atropin, '
+                'skopolamin ve efedrin bulundu. Yazarlara göre bunların kaynağı büyük olasılıkla {tatula} gibi bir itüzümügili ile adanın tek doğal efedra türü Ephedra fragilis’ti; saç uzunluğu, kişinin bunları '
+                'ölümünden önce yaklaşık bir yıl boyunca aldığını gösteriyor [1].',
+                'Mağarada bu bitkilerin kalıntısı yok; yani cenaze törenlerinde değil, başka bir bağlamda kullanılmışlar. Yazarlar, bu kadar zehirli bitkileri kullanmanın uzmanlık gerektirdiğini, bu bilginin tipik '
+                'olarak şamanlarda bulunduğunu hatırlatır. Kapaklardaki iç içe daireleri, bu alkaloitlerin büyüttüğü göz bebekleriyle, “iç görü”nün simgesi olan gözlerle ilişkilendirirler. Menorca’da bugün de efedra '
+                'yaprakları bazı tedavilerde kullanılıyor; tatula ve beyaz banotu (Hyoscyamus albus) eskiden astıma karşı sigara gibi içilirdi [1].']),
+              ('Pamirler: mangalda yakılan kenevir',
+               ['Herodot, MÖ 5. yüzyılda Hazar bozkırındaki insanların küçük bir çadıra oturup kızgın taşlar üstünde kenevir yaktığını yazar. Altay’daki Pazırık kurganlarında (MÖ 500 dolayları) bulunan küçük bir çadır '
+                'iskeleti ve yanık taşlı bakır kaplar bu anlatıyı destekler gibidir [2].',
+                'Çin’in batısında, Pamir Platosu’nda 3.000 metreyi aşan yükseklikteki Jirzankal mezarlığında (yaklaşık 2.500 yıl önce) sekiz mezardan, içinde yanık taşlar bulunan on tahta mangal çıktı. Kimyasal analiz, '
+                'bu mangallarda {kenevir} yakıldığını ve bitkinin yüksek miktarda psikoaktif madde içerdiğini gösterdi. Yazarlara göre bu, doğrudan tarihlenmiş ve bilimsel olarak doğrulanmış en eski ritüel kenevir içme '
+                'kanıtlarından biri. Mezarlıkta Batı Asya’ya özgü cam boncuklar ve açılı arplar ile Doğu Çin’e özgü ipek de bulundu: Pamirler bir kültür kavşağıydı [2].']),
+              ('And dağları: şamanın kesesi ve üç bin yıllık kaktüs',
+               ['Bolivya’da bir mağarada bulunan yaklaşık 1.000 yıllık deri bir ritüel kesede, üç tilki burnundan dikilmiş bir torbada kokain, DMT, bufotenin ve harmin izleri çıktı: {koka}, {yopo} ve {ayahuasca} '
+                'sarmaşığı. Bu bitkilerin hiçbiri bölgede yetişmiyordu [3].',
+                'Peru’da {sanpedro} kaktüsünün kalıntıları And dağlarındaki Guitarrero Mağarası’nda MÖ 8200–6800’e tarihlenen katmanlarda bulundu; kaktüs Chavín ve Moche sanatında da sık sık betimlenir [4]. Bu gelenek '
+                'bugün Kuzey Peru şifacılarının mesa törenlerinde sürüyor.']),
+              ('Bir uyarı',
+               ['Bu yazıdaki bitkilerin çoğu çok zehirlidir; tatula, banotu ve efedra küçük dozda bile ciddi zehirlenmelere yol açabilir. Burada insanlığın bitkilerle bağının tarihine dair bir kayıt olarak '
+                'anlatılıyorlar.'])],
+ 'kaynaklar': [('Elisa Guerra-Doce, Cristina Rihuete-Herrada, Rafael Micó, Roberto Risch, Vicente Lull, Hermann M. Niemeyer, “Direct evidence of the use of multiple drugs in Bronze Age Menorca (Western Mediterranean) '
+                'from human hair analysis”, Scientific Reports 13, 2023',
+                'https://doi.org/10.1038/s41598-023-31064-2'),
+               ('Meng Ren ve ark., “The origins of cannabis smoking: Chemical residue evidence from the first millennium BCE in the Pamirs”, Science Advances 5(6), 2019', 'https://doi.org/10.1126/sciadv.aaw1391'),
+               ('Melanie J. Miller ve ark., “Chemical evidence for the use of multiple psychotropic plants in a 1,000-year-old ritual bundle from South America”, PNAS 116(23), 2019',
+                'https://doi.org/10.1073/pnas.1902174116'),
+               ('Rainer W. Bussmann, Douglas Sharon, “Medicinal plants of the Andes and the Amazon – The magic and medicinal flora of Northern Peru”, Ethnobotany Research and Applications 15, 2016',
+                'https://ethnobotanyjournal.org/index.php/era/article/view/1283')],
+ 'bitkiler': ['hashas', 'tatula', 'efedra', 'kenevir', 'koka', 'yopo', 'ayahuasca', 'sanpedro'],
+ 'semboller': ['goz']},
 {'slug': 'kuzey-peruda-sifa-mesa-san-pedro-pazar',
  'tarih': '2026-11-03',
  'baslik': 'Kuzey Peru’da şifa: mesa sunağı, San Pedro ve pazarın 510 bitkisi',
