@@ -312,7 +312,7 @@ Karıştırma riski: Köpek papatyası (Anthemis) ve kokmaz papatya (Tripleurosp
 ## Sarı kantaron (Hypericum perforatum)
 
 URL: https://bitkitabani.com/kantaron/
-Familya: Hypericaceae · Bölge: Anadolu ve Akdeniz · Kullanılan kısım: Çiçekli dal
+Familya: Hypericaceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Çiçekli dal
 Bilimsel kanıt: Klinik · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -557,7 +557,7 @@ Karıştırma riski: Yabani gül türlerinin meyveleri birbirine benzer. Bilinen
 ## Alıç (Crataegus monogyna)
 
 URL: https://bitkitabani.com/alic/
-Familya: Rosaceae · Bölge: Anadolu ve Akdeniz · Kullanılan kısım: Çiçekli dal, meyve
+Familya: Rosaceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Çiçekli dal, meyve
 Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -694,7 +694,7 @@ Antakya’nın Harbiye semtinin antik adı Daphne’dir; Apollon tapınağı ve 
 ## Mürver (Sambucus nigra)
 
 URL: https://bitkitabani.com/murver/
-Familya: Viburnaceae · Bölge: Anadolu ve Akdeniz, And Dağları · Kullanılan kısım: Çiçek, olgun meyve
+Familya: Viburnaceae · Bölge: Anadolu ve Akdeniz, And Dağları, Avrupa · Kullanılan kısım: Çiçek, olgun meyve
 Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -922,7 +922,7 @@ Türkiye 1970’lerden beri kapsülü çizip afyon sakızı toplamak yerine kaps
 ## Banotu (Hyoscyamus niger)
 
 URL: https://bitkitabani.com/banotu/
-Familya: Solanaceae · Bölge: Anadolu ve Akdeniz · Kullanılan kısım: Tohum, yaprak
+Familya: Solanaceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Tohum, yaprak
 Bilimsel kanıt: Geleneksel · Güvenlik: Yüksek risk
 
 ### Geleneksel kullanım
@@ -1784,7 +1784,7 @@ And’ların muñası ile Anadolu’nun yarpuzu aynı molekülü, pulegonu taş�
 ## Civanperçemi (Achillea millefolium)
 
 URL: https://bitkitabani.com/civanpercemi/
-Familya: Asteraceae · Bölge: Anadolu ve Akdeniz, Kuzey Amerika · Kullanılan kısım: Çiçekli toprak üstü kısım
+Familya: Asteraceae · Bölge: Anadolu ve Akdeniz, Kuzey Amerika, Avrupa · Kullanılan kısım: Çiçekli toprak üstü kısım
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -1818,7 +1818,7 @@ Latince adı Achillea, efsaneye göre yaralı askerlerini bu bitkiyle tedavi ede
 ## Ökse otu (Viscum album)
 
 URL: https://bitkitabani.com/okseotu/
-Familya: Santalaceae · Bölge: Anadolu ve Akdeniz · Kullanılan kısım: Yapraklı dal
+Familya: Santalaceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Yapraklı dal
 Bilimsel kanıt: Sınırlı · Güvenlik: Yüksek risk
 
 ### Geleneksel kullanım

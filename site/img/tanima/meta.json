@@ -1633,5 +1633,13 @@
   "license": "CC BY 2.0",
   "page": "https://commons.wikimedia.org/wiki/File:Petiveria_alliacea_%28flowers%29_in_Costa_Rica.jpg"
  },
- "mucura:kuru": "yok"
+ "mucura:kuru": "yok",
+ "bobinsana:cizim": "yok",
+ "bobinsana:cicek": {
+  "file": "Flor Exótica de Ecuador.JPG",
+  "artist": "Dr. Carlos Costales Terán",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Flor_Ex%C3%B3tica_de_Ecuador.JPG"
+ },
+ "bobinsana:kuru": "yok"
 }
