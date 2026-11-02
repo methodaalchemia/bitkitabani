@@ -599,7 +599,7 @@ def run(G):
 {('<section class="sec"><h2>High-risk Anatolian plants in the catalog</h2><p>These plants are poisonous or have serious side effects; they are in the catalog for their cultural and historical importance and are not recommended for use.</p><ul class="otherlist">' + ''.join(f'<li><a href="/en/{p["id"]}/">{e(name(p))}</a></li>' for p in zhi) + '</ul></section>') if zhi else ''}
 <section class="sec"><h2>Sources</h2><ol class="refs">{"".join(f"<li><cite>{e(t)}</cite></li>" for t in Z_KAYNAK)}</ol></section>
 {DIS}</article>"""
-    write(path, page('Poisonous plants in Turkey and their look-alikes | Bitki Tabanı', 'Autumn crocus, poison hemlock, thorn apple, henbane, foxglove, mad honey and oleander: what they are confused with, how to tell them apart and what to do in a poisoning.', path, '/rehber/zehirli-bitkiler/', body, 'guides', narrow=True))
+    write(path, page('Poisonous plants in Turkey and their look-alikes | Bitki Tabanı', 'Autumn crocus, poison hemlock, thorn apple, mad honey, oleander and poisonous house plants: what they are confused with, how to tell them apart and what to do in a poisoning.', path, '/rehber/zehirli-bitkiler/', body, 'guides', narrow=True))
 
     # ---------- ritual calendar and harvest calendar ----------
     from takvim_en import O_EN, LINK_EN, AYLAR_EN

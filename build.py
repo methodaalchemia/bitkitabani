@@ -1245,7 +1245,7 @@ body = f"""{crumbs(('/rehber/', 'Rehberler'), (path, 'Zehirli bitkiler'))}
 {UPD}
 <section class="sec"><h2>Diğer rehberler</h2>{other_guides("")}</section>
 </article>"""
-write(path, page('Türkiye’de zehirli bitkiler ve en çok karıştırılanlar | Bitki Tabanı', 'Güz çiğdemi, baldıran, tatula, banotu, yüksük otu, deli bal ve zakkum: zehirli bitkiler neyle karıştırılır, nasıl ayırt edilir, zehirlenmede ne yapılır?', path, body, 'zehir', narrow=True,
+write(path, page('Türkiye’de zehirli bitkiler ve en çok karıştırılanlar | Bitki Tabanı', 'Güz çiğdemi, baldıran, tatula, deli bal, zakkum ve evdeki zehirli süs bitkileri: zehirli bitkiler neyle karıştırılır, nasıl ayırt edilir, zehirlenmede ne yapılır?', path, body, 'zehir', narrow=True,
       extra=lds({"@context":"https://schema.org","@type":"Article","headline":"Türkiye’de zehirli bitkiler ve en çok karıştırılanlar","inLanguage":"tr","url":BASE+path,"author":AUTHOR,"dateModified":CONTENT_DATE,"citation":[t for t, u in ZKAYNAK]}, crumb_ld(('/rehber/', 'Rehberler'), (path, 'Zehirli bitkiler')))))
 GUIDE_URLS.append(path)
 
