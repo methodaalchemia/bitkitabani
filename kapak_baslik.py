@@ -66,4 +66,9 @@ KB = {
  'ayahuasca-iki-bitkinin-birlesimidir-sarmasigin-kabugu': ('İki bitki, tek içecek', 'chacruna'),
  'zerdustlerin-kutsal-toreni-yasna-rahipler-haoma': ('Haoma hangi bitkiydi?', 'efedra'),
  'yuzyilda-sirvan-dan-anadolu-gelen-hekim': ('Sahte ilaç nasıl anlaşılırdı?', 'zerdecal'),
+ 'bolivya-magarada-bin-yillik-deri-kese': ('Bir şamanın bin yıllık kesesi', 'yopo'),
+ 'pamir-deniz-seviyesinden-000-metre-yukseklikteki': ('2.500 yıllık kenevir mangalları', 'kenevir'),
+ 'baytop-gore-acicigdem-kolhis-bugunku-batum': ('Medeia’nın Tarabya bahçesi', 'gucigdemi'),
+ 'romalilar-doneminde-iyi-safran-silifke-deki': ('Cehennem mağarasının safranı', 'safran'),
+ 'adamotunun-meyvesi-hos-kokar-sari-yuvarlaktir': ('Sersemleten kavun', 'adamotu'),
 }

@@ -37,6 +37,8 @@ JAUREGUI = ('Ximena Jauregui ve ark., ““Plantas con madre”: Plants that te
 GUERRA = ('Elisa Guerra-Doce, “Psychoactive Substances in Prehistoric Times: Examining the Archaeological Evidence”, Time and Mind 8(1), 2015', 'https://doi.org/10.1080/1751696X.2014.993244')
 MCKENNA = ('Dennis J. McKenna, G.H.N. Towers, F. Abbott, “Monoamine oxidase inhibitors in South American hallucinogenic plants: tryptamine and β-carboline constituents of ayahuasca”, Journal of Ethnopharmacology 10, 1984', 'https://doi.org/10.1016/0378-8741(84)90003-5')
 HAOMA = ('Tayebeh Zarei Karyani, Morteza Yousefzadi, Reza Sheikhakbari-Mehr, “Haoma: unveiling the mysteries of Iran’s sacred Zoroastrian botanical wonder”, Ethnobotany Research and Applications 31, 2025', 'https://ethnobotanyjournal.org/index.php/era/article/view/6824')
+MILLER = ('Melanie J. Miller ve ark., “Chemical evidence for the use of multiple psychotropic plants in a 1,000-year-old ritual bundle from South America”, PNAS 116(23), 2019', 'https://doi.org/10.1073/pnas.1902174116')
+REN = ('Meng Ren ve ark., “The origins of cannabis smoking: Chemical residue evidence from the first millennium BCE in the Pamirs”, Science Advances 5(6), 2019', 'https://doi.org/10.1126/sciadv.aaw1391')
 SIRVANI = ('Muhammed b. Mahmûd eş-Şirvânî, Şifa Bahçesi (Ravdatü’l-ıtr), I. Cilt, tahkik ve çeviri: Muammer Sarıkaya, Celal Turgut Koç, Orman Genel Müdürlüğü Yayınları, Tarih ve Tıp Serisi 1, Ankara', '')
 BK = 'Baytop, Türkiye’de Bitkiler ile Tedavi, 2021'
 
@@ -209,6 +211,16 @@ dict(kaynak=HAOMA, kisa='Zarei Karyani ve ark., Ethnobot Res Appl, 2025', bitki=
   post='Zerdüştlerin en kutsal töreni Yasna’da rahipler “haoma” denen bir içecek hazırlayıp içer; ölümsüzlüğün, arınmanın ve Tanrı’yla bağın simgesidir. Ama haomanın hangi bitkiden yapıldığı hâlâ tartışmalı. En güçlü aday efedra; adı Hint Vedalarındaki “soma” ile akraba. Bazı araştırmacılar ise Anadolu’da nazara karşı yakılan üzerliği öne sürüyor: tohumlarında harmin ve harmalin var. Cevap hâlâ belirsiz.'),
 dict(kaynak=SIRVANI, kisa='Şirvânî, Şifa Bahçesi (OGM yay.)', bitki='zerdecal', yore='XV. yüzyıl Osmanlı',
   post='15. yüzyılda Şirvan’dan Anadolu’ya gelen hekim Şirvânî, eczacılık kitabında sahte ilacın nasıl anlaşılacağını anlatır. Hakiki zerdeçal kat kat soyulur, tadı acıdır, kabuğunun içinde kan gibi koyu bir öz görünür; sahtesi bunun tersidir. Afyonu ise suyla karıştırıp sınarlarmış: dipte tortu kalırsa sahte, kalmazsa hakikidir.'),
+dict(kaynak=MILLER, kisa='Miller ve ark., PNAS, 2019', bitki='yopo', yore='Bolivya And dağları, yaklaşık 1.000 yıl önce',
+  post='Bolivya’da bir mağarada bin yıllık bir deri kese bulundu. İçinde enfiye tahtaları, bir enfiye borusu ve üç tilki burnundan dikilmiş bir torba vardı. Torbada kokain, DMT, bufotenin ve harmin izleri çıktı: koka, yopo ve ayahuasca sarmaşığı. Bu bitkilerin hiçbiri orada yetişmiyor. Keseyi taşıyan şaman onları uzak yollardan getirtmiş, belki de birlikte kullanmıştı.'),
+dict(kaynak=REN, kisa='Ren ve ark., Science Advances, 2019', bitki='kenevir', yore='Pamir Platosu, yaklaşık 2.500 yıl önce',
+  post='Pamir’de, deniz seviyesinden 3.000 metre yükseklikteki Cirzankal mezarlığında tahta mangallar ve yanmış taşlar bulundu. Mangallarda kenevir izleri vardı. Ölüler için yapılan törenlerde kızgın taşlara kenevir atılıp dumanı çekilmiş olabilir. Herodot da İskitlerin cenaze sonrası benzer bir buhar töreni yaptığını yazar. Bu, kenevir dumanının bilinen en eski kimyasal kanıtı.'),
+dict(kaynak=BAYTOP3, kisa=BK, bitki='gucigdemi', yore='İstanbul, Tarabya',
+  post='Baytop’a göre acıçiğdem Kolhis’te, bugünkü Batum dolaylarında bol yetişir. Kolşisin adı da buradan gelir. Efsanevi büyücü Medeia da Kolhisli’dir. Anlatılana göre ülkesinden kaçınca bir süre İstanbul’da kalmış, Boğaz kıyısında bir şifalı bitki bahçesi kurup halkı tedavi etmiş. Semtin adının Grekçe “tedavi” anlamındaki Therapia’dan, yani Tarabya’dan geldiği söylenir.'),
+dict(kaynak=BAYTOP3, kisa=BK, bitki='safran', yore='Silifke, Cehennem mağarası',
+  post='Romalılar döneminde en iyi safran Silifke’deki Cehennem mağarasının dibindeki çalılıklarda yetişirdi. Baytop bunun bugün de sürüp sürmediğini görmek için 1995’te yöreye gitti. Ne safran toplayan biri vardı ne de yörükler ünlü safranlı tatlı zerdeyi tanıyordu. Oysa Hititler bile safranı biliyordu; ona Akadca “safran bitkisi” anlamındaki azupiru derlerdi.'),
+dict(kaynak=BAYTOP3, kisa=BK, bitki='adamotu', yore='Silifke',
+  post='Adamotunun meyvesi hoş kokar, sarı ve yuvarlaktır. Bu yüzden çocuklar bazen onu yer. Ama bitkinin her yeri, özellikle kökü zehirlidir; meyveyi yiyenlerde baş dönmesi ve sarhoşluk görülür. Baytop, Silifke’de bitkiye bu yüzden “toskafakavunu”, yani sersemleten kavun dendiğini kaydeder. Aynı yörede adı “atelması” ve “ittaşağı”dır.'),
 ]
 
 def site_kul():
