@@ -230,7 +230,7 @@ H_EN = {
  'iki-ayri-agac-tek-karadeniz-taflan': dict(
   baslik='One bay, one poison: two taflans',
   yore='Northwest Anatolia',
-  post='Two different trees, one name: on the Black Sea, “taflan” usually means cherry laurel (Laurocerasus officinalis). People who moved from the eastern Black Sea also planted this tree in their new villages. But in some villages bay laurel is also called “taflan” and is used for other things. Researchers warn: cherry laurel leaves and seeds are toxic in large amounts; one must not be used in place of the other because of the shared name.',
+  post='Two different trees, one name: on the Black Sea, “taflan” usually means cherry laurel (Laurocerasus officinalis). People who moved from the eastern Black Sea also planted this tree in their new villages. But in some villages bay laurel is also called “taflan” and is used for other things. Researchers warn: cherry laurel leaves and seeds are poisonous, especially in large amounts; one must not be used in place of the other because of the shared name.',
   kisa='Yeşilada et al., J Ethnopharmacol, 1999'),
  'tugla-yagi-sakarya-nin-koyunde-romatizma': dict(
   baslik='Can a brick give oil?',
