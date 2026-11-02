@@ -233,6 +233,31 @@ DESCRIPTION:İran ve Tacikistan’da sonbahar hasadına şükran: nar\,
 URL:https://bitkitabani.com/takvim/#mehregan
 END:VEVENT
 BEGIN:VEVENT
+UID:olay-kimiz-murindik@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260501
+DTEND;VALUE=DATE:20260601
+RRULE:FREQ=YEARLY
+SUMMARY:Kımız murındık
+DESCRIPTION:Bahar-yazın ilk kımızı: Kazak\, Kırgız ve Başkurtlarda
+  kımız bayramı. Kımız Türkiye’de bazı şarküterilerde bulunur\;
+  alkol içerebileceğini unutma. https://bitkitabani.com/takvim/#kimiz-mu
+ rindik
+URL:https://bitkitabani.com/takvim/#kimiz-murindik
+END:VEVENT
+BEGIN:VEVENT
+UID:olay-sabantuy@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260701
+RRULE:FREQ=YEARLY
+SUMMARY:Sabantuy
+DESCRIPTION:Tatar ve Başkurtların saban bayramı: güreş\, yarışlar 
+ ve toprağa serpilen lapa. Saçı kavramı\, toprağa ve ateşe serpilen 
+ sunuları anlatır. https://bitkitabani.com/takvim/#sabantuy
+URL:https://bitkitabani.com/takvim/#sabantuy
+END:VEVENT
+BEGIN:VEVENT
 UID:toplama-adacayi@bitkitabani.com
 DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260301
