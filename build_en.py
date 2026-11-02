@@ -613,7 +613,7 @@ def run(G):
         r = O_EN[o['slug']]
         kay = ''.join(f'<li><a href="{e(u)}" target="_blank" rel="noopener">{e(t)}</a></li>' for t, u in o['kaynaklar'])
         pl = ''.join(f'<a class="chip" href="/en/{x}/">{e(name(byId[x]))}</a>' for x in o['bitkiler'] if x in byId)
-        lu, _ = o['link']; lu = LINK_EN.get(lu)
+        lu, _ = o['link']; lu = LINK_EN.get(lu) if not lu.startswith('/kavram/') or any(lu == f'/kavram/{k["slug"]}/' for k in G['KAV']) else None
         return (f'<section class="sec" id="{o["slug"]}"><span class="eyebrow">{_dt(o["tarih"])}</span><h2>{e(r["ad"])}</h2><p><b>{e(r["kisa"])}</b></p>'
                 f'<p>{re.sub(r"\[(\d+)\]", lambda m: "<sup>[" + m.group(1) + "]</sup>", e(r["metin"]))}</p><p class="muted-s">To prepare: {e(r["hazirlik"])}</p>'
                 + (f'<div class="related">{pl}</div>' if pl else '') + (f'<p><a class="cta small" href="{lu}">{e(r["link"])} →</a></p>' if lu else '')

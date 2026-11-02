@@ -92,4 +92,88 @@ K_EN = {
         'In medieval Europe these plants became the basis of the green ointment known as “witches’ ointment”. According to the accounts, a witch would undress, rub the ointment over her whole body, sit astride a broom or a stove poker, and the night journey would begin. People numbed by the ointment dreamed of flying, banquets, dancing and love, and on waking believed that what they had dreamed was real. One researcher saw the ointment as a means of intoxication for the poor, who could not afford costlier pleasures [1].',
         'The same plants were used in love potions, poisons and sleep sponges. Of the 140 remedies in the famous twelfth-century formulary Antidotarium Nicolai, at least 29 contained opium, 19 henbane and 14 mandrake. Love potions were banned under heavy penalties from the 13th century; in Prussian law the ban lasted into the 18th century [1].',
         'In the nineteenth century chemists isolated the active compounds of these plants; hyoscine from henbane was for a time used to sedate psychiatric patients [1]. All these plants are highly poisonous; they appear here as a cultural and historical record.']),
+'albasti': {'slug': 'albasti',
+ 'ad': 'Albastı (alkarısı)',
+ 'kisa': 'The evil being believed to attack women who have just given birth and their newborns, and the onion, garlic, iron and red ribbon used against it.',
+ 'metin': ['In Anatolia the being called alkarısı, al, alanası or albası is believed to attack mainly women who have just given birth and their babies. The illness it causes is called albastı or albasması; today it is '
+           'known to have been puerperal fever, an infection after childbirth [1].',
+           'The protections are similar across a wide area: the mother is not left alone for 40 days and a lamp is kept burning; a Qur’an, a mirror, an onion, garlic or an amulet is placed nearby, and iron such as a '
+           'knife, scissors or tongs, or bread and a needle, under the pillow; a red ribbon is tied to the mother’s head and to the cradle. After an attack a horse was brought into the room to neigh, and barley was put '
+           'on the patient for the horse to eat [1]. Field material from Sivas adds burning {corekotu} at the mother’s head and placing onion, {sarimsak}, a knife and a needle by the bed [2].',
+           'Among the Kyrgyz, albarstı can attack men as well as women; the specialists who drive it away are called kuuçu or kuuğunçu. Because the eagle was thought to be the only animal that can see it, an eagle was '
+           'brought into the house during a difficult birth, and eagle claws and wolf teeth were hung on cradles. The Gagauz put embers at the door; Turkmen put a knife, salt and bread under the pillow [3].',
+           'Whoever catches an alkarısı with a needle or pitch is believed to become ocaklı, and objects belonging to such people protect against it; the belief has Central Asian roots [3][4]. This is a record of '
+           'belief: fever, shivering or foul-smelling discharge after childbirth is a medical emergency.']},
+'alastama': {'slug': 'alastama',
+ 'ad': 'Alastama (purifying with smoke)',
+ 'kisa': 'The Kyrgyz practice of driving off evil spirits and purifying with juniper smoke; juniper incense is sacred in the Altai too.',
+ 'metin': ['In Kyrgyz folk medicine the purification called alastap or ısırktap is done by burning {ardic} leaves, and its smoke is used against evil spirits. One healer describes how, as the smoke rises, her voice '
+           '“comes”, and then a knife is touched three times to the patient’s joints. Juniper smoke is also used as incense in homes, workplaces and bazaars [1].',
+           'In the same Kyrgyz material {uzerlik} is burned as a calming “smoke treatment” [1]. The kinship with the Syrian rue incense burned against the evil eye in Anatolia is striking.',
+           'Juniper is sacred among other Turkic peoples too. The Bashkirs revered birch and juniper; a Russian traveller was scolded for breaking a juniper branch on Tura-Tau mountain without making a vow [2]. The '
+           'commandments of Burkhanism (Ak Cañ), born in the Altai in 1904, say “burn juniper incense in censers” and “offer one another a juniper branch instead of tobacco”; the same movement decorated birches with '
+           'five-coloured ribbons [3].',
+           'Like smudging in North America and limpia in the Andes, purification by smoke appears in similar forms in cultures far apart. Breathing smoke indoors for long is harmful to the lungs; burn incense briefly '
+           'and in a ventilated place.']},
+'kut': {'slug': 'kut',
+ 'ad': 'Kut and ıduk',
+ 'kisa': 'Fortune and life force believed to pass from the Sky God to chosen people and beings; ıduk is what is “holy, blessed”.',
+ 'metin': ['In Kaşgarlı Mahmud’s dictionary kut means “fortune, rule”: if God gives His servant kut, his affairs always rise. The word’s meaning takes in life, spiritual strength, courage, happiness and good luck. In '
+           'Turkic belief kut comes from the Sky God and passes to chosen people and beings; it was thought to be handed down by blood to rulers, clan heads, healers, kams and dedes [1].',
+           'In the Old Turkic omen book Irk Bitig kut “comes” and is “given” like a concrete thing: a man on his way to a visit meets God and asks for kut, and God blesses him, “may there be horses in your fold, may '
+           'your life be long” [2]. Among the Sakha, kut is the life-giving force in people, animals and plants [3].',
+           'Iduk means “holy, blessed”. The “ıduk yer-sub” (holy earth-water) of the Orkhon inscriptions refers both to protective spirits and to the homeland [4]. Iduk is also used for an animal dedicated to God and '
+           'set free: it is not loaded, milked or shorn. In the Altai the kam tied a white cloth round the neck of the winning race horse and offered it as ıduk [5].',
+           'Trees carry this holiness too: the Yakuts believed every kam had his own tree, which grew and died with him [6]; the Bashkirs would not break a {ardic} branch without making a vow [7]. The continuation of '
+           'Anatolian ocaks by “giving the hand” is also explained as kut passing by blood and by hand [1].']},
+'hidrellez': {'slug': 'hidrellez',
+ 'ad': 'Hıdrellez',
+ 'kisa': '6 May, when Hızır and İlyas meet: green picnic grounds, wishes tied to trees and intentions placed under a rose bush.',
+ 'metin': ['Hıdrellez is a spring festival held on 6 May, when Hızır and İlyas are believed to meet on earth, and is seen as the start of summer. It is celebrated at green picnic grounds called “hıdırlık”, often by '
+           'water [1].',
+           'According to the inventory form Türkiye submitted to UNESCO, people make wishes by tying ribbons to trees and put wish pots under a {gul} bush; the next day verses are sung as objects are drawn from the pot '
+           '[2]. UNESCO inscribed the festival in 2017 on a joint file of North Macedonia and Türkiye [3].',
+           'Tying cloth to a tree to make a wish is linked with the old tree cult of the Turkic world: Buryats, Yakuts, Bashkirs, Kazakhs and Kyrgyz made vows to old, solitary pines, birches, junipers and plane trees '
+           '[4].']},
+'alkis-kargis': {'slug': 'alkis-and-kargis',
+ 'ad': 'Alkış and kargış',
+ 'kisa': 'The old Turkic belief in the power of the spoken word: alkış is blessing and praise, kargış is curse.',
+ 'metin': ['Alkış and kargış come from the Old Turkic verbs alka- (to praise, to pray) and karga- (to curse). Kaşgarlı Mahmud defines alkış as praise, prayer and recounting a person’s virtues, and kargış as a curse, '
+           'giving the example “God’s curse be upon him” [1].',
+           'In Irk Bitig a man asks God for kut on his way and receives the alkış “may there be horses in your fold, may your life be long” [1]. In Sakha (Yakut) epics alkış is used mostly to voice wishes, to praise '
+           'and to keep evil away, and kargış in moments of danger, against a threatening force or to voice grief. Scholars link the genre to the wish to control nature through words, and to the passage from chaos back '
+           'to order [2].',
+           'Trees were addressed with alkış too: in the Altai the Kaç kam called on the “gold-leafed, eight-shadowed holy birch” and offered it a white lamb, and Sagay, Shor and Teleut kams would not perform a rite '
+           'without a {hus} [3].',
+           'A curse aimed at plants appears in Dede Korkut: Boğaç Han’s mother curses Kazılık Mountain, where her son was struck down, wishing that its grass would no longer grow. In nomadic culture, wishing someone’s '
+           'grass to dry up meant wishing them dead [4]. Anatolian sayings such as “may your hearth go out” or “may your road be open” are living traces of this tradition.']},
+'nevruz': {'slug': 'nowruz',
+ 'ad': 'Nowruz',
+ 'kisa': '“New day”: the arrival of spring on 21 March, with sprouted wheat, Kyrgyz sümölök and Kazakh köje.',
+ 'metin': ['Nowruz means “new day” in Persian and is celebrated on 21 March from Central Asia to the Balkans. People jump over fire, in some Turkic communities iron is forged in the fire, and {bugday} and lentils are '
+           'sprouted and set on the table [1]. In 2016 UNESCO inscribed Nowruz on a joint file of 12 countries including Kazakhstan, Kyrgyzstan, Türkiye, Turkmenistan and Uzbekistan; the festival lasts about two weeks '
+           'and includes water and fire rituals [2].',
+           'The Kyrgyz Nowruz dish sümölök is made from sprouted wheat. The wheat is soaked and watered daily until the sprouts are a finger long. The sprouts are crushed for their juice, which is poured seven times '
+           'into flour roasted in fat. The mixture is stirred in a cauldron with walnut-sized stones for 10–12 hours, and wishes are made as dried fruit and walnuts are added [3]. “Suma” in Kaşgarlı Mahmud’s '
+           'dictionary, sprouted wheat dried and ground, is cited as an early record of the same tradition [3].',
+           'The Kazakh Nowruz köje is cooked with barley or wheat, ayran and meat cured over the winter; in the east a seven-ingredient “kos köje” is made [4].']},
+'kimiz': {'slug': 'kumis',
+ 'ad': 'Kumis and the white offering',
+ 'kisa': 'Fermented mare’s milk: a “white” offering to the sky, the four directions and the ancestors, and the spring kumis festivals.',
+ 'metin': ['Kumis is an old Turkic drink made by fermenting mare’s milk. Among the Kazakhs the first kumis of the spring–summer season is called “qymyz muryndyq” and welcomed with a feast; kumis is sprinkled as a '
+           'bloodless, “white” offering to the sky, the four directions and the mountains. The Buryats, Bashkirs and the Kazakhs of Mongolia have other names for the same festival [1].',
+           'In Fergana, Kipchaks, Kyrgyz and Kazakhs held a week-long kumis festival at the end of May: there was a contest for the best kumis, kumis was given as a gift in leather vessels, and kumis songs were sung '
+           '[2]. The Bashkir kumis festival is held in June with the first milking of the mares; before going home people gather fresh herbs for themselves and their animals. Bashkir kumis ladles are carved from {hus} '
+           'wood, with bird figures on the handles [3].',
+           'At Ysyakh, the Sakha summer festival, young birches are planted along the host’s fences and kumis is served among them; kumis cups are raised nine times to the sky god and kumis is tossed three times toward '
+           'the sky [4]. The old Turks offered the first bite and the first mare’s milk to the ancestors [5].']},
+'saci': {'slug': 'sachy',
+ 'ad': 'Saçı (scattered offering)',
+ 'kisa': 'A bloodless offering: kumis, milk, butter, wheat or millet scattered to the four directions, the fire or the earth.',
+ 'metin': ['Among the old Turks bloodless offerings were called saçı, also kese, sacılga or çacılga. Milk, kumis, butter, {bugday}, millet or money could be offered [1]. The most common daily saçı was sprinkling a '
+           'little kumis from a bowl toward the four directions and drinking the rest; at the first spring thunder Kazakh and Kyrgyz women walked round the tent with vessels of milk, ayran and kumis [1].',
+           'In the Altai oba rite the kam circled the oba three times and fumigated it by burning fragrant herbs [1]. Sakha hunters gave fat and meat to the forest spirit Bayanay and, after the first kill, tied '
+           'coloured cloth strips and furs to trees [2].',
+           'In the old “crow’s porridge” custom of the Tatar Sabantuy festival, children collect groats, milk, butter and eggs from house to house and cook an oat porridge; some of it is scattered on the thawed ground '
+           'as saçı against evil spirits [3]. Throwing wheat, sugar and coins over the bride at Anatolian weddings is a present-day form of the same tradition [4].']},
 }

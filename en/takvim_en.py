@@ -55,6 +55,20 @@ O_EN = {
  'ilkbahar-esitligi': dict(ad='Spring equinox', kisa='Day and night are equal: nature wakes up.',
    metin='Around 20 March day and night become equal and spring begins. The time to gather young stinging nettle leaves is approaching.',
    hazirlik='Gather young nettle leaves with gloves. Gather mallow away from roadsides.', link='Spring plants in nature'),
+ 'kimiz-murindik': {'ad': 'Qymyz muryndyq',
+ 'kisa': 'The first kumis of spring and summer: the kumis festival of the Kazakhs, Kyrgyz and Bashkirs.',
+ 'metin': 'The Kazakhs welcome the season’s first kumis with the qymyz muryndyq feast; kumis is sprinkled as a white offering to the sky, the four directions and the mountains [1]. In Fergana, Kipchaks, Kyrgyz and '
+          'Kazakhs held a week-long kumis festival at the end of May, with a contest for the best kumis, gifts of kumis in leather vessels and kumis songs [2]. Among the Bashkirs the festival is held in June with the '
+          'first milking of the mares [3].',
+ 'hazirlik': 'Kumis can contain alcohol.',
+ 'link': 'Kumis and the white offering'},
+ 'sabantuy': {'ad': 'Sabantuy',
+ 'kisa': 'The plough festival of the Tatars and Bashkirs: wrestling, races and porridge scattered on the earth.',
+ 'metin': 'Sabantuy is a festival tied to snowmelt and the farming year, with roots traced to the Volga Bulgars; it is held in late May or early June on a day set by village elders. In the old “crow’s porridge” custom, '
+          'children collect groats, milk, butter and eggs from house to house and cook an oat porridge, scattering some of it on the earth against evil spirits. The festival ground is ringed with a plough furrow for '
+          'protection; Chuvash girls ploughed a ring around the village in times of epidemic [1].',
+ 'hazirlik': 'The saçı concept describes offerings scattered on the earth and the fire.',
+ 'link': 'What is saçı?'},
 }
-LINK_EN = {'/kavram/animizm/': '/en/concepts/animism/', '/nar/': '/en/nar/', '/pelin/': '/en/pelin/', '/kantaron/': '/en/kantaron/', '/alic/': '/en/alic/', '/kavram/kam/': '/en/concepts/kam/', '/kavram/geleneksel-cin-tibbi/': '/en/concepts/traditional-chinese-medicine/', '/toplama-takvimi/': '/en/harvest-calendar/', '/kavram/pachamama/': '/en/concepts/pachamama/', '/rehber/soguk-alginligi/': '/en/guides/common-cold/'}
+LINK_EN = {'/kavram/kimiz/': '/en/concepts/kumis/', '/kavram/saci/': '/en/concepts/sachy/', '/kavram/animizm/': '/en/concepts/animism/', '/nar/': '/en/nar/', '/pelin/': '/en/pelin/', '/kantaron/': '/en/kantaron/', '/alic/': '/en/alic/', '/kavram/kam/': '/en/concepts/kam/', '/kavram/geleneksel-cin-tibbi/': '/en/concepts/traditional-chinese-medicine/', '/toplama-takvimi/': '/en/harvest-calendar/', '/kavram/pachamama/': '/en/concepts/pachamama/', '/rehber/soguk-alginligi/': '/en/guides/common-cold/'}
 AYLAR_EN = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']

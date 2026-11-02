@@ -46,6 +46,14 @@ SIRVANI = ('Muhammed b. Mahmûd eş-Şirvânî, Şifa Bahçesi (Ravdatü’l-ıt
 BK = 'Baytop, Türkiye’de Bitkiler ile Tedavi, 2021'
 UZUN24 = ('Didem Uzun, Şimal Yakut Aymankuy, “Food and beverage rituals at the period of birth, marriage, and death in Shamanist Turks and its modern reflections”, Journal of Tourism Leisure and Hospitality 6(1), 2024', 'https://doi.org/10.48119/toleho.1492741')
 UZK = 'Uzun & Yakut Aymankuy, TOLEHO, 2024'
+GUL24 = ('Mehmet Güler, “Babürnâme’deki Örneklerden Hareketle Türk-Moğol Kültüründe Yadacılık Geleneği”, Journal of Old Turkic Studies 7(2), 2023', 'https://dergipark.org.tr/tr/download/article-file/2971251')
+KILIC14 = ('Emine Kılıç, “Doğu Türkistan’dan Anadolu’ya Yağmur Törenleri”, Uluslararası Uygur Araştırmaları Dergisi 3, 2014', 'https://dergipark.org.tr/tr/download/article-file/319102')
+GEDIK = ('Seda Gedik, “Dede Korkut Kitabında Bitkiler”, AKRA 8(21), 2020', 'https://doi.org/10.31126/akrajournal.647237')
+OZDEN18 = ('M. Özden, “Türkçenin İlk Sözlüğünde Kullanılan Bitki Adlarının Günümüz Anadolu Ağızlarındaki İzdüşümleri”, Türkiye Sosyal Araştırmalar Dergisi, 2018', 'https://dergipark.org.tr/tr/download/article-file/907819')
+KIELAK = ('Olga Kielak, Journal of Ethnobiology and Ethnomedicine 21, 2025 (Polonya halk inançlarında mürver)', 'https://doi.org/10.1186/s13002-025-00787-z')
+WTH = ('Woodland Trust, Hawthorn', 'https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/hawthorn/')
+NMI = ('National Museum of Ireland, Folklife Collections: May Day', 'https://cms.museum.ie/en-IE/Collections-Research/Folklife-Collections/Folklife-Collections-List-(1)/Religion-and-Calendar-Customs/May-Day')
+SVAN = ('Ingvar Svanberg ve ark., “Uses of tree saps in northern and eastern parts of Europe”, Acta Societatis Botanicorum Poloniae 81(4), 2012', 'https://doi.org/10.5586/asbp.2012.036')
 
 EGE = ('Bintuğ Öztürk ve ark., “Türkiye’nin Etnobotanik Veritabanı”, Ege Üniversitesi BAP sonuç raporu, 2020',
        'https://acikerisim.ege.edu.tr/server/api/core/bitstreams/c2e0e3a1-ac5b-4664-bc34-33187274efea/content')
@@ -252,6 +260,18 @@ dict(kaynak=UZUN24, kisa=UZK, bitki='bugday', yore='Saha (Yakut) Türkleri',
   post='Saha (Yakut) Türklerinde doğumdan üç gün sonra kadınlar bir uğurlama töreni yapardı: gülüşür, yüzlerine yağ sürerlerdi. Bu tören için kaynatılmış buğdaydan bir çorba pişirilip birlikte yenirdi; adı salamattı. Anadolu’da bebeğin ilk dişi çıkınca haşlanıp dağıtılan diş buğdayı da aynı tahıla bağlanan doğum geleneklerindendir.'),
 dict(kaynak=SIRVANI, kisa='Şirvânî, Şifa Bahçesi (OGM yay.)', bitki='gul', yore='XV. yüzyıl Osmanlı',
   post='Şirvânî’nin eczacılık kitabında gül şurubu şöyle yapılır: Nusaybin gülünün ya da yerel gülün yaprakları derin bir kazana konur, üzerine kaynar su dökülür, ağzı kapatılıp güller beyazlayana kadar beklenir. Bu yedi kez ya da daha çok tekrarlanır, sonra su süzülüp ağırlığınca şekerle pekmez kıvamına kaynatılır. Kitaba göre sıtmaya ve susuzluğa iyi gelir, mideyi güçlendirir.'),
+dict(kaynak=GUL24, kisa='Güler, JOTS, 2023; Kılıç, 2014', link='kavram/kam/', yore='Orta Asya, Karahanlılar ve Babürler',
+  post='Kaşgarlı Mahmud, Yağma ülkesinde yaz ortasında bir taşla kar yağdırılıp bir yangının söndürüldüğünü kendi gözüyle gördüğünü yazar. Bu yada taşıydı: suya batırılınca yağmur, atın yelesine asılınca serin rüzgâr getirdiğine inanılırdı. Babür de anılarında Tohta Buga Sultan’ın “yada yaptığını”, ardından rüzgârın ve yağmurun geldiğini anlatır. Taşı kullananlara yadacı denir, kamlardan ayrı tutulurlardı.'),
+dict(kaynak=GEDIK, kisa='Gedik, AKRA, 2020', link='yazilar/samanizm-ve-kam-gelenegi/', yore='Dede Korkut Kitabı',
+  post='Dede Korkut’ta Boğaç Han babasının okuyla ağır yaralanır. Annesine “ağlama” der: boz atlı Hızır gelmiş, yarasını üç kez sıvazlamış, “bu yaradan ölmezsin; dağ çiçeği ile ananın sütü sana merhemdir” demiştir. Araştırmacılar bunu Türk halk hekimliğinde dağ çiçeğinin yerine bir örnek olarak gösterir. Kitapta geçen bitkiler arasında kavak, servi, güz elması, badem, soğan, sarımsak, darı ve arpa da var.'),
+dict(kaynak=OZDEN18, kisa='Özden, Türkiye Sosyal Araştırmalar Dergisi, 2018', link='yazilar/samanizm-ve-kam-gelenegi/', yore='Kaşgar, XI. yüzyıl',
+  post='Kaşgarlı Mahmud’un sözlüğünde andız (aŋduz, Inula helenium) kökünün atın karın ağrısına iyi geldiği yazar ve bir atasözü kaydedilir: “Andız olsa at ölmez.” Aynı sözlükte üzerlik Kaşgar’da yıdıg ot, Oğuzlarda yüzerlik; yarpuz yarpuz, pelin yawçan, kayın ise kadıŋ diye geçer. Bu adların bir kısmı bugün Anadolu ağızlarında yaşıyor.'),
+dict(kaynak=KIELAK, kisa='Kielak, J Ethnobiol Ethnomed, 2025', bitki='murver', yore='Polonya, Lublin yöresi',
+  post='Polonya’nın Lublin yöresinde mürvere “şeytan mürveri” denir; çalısında kötü varlıkların yaşadığına inanılır. Onu sökmek ya da kesmek hastalık, felç, elin kuruması, hatta ölüm getirir. Ama aynı çalıya şifa dualarında “kutsal mürver” diye seslenilir: diş ağrısında “kutsal mürver, derdimi sağlam köklerinin altına al” denir. Dalları cadılara karşı pencere ve eşiklere konurdu.'),
+dict(kaynak=WTH, kisa='Woodland Trust; National Museum of Ireland', bitki='alic', yore='Britanya ve İrlanda',
+  post='Britanya’da alıç çiçeği asla eve sokulmazdı: getirilirse ardından hastalık ve ölüm geleceğine inanılırdı. Orta Çağ’da çiçeğinin kokusunun büyük vebayı andırdığı söylenirdi; bunun açıklaması, çiçekte çürüyen dokuda da oluşan trimetilamin bulunması olabilir. İrlanda’da ise mayıs ayının ilk günü kurdelelerle süslenen “mayıs çalısı” çoğu zaman bir alıçtı.'),
+dict(kaynak=SVAN, kisa='Svanberg ve ark., Acta Soc Bot Pol, 2012', bitki='hus', yore='Baltık ve Doğu Avrupa',
+  post='Rusya, Ukrayna, Belarus, Estonya, Letonya ve Litvanya, ağaç özsuyu, özellikle huş özsuyu toplamanın yakın zamana kadar önemini koruduğu tek ülkeler. Letoncada nisanın adı “sulu mēnesis”, Livoncada “kõļimkū”: ikisi de “huş özsuyu ayı” demek. Vyborg çevresinde huş ağaçları kişilerin malıydı; tıpkı sığırlar gibi her birine ad verilirdi.'),
 ]
 
 def site_kul():

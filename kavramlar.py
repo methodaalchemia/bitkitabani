@@ -1,6 +1,6 @@
 # Günün kavramı: kısa, kaynaklı sözlük maddeleri (/kavram/<slug>/). Her gece yayın tarihi gelen madde yayına girer.
 # Her kavram bir bitkiyle eşleşir (bitki: katalog id); o bitki sayfada “Günün bitkisi” olarak öne çıkar.
-# Bekleyen fikirler: Nevruz (filizlenen buğday; bugday 27 Kasım’da yayında), Hıdrellez (gül; gul 21 Kasım’da yayında), Umay (kayın/huş; hus 26 Kasım’da yayında), uçan merhem (banotu).
+# Bekleyen fikirler: Umay (kayın/huş; hus 26 Kasım’da yayında), uçan merhem (banotu)
 # Alanlar: yayin (YYYY-AA-GG), slug, ad, bitki, kisa (tek cümle), metin (paragraflar; [1] kaynak, {id} bitki bağlantısı),
 # bitkiler, semboller, yazilar (ilgili uzun yazı slug'ları), kaynaklar [(başlık, url)].
 # Kurallar: Bilgiler yalnızca kaynakta yazanlarla sınırlı; Vikipedi kaynak olarak kullanılmaz; ritüeller kültürel kayıt olarak anlatılır.
@@ -167,4 +167,165 @@ dict(yayin='2026-11-08', slug='smudging', ad='Smudging', bitki='akadacayi',
                 'On dokuzuncu yüzyılda kimyacılar bu bitkilerin etken maddelerini ayırdı; banotundan elde edilen hiyosin bir süre ruh hastalarını sakinleştirmek için kullanıldı [1]. Bu bitkilerin hepsi çok zehirlidir; burada kültürel ve tarihî bir kayıt olarak yer alır.'],
          kaynaklar=[('Jürgen Leo Müller, “Love potions and the ointment of witches: historical aspects of the nightshade alkaloids”, Journal of Toxicology: Clinical Toxicology 36(6), 1998', 'https://doi.org/10.3109/15563659809028060')],
          semboller=['okse-otu'], yazilar=[]),
+{'yayin': '2026-11-14',
+ 'slug': 'albasti',
+ 'ad': 'Albastı (alkarısı)',
+ 'bitki': 'corekotu',
+ 'kisa': 'Lohusa kadına ve yeni doğmuş bebeğe saldırdığına inanılan kötü varlık; ve ona karşı soğan, sarımsak, demir, kırmızı kurdele.',
+ 'metin': ['Anadolu’da alkarısı, al, alanası ya da albası denen varlığın en çok yeni doğum yapmış kadınlara ve bebeklerine saldırdığına inanılır. Yol açtığı hastalığa albastı ya da albasması denir; bugün bunun '
+           'lohusalık ateşi (doğum sonrası enfeksiyon) olduğu biliniyor [1].',
+           'Korunma yolları geniş bir coğrafyada benzer: anne 40 gün yalnız bırakılmaz, lamba yanık tutulur; yanına Kur’an, ayna, soğan, sarımsak ya da muska konur, yastığın altına bıçak, makas, maşa gibi demir ya da '
+           'ekmek ve iğne yerleştirilir; annenin başına ve beşiğe kırmızı kurdele bağlanır. Saldırıdan sonra odaya bir at getirilip kişnetilir, hastanın üstüne at yesin diye arpa konurdu [1]. Sivas’tan derlenen '
+           'bilgilere göre lohusanın başucunda {corekotu} yakılır, yatağın yanına soğan, {sarimsak}, bıçak ve iğne konur [2].',
+           'Kırgızlarda albarstı kadınlara olduğu kadar erkeklere de saldırabilir; onu kovan uzmanlara kuuçu ya da kuuğunçu denir. Onu görebilen tek hayvanın kartal olduğuna inanıldığı için zor doğumlarda eve kartal '
+           'getirilir, beşiklere kartal pençesi ve kurt dişi asılırdı. Gagavuzlarda kapıya köz, Türkmenlerde yastık altına bıçak, tuz ve ekmek konur [3].',
+           'Alkarısını iğneyle ya da ziftle yakalayan kişinin ocaklı olduğuna, ona ait eşyaların bu varlığa karşı koruduğuna inanılır; al inancının kökleri Orta Asya’ya uzanır [3][4]. Bu bir inanç kaydıdır: doğumdan '
+           'sonra ateş, titreme ya da kötü kokulu akıntı acil tıbbi durumdur.'],
+ 'bitkiler': ['corekotu', 'sarimsak'],
+ 'semboller': ['muska', 'goz'],
+ 'yazilar': ['samanizm-ve-kam-gelenegi'],
+ 'kaynaklar': [('Abdurrahman Küçük, “Alkarısı”, TDV İslâm Ansiklopedisi 2, 1989', 'https://islamansiklopedisi.org.tr/alkarisi'),
+               ('Özlem Demren, “Türk Kültüründe Bir Korku Kültü Olarak Sivas’ta Alkarısı ve Albasması İnanışı”, Antropoloji 36, 2018', 'https://dergipark.org.tr/tr/download/article-file/625663'),
+               ('Gülzura Moldosultanova Avcı, Elmira Borubayeva, “Kırgızlarda ‘Albarstı’ ile İlgili İnançlar”, Akademik Tarih ve Düşünce 6(3), 2019', 'https://dergipark.org.tr/tr/download/article-file/829862'),
+               ('Hakan Volkan Acar, “Türk Halk Hekimliğindeki Ocak Çeşitleri”, Lokman Hekim Dergisi 7(2), 2017', 'https://dergipark.org.tr/tr/download/article-file/643813')]},
+{'yayin': '2026-11-15',
+ 'slug': 'alastama',
+ 'ad': 'Alastama (tütsüyle arınma)',
+ 'bitki': 'ardic',
+ 'kisa': 'Kırgızların ardıç dumanıyla kötü ruhları kovma ve arınma pratiği; Altay’da da ardıç tütsüsü kutsaldır.',
+ 'metin': ['Kırgız halk hekimliğinde alastap ya da ısırktap denen arınma, {ardic} yapraklarının yakılıp dumanıyla yapılır ve kötü ruhlara karşı kullanılır. Bir şifacının anlatımına göre duman yükselirken sesi “gelir”, '
+           'ardından hastanın eklemlerine üç kez bıçak değdirilir. Ardıç dumanı evlerde, iş yerlerinde ve pazarlarda da tütsü olarak kullanılır [1].',
+           'Aynı Kırgız kayıtlarında {uzerlik} de yatıştırıcı bir “duman tedavisi” olarak yakılır [1]. Anadolu’da nazara karşı yakılan üzerlik tütsüsüyle akrabalığı dikkat çekicidir.',
+           'Ardıç başka Türk topluluklarında da kutsaldır. Başkurtlar kayın ve ardıca saygı gösterirdi; bir Rus gezgini Tura-Tav dağında adak adamadan ardıç dalı kırdığı için azarlanmıştı [2]. 1904’te Altay’da doğan '
+           'Burhanizm (Ak Cañ) hareketinin buyruklarında “buhurdanlarda ardıç tütsüsü yakın” ve “birbirinize tütün yerine ardıç dalı sunun” denir; aynı hareket kayın ağaçlarını beş renkli kurdelelerle süsler [3].',
+           'Kuzey Amerika’daki smudging ve And’lardaki limpia gibi, dumanla arınma birbirinden uzak kültürlerde benzer biçimde ortaya çıkar. Kapalı alanda uzun süre duman solumak akciğerler için zararlıdır; tütsü '
+           'havalandırılan yerde ve kısa süre yakılmalı.'],
+ 'bitkiler': ['ardic', 'uzerlik', 'palosanto'],
+ 'semboller': ['hayat-agaci'],
+ 'yazilar': ['kutsal-agaclar-kayin-umay-hayat-agaci'],
+ 'kaynaklar': [('Rahman Nergiz, “Kırgız Halk Hekimliğinde Şamanist İnançlara ve Bazı Şifalı Bitkilere Dayalı Sağaltma Metodları”, Millî Folklor 145, 2025', 'https://doi.org/10.58242/millifolklor.1067358'),
+               ('Metin Özarslan, “Türk Kültüründe Ağaç ve Orman Kültü”, Türkbilig 2003/5', 'https://dergipark.org.tr/tr/download/article-file/989056'),
+               ('İsmail Dilek, “Güney Sibirya’da Bir Aydınlanma Hareketi Olarak Ak Cañ / Süt Cañ (Burhanizm)”, Türk Dünyası Dil ve Edebiyat Dergisi 53, 2022', 'https://doi.org/10.24155/tdk.2022.199')]},
+{'yayin': '2026-11-16',
+ 'slug': 'kut',
+ 'ad': 'Kut ve ıduk',
+ 'bitki': 'ardic',
+ 'kisa': 'Gök Tanrı’dan seçilmiş kişilere ve varlıklara geçtiğine inanılan talih ve can gücü; ıduk ise “kutsal, mübarek” olan.',
+ 'metin': ['Kaşgarlı Mahmud’un sözlüğünde kut “talih, devlet” demektir: Tanrı kuluna kut verirse işleri hep yükselir. Kelimenin anlamı can, ruhsal güç, cesaret, mutluluk ve uğuru kapsar. Türk inancında kut Gök '
+           'Tanrı’dan gelir ve seçilmiş kişilere, varlıklara geçer; hükümdarlara, boy beylerine, şifacılara, kamlara ve dedelere kan yoluyla aktarıldığı düşünülür [1].',
+           'Eski Türkçe fal kitabı Irk Bitig’de kut somut bir şey gibi “gelir” ve “verilir”: bir hikâyede ziyarete giden adam yolda Tanrı’ya rastlar, kut ister; Tanrı “ağılında atın olsun, ömrün uzun olsun” diye kutsar '
+           '[2]. Saha Türklerinde kut insanda, hayvanda ve bitkide bulunan can verici güçtür [3].',
+           'Iduk “kutsal, mübarek” demektir. Orhun yazıtlarındaki “ıduk yer-sub” (kutsal yer-su) hem koruyucu ruhları hem de yurdu anlatır [4]. Iduk, tanrıya adanıp serbest bırakılan hayvan için de kullanılır: ona yük '
+           'vurulmaz, sütü sağılmaz, yünü kırkılmaz. Altay’da kam, yarışı kazanan atın boynuna ak bez bağlayıp onu ıduk olarak sunardı [5].',
+           'Ağaçlar da bu kutsallığı taşır: Yakutlarda her kamın kendi ağacı olduğuna, ağacın kamla birlikte büyüyüp öldüğüne inanılırdı [6]; Başkurtlar {ardic} dalını adak adamadan kırmazdı [7]. Anadolu’daki ocakların '
+           'el verme yoluyla sürmesi de kutun kan ve el yoluyla aktarılması olarak açıklanır [1].'],
+ 'bitkiler': ['ardic', 'hus'],
+ 'semboller': ['hayat-agaci'],
+ 'yazilar': ['samanizm-ve-kam-gelenegi', 'kutsal-agaclar-kayin-umay-hayat-agaci'],
+ 'kaynaklar': [('Mustafa Çeribaş, “Türk Kültüründe Kut İnancı ve Kut Aktarma Yolları”, Motif Akademi Halkbilimi Dergisi 14(36), 2021', 'https://doi.org/10.12981/mahder.1017943'),
+               ('Erdoğan Bozok, “Eski Türkçe Fal Metinlerinde Alkış ve Kargış Söylemleri”, Millî Folklor 133, 2022', 'https://dergipark.org.tr/tr/download/article-file/1504899'),
+               ('A. Keser, “Saḫa (Yakut) Türklerinin Sözlü Kültür Ürünlerinde Evren Tasarımı”, WOLLT 4(1), 2023', 'https://dergipark.org.tr/tr/download/article-file/2970695'),
+               ('A. Akcan, “Eski Türklerde Devlet Yönetiminde Hakimiyetin İlahi Temelleri”, MECMUA 5(10), 2020', 'https://dergipark.org.tr/tr/download/article-file/1283874'),
+               ('H. Ercan, “İslamiyet’ten Önce Türklerde Kurban Kavramı Üzerine Bir Araştırma”, Journal of Turkic Civilization Studies 4(2), 2023', 'https://dergipark.org.tr/tr/download/article-file/3785644'),
+               ('Rifat Işık, “Türklerde Ağaçla İlgili İnanışlar ve Bunlara Bağlı Kültler”, Fırat Ü. İlahiyat Fakültesi Dergisi 9(2), 2004', 'https://dergipark.org.tr/tr/download/article-file/2224160'),
+               ('Metin Özarslan, “Türk Kültüründe Ağaç ve Orman Kültü”, Türkbilig 2003/5', 'https://dergipark.org.tr/tr/download/article-file/989056')]},
+{'yayin': '2026-11-21',
+ 'slug': 'hidrellez',
+ 'ad': 'Hıdrellez',
+ 'bitki': 'gul',
+ 'kisa': 'Hızır ile İlyas’ın buluştuğu 6 Mayıs: yeşil mesire yerleri, ağaçlara bağlanan dilekler ve gül ağacının dibine konan niyetler.',
+ 'metin': ['Hıdrellez, 6 Mayıs’ta Hızır ile İlyas’ın yeryüzünde buluştuğuna inanılan ve yazın başlangıcı sayılan bir bahar bayramıdır. Kutlamalar “hıdırlık” denen yeşil mesire yerlerinde, su kenarlarında yapılır [1].',
+           'Türkiye’nin UNESCO’ya sunduğu envanter formuna göre insanlar dileklerini ağaçlara kurdele bağlayarak tutar; niyet çömleklerini bir {gul} ağacının altına koyar. Ertesi gün çömlekten çekilen eşyalarla maniler '
+           'söylenir [2]. UNESCO bu bayramı 2017’de Kuzey Makedonya ve Türkiye’nin ortak dosyasıyla insanlığın somut olmayan kültürel mirası listesine aldı [3].',
+           'Ağaca bez bağlayarak dilek tutmak, Türk dünyasının eski ağaç kültüyle ilişkilendirilir: Buryatlar, Yakutlar, Başkurtlar, Kazaklar ve Kırgızlar yaşlı, tek başına duran çam, kayın, ardıç ve çınarlara adak '
+           'adardı [4].'],
+ 'bitkiler': ['gul'],
+ 'semboller': ['hayat-agaci', 'kupe'],
+ 'yazilar': ['kutsal-agaclar-kayin-umay-hayat-agaci'],
+ 'kaynaklar': [('Ahmet Yaşar Ocak, “Hıdrellez”, TDV İslâm Ansiklopedisi, 1998', 'https://islamansiklopedisi.org.tr/hidrellez'),
+               ('Türkiye’nin Hıdrellez ulusal envanter formu (UNESCO)', 'https://ich.unesco.org/doc/src/33887.pdf'),
+               ('UNESCO, Spring celebration, Hıdrellez (Kuzey Makedonya ve Türkiye), 2017', 'https://ich.unesco.org/en/RL/spring-celebration-hdrellez-01284'),
+               ('Rifat Işık, “Türklerde Ağaçla İlgili İnanışlar ve Bunlara Bağlı Kültler”, Fırat Ü. İlahiyat Fakültesi Dergisi 9(2), 2004', 'https://dergipark.org.tr/tr/download/article-file/2224160')]},
+{'yayin': '2026-11-26',
+ 'slug': 'alkis-kargis',
+ 'ad': 'Alkış ve kargış',
+ 'bitki': 'hus',
+ 'kisa': 'Söze güç yükleyen eski Türk inancı: alkış iyi dilek ve övgü, kargış beddua.',
+ 'metin': ['Alkış ve kargış, Eski Türkçedeki alka- (övmek, dua etmek) ve karga- (lanetlemek) fiillerinden gelir. Kaşgarlı Mahmud alkışı övgü, dua ve bir kişinin erdemlerini sayma; kargışı lanet olarak tanımlar ve '
+           '“Tanrı kargışı onun üzerine” sözünü örnek verir [1].',
+           'Irk Bitig’de bir adam yolda Tanrı’dan kut ister ve “ağılında atın olsun, ömrün uzun olsun” diye alkış alır [1]. Saha (Yakut) destanlarında alkış en çok dilek dile getirmek, övmek ve kötülüğü uzak tutmak '
+           'için; kargış ise tehlike anında tehdit eden güce karşı ya da acıyı dile getirmek için söylenir. Araştırmacılar bu türü, sözle doğayı denetleme isteğine ve kargaşadan düzene geçişe bağlar [2].',
+           'Ağaçlara da alkışla seslenilirdi: Altay’da Kaç kamı ayinde “altın yapraklı, sekiz gölgeli kutsal kayına” seslenir ve ona ak bir kuzu sunardı; Sagay, Şor ve Teleüt kamları {hus} (kayın) ağacı olmadan ayin '
+           'yapmazdı [3].',
+           'Bitkiye yönelik bir kargış Dede Korkut’ta geçer: Boğaç Han’ın annesi oğlu vurulan Kazılık Dağı’na “otun bitmesin” diye beddua eder. Göçebe kültürde birinin otunun kurumasını dilemek ölümünü dilemek demekti '
+           '[4]. Anadolu’daki “ocağın sönsün”, “yolun açık olsun” gibi sözler bu geleneğin bugünkü izleridir.'],
+ 'bitkiler': ['hus'],
+ 'semboller': ['hayat-agaci'],
+ 'yazilar': ['samanizm-ve-kam-gelenegi'],
+ 'kaynaklar': [('Erdoğan Bozok, “Eski Türkçe Fal Metinlerinde Alkış ve Kargış Söylemleri”, Millî Folklor 133, 2022', 'https://dergipark.org.tr/tr/download/article-file/1504899'),
+               ('F. Z. Uğurcan, “Alkış ve Kargışlara İşlevsel Bir Bakış: Er Sogotoh Destanı Örneği”, Türkiyat Mecmuası 31(2), 2021', 'https://doi.org/10.26650/iuturkiyat.904969'),
+               ('Metin Özarslan, “Türk Kültüründe Ağaç ve Orman Kültü”, Türkbilig 2003/5', 'https://dergipark.org.tr/tr/download/article-file/989056'),
+               ('Seda Gedik, “Dede Korkut Kitabında Bitkiler”, AKRA 8(21), 2020', 'https://doi.org/10.31126/akrajournal.647237')]},
+{'yayin': '2026-11-27',
+ 'slug': 'nevruz',
+ 'ad': 'Nevruz',
+ 'bitki': 'bugday',
+ 'kisa': '“Yeni gün”: 21 Mart’ta baharın gelişi; filizlenen buğday, Kırgızların sümölöğü ve Kazakların köjesiyle.',
+ 'metin': ['Nevruz Farsçada “yeni gün” demektir ve Orta Asya’dan Balkanlar’a 21 Mart’ta kutlanır. Ateşin üzerinden atlanır, bazı Türk topluluklarında demir ateşte dövülür; {bugday} ve mercimek filizlendirilip sofraya '
+           'konur [1]. UNESCO 2016’da Nevruz’u Kazakistan, Kırgızistan, Türkiye, Türkmenistan ve Özbekistan’ın da aralarında bulunduğu 12 ülkenin ortak dosyasıyla listeye aldı; bayram yaklaşık iki hafta sürer, su ve '
+           'ateş ritüellerini içerir [2].',
+           'Kırgızların Nevruz yemeği sümölök filizlenmiş buğdaydan yapılır. Buğday ıslatılır ve filizler bir parmak boyuna gelene kadar her gün sulanır. Filizler ezilip suyu çıkarılır, yağda kavrulmuş una yedi kez '
+           'dökülür. Karışım kazanda ceviz büyüklüğünde taşlarla 10–12 saat karıştırılır; kuru meyve ve ceviz eklenirken dilek tutulur [3]. Kaşgarlı Mahmud’un sözlüğündeki “suma”, kurutulup öğütülen filizlenmiş buğday, '
+           'aynı geleneğin eski bir kaydı olarak anılır [3].',
+           'Kazaklarda Nevruz köjesi arpa ya da buğday, ayran ve kıştan kalan etle pişirilir; doğu bölgelerinde yedi malzemeli “kos köje” yapılır [4].'],
+ 'bitkiler': ['bugday'],
+ 'semboller': ['basak', 'yildiz'],
+ 'yazilar': [],
+ 'kaynaklar': [('Şinasi Gündüz, “Nevruz”, TDV İslâm Ansiklopedisi, 2007', 'https://islamansiklopedisi.org.tr/nevruz'),
+               ('UNESCO, Karar 11.COM 10.B.1: Nowruz, 2016', 'https://ich.unesco.org/en/decisions/11.COM/10.B.1'),
+               ('Bülent İpek, “Kırgızistan’da Bir Nevruz Geleneği: Sümölök”, Fırat Ü. Sosyal Bilimler Dergisi 22(2), 2012', 'https://dergipark.org.tr/tr/download/article-file/715557'),
+               ('T. Kartaeva, G. Habijanova, “Kazak Kültüründe Nevruz ve Nevruznâme Bayramı Ritüelleri”, Türk Kültürü ve Hacı Bektaş Velî Araştırma Dergisi 82, 2017',
+                'https://dergipark.org.tr/tr/download/article-file/2580420')]},
+{'yayin': '2026-11-28',
+ 'slug': 'kimiz',
+ 'ad': 'Kımız ve ak sunu',
+ 'bitki': 'hus',
+ 'kisa': 'Kısrak sütünden yapılan kımız: göğe, dört yöne ve ataya sunulan “ak” sunu, baharda kımız bayramları.',
+ 'metin': ['Kımız, kısrak sütünün mayalanmasıyla yapılan eski bir Türk içeceğidir. Kazaklarda bahar-yaz mevsiminin ilk kımızına “kımız murındık” denir ve bayramla karşılanır; kımız göğe, dört yöne ve dağlara kansız, '
+           '“ak” bir sunu olarak serpilir. Buryatlarda, Başkurtlarda ve Moğolistan Kazaklarında aynı bayramın başka adları vardır [1].',
+           'Fergana’da Kıpçaklar, Kırgızlar ve Kazaklar mayıs sonunda bir hafta süren kımız bayramı yapardı: en iyi kımız yarışılır, deri kaplarda kımız hediye edilir, kımız türküleri söylenirdi [2]. Başkurtlarda kımız '
+           'bayramı haziranda, kısrakların ilk sağımıyla yapılır; katılanlar eve dönmeden kendileri ve hayvanları için taze ot toplar. Başkurt kımız kepçeleri {hus} (kayın) ağacından oyulur, saplarına kuş figürleri '
+           'yapılır [3].',
+           'Saha Türklerinin yaz bayramı Isıah’ta ev sahibinin çitleri boyunca genç kayınlar dikilir, kımız bu kayınların arasında sunulur; kımız kadehleri dokuz kez gök tanrısına kaldırılır, üç kez göğe serpilir [4]. '
+           'Eski Türkler ilk lokmayı ve ilk kısrak sütünü atalara sunardı [5].'],
+ 'bitkiler': ['hus'],
+ 'semboller': ['hayat-agaci'],
+ 'yazilar': ['kutsal-agaclar-kayin-umay-hayat-agaci'],
+ 'kaynaklar': [('Zh. N. Shaigozova, A. B. Naurzbaeva, Brief Encyclopedia of Signs and Symbols of Kazakh Culture, KazNIIK, 2023: “Qymyz muryndyq”',
+                'https://cultural.kz/en/nature-as-a-symbolic-system/celestial-bodies-time-of-day-natural-phenomena/qymyz-muryndyq/'),
+               ('Çağatay Üstün, “Eski Bir Türk İçeceği: Kımız”, Türkiye Bilimler Akademisi Kültür Envanteri Dergisi (TÜBAR) 26, 2009', 'https://dergipark.org.tr/tr/download/article-file/156974'),
+               ('M. Özşahin, “Başkurt Halk Yaşamında, Sanatında ve Tıbbında Kımız”, Folklor Akademi Dergisi 8(1), 2025', 'https://doi.org/10.55666/folklor.1637963'),
+               ('Ö. Akkuş, A. Altunöz, “Simgesel Anlatım Bağlamında Saha Yeri Isıah Güneşi Karşılama Alanı Heykelleri”, Sanat ve Sosyal Bilimler Dergisi 1(1), 2023',
+                'https://dergipark.org.tr/tr/download/article-file/3020611'),
+               ('H. Ercan, “İslamiyet’ten Önce Türklerde Kurban Kavramı Üzerine Bir Araştırma”, Journal of Turkic Civilization Studies 4(2), 2023', 'https://dergipark.org.tr/tr/download/article-file/3785644')]},
+{'yayin': '2026-11-29',
+ 'slug': 'saci',
+ 'ad': 'Saçı',
+ 'bitki': 'bugday',
+ 'kisa': 'Kansız sunu: kımız, süt, yağ, buğday ya da darı dört yöne, ateşe ya da toprağa serpilir.',
+ 'metin': ['Eski Türklerde kansız sunulara saçı denir; kese, sacılga, çacılga adları da kullanılır. Süt, kımız, tereyağı, {bugday}, darı ya da para sunulabilirdi [1]. En yaygın günlük saçı, bir kâseden biraz kımızı '
+           'dört yöne serpip kalanını içmekti; Kazak ve Kırgız kadınları baharın ilk gök gürültüsünde süt, ayran ve kımız dolu kaplarla çadırın çevresinde dolaşırdı [1].',
+           'Altay’daki oba ayininde kam obanın çevresinde üç kez döner ve güzel kokulu otlar yakarak tütsüler [1]. Saha avcıları orman ruhu Bayanay’a yağ ve et verir; ilk avdan sonra ağaçlara renkli bez şeritleri ve '
+           'kürk bağlar [2].',
+           'Tatarların Sabantuy bayramının eski “karga botkası” geleneğinde çocuklar evlerden yarma, süt, yağ ve yumurta toplayıp yulaf lapası pişirir; bir kısmı kötü ruhlara karşı karları erimiş toprağa saçı olarak '
+           'serpilir [3]. Anadolu düğünlerinde gelinin başından buğday, şeker ve para saçılması da bu geleneğin bugünkü biçimidir [4].'],
+ 'bitkiler': ['bugday'],
+ 'semboller': ['basak', 'bereket'],
+ 'yazilar': ['samanizm-ve-kam-gelenegi'],
+ 'kaynaklar': [('H. Ercan, “İslamiyet’ten Önce Türklerde Kurban Kavramı Üzerine Bir Araştırma”, Journal of Turkic Civilization Studies 4(2), 2023', 'https://dergipark.org.tr/tr/download/article-file/3785644'),
+               ('Rifat Işık, “Türklerde Ağaçla İlgili İnanışlar ve Bunlara Bağlı Kültler”, Fırat Ü. İlahiyat Fakültesi Dergisi 9(2), 2004', 'https://dergipark.org.tr/tr/download/article-file/2224160'),
+               ('Ö. Aksoy, “Tataristan’ın Kukmara Rayonu Mamaşir Köyünde Sabantuy Bayramı”, İdil-Ural Araştırmaları Dergisi 2(2), 2020', 'https://doi.org/10.47089/iuad.797850'),
+               ('Didem Uzun, Şimal Yakut Aymankuy, “Food and beverage rituals at the period of birth, marriage, and death in Shamanist Turks and its modern reflections”, Journal of Tourism Leisure and Hospitality 6(1), '
+                '2024',
+                'https://doi.org/10.48119/toleho.1492741')]},
 ]

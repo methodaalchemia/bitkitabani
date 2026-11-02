@@ -84,4 +84,10 @@ KB = {
  'altay-turklerinin-dugun-sofrasinda-koco-piserdi': ('Keşkeğin atası: köçö', 'bugday'),
  'saha-yakut-turklerinde-dogumdan-gun-sonra': ('Salamat: doğumun buğday çorbası', 'bugday'),
  'sirvani-nin-eczacilik-kitabinda-gul-surubu': ('Güller beyazlayana kadar', 'gul'),
+ 'kasgarli-mahmud-yagma-ulkesinde-yaz-ortasinda': ('Yağmur getiren taş', 'ardic'),
+ 'dede-korkut-bogac-han-babasinin-okuyla': ('Dağ çiçeği ile ana sütü', 'civanpercemi'),
+ 'kasgarli-mahmud-sozlugunde-andiz-duz-inula': ('Andız olsa at ölmez', 'uzerlik'),
+ 'polonya-nin-lublin-yoresinde-murvere-seytan': ('Şeytan mürveri, kutsal mürver', 'murver'),
+ 'britanya-alic-cicegi-asla-eve-sokulmazdi': ('Eve sokulmayan çiçek', 'alic'),
+ 'rusya-ukrayna-belarus-estonya-letonya-litvanya': ('Huş özsuyu ayı', 'hus'),
 }
