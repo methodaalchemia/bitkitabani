@@ -2,6 +2,47 @@
 # Metindeki [1], [2]… işaretleri kaynak listesindeki sıraya karşılık gelir. Bitki bağlantıları {id} biçiminde yazılır.
 
 YAZILAR = [
+{'slug': 'anadoluda-bitkiyle-tedavinin-tarihi-hititlerden-osmanliya',
+ 'tarih': '2026-11-02',
+ 'baslik': 'Anadolu’da bitkiyle tedavinin kısa tarihi: Hititlerden Osmanlı’ya',
+ 'aciklama': 'Şanidar’daki çiçekli mezardan Hitit tabletlerine, Selçuklu darüşşifalarından Osmanlı’nın ilk Türkçe ilaç kitaplarına: Anadolu’da şifalı bitki bilgisinin binlerce yıllık yolculuğu.',
+ 'giris': 'Bugün bir aktardan ıhlamur ya da adaçayı alan biri, Anadolu’da binlerce yıldır süren bir bilgi zincirinin ucunda duruyor. Turhan Baytop’un Türkiye’de Bitkiler ile Tedavi kitabının tarih '
+          'bölümü, bu zinciri Neandertal mezarlarından Osmanlı hastanelerine kadar izliyor. Bu yazı o bölümden derlenmiş kısa bir özet.',
+ 'bolumler': [('Tarih öncesi: Şanidar’ın çiçekleri',
+               ['Baytop’a göre Anadolu insanı Yontma Taş çağından beri bitkileri tedavi için kullanıyor. En eski kanıt olarak, Hakkari’nin hemen güneyindeki Şanidar mağarasında, Neandertal '
+                'mezarlarında bulunan bitki kalıntılarını gösterir [1]. Bu kalıntıların bir ritüelle mi bırakıldığı, yoksa mağaraya hayvanlarla mı taşındığı bugün hâlâ tartışılıyor.']),
+              ('Mezopotamya: 250 bitkisel ilaç',
+               ['Sümer, Akad ve Asur tabletleri, tedavinin rahip hekimler tarafından büyü ve ilaçla birlikte yapıldığını gösterir. İlaçların çoğu bitkiseldi; bira, şarap ve tereyağı taşıyıcı olarak '
+                'kullanılırdı. Bitkilerin gece, güneş doğmadan ya da battıktan sonra toplanmasına ve gölgede kurutulmasına özen gösterilirdi [1].',
+                'Bu dönemde bilinen bitkisel ilaç sayısı 250 kadardır. Reçetelerde {adamotu}, banotu, {hashas}, {safran}, kekik, nane ve rezene gibi bugün de tanıdığımız bitkiler sık geçer [1].']),
+              ('Hititler: “Böylece hasta iyi olacaktır”',
+               ['Hititlerin tıbbını, başkentleri Hattuşa’daki (Boğazköy) arşivde bulunan tabletlerden öğreniyoruz. Hititler hastalığı tanrıların bir cezası sayar, tedavide büyü ile ilacı birlikte '
+                'kullanırdı. İlaçların çoğu bitkiseldi; Hititçede bitkisel ilaca “waşşi” denirdi [1].',
+                'Tabletlerdeki reçetelerde {alic}, badem, {defne}, {meyan}, {mersin}, {sarimsak} ve zeytin gibi Anadolu bitkilerinin yanında dışarıdan getirilen mür ve şeytantersi de geçer. '
+                'Hititler bazı bitkileri ekip yetiştirir, safran ve haşhaş gibi bazılarını başka ülkelere satarlardı [1].',
+                'Reçetelerde miktar nadiren yazılır; “biraz” ya da “fazla” demekle yetinilir. İlacın gece mi gündüz mü alınacağı ise belirtilir. Her reçete “Böylece hasta iyi olacaktır” cümlesiyle '
+                'biter; ardından gelen reçete de “Eğer iyi olmazsa” diye başlar [1].']),
+              ('Selçuklular: her şehre bir darüşşifa',
+               ['Anadolu Selçukluları, 1071’den 1308’e uzanan iki yüzyılda hemen her büyük şehirde bimaristan, darülafiye ya da darüşşifa denen hastaneler kurdu. Baytop’un aktardığına göre bunlar '
+                'hekimi ve eczacısıyla tam donanımlı kurumlardı [1].',
+                'Selçuklu vakfiyelerine göre şehirlerde ilaç satan dükkânlarda Hindistan’dan getirilen bitkiler bile satılıyordu; kervansarayların hastanelerinde de birer eczane vardı. Bu '
+                'hastanelerin ilki, 1206’da Kayseri’de kurulan Gevher Nesibe Sultan Şifaiyesidir. Kapısındaki iki yılan kabartması bugün de görülebilir; yapı artık bir müze [1].']),
+              ('Osmanlı: aşşab, şerbetçi ve saydelan',
+               ['Osmanlı hekimliği büyük ölçüde Selçuklu ve İslam tıbbının devamıdır; asıl fark, Arapça ve Farsça yerine Türkçenin kullanılmasıdır. Sultan I. Bayezid’in 1399’da Bursa’da yaptırdığı '
+                'hastanenin vakfiyesi, ilaç işinde çalışan üç kişiyi sayar: şurup ve şerbetleri yapan şerbetçi, bitkileri tanıyıp toplayan ya da satın alan aşşab, macun, hap ve asıl ilaçları '
+                'hazırlayan saydelan, yani eczacı [1].',
+                'Türkçe yazıldığı bilinen en eski ilaç kitabı, Geredeli İshak bin Murad’ın 1389-90 tarihli Edviye-i Müfrede’sidir. Sade bir Türkçeyle ilaçları alfabetik sıralar; her birinin nerede '
+                'bulunduğunu, hangi hastalığa iyi geldiğini ve zararlarını yazar. Baytop, bu kitaptaki bitkilerin çoğunun halk arasında bugün de aynı adlarla, aynı amaçlarla kullanıldığına dikkat '
+                'çeker [1].',
+                'On beşinci yüzyılda Amasya darüşşifasının başhekimi Sabuncuoğlu Şerefeddin, kullandığı panzehirlerin yılan zehrine karşı işe yarayıp yaramadığını görmek için deney yaptı: bir horozu '
+                'engerek yılanına ısırttı, ardından panzehir verip sonucu not etti [1]. Aynı yüzyılda Şirvan’dan Anadolu’ya gelen hekim Şirvânî de sahte ilacın nasıl anlaşılacağını yazıyordu; bu, '
+                '{zerdecal} hikâyesinde anlattığımız konu.']),
+              ('Bir not',
+               ['Bu yazı, Baytop’un kitabındaki tarih bölümünün kısa bir özetidir; ayrıntılar ve ilk kaynaklar için kitaba bakılabilir. Eski reçetelerdeki bitki adlarının bugünkü hangi türlere '
+                'karşılık geldiği her zaman kesin değildir.'])],
+ 'kaynaklar': [('Turhan Baytop, Türkiye’de Bitkiler ile Tedavi: Geçmişte ve Bugün, 3. baskı (yay. haz. Feza Baytop Günergun), Nobel Tıp Kitabevleri, 2021, “Tarih ve gelişim” bölümü', '')],
+ 'bitkiler': ['safran', 'hashas', 'adamotu', 'meyan', 'zeytin', 'zerdecal'],
+ 'semboller': []},
     dict(
         slug='ogreten-bitkiler-dieta-ayahuasca-pastora',
         tarih='2026-11-01',
