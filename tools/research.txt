@@ -1,29 +1,32 @@
 # id | pubmed sorgusu   ya da   URL adres
-kakule | cardamom supplementation meta-analysis
-kakule | Elettaria cardamomum review
-muskat | nutmeg poisoning myristicin
-muskat | Myristica fragrans review
-tulsi | Tulsi Ocimum sanctum herb for all reasons
-tulsi | Tulsi clinical efficacy safety systematic review
-gelincik | Papaver rhoeas traditional uses phytochemistry
-gelincik | Papaver rhoeas alkaloids rhoeadine
-atkestanesi | Aesculus hippocastanum poisoning
-ceviz | juglone toxicity Juglans
-incir | early domesticated fig Jordan Valley parthenocarpic
-lotus | Nelumbo nucifera seed 1300 years germination
-mahlep | Prunus mahaleb seed composition coumarin
-fitolakka | Phytolacca americana invasive Turkey
-reishi | Ganoderma lucidum review
-karabas | Lavandula stoechas camphor fenchone toxicity
-sogut | salicin aspirin history willow
-hamamelis | witch hazel hamamelitannin
-gotukola | Centella asiatica venous insufficiency
-URL https://www.ema.europa.eu/en/medicines/herbal/myristicae-semen
-URL https://www.ema.europa.eu/en/medicines/herbal/cardamomi-fructus
-URL https://www.ema.europa.eu/en/medicines/herbal/boldi-folium
-URL https://www.ema.europa.eu/en/medicines/herbal/aurantii-amari-epicarpium-mesocarpium
-URL https://www.ema.europa.eu/en/medicines/herbal/aurantii-amari-floris-aetheroleum
-URL https://www.ema.europa.eu/en/medicines/herbal/salicis-cortex
+gul | Rosa damascena pharmacological review
+gul | rose aromatherapy anxiety systematic review
+gul | Rosa damascena dysmenorrhea randomized
+misir | corn silk Zea mays stigma review
+misir | corn silk diuretic clinical
+hus | Betula pendula leaf review
+hus | betulin birch bark wound healing gel
+serbetciotu | Humulus lupulus sleep systematic review
+serbetciotu | hops 8-prenylnaringenin menopause
+serbetciotu | valerian hops insomnia randomized
+hunnap | Ziziphus jujuba fruit review
+hunnap | jujube sleep insomnia clinical trial
+hunnap | Ziziphus jujuba constipation randomized
+bugday | wheatgrass Triticum aestivum review
+bugday | celiac disease gluten review
+akgunluk | Boswellia serrata osteoarthritis meta-analysis
+akgunluk | frankincense Boswellia sacra review
+akgunluk | Boswellia hepatotoxicity
+URL https://www.ema.europa.eu/en/medicines/herbal/maydis-stigma
+URL https://www.ema.europa.eu/en/medicines/herbal/betulae-folium
+URL https://www.ema.europa.eu/en/medicines/herbal/lupuli-flos
+URL https://www.ema.europa.eu/en/medicines/herbal/olibanum-indicum
+URL https://www.ema.europa.eu/en/medicines/herbal/boswelliae-serratae-resina
+URL https://www.ema.europa.eu/en/medicines/herbal/rosae-flos
+URL https://www.ema.europa.eu/en/medicines/herbal/rosae-pseudo-fructus
+URL https://www.ema.europa.eu/en/medicines/herbal/betulae-cortex
+URL https://www.ema.europa.eu/en/medicines/herbal/ziziphi-spinosae-semen
+URL https://www.ema.europa.eu/en/medicines/herbal/tritici-aestivi-oleum
+URL https://www.nccih.nih.gov/health/boswellia
+URL https://www.nccih.nih.gov/health/hops
 URL https://www.nccih.nih.gov/health/herbsataglance
-URL https://www.efsa.europa.eu/en/efsajournal/pub/5909
-URL https://www.fda.gov/food/cfsan-constituent-updates/fda-advises-public-not-consume-star-anise-tea

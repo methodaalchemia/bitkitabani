@@ -1,3 +1,8 @@
 # id | arama terimi | ek kelimeler
-kakule | Elettaria cardamomum | 
-muskat | Myristica fragrans | fruit
+gul | Rosa damascena | flower
+misir | Zea mays | 
+hus | Betula pendula | 
+serbetciotu | Humulus lupulus | 
+hunnap | Ziziphus jujuba | fruit
+bugday | Triticum aestivum | 
+akgunluk | Boswellia sacra | 
