@@ -575,6 +575,7 @@ dict(yayin='2026-11-20', id='salviadivinorum', tr='Kâhin adaçayı', la='Salvia
         'confusion': 'It can be confused with Cordia alliodora, sold under the same name in northern Peruvian markets [4].'}},
 {'yayin': '2026-12-06',
  'id': 'bobinsana',
+ 'foto': 'Flores y hojas de la Bobinsana (Calliandra angustifolia).jpg',
  'tr': 'Bobinsana',
  'la': 'Calliandra angustifolia',
  'fam': 'Fabaceae (baklagiller)',
