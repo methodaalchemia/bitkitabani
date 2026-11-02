@@ -1641,5 +1641,70 @@
   "license": "CC BY 3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Flor_Ex%C3%B3tica_de_Ecuador.JPG"
  },
- "bobinsana:kuru": "yok"
+ "bobinsana:kuru": "yok",
+ "mese:cizim": {
+  "file": "Illustration Quercus robur0 clean.jpg",
+  "artist": "User:Kilom691",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Quercus_robur0_clean.jpg"
+ },
+ "mese:cicek": {
+  "file": "Ruhland, Brauhausplatz Südwestecke, Pyramiden-Eiche, Blüten, Frühling, 01.jpg",
+  "artist": "Wilhelm Zimmerling PAR",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ruhland%2C_Brauhausplatz_S%C3%BCdwestecke%2C_Pyramiden-Eiche%2C_Bl%C3%BCten%2C_Fr%C3%BChling%2C_01.jpg"
+ },
+ "mese:kuru": "yok",
+ "porsuk:cizim": {
+  "file": "Cleaned-Illustration Taxus baccata.jpg",
+  "artist": "Wikimedia Commons",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Cleaned-Illustration_Taxus_baccata.jpg"
+ },
+ "porsuk:cicek": {
+  "file": "Taxus baccata flowers.jpg",
+  "artist": "Wikimedia Commons",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Taxus_baccata_flowers.jpg"
+ },
+ "porsuk:kuru": "yok",
+ "kusuvezi:cizim": {
+  "file": "Illustration Sorbus aucuparia0.jpg",
+  "artist": "Walter Müller",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Sorbus_aucuparia0.jpg"
+ },
+ "kusuvezi:cicek": {
+  "file": "Half geopende bladknop van een lijsterbes (Sorbus) 29-03-2026. (d.j.b).jpg",
+  "artist": "Dominicus Johannes Bergsma.",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Half_geopende_bladknop_van_een_lijsterbes_%28Sorbus%29_29-03-2026._%28d.j.b%29.jpg"
+ },
+ "kusuvezi:kuru": "yok",
+ "disbudak:cizim": {
+  "file": "Illustration Fraxinus excelsior1.jpg",
+  "artist": "Wikimedia Commons",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Fraxinus_excelsior1.jpg"
+ },
+ "disbudak:cicek": {
+  "file": "Ash tree male flowers, North Ayrshire.jpg",
+  "artist": "Rosser1954",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ash_tree_male_flowers%2C_North_Ayrshire.jpg"
+ },
+ "disbudak:kuru": "yok",
+ "minecicegi:cizim": {
+  "file": "Illustration Verbena officinalis clean.JPG",
+  "artist": "File:Illustration Verbena officinalis0.jpg : PLEASE COMPLETE",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Verbena_officinalis_clean.JPG"
+ },
+ "minecicegi:cicek": {
+  "file": "Verveine officinale (2).jpg",
+  "artist": "Espelette36",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Verveine_officinale_%282%29.jpg"
+ },
+ "minecicegi:kuru": "yok"
 }

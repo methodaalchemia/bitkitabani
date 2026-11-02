@@ -531,6 +531,19 @@
   "w": 960,
   "w500": 500
  },
+ "disbudak": {
+  "artist": "This Photo was taken by Wolfgang Moroder . Feel free to use my photos, but please mention me as the author and send me a message . This imag",
+  "auto": true,
+  "b1280": "Lën de Nis a Urtijëi dansciuda.jpg",
+  "file": "Lën de Nis a Urtijëi dansciuda.jpg",
+  "h": 1438,
+  "h500": 749,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:L%C3%ABn_de_Nis_a_Urtij%C3%ABi_dansciuda.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "ebegumeci": {
   "artist": "Alvesgaspar",
   "b1280": "Mallow January 2008-1.jpg",
@@ -1247,6 +1260,19 @@
   "w": 960,
   "w500": 500
  },
+ "kusuvezi": {
+  "artist": "Dominicus Johannes Bergsma.",
+  "auto": true,
+  "b1280": "Half geopende bladknop van een lijsterbes (Sorbus) 29-03-2026. (d.j.b).jpg",
+  "file": "Half geopende bladknop van een lijsterbes (Sorbus) 29-03-2026. (d.j.b).jpg",
+  "h": 1440,
+  "h500": 750,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Half_geopende_bladknop_van_een_lijsterbes_(Sorbus)_29-03-2026._(d.j.b).jpg",
+  "w": 960,
+  "w500": 500
+ },
  "lavanta": {
   "artist": "JLPC",
   "b1280": "Lavande off FR 2012.jpg",
@@ -1359,6 +1385,19 @@
   "w": 960,
   "w500": 500
  },
+ "mese": {
+  "artist": "Dominicus Johannes Bergsma",
+  "auto": true,
+  "b1280": "Eikels van een zomereik met wortelkiem (Quercus robur) 04.jpg",
+  "file": "Eikels van een zomereik met wortelkiem (Quercus robur) 04.jpg",
+  "h": 729,
+  "h500": 380,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Eikels_van_een_zomereik_met_wortelkiem_(Quercus_robur)_04.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "meyan": {
   "artist": "Юрий Данилевский",
   "b1280": "Glycyrrhiza glabra Y01.jpg",
@@ -1368,6 +1407,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Glycyrrhiza_glabra_Y01.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "minecicegi": {
+  "artist": "Konrad Lackerbeck",
+  "auto": true,
+  "b1280": "Eisenkraut, Passau.JPG",
+  "file": "Eisenkraut, Passau.JPG",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 2.5",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:Eisenkraut,_Passau.JPG",
   "w": 960,
   "w500": 500
  },
@@ -1623,6 +1675,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Planta_de_Piri_Piri_en_el_Jard%C3%ADn_Bot%C3%A1nico_de_Lima.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "porsuk": {
+  "artist": "Dominicus Johannes Bergsma",
+  "auto": true,
+  "b1280": "Biotoop op de stam van een knotwilg. (d.j.b) 01.jpg",
+  "file": "Biotoop op de stam van een knotwilg. (d.j.b) 01.jpg",
+  "h": 1513,
+  "h500": 788,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Biotoop_op_de_stam_van_een_knotwilg._(d.j.b)_01.jpg",
   "w": 960,
   "w500": 500
  },
