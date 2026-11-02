@@ -19,6 +19,17 @@ def run(G):
     from tarif_en import T_EN as T_EN2
     from yazilar_en import Y_EN as Y_EN2
     from motif_en import M_EN as M_EN2
+    try:
+        from halk_en import H_EN as H_EN2
+    except ImportError:
+        H_EN2 = {}
+    _HSL, _seen = {}, set()
+    for _h in G['HIK']:
+        if _h['slug'] not in H_EN2: continue
+        _s0 = re.sub(r'[^a-z0-9]+', '-', H_EN2[_h['slug']]['baslik'].lower().replace('’', '')).strip('-')[:60].strip('-') or _h['slug']
+        _s, _n = _s0, 2
+        while _s in _seen: _s = f'{_s0}-{_n}'; _n += 1
+        _seen.add(_s); _HSL[_h['slug']] = _s
     from misc_en import ALT_EN, KORUMA_EN, YASAL_EN, YASAL_AD_EN, BR_EN, REG_EN, KAT_EN, KANIT_EN, GUV_EN, KAN_AD_EN, BIO_EN
     EN.update(G.get('EN_NEW', {})); ETK_EN.update(G.get('ETK_EN_NEW', {}))
     YENI, NEWEST, LOCAL_DAY = G['YENI'], G['NEWEST'], G['LOCAL_DAY']
@@ -71,7 +82,7 @@ def run(G):
 <div class="wrap{{narrow}}">
 '''
     MENU_EN = [('Explore', [('/en/catalog/', 'Catalog', 'kat'), ('/en/bridges/', 'Culture bridges', 'br'), ('/en/regions/', 'Regions of Anatolia', 'regions'), ('/en/harvest-calendar/', 'Harvest calendar', 'calendar'), ('/en/ritual-calendar/', 'Ritual calendar', 'calendar')]),
-               ('Guides', [('/en/guides/', 'Herbs by complaint', 'guides'), ('/en/recipes/', 'Herbal tea recipes', 'recipes'), ('/en/concepts/', 'Concept of the day', 'concepts'), ('/en/symbols/', 'Symbols', 'symbols'), ('/en/articles/', 'Articles', 'articles')]),
+               ('Guides', [('/en/guides/', 'Herbs by complaint', 'guides'), ('/en/recipes/', 'Herbal tea recipes', 'recipes'), ('/en/concepts/', 'Concept of the day', 'concepts'), ('/en/symbols/', 'Symbols', 'symbols'), ('/en/stories/', 'Stories', 'stories'), ('/en/articles/', 'Articles', 'articles')]),
                ('Bitki Tabanı', [('/en/about/', 'About and method', 'about'), ('https://www.instagram.com/bitkitabani/', 'Instagram', 'ig'), ('/en/account/', 'Account', 'acct'), ('/en/privacy/', 'Privacy', 'priv'), ('mailto:iletisim@bitkitabani.com', 'Contact', 'mail')])]
     def nav(cur, tr_path):
         a = lambda href, label, key: f'<a href="{href}"{" aria-current=\"page\"" if cur == key else ""}{" rel=\"noopener\"" if href.startswith("http") else ""}>{label}</a>'
@@ -237,6 +248,7 @@ def run(G):
         _rm += [(f'/en/recipes/{T_EN2[t["slug"]]["slug"]}/', 'Recipe: ' + T_EN2[t['slug']]['ad']) for t in G['LIVE_T'] if t['bitki'] == pid and t['slug'] in T_EN2]
         _rm += [(f'/en/articles/{Y_EN2[y["slug"]]["slug"]}/', 'Article: ' + Y_EN2[y['slug']]['baslik']) for y in G['YAZILAR'] if y['slug'] in Y_EN2 and pid in y['bitkiler']]
         _rm += [(f'/en/symbols/{M_EN2[m["slug"]]["slug"]}/', 'Symbol: ' + M_EN2[m['slug']]['ad']) for m in G['MOTIFLER'] if m['slug'] in M_EN2 and any(x == pid for x, _ in m['bitkiler'])]
+        _rm += [(f'/en/stories/{_HSL[h["slug"]]}/', 'Story: ' + H_EN2[h['slug']]['baslik']) for h in G['HIK'] if h['slug'] in H_EN2 and h['slug'] in _HSL and G['_hik_bitki'](h) == pid][:3]
         if p['guv'] == 'yuksek' or pid in BKAR_EN: _rm.append(('/en/guides/poisonous-plants/', 'Poisonous plants and look-alikes'))
         if _rm:
             body_s += '<section class="sec"><h2>Read more</h2><div class="brlinks">' + ''.join(f'<a class="chip" href="{u}">{e(t)}</a>' for u, t in _rm) + '</div></section>'
@@ -678,6 +690,35 @@ def run(G):
 <div class="chips motif-filtre" role="group" aria-label="By theme">{_chips}</div>
 <div class="motifgrid">{_sc}</div>
 <script>(function(){{var B=document.querySelectorAll('.motif-filtre .chip');B.forEach(function(b){{b.addEventListener('click',function(){{var t=b.dataset.t;B.forEach(function(x){{x.setAttribute('aria-pressed',x===b?'true':'false')}});document.querySelectorAll('.motifcard').forEach(function(c){{c.hidden=!!t&&c.dataset.t!==t}})}})}})}})();</script>""", 'symbols', narrow=True))
+
+    # ---------- folk medicine stories ----------
+    try:
+        from halk_en import H_EN
+    except ImportError:
+        H_EN = {}
+    HK = [h for h in G['HIK'] if h['slug'] in H_EN]
+    _hb = G['_hik_bitki']
+    HSL = _HSL
+    def _hcard(h):
+        r = H_EN[h['slug']]; bp = _hb(h)
+        img = f'<img src="/img/{bp}-500.jpg" alt="" loading="lazy" width="500" height="333">' if bp and bp in IMG else ''
+        return f'<li class="hk"><a href="/en/stories/{HSL[h["slug"]]}/">{img}<b>{e(r["baslik"])}</b><span class="muted-s">{e(r.get("yore", ""))}</span></a></li>'
+    for h in HK:
+        r = H_EN[h['slug']]; bp = _hb(h); path = f'/en/stories/{HSL[h["slug"]]}/'
+        rel = [x for x in HK if x is not h and _hb(x) == bp and bp][:3] or [x for x in HK if x is not h][:3]
+        src = (f'<a href="{h["kaynak"][1]}" target="_blank" rel="noopener">{e(h["kaynak"][0])}</a>' if h['kaynak'][1] else f'<cite>{e(h["kaynak"][0])}</cite>')
+        body = (f'<nav class="crumbs" aria-label="Breadcrumb"><a href="/en/">Home</a><span>/</span><a href="/en/stories/">Stories</a><span>/</span><span>{e(r["baslik"])}</span></nav>'
+                f'<article class="hikaye"><header class="page-head"><span class="eyebrow">From folk medicine{" · " + e(r["yore"]) if r.get("yore") else ""}</span><h1>{e(r["baslik"])}</h1></header>'
+                + (f'<img class="hk-kapak" src="/img/{bp}-960.jpg" alt="{e(name(byId[bp]))}" width="960" height="640">' if bp and bp in IMG else '')
+                + f'<p class="lead">{e(r["post"])}</p><p class="muted-s">Source: {src} ({e(r.get("kisa", ""))}). This is a folk record, not a treatment recommendation.</p>'
+                + (f'<section class="sec"><h2>The plant in this story</h2><div class="grid sim">{card(byId[bp])}</div></section>' if bp else '')
+                + f'</article><section class="sec"><h2>More stories</h2><ul class="hklist">{"".join(_hcard(x) for x in rel)}</ul><p><a href="/en/stories/">All stories →</a></p></section>')
+        write(path, page(f'{r["baslik"]} | Bitki Tabanı', r['post'][:155].rsplit(' ', 1)[0] + '…', path, f'/hikaye/{h["slug"]}/', body, 'stories', narrow=True,
+              extra=f'<script type="application/ld+json">{json.dumps({"@context":"https://schema.org","@type":"Article","headline":r["baslik"][:110],"inLanguage":"en","url":BASE+path,"author":AUTHOR,"citation":h["kaynak"][0]}, ensure_ascii=False)}</script>',
+              image=(f'{BASE}/img/{bp}-960.jpg' if bp and bp in IMG else None)))
+    if HK:
+        write('/en/stories/', page('Stories from folk medicine: sourced tales from Anatolia and beyond | Bitki Tabanı', f'{len(HK)} short, sourced stories from Anatolian folk medicine, old medical texts, archaeology and ritual plants around the world.', '/en/stories/', '/blog/',
+              f'<nav class="crumbs" aria-label="Breadcrumb"><a href="/en/">Home</a><span>/</span><span>Stories</span></nav><header class="page-head"><span class="eyebrow">{len(HK)} stories</span><h1>Stories from folk medicine</h1><p>Short stories from Anatolian villages, healers’ hearths, old medical texts and archaeology, and from ritual plant traditions around the world. Every story rests on a source. For longer pieces see the <a href="/en/articles/">articles</a>.</p></header><ul class="hklist">{"".join(_hcard(h) for h in reversed(HK))}</ul>', 'stories', narrow=True))
 
     # ---------- articles (blog) ----------
     from yazilar_en import Y_EN
