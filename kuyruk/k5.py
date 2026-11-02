@@ -1,0 +1,316 @@
+# Kuyruk 5: Avrupa'nın kutsal ağaçları ve bitkileri, 7–11 Aralık 2026
+G = 'https://www.gutenberg.org/ebooks/'
+
+Q = [
+{'yayin': '2026-12-07',
+ 'id': 'mese',
+ 'tr': 'Meşe',
+ 'la': 'Quercus robur, Q. petraea ve diğer türler',
+ 'fam': 'Fagaceae (kayıngiller)',
+ 'diger': 'Saplı meşe (Q. robur), sapsız meşe (Q. petraea), tüylü meşe (Q. pubescens); İng. oak',
+ 'bolge': ['anadolu', 'avrupa'],
+ 'kat': ['sifa', 'ritual'],
+ 'kisim': 'Genç dalların kabuğu',
+ 'taxon': 'Quercus robur',
+ 'kul': [('Keltler',
+          'Romalı yazar Plinius’a göre Galya druidleri hiçbir şeyi ökseotundan ve onun üzerinde yetiştiği meşeden daha kutsal saymaz, hiçbir ayini meşe dalı olmadan yapmazdı. Ökseotu ayın altıncı günü '
+          'beyaz giysili bir rahip tarafından altın orakla kesilir, beyaz bir örtüyle tutulurdu.'),
+         ('Galatya (İç Anadolu)',
+          'Strabon, Orta Anadolu’ya yerleşen Kelt Galatların 300 kişilik meclisinin Drynemetum denen yerde toplandığını yazar. Frazer bu adı “kutsal meşe korusu” diye okur.'),
+         ('Kuzey ve Doğu Avrupa',
+          'Frazer’in derlemesine göre meşe; Germenlerde Donar’ın (Thor), Slavlarda Perun’un, Litvanyalılarda Perkūnas’ın, yani gök gürültüsü tanrılarının ağacıydı. Novgorod’da Perun için meşe '
+          'odunuyla gece gündüz ateş yakılırdı.'),
+         ('Anadolu',
+          'Malatya Doğanşehir’de büyük meşelere “ziyaret ağacı” ya da “ulu ağaç” denir; dilek tutulup çaput bağlanır, altında yemek yenir, zarar verilmez. Yozgat Sorgun’da yüzyıllık bir palamut meşesi '
+          'korusu, çevresindeki inanışlar sayesinde bugüne korunmuştur.'),
+         ('Avrupa halk tıbbı',
+          'Kabuğu ishalde, ağız içi ve deri iltihaplarında ve hemoroitte büzücü olarak kullanılır; Avrupa İlaç Ajansı (EMA) bu kullanımları geleneksel kullanım olarak tanır.')],
+ 'haz': 'EMA monografına göre kabuktan hazırlanan çay ishalde içilir ya da gargara, kompres ve oturma banyosu olarak dışarıdan kullanılır. İshalde 3 günden, diğer kullanımlarda 1 haftadan uzun kullanılmaz.',
+ 'bilim': 'Kabuk yüzde 8–20 arasında değişen oranda tanen içerir; tanenler dokuyu büzer. EMA değerlendirme raporuna göre kontrollü klinik çalışma yoktur, kullanımı geleneksel kabul edilir.',
+ 'kanit': 'geleneksel',
+ 'guv': 'orta',
+ 'guvNot': 'EMA, 18 yaş altında, hamilelikte ve emzirirken kullanılmasını önermez. Diğer ilaçlarla en az 1 saat ara bırakılmalı, çünkü emilimlerini geciktirebilir. Açık yara, geniş deri hasarı ya da '
+           'enfekte deride banyo olarak kullanılmaz; ateşte, kalp yetmezliğinde ve yüksek tansiyonda sıcak banyodan kaçınılmalı. Alerji bildirilmiştir.',
+ 'ilginc': 'Galatların Orta Anadolu’daki toplanma yeri Drynemetum’un adı, Frazer’e göre Keltçe “kutsal meşe korusu” anlamına gelir.',
+ 'ek': {'mevsim': 'Kabuk ilkbaharda genç dallardan alınır; meşeler ilkbaharda çiçeklenir, palamutları sonbaharda olgunlaşır.',
+        'yetisme': 'Saplı meşe Trakya’da, Karadeniz’de ve Doğu Anadolu’da yetişir; Türkiye türün yayılışının güney sınırıdır (Şahin ve Şahin 2023).',
+        'yoresel': 'Saplı meşe, sapsız meşe; büyük ve kutsal sayılanlara ziyaret ağacı, ulu ağaç',
+        'karisma': 'Türkiye’de çok sayıda meşe türü yetişir; EMA monografı yalnızca saplı, sapsız ve tüylü meşenin kabuğunu kapsar.'},
+ 'ema': [('Quercus cortex', 'https://www.ema.europa.eu/en/documents/herbal-monograph/final-community-herbal-monograph-quercus-robur-l-quercus-petraea-matt-liebl-quercus-pubescens-willd-cortex_en.pdf')],
+ 'etk': [('Ağızdan alınan bütün ilaçlar', 'Tanenler başka ilaçların emilimini geciktirebilir; en az 1 saat ara bırakılmalı (EMA).')],
+ 'etk_en': [('All oral medicines', 'The tannins may delay the absorption of other medicines; take them at least 1 hour apart (EMA).')],
+ 'kaynak': [('Pliny the Elder, Natural History 16.95, çev. Bostock ve Riley, 1855–57 (Project Gutenberg)', G + '59131'),
+            ('Strabon, Geographica 12.5.1, çev. H. L. Jones (Loeb, LacusCurtius)', 'https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/12E*.html'),
+            ('James G. Frazer, The Golden Bough, 1922, 15. bölüm “The Worship of the Oak” (Project Gutenberg)', G + '3623'),
+            ('İsmail Oymak, “Eski Türk inanışlarından ağaç kültünün Malatya’daki izleri”, İlahiyat Fakültesi Dergisi 6, 2001', 'https://dergipark.org.tr/tr/download/article-file/2231021'),
+            ('İlhan Bulut, “Anadolu’da inanışların ve geleneklerin doğa korunması açısından önemi”, Atatürk Ü. Sosyal Bilimler Dergisi 11(46), 2011', 'https://dergipark.org.tr/en/download/article-file/451448'),
+            ('EMA/HMPC, Quercus cortex değerlendirme raporu, 2010', 'https://www.ema.europa.eu/en/documents/herbal-report/final-assessment-report-quercus-robur-l-quercus-petraea-matt-liebl-quercus-pubescens-willd-cortex_en.pdf'),
+            ('Şahin ve Şahin, Ormancılık Araştırma Dergisi 10 (Özel Sayı), 2023', 'https://doi.org/10.17568/ogmoad.1280998')],
+ 'rel': ['okseotu', 'hus', 'alic'],
+ 'en': {'name': 'Oak',
+        'other': 'Pedunculate or English oak (Q. robur), sessile oak (Q. petraea), downy oak (Q. pubescens)',
+        'part': 'Bark of young branches',
+        'uses': [('Celts', 'According to the Roman writer Pliny, the Druids of Gaul held nothing more sacred than mistletoe and the oak it grows on, and performed no rite without oak branches. '
+                           'Mistletoe was cut on the sixth day of the moon by a priest in white with a golden sickle and caught in a white cloak.'),
+                 ('Galatia (central Anatolia)', 'Strabo writes that the council of 300 of the Celtic Galatians, who settled in central Anatolia, met at a place called Drynemetum. Frazer reads '
+                                                'the name as “sacred oak grove”.'),
+                 ('Northern and eastern Europe', 'In Frazer’s compilation the oak was the tree of the thunder gods: Donar (Thor) among the Germans, Perun among the Slavs and Perkūnas among the '
+                                                 'Lithuanians. At Novgorod an oak-wood fire burned day and night for Perun.'),
+                 ('Anatolia', 'In Doğanşehir, Malatya, large oaks are called “ziyaret ağacı” (pilgrimage tree) or “ulu ağaç” (great tree): people tie rags to them when making wishes, eat '
+                              'beneath them and do them no harm. In Sorgun, Yozgat, a centuries-old grove of Vallonea oak has survived thanks to the beliefs around it.'),
+                 ('European folk medicine', 'The bark is used as an astringent for diarrhoea, inflammation of the mouth and skin, and haemorrhoids; the European Medicines Agency (EMA) '
+                                            'recognises these as traditional uses.')],
+        'prep': 'According to the EMA monograph, a decoction of the bark is drunk for diarrhoea or used externally as a gargle, compress or sitz bath. Not for more than 3 days for diarrhoea, or '
+                'more than 1 week for other uses.',
+        'science': 'The bark contains a highly variable 8–20% of tannins, which tighten tissue. According to the EMA assessment report there are no controlled clinical studies, so its use is '
+                   'regarded as traditional.',
+        'safety': 'The EMA does not recommend it under 18, in pregnancy or while breastfeeding. Take other medicines at least 1 hour apart, as it may delay their absorption. Not for baths on '
+                  'open wounds, large skin injuries or infected skin; avoid hot baths with fever, heart failure or high blood pressure. Allergic reactions have been reported.',
+        'fact': 'Drynemetum, the meeting place of the Galatians in central Anatolia, means “sacred oak grove” in Celtic, according to Frazer.',
+        'season': 'Bark is taken from young branches in spring; oaks flower in spring and their acorns ripen in autumn.',
+        'habitat': 'Pedunculate oak grows in Thrace, the Black Sea region and eastern Anatolia; Turkey is the southern limit of its range (Şahin and Şahin 2023).',
+        'local': 'Saplı meşe, sapsız meşe; large sacred oaks are called ziyaret ağacı or ulu ağaç',
+        'confusion': 'Many oak species grow in Turkey; the EMA monograph covers only the bark of pedunculate, sessile and downy oak.'}},
+{'yayin': '2026-12-08',
+ 'id': 'porsuk',
+ 'tr': 'Porsuk ağacı',
+ 'la': 'Taxus baccata',
+ 'fam': 'Taxaceae (porsukgiller)',
+ 'diger': 'Adi porsuk, gürdüç (Bursa); İng. yew',
+ 'bolge': ['anadolu', 'avrupa'],
+ 'kat': ['zehir', 'ritual'],
+ 'kisim': 'Hiçbir kısmı halk arasında kullanılmamalı; iğne yapraklar ilaç sanayisinde hammadde',
+ 'taxon': 'Taxus baccata',
+ 'kul': [('Britanya ve İrlanda',
+          'Çok yaşlı porsuklar sıklıkla erken Hristiyan kilise avlularında, tarih öncesi mezarların ve kutsal alanların yakınında bulunur. İskoçya’daki Fortingall porsuğunun 2.000–5.000, '
+          'Galler’deki Defynnog porsuğunun 3.000 yaşın üzerinde olduğu tahmin edilir; kiliselerin Hristiyanlık öncesi kutsal yerlerin üstüne kurulduğu düşünülür. Kelt, Yunan ve Roma dünyasında '
+          'porsuk ölüm, yeniden doğuş ve ölümsüzlükle ilişkilendirilir.'),
+         ('Roma', 'Plinius porsuğu “kasvetli ve uğursuz görünüşlü” bir ağaç olarak anar; Galya’da bu ağacın odunundan yapılan şarap mataralarının içenleri öldürdüğünü yazar.'),
+         ('Bursa',
+          'Mustafakemalpaşa’nın Alpağut köyünde, iyileşmeyecek kadar hasta hayvanlara acı çekmesinler diye yeşil porsuk sürgünü yedirilirdi; bu bilgi babadan oğula aktarılmış. Dallıca’da yaşlılar, '
+          'bir ahşap caminin minaresinin “gürdüç” odunundan yapıldığını anlatır.'),
+         ('Modern tıp',
+          'Kanser ilacı paklitaksel (Taxol) 1960’larda Pasifik porsuğunun kabuğunda bulundu. Bir hasta için ağaçların kesilmesi gerekince, Avrupa porsuğunun iğne yapraklarından elde edilen bir öncül '
+          'maddeden yarı sentezle üretim yoluna gidildi; ağacı kesmeden, yenilenen kısmından yararlanılabildi.')],
+ 'haz': 'Evde hiçbir biçimde kullanılmaz. Paklitaksel ve dosetaksel yalnızca hastanede, hekim kontrolünde uygulanan saflaştırılmış ilaçlardır.',
+ 'bilim': 'Kırmızı etli tohum kabuğu (aril) dışında bitkinin her yeri taksin alkaloitleri içerir; arilin içindeki sert tohum da zehirlidir. Taksin A ve B, kalpteki sodyum ve kalsiyum kanallarını '
+          'bloke ederek kalp iletisini durdurur. Paklitaksel ise hücre bölünmesinde görev yapan mikrotübülleri sabitleyerek kanser hücrelerinin bölünmesini engeller.',
+ 'kanit': 'klinik',
+ 'guv': 'yuksek',
+ 'guvNot': 'Çok zehirlidir. Ölümcül doz vücut ağırlığının kilosu başına 0,6–1,3 g yaprak olarak bildirilmiştir; 50–100 g iğne yapraktan yapılan çay ölümcül sayılır. Panzehiri yoktur. Kırmızı '
+           'meyvesinin etli kısmı zehirsiz olsa da içindeki tohum zehirlidir; çocuklar ve hayvanlar açısından tehlikelidir. Zehirlenme şüphesinde 114 ya da 112 aranmalı.',
+ 'ilginc': 'Tek bir hastayı 2 g Taxol ile tedavi etmek için dört Pasifik porsuğunun kesilmesi gerekmişti (Gallego-Jara ve ark. 2020).',
+ 'ek': {'mevsim': 'Her dem yeşildir; dişi ağaçların kırmızı arilli tohumları sonbaharda olgunlaşır.',
+        'yetisme': 'Türkiye’nin tek doğal porsuk türüdür: Trakya (Demirköy), Karadeniz (Düzce, Bolu, Karabük, Zonguldak, Bartın, Rize), Kazdağı, Sultan Dağları ve Amanoslar. Genellikle 1.000–1.900 m’de '
+                   'yetişir; Zonguldak ve Bartın çevresinde 1.900–2.000 yaşında olduğu tahmin edilen anıt ağaçlar var (Yaman ve Zaman 2022). Bursa’daki popülasyon azalıyor (Dikeş ve ark. 2021).',
+        'yoresel': 'Gürdüç (Bursa, Mustafakemalpaşa)',
+        'karisma': 'İğne yaprakları köknar ve ardıç dallarıyla karıştırılabilir; porsukta kozalak yoktur, tohum kırmızı, etli bir çanak içindedir.'},
+ 'etk': [('Kalp ilaçları (ritim ilaçları, beta blokerler, kalsiyum kanal blokerleri)', 'Taksinler kalbin sodyum ve kalsiyum kanallarını bloke eder; kalp ilacı kullananlarda zehirlenme daha ağır seyredebilir.')],
+ 'etk_en': [('Heart medicines (antiarrhythmics, beta blockers, calcium channel blockers)', 'Taxines block the heart’s sodium and calcium channels; poisoning may be more severe in people on heart medicines.')],
+ 'kaynak': [('Jîjie ve ark., “A deep dive into the botanical and medicinal heritage of Taxus”, Plants 14, 2025', 'https://doi.org/10.3390/plants14101439'),
+            ('Pliny the Elder, Natural History 16.20, çev. Bostock ve Riley (Project Gutenberg)', G + '59131'),
+            ('Schreiber ve ark., Channels 16, 2022 (taksin zehirlenmesi)', 'https://doi.org/10.1080/19336950.2022.2104886'),
+            ('Vališ ve ark., Journal of Medical Case Reports 8, 2014', 'https://doi.org/10.1186/1752-1947-8-4'),
+            ('Cech ve Oberlies, “From plant to cancer drug: lessons learned from the discovery of taxol”, Natural Product Reports 40, 2023', 'https://doi.org/10.1039/d3np00017f'),
+            ('Atanasov ve ark., Biotechnology Advances 33, 2015', 'https://doi.org/10.1016/j.biotechadv.2015.08.001'),
+            ('Gallego-Jara ve ark., Molecules 25, 2020', 'https://doi.org/10.3390/molecules25245986'),
+            ('Yaman ve Zaman, Bartın Orman Fakültesi Dergisi 24(1), 2022', 'https://doi.org/10.24011/barofd.1017071'),
+            ('Dikeş, Yılmaz ve Kalkan, Biological Diversity and Conservation 14(1), 2021', 'https://doi.org/10.46309/biodicon.2021.883497')],
+ 'rel': ['yuksukotu', 'ardic', 'mese'],
+ 'en': {'name': 'Yew',
+        'other': 'European or common yew; gürdüç (Bursa, Turkish)',
+        'part': 'No part should be used at home; the needles are a raw material for the drug industry',
+        'uses': [('Britain and Ireland', 'Ancient yews are often found in early Christian churchyards and near prehistoric burials and ritual sites. The Fortingall Yew in Scotland is estimated at '
+                                         '2,000–5,000 years old and the Defynnog Yew in Wales at over 3,000; the churches are thought to stand on pre-Christian sanctuaries. In the Celtic, Greek and '
+                                         'Roman worlds the yew was linked with death, rebirth and immortality.'),
+                 ('Rome', 'Pliny calls the yew “sombre and ominous” and writes that in Gaul wine flasks made of its wood killed those who drank from them.'),
+                 ('Bursa, Turkey', 'In Alpağut village, Mustafakemalpaşa, green yew shoots were fed to incurably sick animals to spare them suffering, a practice passed from father to son. '
+                                   'Elders in Dallıca say the minaret of a wooden mosque was built of “gürdüç” wood.'),
+                 ('Modern medicine', 'The cancer drug paclitaxel (Taxol) was found in the bark of the Pacific yew in the 1960s. When trees had to be felled to treat patients, production moved '
+                                     'to semi-synthesis from a precursor in the needles of European yew, a renewable part of the tree.')],
+        'prep': 'Never used at home in any form. Paclitaxel and docetaxel are purified drugs given only in hospital under medical supervision.',
+        'science': 'Every part except the red fleshy aril contains taxine alkaloids; the hard seed inside the aril is also toxic. Taxines A and B block sodium and calcium channels in the heart and '
+                   'stop its conduction. Paclitaxel, by contrast, stabilises the microtubules used in cell division and so stops cancer cells from dividing.',
+        'safety': 'Highly poisonous. Lethal doses of 0.6–1.3 g of leaves per kilogram of body weight have been reported; a tea of 50–100 g of needles is considered fatal. There is no antidote. '
+                  'The fleshy part of the red berry is not toxic, but the seed inside is, so it is dangerous for children and animals. In Turkey call 114 or 112 if poisoning is suspected.',
+        'fact': 'Treating a single patient with 2 g of Taxol once required felling four Pacific yews (Gallego-Jara et al. 2020).',
+        'season': 'Evergreen; the red-arilled seeds of female trees ripen in autumn.',
+        'habitat': 'Turkey’s only native yew: Thrace (Demirköy), the Black Sea region (Düzce, Bolu, Karabük, Zonguldak, Bartın, Rize), Kazdağı, the Sultan Mountains and the Amanos. It usually grows '
+                   'at 1,000–1,900 m; monumental trees around Zonguldak and Bartın are estimated at 1,900–2,000 years old (Yaman and Zaman 2022). The Bursa population is declining (Dikeş et al. 2021).',
+        'local': 'Gürdüç (Mustafakemalpaşa, Bursa)',
+        'confusion': 'The needles can be confused with fir or juniper branches; yew has no cones, and the seed sits in a red fleshy cup.'}},
+{'yayin': '2026-12-09',
+ 'id': 'kusuvezi',
+ 'tr': 'Kuş üvezi',
+ 'la': 'Sorbus aucuparia',
+ 'fam': 'Rosaceae (gülgiller)',
+ 'diger': 'Dişbudak yapraklı kuş üvezi; İng. rowan, mountain ash',
+ 'bolge': ['anadolu', 'avrupa'],
+ 'kat': ['tutsu', 'besin'],
+ 'kisim': 'Meyve (pişirilmiş ya da donmuş)',
+ 'taxon': 'Sorbus aucuparia',
+ 'kul': [('İskoçya, İrlanda ve Kuzey İngiltere',
+          'Cadılara ve kötü ruhlara karşı evlerin yanına dikilir, kapı ve ocak üstüne kırmızı iplikle bağlanmış küçük haçları asılırdı. Kuzey Yorkshire’da halka biçimli kuş üvezi dalları cadılığa '
+          'karşı muska olarak bahçe kapısına takılırdı; Oxford’daki Pitt Rivers Müzesi’nde bunların örnekleri var. İrlanda’da Mayıs arifesinde kapının üstüne dal konur, mayıs gününde ineklerin '
+          'kuyruğuna nazara karşı kırmızı kurdele ya da kuş üvezi bağlanırdı. İskoçya’da bu ağacı kesmek yasaktı.'),
+         ('İskandinav mitolojisi', 'Snorri’nin Edda’sına göre Thor taşan Vimur ırmağında boğulmak üzereyken bir kuş üvezi çalısına tutunup kurtuldu; “kuş üvezi Thor’un kurtuluşudur” sözü buradan gelir.'),
+         ('Avrupa halk tıbbı', 'Meyvesi müshil, idrar söktürücü, romatizmaya ve böbrek hastalıklarına karşı, ses kısıklığında gargara olarak ve C vitamini kaynağı olarak kullanılmıştır (Sarv ve ark. 2020).')],
+ 'haz': 'Meyveler çiğ yenmez; ilk dondan sonra toplanır ya da pişirilerek reçel, marmelat ve şurup yapılır. Çekirdekler ayıklanmalı.',
+ 'bilim': 'Çiğ meyve parasorbik asit içerir; ısıtma ya da dondurma bu maddeyi zararsız sorbik aside dönüştürür. Meyve C vitamini ve polifenollerce zengindir; halk tıbbındaki kullanımları klinik '
+          'çalışmalarla desteklenmemiştir.',
+ 'kanit': 'geleneksel',
+ 'guv': 'dusuk',
+ 'guvNot': 'Çiğ meyvedeki parasorbik asit fazla yendiğinde mideyi tahriş eder, hazımsızlık ve böbrek hasarı yapabilir. Çekirdekler siyanojenik glikozit (prunasin) içerir, ayıklanmalı. Pişirilmiş ya da '
+           'donmuş meyve daha güvenlidir. Kuş üvezini başka üvez türleriyle karıştırma.',
+ 'ilginc': 'Gıda koruyucusu sorbik asit (E200) adını bu ağaçtan alır: A. W. Hofmann onu 1859’da olgunlaşmamış kuş üvezi meyvesinden elde etmişti.',
+ 'ek': {'mevsim': 'Mayıs–haziranda beyaz çiçek salkımları açar; turuncu-kırmızı meyveler ağustos–ekimde olgunlaşır, tercihen ilk dondan sonra toplanır.',
+        'yetisme': 'Türkiye florasında kayıtlı (Gökşin 1982’den aktaran Macit ve ark. 2022); meyvesi Bayburt’tan toplanan örneklerle incelenmiştir (Çınar Topçu ve ark. 2025). Kafkasya ve Türkiye’de 35 kadar '
+                   'Sorbus türü yetişir.',
+        'yoresel': 'Kuş üvezi',
+        'karisma': 'Yalnızca “üvez” denince çoğunlukla yenen üvez (Sorbus domestica) kastedilir; o başka bir türdür.'},
+ 'kaynak': [('Sarv, Venskutonis ve Bhat, “The Sorbus spp.—underutilised plants for foods and nutraceuticals”, Antioxidants 9, 2020', 'https://doi.org/10.3390/antiox9090813'),
+            ('Arvinte ve ark., Plants 12, 2023', 'https://doi.org/10.3390/plants12183225'),
+            ('Pitt Rivers Museum, “A Loop of Rowan Tree: amulets against witchcraft”', 'https://england.prm.ox.ac.uk/englishness-loop-of-rowan-tree.html'),
+            ('National Museum of Ireland, Folklife Collections: May Day', 'https://cms.museum.ie/en-IE/Collections-Research/Folklife-Collections/Folklife-Collections-List-(1)/Religion-and-Calendar-Customs/May-Day'),
+            ('Woodland Trust, Rowan', 'https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/rowan/'),
+            ('Snorri Sturluson, Prose Edda, Skáldskaparmál, çev. A. G. Brodeur, 1916', 'https://archive.org/details/proseedda01brodgoog'),
+            ('Macit ve ark., IJFAA 2(1), 2022', 'https://dergipark.org.tr/en/download/article-file/2704500'),
+            ('Çınar Topçu ve ark., GIDA 50(2), 2025', 'https://doi.org/10.15237/gida.GD24118')],
+ 'rel': ['alic', 'murver', 'hus'],
+ 'en': {'name': 'Rowan',
+        'other': 'Mountain ash; kuş üvezi (Turkish)',
+        'part': 'Fruit (cooked or frozen)',
+        'uses': [('Scotland, Ireland and northern England', 'Planted by houses against witches and evil spirits; small rowan crosses tied with red thread were hung over doors and hearths. In North '
+                                                            'Yorkshire, loops of rowan were set on gates as amulets against witchcraft; the Pitt Rivers Museum in Oxford holds examples. In '
+                                                            'Ireland a rowan branch went over the door on May Eve, and on May Day red ribbons or rowan were tied to cows’ tails against the evil '
+                                                            'eye. In Scotland cutting down a rowan was taboo.'),
+                 ('Norse mythology', 'In Snorri’s Edda, Thor, about to drown in the flooding river Vimur, saved himself by grabbing a rowan bush; hence the saying “rowan is Thor’s deliverance”.'),
+                 ('European folk medicine', 'The fruit has been used as a laxative and diuretic, against rheumatism and kidney disease, as a gargle for hoarseness and as a source of vitamin C '
+                                            '(Sarv et al. 2020).')],
+        'prep': 'Do not eat the berries raw; pick them after the first frost or cook them into jam, jelly or syrup. Remove the seeds.',
+        'science': 'Raw berries contain parasorbic acid; heating or freezing turns it into harmless sorbic acid. The fruit is rich in vitamin C and polyphenols; its folk uses have not been tested '
+                   'in clinical studies.',
+        'safety': 'In larger amounts the parasorbic acid in raw berries irritates the stomach and can cause indigestion and kidney damage. The seeds contain a cyanogenic glycoside (prunasin) and '
+                  'should be removed. Cooked or frozen berries are safer. Do not confuse rowan with other Sorbus species.',
+        'fact': 'The food preservative sorbic acid (E200) is named after this tree: A. W. Hofmann first isolated it from unripe rowan berries in 1859.',
+        'season': 'White flower clusters in May–June; orange-red berries ripen in August–October, best picked after the first frost.',
+        'habitat': 'Recorded in the flora of Turkey; its fruit has been studied from Bayburt. About 35 Sorbus species grow in the Caucasus and Turkey.',
+        'local': 'Kuş üvezi',
+        'confusion': 'Plain “üvez” in Turkish usually means service tree (Sorbus domestica), a different species.'}},
+{'yayin': '2026-12-10',
+ 'id': 'disbudak',
+ 'tr': 'Dişbudak',
+ 'la': 'Fraxinus excelsior',
+ 'fam': 'Oleaceae (zeytingiller)',
+ 'diger': 'Adi dişbudak, Avrupa dişbudağı; İng. ash',
+ 'bolge': ['anadolu', 'avrupa'],
+ 'kat': ['sifa', 'ritual'],
+ 'kisim': 'Yaprak',
+ 'taxon': 'Fraxinus excelsior',
+ 'kul': [('İskandinav mitolojisi',
+          'Şiirsel Edda’daki Völuspá’ya göre dünyayı taşıyan ağaç Yggdrasil bir dişbudaktır: Urd kuyusunun başında hep yeşil durur, vadilere düşen çiğ ondan gelir. Bir geyik tepesini kemirir, gövdesi '
+          'çürür, ejder Nidhogg köklerini kemirir. Odin dokuz gece “rüzgârlı ağaçta” asılı kalarak runları öğrenir; bu ağaç Yggdrasil’dir, adı da “Odin’in atı” anlamına gelir.'),
+         ('İngiltere',
+          'Gilbert White 1789’da Selborne’da fıtıklı çocukların genç bir dişbudağın yarılan gövdesinin arasından çıplak geçirildiğini, ağaç kaynayınca çocuğun da iyileşeceğine inanıldığını yazar. '
+          'Gövdesine canlı bir sivri fare kapatılan dişbudağın dallarının hastalanan sığırı iyileştirdiğine de inanılırdı.'),
+         ('Roma', 'Plinius, dişbudak yaprağı suyunun yılan sokmasına iyi geldiğini, yılanın dişbudağın gölgesinde bile yatmadığını yazar.'),
+         ('Avrupa halk tıbbı', 'Yaprak ve kabuk Hipokrat’tan beri idrar söktürücü ve romatizma ilacı olarak bilinir. EMA yaprağı, hafif eklem ağrılarında ve hafif idrar yolu şikâyetlerinde idrarı artırmak '
+                               'için geleneksel kullanım olarak tanır.')],
+ 'haz': 'EMA monografına göre kurutulmuş yapraktan çay yapılır; idrar yolu şikâyetinde bol sıvıyla birlikte içilir.',
+ 'bilim': 'EMA değerlendirme raporuna göre bütün kaynaklar, iddia edilen kullanımlar için etkinliğin belgelenmediğinde birleşir; kullanım yalnızca uzun geleneğe dayanır.',
+ 'kanit': 'geleneksel',
+ 'guv': 'dusuk',
+ 'guvNot': 'Ağır kalp ya da böbrek hastalığı gibi sıvı alımının kısıtlanması gereken durumlarda kullanılmaz. 18 yaş altında güvenliği belirlenmemiştir. İdrar yolu şikâyeti ateş, kanlı idrar ya da '
+           'kramplarla birlikteyse ya da sürüyorsa hekime gidilmeli.',
+ 'ilginc': 'Gilbert White 1789’da, fıtık tedavisi için içinden çocuk geçirilen ve yarığı kaynamış dişbudakların Selborne’da hâlâ ayakta olduğunu yazar.',
+ 'ek': {'mevsim': 'Yapraklar yaz başında toplanır; çiçekler yapraklardan önce, ilkbaharda açar.',
+        'yetisme': 'Türkiye’de doğal olarak üç dişbudak yetişir: sivri meyveli dişbudak (F. angustifolia), adi dişbudak (F. excelsior) ve çiçekli dişbudak (F. ornus). Adi dişbudak Trakya’da, Kocaeli’de '
+                   've Karadeniz’de, kayın-gürgen ve köknar-ladin ormanlarının nemli vadilerinde ve dere kenarlarında bulunur (Atay 1984).',
+        'yoresel': 'Adi dişbudak',
+        'karisma': 'EMA monografı adi dişbudak ve sivri meyveli dişbudak yapraklarını kapsar; kuş üvezinin yaprakları da dişbudağa benzer.'},
+ 'ema': [('Fraxini folium', 'https://www.ema.europa.eu/en/documents/herbal-monograph/final-community-herbal-monograph-fraxinus-excelsior-l-or-fraxinus-angustifolia-vahl-folium_en.pdf')],
+ 'kaynak': [('Henry Adams Bellows (çev.), The Poetic Edda, 1923 (Project Gutenberg)', G + '73533'),
+            ('Gilbert White, The Natural History of Selborne, 1789, 28. mektup (Project Gutenberg)', G + '1408'),
+            ('Pliny the Elder, Natural History 16.24, çev. Bostock ve Riley (Project Gutenberg)', G + '59131'),
+            ('EMA/HMPC, Fraxini folium değerlendirme raporu, 2011', 'https://www.ema.europa.eu/en/documents/herbal-report/final-assessment-report-fraxinus-excelsior-l-or-fraxinus-angustifolia-vahl-folium_en.pdf'),
+            ('İhsan Atay, “Tâli türlerimizden dişbudağın önemi ve silvikültürel özellikleri”, İÜ Orman Fakültesi Dergisi B 34(3), 1984', 'https://dergipark.org.tr/tr/download/article-file/176576'),
+            ('Forestry Commission, Managing ash dieback in England, 2025', 'https://www.gov.uk/guidance/managing-ash-dieback-in-england'),
+            ('EPPO Global Database, Hymenoscyphus fraxineus: Türkiye', 'https://gd.eppo.int/taxon/CHAAFR/distribution/TR')],
+ 'rel': ['hus', 'okseotu', 'mese'],
+ 'en': {'name': 'Ash',
+        'other': 'Common or European ash; dişbudak (Turkish)',
+        'part': 'Leaf',
+        'uses': [('Norse mythology', 'In the Völuspá of the Poetic Edda, the world tree Yggdrasil is an ash: it stands ever green by Urd’s well, and the dew that falls in the dales comes from it. '
+                                     'A hart bites its top, its trunk rots and the dragon Nidhogg gnaws its roots. Odin hangs nine nights on “the windy tree” to win the runes; that tree is '
+                                     'Yggdrasil, whose name means “Odin’s horse”.'),
+                 ('England', 'Gilbert White wrote in 1789 that in Selborne children with hernias were passed naked through the split trunk of a young ash, in the belief that as the tree healed '
+                             'so would the child. Twigs of an ash in which a live shrew had been plugged were believed to cure lame cattle.'),
+                 ('Rome', 'Pliny writes that ash-leaf juice cures snakebite and that no snake will even lie in an ash’s shadow.'),
+                 ('European folk medicine', 'The leaf and bark have been known as a diuretic and rheumatism remedy since Hippocrates. The EMA recognises the leaf as a traditional remedy for '
+                                            'minor joint pain and for increasing urine in minor urinary complaints.')],
+        'prep': 'According to the EMA monograph, the dried leaf is made into a tea; for urinary complaints it is taken with plenty of fluid.',
+        'science': 'According to the EMA assessment report, all sources agree that efficacy for the claimed uses has not been documented; use rests on long tradition alone.',
+        'safety': 'Not for conditions where fluid intake must be restricted, such as severe heart or kidney disease. Safety under 18 has not been established. See a doctor if a urinary complaint '
+                  'comes with fever, blood in the urine or cramps, or does not go away.',
+        'fact': 'Gilbert White wrote in 1789 that ash trees which had been split to pass children through as a hernia cure, and had healed, were still standing in Selborne.',
+        'season': 'Leaves are gathered in early summer; flowers open in spring, before the leaves.',
+        'habitat': 'Three ashes are native to Turkey: narrow-leaved ash (F. angustifolia), common ash (F. excelsior) and manna ash (F. ornus). Common ash grows in Thrace, Kocaeli and the Black Sea '
+                   'region, in damp valleys and along streams in beech–hornbeam and fir–spruce forests (Atay 1984).',
+        'local': 'Adi dişbudak',
+        'confusion': 'The EMA monograph covers leaves of common and narrow-leaved ash; rowan leaves also look like ash leaves.'}},
+{'yayin': '2026-12-11',
+ 'id': 'minecicegi',
+ 'tr': 'Mine çiçeği',
+ 'la': 'Verbena officinalis',
+ 'fam': 'Verbenaceae (minegiller)',
+ 'diger': 'Tıbbi mine; İng. vervain, common verbena',
+ 'bolge': ['anadolu', 'avrupa'],
+ 'kat': ['sifa', 'ritual'],
+ 'kisim': 'Toprak üstü kısımlar',
+ 'taxon': 'Verbena officinalis',
+ 'kul': [('Roma',
+          'Plinius’a göre Romalılarda hiçbir bitki “verbenaca” kadar ün kazanmamıştı: düşmanla görüşmeye giden elçiler onu taşır, Jüpiter’in sofrası ve evler onunla arındırılırdı.'),
+         ('Galya', 'Plinius, Galya eyaletlerindeki halkın bu bitkiyi kehanet ve gelecekten haber vermek için kullandığını yazar. (Bu pasajda druidlerden söz edilmez.)'),
+         ('Antik “magi”',
+          'Plinius’un aktardığına göre büyücüler, bitkinin Sirius doğarken, ne güneş ne ay görmeden, toprağa bal sunulduktan sonra toplanması, çevresine demirle daire çizilip sol elle sökülmesi '
+          'gerektiğini söylerdi; onunla ovunanın dileklerine kavuşacağına inanırdı.'),
+         ('Türkiye', 'Türkiye’de kalp-damar hastalıklarına karşı geleneksel olarak kullanılan bitkiler arasında kayıtlı; toprak üstü kısmı kaynatılıp içilir (Güleç ve ark. 2023).')],
+ 'haz': 'Halk arasında toprak üstü kısımlar kaynatılıp içilir. EMA monografı yoktur; doz önerisi verilemez.',
+ 'bilim': 'Avrupa Farmakopesi’nde 2008’den beri monografı var; başlıca bileşenleri verbenalin, hastatozit ve aukubin gibi iridoitler ile verbaskozit gibi fenilpropanoitlerdir. Halk tıbbında sinir '
+          'sistemini yatıştırmak için kullanılır ama bu konuda bilimsel veri azdır, klinik çalışma gerekir. Sinüzit için kullanılan karışık bir bitkisel ilacın bileşenlerinden biridir; bu kanıt tek başına '
+          'mine çiçeği için değil, karışım içindir.',
+ 'kanit': 'geleneksel',
+ 'guv': 'dusuk',
+ 'guvNot': 'Düzenleyici kurumların yaptığı bir güvenlik değerlendirmesi yok. Güvenlik verisi olmadığı için hamilelikte, emzirirken ve çocuklarda kullanılmamalı. Limon otu (Aloysia citrodora) ile '
+           'karıştırılmamalı; o başka bir bitkidir.',
+ 'ilginc': 'Romalı elçiler düşmanla barış görüşmesine giderken yanlarında mine çiçeği taşırdı (Plinius).',
+ 'ek': {'mevsim': 'Yaz boyunca, temmuz–eylülde küçük leylak rengi çiçekler açar; toprak üstü kısımlar çiçeklenirken toplanır.',
+        'yetisme': 'Avrupa, Asya, Afrika ve Amerika’da yayılmış, kozmopolit bir türdür; yol kenarlarında ve boş alanlarda görülür.',
+        'yoresel': 'Mine çiçeği',
+        'karisma': 'EMA’nın “Verbenae citriodorae folium” monografı limon otu (Aloysia citrodora) içindir, mine çiçeği için değildir. Süs bitkisi olarak satılan renkli mineler de başka türlerdir.'},
+ 'kaynak': [('Pliny the Elder, Natural History 25.59, çev. Bostock ve Riley (Project Gutenberg)', G + '60688'),
+            ('Kubica ve ark., Antioxidants 11, 2022', 'https://doi.org/10.3390/antiox11020409'),
+            ('Koshovyi ve ark., Plants 14, 2025', 'https://doi.org/10.3390/plants14172651'),
+            ('Güleç, Erarslan ve Kültür, International Journal of Traditional and Complementary Medicine Research 4(2), 2023', 'https://doi.org/10.53811/ijtcmr.1232190')],
+ 'rel': ['okseotu', 'kantaron', 'murver'],
+ 'en': {'name': 'Vervain',
+        'other': 'Common verbena; mine çiçeği (Turkish)',
+        'part': 'Aerial parts',
+        'uses': [('Rome', 'According to Pliny, no plant had greater renown among the Romans than “verbenaca”: envoys carried it when treating with the enemy, and it was used to cleanse the table '
+                          'of Jupiter and to purify houses.'),
+                 ('Gaul', 'Pliny writes that the people of the Gallic provinces used it for soothsaying and foretelling the future. (This passage does not mention the Druids.)'),
+                 ('The ancient “magi”', 'Pliny reports that the magicians said it must be gathered at the rising of the Dog Star, unseen by sun or moon, after honey had been offered to the '
+                                        'earth, with a circle traced round it with iron and the plant lifted with the left hand; rubbing oneself with it was said to win one’s desires.'),
+                 ('Turkey', 'Recorded among plants used traditionally against cardiovascular disease in Turkey; the aerial part is boiled and drunk (Güleç et al. 2023).')],
+        'prep': 'In folk use the aerial parts are boiled and drunk. There is no EMA monograph, so no dose can be recommended.',
+        'science': 'It has had a European Pharmacopoeia monograph since 2008; its main constituents are iridoids such as verbenalin, hastatoside and aucubin, and phenylpropanoids such as '
+                   'verbascoside. It is used in folk medicine to calm the nerves, but scientific data are scarce and clinical studies are needed. It is one ingredient of a combination herbal '
+                   'medicine used for sinusitis; that evidence is for the combination, not for vervain alone.',
+        'safety': 'No regulatory safety assessment exists. Because there are no safety data, do not use it in pregnancy, while breastfeeding or in children. Do not confuse it with lemon verbena '
+                  '(Aloysia citrodora), a different plant.',
+        'fact': 'Roman envoys carried vervain when they went to negotiate peace with the enemy (Pliny).',
+        'season': 'Small lilac flowers through summer, July–September; the aerial parts are gathered in flower.',
+        'habitat': 'A cosmopolitan species of Europe, Asia, Africa and the Americas, seen on roadsides and waste ground.',
+        'local': 'Mine çiçeği',
+        'confusion': 'The EMA monograph “Verbenae citriodorae folium” is for lemon verbena (Aloysia citrodora), not vervain. Colourful garden verbenas are other species.'}},
+]
