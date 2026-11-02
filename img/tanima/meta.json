@@ -1488,5 +1488,86 @@
   "license": "CC BY 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Salvia_divinorum_flower_2.jpg"
  },
- "salviadivinorum:kuru": "yok"
+ "salviadivinorum:kuru": "yok",
+ "gul:cizim": "yok",
+ "gul:cicek": {
+  "file": "وردة الجوري Rosa damascena 2.jpg",
+  "artist": "Bonnjalal00",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%D9%88%D8%B1%D8%AF%D8%A9_%D8%A7%D9%84%D8%AC%D9%88%D8%B1%D9%8A_Rosa_damascena_2.jpg"
+ },
+ "gul:kuru": "yok",
+ "misir:cizim": {
+  "file": "Zea mays - Köhler–s Medizinal-Pflanzen-283.jpg",
+  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Zea_mays_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-283.jpg"
+ },
+ "misir:cicek": {
+  "file": "Corn flower VijayanRajapuram.jpg",
+  "artist": "Vijayanrajapuram",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Corn_flower_VijayanRajapuram.jpg"
+ },
+ "misir:kuru": "yok",
+ "hunnap:cizim": "yok",
+ "hunnap:cicek": {
+  "file": "Jujube in flowers.JPG",
+  "artist": "Sengai Podhuvan",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Jujube_in_flowers.JPG"
+ },
+ "hunnap:kuru": "yok",
+ "serbetciotu:cizim": {
+  "file": "Humulus lupulus - Köhler–s Medizinal-Pflanzen-072.jpg",
+  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Humulus_lupulus_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-072.jpg"
+ },
+ "serbetciotu:cicek": {
+  "file": "Mainz-Oberstadt - Männliche Blüten eines Hopfens.jpg",
+  "artist": "ManuelB701",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Mainz-Oberstadt_-_M%C3%A4nnliche_Bl%C3%BCten_eines_Hopfens.jpg"
+ },
+ "serbetciotu:kuru": "yok",
+ "akgunluk:cizim": {
+  "file": "Boswellia sacra - Köhler–s Medizinal-Pflanzen-022.jpg",
+  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Boswellia_sacra_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-022.jpg"
+ },
+ "akgunluk:cicek": {
+  "file": "584-fiori di incenso.JPG",
+  "artist": "Mauro Raffaelli",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:584-fiori_di_incenso.JPG"
+ },
+ "akgunluk:kuru": "yok",
+ "hus:cizim": {
+  "file": "Illustration Betula pendula clean.JPG",
+  "artist": "File:Illustration Betula pendula0.jpg : PLEASE COMPLETE AUTH",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Betula_pendula_clean.JPG"
+ },
+ "hus:cicek": {
+  "file": "Microscope view of Betula pendula flowers 08.jpg",
+  "artist": "Korinna",
+  "license": "CC BY 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Microscope_view_of_Betula_pendula_flowers_08.jpg"
+ },
+ "hus:kuru": "yok",
+ "bugday:cizim": {
+  "file": "Triticum aestivum - Köhler–s Medizinal-Pflanzen-274.jpg",
+  "artist": "Walther Otto Müller",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Triticum_aestivum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-274.jpg"
+ },
+ "bugday:cicek": {
+  "file": "Starr-180610-3942-Triticum aestivum-Rouge de Bordeaux heads in flower-Hawea Pl Olinda-Maui (43429943082).jpg",
+  "artist": "Forest and Kim Starr",
+  "license": "CC BY 3.0 us",
+  "page": "https://commons.wikimedia.org/wiki/File:Starr-180610-3942-Triticum_aestivum-Rouge_de_Bordeaux_heads_in_flower-Hawea_Pl_Olinda-Maui_%2843429943082%29.jpg"
+ },
+ "bugday:kuru": "yok"
 }
