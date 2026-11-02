@@ -4,6 +4,7 @@ from refs import WIKI, POWO, NCCIH, EMA, OTHER, FILES, BAYTOP
 from baytop_kar import KAR as BKAR
 from extra import EK, KORUMA, YASAL, YASAL_AD, BR_GEO, ALT
 from etkilesim import ETK
+from zehirli import KARIS as ZKARIS, HALK as ZHALK, NEDEN as ZNEDEN, KAYNAK as ZKAYNAK
 from derin import D as DERIN
 from gozden import KISI as GZ_KISI, SAYFALAR as GZ
 KAN_AD = {'klinik': 'Klinik kanıt', 'sinirli': 'Sınırlı kanıt', 'geleneksel': 'Yalnızca geleneksel', 'yok': 'Kanıt yok'}
@@ -306,7 +307,7 @@ def head(title, desc, path, extra='', image=None):
 '''
 
 MENU = [('Bitkiler', [('/katalog/', 'Katalog', 'kat'), ('/toplama-takvimi/', 'Doğada bu ay', 'toplama'), ('/yoreler/', 'Yöreler ve yöresel adlar', 'yore'), ('/yeni/', 'Yeni eklenenler', 'yeni')]),
-        ('Şifa', [('/rehber/', 'Derde göre bitkiler', 'rehber'), ('/tarif/', 'Çay tarifleri', 'tarif'), ('/karsilastirma/', 'Karşılaştırmalar', 'kars'), ('/rehber/ilac-etkilesimi/', 'İlaç etkileşimi', 'etk')]),
+        ('Şifa', [('/rehber/', 'Derde göre bitkiler', 'rehber'), ('/tarif/', 'Çay tarifleri', 'tarif'), ('/karsilastirma/', 'Karşılaştırmalar', 'kars'), ('/rehber/ilac-etkilesimi/', 'İlaç etkileşimi', 'etk'), ('/rehber/zehirli-bitkiler/', 'Zehirli bitkiler', 'zehir')]),
         ('Kültür', [('/kavram/', 'Kavramlar', 'kavram'), ('/semboller/', 'Semboller', 'sembol'), ('/kopruler/', 'Kültür köprüleri', 'br'), ('/blog/', 'Blog', 'yazi'), ('/takvim/', 'Ritüel takvimi', 'takvim')]),
         ('Bitki Tabanı', [('/hakkinda/', 'Hakkında', 'about'), ('/yontem/', 'Yöntem ve kaynaklar', 'yontem'), ('/bulten/', 'Bülten ve e-posta kursu', 'bulten'), ('/kartlar/', 'Yazdırılabilir kartlar', 'kartlar'), ('/hesap/', 'Hesabım', 'acct'), ('/iletisim/', 'İletişim', 'mail')])]
 MENU_HUB = {'Bitkiler': '/katalog/', 'Şifa': '/rehber/', 'Kültür': '/kultur/'}
@@ -609,7 +610,7 @@ for i, p in enumerate(P):
   <!--TOC-->
   <section class="sec"><h2>Geleneksel kullanım</h2><div class="uses">{uses}</div>{halk_kutu(pid, p["tr"])}</section>
   {der_fayda if pid in DERIN else '<section class="sec"><h2>Bilim ne diyor</h2><p>' + e(p["bilim"]) + '</p></section>'}
-  <section class="sec"><h2>Güvenlik</h2><div class="callout {p["guv"]}"><div class="lvl">{GUV[p["guv"]]}</div><p>{e(p["guvNot"])}</p></div><div class="safelinks"><a href="{('#etk' if pid in ETK else '/rehber/ilac-etkilesimi/?q=' + urllib.parse.quote(p["tr"]))}">{ico('etk','ico-s')}<span>{'Bu bitkinin ilaç etkileşimleri' if pid in ETK else 'İlaç kullanıyorsan: etkileşim aracı'}</span></a><a href="/rehber/hamilelik-emzirme/">{ico('gebe','ico-s')}<span>Hamilelik ve emzirme</span></a></div>{(f'<p class="titck">Türkiye İlaç ve Tıbbi Cihaz Kurumu (TİTCK) bu bitki için resmî bir monograf yayımladı: kullanım alanları, dozu, kimlerin kullanmaması gerektiği ve etkileşimleri. <a href="{TITCK_B + TITCK[pid][1]}" target="_blank" rel="noopener">TİTCK monografı ({e(TITCK[pid][0])}, PDF) →</a></p>' if pid in TITCK else '')}</section>
+  <section class="sec"><h2>Güvenlik</h2><div class="callout {p["guv"]}"><div class="lvl">{GUV[p["guv"]]}</div><p>{e(p["guvNot"])}</p></div><div class="safelinks"><a href="{('#etk' if pid in ETK else '/rehber/ilac-etkilesimi/?q=' + urllib.parse.quote(p["tr"]))}">{ico('etk','ico-s')}<span>{'Bu bitkinin ilaç etkileşimleri' if pid in ETK else 'İlaç kullanıyorsan: etkileşim aracı'}</span></a><a href="/rehber/hamilelik-emzirme/">{ico('gebe','ico-s')}<span>Hamilelik ve emzirme</span></a>{('<a href="/rehber/zehirli-bitkiler/">' + ico('etk','ico-s') + '<span>Zehirli bitkiler ve karıştırılanlar</span></a>') if p["guv"] == "yuksek" or pid in BKAR else ""}</div>{(f'<p class="titck">Türkiye İlaç ve Tıbbi Cihaz Kurumu (TİTCK) bu bitki için resmî bir monograf yayımladı: kullanım alanları, dozu, kimlerin kullanmaması gerektiği ve etkileşimleri. <a href="{TITCK_B + TITCK[pid][1]}" target="_blank" rel="noopener">TİTCK monografı ({e(TITCK[pid][0])}, PDF) →</a></p>' if pid in TITCK else '')}</section>
   {etkhtml}
   {yas}
   <section class="sec"><h2>Nasıl hazırlanır</h2><p>{e(p["haz"])}</p>{('<div class="brlinks" style="margin-top:10px">' + tarifler + '</div>') if tarifler else ''}</section>
@@ -1220,6 +1221,31 @@ write(path, page('Bitki ve ilaç etkileşimi: hangi bitki hangi ilaçla sorun ç
       extra=lds({"@context":"https://schema.org","@type":"Article","headline":"Bitki ve ilaç etkileşimi","inLanguage":"tr","url":BASE+path,"author":AUTHOR,"dateModified":CONTENT_DATE}, crumb_ld(('/rehber/', 'Rehberler'), (path, 'İlaç etkileşimi')))))
 GUIDE_URLS.append(path)
 
+# --- zehirli bitkiler ve karıştırılanlar ---
+def _zad(d): return f'<a href="/{d["id"]}/">{e(d["ad"])}</a>' if d['id'] and d['id'] in byId else e(d['ad'])
+_zhi = sorted([p for p in P if p['guv'] == 'yuksek' and 'anadolu' in p['bolge']], key=lambda p: p['tr'])
+_zbk = sorted([pid for pid in BKAR if pid in byId], key=lambda x: byId[x]['tr'])
+path = '/rehber/zehirli-bitkiler/'
+body = f"""{crumbs(('/rehber/', 'Rehberler'), (path, 'Zehirli bitkiler'))}
+<article class="sheet">
+<header class="page-head"><span class="eyebrow">Güvenlik rehberi</span><h1>Türkiye’de zehirli bitkiler ve en çok karıştırılanlar: nasıl ayırt edilir?</h1><p>Bitki zehirlenmelerinin önemli bir kısmı, yenen ya da şifalı bilinen bir bitkinin zehirli bir benzeriyle karıştırılmasından kaynaklanır. Aşağıda Anadolu’da en sık karıştırılan zehirli bitkiler, onları ayırt etmenin yolları ve halk kullanımında zehirlenmeye yol açan örnekler var.</p></header>
+<aside class="warnbox" role="note"><b>Zehirlenme şüphesinde:</b> Ulusal Zehir Danışma Merkezi’ni ara: <a href="tel:114"><b>114</b></a> (7/24, ücretsiz). Durum ağırsa <a href="tel:112"><b>112</b></a>. Bitkinin bir parçasını ya da fotoğrafını yanına al; danışmadan kusturmaya çalışma, süt ya da yağ içirme.</aside>
+<section class="sec"><h2>Türkiye’de bitki zehirlenmesinin başlıca nedenleri</h2><p>Sağlık Bakanlığı’nın Fitoterapi kitabı, Türkiye’deki bitki zehirlenmelerini şu nedenlerle özetliyor:</p><ul>{"".join(f"<li>{e(x)}</li>" for x in ZNEDEN)}</ul><p>Kitaba göre vakaların çoğu 1–12 yaş arası çocuklarda, zehirli türlerin yanlışlıkla yenmesiyle görülüyor.</p></section>
+<section class="sec"><h2>Birbirine benzeyen bitkiler</h2><div class="tablewrap"><table class="cmp etk"><thead><tr><th scope="col">Zehirli bitki</th><th scope="col">Neyle karıştırılır?</th><th scope="col">Nasıl ayırt edilir?</th><th scope="col">Zehirlenme belirtileri</th></tr></thead><tbody>
+{"".join(f'<tr><th scope="row">{_zad(d)}<br><i class="muted-s">{e(d["lat"])}</i></th><td>{e(d["benzer"])}</td><td>{e(d["ayirt"])}</td><td>{e(d["belirti"])}</td></tr>' for d in ZKARIS)}
+</tbody></table></div><p class="muted-s">Kesin tanımadığın bir bitkiyi toplama ve yeme. Fotoğraftan ya da uygulamadan yapılan tanımaya güvenme.</p></section>
+<section class="sec"><h2>Halk kullanımında zehirlenmeye yol açanlar</h2>{"".join(f"<h3>{_zad(d)}</h3><p>{e(d['metin'])}</p>" for d in ZHALK)}</section>
+{('<section class="sec"><h2>Katalogdaki yüksek riskli Anadolu bitkileri</h2><p>Bu bitkiler zehirli ya da ciddi yan etkili; katalogda kültürel ve tarihî önemleri için yer alırlar, kullanım önerisi değildir.</p><ul class="otherlist">' + "".join(f'<li><a href="/{p["id"]}/">{e(p["tr"])}</a></li>' for p in _zhi) + '</ul></section>') if _zhi else ''}
+<section class="sec"><h2>Aktarda karıştırılanlar ve yöresel adlar</h2><p>Zehirli olmasa da aktarlarda başka bir bitkiyle karıştırılan ya da yerine başkası satılan bitkilerin notları kendi sayfalarında: {", ".join(f'<a href="/{x}/">{e(byId[x]["tr"])}</a>' for x in _zbk)}. Aynı yöresel adın birden fazla bitkiye verildiği durumlar için <a href="/yoreler/#adlar">yöresel adlar dizinine</a>, toplama mevsimleri için <a href="/toplama-takvimi/">toplama takvimine</a> bak.</p></section>
+<section class="sec"><h2>Kaynaklar</h2><ol class="refs">{"".join(f"<li><cite>{e(t)}</cite></li>" for t, u in ZKAYNAK)}</ol></section>
+{DISCL}
+{UPD}
+<section class="sec"><h2>Diğer rehberler</h2>{other_guides("")}</section>
+</article>"""
+write(path, page('Türkiye’de zehirli bitkiler ve en çok karıştırılanlar | Bitki Tabanı', 'Güz çiğdemi, baldıran, tatula, banotu, yüksük otu, deli bal ve zakkum: zehirli bitkiler neyle karıştırılır, nasıl ayırt edilir, zehirlenmede ne yapılır?', path, body, 'zehir', narrow=True,
+      extra=lds({"@context":"https://schema.org","@type":"Article","headline":"Türkiye’de zehirli bitkiler ve en çok karıştırılanlar","inLanguage":"tr","url":BASE+path,"author":AUTHOR,"dateModified":CONTENT_DATE,"citation":[t for t, u in ZKAYNAK]}, crumb_ld(('/rehber/', 'Rehberler'), (path, 'Zehirli bitkiler')))))
+GUIDE_URLS.append(path)
+
 # --- bitki bulucu: derde göre, hamilelik ve ilaç durumuna göre süzen sihirbaz (tamamen tarayıcıda) ---
 _tarif_of = {}
 for t in LIVE_T: _tarif_of.setdefault(t['bitki'], t['slug'])
@@ -1651,14 +1677,14 @@ _cs = ''.join(f'<section class="sec" id="ay-{m}"><h2>{AYLAR[m-1]}{" (bu ay)" if 
 path = '/toplama-takvimi/'
 write(path, page(f'Şifalı bitki toplama takvimi: {AYLAR[_cur-1]} ayında hangi bitkiler toplanır? | Bitki Tabanı', f'Anadolu’da ay ay toplanan şifalı bitkiler. {AYLAR[_cur-1]} ayında toplama mevsimi olan {len(_cal[_cur])} bitki ve yılın geri kalanı.', path,
       f'''{crumbs(('/takvim/', 'Takvim'), (path, 'Doğada bu ay'))}{takvim_tabs('d')}<header class="page-head"><span class="eyebrow">Ay ay · {AYLAR[_cur-1]} başta</span><h1>Şifalı bitki toplama takvimi</h1><p>Anadolu’da yetişen bitkilerin toplama mevsimleri, kayıtlardaki “Doğada” bilgisinden derlendi. Liste her ay kendiliğinden içinde bulunduğumuz aydan başlar. Koruma altındaki, yasal kısıtlı ve yüksek riskli bitkiler bu listeye alınmaz.</p></header>
-<aside class="warnbox" role="note"><b>Toplarken:</b> Yalnızca kesin tanıdığın bitkileri, yol kenarından ve ilaçlanmış alanlardan uzakta topla; bir bitkinin tamamını değil bir kısmını alın ki yeniden büyüyebilsin.</aside>{takvim_widget('p')}<details class="tk-detay"><summary>Ay ay liste</summary>{_cs}</details>''', 'rehber', '<script src="/assets/takvim.js" defer></script>', narrow=True, extra=lds(crumb_ld(('/rehber/', 'Rehberler'), (path, 'Toplama takvimi')))))
+<aside class="warnbox" role="note"><b>Toplarken:</b> Yalnızca kesin tanıdığın bitkileri (<a href="/rehber/zehirli-bitkiler/">en çok karıştırılan zehirli bitkiler</a>), yol kenarından ve ilaçlanmış alanlardan uzakta topla; bir bitkinin tamamını değil bir kısmını alın ki yeniden büyüyebilsin.</aside>{takvim_widget('p')}<details class="tk-detay"><summary>Ay ay liste</summary>{_cs}</details>''', 'rehber', '<script src="/assets/takvim.js" defer></script>', narrow=True, extra=lds(crumb_ld(('/rehber/', 'Rehberler'), (path, 'Toplama takvimi')))))
 GUIDE_URLS.append(path)
 
 # --- rehber ana sayfası ---
 gl = ''.join(f'<li class="gi"><a href="/rehber/{k["slug"]}/">{ico(k["slug"], "ico-b")}<b>{e(k["kisa"])}</b></a><span>{e(k["aciklama"])}</span></li>' for k in LIVE_K)
 hub = f'''{crumbs(('/rehber/', 'Rehberler'))}
 <header class="page-head"><span class="eyebrow">Şifa</span><h1>Hangi derde hangi bitki? Kanıtıyla ve riskleriyle</h1><p>Derdini kendi cümlelerinle yaz, üç soruda bul ya da aşağıdaki rehberlerden birini seç. Her rehberde bitkiler kanıtı en güçlü olandan başlayarak sıralanır; her birinin yanında güvenlik etiketi var.</p></header><section class="sec" id="ara"><h2>Derdini yaz</h2><form id="araForm" class="katki-form"><input id="araQ" name="q" maxlength="200" placeholder="Örn. uykuya dalmakta zorlanıyorum; hamileyim, mide bulantısı" required><button class="cta" type="submit">Ara</button></form><div id="araSonuc" role="status"></div><p class="muted-s">Yapay zekâ destekli anlam araması. Sonuçlar tavsiye değildir; her bitkinin güvenlik notuna bak. Ya da <a href="/bitki-bul/"><b>üç soruda bul</b></a>: hamilelik ve ilaç durumuna göre riskli olanlar kendiliğinden elenir.</p></section>
-<section class="sec"><h2>Güvenlik</h2><ul class="guidelist"><li><a href="/rehber/ilac-etkilesimi/"><b>İlaç etkileşimi aracı</b></a><span>Kullandığın ilaç grubunu seç, katalogda o ilaçla etkileşimi bildirilen bitkileri gör.</span></li><li><a href="/rehber/hamilelik-emzirme/"><b>Hamilelik ve emzirme</b></a><span>Hamilelikte ve emzirirken kullanılmaması ya da dikkatle kullanılması gereken bitkiler.</span></li></ul></section>
+<section class="sec"><h2>Güvenlik</h2><ul class="guidelist"><li><a href="/rehber/ilac-etkilesimi/"><b>İlaç etkileşimi aracı</b></a><span>Kullandığın ilaç grubunu seç, katalogda o ilaçla etkileşimi bildirilen bitkileri gör.</span></li><li><a href="/rehber/hamilelik-emzirme/"><b>Hamilelik ve emzirme</b></a><span>Hamilelikte ve emzirirken kullanılmaması ya da dikkatle kullanılması gereken bitkiler.</span></li><li><a href="/rehber/zehirli-bitkiler/"><b>Zehirli bitkiler ve karıştırılanlar</b></a><span>Güz çiğdemi, baldıran, tatula, deli bal: neyle karıştırılır, nasıl ayırt edilir?</span></li></ul></section>
 <section class="sec"><h2>Derde göre</h2><ul class="guidelist">{gl}</ul></section>
 <section class="sec"><h2>Karşılaştırmalar</h2><ul class="otherlist">{"".join(f'<li><a href="/karsilastirma/{c["a"]}-ve-{c["b"]}/">{e(c["baslik"])}</a></li>' for c in LIVE_C)}</ul></section>
 <section class="sec"><h2>Tarifler</h2><ul class="otherlist">{"".join(f'<li><a href="/tarif/{t["slug"]}/">{e(t["ad"])}</a></li>' for t in LIVE_T)}</ul></section>
