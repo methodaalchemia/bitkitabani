@@ -4,7 +4,7 @@ from refs import WIKI, POWO, NCCIH, EMA, OTHER, FILES, BAYTOP
 from baytop_kar import KAR as BKAR
 from extra import EK, KORUMA, YASAL, YASAL_AD, BR_GEO, ALT
 from etkilesim import ETK
-from zehirli import KARIS as ZKARIS, HALK as ZHALK, NEDEN as ZNEDEN, KAYNAK as ZKAYNAK
+from zehirli import KARIS as ZKARIS, HALK as ZHALK, NEDEN as ZNEDEN, KAYNAK as ZKAYNAK, EV as ZEV, EV_METIN as ZEV_M, LISTE as ZLISTE, LISTE_METIN as ZLISTE_M
 from derin import D as DERIN
 from gozden import KISI as GZ_KISI, SAYFALAR as GZ
 KAN_AD = {'klinik': 'Klinik kanıt', 'sinirli': 'Sınırlı kanıt', 'geleneksel': 'Yalnızca geleneksel', 'yok': 'Kanıt yok'}
@@ -1236,6 +1236,8 @@ body = f"""{crumbs(('/rehber/', 'Rehberler'), (path, 'Zehirli bitkiler'))}
 {"".join(f'<tr><th scope="row">{_zad(d)}<br><i class="muted-s">{e(d["lat"])}</i></th><td>{e(d["benzer"])}</td><td>{e(d["ayirt"])}</td><td>{e(d["belirti"])}</td></tr>' for d in ZKARIS)}
 </tbody></table></div><p class="muted-s">Kesin tanımadığın bir bitkiyi toplama ve yeme. Fotoğraftan ya da uygulamadan yapılan tanımaya güvenme.</p></section>
 <section class="sec"><h2>Halk kullanımında zehirlenmeye yol açanlar</h2>{"".join(f"<h3>{_zad(d)}</h3><p>{e(d['metin'])}</p>" for d in ZHALK)}</section>
+<section class="sec"><h2>Evdeki zehirli süs bitkileri</h2><p>{e(ZEV_M)}</p><ul class="otherlist">{"".join(f'<li>{e(a)} <i class="muted-s">{e(l)}</i></li>' for a, l in ZEV)}</ul></section>
+<section class="sec"><h2>Zehir dozdadır: listede yer alan şifalı bitkiler</h2><p>{e(ZLISTE_M)}</p><ul class="otherlist">{"".join(f'<li><a href="/{x}/">{e(byId[x]["tr"])}</a> <i class="muted-s">{e(f)}</i></li>' for x, f in ZLISTE if x in byId)}</ul></section>
 {('<section class="sec"><h2>Katalogdaki yüksek riskli Anadolu bitkileri</h2><p>Bu bitkiler zehirli ya da ciddi yan etkili; katalogda kültürel ve tarihî önemleri için yer alırlar, kullanım önerisi değildir.</p><ul class="otherlist">' + "".join(f'<li><a href="/{p["id"]}/">{e(p["tr"])}</a></li>' for p in _zhi) + '</ul></section>') if _zhi else ''}
 <section class="sec"><h2>Aktarda karıştırılanlar ve yöresel adlar</h2><p>Zehirli olmasa da aktarlarda başka bir bitkiyle karıştırılan ya da yerine başkası satılan bitkilerin notları kendi sayfalarında: {", ".join(f'<a href="/{x}/">{e(byId[x]["tr"])}</a>' for x in _zbk)}. Aynı yöresel adın birden fazla bitkiye verildiği durumlar için <a href="/yoreler/#adlar">yöresel adlar dizinine</a>, toplama mevsimleri için <a href="/toplama-takvimi/">toplama takvimine</a> bak.</p></section>
 <section class="sec"><h2>Kaynaklar</h2><ol class="refs">{"".join(f"<li><cite>{e(t)}</cite></li>" for t, u in ZKAYNAK)}</ol></section>

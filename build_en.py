@@ -543,7 +543,8 @@ def run(G):
           f'<nav class="crumbs" aria-label="Breadcrumb"><a href="/en/">Home</a><span>/</span><span>Concepts</span></nav><header class="page-head"><span class="eyebrow">A concept and a plant every day</span><h1>Concepts</h1><p>From shamanism to folk belief, from ritual to ancestral knowledge: a short, sourced concept every day, each paired with a plant.</p></header>' + (f'<section class="sec"><ul class="guidelist">{kl}</ul></section>' if kl else '<p>The first concept arrives tomorrow.</p>'), 'concepts', narrow=True))
 
     # ---------- safety guides ----------
-    from guven_en import ILAC_EN, FITO_PREG, FITO_PREG_NOTE, FITO_SRC, Z_KARIS, Z_HALK, Z_NEDEN, Z_KAYNAK
+    from guven_en import ILAC_EN, FITO_PREG, FITO_PREG_NOTE, FITO_SRC, Z_KARIS, Z_HALK, Z_NEDEN, Z_KAYNAK, Z_EV, Z_EV_T, Z_LISTE_T
+    from zehirli import LISTE as _ZL
     ILAC, ETK_TR = G['ILAC'], G['ETK']
     _lw = lambda s: s.replace('I', 'ı').replace('İ', 'i').lower()
     ebys = {c: [] for c, _, _ in ILAC}
@@ -593,6 +594,8 @@ def run(G):
 <section class="sec"><h2>The main causes of plant poisoning in Turkey</h2><p>The Turkish Ministry of Health phytotherapy book summarises plant poisonings in Turkey under these causes:</p><ul>{"".join(f"<li>{e(x)}</li>" for x in Z_NEDEN)}</ul><p>According to the book, most cases are in children aged 1–12 who eat poisonous species by mistake.</p></section>
 <section class="sec"><h2>Plants that look alike</h2><div class="tablewrap"><table class="cmp etk"><thead><tr><th scope="col">Poisonous plant</th><th scope="col">Confused with</th><th scope="col">How to tell them apart</th><th scope="col">Symptoms</th></tr></thead><tbody>{"".join(f'<tr><th scope="row">{_zad(pid, d["ad"])}<br><i class="muted-s">{e(d["lat"])}</i></th><td>{e(d["benzer"])}</td><td>{e(d["ayirt"])}</td><td>{e(d["belirti"])}</td></tr>' for pid, d in Z_KARIS.items())}</tbody></table></div><p class="muted-s">Do not gather or eat a plant you cannot identify with certainty. Do not rely on identification from a photo or an app.</p></section>
 <section class="sec"><h2>Folk practices that lead to poisoning</h2>{"".join(f"<h3>{_zad(pid, ad)}</h3><p>{e(t)}</p>" for pid, (ad, t) in Z_HALK.items())}</section>
+<section class="sec"><h2>Poisonous house plants</h2><p>{e(Z_EV_T)}</p><ul class="otherlist">{"".join(f'<li>{e(a)} <i class="muted-s">{e(l)}</i></li>' for a, l in Z_EV)}</ul></section>
+<section class="sec"><h2>The dose makes the poison: medicinal plants on the list</h2><p>{e(Z_LISTE_T)}</p><ul class="otherlist">{"".join(f'<li><a href="/en/{x}/">{e(name(byId[x]))}</a> <i class="muted-s">{e(f)}</i></li>' for x, f in _ZL if x in byId)}</ul></section>
 {('<section class="sec"><h2>High-risk Anatolian plants in the catalog</h2><p>These plants are poisonous or have serious side effects; they are in the catalog for their cultural and historical importance and are not recommended for use.</p><ul class="otherlist">' + ''.join(f'<li><a href="/en/{p["id"]}/">{e(name(p))}</a></li>' for p in zhi) + '</ul></section>') if zhi else ''}
 <section class="sec"><h2>Sources</h2><ol class="refs">{"".join(f"<li><cite>{e(t)}</cite></li>" for t in Z_KAYNAK)}</ol></section>
 {DIS}</article>"""

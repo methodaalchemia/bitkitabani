@@ -65,7 +65,9 @@ Z_NEDEN = ['Taking too much of a plant used for treatment',
            'Using poisonous plants to induce miscarriage']
 Z_KAYNAK = ['Baytop T., Türkiye’de Bitkiler ile Tedavi: Geçmişte ve Bugün (Plant Healing in Turkey: Past and Present), 3rd ed., Nobel Tıp Kitabevleri, 2021',
             'Turkish Ministry of Health, Fitoterapi Uygulaması Kitabı (Phytotherapy Practice Book), 2022 (chapter on poisonous plants)',
-            'Baytop T., Baytop A., Mat A., Sun S., Türkiye’de zehirli bitkiler, bitki zehirlenmeleri ve tedavi yöntemleri (Poisonous plants, plant poisonings and their treatment in Turkey), Istanbul University, 1989 (as cited in the phytotherapy book)']
+            'Baytop T., Baytop A., Mat A., Sun S., Türkiye’de zehirli bitkiler, bitki zehirlenmeleri ve tedavi yöntemleri (Poisonous plants, plant poisonings and their treatment in Turkey), Istanbul University, 1989 (as cited in the phytotherapy book)',
+            'Seçmen Ö., Leblebici E., Yurdumuzun zehirli bitkileri (The poisonous plants of our country), Ege University Faculty of Science, İzmir, 1987 (as cited in the phytotherapy book)',
+            'Nelson L. S., Shih R. D., Balick M. J., Handbook of Poisonous and Injurious Plants, 2nd ed., Springer (as cited in the phytotherapy book; house plant data)']
 
 # Baytop mix-up notes (mirrors baytop_kar.py)
 BKAR_EN = {
@@ -81,3 +83,13 @@ BKAR_EN = {
  'nane': 'According to Baytop, pennyroyal (Mentha pulegium) is sold as “mint” in the markets of Mediterranean towns.',
  'gucigdemi': 'According to Baytop, eating an autumn crocus corm by mistake in place of an edible crocus (Crocus) corm causes dangerous poisoning, especially in children. To tell them apart, look at where the stem leaves the corm: in the edible crocus it rises from the very centre, in autumn crocus from the side.',
 }
+
+Z_EV = [('Dumb cane', 'Dieffenbachia'), ('Philodendron', 'Philodendron'), ('Peace lily', 'Spathiphyllum'), ('Pothos (devil’s ivy)', 'Epipremnum aureum'),
+        ('Swiss cheese plant', 'Monstera'), ('Calla lily', 'Zantedeschia aethiopica'), ('Poinsettia', 'Euphorbia pulcherrima'), ('Ivy', 'Hedera helix')]
+Z_EV_T = ('According to US data cited in the Turkish Ministry of Health phytotherapy book, 85 per cent of calls to poison centres about plant poisoning concern children under six, '
+          'and the plants most often involved are ornamental plants grown in homes and offices. Dumb cane, philodendron, peace lily, pothos and Swiss cheese plant, all in the arum family, contain needle-shaped calcium oxalate crystals: '
+          'chewing them causes burning and swelling of the mouth, tongue and throat. Keep these plants out of reach of small children and pets.')
+Z_LISTE_T = ('The list of poisonous plants of Turkey in the phytotherapy book also includes many medicinal plants in the catalog. It is a reminder that “the dose makes the poison”: the same plant can be a medicine in small amounts and a poison in large ones, '
+             'and in some only one part (the seed, the root, the unripe fruit) is poisonous. The book also stresses that a list of poisonous plants depends on a country’s flora and on local habits: '
+             'henbane causes poisonings in eastern Anatolia but not in France, while Jerusalem cherry (Solanum pseudocapsicum), which grows in Turkey, causes poisonings in France but not here. '
+             'That poison hemlock, henbane and some autumn crocus species are recorded as occasionally eaten in Anatolia also shows how much the dose matters.')

@@ -39,4 +39,24 @@ NEDEN = ['Tedavi için kullanılan bir bitkiden fazla miktarda almak',
 
 KAYNAK = [('Baytop T., Türkiye’de Bitkiler ile Tedavi: Geçmişte ve Bugün, 3. baskı, Nobel Tıp Kitabevleri, 2021', ''),
           ('T.C. Sağlık Bakanlığı, Fitoterapi Uygulaması Kitabı, 2022 (“Zehirli bitkiler” bölümü)', ''),
-          ('Baytop T., Baytop A., Mat A., Sun S., Türkiye’de zehirli bitkiler, bitki zehirlenmeleri ve tedavi yöntemleri, İstanbul Üniversitesi, 1989 (Fitoterapi kitabındaki atıfla)', '')]
+          ('Baytop T., Baytop A., Mat A., Sun S., Türkiye’de zehirli bitkiler, bitki zehirlenmeleri ve tedavi yöntemleri, İstanbul Üniversitesi, 1989 (Fitoterapi kitabındaki atıfla)', ''),
+          ('Seçmen Ö., Leblebici E., Yurdumuzun zehirli bitkileri, Ege Üniversitesi Fen Fakültesi, İzmir, 1987 (Fitoterapi kitabındaki atıfla)', ''),
+          ('Nelson L. S., Shih R. D., Balick M. J., Handbook of Poisonous and Injurious Plants, 2. baskı, Springer (Fitoterapi kitabındaki atıfla; ev bitkileri verisi)', '')]
+
+# Evdeki süs bitkileri (Fitoterapi kitabı, ABD zehir merkezi verisine atıfla)
+EV = [('Difenbahya', 'Dieffenbachia'), ('Filodendron', 'Philodendron'), ('Barış çiçeği (Spathiphyllum)', 'Spathiphyllum'),
+      ('Salon sarmaşığı (potos)', 'Epipremnum aureum'), ('Deve tabanı', 'Monstera'), ('Gala (kala) zambağı', 'Zantedeschia aethiopica'),
+      ('Atatürk çiçeği', 'Euphorbia pulcherrima'), ('Sarmaşık', 'Hedera helix')]
+EV_METIN = ('Sağlık Bakanlığı’nın Fitoterapi kitabının aktardığı ABD verilerine göre zehir danışma merkezlerine yapılan bitki zehirlenmesi başvurularının yüzde 85’i 6 yaşından küçük çocuklarla ilgili; '
+            'en sık karşılaşılanlar ise evlerde ve ofislerde yetiştirilen süs bitkileri. Difenbahya, filodendron, barış çiçeği, potos ve deve tabanı gibi kolokasgillerin dokularında iğne biçimli kalsiyum oksalat kristalleri bulunur: '
+            'çiğnenince ağızda, dilde ve boğazda yanma ve şişmeye yol açar. Bu yüzden bu bitkileri küçük çocukların ve evcil hayvanların ulaşamayacağı yere koymak gerekir.')
+# Türkiye zehirli bitkiler listesinde de yer alan katalog bitkileri (Fitoterapi kitabı; Baytop ve ark. 1989, Seçmen ve Leblebici listelerinden)
+LISTE = [('uzerlik', 'Zygophyllaceae'), ('sedef', 'Rutaceae'), ('isirgan', 'Urticaceae'), ('kantaron', 'Hypericaceae'), ('murver', 'Caprifoliaceae'),
+         ('okseotu', 'Loranthaceae'), ('keten', 'Linaceae'), ('zakkum', 'Apocynaceae'), ('gucigdemi', 'Liliaceae'), ('aloe', 'Liliaceae'),
+         ('tatula', 'Solanaceae'), ('banotu', 'Solanaceae'), ('adamotu', 'Solanaceae'), ('ashwagandha', 'Solanaceae'), ('kenevir', 'Cannabinaceae'),
+         ('pelin', 'Asteraceae'), ('hashas', 'Papaveraceae'), ('atkestanesi', 'Hippocastanaceae'), ('mahlep', 'Rosaceae'), ('fitolakka', 'Phytolaccaceae'),
+         ('ormangulu', 'Ericaceae'), ('baldiran', 'Apiaceae'), ('yuksukotu', 'Scrophulariaceae')]
+LISTE_METIN = ('Fitoterapi kitabındaki Türkiye zehirli bitkiler listesinde, katalogdaki pek çok şifalı bitki de yer alıyor. Bu, “zehir dozdadır” sözünü hatırlatıyor: aynı bitki az miktarda ilaç, fazlasında zehir olabilir; '
+               'bazılarının yalnızca bir kısmı (tohumu, kökü, çiğ meyvesi) zehirlidir. Kitap ayrıca zehirli bitki listesinin ülkenin florasına ve halkın alışkanlıklarına göre değiştiğini vurgular: '
+               'banotu Doğu Anadolu’da zehirlenmelere yol açarken Fransa’da yol açmaz; Türkiye’de yetişen süs biberi (Solanum pseudocapsicum) ise burada değil Fransa’da zehirlenmelere neden olur. '
+               'Baldıran, banotu ve güz çiğdeminin bazı türlerinin Anadolu’da yer yer yenen bitkiler arasında kaydedilmiş olması da dozun önemini gösterir.')
