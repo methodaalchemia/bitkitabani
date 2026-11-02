@@ -799,6 +799,17 @@ DESCRIPTION:Çiçekler Haziran–Ağustos’ta\, sabah açar açmaz topla
 URL:https://bitkitabani.com/sigirkuyrugu/
 END:VEVENT
 BEGIN:VEVENT
+UID:toplama-sogut@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260301
+DTEND;VALUE=DATE:20260302
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Söğüt toplama mevsimi
+DESCRIPTION:Kabuk ilkbaharda\, özsu yürüdüğünde 2–3 yaşındaki d
+ allardan soyulur. https://bitkitabani.com/sogut/
+URL:https://bitkitabani.com/sogut/
+END:VEVENT
+BEGIN:VEVENT
 UID:toplama-sumak@bitkitabani.com
 DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260801

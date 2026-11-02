@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 132 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 133 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -4147,3 +4147,36 @@ Karıştırma riski: Afyon haşhaşına (Papaver somniferum) benzer ama daha kü
 
 ### İlginç bilgi
 Gelincik tohumları toprakta onlarca yıl canlı kalabilir ve toprak sürülüp ışığa çıkınca çimlenir; savaş alanlarının birden gelincikle kaplanmasının sırrı budur.
+
+## Söğüt (Salix alba)
+
+URL: https://bitkitabani.com/sogut/
+Familya: Salicaceae · Bölge: Anadolu ve Akdeniz, Kuzey Amerika · Kullanılan kısım: Kabuk
+Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
+
+### Geleneksel kullanım
+- Anadolu: Söğüt kabuğu halk arasında ateş ve ağrı için kaynatılır; ince dallarından sepet, küfe ve kafes örülür. Mezarlıklara ve su kenarlarına dikilen salkım söğüt yasın simgesidir.
+- Antik dünya ve Kuzey Amerika: Sümer tabletlerinde ve Mısır papirüslerinde söğüt ağrı ve iltihap için anılır; Hipokrat’a atfedilen metinlerde de geçer. Kuzey Amerika’nın yerli halkları da kendi söğüt türlerinin kabuğunu ağrı ve ateş için kullanırdı.
+
+### Hazırlama
+Kurutulmuş kabuk soğuk suda bekletilip 5–10 dakika kaynatılır; bugün daha çok standart ekstre olarak kullanılır.
+
+### Bilim ne diyor
+Kabuktaki salisin vücutta salisilik aside dönüşür. Sistematik derleme (2009), söğüt kabuğu ekstresinin bel ağrısında orta düzeyde etkili olduğuna dair kanıt bulmuş, osteoartritte ise sonuçları tutarsız bulmuştur. EMA kabuğu kısa süreli bel ağrısında tanır. Etkisi aspirinden yavaş başlar; içerdiği salisilat dozu da aspirine göre çok düşüktür.
+
+### Güvenlik
+Aspirin ya da salisilat alerjisi olanlar, astımlılar, mide ülseri olanlar, hamileler ve emzirenler kullanmamalıdır. Reye sendromu riski nedeniyle 18 yaşından küçükler, özellikle ateşli viral hastalıklarda, kullanmamalıdır. Kan sulandırıcı kullananlarda kanama riski artabilir.
+
+### İlaç etkileşimleri
+- Kan sulandırıcılar (varfarin, aspirin, klopidogrel): Salisilatlar kanama riskini artırabilir.
+- Ağrı kesiciler (NSAİİ): Mide yan etkileri toplanabilir.
+- Metotreksat: Salisilatlar metotreksatın atılımını azaltabilir.
+
+### Doğada
+Nerede yetişir: Bütün Türkiye’de dere ve göl kenarlarında, nemli topraklarda.
+Toplama mevsimi: Kabuk ilkbaharda, özsu yürüdüğünde 2–3 yaşındaki dallardan soyulur.
+Yöresel adlar: söğüt, ak söğüt; salkım söğüt ayrı bir türdür (Salix babylonica)
+Karıştırma riski: Salkım söğüt tıbbi olarak kullanılmaz. Kavaklarla karıştırılabilir; söğüt yaprakları daha uzun ve dardır.
+
+### İlginç bilgi
+1828’de söğüt kabuğundan salisin saflaştırıldı; 1897’de Bayer’de Felix Hoffmann asetilsalisilik asidi saf hâlde üretti. Böylece aspirin doğdu.
