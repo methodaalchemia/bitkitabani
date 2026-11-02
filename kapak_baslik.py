@@ -77,4 +77,5 @@ KB = {
  'ronesans-bitki-kitaplarindaki-efsaneye-gore-adamotu': ('Çığlık atan kök', 'adamotu'),
  'hamlet-krali-uyurken-kulagina-hebenon-denen': ('Hamlet’in zehri', 'banotu'),
  '1670-lerde-fransiz-sarayinda-aciklanamayan-olumler': ('Zehir davası', 'tatula'),
+ 'peru-amazonu-nda-derin-ormanda-chullachaqui': ('Ormanın keçi ayaklı sahibi', 'chiricsanango'),
 }

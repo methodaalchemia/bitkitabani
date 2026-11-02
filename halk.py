@@ -41,6 +41,7 @@ MILLER = ('Melanie J. Miller ve ark., “Chemical evidence for the use of multip
 REN = ('Meng Ren ve ark., “The origins of cannabis smoking: Chemical residue evidence from the first millennium BCE in the Pamirs”, Science Advances 5(6), 2019', 'https://doi.org/10.1126/sciadv.aaw1391')
 MULLER = ('Jürgen Leo Müller, “Love potions and the ointment of witches: historical aspects of the nightshade alkaloids”, Journal of Toxicology: Clinical Toxicology 36(6), 1998', 'https://doi.org/10.3109/15563659809028060')
 MICHELOT = ('Didier Michelot, Leda Maria Melendez-Howell, “Amanita muscaria: chemistry, biology, toxicology, and ethnomycology”, Mycological Research 107(2), 2003', 'https://doi.org/10.1017/S0953756203007305')
+LUNA84 = ('Luis Eduardo Luna, “The concept of plants as teachers among four mestizo shamans of Iquitos, northeastern Peru”, Journal of Ethnopharmacology 11(2), 1984', 'https://doi.org/10.1016/0378-8741(84)90036-9')
 SIRVANI = ('Muhammed b. Mahmûd eş-Şirvânî, Şifa Bahçesi (Ravdatü’l-ıtr), I. Cilt, tahkik ve çeviri: Muammer Sarıkaya, Celal Turgut Koç, Orman Genel Müdürlüğü Yayınları, Tarih ve Tıp Serisi 1, Ankara', '')
 BK = 'Baytop, Türkiye’de Bitkiler ile Tedavi, 2021'
 
@@ -235,6 +236,8 @@ dict(kaynak=MULLER, kisa='Müller, Clin Toxicol, 1998', bitki='banotu', yore='Sh
   post='Hamlet’te kralı, uyurken kulağına “hebenon” denen bir zehir dökerek öldürürler. Bugün bu zehrin banotu olduğu düşünülüyor. Banotu Avrupa’da zehirciler ve cellatlar tarafından da iyi bilinirdi: 16. yüzyıl Luzern hesaplarında cellatın banotu tohumu satın aldığı kayıtlıdır. Banotunun bütün kısımları zehirlidir.'),
 dict(kaynak=MULLER, kisa='Müller, Clin Toxicol, 1998', bitki='tatula', yore='XVII. yüzyıl Fransası',
   post='1670’lerde Fransız sarayında açıklanamayan ölümler artınca XIV. Louis zehirlenmeleri araştırmak için özel bir mahkeme kurdu. 1679–1683 arasında 400’den fazla kişi yargılandı, 87’si büyücü ve zehirci olarak ölüme mahkûm edildi. Aşk iksiri ve zehir satan ünlü Catherine Voisin, içkilere banotu, tatula, kantarit böceği ve arsenik katıyordu.'),
+dict(kaynak=LUNA84, kisa='Luna, J Ethnopharmacol, 1984', link='kavram/vegetalismo/', yore='Peru Amazonu, Iquitos',
+  post='Peru Amazonu’nda derin ormanda Chullachaqui yaşar: insana benzer, ama bir ayağı keçi, geyik ya da köpek ayağıdır. Hayvanların efendisi, “ormanın kralı”dır. Onunla dost olan iyi avlanır; çoğu zaman ise karşılaşan delirir ya da hastalanır. Iquitos’taki şifacılara göre, kökleri topraktan bir “ayak” gibi yükselen chullachaqui caspi ağacının dibinde yaşar; bu ağaç da öğreten bir bitkidir.'),
 ]
 
 def site_kul():

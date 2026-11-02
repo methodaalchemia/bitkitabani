@@ -2,6 +2,47 @@
 # Metindeki [1], [2]… işaretleri kaynak listesindeki sıraya karşılık gelir. Bitki bağlantıları {id} biçiminde yazılır.
 
 YAZILAR = [
+{'slug': 'dunya-agaclari-kayin-yggdrasil-ceiba-bodhi',
+ 'tarih': '2026-11-02',
+ 'baslik': 'Dünya ağaçları: kayın, Yggdrasil, ceiba ve Bodhi',
+ 'aciklama': 'Altay’da göğe uzanan kayın, Edda’da dünyayı taşıyan dişbudak, Mayaların dünya ekseni ceiba, Asur saraylarının hurma ağacı ve Buda’nın aydınlandığı incir: dünyanın ortasındaki ağaç, '
+             'kaynaklarıyla.',
+ 'giris': 'Birbirinden binlerce kilometre uzak kültürler, evrenin ortasına bir ağaç koymuştur. Kökleri yeraltına, gövdesi yeryüzüne, dalları göğe uzanan bu ağaç üç dünyayı birbirine bağlar. Bu yazı, '
+          'sitede ayrı ayrı anlattığımız dünya ağaçlarını yan yana koyuyor.',
+ 'bolumler': [('Altay’da kayın',
+               ['Türk mitolojisinde evrenin ortasında Kutup Yıldızı’na uzanan bir “kozmik ağaç” vardır; kaynaklarda Bay Kayın ya da Altınkazık gibi adlarla geçer [1]. Altay anlatılarına göre dünya '
+                'dağının tepesinde bir kayın yükselir. Kamlar ayinlerini kayın olmadan yapmaz; Altay at kurbanında çadırın ortasına dikilen dokuz basamaklı kayına tırmanarak göğün katlarından '
+                'geçerler [1]. Orta Asya Türkçesinde “kayın” huş ağacıdır.']),
+              ('Edda’da dişbudak: Yggdrasil',
+               ['İskandinav Edda şiirlerinde dünyayı taşıyan ağaç Yggdrasil’dir: Urd kuyusunun başında hep yeşil duran bir dişbudak. Üç kökü ölüler diyarının, buz devlerinin ve insanların üzerine '
+                'uzanır. Tepesinde bir kartal, dibinde ejder Nidhögg yaşar; sincap Ratatosk ikisi arasında söz taşır [2]. Türk hayat ağacının tepesindeki kuşla dibindeki yılan arasındaki benzerlik '
+                'dikkat çekicidir.']),
+              ('Mayaların ceibası',
+               ['Klasik Maya kozmolojisinde dev ceiba ağacı (Ceiba pentandra) dünyanın eksenidir; kökleri yeraltı dünyasına uzanır ve dünyayı taşıdığı anlatılır. Maya, Aztek ve Mikstek sanatında '
+                'genç ceiba gövdesinin konik dikenleri tütsü kaplarının ve cenaze küplerinin yüzeyine kilden işlenmiştir. Ceiba bugün Guatemala’nın ulusal ağacıdır [3].',
+                'Aynı ağaç Amazon’da da kutsaldır: Peru’nun Iquitos çevresindeki şifacılar “lupuna” dedikleri ceibayı perhizle alındığında tıp öğreten bitkiler arasında sayar [4].']),
+              ('Asur’da hurma ağacı',
+               ['Asur kralı II. Assurnasirpal’in Nimrud’daki sarayında (MÖ 9. yüzyıl), kanatlı güneş kursunun altında, iki yanında koruyucu figürlerin durduğu üsluplaşmış ağaçlar vardır. Norma '
+                'Franklin bunları yavrularıyla birlikte dişi hurma ağaçları olarak tanımlar ve kralın soyunun simgesi olarak okur [5].']),
+              ('Buda’nın ağacı: Bodhi',
+               ['Siddhartha Gaya’da bir pipal ağacının (Ficus religiosa) altında aydınlandı; ağaç bu yüzden Bodhi, yani bilgelik ağacı oldu. Erken Budist kabartmalarında Buda insan biçiminde '
+                'gösterilmez; onu Bodhi ağacı ve altındaki boş taht temsil eder [6].']),
+              ('Ortak olan ne?',
+               ['Bu ağaçların hepsi bir merkezi, bir ekseni ve bir bağlantıyı anlatır: yeraltı ile gök arasında, ölüler ile yaşayanlar arasında, insan ile tanrılar arasında. Anadolu’da bir ağaca bez '
+                'bağlamak ya da yaşlı bir çınarın dibinde dilek tutmak bu çok eski düşüncenin bugüne kalan biçimlerinden biridir. Her topluluğun anlatısı kendine özgüdür; burada aktarılan, '
+                'kaynakların söyledikleridir.'])],
+ 'kaynaklar': [('Şeyda Büyükcan Sayılır, “Türklerin Ağaç ile Mitolojik ve Tarihî Bağları Üzerine Bir Değerlendirme”, Genel Türk Tarihi Araştırmaları Dergisi 3(6), 2021',
+                'https://doi.org/10.53718/gttad.940879'),
+               ('The Poetic Edda, çev. H. A. Bellows, 1923 (Project Gutenberg)', 'https://gutenberg.org/cache/epub/73533/pg73533-images.html'),
+               ('Nicholas Hellmuth, “Sacred ceiba tree”, FLAAR Mesoamerica, 2015',
+                'https://www.maya-archaeology.org/pre-Columbian_Mesoamerican_Mayan_ethnobotany_Mayan_iconography_archaeology_anthropology_research/sacred_ceiba_tree_flowers_kapok_spines_yaxche_incense_burners.php'),
+               ('Luis Eduardo Luna, “The concept of plants as teachers among four mestizo shamans of Iquitos, northeastern Peru”, Journal of Ethnopharmacology 11(2), 1984',
+                'https://doi.org/10.1016/0378-8741(84)90036-9'),
+               ('Norma Franklin, “The Assyrian Stylized Tree: A Date Palm Plantation and Aššurnaṣirpal II’s Stemma”, Ash-sharq 5(2), 2021',
+                'https://www.archaeopresspublishing.com/ojs/index.php/ash-sharq/article/view/1760'),
+               ('R. V. Sitholey, “Plants represented in ancient Indian sculpture”, Geophytology 6(1), 1976', 'https://palaeobotanicalsociety.org/geophytology/vol6_1976/15vol6_11976.pdf')],
+ 'bitkiler': ['ardic', 'okseotu'],
+ 'semboller': ['hayat-agaci', 'yggdrasil', 'asur-agaci', 'bodhi']},
 {'slug': 'anadoluda-bitkiyle-tedavinin-tarihi-hititlerden-osmanliya',
  'tarih': '2026-11-02',
  'baslik': 'Anadolu’da bitkiyle tedavinin kısa tarihi: Hititlerden Osmanlı’ya',

@@ -2,6 +2,35 @@
 # Keys are the Turkish slugs; sources and plant lists come from yazilar.py. Plant links are written {id}.
 
 Y_EN = {
+'dunya-agaclari-kayin-yggdrasil-ceiba-bodhi': {'slug': 'world-trees-birch-yggdrasil-ceiba-bodhi',
+ 'baslik': 'World trees: the birch, Yggdrasil, the ceiba and the Bodhi tree',
+ 'aciklama': 'The birch reaching to the sky in the Altai, the ash that holds up the world in the Edda, the Maya world axis ceiba, the date palm of Assyrian palaces and the fig under which the Buddha '
+             'awoke: the tree at the centre of the world, with sources.',
+ 'giris': 'Cultures thousands of kilometres apart have placed a tree at the centre of the universe. With its roots in the underworld, its trunk on earth and its branches in the sky, this tree joins '
+          'the three worlds. This article sets side by side the world trees we describe separately on the site.',
+ 'bolumler': [('The birch in the Altai',
+               ['Turkic mythology has a “cosmic tree” at the centre of the universe reaching to the Pole Star, named in the sources Bay Kayın or Altınkazık [1]. According to Altai tales a birch '
+                'rises on the summit of the world mountain. Kams do not perform rites without a birch; in the Altai horse sacrifice they pass through the layers of the sky by climbing a nine-stepped '
+                'birch set up in the middle of the tent [1]. In Central Asian Turkic “kayın” means birch.']),
+              ('The ash in the Edda: Yggdrasil',
+               ['In the Norse Eddic poems the tree that holds up the world is Yggdrasil, an ever-green ash standing at the well of Urd. Its three roots reach over the land of the dead, the frost '
+                'giants and humankind. An eagle lives at its top and the dragon Nidhogg at its foot; the squirrel Ratatosk carries words between them [2]. The likeness to the bird at the top and the '
+                'serpent at the foot of the Turkic tree of life is striking.']),
+              ('The Maya ceiba',
+               ['In Classic Maya cosmology the giant ceiba (Ceiba pentandra) is the axis of the world; its roots reach into the underworld and it is said to hold up the world. In Maya, Aztec and '
+                'Mixtec art the conical spines of the young ceiba trunk were modelled in clay on incense burners and funerary urns. The ceiba is today the national tree of Guatemala [3].',
+                'The same tree is sacred in the Amazon too: healers around Iquitos in Peru count the ceiba, which they call “lupuna”, among the plants that teach medicine when taken with a diet '
+                '[4].']),
+              ('The date palm in Assyria',
+               ['In the palace of the Assyrian king Ashurnasirpal II at Nimrud (9th century BC), stylised trees stand beneath the winged sun-disc, flanked by guardian figures. Norma Franklin '
+                'identifies them as female date palms with their offshoots and reads them as a symbol of the king’s lineage [5].']),
+              ('The Buddha’s tree: Bodhi',
+               ['Siddhartha gained enlightenment under a pipal tree (Ficus religiosa) at Gaya, so the tree became the Bodhi, or wisdom, tree. In early Buddhist reliefs the Buddha is not shown in '
+                'human form; he is represented by the Bodhi tree and the empty throne beneath it [6].']),
+              ('What do they share?',
+               ['All these trees speak of a centre, an axis and a connection: between underworld and sky, between the dead and the living, between people and gods. Tying cloth to a tree in Anatolia '
+                'or making a wish at the foot of an old plane tree is one of the forms in which this very old idea survives. Each community’s story is its own; what is reported here is what the '
+                'sources say.'])]},
 'anadoluda-bitkiyle-tedavinin-tarihi-hititlerden-osmanliya': dict(
     slug='history-of-plant-medicine-in-anatolia',
     baslik='A short history of plant medicine in Anatolia: from the Hittites to the Ottomans',
