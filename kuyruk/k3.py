@@ -366,6 +366,7 @@ dict(yayin='2026-11-20', id='salviadivinorum', tr='Kâhin adaçayı', la='Salvia
  'kat': ['ritual', 'zehir'],
  'kisim': 'Tohum (ritüelde); bütün bitki zehirli',
  'taxon': 'Thevetia peruviana',
+ 'foto': 'Thevetia peruviana1.jpg',
  'kul': [('Kuzey Peru (curanderismo)',
           'Kuzey Peru şifacılığında kurutulmuş tohumlar şaraba, tercihen kilise şarabına yatırılır; “mal aire” (kötü hava), sara, “sinir” ve büyüyle gelen hastalık (daño) için kullanılır. Yaprak ve '
           'sap banyosu kötü hava, romatizma ve uğursuzluk büyüsüne karşı yapılır; kaynak bunun için açıkça “içilmez” uyarısı verir [1].'),
@@ -428,6 +429,7 @@ dict(yayin='2026-11-20', id='salviadivinorum', tr='Kâhin adaçayı', la='Salvia
  'kat': ['ritual', 'zehir'],
  'kisim': 'Tohum (muska olarak)',
  'taxon': 'Ormosia coccinea',
+ 'foto': 'Ormosia coccinea jewellery.jpg',
  'kul': [('Kuzey Peru', 'Kurutulmuş kırmızı-siyah tohumlardan yapılan bilezik, nazara (mal ojo) karşı sol bilekte sürekli takılır [1].'),
          ('Amazon', 'Huayruro adı Erythrina amazonica’ya da verilir; bunun tohumlarından yapılan ve şamanın kutsadığı kolye, kötülükten korunmak için ömür boyu taşınır [1].')],
  'haz': 'Yalnızca muska ve süs olarak kullanılır; tohumlar ağza alınmamalı, yenmemelidir.',
@@ -467,6 +469,7 @@ dict(yayin='2026-11-20', id='salviadivinorum', tr='Kâhin adaçayı', la='Salvia
  'kat': ['ritual', 'sifa'],
  'kisim': 'Yumrulu kök sap (rizom)',
  'taxon': 'Cyperus articulatus',
+ 'foto': 'Planta de Piri Piri en el Jardín Botánico de Lima.jpg',
  'kul': [('Shipibo-Konibo (Ucayali)',
           'Evin yanında yetiştirilen her piri piri kümesinin kendi adı ve kendi şifa kullanımı vardır; tedavi çoğunlukla ezilmiş rizomu sürerek yapılır. Bir türü çocukları korumak ve korku (susto), '
           'kâbus, solgunluk ve iştahsızlığı gidermek için kullanılır. Yabani türlerden biri sevgi büyüsünde, bir başkası huito ile saç uzatmak için, bir başkası da balık avı büyüsünde kullanılır '
@@ -522,6 +525,7 @@ dict(yayin='2026-11-20', id='salviadivinorum', tr='Kâhin adaçayı', la='Salvia
  'kat': ['sifa', 'ritual'],
  'kisim': 'Yaprak, sap, kök',
  'taxon': 'Mansoa alliacea',
+ 'foto': '蒜香藤 Pseudocalymma alliaceum (Mansoa alliacea) -香港北區公園 North District Park, Hong Kong- (9200949132).jpg',
  'kul': [('Peru Amazonu', 'Yanesha halkı ishal ve karın ağrısı, ateş, grip, romatizma ağrısı, deri ülserleri ve çıbanlar için kullanır; Asháninkalar “mal aire” (kötü hava) için kullanır [1].'),
          ('Iquitos', 'Melez şifacılar onu tek başına alınabilen “öğreten bitkiler” arasında sayar [2].'),
          ('Ekvador',
@@ -570,6 +574,7 @@ dict(yayin='2026-11-20', id='salviadivinorum', tr='Kâhin adaçayı', la='Salvia
  'kat': ['ritual', 'sifa'],
  'kisim': 'Yaprak, kök',
  'taxon': 'Petiveria alliacea',
+ 'foto': 'Petiveria. Guiné..JPG',
  'kul': [('Kuzey Peru', 'Ruhsal arınma ve “çiçeklenme” banyolarında ve şifacının hazırladığı koruyucu “seguro” şişelerinde kullanılır [1].'),
          ('Iquitos', 'Melez şifacılar onu ayahuascaya katılabilen ya da tek başına alınabilen “öğreten bitkiler” arasında sayar [2].')],
  'haz': 'Geleneksel olarak banyo ve dış kullanım. Evde iç kullanım önerilmez.',
