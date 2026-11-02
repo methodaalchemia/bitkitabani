@@ -352,4 +352,10 @@ H_EN = {
   yore='Silifke',
   post='The fruit of the mandrake smells pleasant and is yellow and round, so children sometimes eat it. But every part of the plant, especially the root, is poisonous; those who eat the fruit become dizzy and drunk. Baytop records that this is why in Silifke the plant is called “toskafakavunu” (the melon that dazes). In the same area it is also called “atelması” and “ittaşağı.”',
   kisa='Baytop, Türkiye’de Bitkiler ile Tedavi (Plant Healing in Turkey), 2021'),
+ 'orta-cag-avrupasi-nda-bira-cok': dict(baslik='Henbane in the beer', yore='Medieval Europe', kisa='Müller, Clin Toxicol, 1998',
+   post='In medieval Europe henbane seed was added to beer to make it more intoxicating. In German henbane is Bilsenkraut, and the name of the Bohemian town of Pilsen is thought to come from it. The practice became so common that in 1507 Eichstätt banned brewers from adding henbane, and in 1649 Bavaria made it a severely punished offence. Henbane seed is poisonous.'),
+ 'orta-cag-cerrahlari-ameliyattan-once-uyku': dict(baslik='The medieval sleep sponge', yore='Medieval Europe', kisa='Müller, Clin Toxicol, 1998',
+   post='Before an operation, medieval surgeons used a “sleep sponge”: a sponge was soaked in the juice of opium poppy, mandrake and henbane and dried, then moistened with hot water and laid over the patient’s mouth and nose. In 1363 the surgeon Guy de Chauliac warned that the method could cause lasting harm and death. To wake the patient there was a “wake-up sponge” soaked in fennel juice or vinegar.'),
+ 'sibirya-nin-bazi-halklarinda-sinek-mantari': dict(baslik='Fly agaric in Siberia', yore='Siberia', kisa='Michelot & Melendez-Howell, Mycol Res, 2003',
+   post='Among some Siberian peoples a custom was recorded of drinking the urine of a shaman, or of a reindeer, that had eaten fly agaric. There is a reason: the mushroom’s active compounds leave the body partly unchanged in urine and are found there an hour after eating. The name is curious too: in many languages it is the “fly” mushroom; in the Middle Ages flies were believed to enter the head and cause madness. The mushroom is poisonous.'),
 }

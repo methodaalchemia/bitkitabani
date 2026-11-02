@@ -71,4 +71,7 @@ KB = {
  'baytop-gore-acicigdem-kolhis-bugunku-batum': ('Medeia’nın Tarabya bahçesi', 'gucigdemi'),
  'romalilar-doneminde-iyi-safran-silifke-deki': ('Cehennem mağarasının safranı', 'safran'),
  'adamotunun-meyvesi-hos-kokar-sari-yuvarlaktir': ('Sersemleten kavun', 'adamotu'),
+ 'orta-cag-avrupasi-nda-bira-cok': ('Biraya banotu', 'banotu'),
+ 'orta-cag-cerrahlari-ameliyattan-once-uyku': ('Orta Çağ’ın uyku süngeri', 'hashas'),
+ 'sibirya-nin-bazi-halklarinda-sinek-mantari': ('Sinek mantarı ve Sibirya', 'sinekmantari'),
 }

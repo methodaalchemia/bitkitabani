@@ -39,6 +39,8 @@ MCKENNA = ('Dennis J. McKenna, G.H.N. Towers, F. Abbott, “Monoamine oxidase in
 HAOMA = ('Tayebeh Zarei Karyani, Morteza Yousefzadi, Reza Sheikhakbari-Mehr, “Haoma: unveiling the mysteries of Iran’s sacred Zoroastrian botanical wonder”, Ethnobotany Research and Applications 31, 2025', 'https://ethnobotanyjournal.org/index.php/era/article/view/6824')
 MILLER = ('Melanie J. Miller ve ark., “Chemical evidence for the use of multiple psychotropic plants in a 1,000-year-old ritual bundle from South America”, PNAS 116(23), 2019', 'https://doi.org/10.1073/pnas.1902174116')
 REN = ('Meng Ren ve ark., “The origins of cannabis smoking: Chemical residue evidence from the first millennium BCE in the Pamirs”, Science Advances 5(6), 2019', 'https://doi.org/10.1126/sciadv.aaw1391')
+MULLER = ('Jürgen Leo Müller, “Love potions and the ointment of witches: historical aspects of the nightshade alkaloids”, Journal of Toxicology: Clinical Toxicology 36(6), 1998', 'https://doi.org/10.3109/15563659809028060')
+MICHELOT = ('Didier Michelot, Leda Maria Melendez-Howell, “Amanita muscaria: chemistry, biology, toxicology, and ethnomycology”, Mycological Research 107(2), 2003', 'https://doi.org/10.1017/S0953756203007305')
 SIRVANI = ('Muhammed b. Mahmûd eş-Şirvânî, Şifa Bahçesi (Ravdatü’l-ıtr), I. Cilt, tahkik ve çeviri: Muammer Sarıkaya, Celal Turgut Koç, Orman Genel Müdürlüğü Yayınları, Tarih ve Tıp Serisi 1, Ankara', '')
 BK = 'Baytop, Türkiye’de Bitkiler ile Tedavi, 2021'
 
@@ -221,6 +223,12 @@ dict(kaynak=BAYTOP3, kisa=BK, bitki='safran', yore='Silifke, Cehennem mağarası
   post='Romalılar döneminde en iyi safran Silifke’deki Cehennem mağarasının dibindeki çalılıklarda yetişirdi. Baytop bunun bugün de sürüp sürmediğini görmek için 1995’te yöreye gitti. Ne safran toplayan biri vardı ne de yörükler ünlü safranlı tatlı zerdeyi tanıyordu. Oysa Hititler bile safranı biliyordu; ona Akadca “safran bitkisi” anlamındaki azupiru derlerdi.'),
 dict(kaynak=BAYTOP3, kisa=BK, bitki='adamotu', yore='Silifke',
   post='Adamotunun meyvesi hoş kokar, sarı ve yuvarlaktır. Bu yüzden çocuklar bazen onu yer. Ama bitkinin her yeri, özellikle kökü zehirlidir; meyveyi yiyenlerde baş dönmesi ve sarhoşluk görülür. Baytop, Silifke’de bitkiye bu yüzden “toskafakavunu”, yani sersemleten kavun dendiğini kaydeder. Aynı yörede adı “atelması” ve “ittaşağı”dır.'),
+dict(kaynak=MULLER, kisa='Müller, Clin Toxicol, 1998', bitki='banotu', yore='Orta Çağ Avrupası',
+  post='Orta Çağ Avrupası’nda bira daha çok sarhoş etsin diye içine banotu tohumu katılırdı. Almancada banotuna Bilsenkraut denir; Bohemya’daki Pilsen kentinin adının buradan geldiği düşünülür. Bu kullanım öyle yaygınlaştı ki 1507’de Eichstätt’te biracılara banotu katmak yasaklandı, 1649’da Bavyera’da ağır cezaya bağlandı. Banotu tohumu zehirlidir.'),
+dict(kaynak=MULLER, kisa='Müller, Clin Toxicol, 1998', bitki='hashas', yore='Orta Çağ Avrupası',
+  post='Orta Çağ cerrahları ameliyattan önce “uyku süngeri” kullanırdı: sünger haşhaş, adamotu ve banotu özsuyuna batırılıp kurutulur, ameliyatta sıcak suyla ıslatılıp hastanın ağzına ve burnuna konurdu. 1363’te cerrah Guy de Chauliac bu yöntemin kalıcı hasar ve ölüme yol açabileceği uyarısını yaptı. Hastayı uyandırmak için rezene suyuna ya da sirkeye batırılmış bir “uyandırma süngeri” vardı.'),
+dict(kaynak=MICHELOT, kisa='Michelot & Melendez-Howell, Mycol Res, 2003', bitki='sinekmantari', yore='Sibirya',
+  post='Sibirya’nın bazı halklarında sinek mantarı yiyen şamanın ya da ren geyiğinin idrarını içme geleneği kaydedilmiştir. Bunun bir açıklaması var: mantarın etken maddeleri vücuttan kısmen değişmeden idrarla atılır ve yemekten bir saat sonra idrarda bulunur. Adı da ilginç: pek çok dilde “sinek” adını taşır; Orta Çağ’da sineklerin kafaya girip delirttiğine inanılırdı. Mantar zehirlidir.'),
 ]
 
 def site_kul():
