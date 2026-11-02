@@ -229,6 +229,12 @@ dict(kaynak=MULLER, kisa='Müller, Clin Toxicol, 1998', bitki='hashas', yore='Or
   post='Orta Çağ cerrahları ameliyattan önce “uyku süngeri” kullanırdı: sünger haşhaş, adamotu ve banotu özsuyuna batırılıp kurutulur, ameliyatta sıcak suyla ıslatılıp hastanın ağzına ve burnuna konurdu. 1363’te cerrah Guy de Chauliac bu yöntemin kalıcı hasar ve ölüme yol açabileceği uyarısını yaptı. Hastayı uyandırmak için rezene suyuna ya da sirkeye batırılmış bir “uyandırma süngeri” vardı.'),
 dict(kaynak=MICHELOT, kisa='Michelot & Melendez-Howell, Mycol Res, 2003', bitki='sinekmantari', yore='Sibirya',
   post='Sibirya’nın bazı halklarında sinek mantarı yiyen şamanın ya da ren geyiğinin idrarını içme geleneği kaydedilmiştir. Bunun bir açıklaması var: mantarın etken maddeleri vücuttan kısmen değişmeden idrarla atılır ve yemekten bir saat sonra idrarda bulunur. Adı da ilginç: pek çok dilde “sinek” adını taşır; Orta Çağ’da sineklerin kafaya girip delirttiğine inanılırdı. Mantar zehirlidir.'),
+dict(kaynak=MULLER, kisa='Müller, Clin Toxicol, 1998', bitki='adamotu', yore='Orta Çağ ve Rönesans Avrupası',
+  post='Rönesans bitki kitaplarındaki efsaneye göre adamotu darağacının altında yetişir. Sökülürken öyle bir çığlık atar ki duyan ölür. Bu yüzden toplayıcı kulaklarını yünle tıkar, bitkiyi bir iple köpeğin boynuna bağlar ve köpeği çağırırdı; bitkiyi söken köpek ölürdü. Shakespeare de Romeo ve Juliet’te “topraktan sökülen adamotu gibi çığlık” der.'),
+dict(kaynak=MULLER, kisa='Müller, Clin Toxicol, 1998', bitki='banotu', yore='Shakespeare’in Danimarka’sı',
+  post='Hamlet’te kralı, uyurken kulağına “hebenon” denen bir zehir dökerek öldürürler. Bugün bu zehrin banotu olduğu düşünülüyor. Banotu Avrupa’da zehirciler ve cellatlar tarafından da iyi bilinirdi: 16. yüzyıl Luzern hesaplarında cellatın banotu tohumu satın aldığı kayıtlıdır. Banotunun bütün kısımları zehirlidir.'),
+dict(kaynak=MULLER, kisa='Müller, Clin Toxicol, 1998', bitki='tatula', yore='XVII. yüzyıl Fransası',
+  post='1670’lerde Fransız sarayında açıklanamayan ölümler artınca XIV. Louis zehirlenmeleri araştırmak için özel bir mahkeme kurdu. 1679–1683 arasında 400’den fazla kişi yargılandı, 87’si büyücü ve zehirci olarak ölüme mahkûm edildi. Aşk iksiri ve zehir satan ünlü Catherine Voisin, içkilere banotu, tatula, kantarit böceği ve arsenik katıyordu.'),
 ]
 
 def site_kul():

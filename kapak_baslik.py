@@ -74,4 +74,7 @@ KB = {
  'orta-cag-avrupasi-nda-bira-cok': ('Biraya banotu', 'banotu'),
  'orta-cag-cerrahlari-ameliyattan-once-uyku': ('Orta Çağ’ın uyku süngeri', 'hashas'),
  'sibirya-nin-bazi-halklarinda-sinek-mantari': ('Sinek mantarı ve Sibirya', 'sinekmantari'),
+ 'ronesans-bitki-kitaplarindaki-efsaneye-gore-adamotu': ('Çığlık atan kök', 'adamotu'),
+ 'hamlet-krali-uyurken-kulagina-hebenon-denen': ('Hamlet’in zehri', 'banotu'),
+ '1670-lerde-fransiz-sarayinda-aciklanamayan-olumler': ('Zehir davası', 'tatula'),
 }
