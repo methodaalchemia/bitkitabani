@@ -93,6 +93,146 @@ DESCRIPTION:Gece ile gündüz eşitleniyor: doğa uyanıyor. Isırganın
 URL:https://bitkitabani.com/takvim/#ilkbahar-esitligi
 END:VEVENT
 BEGIN:VEVENT
+UID:olay-olu-gunu@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261102
+RRULE:FREQ=YEARLY
+SUMMARY:Ölüler Günü (Día de Muertos)
+DESCRIPTION:Meksika’da ölülerin eve döndüğü günler: kadife çiç
+ eği yaprakları ve kopal dumanı yolu gösterir. Kadife çiçeği (Taget
+ es) sonbaharda Türkiye’de de süs bitkisi olarak satılır\; turuncu y
+ aprakları sunağın rengini verir. https://bitkitabani.com/takvim/#olu-g
+ unu
+URL:https://bitkitabani.com/takvim/#olu-gunu
+END:VEVENT
+BEGIN:VEVENT
+UID:olay-yelda@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20261221
+DTEND;VALUE=DATE:20261222
+RRULE:FREQ=YEARLY
+SUMMARY:Yelda gecesi
+DESCRIPTION:İran ve Afganistan’da yılın en uzun gecesi: büyüklerin
+  evinde nar ve karpuzla sabahlanır. Bir nar ve bir dilim karpuz yeter. H
+ ünnap ve kuru üzüm de sofraya yakışır. https://bitkitabani.com/takv
+ im/#yelda
+URL:https://bitkitabani.com/takvim/#yelda
+END:VEVENT
+BEGIN:VEVENT
+UID:olay-duanwu@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260609
+DTEND;VALUE=DATE:20260610
+RRULE:FREQ=YEARLY
+SUMMARY:Ejder Teknesi Bayramı (Duanwu)
+DESCRIPTION:Çin’de ay takviminin beşinci ayının beşinci günü: ka
+ pılara pelin ve eğir otu asılır. Kurutulmuş bir demet pelin kapını
+ n üstüne asılabilir. Pelin hamilelikte kullanılmamalı. https://bitki
+ tabani.com/takvim/#duanwu
+URL:https://bitkitabani.com/takvim/#duanwu
+END:VEVENT
+BEGIN:VEVENT
+UID:olay-kupala@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260623
+DTEND;VALUE=DATE:20260624
+RRULE:FREQ=YEARLY
+SUMMARY:Kupala ve Yaz Ortası gecesi
+DESCRIPTION:Doğu Avrupa’da otların en şifalı olduğuna inanılan ge
+ ce: çelenkler örülür\, kantaron toplanır. Sarı kantaronun çiçek a
+ çtığı haftalar. Topladığın çiçekleri gölgede kurut\; sarı kant
+ aron birçok ilaçla etkileşir. https://bitkitabani.com/takvim/#kupala
+URL:https://bitkitabani.com/takvim/#kupala
+END:VEVENT
+BEGIN:VEVENT
+UID:olay-beltane@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260501
+DTEND;VALUE=DATE:20260502
+RRULE:FREQ=YEARLY
+SUMMARY:Beltane (Bealtaine)
+DESCRIPTION:İrlanda’da yazın başlangıcı: kapının önüne süslen
+ miş alıç dalı\, inek kuyruğuna üvez. Alıç ağaçları bu haftalar
+ da çiçek açar. Alıç kalp ilaçlarıyla etkileşebilir. https://bitki
+ tabani.com/takvim/#beltane
+URL:https://bitkitabani.com/takvim/#beltane
+END:VEVENT
+BEGIN:VEVENT
+UID:olay-samhain@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+RRULE:FREQ=YEARLY
+SUMMARY:Samhain
+DESCRIPTION:Kelt takviminde kışın başlangıcı: ölülerin eve dönd
+ üğüne inanılan gece. Mevsimin elması ve fındığı bu gecenin sofra
+ sıdır. https://bitkitabani.com/takvim/#samhain
+URL:https://bitkitabani.com/takvim/#samhain
+END:VEVENT
+BEGIN:VEVENT
+UID:olay-lughnasa@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260801
+DTEND;VALUE=DATE:20260802
+RRULE:FREQ=YEARLY
+SUMMARY:Lughnasa ve yaban mersini pazarı
+DESCRIPTION:İrlanda’da ilk hasat: tepelere çıkılıp yaban mersini t
+ oplanır\, ilk yeni patates yenir. Yaz sonu\, yaban meyvelerinin olgunla
+ ştığı zaman. Kesin tanımadığın meyveyi toplama. https://bitkitaba
+ ni.com/takvim/#lughnasa
+URL:https://bitkitabani.com/takvim/#lughnasa
+END:VEVENT
+BEGIN:VEVENT
+UID:olay-inti-raymi@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260624
+DTEND;VALUE=DATE:20260625
+RRULE:FREQ=YEARLY
+SUMMARY:Inti Raymi
+DESCRIPTION:Cusco’da İnka güneş bayramı: koka yaprağı töreni ve 
+ chicha adağı. Koka yaprağı Türkiye’de yasal değildir. Bayramı ta
+ nımak için Pachamama kavramını oku. https://bitkitabani.com/takvim/#i
+ nti-raymi
+URL:https://bitkitabani.com/takvim/#inti-raymi
+END:VEVENT
+BEGIN:VEVENT
+UID:olay-ysyakh@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260621
+DTEND;VALUE=DATE:20260622
+RRULE:FREQ=YEARLY
+SUMMARY:Isıah (Yhyakh)
+DESCRIPTION:Saha Türklerinin yaz yılbaşı: kımız ateşe\, bitkilere 
+ ve insanlara serpilir. Kutsal ağaçlar yazısı Isıah’ın dünyasın
+ ı anlatır. https://bitkitabani.com/takvim/#ysyakh
+URL:https://bitkitabani.com/takvim/#ysyakh
+END:VEVENT
+BEGIN:VEVENT
+UID:olay-chongyang@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20261008
+DTEND;VALUE=DATE:20261009
+RRULE:FREQ=YEARLY
+SUMMARY:Çift Dokuz Bayramı (Chongyang)
+DESCRIPTION:Çin’de dokuzuncu ayın dokuzuncu günü: yükseğe çıkı
+ lır\, krizantem şarabı içilir\, kızılcık takılır. Krizantem sonb
+ aharda çiçekçilerde bulunur. https://bitkitabani.com/takvim/#chongyang
+URL:https://bitkitabani.com/takvim/#chongyang
+END:VEVENT
+BEGIN:VEVENT
+UID:olay-mehregan@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20261001
+DTEND;VALUE=DATE:20261101
+RRULE:FREQ=YEARLY
+SUMMARY:Mihrican (Mehregan)
+DESCRIPTION:İran ve Tacikistan’da sonbahar hasadına şükran: nar\, 
+ üzüm ve buğdayla kurulan sofra. Nar ve üzüm mevsimi. Sofraya bir nar
+  koymak yeter. https://bitkitabani.com/takvim/#mehregan
+URL:https://bitkitabani.com/takvim/#mehregan
+END:VEVENT
+BEGIN:VEVENT
 UID:toplama-adacayi@bitkitabani.com
 DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260301
