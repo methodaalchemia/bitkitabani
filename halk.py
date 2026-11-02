@@ -44,6 +44,8 @@ MICHELOT = ('Didier Michelot, Leda Maria Melendez-Howell, “Amanita muscaria: c
 LUNA84 = ('Luis Eduardo Luna, “The concept of plants as teachers among four mestizo shamans of Iquitos, northeastern Peru”, Journal of Ethnopharmacology 11(2), 1984', 'https://doi.org/10.1016/0378-8741(84)90036-9')
 SIRVANI = ('Muhammed b. Mahmûd eş-Şirvânî, Şifa Bahçesi (Ravdatü’l-ıtr), I. Cilt, tahkik ve çeviri: Muammer Sarıkaya, Celal Turgut Koç, Orman Genel Müdürlüğü Yayınları, Tarih ve Tıp Serisi 1, Ankara', '')
 BK = 'Baytop, Türkiye’de Bitkiler ile Tedavi, 2021'
+UZUN24 = ('Didem Uzun, Şimal Yakut Aymankuy, “Food and beverage rituals at the period of birth, marriage, and death in Shamanist Turks and its modern reflections”, Journal of Tourism Leisure and Hospitality 6(1), 2024', 'https://doi.org/10.48119/toleho.1492741')
+UZK = 'Uzun & Yakut Aymankuy, TOLEHO, 2024'
 
 EGE = ('Bintuğ Öztürk ve ark., “Türkiye’nin Etnobotanik Veritabanı”, Ege Üniversitesi BAP sonuç raporu, 2020',
        'https://acikerisim.ege.edu.tr/server/api/core/bitstreams/c2e0e3a1-ac5b-4664-bc34-33187274efea/content')
@@ -244,6 +246,10 @@ dict(kaynak=BAYTOP3, kisa=BK, link='yazilar/anadoluda-bitkiyle-tedavinin-tarihi-
   post='Türkçe yazılmış bilinen en eski ilaç kitabı, İshak bin Murad’ın Edviye-i Müfrede’si, 1390’da Gerede kalesinin üstündeki Arkut dağında, bir pınarın başında tamamlandı. Yaklaşık 600 yıl sonra, 9 Mayıs 1984’te Turhan Baytop Geredeli bir eczacıyla dağa çıktı. Pınar hâlâ akıyor, mesire yeri olmuştu; dağ sarıçam ve köknar ormanıyla kaplıydı. Kitaptaki bitkilerin çoğu yörede bugün de aynı adla biliniyor.'),
 dict(kaynak=BAYTOP3, kisa=BK, link='yazilar/anadoluda-bitkiyle-tedavinin-tarihi-hititlerden-osmanliya/', yore='XV. yüzyıl, Amasya',
   post='Amasya darüşşifasının hekimi Sabuncuoğlu Şerefeddin, tiryakının yılan zehrine iyi gelip gelmediğini denemek istedi. Bir yılan oynatıcısının getirdiği engereğe bir horozun budunu ısırttı, horozun boğazına tiryak verdi. Bud yeşile dönünce az verdiğinden şüphelendi. Ertesi gün horoz ayaktaydı, yeşillik gitmişti. Deneyi kendi kitabına yazdı: Anadolu’da kayda geçmiş erken bir ilaç denemesi.'),
+dict(kaynak=UZUN24, kisa=UZK, bitki='bugday', yore='Altay ve Saha (Yakut) Türkleri',
+  post='Altay Türklerinin düğün sofrasında köçö pişerdi: et ve yenebilen çiçekli otlarla yapılan koyu bir çorba. Saha (Yakut) Türklerinde aynı yeri malahın tutardı. Uzun ve Yakut Aymankuy, kaynaklara dayanarak bu iki yemeği bugün Anadolu düğünlerinin simgesi olan keşkeğin atası sayar. Ege’de, Manisa’dan Denizli’ye, düğünde kazan kazan keşkek pişirme geleneği hâlâ sürüyor.'),
+dict(kaynak=UZUN24, kisa=UZK, bitki='bugday', yore='Saha (Yakut) Türkleri',
+  post='Saha (Yakut) Türklerinde doğumdan üç gün sonra kadınlar bir uğurlama töreni yapardı: gülüşür, yüzlerine yağ sürerlerdi. Bu tören için kaynatılmış buğdaydan bir çorba pişirilip birlikte yenirdi; adı salamattı. Anadolu’da bebeğin ilk dişi çıkınca haşlanıp dağıtılan diş buğdayı da aynı tahıla bağlanan doğum geleneklerindendir.'),
 ]
 
 def site_kul():
