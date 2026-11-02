@@ -74,6 +74,9 @@ YAZILAR = [
                 'Türkistan’da akçam, karaçam ve kayın kutsal sayılırken, Anadolu’da bu saygı çama, kavağa, ardıca, sedire, serviye, meşeye, duta, söğüde, elmaya ve özellikle çınara geçmiştir [1]. Ağaçlara renkli çaput bağlamak da bu eski ağaç inancının bugüne ulaşan biçimlerinden biridir [1].',
                 'İslamiyetten sonra hurma, elma, nar ve gül ağaçları öne çıkar. Osmanlı’da düğün ve sünnet alaylarında taşınan süslü “nahıl”, hurma ağacı anlamına gelir [1]. Halk hikâyelerinde çocuğu olmayan karı kocanın bir elmayı paylaşarak yemesi en sık karşılaşılan motiflerdendir; elma murat, evlat ve güzellik simgesidir. Evlerin bahçesine ve mezarlıklara dikilen dut ise gölgesi, meyvesi ve sazlara verdiği odunuyla gündelik hayatın parçasıdır [4].',
             ]),
+            ('Çocuk dileği ve ağaç', [
+                'Ağaçla doğurganlık arasındaki bağ, Şamanist Türklerin doğum ritüellerinde de görülür. Kazaklarda çocuğu olmayan kadınların gebe kalmak için bir elma ağacının altında yuvarlandığı, Kırgızlarda ise çocuk dileğiyle kutsal ağaçların ziyaret edildiği aktarılır [5]. Bugün Anadolu’da düğünde gelinin başına buğday ve şeker saçılması da, tarımla uğraşan Türk topluluklarında gelinin başına buğday, darı ve meyve saçma geleneğinin devamı sayılır [5].',
+            ]),
             ('Bir not', [
                 'Bu yazıdaki inanışlar, Türk boylarının farklı dönemlerde derlenmiş anlatılarından ve bu anlatıları inceleyen akademik çalışmalardan aktarılmıştır. Her topluluğun inancı aynı değildir; aktarılan, kaynakların söyledikleridir.',
             ]),
@@ -83,6 +86,7 @@ YAZILAR = [
             ('Ülfet Dağ, “Türk ve İskandinav Mitolojisinde Ağaç Sembolizmi”, Millî Folklor 132, 2021', 'https://dergipark.org.tr/tr/pub/millifolklor/article/819200'),
             ('Reyhan Değirmenci, Türk Mitolojisinde Yüce Ana Arketipi: Umay Üzerine Arketipsel Bir İnceleme, yüksek lisans tezi, Ege Üniversitesi, 2024', ''),
             ('Ali Berat Alptekin, “Türk Halk Hikâyelerinde Ağaç Motifi Üzerine”, Millî Folklor 76, 2007', ''),
+            ('Didem Uzun, Şimal Yakut Aymankuy, “Food and beverage rituals at the period of birth, marriage, and death in Shamanist Turks and its modern reflections”, Journal of Tourism Leisure and Hospitality 6(1), 2024', 'https://doi.org/10.48119/toleho.1492741'),
         ],
         bitkiler=['ardic', 'sogut', 'zeytin', 'uzerlik'],
         semboller=['kutsal-agaclar'],
