@@ -2,6 +2,50 @@
 # Metindeki [1], [2]… işaretleri kaynak listesindeki sıraya karşılık gelir. Bitki bağlantıları {id} biçiminde yazılır.
 
 YAZILAR = [
+{'slug': 'kuzey-peruda-sifa-mesa-san-pedro-pazar',
+ 'tarih': '2026-11-03',
+ 'baslik': 'Kuzey Peru’da şifa: mesa sunağı, San Pedro ve pazarın 510 bitkisi',
+ 'aciklama': 'Trujillo ve Chiclayo pazarlarından şifacıların sunaklarına: Kuzey Peru’da bitkiyle tedavinin bugünü, bin yıllık kökleri, “seguro” şişeleri, çiçek banyoları ve San Pedro kaktüsü. Kaynaklarıyla.',
+ 'giris': 'Kuzey Peru, Ekvador’un güneyinden Bolivya’nın kuzeyine uzanan eski And “sağlık ekseni”nin üst ucunda yer alır. Etnobotanikçi Rainer Bussmann ile antropolog Douglas Sharon, on yılı aşkın bir sürede bölgenin '
+          'pazarlarında ve şifacılarının yanında çalıştı. Bu yazı, onların açık erişimli çalışmasından bölgenin şifa geleneğini özetliyor.',
+ 'bolumler': [('Pazarın bitkileri',
+               ['Çalışma 2001’de Trujillo ve Chiclayo’nun büyük pazarlarında başladı. Kuzey Peru’da tıbbi özelliği olan 510 bitki kaydedildi ve bunlar için 2.499 ayrı kullanım derlendi; türlerin yüzde 83’ü Peru’ya '
+                'özgüydü. Yerel pazarlarda yaygın olarak 150–200 tür satılıyor; nadir türleri şifacılar kendileri topluyor ya da özel toplayıcılardan ısmarlıyor [1].',
+                'Satıcılar bitkileri dört gruba ayırıyor: yaygın ve egzotik bitkiler, sıradan hastalıklar için bitkiler, yalnızca şifacıların kullandıkları ve büyü amaçlı olanlar. Yaklaşık 974 karışım, 29’a kadar '
+                'bileşenle 164 hastalığı tedavi ediyor; bitkilerin yüzde 65 kadarı karışım hâlinde kullanılıyor [1].',
+                'Gelenek donmuş değil. 1789’da piskopos Martínez Compañón’un İspanya’ya gönderdiği koleksiyondaki bitkilerle karşılaştırıldığında, sömürge döneminde kullanılan bitkilerin yarısı bugün listede yok, ama '
+                'toplam sayı artmış. Pazarlarda son yıllarda noni ürünlerinin çoğalması, bitkicilerin uluslararası sağlık modalarını yakından izlediğini gösteriyor [1].']),
+              ('En çok bitki “büyü” hastalıklarına',
+               ['En fazla tür, 207 bitki, “büyüyle ilgili” rahatsızlıkların tedavisinde kullanılıyor; bunlar tüm kullanımların dörtte birinden fazlası. Kötü hava (mal aire), kötü rüzgâr, korku ({susto} ya da espanto), '
+                'nazar (mal ojo) ve büyü (daño, brujería) And toplumunda çok yaygın hastalıklar sayılıyor. Araştırmacılara göre Batı’daki “psikosomatik bozukluk” kavramı bunlara en yakın karşılık [1].',
+                'Tedavi çoğu zaman bir arınma törenini, yani {limpia}yı içerir: bu, kutsal su ve parfümle basit bir püskürtme de olabilir, şifacının sunağı başında bütün gece süren bir tören de. Törenden sonraki '
+                'günlerde hastaya “çiçeklenme banyosu” (baño de florecimiento) yaptırılır. Hasta ayrıca bir “seguro” alır: güçlü otlar, parfümler, aziz resimleri ve hastanın saçı ile tırnağıyla doldurulmuş, koruma ve '
+                'şans için taşınan bir şişe [1].']),
+              ('Mesa: sunağın başında',
+               ['Şifacılar hastaları çoğu zaman evlerinin arka bahçesine kurdukları mesa sunağının başında, bazen de kırdaki kutsal yerlerde ya da dağlardaki kutsal göllerin kıyısında tedavi eder. Sunakta deniz '
+                'kabukları, Kolomb öncesi seramikler, asalar ve taşlar gibi “güç nesneleri” haç ve aziz resimleriyle yan yana durur [1].',
+                'Tören, şifacının kutsanmış bitki özlerini ağzından hastanın bütün bedenine püskürtmesiyle başlar. Çoğu törende hasta haşlanmış {sanpedro} suyu içer ve burnundan tütün ({mapacho}) suyu ile parfüm çeker; '
+                'bazen {toe} (Brugmansia) da kullanılır. Şifacıların söylediği tarjo denen ezgilerde İsa, Meryem ve azizler kadar dağların ruhları (apu) ve kutsal göller de çağrılır. Kobay (cuy) hastalığın teşhisi için '
+                'standart bir araçtır [1].']),
+              ('Üç bin yıllık bir kaktüs',
+               ['San Pedro kaktüsünün kullanımı binlerce yıl öncesine uzanır. Arkeolojik kalıntıları And dağlarındaki Guitarrero Mağarası’nda (MÖ 8200–6800), kuzey-orta kıyıdaki Las Aldas’ta (MÖ 2000–1500) ve orta '
+                'kıyıdaki Garagay’da bulundu. Kaktüs Cupisnique, Chavín, Moche, Nazca ve Lambayeque sanatında sık sık betimlenir [1].',
+                'Moche dönemine (MS 100–800) uzanan bitkiler arasında San Pedro’nun yanı sıra maichil ({camalonga}) ve ishpingo da var: bu bitkiler Moche seramiklerinde betimlenir, bazılarının kalıntıları Sipán '
+                'Efendisi’nin mezarı gibi seçkin mezarlarda bulundu [1][2]. Beş yüz yıllık baskıya rağmen gelenek sürdü; Peru Kültür Bakanlığı 2022’de San Pedro’ya ilişkin geleneksel bilgileri ulusun kültürel mirası '
+                'ilan etti [3].']),
+              ('Tehditler',
+               ['Bussmann ve Sharon’a göre bu bin yıllık geleneği en çok tehdit eden şey bitkilerin yaşam alanlarının yok olması: kentleşme ve şeker, pamuk ve pirinç tarımı kıyı ovalarını değiştirdi; iklim değişikliği '
+                've ormansızlaşma dağ ormanlarını tehdit ediyor. Pek çok şifalı bitkinin yetiştiği yüksek And ekosistemleri ve kutsal göller büyük ölçekli madencilik nedeniyle tehlikede [1].',
+                'Talep artıyor ama ekim artmıyor: bitkilerin çoğu hâlâ doğadan toplanıyor ve bazı önemli türlerde aşırı toplama belirtileri görülüyor. Araştırmacılar laboratuvarda bitkileri de sınadı: enfeksiyon için '
+                'kullanılanların çoğunda antibakteriyel etki doğrulandı; ama su özütlerinin yüzde 24’ü, alkol özütlerinin yüzde 76’sı zehirli çıktı. Geleneksel hazırlama yöntemleri, çözücüyü seçerken bunu hesaba '
+                'katıyor [1]. San Pedro ve Brugmansia güçlü ve tehlikeli bitkilerdir; burada kültürel bir kayıt olarak anlatılıyor.'])],
+ 'kaynaklar': [('Rainer W. Bussmann, Douglas Sharon, “Medicinal plants of the Andes and the Amazon – The magic and medicinal flora of Northern Peru”, Ethnobotany Research and Applications 15, 2016',
+                'https://ethnobotanyjournal.org/index.php/era/article/view/1283'),
+               ('Rainer W. Bussmann, Douglas Sharon, “Traditional medicinal plant use in Northern Peru: tracking two thousand years of healing culture”, Journal of Ethnobiology and Ethnomedicine 2, 2006',
+                'https://doi.org/10.1186/1746-4269-2-47'),
+               ('“Declaran Patrimonio Cultural de la Nación a los conocimientos, saberes y usos del cactus San Pedro”, El Peruano, 2022', '')],
+ 'bitkiler': ['sanpedro', 'mapacho', 'toe', 'camalonga', 'sedef', 'matico'],
+ 'semboller': ['chakana']},
 {'slug': 'dunya-agaclari-kayin-yggdrasil-ceiba-bodhi',
  'tarih': '2026-11-02',
  'baslik': 'Dünya ağaçları: kayın, Yggdrasil, ceiba ve Bodhi',
@@ -41,7 +85,7 @@ YAZILAR = [
                ('Norma Franklin, “The Assyrian Stylized Tree: A Date Palm Plantation and Aššurnaṣirpal II’s Stemma”, Ash-sharq 5(2), 2021',
                 'https://www.archaeopresspublishing.com/ojs/index.php/ash-sharq/article/view/1760'),
                ('R. V. Sitholey, “Plants represented in ancient Indian sculpture”, Geophytology 6(1), 1976', 'https://palaeobotanicalsociety.org/geophytology/vol6_1976/15vol6_11976.pdf')],
- 'bitkiler': ['ardic', 'okseotu'],
+ 'bitkiler': ['ardic', 'okseotu', 'disbudak', 'mese'],
  'semboller': ['hayat-agaci', 'yggdrasil', 'asur-agaci', 'bodhi']},
 {'slug': 'anadoluda-bitkiyle-tedavinin-tarihi-hititlerden-osmanliya',
  'tarih': '2026-11-02',

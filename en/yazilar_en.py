@@ -2,6 +2,42 @@
 # Keys are the Turkish slugs; sources and plant lists come from yazilar.py. Plant links are written {id}.
 
 Y_EN = {
+'kuzey-peruda-sifa-mesa-san-pedro-pazar': {'slug': 'healing-in-northern-peru-mesa-san-pedro-market',
+ 'baslik': 'Healing in northern Peru: the mesa altar, San Pedro and the 510 plants of the market',
+ 'aciklama': 'From the markets of Trujillo and Chiclayo to the healers’ altars: plant healing in northern Peru today, its thousand-year roots, “seguro” bottles, flower baths and the San Pedro cactus. With sources.',
+ 'giris': 'Northern Peru lies at the upper end of the old Andean “health axis” that runs from southern Ecuador to northern Bolivia. The ethnobotanist Rainer Bussmann and the anthropologist Douglas Sharon worked for '
+          'more than a decade in the region’s markets and alongside its healers. This article summarises the region’s healing tradition from their open-access study.',
+ 'bolumler': [('The plants of the market',
+               ['The study began in 2001 in the big markets of Trujillo and Chiclayo. In northern Peru 510 plants with medicinal properties were recorded, with 2,499 different uses; 83 per cent of the species were '
+                'native to Peru. Some 150–200 species are commonly sold in local markets; healers collect the rare ones themselves or order them from specialised collectors [1].',
+                'Vendors group plants into four kinds: common and exotic plants, plants for ordinary illnesses, plants used only by healers, and plants for magical purposes. About 974 mixtures with up to 29 ingredients '
+                'treat 164 conditions; around 65 per cent of the plants are used in mixtures [1].',
+                'The tradition is not frozen. Compared with the plants in the collection Bishop Martínez Compañón sent to Spain in 1789, half of the plants used in colonial times have disappeared from the list, yet the '
+                'total has grown. The recent spread of noni products in the markets shows that herbalists watch international health trends closely [1].']),
+              ('Most plants go to “magical” illnesses',
+               ['The largest number of species, 207, is used for “magical” ailments, more than a quarter of all uses. Bad air (mal aire), bad wind, fright (susto or espanto), the evil eye (mal ojo) and sorcery (daño, '
+                'brujería) are considered very common illnesses in Andean society. According to the researchers, the Western idea of “psychosomatic disorders” comes closest to describing them [1].',
+                'Treatment often involves a cleansing ceremony, a limpia: this can be a simple spraying with holy water and perfume, or an all-night ceremony at the healer’s altar. In the days after the ceremony the '
+                'patient takes a “flowering bath” (baño de florecimiento). The patient also receives a “seguro”: a bottle filled with powerful herbs, perfumes, images of saints and the patient’s hair and nail '
+                'clippings, carried for protection and luck [1].']),
+              ('Mesa: at the altar',
+               ['Healers usually treat patients at the mesa altar set up in their back yard, sometimes at sacred places in the countryside or on the shores of sacred lagoons high in the mountains. On the altar, “power '
+                'objects” such as seashells, pre-Columbian ceramics, staffs and stones stand side by side with crosses and images of saints [1].',
+                'The ceremony begins with the healer spraying blessed plant extracts from his mouth over the patient’s whole body. In most ceremonies the patient drinks boiled {sanpedro} juice and takes tobacco '
+                '({mapacho}) juice and perfume through the nose; sometimes {toe} (Brugmansia) is used too. In the chants called tarjos the healers invoke the mountain spirits (apus) and sacred lagoons as well as '
+                'Christ, the Virgin and the saints. The guinea pig (cuy) is a standard tool of diagnosis [1].']),
+              ('A three-thousand-year-old cactus',
+               ['The use of the San Pedro cactus goes back thousands of years. Its remains have been found at Guitarrero Cave in the Andes (8200–6800 BCE), at Las Aldas on the north-central coast (2000–1500 BCE) and at '
+                'Garagay on the central coast. The cactus is often depicted in Cupisnique, Chavín, Moche, Nazca and Lambayeque art [1].',
+                'Among the plants whose use goes back to the Moche period (100–800 CE), besides San Pedro, are maichil ({camalonga}) and ishpingo: they are depicted on Moche ceramics, and remains of some were found in '
+                'elite burials such as the tomb of the Lord of Sipán [1][2]. Despite five hundred years of suppression the tradition survived; in 2022 Peru’s Ministry of Culture declared the traditional knowledge of '
+                'San Pedro part of the nation’s cultural heritage [3].']),
+              ('Threats',
+               ['According to Bussmann and Sharon, the greatest threat to this ancient tradition is the loss of plant habitats: urban sprawl and sugar, cotton and rice agribusiness have changed the coastal plains; '
+                'climate change and deforestation threaten the mountain forests. The high Andean ecosystems and sacred lagoons where many medicinal plants grow are endangered by large-scale mining [1].',
+                'Demand is growing but cultivation is not: most plants are still gathered from the wild, and some important species show signs of overharvesting. The researchers also tested the plants in the '
+                'laboratory: antibacterial activity was confirmed in most plants used for infections, but 24 per cent of water extracts and 76 per cent of alcohol extracts were toxic. Traditional preparation methods '
+                'take this into account when choosing the solvent [1]. San Pedro and Brugmansia are powerful and dangerous plants; they are described here as a cultural record.'])]},
 'dunya-agaclari-kayin-yggdrasil-ceiba-bodhi': {'slug': 'world-trees-birch-yggdrasil-ceiba-bodhi',
  'baslik': 'World trees: the birch, Yggdrasil, the ceiba and the Bodhi tree',
  'aciklama': 'The birch reaching to the sky in the Altai, the ash that holds up the world in the Edda, the Maya world axis ceiba, the date palm of Assyrian palaces and the fig under which the Buddha '
