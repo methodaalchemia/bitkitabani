@@ -116,3 +116,5 @@ OTHER.setdefault('banotu', []).append(('Müller, Love potions and the ointment o
 OTHER.setdefault('adamotu', []).append(('Müller, Love potions and the ointment of witches: historical aspects of the nightshade alkaloids (Clin Toxicol 1998)', 'https://doi.org/10.3109/15563659809028060'))
 OTHER.setdefault('tatula', []).append(('Müller, Love potions and the ointment of witches: historical aspects of the nightshade alkaloids (Clin Toxicol 1998)', 'https://doi.org/10.3109/15563659809028060'))
 OTHER.setdefault('sinekmantari', []).append(('Michelot & Melendez-Howell, Amanita muscaria: chemistry, biology, toxicology, and ethnomycology (Mycol Res 2003)', 'https://doi.org/10.1017/S0953756203007305'))
+for _p in ('ayahuasca', 'mapacho', 'toe', 'chiricsanango', 'chuchuhuasi', 'abuta'):
+    OTHER.setdefault(_p, []).append(('Luna, The concept of plants as teachers among four mestizo shamans of Iquitos, northeastern Peru (J Ethnopharmacol 1984)', 'https://doi.org/10.1016/0378-8741(84)90036-9'))
