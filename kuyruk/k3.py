@@ -190,7 +190,7 @@ dict(yayin='2026-11-19', id='mayiselmasi', tr='Mayıs elması', la='Podophyllum 
   safety='Root, leaves and unripe fruit are poisonous and can cause violent vomiting, diarrhoea, nerve damage and coma. Careless application of podophyllin resin to the skin has also caused poisoning. Never use in pregnancy; it can cause birth defects. Only the flesh of fully ripe fruit can be eaten, in small amounts; the seeds are poisonous.', fact='A single flower opens between its two umbrella-like leaves; it flowers in May and bears an apple-like fruit, hence “mayapple”.',
   season='Flowers April–May; fruit ripens yellow July–August.', habitat='Shady floors of eastern North American deciduous forests, in wide colonies.', local='no settled Turkish name; mayıs elması, Amerikan adamotu', confusion='It is not related to true mandrake (Mandragora); the name “American mandrake” comes from the similar reputation of its root.')),
 dict(yayin='2026-11-20', id='salviadivinorum', tr='Kâhin adaçayı', la='Salvia divinorum', fam='Lamiaceae (ballıbabagiller)', diger='Salvia divinorum, xka pastora (Mazatekçe), Pastora’nın yaprağı',
-  bolge=['kamerika'], kat=['ritual', 'sifa'], kisim='Yaprak', taxon='Salvia divinorum',
+  bolge=['kamerika'], kat=['ritual', 'sifa'], kisim='Yaprak', taxon='Salvia divinorum', foto='Salvia Divinorum .jpg',
   kul=[('Meksika (Mazatek)', 'Mazatekler birkaç taze yapraktan hazırlanan hafif çayı baş ağrısı, ateş, eklem ağrısı ve genel ağrıda içer; yapraklarını eklem ağrısında, şişlikte, böcek sokmasında ve boğaz ağrısında dıştan kullanır. Hayvanları tedavi etmek için kullananlar da vardır.'),
        ('Ritüel', 'Mazatekler bitkiyi kutsal bir varlık sayar; Meryem Ana’yı çağrıştıran “xka pastora” adıyla anar. Evlerinin yakınında yetiştirir ama gözden saklarlar; bitkiyle ilişki ayrıntılı kurallara bağlıdır.')],
   haz='Evde kullanım önerilmez. Mazatek geleneğinde yapraklar taze olarak ve ritüel kurallarına uyularak kullanılır.',
@@ -216,6 +216,7 @@ dict(yayin='2026-11-20', id='salviadivinorum', tr='Kâhin adaçayı', la='Salvia
  'kat': ['zehir'],
  'kisim': 'Çiçek ve nektarı (deli bal); bütün bitki zehirli',
  'taxon': 'Rhododendron ponticum',
+ 'foto': 'Rhododendron ponticum actm 03.jpg',
  'kul': [('Doğu Karadeniz',
           'Arıların ormangülü çiçeklerinden yaptığı deli bal, halk arasında mide şikâyetleri, yüksek tansiyon ve cinsel güç için az miktarda yenir. Bu kullanım, deli bal zehirlenmelerinin başlıca '
           'nedenidir.'),
@@ -264,6 +265,7 @@ dict(yayin='2026-11-20', id='salviadivinorum', tr='Kâhin adaçayı', la='Salvia
  'kat': ['zehir'],
  'kisim': 'Bütün bitki; en zehirlisi meyve ve çiçek durumu',
  'taxon': 'Conium maculatum',
+ 'foto': 'Conium maculatum storskjerm.jpg',
  'kul': [('Antik Yunan', 'Atina’da ölüm cezası baldıran özüyle uygulanırdı; Sokrates MÖ 399’da bu yolla öldü.'),
          ('Eski tıp', 'Meyveleri ağrı kesici olarak kullanılmıştır; çok zehirli olduğu için bu kullanım bugün terk edilmiştir (Baytop).')],
  'haz': 'Evde kullanım önerilmez; bitkinin hiçbir kısmı kullanılmamalıdır.',
@@ -308,6 +310,7 @@ dict(yayin='2026-11-20', id='salviadivinorum', tr='Kâhin adaçayı', la='Salvia
  'kat': ['zehir', 'sifa'],
  'kisim': 'Yaprak (yalnızca ilaç hammaddesi olarak)',
  'taxon': 'Digitalis ferruginea',
+ 'foto': 'Digitalis ferruginea - Rusty Foxglove 01.jpg',
  'kul': [('İngiltere',
           'Hekim William Withering, Shropshire’da bir ailenin sakladığı halk reçetesindeki etkili bitkinin yüksük otu olduğunu gösterdi ve 1785’te kalp kaynaklı ödemde (su toplamada) dikkatli, dozlu '
           'kullanımını yayımladı.'),
