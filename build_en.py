@@ -69,7 +69,7 @@ def run(G):
 <body>
 <div class="wrap{{narrow}}">
 '''
-    MENU_EN = [('Explore', [('/en/catalog/', 'Catalog', 'kat'), ('/en/bridges/', 'Culture bridges', 'br')]),
+    MENU_EN = [('Explore', [('/en/catalog/', 'Catalog', 'kat'), ('/en/bridges/', 'Culture bridges', 'br'), ('/en/harvest-calendar/', 'Harvest calendar', 'calendar'), ('/en/ritual-calendar/', 'Ritual calendar', 'calendar')]),
                ('Guides', [('/en/guides/', 'Herbs by complaint', 'guides'), ('/en/recipes/', 'Herbal tea recipes', 'recipes'), ('/en/concepts/', 'Concept of the day', 'concepts'), ('/en/articles/', 'Articles', 'articles')]),
                ('Bitki Tabanı', [('/en/about/', 'About and method', 'about'), ('https://www.instagram.com/bitkitabani/', 'Instagram', 'ig'), ('/en/account/', 'Account', 'acct'), ('/en/privacy/', 'Privacy', 'priv'), ('mailto:iletisim@bitkitabani.com', 'Contact', 'mail')])]
     def nav(cur, tr_path):
@@ -582,6 +582,39 @@ def run(G):
 <section class="sec"><h2>Sources</h2><ol class="refs">{"".join(f"<li><cite>{e(t)}</cite></li>" for t in Z_KAYNAK)}</ol></section>
 {DIS}</article>"""
     write(path, page('Poisonous plants in Turkey and their look-alikes | Bitki Tabanı', 'Autumn crocus, poison hemlock, thorn apple, henbane, foxglove, mad honey and oleander: what they are confused with, how to tell them apart and what to do in a poisoning.', path, '/rehber/zehirli-bitkiler/', body, 'guides', narrow=True))
+
+    # ---------- ritual calendar and harvest calendar ----------
+    from takvim_en import O_EN, LINK_EN, AYLAR_EN
+    import takvim as _tk
+    _ol = sorted([o for o in _tk.OLAYLAR if o['slug'] in O_EN], key=lambda o: o['tarih'])
+    def _dt(t):
+        if t in ('and', 'ay') or not t[:2].isdigit(): return 'August'
+        m, d = (t.split('-') + [''])[:2]
+        return f'{int(d)} {AYLAR_EN[int(m)-1]}' if d else AYLAR_EN[int(m)-1]
+    def _ev(o):
+        r = O_EN[o['slug']]
+        kay = ''.join(f'<li><a href="{e(u)}" target="_blank" rel="noopener">{e(t)}</a></li>' for t, u in o['kaynaklar'])
+        pl = ''.join(f'<a class="chip" href="/en/{x}/">{e(name(byId[x]))}</a>' for x in o['bitkiler'] if x in byId)
+        lu, _ = o['link']; lu = LINK_EN.get(lu)
+        return (f'<section class="sec" id="{o["slug"]}"><span class="eyebrow">{_dt(o["tarih"])}</span><h2>{e(r["ad"])}</h2><p><b>{e(r["kisa"])}</b></p>'
+                f'<p>{re.sub(r"\[(\d+)\]", lambda m: "<sup>[" + m.group(1) + "]</sup>", e(r["metin"]))}</p><p class="muted-s">To prepare: {e(r["hazirlik"])}</p>'
+                + (f'<div class="related">{pl}</div>' if pl else '') + (f'<p><a class="cta small" href="{lu}">{e(r["link"])} →</a></p>' if lu else '')
+                + (f'<ol class="refs">{kay}</ol>' if kay else '') + '</section>')
+    path = '/en/ritual-calendar/'
+    write(path, page('Ritual calendar: Nowruz, Hıdrellez, solstices and the Pachamama month | Bitki Tabanı', 'Seasonal festivals and turning points of the year from Anatolia to the Andes, with the plants that belong to them.', path, '/takvim/',
+          f'<nav class="crumbs" aria-label="Breadcrumb"><a href="/en/">Home</a><span>/</span><span>Ritual calendar</span></nav><article class="sheet"><header class="page-head"><span class="eyebrow">{len(_ol)} dates</span><h1>Ritual calendar</h1><p>Seasonal festivals and turning points of the year from Anatolia to the Andes, with the plants that belong to them. Rituals are described as cultural heritage, not as instructions.</p></header>{"".join(_ev(o) for o in _ol)}</article>', 'calendar', narrow=True))
+
+    months_of, AN_EK = G['months_of'], G['EK']
+    _cal = {m: [] for m in range(1, 13)}
+    for q in P:
+        if 'anadolu' in q['bolge'] and q['guv'] != 'yuksek' and q['id'] not in YASAL and not KORUMA.get(q['id'], {}).get('rozet') and q['id'] in AN_EK:
+            for m in months_of(AN_EK[q['id']].get('mevsim', '')): _cal[m].append(q)
+    _cur = LOCAL_DAY.month
+    _order = [(_cur + i - 1) % 12 + 1 for i in range(12)]
+    _cs = ''.join(f'<section class="sec" id="m{m}"><h2>{AYLAR_EN[m-1]}{" (this month)" if m == _cur else ""}</h2>' + ('<ul class="adlar">' + ''.join(f'<li><a href="/en/{q["id"]}/"><b>{e(name(q))}</b></a> · {e(EN[q["id"]].get("season", ""))}</li>' for q in sorted(_cal[m], key=name)) + '</ul>' if _cal[m] else '<p class="muted-s">No plants listed for this month.</p>') + '</section>' for m in _order)
+    path = '/en/harvest-calendar/'
+    write(path, page(f'Medicinal plant harvest calendar for Anatolia: what to gather in {AYLAR_EN[_cur-1]} | Bitki Tabanı', f'Month by month, the medicinal plants gathered in Anatolia. {len(_cal[_cur])} plants are in season in {AYLAR_EN[_cur-1]}.', path, '/toplama-takvimi/',
+          f'<nav class="crumbs" aria-label="Breadcrumb"><a href="/en/">Home</a><span>/</span><span>Harvest calendar</span></nav><article class="sheet"><header class="page-head"><span class="eyebrow">Anatolia · month by month</span><h1>What to gather when: a medicinal plant calendar</h1><p>The gathering season of Anatolian plants in the catalog, starting with this month. High-risk, protected and legally restricted plants are left out.</p></header><aside class="warnbox" role="note"><b>When gathering:</b> pick only plants you can identify with certainty (see <a href="/en/guides/poisonous-plants/">poisonous look-alikes</a>), away from roadsides and sprayed fields; take only part of a plant so it can grow back.</aside>{_cs}</article>', 'calendar', narrow=True))
 
     # ---------- articles (blog) ----------
     from yazilar_en import Y_EN
