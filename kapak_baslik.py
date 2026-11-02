@@ -78,4 +78,7 @@ KB = {
  'hamlet-krali-uyurken-kulagina-hebenon-denen': ('Hamlet’in zehri', 'banotu'),
  '1670-lerde-fransiz-sarayinda-aciklanamayan-olumler': ('Zehir davası', 'tatula'),
  'peru-amazonu-nda-derin-ormanda-chullachaqui': ('Ormanın keçi ayaklı sahibi', 'chiricsanango'),
+ 'anzer-bali-rize-ikizdere-deki-anzer': ('Anzer balının sırrı', 'ormangulu'),
+ 'turkce-yazilmis-bilinen-eski-ilac-kitabi': ('Arkut dağındaki pınar', 'ardic'),
+ 'amasya-darussifasinin-hekimi-sabuncuoglu-serefeddin-tiryakinin': ('Sabuncuoğlu’nun horozu', 'hashas'),
 }

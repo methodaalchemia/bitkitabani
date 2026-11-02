@@ -238,6 +238,12 @@ dict(kaynak=MULLER, kisa='Müller, Clin Toxicol, 1998', bitki='tatula', yore='XV
   post='1670’lerde Fransız sarayında açıklanamayan ölümler artınca XIV. Louis zehirlenmeleri araştırmak için özel bir mahkeme kurdu. 1679–1683 arasında 400’den fazla kişi yargılandı, 87’si büyücü ve zehirci olarak ölüme mahkûm edildi. Aşk iksiri ve zehir satan ünlü Catherine Voisin, içkilere banotu, tatula, kantarit böceği ve arsenik katıyordu.'),
 dict(kaynak=LUNA84, kisa='Luna, J Ethnopharmacol, 1984', link='kavram/vegetalismo/', yore='Peru Amazonu, Iquitos',
   post='Peru Amazonu’nda derin ormanda Chullachaqui yaşar: insana benzer, ama bir ayağı keçi, geyik ya da köpek ayağıdır. Hayvanların efendisi, “ormanın kralı”dır. Onunla dost olan iyi avlanır; çoğu zaman ise karşılaşan delirir ya da hastalanır. Iquitos’taki şifacılara göre, kökleri topraktan bir “ayak” gibi yükselen chullachaqui caspi ağacının dibinde yaşar; bu ağaç da öğreten bir bitkidir.'),
+dict(kaynak=BAYTOP3, kisa=BK, bitki='ormangulu', yore='Rize, Anzer yaylası',
+  post='Anzer balı, Rize İkizdere’deki Anzer yaylasında iki köyde elde edilir. Yöre halkı balın kokusunu arıların “beyaz komar” dediği kafkas ormangülü çiçeğinden almasına bağlar; bu güçlü kokulu çiçeği kuvvet için çiğ yiyenler de vardır. Bal en çok yanık yarasına merhem gibi sürülür. Baytop bir uyarı da ekler: Türkiye’de Anzer balı diye satılan bal, yaylada çıkan miktarın en az yüz katıdır.'),
+dict(kaynak=BAYTOP3, kisa=BK, link='yazilar/anadoluda-bitkiyle-tedavinin-tarihi-hititlerden-osmanliya/', yore='Bolu, Gerede',
+  post='Türkçe yazılmış bilinen en eski ilaç kitabı, İshak bin Murad’ın Edviye-i Müfrede’si, 1390’da Gerede kalesinin üstündeki Arkut dağında, bir pınarın başında tamamlandı. Yaklaşık 600 yıl sonra, 9 Mayıs 1984’te Turhan Baytop Geredeli bir eczacıyla dağa çıktı. Pınar hâlâ akıyor, mesire yeri olmuştu; dağ sarıçam ve köknar ormanıyla kaplıydı. Kitaptaki bitkilerin çoğu yörede bugün de aynı adla biliniyor.'),
+dict(kaynak=BAYTOP3, kisa=BK, link='yazilar/anadoluda-bitkiyle-tedavinin-tarihi-hititlerden-osmanliya/', yore='XV. yüzyıl, Amasya',
+  post='Amasya darüşşifasının hekimi Sabuncuoğlu Şerefeddin, tiryakının yılan zehrine iyi gelip gelmediğini denemek istedi. Bir yılan oynatıcısının getirdiği engereğe bir horozun budunu ısırttı, horozun boğazına tiryak verdi. Bud yeşile dönünce az verdiğinden şüphelendi. Ertesi gün horoz ayaktaydı, yeşillik gitmişti. Deneyi kendi kitabına yazdı: Anadolu’da kayda geçmiş erken bir ilaç denemesi.'),
 ]
 
 def site_kul():
