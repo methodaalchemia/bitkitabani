@@ -83,4 +83,5 @@ KB = {
  'amasya-darussifasinin-hekimi-sabuncuoglu-serefeddin-tiryakinin': ('Sabuncuoğlu’nun horozu', 'hashas'),
  'altay-turklerinin-dugun-sofrasinda-koco-piserdi': ('Keşkeğin atası: köçö', 'bugday'),
  'saha-yakut-turklerinde-dogumdan-gun-sonra': ('Salamat: doğumun buğday çorbası', 'bugday'),
+ 'sirvani-nin-eczacilik-kitabinda-gul-surubu': ('Güller beyazlayana kadar', 'gul'),
 }

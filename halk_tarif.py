@@ -56,4 +56,11 @@ TARIF = {
        adim=['Tuğlalar dövülüp toz edilir.', 'Toz, zeytinyağıyla tavada kavrulur.', 'Üzerine bir miktar su eklenir.', 'Suyun yüzüne çıkan yağ kaşıkla toplanır ve şişede saklanır; ağrıyan yere sürülür.'],
        uyari='Bu bir halk kaydıdır, denenmesi önerilmez. Eklem ağrısı uzun sürüyor, şişlik ya da kızarıklık varsa hekime görün.'),
  ],
+ 'sirvani-nin-eczacilik-kitabinda-gul-surubu': [
+  dict(ad='Gül şurubu (Şirvânî, Şifa Bahçesi; Minhâcü’d-dükkân’dan)',
+       malzeme=['Nusaybin gülünün ya da yerel gülün yaprakları (1 rıtl)', 'Kaynamış su (5 rıtl)', 'Şeker (süzülen suyun ağırlığınca)'],
+       adim=['Gül yaprakları taş ya da bakır, derin bir kazana konur.', 'Üzerine kaynamış su dökülür; su soğuyup güller beyazlayana kadar kabın ağzı kapalı tutulur.', 'Bu işlem yedi kez ya da daha fazla tekrarlanır.', 'Su süzülür, ağırlığınca şekerle pekmez kıvamına gelene kadar kaynatılır ve saklanır.'],
+       olcu='Rıtl eski bir ağırlık ölçüsüdür; bölgeye ve döneme göre değişir. Kitap, aynı şurubun mahmude otu (sakmunya) katılarak yapılan, ishal ettirici türlerini de verir; onlar burada aktarılmadı.',
+       uyari='Bu, 15. yüzyıl kitabındaki tarifin aktarımıdır; kitabın saydığı faydalar o dönemin tıp anlayışına dayanır. Ateşli hastalıkta hekime başvur. Yalnızca ilaçlanmamış, yenebilir gül yaprağı kullan.'),
+ ],
 }

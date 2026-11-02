@@ -250,6 +250,8 @@ dict(kaynak=UZUN24, kisa=UZK, bitki='bugday', yore='Altay ve Saha (Yakut) Türkl
   post='Altay Türklerinin düğün sofrasında köçö pişerdi: et ve yenebilen çiçekli otlarla yapılan koyu bir çorba. Saha (Yakut) Türklerinde aynı yeri malahın tutardı. Uzun ve Yakut Aymankuy, kaynaklara dayanarak bu iki yemeği bugün Anadolu düğünlerinin simgesi olan keşkeğin atası sayar. Ege’de, Manisa’dan Denizli’ye, düğünde kazan kazan keşkek pişirme geleneği hâlâ sürüyor.'),
 dict(kaynak=UZUN24, kisa=UZK, bitki='bugday', yore='Saha (Yakut) Türkleri',
   post='Saha (Yakut) Türklerinde doğumdan üç gün sonra kadınlar bir uğurlama töreni yapardı: gülüşür, yüzlerine yağ sürerlerdi. Bu tören için kaynatılmış buğdaydan bir çorba pişirilip birlikte yenirdi; adı salamattı. Anadolu’da bebeğin ilk dişi çıkınca haşlanıp dağıtılan diş buğdayı da aynı tahıla bağlanan doğum geleneklerindendir.'),
+dict(kaynak=SIRVANI, kisa='Şirvânî, Şifa Bahçesi (OGM yay.)', bitki='gul', yore='XV. yüzyıl Osmanlı',
+  post='Şirvânî’nin eczacılık kitabında gül şurubu şöyle yapılır: Nusaybin gülünün ya da yerel gülün yaprakları derin bir kazana konur, üzerine kaynar su dökülür, ağzı kapatılıp güller beyazlayana kadar beklenir. Bu yedi kez ya da daha çok tekrarlanır, sonra su süzülüp ağırlığınca şekerle pekmez kıvamına kaynatılır. Kitaba göre sıtmaya ve susuzluğa iyi gelir, mideyi güçlendirir.'),
 ]
 
 def site_kul():
