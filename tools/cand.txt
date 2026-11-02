@@ -6,3 +6,7 @@ serbetciotu | Humulus lupulus |
 hunnap | Ziziphus jujuba | fruit
 bugday | Triticum aestivum | 
 akgunluk | Boswellia sacra | 
+salviadivinorum | Salvia divinorum | 
+ormangulu | Rhododendron ponticum | flower
+baldiran | Conium maculatum | 
+yuksukotu | Digitalis ferruginea | 
