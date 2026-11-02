@@ -118,3 +118,6 @@ OTHER.setdefault('tatula', []).append(('Müller, Love potions and the ointment o
 OTHER.setdefault('sinekmantari', []).append(('Michelot & Melendez-Howell, Amanita muscaria: chemistry, biology, toxicology, and ethnomycology (Mycol Res 2003)', 'https://doi.org/10.1017/S0953756203007305'))
 for _p in ('ayahuasca', 'mapacho', 'toe', 'chiricsanango', 'chuchuhuasi', 'abuta'):
     OTHER.setdefault(_p, []).append(('Luna, The concept of plants as teachers among four mestizo shamans of Iquitos, northeastern Peru (J Ethnopharmacol 1984)', 'https://doi.org/10.1016/0378-8741(84)90036-9'))
+OTHER.setdefault('mapacho', []).append(('Luna, The healing practices of a Peruvian shaman (J Ethnopharmacol 1984)', 'https://doi.org/10.1016/0378-8741(84)90035-7'))
+for _p in ('chiricsanango', 'mapacho'):
+    OTHER.setdefault(_p, []).append(('Sanz-Biset & Cañigueral, Plant use in the medicinal practices known as “strict diets” in Chazuta valley (J Ethnopharmacol 2011)', 'https://doi.org/10.1016/j.jep.2011.05.021'))
