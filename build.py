@@ -866,7 +866,8 @@ LEDE = f'{REG_LIST}’dan {len(P)} şifalı ve ritüel bitkisi. Her kayıtta gel
 
 REG_TXT = {'anadolu':'Nazar tütsüsünden kına gecesine, Anadolu’nun şifa ve ritüel otları.','asya':'İskit tütsülerinden Sibirya şamanlarına, bozkırın ve taygaların bitkileri.',
            'and':'Koka yaprağından kantuta çiçeğine, And Dağları’nın kutsal bitkileri.','amazon':'Ayahuasca sarmaşığından huito boyasına, yağmur ormanının öğretmen bitkileri.',
-           'kamerika':'Ak adaçayından peyoteye, Kuzey Amerika yerli halklarının bitkileri.'}
+           'kamerika':'Ak adaçayından peyoteye, Kuzey Amerika yerli halklarının bitkileri.',
+           'avrupa':'Druidlerin ökse otundan Kupala gecesinin kantaronuna, Kelt ve İskandinav Avrupası’nın bitkileri.'}
 regcards = ''.join(f'<a class="regcard" href="/katalog/?bolge={k}"><span class="where">{dot(k)} {e(v["ad"])}</span><b>{cnt(lambda p,k=k: k in p["bolge"])} bitki</b><span>{e(REG_TXT.get(k,""))}</span></a>' for k,v in regs)
 
 # ---------- her gün yeni bitki: ana sayfa bandı ----------

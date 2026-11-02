@@ -19,6 +19,10 @@
   "kamerika": {
    "ad": "Kuzey Amerika",
    "c": "--r-kamerika"
+  },
+  "avrupa": {
+   "ad": "Avrupa",
+   "c": "--r-avrupa"
   }
  },
  "KAT": {
@@ -337,7 +341,8 @@
    "fam": "Hypericaceae",
    "diger": "Kantaron, binbirdelik otu, St John’s wort",
    "bolge": [
-    "anadolu"
+    "anadolu",
+    "avrupa"
    ],
    "kat": [
     "sifa"
@@ -547,7 +552,8 @@
    "fam": "Rosaceae",
    "diger": "Yemişen, hawthorn",
    "bolge": [
-    "anadolu"
+    "anadolu",
+    "avrupa"
    ],
    "kat": [
     "sifa",
@@ -666,7 +672,8 @@
    "diger": "Kara mürver, sauco",
    "bolge": [
     "anadolu",
-    "and"
+    "and",
+    "avrupa"
    ],
    "kat": [
     "sifa",
@@ -889,7 +896,8 @@
    "fam": "Solanaceae",
    "diger": "Kara banotu, henbane",
    "bolge": [
-    "anadolu"
+    "anadolu",
+    "avrupa"
    ],
    "kat": [
     "zehir",
@@ -1734,7 +1742,8 @@
    "diger": "Barsama otu, yarrow, milenrama",
    "bolge": [
     "anadolu",
-    "kamerika"
+    "kamerika",
+    "avrupa"
    ],
    "kat": [
     "sifa"
@@ -1764,7 +1773,8 @@
    "fam": "Santalaceae",
    "diger": "Gökçe, burç, mistletoe",
    "bolge": [
-    "anadolu"
+    "anadolu",
+    "avrupa"
    ],
    "kat": [
     "ritual",

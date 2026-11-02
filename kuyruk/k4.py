@@ -99,7 +99,7 @@ dict(yayin='2026-11-25', id='akgunluk', tr='Akgünlük', la='Boswellia sacra, B.
   season='Resin oozes from cuts made in the trunk in the hot months; the tears are collected after drying for a few weeks.', habitat='B. sacra on dry rocky slopes in Oman, Yemen and Somalia; B. serrata in the dry forests of India. Overtapping threatens some species.', local='akgünlük, günlük, buhur, kündür', confusion='In Anatolia the name “günlük” is also given to the oriental sweetgum (Liquidambar orientalis) and its resin; they are different plants. Myrrh (Commiphora myrrha) is another resin from the same family.')),
 
 dict(yayin='2026-11-26', id='hus', tr='Huş ağacı', la='Betula pendula', fam='Betulaceae (huşgiller)',
- diger='Huş, akkayın, kayın (Orta Asya Türkçesinde), silver birch', bolge=['asya', 'anadolu'], kat=['sifa', 'ritual'], kisim='Yaprak, kabuk, özsu', taxon='Betula pendula',
+ diger='Huş, akkayın, kayın (Orta Asya Türkçesinde), silver birch', bolge=['asya', 'anadolu', 'avrupa'], kat=['sifa', 'ritual'], kisim='Yaprak, kabuk, özsu', taxon='Betula pendula',
  foto='Betula pendula in Sedovo 1.jpg',
  kul=[['Sibirya ve Orta Asya', 'Altay ve Sibirya halklarında huş kutsal bir ağaçtır. Kam davulunun çerçevesi kayın ya da sedir ağacından yapılır; Altaylı kamların göğe yolculuğu anlatılırken çentikli bir huş direğine tırmandıkları aktarılır.'],
       ['Kuzey ve Doğu Avrupa', 'Rusya’da ve Baltık ülkelerinde ilkbaharda gövdeden alınan huş özsuyu taze içilir. Yaprak çayı idrar söktürmek için kullanılır; hamamda huş dallarından yapılmış demetlerle bedene vurulur.']],

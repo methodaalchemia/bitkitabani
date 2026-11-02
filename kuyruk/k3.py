@@ -306,7 +306,7 @@ dict(yayin='2026-11-20', id='salviadivinorum', tr='Kâhin adaçayı', la='Salvia
  'la': 'Digitalis spp.',
  'fam': 'Plantaginaceae (sinirotugiller)',
  'diger': 'Digitalis lanata (yünlü yüksük otu), D. ferruginea, D. purpurea (kırmızı yüksük otu); İng. foxglove',
- 'bolge': ['anadolu'],
+ 'bolge': ['anadolu', 'avrupa'],
  'kat': ['zehir', 'sifa'],
  'kisim': 'Yaprak (yalnızca ilaç hammaddesi olarak)',
  'taxon': 'Digitalis ferruginea',

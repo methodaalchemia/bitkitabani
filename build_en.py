@@ -389,7 +389,7 @@ def run(G):
 
     # ---------- home ----------
     REG_TXT = {'anadolu': 'Smoke against the evil eye, Anatolian folk healing and plants of the Mediterranean.', 'asya': 'Shamanic smoke of the steppe, Chinese medicine and the roots of Siberia.',
-               'and': 'Coca leaf, the San Pedro cactus and cleansing herbs of the high Andes.', 'amazon': 'Ayahuasca, huito body paint and the forest’s teacher plants.', 'kamerika': 'White sage, peyote and the healing plants of the prairies.'}
+               'and': 'Coca leaf, the San Pedro cactus and cleansing herbs of the high Andes.', 'amazon': 'Ayahuasca, huito body paint and the forest’s teacher plants.', 'kamerika': 'White sage, peyote and the healing plants of the prairies.', 'avrupa': 'Mistletoe of the druids, St John’s wort of Midsummer and the herbs of Celtic and Norse Europe.'}
     regcards = ''.join(f'<a class="regcard" href="/en/catalog/?bolge={k}"><span class="eyebrow">{dot(k)} {e(REG_EN[k])}</span><b>{cnt(lambda p,k=k: k in p["bolge"])} plants</b><span>{REG_TXT[k]}</span></a>' for k in regs)
     FEAT = ['uzerlik','ayahuasca','salep','maca','kantaron','koka','kina','huito','safran','guarana','sigla','peyote']
     AYL = ['January','February','March','April','May','June','July','August','September','October','November','December']

@@ -78,7 +78,7 @@ BR_EN = [
  ('Human-shaped roots','East Asia’s ginseng and the Mediterranean’s mandrake were seen as magical and sacred because their roots look human.'),
  ('Two cacti of mescaline','North America’s peyote and the Andes’ San Pedro carry the same molecule and sit at the heart of ceremonies thousands of years old on two continents.'),
 ]
-REG_EN = {'anadolu': 'Anatolia and the Mediterranean', 'asya': 'Asia and Siberia', 'and': 'Andes', 'amazon': 'Amazon', 'kamerika': 'North America'}
+REG_EN = {'anadolu': 'Anatolia and the Mediterranean', 'asya': 'Asia and Siberia', 'and': 'Andes', 'amazon': 'Amazon', 'kamerika': 'North America', 'avrupa': 'Europe'}
 KAT_EN = {'sifa': 'Healing', 'ritual': 'Ritual and shamanic', 'tutsu': 'Incense and protection', 'besin': 'Food', 'zehir': 'Poisonous'}
 KANIT_EN = {'klinik': 'Clinical', 'sinirli': 'Limited', 'geleneksel': 'Traditional'}
 GUV_EN = {'dusuk': 'Generally safe', 'orta': 'Caution', 'yuksek': 'High risk'}
