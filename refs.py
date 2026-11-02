@@ -121,3 +121,5 @@ for _p in ('ayahuasca', 'mapacho', 'toe', 'chiricsanango', 'chuchuhuasi', 'abuta
 OTHER.setdefault('mapacho', []).append(('Luna, The healing practices of a Peruvian shaman (J Ethnopharmacol 1984)', 'https://doi.org/10.1016/0378-8741(84)90035-7'))
 for _p in ('chiricsanango', 'mapacho'):
     OTHER.setdefault(_p, []).append(('Sanz-Biset & Cañigueral, Plant use in the medicinal practices known as “strict diets” in Chazuta valley (J Ethnopharmacol 2011)', 'https://doi.org/10.1016/j.jep.2011.05.021'))
+for _p in ('ayahuasca', 'chacruna', 'unadegato', 'toe'):
+    OTHER.setdefault(_p, []).append(('Sanz-Biset ve ark., A first survey on the medicinal plants of the Chazuta valley (Peruvian Amazon) (J Ethnopharmacol 2009)', 'https://doi.org/10.1016/j.jep.2008.12.009'))
