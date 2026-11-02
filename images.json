@@ -74,6 +74,19 @@
   "w": 960,
   "w500": 500
  },
+ "ajosacha": {
+  "artist": "KENPEI",
+  "auto": true,
+  "b1280": "Mansoa alliacea1.jpg",
+  "file": "Mansoa alliacea1.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Mansoa_alliacea1.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "akadacayi": {
   "artist": "HLWolfe",
   "b1280": "White sage.jpg",
@@ -286,6 +299,19 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Triticum_aestivum_(ripe)_3.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "camalonga": {
+  "artist": "Charles J. Sharp",
+  "auto": true,
+  "b1280": "Olive-backed sunbird (Cinnyris jugularis flammaxillaris) male eclipse plumage Phi Phi.jpg",
+  "file": "Olive-backed sunbird (Cinnyris jugularis flammaxillaris) male eclipse plumage Phi Phi.jpg",
+  "h": 960,
+  "h500": 500,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Olive-backed_sunbird_(Cinnyris_jugularis_flammaxillaris)_male_eclipse_plumage_Phi_Phi.jpg",
   "w": 960,
   "w500": 500
  },
@@ -771,6 +797,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Borago_officinalis_003-1.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "huayruro": {
+  "artist": "Biologiezentrum der Oberoesterreichischen Landesmuseen",
+  "auto": true,
+  "b1280": "Ormosia coccinea (Aubl.) Jacks.jpg",
+  "file": "Ormosia coccinea (Aubl.) Jacks.jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ormosia_coccinea_(Aubl.)_Jacks.jpg",
   "w": 960,
   "w500": 500
  },
@@ -1345,6 +1384,19 @@
   "w": 960,
   "w500": 500
  },
+ "mucura": {
+  "artist": "Maria Lentzou/Archivo Centro Takiwasi",
+  "auto": true,
+  "b1280": "Hojas de Mucura (Petiveria alliacea) 01.jpg",
+  "file": "Hojas de Mucura (Petiveria alliacea) 01.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Hojas_de_Mucura_(Petiveria_alliacea)_01.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "muna": {
   "artist": "Lidsay Brito",
   "b1280": "Muña creciendo de manera silvestre en la quebrada de Aquilpo.jpg",
@@ -1545,6 +1597,19 @@
   "license": "Public domain",
   "licenseUrl": "",
   "page": "https://commons.wikimedia.org/wiki/File:Peyote_Cactus.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "piripiri": {
+  "artist": "Esly Espinoza",
+  "auto": true,
+  "b1280": "Planta de Piri Piri en el Jardín Botánico de Lima.jpg",
+  "file": "Planta de Piri Piri en el Jardín Botánico de Lima.jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Planta_de_Piri_Piri_en_el_Jard%C3%ADn_Bot%C3%A1nico_de_Lima.jpg",
   "w": 960,
   "w500": 500
  },

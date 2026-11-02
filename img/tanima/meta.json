@@ -1598,5 +1598,40 @@
   "license": "CC0",
   "page": "https://commons.wikimedia.org/wiki/File:Digitalis_ferruginea%2C_Trabzon.jpg"
  },
- "yuksukotu:kuru": "yok"
+ "yuksukotu:kuru": "yok",
+ "camalonga:cizim": "yok",
+ "camalonga:cicek": {
+  "file": "Flowering Yellow Oleander Shrub.jpg",
+  "artist": "Paul The Writer",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Flowering_Yellow_Oleander_Shrub.jpg"
+ },
+ "camalonga:kuru": "yok",
+ "huayruro:cizim": "yok",
+ "huayruro:cicek": {
+  "file": "Ormosia coccinea (Aubl.) Jacks.jpg",
+  "artist": "Biologiezentrum der Oberoesterreichischen Landesmuseen",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ormosia_coccinea_%28Aubl.%29_Jacks.jpg"
+ },
+ "huayruro:kuru": "yok",
+ "piripiri:cizim": "yok",
+ "piripiri:cicek": "yok",
+ "piripiri:kuru": "yok",
+ "ajosacha:cizim": "yok",
+ "ajosacha:cicek": {
+  "file": "Garlic creeper 2.jpg",
+  "artist": "Suresh Khole",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Garlic_creeper_2.jpg"
+ },
+ "ajosacha:kuru": "yok",
+ "mucura:cizim": "yok",
+ "mucura:cicek": {
+  "file": "Petiveria alliacea (flowers) in Costa Rica.jpg",
+  "artist": "Geoff Gallice from Gainesville, FL, USA",
+  "license": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Petiveria_alliacea_%28flowers%29_in_Costa_Rica.jpg"
+ },
+ "mucura:kuru": "yok"
 }
