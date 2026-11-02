@@ -171,4 +171,21 @@ R_EN = {
         'gotukola': 'A meta-analysis of memory and cognitive function found no clear effect.',
         'dagcayi': 'A few small studies on attention and cognitive function gave limited results.'},
  uyari='Marked and worsening forgetfulness can be a sign of illness; see a neurologist or your GP.'),
+'ucucu-yaglar-aromaterapi': dict(slug='essential-oils-aromatherapy', kisa='Essential oils', baslik='Essential oils and aromatherapy: what does the evidence say, and where to be careful?',
+ aciklama='Lavender, bitter orange, rose, peppermint and ginger oil: the evidence for aromatherapy in anxiety, sleep and nausea, and the safety rules to know when using essential oils.',
+ giris='Essential oils are concentrated extracts that carry a plant’s scent; they are usually inhaled, diluted for massage or added to a bath. Clinical studies suggest that some may help with anxiety and nausea, but because they are concentrated they can also cause harm when used wrongly.',
+ ozet='Lavender oil is the most studied. Clinical trials and a meta-analysis suggest that inhaled or massaged lavender can reduce pre-operative anxiety and sleep problems; bitter orange and rose oil appear in similar studies. Inhaled peppermint and ginger oil have been tried for nausea. Evidence that essential oils reduce inflammation comes mostly from cell and animal studies; there is not yet enough evidence in humans.',
+ notes={'lavanta': 'Studies show that inhaled or massaged lavender reduces anxiety before surgery, during dental treatment and in dialysis. Standardised oral lavender oil capsules are used as a medicine for anxiety.',
+        'turunc': 'Bitter orange oil was tested in anxiety studies together with or against lavender; in one study it was as effective as lavender in men.',
+        'nane': 'Inhaling peppermint oil, alone or with ginger oil, has been tried to ease nausea in adults.',
+        'zencefil': 'Inhaled ginger oil features in nausea studies.',
+        'papatya': 'Massage with chamomile and lavender oil improved anxiety and sleep quality in patients being treated for burns.'},
+ uyari='If you have swallowed an essential oil, got it in your eyes, or develop widespread skin redness or shortness of breath, seek medical help at once. Talk to a doctor before using essential oils with young children or in pregnancy.',
+ ek=[('Safety when using essential oils', [
+        'Although natural, essential oils can cause allergy, contact dermatitis, sensitivity to light and eye irritation. They should not be applied undiluted to the skin; try a new oil on a small patch before using it on a larger area.',
+        'Citrus oils such as lemon and bergamot can cause light burns that may leave lasting marks if applied to the skin before going out in the sun.',
+        'Do not drink essential oils without expert advice: they can cause digestive problems and depress the nervous system. If oil gets into the eyes, rinse with plenty of water.',
+        'Essential oils break down in air over time and harmful substances can form; keep them tightly closed in a cool, dark place and do not use old oil.']),
+     ('Essential oils for inflammation?', [
+        'A systematic review of studies from 2017–2022 examined the anti-inflammatory effect of 48 plant essential oils. The effects were shown in cell and animal experiments, but because there are few clinical studies in humans, these oils cannot be said to be effective or safe in the long term against inflammation.'])]),
 }

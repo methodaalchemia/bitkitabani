@@ -414,6 +414,8 @@ def run(G):
 <section class="kisaca"><h2>In short</h2><p>{e(r["ozet"])}</p></section>
 <section class="sec"><h2>The plants, strongest evidence first</h2><div class="rb-list">{"".join(gitem(p, r["notes"][p["id"]]) for p in ps)}</div></section>
 <aside class="warnbox" role="note"><b>When to see a doctor:</b> {e(r["uyari"])}</aside>
+{"".join(f'<section class="sec"><h2>{e(h)}</h2>' + ''.join(f'<p>{e(x)}</p>' for x in xs) + '</section>' for h, xs in r.get('ek', []))}
+{('<section class="sec"><h2>Sources</h2><ol class="refs">' + ''.join(f'<li><a href="{e(u)}" target="_blank" rel="noopener">{e(t.replace(' ve ark.', ' et al.'))}</a></li>' for t, u in k['kaynaklar']) + '</ol></section>') if k.get('kaynaklar') else ''}
 {DIS}
 <section class="sec"><h2>Other guides</h2><ul class="otherlist">{others}</ul></section>
 </article>'''
@@ -424,7 +426,7 @@ def run(G):
     gl = ''.join(f'<li><a href="/en/guides/{R_EN[k["slug"]]["slug"]}/"><b>{e(R_EN[k["slug"]]["kisa"])}</b></a><span>{e(R_EN[k["slug"]]["aciklama"])}</span></li>' for k in live)
     hub = f'''<nav class="crumbs" aria-label="Breadcrumb"><a href="/en/">Home</a><span>/</span><span>Guides</span></nav>
 <header class="page-head"><span class="eyebrow">Guides</span><h1>Which herb for which complaint? With the evidence and the risks</h1><p>Plants from the catalog grouped by complaint. In each guide the plants are ranked from the strongest evidence down, each with its safety label and a link to its page.</p></header>
-<section class="sec"><ul class="guidelist">{gl}</ul></section>{DIS}'''
+<section class="sec"><h2>Safety</h2><ul class="guidelist"><li><a href="/en/guides/drug-interactions/"><b>Herb–drug interactions</b></a><span>Pick your medicine group and see which plants in the catalog are reported to interact with it.</span></li><li><a href="/en/guides/pregnancy-breastfeeding/"><b>Pregnancy and breastfeeding</b></a><span>Plants to avoid or use with care in pregnancy and while breastfeeding.</span></li><li><a href="/en/guides/poisonous-plants/"><b>Poisonous plants and look-alikes</b></a><span>Autumn crocus, poison hemlock, thorn apple, mad honey: what they are confused with and how to tell them apart.</span></li></ul></section><section class="sec"><h2>By complaint</h2><ul class="guidelist">{gl}</ul></section>{DIS}'''
     write('/en/guides/', page('Which herb for which complaint? Medicinal plant guides | Bitki Tabanı', 'Herbs for sleep, cough, indigestion, colds, anxiety and more: evidence levels, safety notes and drug interactions.', '/en/guides/', '/rehber/', hub, 'guides', narrow=True))
 
     # ---------- recipes (/en/recipes/) and comparisons (/en/compare/) ----------
@@ -513,6 +515,62 @@ def run(G):
     write('/en/concepts/', page('Concepts: shamanism, ritual and ancestral knowledge | Bitki Tabanı', 'A concept a day, each paired with a plant: animism, the kam, the evil eye, Pachamama, limpia, teacher plants and more.', '/en/concepts/', '/kavram/',
           f'<nav class="crumbs" aria-label="Breadcrumb"><a href="/en/">Home</a><span>/</span><span>Concepts</span></nav><header class="page-head"><span class="eyebrow">A concept and a plant every day</span><h1>Concepts</h1><p>From shamanism to folk belief, from ritual to ancestral knowledge: a short, sourced concept every day, each paired with a plant.</p></header>' + (f'<section class="sec"><ul class="guidelist">{kl}</ul></section>' if kl else '<p>The first concept arrives tomorrow.</p>'), 'concepts', narrow=True))
 
+    # ---------- safety guides ----------
+    from guven_en import ILAC_EN, FITO_PREG, FITO_PREG_NOTE, FITO_SRC, Z_KARIS, Z_HALK, Z_NEDEN, Z_KAYNAK
+    ILAC, ETK_TR = G['ILAC'], G['ETK']
+    _lw = lambda s: s.replace('I', 'ı').replace('İ', 'i').lower()
+    ebys = {c: [] for c, _, _ in ILAC}
+    for pid, rows in ETK_TR.items():
+        if pid not in byId or pid not in ETK_EN or len(ETK_EN[pid]) != len(rows): continue
+        for (g, w), (ge, we) in zip(rows, ETK_EN[pid]):
+            for c, _, keys in ILAC:
+                if any(kw in _lw(g).replace('göz tansiyonu', 'glokom') for kw in keys) and not any(x[0] == pid for x in ebys[c]):
+                    ebys[c].append((pid, ge, we))
+    sel = ''.join(f'<li><a href="#{c}">{e(ILAC_EN[c])}</a> ({len(ebys[c])})</li>' for c, _, _ in ILAC if ebys[c])
+    secs = ''.join(f'<section class="sec" id="{c}"><h2>{e(ILAC_EN[c])}</h2><div class="tablewrap"><table class="cmp etk"><thead><tr><th scope="col">Plant</th><th scope="col">Possible interaction</th></tr></thead><tbody>' + ''.join(f'<tr><th scope="row"><a href="/en/{pid}/">{e(name(byId[pid]))}</a></th><td>{e(we)}</td></tr>' for pid, ge, we in sorted(ebys[c], key=lambda x: name(byId[x[0]]))) + '</tbody></table></div></section>' for c, _, _ in ILAC if ebys[c])
+    nplants = len({pid for v in ebys.values() for pid, _, _ in v})
+    path = '/en/guides/drug-interactions/'
+    body = f"""<nav class="crumbs" aria-label="Breadcrumb"><a href="/en/">Home</a><span>/</span><a href="/en/guides/">Guides</a><span>/</span><span>Drug interactions</span></nav>
+<article class="sheet"><header class="page-head"><span class="eyebrow">Safety tool · {nplants} plants</span><h1>Herb–drug interactions: which plants can cause problems with your medicine?</h1><p>Plants contain active substances just as medicines do. Some can strengthen your medicine’s effect, some weaken it, and some add to its side effects. Below, the interactions reported in the catalog are grouped by medicine.</p></header>
+<aside class="warnbox" role="note"><b>This list is not complete.</b> It covers only interactions reported in the catalog entries; a plant missing from the list is not proof that it is safe with your medicine. If you take medicines regularly, ask your pharmacist or doctor before starting any herbal product.</aside>
+<section class="sec"><h2>Medicine groups</h2><ul class="otherlist">{sel}</ul></section>
+{secs}
+<section class="sec"><h2>Take special care</h2><p><a href="/en/kantaron/">St John’s wort</a> is the best-known plant that weakens many medicines, including birth control pills, blood thinners and some heart and transplant drugs. Taken with antidepressants it can cause serotonin syndrome.</p></section>
+{DIS}</article>"""
+    write(path, page('Herb–drug interactions: which herbs interact with which medicines? | Bitki Tabanı', f'Blood thinners, blood pressure, diabetes and antidepressant medicines and the pill: {nplants} medicinal plants with reported interactions, grouped by medicine.', path, '/rehber/ilac-etkilesimi/', body, 'guides', narrow=True))
+
+    _pr = re.compile(r'[Pp]regnan|[Bb]reastfeed|[Mm]iscarr')
+    def _preg_en(pid):
+        t = EN[pid].get('safety', '')
+        return ' '.join(x for x in re.split(r'(?<=[.!?])\s+', t) if _pr.search(x))
+    pg = sorted([(byId[p['id']], _preg_en(p['id'])) for p, _ in G['preg'] if p['id'] in byId and _preg_en(p['id'])], key=lambda x: name(x[0]))
+    hi = sorted([p for p in P if p['guv'] == 'yuksek' and not _preg_en(p['id'])], key=name)
+    lk = lambda pid, label: f'<a href="/en/{pid}/">{e(label)}</a>' if pid in byId else e(label)
+    path = '/en/guides/pregnancy-breastfeeding/'
+    body = f"""<nav class="crumbs" aria-label="Breadcrumb"><a href="/en/">Home</a><span>/</span><a href="/en/guides/">Guides</a><span>/</span><span>Pregnancy and breastfeeding</span></nav>
+<article class="sheet"><header class="page-head"><span class="eyebrow">Safety guide · {len(pg)} plants</span><h1>Herbs to avoid or use with care in pregnancy and while breastfeeding</h1><p>Herbal teas are often assumed to be harmless because they are “natural”. Yet some plants can stimulate the uterus, some contain substances that pass to the baby, and for many there are simply not enough data to show they are safe in pregnancy. Below are the plants whose catalog safety note carries a specific warning for pregnancy or breastfeeding.</p></header>
+<aside class="warnbox" role="note"><b>Important:</b> A plant missing from this list is not safe in pregnancy by default. In pregnancy and while breastfeeding, talk to your doctor or pharmacist before any herbal product, tea course or supplement beyond the amounts used in food.</aside>
+<section class="sec"><h2>Plants with a pregnancy or breastfeeding warning</h2><div class="tablewrap"><table class="cmp etk"><thead><tr><th scope="col">Plant</th><th scope="col">Warning</th><th scope="col">Safety</th></tr></thead><tbody>{"".join(f'<tr><th scope="row"><a href="/en/{p["id"]}/">{e(name(p))}</a></th><td>{e(t)}</td><td><span class="sf {p["guv"]}">{e(GUV_EN[p["guv"]] if isinstance(GUV_EN[p["guv"]], str) else GUV_EN[p["guv"]].get("ad", p["guv"]))}</span></td></tr>' for p, t in pg)}</tbody></table></div></section>
+<section class="sec"><h2>According to the Turkish Ministry of Health phytotherapy book</h2><p>The Phytotherapy Practice Book published by the Turkish Ministry of Health in 2022 gives explicit warnings for some plants in its chapters on gynaecology and pregnancy:</p><div class="tablewrap"><table class="cmp etk"><thead><tr><th scope="col">Plant</th><th scope="col">Warning in the book</th></tr></thead><tbody>{"".join(f'<tr><th scope="row">{lk(pid, lab)}</th><td>{e(w)}</td></tr>' for pid, lab, w in FITO_PREG)}</tbody></table></div><p>{e(FITO_PREG_NOTE)}</p><p class="muted-s">Source: {e(FITO_SRC)}</p></section>
+{('<section class="sec"><h2>Also: high-risk plants</h2><p>These plants are poisonous or have serious side effects, so they are not recommended in pregnancy or at any other time; they are in the catalog for their cultural and historical importance.</p><ul class="otherlist">' + ''.join(f'<li><a href="/en/{p["id"]}/">{e(name(p))}</a></li>' for p in hi) + '</ul></section>') if hi else ''}
+<section class="sec"><h2>For nausea</h2><p>The most researched plant for nausea in pregnancy is ginger; small studies are positive. Talk to your doctor before using it too. <a href="/en/guides/nausea/">See the nausea guide →</a></p></section>
+{DIS}</article>"""
+    write(path, page('Herbs to avoid in pregnancy and while breastfeeding | Bitki Tabanı', f'{len(pg)} medicinal plants with warnings for pregnancy and breastfeeding: sage, fennel, senna, chaste tree and more.', path, '/rehber/hamilelik-emzirme/', body, 'guides', narrow=True))
+
+    def _zad(pid, ad): return f'<a href="/en/{pid}/">{e(ad)}</a>' if pid in byId else e(ad)
+    zhi = sorted([p for p in P if p['guv'] == 'yuksek' and 'anadolu' in p['bolge']], key=name)
+    path = '/en/guides/poisonous-plants/'
+    body = f"""<nav class="crumbs" aria-label="Breadcrumb"><a href="/en/">Home</a><span>/</span><a href="/en/guides/">Guides</a><span>/</span><span>Poisonous plants</span></nav>
+<article class="sheet"><header class="page-head"><span class="eyebrow">Safety guide</span><h1>Poisonous plants in Turkey and their most common look-alikes: how to tell them apart</h1><p>Many plant poisonings happen when an edible or medicinal plant is confused with a poisonous look-alike. Below are the poisonous plants most often confused in Anatolia, how to tell them apart, and folk practices that lead to poisoning.</p></header>
+<aside class="warnbox" role="note"><b>If you suspect poisoning:</b> in Turkey call the National Poison Information Centre on <a href="tel:114"><b>114</b></a> (24/7, free), or <a href="tel:112"><b>112</b></a> if the situation is serious; elsewhere call your local poison centre or emergency number. Take a piece or a photo of the plant with you; do not try to induce vomiting or give milk or oil without advice.</aside>
+<section class="sec"><h2>The main causes of plant poisoning in Turkey</h2><p>The Turkish Ministry of Health phytotherapy book summarises plant poisonings in Turkey under these causes:</p><ul>{"".join(f"<li>{e(x)}</li>" for x in Z_NEDEN)}</ul><p>According to the book, most cases are in children aged 1–12 who eat poisonous species by mistake.</p></section>
+<section class="sec"><h2>Plants that look alike</h2><div class="tablewrap"><table class="cmp etk"><thead><tr><th scope="col">Poisonous plant</th><th scope="col">Confused with</th><th scope="col">How to tell them apart</th><th scope="col">Symptoms</th></tr></thead><tbody>{"".join(f'<tr><th scope="row">{_zad(pid, d["ad"])}<br><i class="muted-s">{e(d["lat"])}</i></th><td>{e(d["benzer"])}</td><td>{e(d["ayirt"])}</td><td>{e(d["belirti"])}</td></tr>' for pid, d in Z_KARIS.items())}</tbody></table></div><p class="muted-s">Do not gather or eat a plant you cannot identify with certainty. Do not rely on identification from a photo or an app.</p></section>
+<section class="sec"><h2>Folk practices that lead to poisoning</h2>{"".join(f"<h3>{_zad(pid, ad)}</h3><p>{e(t)}</p>" for pid, (ad, t) in Z_HALK.items())}</section>
+{('<section class="sec"><h2>High-risk Anatolian plants in the catalog</h2><p>These plants are poisonous or have serious side effects; they are in the catalog for their cultural and historical importance and are not recommended for use.</p><ul class="otherlist">' + ''.join(f'<li><a href="/en/{p["id"]}/">{e(name(p))}</a></li>' for p in zhi) + '</ul></section>') if zhi else ''}
+<section class="sec"><h2>Sources</h2><ol class="refs">{"".join(f"<li><cite>{e(t)}</cite></li>" for t in Z_KAYNAK)}</ol></section>
+{DIS}</article>"""
+    write(path, page('Poisonous plants in Turkey and their look-alikes | Bitki Tabanı', 'Autumn crocus, poison hemlock, thorn apple, henbane, foxglove, mad honey and oleander: what they are confused with, how to tell them apart and what to do in a poisoning.', path, '/rehber/zehirli-bitkiler/', body, 'guides', narrow=True))
+
     # ---------- articles (blog) ----------
     from yazilar_en import Y_EN
     YZ = [y for y in G['YAZILAR'] if y['slug'] in Y_EN]
@@ -525,7 +583,7 @@ def run(G):
             return f'<a href="/en/{pid}/">{e(nm)}</a>'
         _ap = lambda t: re.sub(r'\[(\d+)\]', lambda m: f'<sup><a href="#k{m.group(1)}">[{m.group(1)}]</a></sup>', re.sub(r'\{([a-z0-9]+)\}', _al, e(t)))
         secs = ''.join(f'<section class="sec"><h2>{e(h)}</h2>' + ''.join(f'<p>{_ap(x)}</p>' for x in ps) + '</section>' for h, ps in r['bolumler'])
-        kay = '<ol class="refs">' + ''.join((f'<li id="k{j}"><a href="{e(u)}" target="_blank" rel="noopener">{e(t)}</a></li>' if u else f'<li id="k{j}"><cite>{e(t)}</cite></li>') for j, (t, u) in enumerate(y['kaynaklar'], 1)) + '</ol>'
+        kay = '<ol class="refs">' + ''.join((f'<li id="k{j}"><a href="{e(u)}" target="_blank" rel="noopener">{e(t.replace(' ve ark.', ' et al.'))}</a></li>' if u else f'<li id="k{j}"><cite>{e(t.replace(' ve ark.', ' et al.'))}</cite></li>') for j, (t, u) in enumerate(y['kaynaklar'], 1)) + '</ol>'
         bit = ''.join(f'<a class="chip" href="/en/{x}/">{e(name(byId[x]))}</a>' for x in y['bitkiler'] if x in byId)
         img = next((f'{BASE}/img/{x}-960.jpg' for x in y['bitkiler'] if x in IMG), None)
         body = f'''<nav class="crumbs" aria-label="Breadcrumb"><a href="/en/">Home</a><span>/</span><a href="/en/articles/">Articles</a><span>/</span><span>{e(r["baslik"])}</span></nav>
