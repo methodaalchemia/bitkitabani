@@ -290,15 +290,15 @@
   "w500": 500
  },
  "bobinsana": {
-  "artist": "Carlo Brescia",
-  "auto": true,
-  "b1280": "Bobinsana (Calliandra angustifolia) en Granja Viana, flores - IMG 8120.jpg",
-  "file": "Bobinsana (Calliandra angustifolia) en Granja Viana, flores - IMG 8120.jpg",
-  "h": 1280,
-  "h500": 667,
+  "artist": "François Delonnay",
+  "auto": false,
+  "b1280": "Flores y hojas de la Bobinsana (Calliandra angustifolia).jpg",
+  "file": "Flores y hojas de la Bobinsana (Calliandra angustifolia).jpg",
+  "h": 640,
+  "h500": 333,
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Bobinsana_(Calliandra_angustifolia)_en_Granja_Viana,_flores_-_IMG_8120.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Flores_y_hojas_de_la_Bobinsana_(Calliandra_angustifolia).jpg",
   "w": 960,
   "w500": 500
  },
