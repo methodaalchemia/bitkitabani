@@ -18,6 +18,7 @@ def run(G):
     from rehber_en import R_EN
     from tarif_en import T_EN as T_EN2
     from yazilar_en import Y_EN as Y_EN2
+    from motif_en import M_EN as M_EN2
     from misc_en import ALT_EN, KORUMA_EN, YASAL_EN, YASAL_AD_EN, BR_EN, REG_EN, KAT_EN, KANIT_EN, GUV_EN, KAN_AD_EN, BIO_EN
     EN.update(G.get('EN_NEW', {})); ETK_EN.update(G.get('ETK_EN_NEW', {}))
     YENI, NEWEST, LOCAL_DAY = G['YENI'], G['NEWEST'], G['LOCAL_DAY']
@@ -69,8 +70,8 @@ def run(G):
 <body>
 <div class="wrap{{narrow}}">
 '''
-    MENU_EN = [('Explore', [('/en/catalog/', 'Catalog', 'kat'), ('/en/bridges/', 'Culture bridges', 'br'), ('/en/harvest-calendar/', 'Harvest calendar', 'calendar'), ('/en/ritual-calendar/', 'Ritual calendar', 'calendar')]),
-               ('Guides', [('/en/guides/', 'Herbs by complaint', 'guides'), ('/en/recipes/', 'Herbal tea recipes', 'recipes'), ('/en/concepts/', 'Concept of the day', 'concepts'), ('/en/articles/', 'Articles', 'articles')]),
+    MENU_EN = [('Explore', [('/en/catalog/', 'Catalog', 'kat'), ('/en/bridges/', 'Culture bridges', 'br'), ('/en/regions/', 'Regions of Anatolia', 'regions'), ('/en/harvest-calendar/', 'Harvest calendar', 'calendar'), ('/en/ritual-calendar/', 'Ritual calendar', 'calendar')]),
+               ('Guides', [('/en/guides/', 'Herbs by complaint', 'guides'), ('/en/recipes/', 'Herbal tea recipes', 'recipes'), ('/en/concepts/', 'Concept of the day', 'concepts'), ('/en/symbols/', 'Symbols', 'symbols'), ('/en/articles/', 'Articles', 'articles')]),
                ('Bitki Tabanı', [('/en/about/', 'About and method', 'about'), ('https://www.instagram.com/bitkitabani/', 'Instagram', 'ig'), ('/en/account/', 'Account', 'acct'), ('/en/privacy/', 'Privacy', 'priv'), ('mailto:iletisim@bitkitabani.com', 'Contact', 'mail')])]
     def nav(cur, tr_path):
         a = lambda href, label, key: f'<a href="{href}"{" aria-current=\"page\"" if cur == key else ""}{" rel=\"noopener\"" if href.startswith("http") else ""}>{label}</a>'
@@ -235,6 +236,7 @@ def run(G):
         _rm = [(f'/en/guides/{R_EN[k["slug"]]["slug"]}/', 'Guide: ' + R_EN[k['slug']]['kisa']) for k in G['KONULAR'] if k['slug'] in R_EN and any(x == pid for x, _ in k['bitkiler']) and sum(1 for z, _ in k['bitkiler'] if z in byId) >= 2]
         _rm += [(f'/en/recipes/{T_EN2[t["slug"]]["slug"]}/', 'Recipe: ' + T_EN2[t['slug']]['ad']) for t in G['LIVE_T'] if t['bitki'] == pid and t['slug'] in T_EN2]
         _rm += [(f'/en/articles/{Y_EN2[y["slug"]]["slug"]}/', 'Article: ' + Y_EN2[y['slug']]['baslik']) for y in G['YAZILAR'] if y['slug'] in Y_EN2 and pid in y['bitkiler']]
+        _rm += [(f'/en/symbols/{M_EN2[m["slug"]]["slug"]}/', 'Symbol: ' + M_EN2[m['slug']]['ad']) for m in G['MOTIFLER'] if m['slug'] in M_EN2 and any(x == pid for x, _ in m['bitkiler'])]
         if p['guv'] == 'yuksek' or pid in BKAR_EN: _rm.append(('/en/guides/poisonous-plants/', 'Poisonous plants and look-alikes'))
         if _rm:
             body_s += '<section class="sec"><h2>Read more</h2><div class="brlinks">' + ''.join(f'<a class="chip" href="{u}">{e(t)}</a>' for u, t in _rm) + '</div></section>'
@@ -615,6 +617,66 @@ def run(G):
     path = '/en/harvest-calendar/'
     write(path, page(f'Medicinal plant harvest calendar for Anatolia: what to gather in {AYLAR_EN[_cur-1]} | Bitki Tabanı', f'Month by month, the medicinal plants gathered in Anatolia. {len(_cal[_cur])} plants are in season in {AYLAR_EN[_cur-1]}.', path, '/toplama-takvimi/',
           f'<nav class="crumbs" aria-label="Breadcrumb"><a href="/en/">Home</a><span>/</span><span>Harvest calendar</span></nav><article class="sheet"><header class="page-head"><span class="eyebrow">Anatolia · month by month</span><h1>What to gather when: a medicinal plant calendar</h1><p>The gathering season of Anatolian plants in the catalog, starting with this month. High-risk, protected and legally restricted plants are left out.</p></header><aside class="warnbox" role="note"><b>When gathering:</b> pick only plants you can identify with certainty (see <a href="/en/guides/poisonous-plants/">poisonous look-alikes</a>), away from roadsides and sprayed fields; take only part of a plant so it can grow back.</aside>{_cs}</article>', 'calendar', narrow=True))
+
+    # ---------- regions (field studies by province) ----------
+    YIL, YSAY, _ils, _YD = G['YORE_IL'], G['YORE_SAYFA'], G['_ilslug'], G['_YD']
+    def _map():
+        s = G['tr_haritasi']()
+        s = re.sub(r'href="/yore/([a-z0-9-]+)/"', r'href="/en/regions/\1/"', s)
+        s = re.sub(r'href="/yoreler/#il-([a-z0-9-]+)"', r'href="/en/regions/#\1"', s)
+        s = re.sub(r'(\d+) bitki', r'\1 plants', s).replace('Türkiye yöre haritası: saha çalışması olan iller renkli', 'Map of Turkey: provinces with field studies are coloured')
+        return s
+    def _ilsec(il, d, tag='h2'):
+        bl = sorted(d['bitki'], key=lambda q: name(byId[q]))
+        def _loc(q):
+            ns = sorted({_YD.get(f'{c["id"]}:{q}', {}).get('ad', '') for c in d['bitki'][q]} - {''})
+            return f' <i class="muted-s">({e(", ".join(ns))})</i>' if ns else ''
+        chips = ''.join(f'<li><a href="/en/{q}/">{e(name(byId[q]))}</a>{_loc(q)}</li>' for q in bl)
+        cal = ''.join(f'<li>{e(c["ilce"] + ": ") if c["ilce"] else ""}<a href="{c["url"]}" target="_blank" rel="noopener">{e(c["baslik"])}</a> · {e(c["yazar"].replace(" ve ark.", " et al.").replace(" ve ", " and "))}, <i>{e(c["dergi"])}</i>, {c["yil"]}</li>' for c in d['cal'])
+        return f'<{tag}>{e(il)} <small class="muted-s">· {len(bl)} plants</small></{tag}><ul class="adlar">{chips}</ul><p class="muted-s">Field studies:</p><ul class="srclist">{cal}</ul>'
+    _order = sorted(YIL, key=lambda il: il.translate(str.maketrans('ÇĞİÖŞÜçğıöşü', 'CGIOSUcgiosu')))
+    _nc = len({c['id'] for d in YIL.values() for c in d['cal']})
+    WARN = '<aside class="warnbox" role="note"><b>When reading:</b> a plant recorded in a region shows that the use is known locally, not that it works. For evidence and safety, see the plant’s own page.</aside>'
+    rb = (f'<nav class="crumbs" aria-label="Breadcrumb"><a href="/en/">Home</a><span>/</span><span>Regions</span></nav><header class="page-head"><span class="eyebrow">Regions · {len(YIL)} provinces · {_nc} field studies</span><h1>Which medicinal plants are used where in Anatolia?</h1><p>The provinces where plants in the catalog were recorded in ethnobotanical field studies in Turkey. Tap a coloured province; every record links to its study. Local plant names are given in Turkish as recorded.</p></header>'
+          f'<figure class="trmap-w">{_map()}<figcaption>Map: Natural Earth (public domain). Dots mark where a field study was carried out. Names of people and villages are not published.</figcaption></figure>{WARN}'
+          + ''.join(f'<section class="sec" id="{_ils(il)}">' + _ilsec(il, YIL[il]) + (f'<p><a class="cta small" href="/en/regions/{_ils(il)}/">{e(il)} page →</a></p>' if il in YSAY else '') + '</section>' for il in _order))
+    write('/en/regions/', page('Medicinal plants by region in Turkey: ethnobotanical field studies | Bitki Tabanı', f'Medicinal plants recorded in ethnobotanical field studies in {len(YIL)} Turkish provinces, on a map, with local names and sources.', '/en/regions/', '/yoreler/', rb, 'regions', narrow=True))
+    for il in YSAY:
+        d = YIL[il]; path = f'/en/regions/{_ils(il)}/'
+        top3 = ', '.join(name(byId[q]).lower() for q in sorted(d['bitki'], key=lambda q: -len(d['bitki'][q]))[:3])
+        body = f'<nav class="crumbs" aria-label="Breadcrumb"><a href="/en/">Home</a><span>/</span><a href="/en/regions/">Regions</a><span>/</span><span>{e(il)}</span></nav><article class="sheet"><header class="page-head"><span class="eyebrow">Region</span><h1>Medicinal plants used in {e(il)}</h1><p>Plants in the catalog recorded in ethnobotanical field studies in {e(il)} province, with the local names noted by the researchers.</p></header>{WARN}<section class="sec">{_ilsec(il, d)}</section></article>'
+        write(path, page(f'Medicinal plants used in {il}, Turkey | Bitki Tabanı', f'{len(d["bitki"])} medicinal plants recorded in field studies in {il}: {top3} and more. With sources.', path, f'/yore/{_ils(il)}/', body, 'regions', narrow=True))
+
+    # ---------- symbols ----------
+    from motif_en import M_EN, TEMA_EN
+    MOT, msvg = G['MOTIFLER'], G['motif_svg']
+    def _esvg(mo): return msvg(mo).replace(' motifi çizimi"', ' motif drawing"').replace(f'aria-label="{e(mo["ad"])} motif drawing"', f'aria-label="{e(M_EN[mo["slug"]]["ad"])} motif drawing"')
+    _ms = lambda t: re.sub(r'\[(\d+)\]', lambda m: f'<sup><a href="#k{m.group(1)}">[{m.group(1)}]</a></sup>', e(t))
+    MOT = [mo for mo in MOT if mo['slug'] in M_EN]
+    for mo in MOT:
+        r = M_EN[mo['slug']]; path = f'/en/symbols/{r["slug"]}/'
+        bit = ''.join(f'<li><a href="/en/{x}/"><b>{e(name(byId[x]))}</b></a>: {e(r["notes"].get(x, ""))}</li>' for x, n in mo['bitkiler'] if x in byId)
+        same = [o for o in MOT if o['tema'] == mo['tema'] and o is not mo]
+        kay = '<ol class="refs">' + ''.join((f'<li id="k{j}"><a href="{e(u)}" target="_blank" rel="noopener">{e(t)}</a></li>' if u else f'<li id="k{j}"><cite>{e(t)}</cite></li>') for j, (t, u) in enumerate(mo['kaynaklar'], 1)) + '</ol>'
+        body = f"""<nav class="crumbs" aria-label="Breadcrumb"><a href="/en/">Home</a><span>/</span><a href="/en/symbols/">Symbols</a><span>/</span><span>{e(r["ad"])}</span></nav>
+<article class="sheet">
+<header class="motif-head"><div class="motif-art">{_esvg(mo)}</div><div><span class="eyebrow">{e(r["bolge"])} · {e(TEMA_EN.get(mo["tema"], ""))}</span><h1>{e(r["ad"])}</h1><p class="lede">{e(r["kisa"])}</p></div></header>
+<section class="sec"><h2>What does it mean?</h2><p>{_ms(r["anlam"])}</p></section>
+{('<section class="sec"><h2>Related plants</h2><ul class="otherlist">' + bit + '</ul></section>') if bit else ''}
+{('<section class="sec"><h2>Same theme</h2><div class="motif-mini">' + ''.join(f'<a href="/en/symbols/{M_EN[o["slug"]]["slug"]}/">{_esvg(o)}<span>{e(M_EN[o["slug"]]["ad"])}</span></a>' for o in same) + '</div></section>') if same else ''}
+<section class="sec"><h2>Sources</h2>{kay}</section>
+<aside class="disclaimer" role="note"><b>A cultural record.</b> The meanings of motifs are given as the sources state them; the same motif may be read differently in different regions.</aside>
+<p class="updated">Drawing: Bitki Tabanı, interpreted from the traditional motif.</p>
+</article>"""
+        write(path, page(f'{r["ad"]} motif: meaning and origin | Bitki Tabanı', f'{r["ad"]} ({r["bolge"]}): {r["kisa"]}'[:158], path, f'/semboller/{mo["slug"]}/', body, 'symbols', narrow=True,
+              extra=f'<script type="application/ld+json">{json.dumps({"@context":"https://schema.org","@type":"Article","headline":r["ad"] + " motif","description":r["kisa"],"inLanguage":"en","url":BASE+path,"author":AUTHOR,"citation":[t for t, u in mo["kaynaklar"]]}, ensure_ascii=False)}</script>'))
+    _chips = '<button type="button" class="chip" data-t="" aria-pressed="true">All</button>' + ''.join(f'<button type="button" class="chip" data-t="{k}" aria-pressed="false">{e(v)}</button>' for k, v in TEMA_EN.items())
+    _sc = ''.join(f'<a class="motifcard" data-t="{mo["tema"]}" href="/en/symbols/{M_EN[mo["slug"]]["slug"]}/">{_esvg(mo)}<b>{e(M_EN[mo["slug"]]["ad"])}</b><span class="muted-s">{e(M_EN[mo["slug"]]["bolge"])}</span></a>' for mo in MOT)
+    write('/en/symbols/', page('Symbols: from kilim motifs to the chakana, their meanings and origins | Bitki Tabanı', 'Eye, cocklebur, elibelinde, ram’s horn, tree of life, chakana, kené: traditional motifs from Anatolia to the Andes, with meanings, sources and related plants.', '/en/symbols/', '/semboller/',
+          f"""<nav class="crumbs" aria-label="Breadcrumb"><a href="/en/">Home</a><span>/</span><span>Symbols</span></nav><header class="page-head"><span class="eyebrow">Symbols · {len(MOT)} motifs</span><h1>Symbols</h1><p>From the evil-eye motif in kilims to the stepped cross of the Andes: motifs woven, dyed and drawn across generations. We have redrawn each by hand and explain its meaning with sources and the plants it is linked to.</p></header>
+<div class="chips motif-filtre" role="group" aria-label="By theme">{_chips}</div>
+<div class="motifgrid">{_sc}</div>
+<script>(function(){{var B=document.querySelectorAll('.motif-filtre .chip');B.forEach(function(b){{b.addEventListener('click',function(){{var t=b.dataset.t;B.forEach(function(x){{x.setAttribute('aria-pressed',x===b?'true':'false')}});document.querySelectorAll('.motifcard').forEach(function(c){{c.hidden=!!t&&c.dataset.t!==t}})}})}})}})();</script>""", 'symbols', narrow=True))
 
     # ---------- articles (blog) ----------
     from yazilar_en import Y_EN
