@@ -1569,5 +1569,34 @@
   "license": "CC BY 3.0 us",
   "page": "https://commons.wikimedia.org/wiki/File:Starr-180610-3942-Triticum_aestivum-Rouge_de_Bordeaux_heads_in_flower-Hawea_Pl_Olinda-Maui_%2843429943082%29.jpg"
  },
- "bugday:kuru": "yok"
+ "bugday:kuru": "yok",
+ "ormangulu:cizim": "yok",
+ "ormangulu:cicek": {
+  "file": "Bloeiwijze Rhododendron (Rhododendron ponticum). 19-05-2026 (d.j.b.).jpg",
+  "artist": "Dominicus Johannes Bergsma.",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Bloeiwijze_Rhododendron_%28Rhododendron_ponticum%29._19-05-2026_%28d.j.b.%29.jpg"
+ },
+ "ormangulu:kuru": "yok",
+ "baldiran:cizim": {
+  "file": "Conium maculatum - Köhler–s Medizinal-Pflanzen-191.jpg",
+  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen (text on p. ",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Conium_maculatum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-191.jpg"
+ },
+ "baldiran:cicek": {
+  "file": "Flowers of Hemlock (Conium maculatum) - geograph.org.uk - 6078013.jpg",
+  "artist": "Robin Stott",
+  "license": "CC BY-SA 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Flowers_of_Hemlock_%28Conium_maculatum%29_-_geograph.org.uk_-_6078013.jpg"
+ },
+ "baldiran:kuru": "yok",
+ "yuksukotu:cizim": "yok",
+ "yuksukotu:cicek": {
+  "file": "Digitalis ferruginea, Trabzon.jpg",
+  "artist": "Hamdigumus",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Digitalis_ferruginea%2C_Trabzon.jpg"
+ },
+ "yuksukotu:kuru": "yok"
 }

@@ -239,6 +239,19 @@
   "w": 960,
   "w500": 500
  },
+ "baldiran": {
+  "artist": "MPF",
+  "auto": true,
+  "b1280": "Conium maculatum Cresswell 01.jpg",
+  "file": "Conium maculatum Cresswell 01.jpg",
+  "h": 1297,
+  "h500": 675,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Conium_maculatum_Cresswell_01.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "banotu": {
   "artist": "Syrio",
   "b1280": "Hyoscyamus niger Altaguardia 02.jpg",
@@ -1434,6 +1447,19 @@
   "w": 960,
   "w500": 500
  },
+ "ormangulu": {
+  "artist": "Agnes Monkelbaan",
+  "auto": true,
+  "b1280": "Rhododendron ponticum actm 05.jpg",
+  "file": "Rhododendron ponticum actm 05.jpg",
+  "h": 960,
+  "h500": 500,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Rhododendron_ponticum_actm_05.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "paico": {
   "artist": "阿宏",
   "auto": false,
@@ -1936,6 +1962,19 @@
   "license": "CC BY 2.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
   "page": "https://commons.wikimedia.org/wiki/File:Yopo_Seeds_-_27803874598.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "yuksukotu": {
+  "artist": "C T Johansson",
+  "auto": true,
+  "b1280": "Digitalis ferruginea-IMG 9992.jpg",
+  "file": "Digitalis ferruginea-IMG 9992.jpg",
+  "h": 950,
+  "h500": 495,
+  "license": "CC BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Digitalis_ferruginea-IMG_9992.jpg",
   "w": 960,
   "w500": 500
  },
