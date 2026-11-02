@@ -1,6 +1,1 @@
 # id | arama terimi | ek kelimeler
-mese | Quercus robur | tree
-porsuk | Taxus baccata | aril
-kusuvezi | Sorbus aucuparia | berries
-disbudak | Fraxinus excelsior | 
-minecicegi | Verbena officinalis | flower
