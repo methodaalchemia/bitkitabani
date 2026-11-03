@@ -137,7 +137,10 @@ def frames(p, photos, tmp, credits=''):
     return bps, op, ep
 
 # her sahnede görüntü sağdan sola kayar (kamera sağa ilerler), hafif yakınlaşmayla
-MOVE = ("1.22+0.04*on/{N}", "(iw-iw/zoom)*on/{N}", "ih/2-(ih/zoom/2)")
+MOVE = ("1.18+0.06*on/{N}", "(iw-iw/zoom)*(0.5+0.5*sin(PI*on/{N}-PI/2))", "ih/2-(ih/zoom/2)")
+# sinematik görünüm: sıcak renk, hafif kontrast, vinyet, ince film greni, yumuşak keskinlik
+GRADE = ("eq=contrast=1.06:saturation=1.14:gamma=0.98,colorbalance=rs=0.04:gs=0.01:bs=-0.05:rm=0.03:bm=-0.03,"
+         "vignette=angle=PI/4.6:mode=forward,unsharp=5:5:0.4,noise=alls=5:allf=t+u")
 
 def _ambient(seed, total):
     rr = random.Random(seed)
@@ -177,7 +180,7 @@ def make(p, m, img_path, out, photos=None):
             if last: fl.append(f"[{i}:v]scale={SW}:{SH},zoompan=z='1+0.03*on/{N}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={N}:s={SW}x{SH}:fps={FPS},setsar=1,format=yuv420p[v{i}]")
             else:
                 z, x, y = (s.format(N=N) for s in MOVE)
-                fl.append(f"[{i}:v]zoompan=z='{z}':x='{x}':y='{y}':d={N}:s={SW}x{SH}:fps={FPS},setsar=1,format=yuv420p[v{i}]")
+                fl.append(f"[{i}:v]zoompan=z='{z}':x='{x}':y='{y}':d={N}:s={SW}x{SH}:fps={FPS},setsar=1,{GRADE},format=yuv420p[v{i}]")
         cur, off = 'v0', scenes[0][1] - scenes[0][0]
         for i in range(1, len(scenes)):
             o = f'x{i}'; fl.append(f"[{cur}][v{i}]xfade=transition={'slideleft' if i < len(scenes) - 1 else 'fade'}:duration={XF}:offset={off:.2f}[{o}]"); cur = o; off += scenes[i][1] - scenes[i][0]

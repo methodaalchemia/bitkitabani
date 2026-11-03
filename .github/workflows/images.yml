@@ -55,6 +55,9 @@ jobs:
       - name: Instagram postları
         continue-on-error: true
         run: python3 tools/ig.py
+      - name: Çay bitkileri Reels
+        continue-on-error: true
+        run: python3 tools/cay_reel.py
       - name: Instagram dosyalarını ayrı dala yaz (geçmiş tutulmaz)
         continue-on-error: true
         run: |
