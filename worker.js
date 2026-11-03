@@ -424,7 +424,7 @@ async function ekPost(env) {
       const kids = [];
       for (const u of a.images) kids.push((await igJson(await fetch(TH + '/me/threads', form({ media_type: 'IMAGE', image_url: u, is_carousel_item: 'true' })))).id);
       await new Promise(r => setTimeout(r, 12000));   // görseller işlenmeden albüm kurulamıyor
-      const box = (await igJson(await fetch(TH + '/me/threads', form({ media_type: 'CAROUSEL', children: kids.join(','), text: (a.threads + (/#\S/.test(a.threads) ? '' : '\n\n#şifalıbitkiler')).slice(0, 500) })))).id;
+      const box = (await igJson(await fetch(TH + '/me/threads', form({ media_type: 'CAROUSEL', children: kids.join(','), text: (a.threads.length > 482 || /#\S/.test(a.threads) ? a.threads : a.threads + '\n\n#şifalıbitkiler').slice(0, 500) })))).id;
       await new Promise(r => setTimeout(r, 10000));
       await igJson(await fetch(TH + '/me/threads_publish', form({ creation_id: box })));
       th.slot.ek = day; th.n = (th.n || 0) + 1;

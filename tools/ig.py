@@ -337,6 +337,20 @@ def motif_image(mo, seed=None):
 
 ONE_CIKAN = ['anadolu-nazara-karsi-tutsulenen-uzerligin-tohumlarinda', 'kuyumcularin-kirat-keciboynuzundan-gelir', 'hakkari-nin-guneyindeki-sanidar-magarasinda-yaklasik',
              'orta-cag-salgin-donemlerinde-hekimler-yuzlerine', 'peru-amazonu-nda-sifaci-olmak-isteyen', 'avrupa-turk-kirmizisi-edirne-kirmizisi-diye']
+def _threads_fit(t, lim=478):
+    """Threads 500 karakter sınırı (worker sona '#şifalıbitkiler' ekler): bağlantıyı kesmeden kısaltır."""
+    if len(t) <= lim: return t
+    paras = t.split('\n\n')
+    drop = lambda x: x.startswith(('Siz ', 'Bu iddiayı', 'Sizin ', 'Bir halk kaydıdır', 'Bilgilendirme', 'Toplarken'))
+    while len('\n\n'.join(paras)) > lim and any(drop(x) for x in paras):
+        paras.remove(next(x for x in paras if drop(x)))
+    while len('\n\n'.join(paras)) > lim:
+        i = max(range(len(paras)), key=lambda k: 0 if 'bitkitabani.com' in paras[k] else len(paras[k]))
+        cut = len('\n\n'.join(paras)) - lim + 1
+        x = paras[i][:max(20, len(paras[i]) - cut)]
+        paras[i] = (x[:x.rfind(' ')] if ' ' in x else x).rstrip(' ,;:') + '…'
+    return '\n\n'.join(paras)
+
 def ek_postlar(data, day, out_root, days=7):
     """Haftalık ek postlar (Instagram + Threads, öğlen): Pazartesi 'Doğru mu, efsane mi?', Çarşamba 'Bunu karıştırmayın', Cuma 'Bu hangi bitki?'."""
     import ig2
@@ -410,7 +424,7 @@ def ek_postlar(data, day, out_root, days=7):
             gid = h.get('gorsel') or h.get('bitki'); p = P.get(h.get('bitki')) or P.get(gid) or next(iter(P.values()))
             ims = [photo_slide(gid, 'Halk hekimliğinden' + (' · ' + h['yore'] if h.get('yore') else ''), h['baslik'], 'Kaydırın. 👉'),
                    paper_slide(p, h.get('yore') or 'Bir hikâye', h['baslik'], h['post'], 2, 3),
-                   paper_slide(p, 'Kaynağıyla', 'Hikâyenin tamamı sitede', f'Kaynak: {h["kisa"]}\n\nbitkitabani.com/hikaye/{h["slug"]}\n\nKaydedin, sonra okuyun. 🔖', 3, 3)]
+                   paper_slide(p, 'Kaynağıyla', 'Hikâyenin tamamı sitede', f'Kaynak: {h["kisa"]}\n\nbitkitabani.com → Hikâyeler\n\nKaydedin, sonra okuyun. 🔖', 3, 3)]
             cap = (f'{h["baslik"]} 🌿\n\n{h["post"]}\n\nKaynak: {h["kisa"]}\n\nSiz bunu duymuş muydunuz? Yorumlarda buluşalım. 👇\n\n'
                    f'Tamamı: bitkitabani.com/hikaye/{h["slug"]} (bağlantı profilde)\n\nBir halk kaydıdır; tedavi önerisi değildir.\n\n#halkhekimliği #etnobotanik #şifalıbitkiler #kültür')
         else:
@@ -419,7 +433,7 @@ def ek_postlar(data, day, out_root, days=7):
         urls = []
         for i, im in enumerate(ims, 1):
             im.convert('RGB').save(os.path.join(od, f'{i}.jpg'), 'JPEG', quality=84, optimize=True); urls.append(f'{BASE}/ig/ek/{key}/{i}.jpg')
-        th = cap.split('\n\n#')[0].replace(' (bağlantı profilde)', '/')
+        th = _threads_fit(cap.split('\n\n#')[0].replace(' (bağlantı profilde)', '/'))
         out[key] = {'tur': tur, 'id': pid, 'images': urls, 'caption': cap, 'threads': th[:495], 'alts': ([f'{mo["ad"]} motifinin el çizimi.', ''] if tur == 'sembol' else [f'{p["tr"]} ({p["la"]}) fotoğrafı.', '', ''])}
     json.dump(out, open(os.path.join(out_root, 'ek.json'), 'w', encoding='utf-8'), ensure_ascii=False)
 
