@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 133 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 134 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -4180,3 +4180,31 @@ Karıştırma riski: Salkım söğüt tıbbi olarak kullanılmaz. Kavaklarla kar
 
 ### İlginç bilgi
 1828’de söğüt kabuğundan salisin saflaştırıldı; 1897’de Bayer’de Felix Hoffmann asetilsalisilik asidi saf hâlde üretti. Böylece aspirin doğdu.
+
+## Çarkıfelek (Passiflora incarnata)
+
+URL: https://bitkitabani.com/pasiflora/
+Familya: Passifloraceae · Bölge: Kuzey Amerika · Kullanılan kısım: Toprak üstü kısımlar
+Bilimsel kanıt: Sınırlı · Güvenlik: Genelde güvenli
+
+### Geleneksel kullanım
+- Kuzey Amerika: Güneydoğu ABD’nin yerli halkları (Cherokee gibi) meyvesini yer, kökünü ve yapraklarını yara ve şişlikte kullanırdı. Bölgede “maypop” diye bilinir.
+- Avrupa ve bugün: 17. yüzyılda Avrupa’ya ulaştı; bugün Avrupa’da kaygı ve uyku sorunları için bitkisel ilaçlarda kullanılır.
+
+### Hazırlama
+Kurutulmuş toprak üstü kısımlardan bir çay kaşığı bir bardak kaynar suda 10 dakika demlenir; akşam içilir. Standart ekstre tablet olarak da bulunur.
+
+### Bilim ne diyor
+EMA çarkıfeleği hafif stres belirtileri ve uykuya dalmaya yardım için geleneksel kullanımda tanır. Sistematik derleme (2020) kaygı ve ameliyat öncesi gerginlik üzerine olumlu sonuçlar bulmuş, ama çalışmaların küçük ve kısa olduğunu vurgulamıştır. Ameliyattan önce verilen tek dozun kaygıyı azalttığını gösteren plasebolu çalışmalar vardır.
+
+### Güvenlik
+Genelde güvenlidir; uyku hâli ve baş dönmesi yapabilir, araç kullanmadan önce alınmamalıdır. Hamilelikte kullanılmamalıdır. Alkol, uyku ilaçları ve sakinleştiricilerle birlikte etkisi artabilir.
+
+### Doğada
+Nerede yetişir: Güneydoğu ABD’nin açık ormanlık alanlarında yetişir; Türkiye’de süs bitkisi olarak çitlerde ve pergolelerde yaygındır (çoğu başka türlerdir).
+Toplama mevsimi: Çiçekli dallar Haziran–Ağustos’ta toplanır.
+Yöresel adlar: çarkıfelek, pasiflora
+Karıştırma riski: Türkiye’de bahçelerde en sık görülen tür mavi çiçekli Passiflora caerulea’dır; tıbbi tür P. incarnata’dır. Çarkıfelek meyvesi (passion fruit) ise P. edulis’in meyvesidir.
+
+### İlginç bilgi
+Batı dillerindeki adı (passion flower), İspanyol misyonerlerin çiçekte İsa’nın çilesinin simgelerini görmesinden gelir; Türkçedeki “çarkıfelek” adı ise çiçeğin dönen bir çarkı andıran şeklinden.
