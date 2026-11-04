@@ -317,7 +317,7 @@ function ytMeta(tr, pid, caption, tarif) {
 }
 async function ytUpload(env, st, videoUrl, meta) {
   const tok = await ytToken(env, st);
-  const v = await fetch(videoUrl); if (!v.ok) throw new Error('video alınamadı ' + v.status);
+  const v = await fetch(videoUrl.replace(SITE + '/ig/', IGRAW).replace('https://bitkitabani.com/ig/', IGRAW)); if (!v.ok) throw new Error('video alınamadı ' + v.status);
   const buf = await v.arrayBuffer();
   const body = { snippet: { title: meta.title, description: meta.desc, tags: meta.tags, categoryId: '26', defaultLanguage: 'tr', defaultAudioLanguage: 'tr' }, status: { privacyStatus: 'public', selfDeclaredMadeForKids: false } };
   const init = await fetch('https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status', { method: 'POST', headers: { authorization: 'Bearer ' + tok, 'content-type': 'application/json; charset=UTF-8', 'x-upload-content-type': 'video/mp4', 'x-upload-content-length': String(buf.byteLength) }, body: JSON.stringify(body) });
