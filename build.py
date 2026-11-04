@@ -1377,6 +1377,7 @@ for mo in MOTIFLER:
     path = f'/semboller/{mo["slug"]}/'
     bit = ''.join(f'<li><a href="/{x}/"><b>{e(byId[x]["tr"])}</b></a>: {e(n)}</li>' for x, n in mo['bitkiler'] if x in byId)
     same = [o for o in MOTIFLER if o['tema'] == mo['tema'] and o is not mo]
+    _ilg = [o for o in MOTIFLER if o['slug'] in (mo.get('ilgili') or [])]
     kay = '<ol class="refs">' + ''.join((f'<li id="k{j}"><a href="{e(u)}" target="_blank" rel="noopener">{e(t)}</a></li>' if u else f'<li id="k{j}"><cite>{e(t)}</cite></li>') for j, (t, u) in enumerate(mo['kaynaklar'], 1)) + '</ol>'
     body = f'''{crumbs(('/semboller/', 'Semboller'), (path, mo['ad']))}
 <article class="sheet">
@@ -1384,6 +1385,7 @@ for mo in MOTIFLER:
 {sharebar(mo['ad'] + ' motifi: ' + mo['kisa'], path)}
 <section class="sec"><h2>Ne anlatır?</h2><p>{_msrc(mo["anlam"])}</p></section>
 {('<section class="sec"><h2>Bağlantılı bitkiler</h2><ul class="otherlist">' + bit + '</ul></section>') if bit else ''}
+{('<section class="sec"><h2>Yakın motif</h2><div class="motif-mini">' + ''.join(f'<a href="/semboller/{o["slug"]}/">{motif_svg(o)}<span>{e(o["ad"])}</span></a>' for o in _ilg) + '</div></section>') if _ilg else ''}
 {('<section class="sec"><h2>Aynı temadan</h2><div class="motif-mini">' + ''.join(f'<a href="/semboller/{o["slug"]}/">{motif_svg(o)}<span>{e(o["ad"])}</span></a>' for o in same) + '</div></section>') if same else ''}
 <section class="sec"><h2>Kaynaklar</h2>{kay}</section>
 <aside class="disclaimer" role="note"><b>Kültürel kayıt.</b> Motiflerin anlamları kaynaklarda yazdığı biçimde verilmiştir; aynı motif farklı yörelerde farklı yorumlanabilir.</aside>
