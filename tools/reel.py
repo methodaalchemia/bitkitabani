@@ -5,7 +5,7 @@ Ses: Microsoft Edge'in Türkçe sinir ağı sesi (edge-tts, tr-TR-EmelNeural). A
 üretilir ve videoya gömülür. edge-tts kurulu değilse ya da ulaşılamazsa video yine üretilir: altyazı tahmini
 zamanlamayla gösterilir, arkada yalnızca ambiyans müziği çalar.
 """
-import os, re, json, asyncio, shutil, subprocess, tempfile, random
+import os, re, json, asyncio, shutil, subprocess, tempfile, random, time
 from PIL import Image, ImageDraw, ImageFilter
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -83,16 +83,25 @@ def _estimate(s):
         d = tot * k / sum(w8); out.append([t, t + d * 0.92, w]); t += d
     return out, tot + 0.1
 
-def voice(sents, tmp):
+def voice(sents, tmp, gem=None):
     """Her cümle ayrı seslendirilir: [(başlangıç, süre, mp3 ya da None, kelimeler)] ve sesli mi?"""
+    if gem is None: gem = bool(os.environ.get('GEMINI_API_KEY'))
     segs, t, ok = [], 0.15, True
     for i, s in enumerate(sents):
         mp3, ws, d = os.path.join(tmp, f's{i}.mp3'), None, 0
         if ok:
             try:
-                if os.environ.get('GEMINI_API_KEY'):
-                    try: ws = _gemini1(s, mp3)
-                    except Exception as e: print('reel: Gemini sesi alınamadı, Edge sesine geçildi:', str(e)[:120]); ws = asyncio.run(_tts1(s, mp3))
+                if gem:
+                    ws = None
+                    for bekle in (0, 20, 40, 60):   # ücretsiz katman dakikada az istek alır: 429'da bekleyip yeniden dene
+                        if bekle: time.sleep(bekle)
+                        try: ws = _gemini1(s, mp3); break
+                        except Exception as e:
+                            err = str(e)[:120]
+                            if '429' not in err: break
+                    if ws is None:   # tek sesle tutarlı kalsın: baştan Edge sesiyle
+                        print('reel: Gemini sesi alınamadı, video Edge sesiyle yapılıyor:', err)
+                        return voice(sents, tmp, gem=False)
                 else: ws = asyncio.run(_tts1(s, mp3))
                 d = _dur(mp3)
                 if not ws or d <= 0: raise RuntimeError('boş ses')
