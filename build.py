@@ -310,7 +310,7 @@ def head(title, desc, path, extra='', image=None):
 MENU = [('Bitkiler', [('/katalog/', 'Katalog', 'kat'), ('/toplama-takvimi/', 'Doğada bu ay', 'toplama'), ('/yoreler/', 'Yöreler ve yöresel adlar', 'yore'), ('/yeni/', 'Yeni eklenenler', 'yeni')]),
         ('Şifa', [('/rehber/', 'Derde göre bitkiler', 'rehber'), ('/tarif/', 'Çay tarifleri', 'tarif'), ('/karsilastirma/', 'Karşılaştırmalar', 'kars'), ('/rehber/ilac-etkilesimi/', 'İlaç etkileşimi', 'etk'), ('/rehber/zehirli-bitkiler/', 'Zehirli bitkiler', 'zehir')]),
         ('Kültür', [('/kavram/', 'Kavramlar', 'kavram'), ('/semboller/', 'Semboller', 'sembol'), ('/kopruler/', 'Kültür köprüleri', 'br'), ('/blog/', 'Blog', 'yazi'), ('/takvim/', 'Ritüel takvimi', 'takvim')]),
-        ('Bitki Tabanı', [('/hakkinda/', 'Hakkında', 'about'), ('/yontem/', 'Yöntem ve kaynaklar', 'yontem'), ('/lisans/', 'Lisans ve atıf', 'lisans'), ('/bulten/', 'Bülten ve e-posta kursu', 'bulten'), ('/kartlar/', 'Yazdırılabilir kartlar', 'kartlar'), ('/hesap/', 'Hesabım', 'acct'), ('/iletisim/', 'İletişim', 'mail')])]
+        ('Bitki Tabanı', [('/hakkinda/', 'Hakkında', 'about'), ('/yontem/', 'Yöntem ve kaynaklar', 'yontem'), ('/lisans/', 'Lisans ve atıf', 'lisans'), ('/veri/', 'Veri setini indir', 'veri'), ('/bulten/', 'Bülten ve e-posta kursu', 'bulten'), ('/kartlar/', 'Yazdırılabilir kartlar', 'kartlar'), ('/hesap/', 'Hesabım', 'acct'), ('/iletisim/', 'İletişim', 'mail')])]
 MENU_HUB = {'Bitkiler': '/katalog/', 'Şifa': '/rehber/', 'Kültür': '/kultur/'}
 _TABICO = {'ara': '<circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/>', 'kat': '<path d="M12 21V9"/><path d="M12 13c-4 0-6-3-6-7 4 0 6 3 6 7z"/><path d="M12 11c3 0 5-2 5-5-3 0-5 2-5 5z"/>',
            'rehber': '<path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/>', 'kultur': '<path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/>', 'gun': '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M5 19l1.5-1.5M17.5 6.5L19 5"/>'}
@@ -717,8 +717,67 @@ katalog = f'''
 {learn_note}</details>
 '''
 ld_kat = [{"@context":"https://schema.org","@type":"CollectionPage","name":"Bitki kataloğu","url":BASE+"/katalog/","inLanguage":"tr","isPartOf":{"@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/"},
-           "mainEntity":{"@type":"ItemList","numberOfItems":len(P),"itemListElement":[{"@type":"ListItem","position":i+1,"url":f'{BASE}/{p["id"]}/',"name":p['tr']} for i,p in enumerate(P)]}},
-          {"@context":"https://schema.org","@type":"Dataset","name":"Bitki Tabanı: şifalı ve ritüel bitkiler veri seti","description":f"{REG_LIST}’dan {len(P)} şifalı ve ritüel bitkisinin geleneksel kullanımı, bilimsel kanıt düzeyi, güvenlik, koruma ve yasal durumu.","url":BASE+"/katalog/","inLanguage":"tr","creator":{"@type":"Organization","name":"Bitki Tabanı","url":BASE+"/"},"keywords":["şifalı bitkiler","etnobotanik","geleneksel tıp","Anadolu","Amazon","And Dağları"],"variableMeasured":["Geleneksel kullanım","Kanıt düzeyi","Güvenlik","Koruma durumu","Türkiye’de yasal durum"],"isAccessibleForFree":True,"license":"https://creativecommons.org/licenses/by-sa/4.0/","creator":AUTHOR,"publisher":{"@type":"Organization","name":"Bitki Tabanı","url":BASE+"/"}}]
+           "mainEntity":{"@type":"ItemList","numberOfItems":len(P),"itemListElement":[{"@type":"ListItem","position":i+1,"url":f'{BASE}/{p["id"]}/',"name":p['tr']} for i,p in enumerate(P)]}}]
+# ---------- açık veri: indirilebilir veri seti ----------
+import csv as _csv
+_VERI_BASLIK = ['id', 'turkce_ad', 'bilimsel_ad', 'familya', 'diger_adlar', 'bolgeler',
+                'kategoriler', 'kullanilan_kisim', 'kanit_duzeyi', 'guvenlik',
+                'turkiyede_yasal_durum', 'url']
+def _veri_satir(p):
+    return [p['id'], p['tr'], p['la'], p['fam'], p.get('diger', ''),
+            '; '.join(REG[b]['ad'] for b in p['bolge'] if b in REG),
+            '; '.join(KAT[k] for k in p['kat'] if k in KAT),
+            p.get('kisim', ''), KANIT[p['kanit']]['ad'], GUV[p['guv']],
+            p.get('yasal', ''), f'{BASE}/{p["id"]}/']
+_VERI = [_veri_satir(p) for p in P]
+os.makedirs(os.path.join(OUT, 'veri'), exist_ok=True)
+with open(os.path.join(OUT, 'veri', 'bitkiler.csv'), 'w', encoding='utf-8-sig', newline='') as _f:
+    _w = _csv.writer(_f); _w.writerow(_VERI_BASLIK); _w.writerows(_VERI)
+json.dump([dict(zip(_VERI_BASLIK, r)) for r in _VERI],
+          open(os.path.join(OUT, 'veri', 'bitkiler.json'), 'w', encoding='utf-8'),
+          ensure_ascii=False, indent=1)
+_csv_boy = os.path.getsize(os.path.join(OUT, 'veri', 'bitkiler.csv'))
+_json_boy = os.path.getsize(os.path.join(OUT, 'veri', 'bitkiler.json'))
+_kb = lambda n: f'{round(n / 1024)} KB'
+
+ld_veri = {"@context": "https://schema.org", "@type": "Dataset",
+    "name": "Bitki Tabanı: şifalı ve ritüel bitkiler veri seti",
+    "description": f"{REG_LIST}’dan {len(P)} şifalı ve ritüel bitkisi; her kayıtta Türkçe ve bilimsel ad, familya, yöresel adlar, bölge, kullanım kategorisi, kullanılan kısım, bilimsel kanıt düzeyi (klinik / sınırlı / geleneksel), güvenlik düzeyi ve Türkiye’deki yasal durum. Kanıt düzeyleri EMA–HMPC monografları, Cochrane derlemeleri ve NCCIH özetleri esas alınarak verilmiştir.",
+    "url": BASE + "/veri/", "inLanguage": "tr", "isAccessibleForFree": True,
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "creator": AUTHOR,
+    "publisher": {"@type": "Organization", "name": "Bitki Tabanı", "url": BASE + "/", "logo": BASE + "/assets/logo-512.png"},
+    "dateModified": CONTENT_DATE,
+    "keywords": ["etnobotanik", "şifalı bitkiler", "ritüel bitkiler", "halk hekimliği", "geleneksel tıp", "bitki–ilaç etkileşimi", "Anadolu", "Amazon", "And Dağları"],
+    "variableMeasured": ["Türkçe ad", "Bilimsel ad", "Familya", "Yöresel adlar", "Bölge", "Kullanım kategorisi", "Kullanılan kısım", "Kanıt düzeyi", "Güvenlik düzeyi", "Türkiye’de yasal durum"],
+    "spatialCoverage": [{"@type": "Place", "name": v['ad']} for k, v in REG.items()],
+    "distribution": [
+        {"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": BASE + "/veri/bitkiler.csv", "contentSize": _kb(_csv_boy), "name": "bitkiler.csv"},
+        {"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": BASE + "/veri/bitkiler.json", "contentSize": _kb(_json_boy), "name": "bitkiler.json"}]}
+
+VERI = f'''<header class="page-head"><span class="eyebrow">Açık veri</span><h1>Veri setini indir</h1><p>Sitedeki {len(P)} bitki kaydının yapılandırılmış hâli, CSV ve JSON olarak. İzin istemeden, kaynak göstererek kullanabilirsin.</p></header>
+<section class="sec"><h2>İndir</h2><p><a class="cta" href="/veri/bitkiler.csv" download>bitkiler.csv ({_kb(_csv_boy)}) →</a></p><p><a class="cta" href="/veri/bitkiler.json" download>bitkiler.json ({_kb(_json_boy)}) →</a></p>
+<p class="muted-s">CSV dosyası UTF-8 BOM ile yazılmıştır; Excel’de Türkçe karakterler bozulmadan açılır.</p></section>
+<section class="sec"><h2>İçindeki alanlar</h2><ul class="kart-list">
+<li><b>id, turkce_ad, bilimsel_ad, familya</b> — kaydın kimliği ve adlandırması.</li>
+<li><b>diger_adlar</b> — yöresel ve halk arasındaki adlar.</li>
+<li><b>bolgeler</b> — {REG_LIST}.</li>
+<li><b>kategoriler</b> — şifa, ritüel ve şamanik, tütsü ve koruma, besin, zehirli.</li>
+<li><b>kullanilan_kisim</b> — yaprak, çiçek, kök, tohum, reçine gibi.</li>
+<li><b>kanit_duzeyi</b> — klinik, sınırlı ya da geleneksel. EMA–HMPC monografları, Cochrane derlemeleri ve NCCIH özetleri esas alınarak verilir.</li>
+<li><b>guvenlik</b> — genelde güvenli, dikkat ya da yüksek risk.</li>
+<li><b>turkiyede_yasal_durum</b> — yalnızca kısıtlı bitkilerde doludur.</li>
+<li><b>url</b> — kaydın sitedeki kalıcı adresi.</li>
+</ul></section>
+<section class="sec"><h2>Veri setinde olmayanlar</h2><p>Geleneksel kullanım anlatıları, hazırlama tarifleri, bilimsel değerlendirme metinleri, güvenlik notları ve kaynakça her bitkinin kendi sayfasında duruyor; onlar da aynı lisansla kullanılabilir. Fotoğraflar veri setinin dışındadır: çoğu Wikimedia Commons’tan alınmıştır ve her birinin kendi lisansı vardır.</p></section>
+<section class="sec"><h2>Adresler kalıcıdır</h2><p>Her bitki ve her motif için tek ve değişmeyen bir adres tutulur. Bir kaydı kaynak gösterirsen bağlantının kırılmaması için adresi koruyoruz; bir adres değişmek zorunda kalırsa eski adresten yenisine yönlendirme konur.</p></section>
+<section class="sec"><h2>Nasıl atıf verilir</h2><p class="muted-s">Tınmazlar, E. ({CONTENT_DATE[:4]}). <i>Bitki Tabanı: şifalı ve ritüel bitkiler veri seti</i> ({len(P)} kayıt). https://bitkitabani.com/veri/ (erişim tarihi: GG.AA.YYYY). CC BY-SA 4.0.</p>
+<p>Lisansın kapsamı ve istisnaları: <a href="/lisans/">Lisans ve atıf</a>. Veriyi kullanıp bir şey ürettiysen <a href="mailto:iletisim@bitkitabani.com">iletisim@bitkitabani.com</a> adresine yazmanı çok isterim; nerede kullanıldığını bilmek işin en keyifli tarafı.</p></section>'''
+write('/veri/', page(f'Veri setini indir: {len(P)} şifalı ve ritüel bitki (CSV, JSON) | Bitki Tabanı',
+      f'Bitki Tabanı’nın {len(P)} bitki kaydı CSV ve JSON olarak, CC BY-SA 4.0 ile. Türkçe ve bilimsel ad, bölge, kanıt düzeyi, güvenlik ve yasal durum alanlarıyla.',
+      '/veri/', VERI, 'veri', narrow=True,
+      extra=f'<script type="application/ld+json">{json.dumps(ld_veri, ensure_ascii=False)}</script>'))
+
 write('/katalog/', page(f'Bitki kataloğu: {len(P)} şifalı ve ritüel bitki | Bitki Tabanı', f'{len(P)} şifalı ve ritüel bitkiyi bölgeye, kullanıma, bilimsel kanıta, güvenliğe ve Türkiye’deki yasal duruma göre süz.', '/katalog/', katalog, 'kat', '<script src="/assets/catalog.js" defer></script>', extra=''.join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>' for x in ld_kat)))
 
 # ---------- köprüler ----------
@@ -856,7 +915,7 @@ LISANS = '''<header class="page-head"><span class="eyebrow">Lisans ve atıf</spa
 </ul><p>Bilimsel olgular telif hakkına tabi değildir: lisans metnin ifade biçimini korur, bilginin kendisini değil.</p></section>
 <section class="sec"><h2>Nasıl atıf verilir</h2><p>Kısa kullanım için bağlantı yeterli: <i>Kaynak: Bitki Tabanı (bitkitabani.com), CC BY-SA 4.0.</i></p>
 <p>Akademik atıf için:</p><p class="muted-s">Tınmazlar, E. ''' + f'({CONTENT_DATE[:4]})' + '''. <i>Kantaron (Hypericum perforatum)</i>. Bitki Tabanı. https://bitkitabani.com/kantaron/ (erişim tarihi: GG.AA.YYYY). CC BY-SA 4.0.</p>
-<p>Veri setinin tamamına atıf vermek istersen <a href="/katalog/">katalog sayfasını</a> kaynak gösterebilirsin.</p></section>
+<p>Veri setinin tamamına atıf vermek istersen <a href="/veri/">veri seti sayfasını</a> kaynak gösterebilirsin; orada CSV ve JSON olarak indirilebilir.</p></section>
 <section class="sec"><h2>İzin gerektiren durumlar</h2><p>Metinleri kaynak göstermeden ya da kapalı bir lisansla yeniden yayımlamak lisansa aykırıdır. Bunun dışında bir kullanım biçimi aklındaysa <a href="mailto:iletisim@bitkitabani.com">iletisim@bitkitabani.com</a> adresine yazabilirsin; işbirliğine açığım.</p></section>'''
 write('/lisans/', page('Lisans ve atıf: içerik nasıl kullanılabilir? | Bitki Tabanı', 'Bitki Tabanı metinleri CC BY-SA 4.0 ile lisanslıdır. Lisansın kapsamı, istisnaları (fotoğraflar) ve atıf örnekleri.', '/lisans/', LISANS, 'lisans', narrow=True))
 
@@ -1803,7 +1862,7 @@ _ai = ['Googlebot', 'Google-Extended', 'Bingbot', 'GPTBot', 'OAI-SearchBot', 'Ch
 open(os.path.join(OUT,'robots.txt'),'w').write('# Bitki Tabanı arama motorlarına ve yapay zekâ asistanlarına açıktır; alıntı yaparken kaynak göster.\n# Özet: ' + BASE + '/llms.txt\n\n' + ''.join(f'User-agent: {a}\n' for a in _ai) + _rules + '\nUser-agent: *\n' + _rules + f'\nSitemap: {BASE}/sitemap.xml\n')
 import build_en
 EN_URLS = build_en.run(globals())
-urls = ['/', '/katalog/', '/kultur/', '/kopruler/', '/gunun-bitkisi/', '/yeni/', '/hakkinda/', '/yontem/', '/lisans/', '/gizlilik/'] + [f'/kopruler/{slug_of(x)}/' for x in BR] + FAM_URLS + [f'/{p["id"]}/' for p in P] + GUIDE_URLS + EN_URLS
+urls = ['/', '/katalog/', '/kultur/', '/kopruler/', '/gunun-bitkisi/', '/yeni/', '/hakkinda/', '/yontem/', '/lisans/', '/veri/', '/gizlilik/'] + [f'/kopruler/{slug_of(x)}/' for x in BR] + FAM_URLS + [f'/{p["id"]}/' for p in P] + GUIDE_URLS + EN_URLS
 def _imgtag(u):   # görsel site haritası: bitki sayfalarına fotoğraflarını ekle
     pid = u.strip('/').split('/')[-1]
     if pid not in IMG or pid not in byId: return ''
