@@ -216,7 +216,7 @@ def _il_bolum(il, d, baslik_tag='h2'):
     cal = ''.join(f'<li>{e(c["ilce"] + ": ") if c["ilce"] else ""}<a href="{c["url"]}" target="_blank" rel="noopener">{e(c["baslik"])}</a> · {e(c["yazar"])}, <i>{e(c["dergi"])}</i>, {c["yil"]}</li>' for c in d['cal'])
     return f'<{baslik_tag}>{e(il)} <small class="muted-s">· {len(bl)} bitki</small></{baslik_tag}><div class="related">{chips}</div><p class="muted-s">Kaynak saha çalışmaları:</p><ul class="srclist">{cal}</ul>'
 from karsilastirma import KARS
-from motifler import MOTIFLER, TEMALAR, ESKI as MOTIF_ESKI
+from motifler import MOTIFLER, TEMALAR, ESKI as MOTIF_ESKI, MSEO
 from yazilar import YAZILAR
 from kavramlar import KAVRAMLAR
 KAV = sorted([k for k in KAVRAMLAR if datetime.date.fromisoformat(k['yayin']) <= LOCAL_DAY and k['bitki'] in byId], key=lambda k: k['yayin'])
@@ -1391,19 +1391,25 @@ for mo in MOTIFLER:
 </article>'''
     _kilim = 'Anadolu' in mo['bolge'] or mo['tema'] in ('koruma', 'bereket')
     _mt = (f'{mo["ad"]} motifi anlamı: kilimde ve nazarlıkta ne anlatır?' if _kilim else f'{mo["ad"]} sembolü: anlamı, kökeni ve bağlantılı bitkiler')
+    _mseo = MSEO.get(mo['slug'])
     if 'motifi' in mo['ad'].lower(): _mt = _mt.replace(' motifi anlamı', ' anlamı')
     if len(_mt) > 62: _mt = f'{mo["ad"]}: anlamı ve kökeni | Bitki Tabanı'
     _m1 = re.sub(r'\s*\[\d+\]', '', mo['anlam']).split('. ')[0].strip().rstrip('.')
     _md = f'{mo["kisa"]} {_m1}. Hangi yörede, hangi dokumada görülür; kaynaklarıyla.'
-    if len(_md) > 158: _md = (f'{mo["kisa"]} {_m1}.')[:158]
-    if len(_md) > 158: _md = mo['kisa'][:158]
+    if len(_md) > 158: _md = (f'{mo["kisa"]} {_m1}.')[:158].rsplit(' ', 1)[0] + '…'
+    if len(_md) > 158: _md = mo['kisa'][:158].rsplit(' ', 1)[0] + '…'
+    if _mseo: _mt, _md = _mseo
     write(path, page(_mt, _md, path, body, 'sembol', narrow=True,
           extra=lds({"@context":"https://schema.org","@type":"Article","headline":mo['ad'] + ' motifi',"description":mo['kisa'],"inLanguage":"tr","url":BASE+path,"author":AUTHOR,"citation":[t for t, u in mo['kaynaklar']]}, crumb_ld(('/semboller/', 'Semboller'), (path, mo['ad'])))))
     GUIDE_URLS.append(path)
 _chips = '<button type="button" class="chip" data-t="" aria-pressed="true">Hepsi</button>' + ''.join(f'<button type="button" class="chip" data-t="{k}" aria-pressed="false">{e(v)}</button>' for k, v in TEMALAR.items())
 _sc = ''.join(f'<a class="motifcard" data-t="{mo["tema"]}" href="/semboller/{mo["slug"]}/">{motif_svg(mo)}<b>{e(mo["ad"])}</b><span class="muted-s">{e(mo["bolge"])}</span></a>' for mo in MOTIFLER)
-write('/semboller/', page('Semboller: kilim motiflerinden chakana’ya, anlamları ve kökenleri | Bitki Tabanı', 'Göz, pıtrak, elibelinde, koçboynuzu, hayat ağacı, chakana, kené: Anadolu’dan And’lara geleneksel motifler, anlamları, kaynakları ve bağlantılı bitkiler.', '/semboller/',
-      f'''{crumbs(('/semboller/', 'Semboller'))}<header class="page-head"><span class="eyebrow">Semboller · {len(MOTIFLER)} motif</span><h1>Semboller</h1><p>Kilimlerdeki nazar gözünden And’ların basamaklı haçına, kuşaklar boyunca dokunan, boyanan ve çizilen motifler. Her birini el çizimiyle yeniden çizdik; anlamlarını kaynaklarıyla ve bağlantılı oldukları bitkilerle birlikte anlatıyoruz.</p></header>
+_pop = [x for x in ['goz', 'elibelinde', 'kocboynuzu', 'hayat-agaci', 'pitrak', 'bereket', 'su-yolu', 'cengel', 'yildiz', 'el'] if any(o['slug'] == x for o in MOTIFLER)]
+_poplinks = ' · '.join(f'<a href="/semboller/{x}/">{e(next(o["ad"] for o in MOTIFLER if o["slug"] == x))}</a>' for x in _pop)
+write('/semboller/', page(f'Kilim motifleri ve anlamları: {len(MOTIFLER)} sembol, kaynaklarıyla | Bitki Tabanı', 'Göz, pıtrak, elibelinde, koçboynuzu, hayat ağacı: kilim motifleri ve anlamları, hangi yörede hangi dokumada göründüğü, kaynakları ve bağlantılı bitkileriyle.', '/semboller/',
+      f'''{crumbs(('/semboller/', 'Semboller'))}<header class="page-head"><span class="eyebrow">Semboller · {len(MOTIFLER)} motif</span><h1>Kilim motifleri ve anlamları</h1><p>Kilimlerdeki nazar gözünden And’ların basamaklı haçına, kuşaklar boyunca dokunan, boyanan ve çizilen motifler. Her birini el çizimiyle yeniden çizdik; anlamlarını kaynaklarıyla ve bağlantılı oldukları bitkilerle birlikte anlatıyoruz.</p>
+<p class="muted-s">Bir motifin anlamı yöreden yöreye değişir: aynı çengel bir kilimde nazarı uzaklaştırır, başkasında evliliği anlatır. Bu yüzden burada tek bir “doğru anlam” verilmiyor; her anlam hakemli bir yayına ya da coğrafi işaret tescil belgesine dayandırılıyor ve kaynağı sayfanın altında yazıyor.</p>
+<p>En çok sorulanlar: {_poplinks}</p></header>
 <div class="chips motif-filtre" role="group" aria-label="Temaya göre">{_chips}</div>
 <div class="motifgrid">{_sc}</div>
 <p><a class="cta" href="/blog/">Şamanizm, ritüel bitkiler ve kadim bilgi üzerine yazılar →</a></p>
