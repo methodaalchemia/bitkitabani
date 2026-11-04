@@ -66,7 +66,9 @@ def _gemini1(text, path):
     with urllib.request.urlopen(req, timeout=90) as r: j = _j.loads(r.read())
     part = j['candidates'][0]['content']['parts'][0]['inlineData']
     pcm = path + '.pcm'; open(pcm, 'wb').write(base64.b64decode(part['data']))
-    subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-f', 's16le', '-ar', '24000', '-ac', '1', '-i', pcm, '-b:a', '128k', path], check=True)
+    hiz = os.environ.get('GEMINI_RATE', '1.12')
+    subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-f', 's16le', '-ar', '24000', '-ac', '1', '-i', pcm,
+                    '-filter:a', f'atempo={hiz}', '-b:a', '128k', path], check=True)
     d = _dur(path)
     ws, est = _estimate(text); k = max(0.05, (d - 0.15)) / max(0.1, est)
     return [[a * k, b * k, w] for a, b, w in ws]
