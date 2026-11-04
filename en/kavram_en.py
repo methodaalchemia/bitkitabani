@@ -176,4 +176,22 @@ K_EN = {
            'coloured cloth strips and furs to trees [2].',
            'In the old “crow’s porridge” custom of the Tatar Sabantuy festival, children collect groats, milk, butter and eggs from house to house and cook an oat porridge; some of it is scattered on the thawed ground '
            'as saçı against evil spirits [3]. Throwing wheat, sugar and coins over the bride at Anatolian weddings is a present-day form of the same tradition [4].']},
+'virote-ve-arkana': {'slug': 'virote-and-arkana',
+ 'ad': 'Virote and arkana',
+ 'kisa': 'In Peruvian Amazonian healing, the “magic dart” virote that causes illness, the healer’s defence arkana, and the healing phlegm yachay.',
+ 'metin': ['In the world of the mestizo healers of the Peruvian Amazon, the vegetalistas, magical illness has two main causes: the loss of the soul and a virote lodged in the body. Virote is Spanish for a crossbow '
+           'bolt; healers describe it as a transparent phlegm, sometimes holding a sliver of wood, a bone or a seed, that enters the victim’s body. It is sent by a sorcerer or a rival shaman. In Iquitos Luna watched '
+           'and filmed sessions in which a healer extracted a virote from a patient; patients said they felt relief at once, but several sessions were needed to remove all the phlegm [1][2].',
+           'When healing, the shaman sucks these darts out; for this he keeps in his mouth his own phlegm, called yachay, yausa or mariri. The yachay is “planted” during apprenticeship, by the spirits of the plants or '
+           'by the teacher: in one account the teacher blew {mapacho} tobacco smoke and juice through the novice’s nostrils, then regurgitated his own phlegm and gave it to him to drink with tobacco juice. The yachay '
+           'grows like a plant, and its growth depends on the length of the diet, the dieta. Although healers distinguish virote from yachay, the two seem to be faces of the same thing, healing, protecting or '
+           'harming: a “good” virote taken from a patient may be added to the healer’s own mariri [1].',
+           'Arkana means “defence” in Quechua. Healing is dangerous work; shamans often fight jealous rivals in their dreams. So every healer has his arkana, his protectors. One Iquitos healer speaks of three darts '
+           'against enemies from earth, water and air, and of a hurricane that blows enemies away; another, in serious cases of sorcery, surrounds himself with the animals of air, water and earth: a small bird circling '
+           'his head, a lion and a panther on his shoulders, a bushmaster snake around his neck and, as a last resort, a school of piranhas. Another places four angels with swords in the corners of his house; yet '
+           'another’s guardians are the “mothers” of four trees armed with guns, and in the greatest danger a war plane comes. Luna sees the arkana’s absorption of modern weapons as a sign of the tradition’s vitality '
+           '[1].',
+           'The chief means of defence are the songs called icaros; a healer without strong icaros does not survive. Tobacco smoke is a constant defence against evil people and forest spirits such as the Yacuruna and '
+           'the Chullachaqui. One healer hangs dried toads filled with tobacco and patiquina to catch darts thrown at his house. To learn who sent a virote, only two leaves of {toe} are added to the ayahuasca; '
+           'the healer considers this plant very strong [1][2]. This is a record of a belief system; many of the plants described are poisonous.']},
 }

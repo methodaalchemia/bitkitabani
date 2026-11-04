@@ -328,4 +328,29 @@ dict(yayin='2026-11-08', slug='smudging', ad='Smudging', bitki='akadacayi',
                ('Didem Uzun, Şimal Yakut Aymankuy, “Food and beverage rituals at the period of birth, marriage, and death in Shamanist Turks and its modern reflections”, Journal of Tourism Leisure and Hospitality 6(1), '
                 '2024',
                 'https://doi.org/10.48119/toleho.1492741')]},
+{'yayin': '2026-11-17',
+ 'slug': 'virote-ve-arkana',
+ 'ad': 'Virote ve arkana',
+ 'bitki': 'mapacho',
+ 'kisa': 'Peru Amazonu şifacılığında hastalık yapan “büyü oku” virote, şifacının savunması arkana ve emerek iyileştiren balgam yachay.',
+ 'metin': ['Peru Amazonu’ndaki melez (mestizo) şifacıların, yani vegetalistaların dünyasında büyüden kaynaklanan hastalığın iki ana nedeni vardır: ruhun çalınması ve bedene bir virote saplanması. Virote, İspanyolcada '
+           'tatar yayı oku demektir; şifacılar onu saydam bir balgam olarak tarif eder; içinde küçük bir tahta parçası, kemik ya da tohum olabilir ve kurbanın bedenine girer. Bir büyücü ya da rakip şaman gönderir. '
+           'Luna, Iquitos’ta bir şifacının hastasından virote çıkardığı seansları izleyip filme aldı; hastalar hemen rahatladığını söylese de balgamın tamamen çıkması için birkaç seans gerekiyordu [1][2].',
+           'Şifacı iyileştirirken bu okları emerek çıkarır; bunun için ağzında yachay, yausa ya da mariri denen kendi balgamı bulunur. Yachay çıraklık sırasında ya bitkilerin ruhları ya da usta tarafından “ekilir”: bir '
+           'anlatıma göre usta, çırağın burun deliklerinden {mapacho} tütünü dumanı ve suyu üfler, sonra kendi balgamını kusup tütün suyuyla birlikte ona içirir. Yachay bir bitki gibi büyür; büyümesi perhizin, yani '
+           'dietanın uzunluğuna bağlıdır. Şifacılar virote ile yachay’ı ayırsa da ikisi aynı şeyin iyileştiren, koruyan ya da zarar veren yüzleri gibidir: hastadan çıkarılan “iyi” bir virote, şifacının kendi '
+           'maririsine katılabilir [1].',
+           'Arkana Keçuvaca “savunma” demektir. Şifacılık tehlikeli bir iştir; şifacılar kıskanç rakiplerle çoğu zaman rüyada savaşır. Bu yüzden her şifacının arkanası, yani koruyucuları vardır. Iquitos’taki '
+           'şifacılardan biri yerden, sudan ve havadan gelen düşmanlara karşı üç ok ile düşmanı savurup atan bir kasırgadan söz eder; bir başkası ağır büyü vakalarında çevresine hava, su ve toprağın hayvanlarını dizer: '
+           'başının üstünde dönen küçük bir kuş, omuzlarında aslan ve panter, boynunda bir şuşupi yılanı, en son çare olarak bir piranha sürüsü. Bir diğeri evinin dört köşesine kılıçlı dört melek koyar; bir başkasının '
+           'koruyucuları dört ağacın “annesi”dir, ellerinde tüfek vardır, en büyük tehlikede ise bir savaş uçağı gelir. Luna, arkananın modern silahları bünyesine katmasını geleneğin canlılığının göstergesi sayar [1].',
+           'Savunmanın en önemli aracı icaro denen şarkılardır; güçlü icarosu olmayan şifacı hayatta kalamaz. Tütün dumanı da kötü insanlara, Yacuruna ve Chullachaqui gibi orman ruhlarına karşı sürekli bir '
+           'savunmadır. Bir şifacı tütün ve patiquina karışımıyla doldurduğu kurutulmuş kurbağaları eve atılan okları yakalasın diye asar. Virote gönderenin kim olduğunu anlamak içinse ayahuascaya yalnızca iki yaprak '
+           '{toe} eklenir; şifacı bu bitkiyi çok güçlü sayar [1][2]. Bunlar bir inanç sisteminin kaydıdır; anlatılan bitkilerin birçoğu zehirlidir.'],
+ 'bitkiler': ['mapacho', 'ayahuasca', 'toe', 'chiricsanango'],
+ 'semboller': [],
+ 'yazilar': ['ogreten-bitkiler-dieta-ayahuasca-pastora'],
+ 'kaynaklar': [('Luis Eduardo Luna, “The concept of plants as teachers among four mestizo shamans of Iquitos, northeastern Peru”, Journal of Ethnopharmacology 11(2), 1984',
+                'https://doi.org/10.1016/0378-8741(84)90036-9'),
+               ('Luis Eduardo Luna, “The healing practices of a Peruvian shaman”, Journal of Ethnopharmacology 11(2), 1984', 'https://doi.org/10.1016/0378-8741(84)90035-7')]},
 ]
