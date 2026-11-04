@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 134 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 135 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -4208,3 +4208,35 @@ Karıştırma riski: Türkiye’de bahçelerde en sık görülen tür mavi çiç
 
 ### İlginç bilgi
 Batı dillerindeki adı (passion flower), İspanyol misyonerlerin çiçekte İsa’nın çilesinin simgelerini görmesinden gelir; Türkçedeki “çarkıfelek” adı ise çiçeğin dönen bir çarkı andıran şeklinden.
+
+## Karabaş otu (Lavandula stoechas)
+
+URL: https://bitkitabani.com/karabas/
+Familya: Lamiaceae · Bölge: Anadolu ve Akdeniz · Kullanılan kısım: Çiçekli başaklar
+Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
+
+### Geleneksel kullanım
+- Anadolu: Ege ve Akdeniz kıyılarında karabaş adıyla bilinir; çayı baş ağrısı, sinir ve öksürük için içilir, kurusu sandıklara güveye karşı konur.
+- Arap ve Fars tıbbı: Ortaçağ Arap ve Fars hekimlerinin “ustukhuddus”udur; eski kitaplarda “beynin süpürgesi” diye anılır ve Hindistan’daki Yunani tıbbında hâlâ kullanılır.
+
+### Hazırlama
+Bir çay kaşığı kurutulmuş çiçek bir bardak kaynar suda 5–10 dakika demlenir; günde bir iki bardağı geçmemek gerekir.
+
+### Bilim ne diyor
+Laboratuvar ve hayvan çalışmalarında yatıştırıcı, kas gevşetici ve antimikrobiyal etkiler gösterilmiştir. İnsanlarda yapılmış az sayıda çalışma vardır; bir meta-analiz doğum ağrısında aromaterapi olarak olası bir fayda bildirir, ama çalışmalar küçüktür. Uçucu yağı, lavantanınkinden (L. angustifolia) farklı olarak çok miktarda kâfur ve fenkon içerir.
+
+### Güvenlik
+Çay olarak ölçülü miktarda genelde güvenli kabul edilir. Uçucu yağı kâfur bakımından zengindir; ağızdan alınmamalı, bebek ve küçük çocukların yüzüne sürülmemelidir, çünkü kâfur nöbete yol açabilir. Hamilelikte kullanılmamalıdır.
+
+### İlaç etkileşimleri
+- Uyku ilaçları ve sakinleştiriciler: Yatıştırıcı etkiler toplanabilir.
+- Nöbet ilaçları: Kâfurlu yağ nöbet eşiğini düşürebilir.
+
+### Doğada
+Nerede yetişir: Ege ve Akdeniz’in kızılçam ormanlarında, makilerde ve kayalık yamaçlarda; kireçsiz toprakları sever.
+Toplama mevsimi: Çiçekler Mart–Mayıs’ta açar; başaklar tam açmadan toplanır.
+Yöresel adlar: karabaş, karabaş otu, keşiş otu
+Karıştırma riski: Gerçek lavanta (L. angustifolia) uzun saplı, kulakçıksız başaklar yapar; karabaşın başağının tepesinde belirgin mor kulakçıklar vardır.
+
+### İlginç bilgi
+Başakların tepesindeki mor “kulakçıklar” çiçek değil, tozlaştırıcıları çekmek için renklenmiş yaprak benzeri brakteelerdir.

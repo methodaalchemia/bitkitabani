@@ -524,6 +524,17 @@ DESCRIPTION:Tomurcuklar Mayıs–Ağustos arasında\, açmadan sabah erke
 URL:https://bitkitabani.com/kapari/
 END:VEVENT
 BEGIN:VEVENT
+UID:toplama-karabas@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260301
+DTEND;VALUE=DATE:20260302
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Karabaş otu toplama mevsimi
+DESCRIPTION:Çiçekler Mart–Mayıs’ta açar\; başaklar tam açmadan 
+ toplanır. https://bitkitabani.com/karabas/
+URL:https://bitkitabani.com/karabas/
+END:VEVENT
+BEGIN:VEVENT
 UID:toplama-karahindiba@bitkitabani.com
 DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260301
