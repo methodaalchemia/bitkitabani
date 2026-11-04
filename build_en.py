@@ -83,7 +83,7 @@ def run(G):
 '''
     MENU_EN = [('Explore', [('/en/catalog/', 'Catalog', 'kat'), ('/en/bridges/', 'Culture bridges', 'br'), ('/en/regions/', 'Regions of Anatolia', 'regions'), ('/en/harvest-calendar/', 'Harvest calendar', 'calendar'), ('/en/ritual-calendar/', 'Ritual calendar', 'calendar')]),
                ('Guides', [('/en/guides/', 'Herbs by complaint', 'guides'), ('/en/recipes/', 'Herbal tea recipes', 'recipes'), ('/en/concepts/', 'Concept of the day', 'concepts'), ('/en/symbols/', 'Symbols', 'symbols'), ('/en/stories/', 'Stories', 'stories'), ('/en/articles/', 'Articles', 'articles')]),
-               ('Bitki Tabanı', [('/en/about/', 'About and method', 'about'), ('https://www.instagram.com/bitkitabani/', 'Instagram', 'ig'), ('/en/account/', 'Account', 'acct'), ('/en/privacy/', 'Privacy', 'priv'), ('mailto:iletisim@bitkitabani.com', 'Contact', 'mail')])]
+               ('Bitki Tabanı', [('/en/about/', 'About and method', 'about'), ('https://www.instagram.com/bitkitabani/', 'Instagram', 'ig'), ('https://www.youtube.com/@bitkitabani', 'YouTube', 'yt'), ('/en/account/', 'Account', 'acct'), ('/en/privacy/', 'Privacy', 'priv'), ('mailto:iletisim@bitkitabani.com', 'Contact', 'mail')])]
     def nav(cur, tr_path):
         a = lambda href, label, key: f'<a href="{href}"{" aria-current=\"page\"" if cur == key else ""}{" rel=\"noopener\"" if href.startswith("http") else ""}>{label}</a>'
         groups = ''.join(f'<div class="mgrp"><b>{g}</b>' + ''.join(a(h, l, k) for h, l, k in items) + '</div>' for g, items in MENU_EN)
@@ -399,7 +399,7 @@ def run(G):
         lab = 'Added today' if d0 == LOCAL_DAY else 'Added yesterday' if (LOCAL_DAY - d0).days == 1 else f'Latest addition · {d0.day} {AYL[d0.month-1]}'
         prev = ''.join(f'<li><a href="/en/{i}/">{e(EN[i]["name"])}</a> <span class="mono-d">{YENI[i].day} {AYL[YENI[i].month-1][:3]}</span></li>' for i in NEWEST[1:5])
         im = f'<div class="ph"><img src="/img/{q["id"]}-500.jpg" alt="" width="500" height="667" loading="lazy"></div>' if q['id'] in IMG else ''
-        newband_en = f'''<section class="newband"><a class="nb-main" href="/en/{q["id"]}/">{im}<span class="nb-txt"><span class="eyebrow">{lab}</span><b>{e(EN[q["id"]]["name"])}</b><i>{e(short_la(q))}</i><span class="nb-fact">{e(EN[q["id"]]["fact"])}</span><span class="cta small">Read the entry →</span></span></a><div class="nb-side"><p class="nb-say"><b>A new plant every day.</b> The catalog grows by one entry every night.</p>{('<ul class="nb-list">' + prev + '</ul>') if prev else ''}<p class="nb-links"><a href="https://www.instagram.com/bitkitabani/" rel="noopener">Daily on Instagram →</a></p></div></section>'''
+        newband_en = f'''<section class="newband"><a class="nb-main" href="/en/{q["id"]}/">{im}<span class="nb-txt"><span class="eyebrow">{lab}</span><b>{e(EN[q["id"]]["name"])}</b><i>{e(short_la(q))}</i><span class="nb-fact">{e(EN[q["id"]]["fact"])}</span><span class="cta small">Read the entry →</span></span></a><div class="nb-side"><p class="nb-say"><b>A new plant every day.</b> The catalog grows by one entry every night.</p>{('<ul class="nb-list">' + prev + '</ul>') if prev else ''}<p class="nb-links"><a href="https://www.instagram.com/bitkitabani/" rel="noopener">Daily on Instagram →</a> · <a href="https://www.youtube.com/@bitkitabani" rel="noopener">Shorts on YouTube →</a></p></div></section>'''
     home = f'''
 <header class="top">
   <div class="brand">
