@@ -1,0 +1,32 @@
+name: Ses denemesi (tek video)
+on:
+  workflow_dispatch:
+    inputs:
+      bitki: { description: 'Bitki id', default: 'nane' }
+      ses: { description: 'Gemini sesi (Kore, Aoede, Leda, Zephyr, Puck, Charon...)', default: 'Kore' }
+permissions: { contents: write }
+jobs:
+  deneme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install -q pillow edge-tts
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - run: python3 build.py
+      - name: Video
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_VOICE: ${{ inputs.ses }}
+        run: |
+          mkdir -p out
+          python3 tools/reel.py "${{ inputs.bitki }}" "out/${{ inputs.bitki }}-${{ inputs.ses }}.mp4"
+      - uses: actions/upload-artifact@v4
+        with: { name: ses-deneme, path: out/*.mp4 }
+      - name: igmedia dalına da koy (deneme/ altında)
+        run: |
+          git fetch -q origin igmedia && git worktree add -q /tmp/igm origin/igmedia
+          mkdir -p /tmp/igm/deneme && cp out/*.mp4 /tmp/igm/deneme/
+          cd /tmp/igm && git config user.name bot && git config user.email bot@users.noreply.github.com
+          git add -A && git commit -qm "ses denemesi" && git push -q origin HEAD:igmedia
