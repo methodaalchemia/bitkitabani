@@ -489,7 +489,7 @@ dict(yayin='2026-11-20', id='salviadivinorum', tr='Kâhin adaçayı', la='Salvia
         'yetisme': 'Batı Amazon’da yerli toplulukların bahçelerinde; ekili örneklerin çoğu kısırdır ve çelikle çoğaltılır [1].',
         'yoresel': 'Piri piri, huaste, ibenki',
         'karisma': 'Pazarda aynı adla satılan Isoetes, Hesperoxiphion ve Peperomia türleriyle karışabilir [4].'},
- 'kaynak': [('Tournon, Cauper Pinedo & Urquía Odicio, Los “piri piri”, plantas paradójicas de la Amazonía (Anthropologica 16, 1998)', 'https://doi.org/10.18800/anthropologica.199801.009'),
+ 'kaynak': [('Tournon, Caúper Pinedo & Urquía Odicio, Los “piri piri”, plantas paradójicas de la Amazonía (Anthropologica 16, 1998)', 'https://doi.org/10.18800/anthropologica.199801.009'),
             ('Kujawska ve ark., The relationship between a Western Amazonian society and domesticated sedges (Cyperus spp.) (Economic Botany 2020)', 'https://doi.org/10.1007/s12231-020-09500-5'),
             ('Luziatelli ve ark., Asháninka medicinal plants: a case study from the native community of Bajo Quimiriki, Junín, Peru (J Ethnobiol Ethnomed 2010)',
              'https://doi.org/10.1186/1746-4269-6-21'),
