@@ -18,7 +18,7 @@ def main():
         od = os.path.join(out_root, pid); os.makedirs(od, exist_ok=True)
         ok = reel.make(p, ig2.text_for(p), img, os.path.join(od, 'reel.mp4'))
         print('cay reel:', pid, 'ok' if ok else 'HATA')
-        if ok: done[pid] = {'reel': f'https://bitkitabani.com/ig/cay/{pid}/reel.mp4', 'caption': ig2.caption2(p, 'Çay tarifi'), 'tr': p['tr']}
+        if ok: done[pid] = {'reel': f'https://bitkitabani.com/ig/cay/{pid}/reel.mp4', 'caption': ig2.caption2(p, 'Çay tarifi'), 'tr': p['tr'], 'tarif': next(t['slug'] for t in TARIFLER if t['bitki'] == pid)}
     json.dump(done, open(os.path.join(out_root, 'index.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 
 if __name__ == '__main__':

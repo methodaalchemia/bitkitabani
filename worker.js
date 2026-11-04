@@ -297,6 +297,65 @@ async function thPost(env) {
   return { n: st.n || 0, error: st.error };
 }
 // ---------- Facebook sayfası: Instagram'daki günlük bitki postu, aynı görseller ve sitenin bağlantısıyla ----------
+// ---------- YouTube Shorts ----------
+// Gerekli gizli değişkenler: YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN (YouTube Data API v3, youtube.upload yetkisi).
+// Sıra: önce 18 çay videosu (igout/cay), günde bir tane; bitince her akşam günün bitkisinin Reels'i. Kota: yükleme 1.600 birim, günlük 10.000.
+async function ytToken(env, st) {
+  if (st.at && st.exp && Date.now() < st.exp - 60e3 && st.seed === env.YT_REFRESH_TOKEN) return st.at;
+  const r = await fetch('https://oauth2.googleapis.com/token', { method: 'POST', body: new URLSearchParams({ client_id: env.YT_CLIENT_ID, client_secret: env.YT_CLIENT_SECRET, refresh_token: env.YT_REFRESH_TOKEN, grant_type: 'refresh_token' }) });
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok || !j.access_token) throw new Error('YouTube token: ' + (j.error_description || j.error || r.status));
+  st.at = j.access_token; st.exp = Date.now() + (j.expires_in || 3600) * 1e3; st.seed = env.YT_REFRESH_TOKEN;
+  return st.at;
+}
+function ytMeta(tr, pid, caption, tarif) {
+  const paras = String(caption || '').split('\n\n').filter(x => !x.startsWith('#') && !/profilde/i.test(x) && !x.startsWith('Kaydırarak'));
+  const tag = tr.toLowerCase().replace(/[^a-zçğıöşü]/g, '');
+  const title = (tarif ? `${tr} çayı nasıl demlenir, neye iyi gelir? | Bitki Tabanı` : `${tr}: neye iyi gelir, kimler dikkat etmeli? | Bitki Tabanı`).slice(0, 100);
+  const desc = paras.slice(0, 3).join('\n\n') + (tarif ? `\n\nÇay tarifi: https://bitkitabani.com/tarif/${tarif}/` : '') + `\nBitkinin sayfası: https://bitkitabani.com/${pid}/\n\nBilgilendirme amaçlıdır; tıbbi tavsiye yerine geçmez.\n\n#Shorts #şifalıbitkiler #${tag} #bitkiçayı #bitkitabani`;
+  return { title, desc, tags: ['Shorts', 'şifalı bitkiler', tr, 'bitki çayı', 'Bitki Tabanı', 'etnobotanik'] };
+}
+async function ytUpload(env, st, videoUrl, meta) {
+  const tok = await ytToken(env, st);
+  const v = await fetch(videoUrl); if (!v.ok) throw new Error('video alınamadı ' + v.status);
+  const buf = await v.arrayBuffer();
+  const body = { snippet: { title: meta.title, description: meta.desc, tags: meta.tags, categoryId: '26', defaultLanguage: 'tr', defaultAudioLanguage: 'tr' }, status: { privacyStatus: 'public', selfDeclaredMadeForKids: false } };
+  const init = await fetch('https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status', { method: 'POST', headers: { authorization: 'Bearer ' + tok, 'content-type': 'application/json; charset=UTF-8', 'x-upload-content-type': 'video/mp4', 'x-upload-content-length': String(buf.byteLength) }, body: JSON.stringify(body) });
+  if (!init.ok) throw new Error('YouTube başlatma: ' + init.status + ' ' + (await init.text()).slice(0, 200));
+  const loc = init.headers.get('location'); if (!loc) throw new Error('YouTube yükleme adresi yok');
+  const up = await fetch(loc, { method: 'PUT', headers: { authorization: 'Bearer ' + tok, 'content-type': 'video/mp4', 'content-length': String(buf.byteLength) }, body: buf });
+  const j = await up.json().catch(() => ({}));
+  if (!up.ok) throw new Error('YouTube yükleme: ' + up.status + ' ' + (j.error && j.error.message || '').slice(0, 200));
+  return j.id;
+}
+async function ytPost(env, force) {   // günde bir Shorts, 18:30–22:00 arası
+  const st = (await call(env, 'yt:state', 'get')) || {};
+  const day = trDay();
+  if (!force && (st.last === day || trH() < 18.4 || trH() > 22)) return { skipped: 'sırası değil' };
+  if (st.errorAt && Date.now() - st.errorAt < 3 * 3600e3 && !force) return { skipped: 'hata sonrası bekleniyor' };
+  try {
+    let videoUrl, meta, key;
+    const cay = await (await igAsset('cay/index.json')).json().catch(() => ({}));
+    const bekleyen = Object.keys(cay).filter(k => !(st.done || {})['cay:' + k]);
+    if (bekleyen.length) {
+      const pid = bekleyen[0], c = cay[pid];
+      key = 'cay:' + pid; videoUrl = c.reel; meta = ytMeta(c.tr, pid, c.caption, c.tarif || null);
+    } else {
+      const ig = (await call(env, 'ig:state', 'get')) || {};
+      if (!ig.lastPlant || ig.last !== day) return { skipped: 'günün videosu yok' };
+      const pr = await igAsset('p/' + (ig.n - 1) + '/post.json'); if (!pr.ok) throw new Error('post bulunamadı');
+      const post = await pr.json();
+      if (!post.reel) return { skipped: 'reel yok' };
+      key = 'gun:' + post.id; if ((st.done || {})[key]) return { skipped: 'zaten yüklendi' };
+      const tr = (post.caption || '').split(/[:\n]/)[0].replace(/[^\p{L}\s]/gu, '').trim() || post.id;
+      videoUrl = post.reel; meta = ytMeta(tr, post.id, post.caption, null);
+    }
+    const id = await ytUpload(env, st, videoUrl, meta);
+    st.done = st.done || {}; st.done[key] = id; st.last = day; st.n = (st.n || 0) + 1; st.lastVideo = 'https://youtube.com/shorts/' + id; st.error = null;
+  } catch (e) { st.error = String(e.message || e).slice(0, 300); st.errorAt = Date.now(); }
+  await call(env, 'yt:state', 'put', st);
+  return { n: st.n || 0, son: st.lastVideo || null, hata: st.error || null };
+}
 // Gerekli gizli değişken: FB_TOKEN (sayfa token'ı; kullanıcı token'ı verilirse sayfanınki otomatik bulunur).
 const FB = 'https://graph.facebook.com/v23.0';
 async function fbAuth(env, st) {
@@ -630,6 +689,7 @@ async function katkiApi(req, env, url) {
     const k = url.searchParams.get('k');
     if (k === 'tg' && env.TG_TOKEN) return json(await tgPost(env, true));
     if (k === 'bsky' && env.BSKY_HANDLE) return json(await bskyPost(env, true));
+    if (k === 'yt' && env.YT_REFRESH_TOKEN) return json(await ytPost(env, true));
     return json({ error: 'anahtar yok', tg: !!env.TG_TOKEN, bsky: !!env.BSKY_HANDLE });
   }
   if (url.pathname === '/api/katki-liste' && req.method === 'GET') return json((await call(env, 'katki:list', 'get')) || []);
@@ -886,6 +946,7 @@ export default {
       try { const q = (await call(env, 'qr:sayac', 'get')) || {}; q[id] = (q[id] || 0) + 1; q._toplam = (q._toplam || 0) + 1; if (k) q['k:' + k] = (q['k:' + k] || 0) + 1; await call(env, 'qr:sayac', 'put', q); } catch (e) {}
       return Response.redirect(url.origin + '/' + id + '/?utm_source=qr' + (k ? '&utm_campaign=' + k : ''), 302);
     }
+    if (url.pathname === '/api/yt-durum' && req.method === 'GET') { const y = (await call(env, 'yt:state', 'get')) || {}; return json({ anahtar: !!env.YT_REFRESH_TOKEN, sayi: y.n || 0, son: y.last || null, video: y.lastVideo || null, yuklenen: Object.keys(y.done || {}), hata: y.error || null }); }
     if (url.pathname === '/api/qr-durum' && req.method === 'GET') return json((await call(env, 'qr:sayac', 'get')) || {});
     if (url.pathname.startsWith('/api/abone/') && (req.method === 'GET' || url.pathname === '/api/abone/cik')) return aboneApi(req, env, url);
     if (req.method !== 'GET' && req.headers.get('x-bt') !== '1') return json({ error: 'csrf' }, 403);
@@ -944,5 +1005,6 @@ export default {
     if (env.FB_TOKEN) ctx.waitUntil(fbPost(env).catch(() => null));
     if (env.TG_TOKEN && env.TG_CHAT) ctx.waitUntil(tgPost(env).catch(() => null).then(() => tgEk(env)).catch(() => null).then(() => tgArsiv(env)).catch(() => null));
     if (env.BSKY_HANDLE && env.BSKY_PASSWORD) ctx.waitUntil(bskyPost(env).catch(() => null));
+    if (env.YT_REFRESH_TOKEN) ctx.waitUntil(ytPost(env).catch(() => null));
   },
 };
