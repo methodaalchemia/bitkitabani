@@ -65,7 +65,11 @@ def kapak(h, i):
     gf, kunye = gorsel(h.get('gorsel'))
     tw = W - (PW if gf else 0)
     soluk = tuple(int(int(bg[j:j + 2], 16) * 0.78 + 0xF1 * 0.22) for j in (1, 3, 5))
-    motif(d, kind, tw - 160 + (hs % 80), 520 + (hs >> 11) % 100, 420, soluk, 12)
+    # büyük filigran motif: renk alanının içinde kalsın (fotoğraf şeridinin altında yarım kalmasın)
+    _r = 420; _h2 = _r // 2
+    _x0, _x1 = _h2 + 26, tw - 34 - _h2 - 26
+    _cx = _x0 + (hs % 101) * (_x1 - _x0) // 100 if _x1 > _x0 else (_x0 + _x1) // 2
+    motif(d, kind, _cx, 300 + (hs >> 11) % 170, _r, soluk, 12)
     if gf:
         ph = Image.open(gf).convert('RGB')
         r = max(PW / ph.width, H / ph.height); ph = ph.resize((int(ph.width * r) + 1, int(ph.height * r) + 1))
@@ -105,7 +109,7 @@ def main():
     eski = json.load(open(idx, encoding='utf-8')) if os.path.exists(idx) else {}
     for i, h in enumerate(H_):
         p = os.path.join(OUT, h['slug'] + '.jpg')
-        imza = h['baslik'] + '|' + str(h.get('gorsel')) + '|v2'
+        imza = h['baslik'] + '|' + str(h.get('gorsel')) + '|v3'
         if os.path.exists(p) and eski.get(h['slug']) == imza: continue
         kapak(h, i).save(p, quality=86, optimize=True); n += 1
         eski[h['slug']] = imza
