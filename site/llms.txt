@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 171 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 134 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 
@@ -146,43 +146,6 @@ Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 - [Gelincik (Papaver rhoeas)](https://bitkitabani.com/gelincik/): Genelde güvenli, kanıt: geleneksel
 - [Söğüt (Salix alba)](https://bitkitabani.com/sogut/): Dikkat, kanıt: sınırlı
 - [Çarkıfelek (Passiflora incarnata)](https://bitkitabani.com/pasiflora/): Genelde güvenli, kanıt: sınırlı
-- [Karabaş otu (Lavandula stoechas)](https://bitkitabani.com/karabas/): Dikkat, kanıt: geleneksel
-- [Neem (Azadirachta indica)](https://bitkitabani.com/neem/): Dikkat, kanıt: sınırlı
-- [Graviola (Annona muricata)](https://bitkitabani.com/graviola/): Dikkat, kanıt: geleneksel
-- [Mahlep (Prunus mahaleb)](https://bitkitabani.com/mahlep/): Genelde güvenli, kanıt: geleneksel
-- [Yıldız anason (Illicium verum)](https://bitkitabani.com/yildizanason/): Dikkat, kanıt: geleneksel
-- [Gotu kola (Centella asiatica)](https://bitkitabani.com/gotukola/): Dikkat, kanıt: sınırlı
-- [Tulsi (Ocimum tenuiflorum)](https://bitkitabani.com/tulsi/): Genelde güvenli, kanıt: sınırlı
-- [Lotus (Nelumbo nucifera)](https://bitkitabani.com/lotus/): Genelde güvenli, kanıt: geleneksel
-- [Cadı fındığı (Hamamelis virginiana)](https://bitkitabani.com/hamamelis/): Genelde güvenli, kanıt: geleneksel
-- [Turna yemişi (Vaccinium macrocarpon)](https://bitkitabani.com/turnayemisi/): Genelde güvenli, kanıt: klinik
-- [Paico (Dysphania ambrosioides)](https://bitkitabani.com/paico/): Yüksek risk, kanıt: geleneksel
-- [Sassafras (Sassafras albidum)](https://bitkitabani.com/sassafras/): Yüksek risk, kanıt: geleneksel
-- [Kiwicha (Amaranthus caudatus)](https://bitkitabani.com/kiwicha/): Genelde güvenli, kanıt: geleneksel
-- [Fitolakka (Phytolacca americana)](https://bitkitabani.com/fitolakka/): Yüksek risk, kanıt: geleneksel
-- [Mayıs elması (Podophyllum peltatum)](https://bitkitabani.com/mayiselmasi/): Yüksek risk, kanıt: klinik
-- [Kâhin adaçayı (Salvia divinorum)](https://bitkitabani.com/salviadivinorum/): Yüksek risk, kanıt: geleneksel
-- [Gül (Rosa damascena)](https://bitkitabani.com/gul/): Genelde güvenli, kanıt: sınırlı
-- [Mısır (Zea mays)](https://bitkitabani.com/misir/): Genelde güvenli, kanıt: geleneksel
-- [Hünnap (Ziziphus jujuba)](https://bitkitabani.com/hunnap/): Genelde güvenli, kanıt: sınırlı
-- [Şerbetçiotu (Humulus lupulus)](https://bitkitabani.com/serbetciotu/): Dikkat, kanıt: sınırlı
-- [Akgünlük (Boswellia sacra)](https://bitkitabani.com/akgunluk/): Genelde güvenli, kanıt: sınırlı
-- [Huş ağacı (Betula pendula)](https://bitkitabani.com/hus/): Genelde güvenli, kanıt: klinik
-- [Buğday (Triticum aestivum)](https://bitkitabani.com/bugday/): Genelde güvenli, kanıt: geleneksel
-- [Ormangülü (Rhododendron ponticum)](https://bitkitabani.com/ormangulu/): Yüksek risk, kanıt: geleneksel
-- [Baldıran (Conium maculatum)](https://bitkitabani.com/baldiran/): Yüksek risk, kanıt: geleneksel
-- [Yüksük otu (Digitalis spp.)](https://bitkitabani.com/yuksukotu/): Yüksek risk, kanıt: klinik
-- [Camalonga (sarı zakkum) (Thevetia peruviana (Cascabela thevetia))](https://bitkitabani.com/camalonga/): Yüksek risk, kanıt: geleneksel
-- [Huayruro (Ormosia spp.)](https://bitkitabani.com/huayruro/): Yüksek risk, kanıt: geleneksel
-- [Piri piri (Cyperus spp.)](https://bitkitabani.com/piripiri/): Dikkat, kanıt: geleneksel
-- [Ajo sacha (orman sarımsağı) (Mansoa alliacea)](https://bitkitabani.com/ajosacha/): Dikkat, kanıt: geleneksel
-- [Mucura (Petiveria alliacea)](https://bitkitabani.com/mucura/): Dikkat, kanıt: geleneksel
-- [Bobinsana (Calliandra angustifolia)](https://bitkitabani.com/bobinsana/): Dikkat, kanıt: geleneksel
-- [Meşe (Quercus robur)](https://bitkitabani.com/mese/): Dikkat, kanıt: geleneksel
-- [Porsuk ağacı (Taxus baccata)](https://bitkitabani.com/porsuk/): Yüksek risk, kanıt: klinik
-- [Kuş üvezi (Sorbus aucuparia)](https://bitkitabani.com/kusuvezi/): Genelde güvenli, kanıt: geleneksel
-- [Dişbudak (Fraxinus excelsior)](https://bitkitabani.com/disbudak/): Genelde güvenli, kanıt: geleneksel
-- [Mine çiçeği (Verbena officinalis)](https://bitkitabani.com/minecicegi/): Genelde güvenli, kanıt: geleneksel
 
 ## Kültür köprüleri
 - [Aynı molekül, iki ayrı ritüel](https://bitkitabani.com/kopruler/uzerlik-ayahuasca/): İkisi de harmin ve harmalin taşır. Anadolu’da bu alkaloitler nazar dumanında yanar; Amazon’da tören içeceğinin omurgasını oluşturur.
