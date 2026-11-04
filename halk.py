@@ -13,7 +13,7 @@ GURSOY = ('Ülkü Gürsoy, “Türk Kültüründe Ağaç Kültü ve Dut Ağacı�
           'https://dergipark.org.tr/tr/pub/tkhcbva/article/1157366')
 AG = 'Ağrı (Diyadin, Doğubayazıt)'
 _L = 'https://dergipark.org.tr/tr/pub/mutftd/article/'
-KIRICI = ('Saliha Kırıcı, Sevgi Demirci Kayıran, Gülşen Tokuzi, “Doğu Akdeniz Bölgesinde Üzerlik (Peganum harmala L.) Bitkisinin Tütsü Olarak Kullanımı”, Lokman Hekim Dergisi 8(1), 2018', _L + '523820')
+KIRICI = ('Saliha Kırıcı, Serpil Demirci Kayıran, Gonca Tokuz, “Doğu Akdeniz Bölgesinde Üzerlik (Peganum harmala L.) Bitkisinin Tütsü Olarak Kullanımı”, Lokman Hekim Dergisi 8(1), 2018', _L + '523820')
 KARDAS = ('Canser Kardaş, “Muş’ta Yabani Bitkilerin Halk Hekimliğinde Kullanılması”, Lokman Hekim Dergisi 9(1), 2019', _L + '468848')
 SEN = ('Esra Şen, Hatice Dinç Kaya, “Doğumda Geleneksel Uygulamalar: Fatma Ana Eli Bitkisi (Anastatica hierochuntica L.)”, Lokman Hekim Dergisi 11(2), 2021', _L + '871831')
 HITIT = ('Sinem Yeğenoğlu, Burcu Sözen Şahne, Ezgi Ulutaş, “Hitit Uygarlığında Bitkilerin Yeri”, Lokman Hekim Dergisi 6(3), 2016', _L + '523739')
