@@ -53,6 +53,24 @@ async def _tts1(text, path):
             elif ch['type'] == 'WordBoundary': words.append([ch['offset'] / 1e7, (ch['offset'] + ch['duration']) / 1e7, ch['text']])
     return words
 
+GEMINI_VOICE = os.environ.get('GEMINI_VOICE', 'Kore')
+def _gemini1(text, path):
+    """Gemini TTS: 24 kHz PCM döner; ffmpeg ile mp3'e çevrilir. Kelime zamanı vermez, süreye orantılı tahmin edilir."""
+    import json as _j, base64, urllib.request
+    key = os.environ.get('GEMINI_API_KEY')
+    if not key: raise RuntimeError('GEMINI_API_KEY yok')
+    body = {'contents': [{'parts': [{'text': 'Sakin, sıcak ve doğal bir belgesel anlatıcısı gibi, acele etmeden Türkçe oku: ' + text}]}],
+            'generationConfig': {'responseModalities': ['AUDIO'], 'speechConfig': {'voiceConfig': {'prebuiltVoiceConfig': {'voiceName': GEMINI_VOICE}}}}}
+    req = urllib.request.Request('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent',
+                                 data=_j.dumps(body).encode(), headers={'content-type': 'application/json', 'x-goog-api-key': key})
+    with urllib.request.urlopen(req, timeout=90) as r: j = _j.loads(r.read())
+    part = j['candidates'][0]['content']['parts'][0]['inlineData']
+    pcm = path + '.pcm'; open(pcm, 'wb').write(base64.b64decode(part['data']))
+    subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-f', 's16le', '-ar', '24000', '-ac', '1', '-i', pcm, '-b:a', '128k', path], check=True)
+    d = _dur(path)
+    ws, est = _estimate(text); k = max(0.05, (d - 0.15)) / max(0.1, est)
+    return [[a * k, b * k, w] for a, b, w in ws]
+
 def _dur(path):
     r = subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', path], capture_output=True, text=True)
     try: return float(r.stdout.strip())
@@ -72,7 +90,11 @@ def voice(sents, tmp):
         mp3, ws, d = os.path.join(tmp, f's{i}.mp3'), None, 0
         if ok:
             try:
-                ws = asyncio.run(_tts1(s, mp3)); d = _dur(mp3)
+                if os.environ.get('GEMINI_API_KEY'):
+                    try: ws = _gemini1(s, mp3)
+                    except Exception as e: print('reel: Gemini sesi alınamadı, Edge sesine geçildi:', str(e)[:120]); ws = asyncio.run(_tts1(s, mp3))
+                else: ws = asyncio.run(_tts1(s, mp3))
+                d = _dur(mp3)
                 if not ws or d <= 0: raise RuntimeError('boş ses')
             except Exception as e:
                 print('reel: ses alınamadı, altyazılı sessiz video:', str(e)[:120]); ok = False

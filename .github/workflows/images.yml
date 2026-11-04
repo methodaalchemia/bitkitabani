@@ -54,9 +54,13 @@ jobs:
         run: pip install -q edge-tts
       - name: Instagram postları
         continue-on-error: true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python3 tools/ig.py
       - name: Çay bitkileri Reels
         continue-on-error: true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python3 tools/cay_reel.py
       - name: Instagram dosyalarını ayrı dala yaz (geçmiş tutulmaz)
         continue-on-error: true
