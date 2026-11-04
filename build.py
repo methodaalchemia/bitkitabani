@@ -4,6 +4,7 @@ from refs import WIKI, POWO, NCCIH, EMA, OTHER, FILES, BAYTOP
 from baytop_kar import KAR as BKAR
 from extra import EK, KORUMA, YASAL, YASAL_AD, BR_GEO, ALT
 from etkilesim import ETK
+from seo import SEO
 from zehirli import KARIS as ZKARIS, HALK as ZHALK, NEDEN as ZNEDEN, KAYNAK as ZKAYNAK, EV as ZEV, EV_METIN as ZEV_M, LISTE as ZLISTE, LISTE_METIN as ZLISTE_M
 from derin import D as DERIN
 from gozden import KISI as GZ_KISI, SAYFALAR as GZ
@@ -451,6 +452,7 @@ KANIT_ICIN = {'kantaron': 'depresyonda', 'lavanta': 'kaygıda (kapsül)', 'hayit
 def kan_txt(p): return KANIT[p["kanit"]]["ad"] + (' · ' + KANIT_ICIN[p['id']] if p['kanit'] == 'klinik' and p['id'] in KANIT_ICIN else '')
 def desc_for(p):
     """Arama sonucu açıklaması: doğal cümle; önce kanıt, sonra güvenlik. Kesme işareti (…) olmadan ≤160 karakter."""
+    if p['id'] in SEO: return SEO[p['id']][1][:160]
     k = p['kanit']
     if k == 'klinik': kc = (KANIT_ICIN[p['id']][0].upper() + KANIT_ICIN[p['id']][1:] + ' klinik kanıtı var') if p['id'] in KANIT_ICIN else 'Kontrollü insan çalışmalarıyla desteklenen bir kullanımı var'
     elif k == 'sinirli': kc = 'Umut verici ama sınırlı insan çalışmaları var'
@@ -519,7 +521,8 @@ def toc_and_ids(html):
 for i, p in enumerate(P):
     pid = p['id']; rel = related(pid)
     prev, nxt = P[i-1], P[(i+1) % len(P)]
-    title = (f'{p["tr"]}: nedir, etkileri ve zehirlilik riski' if p['guv'] == 'yuksek' else f'{p["tr"]} nedir, ne işe yarar? Faydaları ve zararları')
+    title = (f'{p["tr"]} zehirli mi? Etkileri, belirtileri ve tarihi' if p['guv'] == 'yuksek' else f'{p["tr"]} nedir, ne işe yarar? Faydaları ve zararları')
+    if pid in SEO: title = SEO[pid][0]
     if len(title) < 44: title += ' | Bitki Tabanı'
     ld = {"@context":"https://schema.org","@type":"Article","headline":f'{p["tr"]} ({short_la(p)})',"inLanguage":"tr","about":{"@type":"Taxon","name":short_la(p),"alternateName":[p['tr']] + [x.strip() for x in p['diger'].split(',')][:4],"taxonRank":"species","parentTaxon":{"@type":"Taxon","name":p['fam'].split(' ')[0],"taxonRank":"family"}},"description":desc_for(p),"author":AUTHOR,"isPartOf":{"@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/"},"dateModified":(max(CONTENT_DATE, YENI[pid].isoformat()) if pid in YENI else CONTENT_DATE),**({"datePublished":YENI[pid].isoformat()} if pid in YENI else {}),**({"reviewedBy":{"@type":"Person","name":GZ_KISI['ad'],"jobTitle":GZ_KISI.get('unvan','Eczacı')},"lastReviewed":GZ[pid]} if GZ_KISI and pid in GZ else {}),"url":f'{BASE}/{pid}/',"image":(f'{BASE}/img/{pid}-960.jpg' if pid in IMG else None),"publisher":{"@type":"Organization","name":"Bitki Tabanı","url":BASE+"/","logo":BASE+"/assets/logo-512.png","sameAs":["https://www.instagram.com/bitkitabani/","https://www.threads.net/@bitkitabani","https://www.facebook.com/profile.php?id=61595314033889","https://www.pinterest.com/bitkitabani/","https://t.me/bitkitabani"]}}
     crumbs = {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana sayfa","item":BASE+"/"},{"@type":"ListItem","position":2,"name":"Katalog","item":BASE+"/katalog/"},{"@type":"ListItem","position":3,"name":p['tr'],"item":f'{BASE}/{pid}/'}]}
@@ -1386,7 +1389,15 @@ for mo in MOTIFLER:
 <aside class="disclaimer" role="note"><b>Kültürel kayıt.</b> Motiflerin anlamları kaynaklarda yazdığı biçimde verilmiştir; aynı motif farklı yörelerde farklı yorumlanabilir.</aside>
 <p class="updated">Çizim: Bitki Tabanı, geleneksel motiften yorumlanmıştır.</p>
 </article>'''
-    write(path, page(f'{mo["ad"]} motifi: anlamı ve kökeni | Bitki Tabanı', f'{mo["ad"]} ({mo["bolge"]}): {mo["kisa"]} Anlamı, kaynakları ve bağlantılı bitkiler.'[:158], path, body, 'sembol', narrow=True,
+    _kilim = 'Anadolu' in mo['bolge'] or mo['tema'] in ('koruma', 'bereket')
+    _mt = (f'{mo["ad"]} motifi anlamı: kilimde ve nazarlıkta ne anlatır?' if _kilim else f'{mo["ad"]} sembolü: anlamı, kökeni ve bağlantılı bitkiler')
+    if 'motifi' in mo['ad'].lower(): _mt = _mt.replace(' motifi anlamı', ' anlamı')
+    if len(_mt) > 62: _mt = f'{mo["ad"]}: anlamı ve kökeni | Bitki Tabanı'
+    _m1 = re.sub(r'\s*\[\d+\]', '', mo['anlam']).split('. ')[0].strip().rstrip('.')
+    _md = f'{mo["kisa"]} {_m1}. Hangi yörede, hangi dokumada görülür; kaynaklarıyla.'
+    if len(_md) > 158: _md = (f'{mo["kisa"]} {_m1}.')[:158]
+    if len(_md) > 158: _md = mo['kisa'][:158]
+    write(path, page(_mt, _md, path, body, 'sembol', narrow=True,
           extra=lds({"@context":"https://schema.org","@type":"Article","headline":mo['ad'] + ' motifi',"description":mo['kisa'],"inLanguage":"tr","url":BASE+path,"author":AUTHOR,"citation":[t for t, u in mo['kaynaklar']]}, crumb_ld(('/semboller/', 'Semboller'), (path, mo['ad'])))))
     GUIDE_URLS.append(path)
 _chips = '<button type="button" class="chip" data-t="" aria-pressed="true">Hepsi</button>' + ''.join(f'<button type="button" class="chip" data-t="{k}" aria-pressed="false">{e(v)}</button>' for k, v in TEMALAR.items())
