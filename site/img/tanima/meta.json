@@ -1709,5 +1709,52 @@
  "minecicegi:kuru": "yok",
  "ejderkani:cizim": "yok",
  "ejderkani:cicek": "yok",
- "ejderkani:kuru": "yok"
+ "ejderkani:kuru": "yok",
+ "badem:cizim": {
+  "file": "Prunus dulcis - Köhler–s Medizinal-Pflanzen-250.jpg",
+  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Prunus_dulcis_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-250.jpg"
+ },
+ "badem:cicek": {
+  "file": "Almond blossom at El Calvari 01.jpg",
+  "artist": "Kritzolina",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Almond_blossom_at_El_Calvari_01.jpg"
+ },
+ "badem:kuru": "yok",
+ "antepfistigi:cizim": "yok",
+ "antepfistigi:cicek": {
+  "file": "Feuilles de pistachier.jpg",
+  "artist": "Eusebius",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Feuilles_de_pistachier.jpg"
+ },
+ "antepfistigi:kuru": "yok",
+ "mercimek:cizim": {
+  "file": "Illustration Lens culinaris0.jpg",
+  "artist": "Wikimedia Commons",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Lens_culinaris0.jpg"
+ },
+ "mercimek:cicek": {
+  "file": "Lens culinaris flowers close-up.jpg",
+  "artist": "ChriKo",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Lens_culinaris_flowers_close-up.jpg"
+ },
+ "mercimek:kuru": "yok",
+ "arpa:cizim": {
+  "file": "Illustration Hordeum vulgare1.jpg",
+  "artist": "CSvBibra",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Hordeum_vulgare1.jpg"
+ },
+ "arpa:cicek": {
+  "file": "Camomille sauvage (Matricaria chamomilla), coquelicots (Papaver rhoeas) au bord d'un champ d'orge (Hordeum vulgare).jpg",
+  "artist": "JackyM59",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Camomille_sauvage_%28Matricaria_chamomilla%29%2C_coquelicots_%28Papaver_rhoeas%29_au_bord_d%27un_champ_d%27orge_%28Hordeum_vulgare%29.jpg"
+ },
+ "arpa:kuru": "yok"
 }
