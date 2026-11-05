@@ -174,7 +174,7 @@ Q = [
  'kaynak': [('Sarv, Venskutonis ve Bhat, “The Sorbus spp.—underutilised plants for foods and nutraceuticals”, Antioxidants 9, 2020', 'https://doi.org/10.3390/antiox9090813'),
             ('Arvinte ve ark., Plants 12, 2023', 'https://doi.org/10.3390/plants12183225'),
             ('Sandra Modh, “A Loop of Rowan Tree: amulets against witchcraft”', 'https://england.prm.ox.ac.uk/englishness-loop-of-rowan-tree.html'),
-            ('National Museum of Ireland, Folklife Collections: May Day', 'https://cms.museum.ie/en-IE/Collections-Research/Folklife-Collections/Folklife-Collections-List-(1)/Religion-and-Calendar-Customs/May-Day'),
+            ('National Museum of Ireland, “Traditions and customs May Day / Bealtaine”', 'https://www.museum.ie/en-IE/Collections-Research/Folklife-Collections/Folklife-Collections-List-(1)/Religion-and-Calendar-Customs/May-Day'),
             ('Woodland Trust, Rowan', 'https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/rowan/'),
             ('Snorri Sturluson, Prose Edda, Skáldskaparmál, çev. A. G. Brodeur, 1916', 'https://archive.org/details/proseedda01brodgoog'),
             ('Macit ve ark., IJFAA 2(1), 2022', 'https://dergipark.org.tr/en/download/article-file/2704500'),

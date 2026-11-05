@@ -64,7 +64,7 @@ dict(yayin='2026-10-31', slug='benzerlik-ogretisi', ad='Benzerlik öğretisi', b
         'Biyolog Bradley Bennett’e göre bir bitkinin biçiminin şifalı özelliğinin keşfedilmesini sağladığına dair hiçbir kanıt yoktur; “imzalar” önceden yapılan tahminler değil, sonradan eklenen açıklamalardır [3]. Bennett, kalp biçimli yaprakları olan bitkilerden rastgele seçtiği 80 türden yalnızca 3’ünün kalp için kullanıldığını göstermiştir [1]. Yine de tat ve koku hesaba katılınca öğretinin bir payı vardır: güçlü kokulu ya da acı bitkiler eski ilaç kitaplarında sık yer alır. Bennett’e göre öğreti en çok, bilginin kuşaktan kuşağa aktarılmasını kolaylaştıran bir hafıza aracı olarak işe yaramıştır [3].'],
  bitkiler=['adamotu', 'karahindiba'], semboller=[], yazilar=[],
  kaynaklar=[('Emily Miranker, “The Other Language of Flowers: The Doctrine of Signatures”, New York Academy of Medicine', 'https://nyamcenterforhistory.org/tag/flowers/'),
-            ('Allaire Diamond, “Doctrine of Signatures”, Northern Woodlands, 2015', 'https://northernwoodlands.org/articles/article/doctrine-signatures'),
+            ('Allaire Diamond, “That Signature Look: An Introduction to the Doctrine of Signatures”, Northern Woodlands, Winter 2014', 'https://northernwoodlands.org/articles/article/doctrine-signatures'),
             ('Bradley C. Bennett, “Doctrine of Signatures: An Explanation of Medicinal Plant Discovery or Dissemination of Knowledge?”, Economic Botany 61(3), 2007', 'https://link.springer.com/article/10.1663/0013-0001(2007)61[246:DOSAEO]2.0.CO;2')]),
 dict(yayin='2026-11-02', slug='tibb-i-nebevi', ad='Tıbb-ı nebevî', bitki='corekotu',
  kisa='“Peygamber tıbbı”: Hz. Peygamber’in sağlık ve tedaviyle ilgili hadisleri ve bu hadislerden doğan kitaplar.',

@@ -52,10 +52,10 @@ GEDIK = ('Seda Gedik, “Dede Korkut Kitabında Bitkiler”, AKRA 8(21), 2020', 
 OZDEN18 = ('M. Özden, “Türkçenin İlk Sözlüğünde Kullanılan Bitki Adlarının Günümüz Anadolu Ağızlarındaki İzdüşümleri”, Türkiye Sosyal Araştırmalar Dergisi, 2018', 'https://dergipark.org.tr/tr/download/article-file/907819')
 KIELAK = ('Olga Kielak, “Divine thus good, devilish thus bad? Folk linguistic perceptions about plants and their characteristics in Polish folklore”, Journal of Ethnobiology and Ethnomedicine 21, 2025', 'https://doi.org/10.1186/s13002-025-00787-z')
 WTH = ('Woodland Trust, Hawthorn', 'https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/hawthorn/')
-NMI = ('National Museum of Ireland, Folklife Collections: May Day', 'https://cms.museum.ie/en-IE/Collections-Research/Folklife-Collections/Folklife-Collections-List-(1)/Religion-and-Calendar-Customs/May-Day')
+NMI = ('National Museum of Ireland, “Traditions and customs May Day / Bealtaine”', 'https://www.museum.ie/en-IE/Collections-Research/Folklife-Collections/Folklife-Collections-List-(1)/Religion-and-Calendar-Customs/May-Day')
 SVAN = ('Ingvar Svanberg ve ark., “Uses of tree saps in northern and eastern parts of Europe”, Acta Societatis Botanicorum Poloniae 81(4), 2012', 'https://doi.org/10.5586/asbp.2012.036')
 
-EGE = ('Bintuğ Öztürk ve ark., “Türkiye’nin Etnobotanik Veritabanı”, Ege Üniversitesi BAP sonuç raporu, 2020',
+EGE = ('Bintuğ Öztürk (yürütücü) ve ark., “Türkiye’nin Etnobotanik Veritabanı”, Ege Üniversitesi BAP 13-ECZ-024 sonuç raporu, Şubat 2020',
        'https://acikerisim.ege.edu.tr/server/api/core/bitstreams/c2e0e3a1-ac5b-4664-bc34-33187274efea/content')
 
 TM1 = ('Ekrem Sezik, Mamoru Tabata, Erdem Yeşilada ve ark., “Traditional medicine in Turkey I. Folk medicine in Northeast Anatolia”, Journal of Ethnopharmacology 35, 1991', 'https://doi.org/10.1016/0378-8741(91)90072-L')
