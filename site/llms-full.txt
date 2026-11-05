@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 135 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 136 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -4240,3 +4240,35 @@ Karıştırma riski: Gerçek lavanta (L. angustifolia) uzun saplı, kulakçıks�
 
 ### İlginç bilgi
 Başakların tepesindeki mor “kulakçıklar” çiçek değil, tozlaştırıcıları çekmek için renklenmiş yaprak benzeri brakteelerdir.
+
+## Neem (Azadirachta indica)
+
+URL: https://bitkitabani.com/neem/
+Familya: Meliaceae · Bölge: Asya ve Sibirya · Kullanılan kısım: Yaprak, dal, tohum yağı
+Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
+
+### Geleneksel kullanım
+- Hindistan: Dalları diş fırçası olarak çiğnenir, yaprakları cilt hastalıklarında ve bitlere karşı kullanılır; köylerde ağacın gölgesi şifalı sayılır.
+- Güney Hindistan’da bayram: Ugadi yeni yıl bayramında acı neem çiçekleri esmer şekerle karıştırılıp yenir; hayatın acısını ve tatlısını birlikte kabul etmenin simgesidir.
+
+### Hazırlama
+Taze dal ucu diş fırçası gibi çiğnenir. Yaprak kaynatılıp suyu cilde ve saça uygulanır. Tohum yağı yalnızca dıştan kullanılır.
+
+### Bilim ne diyor
+Neem yaprağı ve yağı laboratuvarda antibakteriyel, mantar önleyici ve böcek kovucu etkiler gösterir; tohumundaki azadiraktin dünyada en çok kullanılan doğal tarım ilaçlarındandır. İnsanlarda diş eti iltihabı ve bit üzerine umut verici küçük çalışmalar vardır. Şeker hastalığı ve kanser iddiaları kanıtlanmamıştır.
+
+### Güvenlik
+Neem yağı ağızdan alınmamalıdır: bebeklerde ve küçük çocuklarda birkaç çay kaşığı bile kusma, nöbet, koma ve ölümle sonuçlanan zehirlenmelere yol açmıştır. Yaprak ekstresinin uzun süre içilmesi karaciğer ve böbreğe zarar verebilir. Hamileler ve gebe kalmak isteyenler kullanmamalıdır; neem geleneksel olarak doğum kontrolü için de kullanılmıştır.
+
+### İlaç etkileşimleri
+- Şeker ilaçları: Kan şekerini düşürebilir; şeker düşmesi riski.
+- Bağışıklık baskılayıcılar: Bağışıklığı uyarabilir; ilacın etkisi azalabilir.
+
+### Doğada
+Nerede yetişir: Hindistan alt kıtasının kurak tropik bölgelerinden gelir; Afrika’ya ve Ortadoğu’ya yayılmıştır. Türkiye’de doğal olarak yetişmez.
+Toplama mevsimi: Ağaç her dem yeşildir; çiçekler ilkbaharda açar, meyveler yaz ortasında olgunlaşır.
+Yöresel adlar: neem, nim, Hint leylağı
+Karıştırma riski: Tespih ağacı (Melia azedarach) aynı ailedendir ve Türkiye’de park ağacıdır; meyveleri zehirlidir, neem sanılmamalıdır.
+
+### İlginç bilgi
+Neem yağının mantar önleyici kullanımı için verilen bir Avrupa patenti, Hindistan’da yüzyıllardır bilinen bir bilgiye dayandığı gerekçesiyle 2000’de iptal edildi; olay “biyokorsanlık” tartışmalarının simgesi oldu.
