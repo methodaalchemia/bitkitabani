@@ -744,6 +744,7 @@ ld_veri = {"@context": "https://schema.org", "@type": "Dataset",
     "name": "Bitki Tabanı: şifalı ve ritüel bitkiler veri seti",
     "description": f"{REG_LIST}’dan {len(P)} şifalı ve ritüel bitkisi; her kayıtta Türkçe ve bilimsel ad, familya, yöresel adlar, bölge, kullanım kategorisi, kullanılan kısım, bilimsel kanıt düzeyi (klinik / sınırlı / geleneksel), güvenlik düzeyi ve Türkiye’deki yasal durum. Kanıt düzeyleri EMA–HMPC monografları, Cochrane derlemeleri ve NCCIH özetleri esas alınarak verilmiştir.",
     "url": BASE + "/veri/", "inLanguage": "tr", "isAccessibleForFree": True,
+    "identifier": "https://doi.org/10.5281/zenodo.23972634", "sameAs": "https://doi.org/10.5281/zenodo.23972634",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "creator": AUTHOR,
     "publisher": {"@type": "Organization", "name": "Bitki Tabanı", "url": BASE + "/", "logo": BASE + "/assets/logo-512.png"},
@@ -757,7 +758,8 @@ ld_veri = {"@context": "https://schema.org", "@type": "Dataset",
 
 VERI = f'''<header class="page-head"><span class="eyebrow">Açık veri</span><h1>Veri setini indir</h1><p>Sitedeki {len(P)} bitki kaydının yapılandırılmış hâli, CSV ve JSON olarak. İzin istemeden, kaynak göstererek kullanabilirsin.</p></header>
 <section class="sec"><h2>İndir</h2><p><a class="cta" href="/veri/bitkiler.csv" download>bitkiler.csv ({_kb(_csv_boy)}) →</a></p><p><a class="cta" href="/veri/bitkiler.json" download>bitkiler.json ({_kb(_json_boy)}) →</a></p>
-<p class="muted-s">CSV dosyası UTF-8 BOM ile yazılmıştır; Excel’de Türkçe karakterler bozulmadan açılır.</p></section>
+<p class="muted-s">CSV dosyası UTF-8 BOM ile yazılmıştır; Excel’de Türkçe karakterler bozulmadan açılır.</p>
+<p>Veri setinin kalıcı kimliği (DOI): <a href="https://doi.org/10.5281/zenodo.23972634" rel="noopener">10.5281/zenodo.23972634</a>. Zenodo’daki arşiv kaydı her sürümü saklar; bağlantı her zaman en yeni sürüme götürür.</p></section>
 <section class="sec"><h2>İçindeki alanlar</h2><ul class="kart-list">
 <li><b>id, turkce_ad, bilimsel_ad, familya</b> — kaydın kimliği ve adlandırması.</li>
 <li><b>diger_adlar</b> — yöresel ve halk arasındaki adlar.</li>
@@ -771,7 +773,7 @@ VERI = f'''<header class="page-head"><span class="eyebrow">Açık veri</span><h1
 </ul></section>
 <section class="sec"><h2>Veri setinde olmayanlar</h2><p>Geleneksel kullanım anlatıları, hazırlama tarifleri, bilimsel değerlendirme metinleri, güvenlik notları ve kaynakça her bitkinin kendi sayfasında duruyor; onlar da aynı lisansla kullanılabilir. Fotoğraflar veri setinin dışındadır: çoğu Wikimedia Commons’tan alınmıştır ve her birinin kendi lisansı vardır.</p></section>
 <section class="sec"><h2>Adresler kalıcıdır</h2><p>Her bitki ve her motif için tek ve değişmeyen bir adres tutulur. Bir kaydı kaynak gösterirsen bağlantının kırılmaması için adresi koruyoruz; bir adres değişmek zorunda kalırsa eski adresten yenisine yönlendirme konur.</p></section>
-<section class="sec"><h2>Nasıl atıf verilir</h2><p class="muted-s">Tınmazlar, E. ({CONTENT_DATE[:4]}). <i>Bitki Tabanı: şifalı ve ritüel bitkiler veri seti</i> ({len(P)} kayıt). https://bitkitabani.com/veri/ (erişim tarihi: GG.AA.YYYY). CC BY-SA 4.0.</p>
+<section class="sec"><h2>Nasıl atıf verilir</h2><p class="muted-s">Tınmazlar, E. ({CONTENT_DATE[:4]}). <i>Bitki Tabanı: şifalı ve ritüel bitkiler veri seti</i> ({len(P)} kayıt). Zenodo. https://doi.org/10.5281/zenodo.23972634. CC BY-SA 4.0.</p>
 <p>Lisansın kapsamı ve istisnaları: <a href="/lisans/">Lisans ve atıf</a>. Veriyi kullanıp bir şey ürettiysen <a href="mailto:iletisim@bitkitabani.com">iletisim@bitkitabani.com</a> adresine yazmanı çok isterim; nerede kullanıldığını bilmek işin en keyifli tarafı.</p></section>'''
 write('/veri/', page(f'Veri setini indir: {len(P)} şifalı ve ritüel bitki (CSV, JSON) | Bitki Tabanı',
       f'Bitki Tabanı’nın {len(P)} bitki kaydı CSV ve JSON olarak, CC BY-SA 4.0 ile. Türkçe ve bilimsel ad, bölge, kanıt düzeyi, güvenlik ve yasal durum alanlarıyla.',
@@ -915,7 +917,7 @@ LISANS = '''<header class="page-head"><span class="eyebrow">Lisans ve atıf</spa
 </ul><p>Bilimsel olgular telif hakkına tabi değildir: lisans metnin ifade biçimini korur, bilginin kendisini değil.</p></section>
 <section class="sec"><h2>Nasıl atıf verilir</h2><p>Kısa kullanım için bağlantı yeterli: <i>Kaynak: Bitki Tabanı (bitkitabani.com), CC BY-SA 4.0.</i></p>
 <p>Akademik atıf için:</p><p class="muted-s">Tınmazlar, E. ''' + f'({CONTENT_DATE[:4]})' + '''. <i>Kantaron (Hypericum perforatum)</i>. Bitki Tabanı. https://bitkitabani.com/kantaron/ (erişim tarihi: GG.AA.YYYY). CC BY-SA 4.0.</p>
-<p>Veri setinin tamamına atıf vermek istersen <a href="/veri/">veri seti sayfasını</a> kaynak gösterebilirsin; orada CSV ve JSON olarak indirilebilir.</p></section>
+<p>Veri setinin tamamına atıf vermek istersen DOI’siyle kaynak gösterebilirsin: <a href="https://doi.org/10.5281/zenodo.23972634" rel="noopener">10.5281/zenodo.23972634</a>. CSV ve JSON olarak <a href="/veri/">veri seti sayfasından</a> indirilebilir.</p></section>
 <section class="sec"><h2>İzin gerektiren durumlar</h2><p>Metinleri kaynak göstermeden ya da kapalı bir lisansla yeniden yayımlamak lisansa aykırıdır. Bunun dışında bir kullanım biçimi aklındaysa <a href="mailto:iletisim@bitkitabani.com">iletisim@bitkitabani.com</a> adresine yazabilirsin; işbirliğine açığım.</p></section>'''
 write('/lisans/', page('Lisans ve atıf: içerik nasıl kullanılabilir? | Bitki Tabanı', 'Bitki Tabanı metinleri CC BY-SA 4.0 ile lisanslıdır. Lisansın kapsamı, istisnaları (fotoğraflar) ve atıf örnekleri.', '/lisans/', LISANS, 'lisans', narrow=True))
 
