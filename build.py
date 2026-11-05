@@ -309,7 +309,7 @@ def head(title, desc, path, extra='', image=None):
 <div class="wrap{{narrow}}">
 '''
 
-MENU = [('Bitkiler', [('/katalog/', 'Katalog', 'kat'), ('/toplama-takvimi/', 'Doğada bu ay', 'toplama'), ('/yoreler/', 'Yöreler ve yöresel adlar', 'yore'), ('/yeni/', 'Yeni eklenenler', 'yeni')]),
+MENU = [('Bitkiler', [('/katalog/', 'Katalog', 'kat'), ('/familya/', 'Familyalar', 'kat'), ('/toplama-takvimi/', 'Doğada bu ay', 'toplama'), ('/yoreler/', 'Yöreler ve yöresel adlar', 'yore'), ('/yeni/', 'Yeni eklenenler', 'yeni')]),
         ('Şifa', [('/rehber/', 'Derde göre bitkiler', 'rehber'), ('/tarif/', 'Çay tarifleri', 'tarif'), ('/karsilastirma/', 'Karşılaştırmalar', 'kars'), ('/rehber/ilac-etkilesimi/', 'İlaç etkileşimi', 'etk'), ('/rehber/zehirli-bitkiler/', 'Zehirli bitkiler', 'zehir')]),
         ('Kültür', [('/kavram/', 'Kavramlar', 'kavram'), ('/semboller/', 'Semboller', 'sembol'), ('/kopruler/', 'Kültür köprüleri', 'br'), ('/blog/', 'Blog', 'yazi'), ('/takvim/', 'Ritüel takvimi', 'takvim')]),
         ('Bitki Tabanı', [('/hakkinda/', 'Hakkında', 'about'), ('/yontem/', 'Yöntem ve kaynaklar', 'yontem'), ('/lisans/', 'Lisans ve atıf', 'lisans'), ('/veri/', 'Veri setini indir', 'veri'), ('/bulten/', 'Bülten ve e-posta kursu', 'bulten'), ('/kartlar/', 'Yazdırılabilir kartlar', 'kartlar'), ('/hesap/', 'Hesabım', 'acct'), ('/iletisim/', 'İletişim', 'mail')])]
@@ -488,13 +488,14 @@ def card(p):
 
 import collections, re as _re
 FAMC = collections.Counter(p['fam'] for p in P)
-FAM_TR = {'Lamiaceae':'ballıbabagiller','Solanaceae':'patlıcangiller','Asteraceae':'papatyagiller','Rubiaceae':'kökboyasıgiller','Malvaceae':'ebegümecigiller','Fabaceae':'baklagiller',
-          'Anacardiaceae':'sakızağacıgiller','Ranunculaceae':'düğünçiçeğigiller','Rosaceae':'gülgiller','Apiaceae':'maydanozgiller','Cactaceae':'kaktüsgiller','Euphorbiaceae':'sütleğengiller',
-          'Lythraceae':'kınagiller','Arecaceae':'palmiyegiller'}
+from familya import FAM_TR, FAM_BILGI, fam_kaynak
+FAM_MIN = 3   # kendi sayfası olan familya için en az bitki sayısı; altındakiler /familya/ sayfasında toplanır
 def fam_slug(f): return f.lower()
 def fam_link(p):
     f = p['fam']
-    return f'<a href="/familya/{fam_slug(f)}/" lang="la">{e(f)}</a>' if FAMC[f] >= 2 else f'<span lang="la">{e(f)}</span>'
+    if FAMC[f] >= FAM_MIN: return f'<a href="/familya/{fam_slug(f)}/" lang="la">{e(f)}</a>'
+    if f in FAM_BILGI: return f'<a href="/familya/#{fam_slug(f)}" lang="la">{e(f)}</a>'
+    return f'<span lang="la">{e(f)}</span>'
 DATE_TXT = tr_date(datetime.date.fromisoformat(CONTENT_DATE)).rsplit(',', 1)[0]
 CONTACT = 'iletisim@bitkitabani.com'
 def contrib(p):
@@ -646,20 +647,67 @@ for i, p in enumerate(P):
     write(f'/{pid}/', page(title, desc_for(p), f'/{pid}/', body, 'plant', '<script src="/assets/streak.js" defer></script><script src="/assets/plant.js" defer></script><script src="/assets/katki.js" defer></script>', narrow=True, extra=extra, image=(f'{BASE}/img/{pid}-960.jpg' if pid in IMG else None)))
 
 # ---------- familya sayfaları ----------
+# FAM_MIN'in altındaki familyaların ayrı sayfası yok; hepsi /familya/ sayfasında, kendi bölümleriyle duruyor.
 FAM_URLS = []
+def _lds(*xs): return ''.join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>' for x in xs)
+def _crumb_ld(*xs):
+    items = [("/", "Ana sayfa")] + list(xs)
+    return {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":i+1,"name":t,"item":BASE+u} for i, (u, t) in enumerate(items)]}
+def _crumbs(*xs):
+    out = '<a href="/">Ana sayfa</a>'
+    for i, (u, t) in enumerate(xs):
+        out += '<span>/</span>' + (f'<a href="{u}">{e(t)}</a>' if i < len(xs) - 1 else f'<span>{e(t)}</span>')
+    return f'<nav class="crumbs" aria-label="Konum">{out}</nav>'
+def _fam_kaynak_html(f, ps):
+    anadolu = any('anadolu' in q['bolge'] for q in ps)
+    return '<ol class="refs">' + ''.join(
+        (f'<li><span class="kind">{e(k)}</span><a href="{e(u)}" target="_blank" rel="noopener">{e(t)}</a></li>' if u
+         else f'<li><span class="kind">{e(k)}</span><cite>{e(t)}</cite></li>') for k, t, u in fam_kaynak(f, anadolu)) + '</ol>'
+
+def _fam_govde(f, ps, basligi_goster=True):
+    trn = FAM_TR.get(f); ortak, dikkat = FAM_BILGI.get(f, ('', ''))
+    bas = f'<h2 id="{fam_slug(f)}" lang="la">{e(f)}</h2>' if basligi_goster else ''
+    ad = f'<p class="muted-s">{e(trn[0].upper() + trn[1:])} familyası · {len(ps)} bitki</p>' if trn else f'<p class="muted-s">{len(ps)} bitki</p>'
+    o = f'<p>{e(ortak)}</p>' if ortak else ''
+    d = f'<aside class="warnbox" role="note"><b>Familya düzeyinde dikkat:</b> {e(dikkat)}</aside>' if dikkat else ''
+    return bas + ad + o + d
+
+_FAMS = sorted([(f, n) for f, n in FAMC.items() if f in FAM_BILGI], key=lambda x: (-x[1], x[0]))
 for f, n in sorted(FAMC.items()):
-    if n < 2: continue
+    if n < FAM_MIN: continue
     ps = [p for p in P if p['fam'] == f]; trn = FAM_TR.get(f)
-    others = ' · '.join(f'<a href="/familya/{fam_slug(g)}/" lang="la">{g}</a>' for g, m in sorted(FAMC.items()) if m >= 2 and g != f)
+    others = ' · '.join((f'<a href="/familya/{fam_slug(g)}/" lang="la">{g}</a>' if m >= FAM_MIN else f'<a href="/familya/#{fam_slug(g)}" lang="la">{g}</a>') for g, m in _FAMS if g != f)
+    ortak, dikkat = FAM_BILGI.get(f, ('', ''))
     fb = f'''
-<nav class="crumbs" aria-label="Konum"><a href="/">Ana sayfa</a><span>/</span><a href="/katalog/">Katalog</a><span>/</span><span lang="la">{f}</span></nav>
-<header class="page-head"><span class="eyebrow">Familya · {n} bitki</span><h1 lang="la">{f}</h1><p>{(trn[0].upper() + trn[1:] + ' familyası. ') if trn else ''}Bitki Tabanı’nda bu familyadan {n} bitki var: {", ".join(e(p["tr"]) for p in ps)}. Aynı familyadaki bitkiler çoğu zaman benzer kimyasal bileşikler taşır.</p></header>
-<div class="grid">{"".join(card(p) for p in ps)}</div>
-<section class="sec"><h2>Diğer familyalar</h2><p class="famlist">{others}</p></section>'''
+<nav class="crumbs" aria-label="Konum"><a href="/">Ana sayfa</a><span>/</span><a href="/katalog/">Katalog</a><span>/</span><a href="/familya/">Familyalar</a><span>/</span><span lang="la">{f}</span></nav>
+<header class="page-head"><span class="eyebrow">Familya · {n} bitki</span><h1 lang="la">{f}</h1><p class="lede">{(trn[0].upper() + trn[1:] + ' familyası. ') if trn else ''}{e(ortak)}</p></header>
+{('<aside class="warnbox" role="note"><b>Familya düzeyinde dikkat:</b> ' + e(dikkat) + '</aside>') if dikkat else ''}
+<section class="sec"><h2>Bu familyadan {n} bitki</h2><div class="grid">{"".join(card(p) for p in ps)}</div></section>
+<section class="sec"><h2>Kaynaklar</h2>{_fam_kaynak_html(f, ps)}<p class="muted-s">Familya düzeyindeki bilgiler bitkiye özel öneri değildir; her bitkinin kendi sayfasındaki kanıt düzeyine ve güvenlik notuna bakın.</p></section>
+<section class="sec"><h2>Diğer familyalar</h2><p class="famlist">{others}</p><p><a class="cta" href="/familya/">Bütün familyalar →</a></p></section>'''
     url = f'/familya/{fam_slug(f)}/'; FAM_URLS.append(url)
     ldf = {"@context":"https://schema.org","@type":"CollectionPage","name":f,"url":BASE+url,"inLanguage":"tr","mainEntity":{"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":k+1,"url":f'{BASE}/{p["id"]}/',"name":p['tr']} for k, p in enumerate(ps)]}}
-    write(url, page(f'{f}{" (" + trn + ")" if trn else ""}: {n} şifalı bitki | Bitki Tabanı', f'{f} familyasından {n} şifalı ve ritüel bitkisi: ' + ', '.join(p['tr'] for p in ps)[:110] + '.', url, fb, 'kat',
-          extra=f'<script type="application/ld+json">{json.dumps(ldf, ensure_ascii=False)}</script>'))
+    write(url, page(f'{f}{" (" + trn + ")" if trn else ""} familyası: ortak özellikleri ve {n} bitkisi | Bitki Tabanı', f'{f} familyasının ortak bileşikleri, familya düzeyinde dikkat edilecekler ve Bitki Tabanı’ndaki {n} bitkisi.', url, fb, 'kat',
+          extra=f'<script type="application/ld+json">{json.dumps(ldf, ensure_ascii=False)}</script>' + _lds(_crumb_ld(('/katalog/', 'Katalog'), ('/familya/', 'Familyalar'), (url, f)))))
+
+# /familya/ : bütün familyalar tek sayfada
+_bolumler = []
+for f, n in _FAMS:
+    ps = [p for p in P if p['fam'] == f]
+    kendi = f' <a href="/familya/{fam_slug(f)}/">Familya sayfası →</a>' if n >= FAM_MIN else ''
+    _bolumler.append('<section class="sec">' + _fam_govde(f, ps)
+                     + '<p class="famlist">' + ' · '.join(f'<a href="/{p["id"]}/">{e(p["tr"])}</a>' for p in ps) + kendi + '</p></section>')
+_fi = f'''{_crumbs(('/katalog/', 'Katalog'), ('/familya/', 'Familyalar'))}
+<header class="page-head"><span class="eyebrow">{len(_FAMS)} familya</span><h1>Bitki familyaları</h1><p class="lede">Familya, bir bitki hakkında adından önce bilgi verir: aynı familyanın üyeleri çoğu zaman benzer bileşik gruplarını taşır, bu yüzden benzer işe yarar ve benzer riskleri paylaşır. Aşağıda Bitki Tabanı’ndaki her familyanın ortak özellikleri, familya düzeyinde dikkat edilecekler ve üyeleri var.</p></header>
+<aside class="warnbox" role="note"><b>Familya her şeyi söylemez:</b> aynı familyada hem gıda hem ölümcül zehirli tür bulunabilir. Familya bilgisi bir bitkiyi tanımaya başlamanın yolu, teşhis yerine geçmez.</aside>
+{''.join(_bolumler)}
+<section class="sec"><h2>Kaynaklar</h2>{_fam_kaynak_html('Lamiaceae', P)}<p class="muted-s">Familya düzeyindeki bileşik grupları farmakognozi el kitabına, taksonomi Kew Plants of the World Online kaydına dayanır.</p></section>'''
+_ldfi = {"@context": "https://schema.org", "@type": "CollectionPage", "name": "Bitki familyaları", "url": BASE + "/familya/", "inLanguage": "tr",
+         "mainEntity": {"@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": k + 1, "name": f,
+                        "url": (BASE + f'/familya/{fam_slug(f)}/' if n >= FAM_MIN else BASE + f'/familya/#{fam_slug(f)}')} for k, (f, n) in enumerate(_FAMS)]}}
+write('/familya/', page('Bitki familyaları: ortak özellikleri ve şifalı üyeleri | Bitki Tabanı', f'Bitki Tabanı’ndaki {len(_FAMS)} bitki familyası: ortak bileşik grupları, familya düzeyinde güvenlik notları ve her familyanın bitkileri.', '/familya/', _fi, 'kat',
+      extra=_lds(_ldfi, _crumb_ld(('/katalog/', 'Katalog'), ('/familya/', 'Familyalar')))))
+FAM_URLS.append('/familya/')
 
 # ---------- mevsim (Anadolu'da şu an toplananlar) ----------
 _AY = {m.lower(): i+1 for i, m in enumerate(AYLAR)}

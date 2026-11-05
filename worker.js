@@ -936,6 +936,10 @@ ${thEn ? `<div class=not>Threads'te en çok görülen: <a href="${e(thEn.link)}"
 export default {
   async fetch(req, env) {
     const url = new URL(req.url);
+    // Kapatılan familya sayfaları: içerikleri /familya/ sayfasındaki kendi bölümlerinde duruyor.
+    const FAM_TASINDI = ['arecaceae', 'cactaceae', 'euphorbiaceae', 'lauraceae', 'lythraceae', 'rosaceae', 'rutaceae', 'sapindaceae'];
+    const famM = url.pathname.match(/^\/familya\/([a-z]+)\/?$/);
+    if (famM && FAM_TASINDI.includes(famM[1])) return Response.redirect(url.origin + '/familya/#' + famM[1], 301);
     if (url.pathname.startsWith('/ig/')) return igAsset(url.pathname.slice(4));
     if (!url.pathname.startsWith('/api/')) return env.ASSETS.fetch(req);
     if (url.pathname === '/api/ig-durum' && req.method === 'GET') {
