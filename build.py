@@ -1561,9 +1561,12 @@ def _motif_list(slugs):
 
 # --- kavram yazıları ---
 def _trlow(t): return t.replace('I', 'ı').replace('İ', 'i').lower()
+_KUY_AD = {q['id']: q['tr'] for q in _K.Q}
 def _ylink(m):
     pid = m.group(1)
-    return f'<a href="/{pid}/">{e(_trlow(byId[pid]["tr"]))}</a>' if pid in byId else pid
+    if pid in byId: return f'<a href="/{pid}/">{e(_trlow(byId[pid]["tr"]))}</a>'
+    # kuyrukta ama henüz yayında değil: bağlantısız, doğru adıyla yaz
+    return e(_trlow(_KUY_AD[pid])) if pid in _KUY_AD else pid
 def _yp(t):
     t = e(t)
     t = re.sub(r'\{([a-z0-9]+)\}', _ylink, t)
