@@ -21,6 +21,7 @@ Bu klasördeki bitkiler, `yayin` tarihlerinde siteye kendiliğinden eklenir. Git
    - `rel`: ilgili bitki id'leri.
    - `en`: İngilizce sürüm. Alanlar: name, other, part, uses, prep, science, safety, fact, season, habitat, local, confusion.
 6. İçerik kuralları:
+   - **Künye denetimi:** DergiPark bağlantılı bir kaynak eklediysen `python3 tools/kunye.py` çalıştır. Betik yazar adlarını yayıncı sayfasının üstverisiyle karşılaştırır; farklılık varsa 1 ile çıkar. Yazar adını yanlış yazmak düzeltme maili getiriyor.
    - Her sağlık iddiası bir kaynağa dayanmalı. Emin olunmayan yöresel adlar yazılmaz.
    - Ton: düz, kısa cümleler; "mucize" dili yok.
    - Güvenlik notu açık olmalı: hamilelik, çocuklar, ilaç etkileşimleri.
