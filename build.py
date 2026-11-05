@@ -1735,6 +1735,11 @@ def _hik_bitki(h):
     if h.get('bitki') in byId: return h['bitki']
     l = (h.get('link') or '').strip('/')
     return l if l in byId else None
+def _hik_link(h):   # yayın takvimi gelmemiş kavrama bağlanma: sayfa yok, bağlantı kırık olur
+    l = (h.get('link') or '').strip('/')
+    if not l: return None
+    if l.startswith('kavram/') and not any(l == f'kavram/{k["slug"]}' for k in KAV): return None
+    return l
 from halk_tarif import TARIF as HTARIF
 ETIKET = [('halk-hekimligi', 'Halk hekimliği'), ('tarifler', 'Tarifler'), ('ocaklar', 'Ocaklar ve şifacılar'), ('nazar-ritueller', 'Nazar ve ritüeller'), ('soylenceler', 'Söylenceler'), ('eski-tip', 'Eski tıp metinleri'), ('yoresel-adlar', 'Yöresel adlar'), ('saha', 'Yöreden kayıtlar'), ('samanizm', 'Şamanizm')]
 _ET = dict(ETIKET)
@@ -1768,7 +1773,7 @@ for h in HIK:
             + f'{sharebar(h["baslik"], pth)}<p class="lead">{e(h["post"])}</p>'
             + _htarif(h['slug'])
             + (f'<p class="muted-s">Kaynak: <a href="{h["kaynak"][1]}" target="_blank" rel="noopener">{e(h["kaynak"][0])}</a>. Bu bir halk kaydıdır, tedavi önerisi değildir.</p>' if h["kaynak"][1] else f'<p class="muted-s">Kaynak: <cite>{e(h["kaynak"][0])}</cite>. Bu bir halk kaydıdır, tedavi önerisi değildir.</p>')
-            + (f'<section class="sec"><h2>Bu hikâyenin bitkisi</h2><div class="grid sim">{card(byId[b])}</div></section>' if b else (f'<p><a class="cta" href="/{h["link"]}">Devamı →</a></p>' if h.get('link') else ''))
+            + (f'<section class="sec"><h2>Bu hikâyenin bitkisi</h2><div class="grid sim">{card(byId[b])}</div></section>' if b else (f'<p><a class="cta" href="/{_hik_link(h)}/">Devamı →</a></p>' if _hik_link(h) else ''))
             + f'</article>{abone("hikaye-" + h["slug"][:30], "Her hafta bir halk hekimliği hikâyesi", "Anadolu’dan kaynaklı şifa hikâyeleri, bitkileri ve uyarılarıyla; her pazar e-postanda.", kurs=False)}'
             + f'<section class="sec"><h2>Başka hikâyeler</h2><ul class="hklist">{"".join(_hik_kart(x) for x in ilgili)}</ul><p><a href="/blog/">Bloğun tamamı →</a></p></section>')
     _ut = h.get('uzun') or h['baslik']
