@@ -328,10 +328,12 @@ async function ytUpload(env, st, videoUrl, meta) {
   if (!up.ok) throw new Error('YouTube yükleme: ' + up.status + ' ' + (j.error && j.error.message || '').slice(0, 200));
   return j.id;
 }
-async function ytPost(env, force) {   // günde bir Shorts, 18:30–22:00 arası
+const YT_GUNLUK = 6;   // YouTube API kotası günde 10.000 birim, her yükleme 1.600: en fazla 6
+async function ytPost(env, force) {   // günde YT_GUNLUK Shorts, 10:00–22:00 arası, yarım saat arayla
   const st = (await call(env, 'yt:state', 'get')) || {};
   const day = trDay();
-  if (!force && (st.last === day || trH() < 18.4 || trH() > 22)) return { skipped: 'sırası değil' };
+  if (st.day !== day) { st.day = day; st.dayN = 0; }
+  if (!force && ((st.dayN || 0) >= YT_GUNLUK || trH() < 10 || trH() > 22)) return { skipped: 'sırası değil' };
   if (st.errorAt && Date.now() - st.errorAt < 3 * 3600e3 && !force) return { skipped: 'hata sonrası bekleniyor' };
   try {
     let videoUrl, meta, key;
@@ -351,7 +353,7 @@ async function ytPost(env, force) {   // günde bir Shorts, 18:30–22:00 arası
       videoUrl = post.reel; meta = ytMeta(tr, post.id, post.caption, null);
     }
     const id = await ytUpload(env, st, videoUrl, meta);
-    st.done = st.done || {}; st.done[key] = id; st.last = day; st.n = (st.n || 0) + 1; st.lastVideo = 'https://youtube.com/shorts/' + id; st.error = null;
+    st.done = st.done || {}; st.done[key] = id; st.last = day; st.day = day; st.dayN = (st.dayN || 0) + 1; st.n = (st.n || 0) + 1; st.lastVideo = 'https://youtube.com/shorts/' + id; st.error = null;
   } catch (e) { st.error = String(e.message || e).slice(0, 300); st.errorAt = Date.now(); }
   await call(env, 'yt:state', 'put', st);
   return { n: st.n || 0, son: st.lastVideo || null, hata: st.error || null };
@@ -946,7 +948,7 @@ export default {
       try { const q = (await call(env, 'qr:sayac', 'get')) || {}; q[id] = (q[id] || 0) + 1; q._toplam = (q._toplam || 0) + 1; if (k) q['k:' + k] = (q['k:' + k] || 0) + 1; await call(env, 'qr:sayac', 'put', q); } catch (e) {}
       return Response.redirect(url.origin + '/' + id + '/?utm_source=qr' + (k ? '&utm_campaign=' + k : ''), 302);
     }
-    if (url.pathname === '/api/yt-durum' && req.method === 'GET') { const y = (await call(env, 'yt:state', 'get')) || {}; return json({ anahtar: !!env.YT_REFRESH_TOKEN, sayi: y.n || 0, son: y.last || null, video: y.lastVideo || null, yuklenen: Object.keys(y.done || {}), hata: y.error || null }); }
+    if (url.pathname === '/api/yt-durum' && req.method === 'GET') { const y = (await call(env, 'yt:state', 'get')) || {}; return json({ anahtar: !!env.YT_REFRESH_TOKEN, sayi: y.n || 0, son: y.last || null, bugun: (y.day === trDay() ? (y.dayN || 0) : 0), gunluk: YT_GUNLUK, video: y.lastVideo || null, yuklenen: Object.keys(y.done || {}), hata: y.error || null }); }
     if (url.pathname === '/api/qr-durum' && req.method === 'GET') return json((await call(env, 'qr:sayac', 'get')) || {});
     if (url.pathname.startsWith('/api/abone/') && (req.method === 'GET' || url.pathname === '/api/abone/cik')) return aboneApi(req, env, url);
     if (req.method !== 'GET' && req.headers.get('x-bt') !== '1') return json({ error: 'csrf' }, 403);
