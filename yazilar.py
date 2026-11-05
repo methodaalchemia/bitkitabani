@@ -356,3 +356,222 @@ YAZILAR.append(dict(
  bitkiler=['bugday', 'arpa', 'badem', 'antepfistigi', 'mercimek', 'mese', 'alic', 'sogut', 'disbudak'],
  semboller=['yilan', 'kus', 'hayat-agaci'],
 ))
+
+# Kazı yazıları serisi, 1: Cueva del Chileno (Bolivya)
+# Kaynak: Miller, Albarracin-Jordan, Moore, Capriles 2019, PNAS 116(23):11207–11212.
+# Kurallar: hazırlanış/doz YAZILMAZ. Makalenin ihtiyatlı ifadeleri korunur:
+#  - "kesin kanıt" yalnızca en az üç psikoaktif bitkinin VARLIĞI için geçerli
+#  - "en eski kanıt" DENMEZ; makale nicel bir iddia kuruyor
+#  - bileşiklerin dışarıdan bulaşmış (exogenous) olabileceği söylenir
+#  - fiilî tüketim kanıtlanmamıştır (insan kalıntısı yok)
+YAZILAR.append(dict(
+    slug='bolivyada-bin-yillik-saman-kesesi',
+    tarih='2026-11-07',
+    baslik='Bir şamanın kesesi: Bolivya’da bin yıllık ayahuasca izi',
+    aciklama='3.890 metredeki bir kaya sığınağında bulunan deri çantanın içinden harmin, '
+             'DMT, bufotenin ve kokain çıktı. Kimya ne söylüyor, ne söylemiyor?',
+    giris='Arkeolojide bitki kalıntısı aramak genellikle toprağı yıkamak, tohum saymak ve ölçmek '
+          'demektir. Ama bazen bitkinin kendisi kaybolur, geriye yalnızca kimyası kalır. Güneybatı '
+          'Bolivya’da bir kaya sığınağında bulunan bin yıllık bir deri çanta bunun en çarpıcı örneği: '
+          'içindeki küçük torbanın yüzeyinden kazınan örnekte, bugün ayahuasca dediğimiz içeceğin '
+          'iki temel bileşeni bir arada saptandı. Yazının konusu bu buluntu — ve bir o kadar da, '
+          'onu yayımlayan dört araştırmacının nerede durup “bunu bilmiyoruz” dediği.',
+    bolumler=[
+        ('3.890 metrede bir kaya sığınağı', [
+            'Buluntu, Bolivya’nın güneybatısındaki Lípez yaylalarında, Sora Nehri vadisinde. Vadi, '
+            'kuzeyden güneye uzanan iki paralel ignimbrit yüzeyin arasına sıkışmış dar bir havza. '
+            'Bu yüzeylerden birinde açılmış kaya sığınaklarından biri yerel adıyla Cueva del Chileno; '
+            'deniz seviyesinden 3.890 metre yükseklikte. 2008 ve 2010’da kazıldı [1].',
+            'Sığınakta son dört bin yıla yayılan aralıklı yerleşim izleri var; en eski ölçüm MÖ '
+            '2136–1778 aralığına çıkıyor. Ama bu yazının konusu olan çanta çok daha geç: deri '
+            'çantadan alınan küçük bir örnek hızlandırıcı kütle spektrometrisiyle tarihlendi ve '
+            'kalibre edilmiş MS 905–1170 aralığı çıktı [1].',
+            'Burada dikkat edilecek bir ayrıntı var. Tarihlenen şey çantanın derisi. İçindeki bitki '
+            'parçası, tilki burunlu torba ya da ahşap tabletler ayrı ayrı tarihlenmedi. Yani '
+            '“bin yıllık bileşik” değil, “bin yıllık çanta” demek daha doğru.',
+            'Dönem olarak bu aralık, Tiwanaku devletinin dağılıp yerine bölgesel beyliklerin '
+            'doğduğu zamana denk geliyor. Makale keseyi bir Tiwanaku buluntusu olarak '
+            'etiketlemiyor; enfiye tabletlerinin üslubu Tiwanaku çevresine bağlanıyor, o kadar [1].',
+        ]),
+        ('Çantanın içinde ne vardı', [
+            'Makalenin verdiği döküm şöyle: dış deri çanta (280 × 165 milimetre); ustaca oyulmuş ve '
+            'bezenmiş, üzerinde insan biçimli figürinler olan iki ahşap enfiye tableti; insan biçimli '
+            'bir enfiye tüpü, üzerine bağlanmış iki gerçek insan saçı örgüsüyle; üç And tilkisi '
+            'burnunun dikilmesiyle yapılmış bir hayvan derisi torba; iki lama kemiği spatula; yün ve '
+            'bitkisel lif iplere bağlı iki küçük kurumuş bitki parçası; ve çok renkli dokuma bir alın '
+            'bandı [1].',
+            'Bu dökümde on parça var. Kesenin dışında, molozun içinde ayrıca gevşek saç örgüleri, '
+            'turkuaz boncuklar ve bir öğütme taşı bulundu — bunlar kesenin parçası değil [1].',
+            'Analiz bu on parçanın yalnızca ikisine yapıldı: tilki burunlu torbaya ve kurumuş bitki '
+            'parçasına. Tabletler, tüp, spatulalar, alın bandı ve deri çantanın kendisi test edilmedi. '
+            'Bu, buluntu anlatılırken en sık atlanan ayrıntı: bileşikler ahşap tabletlerden değil, '
+            'torbanın yüzeyinden kazınan örnekten çıktı.',
+        ]),
+        ('Torbadan çıkan bileşikler', [
+            'Yöntem sıvı kromatografisi–tandem kütle spektrometrisi. Tilki burunlu torbadan kazınan '
+            'örnekte beş bileşik saptandı: kokain, benzoilekgonin (kokainin bozunma ürünü), bufotenin, '
+            'harmin ve dimetiltriptamin, yani DMT [1].',
+            'Kurumuş bitki parçasından ise bu beşin yalnızca üçü çıktı: kokain, benzoilekgonin ve '
+            'bufotenin. Harmin ve DMT bu örnekte yok [1].',
+            'Altıncı bir bileşik, psilosin, daha ihtiyatlı anlatılıyor. Makale psilosinin ilk tarama '
+            'listesinde olmadığını, ama ona karşılık gelen bir pik göründüğünü ve bunun örnekte '
+            'bulunduğunu düşündürdüğünü yazıyor; kaynağının psilosin içeren bir mantar olabileceğini '
+            'de bir olasılık olarak anıyor [1]. Makalenin özeti psilosini saymıyor. Yani “altı bileşik '
+            'bulundu” demek yanlış olur: beş bileşik saptandı, ayrıca psilosine karşılık gelen bir pik '
+            'görüldü.',
+        ]),
+        ('Hangi bileşik hangi bitkiye işaret ediyor', [
+            'Kokain ve benzoilekgonin için makale doğrudan konuşuyor: bunlar {koka} yaprağının '
+            'torbada taşındığını gösteriyor [1].',
+            'Bufotenin ayırt edici bir bileşik. Makale bunu {yopo} ve akrabalarının cinsi olan '
+            'Anadenanthera tohumlarının torbada taşındığına işaret olarak okuyor [1]. Bu cinsin '
+            'tohumları arkeolojik enfiye tozlarında mikroskop altında doğrudan kimliklendirilmiştir '
+            'da: Kuzeybatı Arjantin’de toz hâlindeki arkeolojik malzemede Anadenanthera colubrina '
+            'var. cebil saptanmıştır [8].',
+            'DMT ise ayırt edici değil. Makale iki ihtimali açık bırakıyor: DMT ya bufotenini veren '
+            'aynı Anadenanthera malzemesinden geliyor, ya da bağımsız bir kaynaktan — örneğin '
+            '{chacruna} gibi bir Psychotria türünden [1]. Yani “DMT bulundu” demek “chacruna bulundu” '
+            'demek değildir.',
+            'Harmin için makalenin gerekçesi karşılaştırmalı: Güney Amerika bitkileri arasında harmin '
+            'en yüksek miktarda {ayahuasca} sarmaşığında, yani Banisteriopsis caapi’de bulunuyor [1]. '
+            'Burada dürüst olmak gerekiyor: harmin ve harmalin {uzerlik} gibi başka bitkilerde de '
+            'bulunur ve bu bitkinin ana alkaloidleri tam olarak harmalol, harmalin ve harmindir [7]. '
+            'Ama makale üzerliği ya da başka bir harmin kaynağını hiç tartışmıyor; ifadesini '
+            '“Güney Amerika bitkileri arasında” diye sınırlıyor.',
+        ]),
+        ('Neden iki bitki gerekiyor', [
+            'Buluntunun en çok konuşulan tarafı harmin ile DMT’nin bir arada çıkması, çünkü bu ikisi '
+            'ayahuasca denen içeceğin iki temel bileşeni. Peki neden iki ayrı bitki?',
+            'Mekanizma 1984’te tanımlandı. Banisteriopsis caapi harmin, harmalin ve tetrahidroharmin '
+            'içerir; katkı bitkileri ise DMT. DMT güçlü bir halüsinojen ama ağızdan alındığında '
+            'etkisiz, çünkü sindirim sisteminde monoamin oksidaz enzimi tarafından parçalanıyor. '
+            'Beta-karbolinler ise bu enzimin güçlü ve geri dönüşlü inhibitörleri; DMT’yi parçalanmaktan '
+            'koruyup ağızdan etkili hâle getirdikleri öne sürülmüştür [3]. Aynı çalışma iki ihtiyat '
+            'daha koyuyor: 1984 itibarıyla bu mekanizma deneysel olarak doğrulanmamıştı, ve '
+            'beta-karbolinlerin bir arada etkisi sinerjik değil toplamsal bulundu [3]. Mekanizmanın '
+            'insanda ölçülmesi 2003’te yapıldı [4].',
+            'Bitkilerin içeriği de sabit değil. Brezilya’nın yirmi iki ayrı noktasından toplanan '
+            'örneklerde bütün Banisteriopsis caapi örneklerinde harmin, harmalin ve tetrahidroharmin '
+            'saptanabilir miktarda bulundu; ama bazı Psychotria viridis örneklerinde DMT ya çok az ya '
+            'da hiç yoktu [5].',
+            'Bu mekanizmanın bir de doğrudan tıbbi karşılığı var ve burada söylenmesi gerekiyor: '
+            'monoamin oksidazı inhibe eden beta-karbolinlerin, serotonin geri alım inhibitörü '
+            'ilaçlarla birlikte ciddi advers etkileşim riski taşıdığı 1998’de yayımlanmış bir '
+            'uyarıdır [6]. Yani bu bitkileri ağızdan etkili kılan şey, aynı zamanda onları riskli '
+            'kılan şey.',
+        ]),
+        ('Makalenin söylemedikleri', [
+            'Bu buluntu hakkında dolaşan cümlelerin bir kısmı makaleyi aşıyor. Yazarların kendi '
+            'ihtiyatları şöyle.',
+            'Bileşikler dışarıdan bulaşmış olabilir. Makale, test edilen örneğin “o bitki yüzeyinin '
+            'temas ettiği nesnelerin kimyasını yansıtabileceğini”, ve bu bileşiklerin “bir kısmının, '
+            'belki de tamamının dışarıdan gelmiş olabileceğini” yazıyor. Kurumuş bitki parçasının '
+            'türünü belirlemek için daha fazla analiz gerektiğini de açıkça söylüyor [1].',
+            'Ayahuasca için kesin kanıt yok. Makalenin kendi ifadesi: sonuçlar, bugün Güney Amerika '
+            'yerli topluluklarında görülen biçimiyle — Banisteriopsis ve Psychotria’nın birlikte '
+            'kullanıldığı hâliyle — ayahuascanın erken kullanımına dair kesin kanıt sağlamıyor; ama '
+            'bu bileşimin bin yıl önce kullanılmış olabileceğinin kanıtı [1].',
+            'Bu bitkilerin fiilen tüketildiği gösterilmedi. Buluntu bağlamında insan kalıntısı yok, '
+            've makale doğrudan tüketime dair kanıtın bulunmadığını yazıyor [1].',
+            'Hangi yolla kullanıldığı kimyadan anlaşılmıyor. Takımdaki iki enfiye tableti, tüp ve '
+            'spatulalar enfiye yolunu güçlü biçimde düşündürüyor ve yazarlar Anadenanthera tohumları '
+            'için bu yolu öneriyor; ama harmin ile DMT bileşimi için hem içecek hem bileşik enfiye '
+            'olasılığını açık bırakıyorlar [1].',
+            'Ve bu “en eski kanıt” değil. Makale “ilk” ya da “en eski” demiyor. İddiası nicel: '
+            'dünyanın bu bölgesinde tek bir buluntudan bugüne dek elde edilmiş en çok sayıda bileşik, '
+            've Güney Amerika’da tek bir arkeolojik takımda bildirilmiş en yüksek psikoaktif sayısı '
+            '[1]. “Kesin kanıt” ifadesi ise yalnızca en az üç psikoaktif bitkinin varlığı için '
+            'kullanılıyor; birlikte kullanıldıkları için değil, orada “olabilir” deniyor [1].',
+        ]),
+        ('Tek buluntu değil', [
+            'Cueva del Chileno yalnız bir örnek olsaydı yorumlanması zor olurdu. Değil.',
+            'Titicaca Gölü’nün kuzeydoğusunda, Doğu Kordilleralarda yaklaşık 3.500 metrede, Niño '
+            'Korin adlı yerde bir toplu mezardan beş ahşap tablet, kamış tüpler, lavman aletleri ve '
+            'spatulalar çıkmıştır; tabletler Tiwanaku üslubunda. Buluntuyu 1972’de yayımlayan '
+            'monografi bunu bir “tıp adamı”nın takımı olarak tanımlar [12]. Tarihlemesi için '
+            'yayımlanmış tutarlı bir değer bulamadık, o yüzden burada tarih vermiyoruz.',
+            'La Paz yakınlarındaki Amaguaya vadisinde 1998’de bulunan ve Tiwanaku dönemine atfedilen '
+            '“Pallqa” kesesi de aynı buluntu sınıfından: bir din adamı ya da hekimin ilaç bohçası '
+            'olarak incelenmiştir [13].',
+            'Kimyasal taraf da tek bir çalışmaya dayanmıyor. Kuzey Şili’de Orta Dönem’e (MS 500–1000) '
+            'ait insan saçında harmin saptanmıştır [10]. Bu çalışmanın kendisi dikkate değer bir '
+            'ihtiyat da taşıyor: harminin tek başına bulunması halüsinojen kullanımına değil, tıbbi '
+            'kullanıma işaret edebilir. San Pedro de Atacama’nın Hispanik öncesi enfiye tozları '
+            '1991’de kimyasal olarak analiz edilmiştir [9]. Chavín de Huántar’da kullanılan enfiyenin '
+            'hangi bitkiden geldiği ise ikonografi üzerinden tartışılmıştır [11] — {sanpedro} '
+            'kaktüsünün o bölgedeki arkeolojik ve tarihsel izi ayrı bir literatür.',
+            '{koka} için zincir daha da eskiye gidiyor. Kuzey Peru’nun Nanchoc vadisinde ev '
+            'tabanlarında bulunan koka yaprakları en az 8.000 kalibre yıl öncesine tarihlenmiştir; '
+            'yanında, yapraktan alkaloidi çıkarmak için kullanılan kalsit parçaları da bulunmuştur '
+            '[14]. Burada bir ayrım önemli: bu tarih saç ya da diş analizinden değil, bitki kalıntısı '
+            've bağlamdan geliyor.',
+        ]),
+        ('Bir avuç içi kadar torbanın anlattığı', [
+            'Buluntunun en düşündürücü yanı bileşiklerin sayısı değil, nereden geldikleri. Torbanın '
+            'işaret ettiği bitkilerin hiçbiri 3.890 metrelik o yaylada yetişmiyor. Makalenin kendi '
+            'ifadesiyle: Güney Amerika’nın birbirinden kopuk ve uzak ekolojik bölgelerinden gelen '
+            'birden fazla bitkinin bir arada bulunması, halüsinojen bitkilerin önemli mesafeler '
+            'boyunca taşındığını ve Kolomb öncesi ritüel pratiklerinin içinde ayrıntılı bir botanik '
+            'bilgisinin bulunduğunu düşündürüyor [1].',
+            'Yani bu çanta bir bitki listesi değil, bir ağın kanıtı. Birinin hangi bitkinin nerede '
+            'yetiştiğini, hangisinin hangisiyle birlikte işe yaradığını ve onu yüzlerce kilometre '
+            'öteden nasıl getirteceğini bilmesi gerekiyordu.',
+            'Bu yazı arkeolojik ve tarihsel bir bulguyu anlatır; kullanım önerisi değildir. '
+            'Bitkilerin güvenlik, yasal durum ve ilaç etkileşimi bilgileri kendi sayfalarında.',
+        ]),
+    ],
+    kaynaklar=[
+        ('Melanie J. Miller, Juan Albarracin-Jordan, Christine Moore, José M. Capriles, '
+         '“Chemical evidence for the use of multiple psychotropic plants in a 1,000-year-old ritual '
+         'bundle from South America”, PNAS 116(23): 11207–11212, 2019 (PMID 31061128)',
+         'https://pmc.ncbi.nlm.nih.gov/articles/PMC6561276/'),
+        ('Christine VanPool, “Ancient medicinal plants of South America”, PNAS 116(23): 11087–11089, '
+         '2019 (PMID 31113878)', 'https://doi.org/10.1073/pnas.1906805116'),
+        ('Dennis J. McKenna, G. H. N. Towers, F. Abbott, “Monoamine oxidase inhibitors in South '
+         'American hallucinogenic plants: tryptamine and β-carboline constituents of ayahuasca”, '
+         'Journal of Ethnopharmacology 10(2): 195–223, 1984 (PMID 6587171)',
+         'https://doi.org/10.1016/0378-8741(84)90003-5'),
+        ('Jordi Riba, Marta Valle, Gloria Urbano, Mercedes Yritia, Adelaida Morte, Manel J. Barbanoj, '
+         '“Human pharmacology of ayahuasca”, Journal of Pharmacology and Experimental Therapeutics '
+         '306(1): 73–83, 2003 (PMID 12660312)', 'https://doi.org/10.1124/jpet.103.049882'),
+        ('J. C. Callaway, Glacus S. Brito, Edison S. Neves, “Phytochemical analyses of Banisteriopsis '
+         'caapi and Psychotria viridis”, Journal of Psychoactive Drugs 37(2): 145–150, 2005 '
+         '(PMID 16149327)', 'https://doi.org/10.1080/02791072.2005.10399795'),
+        ('James C. Callaway, Charles S. Grob, “Ayahuasca preparations and serotonin reuptake '
+         'inhibitors: a potential combination for severe adverse interactions”, Journal of '
+         'Psychoactive Drugs 30(4): 367–369, 1998 (PMID 9924842)',
+         'https://doi.org/10.1080/02791072.1998.10399712'),
+        ('M. Moloudizargari, P. Mikaili, S. Aghajanshakeri, M. H. Asghari, J. Shayegh, '
+         '“Pharmacological and therapeutic effects of Peganum harmala and its main alkaloids”, '
+         'Pharmacognosy Reviews 7(14): 199–212, 2013 (PMID 24347928)',
+         'https://doi.org/10.4103/0973-7847.120524'),
+        ('M. L. Pochettino, A. R. Cortella, M. Ruiz, “Hallucinogenic snuff from northwestern '
+         'Argentina: microscopical identification of Anadenanthera colubrina var. cebil (Fabaceae) in '
+         'powdered archaeological material”, Economic Botany 53(2): 127–132, 1999',
+         'https://doi.org/10.1007/bf02866491'),
+        ('Constantino Manuel Torres, David B. Repke, Kelvin Chan, Dennis McKenna, Agustin Llagostera, '
+         'Richard Evans Schultes, “Snuff powders from pre-Hispanic San Pedro de Atacama: chemical and '
+         'contextual analysis”, Current Anthropology 32(5): 640–649, 1991',
+         'https://doi.org/10.1086/204014'),
+        ('Juan P. Ogalde, Bernardo T. Arriaza, Elia C. Soto, “Uso de plantas psicoactivas en el norte '
+         'de Chile: evidencia química del consumo de ayahuasca durante el Periodo Medio '
+         '(500–1000 d.C.)”, Latin American Antiquity 21(4): 441–450, 2010',
+         'https://doi.org/10.7183/1045-6635.21.4.441'),
+        ('Richard Burger, “What kind of hallucinogenic snuff was used at Chavín de Huántar? An '
+         'iconographic identification”, Ñawpa Pacha 31(2): 123–140, 2011',
+         'https://doi.org/10.1179/naw.2011.31.2.123'),
+        ('Constantino M. Torres, “Iconografía tiwanaku en la parafernalia inhalatoria de los Andes '
+         'centro-sur”, Boletín de Arqueología PUCP 5: 427–454, 2001; S. Henry Wassén’in Niño Korin '
+         'monografisine dayanır (A medicine-man’s implements and plants in a Tiahuanacoid tomb in '
+         'highland Bolivia, Etnologiska studier 32, Göteborg, 1972)',
+         'https://doi.org/10.18800/boletindearqueologiapucp.200101.016'),
+        ('Carmen Beatriz Loza, “El atado de remedios de un religioso/médico del periodo Tiwanaku”, '
+         'Bulletin de l’Institut français d’études andines 36(3): 317–342, 2007',
+         'https://doi.org/10.4000/bifea.3563'),
+        ('Tom D. Dillehay, Jack Rossen, Donald Ugent, Anathasios Karathanasis, Víctor Vásquez, '
+         'Patricia J. Netherly, “Early Holocene coca chewing in northern Peru”, Antiquity 84(326): '
+         '939–953, 2010', 'https://doi.org/10.1017/s0003598x00067004'),
+    ],
+    bitkiler=['koka', 'ayahuasca', 'chacruna', 'yopo', 'sanpedro', 'uzerlik'],
+    semboller=['chakana', 'kam-davulu'],
+))
