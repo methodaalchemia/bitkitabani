@@ -786,6 +786,22 @@ with open(os.path.join(OUT, 'veri', 'bitkiler.csv'), 'w', encoding='utf-8-sig', 
 json.dump([dict(zip(_VERI_BASLIK, r)) for r in _VERI],
           open(os.path.join(OUT, 'veri', 'bitkiler.json'), 'w', encoding='utf-8'),
           ensure_ascii=False, indent=1)
+# Güncel sayılar: tek yetkili kaynak. Hibe başvurusu, seminer ve doküman metinleri
+# sayıyı elle yazmak yerine buradan okur; her derlemede kendiliğinden tazelenir.
+_bek = [q for q in _K.Q if datetime.date.fromisoformat(q['yayin']) > LOCAL_DAY]
+json.dump({
+    'tarih': LOCAL_DAY.isoformat(),
+    'bitki': len(P),
+    'kuyrukta_bekleyen': len(_bek),
+    'kuyruk_son_tarih': _bek[-1]['yayin'] if _bek else None,
+    'sembol': len(MOTIFLER),
+    'yazi': len(YAZILAR),
+    'bolge': len(REG),
+    'kanit': {KANIT[k]['ad']: sum(1 for p in P if p.get('kanit') == k) for k in KANIT},
+    'guvenlik': {GUV[g]: sum(1 for p in P if p.get('guv') == g) for g in GUV},
+    'yasal_kisitli': sum(1 for p in P if p['id'] in YASAL),
+}, open(os.path.join(OUT, 'veri', 'sayilar.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+
 _csv_boy = os.path.getsize(os.path.join(OUT, 'veri', 'bitkiler.csv'))
 _json_boy = os.path.getsize(os.path.join(OUT, 'veri', 'bitkiler.json'))
 _kb = lambda n: f'{round(n / 1024)} KB'
