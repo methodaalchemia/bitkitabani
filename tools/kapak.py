@@ -47,11 +47,15 @@ def sar(d, metin, f, gen):
 IMG = json.load(open(os.path.join(HERE, 'images.json'), encoding='utf-8'))
 GDIR = os.path.join(HERE, 'img', 'hikaye-gorsel')
 GK = json.load(open(os.path.join(GDIR, 'kaynak.json'), encoding='utf-8')) if os.path.exists(os.path.join(GDIR, 'kaynak.json')) else {}
-def gorsel(g):
-    """(dosya, künye) — önce hikâyeye özel Commons görseli, sonra katalogdaki bitki fotoğrafı."""
+def gorsel(h):
+    """(dosya, künye) — önce hikâyeye özel görsel (slug), sonra bitkiye özel Commons görseli,
+    sonra katalogdaki bitki fotoğrafı. Aynı bitkinin birden çok hikâyesi aynı kareyi paylaşmasın diye
+    slug anahtarı önce gelir."""
+    for anahtar in (h.get('slug'), h.get('gorsel')):
+        if anahtar and anahtar in GK and os.path.exists(os.path.join(GDIR, anahtar + '.jpg')):
+            k = GK[anahtar]; return os.path.join(GDIR, anahtar + '.jpg'), f"{k['artist']}, {k['license']}"
+    g = h.get('gorsel')
     if not g: return None, ''
-    if g in GK and os.path.exists(os.path.join(GDIR, g + '.jpg')):
-        k = GK[g]; return os.path.join(GDIR, g + '.jpg'), f"{k['artist']}, {k['license']}"
     f = os.path.join(HERE, 'img', g + '-1280.jpg')
     if os.path.exists(f):
         k = IMG.get(g, {}); return f, (f"{k.get('artist', '')}, {k.get('license', '')}".strip(', ') if k else '')
@@ -62,7 +66,7 @@ def kapak(h, i):
     hs = int(hashlib.md5(h['slug'].encode()).hexdigest(), 16)
     bg = RENK[i % len(RENK)]; kind = (hs >> 3) % 5; kind2 = (kind + 1 + (hs >> 7) % 4) % 5
     im = Image.new('RGB', (W, H), bg); d = ImageDraw.Draw(im)
-    gf, kunye = gorsel(h.get('gorsel'))
+    gf, kunye = gorsel(h)
     tw = W - (PW if gf else 0)
     soluk = tuple(int(int(bg[j:j + 2], 16) * 0.78 + 0xF1 * 0.22) for j in (1, 3, 5))
     # büyük filigran motif: renk alanının içinde kalsın (fotoğraf şeridinin altında yarım kalmasın)
@@ -109,7 +113,7 @@ def main():
     eski = json.load(open(idx, encoding='utf-8')) if os.path.exists(idx) else {}
     for i, h in enumerate(H_):
         p = os.path.join(OUT, h['slug'] + '.jpg')
-        imza = h['baslik'] + '|' + str(h.get('gorsel')) + '|v3'
+        imza = h['baslik'] + '|' + str(h.get('gorsel')) + '|' + ('S' if h['slug'] in GK else '-') + '|v3'
         if os.path.exists(p) and eski.get(h['slug']) == imza: continue
         kapak(h, i).save(p, quality=86, optimize=True); n += 1
         eski[h['slug']] = imza
