@@ -16,8 +16,9 @@ def main():
         if not p: print('cay reel: yayında değil', pid); continue
         img = next((x for x in [os.path.join(ROOT, 'img', f'{pid}-1280.jpg'), os.path.join(ROOT, 'img', f'{pid}-960.jpg')] if os.path.exists(x)), None)
         od = os.path.join(out_root, pid); os.makedirs(od, exist_ok=True)
-        ok = reel.make(p, ig2.text_for(p), img, os.path.join(od, 'reel.mp4'))
-        print('cay reel:', pid, 'ok' if ok else 'HATA')
+        hedef = os.path.join(od, 'reel.mp4')
+        ok = True if os.path.exists(hedef) else reel.make(p, ig2.text_for(p), img, hedef)
+        print('cay reel:', pid, 'hazır' if ok and os.path.exists(hedef) else ('ok' if ok else 'HATA'))
         if ok: done[pid] = {'reel': f'https://bitkitabani.com/ig/cay/{pid}/reel.mp4', 'caption': ig2.caption2(p, 'Çay tarifi'), 'tr': p['tr'], 'tarif': next(t['slug'] for t in TARIFLER if t['bitki'] == pid)}
     json.dump(done, open(os.path.join(out_root, 'index.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 

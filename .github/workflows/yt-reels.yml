@@ -1,0 +1,49 @@
+name: YouTube Shorts için Reels üret
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: 'Bu çalıştırmada üretilecek video sayısı (0 = hepsi)'
+        default: '24'
+concurrency: { group: yt-reels, cancel-in-progress: false }
+permissions:
+  contents: write
+jobs:
+  reels:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: ffmpeg
+        run: which ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
+      - name: Bağımlılıklar
+        run: pip install -q pillow edge-tts
+      - name: Girdi dosyasını hazırla
+        run: python3 build.py >/dev/null && python3 tools/ig.py
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      - name: Önceki Reels dosyalarını geri al
+        continue-on-error: true
+        run: |
+          git clone -q --depth 1 --branch igmedia "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" /tmp/old || exit 0
+          mkdir -p igout
+          for d in cay yt p; do [ -d "/tmp/old/$d" ] && cp -rn "/tmp/old/$d" igout/ || true; done
+          ls igout
+      - name: Çay Reels (eksikse)
+        continue-on-error: true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 tools/cay_reel.py
+      - name: Katalog Reels
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          YT_REEL_LIMIT: ${{ inputs.limit }}
+        run: python3 tools/yt_reel.py
+      - name: igmedia dalına yaz
+        run: |
+          cd igout && git init -q && git checkout -q -b igmedia && git add -A
+          git -c user.name="bitkitabani-bot" -c user.email="actions@users.noreply.github.com" commit -qm "Reels dosyaları [bot]"
+          git push -fq "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" igmedia
+          echo "yt indeksi:"; python3 -c "import json;d=json.load(open('yt/index.json'));print(len(d),'video')"

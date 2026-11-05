@@ -342,6 +342,10 @@ async function ytPost(env, force) {   // günde YT_GUNLUK Shorts, 10:00–22:00 
     if (bekleyen.length) {
       const pid = bekleyen[0], c = cay[pid];
       key = 'cay:' + pid; videoUrl = c.reel; meta = ytMeta(c.tr, pid, c.caption, c.tarif || null);
+    } else if (Object.keys(await (await igAsset('yt/index.json')).json().catch(() => ({}))).some(k => !(st.done || {})['yt:' + k])) {
+      const ytx = await (await igAsset('yt/index.json')).json();
+      const pid = Object.keys(ytx).find(k => !(st.done || {})['yt:' + k]), c = ytx[pid];
+      key = 'yt:' + pid; videoUrl = c.reel; meta = ytMeta(c.tr, pid, c.caption, c.tarif || null);
     } else {
       const ig = (await call(env, 'ig:state', 'get')) || {};
       if (!ig.lastPlant || ig.last !== day) return { skipped: 'günün videosu yok' };

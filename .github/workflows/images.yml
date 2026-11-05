@@ -57,6 +57,12 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python3 tools/ig.py
+      - name: Önceki Reels dosyalarını geri al (igmedia dalı silinmesin)
+        continue-on-error: true
+        run: |
+          git clone -q --depth 1 --branch igmedia "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" /tmp/old || exit 0
+          mkdir -p igout
+          for d in cay yt; do [ -d "/tmp/old/$d" ] && cp -rn "/tmp/old/$d" igout/ || true; done
       - name: Çay bitkileri Reels
         continue-on-error: true
         env:
