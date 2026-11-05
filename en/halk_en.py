@@ -121,12 +121,12 @@ H_EN = {
   baslik='The flower that opens in the birth room',
   yore='',
   post='In Anatolia, a bowl of water in the birth room with a dry plant in it: Fatma Ana Eli (“Mother Fatma’s Hand”, rose of Jericho, Anastatica hierochuntica). As the plant opens in the water, the birth is believed to become easy, like water. In some regions the midwife rubs the woman’s back and says: “This hand is not my hand, it is the hand of our Mother Fatma.” Note: drinking this plant’s water in pregnancy has not been proven safe.',
-  kisa='Şen and Dinç Kaya, Lokman Hekim Dergisi, 2021'),
+  kisa='Şen and Dinç, Lokman Hekim Dergisi, 2021'),
  'ayni-bitki-farkli-adlar-anastatica-hierochuntica': dict(
   baslik='Fadime Ana, Meryem Ana, Havva Ana',
   yore='',
   post='One plant, different names: in Ankara, Sivas and Tokat, Anastatica hierochuntica (rose of Jericho) is called Fadime Ana, Meryem Ana or Havva Ana (Mother Fatima, Mother Mary, Mother Eve). As it opens in water, the “doors of wishes” are believed to open too. In a study in Karaman, 77.9 percent of women said they had used this plant to ease childbirth.',
-  kisa='Şen and Dinç Kaya, Lokman Hekim Dergisi, 2021'),
+  kisa='Şen and Dinç, Lokman Hekim Dergisi, 2021'),
  'hititler-ardici-dini-torenlerde-kullanmis-mezar': dict(
   baslik='Sacred tree of the Hittites: juniper',
   yore='Hittites',
@@ -196,7 +196,7 @@ H_EN = {
   baslik='A drop of milk on the leaf',
   yore='Christian legend; Turkey',
   post='The white veins on the leaves of milk thistle are linked to a legend: while Mary was nursing Jesus under this plant, a drop of her milk fell on the leaves. In Turkey the plant has many names: deve kengeri, sütlü kengel, akdiken, mübarek diken, şevkülmeryem.',
-  kisa='Ereni and Şar, Lokman Hekim Dergisi, 2020'),
+  kisa='Eren and Şar, Lokman Hekim Dergisi, 2020'),
  'tere-lepidium-sativum-anadolu-kerdeme-circir': dict(
   baslik='Kerdeme, cırcır, garden cress',
   yore='',

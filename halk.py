@@ -15,20 +15,20 @@ AG = 'Ağrı (Diyadin, Doğubayazıt)'
 _L = 'https://dergipark.org.tr/tr/pub/mutftd/article/'
 KIRICI = ('Saliha Kırıcı, Serpil Demirci Kayıran, Gonca Tokuz, “Doğu Akdeniz Bölgesinde Üzerlik (Peganum harmala L.) Bitkisinin Tütsü Olarak Kullanımı”, Lokman Hekim Dergisi 8(1), 2018', _L + '523820')
 KARDAS = ('Canser Kardaş, “Muş’ta Yabani Bitkilerin Halk Hekimliğinde Kullanılması”, Lokman Hekim Dergisi 9(1), 2019', _L + '468848')
-SEN = ('Esra Şen, Hatice Dinç Kaya, “Doğumda Geleneksel Uygulamalar: Fatma Ana Eli Bitkisi (Anastatica hierochuntica L.)”, Lokman Hekim Dergisi 11(2), 2021', _L + '871831')
-HITIT = ('Sinem Yeğenoğlu, Burcu Sözen Şahne, Ezgi Ulutaş, “Hitit Uygarlığında Bitkilerin Yeri”, Lokman Hekim Dergisi 6(3), 2016', _L + '523739')
-MITOS = ('Nazlıcan Tarhan, Mustafa Arslan, Sevgi Şar, “Bazı Tıbbi Bitkiler ve Onlara Ait Mitoslar”, Lokman Hekim Dergisi 6(1), 2016', _L + '523708')
-KOKBOYA = ('Fatma Birgili, Mehmet Özcan, “Kök Boya Ustasından Bitki Kökleri ile Yanık Uygulaması”, Lokman Hekim Dergisi 2(3), 2012', _L + '523500')
-TAFLAN = ('Mehmet Karasu, Aytaç Yaşar, “Taflan (Laurocerasus officinalis Roemer) Bitkisinin Ordu-Giresun Yöresinde Hayvanlarda Folklorik Kullanımı”, Lokman Hekim Dergisi 13(2), 2023', _L + '1245849')
+SEN = ('Ebru Şen, Hüsniye Dinç, “Doğumda Geleneksel Uygulamalar: Fatma Ana Eli Bitkisi (Anastatica hierochuntica L.)”, Lokman Hekim Dergisi 11(2), 2021', _L + '871831')
+HITIT = ('Selen Yeğenoğlu, Bilge Sözen Şahne, Elif Ulutaş, “Hitit Uygarlığında Bitkilerin Yeri”, Lokman Hekim Dergisi 6(3), 2016', _L + '523739')
+MITOS = ('Nilay Tarhan, Miray Arslan, Sevgi Şar, “Bazı Tıbbi Bitkiler ve Onlara Ait Mitoslar”, Lokman Hekim Dergisi 6(1), 2016', _L + '523708')
+KOKBOYA = ('Fatma Birgili, Muesser Özcan, “Kök Boya Ustasından Bitki Kökleri ile Yanık Uygulaması”, Lokman Hekim Dergisi 2(3), 2012', _L + '523500')
+TAFLAN = ('Mehmet Karasu, Aşkın Yaşar, “Taflan (Laurocerasus officinalis Roemer) Bitkisinin Ordu-Giresun Yöresinde Hayvanlarda Folklorik Kullanımı”, Lokman Hekim Dergisi 13(2), 2023', _L + '1245849')
 LADEN = ('Nazım Şekeroğlu, Sevgi Gezici, “Türkiye’nin Virüs Savar Bitkisi Laden (Cistus spp.) Türleri”, Lokman Hekim Dergisi 11(2), 2021', _L + '895397')
 OCAK = ('H. Volkan Acar, “Türk Halk Hekimliğindeki Ocak Çeşitleri”, Lokman Hekim Dergisi 7(2), 2017', _L + '523762')
 NAZAR = ('Deniz Güçlü, “Anadolu’da Nazar İnancı: Halk Hekimliğinde Tanı ve Korunma Pratikleri”, Lokman Hekim Dergisi 16(2), 2026', _L + '1808091')
-MEVLANA = ('Sinem Yeğenoğlu, Burcu Sözen Şahne, “Maddeden Manaya: Bitkiler ve Mevlana”, Lokman Hekim Dergisi 6(1), 2016', _L + '523714')
-GUL = ('A. E. Güler, S. Karataş, “Tarihin Önemli Sırrı: Gül, Gül Yağı ve Gülsuyu”, Lokman Hekim Dergisi, XI. Türk Eczacılık Tarihi Toplantısı bildirileri, 2014', _L + '590199')
-SAFRAN = ('Lale Paşayeva, Halil Tekiner, “Türk-İslam Tıbbında Safranın Yeri”, Lokman Hekim Dergisi 4(3), 2014', _L + '523667')
-SAC = ('Günseli Serarslan, Ayhan Altıntaş, “Şifalı Yağlardan Modern Bilime: XIV. ve XV. Yüzyıl Tıp Metinlerinde Saç Tedavileri”, Lokman Hekim Dergisi 16(3), 2026', _L + '1938020')
-MERYEM = ('H. B. Ereni, Sevgi Şar, “Meryemana Dikeni Bitkisi: Farmakolojik ve Folklorik Bir Değerlendirme”, Lokman Hekim Dergisi 10(1), 2020', _L + '631944')
-TERE = ('İ. Başağaoğlu, G. Kavalalı, “Halk Hekimliğinde Tere Bitkisinin (Lepidium sativum L.) Kullanılması”, Lokman Hekim Dergisi 9(3), 2019', _L + '592053')
+MEVLANA = ('Selen Yeğenoğlu, Bilge Sözen Şahne, “Maddeden Manaya: Bitkiler ve Mevlana”, Lokman Hekim Dergisi 6(1), 2016', _L + '523714')
+GUL = ('Ayşe Esra Güler, Sevdenur Karataş, “Tarihin Önemli Sırrı: Gül, Gül Yağı ve Gülsuyu”, Lokman Hekim Dergisi, XI. Türk Eczacılık Tarihi Toplantısı bildirileri, 2014', _L + '590199')
+SAFRAN = ('Leyla Paşayeva, Halil Tekiner, “Türk-İslam Tıbbında Safranın Yeri”, Lokman Hekim Dergisi 4(3), 2014', _L + '523667')
+SAC = ('Gamze Serarslan, Ayten Altıntaş, “Şifalı Yağlardan Modern Bilime: XIV. ve XV. Yüzyıl Tıp Metinlerinde Saç Tedavileri”, Lokman Hekim Dergisi 16(3), 2026', _L + '1938020')
+MERYEM = ('Hafize Bilge Eren, Sevgi Şar, “Meryemana Dikeni Bitkisinin Kullanımının Eczacılık ve Tıp Tarihi Açısından İncelenmesi”, Lokman Hekim Dergisi 10(1), 2020', _L + '631944')
+TERE = ('İbrahim Başağaoğlu, Gülsel Kavalalı, “Tere Bitkisinin (Lepidium sativum L.) Halk Hekimliğinde Kullanılması”, Lokman Hekim Dergisi 9(3), 2019', _L + '592053')
 LH = 'Lokman Hekim Dergisi'
 BAYTOP3 = ('Turhan Baytop, Türkiye’de Bitkiler ile Tedavi: Geçmişte ve Bugün, 3. baskı (yay. haz. Feza Baytop Günergun), Nobel Tıp Kitabevleri, Ankara, 2021', '')
 YUNT = ('Emin Uğurlu, Özcan Seçmen, “Medicinal plants popularly used in the villages of Yunt Mountain (Manisa-Turkey)”, Fitoterapia 79, 2008', 'https://doi.org/10.1016/j.fitote.2007.07.016')
@@ -126,9 +126,9 @@ HALK = [
   metin='Yörede tolik denen ebegümeci (Malva neglecta) kısırlığa karşı pişirilip beze sarılır ve en az üç gece sıcak sıcak kadının karnına konur; şişkin bebeklerin karnına da unla karıştırılarak sarılır.'),
  dict(bitki='isirgan', yore='Muş', kaynak=KARDAS, kisa=f'Kardaş, {LH}, 2019',
   metin='Yörede gezgezk denen ısırganın taze suyu saç dökülmesine karşı saç diplerine sürülür; çorbası kan hastalıklarına önerilir.'),
- dict(kaynak=SEN, kisa=f'Şen ve Dinç Kaya, {LH}, 2021', link='rehber/',
+ dict(kaynak=SEN, kisa=f'Şen ve Dinç, {LH}, 2021', link='rehber/',
   post='Anadolu’da doğum odasında bir kâse su ve içinde kuru bir bitki: Fatma Ana Eli (Anastatica hierochuntica). Bitki suda açıldıkça doğumun da su gibi kolay olacağına inanılıyor. Bazı yörelerde ebe, kadının sırtını ovarken “Bu el benim elim değil, Fatma Anamızın eli” diyor. Not: gebelikte bu bitkinin suyunu içmenin güvenliği kanıtlanmamıştır.'),
- dict(kaynak=SEN, kisa=f'Şen ve Dinç Kaya, {LH}, 2021', link='rehber/',
+ dict(kaynak=SEN, kisa=f'Şen ve Dinç, {LH}, 2021', link='rehber/',
   post='Aynı bitki, farklı adlar: Anastatica hierochuntica Ankara, Sivas ve Tokat’ta Fadime Ana, Meryem Ana ya da Havva Ana diye anılıyor. Suda açıldıkça “hacet kapılarının” da açıldığına inanılıyor. Karaman’da yapılan bir araştırmada kadınların yüzde 77,9’u doğumu kolaylaştırmak için bu bitkiyi kullandığını söylemiş.'),
  dict(bitki='ardic', yore='Hititler', kaynak=HITIT, kisa=f'Yeğenoğlu ve ark., {LH}, 2016',
   metin='Hititler ardıcı dinî törenlerde tüketmiş, mezar yapımında ve ilaç hazırlamada kullanmıştır.',
@@ -169,7 +169,7 @@ HALK = [
   post='Edirne Sarayı’nın Gülhane’sinde hem gül bahçesi hem de gülsuyu yapılan bir bina vardı; Topkapı’daki Gülhane’de de sarayda yetişen güllerden gülsuyu yapılıyordu. 15. yüzyıl hekimlik kitabı Kemaliye, hamamdan sonra nemli boyna gül tozu sürülmesini öneriyor. Gül yağı Osmanlı’da hafızlık eğitiminde de yer almış.'),
  dict(kaynak=MEVLANA, kisa=f'Yeğenoğlu ve Sözen Şahne, {LH}, 2016', link='kavram/',
   post='Mevlânâ’da üzüm bir yolculuktur: koruk, olgun üzüm ve şarap bilmenin, bulmanın ve olmanın aşamalarını anlatır. Varlığın sırrına eren derviş için “üzüm olan derviş” denir. Konya’daki türbe bahçesine gülleri, babasının gül sevgisini yaşatmak için oğlu diktirmiş.'),
- dict(bitki='devedikeni', yore='Hristiyan söylencesi; Türkiye', kaynak=MERYEM, kisa=f'Ereni ve Şar, {LH}, 2020',
+ dict(bitki='devedikeni', yore='Hristiyan söylencesi; Türkiye', kaynak=MERYEM, kisa=f'Eren ve Şar, {LH}, 2020',
   metin='Söylenceye göre Meryem bu bitkinin altında dinlenip İsa’yı emzirirken sütünden bir damla yapraklara düşmüş; yapraklardaki beyaz damarların buradan geldiğine inanılır. Türkiye’de deve kengeri, sütlü kengel, akdiken, mübarek diken ve şevkülmeryem gibi adlarla bilinir.',
   post='Meryemana dikeninin yapraklarındaki beyaz damarlar bir söylenceye bağlanıyor: Meryem bu bitkinin altında İsa’yı emzirirken sütünden bir damla yapraklara düşmüş. Türkiye’de ise bitkinin pek çok adı var: deve kengeri, sütlü kengel, akdiken, mübarek diken, şevkülmeryem.'),
  dict(kaynak=TERE, kisa=f'Başağaoğlu ve Kavalalı, {LH}, 2019', link='rehber/',
