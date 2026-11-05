@@ -26,9 +26,9 @@ def kaynaklari_topla():
             if not f.endswith('.py'): continue
             p = os.path.join(kok, f)
             s = open(p, encoding='utf-8').read()
-            for m in re.finditer(r"\(\s*(['\"])(.{10,400}?)\1\s*,\s*(['\"])(https?://[^'\"]+)\3\s*\)", s, re.S):
+            for m in re.finditer(r"\(\s*(['\"])([^'\"]{10,400}?)\1\s*,\s*(['\"])(https?://[^'\"]+)\3\s*\)", s, re.S):
                 cift.append((os.path.relpath(p, HERE), re.sub(r'\s+', ' ', m.group(2)), m.group(4)))
-            for m in re.finditer(r"\(\s*(['\"])(.{10,400}?)\1\s*,\s*_?L\s*\+\s*(['\"])(\d+)\3\s*\)", s, re.S):
+            for m in re.finditer(r"\(\s*(['\"])([^'\"]{10,400}?)\1\s*,\s*_?L\s*\+\s*(['\"])(\d+)\3\s*\)", s, re.S):
                 cift.append((os.path.relpath(p, HERE), re.sub(r'\s+', ' ', m.group(2)),
                              'https://dergipark.org.tr/tr/pub/mutftd/article/' + m.group(4)))
     gorulen, out = set(), []

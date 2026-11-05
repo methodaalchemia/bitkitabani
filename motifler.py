@@ -1547,3 +1547,22 @@ MSEO.update({
  'yilan': ('Yılan motifi anlamı: hem zehir hem panzehir',
    'Yılan motifi zıtlıkları bir arada taşır: yaşam ve ölüm, şifa ve hastalık. Dokumada zikzak, bulut ya da ejder biçiminde yorumlanır, Hakkâri’de adı Şahmari.'),
 })
+
+OLMEZ_Y = ('Filiz Nurhan Ölmez, “Dokumalarda Yılan Motifi”, Art-e Sanat Dergisi, 3(6), 2010, 1–21', 'https://dergipark.org.tr/tr/pub/sduarte/article/221451')
+
+MOTIFLER.append(
+dict(slug='ejder', ad='Ejder', bolge='Anadolu', tema='evren', yayin='2026-12-12', ilgili=['yilan'],
+ kisa='Hayat ağacını bekleyen, yılanın büyümüş hâli.',
+ anlam='Eski Türk anlatılarında ejderha hayat ağacının bekçisidir; Orhon ve Bilge Kağan anıtlarında da bekçilik eder [1]. Dokumada ejder çoğunlukla yılan motifinin büyütülmüş hâli olarak görünür: zikzak, bulut ya da kıvrılan bir gövde. On altıncı yüzyıldan beri saray halılarında aynı biçim “çin bulutu” adıyla anılır; on dokuzuncu yüzyıl Ayvacık halılarının bordürlerinde üsluplaşmış ejder dokunur [1]. Hakkâri kilimlerinde “Hevçeker” adlı tip örümcek ya da ejderha motifiyle tanımlanır [2]. Adlandırmalar yöreden yöreye değişir: luu, ejder, nek, mar, büke, evren [1].',
+ cizim=[[(22,84),(18,68),(30,60),(48,60),(60,52),(62,38),(54,28),(42,26)],
+        [(33,88),(29,70),(39,70),(55,68),(67,58),(71,38),(61,22),(44,18)],
+        [(44,18),(27,9),(14,12)], [(42,26),(30,31),(19,31)], [(14,12),(19,20),(19,31)],
+        [(19,20),(9,17)], [(19,20),(9,23)],
+        [(50,18),(55,7)], [(59,22),(67,13)], [(66,30),(76,26)],
+        _spiral(25,84,11,1.0,0.6,1)],
+ dolu=[_diamond(40,21,3)],
+ bitkiler=[('ejderkani', 'Motifin adını paylaştığı drog: Sokotra ejder ağacının koyu kırmızı reçinesi, Arapça kaynaklarda “ejderha kanı” adıyla geçer.')],
+ kaynaklar=[OLMEZ_Y, HAKKARI]))
+
+MSEO['ejder'] = ('Ejder motifi anlamı: hayat ağacını bekleyen ejderha',
+  'Dokumada ejder, yılan motifinin büyütülmüş hâlidir: zikzak, bulut ya da kıvrılan gövde. Eski Türk anlatılarında hayat ağacının bekçisidir.')

@@ -6,7 +6,7 @@ eklenir ve aşağıdaki listeye yazılır; tarihler birbirini izlemeli, bir tari
 """
 import importlib
 
-FILES = ['k1', 'k2', 'k3', 'k4', 'k5']
+FILES = ['k1', 'k2', 'k3', 'k4', 'k5', 'k6']
 Q = []
 for _f in FILES:
     Q.extend(importlib.import_module(f'kuyruk.{_f}').Q)

@@ -216,10 +216,12 @@ def _il_bolum(il, d, baslik_tag='h2'):
     cal = ''.join(f'<li>{e(c["ilce"] + ": ") if c["ilce"] else ""}<a href="{c["url"]}" target="_blank" rel="noopener">{e(c["baslik"])}</a> · {e(c["yazar"])}, <i>{e(c["dergi"])}</i>, {c["yil"]}</li>' for c in d['cal'])
     return f'<{baslik_tag}>{e(il)} <small class="muted-s">· {len(bl)} bitki</small></{baslik_tag}><div class="related">{chips}</div><p class="muted-s">Kaynak saha çalışmaları:</p><ul class="srclist">{cal}</ul>'
 from karsilastirma import KARS
-from motifler import MOTIFLER, TEMALAR, ESKI as MOTIF_ESKI, MSEO
+from motifler import MOTIFLER as _MOTIF_HEPSI, TEMALAR, ESKI as MOTIF_ESKI, MSEO
 from yazilar import YAZILAR
 from kavramlar import KAVRAMLAR
 KAV = sorted([k for k in KAVRAMLAR if datetime.date.fromisoformat(k['yayin']) <= LOCAL_DAY and k['bitki'] in byId], key=lambda k: k['yayin'])
+# yayın tarihi verilmiş motifler o tarihe kadar görünmez (bağlı bitkisi henüz yayında değilse)
+MOTIFLER = [m for m in _MOTIF_HEPSI if not m.get('yayin') or datetime.date.fromisoformat(m['yayin']) <= LOCAL_DAY]
 KAV_TODAY = KAV[-1] if KAV else None
 GLINKS = {}
 def _glinks():
