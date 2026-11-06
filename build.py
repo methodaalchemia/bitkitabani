@@ -312,7 +312,7 @@ def head(title, desc, path, extra='', image=None):
 MENU = [('Bitkiler', [('/katalog/', 'Katalog', 'kat'), ('/familya/', 'Familyalar', 'kat'), ('/toplama-takvimi/', 'Doğada bu ay', 'toplama'), ('/yoreler/', 'Yöreler ve yöresel adlar', 'yore'), ('/yeni/', 'Yeni eklenenler', 'yeni')]),
         ('Şifa', [('/rehber/', 'Derde göre bitkiler', 'rehber'), ('/tarif/', 'Çay tarifleri', 'tarif'), ('/karsilastirma/', 'Karşılaştırmalar', 'kars'), ('/rehber/ilac-etkilesimi/', 'İlaç etkileşimi', 'etk'), ('/rehber/zehirli-bitkiler/', 'Zehirli bitkiler', 'zehir')]),
         ('Kültür', [('/kavram/', 'Kavramlar', 'kavram'), ('/semboller/', 'Semboller', 'sembol'), ('/kopruler/', 'Kültür köprüleri', 'br'), ('/blog/', 'Blog', 'yazi'), ('/takvim/', 'Ritüel takvimi', 'takvim')]),
-        ('Bitki Tabanı', [('/hakkinda/', 'Hakkında', 'about'), ('/yontem/', 'Yöntem ve kaynaklar', 'yontem'), ('/lisans/', 'Lisans ve atıf', 'lisans'), ('/veri/', 'Veri setini indir', 'veri'), ('/bulten/', 'Bülten ve e-posta kursu', 'bulten'), ('/kartlar/', 'Yazdırılabilir kartlar', 'kartlar'), ('/hesap/', 'Hesabım', 'acct'), ('/iletisim/', 'İletişim', 'mail')])]
+        ('Bitki Tabanı', [('/hakkinda/', 'Hakkında', 'about'), ('/yontem/', 'Yöntem ve kaynaklar', 'yontem'), ('/istatistik/', 'Rakamlar', 'about'), ('/lisans/', 'Lisans ve atıf', 'lisans'), ('/veri/', 'Veri setini indir', 'veri'), ('/bulten/', 'Bülten ve e-posta kursu', 'bulten'), ('/kartlar/', 'Yazdırılabilir kartlar', 'kartlar'), ('/hesap/', 'Hesabım', 'acct'), ('/iletisim/', 'İletişim', 'mail')])]
 MENU_HUB = {'Bitkiler': '/katalog/', 'Şifa': '/rehber/', 'Kültür': '/kultur/'}
 _TABICO = {'ara': '<circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/>', 'kat': '<path d="M12 21V9"/><path d="M12 13c-4 0-6-3-6-7 4 0 6 3 6 7z"/><path d="M12 11c3 0 5-2 5-5-3 0-5 2-5 5z"/>',
            'rehber': '<path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/>', 'kultur': '<path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/>', 'gun': '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M5 19l1.5-1.5M17.5 6.5L19 5"/>'}
@@ -1938,6 +1938,78 @@ _ai = ['Googlebot', 'Google-Extended', 'Bingbot', 'GPTBot', 'OAI-SearchBot', 'Ch
 open(os.path.join(OUT,'robots.txt'),'w').write('# Bitki Tabanı arama motorlarına ve yapay zekâ asistanlarına açıktır; alıntı yaparken kaynak göster.\n# Özet: ' + BASE + '/llms.txt\n\n' + ''.join(f'User-agent: {a}\n' for a in _ai) + _rules + '\nUser-agent: *\n' + _rules + f'\nSitemap: {BASE}/sitemap.xml\n')
 import build_en
 EN_URLS = build_en.run(globals())
+# ---------- /istatistik/ : sitenin kendi rakamları ----------
+from istatistik import ARAMA as _AR
+import importlib.util as _ilu
+_rs = _ilu.spec_from_file_location('_refs_ist', os.path.join(HERE, 'refs.py')); _RF = _ilu.module_from_spec(_rs); _rs.loader.exec_module(_RF)
+_kan = collections.Counter(p['kanit'] for p in P)
+_guv = collections.Counter(p['guv'] for p in P)
+_bol = collections.Counter(b for p in P for b in p['bolge'])
+_ema = sum(1 for p in P if p['id'] in _RF.EMA); _ncc = sum(1 for p in P if p['id'] in _RF.NCCIH); _oth = sum(1 for p in P if p['id'] in _RF.OTHER)
+_yas = sum(1 for p in P if (p.get('yasal') or '').strip())
+
+def _bar(baslik, sayilar, toplam):
+    satir = ''.join(f'<tr><th scope="row">{e(ad)}</th><td>{n}</td><td>%{round(100 * n / toplam)}</td></tr>' for ad, n in sayilar)
+    return f'<table class="ist"><caption>{e(baslik)}</caption><thead><tr><th scope="col">Düzey</th><th scope="col">Kayıt</th><th scope="col">Pay</th></tr></thead><tbody>{satir}</tbody></table>'
+
+_sorgu = ''.join(f'<tr><th scope="row">{e(q)}</th><td>{g}</td><td>{k}</td><td>{t}</td></tr>' for q, g, k, t in _AR['sorgular'])
+
+IST = f'''{_crumbs(('/hakkinda/', 'Hakkında'), ('/istatistik/', 'Rakamlar'))}
+<header class="page-head"><span class="eyebrow">Açık rakamlar · {e(_AR["tarih"])}</span><h1>Bitki Tabanı rakamlarla</h1><p class="lede">Bu sayfa sitenin kendi ölçümlerini olduğu gibi yayımlar: ne kadar kayıt var, kaçı hangi kanıt düzeyinde, arama motorundan kaç kişi geliyor. İyi görünen rakamlar kadar görünmeyenler de burada; bir veri tabanının güvenilirliği kendi sayılarını saklamamasıyla da ölçülür.</p></header>
+
+<section class="sec"><h2>Kapsam</h2>
+<ul class="ist-kutu">
+<li><b>{len(P)}</b> bitki kaydı</li>
+<li><b>{len(_bol)}</b> bölge</li>
+<li><b>{len(MOTIFLER)}</b> motif sayfası</li>
+<li><b>{len(HIK)}</b> halk hekimliği hikâyesi</li>
+<li><b>{len(YORE_SAYFA)}</b> yöre sayfası</li>
+<li><b>{_yas}</b> kayıtta Türkiye’deki yasal durum notu</li>
+</ul>
+<p class="muted-s">Bölge dağılımı: {", ".join(f"{e(REG[b]['ad'])} {n}" for b, n in _bol.most_common() if b in REG)}. Bir bitki birden çok bölgede sayılabilir.</p></section>
+
+<section class="sec"><h2>Kanıt ve güvenlik dağılımı</h2>
+<p>Her kullanım aynı ağırlıkta değil. Kanıt düzeyi, o kullanımın hakemli klinik çalışmaya mı yoksa geleneksel aktarıma mı dayandığını söyler.</p>
+{_bar('Kanıt düzeyi', [(KANIT[k]['ad'], _kan[k]) for k in ('klinik', 'sinirli', 'geleneksel') if _kan[k]], len(P))}
+{_bar('Güvenlik düzeyi', [(GUV[g], _guv[g]) for g in ('dusuk', 'orta', 'yuksek') if _guv[g]], len(P))}
+<p class="muted-s">Klinik kanıtlı kayıt sayısının düşük olması bir eksiklik değil, alanın gerçeği: bitkisel kullanımların çoğu kontrollü insan çalışmasıyla sınanmamıştır. Sitenin işi bunu gizlemek değil, etiketlemek.</p></section>
+
+<section class="sec"><h2>Kaynaklar</h2>
+<ul class="ist-kutu">
+<li><b>{_ema}</b> kayıtta EMA–HMPC monografı</li>
+<li><b>{_ncc}</b> kayıtta NCCIH özeti</li>
+<li><b>{_oth}</b> kayıtta ek hakemli ya da resmî kaynak</li>
+</ul>
+<p class="muted-s">Her kaydın ayrıca botanik kaydı (Kew POWO) ve Anadolu kayıtlarının çoğunda Baytop referansı var. Wikipedia kaynak olarak kullanılmıyor.</p></section>
+
+<section class="sec"><h2>Aramadan gelen trafik</h2>
+<p class="muted-s">Google Search Console, {e(_AR["donem"])}, {e(_AR["tarih"])} itibarıyla. Site {e(_AR["kuruldu"])} tarihinde kuruldu.</p>
+<ul class="ist-kutu">
+<li><b>{_AR["gosterim"]:,}</b> gösterim</li>
+<li><b>{_AR["tiklama"]}</b> tıklama</li>
+<li><b>{e(_AR["to"])}</b> tıklama oranı</li>
+<li><b>{e(_AR["konum"])}</b> ortalama konum</li>
+<li><b>{_AR["dizinli"]}</b> dizinlenen sayfa</li>
+</ul>
+<p>Ortalama konum 16,8, yani ikinci sayfa; orada %0,5–1 tıklama oranı olağandır. Yani buradaki düşük oran bir arıza göstergesi değil, yeni bir sitenin henüz ilk sayfaya çıkamamış olmasının sonucu.</p>
+<h3>En çok gösterim alan sorgular</h3>
+<table class="ist"><thead><tr><th scope="col">Sorgu</th><th scope="col">Gösterim</th><th scope="col">Konum</th><th scope="col">Tıklama</th></tr></thead><tbody>{_sorgu}</tbody></table>
+<p class="muted-s">Sıfır tıklamalı satırlar da burada duruyor. En yüksek orana sahip sorgu “mersin yaprağının zararları”: sekiz gösterim, iki tıklama. İnsanlar bir bitkinin ne işe yaradığından çok zararını merak ediyor.</p></section>
+
+<section class="sec"><h2>Bu rakamların söylemediği</h2>
+<ul>
+<li>Sunucu kayıtlarındaki sayfa görüntüleme sayısı (28 binin üzerinde) insan trafiği değildir; büyük bölümü arama motoru ve yapay zekâ tarayıcısıdır. İnsan ölçüsü olarak Search Console tıklaması alınır.</li>
+<li>Gösterim, birinin sayfayı gördüğü anlamına gelmez; arama sonucunun ekranda belirmesi yeterlidir.</li>
+<li>Bu sayfadaki arama verileri elle güncellenir; kapsam ve dağılım rakamları her derlemede veriden yeniden hesaplanır.</li>
+</ul></section>
+
+<section class="sec"><h2>Veriye kendin bak</h2><p>Kayıtların tamamı CSV ve JSON olarak indirilebilir, kalıcı kimliğiyle birlikte: <a href="/veri/">veri seti</a>. Yöntem ve kanıt düzeylerinin nasıl verildiği: <a href="/yontem/">Yöntem ve kaynaklar</a>.</p></section>'''
+write('/istatistik/', page('Bitki Tabanı rakamlarla: kapsam, kanıt dağılımı ve arama verisi | Bitki Tabanı',
+      f'Bitki Tabanı’nın kendi ölçümleri: {len(P)} kaydın kanıt ve güvenlik dağılımı, kaynak sayıları ve Google Search Console verileri.',
+      '/istatistik/', IST, 'about', narrow=True,
+      extra=_lds(_crumb_ld(('/hakkinda/', 'Hakkında'), ('/istatistik/', 'Rakamlar')))))
+GUIDE_URLS.append('/istatistik/')
+
 urls = ['/', '/katalog/', '/kultur/', '/kopruler/', '/gunun-bitkisi/', '/yeni/', '/hakkinda/', '/yontem/', '/lisans/', '/veri/', '/gizlilik/'] + [f'/kopruler/{slug_of(x)}/' for x in BR] + FAM_URLS + [f'/{p["id"]}/' for p in P] + GUIDE_URLS + EN_URLS
 def _imgtag(u):   # görsel site haritası: bitki sayfalarına fotoğraflarını ekle
     pid = u.strip('/').split('/')[-1]
@@ -1974,6 +2046,8 @@ if os.path.isdir(os.path.join(HERE, 'img')):
 for f in os.listdir(os.path.join(HERE, 'kok')):   # site köküne olduğu gibi kopyalanan doğrulama dosyaları
     shutil.copy(os.path.join(HERE, 'kok', f), os.path.join(OUT, f))
 _redir += '/hikaye/ /blog/ 301\n/yazilar/ /blog/ 301\n/yoresel-adlar/ /yoreler/#adlar 301\n/ara/ /rehber/#ara 301\n/oyun/ / 301\n'
+# kendi sayfası kapatılan familyalar: /familya/ sayfasındaki kendi bölümlerine
+_redir += ''.join(f'/familya/{fam_slug(f)}/ /familya/#{fam_slug(f)} 301\n' for f, n in sorted(FAMC.items()) if f in FAM_BILGI and n < FAM_MIN)
 open(os.path.join(OUT, '_redirects'), 'w').write(_redir)
 open(os.path.join(OUT, '_headers'), 'w').write('''/*
   Cache-Control: public, max-age=0, must-revalidate
