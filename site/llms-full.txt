@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 136 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 137 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -4272,3 +4272,35 @@ Karıştırma riski: Tespih ağacı (Melia azedarach) aynı ailedendir ve Türki
 
 ### İlginç bilgi
 Neem yağının mantar önleyici kullanımı için verilen bir Avrupa patenti, Hindistan’da yüzyıllardır bilinen bir bilgiye dayandığı gerekçesiyle 2000’de iptal edildi; olay “biyokorsanlık” tartışmalarının simgesi oldu.
+
+## Graviola (Annona muricata)
+
+URL: https://bitkitabani.com/graviola/
+Familya: Annonaceae · Bölge: Amazon · Kullanılan kısım: Meyve, yaprak, tohum
+Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
+
+### Geleneksel kullanım
+- Amazon ve Karayipler: Meyvesi taze yenir ve içeceği yapılır. Yaprak çayı halk arasında uykusuzluk, ateş ve parazitlere karşı içilir.
+- Bugün: İnternette “kemoterapiden binlerce kat güçlü” gibi iddialarla kanser ilacı olarak satılır; bu iddialar laboratuvar deneylerine dayanır, insanda kanıtlanmamıştır.
+
+### Hazırlama
+Meyve eti taze yenir ya da sütle karıştırılarak içilir. Yaprak, kabuk ve tohumun iç kullanımı önerilmez.
+
+### Bilim ne diyor
+Graviola yaprağı ve tohumundaki asetogeninler laboratuvarda kanser hücrelerini öldürür, ama aynı maddeler sinir hücreleri için de zehirlidir. İnsanda kanser tedavisi için yapılmış kontrollü çalışma yoktur. Karayipler’deki Guadeloupe’ta yapılan çalışmalar, graviola meyvesini ve çayını düzenli tüketenlerde atipik Parkinsonizmin daha sık görüldüğünü ortaya koymuştur.
+
+### Güvenlik
+Meyveyi ara sıra yemek sorun sayılmaz. Yaprak çayının, kapsüllerin ve tohumun uzun süreli kullanımı Parkinson’a benzer hareket bozukluklarıyla ilişkilendirilmiştir. Parkinson hastaları, hamileler ve emzirenler kullanmamalıdır. Kanser tedavisinin yerine ya da yanında kullanmadan önce mutlaka hekime danışılmalıdır.
+
+### İlaç etkileşimleri
+- Tansiyon ve şeker ilaçları: Tansiyonu ve kan şekerini düşürebilir.
+- Parkinson ilaçları: Sinir sistemi üzerindeki etkileri hastalığı kötüleştirebilir.
+
+### Doğada
+Nerede yetişir: Orta ve Güney Amerika ile Karayipler’in sıcak, nemli ovaları; Türkiye’de açık havada yetişmez.
+Toplama mevsimi: Tropik iklimde ağaç yıl boyunca çiçek ve meyve verebilir.
+Yöresel adlar: graviola, guanábana; Türkçede yerleşik bir adı yoktur
+Karıştırma riski: Aynı aileden şeker elması (Annona squamosa) ve çerimoya (A. cherimola) benzer meyvelerdir; çerimoya Türkiye’nin Akdeniz kıyısında az da olsa yetiştirilir.
+
+### İlginç bilgi
+Tek bir graviola meyvesi birkaç kilograma ulaşabilir; dikenli kabuğunun altındaki beyaz etin tadı çilek, ananas ve limon karışımına benzetilir.
