@@ -123,3 +123,26 @@ for _p in ('chiricsanango', 'mapacho'):
     OTHER.setdefault(_p, []).append(('Sanz-Biset & Cañigueral, Plant use in the medicinal practices known as “strict diets” in Chazuta valley (J Ethnopharmacol 2011)', 'https://doi.org/10.1016/j.jep.2011.05.021'))
 for _p in ('ayahuasca', 'chacruna', 'unadegato', 'toe'):
     OTHER.setdefault(_p, []).append(('Sanz-Biset ve ark., A first survey on the medicinal plants of the Chazuta valley (Peruvian Amazon) (J Ethnopharmacol 2009)', 'https://doi.org/10.1016/j.jep.2008.12.009'))
+
+
+# 7 Kasım 2026: kaynak derinligi taramasi. Amazon/And/Kuzey Amerika kayitlarinin
+# yarisi 3 ve alti kaynakla duruyordu. Asagidaki PMID'lerin tamami NCBI
+# E-utilities ile tek tek dogrulandi; yazar adlari yayinci ustverisinden alindi.
+OTHER.setdefault('palosanto', []).extend([
+    ('Espinoza ve ark., Development of a topical amphotericin B and Bursera graveolens essential oil-loaded gel for dermal candidiasis (Pharmaceuticals 2021)', 'https://pubmed.ncbi.nlm.nih.gov/34681257/'),
+    ('Sosa ve ark., Therapeutic applications of essential oils from native and cultivated Ecuadorian plants (Molecules 2023)', 'https://pubmed.ncbi.nlm.nih.gov/37570874/'),
+    ('Viteri ve ark., GABA and octopamine receptors as potential targets for fumigant actions of Bursera graveolens essential oil (Journal of Xenobiotics 2025)', 'https://pubmed.ncbi.nlm.nih.gov/40558874/')])
+OTHER.setdefault('kirmizikaraagac', []).extend([
+    ('LiverTox: Slippery Elm — ABD Ulusal Diyabet, Sindirim ve Böbrek Hastalıkları Enstitüsü', 'https://pubmed.ncbi.nlm.nih.gov/38289993/'),
+    ('Ried, Travica, Dorairaj, Sali, Herbal formula improves upper and lower gastrointestinal symptoms and gut health (Nutrition Research 2020)', 'https://pubmed.ncbi.nlm.nih.gov/32151878/')])
+OTHER.setdefault('tatliot', []).extend([
+    ('Cantrell, Jones, Ali, Isolation and identification of mosquito biting-deterrent compounds from Hierochloë odorata (Journal of Agricultural and Food Chemistry 2016)', 'https://pubmed.ncbi.nlm.nih.gov/27744691/'),
+    ('Brown, Towers, Wright, Biosynthesis of the coumarins: tracer studies on coumarin formation in Hierochloe odorata (Canadian Journal of Biochemistry and Physiology 1960)', 'https://pubmed.ncbi.nlm.nih.gov/13805037/'),
+    ('Alm, Scented grasses in Norway: identity and uses (Journal of Ethnobiology and Ethnomedicine 2015)', 'https://pubmed.ncbi.nlm.nih.gov/26701261/')])
+OTHER.setdefault('hibiskus', []).extend([
+    ('Abdelmonem ve ark., Efficacy of Hibiscus sabdariffa on reducing blood pressure in mild-to-moderate hypertension: sistematik derleme ve meta-analiz (Journal of Cardiovascular Pharmacology 2022)', 'https://pubmed.ncbi.nlm.nih.gov/34694241/'),
+    ('Dilokthornsakul ve ark., Clinical effects of Hibiscus sabdariffa on obesity treatment: sistematik derleme ve meta-analiz (Complementary Therapies in Medicine 2024)', 'https://pubmed.ncbi.nlm.nih.gov/38878905/')])
+OTHER.setdefault('karanfil', []).extend([
+    ('Markowitz, Moynihan, Liu, Kim, Biologic properties of eugenol and zinc oxide-eugenol: a clinically oriented review (Oral Surgery, Oral Medicine, Oral Pathology 1992)', 'https://pubmed.ncbi.nlm.nih.gov/1437045/'),
+    ('Mohammadi Nejad, Özgüneş, Başaran, Pharmacological and toxicological properties of eugenol (Turkish Journal of Pharmaceutical Sciences 2017)', 'https://pubmed.ncbi.nlm.nih.gov/32454614/'),
+    ('LiverTox: Eugenol (Clove Oil) — ABD Ulusal Diyabet, Sindirim ve Böbrek Hastalıkları Enstitüsü', 'https://pubmed.ncbi.nlm.nih.gov/31869191/')])
