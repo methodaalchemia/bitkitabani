@@ -312,7 +312,7 @@ def head(title, desc, path, extra='', image=None):
 MENU = [('Bitkiler', [('/katalog/', 'Katalog', 'kat'), ('/familya/', 'Familyalar', 'kat'), ('/toplama-takvimi/', 'Doğada bu ay', 'toplama'), ('/yoreler/', 'Yöreler ve yöresel adlar', 'yore'), ('/yeni/', 'Yeni eklenenler', 'yeni')]),
         ('Şifa', [('/rehber/', 'Derde göre bitkiler', 'rehber'), ('/tarif/', 'Çay tarifleri', 'tarif'), ('/karsilastirma/', 'Karşılaştırmalar', 'kars'), ('/rehber/ilac-etkilesimi/', 'İlaç etkileşimi', 'etk'), ('/rehber/zehirli-bitkiler/', 'Zehirli bitkiler', 'zehir')]),
         ('Kültür', [('/kavram/', 'Kavramlar', 'kavram'), ('/semboller/', 'Semboller', 'sembol'), ('/kopruler/', 'Kültür köprüleri', 'br'), ('/blog/', 'Blog', 'yazi'), ('/takvim/', 'Ritüel takvimi', 'takvim')]),
-        ('Bitki Tabanı', [('/hakkinda/', 'Hakkında', 'about'), ('/yontem/', 'Yöntem ve kaynaklar', 'yontem'), ('/istatistik/', 'Rakamlar', 'about'), ('/lisans/', 'Lisans ve atıf', 'lisans'), ('/veri/', 'Veri setini indir', 'veri'), ('/bulten/', 'Bülten ve e-posta kursu', 'bulten'), ('/kartlar/', 'Yazdırılabilir kartlar', 'kartlar'), ('/hesap/', 'Hesabım', 'acct'), ('/iletisim/', 'İletişim', 'mail')])]
+        ('Bitki Tabanı', [('/hakkinda/', 'Hakkında', 'about'), ('/yontem/', 'Yöntem, kaynaklar ve veri', 'yontem'), ('/bulten/', 'Bülten ve e-posta kursu', 'bulten'), ('/kartlar/', 'Yazdırılabilir kartlar', 'kartlar'), ('/hesap/', 'Hesabım', 'acct'), ('/iletisim/', 'İletişim', 'mail')])]
 MENU_HUB = {'Bitkiler': '/katalog/', 'Şifa': '/rehber/', 'Kültür': '/kultur/'}
 _TABICO = {'ara': '<circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/>', 'kat': '<path d="M12 21V9"/><path d="M12 13c-4 0-6-3-6-7 4 0 6 3 6 7z"/><path d="M12 11c3 0 5-2 5-5-3 0-5 2-5 5z"/>',
            'rehber': '<path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/>', 'kultur': '<path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/>', 'gun': '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M5 19l1.5-1.5M17.5 6.5L19 5"/>'}
@@ -331,7 +331,7 @@ FOOT = '''<div class="motif indigo" aria-hidden="true"></div>
     <h3>Bu site nedir</h3>
     <p>Bilgi ve merak için hazırlanmış bir derlemedir; tedavi önerisi değildir. Bir bitkiyi kullanmadan önce, özellikle ilaç kullanıyorsan, hamileysen ya da emziriyorsan bir hekime veya eczacıya danış.</p>
     <p>Fotoğraflar Wikimedia Commons’tan özgür lisanslarla alınmıştır; yazarı ve lisansı her bitkinin sayfasında yazılıdır.</p>
-    <p>Sitedeki metinler, aksi belirtilmedikçe <a href="/lisans/">CC BY-SA 4.0</a> ile lisanslıdır: kaynak göstererek ve türev işi aynı lisansla paylaşarak serbestçe kullanabilirsin.</p>
+    <p>Sitedeki metinler, aksi belirtilmedikçe <a href="/yontem/#lisans">CC BY-SA 4.0</a> ile lisanslıdır: kaynak göstererek ve türev işi aynı lisansla paylaşarak serbestçe kullanabilirsin.</p>
   </div>
   <div class="legend">
     <h3>Kanıt düzeyi</h3>
@@ -809,7 +809,7 @@ _kb = lambda n: f'{round(n / 1024)} KB'
 ld_veri = {"@context": "https://schema.org", "@type": "Dataset",
     "name": "Bitki Tabanı: şifalı ve ritüel bitkiler veri seti",
     "description": f"{REG_LIST}’dan {len(P)} şifalı ve ritüel bitkisi; her kayıtta Türkçe ve bilimsel ad, familya, yöresel adlar, bölge, kullanım kategorisi, kullanılan kısım, bilimsel kanıt düzeyi (klinik / sınırlı / geleneksel), güvenlik düzeyi ve Türkiye’deki yasal durum. Kanıt düzeyleri EMA–HMPC monografları, Cochrane derlemeleri ve NCCIH özetleri esas alınarak verilmiştir.",
-    "url": BASE + "/veri/", "inLanguage": "tr", "isAccessibleForFree": True,
+    "url": BASE + "/yontem/#veri-seti", "inLanguage": "tr", "isAccessibleForFree": True,
     "identifier": "https://doi.org/10.5281/zenodo.23972634", "sameAs": "https://doi.org/10.5281/zenodo.23972634",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "creator": AUTHOR,
@@ -822,8 +822,7 @@ ld_veri = {"@context": "https://schema.org", "@type": "Dataset",
         {"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": BASE + "/veri/bitkiler.csv", "contentSize": _kb(_csv_boy), "name": "bitkiler.csv"},
         {"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": BASE + "/veri/bitkiler.json", "contentSize": _kb(_json_boy), "name": "bitkiler.json"}]}
 
-VERI = f'''<header class="page-head"><span class="eyebrow">Açık veri</span><h1>Veri setini indir</h1><p>Sitedeki {len(P)} bitki kaydının yapılandırılmış hâli, CSV ve JSON olarak. İzin istemeden, kaynak göstererek kullanabilirsin.</p></header>
-<section class="sec"><h2>İndir</h2><p><a class="cta" href="/veri/bitkiler.csv" download>bitkiler.csv ({_kb(_csv_boy)}) →</a></p><p><a class="cta" href="/veri/bitkiler.json" download>bitkiler.json ({_kb(_json_boy)}) →</a></p>
+VERI = f'''<section class="sec" id="veri-seti"><h2>Veri setini indir</h2><p>Sitedeki {len(P)} bitki kaydının yapılandırılmış hâli, CSV ve JSON olarak. İzin istemeden, kaynak göstererek kullanabilirsin.</p><p><a class="cta" href="/veri/bitkiler.csv" download>bitkiler.csv ({_kb(_csv_boy)}) →</a></p><p><a class="cta" href="/veri/bitkiler.json" download>bitkiler.json ({_kb(_json_boy)}) →</a></p>
 <p class="muted-s">CSV dosyası UTF-8 BOM ile yazılmıştır; Excel’de Türkçe karakterler bozulmadan açılır.</p>
 <p>Veri setinin kalıcı kimliği (DOI): <a href="https://doi.org/10.5281/zenodo.23972634" rel="noopener">10.5281/zenodo.23972634</a>. Zenodo’daki arşiv kaydı her sürümü saklar; bağlantı her zaman en yeni sürüme götürür.</p></section>
 <section class="sec"><h2>İçindeki alanlar</h2><ul class="kart-list">
@@ -839,12 +838,8 @@ VERI = f'''<header class="page-head"><span class="eyebrow">Açık veri</span><h1
 </ul></section>
 <section class="sec"><h2>Veri setinde olmayanlar</h2><p>Geleneksel kullanım anlatıları, hazırlama tarifleri, bilimsel değerlendirme metinleri, güvenlik notları ve kaynakça her bitkinin kendi sayfasında duruyor; onlar da aynı lisansla kullanılabilir. Fotoğraflar veri setinin dışındadır: çoğu Wikimedia Commons’tan alınmıştır ve her birinin kendi lisansı vardır.</p></section>
 <section class="sec"><h2>Adresler kalıcıdır</h2><p>Her bitki ve her motif için tek ve değişmeyen bir adres tutulur. Bir kaydı kaynak gösterirsen bağlantının kırılmaması için adresi koruyoruz; bir adres değişmek zorunda kalırsa eski adresten yenisine yönlendirme konur.</p></section>
-<section class="sec"><h2>Nasıl atıf verilir</h2><p class="muted-s">Tınmazlar, E. ({CONTENT_DATE[:4]}). <i>Bitki Tabanı: şifalı ve ritüel bitkiler veri seti</i> ({len(P)} kayıt). Zenodo. https://doi.org/10.5281/zenodo.23972634. CC BY-SA 4.0.</p>
-<p>Lisansın kapsamı ve istisnaları: <a href="/lisans/">Lisans ve atıf</a>. Veriyi kullanıp bir şey ürettiysen <a href="mailto:iletisim@bitkitabani.com">iletisim@bitkitabani.com</a> adresine yazmanı çok isterim; nerede kullanıldığını bilmek işin en keyifli tarafı.</p></section>'''
-write('/veri/', page(f'Veri setini indir: {len(P)} şifalı ve ritüel bitki (CSV, JSON) | Bitki Tabanı',
-      f'Bitki Tabanı’nın {len(P)} bitki kaydı CSV ve JSON olarak, CC BY-SA 4.0 ile. Türkçe ve bilimsel ad, bölge, kanıt düzeyi, güvenlik ve yasal durum alanlarıyla.',
-      '/veri/', VERI, 'veri', narrow=True,
-      extra=f'<script type="application/ld+json">{json.dumps(ld_veri, ensure_ascii=False)}</script>'))
+<section class="sec"><h2>Veri setini kullanırsan</h2><p>Veri setinin künyesi:</p><p class="muted-s">Tınmazlar, E. ({CONTENT_DATE[:4]}). <i>Bitki Tabanı: şifalı ve ritüel bitkiler veri seti</i>. Zenodo. https://doi.org/10.5281/zenodo.23972634. CC BY-SA 4.0.</p>
+<p>Veriyi kullanıp bir şey ürettiysen <a href="mailto:iletisim@bitkitabani.com">iletisim@bitkitabani.com</a> adresine yazmanı çok isterim; nerede kullanıldığını bilmek işin en keyifli tarafı.</p></section>'''
 
 write('/katalog/', page(f'Bitki kataloğu: {len(P)} şifalı ve ritüel bitki | Bitki Tabanı', f'{len(P)} şifalı ve ritüel bitkiyi bölgeye, kullanıma, bilimsel kanıta, güvenliğe ve Türkiye’deki yasal duruma göre süz.', '/katalog/', katalog, 'kat', '<script src="/assets/catalog.js" defer></script>', extra=''.join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>' for x in ld_kat)))
 
@@ -942,7 +937,7 @@ about = '''<header class="page-head"><span class="eyebrow">Hakkında</span><h1>B
 <section class="sec"><h2>Kim hazırlıyor</h2><p>''' + BIO + '''</p><p>''' + SOCIAL + ''' · <a href="/yontem/">Kayıtları nasıl hazırladığını oku →</a></p></section>
 <section class="sec"><h2>Bağımsız</h2><p>Bitki Tabanı’nın bilgi içeriği hiçbir satıcıdan ve şirketten bağımsızdır: bitki, takviye ya da tören satmaz; inziva veya ayahuasca seremonisi düzenlemez, bunlara yönlendirmez ve reklam almaz. İleride düzenlenebilecek atölye ve doğa yürüyüşleri ayrıca duyurulur; sitedeki bilgiyi etkilemez. Kayıtlarda adı geçen hiçbir marka ya da satıcıyla bağı yoktur.</p></section>
 <section class="sec"><h2>İletişim</h2><p>Bir hata gördüysen ya da yöresel bir kullanım biliyorsan <a href="mailto:iletisim@bitkitabani.com">iletisim@bitkitabani.com</a> adresine yaz.</p></section>
-<section class="sec"><h2>Kayıtlar nasıl hazırlanıyor</h2><p>Ayrıntılı kurallar <a href="/yontem/">Yöntem</a> sayfasında. Her kayıt; geleneksel kullanımı, hazırlama biçimini, bilimin bugün ne söylediğini ve güvenlik notlarını içerir. Kanıt düzeyi Avrupa İlaç Ajansı (EMA/HMPC) monografileri, ABD NCCIH özetleri, Cochrane derlemeleri ve hakemli literatüre göre belirlenir. Kaynaklar her bitkinin sayfasının sonunda listelenir.</p></section>
+<section class="sec"><h2>Kayıtlar nasıl hazırlanıyor</h2><p>Ayrıntılı kurallar, içerik lisansı ve indirilebilir veri seti <a href="/yontem/">Yöntem, kaynaklar ve veri</a> sayfasında; sitenin kendi ölçümleri <a href="/istatistik/">Rakamlar</a> sayfasında. Her kayıt; geleneksel kullanımı, hazırlama biçimini, bilimin bugün ne söylediğini ve güvenlik notlarını içerir. Kanıt düzeyi Avrupa İlaç Ajansı (EMA/HMPC) monografileri, ABD NCCIH özetleri, Cochrane derlemeleri ve hakemli literatüre göre belirlenir. Kaynaklar her bitkinin sayfasının sonunda listelenir.</p></section>
 <section class="sec"><h2>Önemli not</h2><p>Bu site tıbbi tavsiye vermez. Burada anlatılan geleneksel kullanımlar bir öneri değil, kültürel bir kayıttır. Zehirli ve yasal kısıtlı bitkiler, tarihleri ve riskleri anlaşılsın diye yer alır. Herhangi bir bitkiyi kullanmadan önce bir hekime ya da eczacıya danış.</p></section>
 <section class="sec"><h2>Yerel bilgiye saygı</h2><p>Kayıtlardaki geleneksel bilgi, onu kuşaklar boyunca koruyan toplulukların mirasıdır. Bitki Tabanı bu bilginin kaynağını görünür kılmayı ve aşırı toplanan türler konusunda farkındalık yaratmayı amaçlar.</p></section>
 <section class="sec"><h2>Renklerimiz ve motifimiz</h2><p>Sitenin renkleri, Anadolu ile Amazon ve And Dağları’nın ortak boya geleneklerinden geliyor. Motif ise Anadolu kilimlerindeki göz ve baklava desenini, Shipibo halkının kené çizgileri ve And dokumalarının basamaklı baklavasıyla birleştiriyor.</p>
@@ -973,19 +968,17 @@ ld_about = {"@context":"https://schema.org","@type":"AboutPage","name":"Hakkınd
 write('/hakkinda/', page('Hakkında | Bitki Tabanı', 'Bitki Tabanı’nın amacı, kayıtların nasıl hazırlandığı ve kaynak yaklaşımı.', '/hakkinda/', about, 'about', narrow=True,
       extra=f'<script type="application/ld+json">{json.dumps(ld_about, ensure_ascii=False)}</script>'))
 
-LISANS = '''<header class="page-head"><span class="eyebrow">Lisans ve atıf</span><h1>İçerik nasıl kullanılabilir?</h1><p>Bitki Tabanı’ndaki metinler açık lisanslıdır: izin istemeden, kaynak göstererek kullanabilirsin.</p></header>
-<section class="sec"><h2>Lisans</h2><p>Aksi belirtilmedikçe sitedeki metinler <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.tr" rel="noopener">Creative Commons Atıf–AynıLisanslaPaylaş 4.0 (CC BY-SA 4.0)</a> ile lisanslıdır. İki koşulu var: kaynağı göstermek ve metinden türeteceğin işi aynı lisansla paylaşmak. Ticari kullanım yasak değildir; ders notunda, bültende, haberde, sunumda kullanılabilir.</p></section>
+LISANS = '''<section class="sec" id="lisans"><h2>İçerik nasıl kullanılabilir?</h2><p>Bitki Tabanı’ndaki metinler açık lisanslıdır: izin istemeden, kaynak göstererek kullanabilirsin.</p><p>Aksi belirtilmedikçe sitedeki metinler <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.tr" rel="noopener">Creative Commons Atıf–AynıLisanslaPaylaş 4.0 (CC BY-SA 4.0)</a> ile lisanslıdır. İki koşulu var: kaynağı göstermek ve metinden türeteceğin işi aynı lisansla paylaşmak. Ticari kullanım yasak değildir; ders notunda, bültende, haberde, sunumda kullanılabilir.</p></section>
 <section class="sec"><h2>Lisans neyi kapsar</h2><p>Bitki Tabanı’nın kendi yazdığı metinler: bitki kayıtları, halk hekimliği hikâyeleri, yöre kayıtları, kavram ve sembol açıklamaları, rehber ve karşılaştırma sayfaları. Sitenin kendi çizdiği motif çizimleri de bu lisansa dahildir.</p></section>
 <section class="sec"><h2>Kapsamadıkları</h2><ul class="kart-list">
 <li><b>Fotoğraflar.</b> Çoğu Wikimedia Commons’tan alınmıştır ve her birinin kendi lisansı vardır; fotoğrafçı ve lisans bilgisi ilgili bitkinin sayfasında yazılıdır. Fotoğrafı kullanacaksan oradaki lisansa bakman gerekir.</li>
 <li><b>Alıntılanan metinler.</b> Kaynak gösterilen makale, kitap ve monograflardan yapılan alıntılar kendi sahiplerine aittir.</li>
 <li><b>Üçüncü taraf logoları ve marka adları.</b></li>
 </ul><p>Bilimsel olgular telif hakkına tabi değildir: lisans metnin ifade biçimini korur, bilginin kendisini değil.</p></section>
-<section class="sec"><h2>Nasıl atıf verilir</h2><p>Kısa kullanım için bağlantı yeterli: <i>Kaynak: Bitki Tabanı (bitkitabani.com), CC BY-SA 4.0.</i></p>
+<section class="sec" id="atif"><h2>Nasıl atıf verilir</h2><p>Kısa kullanım için bağlantı yeterli: <i>Kaynak: Bitki Tabanı (bitkitabani.com), CC BY-SA 4.0.</i></p>
 <p>Akademik atıf için:</p><p class="muted-s">Tınmazlar, E. ''' + f'({CONTENT_DATE[:4]})' + '''. <i>Kantaron (Hypericum perforatum)</i>. Bitki Tabanı. https://bitkitabani.com/kantaron/ (erişim tarihi: GG.AA.YYYY). CC BY-SA 4.0.</p>
-<p>Veri setinin tamamına atıf vermek istersen DOI’siyle kaynak gösterebilirsin: <a href="https://doi.org/10.5281/zenodo.23972634" rel="noopener">10.5281/zenodo.23972634</a>. CSV ve JSON olarak <a href="/veri/">veri seti sayfasından</a> indirilebilir.</p></section>
+<p>Veri setinin tamamına atıf vermek istersen DOI’siyle kaynak gösterebilirsin: <a href="https://doi.org/10.5281/zenodo.23972634" rel="noopener">10.5281/zenodo.23972634</a>. CSV ve JSON olarak <a href="#veri-seti">aşağıdan</a> indirilebilir.</p></section>
 <section class="sec"><h2>İzin gerektiren durumlar</h2><p>Metinleri kaynak göstermeden ya da kapalı bir lisansla yeniden yayımlamak lisansa aykırıdır. Bunun dışında bir kullanım biçimi aklındaysa <a href="mailto:iletisim@bitkitabani.com">iletisim@bitkitabani.com</a> adresine yazabilirsin; işbirliğine açığım.</p></section>'''
-write('/lisans/', page('Lisans ve atıf: içerik nasıl kullanılabilir? | Bitki Tabanı', 'Bitki Tabanı metinleri CC BY-SA 4.0 ile lisanslıdır. Lisansın kapsamı, istisnaları (fotoğraflar) ve atıf örnekleri.', '/lisans/', LISANS, 'lisans', narrow=True))
 
 
 # ---------- fotoğraf seçim sayfası (gizli) ----------
@@ -1195,7 +1188,7 @@ write('/gizlilik/', page('Gizlilik | Bitki Tabanı', 'Bitki Tabanı hangi bilgil
 # ---------- yöntem ----------
 GZ_HTML = (f'<section class="sec" id="gozden"><h2>Uzman gözden geçirmesi</h2><p><b>{e(GZ_KISI["ad"])}</b>, {e(GZ_KISI.get("unvan", "Eczacı"))}. {e(GZ_KISI.get("aciklama", ""))}</p><p>Gözden geçirilen sayfalarda güvenlik notları, ilaç etkileşimleri ve kullanım bilgileri bir eczacı tarafından kontrol edilmiştir; kontrol tarihi her sayfanın altında yazar. Şu ana kadar {len(GZ)} bitki sayfası gözden geçirildi.</p></section>') if GZ_KISI else ''
 yt = """
-<header class="page-head"><span class="eyebrow">Yöntem</span><h1>Kayıtları nasıl hazırlıyorum?</h1><p>Bitki Tabanı bağımsız, ticari olmayan bir projedir. Her kayıt aynı kurallarla hazırlanır; bu sayfa o kuralları açıkça yazar ki neye ne kadar güvenebileceğini bil.</p></header>
+<header class="page-head"><span class="eyebrow">Yöntem, kaynaklar ve veri</span><h1>Kayıtları nasıl hazırlıyorum?</h1><p>Bitki Tabanı bağımsız, ticari olmayan bir projedir. Her kayıt aynı kurallarla hazırlanır; bu sayfa o kuralları açıkça yazar ki neye ne kadar güvenebileceğini bil. Aşağıda ayrıca içeriğin <a href="#lisans">lisansı</a>, <a href="#atif">nasıl atıf verileceği</a> ve <a href="#veri-seti">indirilebilir veri seti</a> var.</p></header>
 <section class="sec" id="hazirlayan"><h2>Kim hazırlıyor</h2><p>""" + BIO + """</p><p>""" + SOCIAL + """</p><p>Bitki Tabanı’ndaki her kayıt onun tarafından hazırlanır ve aşağıdaki kurallarla kaynaklara dayandırılır.</p></section>
 <section class="sec"><h2>Hangi kaynakları kullanıyorum</h2><ol class="srclist">
 <li><b>Resmî bitkisel ilaç değerlendirmeleri:</b> Avrupa İlaç Ajansı Bitkisel Ürünler Komitesi (EMA/HMPC) monografları ve ABD Ulusal Tamamlayıcı ve Bütünleştirici Sağlık Merkezi (NCCIH) özetleri.</li>
@@ -1220,8 +1213,11 @@ yt = """
 <section class="sec" id="yapay-zeka"><h2>Yapay zekâ ve otomasyon</h2><p>Sitenin yazılımı, kaynak taramaları ve metin taslaklarının bir kısmı yapay zekâ yardımıyla (Anthropic’in Claude modeli) hazırlanıyor. Görseller Wikimedia Commons’tan kurallara göre otomatik seçiliyor; sosyal medya paylaşımları, sesli videolar ve “derdini yaz” anlam araması da otomatik çalışıyor.</p><p>Yapay zekâ kaynak yerine geçmez: her sağlık bilgisi bağlantısı verilen bir kaynağa dayanır, kanıt ve güvenlik etiketleri yukarıdaki kurallarla belirlenir ve içeriğin sorumluluğu Edanaz Tınmazlar’dadır. Otomatik süreçlerde gözden kaçan bir hata görürsen aşağıdaki adrese yaz; düzeltilir.</p></section>
 <section class="sec"><h2>Güncelleme ve düzeltme</h2><p>Her sayfanın altında son gözden geçirme tarihi yazar. Bir hata görürsen ya da yöresel bir kullanım biliyorsan <a href="mailto:iletisim@bitkitabani.com">iletisim@bitkitabani.com</a> adresine yaz; düzeltmeler kaynağıyla birlikte kontrol edilip eklenir.</p></section>
 <section class="sec"><h2>Bağımsızlık</h2><p>Bitki Tabanı ürün satmaz, reklam almaz, satış ortaklığı (affiliate) bağlantısı kullanmaz ve hiçbir şirketten destek almaz.</p></section>
-"""
-write('/yontem/', page('Yöntem: kayıtları nasıl hazırlıyorum | Bitki Tabanı', 'Bitki Tabanı hangi kaynakları kullanır, kanıt düzeylerini ve güvenlik etiketlerini nasıl belirler, hataları nasıl düzeltir.', '/yontem/', yt, 'about', narrow=True))
+""" + LISANS + VERI
+write('/yontem/', page('Yöntem, kaynaklar, lisans ve veri seti | Bitki Tabanı',
+      'Bitki Tabanı hangi kaynakları kullanır, kanıt düzeylerini ve güvenlik etiketlerini nasıl belirler; içerik hangi lisansla kullanılabilir, nasıl atıf verilir ve veri seti nereden indirilir.',
+      '/yontem/', yt, 'yontem', narrow=True,
+      extra=f'<script type="application/ld+json">{json.dumps(ld_veri, ensure_ascii=False)}</script>'))
 
 # ---------- rehberler: derde göre, hamilelik, ilaç etkileşimi, tarifler, karşılaştırmalar ----------
 GUIDE_URLS = []
@@ -2003,14 +1999,14 @@ IST = f'''{_crumbs(('/hakkinda/', 'Hakkında'), ('/istatistik/', 'Rakamlar'))}
 <li>Bu sayfadaki arama verileri elle güncellenir; kapsam ve dağılım rakamları her derlemede veriden yeniden hesaplanır.</li>
 </ul></section>
 
-<section class="sec"><h2>Veriye kendin bak</h2><p>Kayıtların tamamı CSV ve JSON olarak indirilebilir, kalıcı kimliğiyle birlikte: <a href="/veri/">veri seti</a>. Yöntem ve kanıt düzeylerinin nasıl verildiği: <a href="/yontem/">Yöntem ve kaynaklar</a>.</p></section>'''
+<section class="sec"><h2>Veriye kendin bak</h2><p>Kayıtların tamamı CSV ve JSON olarak indirilebilir, kalıcı kimliğiyle birlikte: <a href="/yontem/#veri-seti">veri seti</a>. Yöntem ve kanıt düzeylerinin nasıl verildiği: <a href="/yontem/">Yöntem, kaynaklar ve veri</a>.</p></section>'''
 write('/istatistik/', page('Bitki Tabanı rakamlarla: kapsam, kanıt dağılımı ve arama verisi | Bitki Tabanı',
       f'Bitki Tabanı’nın kendi ölçümleri: {len(P)} kaydın kanıt ve güvenlik dağılımı, kaynak sayıları ve Google Search Console verileri.',
       '/istatistik/', IST, 'about', narrow=True,
       extra=_lds(_crumb_ld(('/hakkinda/', 'Hakkında'), ('/istatistik/', 'Rakamlar')))))
 GUIDE_URLS.append('/istatistik/')
 
-urls = ['/', '/katalog/', '/kultur/', '/kopruler/', '/gunun-bitkisi/', '/yeni/', '/hakkinda/', '/yontem/', '/lisans/', '/veri/', '/gizlilik/'] + [f'/kopruler/{slug_of(x)}/' for x in BR] + FAM_URLS + [f'/{p["id"]}/' for p in P] + GUIDE_URLS + EN_URLS
+urls = ['/', '/katalog/', '/kultur/', '/kopruler/', '/gunun-bitkisi/', '/yeni/', '/hakkinda/', '/yontem/', '/gizlilik/'] + [f'/kopruler/{slug_of(x)}/' for x in BR] + FAM_URLS + [f'/{p["id"]}/' for p in P] + GUIDE_URLS + EN_URLS
 def _imgtag(u):   # görsel site haritası: bitki sayfalarına fotoğraflarını ekle
     pid = u.strip('/').split('/')[-1]
     if pid not in IMG or pid not in byId: return ''
@@ -2045,7 +2041,7 @@ if os.path.isdir(os.path.join(HERE, 'img')):
     shutil.copytree(os.path.join(HERE, 'img'), os.path.join(OUT, 'img'), dirs_exist_ok=True)
 for f in os.listdir(os.path.join(HERE, 'kok')):   # site köküne olduğu gibi kopyalanan doğrulama dosyaları
     shutil.copy(os.path.join(HERE, 'kok', f), os.path.join(OUT, f))
-_redir += '/hikaye/ /blog/ 301\n/yazilar/ /blog/ 301\n/yoresel-adlar/ /yoreler/#adlar 301\n/ara/ /rehber/#ara 301\n/oyun/ / 301\n'
+_redir += '/lisans/ /yontem/#lisans 301\n/veri/ /yontem/#veri-seti 301\n/hikaye/ /blog/ 301\n/yazilar/ /blog/ 301\n/yoresel-adlar/ /yoreler/#adlar 301\n/ara/ /rehber/#ara 301\n/oyun/ / 301\n'
 # kendi sayfası kapatılan familyalar: /familya/ sayfasındaki kendi bölümlerine
 _redir += ''.join(f'/familya/{fam_slug(f)}/ /familya/#{fam_slug(f)} 301\n' for f, n in sorted(FAMC.items()) if f in FAM_BILGI and n < FAM_MIN)
 open(os.path.join(OUT, '_redirects'), 'w').write(_redir)
