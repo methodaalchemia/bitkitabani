@@ -937,7 +937,7 @@ about = '''<header class="page-head"><span class="eyebrow">Hakkında</span><h1>B
 <section class="sec"><h2>Kim hazırlıyor</h2><p>''' + BIO + '''</p><p>''' + SOCIAL + ''' · <a href="/yontem/">Kayıtları nasıl hazırladığını oku →</a></p></section>
 <section class="sec"><h2>Bağımsız</h2><p>Bitki Tabanı’nın bilgi içeriği hiçbir satıcıdan ve şirketten bağımsızdır: bitki, takviye ya da tören satmaz; inziva veya ayahuasca seremonisi düzenlemez, bunlara yönlendirmez ve reklam almaz. İleride düzenlenebilecek atölye ve doğa yürüyüşleri ayrıca duyurulur; sitedeki bilgiyi etkilemez. Kayıtlarda adı geçen hiçbir marka ya da satıcıyla bağı yoktur.</p></section>
 <section class="sec"><h2>İletişim</h2><p>Bir hata gördüysen ya da yöresel bir kullanım biliyorsan <a href="mailto:iletisim@bitkitabani.com">iletisim@bitkitabani.com</a> adresine yaz.</p></section>
-<section class="sec"><h2>Kayıtlar nasıl hazırlanıyor</h2><p>Ayrıntılı kurallar, içerik lisansı ve indirilebilir veri seti <a href="/yontem/">Yöntem, kaynaklar ve veri</a> sayfasında; sitenin kendi ölçümleri <a href="/istatistik/">Rakamlar</a> sayfasında. Her kayıt; geleneksel kullanımı, hazırlama biçimini, bilimin bugün ne söylediğini ve güvenlik notlarını içerir. Kanıt düzeyi Avrupa İlaç Ajansı (EMA/HMPC) monografileri, ABD NCCIH özetleri, Cochrane derlemeleri ve hakemli literatüre göre belirlenir. Kaynaklar her bitkinin sayfasının sonunda listelenir.</p></section>
+<section class="sec"><h2>Kayıtlar nasıl hazırlanıyor</h2><p>Ayrıntılı kurallar, içerik lisansı ve indirilebilir veri seti <a href="/yontem/">Yöntem, kaynaklar ve veri</a> sayfasında. Her kayıt; geleneksel kullanımı, hazırlama biçimini, bilimin bugün ne söylediğini ve güvenlik notlarını içerir. Kanıt düzeyi Avrupa İlaç Ajansı (EMA/HMPC) monografileri, ABD NCCIH özetleri, Cochrane derlemeleri ve hakemli literatüre göre belirlenir. Kaynaklar her bitkinin sayfasının sonunda listelenir.</p></section>
 <section class="sec"><h2>Önemli not</h2><p>Bu site tıbbi tavsiye vermez. Burada anlatılan geleneksel kullanımlar bir öneri değil, kültürel bir kayıttır. Zehirli ve yasal kısıtlı bitkiler, tarihleri ve riskleri anlaşılsın diye yer alır. Herhangi bir bitkiyi kullanmadan önce bir hekime ya da eczacıya danış.</p></section>
 <section class="sec"><h2>Yerel bilgiye saygı</h2><p>Kayıtlardaki geleneksel bilgi, onu kuşaklar boyunca koruyan toplulukların mirasıdır. Bitki Tabanı bu bilginin kaynağını görünür kılmayı ve aşırı toplanan türler konusunda farkındalık yaratmayı amaçlar.</p></section>
 <section class="sec"><h2>Renklerimiz ve motifimiz</h2><p>Sitenin renkleri, Anadolu ile Amazon ve And Dağları’nın ortak boya geleneklerinden geliyor. Motif ise Anadolu kilimlerindeki göz ve baklava desenini, Shipibo halkının kené çizgileri ve And dokumalarının basamaklı baklavasıyla birleştiriyor.</p>
@@ -2003,8 +2003,9 @@ IST = f'''{_crumbs(('/hakkinda/', 'Hakkında'), ('/istatistik/', 'Rakamlar'))}
 write('/istatistik/', page('Bitki Tabanı rakamlarla: kapsam, kanıt dağılımı ve arama verisi | Bitki Tabanı',
       f'Bitki Tabanı’nın kendi ölçümleri: {len(P)} kaydın kanıt ve güvenlik dağılımı, kaynak sayıları ve Google Search Console verileri.',
       '/istatistik/', IST, 'about', narrow=True,
-      extra=_lds(_crumb_ld(('/hakkinda/', 'Hakkında'), ('/istatistik/', 'Rakamlar')))))
-GUIDE_URLS.append('/istatistik/')
+      extra='<meta name="robots" content="noindex, nofollow">'))
+# Sayfa canlı kalır ama ziyaretçiye gösterilmez: menüde yok, hiçbir sayfadan
+# bağlantısı yok, sitemapte yok ve aramaya kapalı. Adresi bilen açabilir.
 
 urls = ['/', '/katalog/', '/kultur/', '/kopruler/', '/gunun-bitkisi/', '/yeni/', '/hakkinda/', '/yontem/', '/gizlilik/'] + [f'/kopruler/{slug_of(x)}/' for x in BR] + FAM_URLS + [f'/{p["id"]}/' for p in P] + GUIDE_URLS + EN_URLS
 def _imgtag(u):   # görsel site haritası: bitki sayfalarına fotoğraflarını ekle
