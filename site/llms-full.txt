@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 137 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 138 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -4304,3 +4304,31 @@ Karıştırma riski: Aynı aileden şeker elması (Annona squamosa) ve çerimoya
 
 ### İlginç bilgi
 Tek bir graviola meyvesi birkaç kilograma ulaşabilir; dikenli kabuğunun altındaki beyaz etin tadı çilek, ananas ve limon karışımına benzetilir.
+
+## Mahlep (Prunus mahaleb)
+
+URL: https://bitkitabani.com/mahlep/
+Familya: Rosaceae · Bölge: Anadolu ve Akdeniz · Kullanılan kısım: Çekirdek içi (tohum)
+Bilimsel kanıt: Geleneksel · Güvenlik: Genelde güvenli
+
+### Geleneksel kullanım
+- Anadolu: Küçük meyvesinin çekirdeğindeki tohum ezilip paskalya çöreğine, simite, poğaçaya ve kandil simidine katılır; Rum ve Ermeni çöreklerinin karakteristik kokusudur.
+- Ortadoğu ve Akdeniz: Arap ülkelerinde bayram kurabiyelerine (maamoul), Yunanistan’da paskalya çöreği tsoureki’ye katılır. İran halk hekimliğinde tohumu böbrek taşına karşı kullanılır.
+
+### Hazırlama
+Tohum kullanmadan hemen önce dövülür ya da öğütülür; acılaşmaması için az kullanılır.
+
+### Bilim ne diyor
+Tohum kumarin bakımından zengindir; kokusu buradan gelir. Hayvan çalışmalarında böbrek taşı oluşumunu azaltıcı ve bağırsak iltihabını hafifletici etkiler gösterilmiştir. İnsanlarda yapılmış klinik çalışma yoktur.
+
+### Güvenlik
+Baharat olarak güvenlidir. Kumarin içerdiği için çok miktarda ve uzun süre tüketilmemelidir; kan sulandırıcı kullananlar dikkatli olmalıdır. Badem ve kuruyemiş alerjisi olanlarda çapraz alerji bildirilmiştir.
+
+### Doğada
+Nerede yetişir: Anadolu’nun kayalık, kireçli yamaçlarında, meşe ve ardıç arasında çalı ya da küçük ağaç olarak.
+Toplama mevsimi: Çiçekler Nisan–Mayıs’ta açar; meyveler Haziran–Temmuz’da kararınca toplanır, çekirdekler kurutulur.
+Yöresel adlar: mahlep, idris, idris ağacı
+Karıştırma riski: Meyveleri küçük kirazlara benzer ama acıdır. Başka yabani Prunus türlerinin çekirdekleri siyanür salabilir; yabandan çekirdek toplanmamalıdır.
+
+### İlginç bilgi
+Mahlep ağacı Avrupa’da kiraz ağaçlarına aşı anacı olarak kullanılır; kireçli, kurak topraklara dayanıklı olduğu için birçok kiraz bahçesinin “kökü” aslında mahleptir.

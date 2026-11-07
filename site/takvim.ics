@@ -656,6 +656,18 @@ DESCRIPTION:Haziran sonu–Temmuz’da\, çiçekler tam açmadan hemen ö
 URL:https://bitkitabani.com/lavanta/
 END:VEVENT
 BEGIN:VEVENT
+UID:toplama-mahlep@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260401
+DTEND;VALUE=DATE:20260402
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Mahlep toplama mevsimi
+DESCRIPTION:Çiçekler Nisan–Mayıs’ta açar\; meyveler Haziran–Tem
+ muz’da kararınca toplanır\, çekirdekler kurutulur. https://bitkitaba
+ ni.com/mahlep/
+URL:https://bitkitabani.com/mahlep/
+END:VEVENT
+BEGIN:VEVENT
 UID:toplama-melisa@bitkitabani.com
 DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260601
