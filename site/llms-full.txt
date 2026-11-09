@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 139 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 140 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -4363,3 +4363,35 @@ Karıştırma riski: Japon yıldız anasonu (I. anisatum) daha küçük ve düze
 
 ### İlginç bilgi
 Grip ilacı oseltamivirin üretimi yıllarca yıldız anasondan elde edilen şikimik aside dayandı; 2005’teki kuş gribi korkusunda talep o kadar arttı ki baharatın fiyatı belirgin biçimde yükseldi.
+
+## Gotu kola (Centella asiatica)
+
+URL: https://bitkitabani.com/gotukola/
+Familya: Apiaceae · Bölge: Asya ve Sibirya · Kullanılan kısım: Yaprak ve toprak üstü kısımlar
+Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
+
+### Geleneksel kullanım
+- Hindistan ve Sri Lanka: Ayurveda’da zihni ve hafızayı güçlendiren bir bitki sayılır; Sri Lanka’da yaprakları gotu kola sambola adlı salatada çiğ yenir.
+- Güneydoğu Asya ve kozmetik: Tayland’da yaprak suyu serinletici içecek olarak içilir. Kore kozmetiğinde “cica” adıyla yara ve kızarıklığa karşı kremlere katılır.
+
+### Hazırlama
+Taze yapraklar salata olarak yenir; kurusundan çay demlenir. Kremlerde standart ekstresi kullanılır.
+
+### Bilim ne diyor
+EMA gotu kolayı küçük yaraların iyileşmesine yardım için dıştan geleneksel kullanımda tanır. Toplardamar yetmezliğinde triterpen fraksiyonuyla yapılmış küçük çalışmalar şişlik ve ağırlık hissinde iyileşme bildirir. Hafıza ve bilişsel işlevler üzerine yapılan meta-analiz (2017) belirgin bir etki bulmamış, ruh hâli üzerine sınırlı bir fayda görmüştür.
+
+### Güvenlik
+Dıştan kullanım genelde güvenlidir, nadiren kontakt alerji yapar. Ağızdan uzun süre kullanımda karaciğer hasarı vakaları bildirilmiştir. Karaciğer hastaları, hamileler ve emzirenler kullanmamalıdır. Uyku hâli yapabilir.
+
+### İlaç etkileşimleri
+- Karaciğere yük bindiren ilaçlar (yüksek doz parasetamol, statinler gibi): Karaciğer hasarı riski toplanabilir.
+- Sakinleştiriciler: Uyku hâli artabilir.
+
+### Doğada
+Nerede yetişir: Asya’nın tropik ve subtropik bölgelerinde, nemli çayırlarda, pirinç tarlası kenarlarında ve hendeklerde sürünerek yayılır.
+Toplama mevsimi: Yapraklar yıl boyunca toplanabilir; en verimli dönem yağmur mevsimidir.
+Yöresel adlar: gotu kola, centella; Türkçede yerleşik bir adı yoktur
+Karıştırma riski: Hindistan’da brahmi adı hem gotu kolaya hem de Bacopa monnieri’ye verilir; iki bitki farklıdır. Kola fındığıyla bir ilgisi yoktur.
+
+### İlginç bilgi
+Kore kozmetiklerindeki “cica” adı gotu kolanın Latince adı Centella’dan gelir; yaralı kaplanların bu bitkinin üzerinde yuvarlanarak iyileştiği anlatıldığı için “kaplan otu” diye de anılır.
