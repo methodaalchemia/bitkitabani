@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 140 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 141 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -4395,3 +4395,31 @@ Karıştırma riski: Hindistan’da brahmi adı hem gotu kolaya hem de Bacopa mo
 
 ### İlginç bilgi
 Kore kozmetiklerindeki “cica” adı gotu kolanın Latince adı Centella’dan gelir; yaralı kaplanların bu bitkinin üzerinde yuvarlanarak iyileştiği anlatıldığı için “kaplan otu” diye de anılır.
+
+## Tulsi (Ocimum tenuiflorum)
+
+URL: https://bitkitabani.com/tulsi/
+Familya: Lamiaceae · Bölge: Asya ve Sibirya · Kullanılan kısım: Yaprak
+Bilimsel kanıt: Sınırlı · Güvenlik: Genelde güvenli
+
+### Geleneksel kullanım
+- Hinduizm: Tanrıça Lakşmi’nin bir görünümü ve Vişnu’nun eşi sayılır; pek çok Hindu evinin avlusunda tulsi için yapılmış küçük bir sunak vardır, bitki her gün sulanıp dua edilir. Tulsi dallarından tespih yapılır.
+- Ayurveda: Öksürük, ateş, stres ve sindirim için çay olarak içilir; adının “eşsiz olan” anlamına geldiği söylenir.
+
+### Hazırlama
+Taze ya da kuru yapraktan bir tatlı kaşığı bir bardak suda 5–10 dakika demlenir.
+
+### Bilim ne diyor
+Sistematik derleme (2017), tulsinin insanlarda stres, kan şekeri ve kolesterol üzerinde olumlu etkiler bildiren 24 çalışmasını incelemiş ve ciddi yan etki bulmamıştır; ama çalışmaların çoğu küçük ve kısa süreliydi. “Adaptojen” olarak anılır; bu kavram bilimsel olarak iyi tanımlanmış değildir.
+
+### Güvenlik
+Çay olarak genelde güvenlidir. Hayvan çalışmalarında doğurganlığı azaltabildiği görüldüğü için gebe kalmaya çalışanlar ve hamileler kullanmamalıdır. Kan şekerini düşürebilir; şeker ilacı kullananlar dikkatli olmalıdır. Kan sulandırıcı kullananlar ameliyattan önce bırakmalıdır.
+
+### Doğada
+Nerede yetişir: Hindistan alt kıtasında ve Güneydoğu Asya’da evlerde, tapınaklarda ve tarlalarda; Türkiye’de saksıda yaz bitkisi olarak yetişir.
+Toplama mevsimi: Yapraklar çiçeklenme başlarken toplanır; sıcak iklimde yıl boyunca.
+Yöresel adlar: tulsi, kutsal fesleğen
+Karıştırma riski: Mutfaktaki fesleğenden (O. basilicum) farklıdır; yaprakları daha küçük, tüylü ve karanfil kokuludur. Tayland mutfağındaki “kaprao” aynı türdür.
+
+### İlginç bilgi
+Tulsinin karanfil gibi kokması, karanfildeki aynı molekül olan öjenolden gelir.
