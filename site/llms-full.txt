@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 141 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 142 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -4423,3 +4423,31 @@ Karıştırma riski: Mutfaktaki fesleğenden (O. basilicum) farklıdır; yaprakl
 
 ### İlginç bilgi
 Tulsinin karanfil gibi kokması, karanfildeki aynı molekül olan öjenolden gelir.
+
+## Lotus (Nelumbo nucifera)
+
+URL: https://bitkitabani.com/lotus/
+Familya: Nelumbonaceae · Bölge: Asya ve Sibirya · Kullanılan kısım: Kök (rizom), tohum, yaprak, çiçek
+Bilimsel kanıt: Geleneksel · Güvenlik: Genelde güvenli
+
+### Geleneksel kullanım
+- Hinduizm ve Budizm: Çamurdan çıkıp lekesiz açan çiçeği saflığın ve aydınlanmanın simgesidir; Buda ve Hindu tanrıları çoğu zaman bir lotusun üzerinde tasvir edilir. Hindistan’ın ulusal çiçeğidir.
+- Çin ve Japonya mutfağı: Kökü dilimlenip kızartılır ya da çorbaya konur; tohumları tatlılarda ve ay çöreklerinde kullanılır. Yapraklarına pirinç sarılır; çiçek ve yaprak çayı içilir.
+
+### Hazırlama
+Kök haşlanır, kızartılır ya da turşu yapılır. Tohumların acı yeşil filizi çıkarılıp yenir ya da ayrıca çay yapılır.
+
+### Bilim ne diyor
+Lotus yaprağı ve tohumu laboratuvar ve hayvan çalışmalarında kan yağlarını ve şekeri düşürücü, antioksidan etkiler gösterir; tohum filizindeki neferin gibi alkaloitler yoğun olarak araştırılır. İnsanlarda yapılmış kontrollü çalışma çok azdır. Zayıflama çaylarına “yağ yakıcı” olarak eklenmesi kanıta dayanmaz.
+
+### Güvenlik
+Yemek olarak güvenlidir. Kök çiğ yenmemelidir; su bitkisi olduğundan parazit taşıyabilir. Yaprak ve filiz ekstrelerinin yüksek dozları için güvenlik verisi azdır; hamilelikte kullanılmamalıdır.
+
+### Doğada
+Nerede yetişir: Asya’nın sığ göl ve bataklıklarında, durgun ılık sularda; Türkiye’de bazı süs havuzlarında yetiştirilir.
+Toplama mevsimi: Çiçekler Temmuz–Ağustos’ta açar; kökler sonbahar ve kışta çamurdan çıkarılır.
+Yöresel adlar: lotus, kutsal lotus
+Karıştırma riski: Türkiye’nin göllerinde yetişen nilüferler (Nymphaea ve Nuphar) ayrı bir ailedir; nilüferin yaprakları suyun yüzünde yatar, lotusun yaprakları ve çiçekleri suyun üstüne yükselir. Mısır’ın kutsal “mavi lotus”u da aslında bir nilüferdir (Nymphaea caerulea).
+
+### İlginç bilgi
+Çin’de kurumuş bir göl yatağında bulunan yaklaşık 1300 yıllık lotus tohumları çimlendirildi; bunlar bilinen en uzun ömürlü tohumlar arasındadır. Su damlalarını iten yaprakları da “lotus etkisi”ne adını vermiştir.
