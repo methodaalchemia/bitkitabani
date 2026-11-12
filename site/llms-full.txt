@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 142 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 143 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -4451,3 +4451,31 @@ Karıştırma riski: Türkiye’nin göllerinde yetişen nilüferler (Nymphaea v
 
 ### İlginç bilgi
 Çin’de kurumuş bir göl yatağında bulunan yaklaşık 1300 yıllık lotus tohumları çimlendirildi; bunlar bilinen en uzun ömürlü tohumlar arasındadır. Su damlalarını iten yaprakları da “lotus etkisi”ne adını vermiştir.
+
+## Cadı fındığı (Hamamelis virginiana)
+
+URL: https://bitkitabani.com/hamamelis/
+Familya: Hamamelidaceae · Bölge: Kuzey Amerika · Kullanılan kısım: Yaprak, kabuk, dal (damıtılmış su)
+Bilimsel kanıt: Geleneksel · Güvenlik: Genelde güvenli
+
+### Geleneksel kullanım
+- Kuzey Amerika: Yerli halklar kabuğu ve yaprakları kaynatıp şişlik, morluk ve yara için kompres yapardı. Avrupalı yerleşimciler bu bilgiyi alarak 19. yüzyılda damıtılmış cadı fındığı suyunu ticari bir ürüne dönüştürdü.
+- Bugün: Damıtılmış suyu tonik ve sivilce ürünlerinde, kabuk ve yaprak ekstreleri hemoroid kremlerinde kullanılır.
+
+### Hazırlama
+Evde yaprak ya da kabuk kaynatılıp soğutularak kompres yapılır. Hazır damıtılmış su pamukla cilde sürülür.
+
+### Bilim ne diyor
+EMA cadı fındığının yaprağını, kabuğunu ve damıtılmış suyunu hafif cilt iltihapları, küçük yaralar, cilt kuruluğu ve hemoroidin kaşıntı ve yanmasında geleneksel kullanımda tanır. Etkisini taninlerin büzüştürücü özelliğine borçludur. Klinik çalışmalar az ve küçüktür.
+
+### Güvenlik
+Dıştan kullanım genelde güvenlidir; nadiren kontakt alerji yapar. Damıtılmış suyun çoğu alkol içerir ve cildi kurutabilir. Ağızdan kullanılması önerilmez; tanin bakımından zengin olduğundan mide bulantısı ve kabızlık yapabilir.
+
+### Doğada
+Nerede yetişir: Doğu Kuzey Amerika’nın yapraklı ormanlarında, orman kenarlarında ve dere yamaçlarında.
+Toplama mevsimi: Çiçekler Ekim–Aralık’ta açar; yapraklar yazın, kabuk ilkbaharda toplanır.
+Yöresel adlar: cadı fındığı, hamamelis
+Karıştırma riski: Bahçelerde kışın açan Asya kökenli Hamamelis türleri ve melezleri süs bitkisidir; tıbbi tür H. virginiana’dır.
+
+### İlginç bilgi
+Ağaçların çoğu yaprak dökerken açar: sarı, şerit gibi çiçekleri Ekim–Aralık arasında görünür. Adındaki “witch” cadıdan değil, eski İngilizcede “eğilen, esnek” anlamındaki bir sözcükten gelir.
