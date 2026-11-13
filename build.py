@@ -1,6 +1,8 @@
 import json, os, shutil, html, re, urllib.parse, datetime
 HERE = os.path.dirname(os.path.abspath(__file__))
 from refs import WIKI, POWO, NCCIH, EMA, OTHER, FILES, BAYTOP
+from kunye_elle import ELLE as APA_ELLE, BAYTOP_APA, ema_apa, nccih_apa, powo_apa
+from kunye_elle import METIN as APA_METIN
 from baytop_kar import KAR as BKAR
 from extra import EK, KORUMA, YASAL, YASAL_AD, BR_GEO, ALT
 from etkilesim import ETK
@@ -431,21 +433,38 @@ def tags(p, small=False):
     if k and k.get('rozet'): out.append(f'<span class="lg koruma">{e(k["rozet"])}</span>')
     return f'<div class="tags">{"".join(out)}</div>' if out else ''
 
+APA_ONBELLEK = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'kunye_apa.json'), encoding='utf-8'))
+
+
+def _apa(url, yedek):
+    """Künyeyi APA 7 biçiminde döndürür. Kaynak sırası: yayıncı üstverisinden
+    üretilen önbellek, sonra elle yazılmış tablo, sonra eski serbest metin."""
+    if url in APA_ELLE:
+        return APA_ELLE[url]
+    k = APA_ONBELLEK.get(url)
+    if k and k.get('apa'):
+        return k['apa']
+    return APA_METIN.get(yedek, yedek)
+
+
 def refs(p):
     pid = p['id']; items = []
     for label, url in EMA.get(pid, []):
-        if 'ema.europa.eu' in url: items.append(('EMA monografisi', f'{label}: Avrupa İlaç Ajansı bitkisel ilaç değerlendirmesi', url))
-        else: items.append(('Araştırma', label, url))
+        if 'ema.europa.eu' in url: items.append(('EMA monografisi', _apa(url, ema_apa(label)), url))
+        else: items.append(('Araştırma', _apa(url, label), url))
     if pid in NCCIH:
-        items.append(('NCCIH', 'ABD Ulusal Tamamlayıcı ve Bütünleştirici Sağlık Merkezi: kullanım ve güvenlik özeti', f'https://www.nccih.nih.gov/health/{NCCIH[pid]}'))
+        _u = f'https://www.nccih.nih.gov/health/{NCCIH[pid]}'
+        items.append(('NCCIH', nccih_apa(NCCIH[pid]), _u))
     for label, url in OTHER.get(pid, []):
-        kind = 'Resmî kaynak' if ('fda.gov' in url or 'unodc.org' in url or 'nobelprize.org' in url) else 'Araştırma'
-        items.append((kind, label, url))
+        if 'ema.europa.eu' in url: kind = 'EMA raporu'
+        elif 'fda.gov' in url or 'unodc.org' in url or 'nobelprize.org' in url or 'ecfr.gov' in url or 'legislation.gov.uk' in url or 'gov.uk' in url or 'inchem.org' in url or 'cancer.gov' in url: kind = 'Resmî kaynak'
+        else: kind = 'Araştırma'
+        items.append((kind, _apa(url, label), url))
     if pid in BKAR or ('anadolu' in p['bolge'] and any('Anadolu' in w for w, _ in p['kul'])):
-        items.append(('Kitap', BAYTOP, ''))
+        items.append(('Kitap', BAYTOP_APA, ''))
     name = POWO.get(pid, short_la(p))
     if name:
-        items.append(('Botanik kayıt', f'Kew Plants of the World Online: {name}', 'https://powo.science.kew.org/results?q=' + urllib.parse.quote(name)))
+        items.append(('Botanik kayıt', powo_apa(name), 'https://powo.science.kew.org/results?q=' + urllib.parse.quote(name)))
     return '<ol class="refs">' + ''.join((f'<li><span class="kind">{e(k)}</span><a href="{e(u)}" target="_blank" rel="noopener">{e(t)}</a></li>' if u else f'<li><span class="kind">{e(k)}</span><cite>{e(t)}</cite></li>') for k, t, u in items) + '</ol>'
 
 KANIT_ICIN = {'kantaron': 'depresyonda', 'lavanta': 'kaygıda (kapsül)', 'hayit': 'adet öncesi sendromda', 'hashas': 'ağrıda (morfin)', 'kinin': 'sıtmada',
@@ -1276,7 +1295,7 @@ for k in LIVE_K:
 <section class="sec"><h2>Bitkiler, kanıtı en güçlü olandan başlayarak</h2><div class="rb-list">{"".join(rb_item(p, n) for p, n in ps)}</div></section>
 <aside class="warnbox" role="note"><b>Ne zaman hekime gitmeli?</b> {e(k["uyari"])}</aside>
 {"".join(f'<section class="sec"><h2>{e(h)}</h2>' + "".join(f'<p>{e(x)}</p>' for x in ps_) + '</section>' for h, ps_ in k.get('ek', []))}
-{('<section class="sec"><h2>Kaynaklar</h2><ol class="refs">' + "".join(f'<li><a href="{e(u)}" target="_blank" rel="noopener">{e(t)}</a></li>' for t, u in k['kaynaklar']) + '</ol></section>') if k.get('kaynaklar') else ''}
+{('<section class="sec"><h2>Kaynaklar</h2><ol class="refs">' + "".join(f'<li><a href="{e(u)}" target="_blank" rel="noopener">{e(_apa(u, t))}</a></li>' for t, u in k['kaynaklar']) + '</ol></section>') if k.get('kaynaklar') else ''}
 {extra_links}
 {_sss_html}
 {abone('rehber:' + k['slug'])}
@@ -1520,7 +1539,7 @@ for mo in MOTIFLER:
     bit = ''.join(f'<li><a href="/{x}/"><b>{e(byId[x]["tr"])}</b></a>: {e(n)}</li>' for x, n in mo['bitkiler'] if x in byId)
     same = [o for o in MOTIFLER if o['tema'] == mo['tema'] and o is not mo]
     _ilg = [o for o in MOTIFLER if o['slug'] in (mo.get('ilgili') or [])]
-    kay = '<ol class="refs">' + ''.join((f'<li id="k{j}"><a href="{e(u)}" target="_blank" rel="noopener">{e(t)}</a></li>' if u else f'<li id="k{j}"><cite>{e(t)}</cite></li>') for j, (t, u) in enumerate(mo['kaynaklar'], 1)) + '</ol>'
+    kay = '<ol class="refs">' + ''.join((f'<li id="k{j}"><a href="{e(u)}" target="_blank" rel="noopener">{e(_apa(u, t))}</a></li>' if u else f'<li id="k{j}"><cite>{e(_apa(u, t))}</cite></li>') for j, (t, u) in enumerate(mo['kaynaklar'], 1)) + '</ol>'
     body = f'''{crumbs(('/semboller/', 'Semboller'), (path, mo['ad']))}
 <article class="sheet">
 <header class="motif-head"><div class="motif-art">{motif_svg(mo)}</div><div><span class="eyebrow">{e(mo["bolge"])} · {e(TEMALAR[mo["tema"]])}</span><h1>{e(mo["ad"])}</h1><p class="lede">{e(mo["kisa"])}</p></div></header>
@@ -1586,7 +1605,7 @@ def _yp(t):
 for y in YAZILAR:
     path = f'/yazilar/{y["slug"]}/'
     secs = ''.join(f'<section class="sec"><h2>{e(h)}</h2>' + ''.join(f'<p>{_yp(p)}</p>' for p in ps) + '</section>' for h, ps in y['bolumler'])
-    kay = '<ol class="refs">' + ''.join((f'<li id="k{i}"><a href="{e(u)}" target="_blank" rel="noopener">{e(t)}</a></li>' if u else f'<li id="k{i}"><cite>{e(t)}</cite></li>') for i, (t, u) in enumerate(y['kaynaklar'], 1)) + '</ol>'
+    kay = '<ol class="refs">' + ''.join((f'<li id="k{i}"><a href="{e(u)}" target="_blank" rel="noopener">{e(_apa(u, t))}</a></li>' if u else f'<li id="k{i}"><cite>{e(_apa(u, t))}</cite></li>') for i, (t, u) in enumerate(y['kaynaklar'], 1)) + '</ol>'
     bit = ''.join(f'<a class="chip" href="/{x}/">{"".join(dot(r) for r in byId[x]["bolge"])}{e(byId[x]["tr"])}</a>' for x in y['bitkiler'] if x in byId)
     sem = _motif_list(y['semboller'])
     body = f'''{crumbs(('/blog/', 'Blog'), (path, y['baslik']))}
@@ -1613,7 +1632,7 @@ for i, k in enumerate(KAV):
     path = f'/kavram/{k["slug"]}/'
     d = datetime.date.fromisoformat(k['yayin'])
     secs = ''.join(f'<p>{_yp(p)}</p>' for p in k['metin'])
-    kay = '<ol class="refs">' + ''.join((f'<li id="k{j}"><a href="{e(u)}" target="_blank" rel="noopener">{e(t)}</a></li>' if u else f'<li id="k{j}"><cite>{e(t)}</cite></li>') for j, (t, u) in enumerate(k['kaynaklar'], 1)) + '</ol>'
+    kay = '<ol class="refs">' + ''.join((f'<li id="k{j}"><a href="{e(u)}" target="_blank" rel="noopener">{e(_apa(u, t))}</a></li>' if u else f'<li id="k{j}"><cite>{e(_apa(u, t))}</cite></li>') for j, (t, u) in enumerate(k['kaynaklar'], 1)) + '</ol>'
     bit = ''.join(f'<a class="chip" href="/{x}/">{"".join(dot(r) for r in byId[x]["bolge"])}{e(byId[x]["tr"])}</a>' for x in k['bitkiler'] if x in byId and x != k['bitki'])
     sem = _motif_list(k['semboller'])
     yz = ''.join(f'<li><a href="/yazilar/{y["slug"]}/">{e(y["baslik"])}</a></li>' for y in YAZILAR if y['slug'] in k['yazilar'])

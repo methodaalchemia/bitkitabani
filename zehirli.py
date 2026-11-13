@@ -37,11 +37,13 @@ NEDEN = ['Tedavi için kullanılan bir bitkiden fazla miktarda almak',
          'Bir bitkinin hangi kısmının zehirli olduğunu bilmeden yemek',
          'Çocuk düşürmek amacıyla zehirli bitki kullanmak']
 
-KAYNAK = [('Baytop T., Türkiye’de Bitkiler ile Tedavi: Geçmişte ve Bugün, 3. baskı, Nobel Tıp Kitabevleri, 2021', ''),
-          ('T.C. Sağlık Bakanlığı, Fitoterapi Uygulaması Kitabı, 2022 (“Zehirli bitkiler” bölümü)', ''),
-          ('Baytop T., Baytop A., Mat A., Sun S., Türkiye’de zehirli bitkiler, bitki zehirlenmeleri ve tedavi yöntemleri, İstanbul Üniversitesi, 1989 (Fitoterapi kitabındaki atıfla)', ''),
-          ('Seçmen Ö., Leblebici E., Yurdumuzun zehirli bitkileri, Ege Üniversitesi Fen Fakültesi, İzmir, 1987 (Fitoterapi kitabındaki atıfla)', ''),
-          ('Nelson L. S., Shih R. D., Balick M. J., Handbook of Poisonous and Injurious Plants, 2. baskı, Springer (Fitoterapi kitabındaki atıfla; ev bitkileri verisi)', '')]
+from kunye_elle import BAYTOP_APA, FITO_APA, ZEHIR_APA, SECMEN_APA, NELSON_APA
+
+KAYNAK = [(BAYTOP_APA, ''),
+          (FITO_APA + ' (“Zehirli bitkiler” bölümü)', ''),
+          (ZEHIR_APA + ' (Fitoterapi kitabındaki atıfla)', ''),
+          (SECMEN_APA + ' (Fitoterapi kitabındaki atıfla)', ''),
+          (NELSON_APA + ' (Fitoterapi kitabındaki atıfla; ev bitkileri verisi)', '')]
 
 # Evdeki süs bitkileri (Fitoterapi kitabı, ABD zehir merkezi verisine atıfla)
 EV = [('Difenbahya', 'Dieffenbachia'), ('Filodendron', 'Philodendron'), ('Barış çiçeği (Spathiphyllum)', 'Spathiphyllum'),

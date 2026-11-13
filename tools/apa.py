@@ -52,6 +52,9 @@ def yazarlar(ad_listesi):
         parca = ad.rsplit(' ', 1)
         if len(parca) == 2 and parca[1].isupper() and len(parca[1]) <= 4:
             soyad, bas = parca
+            # Eski PubMed kayıtlarında soyadı tamamen büyük harf olabiliyor
+            if soyad.isupper() and len(soyad) > 1:
+                soyad = soyad[0] + soyad[1:].lower()
             bicimli.append(f"{soyad}, {' '.join(h + '.' for h in bas)}")
         else:
             bicimli.append(ad)
@@ -65,7 +68,9 @@ def yazarlar(ad_listesi):
 
 
 def baslik_duzelt(t):
-    return re.sub(r'\.+$', '', (t or '').strip())
+    # PubMed uzun tireyi iki kısa çizgiyle yazıyor
+    t = (t or '').strip().replace('--', '\u2014')
+    return re.sub(r'\.+$', '', t)
 
 
 def apa_makale(d):
@@ -237,7 +242,17 @@ def pmc_to_pmid(pmcler):
     return eslesme
 
 
+# Kimligi adresinden okunamayan ama yayinci kaydi bulunan birkac adres.
+# Deger elle degil, yine PubMed/Crossref'ten cekilir.
+ZORLAMA = {
+    'https://www.nature.com/articles/s41559-018-0697-x': ('pmid', '30374172'),
+    'https://www.sciencedirect.com/science/article/abs/pii/S027841652100060X': ('doi', '10.1016/j.jaa.2021.101327'),
+}
+
+
 def kimlik(url):
+    if url in ZORLAMA:
+        return ZORLAMA[url]
     m = re.search(r'pubmed\.ncbi\.nlm\.nih\.gov/(\d+)', url)
     if m:
         return ('pmid', m.group(1))
@@ -261,6 +276,39 @@ def main():
             for _, u in v:
                 if u and u not in urller:
                     urller.append(u)
+    # Kuyruktaki kayıtların kendi kaynakları derleme anında OTHER'a ekleniyor
+    # (build.py), bu yüzden refs.py üzerinden görünmüyorlar.
+    try:
+        import kuyruk
+        for q in kuyruk.Q:
+            for _, u in (q.get('kaynak') or []):
+                if u and u not in urller:
+                    urller.append(u)
+    except Exception as ex:
+        print('kuyruk okunamadı:', ex)
+    # Familya sayfalarının kaynakları
+    try:
+        from familya import FAM_BILGI
+        for v in FAM_BILGI.values():
+            for _, u in (v.get('kaynak') or []) if isinstance(v, dict) else []:
+                if u and u not in urller:
+                    urller.append(u)
+    except Exception:
+        pass
+
+    # Derlenmiş sitedeki künye listelerinden de topla: yazı, motif ve rehber
+    # sayfalarının kaynakları yukarıdaki modüllerden geçmiyor.
+    try:
+        import glob
+        kok = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'site')
+        for f in glob.glob(os.path.join(kok, '**', '*.html'), recursive=True):
+            h = open(f, encoding='utf-8').read()
+            for ol in re.findall(r'<ol class="refs">(.*?)</ol>', h, re.S):
+                for u in re.findall(r'<li[^>]*>.*?href="(https?://[^"]+)"', ol, re.S):
+                    if u not in urller:
+                        urller.append(u)
+    except Exception as ex:
+        print('site taranamadı:', ex)
 
     eksik = [u for u in urller if u not in onbellek]
     print(f'{len(urller)} benzersiz adres, {len(eksik)} tanesi önbellekte yok.')

@@ -4,8 +4,10 @@
 # "dikkat": familya düzeyinde güvenlik ya da karıştırma uyarısı (varsa).
 # Kaynak: familya düzeyindeki bileşik grupları için farmakognozi el kitabı, taksonomi için Kew POWO.
 
-EVANS = ('William Charles Evans, Trease and Evans’ Pharmacognosy, 16. baskı, Saunders/Elsevier, 2009', '')
-BAYTOP_K = ('Turhan Baytop, Türkiye’de Bitkiler ile Tedavi, Nobel Tıp Kitabevleri, 2021 (3. baskı)', '')
+from kunye_elle import EVANS_APA, BAYTOP_APA, powo_apa
+
+EVANS = (EVANS_APA, '')
+BAYTOP_K = (BAYTOP_APA, '')
 
 FAM_TR = {
  'Lamiaceae': 'ballıbabagiller', 'Solanaceae': 'patlıcangiller', 'Asteraceae': 'papatyagiller',
@@ -61,5 +63,5 @@ def fam_kaynak(f, anadolu=False):
     """Familya sayfasının kaynakları."""
     ks = [('Kitap', EVANS[0], '')]
     if anadolu: ks.append(('Kitap', BAYTOP_K[0], ''))
-    ks.append(('Botanik kayıt', f'Kew Plants of the World Online: {f}', 'https://powo.science.kew.org/results?q=' + f))
+    ks.append(('Botanik kayıt', powo_apa(f), 'https://powo.science.kew.org/results?q=' + f))
     return ks
