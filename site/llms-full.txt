@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 143 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 144 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -4479,3 +4479,31 @@ Karıştırma riski: Bahçelerde kışın açan Asya kökenli Hamamelis türleri
 
 ### İlginç bilgi
 Ağaçların çoğu yaprak dökerken açar: sarı, şerit gibi çiçekleri Ekim–Aralık arasında görünür. Adındaki “witch” cadıdan değil, eski İngilizcede “eğilen, esnek” anlamındaki bir sözcükten gelir.
+
+## Turna yemişi (Vaccinium macrocarpon)
+
+URL: https://bitkitabani.com/turnayemisi/
+Familya: Ericaceae · Bölge: Kuzey Amerika · Kullanılan kısım: Meyve
+Bilimsel kanıt: Klinik · Güvenlik: Genelde güvenli
+
+### Geleneksel kullanım
+- Kuzey Amerika: Wampanoag gibi yerli halklar meyveyi kurutulmuş et ve yağla karıştırıp pemmikan yapar, kumaş boyar, yara üzerine koyardı. Avrupalı yerleşimciler meyveyi onlardan öğrendi.
+- Bugün: Suyu ve kapsülleri tekrarlayan idrar yolu enfeksiyonlarını önlemek için kullanılır; ABD’de Şükran Günü sofrasının sosu yapılır.
+
+### Hazırlama
+Şekersiz meyve suyu ya da standart kapsül olarak kullanılır; kurutulmuş meyvelerin çoğu şekerlidir.
+
+### Bilim ne diyor
+Cochrane derlemesi (2023), turna yemişi ürünlerinin tekrarlayan idrar yolu enfeksiyonu geçiren kadınlarda, çocuklarda ve bazı tıbbi girişimlerden sonra enfeksiyon riskini azalttığını bulmuştur. Bakımevindeki yaşlılarda, hamilelerde ve mesane boşaltma sorunu olanlarda fayda görülmemiştir. Turna yemişi enfeksiyonu tedavi etmez; var olan enfeksiyonda antibiyotiğin yerini tutmaz.
+
+### Güvenlik
+Genelde güvenlidir. Çok miktarda meyve suyu mide rahatsızlığı ve ishal yapabilir; şekerli suları kan şekerini yükseltir. Böbrek taşı geçmişi olanlar yüksek dozdan kaçınmalıdır. Varfarin kullananlarda etkileşim bildirilmiştir, ama yeni çalışmalar ciddi bir etki göstermez; yine de INR izlenmelidir.
+
+### Doğada
+Nerede yetişir: Kuzeydoğu ABD ve Kanada’nın asidik turbalıklarında ve bataklıklarında sürünen bodur bir çalıdır.
+Toplama mevsimi: Meyveler Eylül–Kasım’da olgunlaşır.
+Yöresel adlar: turna yemişi, cranberry
+Karıştırma riski: Türkiye’de “kızılcık” denen Cornus mas bambaşka bir bitkidir; market ürünlerinde cranberry bazen yanlışlıkla kızılcık diye çevrilir. Avrupa turna yemişinin (V. oxycoccos) meyveleri daha küçüktür.
+
+### İlginç bilgi
+Turna yemişi bahçeleri hasatta suyla basılır: içinde hava cepleri olan meyveler su yüzüne çıkar ve kırmızı bir halı gibi toplanır.
