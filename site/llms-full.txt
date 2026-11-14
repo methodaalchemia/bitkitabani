@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 144 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 145 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -4507,3 +4507,34 @@ Karıştırma riski: Türkiye’de “kızılcık” denen Cornus mas bambaşka 
 
 ### İlginç bilgi
 Turna yemişi bahçeleri hasatta suyla basılır: içinde hava cepleri olan meyveler su yüzüne çıkar ve kırmızı bir halı gibi toplanır.
+
+## Paico (Dysphania ambrosioides)
+
+URL: https://bitkitabani.com/paico/
+Familya: Amaranthaceae · Bölge: And Dağları, Amazon · Kullanılan kısım: Yaprak, uçucu yağ
+Bilimsel kanıt: Geleneksel · Güvenlik: Yüksek risk
+
+### Geleneksel kullanım
+- And Dağları ve Amazon: Peru ve Bolivya’da paico adıyla yaprakları bağırsak kurtlarına karşı içilir, çorbalara katılır; mide ağrısında ve ishalde kullanılır.
+- Meksika: Epazote adıyla fasulye yemeklerine gaz yapmasın diye eklenir; Aztekler döneminden beri kullanılır.
+
+### Hazırlama
+Taze yapraklar az miktarda yemeklere katılır. İlaç olarak kullanılması, özellikle yağı, önerilmez.
+
+### Bilim ne diyor
+Uçucu yağındaki askaridol bağırsak kurtlarını öldürür; 20. yüzyılın başında “chenopodium yağı” adıyla dünyada yaygın bir kurt ilacıydı, ama güvenli ilaçlar bulununca zehirliliği nedeniyle bırakıldı. Bugün laboratuvarda antiparaziter ve mantar önleyici etkileri araştırılmaktadır.
+
+### Güvenlik
+Uçucu yağı ölümcül olabilir; askaridol zehirlenmesinde kusma, nöbet, böbrek ve karaciğer hasarı, işitme kaybı ve ölüm bildirilmiştir. Yaprak çayı da yüksek miktarda zararlıdır. Hamileler, emzirenler ve çocuklar kullanmamalıdır. Yemekte baharat olarak kullanılan küçük miktarlar dışında iç kullanımı önerilmez.
+
+### İlaç etkileşimleri
+- Karaciğer ve böbreğe yük bindiren ilaçlar: Askaridolün organ hasarı riski artar.
+
+### Doğada
+Nerede yetişir: Orta ve Güney Amerika’nın sıcak bölgelerinden gelir; bugün dünyanın birçok yerinde, Türkiye’de de yer yer yabani ot olarak görülür.
+Toplama mevsimi: Yapraklar yaz boyunca, çiçeklenmeden önce toplanır.
+Yöresel adlar: paico, epazote; Türkçede yerleşik bir adı yoktur
+Karıştırma riski: Aynı aileden sirken (Chenopodium album) yaygın bir yabani sebzedir; paico keskin, gazyağını andıran kokusuyla ayırt edilir.
+
+### İlginç bilgi
+Paico yağı, 20. yüzyılın başında tropik ülkelerde yürütülen büyük kancalı kurt kampanyalarında kullanılan ilaçlardan biriydi.
