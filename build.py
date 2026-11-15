@@ -459,7 +459,7 @@ def _apa(url, yedek):
 def refs(p):
     pid = p['id']; items = []
     for label, url in EMA.get(pid, []):
-        if 'ema.europa.eu' in url: items.append(('EMA monografisi', _apa(url, ema_apa(label)), url))
+        if 'ema.europa.eu' in url: items.append(('EMA monografisi', _apa(url, ema_apa(label, url)), url))
         else: items.append(('Araştırma', _apa(url, label), url))
     if pid in NCCIH:
         _u = f'https://www.nccih.nih.gov/health/{NCCIH[pid]}'

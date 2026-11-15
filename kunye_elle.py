@@ -9,7 +9,8 @@ Biçim: APA 7. Eser adları özgün dilinde bırakılır (çeviri yapılmaz), ya
 ekler Türkçedir — tarihsiz kaynaklar için "t.y.", köşeli parantez içindeki
 tür açıklamaları Türkçe.
 """
-
+import json
+import os
 # Adres -> APA. Tek tek yazıldı, her biri kaynağın kendi sayfasından doğrulandı.
 ELLE = {
  'https://www.unodc.org/unodc/en/frontpage/2013/January/bolivia-to-re-accede-to-un-drug-convention-while-making-exception-on-coca-leaf-chewing.html':
@@ -371,10 +372,33 @@ BAYTOP_APA = ('Baytop, T. (2021). Türkiye’de bitkiler ile tedavi: Geçmişte 
               '(3. baskı; F. Baytop Günergun, Yay. haz.). Nobel Tıp Kitabevleri.')
 
 
-def ema_apa(ad):
-    """EMA bitkisel monografı. Yayın tarihi sayfada JavaScript ile geldiği için
-    ham HTML'den okunamıyor; APA'nın tarihsiz biçimi kullanılıyor."""
-    return f'European Medicines Agency. (t.y.). {ad} [Bitkisel tıbbi ürün monografı].'
+# EMA bitkisel ilaç envanteri (ema_monograf.json): monografın adresi, ilk
+# yayın tarihi, tedavi alanı ve değerlendirme sonucu. Tablo EMA'nın kendi
+# "Download medicine data" çıktısından geliyor. Monograf sayfasının tarihi
+# JavaScript'le yüklendiği için ham HTML'den okunamıyordu; tarih buradan.
+EMA_MONOGRAF = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                           'ema_monograf.json'), encoding='utf-8'))
+
+
+def _ema_yil(url):
+    """Monografın ilk yayın yılı; adres tabloda yoksa None."""
+    if not url:
+        return None
+    slug = url.rstrip('/').rsplit('/', 1)[-1]
+    return (EMA_MONOGRAF.get(slug) or {}).get('yil')
+
+
+def ema_apa(ad, url=None):
+    """EMA bitkisel monografı künyesi."""
+    yil = _ema_yil(url)
+    return (f'European Medicines Agency. ({yil if yil else "t.y."}). {ad} '
+            '[Bitkisel tıbbi ürün monografı].')
+
+
+def ema_apa_en(ad, url=None):
+    yil = _ema_yil(url)
+    return (f'European Medicines Agency. ({yil if yil else "n.d."}). {ad} '
+            '[Herbal medicinal product monograph].')
 
 
 # NCCIH sayfa başlıkları. Adres kısaltmasından türetilemiyor ("st-johns-wort"
@@ -573,10 +597,6 @@ def ingilizce(apa):
     for a, b in _EN:
         apa = apa.replace(a, b)
     return apa
-
-
-def ema_apa_en(ad):
-    return f'European Medicines Agency. (n.d.). {ad} [Herbal medicinal product monograph].'
 
 
 def nccih_apa_en(ad):

@@ -177,7 +177,7 @@ def run(G):
         pid = p['id']; items = []
         for label, url in EMA.get(pid, []):
             if 'ema.europa.eu' in url:
-                items.append(('EMA monograph', _apa_en(url, ema_apa_en(label)), url))
+                items.append(('EMA monograph', _apa_en(url, ema_apa_en(label, url)), url))
             else:
                 items.append(('Research', _apa_en(url, label), url))
         if pid in NCCIH:

@@ -1,0 +1,1838 @@
+{
+ "absinthii-herba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/absinthii-herba",
+  "alan": "Loss of appetite;Gastrointestinal disorders",
+  "botanik": "Artemisia absinthiumL.",
+  "ingilizce": "Wormwood",
+  "latin": "Absinthii herba",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "adhatodae-vasicae-folium": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/adhatodae-vasicae-folium",
+  "alan": "",
+  "botanik": "Adhatoda vasicaNees",
+  "ingilizce": "Malabar-nut leaf",
+  "latin": "Adhatodae vasicae folium",
+  "sonuc": "Public statement",
+  "yil": "2019"
+ },
+ "agni-casti-fructus": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/agni-casti-fructus",
+  "alan": "Urinary tract and genital disorders",
+  "botanik": "Vitex agnus-castusL.",
+  "ingilizce": "Agnus Castus Fruit",
+  "latin": "Agni casti fructus",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2018"
+ },
+ "agrimoniae-herba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/agrimoniae-herba",
+  "alan": "Mouth and throat disorders;Skin disorders and minor wounds;Gastrointestinal disorders",
+  "botanik": "Agrimonia eupatoria L.",
+  "ingilizce": "Agrimony",
+  "latin": "Agrimoniae herba",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2015"
+ },
+ "agropyri-repentis-rhizoma": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/agropyri-repentis-rhizoma",
+  "alan": "Urinary tract and genital disorders",
+  "botanik": "Agropyron repens (L.) P. Beauv.",
+  "ingilizce": "Couch grass rhizome",
+  "latin": "Agropyri repentis rhizoma",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "allii-cepae-bulbus": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/allii-cepae-bulbus",
+  "alan": "",
+  "botanik": "Allium cepaL.",
+  "ingilizce": "Onion",
+  "latin": "Allii cepae bulbus",
+  "sonuc": "Public statement",
+  "yil": "2010"
+ },
+ "allii-sativi-bulbus": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/allii-sativi-bulbus",
+  "alan": "Cough and cold;Circulatory disorders",
+  "botanik": "Allium sativumL.",
+  "ingilizce": "Garlic",
+  "latin": "Allii sativi bulbus",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "aloes-folii-succus-siccatus": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/aloes-folii-succus-siccatus",
+  "alan": "Constipation",
+  "botanik": "Aloe barbadensis Mill. and Aloe (various species)",
+  "ingilizce": "Dried juice of Aloes leaves",
+  "latin": "Aloes folii succus siccatus",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "althaeae-radix": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/althaeae-radix",
+  "alan": "Mouth and throat disorders;Cough and cold;Gastrointestinal disorders",
+  "botanik": "Althaea officinalisL.",
+  "ingilizce": "Marshmallow Root",
+  "latin": "Althaeae radix",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2008"
+ },
+ "andrographidis-paniculatae-folium": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/andrographidis-paniculatae-folium",
+  "alan": "",
+  "botanik": "Andrographis paniculata Nees",
+  "ingilizce": "Kalmegh",
+  "latin": "Andrographidis paniculatae folium",
+  "sonuc": "Public statement",
+  "yil": "2011"
+ },
+ "angelicae-sinensis-radix": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/angelicae-sinensis-radix",
+  "alan": "",
+  "botanik": "Angelica sinensis (Oliv.) Diels",
+  "ingilizce": "Angelica sinensis root",
+  "latin": "Angelicae sinensis radix",
+  "sonuc": "Public statement",
+  "yil": "2012"
+ },
+ "anisi-aetheroleum": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/anisi-aetheroleum",
+  "alan": "Cough and cold;Gastrointestinal disorders",
+  "botanik": "Pimpinella anisumL.",
+  "ingilizce": "Anise Oil",
+  "latin": "Anisi aetheroleum",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "anisi-fructus": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/anisi-fructus",
+  "alan": "Cough and cold;Gastrointestinal disorders",
+  "botanik": "Pimpinella anisumL.",
+  "ingilizce": "Aniseed",
+  "latin": "Anisi fructus",
+  "sonuc": "European Union herbal monograph;European Union list entry",
+  "yil": "2009"
+ },
+ "arctii-radix": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/arctii-radix",
+  "alan": "Loss of appetite;Skin disorders and minor wounds;Urinary tract and genital disorders",
+  "botanik": "Arctium lappaL.",
+  "ingilizce": "Burdock Root",
+  "latin": "Arctii radix",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "arnicae-flos": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/arnicae-flos",
+  "alan": "Pain and inflammation",
+  "botanik": "Arnica montanaL.",
+  "ingilizce": "Arnica flower",
+  "latin": "Arnicae flos",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "avenae-fructus": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/avenae-fructus",
+  "alan": "Skin disorders and minor wounds",
+  "botanik": "Avena sativaL.",
+  "ingilizce": "Oat Fruit",
+  "latin": "Avenae fructus",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "avenae-herba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/avenae-herba",
+  "alan": "Sleep disorders and temporary insomnia;Mental stress and mood disorders",
+  "botanik": "Avena sativaL.",
+  "ingilizce": "Oat Herb",
+  "latin": "Avenae herba",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "balsamum-peruvianum": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/balsamum-peruvianum",
+  "alan": "",
+  "botanik": "Myroxylon balsamum (L.) Harms var. perierae (Royle) Harms",
+  "ingilizce": "Peru balsam",
+  "latin": "Balsamum peruvianum",
+  "sonuc": "Public statement",
+  "yil": "2014"
+ },
+ "betulae-folium": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/betulae-folium",
+  "alan": "Urinary tract and genital disorders",
+  "botanik": "Betula pendula Roth;Betula pubescens Ehrh.",
+  "ingilizce": "Birch Leaf",
+  "latin": "Betulae folium",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "boldi-folium": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/boldi-folium",
+  "alan": "Gastrointestinal disorders",
+  "botanik": "Peumus boldus Molina",
+  "ingilizce": "Boldo Leaf",
+  "latin": "Boldi folium",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "bursae-pastoris-herba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/bursae-pastoris-herba",
+  "alan": "Urinary tract and genital disorders",
+  "botanik": "Capsella bursa-pastoris (L.) Medik.",
+  "ingilizce": "Shepherds Purse",
+  "latin": "Bursae pastoris herba",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2011"
+ },
+ "calendulae-flos": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/calendulae-flos",
+  "alan": "Mouth and throat disorders;Skin disorders and minor wounds",
+  "botanik": "Calendula officinalisL.",
+  "ingilizce": "Calendula Flower",
+  "latin": "Calendulae flos",
+  "sonuc": "European Union herbal monograph;European Union list entry",
+  "yil": "2009"
+ },
+ "calendulae-herba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/calendulae-herba",
+  "alan": "",
+  "botanik": "Calendula officinalisL.",
+  "ingilizce": "Marigold",
+  "latin": "Calendulae herba",
+  "sonuc": "",
+  "yil": "2014"
+ },
+ "camelliae-sinensis-non-fermentatum-folium": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/camelliae-sinensis-non-fermentatum-folium",
+  "alan": "Fatigue and weakness",
+  "botanik": "Camellia sinensis (L.) Kuntze",
+  "ingilizce": "Green tea",
+  "latin": "Camelliae sinensis non fermentatum folium",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2021"
+ },
+ "cannabis-flos": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/cannabis-flos",
+  "alan": "",
+  "botanik": "Cannabis sativaL.",
+  "ingilizce": "Cannabis flowering tops",
+  "latin": "Cannabis flos",
+  "sonuc": "Public statement",
+  "yil": "2023"
+ },
+ "capsici-fructus": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/capsici-fructus",
+  "alan": "Pain and inflammation",
+  "botanik": "Capsicum annuum L. var. minimum (Miller) Heiser",
+  "ingilizce": "Capsicum",
+  "latin": "Capsici fructus",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2011"
+ },
+ "carvi-aetheroleum": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/carvi-aetheroleum",
+  "alan": "Gastrointestinal disorders",
+  "botanik": "Carum carviL.",
+  "ingilizce": "Caraway oil",
+  "latin": "Carvi aetheroleum",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "carvi-fructus": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/carvi-fructus",
+  "alan": "Gastrointestinal disorders",
+  "botanik": "Carum carviL.",
+  "ingilizce": "Caraway fruit",
+  "latin": "Carvi fructus",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "caryophylli-floris-aetheroleum": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/caryophylli-floris-aetheroleum",
+  "alan": "Mouth and throat disorders",
+  "botanik": "Syzygium aromaticum (L.) Merr. et L.M. Perry (syn. Eugenia caryophyllus (Spreng.) Bullock et S.G. Harrison)",
+  "ingilizce": "Clove oil",
+  "latin": "Caryophylli floris aetheroleum",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2010"
+ },
+ "caryophylli-flos": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/caryophylli-flos",
+  "alan": "",
+  "botanik": "Syzygium aromaticum (L.) Merr. et L.M.Perry (syn. Eugenia caryophyllus (Spreng.) Bullock et S.G.Harrison)",
+  "ingilizce": "Clove",
+  "latin": "Caryophylli flos",
+  "sonuc": "Public statement",
+  "yil": "2009"
+ },
+ "centaurii-herba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/centaurii-herba",
+  "alan": "Loss of appetite;Gastrointestinal disorders",
+  "botanik": "Centaurium erythraea Rafn. s.l.",
+  "ingilizce": "Centaury",
+  "latin": "Centaurii herba",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "centellae-asiaticae-herba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/centellae-asiaticae-herba",
+  "alan": "Skin disorders and minor wounds",
+  "botanik": "Centella asiatica (L.) Urb.",
+  "ingilizce": "Centella",
+  "latin": "Centellae asiaticae herba",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "chamomillae-romanae-flos": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/chamomillae-romanae-flos",
+  "alan": "Gastrointestinal disorders",
+  "botanik": "Chamaemelum nobile (L.) All. (Anthemis nobilis L.)",
+  "ingilizce": "Roman Chamomile Flower",
+  "latin": "Chamomillae romanae flos",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "chelidonii-herba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/chelidonii-herba",
+  "alan": "",
+  "botanik": "Chelidonium majusL.",
+  "ingilizce": "Greater Celandine",
+  "latin": "Chelidonii herba",
+  "sonuc": "Public statement",
+  "yil": "2009"
+ },
+ "cichorii-intybi-radix": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/cichorii-intybi-radix",
+  "alan": "Loss of appetite;Gastrointestinal disorders",
+  "botanik": "Cichorium intybusL.",
+  "ingilizce": "Chicory root",
+  "latin": "Cichorii intybi radix",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "cimicifugae-rhizoma": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/cimicifugae-rhizoma",
+  "alan": "Urinary tract and genital disorders",
+  "botanik": "Cimicifuga racemosa (L.) Nutt.",
+  "ingilizce": "Black Cohosh",
+  "latin": "Cimicifugae rhizoma",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "cinnamomi-cortex": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/cinnamomi-cortex",
+  "alan": "Gastrointestinal disorders",
+  "botanik": "Cinnamomum verum J. S. Presl",
+  "ingilizce": "Cinnamon",
+  "latin": "Cinnamomi cortex",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "cinnamomi-corticis-aetheroleum": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/cinnamomi-corticis-aetheroleum",
+  "alan": "Gastrointestinal disorders",
+  "botanik": "Cinnamomum verum J. S. Presl;Cinnamomum zeylanicum Nees",
+  "ingilizce": "Cinnamon Bark Oil",
+  "latin": "Cinnamomi corticis aetheroleum",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "cisti-cretici-herba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/cisti-cretici-herba",
+  "alan": "Cough and cold",
+  "botanik": "Cistus creticus L.",
+  "ingilizce": "Pink rock-rose",
+  "latin": "Cisti cretici herba",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2014"
+ },
+ "citri-bergamiae-aetheroleum": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/citri-bergamiae-aetheroleum",
+  "alan": "",
+  "botanik": "Citrus bergamia Risso &amp; Poiteau.",
+  "ingilizce": "Bergamot oil",
+  "latin": "Citri bergamiae aetheroleum",
+  "sonuc": "Public statement",
+  "yil": "2009"
+ },
+ "cnici-benedicti-herba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/cnici-benedicti-herba",
+  "alan": "Gastrointestinal disorders",
+  "botanik": "Cnicus benedictusL.",
+  "ingilizce": "St. Benedict's thistle (also blessed thistle, holy thistle or spotted thistle)",
+  "latin": "Cnici benedicti herba",
+  "sonuc": "",
+  "yil": "2021"
+ },
+ "colae-semen": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/colae-semen",
+  "alan": "Fatigue and weakness",
+  "botanik": "Cola nitida (Vent.) Schott et Endl. (C. vera K. Schum.); Cola acuminata (P. Beauv.) Schott et Endl. (Sterculia acuminata P. Beauv.)",
+  "ingilizce": "Cola",
+  "latin": "Colae semen",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "combination-species-pectorales": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/combination-species-pectorales",
+  "alan": "Cough and cold",
+  "botanik": "",
+  "ingilizce": "Herbal tea combinations for use in cough and cold",
+  "latin": "Combination: Species pectorales",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2023"
+ },
+ "crataegi-folium-cum-flore": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/crataegi-folium-cum-flore",
+  "alan": "Circulatory disorders;Mental stress and mood disorders",
+  "botanik": "Crataegus monogyna Jacq. (Lindm.);C. laevigata(Poir.) DC.;C. pentagyna Waldst. et Kit. ex Willd.;C. azarolusL.",
+  "ingilizce": "Hawthorn Leaf and Flower",
+  "latin": "Crataegi folium cum flore",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "cucurbitae-semen": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/cucurbitae-semen",
+  "alan": "Urinary tract and genital disorders",
+  "botanik": "Cucurbita pepoL.",
+  "ingilizce": "Pumpkin seed",
+  "latin": "Cucurbitae semen",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "curcumae-longae-rhizoma": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/curcumae-longae-rhizoma",
+  "alan": "Gastrointestinal disorders",
+  "botanik": "Curcuma longaL.",
+  "ingilizce": "Turmeric",
+  "latin": "Curcumae longae rhizoma",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "curcumae-xanthorrhizae-rhizoma": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/curcumae-xanthorrhizae-rhizoma",
+  "alan": "Gastrointestinal disorders",
+  "botanik": "Curcuma xanthorrhizaRoxb.;C. xanthorrhiza D. Dietrich",
+  "ingilizce": "Javanese turmeric",
+  "latin": "Curcumae xanthorrhizae rhizoma",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "cynarae-folium": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/cynarae-folium",
+  "alan": "Gastrointestinal disorders",
+  "botanik": "Cynara cardunculusL.;syn. C. scolymusL.",
+  "ingilizce": "Artichoke Leaf",
+  "latin": "Cynarae folium",
+  "sonuc": "",
+  "yil": "2009"
+ },
+ "echinaceae-angustifoliae-radix": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/echinaceae-angustifoliae-radix",
+  "alan": "Cough and cold",
+  "botanik": "Echinacea angustifolia DC.",
+  "ingilizce": "Narrow-leaved coneflower root",
+  "latin": "Echinaceae angustifoliae radix",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "echinaceae-pallidae-radix": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/echinaceae-pallidae-radix",
+  "alan": "Cough and cold",
+  "botanik": "Echinacea pallida (Nutt.) Nutt.",
+  "ingilizce": "Pale Coneflower Root",
+  "latin": "Echinaceae pallidae radix",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "echinaceae-purpureae-herba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/echinaceae-purpureae-herba",
+  "alan": "Skin disorders and minor wounds;Cough and cold",
+  "botanik": "Echinacea purpurea (L.) Moench",
+  "ingilizce": "Purple Coneflower Herb",
+  "latin": "Echinaceae purpureae herba",
+  "sonuc": "European Union herbal monograph;European Union list entry",
+  "yil": "2009"
+ },
+ "echinaceae-purpureae-radix": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/echinaceae-purpureae-radix",
+  "alan": "Skin disorders and minor wounds;Cough and cold",
+  "botanik": "Echinacea purpurea (L.) Moench.",
+  "ingilizce": "Purple Coneflower Root",
+  "latin": "Echinaceae purpureae radix",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "eleutherococci-radix": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/eleutherococci-radix",
+  "alan": "Fatigue and weakness",
+  "botanik": "Eleutherococcus senticosus (Rupr. et Maxim.) Maxim.",
+  "ingilizce": "Eleutherococcus",
+  "latin": "Eleutherococci radix",
+  "sonuc": "European Union herbal monograph;European Union list entry",
+  "yil": "2009"
+ },
+ "epilobii-herba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/epilobii-herba",
+  "alan": "Urinary tract and genital disorders",
+  "botanik": "Epilobium angustifoliumL.;Epilobium parviflorumSchreb.",
+  "ingilizce": "Willow herb",
+  "latin": "Epilobii herba",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2014"
+ },
+ "equiseti-herba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/equiseti-herba",
+  "alan": "Urinary tract and genital disorders",
+  "botanik": "Equisetum arvenseL.",
+  "ingilizce": "Horsetail herb",
+  "latin": "Equiseti herba",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "eschscholziae-herba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/eschscholziae-herba",
+  "alan": "Sleep disorders and temporary insomnia;Mental stress and mood disorders",
+  "botanik": "Eschscholzia california Cham.",
+  "ingilizce": "California poppy",
+  "latin": "Eschscholziae herba",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2012"
+ },
+ "eucalypti-aetheroleum": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/eucalypti-aetheroleum",
+  "alan": "Pain and inflammation;Cough and cold",
+  "botanik": "Eucalyptus globulusLabill.;Eucalyptus polybractea R.T. Baker;Eucalyptus smithii R.T. Baker",
+  "ingilizce": "Eucalyptus Oil",
+  "latin": "Eucalypti aetheroleum",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2011"
+ },
+ "eucalypti-folium": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/eucalypti-folium",
+  "alan": "Cough and cold",
+  "botanik": "Eucalyptus globulus Labill.",
+  "ingilizce": "Eucalyptus leaf",
+  "latin": "Eucalypti folium",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "euphrasiae-herba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/euphrasiae-herba",
+  "alan": "",
+  "botanik": "Euphrasia officinalisL.;Euphrasia rostkoviana Hayne",
+  "ingilizce": "Eyebright",
+  "latin": "Euphrasiae herba",
+  "sonuc": "Public statement",
+  "yil": "2009"
+ },
+ "filipendulae-ulmariae-flos": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/filipendulae-ulmariae-flos",
+  "alan": "Pain and inflammation;Cough and cold",
+  "botanik": "Filipendula ulmaria (L.) Maxim. (= Spiraea ulmaria L.).",
+  "ingilizce": "Meadowsweet Flower",
+  "latin": "Filipendulae ulmariae flos",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "filipendulae-ulmariae-herba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/filipendulae-ulmariae-herba",
+  "alan": "Pain and inflammation;Cough and cold",
+  "botanik": "Filipendula ulmaria (L.) Maxim. (= Spiraea ulmaria L.).",
+  "ingilizce": "Meadowsweet",
+  "latin": "Filipendulae ulmariae herba",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "foeniculi-amari-fructus": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/foeniculi-amari-fructus",
+  "alan": "Urinary tract and genital disorders;Cough and cold",
+  "botanik": "Foeniculum vulgare Miller subsp. vulgare var. vulgare",
+  "ingilizce": "Bitter Fennel",
+  "latin": "Foeniculi amari fructus",
+  "sonuc": "European Union herbal monograph;European Union list entry",
+  "yil": "2009"
+ },
+ "foeniculi-amari-fructus-aetheroleum": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/foeniculi-amari-fructus-aetheroleum",
+  "alan": "Cough and cold",
+  "botanik": "Foeniculum vulgare Miller subsp. vulgare var. vulgare",
+  "ingilizce": "Bitter Fennel Fruit Oil",
+  "latin": "Foeniculi amari fructus aetheroleum",
+  "sonuc": "Public statement",
+  "yil": "2009"
+ },
+ "foeniculi-dulcis-fructus": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/foeniculi-dulcis-fructus",
+  "alan": "Urinary tract and genital disorders;Cough and cold",
+  "botanik": "Foeniculum vulgare Miller subsp. vulgare var. dulce (Mill.) Batt. &amp; Trab.",
+  "ingilizce": "Sweet Fennel",
+  "latin": "Foeniculi dulcis fructus",
+  "sonuc": "European Union herbal monograph;European Union list entry",
+  "yil": "2009"
+ },
+ "fragariae-folium": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/fragariae-folium",
+  "alan": "Urinary tract and genital disorders;Gastrointestinal disorders",
+  "botanik": "Fragaria vescaL.;Fragaria moschataWeston;Fragaria viridisWeston;Fragaria x ananassa (Weston) Duchesne ex Rozier",
+  "ingilizce": "Wild Strawberry Leaf",
+  "latin": "Fragariae folium",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "frangulae-cortex": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/frangulae-cortex",
+  "alan": "Constipation",
+  "botanik": "Rhamnus frangulaL.",
+  "ingilizce": "Frangula bark",
+  "latin": "Frangulae cortex",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "fraxini-folium": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/fraxini-folium",
+  "alan": "Pain and inflammation;Urinary tract and genital disorders",
+  "botanik": "Fraxinus excelsiorL.;Fraxinus angustifoliaVahl",
+  "ingilizce": "Ash Leaf",
+  "latin": "Fraxini folium",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "fucus": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/fucus",
+  "alan": "Gastrointestinal disorders",
+  "botanik": "Fucus vesiculosusL.",
+  "ingilizce": "Bladderwrack",
+  "latin": "Fucus",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2011"
+ },
+ "fumariae-herba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/fumariae-herba",
+  "alan": "Gastrointestinal disorders",
+  "botanik": "Fumaria officinalisL.",
+  "ingilizce": "Fumitory",
+  "latin": "Fumariae herba",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2010"
+ },
+ "gentianae-radix": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/gentianae-radix",
+  "alan": "Gastrointestinal disorders",
+  "botanik": "Gentiana lutea L.",
+  "ingilizce": "Gentian Root",
+  "latin": "Gentianae radix",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "ginkgo-folium": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/ginkgo-folium",
+  "alan": "Circulatory disorders",
+  "botanik": "Ginkgo bilobaL.",
+  "ingilizce": "Ginkgo leaf",
+  "latin": "Ginkgo folium",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "ginseng-radix": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/ginseng-radix",
+  "alan": "Fatigue and weakness",
+  "botanik": "Panax ginseng C.A.Mey.",
+  "ingilizce": "Ginseng",
+  "latin": "Ginseng radix",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "glycini-semen": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/glycini-semen",
+  "alan": "",
+  "botanik": "Glycine max (L.) Merr.",
+  "ingilizce": "Soya",
+  "latin": "Glycini semen",
+  "sonuc": "Public statement",
+  "yil": "2017"
+ },
+ "grindeliae-herba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/grindeliae-herba",
+  "alan": "Cough and cold",
+  "botanik": "Grindelia robusta Nutt., Grindelia squarrosa (Pursh) Dunal, Grindelia humilis Hook. et Arn., Grindelia camporum Greene",
+  "ingilizce": "Gumweed herb",
+  "latin": "Grindeliae herba",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2010"
+ },
+ "hamamelidis-cortex": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/hamamelidis-cortex",
+  "alan": "Skin disorders and minor wounds;Circulatory disorders",
+  "botanik": "Hamamelis virginiana L.",
+  "ingilizce": "Hamamelis Bark",
+  "latin": "Hamamelidis cortex",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "hamamelidis-folium": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/hamamelidis-folium",
+  "alan": "Skin disorders and minor wounds;Circulatory disorders",
+  "botanik": "Hamamelis virginiana L.",
+  "ingilizce": "Hamamelis Leaf",
+  "latin": "Hamamelidis folium",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "hamamelidis-folium-et-cortex-aut-ramunculus-destillatum": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/hamamelidis-folium-et-cortex-aut-ramunculus-destillatum",
+  "alan": "Skin disorders and minor wounds;Eye discomfort",
+  "botanik": "Hamamelis virginiana L.",
+  "ingilizce": "Hamamelis Distillate",
+  "latin": "Hamamelidis folium et cortex aut ramunculus destillatum",
+  "sonuc": "European Union herbal monograph;European Union list entry",
+  "yil": "2009"
+ },
+ "harpagophyti-radix": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/harpagophyti-radix",
+  "alan": "Loss of appetite;Pain and inflammation;Gastrointestinal disorders",
+  "botanik": "Harpagophytum procumbens DC.; Harpagophytum zeyheri Decne",
+  "ingilizce": "Devil’s Claw Root",
+  "latin": "Harpagophyti radix",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "hederae-helicis-folium": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/hederae-helicis-folium",
+  "alan": "Cough and cold",
+  "botanik": "Hedera helix L.",
+  "ingilizce": "Ivy leaf",
+  "latin": "Hederae helicis folium",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "helichrysi-flos": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/helichrysi-flos",
+  "alan": "Gastrointestinal disorders",
+  "botanik": "Helichrysum arenarium (L.) Moench",
+  "ingilizce": "Sandy everlasting",
+  "latin": "Helichrysi flos",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2014"
+ },
+ "herniariae-herba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/herniariae-herba",
+  "alan": "Urinary tract and genital disorders",
+  "botanik": "Herniaria glabraL.;Herniaria hirsutaL.;Herniaria incanaLam.",
+  "ingilizce": "Rupturewort",
+  "latin": "Herniariae herba",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2018"
+ },
+ "hippocastani-cortex": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/hippocastani-cortex",
+  "alan": "Urinary tract and genital disorders",
+  "botanik": "Aesculus hippocastanumL.",
+  "ingilizce": "Horse-chestnut bark",
+  "latin": "Hippocastani cortex",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2011"
+ },
+ "hippocastani-semen": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/hippocastani-semen",
+  "alan": "Circulatory disorders",
+  "botanik": "Aesculus hippocastanum L.",
+  "ingilizce": "Horse-Chestnut Seed",
+  "latin": "Hippocastani semen",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "hyperici-herba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/hyperici-herba",
+  "alan": "Urinary tract and genital disorders",
+  "botanik": "Hypericum perforatumL.",
+  "ingilizce": "St. John's Wort",
+  "latin": "Hyperici herba;Cimicifugae rhizoma",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2021"
+ },
+ "hyperici-herba-0": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/hyperici-herba-0",
+  "alan": "Skin disorders and minor wounds;Mental stress and mood disorders;Gastrointestinal disorders",
+  "botanik": "Hypericum perforatumL.",
+  "ingilizce": "St. John's Wort",
+  "latin": "Hyperici herba",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "juglandis-folium": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/juglandis-folium",
+  "alan": "Skin disorders and minor wounds",
+  "botanik": "Juglans regiaL.",
+  "ingilizce": "Walnut leaf",
+  "latin": "Juglandis folium",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "juniperi-aetheroleum": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/juniperi-aetheroleum",
+  "alan": "Pain and inflammation;Urinary tract and genital disorders;Gastrointestinal disorders",
+  "botanik": "Juniperus communis L.",
+  "ingilizce": "Juniper Oil",
+  "latin": "Juniperi aetheroleum",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2010"
+ },
+ "juniperi-galbulus-pseudo-fructus": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/juniperi-galbulus-pseudo-fructus",
+  "alan": "Digestive disorder;Urinary tract and genital disorders",
+  "botanik": "Juniperus communisL.",
+  "ingilizce": "Juniper cone berry",
+  "latin": "Juniperi galbulus (pseudo-fructus)",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "lavandulae-aetheroleum": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/lavandulae-aetheroleum",
+  "alan": "Sleep disorders and temporary insomnia;Mental stress and mood disorders",
+  "botanik": "Lavandula angustifolia Mill. (L. officinalis Chaix)",
+  "ingilizce": "Lavender Oil",
+  "latin": "Lavandulae aetheroleum",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "lavandulae-flos": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/lavandulae-flos",
+  "alan": "Sleep disorders and temporary insomnia;Mental stress and mood disorders",
+  "botanik": "Lavandula angustifolia Mill. (L. officinalis Chaix)",
+  "ingilizce": "Lavender",
+  "latin": "Lavandulae flos",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "lecithinum-ex-soya": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/lecithinum-ex-soya",
+  "alan": "Fatigue and weakness",
+  "botanik": "Glycine max (L.) Merr.",
+  "ingilizce": "Soya-bean lecithin",
+  "latin": "Lecithinum ex soya",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2014"
+ },
+ "leonuri-cardiacae-herba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/leonuri-cardiacae-herba",
+  "alan": "Circulatory disorders;Mental stress and mood disorders",
+  "botanik": "Leonurus cardiaca L.",
+  "ingilizce": "Motherwort",
+  "latin": "Leonuri cardiacae herba",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "levistici-radix": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/levistici-radix",
+  "alan": "Urinary tract and genital disorders",
+  "botanik": "Levisticum officinale W.D.J.Koch",
+  "ingilizce": "Lovage root",
+  "latin": "Levistici radix",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "lichen-islandicus": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/lichen-islandicus",
+  "alan": "Loss of appetite;Mouth and throat disorders;Cough and cold",
+  "botanik": "Cetraria islandica (L.) Acharius s.l.",
+  "ingilizce": "Iceland moss",
+  "latin": "Lichen islandicus",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "lini-semen": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/lini-semen",
+  "alan": "Constipation;Gastrointestinal disorders",
+  "botanik": "Linum usitatissimum L.",
+  "ingilizce": "Linseed",
+  "latin": "Lini semen",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2005"
+ },
+ "liquiritiae-radix": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/liquiritiae-radix",
+  "alan": "Cough and cold;Gastrointestinal disorders",
+  "botanik": "Glycyrrhiza glabra L.; Glycyrrhiza inflata Bat.; Glycyrrhiza uralensis Fisch.",
+  "ingilizce": "Liquorice Root",
+  "latin": "Liquiritiae radix",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "lupuli-flos": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/lupuli-flos",
+  "alan": "Sleep disorders and temporary insomnia;Mental stress and mood disorders",
+  "botanik": "Humulus lupulusL.",
+  "ingilizce": "Hop strobile",
+  "latin": "Lupuli flos",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "malvae-folium": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/malvae-folium",
+  "alan": "Cough and cold;Gastrointestinal disorders",
+  "botanik": "Malva sylvestrisL.;Malva neglectaWallr.",
+  "ingilizce": "Mallow leaf",
+  "latin": "Malvae folium",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2015"
+ },
+ "malvae-sylvestris-flos": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/malvae-sylvestris-flos",
+  "alan": "Cough and cold;Gastrointestinal disorders",
+  "botanik": "Malva sylvestrisL.",
+  "ingilizce": "Mallow flower",
+  "latin": "Malvae sylvestris flos",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2015"
+ },
+ "marrubii-herba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/marrubii-herba",
+  "alan": "Loss of appetite;Cough and cold;Gastrointestinal disorders",
+  "botanik": "Marrubium vulgare L.",
+  "ingilizce": "White horehound",
+  "latin": "Marrubii herba",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "mastic": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/mastic",
+  "alan": "Skin disorders and minor wounds;Gastrointestinal disorders",
+  "botanik": "Pistacia lentiscusL.",
+  "ingilizce": "Mastic (Pistaciae lentisci resina)",
+  "latin": "Mastic",
+  "sonuc": "",
+  "yil": "2014"
+ },
+ "mate-folium": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/mate-folium",
+  "alan": "Fatigue and weakness;Urinary tract and genital disorders",
+  "botanik": "Ilex paraguariensis A.St.-Hil.,",
+  "ingilizce": "Maté Leaf",
+  "latin": "Mate folium",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "matricariae-aetheroleum": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/matricariae-aetheroleum",
+  "alan": "Skin disorders and minor wounds",
+  "botanik": "Matricaria recutitaL.",
+  "ingilizce": "Matricaria Oil",
+  "latin": "Matricariae aetheroleum",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "matricariae-flos": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/matricariae-flos",
+  "alan": "Mouth and throat disorders;Skin disorders and minor wounds;Cough and cold;Gastrointestinal disorders",
+  "botanik": "Matricaria recutita L.",
+  "ingilizce": "Matricaria Flower",
+  "latin": "Matricariae flos",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "maydis-stigma": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/maydis-stigma",
+  "alan": "Urinary tract and genital disorders",
+  "botanik": "Zea maysL.",
+  "ingilizce": "Corn silk",
+  "latin": "Maydis stigma",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2023"
+ },
+ "melaleucae-aetheroleum": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/melaleucae-aetheroleum",
+  "alan": "Mouth and throat disorders;Skin disorders and minor wounds",
+  "botanik": "Melaleuca alternifolia(Maiden and Betche) Cheel",
+  "ingilizce": "Tea-tree oil",
+  "latin": "Melaleucae aetheroleum",
+  "sonuc": "European Union herbal monograph;European Union list entry",
+  "yil": "2009"
+ },
+ "meliloti-herba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/meliloti-herba",
+  "alan": "Skin disorders and minor wounds;Circulatory disorders",
+  "botanik": "Melilotus officinalis (L.) Lam.",
+  "ingilizce": "Melilot",
+  "latin": "Meliloti herba",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "melissae-folium": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/melissae-folium",
+  "alan": "Sleep disorders and temporary insomnia;Mental stress and mood disorders;Gastrointestinal disorders",
+  "botanik": "Melissa officinalis L.",
+  "ingilizce": "Melissa leaf",
+  "latin": "Melissae folium",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "menthae-piperitae-aetheroleum": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/menthae-piperitae-aetheroleum",
+  "alan": "Pain and inflammation;Skin disorders and minor wounds;Cough and cold;Gastrointestinal disorders",
+  "botanik": "Mentha x piperita L.",
+  "ingilizce": "Peppermint oil",
+  "latin": "Menthae piperitae aetheroleum",
+  "sonuc": "European Union herbal monograph;European Union list entry",
+  "yil": "2009"
+ },
+ "menthae-piperitae-folium": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/menthae-piperitae-folium",
+  "alan": "Gastrointestinal disorders",
+  "botanik": "Mentha x piperita L.",
+  "ingilizce": "peppermint leaf",
+  "latin": "Menthae piperitae folium",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "menyanthidis-trifoliatae-folium": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/menyanthidis-trifoliatae-folium",
+  "alan": "Loss of appetite;Pain and inflammation;Gastrointestinal disorders",
+  "botanik": "Menyanthes trifoliata L.",
+  "ingilizce": "Bogbean leaf",
+  "latin": "Menyanthidis trifoliatae folium",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2018"
+ },
+ "millefolii-flos": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/millefolii-flos",
+  "alan": "Loss of appetite;Skin disorders and minor wounds;Urinary tract and genital disorders;Gastrointestinal disorders",
+  "botanik": "Achillea millefolium L.",
+  "ingilizce": "Yarrow Flower",
+  "latin": "Millefolii flos",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "millefolii-herba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/millefolii-herba",
+  "alan": "Loss of appetite;Skin disorders and minor wounds;Urinary tract and genital disorders;Gastrointestinal disorders",
+  "botanik": "Achillea millefolium L.",
+  "ingilizce": "Yarrow",
+  "latin": "Millefolii herba",
+  "sonuc": "European Union herbal monograph;European Union list entry",
+  "yil": "2009"
+ },
+ "myrrha": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/myrrha",
+  "alan": "Mouth and throat disorders;Skin disorders and minor wounds",
+  "botanik": "Commiphora molmolEngler",
+  "ingilizce": "Myrrh",
+  "latin": "Myrrha",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "myrtilli-fructus-recens": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/myrtilli-fructus-recens",
+  "alan": "Circulatory disorders",
+  "botanik": "Vaccinium myrtillusL.",
+  "ingilizce": "Fresh Bilberry fruit",
+  "latin": "Myrtilli fructus recens",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2014"
+ },
+ "myrtilli-fructus-siccus": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/myrtilli-fructus-siccus",
+  "alan": "Mouth and throat disorders;Gastrointestinal disorders",
+  "botanik": "Vaccinium myrtillusL.",
+  "ingilizce": "Dried Bilberry fruit",
+  "latin": "Myrtilli fructus siccus",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "oenotherae-oleum": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/oenotherae-oleum",
+  "alan": "Skin disorders and minor wounds",
+  "botanik": "Oenothera biennis L.; Oenothera lamarckiana L.",
+  "ingilizce": "Evening primrose oil",
+  "latin": "Oenotherae oleum",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "oleae-folium": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/oleae-folium",
+  "alan": "Urinary tract and genital disorders",
+  "botanik": "Olea europaea L.",
+  "ingilizce": "Olive leaf",
+  "latin": "Oleae folium",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "ononidis-radix": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/ononidis-radix",
+  "alan": "Urinary tract and genital disorders",
+  "botanik": "Ononis spinosa L.",
+  "ingilizce": "Restharrow root",
+  "latin": "Ononidis radix",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2012"
+ },
+ "origani-dictamni-herba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/origani-dictamni-herba",
+  "alan": "Skin disorders and minor wounds;Cough and cold;Gastrointestinal disorders",
+  "botanik": "Origanum dictamnus L.",
+  "ingilizce": "Dittany of Crete herb",
+  "latin": "Origani dictamni herba",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2011"
+ },
+ "origani-majoranae-herba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/origani-majoranae-herba",
+  "alan": "Skin disorders and minor wounds;Gastrointestinal disorders",
+  "botanik": "Origanum majoranaL.",
+  "ingilizce": "Majoram",
+  "latin": "Origani majoranae herba",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2014"
+ },
+ "orthosiphonis-folium": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/orthosiphonis-folium",
+  "alan": "Urinary tract and genital disorders",
+  "botanik": "Orthosiphon aristatus (Blume) Miq. var. aristatus",
+  "ingilizce": "Java Tea",
+  "latin": "Orthosiphonis folium",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "paeoniae-radix-alba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/paeoniae-radix-alba",
+  "alan": "",
+  "botanik": "Paeonia lactiflora Pallas",
+  "ingilizce": "Peony root, white",
+  "latin": "Paeoniae radix alba",
+  "sonuc": "Public statement",
+  "yil": "2015"
+ },
+ "paeoniae-radix-rubra": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/paeoniae-radix-rubra",
+  "alan": "",
+  "botanik": "Paeonia lactiflora Pall.;Paeonia veitchii Lynch",
+  "ingilizce": "Peony root, red",
+  "latin": "Paeoniae radix rubra",
+  "sonuc": "Public statement",
+  "yil": "2014"
+ },
+ "passiflorae-herba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/passiflorae-herba",
+  "alan": "Sleep disorders and temporary insomnia;Mental stress and mood disorders",
+  "botanik": "Passiflora incarnata L.",
+  "ingilizce": "Passion Flower",
+  "latin": "Passiflorae herba",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "paulliniae-semen": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/paulliniae-semen",
+  "alan": "Fatigue and weakness",
+  "botanik": "Paullinia cupana Kunth;syn. Paullinia sorbilisMart",
+  "ingilizce": "Guarana",
+  "latin": "Paulliniae semen",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2011"
+ },
+ "pelargonii-radix": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/pelargonii-radix",
+  "alan": "Cough and cold",
+  "botanik": "Pelargonium sidoides DC;Pelargonium reniforme Curt.",
+  "ingilizce": "Pelargonium root",
+  "latin": "Pelargonii radix",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "phaseoli-fructus-sine-semine": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/phaseoli-fructus-sine-semine",
+  "alan": "Urinary tract and genital disorders",
+  "botanik": "Phaseolus vulgaris L.",
+  "ingilizce": "Green bean pod",
+  "latin": "Phaseoli fructus (sine semine)",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2011"
+ },
+ "picrorhizae-kurroae-rhizoma-et-radix": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/picrorhizae-kurroae-rhizoma-et-radix",
+  "alan": "",
+  "botanik": "Picrorhiza kurroa Royle ex. Benth.",
+  "ingilizce": "Katula",
+  "latin": "Picrorhizae kurroae rhizoma et radix",
+  "sonuc": "Public statement",
+  "yil": "2012"
+ },
+ "pilosellae-herba-cum-radice": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/pilosellae-herba-cum-radice",
+  "alan": "Urinary tract and genital disorders",
+  "botanik": "Hieracium pilosella L.",
+  "ingilizce": "Mouse-ear hawkweed",
+  "latin": "Pilosellae herba cum radice",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2012"
+ },
+ "piperis-methystici-rhizoma": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/piperis-methystici-rhizoma",
+  "alan": "",
+  "botanik": "Piper methysticum G. Forst.",
+  "ingilizce": "Kava-kava",
+  "latin": "Piperis methystici rhizoma",
+  "sonuc": "Public statement",
+  "yil": "2015"
+ },
+ "plantaginis-lanceolatae-folium": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/plantaginis-lanceolatae-folium",
+  "alan": "Cough and cold",
+  "botanik": "Plantago lanceolata L.",
+  "ingilizce": "Ribwort Plantain",
+  "latin": "Plantaginis lanceolatae folium",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "plantaginis-ovatae-semen": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/plantaginis-ovatae-semen",
+  "alan": "Constipation",
+  "botanik": "Plantago ovata Forssk.",
+  "ingilizce": "Ispaghula Seed",
+  "latin": "Plantaginis ovatae semen",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "plantaginis-ovatae-seminis-tegumentum": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/plantaginis-ovatae-seminis-tegumentum",
+  "alan": "Constipation",
+  "botanik": "Plantago ovata Forssk.",
+  "ingilizce": "Ispaghula husk",
+  "latin": "Plantaginis ovatae seminis tegumentum",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "polygoni-avicularis-herba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/polygoni-avicularis-herba",
+  "alan": "Mouth and throat disorders;Urinary tract and genital disorders;Cough and cold",
+  "botanik": "Polygonum aviculare L.",
+  "ingilizce": "Knotgrass herb",
+  "latin": "Polygoni avicularis herba",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2014"
+ },
+ "polypodii-rhizoma": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/polypodii-rhizoma",
+  "alan": "Cough and cold;Constipation",
+  "botanik": "Polypodium vulgareL.",
+  "ingilizce": "Polypody Rhizome",
+  "latin": "Polypodii rhizoma",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "primulae-flos": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/primulae-flos",
+  "alan": "Cough and cold",
+  "botanik": "Primula verisL.;Primula elatior(L.) Hill",
+  "ingilizce": "Primula flower",
+  "latin": "Primulae flos",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "primulae-radix": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/primulae-radix",
+  "alan": "Cough and cold",
+  "botanik": "Primula verisL.;Primula elatior(L.) Hill",
+  "ingilizce": "Primula root",
+  "latin": "Primulae radix",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "pruni-africanae-cortex": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/pruni-africanae-cortex",
+  "alan": "Urinary tract and genital disorders",
+  "botanik": "Prunus africana (Hook f.) Kalkm.",
+  "ingilizce": "Pygeum africanum bark",
+  "latin": "Pruni africanae cortex",
+  "sonuc": "",
+  "yil": "2011"
+ },
+ "prunus-avium-peduncle": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/prunus-avium-peduncle",
+  "alan": "Urinary tract and genital disorders",
+  "botanik": "Prunus aviumL.;Prunus cerasusL.",
+  "ingilizce": "Cherry stalks",
+  "latin": "Prunus avium peduncle",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2023"
+ },
+ "psyllii-semen": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/psyllii-semen",
+  "alan": "Constipation",
+  "botanik": "Plantago afraL.;Plantago indicaL.",
+  "ingilizce": "Psyllium seed",
+  "latin": "Psyllii semen",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "quercus-cortex": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/quercus-cortex",
+  "alan": "Skin disorders and minor wounds;Circulatory disorders;Gastrointestinal disorders",
+  "botanik": "Quercus robur L.L.;Quercus petraea (Matt.) Liebl.;Quercus pubescens Willd.",
+  "ingilizce": "Oak Bark",
+  "latin": "Quercus cortex",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "rhamni-purshianae-cortex": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/rhamni-purshianae-cortex",
+  "alan": "Constipation",
+  "botanik": "Rhamnus purshianusD.C.",
+  "ingilizce": "Cascara",
+  "latin": "Rhamni purshianae cortex",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "rhei-radix": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/rhei-radix",
+  "alan": "Constipation",
+  "botanik": "Rheum palmatumL.;Rheum officinale Baillon",
+  "ingilizce": "Rhubarb",
+  "latin": "Rhei radix",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "rhodiolae-roseae-rhizoma-et-radix": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/rhodiolae-roseae-rhizoma-et-radix",
+  "alan": "Fatigue and weakness;Mental stress and mood disorders",
+  "botanik": "Rhodiola roseaL.",
+  "ingilizce": "Arctic root",
+  "latin": "Rhodiolae roseae rhizoma et radix",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "ribis-nigri-folium": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/ribis-nigri-folium",
+  "alan": "Pain and inflammation;Urinary tract and genital disorders",
+  "botanik": "Ribes nigrumL.",
+  "ingilizce": "Blackcurrant Leaf",
+  "latin": "Ribis nigri folium",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "ricini-oleum": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/ricini-oleum",
+  "alan": "Gastrointestinal disorders",
+  "botanik": "Ricinus communisL.",
+  "ingilizce": "Castor oil",
+  "latin": "Ricini oleum",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2014"
+ },
+ "rosae-flos": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/rosae-flos",
+  "alan": "Mouth and throat disorders;Skin disorders and minor wounds",
+  "botanik": "Rosa centifoliaL.;Rosa gallica L.;Rosa damascena Mill.",
+  "ingilizce": "Rose flower",
+  "latin": "Rosae flos",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2011"
+ },
+ "rosmarini-aetheroleum": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/rosmarini-aetheroleum",
+  "alan": "Circulatory disorders;Gastrointestinal disorders",
+  "botanik": "Rosmarinus officinalisL.",
+  "ingilizce": "Rosemary oil",
+  "latin": "Rosmarini aetheroleum",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "rosmarini-folium": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/rosmarini-folium",
+  "alan": "Circulatory disorders;Gastrointestinal disorders",
+  "botanik": "Rosmarinus officinalisL.",
+  "ingilizce": "Rosemary leaf",
+  "latin": "Rosmarini folium",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "rubi-idaei-folium": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/rubi-idaei-folium",
+  "alan": "Mouth and throat disorders;Pain and inflammation;Gastrointestinal disorders",
+  "botanik": "Rubus idaeusL.",
+  "ingilizce": "Raspberry leaf",
+  "latin": "Rubi idaei folium",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2011"
+ },
+ "rusci-rhizoma": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/rusci-rhizoma",
+  "alan": "Circulatory disorders",
+  "botanik": "Ruscus aculeatusL.",
+  "ingilizce": "Butcher's Broom",
+  "latin": "Rusci rhizoma",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "sabalis-serrulatae-fructus": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/sabalis-serrulatae-fructus",
+  "alan": "Urinary tract and genital disorders",
+  "botanik": "Serenoa repens (W.Bartram) Small (syn. Sabal serrulata (Michx.) Schult.f.)",
+  "ingilizce": "Saw Palmetto Fruit",
+  "latin": "Sabalis serrulatae fructus",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "saccharomyces-cerevisiae-cbs-5926": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/saccharomyces-cerevisiae-cbs-5926",
+  "alan": "",
+  "botanik": "Saccharomyces cerevisiae CBS 5926",
+  "ingilizce": "Brewer's yeast",
+  "latin": "Saccharomyces cerevisiae CBS 5926",
+  "sonuc": "Public statement",
+  "yil": "2014"
+ },
+ "salicis-cortex": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/salicis-cortex",
+  "alan": "Pain and inflammation;Cough and cold",
+  "botanik": "Salix [various species including S. purpurea L.; S. daphnoides Vill.; S. fragilis L.]",
+  "ingilizce": "Willow Bark",
+  "latin": "Salicis cortex",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "salviae-miltiorrhizae-radix-et-rhizoma": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/salviae-miltiorrhizae-radix-et-rhizoma",
+  "alan": "Pain and inflammation",
+  "botanik": "Salvia miltiorrhizaBunge",
+  "ingilizce": "Salvia miltiorrhiza root and rhizome ('Danshen')",
+  "latin": "Salviae miltiorrhizae radix et rhizoma",
+  "sonuc": "Public statement",
+  "yil": "2018"
+ },
+ "salviae-officinalis-aetheroleum": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/salviae-officinalis-aetheroleum",
+  "alan": "",
+  "botanik": "Salvia officinalisL.",
+  "ingilizce": "Sage Oil",
+  "latin": "Salviae officinalis aetheroleum",
+  "sonuc": "Public statement",
+  "yil": "2009"
+ },
+ "salviae-officinalis-folium": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/salviae-officinalis-folium",
+  "alan": "Mouth and throat disorders;Skin disorders and minor wounds;Gastrointestinal disorders",
+  "botanik": "Salvia officinalisL.",
+  "ingilizce": "Sage Leaf",
+  "latin": "Salviae officinalis folium",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "salviae-trilobae-folium": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/salviae-trilobae-folium",
+  "alan": "",
+  "botanik": "Salvia fructicosa Mill. (syn. Salvia triloba L. fil)",
+  "ingilizce": "Three-lobed sage leaf",
+  "latin": "Salviae trilobae folium",
+  "sonuc": "Public statement",
+  "yil": "2014"
+ },
+ "sambuci-flos": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/sambuci-flos",
+  "alan": "Cough and cold",
+  "botanik": "Sambucus nigraL.",
+  "ingilizce": "Elder Flower",
+  "latin": "Sambuci flos",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "sambuci-fructus": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/sambuci-fructus",
+  "alan": "",
+  "botanik": "Sambucus nigraL.",
+  "ingilizce": "Elderberry",
+  "latin": "Sambuci fructus",
+  "sonuc": "Public statement",
+  "yil": "2011"
+ },
+ "sennae-folium": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/sennae-folium",
+  "alan": "Constipation",
+  "botanik": "Cassia senna L.;Cassia angustifolia Vahl",
+  "ingilizce": "Senna leaf",
+  "latin": "Sennae folium",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "sennae-fructus": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/sennae-fructus",
+  "alan": "Constipation",
+  "botanik": "Cassia senna L.; L.;Cassia angustifolia Vahl",
+  "ingilizce": "Senna pods",
+  "latin": "Sennae fructus",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "sideritis-herba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/sideritis-herba",
+  "alan": "Cough and cold;Gastrointestinal disorders",
+  "botanik": "Sideritis scardica Griseb.;Sideritis clandestina (Bory &amp; Chaub.) Hayek;Sideritis raeseri Boiss. &amp; Heldr.;Sideritis syriaca L.",
+  "ingilizce": "Ironwort",
+  "latin": "Sideritis herba",
+  "sonuc": "European Union list entry",
+  "yil": "2014"
+ },
+ "silybi-mariani-fructus": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/silybi-mariani-fructus",
+  "alan": "Gastrointestinal disorders",
+  "botanik": "Silybum marianum L. Gaertn.",
+  "ingilizce": "Milkthistle Fruit",
+  "latin": "Silybi mariani fructus",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "sisymbrii-officinalis-herba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/sisymbrii-officinalis-herba",
+  "alan": "Mouth and throat disorders;Cough and cold",
+  "botanik": "Sisymbrium officinale (L.) Scop.",
+  "ingilizce": "Hedge mustard",
+  "latin": "Sisymbrii officinalis herba",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2011"
+ },
+ "soiae-oleum-raffinatum": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/soiae-oleum-raffinatum",
+  "alan": "Skin disorders and minor wounds",
+  "botanik": "Glycine max (L.) Merr., oleum",
+  "ingilizce": "Soya-bean oil",
+  "latin": "Soiae oleum raffinatum",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2016"
+ },
+ "solani-dulcamarae-stipites": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/solani-dulcamarae-stipites",
+  "alan": "Skin disorders and minor wounds",
+  "botanik": "Solanum dulcamaraL.",
+  "ingilizce": "Woody nightshade stem",
+  "latin": "Solani dulcamarae stipites",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "solidaginis-virgaureae-herba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/solidaginis-virgaureae-herba",
+  "alan": "Urinary tract and genital disorders",
+  "botanik": "Solidago virgaureaL.",
+  "ingilizce": "European Goldenrod",
+  "latin": "Solidaginis virgaureae herba",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "species-amarae": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/species-amarae",
+  "alan": "Loss of appetite",
+  "botanik": "",
+  "ingilizce": "Herbal tea combinations for use in loss of appetite",
+  "latin": "Species amarae",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2017"
+ },
+ "species-digestivae": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/species-digestivae",
+  "alan": "Gastrointestinal disorders",
+  "botanik": "",
+  "ingilizce": "Herbal tea combinations for use in gastrointestinal complaints",
+  "latin": "Species digestivae",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2017"
+ },
+ "species-diureticae": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/species-diureticae",
+  "alan": "Urinary tract and genital disorders",
+  "botanik": "Combination: maximum 4 out of 13 possible plants",
+  "ingilizce": "Diuretic herbal tea combinations",
+  "latin": "Species diureticae",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2016"
+ },
+ "species-sedativae": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/species-sedativae",
+  "alan": "Sleep disorders and temporary insomnia;Mental stress and mood disorders",
+  "botanik": "",
+  "ingilizce": "Herbal tea combinations for use as sedatives",
+  "latin": "Species sedativae",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2017"
+ },
+ "symphyti-radix": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/symphyti-radix",
+  "alan": "Pain and inflammation",
+  "botanik": "Symphytum officinaleL.",
+  "ingilizce": "Comfrey Root",
+  "latin": "Symphyti radix",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "tanaceti-parthenii-herba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/tanaceti-parthenii-herba",
+  "alan": "Pain and inflammation",
+  "botanik": "Tanacetum parthenium (L.) Schultz Bip.",
+  "ingilizce": "Feverfew",
+  "latin": "Tanaceti parthenii herba",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2010"
+ },
+ "taraxaci-folium": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/taraxaci-folium",
+  "alan": "Urinary tract and genital disorders",
+  "botanik": "Taraxacum officinale Weber ex Wigg.",
+  "ingilizce": "Dandelion Leaf",
+  "latin": "Taraxaci folium",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "taraxaci-officinalis-radix": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/taraxaci-officinalis-radix",
+  "alan": "Loss of appetite;Urinary tract and genital disorders;Gastrointestinal disorders",
+  "botanik": "Taraxacum officinale F.H. Wigg.",
+  "ingilizce": "Dandelion root",
+  "latin": "Taraxaci officinalis radix",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2019"
+ },
+ "taraxaci-officinalis-radix-0": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/taraxaci-officinalis-radix-0",
+  "alan": "Loss of appetite;Urinary tract and genital disorders;Gastrointestinal disorders",
+  "botanik": "Taraxacum officinale F.H. Wigg.",
+  "ingilizce": "Dandelion root",
+  "latin": "Taraxaci officinalis radix",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2019"
+ },
+ "taraxaci-radix-cum-herba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/taraxaci-radix-cum-herba",
+  "alan": "Loss of appetite;Urinary tract and genital disorders;Gastrointestinal disorders",
+  "botanik": "Taraxacum officinale Weber ex Wigg.",
+  "ingilizce": "Dandelion Root with Herb",
+  "latin": "Taraxaci radix cum herba",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "thymi-aetheroleum": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/thymi-aetheroleum",
+  "alan": "Cough and cold",
+  "botanik": "Thymus vulgarisL.;Thymus zygisL.",
+  "ingilizce": "Thyme oil",
+  "latin": "Thymi aetheroleum",
+  "sonuc": "European Union herbal monograph;European Union list entry",
+  "yil": "2009"
+ },
+ "thymi-herba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/thymi-herba",
+  "alan": "Cough and cold",
+  "botanik": "Thymus vulgarisL.;Thymus zygisL.",
+  "ingilizce": "Thyme",
+  "latin": "Thymi herba",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "thymi-herba-primulae-radix": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/thymi-herba-primulae-radix",
+  "alan": "Cough and cold",
+  "botanik": "Combination: Thymus vulgaris L.; Thymus zygis L. and Primula veris L.; Primula elatior (L.) Hill",
+  "ingilizce": "Thyme and Primula root",
+  "latin": "Thymi herba and Primulae radix",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "tiliae-flos": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/tiliae-flos",
+  "alan": "Cough and cold;Mental stress and mood disorders",
+  "botanik": "Tilia cordata Miller;Tilia platyphyllosScop.;Tilia x vulgaris Heyne",
+  "ingilizce": "Lime flower",
+  "latin": "Tiliae flos",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2010"
+ },
+ "tiliae-tomentosae-flos": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/tiliae-tomentosae-flos",
+  "alan": "",
+  "botanik": "Tilia tomentosa Moench",
+  "ingilizce": "Silver lime flower",
+  "latin": "Tiliae tomentosae flos",
+  "sonuc": "Public statement",
+  "yil": "2010"
+ },
+ "tormentillae-rhizoma": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/tormentillae-rhizoma",
+  "alan": "Mouth and throat disorders;Gastrointestinal disorders",
+  "botanik": "Potentilla erecta (L.) Raeusch.",
+  "ingilizce": "Tormentil",
+  "latin": "Tormentillae rhizoma",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2010"
+ },
+ "tribuli-terrestris-herba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/tribuli-terrestris-herba",
+  "alan": "Urinary tract and gynaecology disorders",
+  "botanik": "Tribulus terrestrisL.",
+  "ingilizce": "Tribulus herb",
+  "latin": "Tribuli terrestris herba",
+  "sonuc": "Public statement",
+  "yil": "2021"
+ },
+ "trigonellae-foenugraeci-semen": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/trigonellae-foenugraeci-semen",
+  "alan": "Loss of appetite;Skin disorders and minor wounds",
+  "botanik": "Trigonella foenum-graecum L.",
+  "ingilizce": "Fenugreek seed",
+  "latin": "Trigonellae foenugraeci semen",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "uncariae-tomentosae-cortex": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/uncariae-tomentosae-cortex",
+  "alan": "",
+  "botanik": "Uncaria tomentosa (Willd. ex Schult.) DC.",
+  "ingilizce": "Cat's Claw",
+  "latin": "Uncariae tomentosae cortex",
+  "sonuc": "Public statement",
+  "yil": "2010"
+ },
+ "urticae-folium": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/urticae-folium",
+  "alan": "Urinary tract and genital disorders",
+  "botanik": "Urtica dioicaL.;Urtica urensL.",
+  "ingilizce": "Nettle Leaf",
+  "latin": "Urticae folium",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "urticae-herba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/urticae-herba",
+  "alan": "Pain and inflammation;Skin disorders and minor wounds;Urinary tract and genital disorders",
+  "botanik": "Urtica dioicaL.;Urtica urensL.",
+  "ingilizce": "Nettle Herb",
+  "latin": "Urticae herba",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "urticae-radix": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/urticae-radix",
+  "alan": "Urinary tract and genital disorders",
+  "botanik": "Urtica dioicaL.;Urtica urensL.",
+  "ingilizce": "Nettle root",
+  "latin": "Urticae radix",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "uvae-ursi-folium": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/uvae-ursi-folium",
+  "alan": "Urinary tract and genital disorders",
+  "botanik": "Arctostaphylos uva-ursi (L.) Spreng.",
+  "ingilizce": "Bearberry Leaf",
+  "latin": "Uvae ursi folium",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "vaccinii-macrocarpi-fructus": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/vaccinii-macrocarpi-fructus",
+  "alan": "Urinary tract and genital disorders",
+  "botanik": "Vaccinium macrocarpon Aiton",
+  "ingilizce": "Cranberry",
+  "latin": "Vaccinii macrocarpi fructus",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2015"
+ },
+ "valerianae-aetheroleum": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/valerianae-aetheroleum",
+  "alan": "Sleep disorders and temporary insomnia;Mental stress and mood disorders",
+  "botanik": "Valeriana officinalisL.",
+  "ingilizce": "Valerian essential oil",
+  "latin": "Valerianae aetheroleum",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2015"
+ },
+ "valerianae-radix": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/valerianae-radix",
+  "alan": "Sleep disorders and temporary insomnia;Mental stress and mood disorders",
+  "botanik": "Valeriana officinalisL.",
+  "ingilizce": "Valerian Root",
+  "latin": "Valerianae radix",
+  "sonuc": "European Union herbal monograph;European Union list entry",
+  "yil": "2009"
+ },
+ "valerianae-radix-lupuli-flos": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/valerianae-radix-lupuli-flos",
+  "alan": "Sleep disorders and temporary insomnia;Mental stress and mood disorders",
+  "botanik": "Combination: Valeriana officinalis L. and Humulus lupulus L.",
+  "ingilizce": "Valerian Root and Hop Strobile",
+  "latin": "Valerianae radix and Lupuli flos",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "valerianae-radix-passiflorae-herba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/valerianae-radix-passiflorae-herba",
+  "alan": "Sleep disorders and temporary insomnia;Mental stress and mood disorders",
+  "botanik": "Combination: Valeriana officinalis L. and Passiflora incarnata L.",
+  "ingilizce": "Valerian Root and Passion Flower",
+  "latin": "Valerianae radix and Passiflorae herba",
+  "sonuc": "",
+  "yil": "2025"
+ },
+ "verbasci-flos": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/verbasci-flos",
+  "alan": "Mouth and throat disorders;Cough and cold",
+  "botanik": "Verbascum thapsus L.; V. densiflorum Bertol. (V. thapsiforme Schrad); V. phlomoides L.",
+  "ingilizce": "Mullein Flower",
+  "latin": "Verbasci flos",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ },
+ "verbenae-citriodorae-folium": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/verbenae-citriodorae-folium",
+  "alan": "Sleep disorders and temporary insomnia;Mental stress and mood disorders;Gastrointestinal disorders",
+  "botanik": "Aloysia citrodora Paláu (syn. Aloysia triphylla (L’Hér.) Kuntze;Verbena triphylla L’Hér.;Lippia citriodora Kunth",
+  "ingilizce": "Lemon verbena leaf",
+  "latin": "Verbenae citriodorae folium",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2018"
+ },
+ "violae-herba-cum-flore": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/violae-herba-cum-flore",
+  "alan": "Skin disorders and minor wounds",
+  "botanik": "Viola tricolor L.L.;Viola arvensis Murray (Gaud);Viola vulgaris Koch (Oborny)",
+  "ingilizce": "Wild Pansy",
+  "latin": "Violae herba cum flore",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2010"
+ },
+ "visci-albi-herba": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/visci-albi-herba",
+  "alan": "",
+  "botanik": "Viscum albumL.",
+  "ingilizce": "Mistletoe",
+  "latin": "Visci albi herba",
+  "sonuc": "Public statement",
+  "yil": "2009"
+ },
+ "vitis-viniferae-folium": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/vitis-viniferae-folium",
+  "alan": "Circulatory disorders",
+  "botanik": "Vitis viniferaL.",
+  "ingilizce": "Grapevine Leaf",
+  "latin": "Vitis viniferae folium",
+  "sonuc": "European Union herbal monograph;European Union list entry",
+  "yil": "2009"
+ },
+ "withaniae-somniferae-radix": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/withaniae-somniferae-radix",
+  "alan": "",
+  "botanik": "Withania somnifera (L.) Dunal",
+  "ingilizce": "Winter-cherry root",
+  "latin": "Withaniae somniferae radix",
+  "sonuc": "Public statement",
+  "yil": "2011"
+ },
+ "zingiberis-rhizoma": {
+  "adres": "https://www.ema.europa.eu/en/medicines/herbal/zingiberis-rhizoma",
+  "alan": "Gastrointestinal disorders",
+  "botanik": "Zingiber officinaleRoscoe",
+  "ingilizce": "Ginger",
+  "latin": "Zingiberis rhizoma",
+  "sonuc": "European Union herbal monograph",
+  "yil": "2009"
+ }
+}
