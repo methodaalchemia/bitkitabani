@@ -15,7 +15,7 @@ Q = [
     dict(
         yayin='2026-12-17',
         id='sarmasik',
-        foto='',  # aday fotoğraflar tools/cand.txt ile toplanacak
+        foto='Hedera helix Dover.jpg',
         tr='Sarmaşık',
         la='Hedera helix L.',
         fam='Araliaceae (sarmaşıkgiller)',
@@ -238,7 +238,7 @@ Q = [
     dict(
         yayin='2026-12-18',
         id='karniyarik',
-        foto='',
+        foto='Plantago ovata kz13.jpg',
         tr='Karnıyarık otu',
         la='Plantago ovata Forssk.',
         fam='Plantaginaceae (sinirotugiller)',
@@ -458,7 +458,7 @@ Q = [
     dict(
         yayin='2026-12-19',
         id='asmayapragi',
-        foto='',
+        foto='2014 11 09 022 Blaetter.jpg',
         tr='Asma yaprağı',
         la='Vitis vinifera L.',
         fam='Vitaceae (asmagiller)',
