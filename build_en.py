@@ -186,7 +186,8 @@ def run(G):
         for label, url in OTHER.get(pid, []):
             if 'ema.europa.eu' in url: kind = 'EMA report'
             elif any(d in url for d in ('fda.gov', 'unodc.org', 'nobelprize.org', 'ecfr.gov',
-                                        'legislation.gov.uk', 'gov.uk', 'inchem.org', 'cancer.gov')):
+                                        'legislation.gov.uk', 'gov.uk', 'inchem.org', 'cancer.gov',
+                                        'titck.gov.tr')):
                 kind = 'Official source'
             else: kind = 'Research'
             items.append((kind, _apa_en(url, label), url))

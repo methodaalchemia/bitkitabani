@@ -83,6 +83,26 @@ def coz(ad):
     return baslik or None, kimlik, None
 
 
+def doi_acilir(doi):
+    """DOI gerçekten bir sayfaya çözülüyor mu?
+
+    Crossref kaydı olan bir DOI her zaman açılmıyor: eski DergiPark
+    kayıtlarının bir bölümünde DOI tescil edilmiş ama hedefi yok ve
+    doi.org 404 döndürüyor. Doğrulamadan kabul edilirse çalışan bir PDF
+    bağlantısı kırık bir DOI ile değiştirilmiş olur — bu araç bir kez
+    bunu yaptı, üç bağlantı kırıldı. Bu yüzden kabul şartı Crossref'te
+    bulunmak değil, doi.org'un açılması.
+    """
+    try:
+        r = urllib.request.urlopen(urllib.request.Request(
+            'https://doi.org/' + doi, headers=UA), timeout=50)
+        return r.status == 200
+    except urllib.error.HTTPError:
+        return False
+    except Exception:
+        return None  # ağ sorunu: karar verilemedi
+
+
 def crossref_doi(baslik):
     """Başlık birebir örtüşen Crossref kaydının DOI'si."""
     u = ('https://api.crossref.org/works?rows=5&select=DOI,title&query.bibliographic='
@@ -116,7 +136,17 @@ def main():
         if not doi and baslik:
             doi = crossref_doi(baslik)
         kayit = {'baslik': baslik, 'makale_id': kimlik, 'doi': doi}
-        kayit['adres'] = 'https://doi.org/' + doi if doi else None
+        kayit['adres'] = None
+        if doi:
+            acilir = doi_acilir(doi)
+            if acilir:
+                kayit['adres'] = 'https://doi.org/' + doi
+            elif acilir is False:
+                kayit['doi_404'] = doi
+                kayit['not'] = ('Crossref DOI verdi ama doi.org 404 döndürüyor; '
+                                'doğrudan PDF bağlantısında kalıyor.')
+            else:
+                kayit['not'] = 'DOI doğrulanamadı (ağ); yeniden çalıştırılmalı.'
         out[u] = kayit
         isaret = kayit['adres'] or f'ÇÖZÜLEMEDİ (makale #{kimlik})'
         print(f'{i:3d}/{len(hepsi)}  {u.rsplit("/", 1)[-1]:9s} {isaret}')

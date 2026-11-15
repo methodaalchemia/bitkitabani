@@ -14,7 +14,14 @@
    }
   ],
   "powo": "316550-2",
-  "familya": "Rosaceae"
+  "familya": "Rosaceae",
+  "kabul_ad": "agrimonia eupatoria",
+  "kisim_oneri": "Toprak üstü kısımları",
+  "alanlar": [
+   "Gastrointestinal disorders",
+   "Mouth and throat disorders",
+   "Skin disorders and minor wounds"
+  ]
  },
  {
   "latin": "Agropyron repens",
@@ -31,7 +38,12 @@
    }
   ],
   "powo": "30083247-2",
-  "familya": "Poaceae"
+  "familya": "Poaceae",
+  "kabul_ad": "agropyron repens",
+  "kisim_oneri": "Kök sapı",
+  "alanlar": [
+   "Urinary tract and genital disorders"
+  ]
  },
  {
   "latin": "Arctium lappa",
@@ -48,7 +60,14 @@
    }
   ],
   "powo": "178385-1",
-  "familya": "Asteraceae"
+  "familya": "Asteraceae",
+  "kabul_ad": "arctium lappa",
+  "kisim_oneri": "Kök",
+  "alanlar": [
+   "Loss of appetite",
+   "Skin disorders and minor wounds",
+   "Urinary tract and genital disorders"
+  ]
  },
  {
   "latin": "Arnica montana",
@@ -65,7 +84,12 @@
    }
   ],
   "powo": "30090722-2",
-  "familya": "Asteraceae"
+  "familya": "Asteraceae",
+  "kabul_ad": "arnica montana",
+  "kisim_oneri": "Çiçek",
+  "alanlar": [
+   "Pain and inflammation"
+  ]
  },
  {
   "latin": "Avena sativa",
@@ -90,7 +114,14 @@
    }
   ],
   "powo": "391732-1",
-  "familya": "Poaceae"
+  "familya": "Poaceae",
+  "kabul_ad": "avena sativa",
+  "kisim_oneri": "Meyve, Toprak üstü kısımları",
+  "alanlar": [
+   "Mental stress and mood disorders",
+   "Skin disorders and minor wounds",
+   "Sleep disorders and temporary insomnia"
+  ]
  },
  {
   "latin": "Calendula officinalis",
@@ -107,7 +138,13 @@
    }
   ],
   "powo": "187894-1",
-  "familya": "Asteraceae"
+  "familya": "Asteraceae",
+  "kabul_ad": "calendula officinalis",
+  "kisim_oneri": "Çiçek",
+  "alanlar": [
+   "Mouth and throat disorders",
+   "Skin disorders and minor wounds"
+  ]
  },
  {
   "latin": "Capsella bursa-pastoris",
@@ -124,7 +161,12 @@
    }
   ],
   "powo": "30092589-2",
-  "familya": "Brassicaceae"
+  "familya": "Brassicaceae",
+  "kabul_ad": "capsella bursa-pastoris",
+  "kisim_oneri": "Toprak üstü kısımları",
+  "alanlar": [
+   "Urinary tract and genital disorders"
+  ]
  },
  {
   "latin": "Capsicum annuum",
@@ -141,7 +183,12 @@
    }
   ],
   "powo": "316944-2",
-  "familya": "Solanaceae"
+  "familya": "Solanaceae",
+  "kabul_ad": "capsicum annuum",
+  "kisim_oneri": "Meyve",
+  "alanlar": [
+   "Pain and inflammation"
+  ]
  },
  {
   "latin": "Carum carvi",
@@ -166,7 +213,12 @@
    }
   ],
   "powo": "839677-1",
-  "familya": "Apiaceae"
+  "familya": "Apiaceae",
+  "kabul_ad": "carum carvi",
+  "kisim_oneri": "Meyve, Uçucu yağ",
+  "alanlar": [
+   "Gastrointestinal disorders"
+  ]
  },
  {
   "latin": "Centaurium erythraea",
@@ -183,7 +235,13 @@
    }
   ],
   "powo": "326619-2",
-  "familya": "Gentianaceae"
+  "familya": "Gentianaceae",
+  "kabul_ad": "centaurium erythraea",
+  "kisim_oneri": "Toprak üstü kısımları",
+  "alanlar": [
+   "Gastrointestinal disorders",
+   "Loss of appetite"
+  ]
  },
  {
   "latin": "Cetraria islandica",
@@ -200,7 +258,14 @@
    }
   ],
   "powo": null,
-  "familya": null
+  "familya": null,
+  "kabul_ad": "cetraria islandica",
+  "kisim_oneri": "Liken",
+  "alanlar": [
+   "Cough and cold",
+   "Loss of appetite",
+   "Mouth and throat disorders"
+  ]
  },
  {
   "latin": "Chamaemelum nobile",
@@ -217,7 +282,12 @@
    }
   ],
   "powo": "192489-1",
-  "familya": "Asteraceae"
+  "familya": "Asteraceae",
+  "kabul_ad": "chamaemelum nobile",
+  "kisim_oneri": "Çiçek",
+  "alanlar": [
+   "Gastrointestinal disorders"
+  ]
  },
  {
   "latin": "Cichorium intybus",
@@ -234,24 +304,13 @@
    }
   ],
   "powo": "194533-1",
-  "familya": "Asteraceae"
- },
- {
-  "latin": "Cimicifuga racemosa",
-  "tr_titck": "Bulunmamaktadır",
-  "titck_pdf": "https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/CimicifugaracemosaL.74b3ce74057c4794800dff0ad478f777_7cad3aed-7bad-498d-8712-4ceeb363cd6f.pdf",
-  "ema": [
-   {
-    "slug": "cimicifugae-rhizoma",
-    "adres": "https://www.ema.europa.eu/en/medicines/herbal/cimicifugae-rhizoma",
-    "latin": "Cimicifugae rhizoma",
-    "yil": "2009",
-    "alan": "Urinary tract and genital disorders",
-    "ingilizce": "Black Cohosh"
-   }
-  ],
-  "powo": "1210182-2",
-  "familya": "Ranunculaceae"
+  "familya": "Asteraceae",
+  "kabul_ad": "cichorium intybus",
+  "kisim_oneri": "Kök",
+  "alanlar": [
+   "Gastrointestinal disorders",
+   "Loss of appetite"
+  ]
  },
  {
   "latin": "Cistus creticus",
@@ -268,7 +327,12 @@
    }
   ],
   "powo": "168230-1",
-  "familya": "Cistaceae"
+  "familya": "Cistaceae",
+  "kabul_ad": "cistus creticus",
+  "kisim_oneri": "Toprak üstü kısımları",
+  "alanlar": [
+   "Cough and cold"
+  ]
  },
  {
   "latin": "Cola nitida",
@@ -285,7 +349,12 @@
    }
   ],
   "powo": "822755-1",
-  "familya": "Sterculiaceae"
+  "familya": "Sterculiaceae",
+  "kabul_ad": "cola nitida",
+  "kisim_oneri": "Tohum",
+  "alanlar": [
+   "Fatigue and weakness"
+  ]
  },
  {
   "latin": "Cucurbita pepo",
@@ -302,7 +371,12 @@
    }
   ],
   "powo": "292416-1",
-  "familya": "Cucurbitaceae"
+  "familya": "Cucurbitaceae",
+  "kabul_ad": "cucurbita pepo",
+  "kisim_oneri": "Tohum",
+  "alanlar": [
+   "Urinary tract and genital disorders"
+  ]
  },
  {
   "latin": "Curcuma xanthorrhiza",
@@ -319,7 +393,12 @@
    }
   ],
   "powo": null,
-  "familya": null
+  "familya": null,
+  "kabul_ad": "curcuma xanthorrhiza",
+  "kisim_oneri": "Kök sapı",
+  "alanlar": [
+   "Gastrointestinal disorders"
+  ]
  },
  {
   "latin": "Eleutherococcus senticosus",
@@ -336,7 +415,12 @@
    }
   ],
   "powo": "90431-1",
-  "familya": "Araliaceae"
+  "familya": "Araliaceae",
+  "kabul_ad": "eleutherococcus senticosus",
+  "kisim_oneri": "Kök",
+  "alanlar": [
+   "Fatigue and weakness"
+  ]
  },
  {
   "latin": "Epilobium angustifolium",
@@ -353,7 +437,12 @@
    }
   ],
   "powo": "92411-2",
-  "familya": "Onagraceae"
+  "familya": "Onagraceae",
+  "kabul_ad": "epilobium angustifolium",
+  "kisim_oneri": "Toprak üstü kısımları",
+  "alanlar": [
+   "Urinary tract and genital disorders"
+  ]
  },
  {
   "latin": "Equisetum arvense",
@@ -370,7 +459,12 @@
    }
   ],
   "powo": "300073-2",
-  "familya": "Equisetaceae"
+  "familya": "Equisetaceae",
+  "kabul_ad": "equisetum arvense",
+  "kisim_oneri": "Toprak üstü kısımları",
+  "alanlar": [
+   "Urinary tract and genital disorders"
+  ]
  },
  {
   "latin": "Eschscholzia california",
@@ -387,7 +481,13 @@
    }
   ],
   "powo": null,
-  "familya": null
+  "familya": null,
+  "kabul_ad": "eschscholzia california",
+  "kisim_oneri": "Toprak üstü kısımları",
+  "alanlar": [
+   "Mental stress and mood disorders",
+   "Sleep disorders and temporary insomnia"
+  ]
  },
  {
   "latin": "Filipendula ulmaria",
@@ -412,7 +512,13 @@
    }
   ],
   "powo": "724943-1",
-  "familya": "Rosaceae"
+  "familya": "Rosaceae",
+  "kabul_ad": "filipendula ulmaria",
+  "kisim_oneri": "Toprak üstü kısımları, Çiçek",
+  "alanlar": [
+   "Cough and cold",
+   "Pain and inflammation"
+  ]
  },
  {
   "latin": "Fragaria vesca",
@@ -429,7 +535,13 @@
    }
   ],
   "powo": "30074127-2",
-  "familya": "Rosaceae"
+  "familya": "Rosaceae",
+  "kabul_ad": "fragaria vesca",
+  "kisim_oneri": "Yaprak",
+  "alanlar": [
+   "Gastrointestinal disorders",
+   "Urinary tract and genital disorders"
+  ]
  },
  {
   "latin": "Fucus vesiculosus",
@@ -446,7 +558,12 @@
    }
   ],
   "powo": null,
-  "familya": null
+  "familya": null,
+  "kabul_ad": "fucus vesiculosus",
+  "kisim_oneri": null,
+  "alanlar": [
+   "Gastrointestinal disorders"
+  ]
  },
  {
   "latin": "Fumaria officinalis",
@@ -463,7 +580,12 @@
    }
   ],
   "powo": "30017594-2",
-  "familya": "Papaveraceae"
+  "familya": "Papaveraceae",
+  "kabul_ad": "fumaria densiflora",
+  "kisim_oneri": "Toprak üstü kısımları",
+  "alanlar": [
+   "Gastrointestinal disorders"
+  ]
  },
  {
   "latin": "Gentiana lutea",
@@ -480,7 +602,12 @@
    }
   ],
   "powo": "368453-1",
-  "familya": "Gentianaceae"
+  "familya": "Gentianaceae",
+  "kabul_ad": "gentiana lutea",
+  "kisim_oneri": "Kök",
+  "alanlar": [
+   "Gastrointestinal disorders"
+  ]
  },
  {
   "latin": "Glycine max",
@@ -505,7 +632,13 @@
    }
   ],
   "powo": "60450240-2",
-  "familya": "Fabaceae"
+  "familya": "Fabaceae",
+  "kabul_ad": "glycine max",
+  "kisim_oneri": "Yağ",
+  "alanlar": [
+   "Fatigue and weakness",
+   "Skin disorders and minor wounds"
+  ]
  },
  {
   "latin": "Grindelia robusta",
@@ -522,7 +655,12 @@
    }
   ],
   "powo": "113592-2",
-  "familya": "Asteraceae"
+  "familya": "Asteraceae",
+  "kabul_ad": "grindelia hirsutula",
+  "kisim_oneri": "Toprak üstü kısımları",
+  "alanlar": [
+   "Cough and cold"
+  ]
  },
  {
   "latin": "Harpagophytum procumbens",
@@ -539,7 +677,14 @@
    }
   ],
   "powo": "675824-1",
-  "familya": "Pedaliaceae"
+  "familya": "Pedaliaceae",
+  "kabul_ad": "harpagophytum procumbens",
+  "kisim_oneri": "Kök",
+  "alanlar": [
+   "Gastrointestinal disorders",
+   "Loss of appetite",
+   "Pain and inflammation"
+  ]
  },
  {
   "latin": "Hedera helix",
@@ -556,7 +701,12 @@
    }
   ],
   "powo": "90723-1",
-  "familya": "Araliaceae"
+  "familya": "Araliaceae",
+  "kabul_ad": "hedera maderensis",
+  "kisim_oneri": "Yaprak",
+  "alanlar": [
+   "Cough and cold"
+  ]
  },
  {
   "latin": "Helichrysum arenarium",
@@ -573,7 +723,12 @@
    }
   ],
   "powo": "212418-1",
-  "familya": "Asteraceae"
+  "familya": "Asteraceae",
+  "kabul_ad": "helichrysum arenarium",
+  "kisim_oneri": "Çiçek",
+  "alanlar": [
+   "Gastrointestinal disorders"
+  ]
  },
  {
   "latin": "Herniaria glabra",
@@ -590,7 +745,12 @@
    }
   ],
   "powo": "434799-1",
-  "familya": "Illecebraceae"
+  "familya": "Illecebraceae",
+  "kabul_ad": "herniaria glabra",
+  "kisim_oneri": "Toprak üstü kısımları",
+  "alanlar": [
+   "Urinary tract and genital disorders"
+  ]
  },
  {
   "latin": "Herniaria hirsuta",
@@ -607,7 +767,12 @@
    }
   ],
   "powo": "434804-1",
-  "familya": "Illecebraceae"
+  "familya": "Illecebraceae",
+  "kabul_ad": "herniaria cinerea",
+  "kisim_oneri": "Toprak üstü kısımları",
+  "alanlar": [
+   "Urinary tract and genital disorders"
+  ]
  },
  {
   "latin": "Herniaria incana",
@@ -624,7 +789,12 @@
    }
   ],
   "powo": "434809-1",
-  "familya": "Illecebraceae"
+  "familya": "Illecebraceae",
+  "kabul_ad": "herniaria incana",
+  "kisim_oneri": "Toprak üstü kısımları",
+  "alanlar": [
+   "Urinary tract and genital disorders"
+  ]
  },
  {
   "latin": "Ilex paraguariensis",
@@ -641,7 +811,13 @@
    }
   ],
   "powo": "315555-2",
-  "familya": "Aquifoliaceae"
+  "familya": "Aquifoliaceae",
+  "kabul_ad": "ilex paraguariensis",
+  "kisim_oneri": "Yaprak",
+  "alanlar": [
+   "Fatigue and weakness",
+   "Urinary tract and genital disorders"
+  ]
  },
  {
   "latin": "Juniperus communis",
@@ -666,7 +842,15 @@
    }
   ],
   "powo": "30088655-2",
-  "familya": "Cupressaceae"
+  "familya": "Cupressaceae",
+  "kabul_ad": "juniperus communis",
+  "kisim_oneri": "Kozalakçık, Meyve, Uçucu yağ",
+  "alanlar": [
+   "Digestive disorder",
+   "Gastrointestinal disorders",
+   "Pain and inflammation",
+   "Urinary tract and genital disorders"
+  ]
  },
  {
   "latin": "Leonurus cardiaca",
@@ -683,7 +867,13 @@
    }
   ],
   "powo": "449168-1",
-  "familya": "Lamiaceae"
+  "familya": "Lamiaceae",
+  "kabul_ad": "leonurus cardiaca",
+  "kisim_oneri": "Toprak üstü kısımları",
+  "alanlar": [
+   "Circulatory disorders",
+   "Mental stress and mood disorders"
+  ]
  },
  {
   "latin": "Levisticum officinale",
@@ -700,7 +890,12 @@
    }
   ],
   "powo": "844187-1",
-  "familya": "Apiaceae"
+  "familya": "Apiaceae",
+  "kabul_ad": "levisticum officinale",
+  "kisim_oneri": "Kök",
+  "alanlar": [
+   "Urinary tract and genital disorders"
+  ]
  },
  {
   "latin": "Marrubium vulgare",
@@ -717,32 +912,14 @@
    }
   ],
   "powo": "449990-1",
-  "familya": "Lamiaceae"
- },
- {
-  "latin": "Matricaria recutita",
-  "tr_titck": "Mayıs Papatyası",
-  "titck_pdf": "https://titck.gov.tr/storage/Archive/2025/dynamicModulesAttachment/MatricariarecutitaL.iekdurumuveuucuyayayml_52dffbac-d166-4b57-a4e6-d74197a8a4de.pdf",
-  "ema": [
-   {
-    "slug": "matricariae-aetheroleum",
-    "adres": "https://www.ema.europa.eu/en/medicines/herbal/matricariae-aetheroleum",
-    "latin": "Matricariae aetheroleum",
-    "yil": "2009",
-    "alan": "Skin disorders and minor wounds",
-    "ingilizce": "Matricaria Oil"
-   },
-   {
-    "slug": "matricariae-flos",
-    "adres": "https://www.ema.europa.eu/en/medicines/herbal/matricariae-flos",
-    "latin": "Matricariae flos",
-    "yil": "2009",
-    "alan": "Mouth and throat disorders;Skin disorders and minor wounds;Cough and cold;Gastrointestinal disorders",
-    "ingilizce": "Matricaria Flower"
-   }
-  ],
-  "powo": "231986-1",
-  "familya": "Asteraceae"
+  "familya": "Lamiaceae",
+  "kabul_ad": "marrubium vulgare",
+  "kisim_oneri": "Toprak üstü kısımları",
+  "alanlar": [
+   "Cough and cold",
+   "Gastrointestinal disorders",
+   "Loss of appetite"
+  ]
  },
  {
   "latin": "Melaleuca alternifolia",
@@ -759,7 +936,13 @@
    }
   ],
   "powo": "597833-1",
-  "familya": "Myrtaceae"
+  "familya": "Myrtaceae",
+  "kabul_ad": "melaleuca alternifolia",
+  "kisim_oneri": "Uçucu yağ",
+  "alanlar": [
+   "Mouth and throat disorders",
+   "Skin disorders and minor wounds"
+  ]
  },
  {
   "latin": "Melilotus officinalis",
@@ -776,7 +959,13 @@
    }
   ],
   "powo": "30429323-2",
-  "familya": "Fabaceae"
+  "familya": "Fabaceae",
+  "kabul_ad": "melilotus officinalis",
+  "kisim_oneri": "Toprak üstü kısımları",
+  "alanlar": [
+   "Circulatory disorders",
+   "Skin disorders and minor wounds"
+  ]
  },
  {
   "latin": "Menyanthes trifoliata",
@@ -793,7 +982,14 @@
    }
   ],
   "powo": "50970102-1",
-  "familya": "Menyanthaceae"
+  "familya": "Menyanthaceae",
+  "kabul_ad": "menyanthes trifoliata",
+  "kisim_oneri": "Yaprak",
+  "alanlar": [
+   "Gastrointestinal disorders",
+   "Loss of appetite",
+   "Pain and inflammation"
+  ]
  },
  {
   "latin": "Oenothera biennis",
@@ -810,7 +1006,12 @@
    }
   ],
   "powo": "172755-2",
-  "familya": "Onagraceae"
+  "familya": "Onagraceae",
+  "kabul_ad": "oenothera biennis",
+  "kisim_oneri": "Yağ",
+  "alanlar": [
+   "Skin disorders and minor wounds"
+  ]
  },
  {
   "latin": "Oenothera lamarckiana",
@@ -827,7 +1028,12 @@
    }
   ],
   "powo": null,
-  "familya": null
+  "familya": null,
+  "kabul_ad": "oenothera grandiflora",
+  "kisim_oneri": "Yağ",
+  "alanlar": [
+   "Skin disorders and minor wounds"
+  ]
  },
  {
   "latin": "Ononis spinosa",
@@ -844,7 +1050,12 @@
    }
   ],
   "powo": "332101-2",
-  "familya": "Fabaceae"
+  "familya": "Fabaceae",
+  "kabul_ad": "ononis spinosa",
+  "kisim_oneri": "Kök",
+  "alanlar": [
+   "Urinary tract and genital disorders"
+  ]
  },
  {
   "latin": "Origanum dictamnus",
@@ -861,7 +1072,14 @@
    }
   ],
   "powo": "453239-1",
-  "familya": "Lamiaceae"
+  "familya": "Lamiaceae",
+  "kabul_ad": "origanum dictamnus",
+  "kisim_oneri": "Toprak üstü kısımları",
+  "alanlar": [
+   "Cough and cold",
+   "Gastrointestinal disorders",
+   "Skin disorders and minor wounds"
+  ]
  },
  {
   "latin": "Pelargonium sidoides",
@@ -878,7 +1096,12 @@
    }
   ],
   "powo": "377008-1",
-  "familya": "Geraniaceae"
+  "familya": "Geraniaceae",
+  "kabul_ad": "pelargonium sidoides",
+  "kisim_oneri": "Kök",
+  "alanlar": [
+   "Cough and cold"
+  ]
  },
  {
   "latin": "Peumus boldus",
@@ -895,7 +1118,12 @@
    }
   ],
   "powo": "191376-2",
-  "familya": "Monimiaceae"
+  "familya": "Monimiaceae",
+  "kabul_ad": "peumus boldus",
+  "kisim_oneri": "Yaprak",
+  "alanlar": [
+   "Gastrointestinal disorders"
+  ]
  },
  {
   "latin": "Phaseolus vulgaris",
@@ -912,7 +1140,12 @@
    }
   ],
   "powo": "514191-1",
-  "familya": "Leguminosae"
+  "familya": "Leguminosae",
+  "kabul_ad": "phaseolus vulgaris",
+  "kisim_oneri": "Meyve",
+  "alanlar": [
+   "Urinary tract and genital disorders"
+  ]
  },
  {
   "latin": "Plantago lanceolata",
@@ -929,7 +1162,12 @@
    }
   ],
   "powo": "321285-2",
-  "familya": "Plantaginaceae"
+  "familya": "Plantaginaceae",
+  "kabul_ad": "plantago lanceolata",
+  "kisim_oneri": "Yaprak",
+  "alanlar": [
+   "Cough and cold"
+  ]
  },
  {
   "latin": "Plantago ovata",
@@ -954,7 +1192,12 @@
    }
   ],
   "powo": "685486-1",
-  "familya": "Plantaginaceae"
+  "familya": "Plantaginaceae",
+  "kabul_ad": "plantago australis",
+  "kisim_oneri": "Tohum, Tohum kabuğu",
+  "alanlar": [
+   "Constipation"
+  ]
  },
  {
   "latin": "Polygonum aviculare",
@@ -971,7 +1214,14 @@
    }
   ],
   "powo": "695422-1",
-  "familya": "Polygonaceae"
+  "familya": "Polygonaceae",
+  "kabul_ad": "polygonum aviculare",
+  "kisim_oneri": "Toprak üstü kısımları",
+  "alanlar": [
+   "Cough and cold",
+   "Mouth and throat disorders",
+   "Urinary tract and genital disorders"
+  ]
  },
  {
   "latin": "Polypodium vulgare",
@@ -988,7 +1238,13 @@
    }
   ],
   "powo": "300720-2",
-  "familya": "Polypodiaceae"
+  "familya": "Polypodiaceae",
+  "kabul_ad": "polypodium vulgare",
+  "kisim_oneri": "Kök sapı",
+  "alanlar": [
+   "Constipation",
+   "Cough and cold"
+  ]
  },
  {
   "latin": "Potentilla erecta",
@@ -1005,7 +1261,13 @@
    }
   ],
   "powo": "60457410-2",
-  "familya": "Rosaceae"
+  "familya": "Rosaceae",
+  "kabul_ad": "potentilla recta",
+  "kisim_oneri": "Kök sapı",
+  "alanlar": [
+   "Gastrointestinal disorders",
+   "Mouth and throat disorders"
+  ]
  },
  {
   "latin": "Primula elatior",
@@ -1038,7 +1300,12 @@
    }
   ],
   "powo": "701870-1",
-  "familya": "Primulaceae"
+  "familya": "Primulaceae",
+  "kabul_ad": "primula elatior",
+  "kisim_oneri": "Kök, Toprak üstü kısımları, Çiçek",
+  "alanlar": [
+   "Cough and cold"
+  ]
  },
  {
   "latin": "Primula veris",
@@ -1063,7 +1330,12 @@
    }
   ],
   "powo": "702751-1",
-  "familya": "Primulaceae"
+  "familya": "Primulaceae",
+  "kabul_ad": "primula veris",
+  "kisim_oneri": "Kök, Çiçek",
+  "alanlar": [
+   "Cough and cold"
+  ]
  },
  {
   "latin": "Rhamnus frangula",
@@ -1080,7 +1352,12 @@
    }
   ],
   "powo": "718338-1",
-  "familya": "Rhamnaceae"
+  "familya": "Rhamnaceae",
+  "kabul_ad": "frangula alnus",
+  "kisim_oneri": "Kabuk",
+  "alanlar": [
+   "Constipation"
+  ]
  },
  {
   "latin": "Rheum officinale",
@@ -1097,7 +1374,12 @@
    }
   ],
   "powo": "696768-1",
-  "familya": "Polygonaceae"
+  "familya": "Polygonaceae",
+  "kabul_ad": "rheum officinale",
+  "kisim_oneri": "Kök",
+  "alanlar": [
+   "Constipation"
+  ]
  },
  {
   "latin": "Rheum palmatum",
@@ -1114,7 +1396,12 @@
    }
   ],
   "powo": "696772-1",
-  "familya": "Polygonaceae"
+  "familya": "Polygonaceae",
+  "kabul_ad": "rheum palmatum",
+  "kisim_oneri": "Kök",
+  "alanlar": [
+   "Constipation"
+  ]
  },
  {
   "latin": "Ribes nigrum",
@@ -1131,7 +1418,13 @@
    }
   ],
   "powo": "792873-1",
-  "familya": "Grossulariaceae"
+  "familya": "Grossulariaceae",
+  "kabul_ad": "ribes nigrum",
+  "kisim_oneri": "Yaprak",
+  "alanlar": [
+   "Pain and inflammation",
+   "Urinary tract and genital disorders"
+  ]
  },
  {
   "latin": "Rubus idaeus",
@@ -1148,7 +1441,14 @@
    }
   ],
   "powo": "298089-2",
-  "familya": "Rosaceae"
+  "familya": "Rosaceae",
+  "kabul_ad": "rubus idaeus",
+  "kisim_oneri": "Yaprak",
+  "alanlar": [
+   "Gastrointestinal disorders",
+   "Mouth and throat disorders",
+   "Pain and inflammation"
+  ]
  },
  {
   "latin": "Ruscus aculeatus",
@@ -1165,7 +1465,12 @@
    }
   ],
   "powo": "540443-1",
-  "familya": "Ruscaceae"
+  "familya": "Ruscaceae",
+  "kabul_ad": "ruscus aculeatus",
+  "kisim_oneri": "Kök sapı",
+  "alanlar": [
+   "Circulatory disorders"
+  ]
  },
  {
   "latin": "Sisymbrium officinale",
@@ -1182,7 +1487,13 @@
    }
   ],
   "powo": "289589-1",
-  "familya": "Brassicaceae"
+  "familya": "Brassicaceae",
+  "kabul_ad": "sisymbrium officinale",
+  "kisim_oneri": "Toprak üstü kısımları",
+  "alanlar": [
+   "Cough and cold",
+   "Mouth and throat disorders"
+  ]
  },
  {
   "latin": "Solidago virgaurea",
@@ -1199,7 +1510,12 @@
    }
   ],
   "powo": "249947-1",
-  "familya": "Asteraceae"
+  "familya": "Asteraceae",
+  "kabul_ad": "solidago virgaurea",
+  "kisim_oneri": "Toprak üstü kısımları",
+  "alanlar": [
+   "Urinary tract and genital disorders"
+  ]
  },
  {
   "latin": "Symphytum officinale",
@@ -1216,7 +1532,12 @@
    }
   ],
   "powo": "120815-1",
-  "familya": "Boraginaceae"
+  "familya": "Boraginaceae",
+  "kabul_ad": "symphytum officinale",
+  "kisim_oneri": "Kök",
+  "alanlar": [
+   "Pain and inflammation"
+  ]
  },
  {
   "latin": "Tanacetum parthenium",
@@ -1233,7 +1554,12 @@
    }
   ],
   "powo": "252460-1",
-  "familya": "Asteraceae"
+  "familya": "Asteraceae",
+  "kabul_ad": "tanacetum parthenium",
+  "kisim_oneri": "Toprak üstü kısımları",
+  "alanlar": [
+   "Pain and inflammation"
+  ]
  },
  {
   "latin": "Vaccinium myrtillus",
@@ -1258,7 +1584,14 @@
    }
   ],
   "powo": "30006039-2",
-  "familya": "Ericaceae"
+  "familya": "Ericaceae",
+  "kabul_ad": "vaccinium myrtillus",
+  "kisim_oneri": "Meyve",
+  "alanlar": [
+   "Circulatory disorders",
+   "Gastrointestinal disorders",
+   "Mouth and throat disorders"
+  ]
  },
  {
   "latin": "Vitis vinifera",
@@ -1275,6 +1608,11 @@
    }
   ],
   "powo": "30478388-2",
-  "familya": "Vitaceae"
+  "familya": "Vitaceae",
+  "kabul_ad": "vitis vinifera",
+  "kisim_oneri": "Yaprak",
+  "alanlar": [
+   "Circulatory disorders"
+  ]
  }
 ]

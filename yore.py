@@ -70,7 +70,7 @@ CALISMALAR = [
   "baslik": "Tek Tek Dağları Milli Parkı eteklerindeki bazı köylerde etnobotanik bir çalışma",
   "dergi": "Bağbahçe Bilim Dergisi",
   "yil": 2019,
-  "url": "https://doi.org/10.35163/bagbahce.613728"
+  "url": "https://dergipark.org.tr/tr/download/article-file/797648"
  },
  {
   "id": "206992",

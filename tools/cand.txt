@@ -1,1 +1,7 @@
 # id | arama terimi | ek kelimeler
+# k8 partisi (17–19 Aralık): fotoğraf adayları. python3 tools/candidates.py
+# çalıştırılınca her bitki için 12 aday cand/<id>/ klasörüne iner; seçim elle
+# yapılır ve kuyruk kaydındaki foto alanına Commons dosya adı yazılır.
+sarmasik | Hedera helix | leaf foliage -berry -fruit
+karniyarik | Plantago ovata | plant inflorescence
+asmayapragi | Vitis vinifera | leaf autumn red -grape -bunch

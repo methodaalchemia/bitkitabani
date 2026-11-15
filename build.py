@@ -466,7 +466,9 @@ def refs(p):
         items.append(('NCCIH', nccih_apa(NCCIH[pid]), _u))
     for label, url in OTHER.get(pid, []):
         if 'ema.europa.eu' in url: kind = 'EMA raporu'
-        elif 'fda.gov' in url or 'unodc.org' in url or 'nobelprize.org' in url or 'ecfr.gov' in url or 'legislation.gov.uk' in url or 'gov.uk' in url or 'inchem.org' in url or 'cancer.gov' in url: kind = 'Resmî kaynak'
+        elif any(_d in url for _d in ('fda.gov', 'unodc.org', 'nobelprize.org', 'ecfr.gov',
+                                       'legislation.gov.uk', 'gov.uk', 'inchem.org',
+                                       'cancer.gov', 'titck.gov.tr')): kind = 'Resmî kaynak'
         else: kind = 'Araştırma'
         items.append((kind, _apa(url, label), url))
     if pid in BKAR or ('anadolu' in p['bolge'] and any('Anadolu' in w for w, _ in p['kul'])):

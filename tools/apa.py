@@ -49,6 +49,11 @@ def yazarlar(ad_listesi):
     """['Cantrell CL', 'Jones AM'] -> 'Cantrell, C. L., & Jones, A. M.'"""
     bicimli = []
     for ad in ad_listesi:
+        # PubMed kimi kayıtta ada sonda boşluk bırakıyor ("Ames NP "),
+        # bu da baş harf ayrıştırmasını bozuyordu
+        ad = (ad or '').strip()
+        if not ad:
+            continue
         parca = ad.rsplit(' ', 1)
         if len(parca) == 2 and parca[1].isupper() and len(parca[1]) <= 4:
             soyad, bas = parca

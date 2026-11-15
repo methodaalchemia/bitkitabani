@@ -313,10 +313,10 @@ ELLE.update({
    'Hayırsever, B. (2020). Geleneksel el sanatlarında kullanılan çintemani motifi ve '
    'seramik sanatına yansımaları. Erciyes Üniversitesi Sosyal Bilimler Enstitüsü Dergisi, '
    '50(3), 9–22.',
- 'https://dergipark.org.tr/tr/download/article-file/156974':
+ 'https://dergipark.org.tr/tr/pub/tubar/article/177215':
    'Üstün, Ç. (2009). Eski bir Türk içeceği: Kımız (koumiss). '
    'Türklük Bilimi Araştırmaları, 26, 247–255.',
- 'https://doi.org/10.15370/muifd.77078':
+ 'https://dergipark.org.tr/tr/download/article-file/162641':
    'Doğanay, A. (2003). XVI. yüzyıl İznik duvar çinilerinde meyve tasvirleri. '
    'Marmara Üniversitesi İlâhiyat Fakültesi Dergisi, 24, 43–63.',
  'https://dergipark.org.tr/tr/download/article-file/193311':
@@ -386,6 +386,23 @@ def _ema_yil(url):
         return None
     slug = url.rstrip('/').rsplit('/', 1)[-1]
     return (EMA_MONOGRAF.get(slug) or {}).get('yil')
+
+
+def titck_apa(latin_ad, yil=None):
+    """TİTCK Tıbbi Bitki Listesi monografının APA künyesi.
+
+    Monograf PDF'inde ayrı bir yayın tarihi yazılı değil; listedeki
+    yayım tarihi sütunu bazı satırlarda var, bazılarında yok. Tarih
+    bilinmiyorsa APA'nın tarihsiz biçimi kullanılır.
+    """
+    return (f'Türkiye İlaç ve Tıbbi Cihaz Kurumu. ({yil if yil else "t.y."}). '
+            f'{latin_ad} [Tıbbi bitki monografı]. Tıbbi Bitki Listesi.')
+
+
+def titck_apa_en(latin_ad, yil=None):
+    return (f'Turkish Medicines and Medical Devices Agency. '
+            f'({yil if yil else "n.d."}). {latin_ad} '
+            '[Medicinal plant monograph]. Medicinal Plant List.')
 
 
 def ema_apa(ad, url=None):
@@ -553,6 +570,45 @@ ELLE.update({
    'Bulut, İ. (2018). Anadolu’da inanışların ve geleneklerin doğa korunması açısından '
    'önemi üzerine örnekler. Atatürk Üniversitesi Sosyal Bilimler Dergisi, 11(46), '
    '119–134.',
+})
+
+# TİTCK monograf PDF'leri (kuyruk/k8.py'deki ilk parti).
+ELLE.update({
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/HederahelixL.46da4ab6263f4179b100319e18963e6b_a66612a6-308e-4ce9-b1be-3e24d66a74b6.pdf':
+   titck_apa('Hedera helix L.'),
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/PlantagoovataForssk..pdf13db3a84bb1f466ab06f79db489eca8e_d021c0b3-2cbe-46b2-8738-8295f105ee52.pdf':
+   titck_apa('Plantago ovata Forssk.'),
+ 'https://titck.gov.tr/storage/Archive/2026/dynamicModulesAttachment/VitisviniferaL.v1_f066e76f-99ff-46ca-8e28-91b751022bac.pdf':
+   titck_apa('Vitis vinifera L.'),
+})
+
+# Kalan künyeler: UNESCO kayıtları ve üstverisi çözülemeyen üç makale.
+# Makale künyeleri PDF'in kapak sayfasından yazıldı.
+ELLE.update({
+ 'https://dergipark.org.tr/tr/pub/firatsbed/article/565652':
+   'İpek, B. (2012). Kırgızistan’da bir Nevruz geleneği: Sümölök. '
+   'Fırat Üniversitesi Sosyal Bilimler Dergisi, 22(2), 34–44.',
+ 'https://dergipark.org.tr/tr/download/article-file/3785644':
+   'Ercan, H. (2023). İslamiyet’ten önce Türklerde kurban kavramı üzerine bir '
+   'araştırma. Journal of Turkic Civilization Studies, 4(2), 132–145.',
+ 'https://dergipark.org.tr/tr/download/article-file/3020611':
+   'Akkuş, Ö., & Altunöz, A. (2023). Simgesel anlatım bağlamında Saha yeri Isıah '
+   'Güneşi karşılama alanı heykelleri. Sanat ve Sosyal Bilimler Dergisi, 1(1), '
+   '6–16.',
+ 'https://ich.unesco.org/en/RL/spring-celebration-hdrellez-01284':
+   'UNESCO. (2017). Spring celebration, Hıdrellez [İnsanlığın Somut Olmayan '
+   'Kültürel Mirasının Temsilî Listesi].',
+ 'https://ich.unesco.org/doc/src/33887.pdf':
+   'Türkiye Cumhuriyeti Kültür ve Turizm Bakanlığı. (t.y.). Hıdrellez '
+   '[Ulusal envanter formu]. UNESCO.',
+ 'https://ich.unesco.org/en/decisions/11.COM/10.B.1':
+   'UNESCO Hükümetlerarası Komite. (2016). Karar 11.COM 10.B.1: Nawrouz '
+   '[Somut Olmayan Kültürel Mirasın Korunması Sözleşmesi kararı].',
+})
+
+METIN.update({
+ 'Turhan Baytop, Türkiye’de Bitkiler ile Tedavi: Geçmişte ve Bugün, 3. baskı, Nobel Tıp Kitabevleri, 2021':
+   BAYTOP_APA,
 })
 
 # APA künyesindeki yapısal ekler Türkçe yazılır. İngilizce sayfalarda aynı
