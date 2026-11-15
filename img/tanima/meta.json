@@ -1756,5 +1756,39 @@
   "license": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Camomille_sauvage_%28Matricaria_chamomilla%29%2C_coquelicots_%28Papaver_rhoeas%29_au_bord_d%27un_champ_d%27orge_%28Hordeum_vulgare%29.jpg"
  },
- "arpa:kuru": "yok"
+ "arpa:kuru": "yok",
+ "sarmasik:cizim": {
+  "file": "Illustration Hedera helix0 correct.jpg",
+  "artist": "kenraiz",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Hedera_helix0_correct.jpg"
+ },
+ "sarmasik:cicek": {
+  "file": "Hedera helix flowers.jpg",
+  "artist": "Stanzilla",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Hedera_helix_flowers.jpg"
+ },
+ "sarmasik:kuru": "yok",
+ "karniyarik:cizim": "yok",
+ "karniyarik:cicek": {
+  "file": "Desert indianwheat (Plantago Ovata) (14397998504).jpg",
+  "artist": "Joshua Tree National Park",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Desert_indianwheat_%28Plantago_Ovata%29_%2814397998504%29.jpg"
+ },
+ "karniyarik:kuru": "yok",
+ "asmayapragi:cizim": {
+  "file": "Vitis vinifera - Köhler–s Medizinal-Pflanzen-145.jpg",
+  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Vitis_vinifera_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-145.jpg"
+ },
+ "asmayapragi:cicek": {
+  "file": "Cabernet sauvignon - inflorescence.jpg",
+  "artist": "Marianne Casamance",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Cabernet_sauvignon_-_inflorescence.jpg"
+ },
+ "asmayapragi:kuru": "yok"
 }
