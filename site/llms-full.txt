@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 145 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 146 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -4538,3 +4538,31 @@ Karıştırma riski: Aynı aileden sirken (Chenopodium album) yaygın bir yabani
 
 ### İlginç bilgi
 Paico yağı, 20. yüzyılın başında tropik ülkelerde yürütülen büyük kancalı kurt kampanyalarında kullanılan ilaçlardan biriydi.
+
+## Sassafras (Sassafras albidum)
+
+URL: https://bitkitabani.com/sassafras/
+Familya: Lauraceae · Bölge: Kuzey Amerika · Kullanılan kısım: Kök kabuğu, yaprak
+Bilimsel kanıt: Geleneksel · Güvenlik: Yüksek risk
+
+### Geleneksel kullanım
+- Kuzey Amerika: Yerli halklar kök kabuğu çayını ateş ve romatizma için içer, yapraklarını yaraya koyardı. 17. yüzyılda Avrupa’ya “her derde deva” diye satıldı ve Virginia kolonisinin ilk ihraç mallarından biri oldu.
+- ABD mutfağı: Kökü eskiden kök birası (root beer) yapımında kullanılırdı. Louisiana’nın Cajun ve Kreol mutfağında kurutulmuş yaprak tozu (filé) gumbo çorbasını koyulaştırır.
+
+### Hazırlama
+Bugün kök kabuğunun iç kullanımı önerilmez. Filé tozu safrolü çok az olan yapraktan yapılır.
+
+### Bilim ne diyor
+Kök kabuğu yağının büyük bölümü safroldür. Safrol hayvanlarda karaciğer kanserine yol açtığı için ABD Gıda ve İlaç Dairesi (FDA) 1960’ta gıdalarda kullanımını yasakladı; bugün kök birası yapay tatlandırıcı ya da safrolü çıkarılmış ekstreyle yapılır. Safrol uyuşturucu üretiminde de kullanılabildiği için birçok ülkede denetim altındadır.
+
+### Güvenlik
+Kök kabuğu çayı ve yağı içilmemelidir: safrol karaciğere zarar verir ve hayvanlarda kanser yapıcıdır. Yağın az miktarı bile ciddi zehirlenme yapabilir. Yaprak tozu (filé) çok az safrol içerir ve yemekte küçük miktarda kullanılır.
+
+### Doğada
+Nerede yetişir: Doğu Kuzey Amerika’nın orman kenarlarında, terk edilmiş tarlalarda ve çalılıklarda.
+Toplama mevsimi: Yapraklar yazın toplanır; kök kabuğu eskiden ilkbahar ve sonbaharda sökülürdü.
+Yöresel adlar: sassafras, sasafras
+Karıştırma riski: Brezilya’da “sassafras yağı” adıyla satılan yağ başka bir ağaçtan (Ocotea) gelir ve o da safrol bakımından zengindir.
+
+### İlginç bilgi
+Sassafras ağacında aynı dal üzerinde üç farklı yaprak bulunur: tek parçalı, eldivene benzeyen iki parçalı ve üç parçalı.
