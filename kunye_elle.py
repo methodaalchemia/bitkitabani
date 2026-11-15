@@ -546,10 +546,6 @@ ELLE.update({
  'https://dergipark.org.tr/tr/download/article-file/643813':
    'Acar, H. V. (2017). Türk halk hekimliğindeki ocak çeşitleri. '
    'Lokman Hekim Dergisi, 7(2), 54–72.',
- 'https://dergipark.org.tr/tr/download/article-file/829862':
-   'Moldosultanova Avcı, G., & Borubayeva, E. (2019). Kırgızlarda “Albarstı” ile ilgili '
-   'inançlar (Narın ve Isık-Köl bölgeleri örneğinde). Akademik Tarih ve Düşünce Dergisi, '
-   '6(3), 17–30.',
  'https://doi.org/10.24155/tdk.2022.199':
    'Dilek, İ. (2022). Güney Sibirya’da (Altay bölgesi) bir aydınlanma hareketi olarak '
    'Ak Cañ / Süt Cañ (Burhanizm): Teşekkülü, temel ilkeleri ve tarihî seyri. '
@@ -609,6 +605,16 @@ ELLE.update({
 METIN.update({
  'Turhan Baytop, Türkiye’de Bitkiler ile Tedavi: Geçmişte ve Bugün, 3. baskı, Nobel Tıp Kitabevleri, 2021':
    BAYTOP_APA,
+})
+
+ELLE.update({
+ # Başlık Her Kelimesi Büyük yazılı ve sonunda dipnot yıldızı var; APA
+ # cümle düzeni ister. Sayfa aralığı yayıncı üstverisinden (derginin
+ # sürekli numaralandırması: 1802–1815).
+ 'https://dergipark.org.tr/tr/pub/atdd/article/632476':
+   'Moldosultanova Avcı, G., & Borubayeva, E. (2019). Kırgızlarda “Albarstı” ile '
+   'ilgili inançlar (Narın ve Isık-Köl bölgeleri örneğinde). Akademik Tarih ve '
+   'Düşünce Dergisi, 6(3), 1802–1815.',
 })
 
 # APA künyesindeki yapısal ekler Türkçe yazılır. İngilizce sayfalarda aynı
