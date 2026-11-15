@@ -4,7 +4,12 @@
 # "dikkat": familya düzeyinde güvenlik ya da karıştırma uyarısı (varsa).
 # Kaynak: familya düzeyindeki bileşik grupları için farmakognozi el kitabı, taksonomi için Kew POWO.
 
-from kunye_elle import EVANS_APA, BAYTOP_APA, powo_apa
+import json as _json
+import os as _os
+from kunye_elle import EVANS_APA, BAYTOP_APA, powo_apa, powo_adres
+
+_POWO_KIMLIK = _json.load(open(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)),
+                                             'powo_kimlik.json'), encoding='utf-8'))
 
 EVANS = (EVANS_APA, '')
 BAYTOP_K = (BAYTOP_APA, '')
@@ -63,5 +68,9 @@ def fam_kaynak(f, anadolu=False):
     """Familya sayfasının kaynakları."""
     ks = [('Kitap', EVANS[0], '')]
     if anadolu: ks.append(('Kitap', BAYTOP_K[0], ''))
-    ks.append(('Botanik kayıt', powo_apa(f), 'https://powo.science.kew.org/results?q=' + f))
+    _pk = _POWO_KIMLIK.get(f) or {}
+    if _pk.get('kimlik'):
+        ks.append(('Botanik kayıt', powo_apa(f, _pk.get('yazar')), powo_adres(_pk['kimlik'])))
+    else:
+        ks.append(('Botanik kayıt', powo_apa(f), 'https://powo.science.kew.org/results?q=' + f))
     return ks

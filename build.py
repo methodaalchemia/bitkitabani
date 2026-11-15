@@ -1,8 +1,17 @@
 import json, os, shutil, html, re, urllib.parse, datetime
 HERE = os.path.dirname(os.path.abspath(__file__))
 from refs import WIKI, POWO, NCCIH, EMA, OTHER, FILES, BAYTOP
-from kunye_elle import ELLE as APA_ELLE, BAYTOP_APA, ema_apa, nccih_apa, powo_apa
+from kunye_elle import ELLE as APA_ELLE, BAYTOP_APA, ema_apa, nccih_apa, powo_apa, powo_adres
 from kunye_elle import METIN as APA_METIN
+
+# POWO kalıcı kayıt kimlikleri (tools/powo.py üretir). Künyelerde arama
+# sorgusu adresi yerine kaydın kendi adresi kullanılır; çözülemeyen adlar
+# eski arama adresine düşer. POWO damarlı bitki listesi olduğu için
+# mantarlar burada yok: onlara POWO künyesi yazılmaz.
+POWO_KIMLIK = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                          'powo_kimlik.json'), encoding='utf-8'))
+MANTAR = ('Amanita', 'Ganoderma', 'Cordyceps', 'Inonotus', 'Lentinula', 'Psilocybe')
+
 from baytop_kar import KAR as BKAR
 from extra import EK, KORUMA, YASAL, YASAL_AD, BR_GEO, ALT
 from etkilesim import ETK
@@ -463,8 +472,13 @@ def refs(p):
     if pid in BKAR or ('anadolu' in p['bolge'] and any('Anadolu' in w for w, _ in p['kul'])):
         items.append(('Kitap', BAYTOP_APA, ''))
     name = POWO.get(pid, short_la(p))
-    if name:
-        items.append(('Botanik kayıt', powo_apa(name), 'https://powo.science.kew.org/results?q=' + urllib.parse.quote(name)))
+    if name and not name.startswith(MANTAR):
+        k = POWO_KIMLIK.get(name) or {}
+        if k.get('kimlik'):
+            items.append(('Botanik kayıt', powo_apa(name, k.get('yazar')), powo_adres(k['kimlik'])))
+        else:
+            items.append(('Botanik kayıt', powo_apa(name),
+                          'https://powo.science.kew.org/results?q=' + urllib.parse.quote(name)))
     return '<ol class="refs">' + ''.join((f'<li><span class="kind">{e(k)}</span><a href="{e(u)}" target="_blank" rel="noopener">{e(t)}</a></li>' if u else f'<li><span class="kind">{e(k)}</span><cite>{e(t)}</cite></li>') for k, t, u in items) + '</ol>'
 
 KANIT_ICIN = {'kantaron': 'depresyonda', 'lavanta': 'kaygıda (kapsül)', 'hayit': 'adet öncesi sendromda', 'hashas': 'ağrıda (morfin)', 'kinin': 'sıtmada',

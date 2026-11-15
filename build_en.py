@@ -1,8 +1,13 @@
 """English edition of Bitki Tabanı (/en/). Called at the end of build.py with build.py's globals."""
 import json, os, re, importlib
 from kunye_elle import (ELLE as APA_ELLE, BAYTOP_APA, ingilizce as _tr2en,
-                        ema_apa_en, nccih_apa_en, powo_apa_en)
+                        ema_apa_en, nccih_apa_en, powo_apa_en, powo_adres)
 from kunye_elle import METIN as APA_METIN
+
+POWO_KIMLIK = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                          'powo_kimlik.json'), encoding='utf-8'))
+MANTAR = ('Amanita', 'Ganoderma', 'Cordyceps', 'Inonotus', 'Lentinula', 'Psilocybe')
+
 
 _APA_ONBELLEK = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
                                             'kunye_apa.json'), encoding='utf-8'))
@@ -188,10 +193,15 @@ def run(G):
         if 'anadolu' in p['bolge'] and any('Anadolu' in w for w, _ in p['kul']):
             items.append(('Book', _tr2en(BAYTOP_APA), ''))
         nm = POWO.get(pid, short_la(p))
-        if nm:
+        if nm and not nm.startswith(MANTAR):
             import urllib.parse
-            items.append(('Botanical record', powo_apa_en(nm),
-                          'https://powo.science.kew.org/results?q=' + urllib.parse.quote(nm)))
+            k = POWO_KIMLIK.get(nm) or {}
+            if k.get('kimlik'):
+                items.append(('Botanical record', powo_apa_en(nm, k.get('yazar')),
+                              powo_adres(k['kimlik'])))
+            else:
+                items.append(('Botanical record', powo_apa_en(nm),
+                              'https://powo.science.kew.org/results?q=' + urllib.parse.quote(nm)))
         return '<ol class="refs">' + ''.join((f'<li><span class="kind">{e(k)}</span><a href="{e(u)}" target="_blank" rel="noopener">{e(t)}</a></li>' if u else f'<li><span class="kind">{e(k)}</span><cite>{e(t)}</cite></li>') for k, t, u in items) + '</ol>'
 
     def toc(html):

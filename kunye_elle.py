@@ -412,8 +412,22 @@ def nccih_apa(ad):
             'ABD Ulusal Sağlık Enstitüleri.')
 
 
-def powo_apa(ad):
-    return (f'Plants of the World Online. (t.y.). {ad}. Royal Botanic Gardens, Kew.')
+def powo_apa(ad, yazar=None):
+    """POWO kaydının APA künyesi. Yazar kısaltması varsa adla birlikte yazılır.
+
+    Yazar kısaltmaları çoğu kez noktayla bitiyor (L., Mill., Burm.f.);
+    ardına bir nokta daha konmaz.
+    """
+    tam = f'{ad} {yazar}'.strip() if yazar else ad
+    nokta = '' if tam.endswith('.') else '.'
+    return (f'Plants of the World Online. (t.y.). {tam}{nokta} '
+            'Royal Botanic Gardens, Kew.')
+
+
+def powo_adres(kimlik):
+    """Kalıcı POWO kayıt adresi."""
+    return 'https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:' + kimlik
+
 
 
 METIN.update({
@@ -494,6 +508,26 @@ ELLE.update({
    'Folklor Akademi Dergisi, 8(1), 8–16. https://doi.org/10.55666/folklor.1637963',
 })
 
+# 13 Kasım sonrası eklenen motif/yazı kaynakları.
+ELLE.update({
+ 'https://dergipark.org.tr/tr/download/article-file/625663':
+   'Demren, Ö. (2018). Türk kültüründe bir korku kültü olarak Sivas’ta Alkarısı ve '
+   'Albasması inanışı. Antropoloji, 36, 1–27.',
+ 'https://dergipark.org.tr/tr/download/article-file/643813':
+   'Acar, H. V. (2017). Türk halk hekimliğindeki ocak çeşitleri. '
+   'Lokman Hekim Dergisi, 7(2), 54–72.',
+ 'https://dergipark.org.tr/tr/download/article-file/829862':
+   'Moldosultanova Avcı, G., & Borubayeva, E. (2019). Kırgızlarda “Albarstı” ile ilgili '
+   'inançlar (Narın ve Isık-Köl bölgeleri örneğinde). Akademik Tarih ve Düşünce Dergisi, '
+   '6(3), 17–30.',
+ 'https://doi.org/10.24155/tdk.2022.199':
+   'Dilek, İ. (2022). Güney Sibirya’da (Altay bölgesi) bir aydınlanma hareketi olarak '
+   'Ak Cañ / Süt Cañ (Burhanizm): Teşekkülü, temel ilkeleri ve tarihî seyri. '
+   'Türk Dünyası Dil ve Edebiyat Dergisi, 53. https://doi.org/10.24155/tdk.2022.199',
+ 'https://islamansiklopedisi.org.tr/alkarisi':
+   'Küçük, A. (1989). Alkarısı. TDV İslâm Ansiklopedisi (C. 2). Türkiye Diyanet Vakfı.',
+})
+
 # APA künyesindeki yapısal ekler Türkçe yazılır. İngilizce sayfalarda aynı
 # künye kullanılır, yalnızca bu ekler değiştirilir; eser adlarına dokunulmaz.
 _EN = [
@@ -548,5 +582,8 @@ def nccih_apa_en(ad):
             'US National Institutes of Health.')
 
 
-def powo_apa_en(ad):
-    return f'Plants of the World Online. (n.d.). {ad}. Royal Botanic Gardens, Kew.'
+def powo_apa_en(ad, yazar=None):
+    tam = f'{ad} {yazar}'.strip() if yazar else ad
+    nokta = '' if tam.endswith('.') else '.'
+    return (f'Plants of the World Online. (n.d.). {tam}{nokta} '
+            'Royal Botanic Gardens, Kew.')
