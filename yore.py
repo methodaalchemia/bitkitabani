@@ -58,7 +58,7 @@ CALISMALAR = [
   "baslik": "Suruç’ta (Şanlıurfa) bazı şifalı bitkilerin geleneksel kullanımları",
   "dergi": "Türk Doğa ve Fen Dergisi",
   "yil": 2021,
-  "url": "https://dergipark.org.tr/tr/download/article-file/1577600"
+  "url": "https://doi.org/10.46810/tdfd.880363"
  },
  {
   "id": "797648",
@@ -70,7 +70,7 @@ CALISMALAR = [
   "baslik": "Tek Tek Dağları Milli Parkı eteklerindeki bazı köylerde etnobotanik bir çalışma",
   "dergi": "Bağbahçe Bilim Dergisi",
   "yil": 2019,
-  "url": "https://dergipark.org.tr/tr/download/article-file/797648"
+  "url": "https://doi.org/10.35163/bagbahce.613728"
  },
  {
   "id": "206992",
@@ -94,7 +94,7 @@ CALISMALAR = [
   "baslik": "Develi ilçesi ve civarında yetişen bazı doğal tıbbi bitkilerin etnobotanik özellikleri ve yerel kullanımı",
   "dergi": "Erciyes Tarım ve Hayvan Bilimleri Dergisi",
   "yil": 2024,
-  "url": "https://dergipark.org.tr/tr/download/article-file/3526922"
+  "url": "https://doi.org/10.55257/ethabd.1388358"
  },
  {
   "id": "3588965",
@@ -106,7 +106,7 @@ CALISMALAR = [
   "baslik": "Ethnobotanical study of medicinal plants in Ağrı province",
   "dergi": "Ankara Üniversitesi Eczacılık Fakültesi Dergisi",
   "yil": 2024,
-  "url": "https://dergipark.org.tr/tr/download/article-file/3588965"
+  "url": "https://doi.org/10.33483/jfpau.1402467"
  },
  {
   "id": "3807088",
@@ -118,7 +118,7 @@ CALISMALAR = [
   "baslik": "Şırnak (İdil) yöresinde halk hekimliğinde kullanılan bitkiler ve kullanım alanları",
   "dergi": "Doğu Fen Bilimleri Dergisi",
   "yil": 2024,
-  "url": "https://dergipark.org.tr/tr/download/article-file/3807088"
+  "url": "https://doi.org/10.57244/dfbd.1455612"
  },
  {
   "id": "4520961",
@@ -130,7 +130,7 @@ CALISMALAR = [
   "baslik": "Medicinal vascular plants traditionally used for respiratory ailments in Dereboğazı village",
   "dergi": "Fırat Üniversitesi Mühendislik Bilimleri Dergisi",
   "yil": 2025,
-  "url": "https://dergipark.org.tr/tr/download/article-file/4520961"
+  "url": "https://doi.org/10.35234/fumbd.1619881"
  },
  {
   "id": "482202",
@@ -178,7 +178,7 @@ CALISMALAR = [
   "baslik": "Korgan (Ordu) yöresinde doğal yayılış gösteren bitki taksonlarının etnobotanik özellikleri",
   "dergi": "Türkiye Ormancılık Dergisi",
   "yil": 2019,
-  "url": "https://dergipark.org.tr/tr/download/article-file/820501"
+  "url": "https://doi.org/10.18182/tjf.560636"
  }
 ]
 # (çalışma id, bitki id)

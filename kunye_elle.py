@@ -86,20 +86,9 @@ ELLE = {
  'https://www.exoriente.org/docs/00046.pdf':
    'Neef, R. (2003). Overlooking the steppe-forest: A preliminary report on the botanical '
    'remains from Early Neolithic Göbekli Tepe (Southeastern Turkey). Neo-Lithics, 2003(2), 13–16.',
- 'https://dergipark.org.tr/en/download/article-file/2704500':
-   'Macit, M., Ahıskalı, M., & Özbay, N. (2022). A review on the botanical and phytochemical '
-   'properties of some species belonging to Sorbus sp. Uluslararası Gıda, Tarım ve Hayvan '
-   'Bilimleri Dergisi, 2(1), 31–37.',
- 'https://dergipark.org.tr/en/download/article-file/451448':
-   'Bulut, İ. (2011). Anadolu’da inanışların ve geleneklerin doğa korunması açısından önemi '
-   'üzerine örnekler. Atatürk Üniversitesi Edebiyat Fakültesi Sosyal Bilimler Dergisi, 11(46), '
-   '119–134.',
  'https://dergipark.org.tr/tr/download/article-file/176576':
    'Atay, İ. (1984). Tâli türlerimizden dişbudağın önemi ve silvikültürel özellikleri. '
    'İstanbul Üniversitesi Orman Fakültesi Dergisi, B 34(3), 17–31.',
- 'https://dergipark.org.tr/tr/download/article-file/2231021':
-   'Oymak, İ. (2001). Eski Türk inanışlarından ağaç kültünün Malatya’daki izleri. '
-   'İlahiyat Fakültesi Dergisi, 6, 55–74.',
 
  # --- Kaynak metinler (kamu malı baskılar) ---
  'https://www.gutenberg.org/files/24886/24886-h/24886-h.htm':
@@ -319,31 +308,31 @@ METIN = {
 # DergiPark'ın doğrudan PDF bağlantıları ve Crossref'ten çözülemeyen DOI'ler;
 # künyeler makalenin kendi kapak sayfasından yazıldı.
 ELLE.update({
- 'https://dergipark.org.tr/tr/download/article-file/1028026':
+ 'https://doi.org/10.48070/erusosbilder.711330':
    'Hayırsever, B. (2020). Geleneksel el sanatlarında kullanılan çintemani motifi ve '
    'seramik sanatına yansımaları. Erciyes Üniversitesi Sosyal Bilimler Enstitüsü Dergisi, '
    '50(3), 9–22.',
  'https://dergipark.org.tr/tr/download/article-file/156974':
    'Üstün, Ç. (2009). Eski bir Türk içeceği: Kımız (koumiss). '
    'Türklük Bilimi Araştırmaları, 26, 247–255.',
- 'https://dergipark.org.tr/tr/download/article-file/162641':
+ 'https://doi.org/10.15370/muifd.77078':
    'Doğanay, A. (2003). XVI. yüzyıl İznik duvar çinilerinde meyve tasvirleri. '
    'Marmara Üniversitesi İlâhiyat Fakültesi Dergisi, 24, 43–63.',
  'https://dergipark.org.tr/tr/download/article-file/193311':
    'Ölmez, F. N. (2009). “Death” symbolism in Turkish weavings. '
    'Süleyman Demirel Üniversitesi Güzel Sanatlar Fakültesi Hakemli Dergisi ART-E, '
    '2009(4), 1–21.',
- 'https://dergipark.org.tr/tr/download/article-file/2199319':
+ 'https://doi.org/10.21602/sduarte.1059623':
    'Karaçay, Ç. (2022). Boteh motifinin kökenine kısa bir bakış ve Anadolu Türk halı '
    'sanatında boteh tasvirleri. Süleyman Demirel Üniversitesi Güzel Sanatlar Fakültesi '
    'Sanat Dergisi ART-E, 15(29), 128–148.',
  'https://dergipark.org.tr/tr/download/article-file/29048':
    'Tali, Ş. (t.y.). Kayseri Tavlusun köyü mezarlığında bezemeli mezar taşları-II. '
    'Atatürk Üniversitesi Güzel Sanatlar Fakültesi Sanat Dergisi, 20, 97–124.',
- 'https://dergipark.org.tr/tr/download/article-file/4267765':
+ 'https://doi.org/10.69787/bitigefd.1562376':
    'Seçilmiş, B. (2024). Ereğli ve çevresinin Hitit ve Geç Hitit dönemlerindeki dinî '
    'kültürü. bitig Edebiyat Fakültesi Dergisi, 4(8), 234–246.',
- 'https://dergipark.org.tr/tr/download/article-file/4421411':
+ 'https://doi.org/10.53568/yyusbed.1597330':
    'Ender, K. N., & Demirel, Ş. (2025). Orta Asya Şamanizminde evrenin tezahürü. '
    'Van Yüzüncü Yıl Üniversitesi Sosyal Bilimler Enstitüsü Dergisi, 67, 231–243.',
  'https://dergipark.org.tr/tr/download/article-file/681504':
@@ -510,7 +499,7 @@ ELLE.update({
 
 # 13 Kasım sonrası eklenen motif/yazı kaynakları.
 ELLE.update({
- 'https://dergipark.org.tr/tr/download/article-file/625663':
+ 'https://doi.org/10.1501/antro_0000000358':
    'Demren, Ö. (2018). Türk kültüründe bir korku kültü olarak Sivas’ta Alkarısı ve '
    'Albasması inanışı. Antropoloji, 36, 1–27.',
  'https://dergipark.org.tr/tr/download/article-file/643813':
@@ -526,6 +515,20 @@ ELLE.update({
    'Türk Dünyası Dil ve Edebiyat Dergisi, 53. https://doi.org/10.24155/tdk.2022.199',
  'https://islamansiklopedisi.org.tr/alkarisi':
    'Küçük, A. (1989). Alkarısı. TDV İslâm Ansiklopedisi (C. 2). Türkiye Diyanet Vakfı.',
+})
+
+# Makale sayfası bulundu ama üstverisi eksik ya da bozuk olan ikisi.
+# Oymak: başlık BÜYÜK HARF, sayfa aralığı üstveride yok (PDF kapağında
+# "S.55-74" yazıyor). Bulut: DergiPark başlığı Türkçe/İngilizce birlikte
+# tutuyor, APA özgün dildeki başlığı ister.
+ELLE.update({
+ 'https://dergipark.org.tr/tr/pub/firatilahiyat/article/1067778':
+   'Oymak, İ. (2001). Eski Türk inanışlarından ağaç kültünün Malatya’daki izleri. '
+   'Fırat Üniversitesi İlahiyat Fakültesi Dergisi, 6, 55–74.',
+ 'https://dergipark.org.tr/tr/pub/ataunisosbd/article/411741':
+   'Bulut, İ. (2018). Anadolu’da inanışların ve geleneklerin doğa korunması açısından '
+   'önemi üzerine örnekler. Atatürk Üniversitesi Sosyal Bilimler Dergisi, 11(46), '
+   '119–134.',
 })
 
 # APA künyesindeki yapısal ekler Türkçe yazılır. İngilizce sayfalarda aynı
