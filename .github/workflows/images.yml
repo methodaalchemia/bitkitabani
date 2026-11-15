@@ -2,7 +2,23 @@ name: Görselleri eşitle ve siteyi derle
 on:
   push:
     branches: [main]
-    paths: ['refs.py', 'baytop_kar.py', 'halk.py', 'kapak_baslik.py', 'halk_tarif.py', 'titck.py', 'aktar.py', 'tarif.py', 'img/imza-*', 'img/hikaye-gorsel/**', 'yore.py', 'ege.py', 'yazilar.py', 'data.json', 'extra.py', 'build.py', 'build_en.py', 'en/**', 'etkilesim.py', 'zehirli.py', 'derin.py', 'assets/**', 'tools/**', 'kuyruk/**', '.github/workflows/images.yml']
+    # Tek tek dosya saymak yerine bütün kaynak dosyaları: liste
+    # eksik kaldığında o modülün değişikliği sessizce yayına çıkmıyordu
+    # (5 Kasım'da altı motif sayfası böyle kayboldu). Derlemenin kendi
+    # çıktıları ve botun yazdığı dosyalar hariç tutuluyor.
+    paths:
+      - '**.py'
+      - '**.json'
+      - 'en/**'
+      - 'kuyruk/**'
+      - 'tools/**'
+      - 'assets/**'
+      - 'img/imza-*'
+      - 'img/hikaye-gorsel/**'
+      - '.github/workflows/images.yml'
+      - '!site/**'
+      - '!images.json'
+      - '!inat.json'
   workflow_dispatch:
     inputs:
       indexnow_all:
