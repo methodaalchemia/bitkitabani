@@ -1,0 +1,1280 @@
+[
+ {
+  "latin": "Agrimonia eupatoria",
+  "tr_titck": "Koyunotu",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/AgrimoniaeupatoriaL.yaymlV2_33336722-c034-4c27-b528-d071e8ed3146.pdf",
+  "ema": [
+   {
+    "slug": "agrimoniae-herba",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/agrimoniae-herba",
+    "latin": "Agrimoniae herba",
+    "yil": "2015",
+    "alan": "Mouth and throat disorders;Skin disorders and minor wounds;Gastrointestinal disorders",
+    "ingilizce": "Agrimony"
+   }
+  ],
+  "powo": "316550-2",
+  "familya": "Rosaceae"
+ },
+ {
+  "latin": "Agropyron repens",
+  "tr_titck": "Ayrık otu",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2024/dynamicModulesAttachment/AgropyronrepensL.P.Beauv.v3_e9326d84-dea4-4d8f-ab8b-b6b8a71334f0.pdf",
+  "ema": [
+   {
+    "slug": "agropyri-repentis-rhizoma",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/agropyri-repentis-rhizoma",
+    "latin": "Agropyri repentis rhizoma",
+    "yil": "2009",
+    "alan": "Urinary tract and genital disorders",
+    "ingilizce": "Couch grass rhizome"
+   }
+  ],
+  "powo": "30083247-2",
+  "familya": "Poaceae"
+ },
+ {
+  "latin": "Arctium lappa",
+  "tr_titck": "Dulavrat otu",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/ArctiumlappaL._b3576af0-4bbf-4f6b-b241-57f4f5f604f6.pdf",
+  "ema": [
+   {
+    "slug": "arctii-radix",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/arctii-radix",
+    "latin": "Arctii radix",
+    "yil": "2009",
+    "alan": "Loss of appetite;Skin disorders and minor wounds;Urinary tract and genital disorders",
+    "ingilizce": "Burdock Root"
+   }
+  ],
+  "powo": "178385-1",
+  "familya": "Asteraceae"
+ },
+ {
+  "latin": "Arnica montana",
+  "tr_titck": "Arnika, öküzgözü otu",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/ArnicamontanaL.V2_3222564f-40c5-40fd-9dd2-be57aea057ad.pdf",
+  "ema": [
+   {
+    "slug": "arnicae-flos",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/arnicae-flos",
+    "latin": "Arnicae flos",
+    "yil": "2009",
+    "alan": "Pain and inflammation",
+    "ingilizce": "Arnica flower"
+   }
+  ],
+  "powo": "30090722-2",
+  "familya": "Asteraceae"
+ },
+ {
+  "latin": "Avena sativa",
+  "tr_titck": "Yulaf",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2024/dynamicModulesAttachment/AvenasativaL._4e1fe68a-0ecb-4053-be4e-b84750043c5b.pdf",
+  "ema": [
+   {
+    "slug": "avenae-fructus",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/avenae-fructus",
+    "latin": "Avenae fructus",
+    "yil": "2009",
+    "alan": "Skin disorders and minor wounds",
+    "ingilizce": "Oat Fruit"
+   },
+   {
+    "slug": "avenae-herba",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/avenae-herba",
+    "latin": "Avenae herba",
+    "yil": "2009",
+    "alan": "Sleep disorders and temporary insomnia;Mental stress and mood disorders",
+    "ingilizce": "Oat Herb"
+   }
+  ],
+  "powo": "391732-1",
+  "familya": "Poaceae"
+ },
+ {
+  "latin": "Calendula officinalis",
+  "tr_titck": "Nergis, Aynısefa",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/CalendulaofficinalisL.yaymlV2_ed72c61f-78da-474e-a20a-3fa6219b8964.pdf",
+  "ema": [
+   {
+    "slug": "calendulae-flos",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/calendulae-flos",
+    "latin": "Calendulae flos",
+    "yil": "2009",
+    "alan": "Mouth and throat disorders;Skin disorders and minor wounds",
+    "ingilizce": "Calendula Flower"
+   }
+  ],
+  "powo": "187894-1",
+  "familya": "Asteraceae"
+ },
+ {
+  "latin": "Capsella bursa-pastoris",
+  "tr_titck": "Çoban Çantası",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/CapsellabursapastorisL.b70dff321ef6465ca8a12954dc8f64c3_923331a2-924d-4201-9cb4-232b00146934.pdf",
+  "ema": [
+   {
+    "slug": "bursae-pastoris-herba",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/bursae-pastoris-herba",
+    "latin": "Bursae pastoris herba",
+    "yil": "2011",
+    "alan": "Urinary tract and genital disorders",
+    "ingilizce": "Shepherds Purse"
+   }
+  ],
+  "powo": "30092589-2",
+  "familya": "Brassicaceae"
+ },
+ {
+  "latin": "Capsicum annuum",
+  "tr_titck": "Kırmızı Biber",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/CapsicumannuumL.var.minimumMillerHeiser1a57bc84143e4c25b2e555ecd599bd21_99b288ba-247e-4ba1-ae8a-843b17243ce7.pdf",
+  "ema": [
+   {
+    "slug": "capsici-fructus",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/capsici-fructus",
+    "latin": "Capsici fructus",
+    "yil": "2011",
+    "alan": "Pain and inflammation",
+    "ingilizce": "Capsicum"
+   }
+  ],
+  "powo": "316944-2",
+  "familya": "Solanaceae"
+ },
+ {
+  "latin": "Carum carvi",
+  "tr_titck": "Frenk Kimyonu",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/CarumcarviL.v3_7efc8888-88eb-46cb-9645-a41c07b94efd.pdf",
+  "ema": [
+   {
+    "slug": "carvi-aetheroleum",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/carvi-aetheroleum",
+    "latin": "Carvi aetheroleum",
+    "yil": "2009",
+    "alan": "Gastrointestinal disorders",
+    "ingilizce": "Caraway oil"
+   },
+   {
+    "slug": "carvi-fructus",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/carvi-fructus",
+    "latin": "Carvi fructus",
+    "yil": "2009",
+    "alan": "Gastrointestinal disorders",
+    "ingilizce": "Caraway fruit"
+   }
+  ],
+  "powo": "839677-1",
+  "familya": "Apiaceae"
+ },
+ {
+  "latin": "Centaurium erythraea",
+  "tr_titck": "Kırmızı kantaron",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/Centauriumerythraea99b92d0018da4d85ac5c6a293ffa570e_79c1e367-885c-47eb-91ee-664dfca60d2d.pdf",
+  "ema": [
+   {
+    "slug": "centaurii-herba",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/centaurii-herba",
+    "latin": "Centaurii herba",
+    "yil": "2009",
+    "alan": "Loss of appetite;Gastrointestinal disorders",
+    "ingilizce": "Centaury"
+   }
+  ],
+  "powo": "326619-2",
+  "familya": "Gentianaceae"
+ },
+ {
+  "latin": "Cetraria islandica",
+  "tr_titck": "İzlanda likeni",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/CetrariaislandicaL.Achariuss.l_a6aaec19-153c-4518-a814-c10239409af6.pdf",
+  "ema": [
+   {
+    "slug": "lichen-islandicus",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/lichen-islandicus",
+    "latin": "Lichen islandicus",
+    "yil": "2009",
+    "alan": "Loss of appetite;Mouth and throat disorders;Cough and cold",
+    "ingilizce": "Iceland moss"
+   }
+  ],
+  "powo": null,
+  "familya": null
+ },
+ {
+  "latin": "Chamaemelum nobile",
+  "tr_titck": "Romen papatyası, Roman papatyası",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2024/dynamicModulesAttachment/ChamaemelumnobileL.AllV3_7130f392-0628-4f8d-8995-1a860e26ca3e.pdf",
+  "ema": [
+   {
+    "slug": "chamomillae-romanae-flos",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/chamomillae-romanae-flos",
+    "latin": "Chamomillae romanae flos",
+    "yil": "2009",
+    "alan": "Gastrointestinal disorders",
+    "ingilizce": "Roman Chamomile Flower"
+   }
+  ],
+  "powo": "192489-1",
+  "familya": "Asteraceae"
+ },
+ {
+  "latin": "Cichorium intybus",
+  "tr_titck": "Beyaz Hindiba",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/CichoriumintybusL._aefa3f9b-53c8-48ab-91be-c8f8211ba5e7.pdf",
+  "ema": [
+   {
+    "slug": "cichorii-intybi-radix",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/cichorii-intybi-radix",
+    "latin": "Cichorii intybi radix",
+    "yil": "2009",
+    "alan": "Loss of appetite;Gastrointestinal disorders",
+    "ingilizce": "Chicory root"
+   }
+  ],
+  "powo": "194533-1",
+  "familya": "Asteraceae"
+ },
+ {
+  "latin": "Cimicifuga racemosa",
+  "tr_titck": "Bulunmamaktadır",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/CimicifugaracemosaL.74b3ce74057c4794800dff0ad478f777_7cad3aed-7bad-498d-8712-4ceeb363cd6f.pdf",
+  "ema": [
+   {
+    "slug": "cimicifugae-rhizoma",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/cimicifugae-rhizoma",
+    "latin": "Cimicifugae rhizoma",
+    "yil": "2009",
+    "alan": "Urinary tract and genital disorders",
+    "ingilizce": "Black Cohosh"
+   }
+  ],
+  "powo": "1210182-2",
+  "familya": "Ranunculaceae"
+ },
+ {
+  "latin": "Cistus creticus",
+  "tr_titck": "Tüylü Laden",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/CistuscreticusL.v2_86e4e3d0-17c0-4579-8565-56d26569a180.pdf",
+  "ema": [
+   {
+    "slug": "cisti-cretici-herba",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/cisti-cretici-herba",
+    "latin": "Cisti cretici herba",
+    "yil": "2014",
+    "alan": "Cough and cold",
+    "ingilizce": "Pink rock-rose"
+   }
+  ],
+  "powo": "168230-1",
+  "familya": "Cistaceae"
+ },
+ {
+  "latin": "Cola nitida",
+  "tr_titck": "Kola",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2024/dynamicModulesAttachment/ColanitidaVent.SchottetEndl._ac17e3c0-a16a-48ce-860c-65c3b58e4ba8.pdf",
+  "ema": [
+   {
+    "slug": "colae-semen",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/colae-semen",
+    "latin": "Colae semen",
+    "yil": "2009",
+    "alan": "Fatigue and weakness",
+    "ingilizce": "Cola"
+   }
+  ],
+  "powo": "822755-1",
+  "familya": "Sterculiaceae"
+ },
+ {
+  "latin": "Cucurbita pepo",
+  "tr_titck": "Sakız kabağı, Çekirdek kabağı, Balkabağı",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2024/dynamicModulesAttachment/CucurbitapepoL.v2_6a1790e8-b9ce-4b13-acb7-2892c9c24092.pdf",
+  "ema": [
+   {
+    "slug": "cucurbitae-semen",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/cucurbitae-semen",
+    "latin": "Cucurbitae semen",
+    "yil": "2009",
+    "alan": "Urinary tract and genital disorders",
+    "ingilizce": "Pumpkin seed"
+   }
+  ],
+  "powo": "292416-1",
+  "familya": "Cucurbitaceae"
+ },
+ {
+  "latin": "Curcuma xanthorrhiza",
+  "tr_titck": "Bulunmamaktadır",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/Curcumaxanthorriza3e907b05928b4967a97d3cf474f0dd23_ab8cf9a4-24da-4888-a29f-3536b6e4205e.pdf",
+  "ema": [
+   {
+    "slug": "curcumae-xanthorrhizae-rhizoma",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/curcumae-xanthorrhizae-rhizoma",
+    "latin": "Curcumae xanthorrhizae rhizoma",
+    "yil": "2009",
+    "alan": "Gastrointestinal disorders",
+    "ingilizce": "Javanese turmeric"
+   }
+  ],
+  "powo": null,
+  "familya": null
+ },
+ {
+  "latin": "Eleutherococcus senticosus",
+  "tr_titck": "PDF",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/EleutherococcussenticosusRupr.EtMaximMaxim.6b1b514b6aba4677b491d1083caa2238_469bf25b-5ec2-4704-9ba2-122c0d06b7d0.pdf",
+  "ema": [
+   {
+    "slug": "eleutherococci-radix",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/eleutherococci-radix",
+    "latin": "Eleutherococci radix",
+    "yil": "2009",
+    "alan": "Fatigue and weakness",
+    "ingilizce": "Eleutherococcus"
+   }
+  ],
+  "powo": "90431-1",
+  "familya": "Araliaceae"
+ },
+ {
+  "latin": "Epilobium angustifolium",
+  "tr_titck": "Yakıotu, Irazyakıotu, küçük çiçekli yakıotu",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/EpilobiumangustifoliumL_26b9b54d-a7d1-4855-89f3-f910a6479257.pdf",
+  "ema": [
+   {
+    "slug": "epilobii-herba",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/epilobii-herba",
+    "latin": "Epilobii herba",
+    "yil": "2014",
+    "alan": "Urinary tract and genital disorders",
+    "ingilizce": "Willow herb"
+   }
+  ],
+  "powo": "92411-2",
+  "familya": "Onagraceae"
+ },
+ {
+  "latin": "Equisetum arvense",
+  "tr_titck": "At kuyruğu, ekleme",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/EquisetumarvenseL.18854d9cb7fa43aab7fa97051497a1fa_c9bbb2db-9b3b-4f66-8ff0-714a51a79b3f.pdf",
+  "ema": [
+   {
+    "slug": "equiseti-herba",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/equiseti-herba",
+    "latin": "Equiseti herba",
+    "yil": "2009",
+    "alan": "Urinary tract and genital disorders",
+    "ingilizce": "Horsetail herb"
+   }
+  ],
+  "powo": "300073-2",
+  "familya": "Equisetaceae"
+ },
+ {
+  "latin": "Eschscholzia california",
+  "tr_titck": "Kaliforniya Haşhaşı",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2024/dynamicModulesAttachment/EschscholziacaliforniaCham.V2_d331fb1b-294f-4e7e-a287-9e85cedab0cd.pdf",
+  "ema": [
+   {
+    "slug": "eschscholziae-herba",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/eschscholziae-herba",
+    "latin": "Eschscholziae herba",
+    "yil": "2012",
+    "alan": "Sleep disorders and temporary insomnia;Mental stress and mood disorders",
+    "ingilizce": "California poppy"
+   }
+  ],
+  "powo": null,
+  "familya": null
+ },
+ {
+  "latin": "Filipendula ulmaria",
+  "tr_titck": "Çayırkraliçesi",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/FilipendulaulmariaL.Maximcd0874ec02cc4a82867e8efdbbb1de37_67c91cf3-53a4-46c1-b04b-d50ef208aba7.pdf",
+  "ema": [
+   {
+    "slug": "filipendulae-ulmariae-flos",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/filipendulae-ulmariae-flos",
+    "latin": "Filipendulae ulmariae flos",
+    "yil": "2009",
+    "alan": "Pain and inflammation;Cough and cold",
+    "ingilizce": "Meadowsweet Flower"
+   },
+   {
+    "slug": "filipendulae-ulmariae-herba",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/filipendulae-ulmariae-herba",
+    "latin": "Filipendulae ulmariae herba",
+    "yil": "2009",
+    "alan": "Pain and inflammation;Cough and cold",
+    "ingilizce": "Meadowsweet"
+   }
+  ],
+  "powo": "724943-1",
+  "familya": "Rosaceae"
+ },
+ {
+  "latin": "Fragaria vesca",
+  "tr_titck": "Yabani çilek, dağ çileği",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2024/dynamicModulesAttachment/FragariamonografV2_9c978def-5f39-4a1e-808c-6522e28b0426.pdf",
+  "ema": [
+   {
+    "slug": "fragariae-folium",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/fragariae-folium",
+    "latin": "Fragariae folium",
+    "yil": "2009",
+    "alan": "Urinary tract and genital disorders;Gastrointestinal disorders",
+    "ingilizce": "Wild Strawberry Leaf"
+   }
+  ],
+  "powo": "30074127-2",
+  "familya": "Rosaceae"
+ },
+ {
+  "latin": "Fucus vesiculosus",
+  "tr_titck": "Esmer su yosunu, kabarcıklı alg, fukus",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/FucusvesiculosusL.v3_107a094e-671b-4bf4-b6a7-2d89514765ef.pdf",
+  "ema": [
+   {
+    "slug": "fucus",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/fucus",
+    "latin": "Fucus",
+    "yil": "2011",
+    "alan": "Gastrointestinal disorders",
+    "ingilizce": "Bladderwrack"
+   }
+  ],
+  "powo": null,
+  "familya": null
+ },
+ {
+  "latin": "Fumaria officinalis",
+  "tr_titck": "Şahtere",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/FumariaofficinalisL.aee311f77d9b47f18fe1305a30edcef0_8560bcc8-9297-4200-a6f7-b80ef5ee2c39.pdf",
+  "ema": [
+   {
+    "slug": "fumariae-herba",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/fumariae-herba",
+    "latin": "Fumariae herba",
+    "yil": "2010",
+    "alan": "Gastrointestinal disorders",
+    "ingilizce": "Fumitory"
+   }
+  ],
+  "powo": "30017594-2",
+  "familya": "Papaveraceae"
+ },
+ {
+  "latin": "Gentiana lutea",
+  "tr_titck": "Centiyan, Jansiyan, Sarı Gentiyan, Sarı afat",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2024/dynamicModulesAttachment/GentianaluteaL.V4_f6bbefa6-e09b-4c5c-bc38-1d08a5de67b1.pdf",
+  "ema": [
+   {
+    "slug": "gentianae-radix",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/gentianae-radix",
+    "latin": "Gentianae radix",
+    "yil": "2009",
+    "alan": "Gastrointestinal disorders",
+    "ingilizce": "Gentian Root"
+   }
+  ],
+  "powo": "368453-1",
+  "familya": "Gentianaceae"
+ },
+ {
+  "latin": "Glycine max",
+  "tr_titck": "PDF",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/GlycinemaxL.Merr.pdf09cd7736af7644089259ce38e73ec4d4_05c16cd8-57e8-4e8c-8a33-08b5dfeb640d.pdf",
+  "ema": [
+   {
+    "slug": "lecithinum-ex-soya",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/lecithinum-ex-soya",
+    "latin": "Lecithinum ex soya",
+    "yil": "2014",
+    "alan": "Fatigue and weakness",
+    "ingilizce": "Soya-bean lecithin"
+   },
+   {
+    "slug": "soiae-oleum-raffinatum",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/soiae-oleum-raffinatum",
+    "latin": "Soiae oleum raffinatum",
+    "yil": "2016",
+    "alan": "Skin disorders and minor wounds",
+    "ingilizce": "Soya-bean oil"
+   }
+  ],
+  "powo": "60450240-2",
+  "familya": "Fabaceae"
+ },
+ {
+  "latin": "Grindelia robusta",
+  "tr_titck": "Grindelya",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/GrindeliarobustaNutt_475dbd6b-0a04-4718-bf93-b35dd0f2cdb8.pdf",
+  "ema": [
+   {
+    "slug": "grindeliae-herba",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/grindeliae-herba",
+    "latin": "Grindeliae herba",
+    "yil": "2010",
+    "alan": "Cough and cold",
+    "ingilizce": "Gumweed herb"
+   }
+  ],
+  "powo": "113592-2",
+  "familya": "Asteraceae"
+ },
+ {
+  "latin": "Harpagophytum procumbens",
+  "tr_titck": "Şeytanpençesi",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/HarpagophytumprocumbensDC.1f3aee27592549acbd161c86d382a2dd_e7eae39e-2b11-4ed6-a834-e758c16b8ef6.pdf",
+  "ema": [
+   {
+    "slug": "harpagophyti-radix",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/harpagophyti-radix",
+    "latin": "Harpagophyti radix",
+    "yil": "2009",
+    "alan": "Loss of appetite;Pain and inflammation;Gastrointestinal disorders",
+    "ingilizce": "Devil’s Claw Root"
+   }
+  ],
+  "powo": "675824-1",
+  "familya": "Pedaliaceae"
+ },
+ {
+  "latin": "Hedera helix",
+  "tr_titck": "Sarmaşık, Duvar Sarmaşığı",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/HederahelixL.46da4ab6263f4179b100319e18963e6b_a66612a6-308e-4ce9-b1be-3e24d66a74b6.pdf",
+  "ema": [
+   {
+    "slug": "hederae-helicis-folium",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/hederae-helicis-folium",
+    "latin": "Hederae helicis folium",
+    "yil": "2009",
+    "alan": "Cough and cold",
+    "ingilizce": "Ivy leaf"
+   }
+  ],
+  "powo": "90723-1",
+  "familya": "Araliaceae"
+ },
+ {
+  "latin": "Helichrysum arenarium",
+  "tr_titck": "Ölmezçiçek",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/HelichrysumarenariumL.Moench0b223e9429d04db0910b96618c8e9dae_6cc89fd4-9f6c-43fd-bbbe-adabc83e64e7.pdf",
+  "ema": [
+   {
+    "slug": "helichrysi-flos",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/helichrysi-flos",
+    "latin": "Helichrysi flos",
+    "yil": "2014",
+    "alan": "Gastrointestinal disorders",
+    "ingilizce": "Sandy everlasting"
+   }
+  ],
+  "powo": "212418-1",
+  "familya": "Asteraceae"
+ },
+ {
+  "latin": "Herniaria glabra",
+  "tr_titck": "Kasık otu, atyaran, Türkotu",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/HerniariaglabraL.v2_92203b68-9afb-4408-a482-d3bbd6df7888.pdf",
+  "ema": [
+   {
+    "slug": "herniariae-herba",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/herniariae-herba",
+    "latin": "Herniariae herba",
+    "yil": "2018",
+    "alan": "Urinary tract and genital disorders",
+    "ingilizce": "Rupturewort"
+   }
+  ],
+  "powo": "434799-1",
+  "familya": "Illecebraceae"
+ },
+ {
+  "latin": "Herniaria hirsuta",
+  "tr_titck": "Deli yaran, tüylü kasıkotu",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/HerniariaglabraL.v2_e639c046-4574-49df-ad3e-7b795d58672b.pdf",
+  "ema": [
+   {
+    "slug": "herniariae-herba",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/herniariae-herba",
+    "latin": "Herniariae herba",
+    "yil": "2018",
+    "alan": "Urinary tract and genital disorders",
+    "ingilizce": "Rupturewort"
+   }
+  ],
+  "powo": "434804-1",
+  "familya": "Illecebraceae"
+ },
+ {
+  "latin": "Herniaria incana",
+  "tr_titck": "Sabun otu, kabayaran",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/HerniariaincanaLam.v2_9892060a-f885-4491-92e3-6fde39c358bb.pdf",
+  "ema": [
+   {
+    "slug": "herniariae-herba",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/herniariae-herba",
+    "latin": "Herniariae herba",
+    "yil": "2018",
+    "alan": "Urinary tract and genital disorders",
+    "ingilizce": "Rupturewort"
+   }
+  ],
+  "powo": "434809-1",
+  "familya": "Illecebraceae"
+ },
+ {
+  "latin": "Ilex paraguariensis",
+  "tr_titck": "Mate",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/IlexparaguariensisSt.Hilaire6d6b83817b114509a49eaec8add91541_dd66941a-c63b-43d1-b9e8-e0bdb2b248e2.pdf",
+  "ema": [
+   {
+    "slug": "mate-folium",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/mate-folium",
+    "latin": "Mate folium",
+    "yil": "2009",
+    "alan": "Fatigue and weakness;Urinary tract and genital disorders",
+    "ingilizce": "Maté Leaf"
+   }
+  ],
+  "powo": "315555-2",
+  "familya": "Aquifoliaceae"
+ },
+ {
+  "latin": "Juniperus communis",
+  "tr_titck": "Adi ardıç",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2025/dynamicModulesAttachment/JuniperuscommunisL.meyvev130.12.2025_e74099dd-a7e7-4c1c-a249-8e24f8801713.docx",
+  "ema": [
+   {
+    "slug": "juniperi-aetheroleum",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/juniperi-aetheroleum",
+    "latin": "Juniperi aetheroleum",
+    "yil": "2010",
+    "alan": "Pain and inflammation;Urinary tract and genital disorders;Gastrointestinal disorders",
+    "ingilizce": "Juniper Oil"
+   },
+   {
+    "slug": "juniperi-galbulus-pseudo-fructus",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/juniperi-galbulus-pseudo-fructus",
+    "latin": "Juniperi galbulus (pseudo-fructus)",
+    "yil": "2009",
+    "alan": "Digestive disorder;Urinary tract and genital disorders",
+    "ingilizce": "Juniper cone berry"
+   }
+  ],
+  "powo": "30088655-2",
+  "familya": "Cupressaceae"
+ },
+ {
+  "latin": "Leonurus cardiaca",
+  "tr_titck": "Aslankuyruğu",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/LeonuruscardiacaL.7522b4e8ae384b16b4e9766dfcf45a8e_d1786ca7-5a4f-4061-8a65-d79eb5c72b14.pdf",
+  "ema": [
+   {
+    "slug": "leonuri-cardiacae-herba",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/leonuri-cardiacae-herba",
+    "latin": "Leonuri cardiacae herba",
+    "yil": "2009",
+    "alan": "Circulatory disorders;Mental stress and mood disorders",
+    "ingilizce": "Motherwort"
+   }
+  ],
+  "powo": "449168-1",
+  "familya": "Lamiaceae"
+ },
+ {
+  "latin": "Levisticum officinale",
+  "tr_titck": "Levistikum",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/LevisticumofficinaleW.D.J.Koch.376b692c333241c3aa52850f97183aeb_8472fc9b-c7c0-473e-9d79-9a530bf411da.pdf",
+  "ema": [
+   {
+    "slug": "levistici-radix",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/levistici-radix",
+    "latin": "Levistici radix",
+    "yil": "2009",
+    "alan": "Urinary tract and genital disorders",
+    "ingilizce": "Lovage root"
+   }
+  ],
+  "powo": "844187-1",
+  "familya": "Apiaceae"
+ },
+ {
+  "latin": "Marrubium vulgare",
+  "tr_titck": "Bozotu, Karaderme, İtsineği, Kukasotu",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/MarrubiumvulgareL.V1_feba4058-a88a-4176-b958-ba2484d3b8ed.pdf",
+  "ema": [
+   {
+    "slug": "marrubii-herba",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/marrubii-herba",
+    "latin": "Marrubii herba",
+    "yil": "2009",
+    "alan": "Loss of appetite;Cough and cold;Gastrointestinal disorders",
+    "ingilizce": "White horehound"
+   }
+  ],
+  "powo": "449990-1",
+  "familya": "Lamiaceae"
+ },
+ {
+  "latin": "Matricaria recutita",
+  "tr_titck": "Mayıs Papatyası",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2025/dynamicModulesAttachment/MatricariarecutitaL.iekdurumuveuucuyayayml_52dffbac-d166-4b57-a4e6-d74197a8a4de.pdf",
+  "ema": [
+   {
+    "slug": "matricariae-aetheroleum",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/matricariae-aetheroleum",
+    "latin": "Matricariae aetheroleum",
+    "yil": "2009",
+    "alan": "Skin disorders and minor wounds",
+    "ingilizce": "Matricaria Oil"
+   },
+   {
+    "slug": "matricariae-flos",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/matricariae-flos",
+    "latin": "Matricariae flos",
+    "yil": "2009",
+    "alan": "Mouth and throat disorders;Skin disorders and minor wounds;Cough and cold;Gastrointestinal disorders",
+    "ingilizce": "Matricaria Flower"
+   }
+  ],
+  "powo": "231986-1",
+  "familya": "Asteraceae"
+ },
+ {
+  "latin": "Melaleuca alternifolia",
+  "tr_titck": "Melaloyka, Çay ağacı",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/MelaleucaalternifoliaMaidenandBetcheCheel58eddbd56bce4f8bb63fa177ca084ff3_5fcf1cfd-fb3b-424c-928d-c7dedf441141.pdf",
+  "ema": [
+   {
+    "slug": "melaleucae-aetheroleum",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/melaleucae-aetheroleum",
+    "latin": "Melaleucae aetheroleum",
+    "yil": "2009",
+    "alan": "Mouth and throat disorders;Skin disorders and minor wounds",
+    "ingilizce": "Tea-tree oil"
+   }
+  ],
+  "powo": "597833-1",
+  "familya": "Myrtaceae"
+ },
+ {
+  "latin": "Melilotus officinalis",
+  "tr_titck": "Kokulu Yonca",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/MelilotusofficinalisL.Lam25f3329baa35428bb04b2e9b194de6de_ae125682-b4fb-4dd3-a5df-fafbca70b485.pdf",
+  "ema": [
+   {
+    "slug": "meliloti-herba",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/meliloti-herba",
+    "latin": "Meliloti herba",
+    "yil": "2009",
+    "alan": "Skin disorders and minor wounds;Circulatory disorders",
+    "ingilizce": "Melilot"
+   }
+  ],
+  "powo": "30429323-2",
+  "familya": "Fabaceae"
+ },
+ {
+  "latin": "Menyanthes trifoliata",
+  "tr_titck": "Acı Yonca",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2024/dynamicModulesAttachment/MenyanthestrifoliataL._c46f522d-f224-470d-b23c-0e6c196da59c.pdf",
+  "ema": [
+   {
+    "slug": "menyanthidis-trifoliatae-folium",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/menyanthidis-trifoliatae-folium",
+    "latin": "Menyanthidis trifoliatae folium",
+    "yil": "2018",
+    "alan": "Loss of appetite;Pain and inflammation;Gastrointestinal disorders",
+    "ingilizce": "Bogbean leaf"
+   }
+  ],
+  "powo": "50970102-1",
+  "familya": "Menyanthaceae"
+ },
+ {
+  "latin": "Oenothera biennis",
+  "tr_titck": "Eşek otu, Akşam sefası, Güneş damlası, Çuha çiçeği yağı",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/OenotherabiennisL.91ffe26a0be94bdc8723c9f806d8f09e_cb526320-64a9-42ad-8721-edfa6667a3e2.pdf",
+  "ema": [
+   {
+    "slug": "oenotherae-oleum",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/oenotherae-oleum",
+    "latin": "Oenotherae oleum",
+    "yil": "2009",
+    "alan": "Skin disorders and minor wounds",
+    "ingilizce": "Evening primrose oil"
+   }
+  ],
+  "powo": "172755-2",
+  "familya": "Onagraceae"
+ },
+ {
+  "latin": "Oenothera lamarckiana",
+  "tr_titck": "Güneş damlası, Eşek otu, Akşam sefası",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/OenotheralamarckianaL.8dd2e9638daa4f26807b9890775b083d_6e75295c-b3ff-4894-a97c-387129832c32.pdf",
+  "ema": [
+   {
+    "slug": "oenotherae-oleum",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/oenotherae-oleum",
+    "latin": "Oenotherae oleum",
+    "yil": "2009",
+    "alan": "Skin disorders and minor wounds",
+    "ingilizce": "Evening primrose oil"
+   }
+  ],
+  "powo": null,
+  "familya": null
+ },
+ {
+  "latin": "Ononis spinosa",
+  "tr_titck": "Kayışkıran",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/OnonisspinosaL.900a25caf22c491691ce15a5bd305571_c15f9564-9cf5-4284-b1a9-f725e270b30a.pdf",
+  "ema": [
+   {
+    "slug": "ononidis-radix",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/ononidis-radix",
+    "latin": "Ononidis radix",
+    "yil": "2012",
+    "alan": "Urinary tract and genital disorders",
+    "ingilizce": "Restharrow root"
+   }
+  ],
+  "powo": "332101-2",
+  "familya": "Fabaceae"
+ },
+ {
+  "latin": "Origanum dictamnus",
+  "tr_titck": "Girit kekiği",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/OriganumdictamnusL.v1_f08d6086-b3a7-4735-864d-9ec71a34df62.pdf",
+  "ema": [
+   {
+    "slug": "origani-dictamni-herba",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/origani-dictamni-herba",
+    "latin": "Origani dictamni herba",
+    "yil": "2011",
+    "alan": "Skin disorders and minor wounds;Cough and cold;Gastrointestinal disorders",
+    "ingilizce": "Dittany of Crete herb"
+   }
+  ],
+  "powo": "453239-1",
+  "familya": "Lamiaceae"
+ },
+ {
+  "latin": "Pelargonium sidoides",
+  "tr_titck": "Güney Afrika Sardunyası",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2024/dynamicModulesAttachment/PelargoniumsidoidesDC.V3_7feee38d-2a52-4217-bdc8-a923af40b8b3.pdf",
+  "ema": [
+   {
+    "slug": "pelargonii-radix",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/pelargonii-radix",
+    "latin": "Pelargonii radix",
+    "yil": "2009",
+    "alan": "Cough and cold",
+    "ingilizce": "Pelargonium root"
+   }
+  ],
+  "powo": "377008-1",
+  "familya": "Geraniaceae"
+ },
+ {
+  "latin": "Peumus boldus",
+  "tr_titck": "Boldo, Boldu",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2024/dynamicModulesAttachment/PeumusboldusMolina_23225ecb-beb0-4a4a-9a75-00f7c7e74940.pdf",
+  "ema": [
+   {
+    "slug": "boldi-folium",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/boldi-folium",
+    "latin": "Boldi folium",
+    "yil": "2009",
+    "alan": "Gastrointestinal disorders",
+    "ingilizce": "Boldo Leaf"
+   }
+  ],
+  "powo": "191376-2",
+  "familya": "Monimiaceae"
+ },
+ {
+  "latin": "Phaseolus vulgaris",
+  "tr_titck": "Sarık Fasülyesi",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2024/dynamicModulesAttachment/PhaseolusvulgarisL._3bb46bf8-5ad6-48d6-9d24-104e5f9f7287.pdf",
+  "ema": [
+   {
+    "slug": "phaseoli-fructus-sine-semine",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/phaseoli-fructus-sine-semine",
+    "latin": "Phaseoli fructus (sine semine)",
+    "yil": "2011",
+    "alan": "Urinary tract and genital disorders",
+    "ingilizce": "Green bean pod"
+   }
+  ],
+  "powo": "514191-1",
+  "familya": "Leguminosae"
+ },
+ {
+  "latin": "Plantago lanceolata",
+  "tr_titck": "Dar yapraklı sinirli ot",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/PlantagolanceolataL_26554602-5f71-4c75-b153-018e3f2ce8f1.pdf",
+  "ema": [
+   {
+    "slug": "plantaginis-lanceolatae-folium",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/plantaginis-lanceolatae-folium",
+    "latin": "Plantaginis lanceolatae folium",
+    "yil": "2009",
+    "alan": "Cough and cold",
+    "ingilizce": "Ribwort Plantain"
+   }
+  ],
+  "powo": "321285-2",
+  "familya": "Plantaginaceae"
+ },
+ {
+  "latin": "Plantago ovata",
+  "tr_titck": "Sarı karnıyarık otu",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/PlantagoovataForssk..pdf13db3a84bb1f466ab06f79db489eca8e_d021c0b3-2cbe-46b2-8738-8295f105ee52.pdf",
+  "ema": [
+   {
+    "slug": "plantaginis-ovatae-semen",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/plantaginis-ovatae-semen",
+    "latin": "Plantaginis ovatae semen",
+    "yil": "2009",
+    "alan": "Constipation",
+    "ingilizce": "Ispaghula Seed"
+   },
+   {
+    "slug": "plantaginis-ovatae-seminis-tegumentum",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/plantaginis-ovatae-seminis-tegumentum",
+    "latin": "Plantaginis ovatae seminis tegumentum",
+    "yil": "2009",
+    "alan": "Constipation",
+    "ingilizce": "Ispaghula husk"
+   }
+  ],
+  "powo": "685486-1",
+  "familya": "Plantaginaceae"
+ },
+ {
+  "latin": "Polygonum aviculare",
+  "tr_titck": "Kadımalak, kuşekmeği, köyotu, çobandeğneği.",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2024/dynamicModulesAttachment/PolygonumaviculareLv3_f6a639b3-d31f-4f59-8ca2-42ddc0fd244d.pdf",
+  "ema": [
+   {
+    "slug": "polygoni-avicularis-herba",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/polygoni-avicularis-herba",
+    "latin": "Polygoni avicularis herba",
+    "yil": "2014",
+    "alan": "Mouth and throat disorders;Urinary tract and genital disorders;Cough and cold",
+    "ingilizce": "Knotgrass herb"
+   }
+  ],
+  "powo": "695422-1",
+  "familya": "Polygonaceae"
+ },
+ {
+  "latin": "Polypodium vulgare",
+  "tr_titck": "Eğreltiotu, Benlieğrelti, Kaya eğreltisi",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/PolypodiumvulgareL.v2_b6ff05b0-0ffd-4181-894e-4b0c5fa728db.pdf",
+  "ema": [
+   {
+    "slug": "polypodii-rhizoma",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/polypodii-rhizoma",
+    "latin": "Polypodii rhizoma",
+    "yil": "2009",
+    "alan": "Cough and cold;Constipation",
+    "ingilizce": "Polypody Rhizome"
+   }
+  ],
+  "powo": "300720-2",
+  "familya": "Polypodiaceae"
+ },
+ {
+  "latin": "Potentilla erecta",
+  "tr_titck": "Beşparmak otu, incibar",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/PotentillaerectaL.Raeusch.v2_7104afdd-0181-46d5-a72f-549a5817cd17.pdf",
+  "ema": [
+   {
+    "slug": "tormentillae-rhizoma",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/tormentillae-rhizoma",
+    "latin": "Tormentillae rhizoma",
+    "yil": "2010",
+    "alan": "Mouth and throat disorders;Gastrointestinal disorders",
+    "ingilizce": "Tormentil"
+   }
+  ],
+  "powo": "60457410-2",
+  "familya": "Rosaceae"
+ },
+ {
+  "latin": "Primula elatior",
+  "tr_titck": "Yayla Tutyası",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2024/dynamicModulesAttachment/PrimulaelatiorL.Hill_b90ba805-ae98-4da2-840d-03d590857f89.pdf",
+  "ema": [
+   {
+    "slug": "primulae-flos",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/primulae-flos",
+    "latin": "Primulae flos",
+    "yil": "2009",
+    "alan": "Cough and cold",
+    "ingilizce": "Primula flower"
+   },
+   {
+    "slug": "primulae-radix",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/primulae-radix",
+    "latin": "Primulae radix",
+    "yil": "2009",
+    "alan": "Cough and cold",
+    "ingilizce": "Primula root"
+   },
+   {
+    "slug": "thymi-herba-primulae-radix",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/thymi-herba-primulae-radix",
+    "latin": "Thymi herba and Primulae radix",
+    "yil": "2009",
+    "alan": "Cough and cold",
+    "ingilizce": "Thyme and Primula root"
+   }
+  ],
+  "powo": "701870-1",
+  "familya": "Primulaceae"
+ },
+ {
+  "latin": "Primula veris",
+  "tr_titck": "Çuha çiçeği, Tutya",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2024/dynamicModulesAttachment/PrimulaverisL._1db4d1c0-0eeb-40c6-90ce-4600dd95cf95.pdf",
+  "ema": [
+   {
+    "slug": "primulae-flos",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/primulae-flos",
+    "latin": "Primulae flos",
+    "yil": "2009",
+    "alan": "Cough and cold",
+    "ingilizce": "Primula flower"
+   },
+   {
+    "slug": "primulae-radix",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/primulae-radix",
+    "latin": "Primulae radix",
+    "yil": "2009",
+    "alan": "Cough and cold",
+    "ingilizce": "Primula root"
+   }
+  ],
+  "powo": "702751-1",
+  "familya": "Primulaceae"
+ },
+ {
+  "latin": "Rhamnus frangula",
+  "tr_titck": "Barut Ağacı",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/RhamnusfrangulaL.f0b77d85298d45fa994898cd3a153f98_08815d4a-e4d9-46fe-914b-3b811878457d.pdf",
+  "ema": [
+   {
+    "slug": "frangulae-cortex",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/frangulae-cortex",
+    "latin": "Frangulae cortex",
+    "yil": "2009",
+    "alan": "Constipation",
+    "ingilizce": "Frangula bark"
+   }
+  ],
+  "powo": "718338-1",
+  "familya": "Rhamnaceae"
+ },
+ {
+  "latin": "Rheum officinale",
+  "tr_titck": "Ravent",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/RheumofficinaleBaillon980033188eed45e98a964d2bcd49135b_48184ecf-8538-4cd3-862b-e944269a6ec4.pdf",
+  "ema": [
+   {
+    "slug": "rhei-radix",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/rhei-radix",
+    "latin": "Rhei radix",
+    "yil": "2009",
+    "alan": "Constipation",
+    "ingilizce": "Rhubarb"
+   }
+  ],
+  "powo": "696768-1",
+  "familya": "Polygonaceae"
+ },
+ {
+  "latin": "Rheum palmatum",
+  "tr_titck": "Ravent",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/RheumpalmatumL.642ddc44bab44773a6e92ce3c5da5e7f_cfa59f56-7695-4dec-9a3d-081393fa0081.pdf",
+  "ema": [
+   {
+    "slug": "rhei-radix",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/rhei-radix",
+    "latin": "Rhei radix",
+    "yil": "2009",
+    "alan": "Constipation",
+    "ingilizce": "Rhubarb"
+   }
+  ],
+  "powo": "696772-1",
+  "familya": "Polygonaceae"
+ },
+ {
+  "latin": "Ribes nigrum",
+  "tr_titck": "Siyah frenk üzümü, Frenk üzümü, Karagat",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/Ribesnigrum_8f334f04-6a87-44c3-9c16-b7c2ed2fdd7d.pdf",
+  "ema": [
+   {
+    "slug": "ribis-nigri-folium",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/ribis-nigri-folium",
+    "latin": "Ribis nigri folium",
+    "yil": "2009",
+    "alan": "Pain and inflammation;Urinary tract and genital disorders",
+    "ingilizce": "Blackcurrant Leaf"
+   }
+  ],
+  "powo": "792873-1",
+  "familya": "Grossulariaceae"
+ },
+ {
+  "latin": "Rubus idaeus",
+  "tr_titck": "Ahududu",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/RubusidaeusL.yaymlv1_d5fc123b-8b58-4e41-b143-6dc1bee880d4.pdf",
+  "ema": [
+   {
+    "slug": "rubi-idaei-folium",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/rubi-idaei-folium",
+    "latin": "Rubi idaei folium",
+    "yil": "2011",
+    "alan": "Mouth and throat disorders;Pain and inflammation;Gastrointestinal disorders",
+    "ingilizce": "Raspberry leaf"
+   }
+  ],
+  "powo": "298089-2",
+  "familya": "Rosaceae"
+ },
+ {
+  "latin": "Ruscus aculeatus",
+  "tr_titck": "Tavşan Memesi",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2024/dynamicModulesAttachment/RuscusaculeatusL.dzenlenen_d9a6ed47-210c-4ef0-956c-f9277113d6a9.pdf",
+  "ema": [
+   {
+    "slug": "rusci-rhizoma",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/rusci-rhizoma",
+    "latin": "Rusci rhizoma",
+    "yil": "2009",
+    "alan": "Circulatory disorders",
+    "ingilizce": "Butcher's Broom"
+   }
+  ],
+  "powo": "540443-1",
+  "familya": "Ruscaceae"
+ },
+ {
+  "latin": "Sisymbrium officinale",
+  "tr_titck": "Ergelen hardalı, çalgıcıotu, bülbülotu",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/SisymbriumofficinaleL.Scop_60a728f6-e428-4dfd-9a5c-85d4f40464a5.pdf",
+  "ema": [
+   {
+    "slug": "sisymbrii-officinalis-herba",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/sisymbrii-officinalis-herba",
+    "latin": "Sisymbrii officinalis herba",
+    "yil": "2011",
+    "alan": "Mouth and throat disorders;Cough and cold",
+    "ingilizce": "Hedge mustard"
+   }
+  ],
+  "powo": "289589-1",
+  "familya": "Brassicaceae"
+ },
+ {
+  "latin": "Solidago virgaurea",
+  "tr_titck": "Altınbaşak, Yahudi otu",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/SolidagovirgaureaL..pdfb279ef8596e34f17b127529054915c2a_bfcf2947-9179-490c-89a6-e3397a3e0d8d.pdf",
+  "ema": [
+   {
+    "slug": "solidaginis-virgaureae-herba",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/solidaginis-virgaureae-herba",
+    "latin": "Solidaginis virgaureae herba",
+    "yil": "2009",
+    "alan": "Urinary tract and genital disorders",
+    "ingilizce": "European Goldenrod"
+   }
+  ],
+  "powo": "249947-1",
+  "familya": "Asteraceae"
+ },
+ {
+  "latin": "Symphytum officinale",
+  "tr_titck": "Kafesotu, Karakafesotu",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2025/dynamicModulesAttachment/SymphytumofficinaleLv230.12.2025_369925b8-5621-4050-b510-f1da49766dca.docx",
+  "ema": [
+   {
+    "slug": "symphyti-radix",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/symphyti-radix",
+    "latin": "Symphyti radix",
+    "yil": "2009",
+    "alan": "Pain and inflammation",
+    "ingilizce": "Comfrey Root"
+   }
+  ],
+  "powo": "120815-1",
+  "familya": "Boraginaceae"
+ },
+ {
+  "latin": "Tanacetum parthenium",
+  "tr_titck": "Gümüş Düğme",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/TanacetumpartheniumL.SchultzBip6feaabf306b745419e4dde78b88bdf2d_010170a8-552c-4e1c-b7a9-73d336220a9e.pdf",
+  "ema": [
+   {
+    "slug": "tanaceti-parthenii-herba",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/tanaceti-parthenii-herba",
+    "latin": "Tanaceti parthenii herba",
+    "yil": "2010",
+    "alan": "Pain and inflammation",
+    "ingilizce": "Feverfew"
+   }
+  ],
+  "powo": "252460-1",
+  "familya": "Asteraceae"
+ },
+ {
+  "latin": "Vaccinium myrtillus",
+  "tr_titck": "PDF",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/Vaccinummyrtillus5d08f485590d4249a3583081a086c7b1_5b750c9a-75a3-456e-b72a-6c304ce8d3a1.pdf",
+  "ema": [
+   {
+    "slug": "myrtilli-fructus-recens",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/myrtilli-fructus-recens",
+    "latin": "Myrtilli fructus recens",
+    "yil": "2014",
+    "alan": "Circulatory disorders",
+    "ingilizce": "Fresh Bilberry fruit"
+   },
+   {
+    "slug": "myrtilli-fructus-siccus",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/myrtilli-fructus-siccus",
+    "latin": "Myrtilli fructus siccus",
+    "yil": "2009",
+    "alan": "Mouth and throat disorders;Gastrointestinal disorders",
+    "ingilizce": "Dried Bilberry fruit"
+   }
+  ],
+  "powo": "30006039-2",
+  "familya": "Ericaceae"
+ },
+ {
+  "latin": "Vitis vinifera",
+  "tr_titck": "Üzüm",
+  "titck_pdf": "https://titck.gov.tr/storage/Archive/2026/dynamicModulesAttachment/VitisviniferaL.v1_f066e76f-99ff-46ca-8e28-91b751022bac.pdf",
+  "ema": [
+   {
+    "slug": "vitis-viniferae-folium",
+    "adres": "https://www.ema.europa.eu/en/medicines/herbal/vitis-viniferae-folium",
+    "latin": "Vitis viniferae folium",
+    "yil": "2009",
+    "alan": "Circulatory disorders",
+    "ingilizce": "Grapevine Leaf"
+   }
+  ],
+  "powo": "30478388-2",
+  "familya": "Vitaceae"
+ }
+]

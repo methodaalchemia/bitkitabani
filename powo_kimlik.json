@@ -20,6 +20,20 @@
   "rutbe": "spec.",
   "yazar": "L."
  },
+ "Agrimonia eupatoria": {
+  "ad": "Agrimonia eupatoria",
+  "familya": "Rosaceae",
+  "kimlik": "316550-2",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
+ "Agropyron repens": {
+  "ad": "Agropyron repens",
+  "familya": "Poaceae",
+  "kimlik": "30083247-2",
+  "rutbe": "spec.",
+  "yazar": "(L.) P.Beauv."
+ },
  "Allium sativum": {
   "ad": "Allium sativum",
   "familya": "Alliaceae",
@@ -94,6 +108,13 @@
   "rutbe": "fam.",
   "yazar": "Lindl."
  },
+ "Arctium lappa": {
+  "ad": "Arctium lappa",
+  "familya": "Asteraceae",
+  "kimlik": "178385-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
  "Arctostaphylos uva-ursi": {
   "ad": "Arctostaphylos uva-ursi",
   "familya": "Ericaceae",
@@ -108,6 +129,14 @@
   "rutbe": "fam.",
   "yazar": "Bercht. & J.Presl"
  },
+ "Arnica montana": {
+  "ad": "Arnica montana",
+  "familya": "Asteraceae",
+  "kimlik": "30090722-2",
+  "rutbe": "spec.",
+  "yazar": "L.",
+  "yazar_kaynagi": "GBIF/WCVP"
+ },
  "Artemisia absinthium": {
   "ad": "Artemisia absinthium",
   "familya": "Asteraceae",
@@ -117,6 +146,13 @@
  },
  "Asteraceae": {
   "hata": "eşadlı: 30000005-2 (Martinov), 319342-2 (Bercht. & J.Presl)"
+ },
+ "Avena sativa": {
+  "ad": "Avena sativa",
+  "familya": "Poaceae",
+  "kimlik": "391732-1",
+  "rutbe": "spec.",
+  "yazar": "L."
  },
  "Azadirachta indica": {
   "ad": "Azadirachta indica",
@@ -188,6 +224,13 @@
   "rutbe": "fam.",
   "yazar": "Juss."
  },
+ "Calendula officinalis": {
+  "ad": "Calendula officinalis",
+  "familya": "Asteraceae",
+  "kimlik": "187894-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
  "Calliandra angustifolia": {
   "ad": "Calliandra angustifolia",
   "familya": "Mimosaceae",
@@ -223,12 +266,40 @@
   "rutbe": "spec.",
   "yazar": "L."
  },
+ "Capsella bursa-pastoris": {
+  "ad": "Capsella bursa-pastoris",
+  "familya": "Brassicaceae",
+  "kimlik": "30092589-2",
+  "rutbe": "spec.",
+  "yazar": "(L.) Medik."
+ },
+ "Capsicum annuum": {
+  "ad": "Capsicum annuum",
+  "familya": "Solanaceae",
+  "kimlik": "316944-2",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
  "Carapa guianensis": {
   "ad": "Carapa guianensis",
   "familya": "Meliaceae",
   "kimlik": "45059-2",
   "rutbe": "spec.",
   "yazar": "Aubl."
+ },
+ "Carum carvi": {
+  "ad": "Carum carvi",
+  "familya": "Apiaceae",
+  "kimlik": "839677-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
+ "Centaurium erythraea": {
+  "ad": "Centaurium erythraea",
+  "familya": "Gentianaceae",
+  "kimlik": "326619-2",
+  "rutbe": "spec.",
+  "yazar": "Rafn"
  },
  "Centella asiatica": {
   "ad": "Centella asiatica",
@@ -244,12 +315,36 @@
   "rutbe": "spec.",
   "yazar": "L."
  },
+ "Cetraria islandica": {
+  "hata": "POWO kaydı olan birebir eşleşme yok"
+ },
+ "Chamaemelum nobile": {
+  "ad": "Chamaemelum nobile",
+  "familya": "Asteraceae",
+  "kimlik": "192489-1",
+  "rutbe": "spec.",
+  "yazar": "(L.) All."
+ },
  "Chenopodium quinoa": {
   "ad": "Chenopodium quinoa",
   "familya": "Chenopodiaceae",
   "kimlik": "165175-1",
   "rutbe": "spec.",
   "yazar": "Willd."
+ },
+ "Cichorium intybus": {
+  "ad": "Cichorium intybus",
+  "familya": "Asteraceae",
+  "kimlik": "194533-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
+ "Cimicifuga racemosa": {
+  "ad": "Cimicifuga racemosa",
+  "familya": "Ranunculaceae",
+  "kimlik": "1210182-2",
+  "rutbe": "spec.",
+  "yazar": "(L.) Nutt."
  },
  "Cinchona officinalis": {
   "ad": "Cinchona officinalis",
@@ -272,12 +367,26 @@
   "rutbe": "spec.",
   "yazar": "L."
  },
+ "Cistus creticus": {
+  "ad": "Cistus creticus",
+  "familya": "Cistaceae",
+  "kimlik": "168230-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
  "Citrus × aurantium": {
   "ad": "Citrus aurantium",
   "familya": "Rutaceae",
   "kimlik": "59600-2",
   "rutbe": "spec.",
   "yazar": "L."
+ },
+ "Cola nitida": {
+  "ad": "Cola nitida",
+  "familya": "Sterculiaceae",
+  "kimlik": "822755-1",
+  "rutbe": "spec.",
+  "yazar": "(Vent.) Schott & Endl."
  },
  "Colchicum autumnale": {
   "ad": "Colchicum autumnale",
@@ -328,6 +437,13 @@
   "rutbe": "spec.",
   "yazar": "Müll.Arg."
  },
+ "Cucurbita pepo": {
+  "ad": "Cucurbita pepo",
+  "familya": "Cucurbitaceae",
+  "kimlik": "292416-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
  "Cuminum cyminum": {
   "ad": "Cuminum cyminum",
   "familya": "Apiaceae",
@@ -341,6 +457,9 @@
   "kimlik": "796451-1",
   "rutbe": "spec.",
   "yazar": "L."
+ },
+ "Curcuma xanthorrhiza": {
+  "hata": "POWO kaydı olan birebir eşleşme yok"
  },
  "Cynara cardunculus": {
   "ad": "Cynara cardunculus",
@@ -406,6 +525,13 @@
   "rutbe": "spec.",
   "yazar": "(L.) Maton"
  },
+ "Eleutherococcus senticosus": {
+  "ad": "Eleutherococcus senticosus",
+  "familya": "Araliaceae",
+  "kimlik": "90431-1",
+  "rutbe": "spec.",
+  "yazar": "(Maxim. & Rupr.) Maxim."
+ },
  "Ephedra sinica": {
   "ad": "Ephedra sinica",
   "familya": "Ephedraceae",
@@ -413,12 +539,29 @@
   "rutbe": "spec.",
   "yazar": "Stapf"
  },
+ "Epilobium angustifolium": {
+  "ad": "Epilobium angustifolium",
+  "familya": "Onagraceae",
+  "kimlik": "92411-2",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
+ "Equisetum arvense": {
+  "ad": "Equisetum arvense",
+  "familya": "Equisetaceae",
+  "kimlik": "300073-2",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
  "Erythroxylum coca": {
   "ad": "Erythroxylum coca",
   "familya": "Erythroxylaceae",
   "kimlik": "330132-2",
   "rutbe": "spec.",
   "yazar": "Lam."
+ },
+ "Eschscholzia california": {
+  "hata": "POWO kaydı olan birebir eşleşme yok"
  },
  "Eucalyptus globulus": {
   "ad": "Eucalyptus globulus",
@@ -456,6 +599,13 @@
   "rutbe": "spec.",
   "yazar": "L."
  },
+ "Filipendula ulmaria": {
+  "ad": "Filipendula ulmaria",
+  "familya": "Rosaceae",
+  "kimlik": "724943-1",
+  "rutbe": "spec.",
+  "yazar": "(L.) Maxim."
+ },
  "Foeniculum vulgare": {
   "ad": "Foeniculum vulgare",
   "familya": "Apiaceae",
@@ -463,12 +613,30 @@
   "rutbe": "spec.",
   "yazar": "Mill."
  },
+ "Fragaria vesca": {
+  "ad": "Fragaria vesca",
+  "familya": "Rosaceae",
+  "kimlik": "30074127-2",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
  "Fraxinus excelsior": {
   "ad": "Fraxinus excelsior",
   "familya": "Oleaceae",
   "kimlik": "609009-1",
   "rutbe": "spec.",
   "yazar": "L."
+ },
+ "Fucus vesiculosus": {
+  "hata": "POWO kaydı olan birebir eşleşme yok"
+ },
+ "Fumaria officinalis": {
+  "ad": "Fumaria officinalis",
+  "familya": "Papaveraceae",
+  "kimlik": "30017594-2",
+  "rutbe": "spec.",
+  "yazar": "L.",
+  "yazar_kaynagi": "GBIF/WCVP"
  },
  "Ganoderma lucidum": {
   "hata": "POWO kaydı olan birebir eşleşme yok"
@@ -480,6 +648,14 @@
   "rutbe": "spec.",
   "yazar": "L."
  },
+ "Gentiana lutea": {
+  "ad": "Gentiana lutea",
+  "familya": "Gentianaceae",
+  "kimlik": "368453-1",
+  "rutbe": "spec.",
+  "yazar": "L.",
+  "yazar_kaynagi": "GBIF/WCVP"
+ },
  "Ginkgo biloba": {
   "ad": "Ginkgo biloba",
   "familya": "Ginkgoaceae",
@@ -487,12 +663,26 @@
   "rutbe": "spec.",
   "yazar": "L."
  },
+ "Glycine max": {
+  "ad": "Glycine max",
+  "familya": "Fabaceae",
+  "kimlik": "60450240-2",
+  "rutbe": "spec.",
+  "yazar": "(L.) Merr."
+ },
  "Glycyrrhiza glabra": {
   "ad": "Glycyrrhiza glabra",
   "familya": "Leguminosae",
   "kimlik": "496941-1",
   "rutbe": "spec.",
   "yazar": "L."
+ },
+ "Grindelia robusta": {
+  "ad": "Grindelia robusta",
+  "familya": "Asteraceae",
+  "kimlik": "113592-2",
+  "rutbe": "spec.",
+  "yazar": "Nutt."
  },
  "Hamamelis virginiana": {
   "ad": "Hamamelis virginiana",
@@ -507,6 +697,51 @@
   "kimlik": "117330-2",
   "rutbe": "spec.",
   "yazar": "(Mart. ex DC.) Mattos"
+ },
+ "Harpagophytum procumbens": {
+  "ad": "Harpagophytum procumbens",
+  "familya": "Pedaliaceae",
+  "kimlik": "675824-1",
+  "rutbe": "spec.",
+  "yazar": "(Burch.) DC."
+ },
+ "Hedera helix": {
+  "ad": "Hedera helix",
+  "familya": "Araliaceae",
+  "kimlik": "90723-1",
+  "rutbe": "spec.",
+  "yazar": "L.",
+  "yazar_kaynagi": "GBIF/WCVP"
+ },
+ "Helichrysum arenarium": {
+  "ad": "Helichrysum arenarium",
+  "familya": "Asteraceae",
+  "kimlik": "212418-1",
+  "rutbe": "spec.",
+  "yazar": "Moench"
+ },
+ "Herniaria glabra": {
+  "ad": "Herniaria glabra",
+  "familya": "Illecebraceae",
+  "kimlik": "434799-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
+ "Herniaria hirsuta": {
+  "ad": "Herniaria hirsuta",
+  "familya": "Illecebraceae",
+  "kimlik": "434804-1",
+  "rutbe": "spec.",
+  "yazar": "L.",
+  "yazar_kaynagi": "GBIF/WCVP"
+ },
+ "Herniaria incana": {
+  "ad": "Herniaria incana",
+  "familya": "Illecebraceae",
+  "kimlik": "434809-1",
+  "rutbe": "spec.",
+  "yazar": "Lam.",
+  "yazar_kaynagi": "GBIF/WCVP"
  },
  "Hibiscus sabdariffa": {
   "ad": "Hibiscus sabdariffa",
@@ -564,6 +799,13 @@
   "rutbe": "spec.",
   "yazar": "Loes."
  },
+ "Ilex paraguariensis": {
+  "ad": "Ilex paraguariensis",
+  "familya": "Aquifoliaceae",
+  "kimlik": "315555-2",
+  "rutbe": "spec.",
+  "yazar": "A.St.-Hil."
+ },
  "Illicium verum": {
   "ad": "Illicium verum",
   "familya": "Illiciaceae",
@@ -577,6 +819,14 @@
   "kimlik": "442427-1",
   "rutbe": "spec.",
   "yazar": "L."
+ },
+ "Juniperus communis": {
+  "ad": "Juniperus communis",
+  "familya": "Cupressaceae",
+  "kimlik": "30088655-2",
+  "rutbe": "spec.",
+  "yazar": "L.",
+  "yazar_kaynagi": "GBIF/WCVP"
  },
  "Juniperus excelsa": {
   "ad": "Juniperus excelsa",
@@ -636,12 +886,26 @@
   "rutbe": "spec.",
   "yazar": "Medik."
  },
+ "Leonurus cardiaca": {
+  "ad": "Leonurus cardiaca",
+  "familya": "Lamiaceae",
+  "kimlik": "449168-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
  "Lepidium meyenii": {
   "ad": "Lepidium meyenii",
   "familya": "Brassicaceae",
   "kimlik": "286286-1",
   "rutbe": "spec.",
   "yazar": "Walp."
+ },
+ "Levisticum officinale": {
+  "ad": "Levisticum officinale",
+  "familya": "Apiaceae",
+  "kimlik": "844187-1",
+  "rutbe": "spec.",
+  "yazar": "W.D.J.Koch"
  },
  "Linum usitatissimum": {
   "ad": "Linum usitatissimum",
@@ -707,10 +971,24 @@
   "rutbe": "spec.",
   "yazar": "(Lam.) A.H.Gentry"
  },
+ "Marrubium vulgare": {
+  "ad": "Marrubium vulgare",
+  "familya": "Lamiaceae",
+  "kimlik": "449990-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
  "Matricaria chamomilla": {
   "ad": "Matricaria chamomilla",
   "familya": "Asteraceae",
   "kimlik": "154715-2",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
+ "Matricaria recutita": {
+  "ad": "Matricaria recutita",
+  "familya": "Asteraceae",
+  "kimlik": "231986-1",
   "rutbe": "spec.",
   "yazar": "L."
  },
@@ -720,6 +998,20 @@
   "kimlik": "155542-2",
   "rutbe": "spec.",
   "yazar": "Briq."
+ },
+ "Melaleuca alternifolia": {
+  "ad": "Melaleuca alternifolia",
+  "familya": "Myrtaceae",
+  "kimlik": "597833-1",
+  "rutbe": "spec.",
+  "yazar": "Cheel"
+ },
+ "Melilotus officinalis": {
+  "ad": "Melilotus officinalis",
+  "familya": "Fabaceae",
+  "kimlik": "30429323-2",
+  "rutbe": "spec.",
+  "yazar": "Pall."
  },
  "Melissa officinalis": {
   "ad": "Melissa officinalis",
@@ -739,6 +1031,13 @@
   "ad": "Mentha piperita",
   "familya": "Lamiaceae",
   "kimlik": "450969-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
+ "Menyanthes trifoliata": {
+  "ad": "Menyanthes trifoliata",
+  "familya": "Menyanthaceae",
+  "kimlik": "50970102-1",
   "rutbe": "spec.",
   "yazar": "L."
  },
@@ -827,10 +1126,35 @@
   "rutbe": "spec.",
   "yazar": "L."
  },
+ "Oenothera biennis": {
+  "ad": "Oenothera biennis",
+  "familya": "Onagraceae",
+  "kimlik": "172755-2",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
+ "Oenothera lamarckiana": {
+  "hata": "POWO kaydı olan birebir eşleşme yok"
+ },
  "Olea europaea": {
   "ad": "Olea europaea",
   "familya": "Oleaceae",
   "kimlik": "610675-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
+ "Ononis spinosa": {
+  "ad": "Ononis spinosa",
+  "familya": "Fabaceae",
+  "kimlik": "332101-2",
+  "rutbe": "spec.",
+  "yazar": "L.",
+  "yazar_kaynagi": "GBIF/WCVP"
+ },
+ "Origanum dictamnus": {
+  "ad": "Origanum dictamnus",
+  "familya": "Lamiaceae",
+  "kimlik": "453239-1",
   "rutbe": "spec.",
   "yazar": "L."
  },
@@ -898,10 +1222,31 @@
   "rutbe": "spec.",
   "yazar": "L."
  },
+ "Pelargonium sidoides": {
+  "ad": "Pelargonium sidoides",
+  "familya": "Geraniaceae",
+  "kimlik": "377008-1",
+  "rutbe": "spec.",
+  "yazar": "DC."
+ },
  "Petiveria alliacea": {
   "ad": "Petiveria alliacea",
   "familya": "Phytolaccaceae",
   "kimlik": "323288-2",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
+ "Peumus boldus": {
+  "ad": "Peumus boldus",
+  "familya": "Monimiaceae",
+  "kimlik": "191376-2",
+  "rutbe": "spec.",
+  "yazar": "Molina"
+ },
+ "Phaseolus vulgaris": {
+  "ad": "Phaseolus vulgaris",
+  "familya": "Leguminosae",
+  "kimlik": "514191-1",
   "rutbe": "spec.",
   "yazar": "L."
  },
@@ -957,6 +1302,21 @@
   "rutbe": "spec.",
   "yazar": "L."
  },
+ "Plantago lanceolata": {
+  "ad": "Plantago lanceolata",
+  "familya": "Plantaginaceae",
+  "kimlik": "321285-2",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
+ "Plantago ovata": {
+  "ad": "Plantago ovata",
+  "familya": "Plantaginaceae",
+  "kimlik": "685486-1",
+  "rutbe": "spec.",
+  "yazar": "Forssk.",
+  "yazar_kaynagi": "GBIF/WCVP"
+ },
  "Plukenetia volubilis": {
   "ad": "Plukenetia volubilis",
   "familya": "Euphorbiaceae",
@@ -969,6 +1329,42 @@
   "ad": "Podophyllum peltatum",
   "familya": "Berberidaceae",
   "kimlik": "107599-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
+ "Polygonum aviculare": {
+  "ad": "Polygonum aviculare",
+  "familya": "Polygonaceae",
+  "kimlik": "695422-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
+ "Polypodium vulgare": {
+  "ad": "Polypodium vulgare",
+  "familya": "Polypodiaceae",
+  "kimlik": "300720-2",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
+ "Potentilla erecta": {
+  "ad": "Potentilla erecta",
+  "familya": "Rosaceae",
+  "kimlik": "60457410-2",
+  "rutbe": "spec.",
+  "yazar": "(L.) Raeusch.",
+  "yazar_kaynagi": "GBIF/WCVP"
+ },
+ "Primula elatior": {
+  "ad": "Primula elatior",
+  "familya": "Primulaceae",
+  "kimlik": "701870-1",
+  "rutbe": "spec.",
+  "yazar": "Hill"
+ },
+ "Primula veris": {
+  "ad": "Primula veris",
+  "familya": "Primulaceae",
+  "kimlik": "702751-1",
   "rutbe": "spec.",
   "yazar": "L."
  },
@@ -1017,6 +1413,27 @@
   "rutbe": "spec.",
   "yazar": "L."
  },
+ "Rhamnus frangula": {
+  "ad": "Rhamnus frangula",
+  "familya": "Rhamnaceae",
+  "kimlik": "718338-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
+ "Rheum officinale": {
+  "ad": "Rheum officinale",
+  "familya": "Polygonaceae",
+  "kimlik": "696768-1",
+  "rutbe": "spec.",
+  "yazar": "Baill."
+ },
+ "Rheum palmatum": {
+  "ad": "Rheum palmatum",
+  "familya": "Polygonaceae",
+  "kimlik": "696772-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
  "Rheum ribes": {
   "ad": "Rheum ribes",
   "familya": "Polygonaceae",
@@ -1042,6 +1459,13 @@
   "ad": "Rhus coriaria",
   "familya": "Anacardiaceae",
   "kimlik": "70477-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
+ "Ribes nigrum": {
+  "ad": "Ribes nigrum",
+  "familya": "Grossulariaceae",
+  "kimlik": "792873-1",
   "rutbe": "spec.",
   "yazar": "L."
  },
@@ -1079,6 +1503,20 @@
   "kimlik": "30032120-2",
   "rutbe": "fam.",
   "yazar": "Juss."
+ },
+ "Rubus idaeus": {
+  "ad": "Rubus idaeus",
+  "familya": "Rosaceae",
+  "kimlik": "298089-2",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
+ "Ruscus aculeatus": {
+  "ad": "Ruscus aculeatus",
+  "familya": "Ruscaceae",
+  "kimlik": "540443-1",
+  "rutbe": "spec.",
+  "yazar": "L."
  },
  "Ruta graveolens": {
   "ad": "Ruta graveolens",
@@ -1194,6 +1632,13 @@
   "rutbe": "spec.",
   "yazar": "(L.) Gaertn."
  },
+ "Sisymbrium officinale": {
+  "ad": "Sisymbrium officinale",
+  "familya": "Brassicaceae",
+  "kimlik": "289589-1",
+  "rutbe": "spec.",
+  "yazar": "(L.) Scop."
+ },
  "Smallanthus sonchifolius": {
   "ad": "Smallanthus sonchifolius",
   "familya": "Asteraceae",
@@ -1204,10 +1649,24 @@
  "Solanaceae": {
   "hata": "eşadlı: 30000631-2 (Juss.), 60437408-2 (Adans.)"
  },
+ "Solidago virgaurea": {
+  "ad": "Solidago virgaurea",
+  "familya": "Asteraceae",
+  "kimlik": "249947-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
  "Sorbus aucuparia": {
   "ad": "Sorbus aucuparia",
   "familya": "Rosaceae",
   "kimlik": "741641-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
+ "Symphytum officinale": {
+  "ad": "Symphytum officinale",
+  "familya": "Boraginaceae",
+  "kimlik": "120815-1",
   "rutbe": "spec.",
   "yazar": "L."
  },
@@ -1217,6 +1676,13 @@
   "kimlik": "601421-1",
   "rutbe": "spec.",
   "yazar": "(L.) Merr. & L.M.Perry"
+ },
+ "Tanacetum parthenium": {
+  "ad": "Tanacetum parthenium",
+  "familya": "Asteraceae",
+  "kimlik": "252460-1",
+  "rutbe": "spec.",
+  "yazar": "Sch.Bip."
  },
  "Taraxacum officinale": {
   "ad": "Taraxacum officinale",
@@ -1297,6 +1763,13 @@
   "rutbe": "spec.",
   "yazar": "Aiton"
  },
+ "Vaccinium myrtillus": {
+  "ad": "Vaccinium myrtillus",
+  "familya": "Ericaceae",
+  "kimlik": "30006039-2",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
  "Valeriana officinalis": {
   "ad": "Valeriana officinalis",
   "familya": "Valerianaceae",
@@ -1329,6 +1802,13 @@
   "ad": "Vitex agnus-castus",
   "familya": "Lamiaceae",
   "kimlik": "865568-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
+ "Vitis vinifera": {
+  "ad": "Vitis vinifera",
+  "familya": "Vitaceae",
+  "kimlik": "30478388-2",
   "rutbe": "spec.",
   "yazar": "L."
  },
