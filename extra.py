@@ -268,6 +268,9 @@ BR_GEO.extend([[(32.9, 39.9, 'Anadolu: kına', 'anadolu'), (-73.5, -4.5, 'Amazon
 
 # Fotoğraf alt metinleri: fotoğrafta ne göründüğü (bitki adı ayrıca eklenir)
 ALT = {
+ 'sarmasik':'ağaç gövdesine tırmanan loblu, açık damarlı yapraklar',
+ 'karniyarik':'kumlu toprakta dar yapraklı küçük bitki ve başakları',
+ 'asmayapragi':'arkadan ışık alan tek sonbahar asma yaprağı',
  'achiote':'açılmış meyve kapsülü ve kırmızı tohumlar','adacayi':'mor çiçekli dallar','adamotu':'mor çiçekler ve yaprak demeti','akadacayi':'gümüşi yapraklar',
  'alic':'beyaz çiçek kümeleri','ardic':'dal ve mavimsi kozalak meyveleri','ayahuasca':'pembe ve beyaz çiçek kümesi','banotu':'damarlı sarımsı çiçek',
  'biberiye':'açık mor çiçekli dallar','chacruna':'parlak yeşil yapraklar','chanca':'küçük yapraklı dallar','chuchuhuasi':'kesilmiş kabuk parçaları',
