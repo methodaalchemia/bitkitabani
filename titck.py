@@ -87,4 +87,7 @@ M = {
  'esmersuyosunu': ('Fucus vesiculosus L.', '2023/dynamicModulesAttachment/FucusvesiculosusL.v3_107a094e-671b-4bf4-b6a7-2d89514765ef.pdf'),
  'izlandalikeni': ('Cetraria islandica (L.) Acharius s.l.', '2023/dynamicModulesAttachment/CetrariaislandicaL.Achariuss.l_a6aaec19-153c-4518-a814-c10239409af6.pdf'),
  'mate': ('Ilex paraguariensis St.-Hil.', '2022/dynamicModulesAttachment/IlexparaguariensisSt.Hilaire6d6b83817b114509a49eaec8add91541_dd66941a-c63b-43d1-b9e8-e0bdb2b248e2.pdf'),
+ 'cuhacicegi': ('Primula veris L.', '2024/dynamicModulesAttachment/PrimulaverisL._1db4d1c0-0eeb-40c6-90ce-4600dd95cf95.pdf'),
+ 'besparmakotu': ('Potentilla erecta (L.) Raeusch.', '2023/dynamicModulesAttachment/PotentillaerectaL.Raeusch.v2_7104afdd-0181-46d5-a72f-549a5817cd17.pdf'),
+ 'koyunotu': ('Agrimonia eupatoria L.', '2023/dynamicModulesAttachment/AgrimoniaeupatoriaL.yaymlV2_33336722-c034-4c27-b528-d071e8ed3146.pdf'),
 }

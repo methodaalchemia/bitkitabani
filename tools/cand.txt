@@ -32,3 +32,6 @@ aslankuyrugu | Leonurus cardiaca | leaves flower whorls -leonotis
 esmersuyosunu | Fucus vesiculosus | seaweed bladders rocks
 izlandalikeni | Cetraria islandica | lichen thallus ground
 mate | Ilex paraguariensis | leaves branch tree -gourd-bombilla
+cuhacicegi | Primula veris | yellow flowers meadow -obconica
+besparmakotu | Potentilla erecta | yellow four-petal flower
+koyunotu | Agrimonia eupatoria | yellow flower spike

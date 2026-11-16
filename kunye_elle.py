@@ -728,6 +728,18 @@ ELLE.update({
    titck_apa('Ilex paraguariensis St.-Hil.'),
 })
 
+# TİTCK monograf dosyaları (kuyruk/k20.py).
+ELLE.update({
+ 'https://titck.gov.tr/storage/Archive/2024/dynamicModulesAttachment/PrimulaverisL._1db4d1c0-0eeb-40c6-90ce-4600dd95cf95.pdf':
+   titck_apa('Primula veris L.'),
+ 'https://titck.gov.tr/storage/Archive/2024/dynamicModulesAttachment/PrimulaelatiorL.Hill_b90ba805-ae98-4da2-840d-03d590857f89.pdf':
+   titck_apa('Primula elatior (L.) Hill.'),
+ 'https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/PotentillaerectaL.Raeusch.v2_7104afdd-0181-46d5-a72f-549a5817cd17.pdf':
+   titck_apa('Potentilla erecta (L.) Raeusch.'),
+ 'https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/AgrimoniaeupatoriaL.yaymlV2_33336722-c034-4c27-b528-d071e8ed3146.pdf':
+   titck_apa('Agrimonia eupatoria L.'),
+})
+
 # Kurum yayını: APA'da kurumsal yazar ve yayın türü köşeli ayraçta.
 ELLE['https://www.iarc.who.int/wp-content/uploads/2018/07/pr244_E.pdf'] = (
     'Uluslararası Kanser Araştırmaları Ajansı. (2016). IARC Monographs '
