@@ -10,7 +10,7 @@ Q = [
     dict(
         yayin='2026-12-29',
         id='kabakcekirdegi',
-        foto='',
+        foto='Pepita de calabaza.jpg',
         tr='Kabak çekirdeği',
         la='Cucurbita pepo L.',
         fam='Cucurbitaceae (kabakgiller)',
@@ -270,7 +270,7 @@ Q = [
     dict(
         yayin='2026-12-30',
         id='arnika',
-        foto='',
+        foto='Arnica montana Arnika górska 2023-06-08 02.jpg',
         tr='Arnika',
         la='Arnica montana L.',
         fam='Asteraceae (papatyagiller)',
@@ -547,7 +547,7 @@ Q = [
     dict(
         yayin='2026-12-31',
         id='yabanmersini',
-        foto='',
+        foto='Vaccinium myrtillus Borówka czarna 2023-08-25 Dolina Roztoki 05.jpg',
         tr='Yaban mersini',
         la='Vaccinium myrtillus L.',
         fam='Ericaceae (fundagiller)',

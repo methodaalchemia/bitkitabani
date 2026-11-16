@@ -18,7 +18,7 @@ Q = [
     dict(
         yayin='2026-12-23',
         id='seytanpencesi',
-        foto='',
+        foto='Harpagophytum procumbens 1DS-II 2-2169.jpg',
         tr='Şeytanpençesi',
         la='Harpagophytum procumbens DC.',
         fam='Pedaliaceae (susamgiller)',
@@ -258,7 +258,7 @@ Q = [
     dict(
         yayin='2026-12-24',
         id='karakafesotu',
-        foto='',
+        foto='Symphytum officinale (4970747978).jpg',
         tr='Karakafesotu',
         la='Symphytum officinale L.',
         fam='Boraginaceae (hodangiller)',
@@ -468,7 +468,7 @@ Q = [
     dict(
         yayin='2026-12-25',
         id='guneyafrikasardunyasi',
-        foto='',
+        foto='Pelargonium sidoides 1DS-II 2-0714.jpg',
         tr='Güney Afrika sardunyası',
         la='Pelargonium sidoides DC.',
         fam='Geraniaceae (turnagagasıgiller)',

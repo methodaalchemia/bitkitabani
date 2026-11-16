@@ -11,7 +11,7 @@ Q = [
     dict(
         yayin='2026-12-26',
         id='gumusdugme',
-        foto='',
+        foto='Altamisa (Tanacetum parthenium) 0063.jpg',
         tr='Gümüş düğme',
         la='Tanacetum parthenium (L.) Schultz Bip.',
         fam='Asteraceae (papatyagiller)',
@@ -247,7 +247,7 @@ Q = [
     dict(
         yayin='2026-12-27',
         id='cayagaci',
-        foto='',
+        foto='200518 049 Alta Vista Botanical Gardens, Melaleuca alternifolia Australian Tea Oil Tree.jpg',
         tr='Çay ağacı',
         la='Melaleuca alternifolia (Maiden & Betche) Cheel',
         fam='Myrtaceae (mersingiller)',
@@ -498,7 +498,7 @@ Q = [
     dict(
         yayin='2026-12-28',
         id='atkuyrugu',
-        foto='',
+        foto='Equisetum arvense foliage.jpg',
         tr='At kuyruğu',
         la='Equisetum arvense L.',
         fam='Equisetaceae (atkuyruğugiller)',

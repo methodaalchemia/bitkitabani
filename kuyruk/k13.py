@@ -10,7 +10,7 @@ Q = [
     dict(
         yayin='2027-01-01',
         id='aynisefa',
-        foto='',
+        foto='Calendula officinalis 31122014 (2).jpg',
         tr='Aynısefa',
         la='Calendula officinalis L.',
         fam='Asteraceae (papatyagiller)',
@@ -252,7 +252,7 @@ Q = [
     dict(
         yayin='2027-01-02',
         id='kirmizikantaron',
-        foto='',
+        foto='Centaurium erythraea (flowers).jpg',
         tr='Kırmızı kantaron',
         la='Centaurium erythraea Rafn',
         fam='Gentianaceae (centiyangiller)',
@@ -473,7 +473,7 @@ Q = [
     dict(
         yayin='2027-01-03',
         id='olmezcicek',
-        foto='',
+        foto='Helichrysum arenarium Kocanki piaskowe 2021-06-27 02.jpg',
         tr='Ölmez çiçek',
         la='Helichrysum arenarium (L.) Moench',
         fam='Asteraceae (papatyagiller)',

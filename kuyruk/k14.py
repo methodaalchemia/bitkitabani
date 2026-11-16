@@ -11,7 +11,7 @@ Q = [
     dict(
         yayin='2027-01-04',
         id='cobancantasi',
-        foto='',
+        foto='Capsella bursa-pastoris flower6 (14679442564).jpg',
         tr='Çoban çantası',
         la='Capsella bursa-pastoris (L.) Medik.',
         fam='Brassicaceae (turpgiller)',
@@ -269,7 +269,7 @@ Q = [
     dict(
         yayin='2027-01-05',
         id='sahtere',
-        foto='',
+        foto='Fumaria officinalis 2601.JPG',
         tr='Şahtere',
         la='Fumaria officinalis L.',
         fam='Papaveraceae (gelincikgiller)',
@@ -526,7 +526,7 @@ Q = [
     dict(
         yayin='2027-01-06',
         id='sinirliot',
-        foto='',
+        foto='Plantago lanceolata Babka lancetowata 2022-06-21 03.jpg',
         tr='Sinirli ot',
         la='Plantago lanceolata L.',
         fam='Plantaginaceae (sinirotugiller)',
