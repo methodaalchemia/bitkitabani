@@ -8,3 +8,6 @@ guneyafrikasardunyasi | Pelargonium sidoides | plant flowers -garden-geranium
 gumusdugme | Tanacetum parthenium | plant flowers leaves -chamomile
 cayagaci | Melaleuca alternifolia | tree leaves flowers -oil-bottle
 atkuyrugu | Equisetum arvense | sterile shoots field -palustre
+kabakcekirdegi | Cucurbita pepo | seeds pepitas -carved-jack-o-lantern
+arnika | Arnica montana | flower meadow -homeopathy-package
+yabanmersini | Vaccinium myrtillus | berries shrub -cultivated-blueberry

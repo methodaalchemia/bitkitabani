@@ -648,6 +648,16 @@ ELLE.update({
    titck_apa('Equisetum arvense L.'),
 })
 
+# TİTCK monograf dosyaları (kuyruk/k12.py).
+ELLE.update({
+ 'https://titck.gov.tr/storage/Archive/2024/dynamicModulesAttachment/CucurbitapepoL.v2_6a1790e8-b9ce-4b13-acb7-2892c9c24092.pdf':
+   titck_apa('Cucurbita pepo L.'),
+ 'https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/ArnicamontanaL.V2_3222564f-40c5-40fd-9dd2-be57aea057ad.pdf':
+   titck_apa('Arnica montana L.'),
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/Vaccinummyrtillus5d08f485590d4249a3583081a086c7b1_5b750c9a-75a3-456e-b72a-6c304ce8d3a1.pdf':
+   titck_apa('Vaccinium myrtillus L.'),
+})
+
 # APA künyesindeki yapısal ekler Türkçe yazılır. İngilizce sayfalarda aynı
 # künye kullanılır, yalnızca bu ekler değiştirilir; eser adlarına dokunulmaz.
 _EN = [

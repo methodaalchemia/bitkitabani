@@ -63,4 +63,7 @@ M = {
  'seytanpencesi': ('Harpagophytum procumbens DC.', '2022/dynamicModulesAttachment/HarpagophytumprocumbensDC.1f3aee27592549acbd161c86d382a2dd_e7eae39e-2b11-4ed6-a834-e758c16b8ef6.pdf'),
  'guneyafrikasardunyasi': ('Pelargonium sidoides DC.', '2024/dynamicModulesAttachment/PelargoniumsidoidesDC.V3_7feee38d-2a52-4217-bdc8-a923af40b8b3.pdf'),
  'karakafesotu': ('Symphytum officinale L.', '2025/dynamicModulesAttachment/SymphytumofficinaleLv230.12.2025_369925b8-5621-4050-b510-f1da49766dca.docx'),
+ 'kabakcekirdegi': ('Cucurbita pepo L.', '2024/dynamicModulesAttachment/CucurbitapepoL.v2_6a1790e8-b9ce-4b13-acb7-2892c9c24092.pdf'),
+ 'arnika': ('Arnica montana L.', '2023/dynamicModulesAttachment/ArnicamontanaL.V2_3222564f-40c5-40fd-9dd2-be57aea057ad.pdf'),
+ 'yabanmersini': ('Vaccinium myrtillus L.', '2022/dynamicModulesAttachment/Vaccinummyrtillus5d08f485590d4249a3583081a086c7b1_5b750c9a-75a3-456e-b72a-6c304ce8d3a1.pdf'),
 }
