@@ -1950,5 +1950,107 @@
   "license": "CC0",
   "page": "https://commons.wikimedia.org/wiki/File:Helichrysum_arenarium_%28flowers%29.jpg"
  },
- "olmezcicek:kuru": "yok"
+ "olmezcicek:kuru": "yok",
+ "cobancantasi:cizim": "yok",
+ "cobancantasi:cicek": {
+  "file": "Starr-110201-0500-Capsella bursa pastoris-flower and seeds-Kula-Maui (24443150594).jpg",
+  "artist": "Forest and Kim Starr",
+  "license": "CC BY 3.0 us",
+  "page": "https://commons.wikimedia.org/wiki/File:Starr-110201-0500-Capsella_bursa_pastoris-flower_and_seeds-Kula-Maui_%2824443150594%29.jpg"
+ },
+ "cobancantasi:kuru": "yok",
+ "sahtere:cizim": {
+  "file": "Illustration Fumaria officinalis clean.JPG",
+  "artist": "File:Illustration Fumaria officinalis0.jpg : PLEASE COMPLETE",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Fumaria_officinalis_clean.JPG"
+ },
+ "sahtere:cicek": {
+  "file": "Ruhland, Karl-Liebknecht-Str. 9a, Gewöhnlicher Erdrauch blühend, Frühling, 09.jpg",
+  "artist": "Wilhelm Zimmerling PAR",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ruhland%2C_Karl-Liebknecht-Str._9a%2C_Gew%C3%B6hnlicher_Erdrauch_bl%C3%BChend%2C_Fr%C3%BChling%2C_09.jpg"
+ },
+ "sahtere:kuru": "yok",
+ "sinirliot:cizim": "yok",
+ "sinirliot:cicek": {
+  "file": "Plantago lanceolata - flower - dark field microscopic photo.jpg",
+  "artist": "Sylwiaxak",
+  "license": "CC BY 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Plantago_lanceolata_-_flower_-_dark_field_microscopic_photo.jpg"
+ },
+ "sinirliot:kuru": "yok",
+ "ahududuyapragi:cizim": {
+  "file": "Rubus idaeus - Köhler–s Medizinal-Pflanzen-124.jpg",
+  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Rubus_idaeus_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-124.jpg"
+ },
+ "ahududuyapragi:cicek": {
+  "file": "Raspberry flower in Sweden.jpg",
+  "artist": "Inhemska trädgården",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Raspberry_flower_in_Sweden.jpg"
+ },
+ "ahududuyapragi:kuru": "yok",
+ "tavsanmemesi:cizim": {
+  "file": "Illustration Ruscus aculeatus clean.jpg",
+  "artist": "File:Illustration Ruscus aculeatus0.jpg : PLEASE COMPLETE AU",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Ruscus_aculeatus_clean.jpg"
+ },
+ "tavsanmemesi:cicek": {
+  "file": "Ruscus aculeatus close-up flower 2.JPG",
+  "artist": "Meneerke bloem",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ruscus_aculeatus_close-up_flower_2.JPG"
+ },
+ "tavsanmemesi:kuru": "yok",
+ "yakiotu:cizim": {
+  "file": "Cleaned-Illustration Epilobium angustifolium.jpg",
+  "artist": "Wikimedia Commons",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Cleaned-Illustration_Epilobium_angustifolium.jpg"
+ },
+ "yakiotu:cicek": {
+  "file": "Purple Lupine Flowers.jpg",
+  "artist": "Giacomo Paltenghi",
+  "license": "CC BY 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Purple_Lupine_Flowers.jpg"
+ },
+ "yakiotu:kuru": "yok",
+ "hindiba:cizim": {
+  "file": "Illustration Cichorium intybus.jpg",
+  "artist": "Illustration_Cichorium_intybus0.jpg derivative work: Wilfred",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Cichorium_intybus.jpg"
+ },
+ "hindiba:cicek": {
+  "file": "Purple chicory flower.jpg",
+  "artist": "Eden Aviv",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Purple_chicory_flower.jpg"
+ },
+ "hindiba:kuru": "yok",
+ "centiyan:cizim": {
+  "file": "Gentiana lutea - Köhler–s Medizinal-Pflanzen-066.jpg",
+  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Gentiana_lutea_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-066.jpg"
+ },
+ "centiyan:cicek": {
+  "file": "Gentiana lutea at Lac de Roy (3).jpg",
+  "artist": "Krzysztof Golik",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Gentiana_lutea_at_Lac_de_Roy_%283%29.jpg"
+ },
+ "centiyan:kuru": "yok",
+ "tuyluladen:cizim": "yok",
+ "tuyluladen:cicek": {
+  "file": "Colored flowers e.jpg",
+  "artist": "Alvesgaspar",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Colored_flowers_e.jpg"
+ },
+ "tuyluladen:kuru": "yok"
 }
