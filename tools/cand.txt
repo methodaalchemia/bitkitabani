@@ -59,3 +59,6 @@ esekotu | Oenothera biennis | yellow flowers plant
 giritkekigi | Origanum dictamnus | plant pink bracts woolly leaves
 cobandegnegi | Polygonum aviculare | plant prostrate flowers
 mercankosk | Origanum majorana | plant leaves flowers
+mur | Commiphora myrrha | resin tree -boswellia
+limonverbena | Aloysia citrodora | plant leaves
+hercaimenekse | Viola tricolor | wild flower -wittrockiana

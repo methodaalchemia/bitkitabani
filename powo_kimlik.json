@@ -49,6 +49,13 @@
   "yazar": "(L.) Burm.f.",
   "yazar_kaynagi": "GBIF/WCVP"
  },
+ "Aloysia citrodora": {
+  "ad": "Aloysia citrodora",
+  "familya": "Verbenaceae",
+  "kimlik": "1015994-1",
+  "rutbe": "spec.",
+  "yazar": "Paláu"
+ },
  "Althaea officinalis": {
   "ad": "Althaea officinalis",
   "familya": "Malvaceae",
@@ -318,6 +325,9 @@
  "Cetraria islandica": {
   "hata": "POWO kaydı olan birebir eşleşme yok"
  },
+ "Cetraria islandica (L.) Ach.": {
+  "hata": "POWO kaydı olan birebir eşleşme yok"
+ },
  "Chamaemelum nobile": {
   "ad": "Chamaemelum nobile",
   "familya": "Asteraceae",
@@ -394,6 +404,13 @@
   "kimlik": "533232-1",
   "rutbe": "spec.",
   "yazar": "L."
+ },
+ "Commiphora myrrha": {
+  "ad": "Commiphora myrrha",
+  "familya": "Burseraceae",
+  "kimlik": "127741-1",
+  "rutbe": "spec.",
+  "yazar": "(T.Nees) Engl."
  },
  "Conium maculatum": {
   "ad": "Conium maculatum",
@@ -532,6 +549,13 @@
   "rutbe": "spec.",
   "yazar": "(Maxim. & Rupr.) Maxim."
  },
+ "Elymus repens": {
+  "ad": "Elymus repens",
+  "familya": "Poaceae",
+  "kimlik": "90320-2",
+  "rutbe": "spec.",
+  "yazar": "(L.) Gould"
+ },
  "Ephedra sinica": {
   "ad": "Ephedra sinica",
   "familya": "Ephedraceae",
@@ -562,6 +586,13 @@
  },
  "Eschscholzia california": {
   "hata": "POWO kaydı olan birebir eşleşme yok"
+ },
+ "Eschscholzia californica": {
+  "ad": "Eschscholzia californica",
+  "familya": "Papaveraceae",
+  "kimlik": "30043364-2",
+  "rutbe": "spec.",
+  "yazar": "Cham."
  },
  "Eucalyptus globulus": {
   "ad": "Eucalyptus globulus",
@@ -628,6 +659,9 @@
   "yazar": "L."
  },
  "Fucus vesiculosus": {
+  "hata": "POWO kaydı olan birebir eşleşme yok"
+ },
+ "Fucus vesiculosus L.": {
   "hata": "POWO kaydı olan birebir eşleşme yok"
  },
  "Fumaria officinalis": {
@@ -1155,6 +1189,13 @@
   "ad": "Origanum dictamnus",
   "familya": "Lamiaceae",
   "kimlik": "453239-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
+ "Origanum majorana": {
+  "ad": "Origanum majorana",
+  "familya": "Lamiaceae",
+  "kimlik": "453303-1",
   "rutbe": "spec.",
   "yazar": "L."
  },
@@ -1788,6 +1829,13 @@
   "ad": "Verbena officinalis",
   "familya": "Verbenaceae",
   "kimlik": "330554-2",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
+ "Viola tricolor": {
+  "ad": "Viola tricolor",
+  "familya": "Violaceae",
+  "kimlik": "869428-1",
   "rutbe": "spec.",
   "yazar": "L."
  },

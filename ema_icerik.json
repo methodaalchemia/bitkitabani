@@ -1874,6 +1874,45 @@
   "pdf": "https://www.ema.europa.eu/en/documents/herbal-monograph/final-european-union-herbal-monograph-menyanthes-trifoliata-l-folium_en.pdf",
   "uzunluk": 21381
  },
+ "myrrha": {
+  "bolum": {
+   "doz_asimi": {
+    "geleneksel": "No case of overdose has been reported. Not required as per Article 16c(1)(a)(iii) of Directive 2001/83/EC as amended. Not required as per Article 16c(1)(a)(iii) of Directive 2001/83/EC as amended. Not required as per Article 16c(1)(a)(iii) of Directive 2001/83/EC as amended, unless necessary for the safe use of the product. gummi-resina Adequate tests on genotoxicity have not been performed. Tests on reproductive toxicity and carcinogenic potential have not been performed. Not applicable. gummi-resina",
+    "iyi_bilinen": "5. Pharmacological properties 5.1. Pharmacodynamic properties 5.2. Pharmacokinetic properties 5.3. Preclinical safety data Community herbal monograph on Commiphora molmol Engler, 6. Pharmaceutical particulars 7. Date of compilation/last revision 12 July 2011 Community herbal monograph on Commiphora molmol Engler,"
+   },
+   "dozaj": {
+    "geleneksel": "Posology Oromucosal use Indication 1) Adolescents, adults and elderly i) 0.5-5 ml of tincture in 150 ml of water for rinsing or gargling 3 times daily. or ii) The undiluted tincture is applied to the affected areas with a cotton bud 2-3 times daily. The use in children under 12 years of age is not recommended (see section 4.4 ‘Special warnings and precautions for use’). Cutaneous use Indication 2) Adolescents, adults and elderly The wound or furuncle is dabbed 2-3 times daily with undiluted (preferably) or diluted tincture in water. The use in children under 12 years of age is not recommended (see section 4.4 ‘Special warnings and precautions for use’). Duration of use If the symptoms persist after 1 week during the use of the medicinal product, a doctor or a qualified health care practitioner should be consulted. Method of administration Oromucosal and cutaneous use. gummi-resina",
+    "iyi_bilinen": "and method of administration Community herbal monograph on Commiphora molmol Engler,"
+   },
+   "endikasyon": {
+    "geleneksel": "Indication 1) Traditional herbal medicinal product for treatment of minor ulcers and inflammation in the mouth 01/2008:1349 corrected 6.0). finished product should be in accordance with relevant herbal gummi-resina (stomatitis and gingivitis). Indication 2) Traditional herbal medicinal product for treatment of minor wounds and small boils (furuncles). The product is a traditional herbal medicinal product for use in specified indications exclusively based upon long-standing use.",
+    "iyi_bilinen": "1 The material complies with the Ph. Eur. monograph (ref.: 2 The declaration of the active substance(s) for an individual quality guidance. Community herbal monograph on Commiphora molmol Engler,"
+   },
+   "etkilesim": {
+    "geleneksel": "None reported.",
+    "iyi_bilinen": "with other medicinal products and other forms of interaction"
+   },
+   "gebelik": {
+    "geleneksel": "Safety during pregnancy and lactation has not been established. In the absence of sufficient data, the use during pregnancy and lactation is not recommended. No fertility data available. gummi-resina No studies on the effect on the ability to drive and use machines have been performed.",
+    "iyi_bilinen": "and lactation Community herbal monograph on Commiphora molmol Engler, 4.7. Effects on ability to drive and use machines"
+   },
+   "istenmeyen": {
+    "geleneksel": "Allergic skin reactions have been reported. The frequency is not known. The tincture contains alcohol, which may cause a transient pain and irritation on application to the mucosa or skin. If other adverse reactions not mentioned above occur, a doctor or a qualified health care practitioner should be consulted.",
+    "iyi_bilinen": null
+   },
+   "kontrendikasyon": {
+    "geleneksel": "Hypersensitivity to the active substance.",
+    "iyi_bilinen": null
+   },
+   "uyari": {
+    "geleneksel": "Indications 1) and 2) The use in children under 12 years of age is not recommended due to lack of adequate data. If the symptoms worsen during the use of the medicinal product, a doctor or a qualified health care practitioner should be consulted. The appropriate labelling for ethanol, taken from the ‘Guideline on excipients in the label and package leaflet of medicinal products for human use’, must be included. Indication 2) If fever or signs of exacerbating skin infection are observed, a doctor or a qualified health care practitioner should be consulted. Small boils (furuncles) in the face should be treated by a medical doctor. Eye contact with myrrh tincture should be avoided.",
+    "iyi_bilinen": "and precautions for use"
+   }
+  },
+  "kanit": "geleneksel kullanım",
+  "pdf": "https://www.ema.europa.eu/en/documents/herbal-monograph/final-community-herbal-monograph-commiphora-molmol-engler-gummi-resina_en.pdf",
+  "uzunluk": 15677
+ },
  "myrtilli-fructus-recens": {
   "bolum": {
    "doz_asimi": {
@@ -2871,6 +2910,80 @@
   "kanit": "geleneksel kullanım",
   "pdf": "https://www.ema.europa.eu/en/documents/herbal-monograph/final-community-herbal-monograph-potentilla-erecta-l-raeusch-rhizoma_en.pdf",
   "uzunluk": 20216
+ },
+ "verbenae-citriodorae-folium": {
+  "bolum": {
+   "doz_asimi": {
+    "geleneksel": "No case of overdose has been reported. Not required as per Article 16c(1)(a)(iii) of Directive 2001/83/EC. Not required as per Article 16c(1)(a)(iii) of Directive 2001/83/EC. Not required as per Article 16c(1)(a)(iii) of Directive 2001/83/EC, unless necessary for the safe use of the product. Adequate tests on reproductive toxicity, genotoxicity and carcinogenicity have not been performed. Kunth), folium Not applicable Aloysia Kunth), folium Page 7/7",
+    "iyi_bilinen": "5. Pharmacological properties 5.1. Pharmacodynamic properties 5.2. Pharmacokinetic properties 5.3. Preclinical safety data triphylla (L'Hér.) Kuntze; Verbena triphylla L'Hér.; Lippia citriodora 6. Pharmaceutical particulars 7. Date of compilation/last revision 13 January 2021 European Union herbal monograph on Aloysia citrodora Paláu (syn. triphylla (L'Hér.) Kuntze; Verbena triphylla L'Hér.; Lippia citriodora EMA/HMPC/376770/2019"
+   },
+   "dozaj": {
+    "geleneksel": "Posology Adolescents, Adults and Elderly Indication 1) Herbal tea For relief of mild symptoms of mental stress: 5 g of the comminuted herbal substance in 100 ml of boiling water as a decoction, 3 times daily. To aid sleep: 1-2 g of the comminuted herbal substance in 200 ml of boiling water as a herbal infusion half an hour before bedtime Indication 2) Herbal tea 2-3 g of the comminuted herbal substance in 200 ml of boiling water as a herbal infusion, 1-3 times daily, or 1 g of the comminuted herbal substance in 200 ml of boiling water as a herbal infusion up to 5 times daily. The use in children is not recommended (see section 4.4 ‘Special warnings and precautions for use’). Duration of use If the symptoms persist longer than 2 weeks during the use of the medicinal product, a doctor or a qualified health care practitioner should be consulted. herbal tea or as infusion/decoction/macerate (EMA/HMPC/5829/2010 Rev.1). Aloysia Kunth), folium Page 4/7 Method of administration Oral use",
+    "iyi_bilinen": "and method of administration 3 For guidance on herbal substance/herbal preparation administered as preparation, please refer to the HMPC ‘Glossary on herbal teas’ European Union herbal monograph on Aloysia citrodora Paláu (syn. triphylla (L'Hér.) Kuntze; Verbena triphylla L'Hér.; Lippia citriodora EMA/HMPC/376770/2019"
+   },
+   "endikasyon": {
+    "geleneksel": "Indication 1) Traditional herbal medicinal product for relief of mild symptoms of mental stress and to aid product should be in accordance with relevant herbal Aloysia Kunth), folium Page 3/7 sleep. Indication 2) Traditional herbal medicinal product for symptomatic treatment of mild gastrointestinal complaints including bloating and flatulence. The product is a traditional herbal medicinal product for use in the specified indications exclusively based upon long-standing use.",
+    "iyi_bilinen": "The declaration of the active substance(s) for an individual finished quality guidance. The material complies with the Ph. Eur. monograph (ref.: 1834). European Union herbal monograph on Aloysia citrodora Paláu (syn. triphylla (L'Hér.) Kuntze; Verbena triphylla L'Hér.; Lippia citriodora EMA/HMPC/376770/2019"
+   },
+   "etkilesim": {
+    "geleneksel": "None reported",
+    "iyi_bilinen": "with other medicinal products and other forms of interaction"
+   },
+   "gebelik": {
+    "geleneksel": "Safety during pregnancy and lactation has not been established. In the absence of sufficient data, the use during pregnancy and lactation is not recommended. No fertility data available. May impair ability to drive and use machines. Affected patients should not drive or operate machinery. Kunth), folium",
+    "iyi_bilinen": "and lactation 4.7. Effects on ability to drive and use machines triphylla (L'Hér.) Kuntze; Verbena triphylla L'Hér.; Lippia citriodora"
+   },
+   "istenmeyen": {
+    "geleneksel": "None known If adverse reactions occur, a doctor or a qualified health care practitioner should be consulted.",
+    "iyi_bilinen": null
+   },
+   "kontrendikasyon": {
+    "geleneksel": "Hypersensitivity to the active substance and to other plants of the Verbenaceae family.",
+    "iyi_bilinen": null
+   },
+   "uyari": {
+    "geleneksel": "The use in children has not been established due to lack of adequate data. If the symptoms worsen during the use of the medicinal product, a doctor or a qualified health care practitioner should be consulted.",
+    "iyi_bilinen": "and precautions for use"
+   }
+  },
+  "kanit": "geleneksel kullanım",
+  "pdf": "https://www.ema.europa.eu/en/documents/herbal-monograph/final-european-union-herbal-monograph-aloysia-citrodora-palau-syn-aloysia-triphylla-lher-kuntze-verbena-triphylla-lher-lippia-citriodora-kunth-folium_en.pdf",
+  "uzunluk": 16864
+ },
+ "violae-herba-cum-flore": {
+  "bolum": {
+   "doz_asimi": {
+    "geleneksel": "No case of overdose has been reported. Not required as per Article 16c (1)(a)(iii) of Directive 2001/83/EC as amended. Not required as per Article 16c (1)(a)(iii) of Directive 2001/83/EC as amended. Viola arvensis Not required as per Article 16c (1)(a)(iii) of Directive 2001/83/EC as amended, unless necessary for the safe use of the product. Tests on reproductive toxicity, genotoxicity and carcinogenicity have not been performed. Not applicable. Viola arvensis",
+    "iyi_bilinen": "5. Pharmacological properties 5.1. Pharmacodynamic properties 5.2. Pharmacokinetic properties Community herbal monograph on Viola tricolor L. and/or subspecies Murray (Gaud) and Viola vulgaris Koch (Oborny), herba cum flore 5.3. Preclinical safety data 6. Pharmaceutical particulars 7. Date of compilation/last revision 25 November 2010 Community herbal monograph on Viola tricolor L. and/or subspecies Murray (Gaud) and Viola vulgaris Koch (Oborny), herba cum flore"
+   },
+   "dozaj": {
+    "geleneksel": "Posology Adults and elderly Oral use Herbal tea: 3 g of comminuted herbal substance as an infusion 1-3 times daily. The use in children and adolescents under 18 years of age is not recommended (see section 4.4 ‘Special warnings and precautions for use’). Adolescents, adults and elderly Cutaneous use 5-20 g/l of comminuted herbal substance as an infusion. Apply as a wet dressing to the affected areas of the skin 2-3 times daily. Bath additive: 5-10 g/l of comminuted herbal substance as an infusion. 1 litre of infusion to be added to the bath. The use in children under 12 years of the age is not recommended (see section 4.4. ‘Special warnings and precautions for use'). Duration of use If the symptoms persist longer than 4 weeks during the use of the medicinal product, a doctor or a qualified health care practitioner should be consulted. Method of administration Viola arvensis Oral use. Cutaneous use.",
+    "iyi_bilinen": "and method of administration Community herbal monograph on Viola tricolor L. and/or subspecies Murray (Gaud) and Viola vulgaris Koch (Oborny), herba cum flore"
+   },
+   "endikasyon": {
+    "geleneksel": "Traditional herbal medicinal product for symptomatic treatment of mild seborrhoeic skin conditions. The product is a traditional herbal medicinal product for use in specified indication exclusively based upon long-standing use.",
+    "iyi_bilinen": null
+   },
+   "etkilesim": {
+    "geleneksel": "None reported. Safety during pregnancy nad lactation has not been established. In the absence of sufficient data, the use during pregnancy and lactation is not recommended. Viola arvensis No studies on the effect on the ability to drive and use machines have been performed.",
+    "iyi_bilinen": "with other medicinal products and other forms of interaction 4.6. Pregnancy and lactation Community herbal monograph on Viola tricolor L. and/or subspecies Murray (Gaud) and Viola vulgaris Koch (Oborny), herba cum flore 4.7. Effects on ability to drive and use machines"
+   },
+   "istenmeyen": {
+    "geleneksel": "One case of haemolysis in a child with G6PD deficiency has been reported after oral administration. The frequency is not known. If other adverse reactions not mentioned above occur, a doctor or a qualified health care practitioner should be consulted.",
+    "iyi_bilinen": null
+   },
+   "kontrendikasyon": {
+    "geleneksel": "Hypersensitivity to the active substance, or to salicylates. Cutaneous use Open wounds, large areas of damaged skin.",
+    "iyi_bilinen": null
+   },
+   "uyari": {
+    "geleneksel": "Oral use The use in children and adolescent under 18 years of age has not been established due to lack of adequate data. Cutaneous use The use in children under 12 years of age has not been established due to lack of adequate data. Hot baths should not be used in case of febrile or infectious illnesses, in heart insufficiency and hypertension.",
+    "iyi_bilinen": "and precautions for use"
+   }
+  },
+  "kanit": "geleneksel kullanım",
+  "pdf": "https://www.ema.europa.eu/en/documents/herbal-monograph/final-community-herbal-monograph-viola-tricolor-l_en.pdf",
+  "uzunluk": 15742
  },
  "vitis-viniferae-folium": {
   "bolum": {
