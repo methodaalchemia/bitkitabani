@@ -1220,6 +1220,14 @@
   "rutbe": "spec.",
   "yazar": "L."
  },
+ "Morus alba": {
+  "ad": "Morus alba",
+  "familya": "Moraceae",
+  "kimlik": "30051955-2",
+  "rutbe": "spec.",
+  "yazar": "L.",
+  "yazar_kaynagi": "GBIF/WCVP"
+ },
  "Myrciaria dubia": {
   "ad": "Myrciaria dubia",
   "familya": "Myrtaceae",
@@ -1450,6 +1458,13 @@
   "rutbe": "spec.",
   "yazar": "L."
  },
+ "Phoenix dactylifera": {
+  "ad": "Phoenix dactylifera",
+  "familya": "Arecaceae",
+  "kimlik": "668912-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
  "Phyllanthus niruri": {
   "ad": "Phyllanthus niruri",
   "familya": "Euphorbiaceae",
@@ -1581,6 +1596,14 @@
   "kimlik": "300720-2",
   "rutbe": "spec.",
   "yazar": "L."
+ },
+ "Populus nigra": {
+  "ad": "Populus nigra",
+  "familya": "Salicaceae",
+  "kimlik": "776790-1",
+  "rutbe": "spec.",
+  "yazar": "L.",
+  "yazar_kaynagi": "GBIF/WCVP"
  },
  "Potentilla erecta": {
   "ad": "Potentilla erecta",

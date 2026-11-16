@@ -869,6 +869,13 @@ ELLE.update({
    'EFSA Panel on Dietetic Products, Nutrition and Allergies. (2015). Scientific Opinion on the safety of caffeine. EFSA Journal, 13(5), 4102. https://doi.org/10.2903/j.efsa.2015.4102',
 })
 
+ELLE.update({
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/Morusalba5d0dc03a0c9144f3832a0f0152514397_13916dbe-937c-4cc0-bd2a-366d327eea47.pdf':
+   titck_apa('Morus alba L.'),
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/Populussp.e195ebbcac354a7fa6a38903ca8f5c30_fb188bf3-f422-4336-b5a2-184dbd76e9b5.pdf':
+   titck_apa('Populus sp.'),
+})
+
 # Kurum yayını: APA'da kurumsal yazar ve yayın türü köşeli ayraçta.
 ELLE['https://www.iarc.who.int/wp-content/uploads/2018/07/pr244_E.pdf'] = (
     'Uluslararası Kanser Araştırmaları Ajansı. (2016). IARC Monographs '

@@ -119,4 +119,6 @@ M = {
  'demirhindi': ('Tamarindus indica L.', '2022/dynamicModulesAttachment/TamarindusindicaL.e4327ab6d88a45b8be366b3dab7b44df_24fbb81a-2c54-44e1-8c39-8ed474abc12c.pdf'),
  'karabiber': ('Piper nigrum L.', '2023/dynamicModulesAttachment/PipernigrumL_8b64c042-a99e-4d71-9cd3-c7b33a4836da.pdf'),
  'stevia': ('Stevia rebaudiana Bertoni', '2022/dynamicModulesAttachment/SteviarebaudianaBertoni8927bc6aa9b44cc28773784989d0ca03_251a8d8c-06e6-4261-9dcd-486fdc05d65f.pdf'),
+ 'beyazdut': ('Morus alba L.', '2022/dynamicModulesAttachment/Morusalba5d0dc03a0c9144f3832a0f0152514397_13916dbe-937c-4cc0-bd2a-366d327eea47.pdf'),
+ 'kavak': ('Populus sp.', '2022/dynamicModulesAttachment/Populussp.e195ebbcac354a7fa6a38903ca8f5c30_fb188bf3-f422-4336-b5a2-184dbd76e9b5.pdf'),
 }

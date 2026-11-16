@@ -103,3 +103,6 @@ stevia | Stevia rebaudiana | leaves plant
 trabzonhurmasi | Diospyros kaki | fruit tree
 kahve | Coffea arabica | beans flowers plant
 findik | Corylus avellana | nuts catkins shrub
+hurma | Phoenix dactylifera | fruit palm tree
+beyazdut | Morus alba | fruit leaves tree
+kavak | Populus nigra | tree buds catkins
