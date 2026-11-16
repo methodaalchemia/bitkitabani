@@ -2246,5 +2246,44 @@
   "license": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Menyanthes_trifoliata_Spechtensee_01.JPG"
  },
- "aciyonca:kuru": "yok"
+ "aciyonca:kuru": "yok",
+ "yulaf:cizim": {
+  "file": "Illustration Avena sativa0.jpg",
+  "artist": "Wikimedia Commons",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Avena_sativa0.jpg"
+ },
+ "yulaf:cicek": {
+  "file": "Weddi IMG 2734.jpg",
+  "artist": "Weddi",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Weddi_IMG_2734.jpg"
+ },
+ "yulaf:kuru": "yok",
+ "frenkkimyonu:cizim": {
+  "file": "Carum carvi - Köhler–s Medizinal-Pflanzen-172.jpg",
+  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Carum_carvi_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-172.jpg"
+ },
+ "frenkkimyonu:cicek": {
+  "file": "Caraway Carum carvi Kerava VI08 H5457 C.jpg",
+  "artist": "Anneli Salo",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Caraway_Carum_carvi_Kerava_VI08_H5457_C.jpg"
+ },
+ "frenkkimyonu:kuru": "yok",
+ "romenpapatyasi:cizim": {
+  "file": "Chamaemelum nobile - Köhler–s Medizinal-Pflanzen-012.jpg",
+  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Chamaemelum_nobile_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-012.jpg"
+ },
+ "romenpapatyasi:cicek": {
+  "file": "Flor de manzanilla.jpg",
+  "artist": "Ident404",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Flor_de_manzanilla.jpg"
+ },
+ "romenpapatyasi:kuru": "yok"
 }

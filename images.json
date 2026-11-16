@@ -946,6 +946,19 @@
   "w": 960,
   "w500": 500
  },
+ "frenkkimyonu": {
+  "artist": "Slick",
+  "auto": true,
+  "b1280": "Kümmel 2012-07-08-9523.jpg",
+  "file": "Kümmel 2012-07-08-9523.jpg",
+  "h": 640,
+  "h500": 333,
+  "license": "CC0",
+  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:K%C3%BCmmel_2012-07-08-9523.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "gelincik": {
   "artist": "Dietmar Rabich",
   "auto": false,
@@ -1473,15 +1486,15 @@
   "w500": 500
  },
  "kasikotu": {
-  "artist": "Wilhelm Zimmerling PAR",
+  "artist": "Agnieszka Kwiecień, Nova",
   "auto": true,
-  "b1280": "Ruhland, Elsterbogen, Graukresse, Herbst-Löwenzahn und Krähenfuß-Wegerich am Straßenrand, Sommer, 01.jpg",
-  "file": "Ruhland, Elsterbogen, Graukresse, Herbst-Löwenzahn und Krähenfuß-Wegerich am Straßenrand, Sommer, 01.jpg",
+  "b1280": "Herniaria glabra Połonicznik nagi 2020-07-10 02.jpg",
+  "file": "Herniaria glabra Połonicznik nagi 2020-07-10 02.jpg",
   "h": 1280,
   "h500": 667,
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Ruhland,_Elsterbogen,_Graukresse,_Herbst-L%C3%B6wenzahn_und_Kr%C3%A4henfu%C3%9F-Wegerich_am_Stra%C3%9Fenrand,_Sommer,_01.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Herniaria_glabra_Po%C5%82onicznik_nagi_2020-07-10_02.jpg",
   "w": 960,
   "w500": 500
  },
@@ -2249,6 +2262,19 @@
   "w": 960,
   "w500": 500
  },
+ "romenpapatyasi": {
+  "artist": "KENPEI",
+  "auto": true,
+  "b1280": "Chamaemelum nobile1.jpg",
+  "file": "Chamaemelum nobile1.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Chamaemelum_nobile1.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "sachainchi": {
   "artist": "The lifted lorax",
   "auto": true,
@@ -2755,6 +2781,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Digitalis_ferruginea_-_Rusty_Foxglove_01.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "yulaf": {
+  "artist": "Richard Bartz",
+  "auto": true,
+  "b1280": "Zygaena filipendulae on Avena sativa.jpg",
+  "file": "Zygaena filipendulae on Avena sativa.jpg",
+  "h": 1440,
+  "h500": 750,
+  "license": "CC BY-SA 2.5",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:Zygaena_filipendulae_on_Avena_sativa.jpg",
   "w": 960,
   "w500": 500
  },
