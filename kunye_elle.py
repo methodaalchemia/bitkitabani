@@ -668,6 +668,16 @@ ELLE.update({
    titck_apa('Helichrysum arenarium (L.) Moench'),
 })
 
+# TİTCK monograf dosyaları (kuyruk/k14.py).
+ELLE.update({
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/CapsellabursapastorisL.b70dff321ef6465ca8a12954dc8f64c3_923331a2-924d-4201-9cb4-232b00146934.pdf':
+   titck_apa('Capsella bursa-pastoris (L.) Medikus'),
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/FumariaofficinalisL.aee311f77d9b47f18fe1305a30edcef0_8560bcc8-9297-4200-a6f7-b80ef5ee2c39.pdf':
+   titck_apa('Fumaria officinalis L.'),
+ 'https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/PlantagolanceolataL_26554602-5f71-4c75-b153-018e3f2ce8f1.pdf':
+   titck_apa('Plantago lanceolata L.'),
+})
+
 # APA künyesindeki yapısal ekler Türkçe yazılır. İngilizce sayfalarda aynı
 # künye kullanılır, yalnızca bu ekler değiştirilir; eser adlarına dokunulmaz.
 _EN = [

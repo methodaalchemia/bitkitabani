@@ -69,4 +69,7 @@ M = {
  'aynisefa': ('Calendula officinalis L.', '2023/dynamicModulesAttachment/CalendulaofficinalisL.yaymlV2_ed72c61f-78da-474e-a20a-3fa6219b8964.pdf'),
  'kirmizikantaron': ('Centaurium erythraea Rafn s. l.', '2022/dynamicModulesAttachment/Centauriumerythraea99b92d0018da4d85ac5c6a293ffa570e_79c1e367-885c-47eb-91ee-664dfca60d2d.pdf'),
  'olmezcicek': ('Helichrysum arenarium (L.) Moench', '2022/dynamicModulesAttachment/HelichrysumarenariumL.Moench0b223e9429d04db0910b96618c8e9dae_6cc89fd4-9f6c-43fd-bbbe-adabc83e64e7.pdf'),
+ 'cobancantasi': ('Capsella bursa-pastoris (L.) Medikus', '2022/dynamicModulesAttachment/CapsellabursapastorisL.b70dff321ef6465ca8a12954dc8f64c3_923331a2-924d-4201-9cb4-232b00146934.pdf'),
+ 'sahtere': ('Fumaria officinalis L.', '2022/dynamicModulesAttachment/FumariaofficinalisL.aee311f77d9b47f18fe1305a30edcef0_8560bcc8-9297-4200-a6f7-b80ef5ee2c39.pdf'),
+ 'sinirliot': ('Plantago lanceolata L.', '2023/dynamicModulesAttachment/PlantagolanceolataL_26554602-5f71-4c75-b153-018e3f2ce8f1.pdf'),
 }
