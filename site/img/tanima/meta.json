@@ -2333,5 +2333,24 @@
   "license": "CC BY 3.0",
   "page": "https://commons.wikimedia.org/wiki/File:2011-07-25_21-30-17-flower.jpg"
  },
- "fasulye:kuru": "yok"
+ "fasulye:kuru": "yok",
+ "grindelya:cizim": "yok",
+ "grindelya:cicek": "yok",
+ "grindelya:kuru": "yok",
+ "kayaegreltisi:cizim": {
+  "file": "Illustration Polypodium vulgare0.jpg",
+  "artist": "Wikimedia Commons",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Polypodium_vulgare0.jpg"
+ },
+ "kayaegreltisi:cicek": "yok",
+ "kayaegreltisi:kuru": "yok",
+ "ergelenhardali:cizim": "yok",
+ "ergelenhardali:cicek": {
+  "file": "Sisymbrium officinale flowers, gewone raket bloemen.jpg",
+  "artist": "Rasbak",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Sisymbrium_officinale_flowers%2C_gewone_raket_bloemen.jpg"
+ },
+ "ergelenhardali:kuru": "yok"
 }

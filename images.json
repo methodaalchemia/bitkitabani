@@ -907,6 +907,19 @@
   "w": 960,
   "w500": 500
  },
+ "ergelenhardali": {
+  "artist": "Michel Langeveld",
+  "auto": true,
+  "b1280": "Sisymbrium officinale 95510566.jpg",
+  "file": "Sisymbrium officinale 95510566.jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Sisymbrium_officinale_95510566.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "esmersuyosunu": {
   "artist": "JackyM59",
   "auto": true,
@@ -1047,6 +1060,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Annona_muricata_young_fruit_at_Peravoor_(3).jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "grindelya": {
+  "artist": "Dawn Endico from Menlo Park, California",
+  "auto": true,
+  "b1280": "Grindelia stricta, Gluey buds.jpg",
+  "file": "Grindelia stricta, Gluey buds.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Grindelia_stricta,_Gluey_buds.jpg",
   "w": 960,
   "w500": 500
  },
@@ -1521,6 +1547,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Herniaria_glabra_Po%C5%82onicznik_nagi_2020-07-10_02.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "kayaegreltisi": {
+  "artist": "Stephan Sprinz",
+  "auto": true,
+  "b1280": "Gewöhnlicher Tüpfelfarn (Polypodium vulgare) auf Spiekeroog 01.jpg",
+  "file": "Gewöhnlicher Tüpfelfarn (Polypodium vulgare) auf Spiekeroog 01.jpg",
+  "h": 639,
+  "h500": 333,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Gew%C3%B6hnlicher_T%C3%BCpfelfarn_(Polypodium_vulgare)_auf_Spiekeroog_01.jpg",
   "w": 960,
   "w500": 500
  },
