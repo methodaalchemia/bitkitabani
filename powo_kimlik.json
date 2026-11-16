@@ -754,6 +754,13 @@
   "rutbe": "fam.",
   "yazar": "Lindl."
  },
+ "Ferula assa-foetida": {
+  "ad": "Ferula assa-foetida",
+  "familya": "Apiaceae",
+  "kimlik": "842190-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
  "Ficus carica": {
   "ad": "Ficus carica",
   "familya": "Moraceae",
@@ -1423,6 +1430,13 @@
   "rutbe": "spec.",
   "yazar": "L."
  },
+ "Pelargonium graveolens": {
+  "ad": "Pelargonium graveolens",
+  "familya": "Geraniaceae",
+  "kimlik": "376259-1",
+  "rutbe": "spec.",
+  "yazar": "L'Hér."
+ },
  "Pelargonium sidoides": {
   "ad": "Pelargonium sidoides",
   "familya": "Geraniaceae",
@@ -1918,6 +1932,13 @@
   "kimlik": "941782-1",
   "rutbe": "spec.",
   "yazar": "(W.Bartram) Small"
+ },
+ "Sesamum indicum": {
+  "ad": "Sesamum indicum",
+  "familya": "Pedaliaceae",
+  "kimlik": "675971-1",
+  "rutbe": "spec.",
+  "yazar": "L."
  },
  "Sideritis": {
   "ad": "Sideritis",

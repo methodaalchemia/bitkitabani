@@ -121,4 +121,6 @@ M = {
  'stevia': ('Stevia rebaudiana Bertoni', '2022/dynamicModulesAttachment/SteviarebaudianaBertoni8927bc6aa9b44cc28773784989d0ca03_251a8d8c-06e6-4261-9dcd-486fdc05d65f.pdf'),
  'beyazdut': ('Morus alba L.', '2022/dynamicModulesAttachment/Morusalba5d0dc03a0c9144f3832a0f0152514397_13916dbe-937c-4cc0-bd2a-366d327eea47.pdf'),
  'kavak': ('Populus sp.', '2022/dynamicModulesAttachment/Populussp.e195ebbcac354a7fa6a38903ca8f5c30_fb188bf3-f422-4336-b5a2-184dbd76e9b5.pdf'),
+ 'itir': ("Pelargonium graveolens L'Her.", '2023/dynamicModulesAttachment/PelargoniumgraveolensLHer_53233e1f-4f95-4672-8ee9-61e1ecafaae3.pdf'),
+ 'hiltit': ('Ferula sp.', '2022/dynamicModulesAttachment/Ferulasp.01ef4c3e54e443bba7842b10dd9a4f56_c7c80c11-36f0-4d95-aedc-ca8d23777602.pdf'),
 }

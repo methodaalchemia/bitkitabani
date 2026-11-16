@@ -876,6 +876,13 @@ ELLE.update({
    titck_apa('Populus sp.'),
 })
 
+ELLE.update({
+ 'https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/PelargoniumgraveolensLHer_53233e1f-4f95-4672-8ee9-61e1ecafaae3.pdf':
+   titck_apa("Pelargonium graveolens L'Her."),
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/Ferulasp.01ef4c3e54e443bba7842b10dd9a4f56_c7c80c11-36f0-4d95-aedc-ca8d23777602.pdf':
+   titck_apa('Ferula sp.'),
+})
+
 # Kurum yayını: APA'da kurumsal yazar ve yayın türü köşeli ayraçta.
 ELLE['https://www.iarc.who.int/wp-content/uploads/2018/07/pr244_E.pdf'] = (
     'Uluslararası Kanser Araştırmaları Ajansı. (2016). IARC Monographs '

@@ -106,3 +106,6 @@ findik | Corylus avellana | nuts catkins shrub
 hurma | Phoenix dactylifera | fruit palm tree
 beyazdut | Morus alba | fruit leaves tree
 kavak | Populus nigra | tree buds catkins
+itir | Pelargonium graveolens | flowers leaves plant
+susam | Sesamum indicum | seeds flowers plant
+hiltit | Ferula assa-foetida | plant resin
