@@ -949,7 +949,7 @@ _EN = [
  (', s. ', ', pp. '),
  ('(Sunucu)', '(Host)'),
  ('[Podcast bölümü]', '[Audio podcast episode]'),
- ('3 Haziran', 'June 3'), ('4 Ekim', 'October 4'),
+ ('3 Haziran', 'June 3'), ('26 Haziran', 'June 26'), ('4 Ekim', 'October 4'),
  (' ve ark.', ' et al.'),
 ]
 # Ordinal düzeltmesi: "3. baskı" gibi Türkçe sıra sayıları
