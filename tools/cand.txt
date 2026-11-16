@@ -94,3 +94,6 @@ haritaki | Terminalia chebula | fruit tree
 zahter | Thymbra spicata | flowers plant
 menengic | Pistacia terebinthus | fruit tree
 kopekuzumu | Solanum nigrum | berries plant
+papaya | Carica papaya | fruit tree
+guava | Psidium guajava | leaves fruit tree
+karabiber | Piper nigrum | peppercorns vine

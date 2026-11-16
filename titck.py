@@ -117,4 +117,5 @@ M = {
  'gilaburu': ('Viburnum opulus L.', '2023/dynamicModulesAttachment/ViburnumopulusL_63293d31-b8b0-49f7-9dcf-786935f17724.pdf'),
  'avokado': ('Persea americana Mill.', '2022/dynamicModulesAttachment/PerseaamericanaMill.be118bf544914e248ecbf94784c1617d_915a9d66-a069-484e-9e9f-9e9330048bd2.pdf'),
  'demirhindi': ('Tamarindus indica L.', '2022/dynamicModulesAttachment/TamarindusindicaL.e4327ab6d88a45b8be366b3dab7b44df_24fbb81a-2c54-44e1-8c39-8ed474abc12c.pdf'),
+ 'karabiber': ('Piper nigrum L.', '2023/dynamicModulesAttachment/PipernigrumL_8b64c042-a99e-4d71-9cd3-c7b33a4836da.pdf'),
 }

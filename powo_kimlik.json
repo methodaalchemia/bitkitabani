@@ -362,6 +362,13 @@
   "rutbe": "spec.",
   "yazar": "Aubl."
  },
+ "Carica papaya": {
+  "ad": "Carica papaya",
+  "familya": "Caricaceae",
+  "kimlik": "30011248-2",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
  "Carthamus tinctorius": {
   "ad": "Carthamus tinctorius",
   "familya": "Asteraceae",
@@ -1460,6 +1467,13 @@
   "yazar": "L.",
   "yazar_kaynagi": "GBIF/WCVP"
  },
+ "Piper nigrum": {
+  "ad": "Piper nigrum",
+  "familya": "Piperaceae",
+  "kimlik": "682369-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
  "Pistacia lentiscus": {
   "ad": "Pistacia lentiscus",
   "familya": "Anacardiaceae",
@@ -1561,6 +1575,13 @@
   "ad": "Prunus mahaleb",
   "familya": "Rosaceae",
   "kimlik": "729931-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
+ "Psidium guajava": {
+  "ad": "Psidium guajava",
+  "familya": "Myrtaceae",
+  "kimlik": "600841-1",
   "rutbe": "spec.",
   "yazar": "L."
  },

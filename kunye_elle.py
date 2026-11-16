@@ -848,6 +848,12 @@ ELLE.update({
  who_url(4, 'fructus-chebulae'): who_apa('Fructus Chebulae', 4, '71–82'),
 })
 
+ELLE.update({
+ 'https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/PipernigrumL_8b64c042-a99e-4d71-9cd3-c7b33a4836da.pdf':
+   titck_apa('Piper nigrum L.'),
+ who_url(4, 'folium-guavae'): who_apa('Folium Guavae', 4, '127–148'),
+})
+
 # Kurum yayını: APA'da kurumsal yazar ve yayın türü köşeli ayraçta.
 ELLE['https://www.iarc.who.int/wp-content/uploads/2018/07/pr244_E.pdf'] = (
     'Uluslararası Kanser Araştırmaları Ajansı. (2016). IARC Monographs '
