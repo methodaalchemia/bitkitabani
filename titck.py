@@ -81,4 +81,7 @@ M = {
  'altinbasak': ('Solidago virgaurea L.', '2022/dynamicModulesAttachment/SolidagovirgaureaL..pdfb279ef8596e34f17b127529054915c2a_bfcf2947-9179-490c-89a6-e3397a3e0d8d.pdf'),
  'kayiskiran': ('Ononis spinosa L.', '2022/dynamicModulesAttachment/OnonisspinosaL.900a25caf22c491691ce15a5bd305571_c15f9564-9cf5-4284-b1a9-f725e270b30a.pdf'),
  'boldo': ('Peumus boldus Molina', '2024/dynamicModulesAttachment/PeumusboldusMolina_23225ecb-beb0-4a4a-9a75-00f7c7e74940.pdf'),
+ 'cayirkralicesi': ('Filipendula ulmariae (L.) Maxim.', '2022/dynamicModulesAttachment/FilipendulaulmariaL.Maximcd0874ec02cc4a82867e8efdbbb1de37_67c91cf3-53a4-46c1-b04b-d50ef208aba7.pdf'),
+ 'bozotu': ('Marrubium vulgare L.', '2023/dynamicModulesAttachment/MarrubiumvulgareL.V1_feba4058-a88a-4176-b958-ba2484d3b8ed.pdf'),
+ 'aslankuyrugu': ('Leonurus cardiaca L.', '2022/dynamicModulesAttachment/LeonuruscardiacaL.7522b4e8ae384b16b4e9766dfcf45a8e_d1786ca7-5a4f-4061-8a65-d79eb5c72b14.pdf'),
 }

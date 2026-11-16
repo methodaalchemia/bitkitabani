@@ -106,6 +106,15 @@ for _q in _K.Q:
     if _q['id'] in byId: continue
     if _d > LOCAL_DAY: KUYRUK_LEFT.append(_q); continue
     _q = dict(_q); _id = _q['id']; YENI[_id] = _d
+    # Vurgu yıldızları yalnızca gövde metninde anlamlı (bkz. ev()). `diger`,
+    # `ek` ve `ilginc` alanları JSON-LD'ye, RSS'e, veri dosyalarına ve
+    # llms-full.txt'ye de gidiyor; oralarda yıldız düz metin olarak
+    # görüneceği için bu alanlarda baştan temizleniyor.
+    if isinstance(_q.get('diger'), str): _q['diger'] = _q['diger'].replace('**', '')
+    if isinstance(_q.get('ilginc'), str): _q['ilginc'] = _q['ilginc'].replace('**', '')
+    if isinstance(_q.get('ek'), dict):
+        _q['ek'] = {_k2: (_v2.replace('**', '') if isinstance(_v2, str) else _v2)
+                    for _k2, _v2 in _q['ek'].items()}
     EK[_id] = _q.pop('ek'); POWO[_id] = _q.pop('taxon')
     EN_NEW[_id] = _q.pop('en')
     if _q.get('etk_en'): ETK_EN_NEW[_id] = _q['etk_en']
@@ -515,6 +524,30 @@ def desc_for(p):
 KISIM = [('yaprak', 'Yaprak', r'yaprak'), ('cicek', 'Çiçek', r'çiçek'), ('kok', 'Kök ve yumru', r'kök|rizom|yumru|soğan'), ('tohum', 'Tohum ve meyve', r'tohum|meyve|bakla|kozalak|tane'),
          ('kabuk', 'Kabuk ve odun', r'kabuk|odun|gövde'), ('herba', 'Toprak üstü kısımlar', r'toprak üstü|dal|herba|bütün bitki'), ('recine', 'Reçine, yağ ve özsu', r'reçine|yağ|sakız|özsu|lateks|jel|süt'), ('mantar', 'Mantar', r'mantar|şapka|miselyum')]
 def kisim_of(p): return ' '.join(k for k, _, rx in KISIM if re.search(rx, p['kisim'].lower()))
+def adlar_of(p):
+    """`diger` alanından JSON-LD'ye konacak ad adaylarını ayıklar.
+
+    Alan ilk kayıtlarda virgülle ayrılmış bir ad listesiydi ("Cranberry,
+    Amerikan turna yemişi"). Sonraki kayıtlarda düzyazı yazılmaya başlandı
+    ve virgülle bölmek cümle parçalarını ad diye JSON-LD'ye taşıyor. Bu
+    yüzden yalnızca ada benzeyen parçalar alınır: kısa, cümle noktalaması
+    taşımayan, fiil gibi bir sözcükle bitmeyen parçalar. Hiçbiri uymazsa
+    liste boş döner ve sayfada yalnızca Türkçe ad kalır.
+    """
+    out = []
+    for x in re.split(r'[,;]', duz(p.get('diger') or '')):
+        x = x.strip(' "“”\'()⚠️.')
+        if not x or len(x) > 34 or len(x.split()) > 4:
+            continue
+        if re.search(r'[.:!?]|\bve\b|\bdiye\b|\bdeğil\b', x):
+            continue
+        if x.lower().startswith(('tİtck', 'titck', 'ingilizce', 'i̇ngilizce',
+                                 'sinonim', 'monograf', 'eski', 'adı', 'hem')):
+            continue
+        out.append(x)
+    return out[:4]
+
+
 def ay_of(p): return ' '.join(f'a{m}' for m in sorted(months_of(EK.get(p['id'], {}).get('mevsim', '')))) if 'months_of' in globals() else ''
 def card(p):
     s = ' '.join([p['tr'], p['la'], p['diger'], p['fam'], p['kisim'], p['haz'], p['bilim'], p['ilginc']] + [x for u in p['kul'] for x in u] + [KAT[k] for k in p['kat']])
@@ -572,7 +605,7 @@ for i, p in enumerate(P):
     title = (f'{p["tr"]} zehirli mi? Etkileri, belirtileri ve tarihi' if p['guv'] == 'yuksek' else f'{p["tr"]} nedir, ne işe yarar? Faydaları ve zararları')
     if pid in SEO: title = SEO[pid][0]
     if len(title) < 44: title += ' | Bitki Tabanı'
-    ld = {"@context":"https://schema.org","@type":"Article","headline":f'{p["tr"]} ({short_la(p)})',"inLanguage":"tr","about":{"@type":"Taxon","name":short_la(p),"alternateName":[p['tr']] + [x.strip() for x in p['diger'].split(',')][:4],"taxonRank":"species","parentTaxon":{"@type":"Taxon","name":p['fam'].split(' ')[0],"taxonRank":"family"}},"description":desc_for(p),"author":AUTHOR,"isPartOf":{"@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/"},"dateModified":(max(CONTENT_DATE, YENI[pid].isoformat()) if pid in YENI else CONTENT_DATE),**({"datePublished":YENI[pid].isoformat()} if pid in YENI else {}),**({"reviewedBy":{"@type":"Person","name":GZ_KISI['ad'],"jobTitle":GZ_KISI.get('unvan','Eczacı')},"lastReviewed":GZ[pid]} if GZ_KISI and pid in GZ else {}),"url":f'{BASE}/{pid}/',"image":(f'{BASE}/img/{pid}-960.jpg' if pid in IMG else None),"publisher":{"@type":"Organization","name":"Bitki Tabanı","url":BASE+"/","logo":BASE+"/assets/logo-512.png","sameAs":["https://www.instagram.com/bitkitabani/","https://www.threads.net/@bitkitabani","https://www.facebook.com/profile.php?id=61595314033889","https://www.pinterest.com/bitkitabani/","https://www.youtube.com/@bitkitabani","https://t.me/bitkitabani"]}}
+    ld = {"@context":"https://schema.org","@type":"Article","headline":f'{p["tr"]} ({short_la(p)})',"inLanguage":"tr","about":{"@type":"Taxon","name":short_la(p),"alternateName":[p['tr']] + adlar_of(p),"taxonRank":"species","parentTaxon":{"@type":"Taxon","name":p['fam'].split(' ')[0],"taxonRank":"family"}},"description":desc_for(p),"author":AUTHOR,"isPartOf":{"@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/"},"dateModified":(max(CONTENT_DATE, YENI[pid].isoformat()) if pid in YENI else CONTENT_DATE),**({"datePublished":YENI[pid].isoformat()} if pid in YENI else {}),**({"reviewedBy":{"@type":"Person","name":GZ_KISI['ad'],"jobTitle":GZ_KISI.get('unvan','Eczacı')},"lastReviewed":GZ[pid]} if GZ_KISI and pid in GZ else {}),"url":f'{BASE}/{pid}/',"image":(f'{BASE}/img/{pid}-960.jpg' if pid in IMG else None),"publisher":{"@type":"Organization","name":"Bitki Tabanı","url":BASE+"/","logo":BASE+"/assets/logo-512.png","sameAs":["https://www.instagram.com/bitkitabani/","https://www.threads.net/@bitkitabani","https://www.facebook.com/profile.php?id=61595314033889","https://www.pinterest.com/bitkitabani/","https://www.youtube.com/@bitkitabani","https://t.me/bitkitabani"]}}
     crumbs = {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana sayfa","item":BASE+"/"},{"@type":"ListItem","position":2,"name":"Katalog","item":BASE+"/katalog/"},{"@type":"ListItem","position":3,"name":p['tr'],"item":f'{BASE}/{pid}/'}]}
     uses = ''.join(f'<div class="use"><div class="who">{e(w)}</div><p>{ev(t)}</p></div>' for w, t in p['kul'])
     relhtml = ''
@@ -2072,7 +2105,7 @@ def _md_plant(p, full=False):
     if not full:
         return L[:4] + ['']
     L += ['### Geleneksel kullanım'] + [f'- {w}: {duz(t)}' for w, t in p['kul']] + ['', '### Hazırlama', duz(p['haz']), '', '### Bilim ne diyor', duz(p['bilim']), '', '### Güvenlik', duz(p['guvNot']), '']
-    if pid in ETK: L += ['### İlaç etkileşimleri'] + [f'- {g}: {w}' for g, w in ETK[pid]] + ['']
+    if pid in ETK: L += ['### İlaç etkileşimleri'] + [f'- {g}: {duz(w)}' for g, w in ETK[pid]] + ['']
     if pid in DERIN: L += ['### İddialar ve kanıt'] + [f'- {i}: {KAN_AD[k]}. {n}' for i, k, n in DERIN[pid]['iddia']] + ['']
     ek = EK.get(pid, {})
     if ek: L += ['### Doğada', f'Nerede yetişir: {ek.get("yetisme","")}', f'Toplama mevsimi: {ek.get("mevsim","")}', f'Yöresel adlar: {ek.get("yoresel","")}', f'Karıştırma riski: {ek.get("karisma","")}', '']

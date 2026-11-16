@@ -708,6 +708,16 @@ ELLE.update({
    titck_apa('Peumus boldus Molina'),
 })
 
+# TİTCK monograf dosyaları (kuyruk/k18.py).
+ELLE.update({
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/FilipendulaulmariaL.Maximcd0874ec02cc4a82867e8efdbbb1de37_67c91cf3-53a4-46c1-b04b-d50ef208aba7.pdf':
+   titck_apa('Filipendula ulmariae (L.) Maxim.'),
+ 'https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/MarrubiumvulgareL.V1_feba4058-a88a-4176-b958-ba2484d3b8ed.pdf':
+   titck_apa('Marrubium vulgare L.'),
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/LeonuruscardiacaL.7522b4e8ae384b16b4e9766dfcf45a8e_d1786ca7-5a4f-4061-8a65-d79eb5c72b14.pdf':
+   titck_apa('Leonurus cardiaca L.'),
+})
+
 # APA künyesindeki yapısal ekler Türkçe yazılır. İngilizce sayfalarda aynı
 # künye kullanılır, yalnızca bu ekler değiştirilir; eser adlarına dokunulmaz.
 _EN = [

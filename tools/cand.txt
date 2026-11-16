@@ -26,3 +26,6 @@ tuyluladen | Cistus creticus | pink flowers shrub -ladanifer
 altinbasak | Solidago virgaurea | yellow flower spike -canadensis
 kayiskiran | Ononis spinosa | pink flowers spiny shrub
 boldo | Peumus boldus | leaves tree -dried-tea-bag
+cayirkralicesi | Filipendula ulmaria | cream flowers meadow -vulgaris
+bozotu | Marrubium vulgare | white woolly plant flowers
+aslankuyrugu | Leonurus cardiaca | leaves flower whorls -leonotis
