@@ -124,3 +124,6 @@ cinmelekotu | Angelica sinensis | plant root flowers
 kaskara | Frangula purshiana | tree bark leaves
 senega | Polygala senega | plant flowers root
 hintgunlugu | Boswellia serrata | tree resin
+guggul | Commiphora wightii | tree resin
+ipeka | Carapichea ipecacuanha | plant root flowers
+kutki | Picrorhiza kurroa | plant flowers rhizome

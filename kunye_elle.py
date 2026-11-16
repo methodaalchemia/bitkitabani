@@ -927,6 +927,12 @@ ELLE.update({
  who_url(4, 'gummi-boswellii'): who_apa('Gummi Boswellii', 4, '48–60'),
 })
 
+ELLE.update({
+ who_url(3, 'gummi-gugguli'): who_apa('Gummi Gugguli', 3, '169–181'),
+ who_url(3, 'radix-ipecacuanhae'): who_apa('Radix Ipecacuanhae', 3, '204–218'),
+ who_url(4, 'rhizoma-picrorhizae'): who_apa('Rhizoma Picrorhizae', 4, '258–283'),
+})
+
 # Kurum yayını: APA'da kurumsal yazar ve yayın türü köşeli ayraçta.
 ELLE['https://www.iarc.who.int/wp-content/uploads/2018/07/pr244_E.pdf'] = (
     'Uluslararası Kanser Araştırmaları Ajansı. (2016). IARC Monographs '

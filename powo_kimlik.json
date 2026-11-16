@@ -390,6 +390,13 @@
   "rutbe": "spec.",
   "yazar": "Aubl."
  },
+ "Carapichea ipecacuanha": {
+  "ad": "Carapichea ipecacuanha",
+  "familya": "Rubiaceae",
+  "kimlik": "1214950-2",
+  "rutbe": "spec.",
+  "yazar": "(Brot.) L.Andersson"
+ },
  "Carica papaya": {
   "ad": "Carica papaya",
   "familya": "Caricaceae",
@@ -542,6 +549,13 @@
   "kimlik": "127741-1",
   "rutbe": "spec.",
   "yazar": "(T.Nees) Engl."
+ },
+ "Commiphora wightii": {
+  "ad": "Commiphora wightii",
+  "familya": "Burseraceae",
+  "kimlik": "127856-1",
+  "rutbe": "spec.",
+  "yazar": "(Arn.) Bhandari"
  },
  "Conium maculatum": {
   "ad": "Conium maculatum",
@@ -1556,6 +1570,13 @@
   "kimlik": "323290-2",
   "rutbe": "spec.",
   "yazar": "L."
+ },
+ "Picrorhiza kurroa": {
+  "ad": "Picrorhiza kurroa",
+  "familya": "Scrophulariaceae",
+  "kimlik": "808408-1",
+  "rutbe": "spec.",
+  "yazar": "Royle ex Benth."
  },
  "Pilosella officinarum": {
   "ad": "Pilosella officinarum",
