@@ -241,6 +241,19 @@
   "w": 960,
   "w500": 500
  },
+ "andrographis": {
+  "artist": "Viswaprabha",
+  "auto": true,
+  "b1280": "Andrographis paniculata Plant.JPG",
+  "file": "Andrographis paniculata Plant.JPG",
+  "h": 1226,
+  "h500": 638,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Andrographis_paniculata_Plant.JPG",
+  "w": 960,
+  "w500": 500
+ },
  "antepfistigi": {
   "artist": "Uslmz",
   "auto": false,
@@ -817,6 +830,19 @@
   "w": 960,
   "w500": 500
  },
+ "demirdikeni": {
+  "artist": "Vengolis",
+  "auto": true,
+  "b1280": "Tribulus terrestris 3002.jpg",
+  "file": "Tribulus terrestris 3002.jpg",
+  "h": 641,
+  "h500": 334,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Tribulus_terrestris_3002.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "devedikeni": {
   "artist": "Frank Schulenburg",
   "auto": false,
@@ -1255,6 +1281,19 @@
   "w": 960,
   "w500": 500
  },
+ "hercaimenekse": {
+  "artist": "Екатерина Борисова",
+  "auto": true,
+  "b1280": "Елагин остров. Анютины глазки 02.jpg",
+  "file": "Елагин остров. Анютины глазки 02.jpg",
+  "h": 1111,
+  "h500": 578,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%D0%95%D0%BB%D0%B0%D0%B3%D0%B8%D0%BD_%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B2._%D0%90%D0%BD%D1%8E%D1%82%D0%B8%D0%BD%D1%8B_%D0%B3%D0%BB%D0%B0%D0%B7%D0%BA%D0%B8_02.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "hibiskus": {
   "artist": "Aris riyanto",
   "auto": false,
@@ -1278,6 +1317,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Bloem_van_een_wilde_cichorei_(Cichorium_intybus)_24-06-2026._(actm.)_02.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "hintyagi": {
+  "artist": "Moonik",
+  "auto": true,
+  "b1280": "Ricinus communis - Fruits.jpg",
+  "file": "Ricinus communis - Fruits.jpg",
+  "h": 1445,
+  "h500": 753,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ricinus_communis_-_Fruits.jpg",
   "w": 960,
   "w500": 500
  },
@@ -1394,6 +1446,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Br%C3%A4nn%C3%A4ssla_(Urtica_Dioica).jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "javacayi": {
+  "artist": "PumpkinSky",
+  "auto": true,
+  "b1280": "Cats Whiskers NBG LR.jpg",
+  "file": "Cats Whiskers NBG LR.jpg",
+  "h": 800,
+  "h500": 417,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Cats_Whiskers_NBG_LR.jpg",
   "w": 960,
   "w500": 500
  },
@@ -1743,6 +1808,19 @@
   "w": 960,
   "w500": 500
  },
+ "kirlangicotu": {
+  "artist": "Robert Flogaus-Faust",
+  "auto": true,
+  "b1280": "Chelidonium majus 2 RF.jpg",
+  "file": "Chelidonium majus 2 RF.jpg",
+  "h": 1186,
+  "h500": 618,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Chelidonium_majus_2_RF.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "kirmizikantaron": {
   "artist": "Hans Hillewaert",
   "auto": false,
@@ -1897,6 +1975,19 @@
   "w": 960,
   "w500": 500
  },
+ "kutsaldevedikeni": {
+  "artist": "H. Zell",
+  "auto": true,
+  "b1280": "Cnicus benedictus 002.JPG",
+  "file": "Cnicus benedictus 002.JPG",
+  "h": 1279,
+  "h500": 666,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Cnicus_benedictus_002.JPG",
+  "w": 960,
+  "w500": 500
+ },
  "lavanta": {
   "artist": "JLPC",
   "b1280": "Lavande off FR 2012.jpg",
@@ -1906,6 +1997,19 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Lavande_off_FR_2012.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "limonverbena": {
+  "artist": "H. Zell",
+  "auto": true,
+  "b1280": "Aloysia citriodora 002.jpg",
+  "file": "Aloysia citriodora 002.jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Aloysia_citriodora_002.jpg",
   "w": 960,
   "w500": 500
  },
@@ -2838,6 +2942,19 @@
   "w": 960,
   "w500": 500
  },
+ "tuylusahinotu": {
+  "artist": "George Chernilevsky",
+  "auto": true,
+  "b1280": "Hieracium pilosella 2015 G1.jpg",
+  "file": "Hieracium pilosella 2015 G1.jpg",
+  "h": 1169,
+  "h500": 609,
+  "license": "Public domain",
+  "licenseUrl": "",
+  "page": "https://commons.wikimedia.org/wiki/File:Hieracium_pilosella_2015_G1.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "unadegato": {
   "artist": "Kristi Denby/Archivo Centro Takiwasi",
   "b1280": "Corteza y espina curva de uña de gato (Uncaria tomentosa).jpg",
@@ -2898,6 +3015,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Vaccinium_myrtillus_Bor%C3%B3wka_czarna_2023-08-25_Dolina_Roztoki_05.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "yabanyasemini": {
+  "artist": "Rasbak",
+  "auto": true,
+  "b1280": "Bitterzoet Solanum dulcamara.jpg",
+  "file": "Bitterzoet Solanum dulcamara.jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Bitterzoet_Solanum_dulcamara.jpg",
   "w": 960,
   "w500": 500
  },
