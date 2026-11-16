@@ -383,6 +383,19 @@
   "w": 960,
   "w500": 500
  },
+ "avokado": {
+  "artist": "Nikodem Nijaki",
+  "auto": true,
+  "b1280": "Avocado IMGP1082.jpg",
+  "file": "Avocado IMGP1082.jpg",
+  "h": 854,
+  "h500": 445,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Avocado_IMGP1082.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "ayahuasca": {
   "artist": "Vojtěch Zavadil",
   "b1280": "3209-Banisteriopsis caapi-Teplice BZ.jpg",
@@ -934,6 +947,19 @@
   "w": 960,
   "w500": 500
  },
+ "demirhindi": {
+  "artist": "This Photo was taken by Timothy A. Gonsalves . Feel free to use my photos, but please mention me as the author. I would much appreciate if y",
+  "auto": true,
+  "b1280": "Tamarind Tree Roots Exposed Termite Mound Luangwa Jul23 A7C 05874.jpg",
+  "file": "Tamarind Tree Roots Exposed Termite Mound Luangwa Jul23 A7C 05874.jpg",
+  "h": 1440,
+  "h500": 750,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Tamarind_Tree_Roots_Exposed_Termite_Mound_Luangwa_Jul23_A7C_05874.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "dereotu": {
   "artist": "Reinhold Möller Ermell",
   "auto": true,
@@ -1193,6 +1219,19 @@
   "w": 960,
   "w500": 500
  },
+ "gilaburu": {
+  "artist": "Andreas Eichler",
+  "auto": true,
+  "b1280": "2014.10.01.-10-Edertal Bringhausen--Gemeiner Schneeball mit reifen Fruechten.jpg",
+  "file": "2014.10.01.-10-Edertal Bringhausen--Gemeiner Schneeball mit reifen Fruechten.jpg",
+  "h": 1435,
+  "h500": 748,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:2014.10.01.-10-Edertal_Bringhausen--Gemeiner_Schneeball_mit_reifen_Fruechten.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "ginkgo": {
   "artist": "Fernando Losada Rodríguez",
   "auto": false,
@@ -1297,6 +1336,19 @@
   "w": 960,
   "w500": 500
  },
+ "guava": {
+  "artist": "Joydeep",
+  "auto": true,
+  "b1280": "Psidium guajava leafbud 26032014.jpg",
+  "file": "Psidium guajava leafbud 26032014.jpg",
+  "h": 671,
+  "h500": 350,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Psidium_guajava_leafbud_26032014.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "guayusa": {
   "artist": "Anna Premo",
   "b1280": "View of Ilex guayusa from above.jpg",
@@ -1361,6 +1413,19 @@
   "w": 960,
   "w500": 500
  },
+ "guzelavratotu": {
+  "artist": "Robert Flogaus-Faust",
+  "auto": true,
+  "b1280": "Atropa belladonna RF.jpg",
+  "file": "Atropa belladonna RF.jpg",
+  "h": 615,
+  "h500": 320,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Atropa_belladonna_RF.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "hamamelis": {
   "artist": "",
   "auto": false,
@@ -1371,6 +1436,19 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
   "page": "https://commons.wikimedia.org/wiki/File:Hamamelis_virginiana_FlowersLeaves_BotGardBln0906.JPG",
+  "w": 960,
+  "w500": 500
+ },
+ "haritaki": {
+  "artist": "Salim Khandoker",
+  "auto": true,
+  "b1280": "Terminalia Chebula Tree with fruits. (Bengali - Horitaky).jpg",
+  "file": "Terminalia Chebula Tree with fruits. (Bengali - Horitaky).jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Terminalia_Chebula_Tree_with_fruits._(Bengali_-_Horitaky).jpg",
   "w": 960,
   "w500": 500
  },
@@ -1720,6 +1798,19 @@
   "w": 960,
   "w500": 500
  },
+ "karabiber": {
+  "artist": "Vengolis",
+  "auto": true,
+  "b1280": "Piper nigrum 04236.jpg",
+  "file": "Piper nigrum 04236.jpg",
+  "h": 640,
+  "h500": 333,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Piper_nigrum_04236.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "karahindiba": {
   "artist": "Thomas Wolf ( Der Wolf im Wald )",
   "b1280": "Gewöhnlicher Löwenzahn.jpg",
@@ -1990,6 +2081,19 @@
   "w": 960,
   "w500": 500
  },
+ "kisnis": {
+  "artist": "Sanjay Acharya",
+  "auto": true,
+  "b1280": "Coriander Seeds.jpg",
+  "file": "Coriander Seeds.jpg",
+  "h": 640,
+  "h500": 333,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Coriander_Seeds.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "kiwicha": {
   "artist": "Tubifex",
   "auto": false,
@@ -2064,6 +2168,19 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Fruits_of_Cola_nitida.JPG",
+  "w": 960,
+  "w500": 500
+ },
+ "kopekuzumu": {
+  "artist": "Agnieszka Kwiecień, Nova",
+  "auto": true,
+  "b1280": "Solanum nigrum Psianka czarna 2015-08-30 03.jpg",
+  "file": "Solanum nigrum Psianka czarna 2015-08-30 03.jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Solanum_nigrum_Psianka_czarna_2015-08-30_03.jpg",
   "w": 960,
   "w500": 500
  },
@@ -2253,6 +2370,19 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:M%C3%A9lisse_Feuilles_FR_2013b.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "menengic": {
+  "artist": "Zeynel Cebeci",
+  "auto": true,
+  "b1280": "Pistacia terebinthus - Yabani fıstık - Terebinth.JPG",
+  "file": "Pistacia terebinthus - Yabani fıstık - Terebinth.JPG",
+  "h": 638,
+  "h500": 332,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Pistacia_terebinthus_-_Yabani_f%C4%B1st%C4%B1k_-_Terebinth.JPG",
   "w": 960,
   "w500": 500
  },
@@ -2534,6 +2664,19 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Kamomillasaunio_(Matricaria_recutita).JPG",
+  "w": 960,
+  "w500": 500
+ },
+ "papaya": {
+  "artist": "Joydeep",
+  "auto": true,
+  "b1280": "Carica papaya 14 7 2012.jpg",
+  "file": "Carica papaya 14 7 2012.jpg",
+  "h": 1290,
+  "h500": 672,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Carica_papaya_14_7_2012.jpg",
   "w": 960,
   "w500": 500
  },
@@ -3314,6 +3457,19 @@
   "license": "CC BY-SA 2.5",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
   "page": "https://commons.wikimedia.org/wiki/File:Zygaena_filipendulae_on_Avena_sativa.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "zahter": {
+  "artist": "Gideon Pisanty ( Gidip ) גדעון פיזנטי",
+  "auto": true,
+  "b1280": "Thymbra spicata 1.jpg",
+  "file": "Thymbra spicata 1.jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Thymbra_spicata_1.jpg",
   "w": 960,
   "w500": 500
  },

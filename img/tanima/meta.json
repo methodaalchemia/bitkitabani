@@ -2648,5 +2648,131 @@
   "license": "CC BY 3.0",
   "page": "https://commons.wikimedia.org/wiki/File:CSIRO_ScienceImage_11351_Dissected_flower_of_Safflower_plant.jpg"
  },
- "aspir:kuru": "yok"
+ "aspir:kuru": "yok",
+ "guzelavratotu:cizim": {
+  "file": "Illustration Atropa bella-donna0.jpg",
+  "artist": "Wikimedia Commons",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Atropa_bella-donna0.jpg"
+ },
+ "guzelavratotu:cicek": {
+  "file": "Flower Wedding Master Files 0040.jpg",
+  "artist": "Walter Crane",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Flower_Wedding_Master_Files_0040.jpg"
+ },
+ "guzelavratotu:kuru": "yok",
+ "kisnis:cizim": {
+  "file": "Coriandrum sativum - Köhler–s Medizinal-Pflanzen-193.jpg",
+  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Coriandrum_sativum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-193.jpg"
+ },
+ "kisnis:cicek": {
+  "file": "Coriander Coriandrum sativum flower.jpg",
+  "artist": "deadrat",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Coriander_Coriandrum_sativum_flower.jpg"
+ },
+ "kisnis:kuru": "yok",
+ "gilaburu:cizim": {
+  "file": "Illustration Viburnum opulus clean.JPG",
+  "artist": "File:Illustration Viburnum opulus0.jpg : PLEASE COMPLETE AUT",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Viburnum_opulus_clean.JPG"
+ },
+ "gilaburu:cicek": {
+  "file": "A white bunch of hanging inflorescence of the guelder-rose (Viburnum opulus).jpg",
+  "artist": "Stch2022",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:A_white_bunch_of_hanging_inflorescence_of_the_guelder-rose_%28Viburnum_opulus%29.jpg"
+ },
+ "gilaburu:kuru": "yok",
+ "avokado:cizim": "yok",
+ "avokado:cicek": {
+  "file": "Flower of Avocado.jpg",
+  "artist": "Edurafi2",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Flower_of_Avocado.jpg"
+ },
+ "avokado:kuru": "yok",
+ "demirhindi:cizim": {
+  "file": "Tamarindus indica - Köhler–s Medizinal-Pflanzen-134.jpg",
+  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Tamarindus_indica_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-134.jpg"
+ },
+ "demirhindi:cicek": {
+  "file": "Tamarind flower vijayanrajapuram 01.jpg",
+  "artist": "Vijayanrajapuram",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Tamarind_flower_vijayanrajapuram_01.jpg"
+ },
+ "demirhindi:kuru": "yok",
+ "haritaki:cizim": "yok",
+ "haritaki:cicek": {
+  "file": "Terminalia chebula - flowers.JPG",
+  "artist": "Delonix",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Terminalia_chebula_-_flowers.JPG"
+ },
+ "haritaki:kuru": "yok",
+ "zahter:cizim": "yok",
+ "zahter:cicek": {
+  "file": "Thymbra spicata 1.jpg",
+  "artist": "Gideon Pisanty ( Gidip ) גדעון פיזנטי",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Thymbra_spicata_1.jpg"
+ },
+ "zahter:kuru": "yok",
+ "menengic:cizim": "yok",
+ "menengic:cicek": {
+  "file": "Pistacia terebinthus kz04.jpg",
+  "artist": "Krzysztof Ziarnek, Kenraiz",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Pistacia_terebinthus_kz04.jpg"
+ },
+ "menengic:kuru": "yok",
+ "kopekuzumu:cizim": "yok",
+ "kopekuzumu:cicek": {
+  "file": "Solanum decipiens Solanaceae.jpg",
+  "artist": "Kostka Martin",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Solanum_decipiens_Solanaceae.jpg"
+ },
+ "kopekuzumu:kuru": "yok",
+ "papaya:cizim": {
+  "file": "Carica papaya - Köhler–s Medizinal-Pflanzen-029.jpg",
+  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Carica_papaya_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-029.jpg"
+ },
+ "papaya:cicek": {
+  "file": "Carica papaya flower.jpg",
+  "artist": "Ctify",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Carica_papaya_flower.jpg"
+ },
+ "papaya:kuru": "yok",
+ "guava:cizim": "yok",
+ "guava:cicek": {
+  "file": "Flower of Guava Plant 03.jpg",
+  "artist": "Sabina Bajracharya",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Flower_of_Guava_Plant_03.jpg"
+ },
+ "guava:kuru": "yok",
+ "karabiber:cizim": {
+  "file": "Piper nigrum - Köhler–s Medizinal-Pflanzen-107.jpg",
+  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Piper_nigrum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-107.jpg"
+ },
+ "karabiber:cicek": {
+  "file": "Starr-130312-2426-Piper nigrum-leaves and flower spikes-Pali o Waipio Huelo-Maui (24580497853).jpg",
+  "artist": "Forest and Kim Starr",
+  "license": "CC BY 3.0 us",
+  "page": "https://commons.wikimedia.org/wiki/File:Starr-130312-2426-Piper_nigrum-leaves_and_flower_spikes-Pali_o_Waipio_Huelo-Maui_%2824580497853%29.jpg"
+ },
+ "karabiber:kuru": "yok"
 }
