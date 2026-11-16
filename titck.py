@@ -90,4 +90,7 @@ M = {
  'cuhacicegi': ('Primula veris L.', '2024/dynamicModulesAttachment/PrimulaverisL._1db4d1c0-0eeb-40c6-90ce-4600dd95cf95.pdf'),
  'besparmakotu': ('Potentilla erecta (L.) Raeusch.', '2023/dynamicModulesAttachment/PotentillaerectaL.Raeusch.v2_7104afdd-0181-46d5-a72f-549a5817cd17.pdf'),
  'koyunotu': ('Agrimonia eupatoria L.', '2023/dynamicModulesAttachment/AgrimoniaeupatoriaL.yaymlV2_33336722-c034-4c27-b528-d071e8ed3146.pdf'),
+ 'kasikotu': ('Herniaria glabra L.', '2023/dynamicModulesAttachment/HerniariaglabraL.v2_92203b68-9afb-4408-a482-d3bbd6df7888.pdf'),
+ 'dulavratotu': ('Arctium lappa L.', '2023/dynamicModulesAttachment/ArctiumlappaL._b3576af0-4bbf-4f6b-b241-57f4f5f604f6.pdf'),
+ 'ayrikotu': ('Agropyron repens (L.) P. Beauv.', '2024/dynamicModulesAttachment/AgropyronrepensL.P.Beauv.v3_e9326d84-dea4-4d8f-ab8b-b6b8a71334f0.pdf'),
 }

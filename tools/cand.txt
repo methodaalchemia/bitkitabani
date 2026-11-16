@@ -35,3 +35,6 @@ mate | Ilex paraguariensis | leaves branch tree -gourd-bombilla
 cuhacicegi | Primula veris | yellow flowers meadow -obconica
 besparmakotu | Potentilla erecta | yellow four-petal flower
 koyunotu | Agrimonia eupatoria | yellow flower spike
+kasikotu | Herniaria glabra | mat plant small flowers
+dulavratotu | Arctium lappa | burrs leaves plant -belladonna
+ayrikotu | Elymus repens | grass rhizome -lawn

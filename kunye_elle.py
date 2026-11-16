@@ -740,6 +740,20 @@ ELLE.update({
    titck_apa('Agrimonia eupatoria L.'),
 })
 
+# TİTCK monograf dosyaları (kuyruk/k21.py).
+ELLE.update({
+ 'https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/HerniariaglabraL.v2_92203b68-9afb-4408-a482-d3bbd6df7888.pdf':
+   titck_apa('Herniaria glabra L.'),
+ 'https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/HerniariaglabraL.v2_e639c046-4574-49df-ad3e-7b795d58672b.pdf':
+   titck_apa('Herniaria hirsuta L.'),
+ 'https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/HerniariaincanaLam.v2_9892060a-f885-4491-92e3-6fde39c358bb.pdf':
+   titck_apa('Herniaria incana Lam.'),
+ 'https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/ArctiumlappaL._b3576af0-4bbf-4f6b-b241-57f4f5f604f6.pdf':
+   titck_apa('Arctium lappa L.'),
+ 'https://titck.gov.tr/storage/Archive/2024/dynamicModulesAttachment/AgropyronrepensL.P.Beauv.v3_e9326d84-dea4-4d8f-ab8b-b6b8a71334f0.pdf':
+   titck_apa('Agropyron repens (L.) P. Beauv.'),
+})
+
 # Kurum yayını: APA'da kurumsal yazar ve yayın türü köşeli ayraçta.
 ELLE['https://www.iarc.who.int/wp-content/uploads/2018/07/pr244_E.pdf'] = (
     'Uluslararası Kanser Araştırmaları Ajansı. (2016). IARC Monographs '
