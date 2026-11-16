@@ -38,3 +38,6 @@ koyunotu | Agrimonia eupatoria | yellow flower spike
 kasikotu | Herniaria glabra | mat plant small flowers
 dulavratotu | Arctium lappa | burrs leaves plant -belladonna
 ayrikotu | Elymus repens | grass rhizome -lawn
+kaliforniyahashasi | Eschscholzia californica | orange flowers -somniferum
+kokuluyonca | Melilotus officinalis | yellow flower spike -albus
+aciyonca | Menyanthes trifoliata | white fringed flowers

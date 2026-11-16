@@ -754,11 +754,28 @@ ELLE.update({
    titck_apa('Agropyron repens (L.) P. Beauv.'),
 })
 
+ELLE.update({
+ 'https://titck.gov.tr/storage/Archive/2024/dynamicModulesAttachment/EschscholziacaliforniaCham.V2_d331fb1b-294f-4e7e-a287-9e85cedab0cd.pdf':
+   titck_apa('Eschscholzia california Cham.'),
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/MelilotusofficinalisL.Lam25f3329baa35428bb04b2e9b194de6de_ae125682-b4fb-4dd3-a5df-fafbca70b485.pdf':
+   titck_apa('Melilotus officinalis (L.) Lam.'),
+ 'https://titck.gov.tr/storage/Archive/2024/dynamicModulesAttachment/MenyanthestrifoliataL._c46f522d-f224-470d-b23c-0e6c196da59c.pdf':
+   titck_apa('Menyanthes trifoliata L.'),
+})
+
 # Kurum yayını: APA'da kurumsal yazar ve yayın türü köşeli ayraçta.
 ELLE['https://www.iarc.who.int/wp-content/uploads/2018/07/pr244_E.pdf'] = (
     'Uluslararası Kanser Araştırmaları Ajansı. (2016). IARC Monographs '
     'evaluate drinking coffee, maté, and very hot beverages '
     '[Basın açıklaması]. Dünya Sağlık Örgütü.')
+
+# Bilim tarihi yazıları: biri dergi yazısı, biri podcast bölümü.
+ELLE['https://www.sciencehistory.org/stories/magazine/aspirin-turn-of-the-century-miracle-drug/'] = (
+    'Goldberg, D. R. (2009, 3 Haziran). Aspirin: Turn-of-the-century '
+    'miracle drug. Distillations. Science History Institute.')
+ELLE['https://www.sciencehistory.org/stories/disappearing-pod/the-life-saving-rat-poison/'] = (
+    'Kean, S. (Sunucu). (2022, 4 Ekim). The lifesaving rat poison '
+    '[Podcast bölümü]. The Disappearing Spoon. Science History Institute.')
 
 # APA künyesindeki yapısal ekler Türkçe yazılır. İngilizce sayfalarda aynı
 # künye kullanılır, yalnızca bu ekler değiştirilir; eser adlarına dokunulmaz.
@@ -792,6 +809,9 @@ _EN = [
  ('(“Zehirli bitkiler” bölümü)', '(chapter on poisonous plants)'),
  ('T.C. Sağlık Bakanlığı Sağlık Hizmetleri Genel Müdürlüğü',
   'Turkish Ministry of Health, General Directorate of Health Services'),
+ ('(Sunucu)', '(Host)'),
+ ('[Podcast bölümü]', '[Audio podcast episode]'),
+ ('3 Haziran', 'June 3'), ('4 Ekim', 'October 4'),
  (' ve ark.', ' et al.'),
 ]
 # Ordinal düzeltmesi: "3. baskı" gibi Türkçe sıra sayıları

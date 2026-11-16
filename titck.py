@@ -93,4 +93,7 @@ M = {
  'kasikotu': ('Herniaria glabra L.', '2023/dynamicModulesAttachment/HerniariaglabraL.v2_92203b68-9afb-4408-a482-d3bbd6df7888.pdf'),
  'dulavratotu': ('Arctium lappa L.', '2023/dynamicModulesAttachment/ArctiumlappaL._b3576af0-4bbf-4f6b-b241-57f4f5f604f6.pdf'),
  'ayrikotu': ('Agropyron repens (L.) P. Beauv.', '2024/dynamicModulesAttachment/AgropyronrepensL.P.Beauv.v3_e9326d84-dea4-4d8f-ab8b-b6b8a71334f0.pdf'),
+ 'kaliforniyahashasi': ('Eschscholzia california Cham.', '2024/dynamicModulesAttachment/EschscholziacaliforniaCham.V2_d331fb1b-294f-4e7e-a287-9e85cedab0cd.pdf'),
+ 'kokuluyonca': ('Melilotus officinalis (L.) Lam.', '2022/dynamicModulesAttachment/MelilotusofficinalisL.Lam25f3329baa35428bb04b2e9b194de6de_ae125682-b4fb-4dd3-a5df-fafbca70b485.pdf'),
+ 'aciyonca': ('Menyanthes trifoliata L.', '2024/dynamicModulesAttachment/MenyanthestrifoliataL._c46f522d-f224-470d-b23c-0e6c196da59c.pdf'),
 }
