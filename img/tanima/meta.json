@@ -2837,5 +2837,67 @@
   "license": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Corylus_avellana_flower_hoarfrost_02-20200102-RM-112558.jpg"
  },
- "findik:kuru": "yok"
+ "findik:kuru": "yok",
+ "hurma:cizim": "yok",
+ "hurma:cicek": {
+  "file": "Male date palm flower.jpg",
+  "artist": "Srianix",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Male_date_palm_flower.jpg"
+ },
+ "hurma:kuru": "yok",
+ "beyazdut:cizim": "yok",
+ "beyazdut:cicek": {
+  "file": "Morus alba flowers in India.jpg",
+  "artist": "Suyash Dwivedi",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Morus_alba_flowers_in_India.jpg"
+ },
+ "beyazdut:kuru": "yok",
+ "kavak:cizim": {
+  "file": "Populus nigra - Köhler–s Medizinal-Pflanzen-112.jpg",
+  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Populus_nigra_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-112.jpg"
+ },
+ "kavak:cicek": {
+  "file": "Zwarte populier (Populus nigra), 06-02-2026. (d.j.b.).jpg 04.jpg",
+  "artist": "Dominicus Johannes Bergsma.",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Zwarte_populier_%28Populus_nigra%29%2C_06-02-2026._%28d.j.b.%29.jpg_04.jpg"
+ },
+ "kavak:kuru": "yok",
+ "itir:cizim": "yok",
+ "itir:cicek": {
+  "file": "Flowers of Pelargonium graveolens 20190502.jpg",
+  "artist": "そらみみ",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Flowers_of_Pelargonium_graveolens_20190502.jpg"
+ },
+ "itir:kuru": "yok",
+ "susam:cizim": {
+  "file": "Sesamum indicum - Köhler–s Medizinal-Pflanzen-129.jpg",
+  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Sesamum_indicum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-129.jpg"
+ },
+ "susam:cicek": {
+  "file": "Flower of Digitalis purpurea.jpg",
+  "artist": "Mullookkaaran",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Flower_of_Digitalis_purpurea.jpg"
+ },
+ "susam:kuru": "yok",
+ "hiltit:cizim": {
+  "file": "Ferula assa-foetida - Köhler–s Medizinal-Pflanzen-061.jpg",
+  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Ferula_assa-foetida_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-061.jpg"
+ },
+ "hiltit:cicek": {
+  "file": "Ferula assa-foetida (Uzbekistan) 3.jpg",
+  "artist": "Valery Fassiaux",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Ferula_assa-foetida_%28Uzbekistan%29_3.jpg"
+ }
 }

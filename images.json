@@ -550,6 +550,19 @@
   "w": 960,
   "w500": 500
  },
+ "beyazdut": {
+  "artist": "Suyash Dwivedi",
+  "auto": true,
+  "b1280": "Morus alba flowers in India.jpg",
+  "file": "Morus alba flowers in India.jpg",
+  "h": 640,
+  "h500": 333,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Morus_alba_flowers_in_India.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "biberiye": {
   "artist": "Christian Ferrer",
   "b1280": "Rosmarinus officinalis in Vieussan.jpg",
@@ -1528,6 +1541,19 @@
   "w": 960,
   "w500": 500
  },
+ "hiltit": {
+  "artist": "Agnieszka Kwiecień, Nova",
+  "auto": true,
+  "b1280": "Ferula assa-foetida Zapaliczka cuchnąca 2020-07-31 06.jpg",
+  "file": "Ferula assa-foetida Zapaliczka cuchnąca 2020-07-31 06.jpg",
+  "h": 1280,
+  "h500": 666,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ferula_assa-foetida_Zapaliczka_cuchn%C4%85ca_2020-07-31_06.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "hindiba": {
   "artist": "Agnes Monkelbaan",
   "auto": true,
@@ -1606,6 +1632,19 @@
   "w": 960,
   "w500": 500
  },
+ "hurma": {
+  "artist": "Berthold Werner",
+  "auto": true,
+  "b1280": "Kafarnaum BW 7.JPG",
+  "file": "Kafarnaum BW 7.JPG",
+  "h": 636,
+  "h500": 331,
+  "license": "Public domain",
+  "licenseUrl": "",
+  "page": "https://commons.wikimedia.org/wiki/File:Kafarnaum_BW_7.JPG",
+  "w": 960,
+  "w500": 500
+ },
  "hus": {
   "artist": "Andrey Butko",
   "auto": false,
@@ -1667,6 +1706,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Br%C3%A4nn%C3%A4ssla_(Urtica_Dioica).jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "itir": {
+  "artist": "— DerHexer (Talk)",
+  "auto": true,
+  "b1280": "Pelargonium graveolens in Hel.jpg",
+  "file": "Pelargonium graveolens in Hel.jpg",
+  "h": 1445,
+  "h500": 753,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Pelargonium_graveolens_in_Hel.jpg",
   "w": 960,
   "w500": 500
  },
@@ -1937,6 +1989,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Leaf_of_Macropiper_excelsum.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "kavak": {
+  "artist": "Dominicus Johannes Bergsma",
+  "auto": true,
+  "b1280": "Locatie, De Famberhorst. Zwarte populieren (Populus nigra) 02.jpg",
+  "file": "Locatie, De Famberhorst. Zwarte populieren (Populus nigra) 02.jpg",
+  "h": 1192,
+  "h500": 621,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Locatie,_De_Famberhorst._Zwarte_populieren_(Populus_nigra)_02.jpg",
   "w": 960,
   "w500": 500
  },
@@ -3187,6 +3252,19 @@
   "license": "Public domain",
   "licenseUrl": "",
   "page": "https://commons.wikimedia.org/wiki/File:Fleur_sumac.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "susam": {
+  "artist": "Vengolis",
+  "auto": true,
+  "b1280": "Sesamum indicum 1369.jpg",
+  "file": "Sesamum indicum 1369.jpg",
+  "h": 1440,
+  "h500": 750,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Sesamum_indicum_1369.jpg",
   "w": 960,
   "w500": 500
  },
