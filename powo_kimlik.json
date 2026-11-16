@@ -1171,6 +1171,13 @@
   "rutbe": "fam.",
   "yazar": "J.St.-Hil."
  },
+ "Magnolia officinalis": {
+  "ad": "Magnolia officinalis",
+  "familya": "Magnoliaceae",
+  "kimlik": "554787-1",
+  "rutbe": "spec.",
+  "yazar": "Rehder & E.H.Wilson"
+ },
  "Malva sylvestris": {
   "ad": "Malva sylvestris",
   "familya": "Malvaceae",
@@ -1541,6 +1548,13 @@
   "kimlik": "514191-1",
   "rutbe": "spec.",
   "yazar": "L."
+ },
+ "Phellodendron amurense": {
+  "ad": "Phellodendron amurense",
+  "familya": "Rutaceae",
+  "kimlik": "774774-1",
+  "rutbe": "spec.",
+  "yazar": "Rupr."
  },
  "Phoenix dactylifera": {
   "ad": "Phoenix dactylifera",
@@ -2303,6 +2317,13 @@
   "ad": "Viburnum opulus",
   "familya": "Caprifoliaceae",
   "kimlik": "326268-2",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
+ "Viburnum prunifolium": {
+  "ad": "Viburnum prunifolium",
+  "familya": "Caprifoliaceae",
+  "kimlik": "326270-2",
   "rutbe": "spec.",
   "yazar": "L."
  },

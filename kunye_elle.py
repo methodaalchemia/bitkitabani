@@ -933,6 +933,12 @@ ELLE.update({
  who_url(4, 'rhizoma-picrorhizae'): who_apa('Rhizoma Picrorhizae', 4, '258–283'),
 })
 
+ELLE.update({
+ who_url(4, 'cortex-phellodendron'): who_apa('Cortex Phellodendron', 4, '244–257'),
+ who_url(4, 'cortex-magnoliae'): who_apa('Cortex Magnoliae', 4, '167–178'),
+ who_url(4, 'cortex-viburni-prunifolii'): who_apa('Cortex Viburni Prunifolii', 4, '364–372'),
+})
+
 # Kurum yayını: APA'da kurumsal yazar ve yayın türü köşeli ayraçta.
 ELLE['https://www.iarc.who.int/wp-content/uploads/2018/07/pr244_E.pdf'] = (
     'Uluslararası Kanser Araştırmaları Ajansı. (2016). IARC Monographs '

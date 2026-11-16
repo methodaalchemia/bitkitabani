@@ -127,3 +127,6 @@ hintgunlugu | Boswellia serrata | tree resin
 guggul | Commiphora wightii | tree resin
 ipeka | Carapichea ipecacuanha | plant root flowers
 kutki | Picrorhiza kurroa | plant flowers rhizome
+amurmantaragaci | Phellodendron amurense | tree bark leaves
+manolyakabugu | Magnolia officinalis | tree flower bark
+karakartopu | Viburnum prunifolium | shrub flowers berries
