@@ -2078,6 +2078,36 @@ if os.path.isdir(os.path.join(HERE, 'img')):
 for f in os.listdir(os.path.join(HERE, 'kok')):   # site köküne olduğu gibi kopyalanan doğrulama dosyaları
     shutil.copy(os.path.join(HERE, 'kok', f), os.path.join(OUT, f))
 _redir += '/lisans/ /yontem/#lisans 301\n/veri/ /yontem/#veri-seti 301\n/hikaye/ /blog/ 301\n/yazilar/ /blog/ 301\n/yoresel-adlar/ /yoreler/#adlar 301\n/ara/ /rehber/#ara 301\n/oyun/ / 301\n'
+
+# Google'ın dizinlediği, artık üretilmeyen adresler. Üç kaynağı var:
+#   1. 5 Kasım'daki ileri tarih sızıntısı — o sayfaların çoğu yayın tarihi
+#      gelince kendiliğinden dönüyor, onlara yönlendirme gerekmiyor.
+#   2. Eski familya adres biçimi: slug Türkçe adı da içeriyordu
+#      ("fabaceae (baklagiller)"). Biçim düzeldi, eski adresler dizinde kaldı.
+#   3. Kaldırılan ya da adı değişen sayfalar.
+# Buradakiler kendiliğinden dönmeyecek olanlar; hepsi 301 ile karşılanıyor.
+_ESKI_ADRES = [
+    # Artık familya listesinde olmayanlar
+    ('/familya/amaranthaceae/', '/familya/'),
+    ('/familya/burseraceae/', '/familya/'),
+    ('/familya/ericaceae/', '/familya/'),
+    ('/familya/meliaceae/', '/familya/'),
+    # Eski slug biçimi: Latince adın yanında Türkçe adı da vardı
+    ('/familya/fabaceae (baklagiller)/', '/familya/fabaceae/'),
+    ('/familya/poaceae (buğdaygiller)/', '/familya/'),
+    ('/familya/rosaceae (gülgiller)/', '/familya/rosaceae/'),
+    # Hikâyenin slug'ı uzadı, eskisi dizinde kaldı
+    ('/hikaye/hititlerin-yaklasik-bayramindan-biri-antahsum/',
+     '/hikaye/hititlerin-yaklasik-bayramindan-biri-antahsum-adini/'),
+    # Kaldırılan Instagram önizleme sayfası
+    ('/ig/', '/'),
+]
+for _eski, _yeni in _ESKI_ADRES:
+    _redir += f'{_eski} {_yeni} 301\n'
+    # Boşluk içeren adresler dizine yüzde kodlu girmiş olabilir
+    if ' ' in _eski:
+        _redir += f'{_eski.replace(" ", "%20")} {_yeni} 301\n'
+
 # kendi sayfası kapatılan familyalar: /familya/ sayfasındaki kendi bölümlerine
 _redir += ''.join(f'/familya/{fam_slug(f)}/ /familya/#{fam_slug(f)} 301\n' for f, n in sorted(FAMC.items()) if f in FAM_BILGI and n < FAM_MIN)
 open(os.path.join(OUT, '_redirects'), 'w').write(_redir)
