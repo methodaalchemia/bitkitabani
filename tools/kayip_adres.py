@@ -72,6 +72,29 @@ def bekleyenler():
     return bek
 
 
+def canli_404(yol, alan='https://bitkitabani.com'):
+    """Adres canlıda gerçekten 404 mü?
+
+    Depo geçmişi tek başına yetmiyor: `site/` klasöründe üretilmeyen ama
+    canlıda duran sayfalar var (örnek: /ig/, Worker'a ayrıca yüklenmiş
+    noindex bir önizleme sayfası). Böyle bir adrese yönlendirme eklemek
+    çalışan sayfayı kırar. Bu yüzden açıkta görünen her adres canlıya
+    sorulur. Ağ hatasında None döner — karar verilmez.
+    """
+    import urllib.error
+    import urllib.parse
+    import urllib.request
+    u = alan + urllib.parse.quote(yol, safe='/')
+    try:
+        r = urllib.request.urlopen(urllib.request.Request(
+            u, headers={'User-Agent': 'bitkitabani-kayip-adres/1.0'}), timeout=30)
+        return r.status == 404
+    except urllib.error.HTTPError as e:
+        return e.code == 404
+    except Exception:
+        return None
+
+
 def yonlendirmeler():
     yol = os.path.join(KOK, 'site', '_redirects')
     if not os.path.exists(yol):
@@ -111,8 +134,19 @@ def main():
     print(f'  kendiliğinden dönecek (yayın tarihi ileride) : {len(donecek)}')
     print(f'  yönlendirmesi var                            : {len(yonlu)}')
     print(f'  AÇIKTA (gerçek 404)                          : {len(acik)}')
+    if acik:
+        print('\n  açıktakiler canlıya soruluyor...')
+    gercek, yanlis_alarm, bilinmeyen = [], [], []
     for y in acik:
-        print('     ', y)
+        d = canli_404(y)
+        (gercek if d else (bilinmeyen if d is None else yanlis_alarm)).append(y)
+    for y in gercek:
+        print('      404 :', y)
+    for y in yanlis_alarm:
+        print('      canlıda duruyor, yönlendirme EKLEME:', y)
+    for y in bilinmeyen:
+        print('      canlıya sorulamadı (ağ):', y)
+    acik = gercek
     if acik:
         print('\nBu adresler için site/_redirects\'e 301 eklenmeli '
               '(build.py içindeki _ESKI_ADRES listesi).')

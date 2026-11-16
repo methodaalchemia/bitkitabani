@@ -2086,6 +2086,10 @@ _redir += '/lisans/ /yontem/#lisans 301\n/veri/ /yontem/#veri-seti 301\n/hikaye/
 #      ("fabaceae (baklagiller)"). Biçim düzeldi, eski adresler dizinde kaldı.
 #   3. Kaldırılan ya da adı değişen sayfalar.
 # Buradakiler kendiliğinden dönmeyecek olanlar; hepsi 301 ile karşılanıyor.
+# ⚠️ Listeye adres eklemeden önce canlıda gerçekten 404 verdiği görülmeli:
+# depoda üretilmeyen ama canlıda duran sayfalar var (/ig/ böyle — Worker'a
+# ayrıca yüklenmiş, noindex bir önizleme sayfası). Depo geçmişine bakıp
+# yönlendirme eklemek çalışan bir sayfayı kırabilir.
 _ESKI_ADRES = [
     # Artık familya listesinde olmayanlar
     ('/familya/amaranthaceae/', '/familya/'),
@@ -2099,8 +2103,6 @@ _ESKI_ADRES = [
     # Hikâyenin slug'ı uzadı, eskisi dizinde kaldı
     ('/hikaye/hititlerin-yaklasik-bayramindan-biri-antahsum/',
      '/hikaye/hititlerin-yaklasik-bayramindan-biri-antahsum-adini/'),
-    # Kaldırılan Instagram önizleme sayfası
-    ('/ig/', '/'),
 ]
 for _eski, _yeni in _ESKI_ADRES:
     _redir += f'{_eski} {_yeni} 301\n'
