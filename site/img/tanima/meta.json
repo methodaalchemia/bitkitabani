@@ -2352,5 +2352,58 @@
   "license": "CC BY-SA 3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Sisymbrium_officinale_flowers%2C_gewone_raket_bloemen.jpg"
  },
- "ergelenhardali:kuru": "yok"
+ "ergelenhardali:kuru": "yok",
+ "selamotu:cizim": {
+  "file": "Levisticum officinale - Köhler–s Medizinal-Pflanzen-217.jpg",
+  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Levisticum_officinale_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-217.jpg"
+ },
+ "selamotu:cicek": {
+  "file": "Levisticum officinale flower clouseup.jpg",
+  "artist": "Amada44",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Levisticum_officinale_flower_clouseup.jpg"
+ },
+ "selamotu:kuru": "yok",
+ "frenkuzumu:cizim": "yok",
+ "frenkuzumu:cicek": {
+  "file": "Flowers of blackcurrant (Ribes nigrum), Pottertons Allotments, Warwick - geograph.org.uk - 6599794.jpg",
+  "artist": "Robin Stott",
+  "license": "CC BY-SA 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Flowers_of_blackcurrant_%28Ribes_nigrum%29%2C_Pottertons_Allotments%2C_Warwick_-_geograph.org.uk_-_6599794.jpg"
+ },
+ "frenkuzumu:kuru": "yok",
+ "esekotu:cizim": {
+  "file": "Illustration Oenothera biennis0 clean.jpg",
+  "artist": "User:Kilom691",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Oenothera_biennis0_clean.jpg"
+ },
+ "esekotu:cicek": {
+  "file": "Oenothera rubricaulis 2014 G1.jpg",
+  "artist": "George Chernilevsky",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Oenothera_rubricaulis_2014_G1.jpg"
+ },
+ "esekotu:kuru": "yok",
+ "giritkekigi:cizim": "yok",
+ "giritkekigi:cicek": "yok",
+ "giritkekigi:kuru": "yok",
+ "cobandegnegi:cizim": "yok",
+ "cobandegnegi:cicek": {
+  "file": "Polygonum aviculare flower kz.jpg",
+  "artist": "Krzysztof Ziarnek",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Polygonum_aviculare_flower_kz.jpg"
+ },
+ "cobandegnegi:kuru": "yok",
+ "mercankosk:cizim": "yok",
+ "mercankosk:cicek": {
+  "file": "The Flowers of Shakespeare 15.jpg",
+  "artist": "Viola",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:The_Flowers_of_Shakespeare_15.jpg"
+ },
+ "mercankosk:kuru": "yok"
 }
