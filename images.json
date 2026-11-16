@@ -1154,6 +1154,19 @@
   "w": 960,
   "w500": 500
  },
+ "findik": {
+  "artist": "Johann Jaritz",
+  "auto": true,
+  "b1280": "Pörtschach Johannes-Brahms-Promenade Werzers Bootshaus Haselbusch 02032019 6087.jpg",
+  "file": "Pörtschach Johannes-Brahms-Promenade Werzers Bootshaus Haselbusch 02032019 6087.jpg",
+  "h": 1332,
+  "h500": 694,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:P%C3%B6rtschach_Johannes-Brahms-Promenade_Werzers_Bootshaus_Haselbusch_02032019_6087.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "fitolakka": {
   "artist": "Cbaile19",
   "auto": false,
@@ -1696,6 +1709,19 @@
   "w": 960,
   "w500": 500
  },
+ "kahve": {
+  "artist": "PJeganathan",
+  "auto": true,
+  "b1280": "Coffee berries harvest in Anaimalai Hills, Southern Western Ghats P1110963.jpg",
+  "file": "Coffee berries harvest in Anaimalai Hills, Southern Western Ghats P1110963.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Coffee_berries_harvest_in_Anaimalai_Hills,_Southern_Western_Ghats_P1110963.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "kakao": {
   "artist": "Flocci Nivis",
   "b1280": "20260317 Theobroma cacao 01.jpg",
@@ -1898,6 +1924,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Herniaria_glabra_Po%C5%82onicznik_nagi_2020-07-10_02.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "kava": {
+  "artist": "Krzysztof Golik",
+  "auto": true,
+  "b1280": "Leaf of Macropiper excelsum.jpg",
+  "file": "Leaf of Macropiper excelsum.jpg",
+  "h": 750,
+  "h500": 391,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Leaf_of_Macropiper_excelsum.jpg",
   "w": 960,
   "w500": 500
  },
@@ -3125,6 +3164,19 @@
   "w": 960,
   "w500": 500
  },
+ "stevia": {
+  "artist": "Ethel Aardvark",
+  "auto": true,
+  "b1280": "Stevia rebaudiana flowers.jpg",
+  "file": "Stevia rebaudiana flowers.jpg",
+  "h": 978,
+  "h500": 509,
+  "license": "CC BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Stevia_rebaudiana_flowers.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "sumak": {
   "artist": "No machine-readable author provided. BourrinOman assumed (based on copyright claims).",
   "auto": true,
@@ -3215,6 +3267,19 @@
   "w": 960,
   "w500": 500
  },
+ "trabzonhurmasi": {
+  "artist": "Frank Schulenburg",
+  "auto": true,
+  "b1280": "Fuyu persimmon fruits, one cut open.jpg",
+  "file": "Fuyu persimmon fruits, one cut open.jpg",
+  "h": 640,
+  "h500": 333,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Fuyu_persimmon_fruits,_one_cut_open.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "tulsi": {
   "artist": "Joydeep",
   "auto": false,
@@ -3251,6 +3316,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Turun%C3%A7_-_Citrus_aurantium_02.JPG",
+  "w": 960,
+  "w500": 500
+ },
+ "tutun": {
+  "artist": "Jebulon",
+  "auto": true,
+  "b1280": "Feuille tabac.jpg",
+  "file": "Feuille tabac.jpg",
+  "h": 639,
+  "h500": 333,
+  "license": "CC0",
+  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Feuille_tabac.jpg",
   "w": 960,
   "w500": 500
  },

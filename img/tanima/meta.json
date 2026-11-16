@@ -2774,5 +2774,68 @@
   "license": "CC BY 3.0 us",
   "page": "https://commons.wikimedia.org/wiki/File:Starr-130312-2426-Piper_nigrum-leaves_and_flower_spikes-Pali_o_Waipio_Huelo-Maui_%2824580497853%29.jpg"
  },
- "karabiber:kuru": "yok"
+ "karabiber:kuru": "yok",
+ "tutun:cizim": {
+  "file": "Nicotiana tabacum - Köhler–s Medizinal-Pflanzen-098.jpg",
+  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Nicotiana_tabacum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-098.jpg"
+ },
+ "tutun:cicek": {
+  "file": "Unknown garden flower in Nepal.JPG",
+  "artist": "Shree Krishna Dhital",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Unknown_garden_flower_in_Nepal.JPG"
+ },
+ "tutun:kuru": "yok",
+ "kava:cizim": "yok",
+ "kava:cicek": {
+  "file": "Starr-091104-8927-Piper methysticum-leaves and flower spikes-Kahanu Gardens NTBG Kaeleku Hana-Maui (24620712229).jpg",
+  "artist": "Forest and Kim Starr",
+  "license": "CC BY 3.0 us",
+  "page": "https://commons.wikimedia.org/wiki/File:Starr-091104-8927-Piper_methysticum-leaves_and_flower_spikes-Kahanu_Gardens_NTBG_Kaeleku_Hana-Maui_%2824620712229%29.jpg"
+ },
+ "kava:kuru": "yok",
+ "stevia:cizim": "yok",
+ "stevia:cicek": {
+  "file": "Stevia rebaudiana flowers.jpg",
+  "artist": "Ethel Aardvark",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Stevia_rebaudiana_flowers.jpg"
+ },
+ "stevia:kuru": "yok",
+ "trabzonhurmasi:cizim": "yok",
+ "trabzonhurmasi:cicek": {
+  "file": "Diospyros kaki3.jpg",
+  "artist": "KENPEI",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Diospyros_kaki3.jpg"
+ },
+ "trabzonhurmasi:kuru": "yok",
+ "kahve:cizim": {
+  "file": "Coffea arabica - Köhler–s Medizinal-Pflanzen-189.jpg",
+  "artist": "Franz Eugen Köhler",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Coffea_arabica_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-189.jpg"
+ },
+ "kahve:cicek": {
+  "file": "20210529 Coffea arabica blossom 009.jpg",
+  "artist": "Zinnmann",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:20210529_Coffea_arabica_blossom_009.jpg"
+ },
+ "kahve:kuru": "yok",
+ "findik:cizim": {
+  "file": "Illustration Corylus avellana0 clean.jpg",
+  "artist": "User:Kilom691",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Corylus_avellana0_clean.jpg"
+ },
+ "findik:cicek": {
+  "file": "Corylus avellana flower hoarfrost 02-20200102-RM-112558.jpg",
+  "artist": "Ermell",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Corylus_avellana_flower_hoarfrost_02-20200102-RM-112558.jpg"
+ },
+ "findik:kuru": "yok"
 }
