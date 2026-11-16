@@ -658,6 +658,16 @@ ELLE.update({
    titck_apa('Vaccinium myrtillus L.'),
 })
 
+# TİTCK monograf dosyaları (kuyruk/k13.py).
+ELLE.update({
+ 'https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/CalendulaofficinalisL.yaymlV2_ed72c61f-78da-474e-a20a-3fa6219b8964.pdf':
+   titck_apa('Calendula officinalis L.'),
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/Centauriumerythraea99b92d0018da4d85ac5c6a293ffa570e_79c1e367-885c-47eb-91ee-664dfca60d2d.pdf':
+   titck_apa('Centaurium erythraea Rafn s. l.'),
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/HelichrysumarenariumL.Moench0b223e9429d04db0910b96618c8e9dae_6cc89fd4-9f6c-43fd-bbbe-adabc83e64e7.pdf':
+   titck_apa('Helichrysum arenarium (L.) Moench'),
+})
+
 # APA künyesindeki yapısal ekler Türkçe yazılır. İngilizce sayfalarda aynı
 # künye kullanılır, yalnızca bu ekler değiştirilir; eser adlarına dokunulmaz.
 _EN = [

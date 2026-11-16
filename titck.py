@@ -66,4 +66,7 @@ M = {
  'kabakcekirdegi': ('Cucurbita pepo L.', '2024/dynamicModulesAttachment/CucurbitapepoL.v2_6a1790e8-b9ce-4b13-acb7-2892c9c24092.pdf'),
  'arnika': ('Arnica montana L.', '2023/dynamicModulesAttachment/ArnicamontanaL.V2_3222564f-40c5-40fd-9dd2-be57aea057ad.pdf'),
  'yabanmersini': ('Vaccinium myrtillus L.', '2022/dynamicModulesAttachment/Vaccinummyrtillus5d08f485590d4249a3583081a086c7b1_5b750c9a-75a3-456e-b72a-6c304ce8d3a1.pdf'),
+ 'aynisefa': ('Calendula officinalis L.', '2023/dynamicModulesAttachment/CalendulaofficinalisL.yaymlV2_ed72c61f-78da-474e-a20a-3fa6219b8964.pdf'),
+ 'kirmizikantaron': ('Centaurium erythraea Rafn s. l.', '2022/dynamicModulesAttachment/Centauriumerythraea99b92d0018da4d85ac5c6a293ffa570e_79c1e367-885c-47eb-91ee-664dfca60d2d.pdf'),
+ 'olmezcicek': ('Helichrysum arenarium (L.) Moench', '2022/dynamicModulesAttachment/HelichrysumarenariumL.Moench0b223e9429d04db0910b96618c8e9dae_6cc89fd4-9f6c-43fd-bbbe-adabc83e64e7.pdf'),
 }

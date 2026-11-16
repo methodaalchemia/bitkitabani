@@ -11,3 +11,6 @@ atkuyrugu | Equisetum arvense | sterile shoots field -palustre
 kabakcekirdegi | Cucurbita pepo | seeds pepitas -carved-jack-o-lantern
 arnika | Arnica montana | flower meadow -homeopathy-package
 yabanmersini | Vaccinium myrtillus | berries shrub -cultivated-blueberry
+aynisefa | Calendula officinalis | flowers orange -tagetes
+kirmizikantaron | Centaurium erythraea | pink flowers meadow
+olmezcicek | Helichrysum arenarium | yellow flower heads -italicum
