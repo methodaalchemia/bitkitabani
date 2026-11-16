@@ -2518,5 +2518,48 @@
   "license": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:FLOWER_OF_ANDROGRAPHIS_PANICULATA.jpg"
  },
- "andrographis:kuru": "yok"
+ "andrographis:kuru": "yok",
+ "sogan:cizim": "yok",
+ "sogan:cicek": {
+  "file": "Flowers in onion's inflorescence.jpg",
+  "artist": "Cookofski",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Flowers_in_onion%27s_inflorescence.jpg"
+ },
+ "sogan:kuru": "yok",
+ "sakayik:cizim": "yok",
+ "sakayik:cicek": {
+  "file": "Flower- Paeoina lactoflora in 2025.jpg",
+  "artist": "Boaventuravinicius",
+  "license": "CC BY 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Flower-_Paeoina_lactoflora_in_2025.jpg"
+ },
+ "sakayik:kuru": "yok",
+ "yilankoku:cizim": "yok",
+ "yilankoku:cicek": {
+  "file": "Rauvolfia serpentina flowers at Peravoor.jpg",
+  "artist": "Vinayaraj",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Rauvolfia_serpentina_flowers_at_Peravoor.jpg"
+ },
+ "yilankoku:kuru": "yok",
+ "geven:cizim": "yok",
+ "geven:cicek": "yok",
+ "geven:kuru": "yok",
+ "tavsankulagi:cizim": "yok",
+ "tavsankulagi:cicek": {
+  "file": "Bupleurum falcatum-Buplèvre en faux 6-20160806.jpg",
+  "artist": "Daniel VILLAFRUELA .",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Bupleurum_falcatum-Bupl%C3%A8vre_en_faux_6-20160806.jpg"
+ },
+ "tavsankulagi:kuru": "yok",
+ "baloncicegi:cizim": "yok",
+ "baloncicegi:cicek": {
+  "file": "Ballonblume -- 2021 -- 8789.jpg",
+  "artist": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ballonblume_--_2021_--_8789.jpg"
+ },
+ "baloncicegi:kuru": "yok"
 }
