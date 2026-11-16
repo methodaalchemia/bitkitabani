@@ -25,7 +25,7 @@ Q = [
         diger='TİTCK monografı İngilizce adlarını devil’s claw, grapple plant, '
               'wood spider, harpago diye veriyor. Adı meyvesinin çengelli '
               'çıkıntılarından geliyor; hayvanların tüyüne takılarak yayılıyor.',
-        bolge=['asya'],
+        bolge=['afrika'],
         kat=['sifa'],
         kisim='Kök',
         taxon='Harpagophytum procumbens',
@@ -476,7 +476,7 @@ Q = [
               'veriyor. Ticari ürünlerde ekstre çoğunlukla EPs 7630 koduyla '
               'geçiyor. Bahçelerdeki sardunya aynı cinstendir ama farklı '
               'türdür.',
-        bolge=['asya'],
+        bolge=['afrika'],
         kat=['sifa'],
         kisim='Kök',
         taxon='Pelargonium sidoides',

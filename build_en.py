@@ -24,6 +24,7 @@ def _apa_en(url, yedek):
 
 def run(G):
     e, short_la, IMG, BASE, OUT, write = G['e'], G['short_la'], G['IMG'], G['BASE'], G['OUT'], G['write']
+    ev, duz = G['ev'], G['duz']   # vurgu ve düz metin yardımcıları (build.py)
     P, BR, REG, EK, ETK, DERIN, EXTRA = G['P'], G['BR'], G['REG'], G['EK'], G['ETK'], G['DERIN'], G['D'].get('EXTRA', {})
     YASAL, KORUMA = G['YASAL'], G['KORUMA']
     EMA, NCCIH, OTHER, POWO, BAYTOP = G['EMA'], G['NCCIH'], G['OTHER'], G['POWO'], G['BAYTOP']
@@ -242,11 +243,11 @@ def run(G):
         pid = p['id']; x = EN[pid]; ek = EK.get(pid, {})
         prev, nxt = P[idx - 1], P[(idx + 1) % len(P)]
         regs_txt = ', '.join(REG_EN[r] for r in p['bolge'])
-        first = lambda t: t.split('. ')[0].rstrip('.') + '.'
+        first = lambda t: duz(t).split('. ')[0].rstrip('.') + '.'
         y = YASAL_EN.get(pid)
         qa = [(f'What is {x["name"]}?', f'{x["name"]} ({short_la(p)}) is a plant of the {p["fam"]} family. Traditions that use it: {regs_txt}. Part used: {x["part"].lower()}.'),
               (f'What is {x["name"]} used for?', f'Traditional use: {first(x["uses"][0][1])} Scientific evidence: {KANIT_EN[p["kanit"]].lower()}. {first(x["science"])}'),
-              (f'Is {x["name"]} safe?', f'Safety label: {GUV_EN[p["guv"]].lower()}. {x["safety"]}' + (f' Legal status: {YASAL_AD_EN[y[0]]}.' if y else ''))]
+              (f'Is {x["name"]} safe?', f'Safety label: {GUV_EN[p["guv"]].lower()}. {duz(x["safety"])}' + (f' Legal status: {YASAL_AD_EN[y[0]]}.' if y else ''))]
         kisa = '<section class="kisaca" aria-label="In short"><span class="eyebrow">In short</span>' + ''.join(f'<div class="qa"><h2 class="q">{e(q)}</h2><p>{e(a)}</p></div>' for q, a in qa) + '</section>'
         uses = ''.join(f'<div class="use"><div class="who">{e(w)}</div><p>{e(t)}</p></div>' for w, t in x['uses'])
         sec = lambda h, inner: f'<section class="sec"><h2>{h}</h2>{inner}</section>'
@@ -254,7 +255,7 @@ def run(G):
         if ek:
             body_s += sec('In nature', f'<dl class="meta wide"><div><dt>Where it grows</dt><dd>{e(x["habitat"])}</dd></div><div><dt>Harvest season</dt><dd>{e(x["season"])}</dd></div><div><dt>Local names</dt><dd>{e(x["local"])}</dd></div></dl>')
             body_s += sec('Mix-up risk', f'<div class="callout orta"><p>{e(x["confusion"])}</p>' + (f'<p>{e(BKAR_EN[pid])}</p>' if pid in BKAR_EN else '') + '</div>')
-        body_s += sec('Preparation', f'<p>{e(x["prep"])}</p>') + sec('What science says', f'<p>{e(x["science"])}</p>')
+        body_s += sec('Preparation', f'<p>{ev(x["prep"])}</p>') + sec('What science says', f'<p>{ev(x["science"])}</p>')
         faq = []
         if pid in D_EN:
             dd = D_EN[pid]
@@ -263,9 +264,9 @@ def run(G):
             body_s += sec('Common mistakes', '<ul class="hatalar">' + ''.join(f'<li>{e(h)}</li>' for h in dd['hata']) + '</ul>')
             body_s += sec('Frequently asked', '<div class="faq">' + ''.join(f'<details><summary>{e(q)}</summary><p>{e(a)}</p></details>' for q, a in dd['sss']) + '</div>')
             faq = dd['sss']
-        body_s += sec('Safety', f'<div class="callout {p["guv"]}"><div class="lvl">{GUV_EN[p["guv"]]}</div><p>{e(x["safety"])}</p></div>')
+        body_s += sec('Safety', f'<div class="callout {p["guv"]}"><div class="lvl">{GUV_EN[p["guv"]]}</div><p>{ev(x["safety"])}</p></div>')
         if pid in ETK_EN:
-            rows = ''.join(f'<tr><th scope="row">{e(g)}</th><td>{e(w)}</td></tr>' for g, w in ETK_EN[pid])
+            rows = ''.join(f'<tr><th scope="row">{e(g)}</th><td>{ev(w)}</td></tr>' for g, w in ETK_EN[pid])
             body_s += sec('Drug interactions', f'<div class="tablewrap"><table class="cmp etk"><thead><tr><th scope="col">Medicine or substance</th><th scope="col">Why it matters</th></tr></thead><tbody>{rows}</tbody></table></div><p class="muted-s">This list is not complete. If you take regular medication, ask your pharmacist or doctor before trying {e(x["name"])}.</p>')
         if y:
             body_s += sec('Legal status', f'<div class="callout {"yuksek" if y[0] == "yasak" else "orta"}"><div class="lvl">{YASAL_AD_EN[y[0]]}</div><p>{e(y[1])}</p><p class="muted-s">Laws differ by country; check local rules before travelling with or buying any plant product.</p></div>')
@@ -300,7 +301,7 @@ def run(G):
       <h1>{e(x["name"])}</h1>
       <span class="latin">{e(p["la"])}</span>
       <div class="badges"><span class="ev">{pips(p["kanit"])} Evidence: {KANIT_EN[p["kanit"]]}</span><span class="sf {p["guv"]}">{GUV_EN[p["guv"]]}</span>{tags(p).replace('<div class="tags">','').replace('</div>','')}</div>
-      <p class="intro">{e(x["fact"])}</p>
+      <p class="intro">{ev(x["fact"])}</p>
       {meta}
     </div>
     <figure class="photo">{ph(p, 960, eager=True)}<figcaption>{credit(p)}</figcaption></figure>
@@ -425,7 +426,9 @@ def run(G):
 
     # ---------- home ----------
     REG_TXT = {'anadolu': 'Smoke against the evil eye, Anatolian folk healing and plants of the Mediterranean.', 'asya': 'Shamanic smoke of the steppe, Chinese medicine and the roots of Siberia.',
-               'and': 'Coca leaf, the San Pedro cactus and cleansing herbs of the high Andes.', 'amazon': 'Ayahuasca, huito body paint and the forest’s teacher plants.', 'kamerika': 'White sage, peyote and the healing plants of the prairies.', 'avrupa': 'Mistletoe of the druids, St John’s wort of Midsummer and the herbs of Celtic and Norse Europe.'}
+               'and': 'Coca leaf, the San Pedro cactus and cleansing herbs of the high Andes.', 'amazon': 'Ayahuasca, huito body paint and the forest’s teacher plants.', 'kamerika': 'White sage, peyote and the healing plants of the prairies.', 'avrupa': 'Mistletoe of the druids, St John’s wort of Midsummer and the herbs of Celtic and Norse Europe.',
+               'afrika': 'Devil’s claw and umckaloabo root: the healing plants of southern Africa.',
+               'okyanusya': 'Tea tree and the healing traditions of Australia and the Pacific.'}
     regcards = ''.join(f'<a class="regcard" href="/en/catalog/?bolge={k}"><span class="eyebrow">{dot(k)} {e(REG_EN[k])}</span><b>{cnt(lambda p,k=k: k in p["bolge"])} plants</b><span>{REG_TXT[k]}</span></a>' for k in regs)
     FEAT = ['uzerlik','ayahuasca','salep','maca','kantaron','koka','kina','huito','safran','guarana','sigla','peyote']
     AYL = ['January','February','March','April','May','June','July','August','September','October','November','December']
@@ -510,7 +513,7 @@ def run(G):
 <section class="sec"><h2>Ingredients</h2><ul class="malz">{"".join(f"<li>{e(m)}</li>" for m in r["malzeme"])}</ul></section>
 <section class="sec"><h2>Method</h2><ol class="adim">{"".join(f"<li>{e(a)}</li>" for a in r["adim"])}</ol></section>
 <p class="fact">{e(r["ipucu"])}</p>
-<aside class="warnbox" role="note"><b>Who should be careful?</b> {e(x["safety"])}</aside>
+<aside class="warnbox" role="note"><b>Who should be careful?</b> {ev(x["safety"])}</aside>
 <p><a class="cta" href="/en/{p["id"]}/">{e(name(p))}: the science, drug interactions and sources →</a></p>
 {DIS}
 <section class="sec"><h2>More recipes</h2><ul class="otherlist">{others}</ul></section>

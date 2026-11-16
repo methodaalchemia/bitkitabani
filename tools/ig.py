@@ -160,7 +160,7 @@ def slides(p, photo, label):
     out.append(im)
     return out
 
-TAG = {'anadolu': '#anadolu', 'asya': '#asya', 'and': '#andlar', 'amazon': '#amazon', 'kamerika': '#kuzeyamerika', 'avrupa': '#avrupa'}
+TAG = {'anadolu': '#anadolu', 'asya': '#asya', 'and': '#andlar', 'amazon': '#amazon', 'kamerika': '#kuzeyamerika', 'avrupa': '#avrupa', 'afrika': '#afrika', 'okyanusya': '#okyanusya'}
 def hashtag(s):
     s = s.replace('İ', 'i').replace('I', 'ı').lower()
     return '#' + re.sub(r'[^a-zçğıöşü0-9]', '', s)

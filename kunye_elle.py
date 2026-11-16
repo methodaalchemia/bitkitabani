@@ -638,6 +638,16 @@ ELLE.update({
    titck_apa('Pelargonium sidoides DC.'),
 })
 
+# TİTCK monograf dosyaları (kuyruk/k11.py).
+ELLE.update({
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/TanacetumpartheniumL.SchultzBip6feaabf306b745419e4dde78b88bdf2d_010170a8-552c-4e1c-b7a9-73d336220a9e.pdf':
+   titck_apa('Tanacetum parthenium (L.) Schultz Bip.'),
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/MelaleucaalternifoliaMaidenandBetcheCheel58eddbd56bce4f8bb63fa177ca084ff3_5fcf1cfd-fb3b-424c-928d-c7dedf441141.pdf':
+   titck_apa('Melaleuca alternifolia (Maiden & Betche) Cheel'),
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/EquisetumarvenseL.18854d9cb7fa43aab7fa97051497a1fa_c9bbb2db-9b3b-4f66-8ff0-714a51a79b3f.pdf':
+   titck_apa('Equisetum arvense L.'),
+})
+
 # APA künyesindeki yapısal ekler Türkçe yazılır. İngilizce sayfalarda aynı
 # künye kullanılır, yalnızca bu ekler değiştirilir; eser adlarına dokunulmaz.
 _EN = [
@@ -648,6 +658,10 @@ _EN = [
  ('Özgün eser y.', 'Original work published'),
  ('. baskı)', 'rd ed.)'),
  ('[Bitkisel tıbbi ürün monografı]', '[Herbal medicinal product monograph]'),
+ ('[Tıbbi bitki monografı]', '[Medicinal plant monograph]'),
+ ('Tıbbi Bitki Listesi.', 'Medicinal Plant List.'),
+ ('Türkiye İlaç ve Tıbbi Cihaz Kurumu',
+  'Turkish Medicines and Medical Devices Agency'),
  ('[Basın açıklaması]', '[Press release]'),
  ('[Ürün bilgisi]', '[Prescribing information]'),
  ('[Dağılım kaydı]', '[Distribution record]'),

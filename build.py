@@ -127,7 +127,16 @@ AYLAR =['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','E
 GUNLER = ['Pazartesi','Salı','Çarşamba','Perşembe','Cuma','Cumartesi','Pazar']
 def tr_date(d): return f'{d.day} {AYLAR[d.month-1]} {d.year}, {GUNLER[d.weekday()]}'
 def slug_of(br): return br['a'] + ('-' + br['b'] if br.get('b') else '')
-e = lambda s: html.escape(str(s), quote=True)
+# Kaçırma ve vurgu. Kuyruk metinlerinde güvenlik açısından kritik cümleler
+# **yıldızla** işaretleniyor. `ev` bunu <strong> yapar; gövde metninde
+# kullanılır. `e` ise yıldızları sessizce atar: bir çağrı yeri `ev` yerine
+# `e` kullanırsa sayfada yıldız görünmez, yalnızca vurgu kaybolur — meta
+# etiketlerine ve JSON-LD'ye etiket sızmasın diye ayrımı böyle kuruyoruz.
+_KACIR = lambda s: html.escape(str(s), quote=True)
+_VURGU = re.compile(r'\*\*(.+?)\*\*', re.S)
+e = lambda s: _KACIR(s).replace('**', '')
+duz = lambda s: str(s).replace('**', '')
+ev = lambda s: _VURGU.sub(r'<strong>\1</strong>', _KACIR(s)).replace('**', '')
 
 # ---------- simgeler (basit çizgi simgeleri) ----------
 IC = {'share': 'M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7 M12 3v13 M7 8l5-5 5 5', 'link': 'M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1 M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1',
@@ -565,13 +574,13 @@ for i, p in enumerate(P):
     if len(title) < 44: title += ' | Bitki Tabanı'
     ld = {"@context":"https://schema.org","@type":"Article","headline":f'{p["tr"]} ({short_la(p)})',"inLanguage":"tr","about":{"@type":"Taxon","name":short_la(p),"alternateName":[p['tr']] + [x.strip() for x in p['diger'].split(',')][:4],"taxonRank":"species","parentTaxon":{"@type":"Taxon","name":p['fam'].split(' ')[0],"taxonRank":"family"}},"description":desc_for(p),"author":AUTHOR,"isPartOf":{"@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/"},"dateModified":(max(CONTENT_DATE, YENI[pid].isoformat()) if pid in YENI else CONTENT_DATE),**({"datePublished":YENI[pid].isoformat()} if pid in YENI else {}),**({"reviewedBy":{"@type":"Person","name":GZ_KISI['ad'],"jobTitle":GZ_KISI.get('unvan','Eczacı')},"lastReviewed":GZ[pid]} if GZ_KISI and pid in GZ else {}),"url":f'{BASE}/{pid}/',"image":(f'{BASE}/img/{pid}-960.jpg' if pid in IMG else None),"publisher":{"@type":"Organization","name":"Bitki Tabanı","url":BASE+"/","logo":BASE+"/assets/logo-512.png","sameAs":["https://www.instagram.com/bitkitabani/","https://www.threads.net/@bitkitabani","https://www.facebook.com/profile.php?id=61595314033889","https://www.pinterest.com/bitkitabani/","https://www.youtube.com/@bitkitabani","https://t.me/bitkitabani"]}}
     crumbs = {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana sayfa","item":BASE+"/"},{"@type":"ListItem","position":2,"name":"Katalog","item":BASE+"/katalog/"},{"@type":"ListItem","position":3,"name":p['tr'],"item":f'{BASE}/{pid}/'}]}
-    uses = ''.join(f'<div class="use"><div class="who">{e(w)}</div><p>{e(t)}</p></div>' for w, t in p['kul'])
+    uses = ''.join(f'<div class="use"><div class="who">{e(w)}</div><p>{ev(t)}</p></div>' for w, t in p['kul'])
     relhtml = ''
     etkhtml = ''
     derhtml = ''; faqld = None; der_fayda = der_hata = der_sss = ''
     trl = p['tr'].replace('I', 'ı').replace('İ', 'i')
     def _first(t): 
-        s = t.split('. ')[0].rstrip('.'); return s + '.'
+        s = duz(t).split('. ')[0].rstrip('.'); return s + '.'
     regs_txt = ', '.join(REG[r]['ad'] for r in p['bolge'])
     _kis = p["kisim"].lower(); _fam = p["fam"].split(" ")[0]
     q_nedir = (f'{p["tr"]} nedir?', f'{p["tr"]} ({short_la(p)}), {_fam} familyasından bir bitkidir. {regs_txt} geleneklerinde en çok {_kis} kullanılır.')
@@ -584,12 +593,12 @@ for i, p in enumerate(P):
     if pid in DERIN:
         dd = DERIN[pid]
         rows_ = ''.join(f'<tr><th scope="row">{e(i)}</th><td><span class="kv {k}">{KAN_AD[k]}</span></td><td>{e(n)}</td></tr>' for i, k, n in dd['iddia'])
-        der_fayda = f'<section class="sec"><h2>Faydaları ne kadar kanıtlı?</h2><p>{e(p["bilim"])}</p><p class="muted-s">İnternette {e(p["tr"].replace("I","ı").replace("İ","i").lower())} için sık tekrarlanan iddialar ve bilimin bugün söyledikleri.</p><div class="tablewrap"><table class="cmp etk kanit"><thead><tr><th scope="col">İddia</th><th scope="col">Kanıt</th><th scope="col">Açıklama</th></tr></thead><tbody>{rows_}</tbody></table></div></section>'
+        der_fayda = f'<section class="sec"><h2>Faydaları ne kadar kanıtlı?</h2><p>{ev(p["bilim"])}</p><p class="muted-s">İnternette {e(p["tr"].replace("I","ı").replace("İ","i").lower())} için sık tekrarlanan iddialar ve bilimin bugün söyledikleri.</p><div class="tablewrap"><table class="cmp etk kanit"><thead><tr><th scope="col">İddia</th><th scope="col">Kanıt</th><th scope="col">Açıklama</th></tr></thead><tbody>{rows_}</tbody></table></div></section>'
         der_hata = '<section class="sec"><h2>Sık yapılan hatalar</h2><ul class="hatalar">' + ''.join(f'<li>{e(h)}</li>' for h in dd['hata']) + '</ul></section>'
         der_sss = '<section class="sec"><h2>Sık sorulanlar</h2><div class="faq">' + ''.join(f'<details><summary>{e(q)}</summary><p>{e(a)}</p></details>' for q, a in dd['sss']) + '</div></section>'
         faqld = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q, a in dd['sss']]}
     if pid in ETK:
-        rows_ = ''.join(f'<tr><th scope="row">{e(g)}</th><td>{e(w)}</td></tr>' for g, w in ETK[pid])
+        rows_ = ''.join(f'<tr><th scope="row">{e(g)}</th><td>{ev(w)}</td></tr>' for g, w in ETK[pid])
         etkhtml = f'<section class="sec" id="etk"><h2>İlaç etkileşimleri</h2><div class="tablewrap"><table class="cmp etk"><thead><tr><th scope="col">İlaç ya da madde</th><th scope="col">Neden önemli</th></tr></thead><tbody>{rows_}</tbody></table></div><p class="muted-s">Bu liste eksiksiz değildir. Düzenli ilaç kullanıyorsan {e(p["tr"])} denemeden önce eczacına ya da hekimine sor.</p></section>'
     _gp = {k['slug'] for k in KONULAR if any(x == pid for x, _ in k['bitkiler'])}
     def _sim(q):
@@ -637,7 +646,7 @@ for i, p in enumerate(P):
       <h1>{e(p["tr"])}</h1>
       <span class="latin">{e(p["la"])}</span>
       <div class="badges"><span class="ev">{pips(p["kanit"])} Kanıt: {kan_txt(p)}</span><span class="sf {p["guv"]}">{GUV[p["guv"]]}</span>{tags(p).replace('<div class="tags">','').replace('</div>','')}</div>
-      <p class="intro">{e(p["ilginc"])}</p>
+      <p class="intro">{ev(p["ilginc"])}</p>
       <dl class="meta">
     <div><dt>Diğer adlar</dt><dd>{e(p["diger"])}</dd></div>
     <div><dt>Kullanılan kısım</dt><dd>{e(p["kisim"])}</dd></div>
@@ -651,11 +660,11 @@ for i, p in enumerate(P):
   {kisahtml}
   <!--TOC-->
   <section class="sec"><h2>Geleneksel kullanım</h2><div class="uses">{uses}</div>{halk_kutu(pid, p["tr"])}</section>
-  {der_fayda if pid in DERIN else '<section class="sec"><h2>Bilim ne diyor</h2><p>' + e(p["bilim"]) + '</p></section>'}
-  <section class="sec"><h2>Güvenlik</h2><div class="callout {p["guv"]}"><div class="lvl">{GUV[p["guv"]]}</div><p>{e(p["guvNot"])}</p></div><div class="safelinks"><a href="{('#etk' if pid in ETK else '/rehber/ilac-etkilesimi/?q=' + urllib.parse.quote(p["tr"]))}">{ico('etk','ico-s')}<span>{'Bu bitkinin ilaç etkileşimleri' if pid in ETK else 'İlaç kullanıyorsan: etkileşim aracı'}</span></a><a href="/rehber/hamilelik-emzirme/">{ico('gebe','ico-s')}<span>Hamilelik ve emzirme</span></a>{('<a href="/rehber/zehirli-bitkiler/">' + ico('etk','ico-s') + '<span>Zehirli bitkiler ve karıştırılanlar</span></a>') if p["guv"] == "yuksek" or pid in BKAR else ""}</div>{(f'<p class="titck">Türkiye İlaç ve Tıbbi Cihaz Kurumu (TİTCK) bu bitki için resmî bir monograf yayımladı: kullanım alanları, dozu, kimlerin kullanmaması gerektiği ve etkileşimleri. <a href="{TITCK_B + TITCK[pid][1]}" target="_blank" rel="noopener">TİTCK monografı ({e(TITCK[pid][0])}, PDF) →</a></p>' if pid in TITCK else '')}</section>
+  {der_fayda if pid in DERIN else '<section class="sec"><h2>Bilim ne diyor</h2><p>' + ev(p["bilim"]) + '</p></section>'}
+  <section class="sec"><h2>Güvenlik</h2><div class="callout {p["guv"]}"><div class="lvl">{GUV[p["guv"]]}</div><p>{ev(p["guvNot"])}</p></div><div class="safelinks"><a href="{('#etk' if pid in ETK else '/rehber/ilac-etkilesimi/?q=' + urllib.parse.quote(p["tr"]))}">{ico('etk','ico-s')}<span>{'Bu bitkinin ilaç etkileşimleri' if pid in ETK else 'İlaç kullanıyorsan: etkileşim aracı'}</span></a><a href="/rehber/hamilelik-emzirme/">{ico('gebe','ico-s')}<span>Hamilelik ve emzirme</span></a>{('<a href="/rehber/zehirli-bitkiler/">' + ico('etk','ico-s') + '<span>Zehirli bitkiler ve karıştırılanlar</span></a>') if p["guv"] == "yuksek" or pid in BKAR else ""}</div>{(f'<p class="titck">Türkiye İlaç ve Tıbbi Cihaz Kurumu (TİTCK) bu bitki için resmî bir monograf yayımladı: kullanım alanları, dozu, kimlerin kullanmaması gerektiği ve etkileşimleri. <a href="{TITCK_B + TITCK[pid][1]}" target="_blank" rel="noopener">TİTCK monografı ({e(TITCK[pid][0])}, {('DOCX' if TITCK[pid][1].endswith('.docx') else 'PDF')}) →</a></p>' if pid in TITCK else '')}</section>
   {etkhtml}
   {yas}
-  <section class="sec"><h2>Nasıl hazırlanır</h2><p>{e(p["haz"])}</p>{('<div class="brlinks" style="margin-top:10px">' + tarifler + '</div>') if tarifler else ''}</section>
+  <section class="sec"><h2>Nasıl hazırlanır</h2><p>{ev(p["haz"])}</p>{('<div class="brlinks" style="margin-top:10px">' + tarifler + '</div>') if tarifler else ''}</section>
   {dogada}
   {korhtml}
   {der_hata}
@@ -768,6 +777,11 @@ season = [p for p in P if 'anadolu' in p['bolge'] and p['guv'] != 'yuksek' and p
 
 def cnt(fn): return sum(1 for p in P if fn(p))
 regs = [(k, v) for k, v in REG.items() if cnt(lambda p: k in p['bolge']) >= 3]
+# Bölge listesi veride tanımlı, ama kuyruktaki bitkiler günü gelince
+# yayımlanıyor: yeni bir bölge bir süre boş kalabiliyor. Boş bölge ne
+# sayılır ne de çip olarak gösterilir, yoksa boş sonuç veren bir filtre
+# bağlantısı çıkıyor.
+REG_DOLU = {k: v for k, v in REG.items() if cnt(lambda p, k=k: k in p['bolge'])}
 REG_LIST = ', '.join(v['ad'].split(' ve ')[0] for k, v in regs[:-1]) + ' ve ' + regs[-1][1]['ad']
 durum = [('yasak', 'Türkiye’de yasak', lambda p: YASAL.get(p['id'], ('',))[0] == 'yasak'),
          ('kisitli', 'Türkiye’de kısıtlı veya lisanslı', lambda p: YASAL.get(p['id'], ('',))[0] in ('kisitli', 'lisansli')),
@@ -831,7 +845,7 @@ json.dump({
     'kuyruk_son_tarih': _bek[-1]['yayin'] if _bek else None,
     'sembol': len(MOTIFLER),
     'yazi': len(YAZILAR),
-    'bolge': len(REG),
+    'bolge': len(REG_DOLU),
     'kanit': {KANIT[k]['ad']: sum(1 for p in P if p.get('kanit') == k) for k in KANIT},
     'guvenlik': {GUV[g]: sum(1 for p in P if p.get('guv') == g) for g in GUV},
     'yasal_kisitli': sum(1 for p in P if p['id'] in YASAL),
@@ -852,7 +866,7 @@ ld_veri = {"@context": "https://schema.org", "@type": "Dataset",
     "dateModified": CONTENT_DATE,
     "keywords": ["etnobotanik", "şifalı bitkiler", "ritüel bitkiler", "halk hekimliği", "geleneksel tıp", "bitki–ilaç etkileşimi", "Anadolu", "Amazon", "And Dağları"],
     "variableMeasured": ["Türkçe ad", "Bilimsel ad", "Familya", "Yöresel adlar", "Bölge", "Kullanım kategorisi", "Kullanılan kısım", "Kanıt düzeyi", "Güvenlik düzeyi", "Türkiye’de yasal durum"],
-    "spatialCoverage": [{"@type": "Place", "name": v['ad']} for k, v in REG.items()],
+    "spatialCoverage": [{"@type": "Place", "name": v['ad']} for k, v in REG_DOLU.items()],
     "distribution": [
         {"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": BASE + "/veri/bitkiler.csv", "contentSize": _kb(_csv_boy), "name": "bitkiler.csv"},
         {"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": BASE + "/veri/bitkiler.json", "contentSize": _kb(_json_boy), "name": "bitkiler.json"}]}
@@ -1044,7 +1058,9 @@ LEDE = f'{REG_LIST}’dan {len(P)} şifalı ve ritüel bitkisi. Her kayıtta gel
 REG_TXT = {'anadolu':'Nazar tütsüsünden kına gecesine, Anadolu’nun şifa ve ritüel otları.','asya':'İskit tütsülerinden Sibirya şamanlarına, bozkırın ve taygaların bitkileri.',
            'and':'Koka yaprağından kantuta çiçeğine, And Dağları’nın kutsal bitkileri.','amazon':'Ayahuasca sarmaşığından huito boyasına, yağmur ormanının öğretmen bitkileri.',
            'kamerika':'Ak adaçayından peyoteye, Kuzey Amerika yerli halklarının bitkileri.',
-           'avrupa':'Druidlerin ökse otundan Kupala gecesinin kantaronuna, Kelt ve İskandinav Avrupası’nın bitkileri.'}
+           'avrupa':'Druidlerin ökse otundan Kupala gecesinin kantaronuna, Kelt ve İskandinav Avrupası’nın bitkileri.',
+           'afrika':'Şeytanpençesinden umckaloabo köküne, Güney Afrika’nın şifa bitkileri.',
+           'okyanusya':'Çay ağacından Aborijin şifa geleneğine, Avustralya ve Pasifik’in bitkileri.'}
 regcards = ''.join(f'<a class="regcard" href="/katalog/?bolge={k}"><span class="where">{dot(k)} {e(v["ad"])}</span><b>{cnt(lambda p,k=k: k in p["bolge"])} bitki</b><span>{e(REG_TXT.get(k,""))}</span></a>' for k,v in regs)
 
 # ---------- her gün yeni bitki: ana sayfa bandı ----------
@@ -1102,8 +1118,8 @@ home = f'''
 </header>
 {takvim_band()}
 <section class="pillars">
-  <a class="pillar" href="/katalog/"><span class="eyebrow">Bitkiler</span><b>{len(P)} bitki, {len(REG)} bölge</b><span>Anadolu’dan Amazon’a, fotoğrafı, çizimi ve kaynaklarıyla her bitki.</span></a>
-  <div class="pchips">{"".join(f'<a class="chip" href="/katalog/?bolge={k}">{dot(k)} {e(v["ad"])}</a>' for k, v in REG.items())}<a class="chip" href="/toplama-takvimi/">Doğada bu ay →</a></div>
+  <a class="pillar" href="/katalog/"><span class="eyebrow">Bitkiler</span><b>{len(P)} bitki, {len(REG_DOLU)} bölge</b><span>Anadolu’dan Amazon’a, fotoğrafı, çizimi ve kaynaklarıyla her bitki.</span></a>
+  <div class="pchips">{"".join(f'<a class="chip" href="/katalog/?bolge={k}">{dot(k)} {e(v["ad"])}</a>' for k, v in REG_DOLU.items())}<a class="chip" href="/toplama-takvimi/">Doğada bu ay →</a></div>
   <a class="pillar" href="/rehber/"><span class="eyebrow">Şifa</span><b>Hangi derde hangi bitki?</b><span>Kanıtı en güçlü olandan başlayarak; güvenlik ve ilaç etkileşimiyle.</span></a>
   <div class="pchips">{"".join(f'<a class="chip" href="/rehber/{k["slug"]}/">{e(k["kisa"])}</a>' for k in [k for k in KONULAR if sum(1 for pid, _ in k["bitkiler"] if pid in byId) >= 2][:6])}<a class="chip" href="/bitki-bul/">Üç soruda bul →</a></div>
   <a class="pillar" href="/kultur/"><span class="eyebrow">Kültür ve ritüel</span><b>Bitkiler yalnızca ilaç değildir</b><span>Şamanizm, animizm, semboller, kutsal ağaçlar ve ritüel takvimi.</span></a>
@@ -1329,7 +1345,7 @@ for k in LIVE_K:
 
 # --- hamilelik ve emzirme ---
 def _preg(p):
-    return [s for s in re.split(r'(?<=[.!?])\s+', p['guvNot']) if re.search(r'[Hh]amile|[Gg]ebe|[Ee]mzir', s)]
+    return [s for s in re.split(r'(?<=[.!?])\s+', duz(p['guvNot'])) if re.search(r'[Hh]amile|[Gg]ebe|[Ee]mzir', s)]
 preg = sorted([(p, ' '.join(_preg(p))) for p in P if _preg(p)], key=lambda x: x[0]['tr'])
 hi = [p for p in P if p['guv'] == 'yuksek' and not _preg(p)]
 path = '/rehber/hamilelik-emzirme/'
@@ -1474,7 +1490,7 @@ for t in LIVE_T:
 <section class="sec"><h2>Malzemeler</h2><ul class="malz">{"".join(f'<li>{e(m)}</li>' for m in t["malzeme"])}</ul></section>
 <section class="sec"><h2>Hazırlanışı</h2><ol class="adim">{"".join(f'<li>{e(a)}</li>' for a in t["adim"])}</ol></section>
 <p class="fact">{e(t["ipucu"])}</p>
-<aside class="warnbox" role="note"><b>Kimler dikkat etmeli?</b> {e(p["guvNot"])}{(' <a href="/' + p["id"] + '/">İlaç etkileşimleri bitkinin sayfasında.</a>') if p["id"] in ETK else ''}</aside>
+<aside class="warnbox" role="note"><b>Kimler dikkat etmeli?</b> {ev(p["guvNot"])}{(' <a href="/' + p["id"] + '/">İlaç etkileşimleri bitkinin sayfasında.</a>') if p["id"] in ETK else ''}</aside>
 <p><a class="cta" href="/{p["id"]}/">{e(p["tr"])}: bilim ne diyor, ilaç etkileşimleri ve kaynaklar →</a></p>
 {abone('tarif:' + t['slug'])}
 {DISCL}
@@ -2055,7 +2071,7 @@ def _md_plant(p, full=False):
         f'Bilimsel kanıt: {KANIT[p["kanit"]]["ad"]} · Güvenlik: {GUV[p["guv"]]}' + (f' · Türkiye’de: {YASAL_AD[YASAL[pid][0]]}' if pid in YASAL else ''), '']
     if not full:
         return L[:4] + ['']
-    L += ['### Geleneksel kullanım'] + [f'- {w}: {t}' for w, t in p['kul']] + ['', '### Hazırlama', p['haz'], '', '### Bilim ne diyor', p['bilim'], '', '### Güvenlik', p['guvNot'], '']
+    L += ['### Geleneksel kullanım'] + [f'- {w}: {duz(t)}' for w, t in p['kul']] + ['', '### Hazırlama', duz(p['haz']), '', '### Bilim ne diyor', duz(p['bilim']), '', '### Güvenlik', duz(p['guvNot']), '']
     if pid in ETK: L += ['### İlaç etkileşimleri'] + [f'- {g}: {w}' for g, w in ETK[pid]] + ['']
     if pid in DERIN: L += ['### İddialar ve kanıt'] + [f'- {i}: {KAN_AD[k]}. {n}' for i, k, n in DERIN[pid]['iddia']] + ['']
     ek = EK.get(pid, {})
@@ -2134,7 +2150,7 @@ json.dump({'day': LOCAL_DAY.isoformat(), 'yeni': {k: v.isoformat() for k, v in Y
            'kuyruk': [[q['id'], q['yayin']] for q in _K.Q],
            'kanit': {k: v['ad'] for k, v in KANIT.items()}, 'guv': GUV, 'reg': {k: v['ad'] for k, v in REG.items()}, 'takvim': {m: [q['id'] for q in sorted(_cal[m], key=lambda q: _trkey(q['tr']))] for m in _cal}, 'derin': {k: [list(x) for x in v['iddia']] for k, v in DERIN.items() if k in byId}, 'karisma': {k: v.get('karisma', '') for k, v in EK.items() if k in byId and v.get('karisma')}, 'kanad': KAN_AD,
            'p': [dict(id=p['id'], no=p['no'], tr=p['tr'], la=short_la(p), fam=p['fam'], kisim=p['kisim'], yoresel=EK.get(p['id'], {}).get('yoresel', ''), bolge=p['bolge'], kat=p['kat'], kul=p['kul'], bilim=p['bilim'], kanit=p['kanit'],
-                      guv=p['guv'], guvNot=p['guvNot'], ilginc=p['ilginc'], yasal=(YASAL[p['id']][0] if p['id'] in YASAL else None), img=(p['id'] in IMG),
+                      guv=p['guv'], guvNot=duz(p['guvNot']), ilginc=duz(p['ilginc']), yasal=(YASAL[p['id']][0] if p['id'] in YASAL else None), img=(p['id'] in IMG),
                       foto=((IMG[p['id']].get('artist') or '') + (' · ' + IMG[p['id']].get('license', '') if IMG[p['id']].get('license') else '')) if p['id'] in IMG else '') for p in P]},
           open(os.path.join(HERE, '.cache', 'ig_input.json'), 'w', encoding='utf-8'), ensure_ascii=False)
 # ---------- IndexNow: yeni sayfaları Bing ve Yandex'e bildir (tools/indexnow.py gönderir) ----------
@@ -2202,13 +2218,13 @@ import hashlib as _hl
 def _cumleler(p):   # aramada gösterilecek cümleler: (etiket, sayfadaki bölüm, cümle)
     out = []
     for w, t in p['kul']:
-        out += [(f'Geleneksel kullanım · {w}', 'geleneksel-kullanim', c) for c in re.split(r'(?<=[.!?])\s+', t) if len(c) > 15]
-    for lab, an, t in [('Bilim ne diyor', 'bilim-ne-diyor', p['bilim']), ('Güvenlik', 'guvenlik', p['guvNot']), ('Hazırlama', 'hazirlama', p['haz']),
+        out += [(f'Geleneksel kullanım · {w}', 'geleneksel-kullanim', c) for c in re.split(r'(?<=[.!?])\s+', duz(t)) if len(c) > 15]
+    for lab, an, t in [('Bilim ne diyor', 'bilim-ne-diyor', duz(p['bilim'])), ('Güvenlik', 'guvenlik', duz(p['guvNot'])), ('Hazırlama', 'hazirlama', duz(p['haz'])),
                        ('Doğada', 'dogada', ' '.join(str(EK.get(p['id'], {}).get(x, '')) for x in ('yoresel', 'mevsim')))]:
         out += [(lab, an, c) for c in re.split(r'(?<=[.!?])\s+', t or '') if len(c) > 15]
     return [list(x) for x in out]
-_ara = [dict(id=p['id'], tr=p['tr'], la=short_la(p), guv=GUV[p['guv']], kisa=p['kul'][0][1].split('. ')[0][:140], c=_cumleler(p),
-             t=f"{p['tr']} ({p['la']}). Diğer adları: {p['diger']}. Kullanım: {', '.join(KAT[k] for k in p['kat'])}. " + ' '.join(f'{w}: {x}' for w, x in p['kul'])[:700] + f" Bilim: {p['bilim'][:300]} Güvenlik: {GUV[p['guv']]}. {p['guvNot'][:300]}") for p in P]
+_ara = [dict(id=p['id'], tr=p['tr'], la=short_la(p), guv=GUV[p['guv']], kisa=duz(p['kul'][0][1]).split('. ')[0][:140], c=_cumleler(p),
+             t=f"{p['tr']} ({p['la']}). Diğer adları: {p['diger']}. Kullanım: {', '.join(KAT[k] for k in p['kat'])}. " + ' '.join(f'{w}: {duz(x)}' for w, x in p['kul'])[:700] + f" Bilim: {duz(p['bilim'])[:300]} Güvenlik: {GUV[p['guv']]}. {duz(p['guvNot'])[:300]}") for p in P]
 _ver = _hl.sha1(json.dumps([x['t'] for x in _ara], ensure_ascii=False).encode()).hexdigest()[:12]
 open(os.path.join(OUT, 'ara.json'), 'w', encoding='utf-8').write(json.dumps({'ver': _ver, 'p': _ara}, ensure_ascii=False))
 # ---------- okur katkıları onay sayfası (yalnızca site sahibi; dizine eklenmez) ----------

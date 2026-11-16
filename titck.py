@@ -57,4 +57,10 @@ M = {
  'zencefil': ('Zingiber officinale Roscoe', '2022/dynamicModulesAttachment/ZingiberofficinaleRoscoe05ea858595184e30b6a2ebf1e6264015_d7926a10-0753-41d7-9cf8-3817f9bb5c99.pdf'),
  'ihlamur': ('Tilia sp.', '2023/dynamicModulesAttachment/Tiliasp.yaymlv2_e49347e7-45e9-47c2-a005-3ce899125a29.pdf'),
  'cemen': ('Trigonella foenum-graecum L.', '2023/dynamicModulesAttachment/TrigonellafoenumgraceumL_4e55fb38-6e6d-4f1c-b417-806cb3481c5a.pdf'),
+ 'gumusdugme': ('Tanacetum parthenium (L.) Schultz Bip.', '2022/dynamicModulesAttachment/TanacetumpartheniumL.SchultzBip6feaabf306b745419e4dde78b88bdf2d_010170a8-552c-4e1c-b7a9-73d336220a9e.pdf'),
+ 'cayagaci': ('Melaleuca alternifolia (Maiden & Betche) Cheel', '2022/dynamicModulesAttachment/MelaleucaalternifoliaMaidenandBetcheCheel58eddbd56bce4f8bb63fa177ca084ff3_5fcf1cfd-fb3b-424c-928d-c7dedf441141.pdf'),
+ 'atkuyrugu': ('Equisetum arvense L.', '2022/dynamicModulesAttachment/EquisetumarvenseL.18854d9cb7fa43aab7fa97051497a1fa_c9bbb2db-9b3b-4f66-8ff0-714a51a79b3f.pdf'),
+ 'seytanpencesi': ('Harpagophytum procumbens DC.', '2022/dynamicModulesAttachment/HarpagophytumprocumbensDC.1f3aee27592549acbd161c86d382a2dd_e7eae39e-2b11-4ed6-a834-e758c16b8ef6.pdf'),
+ 'guneyafrikasardunyasi': ('Pelargonium sidoides DC.', '2024/dynamicModulesAttachment/PelargoniumsidoidesDC.V3_7feee38d-2a52-4217-bdc8-a923af40b8b3.pdf'),
+ 'karakafesotu': ('Symphytum officinale L.', '2025/dynamicModulesAttachment/SymphytumofficinaleLv230.12.2025_369925b8-5621-4050-b510-f1da49766dca.docx'),
 }

@@ -23,6 +23,14 @@
   "avrupa": {
    "ad": "Avrupa",
    "c": "--r-avrupa"
+  },
+  "afrika": {
+   "ad": "Afrika",
+   "c": "--r-afrika"
+  },
+  "okyanusya": {
+   "ad": "Okyanusya",
+   "c": "--r-okyanusya"
   }
  },
  "KAT": {
