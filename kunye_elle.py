@@ -718,6 +718,22 @@ ELLE.update({
    titck_apa('Leonurus cardiaca L.'),
 })
 
+# TİTCK monograf dosyaları (kuyruk/k19.py).
+ELLE.update({
+ 'https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/FucusvesiculosusL.v3_107a094e-671b-4bf4-b6a7-2d89514765ef.pdf':
+   titck_apa('Fucus vesiculosus L.'),
+ 'https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/CetrariaislandicaL.Achariuss.l_a6aaec19-153c-4518-a814-c10239409af6.pdf':
+   titck_apa('Cetraria islandica (L.) Acharius s.l.'),
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/IlexparaguariensisSt.Hilaire6d6b83817b114509a49eaec8add91541_dd66941a-c63b-43d1-b9e8-e0bdb2b248e2.pdf':
+   titck_apa('Ilex paraguariensis St.-Hil.'),
+})
+
+# Kurum yayını: APA'da kurumsal yazar ve yayın türü köşeli ayraçta.
+ELLE['https://www.iarc.who.int/wp-content/uploads/2018/07/pr244_E.pdf'] = (
+    'Uluslararası Kanser Araştırmaları Ajansı. (2016). IARC Monographs '
+    'evaluate drinking coffee, maté, and very hot beverages '
+    '[Basın açıklaması]. Dünya Sağlık Örgütü.')
+
 # APA künyesindeki yapısal ekler Türkçe yazılır. İngilizce sayfalarda aynı
 # künye kullanılır, yalnızca bu ekler değiştirilir; eser adlarına dokunulmaz.
 _EN = [
@@ -741,6 +757,8 @@ _EN = [
  ('ABD Ulusal Tıp Kütüphanesi', 'US National Library of Medicine'),
  ('ABD Gıda ve İlaç Dairesi', 'US Food and Drug Administration'),
  ('ABD Federal Düzenlemeler Kanunu', 'US Code of Federal Regulations'),
+ ('Uluslararası Kanser Araştırmaları Ajansı',
+  'International Agency for Research on Cancer'),
  ('Dünya Sağlık Örgütü', 'World Health Organization'),
  ('Fitoterapi kitabındaki atıfla; ev bitkileri verisi',
   'as cited in the phytotherapy book; house plant data'),

@@ -84,4 +84,7 @@ M = {
  'cayirkralicesi': ('Filipendula ulmariae (L.) Maxim.', '2022/dynamicModulesAttachment/FilipendulaulmariaL.Maximcd0874ec02cc4a82867e8efdbbb1de37_67c91cf3-53a4-46c1-b04b-d50ef208aba7.pdf'),
  'bozotu': ('Marrubium vulgare L.', '2023/dynamicModulesAttachment/MarrubiumvulgareL.V1_feba4058-a88a-4176-b958-ba2484d3b8ed.pdf'),
  'aslankuyrugu': ('Leonurus cardiaca L.', '2022/dynamicModulesAttachment/LeonuruscardiacaL.7522b4e8ae384b16b4e9766dfcf45a8e_d1786ca7-5a4f-4061-8a65-d79eb5c72b14.pdf'),
+ 'esmersuyosunu': ('Fucus vesiculosus L.', '2023/dynamicModulesAttachment/FucusvesiculosusL.v3_107a094e-671b-4bf4-b6a7-2d89514765ef.pdf'),
+ 'izlandalikeni': ('Cetraria islandica (L.) Acharius s.l.', '2023/dynamicModulesAttachment/CetrariaislandicaL.Achariuss.l_a6aaec19-153c-4518-a814-c10239409af6.pdf'),
+ 'mate': ('Ilex paraguariensis St.-Hil.', '2022/dynamicModulesAttachment/IlexparaguariensisSt.Hilaire6d6b83817b114509a49eaec8add91541_dd66941a-c63b-43d1-b9e8-e0bdb2b248e2.pdf'),
 }

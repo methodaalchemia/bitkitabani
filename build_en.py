@@ -6,7 +6,10 @@ from kunye_elle import METIN as APA_METIN
 
 POWO_KIMLIK = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
                                           'powo_kimlik.json'), encoding='utf-8'))
-MANTAR = ('Amanita', 'Ganoderma', 'Cordyceps', 'Inonotus', 'Lentinula', 'Psilocybe')
+MANTAR = ('Amanita', 'Ganoderma', 'Cordyceps', 'Inonotus', 'Lentinula', 'Psilocybe',
+          'Cetraria', 'Fucus', 'Laminaria', 'Ascophyllum', 'Chondrus', 'Spirulina',
+          'Arthrospira', 'Chlorella', 'Usnea', 'Lobaria', 'Trametes', 'Hericium',
+          'Grifola', 'Agaricus', 'Pleurotus', 'Claviceps')
 
 
 _APA_ONBELLEK = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
@@ -188,7 +191,8 @@ def run(G):
             if 'ema.europa.eu' in url: kind = 'EMA report'
             elif any(d in url for d in ('fda.gov', 'unodc.org', 'nobelprize.org', 'ecfr.gov',
                                         'legislation.gov.uk', 'gov.uk', 'inchem.org', 'cancer.gov',
-                                        'titck.gov.tr')):
+                                        'titck.gov.tr', 'iarc.who.int', 'who.int',
+                                        'resmigazete.gov.tr')):
                 kind = 'Official source'
             else: kind = 'Research'
             items.append((kind, _apa_en(url, label), url))

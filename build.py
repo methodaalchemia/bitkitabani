@@ -10,7 +10,14 @@ from kunye_elle import METIN as APA_METIN
 # mantarlar burada yok: onlara POWO künyesi yazılmaz.
 POWO_KIMLIK = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
                                           'powo_kimlik.json'), encoding='utf-8'))
-MANTAR = ('Amanita', 'Ganoderma', 'Cordyceps', 'Inonotus', 'Lentinula', 'Psilocybe')
+# POWO (Plants of the World Online) damarlı bitkilerin kontrol listesidir:
+# mantarlar, likenler ve algler orada yoktur. Bu cinslerden hiçbiri için
+# POWO künyesi üretilmez — yoksa sayfada var olmayan bir botanik kayda
+# atıf yapılmış olur.
+MANTAR = ('Amanita', 'Ganoderma', 'Cordyceps', 'Inonotus', 'Lentinula', 'Psilocybe',
+          'Cetraria', 'Fucus', 'Laminaria', 'Ascophyllum', 'Chondrus', 'Spirulina',
+          'Arthrospira', 'Chlorella', 'Usnea', 'Lobaria', 'Trametes', 'Hericium',
+          'Grifola', 'Agaricus', 'Pleurotus', 'Claviceps')
 
 from baytop_kar import KAR as BKAR
 from extra import EK, KORUMA, YASAL, YASAL_AD, BR_GEO, ALT
@@ -486,7 +493,8 @@ def refs(p):
         if 'ema.europa.eu' in url: kind = 'EMA raporu'
         elif any(_d in url for _d in ('fda.gov', 'unodc.org', 'nobelprize.org', 'ecfr.gov',
                                        'legislation.gov.uk', 'gov.uk', 'inchem.org',
-                                       'cancer.gov', 'titck.gov.tr')): kind = 'Resmî kaynak'
+                                       'cancer.gov', 'titck.gov.tr', 'iarc.who.int', 'who.int',
+                                       'resmigazete.gov.tr')): kind = 'Resmî kaynak'
         else: kind = 'Araştırma'
         items.append((kind, _apa(url, label), url))
     if pid in BKAR or ('anadolu' in p['bolge'] and any('Anadolu' in w for w, _ in p['kul'])):

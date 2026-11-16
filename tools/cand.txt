@@ -29,3 +29,6 @@ boldo | Peumus boldus | leaves tree -dried-tea-bag
 cayirkralicesi | Filipendula ulmaria | cream flowers meadow -vulgaris
 bozotu | Marrubium vulgare | white woolly plant flowers
 aslankuyrugu | Leonurus cardiaca | leaves flower whorls -leonotis
+esmersuyosunu | Fucus vesiculosus | seaweed bladders rocks
+izlandalikeni | Cetraria islandica | lichen thallus ground
+mate | Ilex paraguariensis | leaves branch tree -gourd-bombilla
