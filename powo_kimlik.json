@@ -1387,6 +1387,13 @@
   "rutbe": "spec.",
   "yazar": "DC."
  },
+ "Persea americana": {
+  "ad": "Persea americana",
+  "familya": "Lauraceae",
+  "kimlik": "325643-2",
+  "rutbe": "spec.",
+  "yazar": "Mill."
+ },
  "Petiveria alliacea": {
   "ad": "Petiveria alliacea",
   "familya": "Phytolaccaceae",
@@ -1891,6 +1898,13 @@
   "rutbe": "spec.",
   "yazar": "(L.) Merr. & L.M.Perry"
  },
+ "Tamarindus indica": {
+  "ad": "Tamarindus indica",
+  "familya": "Leguminosae",
+  "kimlik": "520167-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
  "Tanacetum parthenium": {
   "ad": "Tanacetum parthenium",
   "familya": "Asteraceae",
@@ -1912,6 +1926,13 @@
   "rutbe": "spec.",
   "yazar": "L.",
   "yazar_kaynagi": "GBIF/WCVP"
+ },
+ "Terminalia chebula": {
+  "ad": "Terminalia chebula",
+  "familya": "Combretaceae",
+  "kimlik": "171037-1",
+  "rutbe": "spec.",
+  "yazar": "Retz."
  },
  "Theobroma cacao": {
   "ad": "Theobroma cacao",

@@ -88,3 +88,6 @@ aspir | Carthamus tinctorius | orange flower head
 guzelavratotu | Atropa belladonna | black berry flower plant
 kisnis | Coriandrum sativum | seeds plant flowers
 gilaburu | Viburnum opulus | red berries shrub
+avokado | Persea americana | fruit tree
+demirhindi | Tamarindus indica | pods tree
+haritaki | Terminalia chebula | fruit tree

@@ -840,6 +840,14 @@ ELLE.update({
    titck_apa('Viburnum opulus L.'),
 })
 
+ELLE.update({
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/PerseaamericanaMill.be118bf544914e248ecbf94784c1617d_915a9d66-a069-484e-9e9f-9e9330048bd2.pdf':
+   titck_apa('Persea americana Mill.'),
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/TamarindusindicaL.e4327ab6d88a45b8be366b3dab7b44df_24fbb81a-2c54-44e1-8c39-8ed474abc12c.pdf':
+   titck_apa('Tamarindus indica L.'),
+ who_url(4, 'fructus-chebulae'): who_apa('Fructus Chebulae', 4, '71–82'),
+})
+
 # Kurum yayını: APA'da kurumsal yazar ve yayın türü köşeli ayraçta.
 ELLE['https://www.iarc.who.int/wp-content/uploads/2018/07/pr244_E.pdf'] = (
     'Uluslararası Kanser Araştırmaları Ajansı. (2016). IARC Monographs '
