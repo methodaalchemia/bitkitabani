@@ -118,3 +118,6 @@ saparna | Smilax excelsa | climber shoots berries
 kuzukulagi | Rumex acetosa | leaves plant
 labada | Rumex crispus | plant leaves seeds
 aronya | Aronia melanocarpa | berries shrub
+manuka | Leptospermum scoparium | flowers shrub
+afrikaerigi | Prunus africana | tree bark leaves
+cinmelekotu | Angelica sinensis | plant root flowers

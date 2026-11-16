@@ -138,6 +138,13 @@
   "rutbe": "spec.",
   "yazar": "L."
  },
+ "Angelica sinensis": {
+  "ad": "Angelica sinensis",
+  "familya": "Apiaceae",
+  "kimlik": "77065778-1",
+  "rutbe": "spec.",
+  "yazar": "(Oliv.) Diels"
+ },
  "Annona muricata": {
   "ad": "Annona muricata",
   "familya": "Annonaceae",
@@ -1086,6 +1093,13 @@
   "rutbe": "spec.",
   "yazar": "Walp."
  },
+ "Leptospermum scoparium": {
+  "ad": "Leptospermum scoparium",
+  "familya": "Myrtaceae",
+  "kimlik": "597505-1",
+  "rutbe": "spec.",
+  "yazar": "J.R.Forst. & G.Forst."
+ },
  "Levisticum officinale": {
   "ad": "Levisticum officinale",
   "familya": "Apiaceae",
@@ -1675,6 +1689,13 @@
   "kimlik": "702751-1",
   "rutbe": "spec.",
   "yazar": "L."
+ },
+ "Prunus africana": {
+  "ad": "Prunus africana",
+  "familya": "Rosaceae",
+  "kimlik": "729417-1",
+  "rutbe": "spec.",
+  "yazar": "(Hook.f.) Kalkman"
  },
  "Prunus dulcis": {
   "hata": "eşadlı: 729673-1 (D.A.Webb), 77302861-1 (Rouchy)"

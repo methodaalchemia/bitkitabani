@@ -132,4 +132,7 @@ M = {
  'kuzukulagi': ('Rumex acetosa L.', '2022/dynamicModulesAttachment/RumexacetosaL..pdf8f5e582c24f84c488fced036f020a642_7d08286c-972c-47f6-843c-1ce0d580c248.pdf'),
  'labada': ('Rumex crispus L.', '2022/dynamicModulesAttachment/RumexcrispusL..pdfb368e3c895f243749c2818e7897db607_8105eac9-e7fb-4822-a8f9-6633bde0fa6e.pdf'),
  'aronya': ('Aronia melanocarpa (Michx.) Elliott', '2023/dynamicModulesAttachment/AroniamelanocarpaMichx.ElliottyaymlV2_40bcbf81-5da0-4c65-a752-7fa4e887ca77.pdf'),
+ 'manuka': ('Leptospermum scoparium J.R.Forst. & G.Forst.', '2023/dynamicModulesAttachment/Leptospermumsp_a30f0182-0974-4630-ba0c-d12dc192c1a5.pdf'),
+ 'afrikaerigi': ('Prunus africana (Hook. f.) Kalkman', '2022/dynamicModulesAttachment/PrunusafricanaHookf.Kalkmana0a9e24670bf462dbaad09a06e6d4902_31a9c16f-624b-4f14-8dab-735b3b98d8c4.pdf'),
+ 'cinmelekotu': ('Angelica sinensis (Oliv.) Diels', '2022/dynamicModulesAttachment/AngelicasinensisOliv.Diels08e6e3acc0b542a9ad5c1fbbedb9f9ef_e44c7e49-036e-47e7-96fc-dc8feed78a42.pdf'),
 }

@@ -910,6 +910,17 @@ ELLE.update({
    titck_apa('Aronia melanocarpa (Michx.) Elliott'),
 })
 
+ELLE.update({
+ 'https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/Leptospermumsp_a30f0182-0974-4630-ba0c-d12dc192c1a5.pdf':
+   titck_apa('Leptospermum scoparium J.R.Forst. & G.Forst.'),
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/PrunusafricanaHookf.Kalkmana0a9e24670bf462dbaad09a06e6d4902_31a9c16f-624b-4f14-8dab-735b3b98d8c4.pdf':
+   titck_apa('Prunus africana (Hook. f.) Kalkman'),
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/AngelicasinensisOliv.Diels08e6e3acc0b542a9ad5c1fbbedb9f9ef_e44c7e49-036e-47e7-96fc-dc8feed78a42.pdf':
+   titck_apa('Angelica sinensis (Oliv.) Diels'),
+ who_url(2, 'cortex-pruni-africanae'): who_apa('Cortex Pruni Africanae', 2, '246–258'),
+ who_url(2, 'radix-angelicae-sinensis'): who_apa('Radix Angelicae Sinensis', 2, '25–34'),
+})
+
 # Kurum yayını: APA'da kurumsal yazar ve yayın türü köşeli ayraçta.
 ELLE['https://www.iarc.who.int/wp-content/uploads/2018/07/pr244_E.pdf'] = (
     'Uluslararası Kanser Araştırmaları Ajansı. (2016). IARC Monographs '
