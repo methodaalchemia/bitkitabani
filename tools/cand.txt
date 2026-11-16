@@ -62,3 +62,6 @@ mercankosk | Origanum majorana | plant leaves flowers
 mur | Commiphora myrrha | resin tree -boswellia
 limonverbena | Aloysia citrodora | plant leaves
 hercaimenekse | Viola tricolor | wild flower -wittrockiana
+javacayi | Orthosiphon aristatus | flowers white stamens plant
+tuylusahinotu | Pilosella officinarum | yellow flower hairy leaves
+yabanyasemini | Solanum dulcamara | purple flowers red berries

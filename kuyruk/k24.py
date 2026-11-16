@@ -310,12 +310,13 @@ Q = [
               'curcuma, curcuma javanis ve Java turmeric; '
               'kataloğumuzdaki başlık bu son adın Türkçe '
               'karşılığıdır, yöresel bir Türkçe ad değildir. '
-              'Sinonimi Curcuma xanthorrhiza D.Dietrich. '
+              'Sinonimi Curcuma xanthorrhiza D.Dietrich; POWO kabul edilmiş adı '
+              '"Curcuma zanthorrhiza Roxb." yazımıyla veriyor. '
               'Endonezya’da temulawak deniyor.',
         bolge=['asya'],
         kat=['sifa'],
         kisim='Rizomları',
-        taxon='Curcuma xanthorrhiza',
+        taxon='Curcuma zanthorrhiza',  # POWO'nun kabul ettiği yazım; EMA ve TİTCK 'xanthorrhiza' yazıyor
         kul=[
             ['Avrupa — tek endikasyon', 'Avrupa İlaç Ajansı monografı tek '
              'endikasyonu "geleneksel kullanım" başlığına koyuyor: '
@@ -443,7 +444,8 @@ Q = [
                   'are curcuma, curcuma javanis and Java turmeric; the title '
                   'in this catalog is the Turkish rendering of that last '
                   'name, not a vernacular Turkish name. Curcuma xanthorrhiza '
-                  'D.Dietrich is a synonym. In Indonesia it is called '
+                  'D.Dietrich is a synonym; POWO gives the accepted name in the '
+                  'spelling "Curcuma zanthorrhiza Roxb.". In Indonesia it is called '
                   'temulawak.',
             part='The rhizome',
             uses=[

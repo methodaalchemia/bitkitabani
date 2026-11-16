@@ -2147,6 +2147,45 @@
   "pdf": "https://www.ema.europa.eu/en/documents/herbal-monograph/final-european-union-herbal-monograph-origanum-majorana-l-herba_en.pdf",
   "uzunluk": 18178
  },
+ "orthosiphonis-folium": {
+  "bolum": {
+   "doz_asimi": {
+    "geleneksel": "No case of overdose has been reported. Not required as per Article 16c(1)(a)(iii) of Directive 2001/83/EC. Not required as per Article 16c(1)(a)(iii) of Directive 2001/83/EC. Not required as per Article 16c(1)(a)(iii) of Directive 2001/83/EC, unless necessary for the safe use of the product. Adequate tests on genotoxicity have not been performed. Tests on reproductive toxicity and carcinogenicity have not been performed. Not applicable.",
+    "iyi_bilinen": "5. Pharmacological properties 5.1. Pharmacodynamic properties 5.2. Pharmacokinetic properties 5.3. Preclinical safety data 6. Pharmaceutical particulars 7. Date of compilation/last revision 22 September 2021"
+   },
+   "dozaj": {
+    "geleneksel": "Posology Adults and Elderly a) Herbal tea: 2-3 g comminuted herbal substance in 150 ml of boiling water as a herbal infusion Daily dose: 6-12 g b) Powdered herbal substance Single dose: 500-750 mg Daily dose: 1000-1500 mg c) Liquid extract (DER 1:1), extraction solvent ethanol 25% m/m Single dose: 2 g Daily dose: 2-4 g d) Dry extract (DER 5-7:1), extraction solvent water Single dose: 360 mg Daily dose: 1080-1440 mg e) Dry extract (DER 8-12:1), extraction solvent ethanol 60% V/V Single dose: 200-400 mg Daily dose: 600-1200 mg f) Dry extract (DER 7-8:1), extraction solvent ethanol 70% V/V Single dose: 280 mg Daily dose: 840 mg g) Dry extract (DER 5-7:1), extraction solvent ethanol 30% V/V Single dose: 200 mg Daily dose: 400 mg The use in children and adolescents under 18 years of age is not recommended (see section",
+    "iyi_bilinen": "and method of administration"
+   },
+   "endikasyon": {
+    "geleneksel": "Traditional herbal medicinal product used to increase the amount of urine to achieve flushing of the urinary tract as an adjuvant in minor urinary tract complaints. The product is a traditional herbal medicinal product for use in the specified indication exclusively based upon long-standing use.",
+    "iyi_bilinen": null
+   },
+   "etkilesim": {
+    "geleneksel": "None reported.",
+    "iyi_bilinen": "with other medicinal products and other forms of interaction"
+   },
+   "gebelik": {
+    "geleneksel": "Safety during pregnancy and lactation has not been established. In the absence of sufficient data the use during pregnancy and lactation is not recommended. No fertility data available. No studies on the effect on the ability to drive and use machines have been performed.",
+    "iyi_bilinen": "and lactation 4.7. Effects on ability to drive and use machines"
+   },
+   "istenmeyen": {
+    "geleneksel": "None known. If adverse reactions occur, a doctor or a qualified health care practitioner should be consulted.",
+    "iyi_bilinen": null
+   },
+   "kontrendikasyon": {
+    "geleneksel": "Hypersensitivity to the active substance. Conditions where a reduced fluid intake is recommended (e.g. severe cardiac or renal disease). The use in children and adolescents under 18 years of age has not been established due to lack of adequate data. If complaints of symptoms such as fever, dysuria, spasms or blood in the urine occur during the use of the medicinal product, a doctor or a qualified health care practitioner should be consulted. For liquid extracts containing ethanol, the appropriate labelling for ethanol, taken from the ‘Guideline on excipients in the label and package leaflet of medicinal products for human use’, must be included.",
+    "iyi_bilinen": "4.4. Special warnings and precautions for use"
+   },
+   "uyari": {
+    "geleneksel": "Duration of use If the symptoms persist longer than 2 weeks during the use of the medicinal product a doctor or a qualified health care practitioner should be consulted. Method of administration Oral use. To ensure an increase of the amount of urine, adequate fluid intake is required during treatment.",
+    "iyi_bilinen": "and precautions for use)."
+   }
+  },
+  "kanit": "geleneksel kullanım",
+  "pdf": "https://www.ema.europa.eu/en/documents/herbal-monograph/european-union-herbal-monograph-orthosiphon-aristatus-blume-miq-var-aristatus-folium-revision-1_en.pdf",
+  "uzunluk": 19712
+ },
  "pelargonii-radix": {
   "bolum": {
    "doz_asimi": {
@@ -2220,6 +2259,45 @@
   "kanit": "geleneksel kullanım",
   "pdf": "https://www.ema.europa.eu/en/documents/herbal-monograph/final-community-herbal-monograph-phaseolus-vulgaris-l-fructus-sine-semine_en.pdf",
   "uzunluk": 13074
+ },
+ "pilosellae-herba-cum-radice": {
+  "bolum": {
+   "doz_asimi": {
+    "geleneksel": "No case of overdose has been reported. Not required as per Article 16c(1)(a)(iii) of Directive 2001/83/EC. Not required as per Article 16c(1)(a)(iii) of Directive 2001/83/EC. Not required as per Article 16c(1)(a)(iii) of Directive 2001/83/EC, unless necessary for the safe use of the product. Tests on reproductive toxicity, genotoxicity and carcinogenicity have not been performed. Not applicable. Page 6/6",
+    "iyi_bilinen": "5. Pharmacological properties 5.1. Pharmacodynamic properties 5.2. Pharmacokinetic properties 5.3. Preclinical safety data 6. Pharmaceutical particulars 7. Date of compilation/last revision 20 November 2024 pilosella L.), herba cum radice"
+   },
+   "dozaj": {
+    "geleneksel": "Posology Adults and elderly a) Herbal tea Single dose: 2-4 g of the comminuted herbal substance in 250 ml of boiling water as an herbal infusion, 3 times daily. b) Powdered herbal substance: Single dose: 200-520 mg, 2-4 times daily. Daily dose: 560 mg up to 1300 mg. The use in children and adolescents under 18 years of age is not recommended (see section 4.4 ‘Special warnings and precautions for use’). Duration of use If the symptoms persist longer than 2 weeks during the use of the medicinal product, a doctor or a qualified health care practitioner should be consulted. Method of administration Oral use.",
+    "iyi_bilinen": "and method of administration 4"
+   },
+   "endikasyon": {
+    "geleneksel": "Traditional herbal medicinal product used for the relief of symptoms associated with minor urinary tract complaints in addition to the general finished product should be in accordance with relevant herbal Page 3/6 recommendation of a sufficient fluid intake to increase the amount of urine. The product is a traditional herbal medicinal product for use in specified indications exclusively based upon long-standing use.",
+    "iyi_bilinen": "2 The declaration of the active substance(s) for an individual quality guidance. 3 The material complies with the Ph. Fr. monograph (Piloselle) pilosella L.), herba cum radice"
+   },
+   "etkilesim": {
+    "geleneksel": "None reported.",
+    "iyi_bilinen": "with other medicinal products and other forms of interaction"
+   },
+   "gebelik": {
+    "geleneksel": "Safety during pregnancy and lactation has not been established. In the absence of sufficient data, the use during pregnancy and lactation is not recommended. No fertility data available. No studies on the effect on the ability to drive and use machines have been performed.",
+    "iyi_bilinen": "and lactation 4.7. Effects on ability to drive and use machines"
+   },
+   "istenmeyen": {
+    "geleneksel": "None known. Page 5/6 If adverse reactions occur, a doctor or a qualified health care practitioner should be consulted.",
+    "iyi_bilinen": "pilosella L.), herba cum radice"
+   },
+   "kontrendikasyon": {
+    "geleneksel": "Hypersensitivity to the active substance(s) and other plants of the Asteraceae (Compositae) family. as herbal tea or as infusion/decoction/macerate (EMA/HMPC/5829/2010). Page 4/6",
+    "iyi_bilinen": "to 4 For guidance on herbal substance/herbal preparation administered preparation, please refer to the HMPC ‘Glossary on herbal teas’ pilosella L.), herba cum radice"
+   },
+   "uyari": {
+    "geleneksel": "The use in children and adolescents under 18 years of age has not been established due to lack of adequate data. If complaints or symptoms such as fever, dysuria, spasms, or blood in urine occur during the use of the medicinal product, a doctor or a qualified health care practitioner should be consulted. Because adequate fluid intake is required during treatment Pilosella officinarum Vall., herba cum radice is not recommended for patients with conditions where reduced fluid intake is advised.",
+    "iyi_bilinen": "and precautions for use"
+   }
+  },
+  "kanit": "geleneksel kullanım",
+  "pdf": "https://www.ema.europa.eu/en/documents/herbal-monograph/final-european-union-herbal-monograph-pilosella-officinarum-vall-syn-hieracium-pilosella-l-herba-cum-radice-revision-1_en.pdf",
+  "uzunluk": 17295
  },
  "plantaginis-lanceolatae-folium": {
   "bolum": {
@@ -2723,6 +2801,45 @@
   "kanit": "geleneksel kullanım",
   "pdf": "https://www.ema.europa.eu/en/documents/herbal-monograph/final-european-union-herbal-monograph-glycine-max-l-merr-oleum-raffinatum_en.pdf",
   "uzunluk": 17310
+ },
+ "solani-dulcamarae-stipites": {
+  "bolum": {
+   "doz_asimi": {
+    "geleneksel": "No case of overdose has been reported. Not required as per Article 16c(1)(a)(iii) of Directive 2001/83/EC as amended. Not required as per Article 16c(1)(a)(iii) of Directive 2001/83/EC as amended. Not required as per Article 16c(1)(a)(iii) of Directive 2001/83/EC as amended, unless necessary for the safe use of the product. Tests on reproductive toxicity, genotoxicity and carcinogenicity have not been performed. Not applicable.",
+    "iyi_bilinen": "5. Pharmacological properties 5.1. Pharmacodynamic properties Community herbal monograph on Solanum dulcamara L., stipites 5.2. Pharmacokinetic properties 5.3. Preclinical safety data 6. Pharmaceutical particulars 7. Date of compilation/last revision 15 January 2013 Community herbal monograph on Solanum dulcamara L., stipites"
+   },
+   "dozaj": {
+    "geleneksel": "Posology Adults and elderly Comminuted herbal substance for infusion or decoction preparation for cutaneous use: 1-2 g of the comminuted herbal substance in 250 ml of water 1-5 times daily. The use in children and adolescents under 18 years of age is not recommended (see section 4.4 ‘Special warnings and precautions for use’). Duration of use If the symptoms persist longer than 2 weeks during the use of the medicinal product, a doctor or a qualified health care practitioner should be consulted. Method of administration Cutaneous use. The infusion/decoction (at room temperature) is applied on the afflicted area with a clean dressing.",
+    "iyi_bilinen": "and method of administration 3"
+   },
+   "endikasyon": {
+    "geleneksel": "Traditional herbal medicinal product for the symptomatic relief of mild recurrent eczema. The product is a traditional herbal medicinal product for use in the specified indication exclusively based upon long-standing use. finished product should be in accordance with relevant herbal of the plant, harvested in spring prior to leaf development",
+    "iyi_bilinen": "The declaration of the active substance(s) for an individual quality guidance. The herbal substance consists of dried 2 to 3 years old stems or in the late autumn after leaves have dropped. Community herbal monograph on Solanum dulcamara L., stipites"
+   },
+   "etkilesim": {
+    "geleneksel": "None reported.",
+    "iyi_bilinen": "with other medicinal products and other forms of interaction"
+   },
+   "gebelik": {
+    "geleneksel": "Safety during pregnancy and lactation has not been established. In the absence of sufficient data, the use during pregnancy and lactation is not recommended. No fertility data available. No studies on the effect on the ability to drive and use machines have been performed.",
+    "iyi_bilinen": "and lactation 4.7. Effects on ability to drive and use machines"
+   },
+   "istenmeyen": {
+    "geleneksel": "None known. If adverse reactions occur, a doctor or a qualified health care practitioner should be consulted.",
+    "iyi_bilinen": null
+   },
+   "kontrendikasyon": {
+    "geleneksel": "Hypersensitivity to the active substance.",
+    "iyi_bilinen": null
+   },
+   "uyari": {
+    "geleneksel": "The use in children and adolescents under 18 years of age has not been established due to lack of adequate data. If the symptoms worsen during the use of the medicinal product, a doctor or a qualified health care practitioner should be consulted. as herbal tea or as infusion/decoction/macerate (EMA/HMPC/5829/2010 Rev.1).",
+    "iyi_bilinen": "and precautions for use For guidance on herbal substance/herbal preparation administered preparation, please refer to the HMPC ‘Glossary on herbal teas’ Community herbal monograph on Solanum dulcamara L., stipites"
+   }
+  },
+  "kanit": "geleneksel kullanım",
+  "pdf": "https://www.ema.europa.eu/en/documents/herbal-monograph/final-community-herbal-monograph-solanum-dulcamara-l-stipites_en.pdf",
+  "uzunluk": 12704
  },
  "solidaginis-virgaureae-herba": {
   "bolum": {

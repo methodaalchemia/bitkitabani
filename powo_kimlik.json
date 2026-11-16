@@ -478,6 +478,13 @@
  "Curcuma xanthorrhiza": {
   "hata": "POWO kaydı olan birebir eşleşme yok"
  },
+ "Curcuma zanthorrhiza": {
+  "ad": "Curcuma zanthorrhiza",
+  "familya": "Zingiberaceae",
+  "kimlik": "796485-1",
+  "rutbe": "spec.",
+  "yazar": "Roxb."
+ },
  "Cynara cardunculus": {
   "ad": "Cynara cardunculus",
   "familya": "Asteraceae",
@@ -1213,6 +1220,13 @@
   "rutbe": "spec.",
   "yazar": "Jacks."
  },
+ "Orthosiphon aristatus": {
+  "ad": "Orthosiphon aristatus",
+  "familya": "Lamiaceae",
+  "kimlik": "453446-1",
+  "rutbe": "spec.",
+  "yazar": "(Blume) Miq."
+ },
  "Panax ginseng": {
   "ad": "Panax ginseng",
   "familya": "Araliaceae",
@@ -1312,6 +1326,13 @@
   "kimlik": "323290-2",
   "rutbe": "spec.",
   "yazar": "L."
+ },
+ "Pilosella officinarum": {
+  "ad": "Pilosella officinarum",
+  "familya": "Asteraceae",
+  "kimlik": "77133566-1",
+  "rutbe": "spec.",
+  "yazar": "Vaill."
  },
  "Pimpinella anisum": {
   "ad": "Pimpinella anisum",
@@ -1689,6 +1710,13 @@
  },
  "Solanaceae": {
   "hata": "eşadlı: 30000631-2 (Juss.), 60437408-2 (Adans.)"
+ },
+ "Solanum dulcamara": {
+  "ad": "Solanum dulcamara",
+  "familya": "Solanaceae",
+  "kimlik": "285213-2",
+  "rutbe": "spec.",
+  "yazar": "L."
  },
  "Solidago virgaurea": {
   "ad": "Solidago virgaurea",
