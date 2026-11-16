@@ -833,6 +833,13 @@ ELLE.update({
    titck_apa('Polygonum aviculare L.'),
 })
 
+ELLE.update({
+ 'https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/CoriandrumsativumL_9c335edb-e11c-49e8-aa8a-848f6d8ae898.pdf':
+   titck_apa('Coriandrum sativum L.'),
+ 'https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/ViburnumopulusL_63293d31-b8b0-49f7-9dcf-786935f17724.pdf':
+   titck_apa('Viburnum opulus L.'),
+})
+
 # Kurum yayını: APA'da kurumsal yazar ve yayın türü köşeli ayraçta.
 ELLE['https://www.iarc.who.int/wp-content/uploads/2018/07/pr244_E.pdf'] = (
     'Uluslararası Kanser Araştırmaları Ajansı. (2016). IARC Monographs '

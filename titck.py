@@ -113,4 +113,6 @@ M = {
  'esekotu': ('Oenothera biennis L.', '2022/dynamicModulesAttachment/OenotherabiennisL.91ffe26a0be94bdc8723c9f806d8f09e_cb526320-64a9-42ad-8721-edfa6667a3e2.pdf'),
  'giritkekigi': ('Origanum dictamnus L.', '2023/dynamicModulesAttachment/OriganumdictamnusL.v1_f08d6086-b3a7-4735-864d-9ec71a34df62.pdf'),
  'cobandegnegi': ('Polygonum aviculare L.', '2024/dynamicModulesAttachment/PolygonumaviculareLv3_f6a639b3-d31f-4f59-8ca2-42ddc0fd244d.pdf'),
+ 'kisnis': ('Coriandrum sativum L.', '2023/dynamicModulesAttachment/CoriandrumsativumL_9c335edb-e11c-49e8-aa8a-848f6d8ae898.pdf'),
+ 'gilaburu': ('Viburnum opulus L.', '2023/dynamicModulesAttachment/ViburnumopulusL_63293d31-b8b0-49f7-9dcf-786935f17724.pdf'),
 }

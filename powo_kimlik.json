@@ -198,6 +198,16 @@
   "rutbe": "spec.",
   "yazar": "Bunge"
  },
+ "Atropa bella-donna": {
+  "ad": "Atropa bella-donna",
+  "familya": "Solanaceae",
+  "kimlik": "814358-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
+ "Atropa belladonna": {
+  "hata": "POWO kaydı olan birebir eşleşme yok"
+ },
  "Avena sativa": {
   "ad": "Avena sativa",
   "familya": "Poaceae",
@@ -504,6 +514,13 @@
   "kimlik": "64920-2",
   "rutbe": "spec.",
   "yazar": "Desf."
+ },
+ "Coriandrum sativum": {
+  "ad": "Coriandrum sativum",
+  "familya": "Apiaceae",
+  "kimlik": "840760-1",
+  "rutbe": "spec.",
+  "yazar": "L."
  },
  "Cornus mas": {
   "ad": "Cornus mas",
@@ -2000,6 +2017,13 @@
   "ad": "Verbena officinalis",
   "familya": "Verbenaceae",
   "kimlik": "330554-2",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
+ "Viburnum opulus": {
+  "ad": "Viburnum opulus",
+  "familya": "Caprifoliaceae",
+  "kimlik": "326268-2",
   "rutbe": "spec.",
   "yazar": "L."
  },
