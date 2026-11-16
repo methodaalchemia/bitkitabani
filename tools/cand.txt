@@ -79,3 +79,6 @@ baloncicegi | Platycodon grandiflorus | blue flower bud balloon
 karamuk | Berberis vulgaris | red berries shrub
 dereotu | Anethum graveolens | plant umbel yellow flowers
 cayirucgulu | Trifolium pratense | flower head pink
+baykaltakkesi | Scutellaria baicalensis | blue flowers plant
+bestatmeyvesi | Schisandra chinensis | red berries vine
+cinyuksukotu | Rehmannia glutinosa | flowers plant

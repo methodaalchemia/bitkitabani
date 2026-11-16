@@ -849,6 +849,9 @@ ELLE[who_url(1, 'radix-platycodi')] = who_apa('Radix Platycodi', 1, '213–220')
 ELLE[who_url(4, 'cortex-berberidis')] = who_apa('Cortex Berberidis', 4, '30–47')
 ELLE[who_url(3, 'fructus-anethi')] = who_apa('Fructus Anethi', 3, '33–41')
 ELLE[who_url(4, 'flos-trifolii')] = who_apa('Flos Trifolii', 4, '335–352')
+ELLE[who_url(3, 'radix-scutellariae')] = who_apa('Radix Scutellariae', 3, '314–327')
+ELLE[who_url(3, 'fructus-schisandrae')] = who_apa('Fructus Schisandrae', 3, '296–313')
+ELLE[who_url(3, 'radix-rehmanniae')] = who_apa('Radix Rehmanniae', 3, '283–295')
 
 # AB kamu açıklamaları: monograf yazılamayan üç bitki.
 ELLE['https://www.ema.europa.eu/en/documents/public-statement/final-public-statement-chelidonium-majus-l-herba_en.pdf'] = (

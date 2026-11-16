@@ -1546,6 +1546,13 @@
   "rutbe": "spec.",
   "yazar": "(L.) Benth. ex Kurz"
  },
+ "Rehmannia glutinosa": {
+  "ad": "Rehmannia glutinosa",
+  "familya": "Scrophulariaceae",
+  "kimlik": "808644-1",
+  "rutbe": "spec.",
+  "yazar": "Steud."
+ },
  "Rhamnus cathartica": {
   "ad": "Rhamnus cathartica",
   "familya": "Rhamnaceae",
@@ -1749,6 +1756,20 @@
   "kimlik": "71044-1",
   "rutbe": "spec.",
   "yazar": "L."
+ },
+ "Schisandra chinensis": {
+  "ad": "Schisandra chinensis",
+  "familya": "Schisandraceae",
+  "kimlik": "60456331-2",
+  "rutbe": "spec.",
+  "yazar": "(Turcz.) Baill."
+ },
+ "Scutellaria baicalensis": {
+  "ad": "Scutellaria baicalensis",
+  "familya": "Lamiaceae",
+  "kimlik": "458155-1",
+  "rutbe": "spec.",
+  "yazar": "Georgi"
  },
  "Senna alexandrina": {
   "ad": "Senna alexandrina",
