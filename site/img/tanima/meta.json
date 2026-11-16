@@ -3000,5 +3000,101 @@
   "license": "CC BY-SA 2.0",
   "page": "https://commons.wikimedia.org/wiki/File:Kunkiliyam_%28Tamil-_%E0%AE%95%E0%AF%81%E0%AE%99%E0%AF%8D%E0%AE%95%E0%AE%BF%E0%AE%B2%E0%AE%BF%E0%AE%AF%E0%AE%AE%E0%AF%8D%29_%284399784023%29.jpg"
  },
- "hintgunlugu:kuru": "yok"
+ "hintgunlugu:kuru": "yok",
+ "guggul:cizim": "yok",
+ "guggul:cicek": {
+  "file": "Commiphora wightii-2-nethaji nagar-salem-India.jpg",
+  "artist": "Yercaud-elango",
+  "license": "CC BY 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Commiphora_wightii-2-nethaji_nagar-salem-India.jpg"
+ },
+ "guggul:kuru": "yok",
+ "ipeka:cizim": "yok",
+ "ipeka:cicek": "yok",
+ "ipeka:kuru": "yok",
+ "kutki:cizim": "yok",
+ "kutki:cicek": "yok",
+ "kutki:kuru": "yok",
+ "amurmantaragaci:cizim": "yok",
+ "amurmantaragaci:cicek": {
+  "file": "Phellodendron amurense RJB.JPG",
+  "artist": "A. Barra",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Phellodendron_amurense_RJB.JPG"
+ },
+ "amurmantaragaci:kuru": "yok",
+ "manolyakabugu:cizim": "yok",
+ "manolyakabugu:cicek": {
+  "file": "Magnolia officinalis Houpu Magnolia სამკურნალო მაგნოლია (2).JPG",
+  "artist": "Lazaregagnidze",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Magnolia_officinalis_Houpu_Magnolia_%E1%83%A1%E1%83%90%E1%83%9B%E1%83%99%E1%83%A3%E1%83%A0%E1%83%9C%E1%83%90%E1%83%9A%E1%83%9D_%E1%83%9B%E1%83%90%E1%83%92%E1%83%9C%E1%83%9D%E1%83%9A%E1%83%98%E1%83%90_%282%29.JPG"
+ },
+ "manolyakabugu:kuru": "yok",
+ "karakartopu:cizim": "yok",
+ "karakartopu:cicek": {
+  "file": "Blackhaw Viburnum Viburnum prunifolium flower spring.jpg",
+  "artist": "Cossey25",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Blackhaw_Viburnum_Viburnum_prunifolium_flower_spring.jpg"
+ },
+ "karakartopu:kuru": "yok",
+ "tibbiadacayi:cizim": {
+  "file": "Salvia officinalis - Köhler–s Medizinal-Pflanzen-126.jpg",
+  "artist": "Walther Otto Müller",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Salvia_officinalis_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-126.jpg"
+ },
+ "tibbiadacayi:cicek": {
+  "file": "Wild flower purple 1.jpg",
+  "artist": "Shams948",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Wild_flower_purple_1.jpg"
+ },
+ "tibbiadacayi:kuru": "yok",
+ "huanglian:cizim": "yok",
+ "huanglian:cicek": "yok",
+ "huanglian:kuru": "yok",
+ "yadanzi:cizim": "yok",
+ "yadanzi:cicek": {
+  "file": "Brucea javanica-1-JNTBGRI-palode-kerala-India.jpg",
+  "artist": "Yercaud-elango",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Brucea_javanica-1-JNTBGRI-palode-kerala-India.jpg"
+ },
+ "yadanzi:kuru": "yok",
+ "capesarisabiri:cizim": "yok",
+ "capesarisabiri:cicek": {
+  "file": "Aloe Ferox Flower (7050738977).jpg",
+  "artist": "Rod Waddington from Kergunyah, Australia",
+  "license": "CC BY-SA 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Aloe_Ferox_Flower_%287050738977%29.jpg"
+ },
+ "capesarisabiri:kuru": "yok",
+ "kafuragaci:cizim": {
+  "file": "Cinnamomum camphora - Köhler–s Medizinal-Pflanzen-181.jpg",
+  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Cinnamomum_camphora_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-181.jpg"
+ },
+ "kafuragaci:cicek": {
+  "file": "Camphor Laural flower (5066893753).jpg",
+  "artist": "John Tann from Sydney, Australia",
+  "license": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Camphor_Laural_flower_%285066893753%29.jpg"
+ },
+ "kafuragaci:kuru": "yok",
+ "zedoar:cizim": {
+  "file": "Curcuma zedoaria - Köhler–s Medizinal-Pflanzen-048.jpg",
+  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Curcuma_zedoaria_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-048.jpg"
+ },
+ "zedoar:cicek": {
+  "file": "Curcuma zedoaria flower from CUET rubber garden 02.jpg",
+  "artist": "Tanvir Anjum Adib",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Curcuma_zedoaria_flower_from_CUET_rubber_garden_02.jpg"
+ },
+ "zedoar:kuru": "yok"
 }

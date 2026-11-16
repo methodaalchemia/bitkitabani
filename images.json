@@ -241,6 +241,19 @@
   "w": 960,
   "w500": 500
  },
+ "amurmantaragaci": {
+  "artist": "Agnieszka Kwiecień, Nova",
+  "auto": true,
+  "b1280": "Phellodendron amurense Korkowiec amurski 2019-05-24 02.jpg",
+  "file": "Phellodendron amurense Korkowiec amurski 2019-05-24 02.jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Phellodendron_amurense_Korkowiec_amurski_2019-05-24_02.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "anason": {
   "artist": "Metin GÜLEŞCİ",
   "auto": false,
@@ -715,6 +728,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Fruto_de_Camucamu.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "capesarisabiri": {
+  "artist": "iNaturalist.org (Nicola van Berkel) (Nicola%20van%20Berkel)",
+  "auto": true,
+  "b1280": "Aloe ferox Mill. 3302410229.jpg",
+  "file": "Aloe ferox Mill. 3302410229.jpg",
+  "h": 1279,
+  "h500": 666,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Aloe_ferox_Mill._3302410229.jpg",
   "w": 960,
   "w500": 500
  },
@@ -1465,6 +1491,19 @@
   "w": 960,
   "w500": 500
  },
+ "guggul": {
+  "artist": "FrozenAvatar",
+  "auto": true,
+  "b1280": "Commiphora wightii.jpg",
+  "file": "Commiphora wightii.jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Commiphora_wightii.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "gul": {
   "artist": "Bonnjalal00",
   "auto": false,
@@ -1761,6 +1800,19 @@
   "w": 960,
   "w500": 500
  },
+ "ipeka": {
+  "artist": "keesgroenendijk",
+  "auto": true,
+  "b1280": "Carapichea ipecacuanha 100353153.jpg",
+  "file": "Carapichea ipecacuanha 100353153.jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Carapichea_ipecacuanha_100353153.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "isgin": {
   "artist": "Zeynel Cebeci",
   "auto": true,
@@ -1836,6 +1888,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Pepita_de_calabaza.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "kafuragaci": {
+  "artist": "Calistemon",
+  "auto": true,
+  "b1280": "Cinnamomum camphora in Golden Valley Tree Park, May 2022 02.jpg",
+  "file": "Cinnamomum camphora in Golden Valley Tree Park, May 2022 02.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Cinnamomum_camphora_in_Golden_Valley_Tree_Park,_May_2022_02.jpg",
   "w": 960,
   "w500": 500
  },
@@ -2002,6 +2067,19 @@
   "license": "CC BY-SA 2.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
   "page": "https://commons.wikimedia.org/wiki/File:Symphytum_officinale_(4970747978).jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "karakartopu": {
+  "artist": "Lindsey Carter",
+  "auto": true,
+  "b1280": "Pario.jpg",
+  "file": "Pario.jpg",
+  "h": 1707,
+  "h500": 889,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Pario.jpg",
   "w": 960,
   "w500": 500
  },
@@ -2443,6 +2521,19 @@
   "w": 960,
   "w500": 500
  },
+ "kutki": {
+  "artist": "Krzysztof Ziarnek, Kenraiz",
+  "auto": true,
+  "b1280": "Picrorhiza kurroa kz01.jpg",
+  "file": "Picrorhiza kurroa kz01.jpg",
+  "h": 1344,
+  "h500": 700,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Picrorhiza_kurroa_kz01.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "kutsaldevedikeni": {
   "artist": "H. Zell",
   "auto": true,
@@ -2542,6 +2633,19 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
   "page": "https://commons.wikimedia.org/wiki/File:Prunus_mahaleb2.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "manolyakabugu": {
+  "artist": "Lazaregagnidze",
+  "auto": true,
+  "b1280": "Magnolia officinalis Houpu Magnolia სამკურნალო მაგნოლია (2).JPG",
+  "file": "Magnolia officinalis Houpu Magnolia სამკურნალო მაგნოლია (2).JPG",
+  "h": 638,
+  "h500": 332,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Magnolia_officinalis_Houpu_Magnolia_%E1%83%A1%E1%83%90%E1%83%9B%E1%83%99%E1%83%A3%E1%83%A0%E1%83%9C%E1%83%90%E1%83%9A%E1%83%9D_%E1%83%9B%E1%83%90%E1%83%92%E1%83%9C%E1%83%9D%E1%83%9A%E1%83%98%E1%83%90_(2).JPG",
   "w": 960,
   "w500": 500
  },
@@ -3528,6 +3632,19 @@
   "w": 960,
   "w500": 500
  },
+ "tibbiadacayi": {
+  "artist": "Flocci Nivis",
+  "auto": true,
+  "b1280": "20260614 Salvia officinalis 03.jpg",
+  "file": "20260614 Salvia officinalis 03.jpg",
+  "h": 960,
+  "h500": 500,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:20260614_Salvia_officinalis_03.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "toe": {
   "artist": "পাপৰি বৰা",
   "b1280": "Brugmansia suaveolens 3.jpg",
@@ -3720,6 +3837,19 @@
   "w": 960,
   "w500": 500
  },
+ "yadanzi": {
+  "artist": "小石川人晃",
+  "auto": true,
+  "b1280": "Leaves of Rhus javanica var. chinensis 02.jpg",
+  "file": "Leaves of Rhus javanica var. chinensis 02.jpg",
+  "h": 639,
+  "h500": 333,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Leaves_of_Rhus_javanica_var._chinensis_02.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "yakiotu": {
   "artist": "kallerna",
   "auto": true,
@@ -3834,6 +3964,19 @@
   "license": "CC BY 2.5",
   "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
   "page": "https://commons.wikimedia.org/wiki/File:Nerium_oleander_Ouarzazate_wild1.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "zedoar": {
+  "artist": "Michael Wolf",
+  "auto": true,
+  "b1280": "Curcuma zedoaria Bluete.jpg",
+  "file": "Curcuma zedoaria Bluete.jpg",
+  "h": 964,
+  "h500": 502,
+  "license": "CC BY 2.5",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:Curcuma_zedoaria_Bluete.jpg",
   "w": 960,
   "w500": 500
  },
