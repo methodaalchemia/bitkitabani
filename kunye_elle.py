@@ -843,6 +843,9 @@ ELLE['https://www.iarc.who.int/wp-content/uploads/2018/07/pr244_E.pdf'] = (
 ELLE[who_url(1, 'bulbus-allii-cepae')] = who_apa('Bulbus Allii Cepae', 1, '5–15')
 ELLE[who_url(1, 'radix-paeoniae')] = who_apa('Radix Paeoniae', 1, '195–201')
 ELLE[who_url(1, 'radix-rauwolfiae')] = who_apa('Radix Rauwolfiae', 1, '221–230')
+ELLE[who_url(1, 'radix-astragali')] = who_apa('Radix Astragali', 1, '50–58')
+ELLE[who_url(1, 'radix-bupleuri')] = who_apa('Radix Bupleuri', 1, '67–76')
+ELLE[who_url(1, 'radix-platycodi')] = who_apa('Radix Platycodi', 1, '213–220')
 
 # AB kamu açıklamaları: monograf yazılamayan üç bitki.
 ELLE['https://www.ema.europa.eu/en/documents/public-statement/final-public-statement-chelidonium-majus-l-herba_en.pdf'] = (

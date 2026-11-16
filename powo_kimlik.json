@@ -168,6 +168,13 @@
  "Asteraceae": {
   "hata": "eşadlı: 30000005-2 (Martinov), 319342-2 (Bercht. & J.Presl)"
  },
+ "Astragalus mongholicus": {
+  "ad": "Astragalus mongholicus",
+  "familya": "Leguminosae",
+  "kimlik": "478720-1",
+  "rutbe": "spec.",
+  "yazar": "Bunge"
+ },
  "Avena sativa": {
   "ad": "Avena sativa",
   "familya": "Poaceae",
@@ -230,6 +237,13 @@
   "kimlik": "37537-2",
   "rutbe": "spec.",
   "yazar": "D.Don"
+ },
+ "Bupleurum falcatum": {
+  "ad": "Bupleurum falcatum",
+  "familya": "Apiaceae",
+  "kimlik": "839147-1",
+  "rutbe": "spec.",
+  "yazar": "L."
  },
  "Bursera graveolens": {
   "ad": "Bursera graveolens",
@@ -1413,6 +1427,13 @@
   "rutbe": "spec.",
   "yazar": "Forssk.",
   "yazar_kaynagi": "GBIF/WCVP"
+ },
+ "Platycodon grandiflorus": {
+  "ad": "Platycodon grandiflorus",
+  "familya": "Campanulaceae",
+  "kimlik": "144523-1",
+  "rutbe": "spec.",
+  "yazar": "A.DC."
  },
  "Plukenetia volubilis": {
   "ad": "Plukenetia volubilis",

@@ -73,3 +73,6 @@ andrographis | Andrographis paniculata | plant leaves flowers
 sogan | Allium cepa | bulbs plant flower
 sakayik | Paeonia lactiflora | flower white plant
 yilankoku | Rauvolfia serpentina | plant flowers red fruits
+geven | Astragalus mongholicus | plant flowers root
+tavsankulagi | Bupleurum falcatum | plant yellow umbels
+baloncicegi | Platycodon grandiflorus | blue flower bud balloon
