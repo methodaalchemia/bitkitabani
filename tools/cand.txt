@@ -91,3 +91,6 @@ gilaburu | Viburnum opulus | red berries shrub
 avokado | Persea americana | fruit tree
 demirhindi | Tamarindus indica | pods tree
 haritaki | Terminalia chebula | fruit tree
+zahter | Thymbra spicata | flowers plant
+menengic | Pistacia terebinthus | fruit tree
+kopekuzumu | Solanum nigrum | berries plant

@@ -1467,6 +1467,13 @@
   "rutbe": "spec.",
   "yazar": "L."
  },
+ "Pistacia terebinthus": {
+  "ad": "Pistacia terebinthus",
+  "familya": "Anacardiaceae",
+  "kimlik": "70274-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
  "Pistacia vera": {
   "ad": "Pistacia vera",
   "familya": "Anacardiaceae",
@@ -1870,6 +1877,13 @@
   "rutbe": "spec.",
   "yazar": "L."
  },
+ "Solanum nigrum": {
+  "ad": "Solanum nigrum",
+  "familya": "Solanaceae",
+  "kimlik": "30048260-2",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
  "Solidago virgaurea": {
   "ad": "Solidago virgaurea",
   "familya": "Asteraceae",
@@ -1947,6 +1961,13 @@
   "kimlik": "252580-2",
   "rutbe": "spec.",
   "yazar": "(Pers.) K.Schum."
+ },
+ "Thymbra spicata": {
+  "ad": "Thymbra spicata",
+  "familya": "Lamiaceae",
+  "kimlik": "460827-1",
+  "rutbe": "spec.",
+  "yazar": "L."
  },
  "Tilia tomentosa": {
   "ad": "Tilia tomentosa",
