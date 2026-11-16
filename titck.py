@@ -126,4 +126,7 @@ M = {
  'sahilcami': ('Pinus maritima Lam.', '2022/dynamicModulesAttachment/PinusmaritimaLam.4adb7403313a4d9abf16191b2a6c6fe1_f8698d51-b4f5-4f03-a7e1-bd3db4830b08.pdf'),
  'angelika': ('Angelica archangelica L.', '2022/dynamicModulesAttachment/AngelicaarchangelicaL.aca74cb46ef9430c9166c68f01cb72ed_824a1145-1cb5-40c1-8c52-ba8ef06e9522.pdf'),
  'amerikanginsengi': ('Panax quinquefolius L.', '2022/dynamicModulesAttachment/PanaxquinquefoliusL.6107907dcbc148ec9a151e1609e9c21a_ca1d4f3d-dd97-4b24-b7a0-70c9e62c149d.pdf'),
+ 'karadut': ('Morus nigra L.', '2023/dynamicModulesAttachment/MorusnigraL_e72f0e96-27fc-46ca-bfe9-b9ba1219d8df.pdf'),
+ 'mazi': ('Thuja occidentalis L', '2022/dynamicModulesAttachment/Thujaoccidentalis.pdfb32efc5c62de4150a7694c8ee13d8c58_4b9d30fb-d218-4a56-8fef-174dcd7aa1b2.pdf'),
+ 'saparna': ('Smilax sp. L.', '2022/dynamicModulesAttachment/Smilaxsp.1ec6f9c3649f456481cc407dbfed8143_3c8779ce-461c-4346-ab6c-bdee58f073e5.pdf'),
 }

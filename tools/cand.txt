@@ -112,3 +112,6 @@ hiltit | Ferula assa-foetida | plant resin
 sahilcami | Pinus pinaster | tree bark cones
 angelika | Angelica archangelica | flowers plant umbel
 amerikanginsengi | Panax quinquefolius | plant berries root
+karadut | Morus nigra | fruit tree
+mazi | Thuja occidentalis | tree foliage cones
+saparna | Smilax excelsa | climber shoots berries

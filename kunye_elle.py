@@ -892,6 +892,15 @@ ELLE.update({
    titck_apa('Panax quinquefolius L.'),
 })
 
+ELLE.update({
+ 'https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/MorusnigraL_e72f0e96-27fc-46ca-bfe9-b9ba1219d8df.pdf':
+   titck_apa('Morus nigra L.'),
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/Thujaoccidentalis.pdfb32efc5c62de4150a7694c8ee13d8c58_4b9d30fb-d218-4a56-8fef-174dcd7aa1b2.pdf':
+   titck_apa('Thuja occidentalis L.'),
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/Smilaxsp.1ec6f9c3649f456481cc407dbfed8143_3c8779ce-461c-4346-ab6c-bdee58f073e5.pdf':
+   titck_apa('Smilax sp. L.'),
+})
+
 # Kurum yayını: APA'da kurumsal yazar ve yayın türü köşeli ayraçta.
 ELLE['https://www.iarc.who.int/wp-content/uploads/2018/07/pr244_E.pdf'] = (
     'Uluslararası Kanser Araştırmaları Ajansı. (2016). IARC Monographs '

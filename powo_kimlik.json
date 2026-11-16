@@ -1242,6 +1242,13 @@
   "yazar": "L.",
   "yazar_kaynagi": "GBIF/WCVP"
  },
+ "Morus nigra": {
+  "ad": "Morus nigra",
+  "familya": "Moraceae",
+  "kimlik": "854688-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
  "Myrciaria dubia": {
   "ad": "Myrciaria dubia",
   "familya": "Myrtaceae",
@@ -1989,6 +1996,14 @@
   "rutbe": "spec.",
   "yazar": "(Poepp.) H.Rob."
  },
+ "Smilax excelsa": {
+  "ad": "Smilax excelsa",
+  "familya": "Smilacaceae",
+  "kimlik": "541432-1",
+  "rutbe": "spec.",
+  "yazar": "L.",
+  "yazar_kaynagi": "GBIF/WCVP"
+ },
  "Solanaceae": {
   "hata": "eşadlı: 30000631-2 (Juss.), 60437408-2 (Adans.)"
  },
@@ -2091,6 +2106,13 @@
   "kimlik": "252580-2",
   "rutbe": "spec.",
   "yazar": "(Pers.) K.Schum."
+ },
+ "Thuja occidentalis": {
+  "ad": "Thuja occidentalis",
+  "familya": "Cupressaceae",
+  "kimlik": "263956-1",
+  "rutbe": "spec.",
+  "yazar": "L."
  },
  "Thymbra spicata": {
   "ad": "Thymbra spicata",
