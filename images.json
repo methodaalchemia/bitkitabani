@@ -50,6 +50,19 @@
   "w": 960,
   "w500": 500
  },
+ "aciyonca": {
+  "artist": "Uoaei1",
+  "auto": true,
+  "b1280": "Menyanthes trifoliata Spechtensee 01.JPG",
+  "file": "Menyanthes trifoliata Spechtensee 01.JPG",
+  "h": 1440,
+  "h500": 750,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Menyanthes_trifoliata_Spechtensee_01.JPG",
+  "w": 960,
+  "w500": 500
+ },
  "adacayi": {
   "artist": "Krzysztof Ziarnek, Kenraiz",
   "b1280": "Salvia fruticosa kz07.jpg",
@@ -382,6 +395,19 @@
   "w": 960,
   "w500": 500
  },
+ "ayrikotu": {
+  "artist": "Abrget47j",
+  "auto": true,
+  "b1280": "KasteOrasheinal.jpg",
+  "file": "KasteOrasheinal.jpg",
+  "h": 643,
+  "h500": 335,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:KasteOrasheinal.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "badem": {
   "artist": "Balles2601",
   "auto": false,
@@ -430,6 +456,19 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
   "page": "https://commons.wikimedia.org/wiki/File:Rhamnus_frangula_07_ies.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "besparmakotu": {
+  "artist": "Uoaei1",
+  "auto": true,
+  "b1280": "Potentilla erecta Ötschergräben 01.JPG",
+  "file": "Potentilla erecta Ötschergräben 01.JPG",
+  "h": 640,
+  "h500": 333,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Potentilla_erecta_%C3%96tschergr%C3%A4ben_01.JPG",
   "w": 960,
   "w500": 500
  },
@@ -727,6 +766,19 @@
   "w": 960,
   "w500": 500
  },
+ "cuhacicegi": {
+  "artist": "Flocci Nivis",
+  "auto": true,
+  "b1280": "20250412 Primula veris.jpg",
+  "file": "20250412 Primula veris.jpg",
+  "h": 960,
+  "h500": 500,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:20250412_Primula_veris.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "dagcayi": {
   "artist": "Rumen Evtimov",
   "auto": false,
@@ -775,6 +827,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Knoppen_van_een_es_(Fraxinus_excelsior)._03-03-2026._(actm.)_01.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "dulavratotu": {
+  "artist": "JackyM59",
+  "auto": true,
+  "b1280": "Inflorescence de Grande bardane (Arctium lappa).jpg",
+  "file": "Inflorescence de Grande bardane (Arctium lappa).jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Inflorescence_de_Grande_bardane_(Arctium_lappa).jpg",
   "w": 960,
   "w500": 500
  },
@@ -1266,6 +1331,19 @@
   "w": 960,
   "w500": 500
  },
+ "kaliforniyahashasi": {
+  "artist": "Fischer.H",
+  "auto": true,
+  "b1280": "Kalifornischer Mohn IMG 4878.jpg",
+  "file": "Kalifornischer Mohn IMG 4878.jpg",
+  "h": 991,
+  "h500": 516,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Kalifornischer_Mohn_IMG_4878.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "kankoku": {
   "artist": "Agnieszka Kwiecień, Nova",
   "auto": false,
@@ -1391,6 +1469,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Plantago_ovata_kz13.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "kasikotu": {
+  "artist": "Wilhelm Zimmerling PAR",
+  "auto": true,
+  "b1280": "Ruhland, Elsterbogen, Graukresse, Herbst-Löwenzahn und Krähenfuß-Wegerich am Straßenrand, Sommer, 01.jpg",
+  "file": "Ruhland, Elsterbogen, Graukresse, Herbst-Löwenzahn und Krähenfuß-Wegerich am Straßenrand, Sommer, 01.jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ruhland,_Elsterbogen,_Graukresse,_Herbst-L%C3%B6wenzahn_und_Kr%C3%A4henfu%C3%9F-Wegerich_am_Stra%C3%9Fenrand,_Sommer,_01.jpg",
   "w": 960,
   "w500": 500
  },
@@ -1596,6 +1687,32 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Rubia_tinctorum_flowers.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "kokuluyonca": {
+  "artist": "Douglas Goldman",
+  "auto": true,
+  "b1280": "MelilotusO11.jpg",
+  "file": "MelilotusO11.jpg",
+  "h": 1434,
+  "h500": 747,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:MelilotusO11.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "koyunotu": {
+  "artist": "",
+  "auto": true,
+  "b1280": "Agrimonia eupatoria01.jpg",
+  "file": "Agrimonia eupatoria01.jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Agrimonia_eupatoria01.jpg",
   "w": 960,
   "w500": 500
  },

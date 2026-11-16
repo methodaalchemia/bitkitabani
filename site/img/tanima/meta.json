@@ -2144,5 +2144,107 @@
   "page": "https://commons.wikimedia.org/wiki/File:Ilex_paraguariensis_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-074.jpg"
  },
  "mate:cicek": "yok",
- "mate:kuru": "yok"
+ "mate:kuru": "yok",
+ "cuhacicegi:cizim": {
+  "file": "Illustration Primula veris0.jpg",
+  "artist": "Otto Wilhelm Thomé",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Primula_veris0.jpg"
+ },
+ "cuhacicegi:cicek": {
+  "file": "Primula veris flowers.jpg",
+  "artist": "Горбунова М.С.",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Primula_veris_flowers.jpg"
+ },
+ "cuhacicegi:kuru": "yok",
+ "besparmakotu:cizim": {
+  "file": "Potentilla erecta - Köhler–s Medizinal-Pflanzen-248.jpg",
+  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Potentilla_erecta_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-248.jpg"
+ },
+ "besparmakotu:cicek": {
+  "file": "-Small Yellow Flower- (52217898817).jpg",
+  "artist": "Tero Karppinen from Finland",
+  "license": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:-Small_Yellow_Flower-_%2852217898817%29.jpg"
+ },
+ "besparmakotu:kuru": "yok",
+ "koyunotu:cizim": {
+  "file": "Illustration Agrimonia eupatoria0 clean.jpg",
+  "artist": "User:Kilom691",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Agrimonia_eupatoria0_clean.jpg"
+ },
+ "koyunotu:cicek": {
+  "file": "Agrimonia eupatoria inflorescence (01).jpg",
+  "artist": "Paul Fabre",
+  "license": "CC BY-SA 2.0 fr",
+  "page": "https://commons.wikimedia.org/wiki/File:Agrimonia_eupatoria_inflorescence_%2801%29.jpg"
+ },
+ "koyunotu:kuru": "yok",
+ "kasikotu:cizim": {
+  "file": "Illustration Herniaria glabra0.jpg",
+  "artist": "Wikimedia Commons",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Herniaria_glabra0.jpg"
+ },
+ "kasikotu:cicek": {
+  "file": "Ruhland, Elsterbogen, Graukresse, Herbst-Löwenzahn und Krähenfuß-Wegerich am Straßenrand, Sommer, 01.jpg",
+  "artist": "Wilhelm Zimmerling PAR",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ruhland%2C_Elsterbogen%2C_Graukresse%2C_Herbst-L%C3%B6wenzahn_und_Kr%C3%A4henfu%C3%9F-Wegerich_am_Stra%C3%9Fenrand%2C_Sommer%2C_01.jpg"
+ },
+ "kasikotu:kuru": "yok",
+ "dulavratotu:cizim": "yok",
+ "dulavratotu:cicek": {
+  "file": "Burdock (Arctium lappa) in flower - geograph.org.uk - 6568070.jpg",
+  "artist": "Alan Murray-Rust",
+  "license": "CC BY-SA 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Burdock_%28Arctium_lappa%29_in_flower_-_geograph.org.uk_-_6568070.jpg"
+ },
+ "dulavratotu:kuru": "yok",
+ "ayrikotu:cizim": "yok",
+ "ayrikotu:cicek": {
+  "file": "Quackgrass (18653400138).jpg",
+  "artist": "NY State IPM Program at Cornell University from New York, US",
+  "license": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Quackgrass_%2818653400138%29.jpg"
+ },
+ "ayrikotu:kuru": "yok",
+ "kaliforniyahashasi:cizim": "yok",
+ "kaliforniyahashasi:cicek": {
+  "file": "Makrofotografie 002 2021 06 05.jpg",
+  "artist": "Friedrich Haag",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Makrofotografie_002_2021_06_05.jpg"
+ },
+ "kaliforniyahashasi:kuru": "yok",
+ "kokuluyonca:cizim": {
+  "file": "Melilotus officinalis - Köhler–s Medizinal-Pflanzen-093.jpg",
+  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Melilotus_officinalis_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-093.jpg"
+ },
+ "kokuluyonca:cicek": {
+  "file": "Yellow flowers fl.jpg",
+  "artist": "Arria Belli",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Yellow_flowers_fl.jpg"
+ },
+ "kokuluyonca:kuru": "yok",
+ "aciyonca:cizim": {
+  "file": "Menyanthes trifoliata - Köhler–s Medizinal-Pflanzen-225.jpg",
+  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Menyanthes_trifoliata_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-225.jpg"
+ },
+ "aciyonca:cicek": {
+  "file": "Menyanthes trifoliata Spechtensee 01.JPG",
+  "artist": "Uoaei1",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Menyanthes_trifoliata_Spechtensee_01.JPG"
+ },
+ "aciyonca:kuru": "yok"
 }
