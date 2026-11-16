@@ -9,7 +9,7 @@
 Q = [
 
     dict(
-        yayin='2027-01-04',
+        yayin='2026-11-16',
         id='cobancantasi',
         foto='Capsella bursa-pastoris flower6 (14679442564).jpg',
         tr='Çoban çantası',
@@ -267,7 +267,7 @@ Q = [
     ),
 
     dict(
-        yayin='2027-01-05',
+        yayin='2026-11-16',
         id='sahtere',
         foto='Fumaria officinalis 2601.JPG',
         tr='Şahtere',
@@ -524,7 +524,7 @@ Q = [
     ),
 
     dict(
-        yayin='2027-01-06',
+        yayin='2026-11-16',
         id='sinirliot',
         foto='Plantago lanceolata Babka lancetowata 2022-06-21 03.jpg',
         tr='Sinirli ot',

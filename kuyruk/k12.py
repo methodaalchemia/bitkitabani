@@ -8,7 +8,7 @@
 Q = [
 
     dict(
-        yayin='2026-12-29',
+        yayin='2026-11-16',
         id='kabakcekirdegi',
         foto='Pepita de calabaza.jpg',
         tr='Kabak çekirdeği',
@@ -268,7 +268,7 @@ Q = [
     ),
 
     dict(
-        yayin='2026-12-30',
+        yayin='2026-11-16',
         id='arnika',
         foto='Arnica montana Arnika górska 2023-06-08 02.jpg',
         tr='Arnika',
@@ -545,7 +545,7 @@ Q = [
     ),
 
     dict(
-        yayin='2026-12-31',
+        yayin='2026-11-16',
         id='yabanmersini',
         foto='Vaccinium myrtillus Borówka czarna 2023-08-25 Dolina Roztoki 05.jpg',
         tr='Yaban mersini',

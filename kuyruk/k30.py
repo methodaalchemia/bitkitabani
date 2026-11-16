@@ -5,7 +5,7 @@
 Q = [
 
     dict(
-        yayin='2027-02-21',
+        yayin='2026-11-16',
         id='javacayi',
         foto='',
         tr='Java çayı',
@@ -198,7 +198,7 @@ Q = [
     ),
 
     dict(
-        yayin='2027-02-22',
+        yayin='2026-11-16',
         id='tuylusahinotu',
         foto='',
         tr='Tüylü şahinotu',
@@ -357,7 +357,7 @@ Q = [
     ),
 
     dict(
-        yayin='2027-02-23',
+        yayin='2026-11-16',
         id='yabanyasemini',
         foto='',
         tr='Yaban yasemini',

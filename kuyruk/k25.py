@@ -7,7 +7,7 @@
 Q = [
 
     dict(
-        yayin='2027-02-06',
+        yayin='2026-11-16',
         id='yabanicilek',
         foto='',
         tr='Yabani çilek',
@@ -259,7 +259,7 @@ Q = [
     ),
 
     dict(
-        yayin='2027-02-07',
+        yayin='2026-11-16',
         id='soya',
         foto='',
         tr='Soya fasulyesi',
@@ -586,7 +586,7 @@ Q = [
     ),
 
     dict(
-        yayin='2027-02-08',
+        yayin='2026-11-16',
         id='fasulye',
         foto='',
         tr='Fasulye',

@@ -22,7 +22,7 @@ AB432 = ('Regulation (EU) No 432/2012, izin verilen sağlık beyanları listesi 
 Q = [
 
 # ---------------------------------------------------------------- 13 Aralık: BADEM
-{'yayin': '2026-12-13',
+{'yayin': '2026-11-16',
  'id': 'badem',
  'foto': 'Prunus amygdalus 2601.jpg',
  'tr': 'Badem',
@@ -168,7 +168,7 @@ Q = [
                      'amygdalus”: wild, and not settled at species level.'}},
 
 # ---------------------------------------------------------------- 14 Aralık: ANTEP FISTIĞI
-{'yayin': '2026-12-14',
+{'yayin': '2026-11-16',
  'id': 'antepfistigi',
  'foto': 'Ağaçta Fıstık.jpg',
  'tr': 'Antep fıstığı',
@@ -311,7 +311,7 @@ Q = [
                      'monograph — pistachio has none.'}},
 
 # ---------------------------------------------------------------- 15 Aralık: MERCİMEK
-{'yayin': '2026-12-15',
+{'yayin': '2026-11-16',
  'id': 'mercimek',
  'foto': 'Lens culinaris sl1.jpg',
  'tr': 'Mercimek',
@@ -420,7 +420,7 @@ Q = [
                      'archaeologists tell the two apart by that measurement.'}},
 
 # ---------------------------------------------------------------- 16 Aralık: ARPA
-{'yayin': '2026-12-16',
+{'yayin': '2026-11-16',
  'id': 'arpa',
  'foto': 'Barley J1.jpg',
  'tr': 'Arpa',

@@ -16,7 +16,7 @@
 Q = [
 
     dict(
-        yayin='2026-12-23',
+        yayin='2026-11-16',
         id='seytanpencesi',
         foto='Harpagophytum procumbens 1DS-II 2-2169.jpg',
         tr='Şeytanpençesi',
@@ -256,7 +256,7 @@ Q = [
     ),
 
     dict(
-        yayin='2026-12-24',
+        yayin='2026-11-16',
         id='karakafesotu',
         foto='Symphytum officinale (4970747978).jpg',
         tr='Karakafesotu',
@@ -466,7 +466,7 @@ Q = [
     ),
 
     dict(
-        yayin='2026-12-25',
+        yayin='2026-11-16',
         id='guneyafrikasardunyasi',
         foto='Pelargonium sidoides 1DS-II 2-0714.jpg',
         tr='Güney Afrika sardunyası',

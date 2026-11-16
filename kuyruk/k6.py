@@ -3,7 +3,7 @@ P = 'https://pubmed.ncbi.nlm.nih.gov/'
 G = 'https://www.gutenberg.org/ebooks/'
 
 Q = [
-{'yayin': '2026-12-12',
+{'yayin': '2026-11-16',
  'id': 'ejderkani',
  'foto': 'Dracaena cinnabari 111803110.jpg',
  'tr': 'Ejder kanı',

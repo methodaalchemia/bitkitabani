@@ -8,7 +8,7 @@
 Q = [
 
     dict(
-        yayin='2027-01-01',
+        yayin='2026-11-16',
         id='aynisefa',
         foto='Calendula officinalis 31122014 (2).jpg',
         tr='Aynısefa',
@@ -250,7 +250,7 @@ Q = [
     ),
 
     dict(
-        yayin='2027-01-02',
+        yayin='2026-11-16',
         id='kirmizikantaron',
         foto='Centaurium erythraea (flowers).jpg',
         tr='Kırmızı kantaron',
@@ -471,7 +471,7 @@ Q = [
     ),
 
     dict(
-        yayin='2027-01-03',
+        yayin='2026-11-16',
         id='olmezcicek',
         foto='Helichrysum arenarium Kocanki piaskowe 2021-06-27 02.jpg',
         tr='Ölmez çiçek',

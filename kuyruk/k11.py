@@ -9,7 +9,7 @@
 Q = [
 
     dict(
-        yayin='2026-12-26',
+        yayin='2026-11-16',
         id='gumusdugme',
         foto='Altamisa (Tanacetum parthenium) 0063.jpg',
         tr='Gümüş düğme',
@@ -245,7 +245,7 @@ Q = [
     ),
 
     dict(
-        yayin='2026-12-27',
+        yayin='2026-11-16',
         id='cayagaci',
         foto='200518 049 Alta Vista Botanical Gardens, Melaleuca alternifolia Australian Tea Oil Tree.jpg',
         tr='Çay ağacı',
@@ -496,7 +496,7 @@ Q = [
     ),
 
     dict(
-        yayin='2026-12-28',
+        yayin='2026-11-16',
         id='atkuyrugu',
         foto='Equisetum arvense foliage.jpg',
         tr='At kuyruğu',

@@ -8,7 +8,7 @@
 Q = [
 
     dict(
-        yayin='2027-01-19',
+        yayin='2026-11-16',
         id='esmersuyosunu',
         foto='',
         tr='Esmer su yosunu',
@@ -281,7 +281,7 @@ Q = [
     ),
 
     dict(
-        yayin='2027-01-20',
+        yayin='2026-11-16',
         id='izlandalikeni',
         foto='',
         tr='İzlanda likeni',
@@ -524,7 +524,7 @@ Q = [
     ),
 
     dict(
-        yayin='2027-01-21',
+        yayin='2026-11-16',
         id='mate',
         foto='',
         tr='Mate',

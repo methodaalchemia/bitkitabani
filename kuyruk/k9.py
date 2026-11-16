@@ -13,7 +13,7 @@
 Q = [
 
     dict(
-        yayin='2026-12-20',
+        yayin='2026-11-16',
         id='acibiber',
         foto='',
         tr='Acı biber',
@@ -265,7 +265,7 @@ Q = [
     ),
 
     dict(
-        yayin='2026-12-21',
+        yayin='2026-11-16',
         id='barutagaci',
         foto='',
         tr='Barut ağacı',
@@ -526,7 +526,7 @@ Q = [
     ),
 
     dict(
-        yayin='2026-12-22',
+        yayin='2026-11-16',
         id='ravent',
         foto='',
         tr='Ravent',

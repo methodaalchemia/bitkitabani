@@ -13,7 +13,7 @@
 Q = [
 
     dict(
-        yayin='2026-12-17',
+        yayin='2026-11-16',
         id='sarmasik',
         foto='Hedera helix Dover.jpg',
         tr='Sarmaşık',
@@ -236,7 +236,7 @@ Q = [
     ),
 
     dict(
-        yayin='2026-12-18',
+        yayin='2026-11-16',
         id='karniyarik',
         foto='Plantago ovata kz13.jpg',
         tr='Karnıyarık otu',
@@ -456,7 +456,7 @@ Q = [
     ),
 
     dict(
-        yayin='2026-12-19',
+        yayin='2026-11-16',
         id='asmayapragi',
         foto='2014 11 09 022 Blaetter.jpg',
         tr='Asma yaprağı',

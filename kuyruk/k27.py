@@ -7,7 +7,7 @@
 Q = [
 
     dict(
-        yayin='2027-02-12',
+        yayin='2026-11-16',
         id='selamotu',
         foto='',
         tr='Selam otu',
@@ -211,7 +211,7 @@ Q = [
     ),
 
     dict(
-        yayin='2027-02-13',
+        yayin='2026-11-16',
         id='frenkuzumu',
         foto='',
         tr='Siyah frenk üzümü',
@@ -409,7 +409,7 @@ Q = [
     ),
 
     dict(
-        yayin='2027-02-14',
+        yayin='2026-11-16',
         id='esekotu',
         foto='',
         tr='Eşek otu',

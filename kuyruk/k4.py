@@ -3,7 +3,7 @@ E = 'https://www.ema.europa.eu/en/medicines/herbal/'
 PM = 'https://pubmed.ncbi.nlm.nih.gov/'; PMC = 'https://pmc.ncbi.nlm.nih.gov/articles/'
 
 Q = [
-dict(yayin='2026-11-21', id='gul', tr='Gül', la='Rosa damascena', fam='Rosaceae (gülgiller)',
+dict(yayin='2026-11-16', id='gul', tr='Gül', la='Rosa damascena', fam='Rosaceae (gülgiller)',
  diger='Isparta gülü, yağ gülü, Şam gülü, damask rose', bolge=['anadolu', 'asya'], kat=['sifa', 'besin', 'ritual'], kisim='Taç yaprakları (çiçek)', taxon='Rosa damascena',
  foto='وردة الجوري Rosa damascena.jpg',
  kul=[['Anadolu', 'Isparta ve Burdur’da mayıs–haziranda sabah erkenden toplanan çiçeklerden gül yağı ve gül suyu damıtılır. Gül suyu güllaç ve lokum gibi tatlılara katılır; gül reçeli evlerde yapılır.'],
@@ -22,7 +22,7 @@ dict(yayin='2026-11-21', id='gul', tr='Gül', la='Rosa damascena', fam='Rosaceae
   safety='Rose water, jam and tea are safe in food amounts. Rose oil is highly concentrated: do not apply it undiluted or swallow it. The EMA does not recommend use under 12 because of lack of data; safety in pregnancy and breastfeeding is unknown. See a doctor if symptoms last more than a week.', fact='It takes tonnes of petals to make a kilogram of rose oil, which is why it is among the most expensive essential oils. Isparta and Bulgaria’s Kazanlak region are the world’s main producers of rose oil.',
   season='Flowers are picked from late May into June, before the sun is high; the harvest lasts only three or four weeks.', habitat='Grown in gardens around Isparta and Burdur in the Turkish Lakes Region; a drought-tolerant shrub.', local='yağ gülü, Isparta gülü', confusion='Most garden roses come from other species and hybrids; their scent is weak and they are not used for oil or rose water. Rose hips come from the dog rose (Rosa canina).')),
 
-dict(yayin='2026-11-22', id='misir', tr='Mısır', la='Zea mays', fam='Poaceae (buğdaygiller)',
+dict(yayin='2026-11-16', id='misir', tr='Mısır', la='Zea mays', fam='Poaceae (buğdaygiller)',
  diger='Mısır püskülü, darı (yöresel), maize, corn, sara (Ketçuaca)', bolge=['kamerika', 'and'], kat=['besin', 'sifa', 'ritual'], kisim='Püskül (dişicik telleri), tane', taxon='Zea mays',
  foto='Millo.Galiza Oroso.jpg',
  kul=[['Mezoamerika ve And Dağları', 'Mısır yaklaşık 9.000 yıl önce Meksika’da yabani teosinteden evcilleştirildi ve Amerika’nın temel besini oldu. Maya anlatısı Popol Vuh’a göre tanrılar insanı mısır hamurundan yarattı. And’larda mısırdan chicha adlı mayalı içecek yapılır ve Pachamama’ya sunulur.'],
@@ -40,7 +40,7 @@ dict(yayin='2026-11-22', id='misir', tr='Mısır', la='Zea mays', fam='Poaceae (
   safety='Generally considered safe as a tea. Because it increases urine flow, avoid it where fluid intake must be limited, such as heart or kidney failure. High doses affected early pregnancy in rats, so avoid it in pregnancy. With signs of a urinary infection (fever, blood in urine, burning) see a doctor rather than relying on tea.', fact='Every kernel on a cob has its own strand of silk; if that strand is not pollinated, the kernel does not develop. Each strand of silk is a kernel’s stigma.',
   season='Silk is gathered while still pale, when the cobs are at the milk stage (July–August).', habitat='Grown worldwide; in Türkiye mostly on the Black Sea coast, in Çukurova and in the south-east.', local='mısır, darı, püskül', confusion='On the Black Sea coast maize is called “darı”, which can be confused with true millet (Panicum miliaceum), also sold as bird seed.')),
 
-dict(yayin='2026-11-23', id='hunnap', tr='Hünnap', la='Ziziphus jujuba', fam='Rhamnaceae (cehrigiller)',
+dict(yayin='2026-11-16', id='hunnap', tr='Hünnap', la='Ziziphus jujuba', fam='Rhamnaceae (cehrigiller)',
  diger='Çin hurması, kırmızı hurma, unnap, jujube, dazao', bolge=['asya', 'anadolu'], kat=['besin', 'sifa'], kisim='Meyve', taxon='Ziziphus jujuba',
  foto='Ziziphus jujuba (fruit).jpg',
  kul=[['Çin', 'Kurutulmuş kırmızı hünnap (dazao) Çin mutfağında ve geleneksel tıbbında çok yaygındır; “kanı besleyen” bir meyve sayılır, çorbalara, çaylara ve bitki karışımlarına katılır.'],
@@ -58,7 +58,7 @@ dict(yayin='2026-11-23', id='hunnap', tr='Hünnap', la='Ziziphus jujuba', fam='R
   safety='Safe as a fruit. Dried jujubes are high in sugar; people with diabetes should watch the amount. The safety of high-dose extracts in pregnancy is unknown.', fact='As it ripens, the jujube turns from green to reddish brown and shrivels on the branch, its taste shifting from apple-like to date-like.',
   season='Fruits are picked when they redden, September–October.', habitat='Native to China; grown in Anatolian gardens and vineyard edges from the Aegean to the south-east; tolerant of drought and cold.', local='hünnap, unnap', confusion='Christ’s thorn (Paliurus spina-christi) and Christ’s thorn jujube (Ziziphus spina-christi) are relatives with different fruits. It is also confused with oleaster (Elaeagnus).')),
 
-dict(yayin='2026-11-24', id='serbetciotu', tr='Şerbetçiotu', la='Humulus lupulus', fam='Cannabaceae (kenevirgiller)',
+dict(yayin='2026-11-16', id='serbetciotu', tr='Şerbetçiotu', la='Humulus lupulus', fam='Cannabaceae (kenevirgiller)',
  diger='Şerbetçi otu, hop, humulus', bolge=['anadolu'], kat=['sifa', 'besin'], kisim='Dişi çiçek kozalakları', taxon='Humulus lupulus',
  foto='Inflorescences femelles de houblon - Humulus lupulus.jpg',
  kul=[['Avrupa', 'Orta Çağ’dan beri biraya acılık ve dayanıklılık vermek için kullanılır. Halk hekimliğinde uykusuzluk ve sinirlilik için çayı içilir, kurutulmuş kozalaklarla doldurulmuş “şerbetçiotu yastığı” üzerinde uyunur.'],
@@ -79,7 +79,7 @@ dict(yayin='2026-11-24', id='serbetciotu', tr='Şerbetçiotu', la='Humulus lupul
   safety='It can cause drowsiness; take care driving or using machines afterwards. Because it contains oestrogen-like compounds, people with hormone-sensitive conditions such as breast, uterine or ovarian cancer should avoid it. The EMA does not recommend it under 12; its safety in pregnancy and breastfeeding is not well established.', fact='Hops belong to the same family as cannabis. Though it looks like a vine, it has no tendrils: it climbs by stiff hairs on its stem and always twines clockwise.',
   season='Cones are picked in late August–September, when they start to rustle like paper.', habitat='Climbs along damp stream banks, woodland edges and hedges; cultivated on tall wire trellises.', local='şerbetçiotu, şerbetçi otu', confusion='Only the cones of female plants are used. The leaves resemble vine or squash leaves, but the stem is rough-haired and has no tendrils.')),
 
-dict(yayin='2026-11-25', id='akgunluk', tr='Akgünlük', la='Boswellia sacra, B. serrata', fam='Burseraceae',
+dict(yayin='2026-11-16', id='akgunluk', tr='Akgünlük', la='Boswellia sacra, B. serrata', fam='Burseraceae',
  diger='Günlük, buhur, kündür, frankincense, olibanum, Hint akgünlüğü (B. serrata)', bolge=['asya'], kat=['tutsu', 'ritual', 'sifa'], kisim='Reçine (zamk)', taxon='Boswellia sacra',
  foto='Boswellia sacra kz03.jpg',
  kul=[['Arabistan ve Doğu Akdeniz', 'Güney Arabistan’ın (bugünkü Umman ve Yemen) akgünlüğü binlerce yıl kervanlarla Akdeniz’e taşındı; Mısır tapınaklarında, Kudüs’te ve Roma’da tütsü olarak yakıldı. İncil’e göre doğu bilgelerinin İsa’ya getirdiği armağanlardan biridir; kiliselerde bugün de buhur olarak yakılır.'],
@@ -98,7 +98,7 @@ dict(yayin='2026-11-25', id='akgunluk', tr='Akgünlük', la='Boswellia sacra, B.
   safety='According to NCCIH oral use is likely safe; doses up to 1,000 mg a day have been used for up to 6 months in studies. The safety of medicinal doses in pregnancy and breastfeeding is unknown. People taking asthma medicines or receiving cancer treatment should ask their doctor first. Burning incense for long periods indoors can irritate the airways.', fact='Oman’s frankincense trees and its ancient port and caravan towns are on the UNESCO World Heritage List as the “Land of Frankincense”. The trees can grow on bare rock with almost no soil.',
   season='Resin oozes from cuts made in the trunk in the hot months; the tears are collected after drying for a few weeks.', habitat='B. sacra on dry rocky slopes in Oman, Yemen and Somalia; B. serrata in the dry forests of India. Overtapping threatens some species.', local='akgünlük, günlük, buhur, kündür', confusion='In Anatolia the name “günlük” is also given to the oriental sweetgum (Liquidambar orientalis) and its resin; they are different plants. Myrrh (Commiphora myrrha) is another resin from the same family.')),
 
-dict(yayin='2026-11-26', id='hus', tr='Huş ağacı', la='Betula pendula', fam='Betulaceae (huşgiller)',
+dict(yayin='2026-11-16', id='hus', tr='Huş ağacı', la='Betula pendula', fam='Betulaceae (huşgiller)',
  diger='Huş, akkayın, kayın (Orta Asya Türkçesinde), silver birch', bolge=['asya', 'anadolu', 'avrupa'], kat=['sifa', 'ritual'], kisim='Yaprak, kabuk, özsu', taxon='Betula pendula',
  foto='Betula pendula in Sedovo 1.jpg',
  kul=[['Sibirya ve Orta Asya', 'Altay ve Sibirya halklarında huş kutsal bir ağaçtır. Kam davulunun çerçevesi kayın ya da sedir ağacından yapılır; Altaylı kamların göğe yolculuğu anlatılırken çentikli bir huş direğine tırmandıkları aktarılır.'],
@@ -117,7 +117,7 @@ dict(yayin='2026-11-26', id='hus', tr='Huş ağacı', la='Betula pendula', fam='
   safety='Leaf tea is generally safe; it rarely causes stomach upset or allergy. Do not use it for oedema caused by heart or kidney disease or where fluid intake must be limited. The EMA does not recommend it under 12; data in pregnancy and breastfeeding are lacking. Birch pollen is a major cause of spring hay fever, and people allergic to it may react to some fruits.', fact='In Central Asian Turkic “kayın” means birch; in Anatolia the name passed to a different tree, the beech (Fagus). Birch bark owes its whiteness to a compound called betulin.',
   season='Leaves are picked in spring while young and pale green; sap is tapped in March–April before the buds burst.', habitat='Temperate and cold forests from Europe to Siberia; native in Türkiye in the high forests of north-eastern Anatolia and planted in cities as an ornamental.', local='huş, akkayın', confusion='Anatolian beech (Fagus orientalis) is a different tree with a smooth grey trunk; birch has a white trunk that peels like paper.')),
 
-dict(yayin='2026-11-27', id='bugday', tr='Buğday', la='Triticum aestivum', fam='Poaceae (buğdaygiller)',
+dict(yayin='2026-11-16', id='bugday', tr='Buğday', la='Triticum aestivum', fam='Poaceae (buğdaygiller)',
  diger='Ekmeklik buğday, buğday çimi, wheat, wheatgrass', bolge=['anadolu'], kat=['besin', 'ritual'], kisim='Tane, genç filiz (çim)', taxon='Triticum aestivum',
  foto='Triticum aestivum (ripe) 3.jpg',
  kul=[['Anadolu ve Mezopotamya', 'Buğday, “Bereketli Hilal”de, Güneydoğu Anadolu’yu da içine alan bölgede evcilleştirilen ilk tahıllardandır. Ekmek, bulgur, aşure ve keşkek Anadolu sofrasının temelidir. İran’da ve Anadolu’nun bazı yörelerinde Nevruz’dan önce tabaklarda buğday filizlendirilir; yeşeren buğday baharın ve bereketin simgesidir.'],
