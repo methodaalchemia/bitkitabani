@@ -841,6 +841,19 @@
   "w": 960,
   "w500": 500
  },
+ "guneyafrikasardunyasi": {
+  "artist": "peganum from Small Dole, England",
+  "auto": true,
+  "b1280": "Abelia sp (16017669603).jpg",
+  "file": "Abelia sp (16017669603).jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Abelia_sp_(16017669603).jpg",
+  "w": 960,
+  "w500": 500
+ },
  "hamamelis": {
   "artist": "",
   "auto": false,
@@ -1118,6 +1131,19 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Gew%C3%B6hnlicher_L%C3%B6wenzahn.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "karakafesotu": {
+  "artist": "Dietmar Rabich",
+  "auto": true,
+  "b1280": "Arnsberg, Neheim, Unfinished model of the Colosseum -- 2013 -- 4132.jpg",
+  "file": "Arnsberg, Neheim, Unfinished model of the Colosseum -- 2013 -- 4132.jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Arnsberg,_Neheim,_Unfinished_model_of_the_Colosseum_--_2013_--_4132.jpg",
   "w": 960,
   "w500": 500
  },
@@ -1993,6 +2019,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Inflorescences_femelles_de_houblon_-_Humulus_lupulus.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "seytanpencesi": {
+  "artist": "SAplants",
+  "auto": true,
+  "b1280": "Harpagophytum procumbens 1DS-II 2-2169.jpg",
+  "file": "Harpagophytum procumbens 1DS-II 2-2169.jpg",
+  "h": 640,
+  "h500": 333,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Harpagophytum_procumbens_1DS-II_2-2169.jpg",
   "w": 960,
   "w500": 500
  },

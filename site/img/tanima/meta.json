@@ -1829,5 +1829,29 @@
   "license": "CC BY-SA 3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Rheum_officinale_002.JPG"
  },
- "ravent:kuru": "yok"
+ "ravent:kuru": "yok",
+ "seytanpencesi:cizim": "yok",
+ "seytanpencesi:cicek": "yok",
+ "seytanpencesi:kuru": "yok",
+ "karakafesotu:cizim": {
+  "file": "Symphytum officinale - Köhler–s Medizinal-Pflanzen-268.jpg",
+  "artist": "Walther Otto Müller",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Symphytum_officinale_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-268.jpg"
+ },
+ "karakafesotu:cicek": {
+  "file": "Gewone smeerwortel (Symphytum officinale) 02.JPG",
+  "artist": "Dominicus Johannes Bergsma",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Gewone_smeerwortel_%28Symphytum_officinale%29_02.JPG"
+ },
+ "karakafesotu:kuru": "yok",
+ "guneyafrikasardunyasi:cizim": "yok",
+ "guneyafrikasardunyasi:cicek": {
+  "file": "Pelargonium sidoides (2910252198).jpg",
+  "artist": "peganum from Henfield, England",
+  "license": "CC BY-SA 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Pelargonium_sidoides_%282910252198%29.jpg"
+ },
+ "guneyafrikasardunyasi:kuru": "yok"
 }
