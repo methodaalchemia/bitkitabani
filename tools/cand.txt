@@ -100,3 +100,6 @@ karabiber | Piper nigrum | peppercorns vine
 tutun | Nicotiana tabacum | flowers leaves plant
 kava | Piper methysticum | plant leaves rhizome
 stevia | Stevia rebaudiana | leaves plant
+trabzonhurmasi | Diospyros kaki | fruit tree
+kahve | Coffea arabica | beans flowers plant
+findik | Corylus avellana | nuts catkins shrub

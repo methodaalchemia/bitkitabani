@@ -864,6 +864,11 @@ ELLE.update({
    'Wilbert, J. (1987). Tobacco and shamanism in South America. Yale University Press.',
 })
 
+ELLE.update({
+ 'https://doi.org/10.2903/j.efsa.2015.4102':
+   'EFSA Panel on Dietetic Products, Nutrition and Allergies. (2015). Scientific Opinion on the safety of caffeine. EFSA Journal, 13(5), 4102. https://doi.org/10.2903/j.efsa.2015.4102',
+})
+
 # Kurum yayını: APA'da kurumsal yazar ve yayın türü köşeli ayraçta.
 ELLE['https://www.iarc.who.int/wp-content/uploads/2018/07/pr244_E.pdf'] = (
     'Uluslararası Kanser Araştırmaları Ajansı. (2016). IARC Monographs '

@@ -371,6 +371,10 @@
   "apa": "Vassal, V. (2021). La fleur de lotus ou Nelumbo nucifera dans les mosaïques gréco-romaines. Journal of Mosaic Research, 341–353. https://doi.org/10.26658/jmr.1014577",
   "kaynak": "crossref:10.26658/jmr.1014577"
  },
+ "https://doi.org/10.2903/j.efsa.2015.4102": {
+  "apa": "(2015). Scientific Opinion on the safety of caffeine. EFSA Journal, 13(5). https://doi.org/10.2903/j.efsa.2015.4102",
+  "kaynak": "crossref:10.2903/j.efsa.2015.4102"
+ },
  "https://doi.org/10.30794/pausbed.450535": {
   "apa": "Balkanal, Z. (2019). TÜRK KÜLTÜRÜNÜN DEĞER YARGILARINI YANSITAN KİLİM MOTİFLERİNE TASARIM AÇISINDAN ALTERNATİF BİR YAKLAŞIM; KAAT’I SANATINDA UYGULAMALARI. Pamukkale University Journal of Social Sciences Institute. https://doi.org/10.30794/pausbed.450535",
   "kaynak": "crossref:10.30794/pausbed.450535"
@@ -1215,6 +1219,10 @@
   "apa": "Ocsel, H., Teke, Z., Sacar, M., Kabay, B., Duzcan, S. E., & Kara, I. G. (2012). Effects of oriental sweet gum storax on porcine wound healing. Journal of Investigative Surgery : the Official Journal of the Academy of Surgical Research, 25(4), 262–70. https://doi.org/10.3109/08941939.2011.639847",
   "kaynak": "pubmed:22853813"
  },
+ "https://pubmed.ncbi.nlm.nih.gov/23252775/": {
+  "apa": "Ladas, S. D., Kamberoglou, D., Karamanolis, G., Vlachogiannakos, J., & Zouboulis-Vafiadis, I. (2013). Systematic review: Coca-Cola can effectively dissolve gastric phytobezoars as a first-line treatment. Alimentary Pharmacology & Therapeutics, 37(2), 169–73. https://doi.org/10.1111/apt.12141",
+  "kaynak": "pubmed:23252775"
+ },
  "https://pubmed.ncbi.nlm.nih.gov/23326148/": {
   "apa": "Yang, J., Wang, H. P., Zhou, L., & Xu, C. F. (2012). Effect of dietary fiber on constipation: a meta analysis. World Journal of Gastroenterology, 18(48), 7378–83. https://doi.org/10.3748/wjg.v18.i48.7378",
   "kaynak": "pubmed:23326148"
@@ -1258,6 +1266,10 @@
  "https://pubmed.ncbi.nlm.nih.gov/25597924/": {
   "apa": "Cao, H., Yang, G., Wang, Y., Liu, J. P., Smith, C. A., Luo, H., & Liu, Y. (2015). Complementary therapies for acne vulgaris. The Cochrane Database of Systematic Reviews, 1(1), CD009436. https://doi.org/10.1002/14651858.CD009436.pub2",
   "kaynak": "pubmed:25597924"
+ },
+ "https://pubmed.ncbi.nlm.nih.gov/25637828/": {
+  "apa": "Xie, C., Xie, Z., Xu, X., & Yang, D. (2015). Persimmon (Diospyros kaki L.) leaves: a review on traditional uses, phytochemistry and pharmacological properties. Journal of Ethnopharmacology, 163, 229–40. https://doi.org/10.1016/j.jep.2015.01.007",
+  "kaynak": "pubmed:25637828"
  },
  "https://pubmed.ncbi.nlm.nih.gov/25641457/": {
   "apa": "Tuglu, D., Yılmaz, E., Yuvanc, E., Erguder, I., Kisa, U., Bal, F., & Batislam, E. (2014). Viburnum opulus: could it be a new alternative, such as lemon juice, to pharmacological therapy in hypocitraturic stone patients?. Archivio Italiano Di Urologia, Andrologia : Organo Ufficiale [di] Societa Italiana Di Ecografia Urologica E Nefrologica, 86(4), 297–9. https://doi.org/10.4081/aiua.2014.4.297",
@@ -1315,6 +1327,10 @@
   "apa": "Park, J. Y., & Kim, K. H. (2016). A randomized, double-blind, placebo-controlled trial of Schisandra chinensis for menopausal symptoms. Climacteric : the Journal of the International Menopause Society, 19(6), 574–580. https://doi.org/10.1080/13697137.2016.1238453",
   "kaynak": "pubmed:27763802"
  },
+ "https://pubmed.ncbi.nlm.nih.gov/27897978/": {
+  "apa": "Perna, S., Giacosa, A., Bonitta, G., Bologna, C., Isu, A., Guido, D., & Rondanelli, M. (2016). Effects of Hazelnut Consumption on Blood Lipids and Body Weight: A Systematic Review and Bayesian Meta-Analysis. Nutrients, 8(12). https://doi.org/10.3390/nu8120747",
+  "kaynak": "pubmed:27897978"
+ },
  "https://pubmed.ncbi.nlm.nih.gov/27997978/": {
   "apa": "Shamon, S. D., & Perez, M. I. (2016). Blood pressure-lowering efficacy of reserpine for primary hypertension. The Cochrane Database of Systematic Reviews, 12(12), CD007655. https://doi.org/10.1002/14651858.CD007655.pub3",
   "kaynak": "pubmed:27997978"
@@ -1362,6 +1378,10 @@
  "https://pubmed.ncbi.nlm.nih.gov/29098921/": {
   "apa": "Lim, A. (2018). Black salve treatment of skin cancer: a review. The Journal of Dermatological Treatment, 29(4), 388–392. https://doi.org/10.1080/09546634.2017.1395795",
   "kaynak": "pubmed:29098921"
+ },
+ "https://pubmed.ncbi.nlm.nih.gov/29167102/": {
+  "apa": "Poole, R., Kennedy, O. J., Roderick, P., Fallowfield, J. A., Hayes, P. C., & Parkes, J. (2017). Coffee consumption and health: umbrella review of meta-analyses of multiple health outcomes. BMJ (Clinical Research Ed.), 359, j5024. https://doi.org/10.1136/bmj.j5024",
+  "kaynak": "pubmed:29167102"
  },
  "https://pubmed.ncbi.nlm.nih.gov/29299298/": {
   "apa": "Molnár V, A., Nagy, T., Löki, V., Süveges, K., Takács, A., Bódis, J., & Tökölyi, J. (2017). Turkish graveyards as refuges for orchids against tuber harvest. Ecology and Evolution, 7(24), 11257–11264. https://doi.org/10.1002/ece3.3562",
@@ -1470,6 +1490,10 @@
  "https://pubmed.ncbi.nlm.nih.gov/31755188/": {
   "apa": "Shekarchizadeh-Esfahani, P., Arab, A., Ghaedi, E., Hadi, A., & Jalili, C. (2020). Effects of cardamom supplementation on lipid profile: A systematic review and meta-analysis of randomized controlled clinical trials. Phytotherapy Research : PTR, 34(3), 475–485. https://doi.org/10.1002/ptr.6543",
   "kaynak": "pubmed:31755188"
+ },
+ "https://pubmed.ncbi.nlm.nih.gov/31773150/": {
+  "apa": "Liu, K., Hui, S., Wang, B., Kaliannan, K., Guo, X., & Liang, L. (2020). Comparative effects of different types of tree nut consumption on blood lipids: a network meta-analysis of clinical trials. The American Journal of Clinical Nutrition, 111(1), 219–227. https://doi.org/10.1093/ajcn/nqz280",
+  "kaynak": "pubmed:31773150"
  },
  "https://pubmed.ncbi.nlm.nih.gov/31869191/": {
   "apa": "Eugenol (Clove Oil). (2012). In LiverTox: Clinical and Research Information on Drug-Induced Liver Injury. National Institute of Diabetes and Digestive and Kidney Diseases.",

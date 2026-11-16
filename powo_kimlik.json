@@ -487,6 +487,13 @@
   "rutbe": "spec.",
   "yazar": "L."
  },
+ "Coffea arabica": {
+  "ad": "Coffea arabica",
+  "familya": "Rubiaceae",
+  "kimlik": "747038-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
  "Cola nitida": {
   "ad": "Cola nitida",
   "familya": "Sterculiaceae",
@@ -533,6 +540,13 @@
   "ad": "Cornus mas",
   "familya": "Cornaceae",
   "kimlik": "271612-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
+ "Corylus avellana": {
+  "ad": "Corylus avellana",
+  "familya": "Corylaceae",
+  "kimlik": "295446-1",
   "rutbe": "spec.",
   "yazar": "L."
  },
@@ -616,6 +630,13 @@
   "kimlik": "802003-1",
   "rutbe": "spec.",
   "yazar": "L."
+ },
+ "Diospyros kaki": {
+  "ad": "Diospyros kaki",
+  "familya": "Ebenaceae",
+  "kimlik": "322553-1",
+  "rutbe": "spec.",
+  "yazar": "L.f."
  },
  "Dracaena cinnabari": {
   "ad": "Dracaena cinnabari",
