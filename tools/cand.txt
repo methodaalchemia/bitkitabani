@@ -50,3 +50,6 @@ sibiryaginsengi | Eleutherococcus senticosus | shrub leaves berries
 yabanicilek | Fragaria vesca | leaves plant fruit -ananassa
 soya | Glycine max | pods plant field
 fasulye | Phaseolus vulgaris | green pods plant -dried
+grindelya | Grindelia robusta | yellow flower resin buds
+kayaegreltisi | Polypodium vulgare | fern fronds rock
+ergelenhardali | Sisymbrium officinale | plant yellow flowers -brassica

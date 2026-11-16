@@ -105,4 +105,7 @@ M = {
  'yabanicilek': ('Fragaria vesca L.', '2024/dynamicModulesAttachment/FragariamonografV2_9c978def-5f39-4a1e-808c-6522e28b0426.pdf'),
  'soya': ('Glycine max (L.) Merr.', '2022/dynamicModulesAttachment/GlycinemaxL.Merr.pdf09cd7736af7644089259ce38e73ec4d4_05c16cd8-57e8-4e8c-8a33-08b5dfeb640d.pdf'),
  'fasulye': ('Phaseolus vulgaris L.', '2024/dynamicModulesAttachment/PhaseolusvulgarisL._3bb46bf8-5ad6-48d6-9d24-104e5f9f7287.pdf'),
+ 'grindelya': ('Grindelia robusta Nutt.', '2022/dynamicModulesAttachment/GrindeliarobustaNutt_475dbd6b-0a04-4718-bf93-b35dd0f2cdb8.pdf'),
+ 'kayaegreltisi': ('Polypodium vulgare L.', '2023/dynamicModulesAttachment/PolypodiumvulgareL.v2_b6ff05b0-0ffd-4181-894e-4b0c5fa728db.pdf'),
+ 'ergelenhardali': ('Sisymbrium officinale (L.) Scop.', '2023/dynamicModulesAttachment/SisymbriumofficinaleL.Scop_60a728f6-e428-4dfd-9a5c-85d4f40464a5.pdf'),
 }

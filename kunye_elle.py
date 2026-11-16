@@ -792,6 +792,15 @@ ELLE.update({
    titck_apa('Phaseolus vulgaris L.'),
 })
 
+ELLE.update({
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/GrindeliarobustaNutt_475dbd6b-0a04-4718-bf93-b35dd0f2cdb8.pdf':
+   titck_apa('Grindelia robusta Nutt.'),
+ 'https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/PolypodiumvulgareL.v2_b6ff05b0-0ffd-4181-894e-4b0c5fa728db.pdf':
+   titck_apa('Polypodium vulgare L.'),
+ 'https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/SisymbriumofficinaleL.Scop_60a728f6-e428-4dfd-9a5c-85d4f40464a5.pdf':
+   titck_apa('Sisymbrium officinale (L.) Scop.'),
+})
+
 # Kurum yayını: APA'da kurumsal yazar ve yayın türü köşeli ayraçta.
 ELLE['https://www.iarc.who.int/wp-content/uploads/2018/07/pr244_E.pdf'] = (
     'Uluslararası Kanser Araştırmaları Ajansı. (2016). IARC Monographs '
