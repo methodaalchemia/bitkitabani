@@ -405,6 +405,20 @@ def titck_apa_en(latin_ad, yil=None):
             '[Medicinal plant monograph]. Medicinal Plant List.')
 
 
+WHO_CILT = {1: (1999, '42052'), 2: (2002, '42052'), 3: (2007, '42052'), 4: (2009, '42052')}
+
+
+def who_apa(ad, cilt, sayfa):
+    """WHO 'Monographs on selected medicinal plants' künyesi (dört cilt tek IRIS kaydında)."""
+    yil, _ = WHO_CILT[cilt]
+    return (f'World Health Organization. ({yil}). {ad}. WHO monographs on '
+            f'selected medicinal plants içinde (Cilt {cilt}, s. {sayfa}). WHO.')
+
+
+def who_url(cilt, slug):
+    return f'https://iris.who.int/handle/10665/42052?cilt={cilt}&mono={slug}'
+
+
 def ema_apa(ad, url=None):
     """EMA bitkisel monografı künyesi."""
     yil = _ema_yil(url)
@@ -825,6 +839,11 @@ ELLE['https://www.iarc.who.int/wp-content/uploads/2018/07/pr244_E.pdf'] = (
     'evaluate drinking coffee, maté, and very hot beverages '
     '[Basın açıklaması]. Dünya Sağlık Örgütü.')
 
+# DSÖ monografları (Cilt 1, 1999).
+ELLE[who_url(1, 'bulbus-allii-cepae')] = who_apa('Bulbus Allii Cepae', 1, '5–15')
+ELLE[who_url(1, 'radix-paeoniae')] = who_apa('Radix Paeoniae', 1, '195–201')
+ELLE[who_url(1, 'radix-rauwolfiae')] = who_apa('Radix Rauwolfiae', 1, '221–230')
+
 # AB kamu açıklamaları: monograf yazılamayan üç bitki.
 ELLE['https://www.ema.europa.eu/en/documents/public-statement/final-public-statement-chelidonium-majus-l-herba_en.pdf'] = (
     'European Medicines Agency. (2011). Public statement on Chelidonium majus '
@@ -883,6 +902,8 @@ _EN = [
  ('T.C. Sağlık Bakanlığı Sağlık Hizmetleri Genel Müdürlüğü',
   'Turkish Ministry of Health, General Directorate of Health Services'),
  ('[Kamu açıklaması]', '[Public statement]'),
+ ('selected medicinal plants içinde (Cilt ', 'selected medicinal plants (Vol. '),
+ (', s. ', ', pp. '),
  ('(Sunucu)', '(Host)'),
  ('[Podcast bölümü]', '[Audio podcast episode]'),
  ('3 Haziran', 'June 3'), ('4 Ekim', 'October 4'),

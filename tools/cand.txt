@@ -70,3 +70,6 @@ kutsaldevedikeni | Centaurea benedicta | yellow flower spiny
 kirlangicotu | Chelidonium majus | yellow flowers plant latex
 demirdikeni | Tribulus terrestris | plant yellow flower spiny fruit
 andrographis | Andrographis paniculata | plant leaves flowers
+sogan | Allium cepa | bulbs plant flower
+sakayik | Paeonia lactiflora | flower white plant
+yilankoku | Rauvolfia serpentina | plant flowers red fruits

@@ -34,6 +34,13 @@
   "rutbe": "spec.",
   "yazar": "(L.) P.Beauv."
  },
+ "Allium cepa": {
+  "ad": "Allium cepa",
+  "familya": "Alliaceae",
+  "kimlik": "527795-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
  "Allium sativum": {
   "ad": "Allium sativum",
   "familya": "Alliaceae",
@@ -1248,6 +1255,13 @@
   "rutbe": "spec.",
   "yazar": "(Blume) Miq."
  },
+ "Paeonia lactiflora": {
+  "ad": "Paeonia lactiflora",
+  "familya": "Paeoniaceae",
+  "kimlik": "711802-1",
+  "rutbe": "spec.",
+  "yazar": "Pall."
+ },
  "Panax ginseng": {
   "ad": "Panax ginseng",
   "familya": "Araliaceae",
@@ -1488,6 +1502,13 @@
   "kimlik": "30000277-2",
   "rutbe": "fam.",
   "yazar": "Juss."
+ },
+ "Rauvolfia serpentina": {
+  "ad": "Rauvolfia serpentina",
+  "familya": "Apocynaceae",
+  "kimlik": "81648-1",
+  "rutbe": "spec.",
+  "yazar": "(L.) Benth. ex Kurz"
  },
  "Rhamnus cathartica": {
   "ad": "Rhamnus cathartica",
