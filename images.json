@@ -37,6 +37,19 @@
   "w": 960,
   "w500": 500
  },
+ "acibiber": {
+  "artist": "George Chernilevsky",
+  "auto": true,
+  "b1280": "Capsicum annuum 2026 G1.jpg",
+  "file": "Capsicum annuum 2026 G1.jpg",
+  "h": 1314,
+  "h500": 684,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Capsicum_annuum_2026_G1.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "adacayi": {
   "artist": "Krzysztof Ziarnek, Kenraiz",
   "b1280": "Salvia fruticosa kz07.jpg",
@@ -326,6 +339,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Hyoscyamus_niger_Altaguardia_02.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "barutagaci": {
+  "artist": "Frank Vincentz",
+  "auto": true,
+  "b1280": "Rhamnus frangula 07 ies.jpg",
+  "file": "Rhamnus frangula 07 ies.jpg",
+  "h": 840,
+  "h500": 438,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Rhamnus_frangula_07_ies.jpg",
   "w": 960,
   "w500": 500
  },
@@ -1779,6 +1805,19 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Taxus_baccata_Lviv.JPG",
+  "w": 960,
+  "w500": 500
+ },
+ "ravent": {
+  "artist": "Nancy",
+  "auto": true,
+  "b1280": "Rhubarb Flower.jpg",
+  "file": "Rhubarb Flower.jpg",
+  "h": 1398,
+  "h500": 728,
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Rhubarb_Flower.jpg",
   "w": 960,
   "w500": 500
  },

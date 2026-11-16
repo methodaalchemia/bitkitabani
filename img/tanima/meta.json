@@ -1790,5 +1790,44 @@
   "license": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Cabernet_sauvignon_-_inflorescence.jpg"
  },
- "asmayapragi:kuru": "yok"
+ "asmayapragi:kuru": "yok",
+ "acibiber:cizim": {
+  "file": "Capsicum annuum - Köhler–s Medizinal-Pflanzen-027.jpg",
+  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Capsicum_annuum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-027.jpg"
+ },
+ "acibiber:cicek": {
+  "file": "Flower of pepper plant.jpg",
+  "artist": "Bst9jkj",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Flower_of_pepper_plant.jpg"
+ },
+ "acibiber:kuru": "yok",
+ "barutagaci:cizim": {
+  "file": "Rhamnus frangula - Köhler–s Medizinal-Pflanzen-120.jpg",
+  "artist": "Walther Otto Müller",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Rhamnus_frangula_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-120.jpg"
+ },
+ "barutagaci:cicek": {
+  "file": "Rhamnus frangula 07 ies.jpg",
+  "artist": "Frank Vincentz",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Rhamnus_frangula_07_ies.jpg"
+ },
+ "barutagaci:kuru": "yok",
+ "ravent:cizim": {
+  "file": "Rheum palmatum Woodville.jpg",
+  "artist": "Woodville, William (1802 - 1851)",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Rheum_palmatum_Woodville.jpg"
+ },
+ "ravent:cicek": {
+  "file": "Rheum officinale 002.JPG",
+  "artist": "H. Zell",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Rheum_officinale_002.JPG"
+ },
+ "ravent:kuru": "yok"
 }
