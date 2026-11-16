@@ -227,6 +227,19 @@
   "w": 960,
   "w500": 500
  },
+ "arnika": {
+  "artist": "Hans Hillewaert",
+  "auto": true,
+  "b1280": "Arnica montana (flower).jpg",
+  "file": "Arnica montana (flower).jpg",
+  "h": 1280,
+  "h500": 666,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Arnica_montana_(flower).jpg",
+  "w": 960,
+  "w500": 500
+ },
  "arpa": {
   "artist": "Jamain",
   "auto": false,
@@ -279,6 +292,19 @@
   "w": 960,
   "w500": 500
  },
+ "atkuyrugu": {
+  "artist": "Danny S.",
+  "auto": true,
+  "b1280": "Equisetum arvense-271.JPG",
+  "file": "Equisetum arvense-271.JPG",
+  "h": 1493,
+  "h500": 778,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Equisetum_arvense-271.JPG",
+  "w": 960,
+  "w500": 500
+ },
  "ayahuasca": {
   "artist": "Vojtěch Zavadil",
   "b1280": "3209-Banisteriopsis caapi-Teplice BZ.jpg",
@@ -301,6 +327,19 @@
   "license": "CC BY 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Arctostaphylos_uva-ursi_3_RF.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "aynisefa": {
+  "artist": "Dominicus Johannes Bergsma",
+  "auto": true,
+  "b1280": "Zaaddoos van een goudsbloem (Calendula officinalis) 11-09-2020 (d.j.b.).jpg",
+  "file": "Zaaddoos van een goudsbloem (Calendula officinalis) 11-09-2020 (d.j.b.).jpg",
+  "h": 960,
+  "h500": 500,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Zaaddoos_van_een_goudsbloem_(Calendula_officinalis)_11-09-2020_(d.j.b.).jpg",
   "w": 960,
   "w500": 500
  },
@@ -429,6 +468,19 @@
   "license": "Public domain",
   "licenseUrl": "",
   "page": "https://commons.wikimedia.org/wiki/File:Csinensis.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "cayagaci": {
+  "artist": "Geoff Derrin",
+  "auto": true,
+  "b1280": "Melaleuca alternifolia flowers.jpg",
+  "file": "Melaleuca alternifolia flowers.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Melaleuca_alternifolia_flowers.jpg",
   "w": 960,
   "w500": 500
  },
@@ -841,6 +893,19 @@
   "w": 960,
   "w500": 500
  },
+ "gumusdugme": {
+  "artist": "Bff",
+  "auto": true,
+  "b1280": "Tanacetum parthenium Golden Ball20170822 9815.jpg",
+  "file": "Tanacetum parthenium Golden Ball20170822 9815.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Tanacetum_parthenium_Golden_Ball20170822_9815.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "guneyafrikasardunyasi": {
   "artist": "peganum from Small Dole, England",
   "auto": true,
@@ -1030,6 +1095,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Br%C3%A4nn%C3%A4ssla_(Urtica_Dioica).jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "kabakcekirdegi": {
+  "artist": "Friedrich Haag",
+  "auto": true,
+  "b1280": "2014 06 23 032 Zucchiniblüte.jpg",
+  "file": "2014 06 23 032 Zucchiniblüte.jpg",
+  "h": 1696,
+  "h500": 883,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:2014_06_23_032_Zucchinibl%C3%BCte.jpg",
   "w": 960,
   "w500": 500
  },
@@ -1298,6 +1376,19 @@
   "license": "Public domain",
   "licenseUrl": "",
   "page": "https://commons.wikimedia.org/wiki/File:Quinua.JPG",
+  "w": 960,
+  "w500": 500
+ },
+ "kirmizikantaron": {
+  "artist": "Alchemist-hp ( talk ) ( www.pse-mendelejew.de )",
+  "auto": true,
+  "b1280": "Centaurium erythraea 6238.jpg",
+  "file": "Centaurium erythraea 6238.jpg",
+  "h": 685,
+  "h500": 357,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Centaurium_erythraea_6238.jpg",
   "w": 960,
   "w500": 500
  },
@@ -1704,6 +1795,19 @@
   "license": "CC BY 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Viscum_album_2026_G1.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "olmezcicek": {
+  "artist": "Robert Flogaus-Faust",
+  "auto": true,
+  "b1280": "Helichrysum arenarium RF.jpg",
+  "file": "Helichrysum arenarium RF.jpg",
+  "h": 1143,
+  "h500": 595,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Helichrysum_arenarium_RF.jpg",
   "w": 960,
   "w500": 500
  },
@@ -2235,6 +2339,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Hippophae_(Novogrudinina).jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "yabanmersini": {
+  "artist": "Robert Flogaus-Faust",
+  "auto": true,
+  "b1280": "Vaccinium myrtillus 2 RF.jpg",
+  "file": "Vaccinium myrtillus 2 RF.jpg",
+  "h": 1066,
+  "h500": 555,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Vaccinium_myrtillus_2_RF.jpg",
   "w": 960,
   "w500": 500
  },

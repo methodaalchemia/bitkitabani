@@ -1853,5 +1853,102 @@
   "license": "CC BY-SA 2.0",
   "page": "https://commons.wikimedia.org/wiki/File:Pelargonium_sidoides_%282910252198%29.jpg"
  },
- "guneyafrikasardunyasi:kuru": "yok"
+ "guneyafrikasardunyasi:kuru": "yok",
+ "gumusdugme:cizim": {
+  "file": "Tanacetum parthenium - Köhler–s Medizinal-Pflanzen-036.jpg",
+  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Tanacetum_parthenium_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-036.jpg"
+ },
+ "gumusdugme:cicek": {
+  "file": "Orange flower with water.jpg",
+  "artist": "rootology ( T ) 17:12, 22 July 2008 (UTC)",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Orange_flower_with_water.jpg"
+ },
+ "gumusdugme:kuru": "yok",
+ "cayagaci:cizim": "yok",
+ "cayagaci:cicek": {
+  "file": "澳洲茶樹 Melaleuca alternifolia -香港花展 Hong Kong Flower Show- (9227116545).jpg",
+  "artist": "阿橋 HQ",
+  "license": "CC BY-SA 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%E6%BE%B3%E6%B4%B2%E8%8C%B6%E6%A8%B9_Melaleuca_alternifolia_-%E9%A6%99%E6%B8%AF%E8%8A%B1%E5%B1%95_Hong_Kong_Flower_Show-_%289227116545%29.jpg"
+ },
+ "cayagaci:kuru": "yok",
+ "atkuyrugu:cizim": "yok",
+ "atkuyrugu:cicek": {
+  "file": "ツクシ (66055747).jpeg",
+  "artist": "Kazuhiro Tsugita",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%E3%83%84%E3%82%AF%E3%82%B7_%2866055747%29.jpeg"
+ },
+ "atkuyrugu:kuru": "yok",
+ "kabakcekirdegi:cizim": "yok",
+ "kabakcekirdegi:cicek": {
+  "file": "Cucurbita pepo flower 03.jpg",
+  "artist": "কামরুল ইসলাম শাহীন",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Cucurbita_pepo_flower_03.jpg"
+ },
+ "kabakcekirdegi:kuru": "yok",
+ "arnika:cizim": {
+  "file": "Arnica montana - Köhler–s Medizinal-Pflanzen-015.jpg",
+  "artist": "Franz Eugen Köhler, Köhlers Medizinal-Pflanzen",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Arnica_montana_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-015.jpg"
+ },
+ "arnika:cicek": {
+  "file": "Arnica montana at Col de Joux Plane (1).jpg",
+  "artist": "Krzysztof Golik",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Arnica_montana_at_Col_de_Joux_Plane_%281%29.jpg"
+ },
+ "arnika:kuru": "yok",
+ "yabanmersini:cizim": "yok",
+ "yabanmersini:cicek": {
+  "file": "Blueberry flowers in sunset 155468478.jpg",
+  "artist": "Miika Silfverberg",
+  "license": "CC BY-SA 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Blueberry_flowers_in_sunset_155468478.jpg"
+ },
+ "yabanmersini:kuru": "yok",
+ "aynisefa:cizim": {
+  "file": "Calendula officinalis - Köhler–s Medizinal-Pflanzen-024.jpg",
+  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Calendula_officinalis_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-024.jpg"
+ },
+ "aynisefa:cicek": {
+  "file": "Ringelblume (Calendula officinalis) Blüte focus stack-20220619-RM-165610.jpg",
+  "artist": "Ermell",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ringelblume_%28Calendula_officinalis%29_Bl%C3%BCte_focus_stack-20220619-RM-165610.jpg"
+ },
+ "aynisefa:kuru": "yok",
+ "kirmizikantaron:cizim": {
+  "file": "Centaurium erythraea - Köhler–s Medizinal-Pflanzen-058.jpg",
+  "artist": "Walther Otto Müller",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Centaurium_erythraea_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-058.jpg"
+ },
+ "kirmizikantaron:cicek": {
+  "file": "Centaurium erythraea flower.jpg",
+  "artist": "Frederick Depuydt",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Centaurium_erythraea_flower.jpg"
+ },
+ "kirmizikantaron:kuru": "yok",
+ "olmezcicek:cizim": {
+  "file": "Illustration Helichrysum arenarium0.jpg",
+  "artist": "Wikimedia Commons",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Helichrysum_arenarium0.jpg"
+ },
+ "olmezcicek:cicek": {
+  "file": "Helichrysum arenarium (flowers).jpg",
+  "artist": "Novoklimov",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Helichrysum_arenarium_%28flowers%29.jpg"
+ },
+ "olmezcicek:kuru": "yok"
 }
