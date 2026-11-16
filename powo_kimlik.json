@@ -285,6 +285,13 @@
   "rutbe": "spec.",
   "yazar": "Flück."
  },
+ "Boswellia serrata": {
+  "ad": "Boswellia serrata",
+  "familya": "Burseraceae",
+  "kimlik": "127067-1",
+  "rutbe": "spec.",
+  "yazar": "Roxb."
+ },
  "Brugmansia suaveolens": {
   "ad": "Brugmansia suaveolens",
   "familya": "Solanaceae",
@@ -809,6 +816,13 @@
   "kimlik": "30074127-2",
   "rutbe": "spec.",
   "yazar": "L."
+ },
+ "Frangula purshiana": {
+  "ad": "Frangula purshiana",
+  "familya": "Rhamnaceae",
+  "kimlik": "30426867-2",
+  "rutbe": "spec.",
+  "yazar": "(DC.) A.Gray ex J.G.Cooper"
  },
  "Fraxinus excelsior": {
   "ad": "Fraxinus excelsior",
@@ -1643,6 +1657,13 @@
   "ad": "Podophyllum peltatum",
   "familya": "Berberidaceae",
   "kimlik": "107599-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
+ "Polygala senega": {
+  "ad": "Polygala senega",
+  "familya": "Polygalaceae",
+  "kimlik": "283498-2",
   "rutbe": "spec.",
   "yazar": "L."
  },

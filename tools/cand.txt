@@ -121,3 +121,6 @@ aronya | Aronia melanocarpa | berries shrub
 manuka | Leptospermum scoparium | flowers shrub
 afrikaerigi | Prunus africana | tree bark leaves
 cinmelekotu | Angelica sinensis | plant root flowers
+kaskara | Frangula purshiana | tree bark leaves
+senega | Polygala senega | plant flowers root
+hintgunlugu | Boswellia serrata | tree resin
