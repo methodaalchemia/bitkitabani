@@ -258,6 +258,29 @@ DESCRIPTION:Tatar ve Başkurtların saban bayramı: güreş\, yarışlar
 URL:https://bitkitabani.com/takvim/#sabantuy
 END:VEVENT
 BEGIN:VEVENT
+UID:toplama-acibiber@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260602
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Acı biber toplama mevsimi
+DESCRIPTION:Yazlık bitki\; meyveler yaz sonu ve sonbaharda olgunlaşıp 
+ kızarır\, kurutularak saklanır. https://bitkitabani.com/acibiber/
+URL:https://bitkitabani.com/acibiber/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-aciyonca@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260401
+DTEND;VALUE=DATE:20260402
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Acı yonca toplama mevsimi
+DESCRIPTION:Nisan–Haziran arasında beyaz-pembe\, tüylü taçyapraklı
+  çiçekler açar\; yapraklar çiçeklenme döneminde toplanır. https://
+ bitkitabani.com/aciyonca/
+URL:https://bitkitabani.com/aciyonca/
+END:VEVENT
+BEGIN:VEVENT
 UID:toplama-adacayi@bitkitabani.com
 DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260301
@@ -267,6 +290,18 @@ SUMMARY:🌿 Adaçayı toplama mevsimi
 DESCRIPTION:Yapraklar çiçeklenmeden önce\, ilkbahar ile yaz başında 
  toplanır. https://bitkitabani.com/adacayi/
 URL:https://bitkitabani.com/adacayi/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-ahududuyapragi@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260301
+DTEND;VALUE=DATE:20260302
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Ahududu yaprağı toplama mevsimi
+DESCRIPTION:İlkbaharda beyaz çiçekler\, yazın kırmızı meyveler. İ
+ laç için kullanılan yaprak\, çiçeklenme öncesinde ve döneminde top
+ lanıyor. https://bitkitabani.com/ahududuyapragi/
+URL:https://bitkitabani.com/ahududuyapragi/
 END:VEVENT
 BEGIN:VEVENT
 UID:toplama-alic@bitkitabani.com
@@ -280,6 +315,18 @@ DESCRIPTION:Çiçekler Nisan–Mayıs\, meyveler Eylül–Ekim arasında
 URL:https://bitkitabani.com/alic/
 END:VEVENT
 BEGIN:VEVENT
+UID:toplama-altinbasak@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260701
+DTEND;VALUE=DATE:20260702
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Altınbaşak toplama mevsimi
+DESCRIPTION:Temmuz–Eylül arasında sarı\, başak biçiminde çiçek k
+ ümeleri açar\; toprak üstü kısmı çiçeklenme döneminde toplanır.
+  https://bitkitabani.com/altinbasak/
+URL:https://bitkitabani.com/altinbasak/
+END:VEVENT
+BEGIN:VEVENT
 UID:toplama-anason@bitkitabani.com
 DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260701
@@ -289,6 +336,54 @@ SUMMARY:🌿 Anason toplama mevsimi
 DESCRIPTION:Tohumlar Temmuz–Ağustos’ta\, şemsiyeler sararınca hasa
  t edilir. https://bitkitabani.com/anason/
 URL:https://bitkitabani.com/anason/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-antepfistigi@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260301
+DTEND;VALUE=DATE:20260302
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Antep fıstığı toplama mevsimi
+DESCRIPTION:Mart–nisanda çiçek açar\, meyveler ağustos–eylülde o
+ lgunlaşır. Ağaç iki yılda bir bol ürün verir\; buna “periyodisit
+ e” denir. https://bitkitabani.com/antepfistigi/
+URL:https://bitkitabani.com/antepfistigi/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-arpa@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260602
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Arpa toplama mevsimi
+DESCRIPTION:Çoğunlukla sonbaharda ekilir\, haziranda hasat edilir\; yaz
+ lık ekim de yapılır. Buğdaydan daha erken olgunlaşır. https://bitki
+ tabani.com/arpa/
+URL:https://bitkitabani.com/arpa/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-aslankuyrugu@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260602
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Aslan kuyruğu toplama mevsimi
+DESCRIPTION:Haziran–Eylül arasında yaprak koltuklarında pembemsi çi
+ çek halkaları açar\; toprak üstü kısmı çiçeklenme döneminde top
+ lanır. https://bitkitabani.com/aslankuyrugu/
+URL:https://bitkitabani.com/aslankuyrugu/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-asmayapragi@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260501
+DTEND;VALUE=DATE:20260502
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Asma yaprağı toplama mevsimi
+DESCRIPTION:Yemeklik yaprak mayıs–haziranda\, bitki körpeyken toplan
+ ıyor. Tıbbi ekstreye giren yaprak ise sonbaharda\, kızardıktan sonra 
+ hasat ediliyor. https://bitkitabani.com/asmayapragi/
+URL:https://bitkitabani.com/asmayapragi/
 END:VEVENT
 BEGIN:VEVENT
 UID:toplama-atkestanesi@bitkitabani.com
@@ -302,6 +397,18 @@ DESCRIPTION:Çiçekler Nisan–Mayıs’ta açar\; tohumlar Eylül–Ekim
 URL:https://bitkitabani.com/atkestanesi/
 END:VEVENT
 BEGIN:VEVENT
+UID:toplama-atkuyrugu@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260301
+DTEND;VALUE=DATE:20260302
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 At kuyruğu toplama mevsimi
+DESCRIPTION:İlkbaharda önce sporlu\, kahverengi sürgünler çıkar\; y
+ az boyunca yeşil\, dallı kısır sürgünler gelişir ve ilaç için ku
+ llanılan kısım bunlardır. https://bitkitabani.com/atkuyrugu/
+URL:https://bitkitabani.com/atkuyrugu/
+END:VEVENT
+BEGIN:VEVENT
 UID:toplama-ayiuzumu@bitkitabani.com
 DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260601
@@ -311,6 +418,90 @@ SUMMARY:🌿 Ayı üzümü toplama mevsimi
 DESCRIPTION:Yapraklar yaz sonu ve sonbaharda toplanır. https://bitkitaba
  ni.com/ayiuzumu/
 URL:https://bitkitabani.com/ayiuzumu/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-aynisefa@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260602
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Aynısefa toplama mevsimi
+DESCRIPTION:Haziran’dan sonbahara kadar turuncu-sarı çiçekler açar\
+ ; çiçekler tam açtığında toplanıp gölgede kurutulur. https://bitk
+ itabani.com/aynisefa/
+URL:https://bitkitabani.com/aynisefa/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-ayrikotu@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260301
+DTEND;VALUE=DATE:20260302
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Ayrık otu toplama mevsimi
+DESCRIPTION:Haziran–Eylül arasında başak çıkarır. Rizom ilkbahard
+ a ya da sonbaharda sökülür\, yıkanıp kurutulur. https://bitkitabani.
+ com/ayrikotu/
+URL:https://bitkitabani.com/ayrikotu/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-badem@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260201
+DTEND;VALUE=DATE:20260202
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Badem toplama mevsimi
+DESCRIPTION:Şubat–mart arasında\, yapraklardan önce çiçek açar\; 
+ Anadolu’da baharın ilk çiçeklenen ağaçlarından biridir. Meyveler 
+ ağustos–eylülde olgunlaşır\; taze “çağla” olarak mayıs–haz
+ iranda yenir. https://bitkitabani.com/badem/
+URL:https://bitkitabani.com/badem/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-barutagaci@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260301
+DTEND;VALUE=DATE:20260302
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Barut ağacı toplama mevsimi
+DESCRIPTION:Kabuk ilkbaharda\, öz suyun yürüdüğü dönemde soyuluyor
+  ve en az bir yıl bekletiliyor. https://bitkitabani.com/barutagaci/
+URL:https://bitkitabani.com/barutagaci/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-besparmakotu@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260501
+DTEND;VALUE=DATE:20260502
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Beşparmak otu toplama mevsimi
+DESCRIPTION:Mayıs–Eylül arasında dört taçyapraklı sarı çiçekle
+ r açar — gülgillerde beş taçyaprak kuraldır\, bu türün dört olm
+ ası ayırt edici bir özelliktir. Rizom sonbaharda sökülür. https://b
+ itkitabani.com/besparmakotu/
+URL:https://bitkitabani.com/besparmakotu/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-bozotu@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260501
+DTEND;VALUE=DATE:20260502
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Bozotu toplama mevsimi
+DESCRIPTION:Mayıs–Eylül arasında yaprak koltuklarında beyaz çiçek
+  halkaları açar\; çiçekli toprak üstü kısmı bu dönemde toplanır
+ . https://bitkitabani.com/bozotu/
+URL:https://bitkitabani.com/bozotu/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-bugday@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Buğday toplama mevsimi
+DESCRIPTION:Kışlık buğday sonbaharda ekilir\, Haziran–Temmuz’da h
+ asat edilir. https://bitkitabani.com/bugday/
+URL:https://bitkitabani.com/bugday/
 END:VEVENT
 BEGIN:VEVENT
 UID:toplama-cehri@bitkitabani.com
@@ -358,6 +549,18 @@ DESCRIPTION:Rize’de Mayıs–Ekim arasında üç sürgün dönemi vard
 URL:https://bitkitabani.com/cay/
 END:VEVENT
 BEGIN:VEVENT
+UID:toplama-cayirkralicesi@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260602
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Çayır kraliçesi toplama mevsimi
+DESCRIPTION:Haziran–Ağustos arasında krem rengi\, yoğun bal kokulu 
+ çiçek kümeleri açar\; çiçek ve toprak üstü kısmı çiçeklenme d
+ öneminde toplanır. https://bitkitabani.com/cayirkralicesi/
+URL:https://bitkitabani.com/cayirkralicesi/
+END:VEVENT
+BEGIN:VEVENT
 UID:toplama-cemen@bitkitabani.com
 DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260701
@@ -367,6 +570,31 @@ SUMMARY:🌿 Çemen otu toplama mevsimi
 DESCRIPTION:Tohumlar Temmuz–Ağustos’ta kapsüller kuruyunca toplanı
  r. https://bitkitabani.com/cemen/
 URL:https://bitkitabani.com/cemen/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-cobancantasi@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Çoban çantası toplama mevsimi
+DESCRIPTION:Çok erken çiçek açar: ılıman yerlerde kış sonundan so
+ nbahara kadar çiçekli bulunabilir. Toprak üstü kısmı çiçek ve mey
+ ve döneminde toplanır\; yemek için ilkbaharda\, genç yapraklarıyla t
+ oplanıyor. https://bitkitabani.com/cobancantasi/
+URL:https://bitkitabani.com/cobancantasi/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-cobandegnegi@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260602
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Çobandeğneği toplama mevsimi
+DESCRIPTION:Haziran–Ekim arasında yaprak koltuklarında küçük pembe
+ -beyaz çiçekler\; çiçekli toprak üstü kısmı yazın toplanır. htt
+ ps://bitkitabani.com/cobandegnegi/
+URL:https://bitkitabani.com/cobandegnegi/
 END:VEVENT
 BEGIN:VEVENT
 UID:toplama-corekotu@bitkitabani.com
@@ -380,6 +608,17 @@ DESCRIPTION:Tohumlar Temmuz–Ağustos’ta\, kapsüller kuruyunca toplan
 URL:https://bitkitabani.com/corekotu/
 END:VEVENT
 BEGIN:VEVENT
+UID:toplama-cuhacicegi@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260301
+DTEND;VALUE=DATE:20260302
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Çuha çiçeği toplama mevsimi
+DESCRIPTION:Mart–Mayıs arasında sarı çiçekler açar\; çiçek bu d
+ önemde\, kök sonbaharda toplanır. https://bitkitabani.com/cuhacicegi/
+URL:https://bitkitabani.com/cuhacicegi/
+END:VEVENT
+BEGIN:VEVENT
 UID:toplama-dagcayi@bitkitabani.com
 DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260601
@@ -391,6 +630,17 @@ DESCRIPTION:Çiçekli dallar Haziran–Ağustos’ta\, çiçekler tam aç
 URL:https://bitkitabani.com/dagcayi/
 END:VEVENT
 BEGIN:VEVENT
+UID:toplama-demirdikeni@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260602
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Demirdikeni toplama mevsimi
+DESCRIPTION:Yazın küçük sarı çiçekler\; sonbahara doğru beş par
+ çalı\, sert dikenli meyveler. https://bitkitabani.com/demirdikeni/
+URL:https://bitkitabani.com/demirdikeni/
+END:VEVENT
+BEGIN:VEVENT
 UID:toplama-devedikeni@bitkitabani.com
 DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260701
@@ -400,6 +650,29 @@ SUMMARY:🌿 Deve dikeni toplama mevsimi
 DESCRIPTION:Tohumlar Temmuz–Ağustos’ta\, başlar kuruyup pamukçuk a
  çınca toplanır. https://bitkitabani.com/devedikeni/
 URL:https://bitkitabani.com/devedikeni/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-disbudak@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260301
+DTEND;VALUE=DATE:20260302
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Dişbudak toplama mevsimi
+DESCRIPTION:Yapraklar yaz başında toplanır\; çiçekler yapraklardan 
+ önce\, ilkbaharda açar. https://bitkitabani.com/disbudak/
+URL:https://bitkitabani.com/disbudak/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-dulavratotu@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260701
+DTEND;VALUE=DATE:20260702
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Dulavrat otu toplama mevsimi
+DESCRIPTION:Temmuz–Eylül arasında mor\, çengelli başlı çiçekler 
+ açar\; kök birinci yılın sonbaharında\, bitki çiçeklenmeden önce 
+ sökülür. https://bitkitabani.com/dulavratotu/
+URL:https://bitkitabani.com/dulavratotu/
 END:VEVENT
 BEGIN:VEVENT
 UID:toplama-ebegumeci@bitkitabani.com
@@ -424,6 +697,18 @@ DESCRIPTION:Çiçek başları Mart–Mayıs arasında\, açmadan önce ke
 URL:https://bitkitabani.com/enginar/
 END:VEVENT
 BEGIN:VEVENT
+UID:toplama-ergelenhardali@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260501
+DTEND;VALUE=DATE:20260502
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Ergelen hardalı toplama mevsimi
+DESCRIPTION:Mayıs–Eylül arasında küçük sarı çiçekler açar\; 
+ çiçekli toprak üstü kısmı bu dönemde toplanır. https://bitkitaban
+ i.com/ergelenhardali/
+URL:https://bitkitabani.com/ergelenhardali/
+END:VEVENT
+BEGIN:VEVENT
 UID:toplama-feslegen@bitkitabani.com
 DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260601
@@ -433,6 +718,18 @@ SUMMARY:🌿 Fesleğen toplama mevsimi
 DESCRIPTION:Yapraklar Haziran–Eylül’de\, çiçeklenmeden hemen önce
   en kokuludur. https://bitkitabani.com/feslegen/
 URL:https://bitkitabani.com/feslegen/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-frenkkimyonu@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260602
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Frenk kimyonu toplama mevsimi
+DESCRIPTION:İki yıllık bir bitki\; ikinci yıl çiçek açar ve meyve 
+ verir. Meyveler yaz başında olgunlaşıp kurutuluyor. https://bitkitaba
+ ni.com/frenkkimyonu/
+URL:https://bitkitabani.com/frenkkimyonu/
 END:VEVENT
 BEGIN:VEVENT
 UID:toplama-gelincik@bitkitabani.com
@@ -445,6 +742,42 @@ DESCRIPTION:Çiçekler Nisan–Haziran’da açar\; taç yaprakları saba
  h çiy kalkınca toplanıp gölgede kurutulur. Yapraklar Mart–Nisan’d
  a toplanır. https://bitkitabani.com/gelincik/
 URL:https://bitkitabani.com/gelincik/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-giritkekigi@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260602
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Girit kekiği toplama mevsimi
+DESCRIPTION:Yaz ortasında pembe bürgülü çiçekler\; çiçekli toprak
+  üstü kısmı bu dönemde toplanır. https://bitkitabani.com/giritkekig
+ i/
+URL:https://bitkitabani.com/giritkekigi/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-gul@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260501
+DTEND;VALUE=DATE:20260502
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Gül toplama mevsimi
+DESCRIPTION:Çiçekler mayıs sonu–haziranda\, güneş yükselmeden top
+ lanır\; hasat yalnızca üç dört hafta sürer. https://bitkitabani.com
+ /gul/
+URL:https://bitkitabani.com/gul/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-gumusdugme@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260602
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Gümüş düğme toplama mevsimi
+DESCRIPTION:Yaz boyunca papatyayı andıran beyaz-sarı çiçekler açar\
+ ; toprak üstü kısımları çiçeklenme döneminde toplanır. https://b
+ itkitabani.com/gumusdugme/
+URL:https://bitkitabani.com/gumusdugme/
 END:VEVENT
 BEGIN:VEVENT
 UID:toplama-hatmi@bitkitabani.com
@@ -469,6 +802,30 @@ DESCRIPTION:Meyveler Eylül–Ekim’de toplanır. https://bitkitabani.co
 URL:https://bitkitabani.com/hayit/
 END:VEVENT
 BEGIN:VEVENT
+UID:toplama-hercaimenekse@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260301
+DTEND;VALUE=DATE:20260302
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Hercai menekşe toplama mevsimi
+DESCRIPTION:İlkbahardan sonbahara üç renkli (mor-sarı-beyaz) çiçekl
+ er\; çiçekli toprak üstü kısmı yaz boyunca toplanır. https://bitki
+ tabani.com/hercaimenekse/
+URL:https://bitkitabani.com/hercaimenekse/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-hindiba@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260602
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Hindiba toplama mevsimi
+DESCRIPTION:Haziran–Eylül arasında gökmavisi çiçekler açar\; çi
+ çekler sabah açıp öğleden sonra kapanır. Kök sonbaharda sökülür
+ . https://bitkitabani.com/hindiba/
+URL:https://bitkitabani.com/hindiba/
+END:VEVENT
+BEGIN:VEVENT
 UID:toplama-hodan@bitkitabani.com
 DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260301
@@ -478,6 +835,29 @@ SUMMARY:🌿 Hodan toplama mevsimi
 DESCRIPTION:Yapraklar ilkbaharda\, çiçekler Nisan–Haziran’da toplan
  ır. https://bitkitabani.com/hodan/
 URL:https://bitkitabani.com/hodan/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-hus@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260301
+DTEND;VALUE=DATE:20260302
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Huş ağacı toplama mevsimi
+DESCRIPTION:Yapraklar ilkbaharda\, genç ve açık yeşilken toplanır\; 
+ özsu Mart–Nisan’da tomurcuklar patlamadan alınır. https://bitkitab
+ ani.com/hus/
+URL:https://bitkitabani.com/hus/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-hunnap@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260901
+DTEND;VALUE=DATE:20260902
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Hünnap toplama mevsimi
+DESCRIPTION:Meyveler Eylül–Ekim’de kızarınca toplanır. https://bi
+ tkitabani.com/hunnap/
+URL:https://bitkitabani.com/hunnap/
 END:VEVENT
 BEGIN:VEVENT
 UID:toplama-ihlamur@bitkitabani.com
@@ -513,6 +893,18 @@ DESCRIPTION:Meyve Ağustos–Eylül’de olgunlaşır\; yapraklar yaz boy
 URL:https://bitkitabani.com/incir/
 END:VEVENT
 BEGIN:VEVENT
+UID:toplama-kabakcekirdegi@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260602
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Kabak çekirdeği toplama mevsimi
+DESCRIPTION:Yazın çiçek açar\, sonbaharda meyve olgunlaşır\; tohuml
+ ar olgun meyveden çıkarılıp kurutulur. https://bitkitabani.com/kabakc
+ ekirdegi/
+URL:https://bitkitabani.com/kabakcekirdegi/
+END:VEVENT
+BEGIN:VEVENT
 UID:toplama-kapari@bitkitabani.com
 DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260501
@@ -544,6 +936,40 @@ SUMMARY:🌿 Karahindiba toplama mevsimi
 DESCRIPTION:Yapraklar ilkbaharda\, kökler sonbaharda toplanır. https://
  bitkitabani.com/karahindiba/
 URL:https://bitkitabani.com/karahindiba/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-kasikotu@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260602
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Kasık otu toplama mevsimi
+DESCRIPTION:Haziran–Eylül arasında çok küçük\, yeşilimsi çiçek
+ ler açar\; toprak üstü kısmı çiçeklenme döneminde toplanır. http
+ s://bitkitabani.com/kasikotu/
+URL:https://bitkitabani.com/kasikotu/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-kayaegreltisi@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260901
+DTEND;VALUE=DATE:20260902
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Kaya eğreltisi toplama mevsimi
+DESCRIPTION:Her dem yeşil\; rizomlar sonbaharda toplanıp kurutuluyor. h
+ ttps://bitkitabani.com/kayaegreltisi/
+URL:https://bitkitabani.com/kayaegreltisi/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-kayiskiran@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260602
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Kayışkıran toplama mevsimi
+DESCRIPTION:Haziran–Eylül arasında pembe-mor baklagil çiçekleri aç
+ ar. Kök sonbaharda sökülür. https://bitkitabani.com/kayiskiran/
+URL:https://bitkitabani.com/kayiskiran/
 END:VEVENT
 BEGIN:VEVENT
 UID:toplama-keciboynuzu@bitkitabani.com
@@ -590,6 +1016,30 @@ DESCRIPTION:Tohumlar Temmuz–Ağustos’ta toplanır. https://bitkitaban
 URL:https://bitkitabani.com/keten/
 END:VEVENT
 BEGIN:VEVENT
+UID:toplama-kirlangicotu@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260401
+DTEND;VALUE=DATE:20260402
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Kırlangıçotu toplama mevsimi
+DESCRIPTION:Nisan–Ekim arasında dört taçyapraklı sarı çiçekler\;
+  gövde kırılınca turuncu süt akar. https://bitkitabani.com/kirlangic
+ otu/
+URL:https://bitkitabani.com/kirlangicotu/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-kirmizikantaron@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260602
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Kırmızı kantaron toplama mevsimi
+DESCRIPTION:Haziran–Ağustos arasında pembe-kırmızı\, yıldız biç
+ imli çiçekler açar\; toprak üstü kısmı çiçeklenme döneminde top
+ lanır. https://bitkitabani.com/kirmizikantaron/
+URL:https://bitkitabani.com/kirmizikantaron/
+END:VEVENT
+BEGIN:VEVENT
 UID:toplama-kizilcik@bitkitabani.com
 DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260801
@@ -612,6 +1062,30 @@ DESCRIPTION:Tohumlar Haziran–Temmuz’da toplanır. https://bitkitabani
 URL:https://bitkitabani.com/kimyon/
 END:VEVENT
 BEGIN:VEVENT
+UID:toplama-kokuluyonca@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260501
+DTEND;VALUE=DATE:20260502
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Kokulu yonca toplama mevsimi
+DESCRIPTION:Mayıs–Eylül arasında sarı\, küçük çiçekli başakla
+ r açar\; toprak üstü kısmı çiçeklenme döneminde toplanıp kurutul
+ ur. https://bitkitabani.com/kokuluyonca/
+URL:https://bitkitabani.com/kokuluyonca/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-koyunotu@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260602
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Koyunotu toplama mevsimi
+DESCRIPTION:Haziran–Eylül arasında uzun başak biçiminde sarı çiç
+ ekler açar\; toprak üstü kısmı çiçeklenme döneminde toplanır. ht
+ tps://bitkitabani.com/koyunotu/
+URL:https://bitkitabani.com/koyunotu/
+END:VEVENT
+BEGIN:VEVENT
 UID:toplama-kokboya@bitkitabani.com
 DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260901
@@ -632,6 +1106,18 @@ SUMMARY:🌿 Kudret narı toplama mevsimi
 DESCRIPTION:Meyveler Ağustos–Ekim’de turuncuya dönünce toplanır. 
  https://bitkitabani.com/kudretnari/
 URL:https://bitkitabani.com/kudretnari/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-kusuvezi@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260501
+DTEND;VALUE=DATE:20260502
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Kuş üvezi toplama mevsimi
+DESCRIPTION:Mayıs–haziranda beyaz çiçek salkımları açar\; turuncu
+ -kırmızı meyveler ağustos–ekimde olgunlaşır\, tercihen ilk dondan
+  sonra toplanır. https://bitkitabani.com/kusuvezi/
+URL:https://bitkitabani.com/kusuvezi/
 END:VEVENT
 BEGIN:VEVENT
 UID:toplama-kusburnu@bitkitabani.com
@@ -679,6 +1165,18 @@ DESCRIPTION:Çiçeklenmeden önce\, Haziran–Ağustos arasında toplanı
 URL:https://bitkitabani.com/melisa/
 END:VEVENT
 BEGIN:VEVENT
+UID:toplama-mercimek@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Mercimek toplama mevsimi
+DESCRIPTION:Kışlık ya da yazlık ekilir\; Türkiye’de kırmızı mer
+ cimek çoğunlukla sonbaharda ekilip haziran–temmuzda hasat edilir. htt
+ ps://bitkitabani.com/mercimek/
+URL:https://bitkitabani.com/mercimek/
+END:VEVENT
+BEGIN:VEVENT
 UID:toplama-mersin@bitkitabani.com
 DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260601
@@ -690,6 +1188,18 @@ DESCRIPTION:Yapraklar yaz başında\, meyveler Kasım–Aralık’ta topl
 URL:https://bitkitabani.com/mersin/
 END:VEVENT
 BEGIN:VEVENT
+UID:toplama-mese@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260301
+DTEND;VALUE=DATE:20260302
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Meşe toplama mevsimi
+DESCRIPTION:Kabuk ilkbaharda genç dallardan alınır\; meşeler ilkbahar
+ da çiçeklenir\, palamutları sonbaharda olgunlaşır. https://bitkitaba
+ ni.com/mese/
+URL:https://bitkitabani.com/mese/
+END:VEVENT
+BEGIN:VEVENT
 UID:toplama-meyan@bitkitabani.com
 DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260301
@@ -699,6 +1209,18 @@ SUMMARY:🌿 Meyan kökü toplama mevsimi
 DESCRIPTION:Kökler sonbaharda ya da ilkbaharda sökülür. https://bitki
  tabani.com/meyan/
 URL:https://bitkitabani.com/meyan/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-minecicegi@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260602
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Mine çiçeği toplama mevsimi
+DESCRIPTION:Yaz boyunca\, temmuz–eylülde küçük leylak rengi çiçek
+ ler açar\; toprak üstü kısımlar çiçeklenirken toplanır. https://b
+ itkitabani.com/minecicegi/
+URL:https://bitkitabani.com/minecicegi/
 END:VEVENT
 BEGIN:VEVENT
 UID:toplama-murver@bitkitabani.com
@@ -732,6 +1254,18 @@ SUMMARY:🌿 Nar toplama mevsimi
 DESCRIPTION:Meyveler Eylül–Kasım arasında olgunlaşır. https://bitk
  itabani.com/nar/
 URL:https://bitkitabani.com/nar/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-olmezcicek@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260602
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Ölmez çiçek toplama mevsimi
+DESCRIPTION:Haziran–Ağustos arasında sarı\, küçük çiçek başlar
+ ı açar\; çiçekler tam açmadan toplanıp kurutulur. https://bitkitaba
+ ni.com/olmezcicek/
+URL:https://bitkitabani.com/olmezcicek/
 END:VEVENT
 BEGIN:VEVENT
 UID:toplama-papatya@bitkitabani.com
@@ -822,6 +1356,18 @@ DESCRIPTION:Çiçekler Haziran–Ağustos’ta\, sabah açar açmaz topla
 URL:https://bitkitabani.com/sigirkuyrugu/
 END:VEVENT
 BEGIN:VEVENT
+UID:toplama-sinirliot@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260301
+DTEND;VALUE=DATE:20260302
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Sinirli ot toplama mevsimi
+DESCRIPTION:İlkbahardan sonbahara kadar\, uzun sapın ucunda kahverengi 
+ kısa başaklar hâlinde çiçek açar\; yapraklar çiçeklenme dönemind
+ e toplanır. https://bitkitabani.com/sinirliot/
+URL:https://bitkitabani.com/sinirliot/
+END:VEVENT
+BEGIN:VEVENT
 UID:toplama-sogut@bitkitabani.com
 DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260301
@@ -844,6 +1390,43 @@ DESCRIPTION:Meyve salkımları Ağustos–Eylül’de kızarınca toplan
 URL:https://bitkitabani.com/sumak/
 END:VEVENT
 BEGIN:VEVENT
+UID:toplama-sahtere@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260301
+DTEND;VALUE=DATE:20260302
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Şahtere toplama mevsimi
+DESCRIPTION:İlkbahardan yaz başına kadar pembe-mor\, uçları koyu ba
+ şaklı çiçekler açar\; toprak üstü kısmı çiçeklenme döneminde 
+ toplanır. https://bitkitabani.com/sahtere/
+URL:https://bitkitabani.com/sahtere/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-serbetciotu@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260801
+DTEND;VALUE=DATE:20260802
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Şerbetçiotu toplama mevsimi
+DESCRIPTION:Kozalaklar Ağustos sonu–Eylül’de\, kâğıt gibi hış
+ ırdamaya başladığında toplanır. https://bitkitabani.com/serbetciotu
+ /
+URL:https://bitkitabani.com/serbetciotu/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-tavsanmemesi@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Tavşan memesi toplama mevsimi
+DESCRIPTION:Küçük\, yeşilimsi çiçekler kış sonu ve ilkbaharda aç
+ ar\; parlak kırmızı meyveler sonbahar ve kışın görülür. İlaç i
+ çin kök ve rizom sonbaharda sökülür. https://bitkitabani.com/tavsanm
+ emesi/
+URL:https://bitkitabani.com/tavsanmemesi/
+END:VEVENT
+BEGIN:VEVENT
 UID:toplama-turunc@bitkitabani.com
 DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260101
@@ -855,6 +1438,30 @@ DESCRIPTION:Çiçekler Mart–Nisan’da açar\; meyveler Aralık–Şuba
 URL:https://bitkitabani.com/turunc/
 END:VEVENT
 BEGIN:VEVENT
+UID:toplama-tuyluladen@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260401
+DTEND;VALUE=DATE:20260402
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Tüylü laden toplama mevsimi
+DESCRIPTION:Nisan–Haziran arasında pembe\, buruşuk taçyapraklı çi
+ çekler açar\; çiçekler bir gün sürer. Reçine yaz sıcağında topl
+ anır. https://bitkitabani.com/tuyluladen/
+URL:https://bitkitabani.com/tuyluladen/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-tuylusahinotu@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260501
+DTEND;VALUE=DATE:20260502
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Tüylü şahinotu toplama mevsimi
+DESCRIPTION:Mayıs–Ekim arasında tek sarı çiçek\; bütün bitki çi
+ çekli dönemde kökleriyle sökülür. https://bitkitabani.com/tuylusahi
+ notu/
+URL:https://bitkitabani.com/tuylusahinotu/
+END:VEVENT
+BEGIN:VEVENT
 UID:toplama-yabaniigde@bitkitabani.com
 DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260901
@@ -864,5 +1471,65 @@ SUMMARY:🌿 Yaban iğdesi toplama mevsimi
 DESCRIPTION:Meyveler Eylül–Kasım arasında\, ilk donlardan sonra topl
  anır. https://bitkitabani.com/yabaniigde/
 URL:https://bitkitabani.com/yabaniigde/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-yabanmersini@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260501
+DTEND;VALUE=DATE:20260502
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Yaban mersini toplama mevsimi
+DESCRIPTION:Mayıs–Haziran’da pembe-yeşil\, çan biçimli küçük 
+ çiçekler açar\; meyveler Temmuz–Ağustos’ta olgunlaşır ve toplan
+ ır. https://bitkitabani.com/yabanmersini/
+URL:https://bitkitabani.com/yabanmersini/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-yabanyasemini@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260301
+DTEND;VALUE=DATE:20260302
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Yaban yasemini toplama mevsimi
+DESCRIPTION:Haziran–Eylül mor çiçekler\, sonbaharda parlak kırmız
+ ı meyveler\; drog ilkbaharda\, yapraklanmadan önce gövdeden toplanır.
+  https://bitkitabani.com/yabanyasemini/
+URL:https://bitkitabani.com/yabanyasemini/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-yabanicilek@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260301
+DTEND;VALUE=DATE:20260302
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Yabani çilek toplama mevsimi
+DESCRIPTION:Yapraklar bitki çiçekli ya da meyveli dönemde toplanıp ku
+ rutuluyor\; meyve ilkbahar sonu ve yaz başında olgunlaşır. https://bi
+ tkitabani.com/yabanicilek/
+URL:https://bitkitabani.com/yabanicilek/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-yakiotu@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260701
+DTEND;VALUE=DATE:20260702
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Yakıotu toplama mevsimi
+DESCRIPTION:Temmuz–Ağustos arasında uzun\, pembe-mor çiçek başakla
+ rı açar\; toprak üstü kısmı çiçeklenme döneminde toplanır. http
+ s://bitkitabani.com/yakiotu/
+URL:https://bitkitabani.com/yakiotu/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-yulaf@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260602
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Yulaf toplama mevsimi
+DESCRIPTION:Yazın olgunlaşır. Saman olarak kullanılan toprak üstü k
+ ısımları çiçeklenmeden önce toplanıyor\; taneler olgunlukta hasat 
+ ediliyor. https://bitkitabani.com/yulaf/
+URL:https://bitkitabani.com/yulaf/
 END:VEVENT
 END:VCALENDAR
