@@ -130,3 +130,6 @@ kutki | Picrorhiza kurroa | plant flowers rhizome
 amurmantaragaci | Phellodendron amurense | tree bark leaves
 manolyakabugu | Magnolia officinalis | tree flower bark
 karakartopu | Viburnum prunifolium | shrub flowers berries
+tibbiadacayi | Salvia officinalis | leaves flowers plant
+huanglian | Coptis chinensis | plant rhizome flowers
+yadanzi | Brucea javanica | shrub fruit leaves

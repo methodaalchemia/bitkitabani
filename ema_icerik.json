@@ -2850,6 +2850,45 @@
   "pdf": "https://www.ema.europa.eu/en/documents/herbal-monograph/european-union-herbal-monograph-ruscus-aculeatus-l-rhizoma-revision-1_en.pdf",
   "uzunluk": 19377
  },
+ "salviae-officinalis-folium": {
+  "bolum": {
+   "doz_asimi": {
+    "geleneksel": "No case of overdose from sage leaves has been reported. Intake of sage oil corresponding to more than 15 g of sage leaf is reported to cause sensation of heat, tachycardia, vertigo and epileptiform convulsions (seizures). Not required as per Article 16c(1)(a)(iii) of Directive 2001/83/EC. Not required as per Article 16c(1)(a)(iii) of Directive 2001/83/EC. Not required as per Article 16c(1)(a)(iii) of Directive 2001/83/EC, unless necessary for the safe use of the product. Thujone is reported to be neurotoxic, hence chemotypes with low content of thujone should be preferred. Adequate tests on genotoxicity and carcinogenicity have not been performed. Tests on reproductive toxicity have not been performed. The amount of thujone has to be specified in the given product. The daily exposure has to be below 6.0 mg. For more details see the “Public statement on the use of herbal medicinal products containing thujone)” (EMA/HMPC/732886/2010).",
+    "iyi_bilinen": "5. Pharmacological properties 5.1. Pharmacodynamic properties 5.2. Pharmacokinetic properties 5.3. Preclinical safety data 6. Pharmaceutical particulars 7. Date of compilation/last revision 20 September 2016"
+   },
+   "dozaj": {
+    "geleneksel": "Posology Adults and elderly Indication 1) a) Comminuted herbal substance Herbal tea: 1-2 g of the comminuted herbal substance in 150 ml boiling water as herbal herbal tea or as infusion/decoction/macerate (EMA/HMPC/5829/2010 Rev.1) infusion 3 times daily. c) Dry extract (DER 4-7:1) 320 mg daily divided in 3-4 doses d) Liquid extract (DER 1:3.5-5) 0.5 ml in water 3 times daily. f) Liquid extract (DER 1:4-6) 0.43 ml 3 times daily g) Tincture 2-3 ml 3 times daily Indication 2) a) Comminuted herbal substance Herbal tea: 2 g of comminuted herbal substance in 150 ml boiling water as herbal infusion. c) Dry extract (DER 4-7:1) 80-160 mg 3 times daily d) Liquid extract (DER 1:3.5-5) 0.5-1 ml in some liquid 3 times daily. For night sweat: 1.5 ml in some liquid 1 hour directly before bedtime. e) Liquid extract (DER 1:4.5) 2 ml 3 times daily Indication 3) a) Comminuted herbal substance: 2.5 g comminuted herbal substance in 100 ml boiling water as an infusion. The infusion is used warm for gargle 3 times daily. b) Liquid extract (DER 1:1) 250 mg gel containing 20% liquid extract for oromucosal use. Apply on affected regions and massage gently up to 5 times daily. d) Liquid extract (DER 1:3.5-5) 0.5 ml in 150 ml warm water for gargle 3 times daily. f) Liquid extract (DER 1:4-6) 0.65 ml in 150 ml water for rinse or gargle 3 times daily. g) Tincture 5-10 ml in a glass of water for rinse or gargle several times daily. Undiluted tincture is applied locally on the affected regions once daily. Indication 4) a) Comminuted herbal substance 2.5 g of the comminuted herbal substance in 100 ml water as herbal infusion to be applied on the affected area of the skin 2-4 times daily. The use in children and adolescents under 18 years of age is not recommended (see section 4.4 ‘Special warnings and precautions for use’). Duration of use Indications 1) If the symptoms persist longer than 2 weeks during the use of the medicinal product, a doctor or a qualified health care practitioner should be consulted. Indication 2) Long-term use is possible (see section 4.4 ‘Special warnings and precautions for use’). If the symptoms do not improve within 6 weeks of use of the medicinal product, a doctor or a qualified health care practitioner should be consulted. Indication 3) If the symptoms persist longer than 1 week during the use of the medicinal product, a doctor or a qualified health care practitioner should be consulted. Indication 4) If the symptoms persist longer than 2 weeks during the use of the medicinal product, a doctor or a qualified health care practitioner should be consulted. Method of administration Indication 1) and 2) Oral use Indication 3) Oromucosal use Indication 4) Cutaneous use",
+    "iyi_bilinen": "and method of administration3 For guidance on herbal substance/herbal preparation administered as preparation, please refer to the HMPC ‘Glossary on herbal teas’"
+   },
+   "endikasyon": {
+    "geleneksel": "Indication 1) Traditional herbal medicinal product for relief of mild dyspeptic complaints such as heartburn and bloating. Indication 2) Traditional herbal medicinal product for relief of excessive sweating. Indication 3) Traditional herbal medicinal product for relief of inflammations in the mouth or the throat. Indication 4) Traditional herbal medicinal product for relief of minor skin inflammations. The product is a traditional herbal medicinal product for use in specified indications exclusively based upon long-standing use.",
+    "iyi_bilinen": null
+   },
+   "etkilesim": {
+    "geleneksel": "None reported",
+    "iyi_bilinen": "with other medicinal products and other forms of interaction"
+   },
+   "gebelik": {
+    "geleneksel": "Safety during pregnancy and lactation has not been established. In the absence of sufficient data, the use during pregnancy and lactation is not recommended. No fertility data available. No studies on the effect on the ability to drive and use machines have been performed.",
+    "iyi_bilinen": "and lactation 4.7. Effects on ability to drive and use machines"
+   },
+   "istenmeyen": {
+    "geleneksel": "None known If adverse reactions occur, a doctor or a qualified health care practitioner should be consulted.",
+    "iyi_bilinen": null
+   },
+   "kontrendikasyon": {
+    "geleneksel": "Hypersensitivity to the active substance(s).",
+    "iyi_bilinen": null
+   },
+   "uyari": {
+    "geleneksel": "The use in children and adolescents under 18 years of age has not been established due to lack of adequate data. If the symptoms worsen during the use of the medicinal product, a doctor or a qualified health care practitioner should be consulted. For tinctures and extracts containing ethanol, the appropriate labelling for ethanol, taken from the ‘Guideline on excipients in the label and package leaflet of medicinal products for human use’, must be included.",
+    "iyi_bilinen": "and precautions for use"
+   }
+  },
+  "kanit": "geleneksel kullanım",
+  "pdf": "https://www.ema.europa.eu/en/documents/herbal-monograph/final-european-union-herbal-monograph-salvia-officinalis-l-folium-revision-1_en.pdf",
+  "uzunluk": 27359
+ },
  "sisymbrii-officinalis-herba": {
   "bolum": {
    "doz_asimi": {
@@ -3079,6 +3118,41 @@
   "kanit": "geleneksel kullanım",
   "pdf": "https://www.ema.europa.eu/en/documents/herbal-monograph/final-european-union-herbal-monograph-tanacetum-parthenium-l-schulz-bip-herba-revision-1_en.pdf",
   "uzunluk": 16661
+ },
+ "thymi-herba": {
+  "bolum": {
+   "doz_asimi": {
+    "geleneksel": "No case of overdose has been reported. 5/6 required as per Article 16c(1)(a)(iii) of Directive 2001/83/EC as amended. ed required as per Article 16c(1)(a)(iii) of Directive 2001/83/EC as amended. Traditional use required as per Article 16c(1)(a)(iii) of Directive 2001/83/EC as amended, unless necessary for the safe use of the product. on reproductive toxicity, genotoxicity and carcinogenicity with extracts have not been performed. applicable. 6/6",
+    "iyi_bilinen": "EMEA 2007 5. PHARMACOLOGICAL PROPERTIES 5.1 Pharmacodynamic properties Not 5.2 Pharmacokinetic properties Not 5.3 Preclinical safety data Well-established use ed Not Tests rs 6. PHARMACEUTICAL PARTICULARS pe Not 7. DATE OF COMPILATION/LAST REVISION 31 October 2007 Su EMEA 2007"
+   },
+   "dozaj": {
+    "geleneksel": "Posology Adolescents over 12 years of age, adults and elderly Single dose Herbal substance: 1 - 2 g A) Liquid extract: 1 - 2 ml B) Liquid extract: 1.2 - 2.4 ml C) Liquid extract: 1.0 - 4 g D) Tincture: 40 drops E) Soft extract: 50 mg F) Liquid extract from fresh herb: 10 ml G) Dry extract: 75 - 200 mg H) Comminuted herbal substance for tea preparation: 1 - 2 g Daily dose Herbal substance: 3 - 8 g A) Liquid extract: 3 - 8 ml B) Liquid extract: 3.5 - 9.3 ml C) Liquid extract: 1 - 14 g D) Tincture: 120 drops E) Soft extract: 300 mg F) Liquid extract from fresh herb: 30 - 40 ml G) Dry extract: 225 - 600 mg 3/6 H) Comminuted herbal substance for tea preparation: 3 - 8 g Children between 4 and 12 years of age C) Liquid extract: Single dose: 0.5 - 0.9 ml Daily dose: 2.5 - 4 ml, divided into 3-5 single doses. F) Liquid extract from fresh herb: Single dose: 7 - 10 ml Daily dose: 14 - 30 ml, divided into 2 - 3 single doses ed The use in children under 4 years of age is not recommended (see",
+    "iyi_bilinen": "and method of administration pe Su EMEA 2007"
+   },
+   "endikasyon": {
+    "geleneksel": "Traditional herbal medicinal product used as an expectorant in cough associated with cold. The product is a traditional herbal medicinal product for use in the specified indication exclusively based upon long-standing use.",
+    "iyi_bilinen": "ed rs"
+   },
+   "etkilesim": {
+    "geleneksel": "interaction None reported Traditional use Safety during pregnancy and lactation has not been established. In the absence of sufficient data, the use during pregnancy and lactation is not recommended. machines No studies on the effect on the ability to drive and use machines have been performed.",
+    "iyi_bilinen": "with other medicinal products and other forms of 4.6. Pregnancy and lactation Well-established use ed rs 4.7. Effects on ability to drive and use pe"
+   },
+   "istenmeyen": {
+    "geleneksel": "Hypersensitivity reactions (including one case of anaphylactic shock and one case of Quincke edema) and stomach disorders have been observed. The frequency is not known.",
+    "iyi_bilinen": "Su"
+   },
+   "kontrendikasyon": {
+    "geleneksel": "Hypersensitivity to the active substance or to other members of the Lamiaceae family. Herbal preparations C and F: The use in children under 4 years of age is not recommended because medical advice should be sought. Herbal substance and all other types of herbal preparations: 4/6 The use in children under 12 years of age is not recommended because of lack of data. When dyspnoea, fever or purulent sputum occurs, a doctor or a qualified health care practitioner should be consulted. For tinctures and extracts containing ethanol, the appropriate labelling for ethanol, taken from the ‘Guideline on excipients in the label and package leaflet of medicinal products for human use’, must be included. ed",
+    "iyi_bilinen": "Su 4.4. Special warnings and precautions for use EMEA 2007"
+   },
+   "uyari": {
+    "geleneksel": "precaution for use). Herbal substance and herbal preparations type A, B, D, E, G and H: The use in children under 12 years of age is not recommended (see 4.4 Special warnings and precaution for use). Duration of use If the symptoms persist longer than 1 week, a doctor or a qualified health care practitioner should be consulted. Method of administration Oral use. Tea preparation: 1-2 g of herbal substance or comminuted herbal substance for infusion. As an expectorant 3-4 cups of tea per day.",
+    "iyi_bilinen": "and ed rs pe"
+   }
+  },
+  "kanit": "geleneksel kullanım",
+  "pdf": "https://www.ema.europa.eu/en/documents/herbal-monograph/superseded-final-community-herbal-monograph-thymus-vulgaris-l-and-thymus-zygis-l-herba_en.pdf",
+  "uzunluk": 17180
  },
  "thymi-herba-primulae-radix": {
   "bolum": {

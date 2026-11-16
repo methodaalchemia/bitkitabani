@@ -292,6 +292,13 @@
   "rutbe": "spec.",
   "yazar": "Roxb."
  },
+ "Brucea javanica": {
+  "ad": "Brucea javanica",
+  "familya": "Simaroubaceae",
+  "kimlik": "813610-1",
+  "rutbe": "spec.",
+  "yazar": "(L.) Merr."
+ },
  "Brugmansia suaveolens": {
   "ad": "Brugmansia suaveolens",
   "familya": "Solanaceae",
@@ -570,6 +577,13 @@
   "kimlik": "64920-2",
   "rutbe": "spec.",
   "yazar": "Desf."
+ },
+ "Coptis chinensis": {
+  "ad": "Coptis chinensis",
+  "familya": "Ranunculaceae",
+  "kimlik": "710313-1",
+  "rutbe": "spec.",
+  "yazar": "Franch."
  },
  "Coriandrum sativum": {
   "ad": "Coriandrum sativum",
@@ -1988,6 +2002,13 @@
   "kimlik": "456249-1",
   "rutbe": "spec.",
   "yazar": "Mill."
+ },
+ "Salvia officinalis": {
+  "ad": "Salvia officinalis",
+  "familya": "Lamiaceae",
+  "kimlik": "456833-1",
+  "rutbe": "spec.",
+  "yazar": "L."
  },
  "Salvia rosmarinus": {
   "ad": "Salvia rosmarinus",
