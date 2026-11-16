@@ -1915,6 +1915,19 @@
   "w": 960,
   "w500": 500
  },
+ "karadut": {
+  "artist": "Notafly",
+  "auto": true,
+  "b1280": "MorusCaffarellacu.JPG",
+  "file": "MorusCaffarellacu.JPG",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:MorusCaffarellacu.JPG",
+  "w": 960,
+  "w500": 500
+ },
  "karahindiba": {
   "artist": "Thomas Wolf ( Der Wolf im Wald )",
   "b1280": "Gewöhnlicher Löwenzahn.jpg",
@@ -2491,6 +2504,19 @@
   "w": 960,
   "w500": 500
  },
+ "mazi": {
+  "artist": "Ryan Hodnett",
+  "auto": true,
+  "b1280": "Northern Whitecedar (Thuja occidentalis) - Algonquin Provincial Park, Ontario 2019-09-20.jpg",
+  "file": "Northern Whitecedar (Thuja occidentalis) - Algonquin Provincial Park, Ontario 2019-09-20.jpg",
+  "h": 1200,
+  "h500": 625,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Northern_Whitecedar_(Thuja_occidentalis)_-_Algonquin_Provincial_Park,_Ontario_2019-09-20.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "melisa": {
   "artist": "JLPC",
   "b1280": "Mélisse Feuilles FR 2013b.jpg",
@@ -3060,6 +3086,19 @@
   "license": "CC BY 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Echinopsis_pachanoi_2.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "saparna": {
+  "artist": "Димитър Найденов / Dimìtar Nàydenov",
+  "auto": true,
+  "b1280": "Smilax excelsa - Висока скрипка – плодове.jpg",
+  "file": "Smilax excelsa - Висока скрипка – плодове.jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Smilax_excelsa_-_%D0%92%D0%B8%D1%81%D0%BE%D0%BA%D0%B0_%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D0%BA%D0%B0_%E2%80%93_%D0%BF%D0%BB%D0%BE%D0%B4%D0%BE%D0%B2%D0%B5.jpg",
   "w": 960,
   "w500": 500
  },

@@ -2914,5 +2914,34 @@
  "angelika:kuru": "yok",
  "amerikanginsengi:cizim": "yok",
  "amerikanginsengi:cicek": "yok",
- "amerikanginsengi:kuru": "yok"
+ "amerikanginsengi:kuru": "yok",
+ "karadut:cizim": {
+  "file": "Illustration Morus nigra0.jpg",
+  "artist": "Wikimedia Commons",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Morus_nigra0.jpg"
+ },
+ "karadut:cicek": {
+  "file": "Black Mulberry Female Flowers.jpg",
+  "artist": "JJ Harrison ( https://www.jjharrison.com.au/ )",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Black_Mulberry_Female_Flowers.jpg"
+ },
+ "karadut:kuru": "yok",
+ "mazi:cizim": "yok",
+ "mazi:cicek": {
+  "file": "Flowers 132.jpg",
+  "artist": "Almostway2004",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Flowers_132.jpg"
+ },
+ "mazi:kuru": "yok",
+ "saparna:cizim": "yok",
+ "saparna:cicek": {
+  "file": "Висока скрипка 3.jpg",
+  "artist": "Димитър Найденов / Dimìtar Nàydenov",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%B8%D1%81%D0%BE%D0%BA%D0%B0_%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D0%BA%D0%B0_3.jpg"
+ },
+ "saparna:kuru": "yok"
 }

@@ -3498,5 +3498,19 @@
   "guvenlik": "Dikkat",
   "turkiyede_yasal_durum": "",
   "url": "https://bitkitabani.com/andrographis/"
+ },
+ {
+  "id": "sogan",
+  "turkce_ad": "Soğan",
+  "bilimsel_ad": "Allium cepa L.",
+  "familya": "Amaryllidaceae (nergisgiller)",
+  "diger_adlar": "Türkçe soğan, baş soğan, kuru soğan; İngilizce onion. DSÖ monografı droğu \"Bulbus Allii Cepae\" — taze ya da kurutulmuş soğan başı — diye tanımlıyor. TİTCK ve AB monografı yok; kayıt DSÖ monografına, PubMed’e ve POWO’ya dayanıyor. Sarımsakla aynı cinsten.",
+  "bolgeler": "Anadolu ve Akdeniz; Asya ve Sibirya; Avrupa",
+  "kategoriler": "Şifa; Besin",
+  "kullanilan_kisim": "Taze ya da kurutulmuş soğan başı",
+  "kanit_duzeyi": "Sınırlı",
+  "guvenlik": "Yüksek risk",
+  "turkiyede_yasal_durum": "",
+  "url": "https://bitkitabani.com/sogan/"
  }
 ]

@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 250 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 251 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -7954,3 +7954,35 @@ Karıştırma riski: Piyasada Andrographis adıyla satılan ürünlerin androgra
 
 ### İlginç bilgi
 Kataloğumuzun 250. bitkisi, resmî listelerin dışında bir bitki — ve bu bir rastlantı değil. Andrographis için 7.175 hastalık bir meta-analiz var; buna rağmen Avrupa düzenleyicisi monograf yazamadı, çünkü kurallar başka şey soruyor: "AB’de otuz yıldır kullanılıyor mu?" (hayır, İskandinavya’da 1990’lar) ve "tanınmış etkinlik ve kabul edilebilir güvenlik gösterilmiş mi?" (kalitesi düşük çalışmalarla hayır). Bir bitkinin klinik çalışma sayısı ile düzenleyici durumu arasında doğrusal bir ilişki yok — kataloğumuzun 250 kaydının son dersi bu.
+
+## Soğan (Allium cepa L.)
+
+URL: https://bitkitabani.com/sogan/
+Familya: Amaryllidaceae (nergisgiller) · Bölge: Anadolu ve Akdeniz, Asya ve Sibirya, Avrupa · Kullanılan kısım: Taze ya da kurutulmuş soğan başı
+Bilimsel kanıt: Sınırlı · Güvenlik: Yüksek risk
+
+### Geleneksel kullanım
+- DSÖ monografı (1999): Dünya Sağlık Örgütü’nün tıbbi bitki monografları serisinin ilk cildinde soğan var. "Klinik veriyle desteklenen kullanım" başlığında damarlarda yaşa bağlı değişikliklerin önlenmesi ve iştahsızlık; farmakopelerde ve geleneksel sistemlerde dizanteri gibi bakteriyel enfeksiyonlar, idrar söktürücü, yara ve yanık izi, astım ve diyabette yardımcı tedavi. Günlük doz 50 g taze soğan ya da 20 g kuru drog. Monografın güvenlik cümlesi kataloğumuzdaki en kısa olanı: "güvenlik düzeyi, dünya çapında sebze olarak tüketilmesiyle yansıtılmaktadır."
+- Türkiye: TİTCK Tıbbi Bitki Listesi’nde soğan için monograf yok — bir sebze olarak listeye gerek de görülmemiş. Anadolu halk hekimliğinde soğanın yara, çıban ve öksürükte kullanımı yaygın biliniyor; kataloğumuz bu kullanımları kaynaklı olarak genişletmiyor.
+- Dünya — en eski sebzelerden: Soğan Orta Asya kökenli; Mısır, Mezopotamya ve Hitit kaynaklarında geçiyor ve bugün dünyanın en çok yetiştirilen sebzelerinden. Yara izi jeli olarak soğan özütü Avrupa ve Amerika’da ticari bir ürün — kanıt bölümünde bu ürün ayrıca ele alınıyor.
+
+### Hazırlama
+DSÖ monografı günlük doz olarak 50 g taze soğan ya da 20 g kurutulmuş drog veriyor; hazırlıkların dozu buna göre hesaplanıyor. Bir sebze olduğu için ayrı bir "hazırlayış" yok; yara izi için satılan soğan özütlü jeller ayrı ürünlerdir.
+
+### Bilim ne diyor
+Soğanın iki ayrı kanıt hattı var. Metabolik parametreler: 2023’te Clinical Nutrition ESPEN dergisinde yayımlanan sistematik derleme ve meta-analiz 14 randomize çalışmayı birleştirdi: soğan takviyesi vücut yağ oranını, LDL ve toplam kolesterolü ve sistolik kan basıncını anlamlı ölçüde iyileştirdi; 12 haftadan uzun ve günde 300 mg’ın üstündeki kullanımlarda kilo, bel çevresi ve beden kitle indeksinde de fark görüldü. Bu, DSÖ’nün 1999’da "damarlarda yaşa bağlı değişiklik" diye yazdığı kullanımın güncel karşılığı. Yara izi: soğan özütlü jel en çok satılan soğan ürünü; ama 2021’de International Wound Journal’da yayımlanan meta-analizin başlığı sonucu özetliyor — soğan özütü jeli yara izi yönetiminde öteki topikal tedavilerden daha iyi değil. Yani ünlü ürünün kanıtı, ünlü olmayan kullanımdan zayıf. Etki büyüklükleri ölçülü ve çalışmaların kalitesi karışık; kanıt düzeyi "sınırlı".
+
+### Güvenlik
+DSÖ monografı kontrendikasyon olarak yalnızca soğan alerjisini veriyor ve uyarı bildirmiyor; istenmeyen etki olarak alerjik rinokonjunktivit ve kontakt dermatit (özellikle soğan doğrayan mutfak çalışanlarında) bildirilmiş. Gebelik, emzirme, çocuk ve ilaç etkileşimi için monograf "bildirilmemiş" diyor — sebze dozlarında bir güvenlik sorunu beklenmiyor. Takviye dozlarında (özüt, kapsül) kan şekeri ve pıhtılaşma üzerindeki olası etkiler nedeniyle antidiyabetik ve antikoagülan kullananların hekimine söylemesi mantıklı — bu bir kuramsal nottur.
+
+### İlaç etkileşimleri
+- DSÖ monografında bildirilmiş etkileşim yok: Monograf ilaç etkileşimi bildirmiyor. Sarımsakla aynı cinsten olduğu için sarımsak kaydındaki antikoagülan uyarısı takviye dozlarında soğan için de kuramsal olarak akılda tutulabilir; sebze olarak yenen soğan için böyle bir uyarı yoktur.
+
+### Doğada
+Nerede yetişir: Orta Asya kökenli; dünyanın her yerinde kültür bitkisi. Türkiye büyük üreticilerden.
+Toplama mevsimi: İki yıllık; birinci yıl soğan başı oluşur, yaz sonunda hasat edilir ve kurutulup saklanır.
+Yöresel adlar: Soğan, baş soğan, kuru soğan; yöresel adlar kaynaksız genişletilmedi.
+Karıştırma riski: Yabani Allium türleriyle karışma mutfakta değil doğada olur; bazı soğanımsı soğanlı bitkiler (örneğin Colchicum, acıçiğdem) zehirlidir ve yabani "soğan" diye toplanmamalıdır.
+
+### İlginç bilgi
+Dünya Sağlık Örgütü bir sebzeye monograf yazdı ve güvenlik bölümünü tek cümleyle geçti: güvenliği, dünya çapında sebze olarak yenmesiyle gösterilmiş. Kataloğumuzda hiçbir bitkinin güvenlik kanıtı bu kadar büyük bir örnekleme dayanmıyor. Buna karşılık soğanın en çok satılan tıbbi ürünü — yara izi jeli — meta-analizde öteki tedavilerden daha iyi çıkmadı. Mutfaktaki soğan ile eczanedeki soğan aynı bitkiden iki ayrı kanıt hikâyesi.
