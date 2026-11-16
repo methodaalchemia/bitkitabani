@@ -920,6 +920,19 @@
   "w": 960,
   "w500": 500
  },
+ "fasulye": {
+  "artist": "Sanjay Acharya",
+  "auto": true,
+  "b1280": "Pinto Beans Seeds.jpg",
+  "file": "Pinto Beans Seeds.jpg",
+  "h": 640,
+  "h500": 333,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Pinto_Beans_Seeds.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "feslegen": {
   "artist": "Netha Hussain",
   "auto": false,
@@ -1303,6 +1316,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Br%C3%A4nn%C3%A4ssla_(Urtica_Dioica).jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "javazerdecali": {
+  "artist": "Ariyanto",
+  "auto": true,
+  "b1280": "\"+arya+\" kencur bunga Curcuma zanthorrhiza 2023 0.jpg",
+  "file": "\"+arya+\" kencur bunga Curcuma zanthorrhiza 2023 0.jpg",
+  "h": 1283,
+  "h500": 668,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%22%2Barya%2B%22_kencur_bunga_Curcuma_zanthorrhiza_2023_0.jpg",
   "w": 960,
   "w500": 500
  },
@@ -1713,6 +1739,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:MelilotusO11.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "kola": {
+  "artist": "Michael Hermann",
+  "auto": true,
+  "b1280": "Fruits of Cola nitida.JPG",
+  "file": "Fruits of Cola nitida.JPG",
+  "h": 1443,
+  "h500": 751,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Fruits_of_Cola_nitida.JPG",
   "w": 960,
   "w500": 500
  },
@@ -2451,6 +2490,19 @@
   "w": 960,
   "w500": 500
  },
+ "sibiryaginsengi": {
+  "artist": "Krzysztof Ziarnek, Kenraiz",
+  "auto": true,
+  "b1280": "Eleutherococcus senticosus kz05.jpg",
+  "file": "Eleutherococcus senticosus kz05.jpg",
+  "h": 1343,
+  "h500": 700,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Eleutherococcus_senticosus_kz05.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "sigirkuyrugu": {
   "artist": "Bernard DUPONT",
   "auto": false,
@@ -2524,6 +2576,19 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
   "page": "https://commons.wikimedia.org/wiki/File:Salix_alba_leaves.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "soya": {
+  "artist": "H. Zell",
+  "auto": true,
+  "b1280": "Glycine max 003.JPG",
+  "file": "Glycine max 003.JPG",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Glycine_max_003.JPG",
   "w": 960,
   "w500": 500
  },
@@ -2677,6 +2742,19 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Peganum_harmala_Baikonur_04.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "yabanicilek": {
+  "artist": "Ermell",
+  "auto": true,
+  "b1280": "Walderdbeere Frucht-20210617-RM-124006.jpg",
+  "file": "Walderdbeere Frucht-20210617-RM-124006.jpg",
+  "h": 1317,
+  "h500": 686,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Walderdbeere_Frucht-20210617-RM-124006.jpg",
   "w": 960,
   "w500": 500
  },

@@ -2285,5 +2285,53 @@
   "license": "CC0",
   "page": "https://commons.wikimedia.org/wiki/File:Flor_de_manzanilla.jpg"
  },
- "romenpapatyasi:kuru": "yok"
+ "romenpapatyasi:kuru": "yok",
+ "kola:cizim": "yok",
+ "kola:cicek": {
+  "file": "Cola nitida flowers.JPG",
+  "artist": "Michael Hermann",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Cola_nitida_flowers.JPG"
+ },
+ "kola:kuru": "yok",
+ "javazerdecali:cizim": "yok",
+ "javazerdecali:cicek": {
+  "file": "\"+arya+\" kencur bunga Curcuma zanthorrhiza 2023 0.jpg",
+  "artist": "Ariyanto",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%22%2Barya%2B%22_kencur_bunga_Curcuma_zanthorrhiza_2023_0.jpg"
+ },
+ "javazerdecali:kuru": "yok",
+ "sibiryaginsengi:cizim": "yok",
+ "sibiryaginsengi:cicek": "yok",
+ "sibiryaginsengi:kuru": "yok",
+ "yabanicilek:cizim": {
+  "file": "Illustration Fragaria vesca0.jpg",
+  "artist": "Wikimedia Commons",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Fragaria_vesca0.jpg"
+ },
+ "yabanicilek:cicek": {
+  "file": "IMG 6128-Fragaria vesca.jpg",
+  "artist": "C T Johansson",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:IMG_6128-Fragaria_vesca.jpg"
+ },
+ "yabanicilek:kuru": "yok",
+ "soya:cizim": "yok",
+ "soya:cicek": {
+  "file": "Glycine max kz04.jpg",
+  "artist": "Krzysztof Ziarnek, Kenraiz",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Glycine_max_kz04.jpg"
+ },
+ "soya:kuru": "yok",
+ "fasulye:cizim": "yok",
+ "fasulye:cicek": {
+  "file": "2011-07-25 21-30-17-flower.jpg",
+  "artist": "Thomas Bresson",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:2011-07-25_21-30-17-flower.jpg"
+ },
+ "fasulye:kuru": "yok"
 }
