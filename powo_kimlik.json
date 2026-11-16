@@ -94,6 +94,13 @@
   "rutbe": "spec.",
   "yazar": "Speg."
  },
+ "Andrographis paniculata": {
+  "ad": "Andrographis paniculata",
+  "familya": "Acanthaceae",
+  "kimlik": "45226-1",
+  "rutbe": "spec.",
+  "yazar": "(Burm.f.) Wall. ex Nees"
+ },
  "Annona muricata": {
   "ad": "Annona muricata",
   "familya": "Annonaceae",
@@ -341,6 +348,13 @@
   "kimlik": "192489-1",
   "rutbe": "spec.",
   "yazar": "(L.) All."
+ },
+ "Chelidonium majus": {
+  "ad": "Chelidonium majus",
+  "familya": "Papaveraceae",
+  "kimlik": "303589-2",
+  "rutbe": "spec.",
+  "yazar": "L."
  },
  "Chenopodium quinoa": {
   "ad": "Chenopodium quinoa",
@@ -1802,6 +1816,14 @@
   "kimlik": "835608-1",
   "rutbe": "spec.",
   "yazar": "Moench"
+ },
+ "Tribulus terrestris": {
+  "ad": "Tribulus terrestris",
+  "familya": "Zygophyllaceae",
+  "kimlik": "873489-1",
+  "rutbe": "spec.",
+  "yazar": "L.",
+  "yazar_kaynagi": "GBIF/WCVP"
  },
  "Trigonella foenum-graecum": {
   "ad": "Trigonella foenum-graecum",

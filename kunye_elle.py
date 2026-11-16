@@ -825,6 +825,17 @@ ELLE['https://www.iarc.who.int/wp-content/uploads/2018/07/pr244_E.pdf'] = (
     'evaluate drinking coffee, maté, and very hot beverages '
     '[Basın açıklaması]. Dünya Sağlık Örgütü.')
 
+# AB kamu açıklamaları: monograf yazılamayan üç bitki.
+ELLE['https://www.ema.europa.eu/en/documents/public-statement/final-public-statement-chelidonium-majus-l-herba_en.pdf'] = (
+    'European Medicines Agency. (2011). Public statement on Chelidonium majus '
+    'L., herba [Kamu açıklaması] (EMA/HMPC/743927/2010).')
+ELLE['https://www.ema.europa.eu/en/documents/herbal-report/final-public-statement-tribulus-terrestris-l-herba_en.pdf'] = (
+    'European Medicines Agency. (2024). Public statement on Tribulus '
+    'terrestris L., herba [Kamu açıklaması] (EMA/HMPC/308436/2023).')
+ELLE['https://www.ema.europa.eu/en/documents/public-statement/final-public-statement-andrographis-paniculata-nees-folium-first-version_en.pdf'] = (
+    'European Medicines Agency. (2013). Public statement on Andrographis '
+    'paniculata Nees, folium [Kamu açıklaması] (EMA/HMPC/709282/2012).')
+
 # Kola cevizinin Igbo kültüründeki yerini belgeleyen dergi yazısı.
 ELLE['https://ajol.info/index.php/ijah/article/view/157097/146708'] = (
     'Obineche, J. O. (2017). Kola nut: Revisiting the Igbo '
@@ -871,6 +882,7 @@ _EN = [
  ('(“Zehirli bitkiler” bölümü)', '(chapter on poisonous plants)'),
  ('T.C. Sağlık Bakanlığı Sağlık Hizmetleri Genel Müdürlüğü',
   'Turkish Ministry of Health, General Directorate of Health Services'),
+ ('[Kamu açıklaması]', '[Public statement]'),
  ('(Sunucu)', '(Host)'),
  ('[Podcast bölümü]', '[Audio podcast episode]'),
  ('3 Haziran', 'June 3'), ('4 Ekim', 'October 4'),

@@ -67,3 +67,6 @@ tuylusahinotu | Pilosella officinarum | yellow flower hairy leaves
 yabanyasemini | Solanum dulcamara | purple flowers red berries
 hintyagi | Ricinus communis | plant leaves fruit
 kutsaldevedikeni | Centaurea benedicta | yellow flower spiny
+kirlangicotu | Chelidonium majus | yellow flowers plant latex
+demirdikeni | Tribulus terrestris | plant yellow flower spiny fruit
+andrographis | Andrographis paniculata | plant leaves flowers
