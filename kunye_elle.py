@@ -698,6 +698,16 @@ ELLE.update({
    titck_apa('Cistus creticus L.'),
 })
 
+# TİTCK monograf dosyaları (kuyruk/k17.py).
+ELLE.update({
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/SolidagovirgaureaL..pdfb279ef8596e34f17b127529054915c2a_bfcf2947-9179-490c-89a6-e3397a3e0d8d.pdf':
+   titck_apa('Solidago virgaurea L.'),
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/OnonisspinosaL.900a25caf22c491691ce15a5bd305571_c15f9564-9cf5-4284-b1a9-f725e270b30a.pdf':
+   titck_apa('Ononis spinosa L.'),
+ 'https://titck.gov.tr/storage/Archive/2024/dynamicModulesAttachment/PeumusboldusMolina_23225ecb-beb0-4a4a-9a75-00f7c7e74940.pdf':
+   titck_apa('Peumus boldus Molina'),
+})
+
 # APA künyesindeki yapısal ekler Türkçe yazılır. İngilizce sayfalarda aynı
 # künye kullanılır, yalnızca bu ekler değiştirilir; eser adlarına dokunulmaz.
 _EN = [

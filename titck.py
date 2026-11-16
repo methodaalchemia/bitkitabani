@@ -78,4 +78,7 @@ M = {
  'hindiba': ('Cichorium intybus L.', '2023/dynamicModulesAttachment/CichoriumintybusL._aefa3f9b-53c8-48ab-91be-c8f8211ba5e7.pdf'),
  'centiyan': ('Gentiana lutea L.', '2024/dynamicModulesAttachment/GentianaluteaL.V4_f6bbefa6-e09b-4c5c-bc38-1d08a5de67b1.pdf'),
  'tuyluladen': ('Cistus creticus L.', '2023/dynamicModulesAttachment/CistuscreticusL.v2_86e4e3d0-17c0-4579-8565-56d26569a180.pdf'),
+ 'altinbasak': ('Solidago virgaurea L.', '2022/dynamicModulesAttachment/SolidagovirgaureaL..pdfb279ef8596e34f17b127529054915c2a_bfcf2947-9179-490c-89a6-e3397a3e0d8d.pdf'),
+ 'kayiskiran': ('Ononis spinosa L.', '2022/dynamicModulesAttachment/OnonisspinosaL.900a25caf22c491691ce15a5bd305571_c15f9564-9cf5-4284-b1a9-f725e270b30a.pdf'),
+ 'boldo': ('Peumus boldus Molina', '2024/dynamicModulesAttachment/PeumusboldusMolina_23225ecb-beb0-4a4a-9a75-00f7c7e74940.pdf'),
 }

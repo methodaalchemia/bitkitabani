@@ -23,3 +23,6 @@ yakiotu | Epilobium angustifolium | pink flower spikes
 hindiba | Cichorium intybus | blue flowers plant -radicchio
 centiyan | Gentiana lutea | yellow flowers plant -veratrum
 tuyluladen | Cistus creticus | pink flowers shrub -ladanifer
+altinbasak | Solidago virgaurea | yellow flower spike -canadensis
+kayiskiran | Ononis spinosa | pink flowers spiny shrub
+boldo | Peumus boldus | leaves tree -dried-tea-bag
