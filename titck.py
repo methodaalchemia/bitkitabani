@@ -75,4 +75,7 @@ M = {
  'ahududuyapragi': ('Rubus idaeus L.', '2023/dynamicModulesAttachment/RubusidaeusL.yaymlv1_d5fc123b-8b58-4e41-b143-6dc1bee880d4.pdf'),
  'tavsanmemesi': ('Ruscus aculeatus L.', '2024/dynamicModulesAttachment/RuscusaculeatusL.dzenlenen_d9a6ed47-210c-4ef0-956c-f9277113d6a9.pdf'),
  'yakiotu': ('Epilobium angustifolium L. / E. parviflorum Schreb.', '2023/dynamicModulesAttachment/EpilobiumangustifoliumL_26b9b54d-a7d1-4855-89f3-f910a6479257.pdf'),
+ 'hindiba': ('Cichorium intybus L.', '2023/dynamicModulesAttachment/CichoriumintybusL._aefa3f9b-53c8-48ab-91be-c8f8211ba5e7.pdf'),
+ 'centiyan': ('Gentiana lutea L.', '2024/dynamicModulesAttachment/GentianaluteaL.V4_f6bbefa6-e09b-4c5c-bc38-1d08a5de67b1.pdf'),
+ 'tuyluladen': ('Cistus creticus L.', '2023/dynamicModulesAttachment/CistuscreticusL.v2_86e4e3d0-17c0-4579-8565-56d26569a180.pdf'),
 }

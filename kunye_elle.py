@@ -688,6 +688,16 @@ ELLE.update({
    titck_apa('Epilobium angustifolium L. / E. parviflorum Schreb.'),
 })
 
+# TİTCK monograf dosyaları (kuyruk/k16.py).
+ELLE.update({
+ 'https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/CichoriumintybusL._aefa3f9b-53c8-48ab-91be-c8f8211ba5e7.pdf':
+   titck_apa('Cichorium intybus L.'),
+ 'https://titck.gov.tr/storage/Archive/2024/dynamicModulesAttachment/GentianaluteaL.V4_f6bbefa6-e09b-4c5c-bc38-1d08a5de67b1.pdf':
+   titck_apa('Gentiana lutea L.'),
+ 'https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/CistuscreticusL.v2_86e4e3d0-17c0-4579-8565-56d26569a180.pdf':
+   titck_apa('Cistus creticus L.'),
+})
+
 # APA künyesindeki yapısal ekler Türkçe yazılır. İngilizce sayfalarda aynı
 # künye kullanılır, yalnızca bu ekler değiştirilir; eser adlarına dokunulmaz.
 _EN = [

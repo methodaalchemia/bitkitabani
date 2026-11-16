@@ -1,6 +1,6 @@
 """Commons'tan seçili bitki fotoğraflarını indirir (500 ve 960 px), kredi bilgisini images.json'a yazar.
 GitHub Actions'ta çalışır; yerelde de `python3 tools/fetch_images.py` ile çalıştırılabilir."""
-import json, os, re, sys, time, urllib.parse, urllib.request, html
+import json, os, re, sys, time, urllib.error, urllib.parse, urllib.request, html
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
@@ -23,14 +23,41 @@ META = os.path.join(ROOT, 'images.json')
 os.makedirs(OUT, exist_ok=True)
 meta = json.load(open(META, encoding='utf-8')) if os.path.exists(META) else {}
 
+_SON = [0.0]      # son isteğin zamanı; istekler arasına en az ARA kadar boşluk konur
+ARA = 0.4
+
 def get(url, binary=False):
-    for attempt in range(4):
+    """Commons'tan indirir. 429'da uzun bekler.
+
+    Wikimedia hız sınırı aştığımızda 429 döndürüyor ve kısa bir
+    beklemeyle tekrar denemek sınırı daha da sıkıştırıyor. Bu yüzden
+    429 ayrı ele alınıyor: sunucu Retry-After veriyorsa ona uyuluyor,
+    vermiyorsa bekleme 30 saniyeden başlayıp ikiye katlanıyor. Diğer
+    hatalarda kısa bekleme yeterli, çünkü onlar genellikle geçici ağ
+    hatalarıdır.
+    """
+    bekle = 30
+    for attempt in range(6):
+        ara = ARA - (time.time() - _SON[0])
+        if ara > 0:
+            time.sleep(ara)
         try:
             req = urllib.request.Request(url, headers={'User-Agent': UA})
             with urllib.request.urlopen(req, timeout=60) as r:
                 data = r.read()
+            _SON[0] = time.time()
             return data if binary else json.loads(data)
+        except urllib.error.HTTPError as e:
+            _SON[0] = time.time()
+            if e.code == 429:
+                ra = e.headers.get('Retry-After')
+                s_ = int(ra) if (ra or '').isdigit() else bekle
+                print('  429, %d sn bekleniyor (deneme %d)' % (s_, attempt + 1))
+                time.sleep(min(s_, 300)); bekle = min(bekle * 2, 300)
+                continue
+            print('  tekrar', attempt + 1, e); time.sleep(3 * (attempt + 1))
         except Exception as e:
+            _SON[0] = time.time()
             print('  tekrar', attempt + 1, e); time.sleep(3 * (attempt + 1))
     raise RuntimeError('indirilemedi: ' + url)
 

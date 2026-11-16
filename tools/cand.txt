@@ -20,3 +20,6 @@ sinirliot | Plantago lanceolata | leaf rosette spike
 ahududuyapragi | Rubus idaeus | leaves plant -fruit-closeup
 tavsanmemesi | Ruscus aculeatus | shrub red berries
 yakiotu | Epilobium angustifolium | pink flower spikes
+hindiba | Cichorium intybus | blue flowers plant -radicchio
+centiyan | Gentiana lutea | yellow flowers plant -veratrum
+tuyluladen | Cistus creticus | pink flowers shrub -ladanifer
