@@ -763,6 +763,15 @@ ELLE.update({
    titck_apa('Menyanthes trifoliata L.'),
 })
 
+ELLE.update({
+ 'https://titck.gov.tr/storage/Archive/2024/dynamicModulesAttachment/AvenasativaL._4e1fe68a-0ecb-4053-be4e-b84750043c5b.pdf':
+   titck_apa('Avena sativa L.'),
+ 'https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/CarumcarviL.v3_7efc8888-88eb-46cb-9645-a41c07b94efd.pdf':
+   titck_apa('Carum carvi L.'),
+ 'https://titck.gov.tr/storage/Archive/2024/dynamicModulesAttachment/ChamaemelumnobileL.AllV3_7130f392-0628-4f8d-8995-1a860e26ca3e.pdf':
+   titck_apa('Chamaemelum nobile (L.) All.'),
+})
+
 # Kurum yayını: APA'da kurumsal yazar ve yayın türü köşeli ayraçta.
 ELLE['https://www.iarc.who.int/wp-content/uploads/2018/07/pr244_E.pdf'] = (
     'Uluslararası Kanser Araştırmaları Ajansı. (2016). IARC Monographs '

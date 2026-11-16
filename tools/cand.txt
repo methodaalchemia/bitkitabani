@@ -41,3 +41,6 @@ ayrikotu | Elymus repens | grass rhizome -lawn
 kaliforniyahashasi | Eschscholzia californica | orange flowers -somniferum
 kokuluyonca | Melilotus officinalis | yellow flower spike -albus
 aciyonca | Menyanthes trifoliata | white fringed flowers
+yulaf | Avena sativa | panicle grain spikelets
+frenkkimyonu | Carum carvi | umbel seeds -cuminum
+romenpapatyasi | Chamaemelum nobile | white flower heads -matricaria

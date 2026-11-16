@@ -96,4 +96,7 @@ M = {
  'kaliforniyahashasi': ('Eschscholzia california Cham.', '2024/dynamicModulesAttachment/EschscholziacaliforniaCham.V2_d331fb1b-294f-4e7e-a287-9e85cedab0cd.pdf'),
  'kokuluyonca': ('Melilotus officinalis (L.) Lam.', '2022/dynamicModulesAttachment/MelilotusofficinalisL.Lam25f3329baa35428bb04b2e9b194de6de_ae125682-b4fb-4dd3-a5df-fafbca70b485.pdf'),
  'aciyonca': ('Menyanthes trifoliata L.', '2024/dynamicModulesAttachment/MenyanthestrifoliataL._c46f522d-f224-470d-b23c-0e6c196da59c.pdf'),
+ 'yulaf': ('Avena sativa L.', '2024/dynamicModulesAttachment/AvenasativaL._4e1fe68a-0ecb-4053-be4e-b84750043c5b.pdf'),
+ 'frenkkimyonu': ('Carum carvi L.', '2023/dynamicModulesAttachment/CarumcarviL.v3_7efc8888-88eb-46cb-9645-a41c07b94efd.pdf'),
+ 'romenpapatyasi': ('Chamaemelum nobile (L.) All.', '2024/dynamicModulesAttachment/ChamaemelumnobileL.AllV3_7130f392-0628-4f8d-8995-1a860e26ca3e.pdf'),
 }
