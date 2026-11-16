@@ -53,3 +53,6 @@ fasulye | Phaseolus vulgaris | green pods plant -dried
 grindelya | Grindelia robusta | yellow flower resin buds
 kayaegreltisi | Polypodium vulgare | fern fronds rock
 ergelenhardali | Sisymbrium officinale | plant yellow flowers -brassica
+selamotu | Levisticum officinale | plant leaves umbel
+frenkuzumu | Ribes nigrum | leaves bush berries
+esekotu | Oenothera biennis | yellow flowers plant

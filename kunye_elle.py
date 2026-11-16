@@ -801,6 +801,17 @@ ELLE.update({
    titck_apa('Sisymbrium officinale (L.) Scop.'),
 })
 
+ELLE.update({
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/LevisticumofficinaleW.D.J.Koch.376b692c333241c3aa52850f97183aeb_8472fc9b-c7c0-473e-9d79-9a530bf411da.pdf':
+   titck_apa('Levisticum officinale W.D.J. Koch'),
+ 'https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/Ribesnigrum_8f334f04-6a87-44c3-9c16-b7c2ed2fdd7d.pdf':
+   titck_apa('Ribes nigrum L.'),
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/OenotherabiennisL.91ffe26a0be94bdc8723c9f806d8f09e_cb526320-64a9-42ad-8721-edfa6667a3e2.pdf':
+   titck_apa('Oenothera biennis L.'),
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/OenotheralamarckianaL.8dd2e9638daa4f26807b9890775b083d_6e75295c-b3ff-4894-a97c-387129832c32.pdf':
+   titck_apa('Oenothera lamarckiana L.'),
+})
+
 # Kurum yayını: APA'da kurumsal yazar ve yayın türü köşeli ayraçta.
 ELLE['https://www.iarc.who.int/wp-content/uploads/2018/07/pr244_E.pdf'] = (
     'Uluslararası Kanser Araştırmaları Ajansı. (2016). IARC Monographs '

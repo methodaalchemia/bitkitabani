@@ -108,4 +108,7 @@ M = {
  'grindelya': ('Grindelia robusta Nutt.', '2022/dynamicModulesAttachment/GrindeliarobustaNutt_475dbd6b-0a04-4718-bf93-b35dd0f2cdb8.pdf'),
  'kayaegreltisi': ('Polypodium vulgare L.', '2023/dynamicModulesAttachment/PolypodiumvulgareL.v2_b6ff05b0-0ffd-4181-894e-4b0c5fa728db.pdf'),
  'ergelenhardali': ('Sisymbrium officinale (L.) Scop.', '2023/dynamicModulesAttachment/SisymbriumofficinaleL.Scop_60a728f6-e428-4dfd-9a5c-85d4f40464a5.pdf'),
+ 'selamotu': ('Levisticum officinale W.D.J. Koch', '2022/dynamicModulesAttachment/LevisticumofficinaleW.D.J.Koch.376b692c333241c3aa52850f97183aeb_8472fc9b-c7c0-473e-9d79-9a530bf411da.pdf'),
+ 'frenkuzumu': ('Ribes nigrum L.', '2023/dynamicModulesAttachment/Ribesnigrum_8f334f04-6a87-44c3-9c16-b7c2ed2fdd7d.pdf'),
+ 'esekotu': ('Oenothera biennis L.', '2022/dynamicModulesAttachment/OenotherabiennisL.91ffe26a0be94bdc8723c9f806d8f09e_cb526320-64a9-42ad-8721-edfa6667a3e2.pdf'),
 }
