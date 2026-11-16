@@ -87,6 +87,19 @@
   "w": 960,
   "w500": 500
  },
+ "afrikaerigi": {
+  "artist": "SAplants",
+  "auto": true,
+  "b1280": "Prunus africana 1DS-II 0042.jpg",
+  "file": "Prunus africana 1DS-II 0042.jpg",
+  "h": 1440,
+  "h500": 750,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Prunus_africana_1DS-II_0042.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "aguaymanto": {
   "artist": "fir0002 flagstaffotos [at] gmail.com Canon 20D + Tamron 28-75mm f/2.8",
   "auto": true,
@@ -315,6 +328,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Arnica_montana_Arnika_g%C3%B3rska_2023-06-08_02.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "aronya": {
+  "artist": "Michal Klajban",
+  "auto": true,
+  "b1280": "Aronia melanocarpa, Christchurch Botanic Gardens, Canterbury, New Zealand 13.jpg",
+  "file": "Aronia melanocarpa, Christchurch Botanic Gardens, Canterbury, New Zealand 13.jpg",
+  "h": 707,
+  "h500": 368,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Aronia_melanocarpa,_Christchurch_Botanic_Gardens,_Canterbury,_New_Zealand_13.jpg",
   "w": 960,
   "w500": 500
  },
@@ -842,6 +868,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Corteza_de_Chuchuhuasi_(Maytenus_macrocarpa)_cortada_en_el_Centro_Takiwasi,_2010.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "cinmelekotu": {
+  "artist": "Dr Aug. Henry, 1889, China Hupeh",
+  "auto": true,
+  "b1280": "Danggui Angelica sinensis herbier.jpg",
+  "file": "Danggui Angelica sinensis herbier.jpg",
+  "h": 1385,
+  "h500": 721,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Danggui_Angelica_sinensis_herbier.jpg",
   "w": 960,
   "w500": 500
  },
@@ -1593,6 +1632,19 @@
   "w": 960,
   "w500": 500
  },
+ "hintgunlugu": {
+  "artist": "Dinesh Valke from Thane, India",
+  "auto": true,
+  "b1280": "Kunkiliyam (Tamil- குங்கிலியம்) (4399784023).jpg",
+  "file": "Kunkiliyam (Tamil- குங்கிலியம்) (4399784023).jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Kunkiliyam_(Tamil-_%E0%AE%95%E0%AF%81%E0%AE%99%E0%AF%8D%E0%AE%95%E0%AE%BF%E0%AE%B2%E0%AE%BF%E0%AE%AF%E0%AE%AE%E0%AF%8D)_(4399784023).jpg",
+  "w": 960,
+  "w500": 500
+ },
  "hintyagi": {
   "artist": "Moonik",
   "auto": true,
@@ -2018,6 +2070,19 @@
   "w": 960,
   "w500": 500
  },
+ "kaskara": {
+  "artist": "Jesse Taylor",
+  "auto": true,
+  "b1280": "Rhamnus purshiana -- leaves and fruits.JPG",
+  "file": "Rhamnus purshiana -- leaves and fruits.JPG",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Rhamnus_purshiana_--_leaves_and_fruits.JPG",
+  "w": 960,
+  "w500": 500
+ },
  "kava": {
   "artist": "Krzysztof Golik",
   "auto": true,
@@ -2391,6 +2456,32 @@
   "w": 960,
   "w500": 500
  },
+ "kuzukulagi": {
+  "artist": "Ivar Leidus",
+  "auto": true,
+  "b1280": "Rumex acetosa - Hapu oblikas.jpg",
+  "file": "Rumex acetosa - Hapu oblikas.jpg",
+  "h": 1440,
+  "h500": 750,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Rumex_acetosa_-_Hapu_oblikas.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "labada": {
+  "artist": "Retama",
+  "auto": true,
+  "b1280": "Rumex crispus re.jpg",
+  "file": "Rumex crispus re.jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Rumex_crispus_re.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "lavanta": {
   "artist": "JLPC",
   "b1280": "Lavande off FR 2012.jpg",
@@ -2451,6 +2542,19 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
   "page": "https://commons.wikimedia.org/wiki/File:Prunus_mahaleb2.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "manuka": {
+  "artist": "Peter de Lange",
+  "auto": true,
+  "b1280": "Leptospermum scoparium 180802330.jpg",
+  "file": "Leptospermum scoparium 180802330.jpg",
+  "h": 1222,
+  "h500": 636,
+  "license": "CC0",
+  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Leptospermum_scoparium_180802330.jpg",
   "w": 960,
   "w500": 500
  },
@@ -3163,6 +3267,19 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Levisticum_officinale_Bl%C3%BCtenstand_Juni_2012.JPG",
+  "w": 960,
+  "w500": 500
+ },
+ "senega": {
+  "artist": "Rob Routledge, Sault College, Bugwood.org",
+  "auto": true,
+  "b1280": "Polygala senega 2.jpg",
+  "file": "Polygala senega 2.jpg",
+  "h": 1282,
+  "h500": 668,
+  "license": "CC BY 3.0 us",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0/us/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Polygala_senega_2.jpg",
   "w": 960,
   "w500": 500
  },

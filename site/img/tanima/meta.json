@@ -2943,5 +2943,62 @@
   "license": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%B8%D1%81%D0%BE%D0%BA%D0%B0_%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D0%BA%D0%B0_3.jpg"
  },
- "saparna:kuru": "yok"
+ "saparna:kuru": "yok",
+ "kuzukulagi:cizim": "yok",
+ "kuzukulagi:cicek": {
+  "file": "酸模 20190423205518.jpg",
+  "artist": "Ping an Chang",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%E9%85%B8%E6%A8%A1_20190423205518.jpg"
+ },
+ "kuzukulagi:kuru": "yok",
+ "labada:cizim": "yok",
+ "labada:cicek": {
+  "file": "Inflorescence of Curled Dock (Rumex crispus), Kyiv, Ukraine.jpg",
+  "artist": "Ввласенко",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Inflorescence_of_Curled_Dock_%28Rumex_crispus%29%2C_Kyiv%2C_Ukraine.jpg"
+ },
+ "labada:kuru": "yok",
+ "aronya:cizim": "yok",
+ "aronya:cicek": {
+  "file": "Atlas roslin pl Aronia czarna 3050 6388.jpg",
+  "artist": "Joanna Boisse",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Atlas_roslin_pl_Aronia_czarna_3050_6388.jpg"
+ },
+ "aronya:kuru": "yok",
+ "manuka:cizim": "yok",
+ "manuka:cicek": {
+  "file": "Leptospermum Scoparium.jpg",
+  "artist": "Luizabella",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Leptospermum_Scoparium.jpg"
+ },
+ "manuka:kuru": "yok",
+ "afrikaerigi:cizim": "yok",
+ "afrikaerigi:cicek": "yok",
+ "afrikaerigi:kuru": "yok",
+ "cinmelekotu:cizim": "yok",
+ "cinmelekotu:cicek": "yok",
+ "cinmelekotu:kuru": "yok",
+ "kaskara:cizim": "yok",
+ "kaskara:cicek": "yok",
+ "kaskara:kuru": "yok",
+ "senega:cizim": {
+  "file": "Polygala senega - Köhler–s Medizinal-Pflanzen-247.jpg",
+  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Polygala_senega_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-247.jpg"
+ },
+ "senega:cicek": "yok",
+ "senega:kuru": "yok",
+ "hintgunlugu:cizim": "yok",
+ "hintgunlugu:cicek": {
+  "file": "Kunkiliyam (Tamil- குங்கிலியம்) (4399784023).jpg",
+  "artist": "Dinesh Valke from Thane, India",
+  "license": "CC BY-SA 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Kunkiliyam_%28Tamil-_%E0%AE%95%E0%AF%81%E0%AE%99%E0%AF%8D%E0%AE%95%E0%AE%BF%E0%AE%B2%E0%AE%BF%E0%AE%AF%E0%AE%AE%E0%AF%8D%29_%284399784023%29.jpg"
+ },
+ "hintgunlugu:kuru": "yok"
 }
