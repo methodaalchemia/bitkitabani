@@ -131,6 +131,13 @@
   "yazar": "L.",
   "yazar_kaynagi": "GBIF/WCVP"
  },
+ "Angelica archangelica": {
+  "ad": "Angelica archangelica",
+  "familya": "Apiaceae",
+  "kimlik": "837560-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
  "Annona muricata": {
   "ad": "Annona muricata",
   "familya": "Annonaceae",
@@ -1387,6 +1394,13 @@
   "rutbe": "spec.",
   "yazar": "C.A.Mey."
  },
+ "Panax quinquefolius": {
+  "ad": "Panax quinquefolius",
+  "familya": "Araliaceae",
+  "kimlik": "300467-2",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
  "Papaver rhoeas": {
   "ad": "Papaver rhoeas",
   "familya": "Papaveraceae",
@@ -1515,6 +1529,13 @@
   "rutbe": "spec.",
   "yazar": "L.",
   "yazar_kaynagi": "GBIF/WCVP"
+ },
+ "Pinus pinaster": {
+  "ad": "Pinus pinaster",
+  "familya": "Pinaceae",
+  "kimlik": "263216-1",
+  "rutbe": "spec.",
+  "yazar": "Aiton"
  },
  "Piper aduncum": {
   "ad": "Piper aduncum",

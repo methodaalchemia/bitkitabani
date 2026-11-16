@@ -883,6 +883,15 @@ ELLE.update({
    titck_apa('Ferula sp.'),
 })
 
+ELLE.update({
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/PinusmaritimaLam.4adb7403313a4d9abf16191b2a6c6fe1_f8698d51-b4f5-4f03-a7e1-bd3db4830b08.pdf':
+   titck_apa('Pinus maritima Lam.'),
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/AngelicaarchangelicaL.aca74cb46ef9430c9166c68f01cb72ed_824a1145-1cb5-40c1-8c52-ba8ef06e9522.pdf':
+   titck_apa('Angelica archangelica L.'),
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/PanaxquinquefoliusL.6107907dcbc148ec9a151e1609e9c21a_ca1d4f3d-dd97-4b24-b7a0-70c9e62c149d.pdf':
+   titck_apa('Panax quinquefolius L.'),
+})
+
 # Kurum yayını: APA'da kurumsal yazar ve yayın türü köşeli ayraçta.
 ELLE['https://www.iarc.who.int/wp-content/uploads/2018/07/pr244_E.pdf'] = (
     'Uluslararası Kanser Araştırmaları Ajansı. (2016). IARC Monographs '

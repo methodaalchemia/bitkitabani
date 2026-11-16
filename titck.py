@@ -123,4 +123,7 @@ M = {
  'kavak': ('Populus sp.', '2022/dynamicModulesAttachment/Populussp.e195ebbcac354a7fa6a38903ca8f5c30_fb188bf3-f422-4336-b5a2-184dbd76e9b5.pdf'),
  'itir': ("Pelargonium graveolens L'Her.", '2023/dynamicModulesAttachment/PelargoniumgraveolensLHer_53233e1f-4f95-4672-8ee9-61e1ecafaae3.pdf'),
  'hiltit': ('Ferula sp.', '2022/dynamicModulesAttachment/Ferulasp.01ef4c3e54e443bba7842b10dd9a4f56_c7c80c11-36f0-4d95-aedc-ca8d23777602.pdf'),
+ 'sahilcami': ('Pinus maritima Lam.', '2022/dynamicModulesAttachment/PinusmaritimaLam.4adb7403313a4d9abf16191b2a6c6fe1_f8698d51-b4f5-4f03-a7e1-bd3db4830b08.pdf'),
+ 'angelika': ('Angelica archangelica L.', '2022/dynamicModulesAttachment/AngelicaarchangelicaL.aca74cb46ef9430c9166c68f01cb72ed_824a1145-1cb5-40c1-8c52-ba8ef06e9522.pdf'),
+ 'amerikanginsengi': ('Panax quinquefolius L.', '2022/dynamicModulesAttachment/PanaxquinquefoliusL.6107907dcbc148ec9a151e1609e9c21a_ca1d4f3d-dd97-4b24-b7a0-70c9e62c149d.pdf'),
 }
