@@ -72,4 +72,7 @@ M = {
  'cobancantasi': ('Capsella bursa-pastoris (L.) Medikus', '2022/dynamicModulesAttachment/CapsellabursapastorisL.b70dff321ef6465ca8a12954dc8f64c3_923331a2-924d-4201-9cb4-232b00146934.pdf'),
  'sahtere': ('Fumaria officinalis L.', '2022/dynamicModulesAttachment/FumariaofficinalisL.aee311f77d9b47f18fe1305a30edcef0_8560bcc8-9297-4200-a6f7-b80ef5ee2c39.pdf'),
  'sinirliot': ('Plantago lanceolata L.', '2023/dynamicModulesAttachment/PlantagolanceolataL_26554602-5f71-4c75-b153-018e3f2ce8f1.pdf'),
+ 'ahududuyapragi': ('Rubus idaeus L.', '2023/dynamicModulesAttachment/RubusidaeusL.yaymlv1_d5fc123b-8b58-4e41-b143-6dc1bee880d4.pdf'),
+ 'tavsanmemesi': ('Ruscus aculeatus L.', '2024/dynamicModulesAttachment/RuscusaculeatusL.dzenlenen_d9a6ed47-210c-4ef0-956c-f9277113d6a9.pdf'),
+ 'yakiotu': ('Epilobium angustifolium L. / E. parviflorum Schreb.', '2023/dynamicModulesAttachment/EpilobiumangustifoliumL_26b9b54d-a7d1-4855-89f3-f910a6479257.pdf'),
 }

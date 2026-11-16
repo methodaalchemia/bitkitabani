@@ -678,6 +678,16 @@ ELLE.update({
    titck_apa('Plantago lanceolata L.'),
 })
 
+# TİTCK monograf dosyaları (kuyruk/k15.py).
+ELLE.update({
+ 'https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/RubusidaeusL.yaymlv1_d5fc123b-8b58-4e41-b143-6dc1bee880d4.pdf':
+   titck_apa('Rubus idaeus L.'),
+ 'https://titck.gov.tr/storage/Archive/2024/dynamicModulesAttachment/RuscusaculeatusL.dzenlenen_d9a6ed47-210c-4ef0-956c-f9277113d6a9.pdf':
+   titck_apa('Ruscus aculeatus L.'),
+ 'https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/EpilobiumangustifoliumL_26b9b54d-a7d1-4855-89f3-f910a6479257.pdf':
+   titck_apa('Epilobium angustifolium L. / E. parviflorum Schreb.'),
+})
+
 # APA künyesindeki yapısal ekler Türkçe yazılır. İngilizce sayfalarda aynı
 # künye kullanılır, yalnızca bu ekler değiştirilir; eser adlarına dokunulmaz.
 _EN = [
