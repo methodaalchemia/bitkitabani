@@ -48,6 +48,13 @@
   "rutbe": "spec.",
   "yazar": "L."
  },
+ "Aloe ferox": {
+  "ad": "Aloe ferox",
+  "familya": "Aloaceae",
+  "kimlik": "529449-1",
+  "rutbe": "spec.",
+  "yazar": "Mill."
+ },
  "Aloe vera": {
   "ad": "Aloe vera",
   "familya": "Aloaceae",
@@ -501,6 +508,13 @@
   "rutbe": "spec.",
   "yazar": "L."
  },
+ "Cinnamomum camphora": {
+  "ad": "Cinnamomum camphora",
+  "familya": "Lauraceae",
+  "kimlik": "463336-1",
+  "rutbe": "spec.",
+  "yazar": "(L.) J.Presl"
+ },
  "Cinnamomum verum": {
   "ad": "Cinnamomum verum",
   "familya": "Lauraceae",
@@ -657,6 +671,14 @@
   "kimlik": "796485-1",
   "rutbe": "spec.",
   "yazar": "Roxb."
+ },
+ "Curcuma zedoaria": {
+  "ad": "Curcuma zedoaria",
+  "familya": "Zingiberaceae",
+  "kimlik": "872393-1",
+  "rutbe": "spec.",
+  "yazar": "(Christm.) Roscoe",
+  "yazar_kaynagi": "GBIF/WCVP"
  },
  "Cynara cardunculus": {
   "ad": "Cynara cardunculus",

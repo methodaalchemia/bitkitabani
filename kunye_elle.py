@@ -944,6 +944,15 @@ ELLE.update({
  who_url(1, 'fructus-bruceae'): who_apa('Fructus Bruceae', 1, '59–65'),
 })
 
+ELLE.update({
+ 'https://titck.gov.tr/storage/Archive/2024/dynamicModulesAttachment/Aloeferoxzsuyu_59f65bec-2c22-4bfd-9ea7-735236ec939b.pdf':
+   titck_apa('Aloe ferox Miller'),
+ 'https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/CinnamomumcamphorayaymlV1_580e3269-513e-45c6-a2c3-050e131bb5ef.pdf':
+   titck_apa('Cinnamomum camphora (L.) J.Presl'),
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/CurcumazedoariaChristmannRoscoe8fbeb733a2b548519d8e8ca15a8229d1_1d5425d2-9b06-48df-880e-c1d802ccd3e0.pdf':
+   titck_apa('Curcuma zedoaria (Christmann) Roscoe'),
+})
+
 # Kurum yayını: APA'da kurumsal yazar ve yayın türü köşeli ayraçta.
 ELLE['https://www.iarc.who.int/wp-content/uploads/2018/07/pr244_E.pdf'] = (
     'Uluslararası Kanser Araştırmaları Ajansı. (2016). IARC Monographs '

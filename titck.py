@@ -135,4 +135,7 @@ M = {
  'manuka': ('Leptospermum scoparium J.R.Forst. & G.Forst.', '2023/dynamicModulesAttachment/Leptospermumsp_a30f0182-0974-4630-ba0c-d12dc192c1a5.pdf'),
  'afrikaerigi': ('Prunus africana (Hook. f.) Kalkman', '2022/dynamicModulesAttachment/PrunusafricanaHookf.Kalkmana0a9e24670bf462dbaad09a06e6d4902_31a9c16f-624b-4f14-8dab-735b3b98d8c4.pdf'),
  'cinmelekotu': ('Angelica sinensis (Oliv.) Diels', '2022/dynamicModulesAttachment/AngelicasinensisOliv.Diels08e6e3acc0b542a9ad5c1fbbedb9f9ef_e44c7e49-036e-47e7-96fc-dc8feed78a42.pdf'),
+ 'capesarisabiri': ('Aloe ferox Miller', '2024/dynamicModulesAttachment/Aloeferoxzsuyu_59f65bec-2c22-4bfd-9ea7-735236ec939b.pdf'),
+ 'kafuragaci': ('Cinnamomum camphora (L.) J.Presl', '2023/dynamicModulesAttachment/CinnamomumcamphorayaymlV1_580e3269-513e-45c6-a2c3-050e131bb5ef.pdf'),
+ 'zedoar': ('Curcuma zedoaria (Christmann) Roscoe', '2022/dynamicModulesAttachment/CurcumazedoariaChristmannRoscoe8fbeb733a2b548519d8e8ca15a8229d1_1d5425d2-9b06-48df-880e-c1d802ccd3e0.pdf'),
 }

@@ -133,3 +133,6 @@ karakartopu | Viburnum prunifolium | shrub flowers berries
 tibbiadacayi | Salvia officinalis | leaves flowers plant
 huanglian | Coptis chinensis | plant rhizome flowers
 yadanzi | Brucea javanica | shrub fruit leaves
+capesarisabiri | Aloe ferox | plant flowers leaves
+kafuragaci | Cinnamomum camphora | tree leaves bark
+zedoar | Curcuma zedoaria | rhizome flowers plant
