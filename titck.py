@@ -102,4 +102,7 @@ M = {
  'kola': ('Cola nitida (Vent.) Schott et Endl.', '2024/dynamicModulesAttachment/ColanitidaVent.SchottetEndl._ac17e3c0-a16a-48ce-860c-65c3b58e4ba8.pdf'),
  'javazerdecali': ('Curcuma xanthorrhiza Roxb.', '2022/dynamicModulesAttachment/Curcumaxanthorriza3e907b05928b4967a97d3cf474f0dd23_ab8cf9a4-24da-4888-a29f-3536b6e4205e.pdf'),
  'sibiryaginsengi': ('Eleutherococcus senticosus (Rupr. et Maxim.) Maxim.', '2022/dynamicModulesAttachment/EleutherococcussenticosusRupr.EtMaximMaxim.6b1b514b6aba4677b491d1083caa2238_469bf25b-5ec2-4704-9ba2-122c0d06b7d0.pdf'),
+ 'yabanicilek': ('Fragaria vesca L.', '2024/dynamicModulesAttachment/FragariamonografV2_9c978def-5f39-4a1e-808c-6522e28b0426.pdf'),
+ 'soya': ('Glycine max (L.) Merr.', '2022/dynamicModulesAttachment/GlycinemaxL.Merr.pdf09cd7736af7644089259ce38e73ec4d4_05c16cd8-57e8-4e8c-8a33-08b5dfeb640d.pdf'),
+ 'fasulye': ('Phaseolus vulgaris L.', '2024/dynamicModulesAttachment/PhaseolusvulgarisL._3bb46bf8-5ad6-48d6-9d24-104e5f9f7287.pdf'),
 }

@@ -47,3 +47,6 @@ romenpapatyasi | Chamaemelum nobile | white flower heads -matricaria
 kola | Cola nitida | nuts seeds tree
 javazerdecali | Curcuma xanthorrhiza | rhizome plant -longa
 sibiryaginsengi | Eleutherococcus senticosus | shrub leaves berries
+yabanicilek | Fragaria vesca | leaves plant fruit -ananassa
+soya | Glycine max | pods plant field
+fasulye | Phaseolus vulgaris | green pods plant -dried

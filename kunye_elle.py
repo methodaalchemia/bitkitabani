@@ -782,6 +782,16 @@ ELLE.update({
    titck_apa('Eleutherococcus senticosus (Rupr. et Maxim.) Maxim.'),
 })
 
+ELLE.update({
+ 'https://titck.gov.tr/storage/Archive/2024/dynamicModulesAttachment/FragariamonografV2_9c978def-5f39-4a1e-808c-6522e28b0426.pdf':
+   titck_apa('Fragaria vesca L., F. moschata Weston, F. viridis Weston, '
+             'F. x ananassa (Duchesne ex Weston) Duchesne ex Rozier'),
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/GlycinemaxL.Merr.pdf09cd7736af7644089259ce38e73ec4d4_05c16cd8-57e8-4e8c-8a33-08b5dfeb640d.pdf':
+   titck_apa('Glycine max (L.) Merr.'),
+ 'https://titck.gov.tr/storage/Archive/2024/dynamicModulesAttachment/PhaseolusvulgarisL._3bb46bf8-5ad6-48d6-9d24-104e5f9f7287.pdf':
+   titck_apa('Phaseolus vulgaris L.'),
+})
+
 # Kurum yayını: APA'da kurumsal yazar ve yayın türü köşeli ayraçta.
 ELLE['https://www.iarc.who.int/wp-content/uploads/2018/07/pr244_E.pdf'] = (
     'Uluslararası Kanser Araştırmaları Ajansı. (2016). IARC Monographs '
