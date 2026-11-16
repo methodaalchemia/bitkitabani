@@ -1249,6 +1249,13 @@
   "rutbe": "spec.",
   "yazar": "L."
  },
+ "Nicotiana tabacum": {
+  "ad": "Nicotiana tabacum",
+  "familya": "Solanaceae",
+  "kimlik": "817077-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
  "Nigella sativa": {
   "ad": "Nigella sativa",
   "familya": "Ranunculaceae",
@@ -1465,6 +1472,14 @@
   "kimlik": "680296-1",
   "rutbe": "spec.",
   "yazar": "L.",
+  "yazar_kaynagi": "GBIF/WCVP"
+ },
+ "Piper methysticum": {
+  "ad": "Piper methysticum",
+  "familya": "Piperaceae",
+  "kimlik": "198437-2",
+  "rutbe": "spec.",
+  "yazar": "G.Forst.",
   "yazar_kaynagi": "GBIF/WCVP"
  },
  "Piper nigrum": {
@@ -1918,6 +1933,14 @@
   "kimlik": "741641-1",
   "rutbe": "spec.",
   "yazar": "L."
+ },
+ "Stevia rebaudiana": {
+  "ad": "Stevia rebaudiana",
+  "familya": "Asteraceae",
+  "kimlik": "245468-2",
+  "rutbe": "spec.",
+  "yazar": "(Bertoni) Bertoni",
+  "yazar_kaynagi": "GBIF/WCVP"
  },
  "Symphytum officinale": {
   "ad": "Symphytum officinale",

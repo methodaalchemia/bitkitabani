@@ -97,3 +97,6 @@ kopekuzumu | Solanum nigrum | berries plant
 papaya | Carica papaya | fruit tree
 guava | Psidium guajava | leaves fruit tree
 karabiber | Piper nigrum | peppercorns vine
+tutun | Nicotiana tabacum | flowers leaves plant
+kava | Piper methysticum | plant leaves rhizome
+stevia | Stevia rebaudiana | leaves plant

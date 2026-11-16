@@ -854,6 +854,16 @@ ELLE.update({
  who_url(4, 'folium-guavae'): who_apa('Folium Guavae', 4, '127–148'),
 })
 
+ELLE.update({
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/SteviarebaudianaBertoni8927bc6aa9b44cc28773784989d0ca03_251a8d8c-06e6-4261-9dcd-486fdc05d65f.pdf':
+   titck_apa('Stevia rebaudiana Bertoni'),
+ who_url(2, 'rhizoma-piperis-methystici'): who_apa('Rhizoma Piperis Methystici', 2, '231–245'),
+ 'https://www.who.int/news-room/fact-sheets/detail/tobacco':
+   'World Health Organization. (2026, 26 Haziran). Tobacco [Bilgi föyü]. https://www.who.int/news-room/fact-sheets/detail/tobacco',
+ 'https://yalebooks.yale.edu/9780300057904/tobacco-and-shamanism-in-south-america':
+   'Wilbert, J. (1987). Tobacco and shamanism in South America. Yale University Press.',
+})
+
 # Kurum yayını: APA'da kurumsal yazar ve yayın türü köşeli ayraçta.
 ELLE['https://www.iarc.who.int/wp-content/uploads/2018/07/pr244_E.pdf'] = (
     'Uluslararası Kanser Araştırmaları Ajansı. (2016). IARC Monographs '
@@ -905,7 +915,7 @@ ELLE['https://www.sciencehistory.org/stories/disappearing-pod/the-life-saving-ra
 # APA künyesindeki yapısal ekler Türkçe yazılır. İngilizce sayfalarda aynı
 # künye kullanılır, yalnızca bu ekler değiştirilir; eser adlarına dokunulmaz.
 _EN = [
- ('(t.y.)', '(n.d.)'),
+ ('(t.y.)', '(n.d.)'), ('[Bilgi föyü]', '[Fact sheet]'),
  ('Çev.;', 'Trans.;'), (', Çev.)', ', Trans.)'), ('Çev.).', 'Trans.).'),
  ('(Çev.).', '(Trans.).'),
  ('Yay. haz.', 'Ed.'), ('(Ed.).', '(Ed.).'),
