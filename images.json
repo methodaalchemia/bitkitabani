@@ -163,6 +163,19 @@
   "w": 960,
   "w500": 500
  },
+ "altinbasak": {
+  "artist": "Victor M. Vicente Selvas",
+  "auto": true,
+  "b1280": "S. virgaurea2015-10-10.jpg",
+  "file": "S. virgaurea2015-10-10.jpg",
+  "h": 1748,
+  "h500": 911,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:S._virgaurea2015-10-10.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "altinkok": {
   "artist": "WildBoar",
   "auto": false,
@@ -276,6 +289,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Withania_somnifera_1DS-II_3-7489.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "aslankuyrugu": {
+  "artist": "D. Gordon E. Robertson",
+  "auto": true,
+  "b1280": "Motherwort.jpg",
+  "file": "Motherwort.jpg",
+  "h": 1357,
+  "h500": 707,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Motherwort.jpg",
   "w": 960,
   "w500": 500
  },
@@ -432,6 +458,32 @@
   "w": 960,
   "w500": 500
  },
+ "boldo": {
+  "artist": "Kabelkarl",
+  "auto": true,
+  "b1280": "Boldo - Blüte.jpg",
+  "file": "Boldo - Blüte.jpg",
+  "h": 2132,
+  "h500": 1111,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Boldo_-_Bl%C3%BCte.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "bozotu": {
+  "artist": "H. Zell",
+  "auto": true,
+  "b1280": "Marrubium vulgare 002.JPG",
+  "file": "Marrubium vulgare 002.JPG",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Marrubium_vulgare_002.JPG",
+  "w": 960,
+  "w500": 500
+ },
  "bugday": {
   "artist": "Hans Hillewaert",
   "auto": false,
@@ -494,6 +546,19 @@
   "license": "CC BY 2.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
   "page": "https://commons.wikimedia.org/wiki/File:200518_049_Alta_Vista_Botanical_Gardens,_Melaleuca_alternifolia_Australian_Tea_Oil_Tree.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "cayirkralicesi": {
+  "artist": "Hans Hillewaert",
+  "auto": true,
+  "b1280": "Filipendula ulmaria (flower spike).jpg",
+  "file": "Filipendula ulmaria (flower spike).jpg",
+  "h": 1281,
+  "h500": 667,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Filipendula_ulmaria_(flower_spike).jpg",
   "w": 960,
   "w500": 500
  },
@@ -774,6 +839,19 @@
   "license": "CC0",
   "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
   "page": "https://commons.wikimedia.org/wiki/File:Cynara_cardunculus_var._scolymus_in_Jardin_des_Plante_de_Paris.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "esmersuyosunu": {
+  "artist": "JackyM59",
+  "auto": true,
+  "b1280": "Fucus vésiculeux (Fucus vesiculosus) - Sainte-Cécile-Plage.jpg",
+  "file": "Fucus vésiculeux (Fucus vesiculosus) - Sainte-Cécile-Plage.jpg",
+  "h": 540,
+  "h500": 281,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Fucus_v%C3%A9siculeux_(Fucus_vesiculosus)_-_Sainte-C%C3%A9cile-Plage.jpg",
   "w": 960,
   "w500": 500
  },
@@ -1316,6 +1394,19 @@
   "w": 960,
   "w500": 500
  },
+ "kayiskiran": {
+  "artist": "( Hans Hillewaert )",
+  "auto": true,
+  "b1280": "Ononis repens (flowers).jpg",
+  "file": "Ononis repens (flowers).jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ononis_repens_(flowers).jpg",
+  "w": 960,
+  "w500": 500
+ },
  "keciboynuzu": {
   "artist": "Zeynel Cebeci",
   "auto": false,
@@ -1605,6 +1696,19 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:P1000513_Nicotiana_rustica_(Aztec_tobacco,_wild_tobacco)_(Solanaceae)_Plant.JPG",
+  "w": 960,
+  "w500": 500
+ },
+ "mate": {
+  "artist": "Andrés González",
+  "auto": true,
+  "b1280": "Flora Nativa de Uruguay Ilex paraguariensis. Aquifoliaceae 13.jpg",
+  "file": "Flora Nativa de Uruguay Ilex paraguariensis. Aquifoliaceae 13.jpg",
+  "h": 960,
+  "h500": 500,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Flora_Nativa_de_Uruguay_Ilex_paraguariensis._Aquifoliaceae_13.jpg",
   "w": 960,
   "w500": 500
  },

@@ -2052,5 +2052,97 @@
   "license": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Colored_flowers_e.jpg"
  },
- "tuyluladen:kuru": "yok"
+ "tuyluladen:kuru": "yok",
+ "altinbasak:cizim": {
+  "file": "Illustration Solidago virgaurea0.jpg",
+  "artist": "Otto Wilhelm Thomé",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Solidago_virgaurea0.jpg"
+ },
+ "altinbasak:cicek": {
+  "file": "Золота різка - 20260816 142548.jpg",
+  "artist": "Микола Василечко",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%B0_%D1%80%D1%96%D0%B7%D0%BA%D0%B0_-_20260816_142548.jpg"
+ },
+ "altinbasak:kuru": "yok",
+ "kayiskiran:cizim": {
+  "file": "Ononis spinosa - Köhler–s Medizinal-Pflanzen-230.jpg",
+  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Ononis_spinosa_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-230.jpg"
+ },
+ "kayiskiran:cicek": {
+  "file": "Close-up van de bloeiwijze van Ononis spinosa subsp. spinosa.jpg",
+  "artist": "Cultureel Gelderland",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Close-up_van_de_bloeiwijze_van_Ononis_spinosa_subsp._spinosa.jpg"
+ },
+ "kayiskiran:kuru": "yok",
+ "boldo:cizim": {
+  "file": "Peumus boldus - Köhler–s Medizinal-Pflanzen-104.jpg",
+  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Peumus_boldus_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-104.jpg"
+ },
+ "boldo:cicek": {
+  "file": "Peumus boldus (boldo), hembra - Flickr - Pato Novoa.jpg",
+  "artist": "Pato Novoa from Valparaíso, Chile",
+  "license": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Peumus_boldus_%28boldo%29%2C_hembra_-_Flickr_-_Pato_Novoa.jpg"
+ },
+ "boldo:kuru": "yok",
+ "cayirkralicesi:cizim": {
+  "file": "Illustration Filipendula ulmaria0 clean.jpg",
+  "artist": "User:Kilom691",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Filipendula_ulmaria0_clean.jpg"
+ },
+ "cayirkralicesi:cicek": {
+  "file": "Filipendula ulmaria (flower spike).jpg",
+  "artist": "Hans Hillewaert",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Filipendula_ulmaria_%28flower_spike%29.jpg"
+ },
+ "cayirkralicesi:kuru": "yok",
+ "bozotu:cizim": {
+  "file": "Marrubium vulgare - Köhler–s Medizinal-Pflanzen-224.jpg",
+  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Marrubium_vulgare_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-224.jpg"
+ },
+ "bozotu:cicek": {
+  "file": "Andorn Roscheiderhof h3.jpg",
+  "artist": "Helge Klaus Rieder",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Andorn_Roscheiderhof_h3.jpg"
+ },
+ "bozotu:kuru": "yok",
+ "aslankuyrugu:cizim": {
+  "file": "Illustration Leonurus cardiaca0.jpg",
+  "artist": "Wikimedia Commons",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Leonurus_cardiaca0.jpg"
+ },
+ "aslankuyrugu:cicek": {
+  "file": "Leonurus cardiaca subsp. cardiaca sl12.jpg",
+  "artist": "Stefan.lefnaer",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Leonurus_cardiaca_subsp._cardiaca_sl12.jpg"
+ },
+ "aslankuyrugu:kuru": "yok",
+ "esmersuyosunu:cizim": "yok",
+ "esmersuyosunu:cicek": "yok",
+ "esmersuyosunu:kuru": "yok",
+ "izlandalikeni:cizim": "yok",
+ "izlandalikeni:cicek": "yok",
+ "izlandalikeni:kuru": "yok",
+ "mate:cizim": {
+  "file": "Ilex paraguariensis - Köhler–s Medizinal-Pflanzen-074.jpg",
+  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Ilex_paraguariensis_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-074.jpg"
+ },
+ "mate:cicek": "yok",
+ "mate:kuru": "yok"
 }
