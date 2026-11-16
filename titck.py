@@ -129,4 +129,7 @@ M = {
  'karadut': ('Morus nigra L.', '2023/dynamicModulesAttachment/MorusnigraL_e72f0e96-27fc-46ca-bfe9-b9ba1219d8df.pdf'),
  'mazi': ('Thuja occidentalis L', '2022/dynamicModulesAttachment/Thujaoccidentalis.pdfb32efc5c62de4150a7694c8ee13d8c58_4b9d30fb-d218-4a56-8fef-174dcd7aa1b2.pdf'),
  'saparna': ('Smilax sp. L.', '2022/dynamicModulesAttachment/Smilaxsp.1ec6f9c3649f456481cc407dbfed8143_3c8779ce-461c-4346-ab6c-bdee58f073e5.pdf'),
+ 'kuzukulagi': ('Rumex acetosa L.', '2022/dynamicModulesAttachment/RumexacetosaL..pdf8f5e582c24f84c488fced036f020a642_7d08286c-972c-47f6-843c-1ce0d580c248.pdf'),
+ 'labada': ('Rumex crispus L.', '2022/dynamicModulesAttachment/RumexcrispusL..pdfb368e3c895f243749c2818e7897db607_8105eac9-e7fb-4822-a8f9-6633bde0fa6e.pdf'),
+ 'aronya': ('Aronia melanocarpa (Michx.) Elliott', '2023/dynamicModulesAttachment/AroniamelanocarpaMichx.ElliottyaymlV2_40bcbf81-5da0-4c65-a752-7fa4e887ca77.pdf'),
 }

@@ -901,6 +901,15 @@ ELLE.update({
    titck_apa('Smilax sp. L.'),
 })
 
+ELLE.update({
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/RumexacetosaL..pdf8f5e582c24f84c488fced036f020a642_7d08286c-972c-47f6-843c-1ce0d580c248.pdf':
+   titck_apa('Rumex acetosa L.'),
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/RumexcrispusL..pdfb368e3c895f243749c2818e7897db607_8105eac9-e7fb-4822-a8f9-6633bde0fa6e.pdf':
+   titck_apa('Rumex crispus L.'),
+ 'https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/AroniamelanocarpaMichx.ElliottyaymlV2_40bcbf81-5da0-4c65-a752-7fa4e887ca77.pdf':
+   titck_apa('Aronia melanocarpa (Michx.) Elliott'),
+})
+
 # Kurum yayını: APA'da kurumsal yazar ve yayın türü köşeli ayraçta.
 ELLE['https://www.iarc.who.int/wp-content/uploads/2018/07/pr244_E.pdf'] = (
     'Uluslararası Kanser Araştırmaları Ajansı. (2016). IARC Monographs '

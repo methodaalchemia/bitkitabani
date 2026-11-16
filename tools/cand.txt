@@ -115,3 +115,6 @@ amerikanginsengi | Panax quinquefolius | plant berries root
 karadut | Morus nigra | fruit tree
 mazi | Thuja occidentalis | tree foliage cones
 saparna | Smilax excelsa | climber shoots berries
+kuzukulagi | Rumex acetosa | leaves plant
+labada | Rumex crispus | plant leaves seeds
+aronya | Aronia melanocarpa | berries shrub

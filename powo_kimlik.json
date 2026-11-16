@@ -188,6 +188,13 @@
   "yazar": "L.",
   "yazar_kaynagi": "GBIF/WCVP"
  },
+ "Aronia melanocarpa": {
+  "ad": "Aronia melanocarpa",
+  "familya": "Rosaceae",
+  "kimlik": "1109609-2",
+  "rutbe": "spec.",
+  "yazar": "(Michx.) Elliott"
+ },
  "Artemisia absinthium": {
   "ad": "Artemisia absinthium",
   "familya": "Asteraceae",
@@ -1839,6 +1846,21 @@
   "kimlik": "298089-2",
   "rutbe": "spec.",
   "yazar": "L."
+ },
+ "Rumex acetosa": {
+  "ad": "Rumex acetosa",
+  "familya": "Polygonaceae",
+  "kimlik": "332105-2",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
+ "Rumex crispus": {
+  "ad": "Rumex crispus",
+  "familya": "Polygonaceae",
+  "kimlik": "224413-2",
+  "rutbe": "spec.",
+  "yazar": "L.",
+  "yazar_kaynagi": "GBIF/WCVP"
  },
  "Ruscus aculeatus": {
   "ad": "Ruscus aculeatus",
