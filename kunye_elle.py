@@ -812,6 +812,13 @@ ELLE.update({
    titck_apa('Oenothera lamarckiana L.'),
 })
 
+ELLE.update({
+ 'https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/OriganumdictamnusL.v1_f08d6086-b3a7-4735-864d-9ec71a34df62.pdf':
+   titck_apa('Origanum dictamnus L.'),
+ 'https://titck.gov.tr/storage/Archive/2024/dynamicModulesAttachment/PolygonumaviculareLv3_f6a639b3-d31f-4f59-8ca2-42ddc0fd244d.pdf':
+   titck_apa('Polygonum aviculare L.'),
+})
+
 # Kurum yayını: APA'da kurumsal yazar ve yayın türü köşeli ayraçta.
 ELLE['https://www.iarc.who.int/wp-content/uploads/2018/07/pr244_E.pdf'] = (
     'Uluslararası Kanser Araştırmaları Ajansı. (2016). IARC Monographs '

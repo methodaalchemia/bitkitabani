@@ -111,4 +111,6 @@ M = {
  'selamotu': ('Levisticum officinale W.D.J. Koch', '2022/dynamicModulesAttachment/LevisticumofficinaleW.D.J.Koch.376b692c333241c3aa52850f97183aeb_8472fc9b-c7c0-473e-9d79-9a530bf411da.pdf'),
  'frenkuzumu': ('Ribes nigrum L.', '2023/dynamicModulesAttachment/Ribesnigrum_8f334f04-6a87-44c3-9c16-b7c2ed2fdd7d.pdf'),
  'esekotu': ('Oenothera biennis L.', '2022/dynamicModulesAttachment/OenotherabiennisL.91ffe26a0be94bdc8723c9f806d8f09e_cb526320-64a9-42ad-8721-edfa6667a3e2.pdf'),
+ 'giritkekigi': ('Origanum dictamnus L.', '2023/dynamicModulesAttachment/OriganumdictamnusL.v1_f08d6086-b3a7-4735-864d-9ec71a34df62.pdf'),
+ 'cobandegnegi': ('Polygonum aviculare L.', '2024/dynamicModulesAttachment/PolygonumaviculareLv3_f6a639b3-d31f-4f59-8ca2-42ddc0fd244d.pdf'),
 }

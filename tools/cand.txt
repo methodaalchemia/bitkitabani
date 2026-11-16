@@ -56,3 +56,6 @@ ergelenhardali | Sisymbrium officinale | plant yellow flowers -brassica
 selamotu | Levisticum officinale | plant leaves umbel
 frenkuzumu | Ribes nigrum | leaves bush berries
 esekotu | Oenothera biennis | yellow flowers plant
+giritkekigi | Origanum dictamnus | plant pink bracts woolly leaves
+cobandegnegi | Polygonum aviculare | plant prostrate flowers
+mercankosk | Origanum majorana | plant leaves flowers

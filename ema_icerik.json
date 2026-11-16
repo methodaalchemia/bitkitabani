@@ -2069,6 +2069,45 @@
   "pdf": "https://www.ema.europa.eu/en/documents/herbal-monograph/final-community-herbal-monograph-origanum-dictamnus-l-herba-first-version_en.pdf",
   "uzunluk": 17134
  },
+ "origani-majoranae-herba": {
+  "bolum": {
+   "doz_asimi": {
+    "geleneksel": "No case of overdose has been reported. required as per Article 16c(1)(a)(iii) of Directive 2001/83/EC. Not required as per Article 16c(1)(a)(iii) of Directive 2001/83/EC. Not required as per Article 16c(1)(a)(iii) of Directive 2001/83/EC, unless necessary for the safe use of the product. Tests on reproductive toxicity, genotoxicity and carcinogenicity have not been performed. Not applicable",
+    "iyi_bilinen": "5. Pharmacological properties 5.1. Pharmacodynamic properties Not 5.2. Pharmacokinetic properties 5.3. Preclinical safety data 6. Pharmaceutical particulars 7. Date of compilation/last revision 20 September 2016"
+   },
+   "dozaj": {
+    "geleneksel": "Posology Indication 1) Adults and elderly a) Herbal tea: 2-4 g of the comminuted herbal substance in 150 ml of boiling water as a herbal infusion, once to twice daily before meal. Daily dose: 2-8 g The use in children and adolescents under 18 years of age is not recommended (see section 4.4 ‘Special warnings and precautions for use’). Indication 2) b) Children 1-11 years, adolescents and adults Small amount of the preparation spread around nostrils, 2 to 4 times daily The use in children under 1 year of age is not recommended (see section 4.4 ‘Special warnings and precautions for use’). as herbal tea or as infusion/decoction/macerate (EMA/HMPC/5829/2010 Rev.1). Duration of use Indication 1) If the symptoms persist longer than 2 weeks during the use of the medicinal product, a doctor or a qualified health care practitioner should be consulted. Indication 2) If the symptoms persist longer than 1 week during the use of the medicinal product, a doctor or a qualified health care practitioner should be consulted Method of administration Preparation a) Oral use Preparation b) Cutaneous use",
+    "iyi_bilinen": "and method of administration 5 For guidance on herbal substance/herbal preparation administered preparation, please refer to the HMPC ‘Glossary on herbal teas’"
+   },
+   "endikasyon": {
+    "geleneksel": "Indication 1) Traditional herbal medicinal product used for the symptomatic relief of mild spasmodic gastro- intestinal complaints such as bloating and flatulence. Indication 2) Traditional herbal medicinal product used for relief of irritated skin around the nostrils. The product is a traditional herbal medicinal product for use in the specified indications exclusively based upon long-standing use.",
+    "iyi_bilinen": null
+   },
+   "etkilesim": {
+    "geleneksel": "None reported",
+    "iyi_bilinen": "with other medicinal products and other forms of interaction"
+   },
+   "gebelik": {
+    "geleneksel": "Safety during pregnancy and lactation has not been established. In the absence of sufficient data, the use during pregnancy and lactation is not recommended. No fertility data available. No studies on the ability to drive or use machines have been performed.",
+    "iyi_bilinen": "and lactation 4.7. Effects on ability to drive and use machines"
+   },
+   "istenmeyen": {
+    "geleneksel": "None known If adverse reactions occur, a doctor or a qualified health care practitioner should be consulted.",
+    "iyi_bilinen": null
+   },
+   "kontrendikasyon": {
+    "geleneksel": "Hypersensitivity to the active substance or to plants of the Lamiaceae family.",
+    "iyi_bilinen": "other"
+   },
+   "uyari": {
+    "geleneksel": "Indication 1) The use in children and adolescents under 18 years of age has not been established due to lack of adequate data. Indication 2) The use in children under 1 year of age has not been established due to lack of adequate data. The deep penetration of the ointment inside nostril should be avoided, as it can reduce the activity of the ciliary epithelium. If signs of skin infection are observed during the use of the medicinal product, a doctor or a qualified health care practitioner should be consulted. Eye contact with unwashed hands after the application may potentially cause irritation. Indication 1) and 2) If the symptoms worsen during the use of the medicinal product, a doctor or a qualified health care practitioner should be consulted.",
+    "iyi_bilinen": "and precautions for use"
+   }
+  },
+  "kanit": "geleneksel kullanım",
+  "pdf": "https://www.ema.europa.eu/en/documents/herbal-monograph/final-european-union-herbal-monograph-origanum-majorana-l-herba_en.pdf",
+  "uzunluk": 18178
+ },
  "pelargonii-radix": {
   "bolum": {
    "doz_asimi": {
