@@ -627,6 +627,19 @@
   "w": 960,
   "w500": 500
  },
+ "cayirucgulu": {
+  "artist": "池田正樹 ( talk )masaki ikeda",
+  "auto": true,
+  "b1280": "Trifolium pratense 0522.jpg",
+  "file": "Trifolium pratense 0522.jpg",
+  "h": 1259,
+  "h500": 655,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Trifolium_pratense_0522.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "cehri": {
   "artist": "Franz Xaver",
   "auto": true,
@@ -853,6 +866,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Tribulus_terrestris_3002.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "dereotu": {
+  "artist": "Reinhold Möller Ermell",
+  "auto": true,
+  "b1280": "Schwalbenschwanz (Papilio machaon) Raupe-20250724-RM-101941.jpg",
+  "file": "Schwalbenschwanz (Papilio machaon) Raupe-20250724-RM-101941.jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Schwalbenschwanz_(Papilio_machaon)_Raupe-20250724-RM-101941.jpg",
   "w": 960,
   "w500": 500
  },
@@ -1638,6 +1664,19 @@
   "license": "CC BY-SA 2.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
   "page": "https://commons.wikimedia.org/wiki/File:Symphytum_officinale_(4970747978).jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "karamuk": {
+  "artist": "Robert Flogaus-Faust",
+  "auto": true,
+  "b1280": "Berberis vulgaris 2 RF.jpg",
+  "file": "Berberis vulgaris 2 RF.jpg",
+  "h": 806,
+  "h500": 420,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Berberis_vulgaris_2_RF.jpg",
   "w": 960,
   "w500": 500
  },

@@ -2561,5 +2561,44 @@
   "license": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Ballonblume_--_2021_--_8789.jpg"
  },
- "baloncicegi:kuru": "yok"
+ "baloncicegi:kuru": "yok",
+ "karamuk:cizim": {
+  "file": "Illustration Berberis vulgaris0.jpg",
+  "artist": "Wikimedia Commons",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Berberis_vulgaris0.jpg"
+ },
+ "karamuk:cicek": {
+  "file": "Berberis vulgaris inflorescence - Keila.jpg",
+  "artist": "Ivar Leidus",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Berberis_vulgaris_inflorescence_-_Keila.jpg"
+ },
+ "karamuk:kuru": "yok",
+ "dereotu:cizim": {
+  "file": "Illustration Anethum graveolens clean.jpg",
+  "artist": "Illustration_Anethum_graveolens0.jpg : Prof. Dr. Otto Wilhel",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Anethum_graveolens_clean.jpg"
+ },
+ "dereotu:cicek": {
+  "file": "Aneth FR 2012.jpg",
+  "artist": "JLPC",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Aneth_FR_2012.jpg"
+ },
+ "dereotu:kuru": "yok",
+ "cayirucgulu:cizim": {
+  "file": "Cleaned-Illustration Trifolium pratense.jpg",
+  "artist": "Wikimedia Commons",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Cleaned-Illustration_Trifolium_pratense.jpg"
+ },
+ "cayirucgulu:cicek": {
+  "file": "Trifolium pratense - Keila2.jpg",
+  "artist": "Ivar Leidus",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Trifolium_pratense_-_Keila2.jpg"
+ },
+ "cayirucgulu:kuru": "yok"
 }
