@@ -108,6 +108,14 @@
   "rutbe": "spec.",
   "yazar": "(Burm.f.) Wall. ex Nees"
  },
+ "Anethum graveolens": {
+  "ad": "Anethum graveolens",
+  "familya": "Apiaceae",
+  "kimlik": "837530-1",
+  "rutbe": "spec.",
+  "yazar": "L.",
+  "yazar_kaynagi": "GBIF/WCVP"
+ },
  "Annona muricata": {
   "ad": "Annona muricata",
   "familya": "Annonaceae",
@@ -195,6 +203,13 @@
   "kimlik": "29180-2",
   "rutbe": "spec.",
   "yazar": "(Spruce ex Griseb.) C.V.Morton"
+ },
+ "Berberis vulgaris": {
+  "ad": "Berberis vulgaris",
+  "familya": "Berberidaceae",
+  "kimlik": "328527-2",
+  "rutbe": "spec.",
+  "yazar": "L."
  },
  "Betula pendula": {
   "ad": "Betula pendula",
@@ -1866,6 +1881,13 @@
   "rutbe": "spec.",
   "yazar": "L.",
   "yazar_kaynagi": "GBIF/WCVP"
+ },
+ "Trifolium pratense": {
+  "ad": "Trifolium pratense",
+  "familya": "Leguminosae",
+  "kimlik": "523575-1",
+  "rutbe": "spec.",
+  "yazar": "L."
  },
  "Trigonella foenum-graecum": {
   "ad": "Trigonella foenum-graecum",

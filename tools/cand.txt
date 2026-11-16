@@ -76,3 +76,6 @@ yilankoku | Rauvolfia serpentina | plant flowers red fruits
 geven | Astragalus mongholicus | plant flowers root
 tavsankulagi | Bupleurum falcatum | plant yellow umbels
 baloncicegi | Platycodon grandiflorus | blue flower bud balloon
+karamuk | Berberis vulgaris | red berries shrub
+dereotu | Anethum graveolens | plant umbel yellow flowers
+cayirucgulu | Trifolium pratense | flower head pink
