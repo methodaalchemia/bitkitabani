@@ -617,6 +617,16 @@ ELLE.update({
    'Düşünce Dergisi, 6(3), 1802–1815.',
 })
 
+# TİTCK monograf PDF'leri (kuyruk/k9.py).
+ELLE.update({
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/CapsicumannuumL.var.minimumMillerHeiser1a57bc84143e4c25b2e555ecd599bd21_99b288ba-247e-4ba1-ae8a-843b17243ce7.pdf':
+   titck_apa('Capsicum annuum L. var. minimum (Miller) Heiser'),
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/RhamnusfrangulaL.f0b77d85298d45fa994898cd3a153f98_08815d4a-e4d9-46fe-914b-3b811878457d.pdf':
+   titck_apa('Rhamnus frangula L.'),
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/RheumpalmatumL.642ddc44bab44773a6e92ce3c5da5e7f_cfa59f56-7695-4dec-9a3d-081393fa0081.pdf':
+   titck_apa('Rheum palmatum L.'),
+})
+
 # APA künyesindeki yapısal ekler Türkçe yazılır. İngilizce sayfalarda aynı
 # künye kullanılır, yalnızca bu ekler değiştirilir; eser adlarına dokunulmaz.
 _EN = [
