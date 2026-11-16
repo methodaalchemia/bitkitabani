@@ -344,6 +344,19 @@
   "w": 960,
   "w500": 500
  },
+ "aspir": {
+  "artist": "Fischer.H",
+  "auto": true,
+  "b1280": "Färber-Distel IMG 2487.jpg",
+  "file": "Färber-Distel IMG 2487.jpg",
+  "h": 931,
+  "h500": 485,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:F%C3%A4rber-Distel_IMG_2487.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "atkestanesi": {
   "artist": "Ввласенко",
   "auto": false,
@@ -485,6 +498,19 @@
   "w": 960,
   "w500": 500
  },
+ "baykaltakkesi": {
+  "artist": "Agnieszka Kwiecień, Nova",
+  "auto": true,
+  "b1280": "Scutellaria baicalensis Tarczyca bajkalska 2020-09-20 03.jpg",
+  "file": "Scutellaria baicalensis Tarczyca bajkalska 2020-09-20 03.jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Scutellaria_baicalensis_Tarczyca_bajkalska_2020-09-20_03.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "besparmakotu": {
   "artist": "Uoaei1",
   "auto": true,
@@ -495,6 +521,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Potentilla_erecta_%C3%96tschergr%C3%A4ben_01.JPG",
+  "w": 960,
+  "w500": 500
+ },
+ "bestatmeyvesi": {
+  "artist": "Kostka Martin",
+  "auto": true,
+  "b1280": "Schsandra chinensis in flower.jpg",
+  "file": "Schsandra chinensis in flower.jpg",
+  "h": 1074,
+  "h500": 560,
+  "license": "CC0",
+  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Schsandra_chinensis_in_flower.jpg",
   "w": 960,
   "w500": 500
  },
@@ -559,6 +598,19 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Triticum_aestivum_(ripe)_3.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "buyukhiltan": {
+  "artist": "Reinhold Möller Ermell",
+  "auto": true,
+  "b1280": "Lederwanze (Coriomeris denticulatus)-20250813-RM-161605.jpg",
+  "file": "Lederwanze (Coriomeris denticulatus)-20250813-RM-161605.jpg",
+  "h": 824,
+  "h500": 429,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Lederwanze_(Coriomeris_denticulatus)-20250813-RM-161605.jpg",
   "w": 960,
   "w500": 500
  },
@@ -741,6 +793,19 @@
   "w": 960,
   "w500": 500
  },
+ "cinyuksukotu": {
+  "artist": "Shizhao",
+  "auto": true,
+  "b1280": "Rehmannia.JPG",
+  "file": "Rehmannia.JPG",
+  "h": 1378,
+  "h500": 718,
+  "license": "CC BY 2.5",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:Rehmannia.JPG",
+  "w": 960,
+  "w500": 500
+ },
  "civanpercemi": {
   "artist": "O. Pichard",
   "auto": true,
@@ -905,6 +970,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Knoppen_van_een_es_(Fraxinus_excelsior)._03-03-2026._(actm.)_01.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "disotu": {
+  "artist": "user:penarc",
+  "auto": true,
+  "b1280": "Ammi visnaga A5.jpg",
+  "file": "Ammi visnaga A5.jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ammi_visnaga_A5.jpg",
   "w": 960,
   "w500": 500
  },

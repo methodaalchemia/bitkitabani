@@ -2600,5 +2600,53 @@
   "license": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Trifolium_pratense_-_Keila2.jpg"
  },
- "cayirucgulu:kuru": "yok"
+ "cayirucgulu:kuru": "yok",
+ "baykaltakkesi:cizim": "yok",
+ "baykaltakkesi:cicek": {
+  "file": "Baikal Skullcap, Red Butte Garden - Flickr - andrey zharkikh.jpg",
+  "artist": "Andrey Zharkikh from Salt Lake City, USA",
+  "license": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Baikal_Skullcap%2C_Red_Butte_Garden_-_Flickr_-_andrey_zharkikh.jpg"
+ },
+ "baykaltakkesi:kuru": "yok",
+ "bestatmeyvesi:cizim": "yok",
+ "bestatmeyvesi:cicek": {
+  "file": "Schisandra sinensis flower.jpg",
+  "artist": "Doronenko 07:11, 21 April 2007 (UTC)",
+  "license": "CC BY 2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:Schisandra_sinensis_flower.jpg"
+ },
+ "bestatmeyvesi:kuru": "yok",
+ "cinyuksukotu:cizim": "yok",
+ "cinyuksukotu:cicek": "yok",
+ "cinyuksukotu:kuru": "yok",
+ "buyukhiltan:cizim": "yok",
+ "buyukhiltan:cicek": {
+  "file": "Ammi majus 002.JPG",
+  "artist": "H. Zell",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ammi_majus_002.JPG"
+ },
+ "buyukhiltan:kuru": "yok",
+ "disotu:cizim": "yok",
+ "disotu:cicek": {
+  "file": "Drankolik-Ammi visnaga L. 2.jpg",
+  "artist": "Dûrzan",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Drankolik-Ammi_visnaga_L._2.jpg"
+ },
+ "disotu:kuru": "yok",
+ "aspir:cizim": {
+  "file": "Illustration Carthamus tinctorius0.jpg",
+  "artist": "Wikimedia Commons",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Carthamus_tinctorius0.jpg"
+ },
+ "aspir:cicek": {
+  "file": "CSIRO ScienceImage 11351 Dissected flower of Safflower plant.jpg",
+  "artist": "Carl Davies, CSIRO",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:CSIRO_ScienceImage_11351_Dissected_flower_of_Safflower_plant.jpg"
+ },
+ "aspir:kuru": "yok"
 }
