@@ -82,3 +82,6 @@ cayirucgulu | Trifolium pratense | flower head pink
 baykaltakkesi | Scutellaria baicalensis | blue flowers plant
 bestatmeyvesi | Schisandra chinensis | red berries vine
 cinyuksukotu | Rehmannia glutinosa | flowers plant
+buyukhiltan | Ammi majus | white umbel flowers
+disotu | Ammi visnaga | umbel plant toothpick
+aspir | Carthamus tinctorius | orange flower head

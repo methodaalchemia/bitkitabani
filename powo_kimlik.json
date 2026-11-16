@@ -80,6 +80,21 @@
   "rutbe": "spec.",
   "yazar": "L."
  },
+ "Ammi majus": {
+  "ad": "Ammi majus",
+  "familya": "Apiaceae",
+  "kimlik": "837486-1",
+  "rutbe": "spec.",
+  "yazar": "L.",
+  "yazar_kaynagi": "GBIF/WCVP"
+ },
+ "Ammi visnaga": {
+  "ad": "Ammi visnaga",
+  "familya": "Apiaceae",
+  "kimlik": "837503-1",
+  "rutbe": "spec.",
+  "yazar": "(L.) Lam."
+ },
  "Anacamptis morio": {
   "ad": "Anacamptis morio",
   "familya": "Orchidaceae",
@@ -336,6 +351,13 @@
   "kimlik": "45059-2",
   "rutbe": "spec.",
   "yazar": "Aubl."
+ },
+ "Carthamus tinctorius": {
+  "ad": "Carthamus tinctorius",
+  "familya": "Asteraceae",
+  "kimlik": "324467-2",
+  "rutbe": "spec.",
+  "yazar": "L."
  },
  "Carum carvi": {
   "ad": "Carum carvi",
