@@ -301,6 +301,13 @@
   "rutbe": "spec.",
   "yazar": "L."
  },
+ "Centaurea benedicta": {
+  "ad": "Centaurea benedicta",
+  "familya": "Asteraceae",
+  "kimlik": "190024-1",
+  "rutbe": "spec.",
+  "yazar": "(L.) L."
+ },
  "Centaurium erythraea": {
   "ad": "Centaurium erythraea",
   "familya": "Gentianaceae",
@@ -1528,6 +1535,13 @@
   "ad": "Ribes nigrum",
   "familya": "Grossulariaceae",
   "kimlik": "792873-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
+ "Ricinus communis": {
+  "ad": "Ricinus communis",
+  "familya": "Euphorbiaceae",
+  "kimlik": "355498-1",
   "rutbe": "spec.",
   "yazar": "L."
  },

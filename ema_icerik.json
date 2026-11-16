@@ -642,6 +642,45 @@
   "pdf": "https://www.ema.europa.eu/en/documents/herbal-monograph/final-european-union-herbal-monograph-cisti-cretici-herba-first-version_en.pdf",
   "uzunluk": 15281
  },
+ "cnici-benedicti-herba": {
+  "bolum": {
+   "doz_asimi": {
+    "geleneksel": "When taken at doses of more than 5 g per cup of tea, it may cause gastric irritation and vomiting. No case of overdose has been reported. Not required as per Article 16c(1)(a)(iii) of Directive 2001/83/EC. Not required as per Article 16c(1)(a)(iii) of Directive 2001/83/EC. Not required as per Article 16c(1)(a)(iii) of Directive 2001/83/EC, unless necessary for the safe use of the product. Tests on reproductive toxicity, genotoxicity and carcinogenicity have not been performed. Not applicable.",
+    "iyi_bilinen": "5. Pharmacological properties 5.1. Pharmacodynamic properties 5.2. Pharmacokinetic properties 5.3. Preclinical safety data 6. Pharmaceutical particulars 7. Date of compilation/last revision 20 September 2023"
+   },
+   "dozaj": {
+    "geleneksel": "Posology Indications 1) and 2) Adults and Elderly a) Single dose: 1 - 2 g, 3 times daily Daily dose: 3 - 6 g b) Single dose: Comminuted herbal substance for infusion or decoction: 1.5 - 3 g of the comminuted herbal substance in 150 ml of water, 3 times daily Daily dose: 4.5 - 9 g c) Single dose: 1.5 - 2 ml, 3 times daily Daily dose: 4.5 - 6 ml liquid extract d) Single dose: 3 - 6 ml, 3 times daily Daily dose: 9 - 18 ml tincture The use in children and adolescents under 18 years of age is not recommended (see section as herbal tea or as infusion/decoction/macerate (EMA/HMPC/5829/2010 Rev.1). 4.4 ‘Special warnings and precautions for use’). Duration of use If the symptoms persist longer than 2 weeks during the use of the medicinal product, a doctor or a qualified health care practitioner should be consulted. Method of administration Indication 1) Oral use, before meals. Indication 2) Oral use.",
+    "iyi_bilinen": "and method of administration4 For guidance on herbal substance/herbal preparation administered preparation, please refer to the HMPC ‘Glossary on herbal teas’"
+   },
+   "endikasyon": {
+    "geleneksel": "Indication 1) Traditional herbal medicinal product for the temporary loss of appetite. Indication 2) Traditional herbal medicinal product for symptomatic relief of dyspepsia and mild spasmodic disorders of the gastrointestinal tract. The product is a traditional herbal medicinal product for use in the specified indications exclusively based upon long-standing use.",
+    "iyi_bilinen": null
+   },
+   "etkilesim": {
+    "geleneksel": "None reported.",
+    "iyi_bilinen": "with other medicinal products and other forms of interaction"
+   },
+   "gebelik": {
+    "geleneksel": "Safety during pregnancy and lactation has not been established. In the absence of sufficient data, the use during pregnancy and lactation is not recommended. No fertility data available. No studies on the effect on the ability to drive and use machines have been performed.",
+    "iyi_bilinen": "and lactation 4.7. Effects on ability to drive and use machines"
+   },
+   "istenmeyen": {
+    "geleneksel": "None known. If adverse reactions occur, a doctor or a qualified health care practitioner should be consulted.",
+    "iyi_bilinen": null
+   },
+   "kontrendikasyon": {
+    "geleneksel": "Hypersensitivity to the active substance and to other plants of the Asteraceae (Compositae) family.",
+    "iyi_bilinen": null
+   },
+   "uyari": {
+    "geleneksel": "The use in children and adolescents under 18 years of age has not been established due to lack of adequate data. If the symptoms worsen during the use of the medicinal product, a doctor or a qualified health care practitioner should be consulted. For tinctures and liquid extracts containing ethanol, the appropriate labelling for ethanol, taken from the ‘Guideline on excipients in the label and package leaflet of medicinal products for human use’, must be included.",
+    "iyi_bilinen": "and precautions for use"
+   }
+  },
+  "kanit": "geleneksel kullanım",
+  "pdf": "https://www.ema.europa.eu/en/documents/herbal-monograph/final-european-union-herbal-monograph-cnicus-benedictus-l-herba_en.pdf",
+  "uzunluk": 16941
+ },
  "colae-semen": {
   "bolum": {
    "doz_asimi": {
@@ -2645,6 +2684,45 @@
   "kanit": "geleneksel kullanım",
   "pdf": "https://www.ema.europa.eu/en/documents/herbal-monograph/final-european-union-herbal-monograph-ribes-nigrum-l-folium_en.pdf",
   "uzunluk": 18737
+ },
+ "ricini-oleum": {
+  "bolum": {
+   "doz_asimi": {
+    "geleneksel": null,
+    "iyi_bilinen": "The major symptoms of overdose are gastric irritation with nausea, vomiting, colic and severe diarrhoea, loss of water and electrolytes. Treatment should be supportive with generous amount of fluid and correction of electrolytes. A specific antidote is not available. 5. Pharmacological properties 5.1. Pharmacodynamic properties Pharmacotherapeutic group: contact laxatives Proposed ATC code: A 06 AB05 Ricinoleic acid, the active metabolite, like other anionic surfactants, reduces net absorption of fluid and electrolytes, and stimulates intestinal peristalsis. 5.2. Pharmacokinetic properties The absorption is inversely related to the administered dose. Small doses of castor oil (4 g) are completely absorbed while 11.4% of a dose of 10 g and 86% of a dose of 44.4 g appeared in the faeces within 24 hours. Castor oil is hydrolysed in the small intestine by pancreatic enzymes, leading to the release of glycerol and ricinoleic acid. Ricinoleic acid is then metabolised to epoxydicarboxylic acids (3,6-epoxyoctanedioic acid, 3,6-epoxydecanedioic acid and 3,6 epoxydodecanedioic acid) which are excreted via urine. 5.3. Preclinical safety data Castor oil (2 ml daily) administered by gavage on days 18, 19 and 20 of gestation induced the initiation of labour and shortened the course of the delivery in pregnant rats. Adequate tests on genotoxicity and carcinogenicity have not been performed. 6. Pharmaceutical particulars Not applicable. 7. Date of compilation/last revision 2 February 2016"
+   },
+   "dozaj": {
+    "geleneksel": null,
+    "iyi_bilinen": "and method of administration Posology Adults and elderly Daily dose: 2-5 g (2.1-5.3 ml) as a single dose Normally it is sufficient to take this medicinal product up to 2-3 times a week. The use in children and adolescents under 18 years of age is not recommended (see section 4.4 ‘Special warnings and precautions for use’). Duration of use Use for more than 1 week requires medical supervision. If the symptoms persist during the use of the medicinal product, a doctor or a pharmacist should be consulted. Method of administration Oral use The onset time of defecation varies between 2-6 hours."
+   },
+   "endikasyon": {
+    "geleneksel": "finished product should be in accordance with relevant herbal virginale (ref.: 0051) or Ricini oleum raffinatum (ref.:",
+    "iyi_bilinen": "Laxative for short term use in cases of occasional constipation. The declaration of the active substance(s) for an individual quality guidance. The material complies with the Ph. Eur. monograph (Ricini oleum 2367))"
+   },
+   "etkilesim": {
+    "geleneksel": null,
+    "iyi_bilinen": "with other medicinal products and other forms of interaction Hypokalaemia (resulting from long-term laxative abuse) potentiates the action of cardiac glycosides and interacts with antiarrhythmic medicinal products. Concomitant use with diuretics, adrenal corticosteroids and liquorice root may enhance loss of potassium. Concomitant use of antihistamines may reduce the laxative action of castor oil."
+   },
+   "gebelik": {
+    "geleneksel": null,
+    "iyi_bilinen": "and lactation The use during pregnancy is contraindicated because castor oil can influence the labour (see 5.3 ‘Preclinical safety data’). The use during lactation is contraindicated because may pass into breast milk (see section 4.3 ‘Contraindication\"). No fertility data available. 4.7. Effects on ability to drive and use machines No studies on the effect on the ability to drive and use machines have been performed."
+   },
+   "istenmeyen": {
+    "geleneksel": null,
+    "iyi_bilinen": "Nausea, vomiting, abdominal pain and severe diarrhoea may occur. The frequency is not known. In such cases dose reduction is necessary. If other adverse reactions not mentioned above occur, a doctor or a pharmacist should be consulted."
+   },
+   "kontrendikasyon": {
+    "geleneksel": null,
+    "iyi_bilinen": "Hypersensitivity to the active substance. Cases of intestinal obstructions and stenosis, atony, appendicitis, inflammatory colon diseases (e.g. Crohn’s disease, ulcerative colitis), abdominal pain of unknown origin, severe dehydration state with water and electrolyte depletion. Pregnancy and lactation (See section 5.3)"
+   },
+   "uyari": {
+    "geleneksel": null,
+    "iyi_bilinen": "and precautions for use Long-term use of laxatives should be avoided. If laxatives are needed every day the cause of constipation should be investigated. If stimulant laxatives are taken for longer than a brief period, this may lead to impaired function of the intestine. Castor oil should only be used if a therapeutic effect cannot be achieved by a change of diet or the administration of bulk forming agents. The use in children and adolescents under 18 years of age has not been established due to lack of adequate data on safety and efficacy. If the symptoms worsen during the use of the medicinal product, a doctor or a pharmacist should be consulted."
+   }
+  },
+  "kanit": null,
+  "pdf": "https://www.ema.europa.eu/en/documents/herbal-monograph/final-european-union-herbal-monograph-ricinus-communis-l-oleum_en.pdf",
+  "uzunluk": 11031
  },
  "rubi-idaei-folium": {
   "bolum": {

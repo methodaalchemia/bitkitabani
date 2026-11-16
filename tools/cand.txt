@@ -65,3 +65,5 @@ hercaimenekse | Viola tricolor | wild flower -wittrockiana
 javacayi | Orthosiphon aristatus | flowers white stamens plant
 tuylusahinotu | Pilosella officinarum | yellow flower hairy leaves
 yabanyasemini | Solanum dulcamara | purple flowers red berries
+hintyagi | Ricinus communis | plant leaves fruit
+kutsaldevedikeni | Centaurea benedicta | yellow flower spiny
