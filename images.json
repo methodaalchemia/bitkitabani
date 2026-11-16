@@ -215,6 +215,19 @@
   "w": 960,
   "w500": 500
  },
+ "amerikanginsengi": {
+  "artist": "Pittillo, Dan J.",
+  "auto": true,
+  "b1280": "Panax quinquefolius FWS.jpg",
+  "file": "Panax quinquefolius FWS.jpg",
+  "h": 1425,
+  "h500": 742,
+  "license": "Public domain",
+  "licenseUrl": "",
+  "page": "https://commons.wikimedia.org/wiki/File:Panax_quinquefolius_FWS.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "anason": {
   "artist": "Metin GÜLEŞCİ",
   "auto": false,
@@ -251,6 +264,19 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Andrographis_paniculata_Plant.JPG",
+  "w": 960,
+  "w500": 500
+ },
+ "angelika": {
+  "artist": "Rohit Sharma",
+  "auto": true,
+  "b1280": "Mountain angelica at Valley of flowers national park, India.jpg",
+  "file": "Mountain angelica at Valley of flowers national park, India.jpg",
+  "h": 960,
+  "h500": 500,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Mountain_angelica_at_Valley_of_flowers_national_park,_India.jpg",
   "w": 960,
   "w500": 500
  },
@@ -2934,6 +2960,19 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
   "page": "https://commons.wikimedia.org/wiki/File:Crocus_sativus_sahuran.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "sahilcami": {
+  "artist": "Alvesgaspar",
+  "auto": true,
+  "b1280": "Pine cone July 2012-1.jpg",
+  "file": "Pine cone July 2012-1.jpg",
+  "h": 1206,
+  "h500": 628,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Pine_cone_July_2012-1.jpg",
   "w": 960,
   "w500": 500
  },

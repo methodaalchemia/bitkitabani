@@ -2881,12 +2881,7 @@
   "license": "Public domain",
   "page": "https://commons.wikimedia.org/wiki/File:Sesamum_indicum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-129.jpg"
  },
- "susam:cicek": {
-  "file": "Flower of Digitalis purpurea.jpg",
-  "artist": "Mullookkaaran",
-  "license": "CC BY-SA 3.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Flower_of_Digitalis_purpurea.jpg"
- },
+ "susam:cicek": "yok",
  "susam:kuru": "yok",
  "hiltit:cizim": {
   "file": "Ferula assa-foetida - Köhler–s Medizinal-Pflanzen-061.jpg",
@@ -2899,5 +2894,25 @@
   "artist": "Valery Fassiaux",
   "license": "Public domain",
   "page": "https://commons.wikimedia.org/wiki/File:Ferula_assa-foetida_%28Uzbekistan%29_3.jpg"
- }
+ },
+ "hiltit:kuru": "yok",
+ "sahilcami:cizim": "yok",
+ "sahilcami:cicek": "yok",
+ "sahilcami:kuru": "yok",
+ "angelika:cizim": {
+  "file": "Angelica archangelica - Köhler–s Medizinal-Pflanzen-158.jpg",
+  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Angelica_archangelica_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-158.jpg"
+ },
+ "angelika:cicek": {
+  "file": "Angelica archangelica flower.JPG",
+  "artist": "Deecodee",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Angelica_archangelica_flower.JPG"
+ },
+ "angelika:kuru": "yok",
+ "amerikanginsengi:cizim": "yok",
+ "amerikanginsengi:cicek": "yok",
+ "amerikanginsengi:kuru": "yok"
 }
