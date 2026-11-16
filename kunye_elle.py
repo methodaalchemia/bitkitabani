@@ -772,11 +772,27 @@ ELLE.update({
    titck_apa('Chamaemelum nobile (L.) All.'),
 })
 
+ELLE.update({
+ 'https://titck.gov.tr/storage/Archive/2024/dynamicModulesAttachment/ColanitidaVent.SchottetEndl._ac17e3c0-a16a-48ce-860c-65c3b58e4ba8.pdf':
+   titck_apa('Cola nitida (Vent.) Schott et Endl. ve varyeteleri, '
+             'Cola acuminata (P. Beauv.) Schott et Endl.'),
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/Curcumaxanthorriza3e907b05928b4967a97d3cf474f0dd23_ab8cf9a4-24da-4888-a29f-3536b6e4205e.pdf':
+   titck_apa('Curcuma xanthorrhiza Roxb.'),
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/EleutherococcussenticosusRupr.EtMaximMaxim.6b1b514b6aba4677b491d1083caa2238_469bf25b-5ec2-4704-9ba2-122c0d06b7d0.pdf':
+   titck_apa('Eleutherococcus senticosus (Rupr. et Maxim.) Maxim.'),
+})
+
 # Kurum yayını: APA'da kurumsal yazar ve yayın türü köşeli ayraçta.
 ELLE['https://www.iarc.who.int/wp-content/uploads/2018/07/pr244_E.pdf'] = (
     'Uluslararası Kanser Araştırmaları Ajansı. (2016). IARC Monographs '
     'evaluate drinking coffee, maté, and very hot beverages '
     '[Basın açıklaması]. Dünya Sağlık Örgütü.')
+
+# Kola cevizinin Igbo kültüründeki yerini belgeleyen dergi yazısı.
+ELLE['https://ajol.info/index.php/ijah/article/view/157097/146708'] = (
+    'Obineche, J. O. (2017). Kola nut: Revisiting the Igbo '
+    'socio-cultural values and identity. International Journal of Arts '
+    'and Humanities, 6(2), 94–107.')
 
 # Bilim tarihi yazıları: biri dergi yazısı, biri podcast bölümü.
 ELLE['https://www.sciencehistory.org/stories/magazine/aspirin-turn-of-the-century-miracle-drug/'] = (

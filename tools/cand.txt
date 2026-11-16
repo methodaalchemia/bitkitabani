@@ -44,3 +44,6 @@ aciyonca | Menyanthes trifoliata | white fringed flowers
 yulaf | Avena sativa | panicle grain spikelets
 frenkkimyonu | Carum carvi | umbel seeds -cuminum
 romenpapatyasi | Chamaemelum nobile | white flower heads -matricaria
+kola | Cola nitida | nuts seeds tree
+javazerdecali | Curcuma xanthorrhiza | rhizome plant -longa
+sibiryaginsengi | Eleutherococcus senticosus | shrub leaves berries

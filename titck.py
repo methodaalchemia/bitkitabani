@@ -99,4 +99,7 @@ M = {
  'yulaf': ('Avena sativa L.', '2024/dynamicModulesAttachment/AvenasativaL._4e1fe68a-0ecb-4053-be4e-b84750043c5b.pdf'),
  'frenkkimyonu': ('Carum carvi L.', '2023/dynamicModulesAttachment/CarumcarviL.v3_7efc8888-88eb-46cb-9645-a41c07b94efd.pdf'),
  'romenpapatyasi': ('Chamaemelum nobile (L.) All.', '2024/dynamicModulesAttachment/ChamaemelumnobileL.AllV3_7130f392-0628-4f8d-8995-1a860e26ca3e.pdf'),
+ 'kola': ('Cola nitida (Vent.) Schott et Endl.', '2024/dynamicModulesAttachment/ColanitidaVent.SchottetEndl._ac17e3c0-a16a-48ce-860c-65c3b58e4ba8.pdf'),
+ 'javazerdecali': ('Curcuma xanthorrhiza Roxb.', '2022/dynamicModulesAttachment/Curcumaxanthorriza3e907b05928b4967a97d3cf474f0dd23_ab8cf9a4-24da-4888-a29f-3536b6e4205e.pdf'),
+ 'sibiryaginsengi': ('Eleutherococcus senticosus (Rupr. et Maxim.) Maxim.', '2022/dynamicModulesAttachment/EleutherococcussenticosusRupr.EtMaximMaxim.6b1b514b6aba4677b491d1083caa2238_469bf25b-5ec2-4704-9ba2-122c0d06b7d0.pdf'),
 }
