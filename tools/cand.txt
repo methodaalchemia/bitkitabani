@@ -2,6 +2,6 @@
 # Fotoğraf adayları. Bu dosya değişince candidates iş akışı her bitki için 12
 # aday indirip candidates dalına yazıyor; seçim elle yapılıp Commons dosya adı
 # kuyruk kaydındaki foto alanına yazılıyor.
-acibiber | Capsicum annuum | chili fruit plant -powder -flakes -dish
-barutagaci | Frangula alnus | shrub bark leaves -berry
-ravent | Rheum palmatum | plant leaves -pie -stalk -food
+seytanpencesi | Harpagophytum procumbens | plant flower fruit -root-powder
+karakafesotu | Symphytum officinale | plant flowers leaves
+guneyafrikasardunyasi | Pelargonium sidoides | plant flowers -garden-geranium

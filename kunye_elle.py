@@ -627,6 +627,17 @@ ELLE.update({
    titck_apa('Rheum palmatum L.'),
 })
 
+# TİTCK monograf dosyaları (kuyruk/k10.py). Symphytum'unki .docx olarak
+# yayımlanmış, diğerleri PDF.
+ELLE.update({
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/HarpagophytumprocumbensDC.1f3aee27592549acbd161c86d382a2dd_e7eae39e-2b11-4ed6-a834-e758c16b8ef6.pdf':
+   titck_apa('Harpagophytum procumbens DC.'),
+ 'https://titck.gov.tr/storage/Archive/2025/dynamicModulesAttachment/SymphytumofficinaleLv230.12.2025_369925b8-5621-4050-b510-f1da49766dca.docx':
+   titck_apa('Symphytum officinale L.'),
+ 'https://titck.gov.tr/storage/Archive/2024/dynamicModulesAttachment/PelargoniumsidoidesDC.V3_7feee38d-2a52-4217-bdc8-a923af40b8b3.pdf':
+   titck_apa('Pelargonium sidoides DC.'),
+})
+
 # APA künyesindeki yapısal ekler Türkçe yazılır. İngilizce sayfalarda aynı
 # künye kullanılır, yalnızca bu ekler değiştirilir; eser adlarına dokunulmaz.
 _EN = [
