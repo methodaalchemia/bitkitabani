@@ -1,4 +1,11 @@
 {
+ "Abelmoschus esculentus": {
+  "ad": "Abelmoschus esculentus",
+  "familya": "Malvaceae",
+  "kimlik": "558006-1",
+  "rutbe": "spec.",
+  "yazar": "(L.) Moench"
+ },
  "Achillea millefolium": {
   "ad": "Achillea millefolium",
   "familya": "Asteraceae",
@@ -216,6 +223,13 @@
   "rutbe": "spec.",
   "yazar": "L."
  },
+ "Asparagus officinalis": {
+  "ad": "Asparagus officinalis",
+  "familya": "Asparagaceae",
+  "kimlik": "531229-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
  "Asteraceae": {
   "hata": "eşadlı: 30000005-2 (Martinov), 319342-2 (Bercht. & J.Presl)"
  },
@@ -312,6 +326,13 @@
   "kimlik": "127067-1",
   "rutbe": "spec.",
   "yazar": "Roxb."
+ },
+ "Brassica rapa": {
+  "ad": "Brassica rapa",
+  "familya": "Brassicaceae",
+  "kimlik": "279485-1",
+  "rutbe": "spec.",
+  "yazar": "L."
  },
  "Brucea javanica": {
   "ad": "Brucea javanica",
@@ -998,6 +1019,13 @@
   "yazar": "L.",
   "yazar_kaynagi": "GBIF/WCVP"
  },
+ "Helianthus tuberosus": {
+  "ad": "Helianthus tuberosus",
+  "familya": "Asteraceae",
+  "kimlik": "329252-2",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
  "Helichrysum arenarium": {
   "ad": "Helichrysum arenarium",
   "familya": "Asteraceae",
@@ -1097,6 +1125,13 @@
   "kimlik": "554553-1",
   "rutbe": "spec.",
   "yazar": "Hook.f."
+ },
+ "Ipomoea batatas": {
+  "ad": "Ipomoea batatas",
+  "familya": "Convolvulaceae",
+  "kimlik": "1101088-2",
+  "rutbe": "spec.",
+  "yazar": "(L.) Lam."
  },
  "Juglans regia": {
   "ad": "Juglans regia",
@@ -2219,6 +2254,14 @@
   "kimlik": "285213-2",
   "rutbe": "spec.",
   "yazar": "L."
+ },
+ "Solanum melongena": {
+  "ad": "Solanum melongena",
+  "familya": "Solanaceae",
+  "kimlik": "820053-1",
+  "rutbe": "spec.",
+  "yazar": "L.",
+  "yazar_kaynagi": "GBIF/WCVP"
  },
  "Solanum nigrum": {
   "ad": "Solanum nigrum",

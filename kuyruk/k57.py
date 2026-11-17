@@ -955,4 +955,466 @@ Q = [
         ],
     ),
 
+    dict(
+        yayin='2027-02-01',
+        id='kuskonmaz',
+        foto='',
+        tr='Kuşkonmaz',
+        la='Asparagus officinalis L.',
+        fam='Asparagaceae (kuşkonmazgiller)',
+        diger='Türkçede kuşkonmaz; Ege ve Akdeniz’de yabani akrabası '
+              '*Asparagus acutifolius* için "yabani kuşkonmaz", "çalı '
+              'kuşkonmazı" deniyor. İngilizce asparagus. Kullanılan kısım '
+              '**genç sürgünleri**; halk hekimliğinde ayrıca **kökü ve '
+              'rizomu**. TİTCK, AB ve DSÖ monografı yok. ⚠️ Ayurveda’nın '
+              '**shatavari**’si (*A. racemosus*) aynı cinsten ayrı bir '
+              'türdür, bu sayfa onun için değil.',
+        bolge=['anadolu', 'avrupa', 'asya'],
+        kat=['besin', 'sifa'],
+        kisim='Genç sürgünleri; kökü ve rizomu (halk hekimliğinde)',
+        taxon='Asparagus officinalis',
+        kul=[
+            ['Anadolu — baharın acımsı sürgünü', 'Ege ve Akdeniz kıyılarında '
+             'ilkbaharda çalılar arasından **yabani kuşkonmaz** sürgünleri '
+             'toplanır; kültür kuşkonmazından ince, koyu ve belirgin biçimde '
+             'acıdır. Haşlanıp yumurtayla pişirilir ya da zeytinyağlı '
+             'yapılır. Kültür kuşkonmazı Türkiye’de yakın zamanda '
+             'yaygınlaştı; yabani olanı hâlâ mevsimlik bir toplama işi.'],
+            ['Avrupa — Roma’dan beri idrar söktürücü', 'Kuşkonmaz antik '
+             'kaynaklardan beri idrar artırıcı sayılıyor ve Avrupa halk '
+             'hekimliğinde "idrar yollarını yıkama" geleneğinin bitkilerinden '
+             'biri. Kökü ve rizomu bu amaçla kaynatılmış; kültür bitkisi '
+             'olarak yetiştirilmesi Roma’ya kadar gidiyor.'],
+            ['Bugün — takviye olarak satılan kök', 'Kuşkonmaz kökü, '
+             'maydanozla birlikte standart bir karışım hâlinde tansiyon ve '
+             'idrar yolları için takviye olarak satıldı. Bu ürün klinik '
+             'olarak izlendi; sonucu aşağıda ve iyi değil.'],
+        ],
+        haz='Sürgünler körpeyken toplanır; gövdenin dip kısmı odunsudur, '
+            'kırılarak atılır. Buharda ya da az suda kısa pişirilir — uzun '
+            'pişirmek hem tadını hem dokusunu bozar. Yabani kuşkonmazın '
+            'acılığı bir kez haşlanıp suyu dökülerek azaltılır. '
+            '⚠️ **Kök ve rizom için bu sayfada doz verilmiyor:** aşağıdaki '
+            'klinik izlemede böbrekle ilgili şikâyetler görüldü.',
+        bilim='Kuşkonmazın en bilinen tıbbi iddiası idrar söktürücülük ve '
+              'tansiyon; bu iddia ticari bir üründe sınandı ve **düştü.** '
+              'Tansiyon ilacı kullanan 163 hastanın altı hafta izlendiği '
+              'çalışmada, kurutulmuş kuşkonmaz kökü ve maydanoz yaprağından '
+              'oluşan standart karışım **klinik olarak yararlı bir tansiyon '
+              'düşürücü etki göstermedi.** Dahası yan etki tablosu '
+              'araştırmacıları şu cümleye götürdü: **yedi hasta böbrekle '
+              'ilgili şikâyetler nedeniyle çalışmadan erken ayrıldı** ve bu '
+              'tablo ürünün hipertansiyonda, böbrek iltihabında ya da idrar '
+              'yolu taşında "yıkama" amacıyla kullanılmasına karşıdır '
+              '(*Phytotherapy Research*, 2009). Yani burada yalnız "işe '
+              'yaramadı" değil, "kullanılmamalı" sonucu var. Bitkinin '
+              'sebze olarak yenmesi ayrı bir konudur ve bu bulgu onu '
+              'kapsamaz. Kanıt düzeyi "geleneksel".',
+        kanit='geleneksel',
+        guv='orta',
+        guvNot='Sebze olarak yaygın ve olağan bir yiyecek. Ama **kök ve '
+               'rizom takviyesi başka bir şey:** klinik izlemede böbrekle '
+               'ilgili şikâyetler görüldü ve araştırmacılar bu ürünün '
+               'hipertansiyonda ve idrar yolu taşında kullanılmasına karşı '
+               'çıktı. **Kalp ya da böbrek yetmezliğine bağlı ödemi olan '
+               'kimse, idrar artırıcı amaçla bitki kullanmadan önce hekime '
+               'sormalı** — sıvı atmak bu durumlarda tıbbi bir karardır. '
+               'Kuşkonmaz **pürin bakımından zengindir**; gut hastalığı '
+               'olanlarda miktar sınırlanır. Toplayıcılarda ve '
+               'yetiştiricilerde temas dermatiti bildirilmiş. Güvenlik '
+               'düzeyi "dikkat".',
+        etk=[
+            ['Diüretikler (idrar söktürücü ilaçlar)',
+             'Kuşkonmaz kökü takviyesi aynı yönde etki iddiasıyla satılıyor; '
+             'birlikte kullanımda sıvı ve tuz dengesi bozulabilir. Klinik '
+             'izlemede bu üründe böbrek şikâyetleri görüldü.'],
+            ['Lityum (kuramsal)',
+             'İdrar atımını artıran her şey lityum düzeyini oynatabilir; '
+             'kuşkonmaz için gösterilmiş bir etki yok, ilke diüretiklerin '
+             'ortak özelliğinden geliyor.'],
+            ['Varfarin ve K vitamini antagonistleri',
+             'Sürgünleri K vitamini taşıyor; düzenli ve bol tüketimde '
+             'miktarı birden değiştirmemek önemli.'],
+        ],
+        ilginc='Kuşkonmaz yedikten sonra idrarın keskin bir koku alması iki '
+               'ayrı piyangoya bağlı: **o kokuyu üretebilmek** ve **onu '
+               'alabilmek.** Kokunun kimyası 1987’de çözüldü — bitkinin '
+               'asparagusik asidi vücutta kükürtlü uçucu bileşiklere '
+               'dönüşüyor. Ama herkes bu dönüşümü aynı ölçüde yapmıyor ve '
+               'yapanların ürettiği kokuyu da herkes alamıyor. Yani masada '
+               'dört kişi aynı yemeği yiyip tamamen farklı şeyler '
+               'yaşayabiliyor.',
+        ek=dict(
+            mevsim='**İlkbahar bitkisi:** sürgünler mart–mayısta toprağı '
+                   'deler. Hasat penceresi kısadır; sürgün uzayıp dallanınca '
+                   'odunsulaşır ve yenmez.',
+            yetisme='Avrupa ve Batı Asya kökenli. Türkiye’de yabani türleri '
+                    '(*A. acutifolius*) Ege ve Akdeniz çalılıklarında '
+                    'yaygın; kültür kuşkonmazı son yıllarda Marmara ve '
+                    'Ege’de ticari olarak yetiştiriliyor. Kumlu, derin '
+                    'toprak ister; tarla bir kez kurulunca on yıldan uzun '
+                    'ürün verir.',
+            yoresel='Kuşkonmaz, yabani kuşkonmaz, çalı kuşkonmazı, tilkişen '
+                    '(bazı yörelerde — ⚠️ bu ad başka bitkiler için de '
+                    'kullanılıyor); asparagus (İngilizce).',
+            karisma='⚠️ **Shatavari (*Asparagus racemosus*) ayrı türdür** — '
+                    'Ayurveda’da kökü kadın sağlığı iddialarıyla kullanılıyor; '
+                    'bu sayfadaki bitkinin kanıtı ve uyarıları ona taşınmaz. '
+                    '⚠️ **Süs "asparagus"u yenmez:** çiçekçideki tüylü '
+                    '*A. setaceus* ve *A. densiflorus* aynı cinstendir ama '
+                    'sebze değildir, meyveleri zehirlidir. ⚠️ Yabani '
+                    'kuşkonmaz (*A. acutifolius*) ayrı türdür ve daha acıdır.',
+        ),
+        ema=[],
+        kaynak=[
+            ['S. Chrubasik ve ark., “Asparagus P® cannot compete with '
+             'first-line diuretics in lowering the blood pressure in '
+             'treatment-requiring antihypertensives”, Phytotherapy Research '
+             '23(9), 2009',
+             'https://pubmed.ncbi.nlm.nih.gov/19274702/'],
+            ['R. H. Waring ve ark., “The chemical nature of the urinary odour produced '
+             'by man after asparagus ingestion”, Xenobiotica 17(11), 1987',
+             'https://pubmed.ncbi.nlm.nih.gov/3433805/'],
+            ['S. C. Mitchell, “Asparagus, urinary odor, and 1,2-dithiolane-4-'
+             'carboxylic acid”, Perspectives in Biology and Medicine 56(3), '
+             '2013',
+             'https://pubmed.ncbi.nlm.nih.gov/24375116/'],
+        ],
+        rel=['tavsanmemesi', 'sogan', 'sarimsak', 'ejderkani'],
+        en=dict(
+            name='Asparagus',
+            other='Turkish *kuşkonmaz*; along the Aegean and Mediterranean the '
+                  'wild relative *Asparagus acutifolius* is called "yabani '
+                  'kuşkonmaz". The part used is the **young shoot**; in folk '
+                  'medicine also the **root and rhizome**. No Turkish, EU or '
+                  'WHO monograph. ⚠️ Ayurveda’s **shatavari** (*A. '
+                  'racemosus*) is a different species of the same genus; this '
+                  'page is not about it.',
+            part='The young shoots; the root and rhizome in folk medicine',
+            uses=[
+                ['Anatolia — the bitter shoot of spring', 'In spring, along '
+                 'the Aegean and Mediterranean coasts, **wild asparagus** '
+                 'shoots are gathered from the scrub; they are thinner, darker '
+                 'and markedly more bitter than the cultivated kind. They are '
+                 'boiled and cooked with egg, or dressed with olive oil. '
+                 'Cultivated asparagus spread in Turkey only recently; the '
+                 'wild one is still a seasonal gathering.'],
+                ['Europe — a diuretic since Rome', 'Asparagus has been held to '
+                 'increase urine since antiquity, and it is one of the plants '
+                 'of the European folk tradition of "flushing the urinary '
+                 'tract". The root and rhizome were boiled for this; its '
+                 'cultivation goes back to Rome.'],
+                ['Today — the root sold as a supplement', 'Asparagus root, in '
+                 'a standardised mixture with parsley leaf, has been sold as a '
+                 'supplement for blood pressure and the urinary tract. That '
+                 'product was followed clinically; the result is below, and it '
+                 'is not good.'],
+            ],
+            prep='Shoots are cut while tender; the woody base is snapped off '
+                 'and discarded. Steam or boil briefly — long cooking ruins '
+                 'both taste and texture. The bitterness of wild asparagus is '
+                 'reduced by boiling once and discarding the water. ⚠️ **No '
+                 'dose is given here for the root and rhizome:** the clinical '
+                 'surveillance below found renal complaints.',
+            science='Asparagus’s best-known medical claim is as a diuretic '
+                    'and for blood pressure, and the claim was tested in a '
+                    'commercial product and **failed.** In a six-week '
+                    'surveillance of 163 patients on antihypertensive '
+                    'treatment, a standardised mixture of dried asparagus root '
+                    'and parsley leaf showed **no clinically useful '
+                    'antihypertensive effect.** More than that, the '
+                    'adverse-event profile led the authors to a plain '
+                    'conclusion: **seven patients left the study early with '
+                    'renal complaints**, and that profile contraindicates the '
+                    'product’s use in hypertension, in inflammatory renal '
+                    'conditions or for flushing in urolithiasis '
+                    '(*Phytotherapy Research*, 2009). So this is not only "it '
+                    'did not work" but "it should not be used". Eating the '
+                    'plant as a vegetable is a separate matter and is not '
+                    'covered by that finding. Evidence rating "traditional".',
+            safety='A common, ordinary vegetable. But **the root and rhizome '
+                   'as a supplement are another matter:** renal complaints '
+                   'appeared in clinical surveillance, and the researchers '
+                   'advised against the product in hypertension and in '
+                   'urolithiasis. **Anyone with oedema from heart or kidney '
+                   'failure should ask a doctor before taking any plant to '
+                   'increase urine** — shedding fluid is a medical decision in '
+                   'those conditions. Asparagus is **rich in purines**; the '
+                   'amount is limited in gout. Contact dermatitis has been '
+                   'reported in pickers and growers.',
+            fact='Whether your urine smells sharp after asparagus depends on '
+                 'two separate lotteries: **being able to produce the smell** '
+                 'and **being able to detect it.** The chemistry was settled in '
+                 '1987 — the plant’s asparagusic acid is converted in the '
+                 'body into volatile sulphur compounds. But not everyone makes '
+                 'the conversion to the same degree, and not everyone can smell '
+                 'what the producers make. Four people at one table can eat the '
+                 'same dish and have entirely different experiences.',
+            season='**A spring plant:** the shoots break the soil from March to '
+                   'May. The harvest window is short; once a shoot lengthens '
+                   'and branches it turns woody and is not eaten.',
+            habitat='Native to Europe and western Asia. In Turkey the wild '
+                    'species (*A. acutifolius*) is common in Aegean and '
+                    'Mediterranean scrub; cultivated asparagus has been grown '
+                    'commercially in the Marmara and Aegean regions in recent '
+                    'years. It wants deep sandy soil, and once established a '
+                    'bed crops for more than ten years.',
+            local='Kuşkonmaz, yabani kuşkonmaz, çalı kuşkonmazı; asparagus '
+                  '(English).',
+            confusion='⚠️ **Shatavari (*Asparagus racemosus*) is a different '
+                      'species** — in Ayurveda its root is used on claims about '
+                      'women’s health; the evidence and warnings on this '
+                      'page do not transfer to it. ⚠️ **The ornamental '
+                      '"asparagus" is not edible:** the feathery *A. setaceus* '
+                      'and *A. densiflorus* of the florist are the same genus '
+                      'but not a vegetable, and their berries are poisonous. '
+                      '⚠️ Wild asparagus (*A. acutifolius*) is a different, '
+                      'more bitter species.',
+        ),
+        etk_en=[
+            ['Diuretics',
+             'The root supplement is sold on a claim of the same effect; taken '
+             'together, fluid and salt balance can be disturbed. Renal '
+             'complaints appeared with this product in clinical surveillance.'],
+            ['Lithium (theoretical)',
+             'Anything that increases urine output can move lithium levels; no '
+             'effect has been shown for asparagus, and the principle comes from '
+             'what diuretics have in common.'],
+            ['Warfarin and vitamin K antagonists',
+             'The shoots carry vitamin K; with regular, generous intake what '
+             'matters is not changing the amount abruptly.'],
+        ],
+    ),
+
+    dict(
+        yayin='2027-02-02',
+        id='bamya',
+        foto='',
+        tr='Bamya',
+        la='Abelmoschus esculentus (L.) Moench',
+        fam='Malvaceae (ebegümecigiller)',
+        diger='Türkçede bamya, bamye; Amasya ve Çorum’un ipe dizilen kuru '
+              'bamyası ayrı bir üründür. İngilizce **okra**, *lady’s '
+              'fingers*; Amerika’da **gumbo** — kelime Bantu dillerindeki '
+              '*ki ngombo*’dan geliyor. Kullanılan kısım **taze ve '
+              'kurutulmuş meyvesi**, ayrıca **tohumu**. TİTCK, AB ve DSÖ '
+              'monografı yok. Ebegümecigillerden — ebegümeci, hatmi ve '
+              'hibiskusla aynı familya; sümüksü kıvamı da oradan.',
+        bolge=['afrika', 'asya', 'anadolu'],
+        kat=['besin', 'sifa'],
+        kisim='Taze ve kurutulmuş meyvesi; tohumu',
+        taxon='Abelmoschus esculentus',
+        kul=[
+            ['Afrika — kökeni ve adı', 'Bamyanın yurdu Afrika; adı da '
+             'oradan geliyor. Bantu dillerinde *ki ngombo*, köle ticaretiyle '
+             'Atlantik’i geçip Amerika’nın güneyinde **gumbo**ya dönüştü — '
+             'önce bitkinin, sonra onunla yapılan çorbanın adı oldu. Batı '
+             'Afrika mutfağında meyve koyulaştırıcı olarak kullanılıyor.'],
+            ['Anadolu — ipe dizilen kuru bamya', 'Türkiye’de bamya küçükken, '
+             'tırnak büyüklüğündeyken toplanır; büyüyeni lifli olur. '
+             '**Amasya ve Çorum’un kuru bamyası** iğneyle ipe dizilip '
+             'kurutulur ve kışın etli yemeği yapılır. Sümüksü kıvamı '
+             'limon ya da sirkeyle azaltılır. Halk hekimliğinde mide ve '
+             'bağırsak için müsilajı yumuşatıcı sayılır.'],
+            ['Bugün — "bamya suyu" akımı', 'Son yıllarda internette bamyanın '
+             'gece suda bekletilip suyunun içilmesi **diyabet için** '
+             'yaygınlaştı. Küçük klinik çalışmalar var ve en önemli bulgu '
+             'beklenenin tersi yönde; aşağıda.'],
+        ],
+        haz='Taze bamya tırnak büyüklüğündeyken toplanır, sapı konik biçimde '
+            'yontulur. Etli yemekte limon ya da sirke sümüksü kıvamı '
+            'azaltır. Kurutmalık olanlar ipe dizilip gölgede kurutulur, '
+            'kullanmadan önce ılık suda yumuşatılır. ⚠️ **"Bamya suyu" için '
+            'standart bir ölçü ve doz yok;** çalışmalarda kullanılan '
+            'miktarlar birbirini tutmuyor.',
+        bilim='Bamyanın diyabet iddiası küçük klinik çalışmalarla sınandı: '
+              'tip 2 diyabetlilerde randomize, çift kör, plasebo kontrollü '
+              'bir çalışma (*Acta Diabetologica*, 2023) ve benzerleri kan '
+              'şekeri belirteçlerinde ölçülebilir ama küçük değişiklikler '
+              'bildiriyor; 2025 tarihli derleme bunları bir araya getirirken '
+              'çalışmaların **küçük, kısa ve birbirinden farklı** olduğunu '
+              'vurguluyor. ⚠️ **Asıl dikkat çeken bulgu ters yönde.** '
+              'Sıçanlarda yapılan çalışmada bamyanın suda çözünen kısmı '
+              'yalnız şeker emilimini azaltmakla kalmadı, **metforminin '
+              'emilimini de belirgin biçimde değiştirdi**: metforminle '
+              'birlikte bamya verilen grupta kan şekeri, yalnız metformin '
+              'verilene göre **daha yüksek** seyretti (*ISRN Pharmacology*, '
+              '2011). Yani "bamya suyu diyabete iyi gelir" diye içilen şey, '
+              'diyabet ilacının etkisini azaltıyor olabilir. İnsanda '
+              'doğrulanmadı ama metformin kullanan biri için bu, göz ardı '
+              'edilecek bir ihtimal değil. Kanıt düzeyi "sınırlı".',
+        kanit='sinirli',
+        guv='dusuk',
+        guvNot='Sebze olarak olağan ve güvenli. **Asıl uyarı ilaç tarafında:** '
+               'metformin kullanan biri düzenli olarak bol bamya ya da '
+               '"bamya suyu" tüketiyorsa bunu hekimine söylemeli — hayvan '
+               'verisi bamyanın metforminin emilimini değiştirdiğini '
+               'gösteriyor ve bu, ilacın etkisini **azaltma** yönünde. Kan '
+               'şekeri düşürücü başka ilaçlarla birlikte ise ters yönde, '
+               'toplanma riski var; ölçüm yapılmadan karar verilmemeli. '
+               '"Bamya suyu"nun standart bir dozu yok. Ebegümecigillere '
+               'alerji nadirdir ama mümkündür. Güvenlik düzeyi "düşük risk".',
+        etk=[
+            ['Metformin',
+             '⚠️ Sıçan çalışmasında bamyanın suda çözünen kısmı metforminin '
+               'emilimini değiştirdi ve birlikte verildiğinde kan şekeri daha '
+               'yüksek seyretti. İnsanda doğrulanmadı; yine de metformin '
+               'kullanan biri düzenli bamya suyu içiyorsa hekimine '
+               'söylemeli ve aynı öğünde almamayı tercih etmeli.'],
+            ['Diyabet ilaçları (sülfonilüre, insülin)',
+             'Küçük çalışmalarda bamya kan şekerini bir miktar düşürüyor; '
+             'ilaçla birlikte hipoglisemi olabilir. Etki yönü metforminle '
+             'olandan farklı, bu yüzden ölçüm önemli.'],
+            ['Varfarin (kuramsal)',
+             'Bamya K vitamini taşıyor; düzenli ve bol tüketimde miktarı '
+             'birden değiştirmemek önemli. Bamyaya özgü çalışma yok.'],
+        ],
+        ilginc='Amerika’nın güneyinin meşhur çorbası **gumbo**, adını '
+               'bamyadan alıyor: Bantu dillerinde bitkinin adı *ki ngombo*, '
+               've köle gemileriyle Atlantik’i geçip önce bitkinin, sonra '
+               'yemeğin adı oldu. Bir sebzenin adı, bir mutfağın adı hâline '
+               'gelmiş. Türkiye’de ise aynı bitki iğneyle ipe dizilip '
+               'kurutuluyor ve kışa saklanıyor — iki kıtada iki ayrı '
+               'çözüm, aynı sümüksü kıvam için.',
+        ek=dict(
+            mevsim='**Yaz sebzesi:** Türkiye’de temmuz–eylül. Meyve çok hızlı '
+                   'büyüyüp lifleşir, bu yüzden tarlada **her gün** '
+                   'toplanır — kuru bamyanın pahalı olmasının sebebi budur.',
+            yetisme='Afrika kökenli; sıcak ve nemli iklim ister, dona '
+                    'dayanmaz. Türkiye’de **Amasya, Çorum, Tokat** ve Ege’de '
+                    'yetiştiriliyor; Amasya bamyası küçük taneli ve kuru '
+                    'bamya için tercih ediliyor.',
+            yoresel='Bamya, bamye; okra, lady’s fingers (İngilizce), gumbo '
+                    '(Amerika), bāmiyah (Arapça).',
+            karisma='⚠️ **Abelmoschus manihot ayrı bir türdür.** Çin’de '
+                    'böbrek hastalığında kullanılıyor ve 2022’de *Diabetes '
+                    'Care*’de irbesartanla birlikte albüminüri üzerine '
+                    'çalışıldı — **o çalışma bamyayla ilgili değildir** ve '
+                    'sonucu bamyaya taşınmaz. ⚠️ Ebegümeci ve hatmi aynı '
+                    'familyadandır; sümüksü kıvam ortak özellikleri, ama '
+                    'ayrı bitkilerdir.',
+        ),
+        ema=[],
+        kaynak=[
+            ['M. Tavakolizadeh ve ark., “Clinical efficacy and safety of okra '
+             '(Abelmoschus esculentus (L.) Moench) in type 2 diabetic '
+             'patients: a randomized, double-blind, placebo-controlled '
+             'clinical trial”, Acta Diabetologica 60(12), 2023',
+             'https://pubmed.ncbi.nlm.nih.gov/37507536/'],
+            ['H. Khatun ve ark., “Water-soluble fraction of Abelmoschus '
+             'esculentus L interacts with glucose and metformin hydrochloride '
+             'and alters their absorption kinetics after coadministration in '
+             'rats”, ISRN Pharmacology 2011',
+             'https://pubmed.ncbi.nlm.nih.gov/22389848/'],
+            ['Y. Fan ve ark., “The Impact of Okra (Abelmoschus esculentus) '
+             'Supplementation on Diabetes and Obesity Biomarkers in Type 2 '
+             'Diabetes”, '
+             'Phytotherapy Research, 2025',
+             'https://pubmed.ncbi.nlm.nih.gov/40867089/'],
+        ],
+        rel=['ebegumeci', 'hatmi', 'hibiskus', 'keten'],
+        en=dict(
+            name='Okra',
+            other='Turkish *bamya*; the dried okra of Amasya and Çorum, strung '
+                  'on thread, is a product of its own. English **okra**, '
+                  '*lady’s fingers*; in America **gumbo** — the word comes '
+                  'from *ki ngombo* in the Bantu languages. The parts used are '
+                  'the **fresh and dried fruit** and the **seed**. No Turkish, '
+                  'EU or WHO monograph. A mallow — the same family as mallow, '
+                  'marshmallow and hibiscus, and that is where its mucilage '
+                  'comes from.',
+            part='The fresh and dried fruit; the seed',
+            uses=[
+                ['Africa — its homeland and its name', 'Okra’s home is '
+                 'Africa, and so is its name. *Ki ngombo* in the Bantu '
+                 'languages crossed the Atlantic with the slave trade and '
+                 'became **gumbo** in the American South — first the name of '
+                 'the plant, then of the soup made with it. In West African '
+                 'cooking the fruit is used as a thickener.'],
+                ['Anatolia — dried okra strung on thread', 'In Turkey okra is '
+                 'picked small, the size of a fingernail; larger pods turn '
+                 'fibrous. The **dried okra of Amasya and Çorum** is threaded '
+                 'on a needle, dried, and cooked with meat in winter. Lemon or '
+                 'vinegar cuts the mucilage. In folk medicine the mucilage is '
+                 'held to soothe the stomach and bowel.'],
+                ['Today — the "okra water" trend', 'In recent years, steeping '
+                 'okra overnight and drinking the water has spread online as a '
+                 'remedy **for diabetes**. Small clinical studies exist, and '
+                 'the most important finding runs the other way; see below.'],
+            ],
+            prep='Fresh okra is picked at fingernail size and the stem pared '
+                 'into a cone. In a meat dish lemon or vinegar reduces the '
+                 'mucilage. Pods for drying are strung on thread and dried in '
+                 'the shade, then softened in warm water before use. ⚠️ '
+                 '**There is no standard measure or dose for "okra water";** '
+                 'the amounts used in studies do not agree with one another.',
+            science='Okra’s diabetes claim has been tested in small '
+                    'clinical trials: a randomised, double-blind, '
+                    'placebo-controlled study in type 2 diabetics (*Acta '
+                    'Diabetologica*, 2023) and others report measurable but '
+                    'small changes in blood-sugar markers, and a 2025 review '
+                    'pulling them together stresses that the trials are '
+                    '**small, short and dissimilar**. ⚠️ **The striking finding '
+                    'runs the other way.** In rats, the water-soluble fraction '
+                    'of okra not only reduced glucose absorption but '
+                    '**markedly altered the absorption of metformin**: in the '
+                    'group given okra together with metformin, blood sugar ran '
+                    '**higher** than with metformin alone (*ISRN Pharmacology*, '
+                    '2011). So the thing drunk as "okra water helps diabetes" '
+                    'may be reducing the effect of the diabetes drug. It has '
+                    'not been confirmed in people, but for someone taking '
+                    'metformin it is not a possibility to wave away. Evidence '
+                    'rating "limited".',
+            safety='Ordinary and safe as a vegetable. **The real warning is on '
+                   'the drug side:** anyone taking metformin who regularly '
+                   'consumes a lot of okra or "okra water" should tell their '
+                   'doctor — animal data show okra alters metformin’s '
+                   'absorption, in the direction of **reducing** the '
+                   'drug’s effect. With other blood-sugar-lowering drugs '
+                   'the risk runs the opposite way, toward an additive effect; '
+                   'nothing should be decided without measurement. "Okra water" '
+                   'has no standard dose. Allergy in the mallow family is rare '
+                   'but possible.',
+            fact='**Gumbo**, the famous soup of the American South, takes its '
+                 'name from okra: *ki ngombo* in the Bantu languages, carried '
+                 'across the Atlantic on the slave ships, became first the name '
+                 'of the plant and then of the dish. A vegetable’s name '
+                 'turned into a cuisine’s. In Turkey the same plant is '
+                 'threaded on a needle and dried for winter — two continents, '
+                 'two solutions, for the same slippery texture.',
+            season='**A summer vegetable:** July to September in Turkey. The '
+                   'pod grows and turns fibrous very fast, so it is picked '
+                   '**every day** in the field — which is why dried okra is '
+                   'expensive.',
+            habitat='Native to Africa; it wants heat and humidity and will not '
+                    'stand frost. In Turkey it is grown in **Amasya, Çorum, '
+                    'Tokat** and the Aegean; Amasya okra is small-podded and '
+                    'preferred for drying.',
+            local='Bamya, bamye; okra, lady’s fingers (English), gumbo '
+                  '(America), bāmiyah (Arabic).',
+            confusion='⚠️ **Abelmoschus manihot is a different species.** It is '
+                      'used in China for kidney disease and was studied with '
+                      'irbesartan for albuminuria in *Diabetes Care* in 2022 — '
+                      '**that study is not about okra** and its result does not '
+                      'transfer. ⚠️ Mallow and marshmallow are in the same '
+                      'family; the mucilage is a shared trait, but they are '
+                      'different plants.',
+        ),
+        etk_en=[
+            ['Metformin',
+             '⚠️ In a rat study the water-soluble fraction of okra altered '
+             'metformin’s absorption, and blood sugar ran higher when the '
+             'two were given together. Not confirmed in people; even so, anyone '
+             'on metformin who drinks okra water regularly should tell their '
+             'doctor and is better off not taking the two at the same meal.'],
+            ['Diabetes medicines (sulfonylureas, insulin)',
+             'In small trials okra lowers blood sugar somewhat; with medication '
+             'that can mean hypoglycaemia. The direction differs from the '
+             'metformin finding, which is why measurement matters.'],
+            ['Warfarin (theoretical)',
+             'Okra carries vitamin K; with regular, generous intake what matters '
+             'is not changing the amount abruptly. No study specific to okra.'],
+        ],
+    ),
+
 ]
