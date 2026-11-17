@@ -95,8 +95,28 @@ jobs:
         run: |
           git config user.name "bitkitabani-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add img images.json site tools/fonts assets/fonts assets/icons; if [ -f inat.json ]; then git add inat.json; fi
-          if git diff --cached --quiet; then echo "değişiklik yok"; else git commit -m "Görseller ve site güncellendi [bot]" && (git push || (git pull --rebase -X theirs && git push)); fi
+          ekle() {
+            git add img images.json site tools/fonts assets/fonts assets/icons
+            if [ -f inat.json ]; then git add inat.json; fi
+          }
+          ekle
+          if git diff --cached --quiet; then echo "değişiklik yok"; exit 0; fi
+          git commit -m "Görseller ve site güncellendi [bot]"
+          # ⚠️ Burada eskiden `git pull --rebase -X theirs` vardı. Rebase'de
+          # "theirs" botun kendi commit'i demek; yani iş akışı başladığı
+          # andaki derlemeyi, araya giren daha YENİ bir derlemenin üstüne
+          # yazıyordu. Kaynak sağlam kalıyor, site/ eskiyor, değişiklik
+          # canlıda görünmüyordu (17 Kasım 2026'da iki kez oldu).
+          # Doğrusu: çakışmada karşı tarafı koru, sonra site/'ı birleşmiş
+          # kaynaktan YENİDEN DERLE ve commit'i tazele.
+          for i in 1 2 3; do
+            if git push; then exit 0; fi
+            git pull --rebase -X ours || { git rebase --abort || true; exit 1; }
+            python3 build.py
+            ekle
+            git diff --cached --quiet || git commit --amend --no-edit
+          done
+          echo "üç denemede push edilemedi"; exit 1
       - name: IndexNow bildirimi (yayına alınması için kısa bekleme)
         if: always()
         continue-on-error: true
