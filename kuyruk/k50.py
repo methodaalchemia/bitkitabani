@@ -4,7 +4,7 @@ E = 'https://www.ema.europa.eu/en/medicines/herbal/'
 Q = [
 
     dict(
-        yayin='2027-01-12',
+        yayin='2027-01-07',
         id='kaskara',
         foto='',
         tr='Kaskara (kutsal kabuk)',
@@ -238,7 +238,7 @@ Q = [
     ),
 
     dict(
-        yayin='2027-01-13',
+        yayin='2027-01-08',
         id='senega',
         foto='',
         tr='Senega (yılan kökü)',
@@ -416,7 +416,7 @@ Q = [
     ),
 
     dict(
-        yayin='2027-01-14',
+        yayin='2027-01-09',
         id='hintgunlugu',
         foto='',
         tr='Hint günlüğü (salai)',

@@ -11,7 +11,7 @@ CI = ('Bingöl Balı menşe adı tescil belgesi, Tescil No 1237, '
 Q = [
 
     dict(
-        yayin='2026-11-18',
+        yayin='2026-11-16',
         id='geven',
         foto='',
         tr='Geven',
@@ -264,7 +264,7 @@ Q = [
     ),
 
     dict(
-        yayin='2026-11-19',
+        yayin='2026-11-16',
         id='ucgul',
         foto='',
         tr='Üçgül',
@@ -525,7 +525,7 @@ Q = [
     ),
 
     dict(
-        yayin='2026-11-20',
+        yayin='2026-11-16',
         id='kagitcicegi',
         foto='',
         tr='Kağıtçiçeği',
@@ -716,7 +716,7 @@ Q = [
     ),
 
     dict(
-        yayin='2026-11-21',
+        yayin='2026-11-16',
         id='gazalboynuzu',
         foto='',
         tr='Gazalboynuzu',
@@ -916,7 +916,7 @@ Q = [
     ),
 
     dict(
-        yayin='2026-11-22',
+        yayin='2026-11-16',
         id='ballibaba',
         foto='',
         tr='Ak ballıbaba',

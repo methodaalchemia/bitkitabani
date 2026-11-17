@@ -3,7 +3,7 @@
 Q = [
 
     dict(
-        yayin='2026-12-28',
+        yayin='2026-12-23',
         id='itir',
         foto='',
         tr='Itır',
@@ -212,7 +212,7 @@ Q = [
     ),
 
     dict(
-        yayin='2026-12-29',
+        yayin='2026-12-24',
         id='susam',
         foto='',
         tr='Susam',
@@ -400,7 +400,7 @@ Q = [
     ),
 
     dict(
-        yayin='2026-12-30',
+        yayin='2026-12-25',
         id='hiltit',
         foto='',
         tr='Hiltit (şeytantersi)',

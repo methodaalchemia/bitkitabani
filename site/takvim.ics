@@ -304,6 +304,18 @@ DESCRIPTION:İlkbaharda beyaz çiçekler\, yazın kırmızı meyveler. İ
 URL:https://bitkitabani.com/ahududuyapragi/
 END:VEVENT
 BEGIN:VEVENT
+UID:toplama-ballibaba@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260401
+DTEND;VALUE=DATE:20260402
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Ak ballıbaba toplama mevsimi
+DESCRIPTION:Nisan–eylül arasında uzun süre çiçekte\; çiçekler a
+ çmışken toplanıp gölgede kurutulur. https://bitkitabani.com/ballibab
+ a/
+URL:https://bitkitabani.com/ballibaba/
+END:VEVENT
+BEGIN:VEVENT
 UID:toplama-alic@bitkitabani.com
 DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260401
@@ -732,6 +744,18 @@ DESCRIPTION:İki yıllık bir bitki\; ikinci yıl çiçek açar ve meyve
 URL:https://bitkitabani.com/frenkkimyonu/
 END:VEVENT
 BEGIN:VEVENT
+UID:toplama-gazalboynuzu@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260501
+DTEND;VALUE=DATE:20260502
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Gazalboynuzu toplama mevsimi
+DESCRIPTION:Mayıs–eylül arasında sarı çiçekler açar\; meyveler y
+ azın olgunlaşıp boynuz biçimini alır. https://bitkitabani.com/gazalb
+ oynuzu/
+URL:https://bitkitabani.com/gazalboynuzu/
+END:VEVENT
+BEGIN:VEVENT
 UID:toplama-gelincik@bitkitabani.com
 DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260301
@@ -742,6 +766,18 @@ DESCRIPTION:Çiçekler Nisan–Haziran’da açar\; taç yaprakları saba
  h çiy kalkınca toplanıp gölgede kurutulur. Yapraklar Mart–Nisan’d
  a toplanır. https://bitkitabani.com/gelincik/
 URL:https://bitkitabani.com/gelincik/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-geven@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260602
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Geven toplama mevsimi
+DESCRIPTION:Haziran–ağustosta çiçek açar\; kitre de yazın alınır
+  — gövde çizilir\, sızan sıvı birkaç gün içinde kuruyup şeritl
+ eşir. https://bitkitabani.com/geven/
+URL:https://bitkitabani.com/geven/
 END:VEVENT
 BEGIN:VEVENT
 UID:toplama-giritkekigi@bitkitabani.com
@@ -903,6 +939,18 @@ DESCRIPTION:Yazın çiçek açar\, sonbaharda meyve olgunlaşır\; tohuml
  ar olgun meyveden çıkarılıp kurutulur. https://bitkitabani.com/kabakc
  ekirdegi/
 URL:https://bitkitabani.com/kabakcekirdegi/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-kagitcicegi@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260602
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Kağıtçiçeği toplama mevsimi
+DESCRIPTION:Haziran–ağustosta çiçekte\; kuru çiçek için tam açm
+ ışken toplanıp asılarak kurutulur. https://bitkitabani.com/kagitciceg
+ i/
+URL:https://bitkitabani.com/kagitcicegi/
 END:VEVENT
 BEGIN:VEVENT
 UID:toplama-kapari@bitkitabani.com
@@ -1460,6 +1508,17 @@ DESCRIPTION:Mayıs–Ekim arasında tek sarı çiçek\; bütün bitki çi
  çekli dönemde kökleriyle sökülür. https://bitkitabani.com/tuylusahi
  notu/
 URL:https://bitkitabani.com/tuylusahinotu/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-ucgul@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260501
+DTEND;VALUE=DATE:20260502
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Üçgül toplama mevsimi
+DESCRIPTION:Mayıs–eylül arasında çiçekte\; çiçekler tam açmış
+ ken toplanıp gölgede kurutulur. https://bitkitabani.com/ucgul/
+URL:https://bitkitabani.com/ucgul/
 END:VEVENT
 BEGIN:VEVENT
 UID:toplama-yabaniigde@bitkitabani.com

@@ -4,7 +4,7 @@ from kunye_elle import who_url
 Q = [
 
     dict(
-        yayin='2026-12-10',
+        yayin='2026-12-05',
         id='avokado',
         foto='',
         tr='Avokado',
@@ -234,7 +234,7 @@ Q = [
     ),
 
     dict(
-        yayin='2026-12-11',
+        yayin='2026-12-06',
         id='demirhindi',
         foto='',
         tr='Demirhindi',
@@ -420,7 +420,7 @@ Q = [
     ),
 
     dict(
-        yayin='2026-12-12',
+        yayin='2026-12-07',
         id='haritaki',
         foto='',
         tr='Haritaki (kara helile)',

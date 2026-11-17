@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 251 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 256 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 
@@ -262,6 +262,11 @@ Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 - [Kırlangıçotu (Chelidonium majus L.)](https://bitkitabani.com/kirlangicotu/): Genelde güvenli, kanıt: geleneksel
 - [Demirdikeni (Tribulus terrestris L.)](https://bitkitabani.com/demirdikeni/): Dikkat, kanıt: sınırlı
 - [Andrographis (Andrographis paniculata (Burm.f.) Nees)](https://bitkitabani.com/andrographis/): Dikkat, kanıt: sınırlı
+- [Geven (Astragalus gummifer Labill.; A. longifolius Lam.; A. muschianus Kotschy & Boiss. ex Boiss.)](https://bitkitabani.com/geven/): Genelde güvenli, kanıt: geleneksel
+- [Üçgül (Trifolium pratense L.)](https://bitkitabani.com/ucgul/): Dikkat, kanıt: sınırlı
+- [Kağıtçiçeği (Xeranthemum annuum L.)](https://bitkitabani.com/kagitcicegi/): Dikkat, kanıt: geleneksel
+- [Gazalboynuzu (Lotus corniculatus L.)](https://bitkitabani.com/gazalboynuzu/): Dikkat, kanıt: geleneksel
+- [Ak ballıbaba (Lamium album L.)](https://bitkitabani.com/ballibaba/): Genelde güvenli, kanıt: geleneksel
 - [Soğan (Allium cepa L.)](https://bitkitabani.com/sogan/): Yüksek risk, kanıt: sınırlı
 
 ## Kültür köprüleri

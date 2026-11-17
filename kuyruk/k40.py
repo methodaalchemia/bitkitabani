@@ -4,7 +4,7 @@
 Q = [
 
     dict(
-        yayin='2026-12-13',
+        yayin='2026-12-08',
         id='zahter',
         foto='',
         tr='Zahter',
@@ -189,7 +189,7 @@ Q = [
     ),
 
     dict(
-        yayin='2026-12-14',
+        yayin='2026-12-09',
         id='menengic',
         foto='',
         tr='Menengiç',
@@ -367,7 +367,7 @@ Q = [
     ),
 
     dict(
-        yayin='2026-12-15',
+        yayin='2026-12-10',
         id='kopekuzumu',
         foto='',
         tr='Köpek üzümü',

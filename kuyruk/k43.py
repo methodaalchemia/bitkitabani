@@ -4,7 +4,7 @@
 Q = [
 
     dict(
-        yayin='2026-12-22',
+        yayin='2026-12-17',
         id='trabzonhurmasi',
         foto='',
         tr='Trabzon hurması',
@@ -221,7 +221,7 @@ Q = [
     ),
 
     dict(
-        yayin='2026-12-23',
+        yayin='2026-12-18',
         id='kahve',
         foto='',
         tr='Kahve',
@@ -461,7 +461,7 @@ Q = [
     ),
 
     dict(
-        yayin='2026-12-24',
+        yayin='2026-12-19',
         id='findik',
         foto='',
         tr='Fındık',
