@@ -210,7 +210,7 @@ Q = [
     ),
 
     dict(
-        yayin='2026-11-18',
+        yayin='2026-11-23',
         id='sakayik',
         foto='',
         tr='Şakayık',
@@ -409,7 +409,7 @@ Q = [
     ),
 
     dict(
-        yayin='2026-11-19',
+        yayin='2026-11-24',
         id='yilankoku',
         foto='',
         tr='Yılankökü',

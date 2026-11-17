@@ -971,6 +971,17 @@ ELLE.update({
    titck_apa('Melaleuca cajuputi Powell'),
 })
 
+ELLE.update({
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/TrifoliumpratenseL.03d59e5f8c6844d4a63937bb3fca382f_fa81373a-b038-4849-986d-6d8916555033.pdf':
+   titck_apa('Trifolium pratense L.'),
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/AstragalusmembranaceusFisch.Bungeaa3769f4f317421581650a37baf67e19_53dde54b-08df-45f3-af6f-206efd6701ad.pdf':
+   titck_apa('Astragalus membranaceus (Fisch.) Bunge / Astragalus mongholicus Bunge'),
+ # Coğrafi işaret tescil belgesi: PubMed'de yok, elle yazılıyor.
+ 'https://ci.turkpatent.gov.tr/Files/GeographicalSigns/2959a6e7-1841-454b-9530-3f34c807ee9a.pdf':
+   ('Türk Patent ve Marka Kurumu. (2022). Bingöl Balı '
+    '[Coğrafi işaret tescil belgesi, Tescil No 1237]. Bingöl Üniversitesi.'),
+})
+
 # Kurum yayını: APA'da kurumsal yazar ve yayın türü köşeli ayraçta.
 ELLE['https://www.iarc.who.int/wp-content/uploads/2018/07/pr244_E.pdf'] = (
     'Uluslararası Kanser Araştırmaları Ajansı. (2016). IARC Monographs '

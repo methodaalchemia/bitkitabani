@@ -219,6 +219,13 @@
  "Asteraceae": {
   "hata": "eşadlı: 30000005-2 (Martinov), 319342-2 (Bercht. & J.Presl)"
  },
+ "Astragalus gummifer": {
+  "ad": "Astragalus gummifer",
+  "familya": "Leguminosae",
+  "kimlik": "477705-1",
+  "rutbe": "spec.",
+  "yazar": "Labill."
+ },
  "Astragalus mongholicus": {
   "ad": "Astragalus mongholicus",
   "familya": "Leguminosae",
@@ -1121,6 +1128,14 @@
   "rutbe": "fam.",
   "yazar": "Martinov"
  },
+ "Lamium album": {
+  "ad": "Lamium album",
+  "familya": "Lamiaceae",
+  "kimlik": "448792-1",
+  "rutbe": "spec.",
+  "yazar": "L.",
+  "yazar_kaynagi": "GBIF/WCVP"
+ },
  "Lauraceae": {
   "ad": "Lauraceae",
   "familya": "Lauraceae",
@@ -1212,6 +1227,13 @@
   "kimlik": "143606-2",
   "rutbe": "spec.",
   "yazar": "(Lem. ex J.F.Cels) J.M.Coult."
+ },
+ "Lotus corniculatus": {
+  "ad": "Lotus corniculatus",
+  "familya": "Fabaceae",
+  "kimlik": "30179739-2",
+  "rutbe": "spec.",
+  "yazar": "L."
  },
  "Lycium barbarum": {
   "ad": "Lycium barbarum",
@@ -2446,6 +2468,13 @@
   "kimlik": "821709-1",
   "rutbe": "spec.",
   "yazar": "(L.) Dunal"
+ },
+ "Xeranthemum annuum": {
+  "ad": "Xeranthemum annuum",
+  "familya": "Asteraceae",
+  "kimlik": "260959-1",
+  "rutbe": "spec.",
+  "yazar": "L."
  },
  "Zea mays": {
   "ad": "Zea mays",

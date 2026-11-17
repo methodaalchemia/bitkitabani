@@ -5,7 +5,7 @@ E = 'https://www.ema.europa.eu/en/medicines/herbal/'
 Q = [
 
     dict(
-        yayin='2027-01-16',
+        yayin='2027-01-21',
         id='tibbiadacayi',
         foto='',
         tr='Tıbbi adaçayı',
@@ -220,7 +220,7 @@ Q = [
     ),
 
     dict(
-        yayin='2027-01-17',
+        yayin='2027-01-22',
         id='huanglian',
         foto='',
         tr='Huang lian (Çin altın ipliği)',
@@ -427,7 +427,7 @@ Q = [
     ),
 
     dict(
-        yayin='2027-01-18',
+        yayin='2027-01-23',
         id='yadanzi',
         foto='',
         tr='Ya dan zi (Cava bruseası)',

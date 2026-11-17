@@ -6,18 +6,20 @@ from kunye_elle import who_url
 Q = [
 
     dict(
-        yayin='2026-11-20',
-        id='geven',
+        yayin='2026-11-25',
+        id='cingeveni',
         foto='',
-        tr='Geven',
+        tr='Çin geveni',
         la='Astragalus membranaceus (Fisch.) Bunge; A. mongholicus Bunge',
         fam='Fabaceae (baklagiller)',
-        diger='Türkçe geven — Astragalus cinsinin yerleşik Türkçe adı; Çince '
-              'huángqí, İngilizce astragalus root, milkvetch. DSÖ monografı '
-              'droğu "Radix Astragali" — kurutulmuş kök — diye tanımlıyor. '
-              '⚠️ Türkiye’nin yüzlerce geven türü (A. gummifer, kitre zamkı '
-              'kaynağı dahil) bu monografın kapsamında değildir; monograf iki '
-              'Çin türü içindir. TİTCK ve AB monografı yok.',
+        diger='Türkçede bu türe de **geven** deniyor — TİTCK monografı Türkçe '
+              'adını "geven" diye veriyor. Çince huángqí, İngilizce astragalus '
+              'root, milkvetch. DSÖ monografı droğu "Radix Astragali" — '
+              'kurutulmuş kök — diye tanımlıyor. ⚠️ **Anadolu’nun gevenleri '
+              'bu bitki değildir:** Türkiye’nin dört yüzü aşkın Astragalus '
+              'türü (kitre zamkının kaynağı A. gummifer dahil) ne DSÖ ne '
+              'TİTCK monografının kapsamında; onlar ayrı kayıtta. **TİTCK '
+              'monografı var**, AB monografı yok.',
         bolge=['asya'],
         kat=['sifa'],
         kisim='Kurutulmuş kökü',
@@ -93,10 +95,14 @@ Q = [
                    'bitkilerden ilkbahar ya da sonbaharda sökülür.',
             yetisme='Kuzey Çin, Moğolistan ve Doğu Sibirya’nın yerlisi; Çin’de '
                     'geniş çapta kültürü yapılıyor. Türkiye’de yetişmiyor.',
-            yoresel='Geven; Çince huángqí, İngilizce astragalus.',
-            karisma='⚠️ Türkiye’nin yerli Astragalus türleri (kitre geveni A. '
-                    'gummifer dahil) başka bitkilerdir ve monografın kapsamında '
-                    'değildir. Çin pazarında da kök sahteciliği (başka '
+            yoresel='Çin geveni, geven (TİTCK), huangqi; Çince huángqí, İngilizce astragalus root.',
+            karisma='⚠️ **Anadolu’nun gevenleri ayrı kayıttadır** — kitre '
+                    'geveni (A. gummifer), A. longifolius ve A. muschianus gibi '
+                    'yerli türler başka bitkilerdir, bu monografın kapsamında '
+                    'değildir ve kullanılan kısımları kök değil, gövdeden sızan '
+                    'zamktır. TİTCK listesinde Türkçe adın ikisi için de '
+                    '"geven" olması karışıklığı resmî metne kadar taşımış '
+                    'durumda. Çin pazarında ayrıca kök sahteciliği (başka '
                     'Astragalus ve Hedysarum türleri) biliniyor.',
         ),
         ema=[],
@@ -109,16 +115,18 @@ Q = [
             ['Radix Astragali, DSÖ Monographs on Selected Medicinal Plants, '
              'Cilt 1, 1999', who_url(1, 'radix-astragali')],
         ],
-        rel=['ekinezya', 'ginseng', 'sibiryaginsengi'],
+        rel=['geven', 'ekinezya', 'ginseng', 'sibiryaginsengi'],
         en=dict(
-            name='Astragalus root',
-            other='Turkish geven — the established Turkish name of the genus '
-                  'Astragalus; Chinese huángqí, English astragalus root, '
-                  'milkvetch. The WHO monograph defines the drug as "Radix '
-                  'Astragali" — the dried root. ⚠️ Turkey’s hundreds of '
-                  'Astragalus species (including A. gummifer, the source of gum '
-                  'tragacanth) are not covered by this monograph; it is for two '
-                  'Chinese species. No Turkish or EU monograph.',
+            name='Chinese milkvetch root',
+            other='Turkish calls this one **geven** as well — the Turkish '
+                  'monograph gives its Turkish name as "geven". Chinese '
+                  'huángqí, English astragalus root, milkvetch. The WHO '
+                  'monograph defines the drug as "Radix Astragali", the dried '
+                  'root. ⚠️ **The milkvetches of Anatolia are not this plant:** '
+                  'Turkey’s four hundred-odd Astragalus species (including A. '
+                  'gummifer, the source of gum tragacanth) fall under neither '
+                  'the WHO nor the Turkish monograph; they have their own '
+                  'record. **There is a Turkish monograph**; no EU monograph.',
             part='The dried root',
             uses=[
                 ['WHO monograph (1999)', '"Uses supported by clinical data": '
@@ -186,11 +194,15 @@ Q = [
             habitat='Native to northern China, Mongolia and eastern Siberia; '
                     'widely cultivated in China. It does not grow in Turkey.',
             local='Geven; Chinese huángqí, English astragalus.',
-            confusion='⚠️ Turkey’s native Astragalus species (including the '
-                      'tragacanth milkvetch A. gummifer) are other plants '
-                      'outside the monograph. Root adulteration (other '
-                      'Astragalus and Hedysarum species) is known on the Chinese '
-                      'market too.',
+            confusion='⚠️ **Anatolia’s milkvetches have their own record** — '
+                      'native species such as the tragacanth milkvetch (A. '
+                      'gummifer), A. longifolius and A. muschianus are different '
+                      'plants, outside this monograph, and the part used is not '
+                      'the root but the gum that seeps from the stem. Because '
+                      'the Turkish list gives both the same Turkish name, '
+                      '"geven", the confusion has reached official documents. '
+                      'Root adulteration (other Astragalus and Hedysarum '
+                      'species) is also known on the Chinese market.',
         ),
         etk_en=[
             ['No interactions reported in the WHO monograph',
@@ -203,7 +215,7 @@ Q = [
     ),
 
     dict(
-        yayin='2026-11-21',
+        yayin='2026-11-26',
         id='tavsankulagi',
         foto='',
         tr='Tavşankulağı',
@@ -398,7 +410,7 @@ Q = [
     ),
 
     dict(
-        yayin='2026-11-22',
+        yayin='2026-11-27',
         id='baloncicegi',
         foto='',
         tr='Balon çiçeği',

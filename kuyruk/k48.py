@@ -3,7 +3,7 @@
 Q = [
 
     dict(
-        yayin='2027-01-01',
+        yayin='2027-01-06',
         id='kuzukulagi',
         foto='',
         tr='Kuzukulağı',
@@ -176,7 +176,7 @@ Q = [
     ),
 
     dict(
-        yayin='2027-01-02',
+        yayin='2027-01-07',
         id='labada',
         foto='',
         tr='Labada (evelik)',
@@ -374,7 +374,7 @@ Q = [
     ),
 
     dict(
-        yayin='2027-01-03',
+        yayin='2027-01-08',
         id='aronya',
         foto='',
         tr='Aronya',

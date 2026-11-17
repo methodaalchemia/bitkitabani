@@ -142,3 +142,8 @@ japonnanesi | Mentha canadensis | plant flowers leaves
 noni | Morinda citrifolia | fruit tree leaves
 yabanicivit | Baptisia tinctoria | plant flowers
 kajuput | Melaleuca cajuputi | tree bark flowers
+geven | Astragalus gummifer | thorny cushion plant steppe tragacanth
+ucgul | Trifolium pratense | red clover flowers meadow
+kagitcicegi | Xeranthemum annuum | flowers plant
+gazalboynuzu | Lotus corniculatus | yellow flowers pods meadow
+ballibaba | Lamium album | white flowers plant

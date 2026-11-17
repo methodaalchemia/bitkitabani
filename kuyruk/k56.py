@@ -2,7 +2,7 @@
 Q = [
 
     dict(
-        yayin='2027-01-25',
+        yayin='2027-01-30',
         id='noni',
         foto='',
         tr='Noni',
@@ -201,7 +201,7 @@ Q = [
     ),
 
     dict(
-        yayin='2027-01-26',
+        yayin='2027-01-31',
         id='yabanicivit',
         foto='',
         tr='Yabani çivit (Baptisia)',
@@ -380,7 +380,7 @@ Q = [
     ),
 
     dict(
-        yayin='2027-01-27',
+        yayin='2027-02-01',
         id='kajuput',
         foto='',
         tr='Kajuput',

@@ -144,4 +144,6 @@ M = {
  'noni': ('Morinda citrifolia Linn.', '2022/dynamicModulesAttachment/MorindacitrifoliaLinn.a9015a172043462b9e4201c5e3c33fbc_681e3307-7e5f-4dd6-9953-07beb37acf9c.pdf'),
  'yabanicivit': ('Baptisia tinctoria L.', '2022/dynamicModulesAttachment/BaptisiatinctoriaL..pdfce23ee8ba371490aac28b75e2476950e_f2b7b3a0-8109-4b70-a649-e3bdd6cfb4d6.pdf'),
  'kajuput': ('Melaleuca cajuputi Powell', '2023/dynamicModulesAttachment/MelaleucacajuputiPowell_56fc1308-355b-419e-b62a-5a67836dd4b3.pdf'),
+ 'ucgul': ('Trifolium pratense L.', '2022/dynamicModulesAttachment/TrifoliumpratenseL.03d59e5f8c6844d4a63937bb3fca382f_fa81373a-b038-4849-986d-6d8916555033.pdf'),
+ 'cingeveni': ('Astragalus membranaceus (Fisch.) Bunge / Astragalus mongholicus Bunge', '2022/dynamicModulesAttachment/AstragalusmembranaceusFisch.Bungeaa3769f4f317421581650a37baf67e19_53dde54b-08df-45f3-af6f-206efd6701ad.pdf'),
 }

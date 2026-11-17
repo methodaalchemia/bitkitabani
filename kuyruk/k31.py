@@ -335,7 +335,11 @@ Q = [
             karisma='⚠️ Devedikeni (Silybum marianum, karaciğer bitkisi) ile '
                     'adı karışıyor; ikisi ayrı cins, ayrı monograf, ayrı '
                     'endikasyon. Dikenli papatyagillerin pek çok türü benzer '
-                    'görünür; eczane ürünü tercih edilmeli.',
+                    'görünür; eczane ürünü tercih edilmeli. ⚠️ Bitkinin '
+                    'eşadı Centaurea benedicta olduğu için **peygamber '
+                    'çiçeği (Centaurea) türleriyle de karışıyor**; onlar '
+                    'ayrı bitkilerdir ve bu monografın kapsamında '
+                    'değildir.',
         ),
         ema=[('Cnici benedicti herba',
               'https://www.ema.europa.eu/en/medicines/herbal/cnici-benedicti-herba')],
@@ -414,7 +418,10 @@ Q = [
                       'marianum, the liver plant); separate genera, separate '
                       'monographs, separate indications. Many spiny daisy-family '
                       'species look alike; a pharmacy product is the better '
-                      'choice.',
+                      'choice. ⚠️ Because the plant’s synonym is Centaurea '
+                      'benedicta it is also confused with the knapweeds '
+                      '(Centaurea); those are different plants and outside '
+                      'this monograph.',
         ),
         etk_en=[
             ['No interactions reported in the EMA monograph',

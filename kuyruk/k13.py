@@ -576,7 +576,11 @@ Q = [
                     'kozmetikte ve uçucu yağ olarak satılıyor ve farklı '
                     'bir türdür; AB monografı yalnızca H. arenarium’u '
                     'kapsıyor. Türkiye’de birçok Helichrysum türü '
-                    '"ölmez çiçek" ve "altın otu" adıyla toplanıyor.',
+                    '"ölmez çiçek" ve "altın otu" adıyla toplanıyor. '
+                    '⚠️ Ayrı bir cins olan **kağıtçiçeğine (Xeranthemum '
+                    'annuum) de İngilizcede "everlasting flower" deniyor**; '
+                    'o ayrı bir bitkidir, TİTCK monografı yoktur ve kendi '
+                    'kaydındadır.',
         ),
         ema=[('Helichrysi flos',
               'https://www.ema.europa.eu/en/medicines/herbal/helichrysi-flos')],
@@ -584,7 +588,7 @@ Q = [
             ['Helichrysum arenarium (L.) Moench monografı, TİTCK Tıbbi Bitki '
              'Listesi', 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/HelichrysumarenariumL.Moench0b223e9429d04db0910b96618c8e9dae_6cc89fd4-9f6c-43fd-bbbe-adabc83e64e7.pdf'],
         ],
-        rel=['karahindiba', 'enginar'],
+        rel=['karahindiba', 'enginar', 'kagitcicegi'],
         en=dict(
             name='Sandy everlasting',
             other='The Turkish monograph gives the names "ölmez çiçek, altın '

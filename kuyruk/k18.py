@@ -637,7 +637,7 @@ Q = [
             ['Leonurus cardiaca L. monografı, TİTCK Tıbbi Bitki Listesi',
              'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/LeonuruscardiacaL.7522b4e8ae384b16b4e9766dfcf45a8e_d1786ca7-5a4f-4061-8a65-d79eb5c72b14.pdf'],
         ],
-        rel=['melisa', 'kediotu'],
+        rel=['melisa', 'kediotu', 'ballibaba'],
         en=dict(
             name='Motherwort',
             other='The Turkish monograph gives the name "aslan kuyruğu" '

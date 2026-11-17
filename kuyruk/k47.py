@@ -3,7 +3,7 @@
 Q = [
 
     dict(
-        yayin='2026-12-29',
+        yayin='2027-01-03',
         id='karadut',
         foto='',
         tr='Karadut',
@@ -194,7 +194,7 @@ Q = [
     ),
 
     dict(
-        yayin='2026-12-30',
+        yayin='2027-01-04',
         id='mazi',
         foto='',
         tr='Mazı (batı mazısı)',
@@ -416,7 +416,7 @@ Q = [
     ),
 
     dict(
-        yayin='2026-12-31',
+        yayin='2027-01-05',
         id='saparna',
         foto='',
         tr='Saparna (melocan)',
