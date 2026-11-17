@@ -448,6 +448,19 @@
   "w": 960,
   "w500": 500
  },
+ "atlassediri": {
+  "artist": "TadejM",
+  "auto": true,
+  "b1280": "2023-10-14 Botanični vrt Sežana.jpg",
+  "file": "2023-10-14 Botanični vrt Sežana.jpg",
+  "h": 540,
+  "h500": 282,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:2023-10-14_Botani%C4%8Dni_vrt_Se%C5%BEana.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "avokado": {
   "artist": "Nikodem Nijaki",
   "auto": true,
@@ -1697,6 +1710,19 @@
   "w": 960,
   "w500": 500
  },
+ "hiyarsembe": {
+  "artist": "Basile Morin",
+  "auto": true,
+  "b1280": "Cassia fistula (Golden rain tree) flowers.jpg",
+  "file": "Cassia fistula (Golden rain tree) flowers.jpg",
+  "h": 960,
+  "h500": 500,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Cassia_fistula_(Golden_rain_tree)_flowers.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "hodan": {
   "artist": "Fabrizio Tampieri",
   "auto": false,
@@ -1849,6 +1875,19 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Pelargonium_graveolens_in_Hel.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "japonnanesi": {
+  "artist": "Ayotte, Gilles, 1948-",
+  "auto": true,
+  "b1280": "Mentha canadensis 15-p.bot-mentha.cana-02.jpg",
+  "file": "Mentha canadensis 15-p.bot-mentha.cana-02.jpg",
+  "h": 1383,
+  "h500": 721,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Mentha_canadensis_15-p.bot-mentha.cana-02.jpg",
   "w": 960,
   "w500": 500
  },

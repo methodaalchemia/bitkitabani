@@ -3096,5 +3096,29 @@
   "license": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Curcuma_zedoaria_flower_from_CUET_rubber_garden_02.jpg"
  },
- "zedoar:kuru": "yok"
+ "zedoar:kuru": "yok",
+ "hiyarsembe:cizim": "yok",
+ "hiyarsembe:cicek": {
+  "file": "সোণাৰু.jpg",
+  "artist": "ঈশান জ্যোতি বৰা",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%E0%A6%B8%E0%A7%8B%E0%A6%A3%E0%A6%BE%E0%A7%B0%E0%A7%81.jpg"
+ },
+ "hiyarsembe:kuru": "yok",
+ "atlassediri:cizim": "yok",
+ "atlassediri:cicek": {
+  "file": "Flores masculinas de cedro plateado (16898407441).jpg",
+  "artist": "jacilluch",
+  "license": "CC BY-SA 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Flores_masculinas_de_cedro_plateado_%2816898407441%29.jpg"
+ },
+ "atlassediri:kuru": "yok",
+ "japonnanesi:cizim": "yok",
+ "japonnanesi:cicek": {
+  "file": "WildMInt.JPG",
+  "artist": "SriMesh",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:WildMInt.JPG"
+ },
+ "japonnanesi:kuru": "yok"
 }
