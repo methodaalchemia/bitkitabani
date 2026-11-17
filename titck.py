@@ -138,4 +138,7 @@ M = {
  'capesarisabiri': ('Aloe ferox Miller', '2024/dynamicModulesAttachment/Aloeferoxzsuyu_59f65bec-2c22-4bfd-9ea7-735236ec939b.pdf'),
  'kafuragaci': ('Cinnamomum camphora (L.) J.Presl', '2023/dynamicModulesAttachment/CinnamomumcamphorayaymlV1_580e3269-513e-45c6-a2c3-050e131bb5ef.pdf'),
  'zedoar': ('Curcuma zedoaria (Christmann) Roscoe', '2022/dynamicModulesAttachment/CurcumazedoariaChristmannRoscoe8fbeb733a2b548519d8e8ca15a8229d1_1d5425d2-9b06-48df-880e-c1d802ccd3e0.pdf'),
+ 'hiyarsembe': ('Cassia fistula L.', '2022/dynamicModulesAttachment/CassiafistulaL.79d54efc4ec546db88a513e6cd21fc5a_d48fd8f4-92e6-4a65-bf56-0dfe9e886b52.pdf'),
+ 'atlassediri': ('Cedrus atlantica (Endlicher) Carrière', '2022/dynamicModulesAttachment/Cedrusatlantica3c154dde10364cd9858822febf591c5b_62b70c02-c3e8-4a41-a4d1-d53bb3c46842.pdf'),
+ 'japonnanesi': ('Mentha canadensis L.', '2023/dynamicModulesAttachment/MenthacanadensisL_f3fe2d20-176f-4f67-a88e-e3d4afdadf41.pdf'),
 }

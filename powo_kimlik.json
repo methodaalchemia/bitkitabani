@@ -432,6 +432,20 @@
   "rutbe": "spec.",
   "yazar": "L."
  },
+ "Cassia fistula": {
+  "ad": "Cassia fistula",
+  "familya": "Leguminosae",
+  "kimlik": "484507-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
+ "Cedrus atlantica": {
+  "ad": "Cedrus atlantica",
+  "familya": "Pinaceae",
+  "kimlik": "50881822-1",
+  "rutbe": "spec.",
+  "yazar": "(Endl.) G.Manetti ex Carrière"
+ },
  "Centaurea benedicta": {
   "ad": "Centaurea benedicta",
   "familya": "Asteraceae",
@@ -1288,6 +1302,13 @@
   "ad": "Melissa officinalis",
   "familya": "Lamiaceae",
   "kimlik": "450084-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
+ "Mentha canadensis": {
+  "ad": "Mentha canadensis",
+  "familya": "Lamiaceae",
+  "kimlik": "450311-1",
   "rutbe": "spec.",
   "yazar": "L."
  },

@@ -953,6 +953,15 @@ ELLE.update({
    titck_apa('Curcuma zedoaria (Christmann) Roscoe'),
 })
 
+ELLE.update({
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/CassiafistulaL.79d54efc4ec546db88a513e6cd21fc5a_d48fd8f4-92e6-4a65-bf56-0dfe9e886b52.pdf':
+   titck_apa('Cassia fistula L.'),
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/Cedrusatlantica3c154dde10364cd9858822febf591c5b_62b70c02-c3e8-4a41-a4d1-d53bb3c46842.pdf':
+   titck_apa('Cedrus atlantica (Endlicher) Carrière'),
+ 'https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/MenthacanadensisL_f3fe2d20-176f-4f67-a88e-e3d4afdadf41.pdf':
+   titck_apa('Mentha canadensis L.'),
+})
+
 # Kurum yayını: APA'da kurumsal yazar ve yayın türü köşeli ayraçta.
 ELLE['https://www.iarc.who.int/wp-content/uploads/2018/07/pr244_E.pdf'] = (
     'Uluslararası Kanser Araştırmaları Ajansı. (2016). IARC Monographs '
