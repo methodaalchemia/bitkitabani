@@ -577,6 +577,19 @@
   "w": 960,
   "w500": 500
  },
+ "bamya": {
+  "artist": "Wilfredor",
+  "auto": true,
+  "b1280": "Okra in Margarita Island.jpg",
+  "file": "Okra in Margarita Island.jpg",
+  "h": 1445,
+  "h500": 753,
+  "license": "CC0",
+  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Okra_in_Margarita_Island.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "banotu": {
   "artist": "Syrio",
   "b1280": "Hyoscyamus niger Altaguardia 02.jpg",
@@ -2612,6 +2625,19 @@
   "w": 960,
   "w500": 500
  },
+ "kuskonmaz": {
+  "artist": "Rasbak",
+  "auto": true,
+  "b1280": "Asperge in bloei Asparagus officinalis.jpg",
+  "file": "Asperge in bloei Asparagus officinalis.jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Asperge_in_bloei_Asparagus_officinalis.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "kusuvezi": {
   "artist": "W.carter",
   "auto": false,
@@ -3174,6 +3200,19 @@
   "w": 960,
   "w500": 500
  },
+ "patlican": {
+  "artist": "Uoaei1",
+  "auto": true,
+  "b1280": "Monsieur d'Aubergine.JPG",
+  "file": "Monsieur d'Aubergine.JPG",
+  "h": 1440,
+  "h500": 750,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Monsieur_d%27Aubergine.JPG",
+  "w": 960,
+  "w500": 500
+ },
  "pauarco": {
   "artist": "Giles Laurent",
   "auto": true,
@@ -3374,6 +3413,19 @@
   "license": "CC BY 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:20260517_Anacamptis_morio_02.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "salgam": {
+  "artist": "Kakoula10",
+  "auto": true,
+  "b1280": "Fleurs de navet et abeille.jpg",
+  "file": "Fleurs de navet et abeille.jpg",
+  "h": 687,
+  "h500": 358,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Fleurs_de_navet_et_abeille.jpg",
   "w": 960,
   "w500": 500
  },
@@ -3710,6 +3762,19 @@
   "w": 960,
   "w500": 500
  },
+ "tatlipatates": {
+  "artist": "Prahlad balaji",
+  "auto": true,
+  "b1280": "Ipomoea batatas flower 2.jpg",
+  "file": "Ipomoea batatas flower 2.jpg",
+  "h": 1707,
+  "h500": 889,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ipomoea_batatas_flower_2.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "tatula": {
   "artist": "Júlio Reis",
   "auto": false,
@@ -4016,6 +4081,19 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Gardenology.org-IMG_2751_rbgs11jan.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "yerelmasi": {
+  "artist": "JackyM59",
+  "auto": true,
+  "b1280": "Fleur de Topinambur en contre jour (Helianthus tuberosus).jpg",
+  "file": "Fleur de Topinambur en contre jour (Helianthus tuberosus).jpg",
+  "h": 960,
+  "h500": 500,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Fleur_de_Topinambur_en_contre_jour_(Helianthus_tuberosus).jpg",
   "w": 960,
   "w500": 500
  },

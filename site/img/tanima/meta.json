@@ -3189,5 +3189,58 @@
  "ballibaba:kuru": "yok",
  "cingeveni:cizim": "yok",
  "cingeveni:cicek": "yok",
- "cingeveni:kuru": "yok"
+ "cingeveni:kuru": "yok",
+ "tatlipatates:cizim": "yok",
+ "tatlipatates:cicek": {
+  "file": "Ipomoea batatas flower 2.jpg",
+  "artist": "Prahlad balaji",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ipomoea_batatas_flower_2.jpg"
+ },
+ "tatlipatates:kuru": "yok",
+ "yerelmasi:cizim": "yok",
+ "yerelmasi:cicek": {
+  "file": "Jerusalem artichoke flower.jpg",
+  "artist": "Jamplevia",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Jerusalem_artichoke_flower.jpg"
+ },
+ "yerelmasi:kuru": "yok",
+ "salgam:cizim": "yok",
+ "salgam:cicek": {
+  "file": "Nepali name of mustard.jpg",
+  "artist": "Subash321",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Nepali_name_of_mustard.jpg"
+ },
+ "salgam:kuru": "yok",
+ "patlican:cizim": "yok",
+ "patlican:cicek": {
+  "file": "Flower of Long purple eggplant.jpg",
+  "artist": "Rocky Masum This work was made by Masum-al-Hasan Rocky and r",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Flower_of_Long_purple_eggplant.jpg"
+ },
+ "patlican:kuru": "yok",
+ "kuskonmaz:cizim": {
+  "file": "Illustration Asparagus officinalis0b.jpg",
+  "artist": "CSvBibra",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Asparagus_officinalis0b.jpg"
+ },
+ "kuskonmaz:cicek": {
+  "file": "Asparagus officinalis subsp. oficinalis flower, asperge bloem.jpg",
+  "artist": "Rasbak",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Asparagus_officinalis_subsp._oficinalis_flower%2C_asperge_bloem.jpg"
+ },
+ "kuskonmaz:kuru": "yok",
+ "bamya:cizim": "yok",
+ "bamya:cicek": {
+  "file": "Okra flower extreme closeup pentagonal.jpg",
+  "artist": "Golem Unity",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Okra_flower_extreme_closeup_pentagonal.jpg"
+ },
+ "bamya:kuru": "yok"
 }
