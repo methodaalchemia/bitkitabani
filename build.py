@@ -1766,11 +1766,11 @@ for i, k in enumerate(KAV):
                     crumb_ld(('/kavram/', 'Kavramlar'), (path, k['ad']))), image=(f'{BASE}/img/{k["bitki"]}-960.jpg' if k['bitki'] in IMG else None)))
     GUIDE_URLS.append(path)
 if True:
-    _kl = ''.join(f'<li><a href="/kavram/{k["slug"]}/"><b>{e(k["ad"])}</b></a><span>{e(k["kisa"])} · Bitkisi: <a href="/{k["bitki"]}/">{e(byId[k["bitki"]]["tr"])}</a></span></li>' for k in sorted(KAV, key=lambda k: k['ad'].replace('Ç','C~').replace('Ö','O~').replace('Ş','S~').replace('Ü','U~').replace('İ','I~')))
+    _kl = ''.join(f'<a class="scard" href="/kavram/{k["slug"]}/">{ph(byId[k["bitki"]], 500)}<span class="sc-txt"><b>{e(k["ad"])}</b><span class="sc-k">{e(k["kisa"])}</span><span class="sc-b">Bitkisi: {e(byId[k["bitki"]]["tr"])}</span></span></a>' for k in sorted(KAV, key=lambda k: k['ad'].replace('Ç','C~').replace('Ö','O~').replace('Ş','S~').replace('Ü','U~').replace('İ','I~')))
     write('/kavram/', page('Kavramlar sözlüğü: şamanizm, ritüel ve kadim bilgi | Bitki Tabanı', 'Her gün bir kavram ve onunla eşleşen bir bitki: animizm, kam, nazar, Pachamama, limpia, öğretmen bitkiler ve daha fazlası.', '/kavram/',
           f'''{crumbs(('/kavram/', 'Kavramlar'))}<header class="page-head"><span class="eyebrow">Her gün bir kavram, bir bitki · {len(KAV)} madde</span><h1>Kavramlar sözlüğü</h1><p>Şamanizmden halk inançlarına, ritüellerden kadim bilgiye: her gün kısa, kaynaklı bir kavram ve onunla eşleşen bir bitki.</p></header>
 {('<section class="sec"><h2>Bugünün kavramı</h2><p><a class="cta" href="/kavram/' + KAV_TODAY["slug"] + '/">' + e(KAV_TODAY["ad"]) + ' →</a></p>' + kav_plant(KAV_TODAY) + '</section>') if KAV_TODAY else ''}
-{('<section class="sec"><h2>A’dan Z’ye</h2><ul class="guidelist">' + _kl + '</ul></section>') if _kl else '<p>İlk kavram yarın sabah burada.</p>'}''', 'kavram', narrow=True))
+{('<section class="sec"><h2>A’dan Z’ye</h2><div class="startcards">' + _kl + '</div></section>') if _kl else '<p>İlk kavram yarın sabah burada.</p>'}''', 'kavram', narrow=True))
     GUIDE_URLS.insert(0, '/kavram/')
 
 # --- takvim bileşeni (ritüel + toplama, aylık ızgara; tıklayınca takvime ekle / paylaş) ---

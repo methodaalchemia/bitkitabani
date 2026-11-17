@@ -723,3 +723,5 @@ button.cta{-webkit-appearance:none;appearance:none;background:var(--accent);colo
 .today-ph[hidden]{display:none}
 .today-t{display:flex;flex-direction:column;gap:4px;padding:12px 14px}
 @media (max-width:640px){.today{width:100%}.today-ph{aspect-ratio:16/9}}
+.sc-k{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.sc-b{font-family:var(--f-mono);font-size:var(--t-xs);color:var(--muted)}
