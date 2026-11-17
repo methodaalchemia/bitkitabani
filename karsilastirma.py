@@ -77,4 +77,12 @@ dict(a='sinameki', b='keten', baslik='Sinameki mi, keten tohumu mu? Kabızlık i
        'Sinameki bir haftadan uzun kullanılmamalı; uzun süreli kullanım bağırsak tembelliği ve potasyum kaybı yapar. Zayıflama için kullanmak tehlikelidir.',
        'Keten tohumu uzun süre kullanılabilir, ama mutlaka bol suyla alınmalı; az suyla bağırsak tıkanıklığı yapabilir.'],
  sonuc='Düzenli kullanım için uygun olan keten tohumu. Sinameki yalnızca kısa süreli, ara sıra.'),
+dict(a='geven', b='cingeveni', baslik='Geven mi, Çin geveni mi? Aynı ad, iki ayrı bitki',
+ giris='Türkçede ikisine de “geven” deniyor ve bu karışıklık resmî metinlere kadar girmiş durumda: TİTCK Tıbbi Bitki Listesi’nde “geven” diye kayıtlı olan tür, Çin tıbbının Astragalus membranaceus’u. Oysa Anadolu’nun geveni bozkırın dikenli yastık bitkisidir (A. gummifer, A. longifolius, A. muschianus) ve kullanılan kısmı bile farklıdır. Aynı cinsten iki bitki, iki ayrı kıta, iki ayrı kullanım.',
+ fark=['Kullanılan kısım başka: Anadolu’da gövdeyi çizince sızan zamk, yani kitre; Çin’de kurutulmuş kök. Aynı cinsin birbirinden en uzak iki parçası.',
+       'Resmî kayıt yalnız Çin türünde: TİTCK monografı ve DSÖ monografı A. membranaceus / A. mongholicus için. Anadolu türlerinin ne TİTCK’de ne AB’de ne DSÖ’de monografı var. DSÖ monografı ayrıca “klinik veriyle desteklenen kullanım” bölümüne “yok” yazıyor.',
+       'Kanıtın türü bile farklı: kitrenin kanıtlanmış işlevi bir ilaç etkisi değil, malzeme özelliğidir — kıvam verici, askıda tutucu, E 413 kodlu gıda katkı maddesi. Çin geveninin iddiası ise bağışıklık ve yorgunluk ve kanıtı sınırlı.',
+       'Uyarılar birbirine taşınmaz. Çin geveni bağışıklığı uyardığı için multipl skleroz, lupus ve romatoit artrit gibi otoimmün hastalıklarda kullanılmıyor, bağışıklık baskılayıcılarla ve antikoagülanlarla etkileşiyor. Bu uyarılar Anadolu gevenleri için geçerli değil; kitrenin kendi uyarısı ayrıdır — kuru yutulmaz, suda şişip tıkanmaya yol açabilir.',
+       'Türkiye, Astragalus çeşitliliğinin dünyadaki merkezlerinden: dört yüzü aşkın tür, önemli bir kısmı başka hiçbir yerde yetişmiyor. Buna rağmen piyasadaki “astragalus” takviyesi bunların hiçbiri değil, ithal bir Çin köküdür.'],
+ sonuc='Takviye olarak “astragalus” alıyorsan aldığın şey Çin’in kökü; bozkırda gördüğün dikenli yastık değil. Etiketteki Latince ada bak: A. membranaceus ya da A. mongholicus yazıyorsa Çin geveni. Anadolu gevenlerinin tıbbi bir kullanımı için klinik kanıt yok, kitre de ilaç değil yardımcı maddedir.'),
 ]
