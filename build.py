@@ -386,7 +386,7 @@ FOOT = '''<div class="motif indigo" aria-hidden="true"></div>
 </div>
 '''
 
-FOOT_GIZLI = {'/kartlar/'}   # menüde var, altbilgide yok
+FOOT_GIZLI = {'/kartlar/', '/hesap/'}   # menüde var, altbilgide yok
 FOOTNAV = '<nav class="footnav" aria-label="Site haritası">' + ''.join(f'<div><h3>{g}</h3><ul>' + ''.join(f'<li><a href="{h}"' + (' rel="noopener"' if h.startswith('http') else '') + f'>{l}</a></li>' for h, l, k in items if h not in FOOT_GIZLI) + '</ul></div>' for g, items in MENU) + '</nav>'
 SOSYAL = [('instagram', 'Instagram', 'https://www.instagram.com/bitkitabani/'), ('threads', 'Threads', 'https://www.threads.net/@bitkitabani'),
           ('facebook', 'Facebook', 'https://www.facebook.com/profile.php?id=61595314033889'), ('pinterest', 'Pinterest', 'https://www.pinterest.com/bitkitabani/'), ('youtube', 'YouTube', 'https://www.youtube.com/@bitkitabani'), ('telegram', 'Telegram', 'https://t.me/bitkitabani'), ('rss', 'RSS', '/yeni/rss.xml')]

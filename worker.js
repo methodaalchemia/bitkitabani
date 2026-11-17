@@ -699,6 +699,14 @@ async function katkiApi(req, env, url) {
     return json({ error: 'anahtar yok', tg: !!env.TG_TOKEN, bsky: !!env.BSKY_HANDLE });
   }
   if (url.pathname === '/api/katki-liste' && req.method === 'GET') return json((await call(env, 'katki:list', 'get')) || []);
+  if (url.pathname === '/api/abone-liste' && req.method === 'GET') {   // yalnızca site sahibi: bülten kayıtları (CSV)
+    const A = (await call(env, 'abone:list', 'get')) || {};
+    const q = v => '"' + String(v == null ? '' : v).replace(/"/g, '""') + '"';
+    const satir = Object.entries(A).sort((x, y) => String(x[1].at || '').localeCompare(String(y[1].at || '')))
+      .map(([em, a]) => [em, a.on ? 'onaylı' : 'onay bekliyor', a.at, a.onay, a.src, a.d ? 'duyuru' : '', typeof a.kurs === 'number' ? 'kurs ' + a.kurs + '/7' : ''].map(q).join(','));
+    const csv = '﻿' + ['e-posta', 'durum', 'kayıt', 'onay', 'kaynak', 'duyuru', 'kurs'].map(q).join(',') + '\n' + satir.join('\n') + '\n';
+    return new Response(csv, { headers: { 'content-type': 'text/csv; charset=utf-8', 'content-disposition': 'attachment; filename="bitkitabani-abone.csv"', 'cache-control': 'no-store', 'x-robots-tag': 'noindex' } });
+  }
   if (url.pathname === '/api/katki-karar' && req.method === 'POST') {
     const b = await req.json().catch(() => ({})); const L = (await call(env, 'katki:list', 'get')) || [];
     const k = L.find(x => x.id === b.id); if (!k) return json({ error: 'yok' }, 404);
