@@ -93,8 +93,15 @@ def kapak(h, i):
             motif(d, kind2 if (x // 60) % 2 else kind, x, y, 34, KREM, 3)
     d.line([0, 86, tw - 34, 86], fill=KREM, width=2); d.line([0, H - 86, tw - 34, H - 86], fill=KREM, width=2)
     ey = h.get('ust') or 'HALK HEKİMLİĞİNDEN'
-    d.text((70, 140), ey, font=font('CourierPrime-Regular.ttf', 28), fill=KREM)
     bas = h['baslik'].rstrip('…'); gen = tw - 34 - 140
+    # üst etiket uzunsa küçülüp alt satıra iner (taşmasın)
+    for esz in (28, 25, 22, 20):
+        fe = font('CourierPrime-Regular.ttf', esz)
+        EL = sar(d, ey, fe, gen)
+        if len(EL) <= 2 and all(d.textlength(l, font=fe) <= gen for l in EL): break
+    EL = EL[:2]; ya = int(esz * 1.3)
+    ye = 140 - (len(EL) - 1) * ya
+    for l in EL: d.text((70, ye), l, font=fe, fill=KREM); ye += ya
     for sz in (96, 86, 76, 68, 60, 52, 46):
         f = font('Alegreya[wght].ttf', sz)
         try: f.set_variation_by_name('Bold')

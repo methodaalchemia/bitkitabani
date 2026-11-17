@@ -44,8 +44,8 @@ def script(p, m):
 # ---------- ses ----------
 async def _tts1(text, path):
     import edge_tts
-    try: c = edge_tts.Communicate(text, VOICE, rate='+5%', boundary='WordBoundary')
-    except TypeError: c = edge_tts.Communicate(text, VOICE, rate='+5%')
+    try: c = edge_tts.Communicate(text, VOICE, rate='+12%', boundary='WordBoundary')
+    except TypeError: c = edge_tts.Communicate(text, VOICE, rate='+12%')
     words = []
     with open(path, 'wb') as f:
         async for ch in c.stream():
@@ -56,22 +56,67 @@ async def _tts1(text, path):
 GEMINI_VOICE = os.environ.get('GEMINI_VOICE', 'Kore')
 def _gemini1(text, path):
     """Gemini TTS: 24 kHz PCM döner; ffmpeg ile mp3'e çevrilir. Kelime zamanı vermez, süreye orantılı tahmin edilir."""
-    import json as _j, base64, urllib.request
+    import json as _j, base64, urllib.request, urllib.error
     key = os.environ.get('GEMINI_API_KEY')
     if not key: raise RuntimeError('GEMINI_API_KEY yok')
     body = {'contents': [{'parts': [{'text': 'Sakin, sıcak ve doğal bir belgesel anlatıcısı gibi, acele etmeden Türkçe oku: ' + text}]}],
             'generationConfig': {'responseModalities': ['AUDIO'], 'speechConfig': {'voiceConfig': {'prebuiltVoiceConfig': {'voiceName': GEMINI_VOICE}}}}}
     req = urllib.request.Request('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent',
                                  data=_j.dumps(body).encode(), headers={'content-type': 'application/json', 'x-goog-api-key': key})
-    with urllib.request.urlopen(req, timeout=90) as r: j = _j.loads(r.read())
+    try:
+        with urllib.request.urlopen(req, timeout=120) as r: j = _j.loads(r.read())
+    except urllib.error.HTTPError as ex:   # kota mesajı gövdede: hangi sınıra takıldığımız görünsün
+        try: govde = ex.read().decode('utf-8', 'replace')[:400]
+        except Exception: govde = ''
+        raise RuntimeError(f'HTTP {ex.code} {govde}') from None
     part = j['candidates'][0]['content']['parts'][0]['inlineData']
     pcm = path + '.pcm'; open(pcm, 'wb').write(base64.b64decode(part['data']))
-    hiz = os.environ.get('GEMINI_RATE', '1.12')
+    hiz = os.environ.get('GEMINI_RATE', '1.18')
     subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-f', 's16le', '-ar', '24000', '-ac', '1', '-i', pcm,
                     '-filter:a', f'atempo={hiz}', '-b:a', '128k', path], check=True)
-    d = _dur(path)
-    ws, est = _estimate(text); k = max(0.05, (d - 0.15)) / max(0.1, est)
-    return [[a * k, b * k, w] for a, b, w in ws]
+    return _dur(path)
+
+def _sessizlikler(path):
+    """ffmpeg silencedetect: (başlangıç, bitiş) sessizlik aralıkları."""
+    r = subprocess.run(['ffmpeg', '-v', 'info', '-i', path, '-af', 'silencedetect=noise=-33dB:d=0.22', '-f', 'null', '-'],
+                       capture_output=True, text=True)
+    out, bas = [], None
+    for m in re.finditer(r'silence_(start|end): (-?[\d.]+)', r.stderr):
+        if m.group(1) == 'start': bas = float(m.group(2))
+        elif bas is not None: out.append((bas, float(m.group(2)))); bas = None
+    return out
+
+def _gemini_hepsi(sents, tmp):
+    """Bütün metni TEK istekte seslendirir, sonra cümleleri aradaki sessizliklerden keser.
+
+    Cümle başına bir istek atmak Gemini'nin ücretsiz katmanındaki günlük hakkı bir videoda bitiriyordu;
+    tek istek hem kotaya sığar hem de tonu video boyunca tutarlı tutar.
+    """
+    tam = os.path.join(tmp, 'gem-tam.mp3')
+    yonerge = ('Sakin, sıcak ve doğal bir belgesel anlatıcısı gibi, acele etmeden Türkçe oku. '
+               'Her satır ayrı bir cümledir; cümleler arasında kısa birer duraklama bırak:\n')
+    _gemini1(yonerge + '\n'.join(sents), tam)
+    toplam = _dur(tam)
+    if toplam <= 0: raise RuntimeError('boş ses')
+    n = len(sents)
+    ic = [(a, b) for a, b in _sessizlikler(tam) if a > 0.25 and b < toplam - 0.25]
+    if n > 1 and len(ic) >= n - 1:   # en uzun n-1 sessizlikten kes
+        sec = sorted(sorted(ic, key=lambda s: s[0] - s[1])[:n - 1])
+        araliklar, onceki = [], 0.0
+        for a, b in sec: araliklar.append((onceki, a)); onceki = b
+        araliklar.append((onceki, toplam))
+    else:                            # sessizlik bulunamazsa metin uzunluğuna göre böl
+        w = [max(1, len(s)) for s in sents]; t, araliklar = 0.0, []
+        for k in w:
+            d = toplam * k / sum(w); araliklar.append((t, t + d)); t += d
+    out = []
+    for i, ((a, b), s) in enumerate(zip(araliklar, sents)):
+        mp3 = os.path.join(tmp, f's{i}.mp3')
+        subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-ss', f'{a:.3f}', '-to', f'{b:.3f}', '-i', tam, '-b:a', '128k', mp3], check=True)
+        d = _dur(mp3)
+        ws, est = _estimate(s); k = max(0.05, d - 0.12) / max(0.1, est)
+        out.append((mp3, d, [[x * k, y * k, w] for x, y, w in ws]))
+    return out
 
 def _dur(path):
     r = subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', path], capture_output=True, text=True)
@@ -88,23 +133,27 @@ def _estimate(s):
 def voice(sents, tmp, gem=None):
     """Her cümle ayrı seslendirilir: [(başlangıç, süre, mp3 ya da None, kelimeler)] ve sesli mi?"""
     if gem is None: gem = bool(os.environ.get('GEMINI_API_KEY'))
+    if gem:
+        hata = ''
+        for bekle in (0, 20, 40):   # ücretsiz katman dakikada az istek alır
+            if bekle: time.sleep(bekle)
+            try:
+                parcalar = _gemini_hepsi(sents, tmp)
+                segs, t = [], 0.15
+                for d, (mp3, dur, ws) in zip(sents, parcalar):
+                    segs.append((t, dur, mp3, [[a + t, b + t, w] for a, b, w in ws])); t += dur + GAP
+                return segs, True, t
+            except Exception as ex:
+                hata = str(ex)[:300]
+                if '429' not in hata: break
+        print('reel: Gemini sesi alınamadı, video Edge sesiyle yapılıyor:', hata)
+        return voice(sents, tmp, gem=False)
     segs, t, ok = [], 0.15, True
     for i, s in enumerate(sents):
         mp3, ws, d = os.path.join(tmp, f's{i}.mp3'), None, 0
         if ok:
             try:
-                if gem:
-                    ws = None
-                    for bekle in (0, 20, 40, 60):   # ücretsiz katman dakikada az istek alır: 429'da bekleyip yeniden dene
-                        if bekle: time.sleep(bekle)
-                        try: ws = _gemini1(s, mp3); break
-                        except Exception as e:
-                            err = str(e)[:120]
-                            if '429' not in err: break
-                    if ws is None:   # tek sesle tutarlı kalsın: baştan Edge sesiyle
-                        print('reel: Gemini sesi alınamadı, video Edge sesiyle yapılıyor:', err)
-                        return voice(sents, tmp, gem=False)
-                else: ws = asyncio.run(_tts1(s, mp3))
+                ws = asyncio.run(_tts1(s, mp3))
                 d = _dur(mp3)
                 if not ws or d <= 0: raise RuntimeError('boş ses')
             except Exception as e:
@@ -155,8 +204,21 @@ def frames(p, photos, tmp, credits=''):
         g.putpixel((0, y), int(min(220, a)))
     ov.paste(Image.new('RGBA', (SW, SH), (10, 16, 12, 255)), (0, 0), g.resize((SW, SH)))
     d = ImageDraw.Draw(ov)
-    d.text((80, 110), _up(p['tr']), font=_font('AlegreyaSans-Bold.ttf', 58), fill=(255, 255, 255))
-    d.text((80, 182), p['la'], font=_font('AlegreyaSans-Italic.ttf', 40), fill=(236, 226, 205))
+    _gen = SW - 160   # uzun adlar taşmasın: önce küçült, gerekirse alt satıra sar
+    def _yaz(x, y, metin, dosya, boy, renk, kucuk=None, satir=2):
+        for b in range(boy, (kucuk or boy) - 1, -4):
+            f = _font(dosya, b)
+            L, cur = [], ''
+            for w in metin.split():
+                t = (cur + ' ' + w).strip()
+                if not cur or d.textlength(t, font=f) <= _gen: cur = t
+                else: L.append(cur); cur = w
+            if cur: L.append(cur)
+            if len(L) <= satir and all(d.textlength(l, font=f) <= _gen for l in L): break
+        for l in L[:satir]: d.text((x, y), l, font=f, fill=renk); y += int(b * 1.12)
+        return y
+    _y = _yaz(80, 110, _up(p['tr']), 'AlegreyaSans-Bold.ttf', 58, (255, 255, 255), 40)
+    _yaz(80, max(182, _y + 6), p['la'], 'AlegreyaSans-Italic.ttf', 40, (236, 226, 205), 28)
     d.text((80, SH - 150), 'bitkitabani.com', font=_font('AlegreyaSans-Bold.ttf', 42), fill=(240, 226, 196))
     if credits: d.text((80, SH - 88), ('Fotoğraflar: ' + credits)[:110], font=_font('AlegreyaSans-Regular.ttf', 22), fill=(220, 214, 200))
     op = os.path.join(tmp, 'ov.png'); ov.save(op)
