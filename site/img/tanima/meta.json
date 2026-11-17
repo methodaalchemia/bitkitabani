@@ -3120,5 +3120,29 @@
   "license": "CC BY-SA 3.0",
   "page": "https://commons.wikimedia.org/wiki/File:WildMInt.JPG"
  },
- "japonnanesi:kuru": "yok"
+ "japonnanesi:kuru": "yok",
+ "noni:cizim": "yok",
+ "noni:cicek": {
+  "file": "നോനിയുടെ പൂവ് - Side view.jpg",
+  "artist": "Mazhanilavu",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%E0%B4%A8%E0%B5%8B%E0%B4%A8%E0%B4%BF%E0%B4%AF%E0%B5%81%E0%B4%9F%E0%B5%86_%E0%B4%AA%E0%B5%82%E0%B4%B5%E0%B5%8D_-_Side_view.jpg"
+ },
+ "noni:kuru": "yok",
+ "yabanicivit:cizim": {
+  "file": "Baptisia tinctoria (Curtis).jpg",
+  "artist": "Denis.prévôt",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Baptisia_tinctoria_%28Curtis%29.jpg"
+ },
+ "yabanicivit:cicek": "yok",
+ "yabanicivit:kuru": "yok",
+ "kajuput:cizim": "yok",
+ "kajuput:cicek": {
+  "file": "Flores de una planta del género Melaleuca 13-11-2023.jpg",
+  "artist": "Carlos A. Padrón P.",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Flores_de_una_planta_del_g%C3%A9nero_Melaleuca_13-11-2023.jpg"
+ },
+ "kajuput:kuru": "yok"
 }
