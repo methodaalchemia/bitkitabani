@@ -2162,10 +2162,10 @@ _ESKI_ADRES = [
      '/hikaye/hititlerin-yaklasik-bayramindan-biri-antahsum-adini/'),
 ]
 for _eski, _yeni in _ESKI_ADRES:
-    _redir += f'{_eski} {_yeni} 301\n'
-    # Boşluk içeren adresler dizine yüzde kodlu girmiş olabilir
-    if ' ' in _eski:
-        _redir += f'{_eski.replace(" ", "%20")} {_yeni} 301\n'
+    # Boşluk içeren adres yüzde kodlu yazılmalı: Cloudflare'in _redirects
+    # çözümleyicisi satırı boşluktan bölüyor, çiğ boşluk derlemeyi düşürüyor
+    # ("Expected exactly 2 or 3 whitespace-separated tokens").
+    _redir += f'{_eski.replace(" ", "%20")} {_yeni.replace(" ", "%20")} 301\n'
 
 # kendi sayfası kapatılan familyalar: /familya/ sayfasındaki kendi bölümlerine
 _redir += ''.join(f'/familya/{fam_slug(f)}/ /familya/#{fam_slug(f)} 301\n' for f, n in sorted(FAMC.items()) if f in FAM_BILGI and n < FAM_MIN)
