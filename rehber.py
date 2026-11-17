@@ -5,6 +5,7 @@
 KONULAR = [
     dict(
         slug='ucucu-yaglar-aromaterapi',
+        blog=True,   # rehber listelerinde değil, blogun altında durur
         baslik='Uçucu yağlar ve aromaterapi: kanıt ne diyor, nerede dikkat?',
         kisa='Uçucu yağlar',
         aciklama='Lavanta, turunç, gül, nane ve zencefil yağı: aromaterapinin kaygı, uyku ve bulantıdaki kanıtı ve uçucu yağ kullanırken bilinmesi gereken güvenlik kuralları.',

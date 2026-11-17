@@ -9,6 +9,8 @@
   t.href = '/' + p[0] + '/';
   document.getElementById('todayName').textContent = p[1];
   document.getElementById('todayLatin').textContent = p[2];
+  var im = document.getElementById('todayImg');
+  if (im) { if (p[3]) { im.src = '/img/' + p[0] + '-500.jpg'; im.hidden = false; } else { im.hidden = true; } }
 })();
 /* Ana sayfa arama: bitki adlarında anlık öneri; cümle yazılırsa akıllı aramaya gider */
 (function(){

@@ -264,7 +264,7 @@ def _glinks():
     for k in KONULAR:
         if sum(1 for x, _ in k['bitkiler'] if x in byId) < 2: continue
         for pid, _ in k['bitkiler']:
-            if pid in byId: GLINKS.setdefault(pid, []).append((f'/rehber/{k["slug"]}/', 'Rehber: ' + k['kisa']))
+            if pid in byId: GLINKS.setdefault(pid, []).append((f'/rehber/{k["slug"]}/', ('Yazı: ' if k.get('blog') else 'Rehber: ') + k['kisa']))
     for t in TARIFLER:
         if t['bitki'] in byId: GLINKS.setdefault(t['bitki'], []).append((f'/tarif/{t["slug"]}/', 'Tarif: ' + t['ad']))
     for mo in MOTIFLER:
@@ -386,7 +386,8 @@ FOOT = '''<div class="motif indigo" aria-hidden="true"></div>
 </div>
 '''
 
-FOOTNAV = '<nav class="footnav" aria-label="Site haritası">' + ''.join(f'<div><h3>{g}</h3><ul>' + ''.join(f'<li><a href="{h}"' + (' rel="noopener"' if h.startswith('http') else '') + f'>{l}</a></li>' for h, l, k in items) + '</ul></div>' for g, items in MENU) + '</nav>'
+FOOT_GIZLI = {'/kartlar/'}   # menüde var, altbilgide yok
+FOOTNAV = '<nav class="footnav" aria-label="Site haritası">' + ''.join(f'<div><h3>{g}</h3><ul>' + ''.join(f'<li><a href="{h}"' + (' rel="noopener"' if h.startswith('http') else '') + f'>{l}</a></li>' for h, l, k in items if h not in FOOT_GIZLI) + '</ul></div>' for g, items in MENU) + '</nav>'
 SOSYAL = [('instagram', 'Instagram', 'https://www.instagram.com/bitkitabani/'), ('threads', 'Threads', 'https://www.threads.net/@bitkitabani'),
           ('facebook', 'Facebook', 'https://www.facebook.com/profile.php?id=61595314033889'), ('pinterest', 'Pinterest', 'https://www.pinterest.com/bitkitabani/'), ('youtube', 'YouTube', 'https://www.youtube.com/@bitkitabani'), ('telegram', 'Telegram', 'https://t.me/bitkitabani'), ('rss', 'RSS', '/yeni/rss.xml')]
 def _icon(n, label):
@@ -557,6 +558,10 @@ def adlar_of(p):
 
 
 def ay_of(p): return ' '.join(f'a{m}' for m in sorted(months_of(EK.get(p['id'], {}).get('mevsim', '')))) if 'months_of' in globals() else ''
+def pmini(p):      # küçük fotoğraflı bitki kartı: salt bağlantı listelerinin yerine
+    return f'<a class="pmini" href="/{p["id"]}/">{ph(p, 500)}<b>{e(p["tr"])}</b></a>'
+def pminis(ps, son=''):
+    return f'<div class="pminis">' + ''.join(pmini(p) for p in ps) + son + '</div>'
 def card(p):
     s = ' '.join([p['tr'], p['la'], p['diger'], p['fam'], p['kisim'], p['haz'], p['bilim'], p['ilginc']] + [x for u in p['kul'] for x in u] + [KAT[k] for k in p['kat']])
     return f'''<a class="card" href="/{p["id"]}/" data-id="{p["id"]}" data-bolge="{" ".join(p["bolge"])}" data-kat="{" ".join(p["kat"])}" data-kanit="{p["kanit"]}" data-no="{p["no"]}" data-ad="{e(p["tr"])}" data-guv="{p["guv"]}" data-kisim="{kisim_of(p)}" data-ay="{ay_of(p)}" data-durum="{" ".join(([YASAL[p["id"]][0] if YASAL[p["id"]][0]=="yasak" else "kisitli"] if p["id"] in YASAL else []) + (["zehir"] if "zehir" in p["kat"] else []) + (["koruma"] if KORUMA.get(p["id"], {}).get("rozet") else []))}" data-s="{e(s)}">
@@ -779,12 +784,12 @@ for f, n in sorted(FAMC.items()):
 _bolumler = []
 for f, n in _FAMS:
     ps = [p for p in P if p['fam'] == f]
-    kendi = f' <a href="/familya/{fam_slug(f)}/">Familya sayfası →</a>' if n >= FAM_MIN else ''
-    _bolumler.append('<section class="sec">' + _fam_govde(f, ps)
-                     + '<p class="famlist">' + ' · '.join(f'<a href="/{p["id"]}/">{e(p["tr"])}</a>' for p in ps) + kendi + '</p></section>')
+    kendi = f'<p><a class="cta" href="/familya/{fam_slug(f)}/">{e(f)} familyasının sayfası →</a></p>' if n >= FAM_MIN else ''
+    _bolumler.append('<section class="sec fam-sec">' + _fam_govde(f, ps) + pminis(ps) + kendi + '</section>')
 _fi = f'''{_crumbs(('/katalog/', 'Katalog'), ('/familya/', 'Familyalar'))}
 <header class="page-head"><span class="eyebrow">{len(_FAMS)} familya</span><h1>Bitki familyaları</h1><p class="lede">Familya, bir bitki hakkında adından önce bilgi verir: aynı familyanın üyeleri çoğu zaman benzer bileşik gruplarını taşır, bu yüzden benzer işe yarar ve benzer riskleri paylaşır. Aşağıda Bitki Tabanı’ndaki her familyanın ortak özellikleri, familya düzeyinde dikkat edilecekler ve üyeleri var.</p></header>
 <aside class="warnbox" role="note"><b>Familya her şeyi söylemez:</b> aynı familyada hem gıda hem ölümcül zehirli tür bulunabilir. Familya bilgisi bir bitkiyi tanımaya başlamanın yolu, teşhis yerine geçmez.</aside>
+<nav class="pchips" aria-label="Familyalar">{"".join(f'<a class="chip" href="#{fam_slug(_f)}" lang="la">{e(_f)} <small>{_n}</small></a>' for _f, _n in _FAMS)}</nav>
 {''.join(_bolumler)}
 <section class="sec"><h2>Kaynaklar</h2>{_fam_kaynak_html('Lamiaceae', P)}<p class="muted-s">Familya düzeyindeki bileşik grupları farmakognozi el kitabına, taksonomi Kew Plants of the World Online kaydına dayanır.</p></section>'''
 _ldfi = {"@context": "https://schema.org", "@type": "CollectionPage", "name": "Bitki familyaları", "url": BASE + "/familya/", "inLanguage": "tr",
@@ -1142,6 +1147,14 @@ def takvim_band():
     bt = ''.join(f'<a class="chip" href="/{x}/">{e(byId[x]["tr"])}</a>' for x in o['bitkiler'] if x in byId)
     return f'<section class="takvimband"><span class="eyebrow">Takvim · {ne}</span><h2><a href="/takvim/#{o["slug"]}">{e(o["ad"])}</a></h2><p>{e(o["kisa"])}</p>{("<div class=related>" + bt + "</div>") if bt else ""}<p><a class="cta small" href="{_olink(o)[0]}">{e(_olink(o)[1])} →</a></p></section>'
 
+# Nereden başlamalı: fotoğraflı kartlar
+_BASLA = [('papatya', 'Herkesin bildiği bir çayın arkasındaki bilim.'),
+          ('kantaron', 'Kanıtı güçlü, ama ilaç etkileşimleri ciddi.'),
+          ('uzerlik', 'Nazar dumanından ayahuascaya uzanan bir köprü.'),
+          ('salep', 'Sevdiğimiz bir içeceğin yabani orkidelere bedeli.'),
+          ('koka', 'And’larda kutsal bir yaprak, başka yerde yasak bir madde.')]
+_basla_html = ''.join(f'<a class="scard" href="/{pid}/">{ph(byId[pid], 500)}<span class="sc-txt"><b>{e(byId[pid]["tr"])}</b><span>{e(not_)}</span></span></a>'
+                      for pid, not_ in _BASLA if pid in byId)
 home = f'''
 <header class="top">
   <div class="brand">
@@ -1155,24 +1168,20 @@ home = f'''
     </form>
     <script id="hqData" type="application/json">{json.dumps([[p['id'], p['tr'], short_la(p), p['diger']] for p in P], ensure_ascii=False).replace('</', '<\\/')}</script>
   </div>
-  <div class="todaybox"><a class="today" id="today" href="/{today_p["id"]}/" data-pool="{e(json.dumps([[p["id"], p["tr"], p["la"]] for p in pool], ensure_ascii=False))}"><span class="eyebrow">Bugünün bitkisi</span><b id="todayName">{e(today_p["tr"])}</b><i id="todayLatin">{e(today_p["la"])}</i></a><a class="cta small" href="/gunun-bitkisi/">Geçmiş günlerin bitkileri →</a><p class="streak" id="streak" hidden></p></div>
+  <div class="todaybox"><a class="today" id="today" href="/{today_p["id"]}/" data-pool="{e(json.dumps([[p["id"], p["tr"], p["la"], 1 if p["id"] in IMG else 0] for p in pool], ensure_ascii=False))}"><img id="todayImg" class="today-ph" src="/img/{today_p["id"]}-500.jpg" alt="" width="500" height="667" decoding="async"{'' if today_p["id"] in IMG else ' hidden'}><span class="today-t"><span class="eyebrow">Bugünün bitkisi</span><b id="todayName">{e(today_p["tr"])}</b><i id="todayLatin">{e(today_p["la"])}</i></span></a><a class="cta small" href="/gunun-bitkisi/">Geçmiş günlerin bitkileri →</a><p class="streak" id="streak" hidden></p></div>
 </header>
 {takvim_band()}
 <section class="pillars">
   <a class="pillar" href="/katalog/"><span class="eyebrow">Bitkiler</span><b>{len(P)} bitki, {len(REG_DOLU)} bölge</b><span>Anadolu’dan Amazon’a, fotoğrafı, çizimi ve kaynaklarıyla her bitki.</span></a>
   <div class="pchips">{"".join(f'<a class="chip" href="/katalog/?bolge={k}">{dot(k)} {e(v["ad"])}</a>' for k, v in REG_DOLU.items())}<a class="chip" href="/toplama-takvimi/">Doğada bu ay →</a></div>
   <a class="pillar" href="/rehber/"><span class="eyebrow">Şifa</span><b>Hangi derde hangi bitki?</b><span>Kanıtı en güçlü olandan başlayarak; güvenlik ve ilaç etkileşimiyle.</span></a>
-  <div class="pchips">{"".join(f'<a class="chip" href="/rehber/{k["slug"]}/">{e(k["kisa"])}</a>' for k in [k for k in KONULAR if sum(1 for pid, _ in k["bitkiler"] if pid in byId) >= 2][:6])}<a class="chip" href="/bitki-bul/">Üç soruda bul →</a></div>
+  <div class="pchips">{"".join(f'<a class="chip" href="/rehber/{k["slug"]}/">{e(k["kisa"])}</a>' for k in [k for k in KONULAR if not k.get("blog") and sum(1 for pid, _ in k["bitkiler"] if pid in byId) >= 2][:6])}<a class="chip" href="/bitki-bul/">Üç soruda bul →</a></div>
   <a class="pillar" href="/kultur/"><span class="eyebrow">Kültür ve ritüel</span><b>Bitkiler yalnızca ilaç değildir</b><span>Şamanizm, animizm, semboller, kutsal ağaçlar ve ritüel takvimi.</span></a>
   <div class="pchips"><a class="chip" href="/kavram/">Kavramlar</a><a class="chip" href="/semboller/">Semboller</a><a class="chip" href="/kopruler/">Kültür köprüleri</a><a class="chip" href="/blog/">Blog</a><a class="chip" href="/takvim/">Takvim</a></div>
 </section>
-<section class="sec"><h2>Nereden başlamalı?</h2><ol class="start">
-<li><a href="/papatya/"><b>Papatya</b></a>: herkesin bildiği bir çayın arkasındaki bilim.</li>
-<li><a href="/kantaron/"><b>Sarı kantaron</b></a>: kanıtı güçlü ama ilaç etkileşimleri ciddi.</li>
-<li><a href="/uzerlik/"><b>Üzerlik</b></a>: nazar dumanından ayahuascaya uzanan bir köprü.</li>
-<li><a href="/salep/"><b>Salep</b></a>: sevdiğimiz bir içeceğin yabani orkidelere bedeli.</li>
-<li><a href="/koka/"><b>Koka</b></a>: And’larda kutsal bir yaprak, başka yerde yasak bir madde.</li>
-</ol></section>
+<section class="sec"><h2>Nereden başlamalı?</h2>
+<p class="sec-intro">Kataloğun tamamı {len(P)} bitki; ilk kez bakıyorsan aşağıdaki beşi iyi bir başlangıç. Her biri sitenin ne yaptığını başka bir yönüyle gösteriyor: bildiğin bir çayın arkasındaki kanıtı okumak, bir bitkinin riskini tartmak, kültürdeki yerini görmek.</p>
+<div class="startcards">{_basla_html}</div></section>
 '''
 ldsite = {"@context":"https://schema.org","@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/","inLanguage":"tr","description":"Şifalı ve ritüel bitkiler için Türkçe etnobotanik kayıt defteri."}
 write('/index.html', page('Bitki Tabanı: şifalı ve ritüel bitkiler veri tabanı', f'{REG_LIST}’dan {len(P)} şifalı ve ritüel bitkisi: geleneksel kullanım, bilimsel kanıt, güvenlik ve kaynaklar.', '/', home, 'home', '<script src="/assets/streak.js" defer></script><script src="/assets/home.js" defer></script>', extra=f'<script type="application/ld+json">{json.dumps(ldsite, ensure_ascii=False)}</script>'))
@@ -1334,15 +1343,18 @@ def gimage(ids):
         if i in IMG: return f'{BASE}/img/{i}-960.jpg'
     return None
 
-LIVE_K = [k for k in KONULAR if sum(1 for pid, _ in k['bitkiler'] if pid in byId) >= 2]
+_K_HAZIR = [k for k in KONULAR if sum(1 for pid, _ in k['bitkiler'] if pid in byId) >= 2]
+LIVE_K = [k for k in _K_HAZIR if not k.get('blog')]      # "derde göre" rehber listelerinde görünenler
+BLOG_K = [k for k in _K_HAZIR if k.get('blog')]          # rehber değil: blogun altında duran uzun yazılar
 LIVE_T = [t for t in TARIFLER if t['bitki'] in byId]
 LIVE_C = [c for c in KARS if c['a'] in byId and c['b'] in byId]
 def takvim_tabs(cur): return '<nav class="tabs" aria-label="Takvim">' + ''.join(f'<a href="{h}"' + (' aria-current="page"' if k == cur else '') + f'>{l}</a>' for h, l, k in [('/takvim/', 'Ritüeller', 'r'), ('/toplama-takvimi/', 'Doğada bu ay', 'd')]) + '</nav>'
 def other_guides(cur):
     return '<ul class="otherlist">' + ''.join(f'<li><a href="/rehber/{k["slug"]}/">{e(k["kisa"])}</a></li>' for k in LIVE_K if k['slug'] != cur) + '<li><a href="/rehber/hamilelik-emzirme/">Hamilelik ve emzirme</a></li><li><a href="/rehber/ilac-etkilesimi/">İlaç etkileşimi</a></li></ul>'
 
-# --- derde göre rehberler ---
-for k in LIVE_K:
+# --- derde göre rehberler (blog=True olanlar aynı şablonla, ama blogun altında) ---
+for k in LIVE_K + BLOG_K:
+    _ust = ('/blog/', 'Blog') if k.get('blog') else ('/rehber/', 'Rehberler')
     ps = sorted([(byId[pid], n) for pid, n in k['bitkiler'] if pid in byId], key=lambda x: KAN_SIRA[x[0]['kanit']])
     ids = [p['id'] for p, _ in ps]
     trs = [t for t in LIVE_T if t['bitki'] in ids]
@@ -1360,9 +1372,9 @@ for k in LIVE_K:
             ('Hamilelikte ve emzirirken kullanılabilir mi?', (f'Güvenlik etiketi “dikkat” ya da “yüksek risk” olanlar: {", ".join(_risk)}. ' if _risk else '') + 'Hamilelikte ve emzirirken bitkisel ürünlere hekime danışmadan başlama. Ayrıntılı liste Hamilelik ve emzirme rehberinde.')]
     _sss_html = '<section class="sec"><h2>Sık sorulanlar</h2><div class="faq">' + ''.join(f'<details><summary>{e(q)}</summary><p>{e(a)}</p></details>' for q, a in _sss) + '</div></section>'
 
-    body = f'''{crumbs(('/rehber/', 'Rehberler'), (path, k['kisa']))}
+    body = f'''{crumbs(_ust, (path, k['kisa']))}
 <article class="sheet">
-<header class="page-head"><span class="eyebrow">Derde göre rehber · {len(ps)} bitki</span><h1>{e(k["baslik"])}</h1><p>{e(k["giris"])}</p></header>
+<header class="page-head"><span class="eyebrow">{'Yazı' if k.get('blog') else 'Derde göre rehber'} · {len(ps)} bitki</span><h1>{e(k["baslik"])}</h1><p>{e(k["giris"])}</p></header>
 {sharebar(k['baslik'], path)}
 <section class="kisaca"><h2>Kısaca</h2><p>{e(k["ozet"])}</p></section>
 <section class="sec"><h2>Bitkiler, kanıtı en güçlü olandan başlayarak</h2><div class="rb-list">{"".join(rb_item(p, n) for p, n in ps)}</div></section>
@@ -1374,12 +1386,12 @@ for k in LIVE_K:
 {abone('rehber:' + k['slug'])}
 {DISCL}
 <p class="updated">Hazırlayan: <a href="/yontem/#hazirlayan">Edanaz Tınmazlar</a> · Son gözden geçirme: <time datetime="{CONTENT_DATE}">{DATE_TXT}</time></p>
-<section class="sec"><h2>Diğer rehberler</h2>{other_guides(k["slug"])}</section>
+<section class="sec"><h2>{'Rehberler' if k.get('blog') else 'Diğer rehberler'}</h2>{other_guides(k["slug"])}</section>
 </article>'''
     ld = [{"@context":"https://schema.org","@type":"Article","headline":k['baslik'],"description":k['aciklama'],"inLanguage":"tr","url":BASE+path,"author":AUTHOR,"dateModified":CONTENT_DATE,
            "isPartOf":{"@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/"},"image":[f'{BASE}/img/{i}-960.jpg' for i in ids if i in IMG][:3]},
           {"@context":"https://schema.org","@type":"ItemList","name":k['baslik'],"itemListElement":[{"@type":"ListItem","position":i+1,"url":f'{BASE}/{p["id"]}/',"name":p['tr']} for i, (p, _) in enumerate(ps)]},
-          crumb_ld(('/rehber/', 'Rehberler'), (path, k['kisa'])),
+          crumb_ld(_ust, (path, k['kisa'])),
           {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q, a in _sss]}]
     write(path, page(f'{k["baslik"]} | Bitki Tabanı', k['aciklama'], path, body, 'rehber', narrow=True, extra=lds(*ld), image=gimage(ids)))
     GUIDE_URLS.append(path)
@@ -1918,6 +1930,10 @@ def _yazi_kart(y):
     k = f'/img/hikaye/yazi-{y["slug"]}.jpg'
     img = f'<img src="{k}" alt="" loading="lazy" width="1200" height="800">' if os.path.exists(os.path.join(HERE, k.lstrip('/'))) else ''
     return f'<li class="hk uzun" data-etk="{" ".join(_yazi_etk(y))}"><a href="/yazilar/{y["slug"]}/">{img}<b>{e(y["baslik"])}</b><span class="muted-s">Uzun yazı · {e(y["aciklama"][:90])}</span></a></li>'
+def _rehber_kart(k):   # blog=True işaretli uzun rehber yazıları blog listesinde
+    _p = next((byId[pid] for pid, _ in k['bitkiler'] if pid in byId and pid in IMG), None)
+    img = f'<img src="/img/{_p["id"]}-500.jpg" alt="" loading="lazy" width="500" height="667">' if _p else ''
+    return f'<li class="hk uzun" data-etk=""><a href="/rehber/{k["slug"]}/">{img}<b>{e(k["baslik"])}</b><span class="muted-s">Uzun yazı · {e(k["aciklama"][:90])}</span></a></li>'
 _ys = sorted(YAZILAR, key=lambda y: y['tarih'], reverse=True)
 _say = {k: 0 for k, _ in ETIKET}
 for h in HIK:
@@ -1929,7 +1945,7 @@ _bjs = """<script>(function(){var c=document.querySelectorAll('.blog-etk .chip')
 write('/blog/', page('Blog: halk hekimliği hikâyeleri, ritüeller, söylenceler ve şamanizm | Bitki Tabanı', f'Anadolu’dan {len(HIK)} kaynaklı halk hekimliği hikâyesi; ocaklar, nazar, söylenceler, eski tıp metinleri ve şamanizm üzerine yazılar.', '/blog/',
       f'{crumbs(("/blog/", "Blog"))}<header class="page-head"><span class="eyebrow">Blog · her hafta yeni hikâye</span><h1>Blog</h1><p>Anadolu’nun köylerinden, ocaklarından ve eski tıp metinlerinden kaynaklı şifa hikâyeleri; ritüeller, söylenceler ve şamanizm üzerine uzun yazılar. Hepsi bir kaynağa dayanır.</p></header>'
       f'<nav class="pchips blog-etk" aria-label="Konular">{_chips}</nav><p class="muted-s" id="blog-n" aria-live="polite"></p>'
-      f'<ul class="hklist blog-l">{"".join(_yazi_kart(y) for y in _ys)}{"".join(_hik_kart(h) for h in reversed(HIK))}</ul>{abone("hikaye-liste", "Her hafta bir halk hekimliği hikâyesi", "Anadolu’dan kaynaklı şifa hikâyeleri, bitkileri ve uyarılarıyla; her pazar e-postanda.", kurs=False)}{_bjs}',
+      f'<ul class="hklist blog-l">{"".join(_rehber_kart(k) for k in BLOG_K)}{"".join(_yazi_kart(y) for y in _ys)}{"".join(_hik_kart(h) for h in reversed(HIK))}</ul>{abone("hikaye-liste", "Her hafta bir halk hekimliği hikâyesi", "Anadolu’dan kaynaklı şifa hikâyeleri, bitkileri ve uyarılarıyla; her pazar e-postanda.", kurs=False)}{_bjs}',
       'yazi', narrow=True, extra=lds(crumb_ld(("/blog/", "Blog")))))
 GUIDE_URLS.insert(0, '/blog/')
 
@@ -2269,17 +2285,19 @@ write('/eczaneler/', page('Eczaneler için ücretsiz bitki–ilaç etkileşimi k
 <section class="sec"><p><a class="cta" href="/assets/indir/bitki-ilac-etkilesimi-karti.pdf" download>Kartı indir (PDF, A4) →</a></p><p><a href="/indir/eczane-karti/">Kartı tarayıcıda aç</a> · <a href="/rehber/ilac-etkilesimi/">Etkileşim aracı</a></p></section>
 <section class="sec"><h2>Nasıl hazırlandı</h2><p>Kart, Bitki Tabanı’ndaki bitki sayfalarının güvenlik ve ilaç etkileşimi bölümlerinden derlenir; bu bölümler EMA monografları, ABD Ulusal Tamamlayıcı ve Bütünleştirici Sağlık Merkezi (NCCIH) özetleri ve TİTCK monograflarına dayanır. Bitki Tabanı bağımsızdır; bitki ya da takviye satmaz, reklam almaz. Kartı ücretsiz basıp dağıtabilirsiniz.</p><p>Bir eksik ya da hata görürseniz <a href="/iletisim/?konu=duzeltme">bize yazın</a>.</p></section>''', '', narrow=True))
 # ---------- Kültür ve ritüel ana sayfası ----------
-_kh = [('/kavram/', 'Kavramlar', 'Şamanizm, animizm, Pachamama, Hıdrellez… Her kavram bir bitkiyle, kaynaklarıyla.'),
-       ('/semboller/', 'Semboller', 'Kilim motiflerinden Shipibo kené desenlerine: çizilebilir semboller ve anlamları.'),
-       ('/kopruler/', 'Kültür köprüleri', 'Anadolu ile Amazon ve And’larda aynı işi gören bitkiler ve ritüeller, yan yana.'),
-       ('/blog/', 'Blog', 'Halk hekimliği hikâyeleri, ritüeller, söylenceler ve şamanizm üzerine kaynaklı yazılar.'),
-       ('/takvim/', 'Ritüel takvimi', 'Nevruz, Hıdrellez, gündönümleri, Pachamama ayı: yılın dönüm noktaları ve bitkileri.')]
+_MO_SLUG = {m['slug']: m for m in MOTIFLER}
+_kh = [('/kavram/', 'Kavramlar', 'Şamanizm, animizm, Pachamama, Hıdrellez… Her kavram bir bitkiyle, kaynaklarıyla.', 'kam-davulu'),
+       ('/semboller/', 'Semboller', 'Kilim motiflerinden Shipibo kené desenlerine: çizilebilir semboller ve anlamları.', 'goz'),
+       ('/kopruler/', 'Kültür köprüleri', 'Anadolu ile Amazon ve And’larda aynı işi gören bitkiler ve ritüeller, yan yana.', 'chakana'),
+       ('/blog/', 'Blog', 'Halk hekimliği hikâyeleri, ritüeller, söylenceler ve şamanizm üzerine kaynaklı yazılar.', 'kus'),
+       ('/takvim/', 'Ritüel takvimi', 'Nevruz, Hıdrellez, gündönümleri, Pachamama ayı: yılın dönüm noktaları ve bitkileri.', 'carkifelek')]
+_khh = ''.join(f'<a class="hubcard" href="{h}"><span class="hc-art" aria-hidden="true">{motif_svg(_MO_SLUG[mo]) if mo in _MO_SLUG else ""}</span><b>{l}</b><span class="hc-d">{d}</span></a>' for h, l, d, mo in _kh)
 write('/kultur/', page('Kültür ve ritüel: şamanizm, animizm, semboller ve kutsal bitkiler | Bitki Tabanı',
       'Bitkilerin kültürel ve ritüel dünyası: şamanizm, animizm, doğa kültü, semboller, kültür köprüleri ve ritüel takvimi; kaynaklarıyla.', '/kultur/',
       f'''{crumbs(('/kultur/', 'Kültür ve ritüel'))}<header class="page-head"><span class="eyebrow">Kültür ve ritüel</span><h1>Bitkiler yalnızca ilaç değildir</h1>
 <p>Anadolu’da ardıç dumanıyla arınılır, dut ağacına dilek bezi bağlanır; And’larda koka yaprağı toprak anaya sunulur, Amazon’da bazı bitkilerin öğretmen olduğuna inanılır. Bu bölüm, bitkilerin insanlarla kurduğu bu ilişkiyi, onu yaşatan toplulukların adıyla ve kaynaklarıyla anlatır. Ritüel kullanım önerisi değil, kültürel bir kayıttır.</p></header>
-<ul class="guidelist">{"".join(f'<li><a href="{h}"><b>{l}</b></a><span>{d}</span></li>' for h, l, d in _kh)}</ul>
-<section class="sec"><h2>Son yazılar</h2><ul class="otherlist">{"".join(f'<li><a href="/yazilar/{y["slug"]}/">{e(y["baslik"])}</a></li>' for y in YAZILAR)}</ul></section>''',
+<div class="hubcards">{_khh}</div>
+<section class="sec"><h2>Son yazılar</h2><ul class="hklist">{"".join(_yazi_kart(y) for y in sorted(YAZILAR, key=lambda y: y["tarih"], reverse=True)[:6])}</ul><p><a class="cta" href="/blog/">Bütün yazılar ve hikâyeler →</a></p></section>''',
       'kultur', narrow=True, extra=lds(crumb_ld(('/kultur/', 'Kültür ve ritüel')))))
 # ---------- akıllı arama verisi ve sayfası ----------
 import hashlib as _hl

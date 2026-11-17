@@ -1,14 +1,16 @@
-/* Tema düğmesi: otomatik → açık → koyu. Seçim bu tarayıcıda saklanır. */
+/* Tema düğmesi: yalnızca iki mod — açık ve koyu. İlk açılışta sistem tercihiyle başlar, seçim bu tarayıcıda saklanır. */
 (function(){
   var K = 'bt-theme', root = document.documentElement;
-  var L = { tr: { auto: 'Tema: sistem', light: 'Tema: açık', dark: 'Tema: koyu' }, en: { auto: 'Theme: system', light: 'Theme: light', dark: 'Theme: dark' } };
-  function get(){ try{ return localStorage.getItem(K) || 'auto'; }catch(e){ return 'auto'; } }
-  function set(v){ try{ if (v === 'auto') localStorage.removeItem(K); else localStorage.setItem(K, v); }catch(e){} }
-  function apply(v){ if (v === 'auto') root.removeAttribute('data-theme'); else root.setAttribute('data-theme', v); }
+  var L = { tr: { light: 'Tema: açık', dark: 'Tema: koyu' }, en: { light: 'Theme: light', dark: 'Theme: dark' } };
+  function sistem(){ try{ return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }catch(e){ return 'light'; } }
+  function get(){ var v; try{ v = localStorage.getItem(K); }catch(e){}
+    return v === 'light' || v === 'dark' ? v : sistem(); }
+  function set(v){ try{ localStorage.setItem(K, v); }catch(e){} }
+  function apply(v){ root.setAttribute('data-theme', v); }
   document.querySelectorAll('.themebtn').forEach(function(b){
     var lang = b.getAttribute('data-l') === 'en' ? 'en' : 'tr';
-    function paint(){ var v = get(); b.setAttribute('title', L[lang][v]); b.setAttribute('aria-label', L[lang][v]); b.textContent = v === 'light' ? '☀' : v === 'dark' ? '☾' : '◐'; }
-    b.addEventListener('click', function(){ var v = get(), n = v === 'auto' ? 'light' : v === 'light' ? 'dark' : 'auto'; set(n); apply(n); paint(); });
+    function paint(){ var v = get(); b.setAttribute('title', L[lang][v]); b.setAttribute('aria-label', L[lang][v]); b.textContent = v === 'light' ? '☀' : '☾'; }
+    b.addEventListener('click', function(){ var n = get() === 'dark' ? 'light' : 'dark'; set(n); apply(n); paint(); });
     paint();
   });
   /* Dar ekranda katalog filtreleri kapalı başlar */

@@ -685,3 +685,41 @@ button.cta{-webkit-appearance:none;appearance:none;background:var(--accent);colo
 .sheet .alt-h{font-size:var(--t-md);margin:16px 0 8px}
 @media print{.tabbar,details.menu{display:none!important}}
 .ekart-alt{display:flex;gap:14px;align-items:center}.ekart-alt svg{width:90px;height:90px;flex:none}
+
+/* --- fotoğraflı kart bileşenleri: salt bağlantı listelerinin yerine --- */
+.sec-intro{max-width:62ch;margin:0 0 16px;color:var(--muted)}
+.startcards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,180px),1fr));gap:14px}
+.scard{display:flex;flex-direction:column;background:var(--sheet);border:1px solid var(--rule);text-decoration:none;color:var(--ink);transition:transform .15s ease,border-color .15s ease}
+.scard:hover{border-color:var(--accent);transform:translateY(-2px)}
+.scard .ph{aspect-ratio:4/3;border-bottom:1px solid var(--rule)}
+.sc-txt{display:flex;flex-direction:column;gap:4px;padding:10px 14px 14px}
+.sc-txt b{font-family:var(--f-display);font-size:1.15rem}
+.sc-txt span{font-size:var(--t-sm);color:var(--muted);line-height:1.4}
+.pminis{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,110px),1fr));gap:12px;margin:12px 0 0}
+.pmini{display:flex;flex-direction:column;gap:6px;text-decoration:none;color:var(--ink);min-width:0}
+.pmini .ph{aspect-ratio:3/4;border:1px solid var(--rule);transition:border-color .15s ease}
+.pmini:hover .ph{border-color:var(--accent)}
+.pmini .ph .ph-mark{font-size:.85rem;padding:6px}
+.pmini b{font-size:var(--t-sm);font-weight:600;line-height:1.25;overflow-wrap:anywhere}
+.fam-sec .cta{margin-top:14px}
+.hubcards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));gap:16px;margin:8px 0 0}
+.hubcard{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding:20px 16px 18px;background:var(--sheet);border:1px solid var(--rule);text-decoration:none;color:var(--ink);transition:transform .15s ease,border-color .15s ease}
+.hubcard:hover{border-color:var(--accent);transform:translateY(-2px)}
+.hubcard .hc-art{display:flex;align-items:center;justify-content:center;width:84px;height:84px}
+.hubcard .hc-art .motif-svg{width:84px;height:84px}
+.hubcard b{font-family:var(--f-display);font-size:1.2rem}
+.hubcard .hc-d{font-size:var(--t-sm);color:var(--muted);line-height:1.45}
+@media (min-width:900px){.startcards{grid-template-columns:repeat(5,1fr)}.pminis{grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}}
+
+/* --- masaüstü: dar (okuma genişliğinde) sayfalarda ızgaraların geniş ekrana açılması --- */
+@media (min-width:980px){
+  .narrow .tk,.narrow .hklist,.narrow .hubcards,.narrow .startcards,.narrow .pminis,.narrow .breakout{margin-inline:calc((820px - min(1180px, 100vw - 32px)) / 2)}
+  .tk-cark{width:min(480px,100%)}
+}
+@media (min-width:1100px){.tk-kartlar{grid-template-columns:repeat(3,1fr)}}
+/* bugünün bitkisi kartı: masaüstünde fotoğrafla dolar */
+.today{padding:0;overflow:hidden;width:280px;max-width:100%}
+.today-ph{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-bottom:1px solid var(--rule)}
+.today-ph[hidden]{display:none}
+.today-t{display:flex;flex-direction:column;gap:4px;padding:12px 14px}
+@media (max-width:640px){.today{width:100%}.today-ph{aspect-ratio:16/9}}
