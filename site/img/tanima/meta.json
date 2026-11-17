@@ -3144,5 +3144,50 @@
   "license": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Flores_de_una_planta_del_g%C3%A9nero_Melaleuca_13-11-2023.jpg"
  },
- "kajuput:kuru": "yok"
+ "kajuput:kuru": "yok",
+ "ucgul:cizim": {
+  "file": "Cleaned-Illustration Trifolium pratense.jpg",
+  "artist": "Wikimedia Commons",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Cleaned-Illustration_Trifolium_pratense.jpg"
+ },
+ "ucgul:cicek": {
+  "file": "Trifolium pratense - Keila2.jpg",
+  "artist": "Ivar Leidus",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Trifolium_pratense_-_Keila2.jpg"
+ },
+ "ucgul:kuru": "yok",
+ "kagitcicegi:cizim": "yok",
+ "kagitcicegi:cicek": {
+  "file": "Everlasting flower - the flower of Ukrainian steppes.JPG",
+  "artist": "Alreadyexist",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Everlasting_flower_-_the_flower_of_Ukrainian_steppes.JPG"
+ },
+ "kagitcicegi:kuru": "yok",
+ "gazalboynuzu:cizim": {
+  "file": "Cleaned-Illustration Lotus corniculatus.jpg",
+  "artist": "Wikimedia Commons",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Cleaned-Illustration_Lotus_corniculatus.jpg"
+ },
+ "gazalboynuzu:cicek": {
+  "file": "Senna flower.jpg",
+  "artist": "Maciej Opaliński",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Senna_flower.jpg"
+ },
+ "gazalboynuzu:kuru": "yok",
+ "ballibaba:cizim": "yok",
+ "ballibaba:cicek": {
+  "file": "Ruhland, Alte Hermsdorfer Str. beim LSR-Antennenmast, Weiße Taubnessel blühend, Frühling, 03.jpg",
+  "artist": "Wilhelm Zimmerling PAR",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ruhland%2C_Alte_Hermsdorfer_Str._beim_LSR-Antennenmast%2C_Wei%C3%9Fe_Taubnessel_bl%C3%BChend%2C_Fr%C3%BChling%2C_03.jpg"
+ },
+ "ballibaba:kuru": "yok",
+ "cingeveni:cizim": "yok",
+ "cingeveni:cicek": "yok",
+ "cingeveni:kuru": "yok"
 }

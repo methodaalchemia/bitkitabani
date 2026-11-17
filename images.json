@@ -551,6 +551,19 @@
   "w": 960,
   "w500": 500
  },
+ "ballibaba": {
+  "artist": "Robert Flogaus-Faust",
+  "auto": true,
+  "b1280": "Lamium album RF.jpg",
+  "file": "Lamium album RF.jpg",
+  "h": 1270,
+  "h500": 662,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Lamium_album_RF.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "baloncicegi": {
   "artist": "Dietmar Rabich",
   "auto": true,
@@ -907,6 +920,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Corteza_de_Chuchuhuasi_(Maytenus_macrocarpa)_cortada_en_el_Centro_Takiwasi,_2010.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "cingeveni": {
+  "artist": "Urgamal Magsar,",
+  "auto": true,
+  "b1280": "Astragalus mongholicus, fruits.jpg",
+  "file": "Astragalus mongholicus, fruits.jpg",
+  "h": 788,
+  "h500": 411,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Astragalus_mongholicus,_fruits.jpg",
   "w": 960,
   "w500": 500
  },
@@ -1320,6 +1346,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Blackcurrant_in_basket_2021_G1.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "gazalboynuzu": {
+  "artist": "Krzysztof Golik",
+  "auto": true,
+  "b1280": "Lotus corniculatus at Lac des Plagnes (2).jpg",
+  "file": "Lotus corniculatus at Lac des Plagnes (2).jpg",
+  "h": 960,
+  "h500": 500,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Lotus_corniculatus_at_Lac_des_Plagnes_(2).jpg",
   "w": 960,
   "w500": 500
  },
@@ -1940,6 +1979,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Cinnamomum_camphora_in_Golden_Valley_Tree_Park,_May_2022_02.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "kagitcicegi": {
+  "artist": "Alreadyexist",
+  "auto": true,
+  "b1280": "Everlasting flower - the flower of Ukrainian steppes.JPG",
+  "file": "Everlasting flower - the flower of Ukrainian steppes.JPG",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Everlasting_flower_-_the_flower_of_Ukrainian_steppes.JPG",
   "w": 960,
   "w500": 500
  },
@@ -3810,6 +3862,19 @@
   "license": "Public domain",
   "licenseUrl": "",
   "page": "https://commons.wikimedia.org/wiki/File:Hieracium_pilosella_2015_G1.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "ucgul": {
+  "artist": "池田正樹 ( talk )masaki ikeda",
+  "auto": true,
+  "b1280": "Trifolium pratense 0522.jpg",
+  "file": "Trifolium pratense 0522.jpg",
+  "h": 1259,
+  "h500": 655,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Trifolium_pratense_0522.jpg",
   "w": 960,
   "w500": 500
  },
