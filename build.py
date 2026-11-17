@@ -1583,7 +1583,11 @@ GUIDE_URLS.append('/karsilastirma/')
 
 # --- semboller: el çizimi tek renk motifler ---
 import random as _rnd
-def motif_svg(mo, size=None, cls='motif-svg'):
+MOTIF_INK = '#1b1b1b'       # bağımsız dosyada currentColor çalışmaz: sabit mürekkep
+MOTIF_INK_DARK = '#e9e4da'  # <img> içindeki SVG kendi medya sorgusunu okuyabiliyor
+def motif_svg(mo, size=None, cls='motif-svg', dosya=False):
+    # dosya=True: Google Görseller satır içi <svg>'yi indekslemiyor, yalnız
+    # <img src> içindeki görseli alıyor. Aynı çizim, bağımsız dosya olarak.
     r = _rnd.Random(mo['slug'])
     def wob(pts, amp):
         out = []
@@ -1599,15 +1603,35 @@ def motif_svg(mo, size=None, cls='motif-svg'):
         for (ax, ay), (bx, by) in zip(pts[1:], pts[2:] + [pts[-1]]):
             d += f' Q{ax:.1f} {ay:.1f} {(ax + bx) / 2:.1f} {(ay + by) / 2:.1f}'
         return d
-    body = ''.join(f'<path d="{path(wob(p, .45))}" fill="currentColor" stroke="none" opacity=".9"/>' for p in mo.get('dolu', []))
+    _ink = MOTIF_INK if dosya else 'currentColor'
+    body = ''.join(f'<path class="f" d="{path(wob(p, .45))}" fill="{_ink}" stroke="none" opacity=".9"/>' for p in mo.get('dolu', []))
     body += ''.join(f'<path d="{path(wob(p, .55))}"/>' for p in mo['cizim'])
     body += ''.join(f'<path d="{path(wob(p, .9))}" stroke-width="1.1" opacity=".55"/>' for p in mo['cizim'])
+    if dosya:
+        _st = (f'path{{stroke:{MOTIF_INK}}}.f{{fill:{MOTIF_INK}}}'
+               f'@media(prefers-color-scheme:dark){{path{{stroke:{MOTIF_INK_DARK}}}.f{{fill:{MOTIF_INK_DARK}}}}}')
+        return ('<?xml version="1.0" encoding="UTF-8"?>\n'
+                f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="-4 -4 108 108" width="512" height="512" '
+                f'fill="none" stroke="{MOTIF_INK}" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round" '
+                f'role="img" aria-labelledby="mt md">'
+                f'<title id="mt">{e(mo["ad"])} motifi</title>'
+                f'<desc id="md">{e(mo["kisa"])} Çizim: Edanaz Tınmazlar, Bitki Tabanı (bitkitabani.com). CC BY-SA 4.0.</desc>'
+                f'<style>{_st}</style>{body}</svg>\n')
     sz = f' width="{size}" height="{size}"' if size else ''
     return f'<svg class="{cls}" viewBox="-4 -4 108 108"{sz} fill="none" stroke="currentColor" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="{e(mo["ad"])} motifi çizimi">{body}</svg>'
 import math
 def _msrc(t):
     return re.sub(r'\[(\d+)\]', lambda m: f'<sup><a href="#k{m.group(1)}">[{m.group(1)}]</a></sup>', e(t))
+MOTIF_DIR = os.path.join(OUT, 'img', 'motif')
+os.makedirs(MOTIF_DIR, exist_ok=True)
+def motif_alt(mo):   # alt metni motifi tarif etmeli, adını tekrarlamamalı
+    k = re.sub(r'\s*\[\d+\]', '', duz(mo['kisa'])).strip().rstrip('.')
+    return f'{mo["ad"]} motifi çizimi: {k[0].lower() + k[1:]}' if k else f'{mo["ad"]} motifi çizimi'
+def motif_og(mo):    # paylaşım önizlemesi SVG oluşturamıyor; PNG varsa o, yoksa logo
+    return (BASE + f'/img/motif/{mo["slug"]}.png'
+            if os.path.exists(os.path.join(HERE, 'img', 'motif', f'{mo["slug"]}.png')) else None)
 for mo in MOTIFLER:
+    open(os.path.join(MOTIF_DIR, f'{mo["slug"]}.svg'), 'w', encoding='utf-8').write(motif_svg(mo, dosya=True))
     path = f'/semboller/{mo["slug"]}/'
     bit = ''.join(f'<li><a href="/{x}/"><b>{e(byId[x]["tr"])}</b></a>: {e(n)}</li>' for x, n in mo['bitkiler'] if x in byId)
     same = [o for o in MOTIFLER if o['tema'] == mo['tema'] and o is not mo]
@@ -1615,7 +1639,7 @@ for mo in MOTIFLER:
     kay = '<ol class="refs">' + ''.join((f'<li id="k{j}"><a href="{e(u)}" target="_blank" rel="noopener">{e(_apa(u, t))}</a></li>' if u else f'<li id="k{j}"><cite>{e(_apa(u, t))}</cite></li>') for j, (t, u) in enumerate(mo['kaynaklar'], 1)) + '</ol>'
     body = f'''{crumbs(('/semboller/', 'Semboller'), (path, mo['ad']))}
 <article class="sheet">
-<header class="motif-head"><div class="motif-art">{motif_svg(mo)}</div><div><span class="eyebrow">{e(mo["bolge"])} · {e(TEMALAR[mo["tema"]])}</span><h1>{e(mo["ad"])}</h1><p class="lede">{e(mo["kisa"])}</p></div></header>
+<header class="motif-head"><div class="motif-art"><img class="motif-svg" src="/img/motif/{mo["slug"]}.svg" width="512" height="512" alt="{e(motif_alt(mo))}" decoding="async"></div><div><span class="eyebrow">{e(mo["bolge"])} · {e(TEMALAR[mo["tema"]])}</span><h1>{e(mo["ad"])}</h1><p class="lede">{e(mo["kisa"])}</p></div></header>
 {sharebar(mo['ad'] + ' motifi: ' + mo['kisa'], path)}
 <section class="sec"><h2>Ne anlatır?</h2><p>{_msrc(mo["anlam"])}</p></section>
 {('<section class="sec"><h2>Bağlantılı bitkiler</h2><ul class="otherlist">' + bit + '</ul></section>') if bit else ''}
@@ -1635,8 +1659,8 @@ for mo in MOTIFLER:
     if len(_md) > 158: _md = (f'{mo["kisa"]} {_m1}.')[:158].rsplit(' ', 1)[0] + '…'
     if len(_md) > 158: _md = mo['kisa'][:158].rsplit(' ', 1)[0] + '…'
     if _mseo: _mt, _md = _mseo
-    write(path, page(_mt, _md, path, body, 'sembol', narrow=True,
-          extra=lds({"@context":"https://schema.org","@type":"Article","headline":mo['ad'] + ' motifi',"description":mo['kisa'],"inLanguage":"tr","url":BASE+path,"author":AUTHOR,"citation":[t for t, u in mo['kaynaklar']]}, crumb_ld(('/semboller/', 'Semboller'), (path, mo['ad'])))))
+    write(path, page(_mt, _md, path, body, 'sembol', narrow=True, image=motif_og(mo),
+          extra=lds({"@context":"https://schema.org","@type":"Article","headline":mo['ad'] + ' motifi',"description":mo['kisa'],"inLanguage":"tr","url":BASE+path,"author":AUTHOR,"image":BASE + f'/img/motif/{mo["slug"]}.svg',"citation":[t for t, u in mo['kaynaklar']]}, crumb_ld(('/semboller/', 'Semboller'), (path, mo['ad'])))))
     GUIDE_URLS.append(path)
 _chips = '<button type="button" class="chip" data-t="" aria-pressed="true">Hepsi</button>' + ''.join(f'<button type="button" class="chip" data-t="{k}" aria-pressed="false">{e(v)}</button>' for k, v in TEMALAR.items())
 _sc = ''.join(f'<a class="motifcard" data-t="{mo["tema"]}" href="/semboller/{mo["slug"]}/">{motif_svg(mo)}<b>{e(mo["ad"])}</b><span class="muted-s">{e(mo["bolge"])}</span></a>' for mo in MOTIFLER)
@@ -2100,8 +2124,11 @@ write('/istatistik/', page('Bitki Tabanı rakamlarla: kapsam, kanıt dağılım�
 # bağlantısı yok, sitemapte yok ve aramaya kapalı. Adresi bilen açabilir.
 
 urls = ['/', '/katalog/', '/kultur/', '/kopruler/', '/gunun-bitkisi/', '/yeni/', '/hakkinda/', '/yontem/', '/gizlilik/'] + [f'/kopruler/{slug_of(x)}/' for x in BR] + FAM_URLS + [f'/{p["id"]}/' for p in P] + GUIDE_URLS + EN_URLS
+_MOTIF_SLUG = {m['slug'] for m in MOTIFLER}
 def _imgtag(u):   # görsel site haritası: bitki sayfalarına fotoğraflarını ekle
     pid = u.strip('/').split('/')[-1]
+    if u.startswith('/semboller/') and pid in _MOTIF_SLUG:
+        return f'<image:image><image:loc>{BASE}/img/motif/{pid}.svg</image:loc></image:image>'
     if pid not in IMG or pid not in byId: return ''
     f = f'{pid}-1280.jpg' if os.path.exists(os.path.join(HERE, 'img', f'{pid}-1280.jpg')) else f'{pid}-960.jpg'
     return f'<image:image><image:loc>{BASE}/img/{f}</image:loc></image:image>'
