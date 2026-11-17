@@ -257,6 +257,13 @@
   "rutbe": "spec.",
   "yazar": "(Spruce ex Griseb.) C.V.Morton"
  },
+ "Baptisia tinctoria": {
+  "ad": "Baptisia tinctoria",
+  "familya": "Fabaceae",
+  "kimlik": "1198899-2",
+  "rutbe": "spec.",
+  "yazar": "(L.) R.Br. in W.T.Aiton"
+ },
  "Berberis vulgaris": {
   "ad": "Berberis vulgaris",
   "familya": "Berberidaceae",
@@ -1291,6 +1298,13 @@
   "rutbe": "spec.",
   "yazar": "Cheel"
  },
+ "Melaleuca cajuputi": {
+  "ad": "Melaleuca cajuputi",
+  "familya": "Myrtaceae",
+  "kimlik": "115161-3",
+  "rutbe": "spec.",
+  "yazar": "Banks, Maton & Sm. ex R.Powell"
+ },
  "Melilotus officinalis": {
   "ad": "Melilotus officinalis",
   "familya": "Fabaceae",
@@ -1344,6 +1358,13 @@
   "ad": "Momordica charantia",
   "familya": "Cucurbitaceae",
   "kimlik": "293413-1",
+  "rutbe": "spec.",
+  "yazar": "L."
+ },
+ "Morinda citrifolia": {
+  "ad": "Morinda citrifolia",
+  "familya": "Rubiaceae",
+  "kimlik": "756359-1",
   "rutbe": "spec.",
   "yazar": "L."
  },

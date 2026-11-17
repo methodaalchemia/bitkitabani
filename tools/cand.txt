@@ -139,3 +139,6 @@ zedoar | Curcuma zedoaria | rhizome flowers plant
 hiyarsembe | Cassia fistula | tree flowers pods
 atlassediri | Cedrus atlantica | tree cones
 japonnanesi | Mentha canadensis | plant flowers leaves
+noni | Morinda citrifolia | fruit tree leaves
+yabanicivit | Baptisia tinctoria | plant flowers
+kajuput | Melaleuca cajuputi | tree bark flowers

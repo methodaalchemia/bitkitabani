@@ -141,4 +141,7 @@ M = {
  'hiyarsembe': ('Cassia fistula L.', '2022/dynamicModulesAttachment/CassiafistulaL.79d54efc4ec546db88a513e6cd21fc5a_d48fd8f4-92e6-4a65-bf56-0dfe9e886b52.pdf'),
  'atlassediri': ('Cedrus atlantica (Endlicher) Carrière', '2022/dynamicModulesAttachment/Cedrusatlantica3c154dde10364cd9858822febf591c5b_62b70c02-c3e8-4a41-a4d1-d53bb3c46842.pdf'),
  'japonnanesi': ('Mentha canadensis L.', '2023/dynamicModulesAttachment/MenthacanadensisL_f3fe2d20-176f-4f67-a88e-e3d4afdadf41.pdf'),
+ 'noni': ('Morinda citrifolia Linn.', '2022/dynamicModulesAttachment/MorindacitrifoliaLinn.a9015a172043462b9e4201c5e3c33fbc_681e3307-7e5f-4dd6-9953-07beb37acf9c.pdf'),
+ 'yabanicivit': ('Baptisia tinctoria L.', '2022/dynamicModulesAttachment/BaptisiatinctoriaL..pdfce23ee8ba371490aac28b75e2476950e_f2b7b3a0-8109-4b70-a649-e3bdd6cfb4d6.pdf'),
+ 'kajuput': ('Melaleuca cajuputi Powell', '2023/dynamicModulesAttachment/MelaleucacajuputiPowell_56fc1308-355b-419e-b62a-5a67836dd4b3.pdf'),
 }

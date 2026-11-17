@@ -962,6 +962,15 @@ ELLE.update({
    titck_apa('Mentha canadensis L.'),
 })
 
+ELLE.update({
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/MorindacitrifoliaLinn.a9015a172043462b9e4201c5e3c33fbc_681e3307-7e5f-4dd6-9953-07beb37acf9c.pdf':
+   titck_apa('Morinda citrifolia Linn.'),
+ 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/BaptisiatinctoriaL..pdfce23ee8ba371490aac28b75e2476950e_f2b7b3a0-8109-4b70-a649-e3bdd6cfb4d6.pdf':
+   titck_apa('Baptisia tinctoria L.'),
+ 'https://titck.gov.tr/storage/Archive/2023/dynamicModulesAttachment/MelaleucacajuputiPowell_56fc1308-355b-419e-b62a-5a67836dd4b3.pdf':
+   titck_apa('Melaleuca cajuputi Powell'),
+})
+
 # Kurum yayını: APA'da kurumsal yazar ve yayın türü köşeli ayraçta.
 ELLE['https://www.iarc.who.int/wp-content/uploads/2018/07/pr244_E.pdf'] = (
     'Uluslararası Kanser Araştırmaları Ajansı. (2016). IARC Monographs '
