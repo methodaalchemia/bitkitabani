@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 256 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 257 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -8154,3 +8154,36 @@ Karıştırma riski: Yabani Allium türleriyle karışma mutfakta değil doğada
 
 ### İlginç bilgi
 Dünya Sağlık Örgütü bir sebzeye monograf yazdı ve güvenlik bölümünü tek cümleyle geçti: güvenliği, dünya çapında sebze olarak yenmesiyle gösterilmiş. Kataloğumuzda hiçbir bitkinin güvenlik kanıtı bu kadar büyük bir örnekleme dayanmıyor. Buna karşılık soğanın en çok satılan tıbbi ürünü — yara izi jeli — meta-analizde öteki tedavilerden daha iyi çıkmadı. Mutfaktaki soğan ile eczanedeki soğan aynı bitkiden iki ayrı kanıt hikâyesi.
+
+## Şakayık (Paeonia lactiflora Pall.)
+
+URL: https://bitkitabani.com/sakayik/
+Familya: Paeoniaceae (şakayıkgiller) · Bölge: Asya ve Sibirya · Kullanılan kısım: Kurutulmuş kökü
+Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
+
+### Geleneksel kullanım
+- DSÖ monografı (1999): "Klinik veriyle desteklenen kullanım": yok. Farmakopelerde ve geleneksel sistemlerde: amenore, dismenore, göğüs ve karın ağrısında ağrı kesici, iltihap giderici ve spazm çözücü; baş ağrısı, baş dönmesi, baldır krampları, karaciğer hastalığı ve alerjiler. Günlük en çok 6–15 g kök (paeoniflorin için standardize). Gebelikte kontrendike: geleneksel kayıtlar düşük yaptırıcı etkiye işaret ediyor.
+- Avrupa — monograf yok, kamu açıklaması var: Avrupa İlaç Ajansı 2015’te beyaz şakayık kökü için monograf yerine kamu açıklaması yayımladı: AB’de yeterli kullanım geçmişi ve veri olmadığı için monograf kurulamadı. Çin tıbbının en temel droglarından birinin Avrupa’da resmî yeri yok.
+- Çin — temel drog: Beyaz şakayık kökü (báisháo) Çin tıbbının en eski ve en çok kullanılan droglarından; kan ve karaciğer "besleyici" formüllerin bileşeni. Kökün standardize özütü ("total glucosides of paeony", TGP) Çin’de romatoid artrit için ruhsatlı bir ilaç — ve kanıt bölümündeki meta-analiz buna ait.
+
+### Hazırlama
+DSÖ monografı günlük en çok 6–15 g kurutulmuş kök veriyor, paeoniflorin için standardize. Çin’de kullanılan TGP kapsülleri reçeteli ilaçtır. Gebelikte kullanılmaz; emzirirken ve çocuklarda da önerilmiyor.
+
+### Bilim ne diyor
+Şakayık kökünün en güçlü kanıtı Çin’de ruhsatlı özütüne ait. 2021’de BMC Complementary Medicine and Therapies dergisinde yayımlanan sistematik derleme ve meta-analiz, romatoid artritte TGP’nin standart ilaçlara (metotreksat, leflunomid ve diğerleri) eklenmesini inceleyen 39 çalışmayı (3.680 hasta) birleştirdi ve asıl bulgusu güvenlikle ilgili: TGP eklenen gruplarda karaciğer yan etkisi (RR 0,31; %95 GA 0,23–0,41) ve lökopeni anlamlı ölçüde daha azdı. Yani çalışmalar şakayığın hastalığı tedavi ettiğini değil, ilaçların yan etkisini azaltabildiğini ölçüyor; hepsi Çin’de yapılmış ve kalite değişken. DSÖ monografının 1999’daki "klinik veri yok" hükmü bu özüt için artık eski, ama drog olarak kök çayı için hâlâ geçerli. Kanıt düzeyi "sınırlı".
+
+### Güvenlik
+Gebelikte kontrendike — DSÖ monografı geleneksel kayıtlara dayanarak düşük yaptırıcı etkiden söz ediyor. Emzirirken ve çocuklarda veri olmadığı için önerilmiyor. İstenmeyen etki bilgisi monografta yok; TGP meta-analizinde en sık bildirilen etki yumuşak dışkı ve ishaldir. Monograf, Çin tıbbı geleneğinden üç bitkiyle birlikte kullanılmamasını da aktarıyor (aşağıda). Türkiye’deki yabani şakayık türleri bu monografın kapsamında değildir ve kökleri doğadan sökülmemelidir.
+
+### İlaç etkileşimleri
+- Fritillaria, Cuscuta ve ravent (Rheum officinale): DSÖ monografı Çin farmakopesine dayanarak şakayık kökünün bu üç drogla birleştirilmemesi gerektiğini aktarıyor — geleneksel uyumsuzluk kuralı, farmakolojik etkileşim verisi değil.
+- Antikoagülanlar (kuramsal): Monograf geleneksel kullanımlar arasında "antikoagülan" sayıyor; kan sulandırıcı kullananlar için kuramsal bir üst üste binme notu.
+
+### Doğada
+Nerede yetişir: Kuzey Çin, Moğolistan ve Sibirya’nın yerlisi; Çin’de geniş çapta kültürü yapılıyor. Türkiye’de süs bitkisi.
+Toplama mevsimi: İlkbahar sonunda iri beyaz-pembe çiçekler; kök sonbaharda, 4–5 yıllık bitkilerden sökülür.
+Yöresel adlar: Şakayık, beyaz şakayık; Çince báisháo.
+Karıştırma riski: ⚠️ Türkiye’de yabani şakayıklar (Paeonia mascula, P. peregrina, P. tenuifolia) ayrı türlerdir ve bazıları korunur; monograf yalnızca P. lactiflora içindir. "Kırmızı şakayık kökü" (chìsháo) aynı türün işlenmemiş kökü ya da P. veitchii’dir ve Çin tıbbında ayrı bir drogdur.
+
+### İlginç bilgi
+Çin tıbbının en temel droglarından biri, Avrupa’da resmî bir yere sahip değil: Avrupa İlaç Ajansı 2015’te monograf yerine kamu açıklaması yayımladı. Oysa aynı kökün özütü Çin’de romatoid artrit için ruhsatlı ilaç ve 39 çalışmalık bir meta-analizi var. Bir bitkinin "resmî" durumu kıtaya göre değişiyor — ve Türkiye’de bahçelerde süs için yetişen şakayık ile Çin eczanesindeki báisháo aynı cinsten ayrı türler.

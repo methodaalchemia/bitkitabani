@@ -1,19 +1,19 @@
 {
- "tarih": "2026-11-17",
- "bitki": 256,
- "kuyrukta_bekleyen": 77,
+ "tarih": "2026-11-18",
+ "bitki": 257,
+ "kuyrukta_bekleyen": 76,
  "kuyruk_son_tarih": "2027-02-02",
  "sembol": 48,
  "yazi": 9,
  "bolge": 8,
  "kanit": {
   "Klinik": 27,
-  "Sınırlı": 99,
+  "Sınırlı": 100,
   "Geleneksel": 130
  },
  "guvenlik": {
   "Genelde güvenli": 84,
-  "Dikkat": 133,
+  "Dikkat": 134,
   "Yüksek risk": 39
  },
  "yasal_kisitli": 11
