@@ -727,3 +727,9 @@ button.cta{-webkit-appearance:none;appearance:none;background:var(--accent);colo
 
 /* Geniş sayfalarda metin satırı okunur kalsın (ızgaralar tam genişlikte) */
 .wrap:not(.narrow) .page-head p,.wrap:not(.narrow) .sec>p,.wrap:not(.narrow) .sec>ul:not([class]),.wrap:not(.narrow) .sec>ol:not([class]),.wrap:not(.narrow) .sec-intro{max-width:72ch}
+
+/* Masaüstünde tek sütun liste yerine ızgara: rehber ve karşılaştırma dizinleri */
+@media (min-width:860px){
+  .guidelist{grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));gap:14px 32px}
+  .otherlist{columns:3}
+}
