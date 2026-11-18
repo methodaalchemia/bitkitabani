@@ -852,7 +852,7 @@ katalog = f'''
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="2" fill="none"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       <input id="q" type="search" placeholder="Bitki, Latince ad, kullanım ara… (ör. nazar, öksürük, tütsü)" autocomplete="off" aria-label="Bitki ara">
     </label>
-    <details class="fbox"><summary>Filtreler <span class="fcount" hidden></span></summary><div class="fgroups">{filters}</div></details>
+    <details class="fbox"><summary>Filtreler <span class="fcount" hidden></span></summary><div class="fgroups">{filters}<p class="muted-s">Bir bitki birden fazla bölgede ve kullanımda kayıtlı olabilir; bu yüzden grup sayılarının toplamı {len(P)} bitkiden fazladır.</p></div></details>
   </div>
   <div class="resultbar"><span id="count" aria-live="polite">{len(P)} / {len(P)} kayıt gösteriliyor</span><button class="linkbtn" id="reset" type="button" hidden>Filtreleri temizle</button><label class="sortsel">Sırala <select id="sort"><option value="no">Katalog sırası</option><option value="az">A’dan Z’ye</option><option value="kanit">Kanıtı en güçlü</option></select></label></div>
   <div class="grid">{"".join(card(p) for p in P)}</div>
@@ -1005,6 +1005,10 @@ for i, br_ in enumerate(BR, 1):
         uses = ''.join(f'<div class="use"><div class="who">{e(w)}</div><p>{e(t)}</p></div>' for w, t in q['kul'])
         blocks += f'<section class="sec"><h2>{e(q["tr"])}</h2><div class="uses">{uses}</div><p><b>Bilim:</b> {e(q["bilim"])}</p><p><b>Güvenlik:</b> {e(q["guvNot"])}</p><p><a class="cta" href="/{q["id"]}/">{e(q["tr"])} sayfasının tamamı →</a></p></section>'
     others = ''.join(f'<li><a href="/kopruler/{slug_of(x)}/">{e(x["t"])}</a></li>' for x in BR if x is not br_)
+    kay_br = ('<section class="sec"><h2>Kaynaklar</h2>'
+              '<p class="muted-s">Bu sayfadaki karşılaştırma, aşağıdaki bitki kayıtlarına dayanır; tarihsel ve kimyasal iddialar ilgili kaydın kaynaklarıyla desteklenir.</p>'
+              + ''.join(f'<h3>{e(q["tr"])} <span class="muted-s" lang="la">{e(short_la(q))}</span></h3>{refs(q)}' for q in ps)
+              + '</section>')
     prev_, next_ = BR[i-2], BR[i % len(BR)]
     body = f'''
 <nav class="crumbs" aria-label="Konum"><a href="/">Ana sayfa</a><span>/</span><a href="/kopruler/">Kültür köprüleri</a><span>/</span><span>{e(br_["t"])}</span></nav>
@@ -1014,6 +1018,7 @@ for i, br_ in enumerate(BR, 1):
 <section class="sec"><h2>Yan yana</h2>{cmp_rows(ps)}</section>
 {blocks}
 <aside class="disclaimer" role="note"><b>Tıbbi tavsiye değildir.</b> Bu sayfa geleneksel kullanımları kültürel bir kayıt olarak karşılaştırır; teşhis ya da tedavi önerisi değildir. Herhangi bir bitkiyi kullanmadan önce hekimine ya da eczacına danış. Zehirlenme şüphesinde Ulusal Zehir Danışma Merkezi’ni (UZEM) <b>114</b> numaradan ara.</aside>
+{kay_br}
 <p class="updated">Son gözden geçirme: <time datetime="{CONTENT_DATE}">{DATE_TXT}</time></p>
 <section class="sec"><h2>Diğer köprüler</h2><ul class="otherlist">{others}</ul></section>
 <div class="sheet-foot"><a class="cta" href="/kopruler/">Bütün köprüler ve harita →</a><div class="pager"><a href="/kopruler/{slug_of(prev_)}/">← {e(prev_["t"])}</a><a href="/kopruler/{slug_of(next_)}/">{e(next_["t"])} →</a></div></div>

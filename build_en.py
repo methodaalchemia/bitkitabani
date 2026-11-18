@@ -351,7 +351,7 @@ def run(G):
   <div class="controls">
     <label class="search" for="q"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="2" fill="none"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       <input id="q" type="search" placeholder="Search plants, Latin names, uses… (e.g. evil eye, cough, incense)" autocomplete="off" aria-label="Search plants"></label>
-    <details class="fbox"><summary>Filters <span class="fcount" hidden></span></summary><div class="fgroups">{filters}</div></details>
+    <details class="fbox"><summary>Filters <span class="fcount" hidden></span></summary><div class="fgroups">{filters}<p class="muted-s">A plant may be recorded in more than one region and more than one use, so the group counts add up to more than the {len(P)} plants in the catalogue.</p></div></details>
   </div>
   <div class="resultbar"><span id="count" aria-live="polite" data-tpl="Showing {{n}} of {{t}} entries">Showing {len(P)} of {len(P)} entries</span><button class="linkbtn" id="reset" type="button" hidden>Clear filters</button></div>
   <div class="grid">{"".join(card(p) for p in srt)}</div>
@@ -385,6 +385,10 @@ def run(G):
         tb = ''.join('<tr><th scope="row">' + lab + '</th>' + ''.join(f'<td>{fn(q)}</td>' for q in ps) + '</tr>' for lab, fn in rows)
         blocks = ''.join(f'<section class="sec"><h2>{e(name(q))}</h2><div class="uses">' + ''.join(f'<div class="use"><div class="who">{e(w)}</div><p>{e(tx)}</p></div>' for w, tx in EN[q['id']]['uses']) + f'</div><p><b>Science:</b> {e(EN[q["id"]]["science"])}</p><p><b>Safety:</b> {e(EN[q["id"]]["safety"])}</p><p><a class="cta" href="/en/{q["id"]}/">Full {e(name(q))} page →</a></p></section>' for q in ps)
         others = ''.join(f'<li><a href="/en/bridges/{slug_of(z)}/">{e(BR_EN[j][0])}</a></li>' for j, z in enumerate(BR) if z is not b)
+        kay_br = ('<section class="sec"><h2>Sources</h2>'
+                  '<p class="muted-s">This comparison rests on the plant records below; the historical and chemical claims are supported by each record\'s own sources.</p>'
+                  + ''.join(f'<h3>{e(name(q))} <span class="muted-s" lang="la">{e(q["la"])}</span></h3>{refs(q)}' for q in ps)
+                  + '</section>')
         pv, nx = BR[i-2], BR[i % len(BR)]
         body = f'''
 <nav class="crumbs" aria-label="Breadcrumb"><a href="/en/">Home</a><span>/</span><a href="/en/bridges/">Culture bridges</a><span>/</span><span>{e(t)}</span></nav>
@@ -393,6 +397,7 @@ def run(G):
 <figure class="mapwrap">{map_en(only=i)}<figcaption>Map: Natural Earth (public domain). Dots show the region, not an exact collection site.</figcaption></figure>
 <section class="sec"><h2>Side by side</h2><div class="tablewrap"><table class="cmp"><thead>{th}</thead><tbody>{tb}</tbody></table></div></section>
 {blocks}
+{kay_br}
 {DISC.format(n="these plants")}
 <p class="updated">Last reviewed: <time datetime="{CONTENT_DATE}">{DATE_TXT}</time> · <a href="/kopruler/{slug}/" lang="tr">Türkçe</a></p>
 <section class="sec"><h2>Other bridges</h2><ul class="otherlist">{others}</ul></section>
@@ -452,7 +457,7 @@ def run(G):
     <p><a class="cta" href="/en/catalog/">Open the catalog →</a></p>
   </div>
 </header>
-<section class="sec"><h2>By region</h2><div class="regs-grid">{regcards}</div></section>
+<section class="sec"><h2>By region</h2><div class="regs-grid">{regcards}</div><p class="muted-s">A plant may be recorded in more than one region, so these numbers add up to more than the {len(P)} plants in the catalogue.</p></section>
 {newband_en}<section class="sec"><h2>Where to start</h2><p>{len(P)} plants can be a lot. Start with these five to get to know the site:</p><ol class="start">
 <li><a href="/en/papatya/"><b>Chamomile</b></a>: the science behind a tea everyone knows, with its “How strong is the evidence?” table.</li>
 <li><a href="/en/kantaron/"><b>St John’s wort</b></a>: strong evidence but serious drug interactions; why a plant can be both remedy and risk.</li>
