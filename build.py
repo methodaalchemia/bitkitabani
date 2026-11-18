@@ -1685,7 +1685,7 @@ write('/semboller/', page(f'Kilim motifleri ve anlamları: {len(MOTIFLER)} sembo
 <div class="chips motif-filtre" role="group" aria-label="Temaya göre">{_chips}</div>
 <div class="motifgrid">{_sc}</div>
 <p><a class="cta" href="/blog/">Şamanizm, ritüel bitkiler ve kadim bilgi üzerine yazılar →</a></p>
-<script>(function(){{var B=document.querySelectorAll('.motif-filtre .chip');B.forEach(function(b){{b.addEventListener('click',function(){{var t=b.dataset.t;B.forEach(function(x){{x.setAttribute('aria-pressed',x===b?'true':'false')}});document.querySelectorAll('.motifcard').forEach(function(c){{c.hidden=!!t&&c.dataset.t!==t}})}})}})}})();</script>''', 'sembol', narrow=True, extra=lds(crumb_ld(('/semboller/', 'Semboller')))))
+<script>(function(){{var B=document.querySelectorAll('.motif-filtre .chip');B.forEach(function(b){{b.addEventListener('click',function(){{var t=b.dataset.t;B.forEach(function(x){{x.setAttribute('aria-pressed',x===b?'true':'false')}});document.querySelectorAll('.motifcard').forEach(function(c){{c.hidden=!!t&&c.dataset.t!==t}})}})}})}})();</script>''', 'sembol', extra=lds(crumb_ld(('/semboller/', 'Semboller')))))
 GUIDE_URLS.insert(0, '/semboller/')
 _redir = ''.join(f'/semboller/{old}/ /semboller/{news[0]}/ 301\n' for old, news in MOTIF_ESKI.items() if old != news[0])
 def _rel_motifs(slugs):
@@ -1770,7 +1770,7 @@ if True:
     write('/kavram/', page('Kavramlar sözlüğü: şamanizm, ritüel ve kadim bilgi | Bitki Tabanı', 'Her gün bir kavram ve onunla eşleşen bir bitki: animizm, kam, nazar, Pachamama, limpia, öğretmen bitkiler ve daha fazlası.', '/kavram/',
           f'''{crumbs(('/kavram/', 'Kavramlar'))}<header class="page-head"><span class="eyebrow">Her gün bir kavram, bir bitki · {len(KAV)} madde</span><h1>Kavramlar sözlüğü</h1><p>Şamanizmden halk inançlarına, ritüellerden kadim bilgiye: her gün kısa, kaynaklı bir kavram ve onunla eşleşen bir bitki.</p></header>
 {('<section class="sec"><h2>Bugünün kavramı</h2><p><a class="cta" href="/kavram/' + KAV_TODAY["slug"] + '/">' + e(KAV_TODAY["ad"]) + ' →</a></p>' + kav_plant(KAV_TODAY) + '</section>') if KAV_TODAY else ''}
-{('<section class="sec"><h2>A’dan Z’ye</h2><div class="startcards">' + _kl + '</div></section>') if _kl else '<p>İlk kavram yarın sabah burada.</p>'}''', 'kavram', narrow=True))
+{('<section class="sec"><h2>A’dan Z’ye</h2><div class="startcards">' + _kl + '</div></section>') if _kl else '<p>İlk kavram yarın sabah burada.</p>'}''', 'kavram'))
     GUIDE_URLS.insert(0, '/kavram/')
 
 # --- takvim bileşeni (ritüel + toplama, aylık ızgara; tıklayınca takvime ekle / paylaş) ---
@@ -1835,7 +1835,7 @@ def _olay_html(bas, o):
 write('/takvim/', page('Ritüel ve mevsim takvimi: Nevruz, Hıdrellez, gündönümleri | Bitki Tabanı', 'Nevruz, Hıdrellez, gündönümleri, ekinokslar ve And’larda Pachamama ayı: yılın ritüel ve mevsim takvimi, bitkileri ve sembolleriyle.', '/takvim/',
       f'''{crumbs(('/takvim/', 'Takvim'))}{takvim_tabs('r')}<header class="page-head"><span class="eyebrow">Ritüel ve mevsim takvimi</span><h1>Yılın dönüm noktaları</h1><p>Bayramlar, gündönümleri ve doğadaki büyük değişimler; her biri kendi bitkileri ve sembolleriyle. Çarktaki noktalar yılın dönüm noktaları; birine dokun, takvimine ekle ya da paylaş.</p></header>
 {takvim_widget('o')}<details class="tk-detay" id="ayrinti"><summary>Ayrıntılar, semboller ve kaynaklar</summary>
-<div class="olaylar">{"".join(_olay_html(b, o) for b, o in _ol)}</div></details>''', 'takvim', '<script src="/assets/takvim.js" defer></script>', narrow=True, extra=lds(crumb_ld(('/takvim/', 'Takvim')))))
+<div class="olaylar">{"".join(_olay_html(b, o) for b, o in _ol)}</div></details>''', 'takvim', '<script src="/assets/takvim.js" defer></script>', extra=lds(crumb_ld(('/takvim/', 'Takvim')))))
 GUIDE_URLS.append('/takvim/')
 
 # --- yöresel ve diğer adlar sözlüğü ---
@@ -1946,7 +1946,7 @@ write('/blog/', page('Blog: halk hekimliği hikâyeleri, ritüeller, söylencele
       f'{crumbs(("/blog/", "Blog"))}<header class="page-head"><span class="eyebrow">Blog · her hafta yeni hikâye</span><h1>Blog</h1><p>Anadolu’nun köylerinden, ocaklarından ve eski tıp metinlerinden kaynaklı şifa hikâyeleri; ritüeller, söylenceler ve şamanizm üzerine uzun yazılar. Hepsi bir kaynağa dayanır.</p></header>'
       f'<nav class="pchips blog-etk" aria-label="Konular">{_chips}</nav><p class="muted-s" id="blog-n" aria-live="polite"></p>'
       f'<ul class="hklist blog-l">{"".join(_rehber_kart(k) for k in BLOG_K)}{"".join(_yazi_kart(y) for y in _ys)}{"".join(_hik_kart(h) for h in reversed(HIK))}</ul>{abone("hikaye-liste", "Her hafta bir halk hekimliği hikâyesi", "Anadolu’dan kaynaklı şifa hikâyeleri, bitkileri ve uyarılarıyla; her pazar e-postanda.", kurs=False)}{_bjs}',
-      'yazi', narrow=True, extra=lds(crumb_ld(("/blog/", "Blog")))))
+      'yazi', extra=lds(crumb_ld(("/blog/", "Blog")))))
 GUIDE_URLS.insert(0, '/blog/')
 
 # --- yöre sayfaları ---
@@ -1956,7 +1956,7 @@ _ybody = f'''{crumbs(('/yoreler/', 'Yöreler'))}<header class="page-head"><span 
 <figure class="trmap-w">{tr_haritasi()}<figcaption>Harita: Natural Earth (kamu malı). Noktalar saha çalışmasının yapıldığı yeri gösterir. Kişi ve köy adları yayımlanmaz.</figcaption></figure>
 <aside class="warnbox" role="note"><b>Okurken:</b> Bir bitkinin bir yörede kaydedilmiş olması, o kullanımın işe yaradığını göstermez; yalnızca halk arasında bilindiğini gösterir. Kanıt ve güvenlik için bitkinin kendi sayfasına bak.</aside>
 <nav class="tabs" aria-label="Bölümler"><a href="#iller">İller</a><a href="#adlar">Yöresel adlar A–Z</a></nav><div id="iller"></div>''' + ''.join(f'<section class="sec" id="il-{_ilslug(il)}">' + _il_bolum(il, YORE_IL[il]) + (f'<p><a class="cta small" href="/yore/{_ilslug(il)}/">{e(il)} sayfası →</a></p>' if il in YORE_SAYFA else '') + '</section>' for il in _ils) + _ADLAR_HTML
-write('/yoreler/', page(f'Yöreler ve yöresel adlar: Anadolu’da hangi yörede hangi şifalı bitki? | Bitki Tabanı', f'{len(YORE_IL)} ilde saha çalışmalarında kaydedilen şifalı bitkiler haritada ve {_ADLAR_N} yöresel bitki adı A’dan Z’ye: hangi ad hangi bitki, kaynaklarıyla.', '/yoreler/', _ybody, 'yore', narrow=True, extra=lds(crumb_ld(('/yoreler/', 'Yöreler')))))
+write('/yoreler/', page(f'Yöreler ve yöresel adlar: Anadolu’da hangi yörede hangi şifalı bitki? | Bitki Tabanı', f'{len(YORE_IL)} ilde saha çalışmalarında kaydedilen şifalı bitkiler haritada ve {_ADLAR_N} yöresel bitki adı A’dan Z’ye: hangi ad hangi bitki, kaynaklarıyla.', '/yoreler/', _ybody, 'yore', extra=lds(crumb_ld(('/yoreler/', 'Yöreler')))))
 GUIDE_URLS.append('/yoreler/')
 for il in YORE_SAYFA:
     _p = f'/yore/{_ilslug(il)}/'
@@ -1981,7 +1981,7 @@ _cs = ''.join(f'<section class="sec" id="ay-{m}"><h2>{AYLAR[m-1]}{" (bu ay)" if 
 path = '/toplama-takvimi/'
 write(path, page(f'Şifalı bitki toplama takvimi: {AYLAR[_cur-1]} ayında hangi bitkiler toplanır? | Bitki Tabanı', f'Anadolu’da ay ay toplanan şifalı bitkiler. {AYLAR[_cur-1]} ayında toplama mevsimi olan {len(_cal[_cur])} bitki ve yılın geri kalanı.', path,
       f'''{crumbs(('/takvim/', 'Takvim'), (path, 'Doğada bu ay'))}{takvim_tabs('d')}<header class="page-head"><span class="eyebrow">Ay ay · {AYLAR[_cur-1]} başta</span><h1>Şifalı bitki toplama takvimi</h1><p>Anadolu’da yetişen bitkilerin toplama mevsimleri, kayıtlardaki “Doğada” bilgisinden derlendi. Liste her ay kendiliğinden içinde bulunduğumuz aydan başlar. Koruma altındaki, yasal kısıtlı ve yüksek riskli bitkiler bu listeye alınmaz.</p></header>
-<aside class="warnbox" role="note"><b>Toplarken:</b> Yalnızca kesin tanıdığın bitkileri (<a href="/rehber/zehirli-bitkiler/">en çok karıştırılan zehirli bitkiler</a>), yol kenarından ve ilaçlanmış alanlardan uzakta topla; bir bitkinin tamamını değil bir kısmını alın ki yeniden büyüyebilsin.</aside>{takvim_widget('p')}<details class="tk-detay"><summary>Ay ay liste</summary>{_cs}</details>''', 'rehber', '<script src="/assets/takvim.js" defer></script>', narrow=True, extra=lds(crumb_ld(('/rehber/', 'Rehberler'), (path, 'Toplama takvimi')))))
+<aside class="warnbox" role="note"><b>Toplarken:</b> Yalnızca kesin tanıdığın bitkileri (<a href="/rehber/zehirli-bitkiler/">en çok karıştırılan zehirli bitkiler</a>), yol kenarından ve ilaçlanmış alanlardan uzakta topla; bir bitkinin tamamını değil bir kısmını alın ki yeniden büyüyebilsin.</aside>{takvim_widget('p')}<details class="tk-detay"><summary>Ay ay liste</summary>{_cs}</details>''', 'rehber', '<script src="/assets/takvim.js" defer></script>', extra=lds(crumb_ld(('/rehber/', 'Rehberler'), (path, 'Toplama takvimi')))))
 GUIDE_URLS.append(path)
 
 # --- rehber ana sayfası ---
@@ -2298,7 +2298,7 @@ write('/kultur/', page('Kültür ve ritüel: şamanizm, animizm, semboller ve ku
 <p>Anadolu’da ardıç dumanıyla arınılır, dut ağacına dilek bezi bağlanır; And’larda koka yaprağı toprak anaya sunulur, Amazon’da bazı bitkilerin öğretmen olduğuna inanılır. Bu bölüm, bitkilerin insanlarla kurduğu bu ilişkiyi, onu yaşatan toplulukların adıyla ve kaynaklarıyla anlatır. Ritüel kullanım önerisi değil, kültürel bir kayıttır.</p></header>
 <div class="hubcards">{_khh}</div>
 <section class="sec"><h2>Son yazılar</h2><ul class="hklist">{"".join(_yazi_kart(y) for y in sorted(YAZILAR, key=lambda y: y["tarih"], reverse=True)[:6])}</ul><p><a class="cta" href="/blog/">Bütün yazılar ve hikâyeler →</a></p></section>''',
-      'kultur', narrow=True, extra=lds(crumb_ld(('/kultur/', 'Kültür ve ritüel')))))
+      'kultur', extra=lds(crumb_ld(('/kultur/', 'Kültür ve ritüel')))))
 # ---------- akıllı arama verisi ve sayfası ----------
 import hashlib as _hl
 def _cumleler(p):   # aramada gösterilecek cümleler: (etiket, sayfadaki bölüm, cümle)

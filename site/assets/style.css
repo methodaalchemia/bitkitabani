@@ -713,7 +713,6 @@ button.cta{-webkit-appearance:none;appearance:none;background:var(--accent);colo
 
 /* --- masaüstü: dar (okuma genişliğinde) sayfalarda ızgaraların geniş ekrana açılması --- */
 @media (min-width:980px){
-  .narrow .tk,.narrow .hklist,.narrow .hubcards,.narrow .startcards,.narrow .pminis,.narrow .breakout{margin-inline:calc((820px - min(1180px, 100vw - 32px)) / 2)}
   .tk-cark{width:min(480px,100%)}
 }
 @media (min-width:1100px){.tk-kartlar{grid-template-columns:repeat(3,1fr)}}
@@ -725,3 +724,6 @@ button.cta{-webkit-appearance:none;appearance:none;background:var(--accent);colo
 @media (max-width:640px){.today{width:100%}.today-ph{aspect-ratio:16/9}}
 .sc-k{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .sc-b{font-family:var(--f-mono);font-size:var(--t-xs);color:var(--muted)}
+
+/* Geniş sayfalarda metin satırı okunur kalsın (ızgaralar tam genişlikte) */
+.wrap:not(.narrow) .page-head p,.wrap:not(.narrow) .sec>p,.wrap:not(.narrow) .sec>ul:not([class]),.wrap:not(.narrow) .sec>ol:not([class]),.wrap:not(.narrow) .sec-intro{max-width:72ch}
