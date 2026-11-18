@@ -598,7 +598,14 @@ async function bultenCron(env) {
 }
 
 // ---------- Okur katkıları: site formu ve Threads 'yörende ne denir?' yanıtları; site sahibi onaylar ----------
-const KATKI_TUR = { ad: 'Yöresel ad', kullanim: 'Yöresel kullanım', duzeltme: 'Düzeltme', iletisim: 'İletişim', isbirligi: 'İş birliği', basin: 'Basın' };
+const KATKI_TUR = { ad: 'Yöresel ad', kullanim: 'Yöresel kullanım', duzeltme: 'Düzeltme', iletisim: 'İletişim', isbirligi: 'İş birliği', basin: 'Basın', eczaci: 'Eczacı başvurusu' };
+// Site sahibine düz bildirim postası (bülten başlıkları olmadan). Alıcı: SAHIP_MAIL tanımlıysa o, değilse iletisim@ (Email Routing sahibin kutusuna yönlendirir).
+async function sahibeYaz(env, konu, metin) {
+  const key = env.RESEND_KEY || env.RESEND_Key; if (!key) return;
+  await fetch('https://api.resend.com/emails', { method: 'POST', headers: { authorization: 'Bearer ' + key, 'content-type': 'application/json' },
+    body: JSON.stringify({ from: MAIL_FROM, to: [env.SAHIP_MAIL || 'iletisim@bitkitabani.com'], reply_to: 'iletisim@bitkitabani.com', subject: konu,
+      text: metin, html: '<pre style="font:14px/1.5 ui-monospace,monospace;white-space:pre-wrap">' + esc(metin) + '</pre>' }) });
+}
 async function katkiEkle(env, k) {
   const L = (await call(env, 'katki:list', 'get')) || [];
   if (k.ext && L.some(x => x.ext === k.ext)) return false;
@@ -674,14 +681,24 @@ async function katkiApi(req, env, url) {
     const b = await req.json().catch(() => ({}));
     if (b.hp) return json({ ok: true });   // bot tuzağı
     const bitki = String(b.bitki || '').replace(/[^a-z0-9]/g, '').slice(0, 40) || 'genel', tur = KATKI_TUR[b.tur] ? b.tur : 'kullanim';
-    const metin = String(b.metin || '').trim().slice(0, 2000);
+    const alan = String(b.alan || '').slice(0, 60), tel = String(b.tel || '').slice(0, 30);
+    const metin = tur === 'eczaci'
+      ? ('Gözden geçiren eczacı başvurusu · Alan: ' + (alan || 'belirtilmedi') + ' · Telefon: ' + (tel || 'yazılmadı'))
+      : String(b.metin || '').trim().slice(0, 2000);
     if (metin.length < 3) return json({ error: 'Lütfen kısa da olsa bir not yazın.' }, 400);
     const ip = req.headers.get('cf-connecting-ip') || 'x', key = trDay() + ':' + ip;
     const RL = (await call(env, 'katki:rl', 'get')) || {};
     for (const k of Object.keys(RL)) if (!k.startsWith(trDay())) delete RL[k];
     if ((RL[key] = (RL[key] || 0) + 1) > 8) return json({ error: 'Bugün için yeterince not gönderdiniz, teşekkürler.' }, 429);
     await call(env, 'katki:rl', 'put', RL);
-    await katkiEkle(env, { src: 'form', bitki, tur, metin, yore: String(b.yore || '').slice(0, 80), ad: String(b.ad || '').slice(0, 60), kaynak: String(b.kaynak || '').slice(0, 200), bitkiAd: String(b.bitki_ad || '').slice(0, 60), eposta: String(b.eposta || '').trim().slice(0, 120) });
+    const ad = String(b.ad || '').slice(0, 60), eposta = String(b.eposta || '').trim().slice(0, 120);
+    await katkiEkle(env, { src: 'form', bitki, tur, metin, yore: String(b.yore || '').slice(0, 80), ad, kaynak: String(b.kaynak || '').slice(0, 200), bitkiAd: String(b.bitki_ad || '').slice(0, 60), eposta, ...(tur === 'eczaci' ? { alan, tel } : {}) });
+    if (tur === 'eczaci') {   // başvurular sahibin kutusuna da düşsün; posta gitmezse kayıt yine de duruyor
+      try { await sahibeYaz(env, 'Eczacı başvurusu: ' + (ad || 'ad yazılmadı'),
+        ['Gözden geçiren eczacı çağrısına başvuru geldi.', '', 'Ad soyad : ' + (ad || '-'), 'Alan     : ' + (alan || '-'),
+         'Telefon  : ' + (tel || '-'), 'E-posta  : ' + (eposta || '-'), '', 'Tarih    : ' + new Date().toISOString(),
+         '', 'Bütün başvurular: ' + SITE + '/api/katki-liste (yönetici girişiyle)'].join('\n')); } catch (e) {}
+    }
     return json({ ok: true });
   }
   if (url.pathname === '/api/katki-onayli' && req.method === 'GET') {   // derleme bunu okur

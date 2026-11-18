@@ -1175,6 +1175,7 @@ home = f'''
   </div>
   <div class="todaybox"><a class="today" id="today" href="/{today_p["id"]}/" data-pool="{e(json.dumps([[p["id"], p["tr"], p["la"], 1 if p["id"] in IMG else 0] for p in pool], ensure_ascii=False))}"><img id="todayImg" class="today-ph" src="/img/{today_p["id"]}-500.jpg" alt="" width="500" height="667" decoding="async"{'' if today_p["id"] in IMG else ' hidden'}><span class="today-t"><span class="eyebrow">Bugünün bitkisi</span><b id="todayName">{e(today_p["tr"])}</b><i id="todayLatin">{e(today_p["la"])}</i></span></a><a class="cta small" href="/gunun-bitkisi/">Geçmiş günlerin bitkileri →</a><p class="streak" id="streak" hidden></p></div>
 </header>
+<a class="cagri" href="/eczaci-cagrisi/"><span class="cagri-t">Gözden geçiren eczacı arıyoruz</span><span class="cagri-d">Güvenlik, etkileşim ve kontrendikasyon bölümlerini mesleki gözle değerlendirecek beş eczacıyı davet ediyoruz. Son başvuru 15 Aralık.</span><span class="cagri-c">Ayrıntılar →</span></a>
 {takvim_band()}
 <section class="pillars">
   <a class="pillar" href="/katalog/"><span class="eyebrow">Bitkiler</span><b>{len(P)} bitki, {len(REG_DOLU)} bölge</b><span>Anadolu’dan Amazon’a, fotoğrafı, çizimi ve kaynaklarıyla her bitki.</span></a>
@@ -1935,6 +1936,9 @@ def _yazi_kart(y):
     k = f'/img/hikaye/yazi-{y["slug"]}.jpg'
     img = f'<img src="{k}" alt="" loading="lazy" width="1200" height="800">' if os.path.exists(os.path.join(HERE, k.lstrip('/'))) else ''
     return f'<li class="hk uzun" data-etk="{" ".join(_yazi_etk(y))}"><a href="/yazilar/{y["slug"]}/">{img}<b>{e(y["baslik"])}</b><span class="muted-s">Uzun yazı · {e(y["aciklama"][:90])}</span></a></li>'
+_cagri_kart = ('<li class="hk uzun" data-etk=""><a href="/eczaci-cagrisi/">'
+               '<b>Gözden geçiren eczacı arıyoruz</b>'
+               '<span class="muted-s">Çağrı · güvenlik bölümlerini değerlendirecek beş eczacı, son başvuru 15 Aralık</span></a></li>')
 def _rehber_kart(k):   # blog=True işaretli uzun rehber yazıları blog listesinde
     _p = next((byId[pid] for pid, _ in k['bitkiler'] if pid in byId and pid in IMG), None)
     img = f'<img src="/img/{_p["id"]}-500.jpg" alt="" loading="lazy" width="500" height="667">' if _p else ''
@@ -1950,7 +1954,7 @@ _bjs = """<script>(function(){var c=document.querySelectorAll('.blog-etk .chip')
 write('/blog/', page('Blog: halk hekimliği hikâyeleri, ritüeller, söylenceler ve şamanizm | Bitki Tabanı', f'Anadolu’dan {len(HIK)} kaynaklı halk hekimliği hikâyesi; ocaklar, nazar, söylenceler, eski tıp metinleri ve şamanizm üzerine yazılar.', '/blog/',
       f'{crumbs(("/blog/", "Blog"))}<header class="page-head"><span class="eyebrow">Blog · her hafta yeni hikâye</span><h1>Blog</h1><p>Anadolu’nun köylerinden, ocaklarından ve eski tıp metinlerinden kaynaklı şifa hikâyeleri; ritüeller, söylenceler ve şamanizm üzerine uzun yazılar. Hepsi bir kaynağa dayanır.</p></header>'
       f'<nav class="pchips blog-etk" aria-label="Konular">{_chips}</nav><p class="muted-s" id="blog-n" aria-live="polite"></p>'
-      f'<ul class="hklist blog-l">{"".join(_rehber_kart(k) for k in BLOG_K)}{"".join(_yazi_kart(y) for y in _ys)}{"".join(_hik_kart(h) for h in reversed(HIK))}</ul>{abone("hikaye-liste", "Her hafta bir halk hekimliği hikâyesi", "Anadolu’dan kaynaklı şifa hikâyeleri, bitkileri ve uyarılarıyla; her pazar e-postanda.", kurs=False)}{_bjs}',
+      f'<ul class="hklist blog-l">{_cagri_kart}{"".join(_rehber_kart(k) for k in BLOG_K)}{"".join(_yazi_kart(y) for y in _ys)}{"".join(_hik_kart(h) for h in reversed(HIK))}</ul>{abone("hikaye-liste", "Her hafta bir halk hekimliği hikâyesi", "Anadolu’dan kaynaklı şifa hikâyeleri, bitkileri ve uyarılarıyla; her pazar e-postanda.", kurs=False)}{_bjs}',
       'yazi', extra=lds(crumb_ld(("/blog/", "Blog")))))
 GUIDE_URLS.insert(0, '/blog/')
 
@@ -2144,7 +2148,52 @@ write('/istatistik/', page('Bitki Tabanı rakamlarla: kapsam, kanıt dağılım�
 # Sayfa canlı kalır ama ziyaretçiye gösterilmez: menüde yok, hiçbir sayfadan
 # bağlantısı yok, sitemapte yok ve aramaya kapalı. Adresi bilen açabilir.
 
-urls = ['/', '/katalog/', '/kultur/', '/kopruler/', '/gunun-bitkisi/', '/yeni/', '/hakkinda/', '/yontem/', '/gizlilik/'] + [f'/kopruler/{slug_of(x)}/' for x in BR] + FAM_URLS + [f'/{p["id"]}/' for p in P] + GUIDE_URLS + EN_URLS
+
+# ---------- gözden geçiren eczacı çağrısı ----------
+ECZ_YOL = '/eczaci-cagrisi/'
+ECZ_BAS = 'Gözden geçiren eczacı arıyoruz'
+ECZ_OZET = 'Bitki Tabanı’nın güvenlik, etkileşim ve kontrendikasyon bölümlerini mesleki gözle değerlendirecek beş eczacıyı davet ediyoruz. Son başvuru 15 Aralık.'
+ECZ_ALAN = ['Fark etmez', 'İlaç etkileşimleri', 'Toksikoloji', 'Fitoterapi', 'Farmakognozi']
+ecz = f'''{crumbs((ECZ_YOL, 'Eczacı çağrısı'))}
+<article class="sheet">
+<header class="page-head"><span class="eyebrow">Çağrı · son başvuru 15 Aralık</span><h1>{ECZ_BAS}</h1>
+<p>{ECZ_OZET}</p></header>
+<section class="sec"><p>Bitki Tabanı, şifalı ve ritüel bitkilerin açık erişimli bir kaydıdır. Her kayıt kaynağıyla, kanıt düzeyiyle ve gerektiğinde Türkiye’deki yasal durumuyla birlikte yayımlanır. Sitede reklam bulunmaz, herhangi bir ürün satılmaz. İçerik CC BY-SA 4.0 lisanslıdır ve veri setinin DOI’si vardır.</p>
+<p>Kataloğun en hassas bölümü güvenlik katmanıdır. Bir bitkinin hangi ilaçlarla etkileşebileceğini, kimlerin kullanmaması gerektiğini, hangi hazırlanış biçimlerinde risk taşıdığını güvenilir kaynaklara dayanarak yazıyoruz. Mesleğin içinden bakan bir değerlendirmenin bundan farklı bir karşılığı olduğunu biliyoruz.</p>
+<p><b>Bu nedenle beş eczacıyı, bu bölümleri gözden geçirmeye davet ediyoruz.</b></p></section>
+<section class="sec"><h2>Katkıda bulunan eczacılara sunduklarımız</h2>
+<ul class="kart-list">
+<li>Değerlendirdiğiniz her kaydın altında adınız, unvanınız ve gözden geçirme tarihi yer alır.</li>
+<li>Sitede size ait bir gözden geçiren sayfası açılır; dilerseniz uzmanlık alanınız ve mesleki profilinize bağlantı eklenebilir.</li>
+<li>Adınız sayfalara yapılandırılmış veri olarak işlenir, böylece arama motorları ve yapay zekâ sistemleri için okunabilir hâle gelir.</li>
+<li>İçerik CC BY-SA 4.0 lisanslı, veri setinin DOI’si var ve kayıtların adresi değişmiyor; katkınız kalıcıdır ve atıf verilebilir.</li>
+<li>Değerlendirmeniz metin üzerinde bağlayıcıdır; bir bölümü hatalı bulursanız düzeltilir, düzeltilmezse adınız o sayfada yer almaz.</li>
+<li>Kayıtlar ilgi alanınıza göre dağıtılır: ilaç etkileşimleri, toksikoloji, fitoterapi veya farmakognozi.</li>
+</ul>
+<p class="muted-s">Mevzuat gereği eczane adı, adresi ve iletişim bilgisi yayımlanmaz. Sitede yer alan, kişisel mesleki kimliğinizdir.</p></section>
+<section class="sec"><h2>Katkının kapsamı</h2><p>Yüksek riskli olarak sınıflandırdığımız 39 kaydın güvenlik, etkileşim ve kontrendikasyon bölümleri gözden geçirilecek. Kişi başına sekiz kayıt düşmektedir ve değerlendirmeler ocak ayı içinde, kendi programınıza göre yapılabilir.</p></section>
+<section class="sec"><h2>Değerlendirmenizin sınırı</h2><p>Adınız yalnızca güvenlik, etkileşim ve kontrendikasyon bölümlerinin altında görünür. Kültürel ve etnobotanik içerik, ritüel katmanı, kanıt düzeyi etiketleri ve yasal durum bilgisi değerlendirmenizin kapsamı dışında kalır. Bu ayrım ilgili sayfalarda da açıkça belirtilir.</p></section>
+<section class="sec"><h2>Gönüllülük esası</h2><p>Çalışma gönüllülük esasına dayanır; katkıda bulunanlardan ücret talep edilmez, kendilerine ödeme yapılmaz. Bu çalışmanın hakemli bir yayın katkısı niteliği taşımadığını ve sertifika düzenlenmediğini başvuru öncesinde belirtmek isteriz.</p>
+<p>Başvurularda eczacı odası kaydı teyit edilir. Son başvuru tarihi <b>15 Aralık</b>’tır.</p></section>
+<section class="sec" id="basvuru"><h2>Başvuru</h2>
+<form class="katki-form ecz-form" data-ok="Başvurunuz ulaştı, teşekkürler. İlk temasta eczacı odası kaydı teyit edilecek.">
+<input type="hidden" name="tur" value="eczaci">
+<label>Ad ve soyad <input name="ad" maxlength="60" required autocomplete="name"></label>
+<label>İncelemek istediğiniz alan <select name="alan">{"".join(f'<option>{a}</option>' for a in ECZ_ALAN)}</select></label>
+<label>Telefon <input name="tel" type="tel" maxlength="30" required autocomplete="tel"></label>
+<label>E-posta <input name="eposta" type="email" maxlength="120" required autocomplete="email"></label>
+<input name="hp" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+<button type="submit" class="cta">Başvur</button> <span class="katki-durum muted-s" role="status"></span></form>
+<p class="muted-s">Verdiğiniz telefon ve e-posta yalnızca başvurunuzun değerlendirilmesi ve sizinle iletişim kurulması için kullanılır; sitede yayımlanmaz, üçüncü kişilerle paylaşılmaz ve talep etmeniz hâlinde silinir. Ayrıntı: <a href="/gizlilik/">gizlilik</a>.</p>
+<p class="muted-s">Dilerseniz doğrudan yazabilirsiniz: <a href="mailto:iletisim@bitkitabani.com">iletisim@bitkitabani.com</a></p></section>
+</article>'''
+_ecz_ld = {"@context":"https://schema.org","@type":"WebPage","name":ECZ_BAS,"url":BASE+ECZ_YOL,"inLanguage":"tr","description":ECZ_OZET,
+           "datePublished":CONTENT_DATE,"author":AUTHOR,"isPartOf":{"@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/"}}
+write(ECZ_YOL, page(f'{ECZ_BAS} | Bitki Tabanı', ECZ_OZET[:158], ECZ_YOL, ecz, 'about',
+      '<script src="/assets/katki.js" defer></script>', narrow=True,
+      extra=lds(_ecz_ld, crumb_ld((ECZ_YOL, 'Eczacı çağrısı')))))
+
+urls = ['/', '/katalog/', '/kultur/', '/kopruler/', '/gunun-bitkisi/', '/yeni/', '/hakkinda/', '/yontem/', '/gizlilik/', ECZ_YOL] + [f'/kopruler/{slug_of(x)}/' for x in BR] + FAM_URLS + [f'/{p["id"]}/' for p in P] + GUIDE_URLS + EN_URLS
 _MOTIF_SLUG = {m['slug'] for m in MOTIFLER}
 def _imgtag(u):   # görsel site haritası: bitki sayfalarına fotoğraflarını ekle
     pid = u.strip('/').split('/')[-1]

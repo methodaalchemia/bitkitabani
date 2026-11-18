@@ -15,7 +15,7 @@ document.querySelectorAll('.katki-form').forEach(f => {
     try {
       const r = await fetch('/api/katki', { method: 'POST', headers: { 'content-type': 'application/json', 'x-bt': '1' }, body: JSON.stringify(v) });
       const j = await r.json().catch(() => ({}));
-      if (r.ok) { f.reset(); d.textContent = ilt ? 'Teşekkürler, mesajın ulaştı.' : 'Teşekkürler! Notun okunduktan sonra eklenecek.'; b.disabled = false; }
+      if (r.ok) { f.reset(); d.textContent = f.dataset.ok || (ilt ? 'Teşekkürler, mesajın ulaştı.' : 'Teşekkürler! Notun okunduktan sonra eklenecek.'); b.disabled = false; }
       else { d.textContent = j.error || 'Gönderilemedi, birazdan yeniden dene.'; b.disabled = false; }
     } catch (e) { d.textContent = 'Bağlantı kurulamadı, birazdan yeniden dene.'; b.disabled = false; }
   });

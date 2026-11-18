@@ -733,3 +733,13 @@ button.cta{-webkit-appearance:none;appearance:none;background:var(--accent);colo
   .guidelist{grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));gap:14px 32px}
   .otherlist{columns:3}
 }
+
+/* Ana sayfadaki çağrı bandı */
+.cagri{display:flex;flex-direction:column;gap:4px;padding:16px 18px;border:1px solid var(--accent);border-left-width:4px;background:var(--sheet);text-decoration:none;color:var(--ink)}
+.cagri:hover{background:var(--sheet-2,var(--sheet));border-color:var(--accent)}
+.cagri-t{font-family:var(--f-display);font-size:1.15rem;font-weight:700}
+.cagri-d{font-size:var(--t-sm);color:var(--muted);max-width:70ch}
+.cagri-c{font-family:var(--f-mono);font-size:var(--t-xs);color:var(--accent);margin-top:2px}
+.ecz-form label{display:flex;flex-direction:column;gap:4px;margin:0 0 12px;max-width:34rem}
+.ecz-form input,.ecz-form select{font:inherit;padding:9px 10px;border:1px solid var(--rule);background:var(--bg);color:var(--ink)}
+.ecz-form button{max-width:34rem}
