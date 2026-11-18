@@ -693,12 +693,18 @@ async function katkiApi(req, env, url) {
     await call(env, 'katki:rl', 'put', RL);
     const ad = String(b.ad || '').slice(0, 60), eposta = String(b.eposta || '').trim().slice(0, 120);
     await katkiEkle(env, { src: 'form', bitki, tur, metin, yore: String(b.yore || '').slice(0, 80), ad, kaynak: String(b.kaynak || '').slice(0, 200), bitkiAd: String(b.bitki_ad || '').slice(0, 60), eposta, ...(tur === 'eczaci' ? { alan, tel } : {}) });
-    if (tur === 'eczaci') {   // başvurular sahibin kutusuna da düşsün; posta gitmezse kayıt yine de duruyor
-      try { await sahibeYaz(env, 'Eczacı başvurusu: ' + (ad || 'ad yazılmadı'),
-        ['Gözden geçiren eczacı çağrısına başvuru geldi.', '', 'Ad soyad : ' + (ad || '-'), 'Alan     : ' + (alan || '-'),
-         'Telefon  : ' + (tel || '-'), 'E-posta  : ' + (eposta || '-'), '', 'Tarih    : ' + new Date().toISOString(),
-         '', 'Bütün başvurular: ' + SITE + '/api/katki-liste (yönetici girişiyle)'].join('\n')); } catch (e) {}
-    }
+    // Site formundan gelen her şey sahibin kutusuna da düşsün; posta gitmezse kayıt yine de katkı listesinde duruyor.
+    try {
+      const satir = tur === 'eczaci'
+        ? ['Gözden geçiren eczacı çağrısına başvuru geldi.', '', 'Ad soyad : ' + (ad || '-'), 'Alan     : ' + (alan || '-'),
+           'Telefon  : ' + (tel || '-'), 'E-posta  : ' + (eposta || '-')]
+        : [KATKI_TUR[tur] + ' türünde yeni bir form mesajı var.', '', 'Ad       : ' + (ad || '-'), 'E-posta  : ' + (eposta || '-'),
+           ...(b.yore ? ['Yöre     : ' + String(b.yore).slice(0, 80)] : []),
+           ...(bitki !== 'genel' ? ['Bitki    : ' + (String(b.bitki_ad || '').slice(0, 60) || bitki) + '  ' + SITE + '/' + bitki + '/'] : []),
+           ...(b.kaynak ? ['Kaynak   : ' + String(b.kaynak).slice(0, 200)] : []), '', 'Mesaj:', metin];
+      await sahibeYaz(env, (tur === 'eczaci' ? 'Eczacı başvurusu: ' : 'Siteden mesaj (' + KATKI_TUR[tur] + '): ') + (ad || 'ad yazılmadı'),
+        [...satir, '', 'Tarih    : ' + new Date().toISOString(), '', 'Hepsi: ' + SITE + '/api/katki-liste (yönetici girişiyle)'].join('\n'));
+    } catch (e) {}
     return json({ ok: true });
   }
   if (url.pathname === '/api/katki-onayli' && req.method === 'GET') {   // derleme bunu okur
