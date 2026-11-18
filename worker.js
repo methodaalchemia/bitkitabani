@@ -699,14 +699,6 @@ async function katkiApi(req, env, url) {
     return json({ error: 'anahtar yok', tg: !!env.TG_TOKEN, bsky: !!env.BSKY_HANDLE });
   }
   if (url.pathname === '/api/katki-liste' && req.method === 'GET') return json((await call(env, 'katki:list', 'get')) || []);
-  if (url.pathname === '/api/abone-liste' && req.method === 'GET') {   // yalnızca site sahibi: bülten kayıtları (CSV)
-    const A = (await call(env, 'abone:list', 'get')) || {};
-    const q = v => '"' + String(v == null ? '' : v).replace(/"/g, '""') + '"';
-    const satir = Object.entries(A).sort((x, y) => String(x[1].at || '').localeCompare(String(y[1].at || '')))
-      .map(([em, a]) => [em, a.on ? 'onaylı' : 'onay bekliyor', a.at, a.onay, a.src, a.d ? 'duyuru' : '', typeof a.kurs === 'number' ? 'kurs ' + a.kurs + '/7' : ''].map(q).join(','));
-    const csv = '﻿' + ['e-posta', 'durum', 'kayıt', 'onay', 'kaynak', 'duyuru', 'kurs'].map(q).join(',') + '\n' + satir.join('\n') + '\n';
-    return new Response(csv, { headers: { 'content-type': 'text/csv; charset=utf-8', 'content-disposition': 'attachment; filename="bitkitabani-abone.csv"', 'cache-control': 'no-store', 'x-robots-tag': 'noindex' } });
-  }
   if (url.pathname === '/api/katki-karar' && req.method === 'POST') {
     const b = await req.json().catch(() => ({})); const L = (await call(env, 'katki:list', 'get')) || [];
     const k = L.find(x => x.id === b.id); if (!k) return json({ error: 'yok' }, 404);
@@ -966,6 +958,17 @@ export default {
     if (req.method !== 'GET' && req.headers.get('x-bt') !== '1') return json({ error: 'csrf' }, 403);
     if (url.pathname === '/api/abone') return aboneApi(req, env, url);
     if (url.pathname.startsWith('/api/katki')) return katkiApi(req, env, url);
+    if (url.pathname === '/api/abone-liste' && req.method === 'GET') {   // yalnızca site sahibi: bülten kayıtları
+      const s2 = await session(req, env);
+      if (!s2 || !s2.admin) return json({ error: s2 ? 'yetki' : 'giriş yok', not: 'bitkitabani.com/hesap/ sayfasından giriş yap' }, s2 ? 403 : 401);
+      const A = (await call(env, 'abone:list', 'get')) || {};
+      const q = v => '"' + String(v == null ? '' : v).replace(/"/g, '""') + '"';
+      const satir = Object.entries(A).sort((x, y) => String(x[1].at || '').localeCompare(String(y[1].at || '')))
+        .map(([em, a]) => [em, a.on ? 'onaylı' : 'onay bekliyor', a.at, a.onay, a.src, a.d ? 'duyuru' : '', typeof a.kurs === 'number' ? 'kurs ' + a.kurs + '/7' : ''].map(q).join(','));
+      const csv = '\ufeff' + ['e-posta', 'durum', 'kayıt', 'onay', 'kaynak', 'duyuru', 'kurs'].map(q).join(',') + '\n' + satir.join('\n') + '\n';
+      const indir = url.searchParams.get('indir') === '1';
+      return new Response(csv, { headers: { 'content-type': indir ? 'text/csv; charset=utf-8' : 'text/plain; charset=utf-8', ...(indir ? { 'content-disposition': 'attachment; filename="bitkitabani-abone.csv"' } : {}), 'cache-control': 'no-store', 'x-robots-tag': 'noindex' } });
+    }
     if (url.pathname === '/api/istatistik' || url.pathname === '/api/istatistik-yenile') {
       const s = await session(req, env);
       if (!s || !s.admin) return json({ error: s ? 'yetki' : 'giriş yok', not: 'bitkitabani.com/hesap/ sayfasından giriş yap' }, s ? 403 : 401);
