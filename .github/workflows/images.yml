@@ -26,14 +26,9 @@ on:
         default: '0'
   schedule:
     - cron: '5 21 * * *'
-# Aynı anda iki derleme çalışınca ikisi de main'e push etmeye çalışıyor ve biri
-# beş denemede pes ediyordu (19 Kasım). Sıraya alınsınlar: yenisi, çalışan bitince başlar.
-concurrency:
-  group: gorsel-derleme
-  cancel-in-progress: false
 permissions:
   contents: write
-concurrency: images
+concurrency: images   # koşular sıraya girer; iki derleme aynı anda push etmez
 jobs:
   sync:
     runs-on: ubuntu-latest
