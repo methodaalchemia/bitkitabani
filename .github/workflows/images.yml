@@ -53,6 +53,10 @@ jobs:
       - name: Site yazı tipleri (WOFF2)
         continue-on-error: true
         run: pip install fonttools brotli && python3 tools/fonts_web.py
+      - name: Wikidata kimlikleri (şemadaki sameAs için)
+        continue-on-error: true
+        run: python3 tools/wikidata_kimlik.py
+
       - name: iNaturalist gözlem ayları
         continue-on-error: true
         run: python3 tools/inat.py
@@ -98,6 +102,7 @@ jobs:
           ekle() {
             git add img images.json site tools/fonts assets/fonts assets/icons
             if [ -f inat.json ]; then git add inat.json; fi
+            if [ -f wikidata_kimlik.json ]; then git add wikidata_kimlik.json; fi
           }
           ekle
           if git diff --cached --quiet; then echo "değişiklik yok"; exit 0; fi

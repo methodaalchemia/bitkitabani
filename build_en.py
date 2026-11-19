@@ -33,6 +33,7 @@ def run(G):
     EMA, NCCIH, OTHER, POWO, BAYTOP = G['EMA'], G['NCCIH'], G['OTHER'], G['POWO'], G['BAYTOP']
     slug_of, bridge_map, pips, acc, dot = G['slug_of'], G['bridge_map'], G['pips'], G['acc'], G['dot']
     FAV, FONTS, CONTENT_DATE, AUTHOR = G['FAV'], G['FONTS'], G['CONTENT_DATE'], G['AUTHOR']
+    taxon_sameas, cite_ld = G['taxon_sameas'], G['cite_ld']   # şemadaki dış kimlikler ve kaynak künyeleri
     import sys; sys.path.insert(0, os.path.join(G['HERE'], 'en'))
     EN = {}
     for n in range(1, 9):
@@ -177,7 +178,7 @@ def run(G):
     <div class="foot"><span class="ev" aria-label="Evidence level: {KANIT_EN[p["kanit"]]}">{pips(p["kanit"])} Evidence: {KANIT_EN[p["kanit"]]}</span><span class="sf {p["guv"]}">{GUV_EN[p["guv"]]}</span></div>
   </div>
 </a>'''
-    def refs(p):
+    def ref_items(p):
         pid = p['id']; items = []
         for label, url in EMA.get(pid, []):
             if 'ema.europa.eu' in url:
@@ -208,7 +209,10 @@ def run(G):
             else:
                 items.append(('Botanical record', powo_apa_en(nm),
                               'https://powo.science.kew.org/results?q=' + urllib.parse.quote(nm)))
-        return '<ol class="refs">' + ''.join((f'<li><span class="kind">{e(k)}</span><a href="{e(u)}" target="_blank" rel="noopener">{e(t)}</a></li>' if u else f'<li><span class="kind">{e(k)}</span><cite>{e(t)}</cite></li>') for k, t, u in items) + '</ol>'
+        return items
+
+    def refs(p):
+        return '<ol class="refs">' + ''.join((f'<li><span class="kind">{e(k)}</span><a href="{e(u)}" target="_blank" rel="noopener">{e(t)}</a></li>' if u else f'<li><span class="kind">{e(k)}</span><cite>{e(t)}</cite></li>') for k, t, u in ref_items(p)) + '</ol>'
 
     def toc(html):
         items = []
@@ -324,7 +328,7 @@ def run(G):
         desc = f'{x["name"]} ({short_la(p)}): {first(x["uses"][0][1])} Evidence: {KANIT_EN[p["kanit"]].lower()}. Safety notes and sources.'
         desc = desc if len(desc) <= 160 else desc[:157].rsplit(' ', 1)[0] + '…'
         ld = [{"@context":"https://schema.org","@type":"Article","headline":f'{x["name"]} ({short_la(p)})',"inLanguage":"en","author":{**AUTHOR, 'url': BASE + '/en/about/#author', 'jobTitle': 'Artist and herbalist'},
-               "about":{"@type":"Taxon","name":short_la(p),"alternateName":[x['name'], p['tr']]},"description":desc,"dateModified":CONTENT_DATE,"url":f'{BASE}/en/{pid}/',
+               "about":{"@type":"Taxon","name":short_la(p),"alternateName":[x['name'], p['tr']],**({"sameAs":_s} if (_s := taxon_sameas(p)) else {})},"citation":cite_ld(ref_items(p)),"description":desc,"dateModified":CONTENT_DATE,"url":f'{BASE}/en/{pid}/',
                "image":(f'{BASE}/img/{pid}-960.jpg' if pid in IMG else None),"publisher":{"@type":"Organization","name":"Bitki Tabanı","url":BASE+"/"}},
               {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":BASE+"/en/"},{"@type":"ListItem","position":2,"name":"Catalog","item":BASE+"/en/catalog/"},{"@type":"ListItem","position":3,"name":x['name'],"item":f'{BASE}/en/{pid}/'}]},
               {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q, a in qa + list(faq)]}]
@@ -403,7 +407,13 @@ def run(G):
 <section class="sec"><h2>Other bridges</h2><ul class="otherlist">{others}</ul></section>
 <div class="sheet-foot"><a class="cta" href="/en/bridges/">All bridges and the map →</a><div class="pager"><a href="/en/bridges/{slug_of(pv)}/">← {e(BR_EN[BR.index(pv)][0])}</a><a href="/en/bridges/{slug_of(nx)}/">{e(BR_EN[BR.index(nx)][0])} →</a></div></div>
 </article>'''
-        write(f'/en/bridges/{slug}/', page(f'{t}: {tn} | Bitki Tabanı', (f'{tn}: ' + d)[:157], f'/en/bridges/{slug}/', f'/kopruler/{slug}/', body, 'br', narrow=True, image=(f'{BASE}/img/{a["id"]}-960.jpg' if a['id'] in IMG else None)))
+        _br_ld = {"@context": "https://schema.org", "@type": "Article", "headline": t, "description": (f'{tn}: ' + d)[:200], "inLanguage": "en",
+                  "url": f'{BASE}/en/bridges/{slug}/', "author": AUTHOR, "dateModified": CONTENT_DATE,
+                  "about": [{"@type": "Taxon", "name": short_la(q), "alternateName": name(q), **({"sameAs": _s} if (_s := taxon_sameas(q)) else {})} for q in ps],
+                  "citation": cite_ld([_it for q in ps for _it in ref_items(q)]),
+                  "isPartOf": {"@type": "WebSite", "name": "Bitki Tabanı", "url": BASE + "/"}}
+        write(f'/en/bridges/{slug}/', page(f'{t}: {tn} | Bitki Tabanı', (f'{tn}: ' + d)[:157], f'/en/bridges/{slug}/', f'/kopruler/{slug}/', body, 'br', narrow=True, image=(f'{BASE}/img/{a["id"]}-960.jpg' if a['id'] in IMG else None),
+              extra='<script type="application/ld+json">' + json.dumps(_br_ld, ensure_ascii=False) + '</script>'))
 
     # ---------- about ----------
     about = f'''<header class="page-head"><span class="eyebrow">About</span><h1>What is Bitki Tabanı?</h1><p>Bitki Tabanı (“plant base” in Turkish) is an independent, non-commercial ethnobotanical record of plants used for healing and ritual across cultures. It aims to spark curiosity and to set traditional knowledge side by side with today’s science. The main edition is in Turkish; this is the English edition.</p></header>

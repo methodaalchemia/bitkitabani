@@ -1,4 +1,5 @@
 import json, os, shutil, html, re, urllib.parse, datetime
+from kunye_ld import cite_ld
 HERE = os.path.dirname(os.path.abspath(__file__))
 from refs import WIKI, POWO, NCCIH, EMA, OTHER, FILES, BAYTOP
 from kunye_elle import ELLE as APA_ELLE, BAYTOP_APA, ema_apa, nccih_apa, powo_apa, powo_adres
@@ -482,7 +483,7 @@ def _apa(url, yedek):
     return APA_METIN.get(yedek, yedek)
 
 
-def refs(p):
+def ref_items(p):
     pid = p['id']; items = []
     for label, url in EMA.get(pid, []):
         if 'ema.europa.eu' in url: items.append(('EMA monografisi', _apa(url, ema_apa(label, url)), url))
@@ -508,7 +509,24 @@ def refs(p):
         else:
             items.append(('Botanik kayıt', powo_apa(name),
                           'https://powo.science.kew.org/results?q=' + urllib.parse.quote(name)))
-    return '<ol class="refs">' + ''.join((f'<li><span class="kind">{e(k)}</span><a href="{e(u)}" target="_blank" rel="noopener">{e(t)}</a></li>' if u else f'<li><span class="kind">{e(k)}</span><cite>{e(t)}</cite></li>') for k, t, u in items) + '</ol>'
+    return items
+
+def refs(p):
+    return '<ol class="refs">' + ''.join((f'<li><span class="kind">{e(k)}</span><a href="{e(u)}" target="_blank" rel="noopener">{e(t)}</a></li>' if u else f'<li><span class="kind">{e(k)}</span><cite>{e(t)}</cite></li>') for k, t, u in ref_items(p)) + '</ol>'
+
+# --- dış kimlikler: Taxon düğümünü POWO/IPNI ve Wikidata'ya bağlar ---
+try:
+    WIKIDATA = json.load(open(os.path.join(HERE, 'wikidata_kimlik.json'), encoding='utf-8'))
+except Exception:
+    WIKIDATA = {}
+def taxon_sameas(p):
+    ad = POWO.get(p['id'], short_la(p))
+    out = []
+    k = (POWO_KIMLIK.get(ad) or {}).get('kimlik')
+    if k: out.append(powo_adres(k))
+    q = WIKIDATA.get(ad) or WIKIDATA.get(short_la(p))
+    if q: out.append('https://www.wikidata.org/wiki/' + q)
+    return out
 
 KANIT_ICIN = {'kantaron': 'depresyonda', 'lavanta': 'kaygıda (kapsül)', 'hayit': 'adet öncesi sendromda', 'hashas': 'ağrıda (morfin)', 'kinin': 'sıtmada',
               'nane': 'huzursuz bağırsakta', 'sarimsak': 'tansiyon ve kolesterolde', 'keten': 'kabızlıkta', 'gucigdemi': 'gut ve FMF’de (kolşisin)', 'efedra': 'bronş açmada (efedrin)',
@@ -618,7 +636,7 @@ for i, p in enumerate(P):
     title = (f'{p["tr"]} zehirli mi? Etkileri, belirtileri ve tarihi' if p['guv'] == 'yuksek' else f'{p["tr"]} nedir, ne işe yarar? Faydaları ve zararları')
     if pid in SEO: title = SEO[pid][0]
     if len(title) < 44: title += ' | Bitki Tabanı'
-    ld = {"@context":"https://schema.org","@type":"Article","headline":f'{p["tr"]} ({short_la(p)})',"inLanguage":"tr","about":{"@type":"Taxon","name":short_la(p),"alternateName":[p['tr']] + adlar_of(p),"taxonRank":"species","parentTaxon":{"@type":"Taxon","name":p['fam'].split(' ')[0],"taxonRank":"family"}},"description":desc_for(p),"author":AUTHOR,"isPartOf":{"@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/"},"dateModified":(max(CONTENT_DATE, YENI[pid].isoformat()) if pid in YENI else CONTENT_DATE),**({"datePublished":YENI[pid].isoformat()} if pid in YENI else {}),**({"reviewedBy":{"@type":"Person","name":GZ_KISI['ad'],"jobTitle":GZ_KISI.get('unvan','Eczacı')},"lastReviewed":GZ[pid]} if GZ_KISI and pid in GZ else {}),"url":f'{BASE}/{pid}/',"image":(f'{BASE}/img/{pid}-960.jpg' if pid in IMG else None),"publisher":{"@type":"Organization","name":"Bitki Tabanı","url":BASE+"/","logo":BASE+"/assets/logo-512.png","sameAs":["https://www.instagram.com/bitkitabani/","https://www.threads.net/@bitkitabani","https://www.facebook.com/profile.php?id=61595314033889","https://www.pinterest.com/bitkitabani/","https://www.youtube.com/@bitkitabani","https://t.me/bitkitabani"]}}
+    ld = {"@context":"https://schema.org","@type":"Article","headline":f'{p["tr"]} ({short_la(p)})',"inLanguage":"tr","about":{"@type":"Taxon","name":short_la(p),"alternateName":[p['tr']] + adlar_of(p),"taxonRank":"species",**({"sameAs":_tsa} if (_tsa := taxon_sameas(p)) else {}),"parentTaxon":{"@type":"Taxon","name":p['fam'].split(' ')[0],"taxonRank":"family"}},"citation":cite_ld(ref_items(p)),"description":desc_for(p),"author":AUTHOR,"isPartOf":{"@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/"},"dateModified":(max(CONTENT_DATE, YENI[pid].isoformat()) if pid in YENI else CONTENT_DATE),**({"datePublished":YENI[pid].isoformat()} if pid in YENI else {}),**({"reviewedBy":{"@type":"Person","name":GZ_KISI['ad'],"jobTitle":GZ_KISI.get('unvan','Eczacı')},"lastReviewed":GZ[pid]} if GZ_KISI and pid in GZ else {}),"url":f'{BASE}/{pid}/',"image":(f'{BASE}/img/{pid}-960.jpg' if pid in IMG else None),"publisher":{"@type":"Organization","name":"Bitki Tabanı","url":BASE+"/","logo":BASE+"/assets/logo-512.png","sameAs":["https://www.instagram.com/bitkitabani/","https://www.threads.net/@bitkitabani","https://www.facebook.com/profile.php?id=61595314033889","https://www.pinterest.com/bitkitabani/","https://www.youtube.com/@bitkitabani","https://t.me/bitkitabani"]}}
     crumbs = {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana sayfa","item":BASE+"/"},{"@type":"ListItem","position":2,"name":"Katalog","item":BASE+"/katalog/"},{"@type":"ListItem","position":3,"name":p['tr'],"item":f'{BASE}/{pid}/'}]}
     uses = ''.join(f'<div class="use"><div class="who">{e(w)}</div><p>{ev(t)}</p></div>' for w, t in p['kul'])
     relhtml = ''
@@ -1024,7 +1042,7 @@ for i, br_ in enumerate(BR, 1):
 <div class="sheet-foot"><a class="cta" href="/kopruler/">Bütün köprüler ve harita →</a><div class="pager"><a href="/kopruler/{slug_of(prev_)}/">← {e(prev_["t"])}</a><a href="/kopruler/{slug_of(next_)}/">{e(next_["t"])} →</a></div></div>
 </article>'''
     ldb = [{"@context":"https://schema.org","@type":"Article","author":AUTHOR,"headline":br_['t'],"description":br_['d'],"inLanguage":"tr","url":f'{BASE}/kopruler/{slug}/',"dateModified":CONTENT_DATE,
-            "about":[{"@type":"Taxon","name":short_la(q),"alternateName":q['tr']} for q in ps],"isPartOf":{"@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/"},
+            "about":[{"@type":"Taxon","name":short_la(q),"alternateName":q['tr'],**({"sameAs":_s} if (_s := taxon_sameas(q)) else {})} for q in ps],"citation":cite_ld([_it for q in ps for _it in ref_items(q)]),"isPartOf":{"@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/"},
             "image":[f'{BASE}/img/{q["id"]}-960.jpg' for q in ps if q['id'] in IMG]},
            {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana sayfa","item":BASE+"/"},{"@type":"ListItem","position":2,"name":"Kültür köprüleri","item":BASE+"/kopruler/"},{"@type":"ListItem","position":3,"name":br_['t'],"item":f'{BASE}/kopruler/{slug}/'}]}]
     desc = (f'{title_names}: ' + br_['d'])[:157]
@@ -1590,7 +1608,7 @@ for c in LIVE_C:
     desc = f'{a["tr"]} ve {b["tr"]} arasındaki farklar: bilimsel kanıt, kullanım, güvenlik ve ilaç etkileşimleri yan yana.'
     write(path, page(f'{c["baslik"]} | Bitki Tabanı', desc, path, body, 'kars', narrow=True,
           extra=lds({"@context":"https://schema.org","@type":"Article","headline":c['baslik'],"description":desc,"inLanguage":"tr","url":BASE+path,"author":AUTHOR,"dateModified":CONTENT_DATE,
-                     "about":[{"@type":"Taxon","name":short_la(q),"alternateName":q['tr']} for q in (a, b)],"image":[f'{BASE}/img/{q["id"]}-960.jpg' for q in (a, b) if q['id'] in IMG]},
+                     "about":[{"@type":"Taxon","name":short_la(q),"alternateName":q['tr'],**({"sameAs":_s} if (_s := taxon_sameas(q)) else {})} for q in (a, b)],"image":[f'{BASE}/img/{q["id"]}-960.jpg' for q in (a, b) if q['id'] in IMG]},
                     crumb_ld(('/rehber/', 'Rehberler'), (path, c['baslik']))), image=gimage([a['id'], b['id']])))
     GUIDE_URLS.append(path)
 
