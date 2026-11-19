@@ -1050,6 +1050,11 @@ for i, br_ in enumerate(BR, 1):
     slug = slug_of(br_); a = byId[br_['a']]; c = byId.get(br_.get('b')) if br_.get('b') else None
     ps = [a] + ([c] if c else [])
     title_names = f'{a["tr"]} ve {c["tr"]}' if c else a['tr']
+    # A3: sayfa görselsizdi; karşılaştırılan bitkilerin fotoğrafları gövdeye konur
+    _shots = ''.join(f'<figure class="brshot"><a href="/{q["id"]}/">{ph(q, 500)}</a>'
+                     f'<figcaption><b>{e(q["tr"])}</b> <i lang="la">{e(short_la(q))}</i>'
+                     f'{("<span class=muted-s>" + credit(q) + "</span>") if q["id"] in IMG else ""}</figcaption></figure>' for q in ps)
+    shots = f'<div class="brshots cols{len(ps)}">{_shots}</div>' if any(q['id'] in IMG for q in ps) else ''
     blocks = ''
     for q in ps:
         uses = ''.join(f'<div class="use"><div class="who">{e(w)}</div><p>{e(t)}</p></div>' for w, t in q['kul'])
@@ -1064,6 +1069,7 @@ for i, br_ in enumerate(BR, 1):
 <nav class="crumbs" aria-label="Konum"><a href="/">Ana sayfa</a><span>/</span><a href="/kopruler/">Kültür köprüleri</a><span>/</span><span>{e(br_["t"])}</span></nav>
 <article class="sheet">
 <header class="page-head"><span class="eyebrow">Kültür köprüsü {i} · {e(title_names)}</span><h1>{e(br_["t"])}</h1><p>{e(br_["d"])}</p></header>
+{shots}
 <figure class="mapwrap">{bridge_map(only=i)}<figcaption>Harita: Natural Earth (kamu malı). Noktalar bölgeyi temsil eder, kesin toplama yerini değil.</figcaption></figure>
 <section class="sec"><h2>Yan yana</h2>{cmp_rows(ps)}</section>
 {blocks}

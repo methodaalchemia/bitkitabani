@@ -393,11 +393,17 @@ def run(G):
                   '<p class="muted-s">This comparison rests on the plant records below; the historical and chemical claims are supported by each record\'s own sources.</p>'
                   + ''.join(f'<h3>{e(name(q))} <span class="muted-s" lang="la">{e(q["la"])}</span></h3>{refs(q)}' for q in ps)
                   + '</section>')
+        # A3: sayfa görselsizdi; karşılaştırılan bitkilerin fotoğrafları gövdeye konur
+        _shots = ''.join(f'<figure class="brshot"><a href="/en/{q["id"]}/">{ph(q, 500)}</a>'
+                         f'<figcaption><b>{e(name(q))}</b> <i lang="la">{e(short_la(q))}</i>'
+                         f'{("<span class=muted-s>" + credit(q) + "</span>") if q["id"] in IMG else ""}</figcaption></figure>' for q in ps)
+        shots = f'<div class="brshots cols{len(ps)}">{_shots}</div>' if any(q['id'] in IMG for q in ps) else ''
         pv, nx = BR[i-2], BR[i % len(BR)]
         body = f'''
 <nav class="crumbs" aria-label="Breadcrumb"><a href="/en/">Home</a><span>/</span><a href="/en/bridges/">Culture bridges</a><span>/</span><span>{e(t)}</span></nav>
 <article class="sheet">
 <header class="page-head"><span class="eyebrow">Culture bridge {i} · {e(tn)}</span><h1>{e(t)}</h1><p>{e(d)}</p></header>
+{shots}
 <figure class="mapwrap">{map_en(only=i)}<figcaption>Map: Natural Earth (public domain). Dots show the region, not an exact collection site.</figcaption></figure>
 <section class="sec"><h2>Side by side</h2><div class="tablewrap"><table class="cmp"><thead>{th}</thead><tbody>{tb}</tbody></table></div></section>
 {blocks}

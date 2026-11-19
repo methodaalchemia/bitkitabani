@@ -779,3 +779,14 @@ button.cta{-webkit-appearance:none;appearance:none;background:var(--accent);colo
    her şey aşağı kayıyordu (CLS 0,18). Çarkın ve künyelerin yüksekliği baştan ayrılır. */
 .tk .tk-govde{min-height:min(760px,85vh);display:flex;flex-direction:column;justify-content:flex-start}
 .tk .tk-govde>p.muted-s:only-child{margin:auto;text-align:center}
+
+/* A3: köprü sayfalarında karşılaştırılan bitkilerin fotoğrafları */
+.brshots{display:grid;gap:14px;margin:18px 0 22px;max-width:840px}
+.brshots.cols2{grid-template-columns:1fr 1fr}
+.brshot{margin:0}
+.brshot .ph{aspect-ratio:4/3;max-width:100%;border-radius:12px;overflow:hidden;border:1px solid var(--rule)}
+.brshot .ph img{height:auto;aspect-ratio:4/3;object-fit:cover}
+.brshot figcaption{margin-top:6px;font-size:var(--t-sm);line-height:1.45}
+.brshot figcaption i{color:var(--muted)}
+.brshot figcaption .muted-s{display:block;margin-top:2px}
+@media(max-width:560px){.brshots.cols2{grid-template-columns:1fr}}
