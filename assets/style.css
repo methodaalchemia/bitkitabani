@@ -891,10 +891,8 @@ footer.site h3{letter-spacing:.04em}
 .empty .cta{display:inline-block;margin-top:10px}
 
 /* D3 · ana sayfadaki iki harita: küçültülmüş ve tıklanabilir */
-.harita-k{display:block;text-decoration:none;color:inherit}
-.harita-k figure{margin:0}
-.harita-k figcaption{font-family:var(--f-body);font-size:var(--t-sm);color:var(--accent);margin-top:6px}
-.harita-k:hover figcaption{text-decoration:underline;text-underline-offset:3px}
+.mapwrap.mini figcaption,.trmap-w.mini figcaption{font-family:var(--f-body);font-size:var(--t-sm);margin-top:6px}
+.mapwrap.mini figcaption a,.trmap-w.mini figcaption a{color:var(--accent)}
 .mapwrap.mini svg,.trmap-w.mini svg{max-height:380px;width:100%;height:auto}
 
 /* Fotoğrafı olmayan kayıt: kart ve sayfa başında koca boş alan bırakmasın */

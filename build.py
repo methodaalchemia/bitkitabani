@@ -1474,14 +1474,11 @@ home = f'''
 </section>
 <section class="sec"><h2>Kültür köprüleri</h2>
 <p class="sec-intro">Anadolu ile Amazon ve And’larda aynı işi gören bitkiler, aynı molekülün iki ayrı ritüelde karşımıza çıkışı: bir bitkinin tek bir kültüre ait olmadığı yerler.</p>
-<a class="harita-k" href="/kopruler/" aria-label="Kültür köprüleri haritası: 16 köprünün tamamı">
-  <figure class="mapwrap mini">{bridge_map()}<figcaption>16 köprünün tamamı haritada →</figcaption></figure></a>
-<div class="startcards">{_kopru_html}</div>
-<p><a class="cta" href="/kopruler/">Bütün köprüler →</a></p></section>
+<figure class="mapwrap mini">{bridge_map()}<figcaption>Haritadaki her yay bir köprü; üzerine gel ya da <a href="/kopruler/">on altısını birden gör →</a></figcaption></figure>
+<div class="startcards">{_kopru_html}</div></section>
 <section class="sec"><h2>Türkiye’de nerede ne derleniyor</h2>
 <p class="sec-intro">Hakemli saha çalışmalarında kaydedilmiş bitkiler, derlendikleri illerle birlikte. Renkli iller kaydı olanlar; bir ile tıkla, o yörenin bitkilerini gör. Kişi ve köy adları yayımlanmaz.</p>
-<a class="harita-k" href="/yoreler/" aria-label="Yöre haritası: saha çalışması olan iller">
-  <figure class="trmap-w mini">{tr_haritasi()}<figcaption>{len(YORE_IL)} il · {len(_YC)} saha çalışması · bütün yöreler →</figcaption></figure></a></section>
+<figure class="trmap-w mini">{tr_haritasi()}<figcaption>Renkli bir ile tıkla ya da <a href="/yoreler/">{len(YORE_IL)} ilin ve {len(_YC)} saha çalışmasının tamamına bak →</a></figcaption></figure></section>
 <section class="sec"><h2>Semboller</h2>
 <p class="sec-intro">Kilim motiflerinden Shipibo kené desenlerine: her motifin anlamı kaynağıyla yazılı, çizimleri açık lisanslı. {len(MOTIFLER)} sembol.</p>
 <div class="motif-mini ana">{_motif_html}</div>
@@ -1501,7 +1498,7 @@ yn = f"""
 <header class="page-head"><span class="eyebrow">Her gün yeni bir bitki</span><h1>Yeni eklenenler</h1><p>Bitki Tabanı her gece yarısı bir kayıt büyüyor. Her yeni bitki öteki kayıtlar gibi geleneksel kullanım, bilimsel kanıt, güvenlik notu ve kaynaklarla gelir. Şu an katalogda {len(P)} bitki var.</p></header>
 {teaser()}
 {('<div class="grid">' + ''.join(card(byId[i]) for i in NEWEST[:12]) + '</div>') if NEWEST else '<p>İlk yeni bitki bu gece geliyor.</p>'}
-{abone("yeni")}<section class="sec"><h2>Takip et</h2><p><a class="cta" href="{IG_URL}" rel="noopener">Instagram’da her gün bir bitki →</a> <a class="cta" href="https://www.youtube.com/@bitkitabani" rel="noopener" target="_blank">YouTube’da kısa videolar →</a></p><p class="tg-cta"><a class="cta" href="https://t.me/bitkitabani" rel="noopener" target="_blank">Telegram kanalında her akşam bir bitki →</a> <span class="muted-s">Bildirimle gelir, e-posta gerekmez.</span></p><p><a class="cta" href="/yeni/rss.xml">RSS ile takip et →</a> <span class="muted-s">Bir RSS okuyucusu her yeni bitkiyi getirir; bildirim ya da e-posta yok.</span></p></section>
+{abone("yeni")}<section class="sec"><h2>Takip et</h2><p><a class="cta" href="{IG_URL}" rel="noopener">Instagram’da her gün bir bitki →</a> <a class="cta" href="https://www.youtube.com/@bitkitabani" rel="noopener" target="_blank">YouTube’da kısa videolar →</a></p><p><a class="cta" href="/yeni/rss.xml">RSS ile takip et →</a> <span class="muted-s">Bir RSS okuyucusu her yeni bitkiyi getirir; bildirim ya da e-posta yok.</span></p></section>
 {('<section class="sec"><h2>Bütün liste</h2><ul class="daylist">' + nl + '</ul></section>') if nl else ''}
 """
 write('/yeni/', page(f'Yeni eklenen bitkiler | Bitki Tabanı', f'Bitki Tabanı’na her gün yeni bir şifalı ya da ritüel bitki ekleniyor. Son eklenenler ve tarihleri.', '/yeni/', yn, 'yeni', image=(f'{BASE}/img/{NEWEST[0]}-960.jpg' if NEWEST and NEWEST[0] in IMG else None)))
