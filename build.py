@@ -2507,7 +2507,10 @@ _redir += '/lisans/ /yontem/#lisans 301\n/veri/ /yontem/#veri-seti 301\n/hikaye/
 # ayrıca yüklenmiş, noindex bir önizleme sayfası). Depo geçmişine bakıp
 # yönlendirme eklemek çalışan bir sayfayı kırabilir.
 _ESKI_ADRES = [
-    # Artık familya listesinde olmayanlar
+    # Artık familya listesinde olmayanlar.
+    # ⚠️ Sayfası olan familyaya yönlendirme yazılmaz: aşağıda kendiliğinden süzülüyor.
+    # (Familya adları normalleştirilince bölünmüş gruplar birleşti, amaranthaceae ve
+    #  burseraceae yeniden kendi sayfasını hak etti; eski kuralları 301 döndürüyordu.)
     ('/familya/amaranthaceae/', '/familya/'),
     ('/familya/burseraceae/', '/familya/'),
     ('/familya/ericaceae/', '/familya/'),
@@ -2520,11 +2523,18 @@ _ESKI_ADRES = [
     ('/hikaye/hititlerin-yaklasik-bayramindan-biri-antahsum/',
      '/hikaye/hititlerin-yaklasik-bayramindan-biri-antahsum-adini/'),
 ]
+_ESKI_ATLANAN = []
 for _eski, _yeni in _ESKI_ADRES:
+    # Yönlendirme, yayımlanan bir sayfanın önüne geçmemeli: /familya/amaranthaceae/
+    # sayfası yeniden üretildiği hâlde eski kural yüzünden 301 dönüyordu.
+    if os.path.exists(os.path.join(OUT, _eski.strip('/'), 'index.html')):
+        _ESKI_ATLANAN.append(_eski); continue
     # Boşluk içeren adres yüzde kodlu yazılmalı: Cloudflare'in _redirects
     # çözümleyicisi satırı boşluktan bölüyor, çiğ boşluk derlemeyi düşürüyor
     # ("Expected exactly 2 or 3 whitespace-separated tokens").
     _redir += f'{_eski.replace(" ", "%20")} {_yeni.replace(" ", "%20")} 301\n'
+if _ESKI_ATLANAN:
+    print('yönlendirme atlandı (sayfası var):', ', '.join(_ESKI_ATLANAN))
 
 # kendi sayfası kapatılan familyalar: /familya/ sayfasındaki kendi bölümlerine
 _redir += ''.join(f'/familya/{fam_slug(f)}/ /familya/#{fam_slug(f)} 301\n' for f, n in sorted(FAMC.items()) if f in FAM_BILGI and n < FAM_MIN)
