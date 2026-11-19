@@ -220,7 +220,8 @@ def yore_html(pid):
     for c in L: by.setdefault(c['il'], []).append(c)
     items = []
     for il in sorted(by, key=_trkey0):
-        ad = f'<a href="/yore/{_ilslug(il)}/">{e(il)}</a>' if il in YORE_SAYFA else e(il)
+        _ih = f'/yore/{_ilslug(il)}/' if il in YORE_SAYFA else f'/yoreler/#il-{_ilslug(il)}'
+        ad = f'<a href="{_ih}">{e(il)}</a>'
         items.append(f'<li><b>{ad}</b>' + (' (' + ', '.join(e(c['ilce']) for c in by[il] if c['ilce']) + ')' if any(c['ilce'] for c in by[il]) else '') + ' · ' + '; '.join(_cal_ref(c) + _ydet(c, pid) for c in by[il]) + '</li>')
     return (f'<aside class="yore-k"><h3>Saha çalışmalarında kaydedildiği yöreler</h3><ul>{"".join(items)}</ul>'
             f'<p class="muted-s"><a href="/yoreler/">Bütün yöreler haritada →</a></p></aside>')
@@ -648,6 +649,58 @@ def toc_and_ids(html):
     nav_ = '<div class="toc"><p class="toc-h"><span class="eyebrow">Bu sayfada</span></p><nav aria-label="Bu sayfada"><ol>' + ''.join(f'<li><a href="#{s}">{t}</a></li>' for s, t in items) + '</ol></nav></div>'
     return html.replace('<!--TOC-->', nav_)
 
+# ---------- komşu kayıtlar (B4: iç bağlantı dağılımı) ----------
+# Bağlar hub'larda toplanmıştı: katalogdan gelen bağ her kayda eşit düşüyor ama kayıtlar
+# arasında bağ yok denecek kadar azdı. En az bağ alan kayıtlar Amazon ve And bitkileri:
+# saha çalışması kaydı yok, karşılaştırması yok, motifi yok. Burada her kayda aynı bölgeyi
+# ve aynı kullanımı paylaşan altı komşu veriliyor; sıralama "bağı en az olan önce" diye
+# yapıldığı için yeni bağlar ucu kalın değil, ince olan tarafa düşüyor.
+def _bag_puani(q):
+    """Kaydın hâlihazırda kaç yerden bağ aldığı (yaklaşık)."""
+    n = len(EXTRA.get(q, []))
+    n += sum(1 for b in BR if b['a'] == q or b.get('b') == q)
+    n += sum(1 for c in KARS if c['a'] == q or c['b'] == q)
+    n += len(MOTIF_BITKI.get(q, []))
+    n += len(YORE_BITKI.get(q, []))
+    n += sum(1 for t in TARIFLER if t['bitki'] == q)
+    return n
+
+def _komsu_hesapla(n=6):
+    """Bütün katalog için bir kerede hesaplanır. İki ölçüt: kaydın hâlihazırda aldığı bağ
+    (az olan önce) ve bu turda kaç kez komşu gösterildiği (az olan önce). İkincisi olmadan
+    bağlar birkaç ince kaydın üstünde yığılıyordu — 178 bağ alan tek bir kayıt çıkmıştı."""
+    puan = {q: _bag_puani(q) for q in byId}
+    kullanim = {q: 0 for q in byId}
+    sira = sorted(byId, key=lambda q: (puan[q], _trkey0(byId[q]['tr'])))
+    out = {}
+    for pid in sira:
+        p = byId[pid]
+        bol, kat = set(p['bolge']), set(p['kat'])
+        aday = [q for q in byId if q != pid and (set(byId[q]['bolge']) & bol) and (set(byId[q]['kat']) & kat)]
+        if len(aday) < 3:   # kullanım eşleşmesi tutmazsa yalnız bölge
+            aday = [q for q in byId if q != pid and (set(byId[q]['bolge']) & bol)]
+        zaten = set(related(pid))
+        aday = [q for q in aday if q not in zaten]
+        aday.sort(key=lambda q: (kullanim[q], puan[q], _trkey0(byId[q]['tr'])))
+        sec = aday[:n]
+        for q in sec: kullanim[q] += 1
+        out[pid] = sec
+    return out
+
+KOMSU = None
+def komsular(pid, n=6):
+    global KOMSU
+    if KOMSU is None: KOMSU = _komsu_hesapla(n)
+    return KOMSU.get(pid, [])
+
+def komsu_html(pid):
+    ks = komsular(pid)
+    if not ks: return ''
+    chips = ''.join(f'<a class="chip" href="/{q}/">{e(byId[q]["tr"])}</a>' for q in ks)
+    return ('<section class="sec"><h2>Aynı bölge ve kullanımda</h2>'
+            '<p class="muted-s">Aynı kültür bölgesinden ve aynı kullanım başlığından başka kayıtlar.</p>'
+            f'<nav class="chips">{chips}</nav></section>')
+
 # ---------- motif ↔ bitki bağı (B4: iç bağlantı) ----------
 # Bağ motifler.py'de motiften bitkiye yazılı; bitki sayfasında karşılığı yoktu.
 # Dışarıda bırakılan çift: /semboller/karanfil-motifi/ ile /karanfil/ — motifteki karanfil
@@ -775,6 +828,7 @@ for i, p in enumerate(P):
   {der_sss}
   {relhtml}
   {motif_bag(pid)}
+  {komsu_html(pid)}
   <section class="sec"><h2>Kaynaklar</h2>{refs(p)}</section>
   <aside class="disclaimer" role="note"><b>Tıbbi tavsiye değildir.</b> Bu sayfa geleneksel kullanımları kültürel bir kayıt olarak anlatır ve bilimsel bilgiyi özetler; teşhis ya da tedavi önerisi değildir. {e(p["tr"])} ya da başka bir bitkiyi kullanmadan önce, özellikle ilaç kullanıyorsan, hamileysen, emziriyorsan ya da bir hastalığın varsa hekimine veya eczacına danış. Zehirlenme şüphesinde Ulusal Zehir Danışma Merkezi’ni (UZEM) <b>114</b> numaradan ara.</aside>
   <p class="updated">Hazırlayan: <a href="/yontem/#hazirlayan">Edanaz Tınmazlar</a> · {('Gözden geçiren: <a href="/yontem/#gozden">' + e(GZ_KISI['ad']) + '</a> (<time datetime="' + GZ[pid] + '">' + tr_date(datetime.date.fromisoformat(GZ[pid])).rsplit(',', 1)[0] + '</time>) · ') if GZ_KISI and pid in GZ else ''}{('Eklendi: <time datetime="' + YENI[pid].isoformat() + '">' + tr_date(YENI[pid]).rsplit(',', 1)[0] + '</time> · ') if pid in YENI else ''}Son gözden geçirme: <time datetime="{CONTENT_DATE}">{DATE_TXT}</time></p>

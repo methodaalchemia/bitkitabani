@@ -123,20 +123,20 @@ jobs:
           # ayrılıyor ve push "non-fast-forward / branch is behind" diye reddediliyor.
           # Doğrusu: tepede hâlâ botun kendi commit'i varsa tazele, yoksa yeni commit aç.
           MESAJ="Görseller ve site güncellendi [bot]"
-          for i in 1 2 3 4 5; do
+          for i in 1 2 3 4 5 6 7 8; do
             if git push; then exit 0; fi
-            sleep $(( (RANDOM % 10) + 5 ))     # araya giren push'la yarışmayalım
+            sleep $(( (RANDOM % 30) + 15 ))    # araya giren push'la yarışmayalım
             git pull --rebase -X ours || { git rebase --abort || true; exit 1; }
             python3 build.py
             ekle
-            if git diff --cached --quiet; then continue; fi
-            if [ "$(git log -1 --format=%s)" = "$MESAJ" ]; then
-              git commit --amend --no-edit
-            else
-              git commit -m "$MESAJ"
+            if git diff --cached --quiet; then
+              # Rebase'den sonra yazacak bir şey kalmadı: başka bir koşu aynı içeriği
+              # zaten yayımlamış demektir, bu koşunun işi bitti.
+              echo "aynı içerik başka bir koşuda yayımlanmış, bırakılıyor"; exit 0
             fi
+            git commit -m "$MESAJ"           # amend değil: tepedeki başkasının commit'i yeniden yazılmasın
           done
-          echo "beş denemede push edilemedi"; exit 1
+          echo "sekiz denemede push edilemedi — büyük ihtimalle eşzamanlı başka bir koşu yazıyordu"; exit 1
       - name: IndexNow bildirimi (yayına alınması için kısa bekleme)
         if: always()
         continue-on-error: true

@@ -320,6 +320,13 @@ def run(G):
         if _rm:
             body_s += '<section class="sec"><h2>Read more</h2><div class="brlinks">' + ''.join(f'<a class="chip" href="{u}">{e(t)}</a>' for u, t in _rm) + '</div></section>'
         body_s += f'<section class="sec"><h2>Similar plants</h2><div class="grid sim">{"".join(card(q) for q in similar)}</div></section>'
+        # B4: kayıtlar arası bağ — aynı bölge ve kullanımdan komşular (TR tarafıyla aynı hesap)
+        _ks = [q for q in G['komsular'](pid) if q in EN]
+        if _ks:
+            _kc = ''.join(f'<a class="chip" href="/en/{q}/">{e(name(byId[q]))}</a>' for q in _ks)
+            body_s += ('<section class="sec"><h2>Same region and use</h2>'
+                       '<p class="muted-s">Other records from the same culture area and the same use.</p>'
+                       f'<nav class="chips">{_kc}</nav></section>')
         body_s += sec('Sources', refs(p))
         meta = f'''<dl class="meta"><div><dt>Other names</dt><dd>{e(x["other"])}</dd></div><div><dt>Part used</dt><dd>{e(x["part"])}</dd></div><div><dt>Region</dt><dd>{"<br>".join(dot(r) + " " + e(REG_EN[r]) for r in p["bolge"])}</dd></div><div><dt>Use</dt><dd>{", ".join(KAT_EN[c] for c in p["kat"])}</dd></div></dl>'''
         body = f'''
