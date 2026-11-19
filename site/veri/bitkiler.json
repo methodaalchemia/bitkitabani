@@ -3596,5 +3596,19 @@
   "guvenlik": "Dikkat",
   "turkiyede_yasal_durum": "",
   "url": "https://bitkitabani.com/sakayik/"
+ },
+ {
+  "id": "yilankoku",
+  "turkce_ad": "Yılankökü",
+  "bilimsel_ad": "Rauvolfia serpentina (L.) Benth. ex Kurz",
+  "familya": "Apocynaceae (zakkumgiller)",
+  "diger_adlar": "Türkçe yılankökü, Hint yılankökü; İngilizce rauwolfia, Indian snakeroot; Hintçe sarpagandha. DSÖ monografı droğu \"Radix Rauwolfiae\" — kurutulmuş kök — diye tanımlıyor. TİTCK ve AB monografı yok. Modern tansiyon ilacı reserpinin kaynağı; bu yüzden kataloğumuzdaki en \"ilaç gibi\" bitki.",
+  "bolgeler": "Asya ve Sibirya",
+  "kategoriler": "Şifa; Zehirli",
+  "kullanilan_kisim": "Kurutulmuş kökü",
+  "kanit_duzeyi": "Klinik",
+  "guvenlik": "Genelde güvenli",
+  "turkiyede_yasal_durum": "",
+  "url": "https://bitkitabani.com/yilankoku/"
  }
 ]

@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 257 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 258 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -8187,3 +8187,38 @@ Karıştırma riski: ⚠️ Türkiye’de yabani şakayıklar (Paeonia mascula, 
 
 ### İlginç bilgi
 Çin tıbbının en temel droglarından biri, Avrupa’da resmî bir yere sahip değil: Avrupa İlaç Ajansı 2015’te monograf yerine kamu açıklaması yayımladı. Oysa aynı kökün özütü Çin’de romatoid artrit için ruhsatlı ilaç ve 39 çalışmalık bir meta-analizi var. Bir bitkinin "resmî" durumu kıtaya göre değişiyor — ve Türkiye’de bahçelerde süs için yetişen şakayık ile Çin eczanesindeki báisháo aynı cinsten ayrı türler.
+
+## Yılankökü (Rauvolfia serpentina (L.) Benth. ex Kurz)
+
+URL: https://bitkitabani.com/yilankoku/
+Familya: Apocynaceae (zakkumgiller) · Bölge: Asya ve Sibirya · Kullanılan kısım: Kurutulmuş kökü
+Bilimsel kanıt: Klinik · Güvenlik: Genelde güvenli
+
+### Geleneksel kullanım
+- DSÖ monografı (1999): "Klinik veriyle desteklenen kullanım": hafif esansiyel hipertansiyon — genellikle sıvı tutulumunu önlemek için bir diüretikle birlikte. Farmakopelerde: sinir ve ruh hastalıklarında sakinleştirici. Monografın kontrendikasyon ve uyarı bölümleri bir reçeteli ilacınki kadar uzun: depresyon öyküsü (özellikle intihar eğilimi), MAO inhibitörü tedavisi, aktif peptik ülser, sinüs düğümü bozuklukları, ülseratif kolit, epilepsi, böbrek yetmezliği, elektrokonvülsif tedavi.
+- Türkiye: TİTCK Tıbbi Bitki Listesi’nde yılankökü yok; Türkiye’de yetişmiyor ve aktarlarda bulunmaz. Reserpin içeren ilaçlar Türkiye’de de yıllarca tansiyon tedavisinde kullanıldı; bugün yerini yeni ilaç sınıflarına bıraktı.
+- Hindistan — sarpagandha: Ayurveda’nın yılan ısırığı, uykusuzluk ve "delilik" bitkisi; adı Sanskritçe sarpagandha (yılan kokusu). 1950’lerde kökünden ayrılan reserpin, modern tıbbın ilk etkili tansiyon ve antipsikotik ilaçlarından oldu — ve bir bitkinin sentetik olmayan tek bir maddeyle ilaç rafına girmesinin ders kitabı örneği.
+
+### Hazırlama
+Bu kayıt kullanım için doz vermiyor: DSÖ monografındaki dozlar (toz drog günde 200 mg, idame 50–300 mg; reserpin alkaloitlerine göre ayarlanarak, en az on günlük aralıklarla küçük artışlarla) hekim gözetiminde kullanılan bir ilacın dozlarıdır. Yılankökü kendi başına kullanılacak bir bitki değildir; aktar ya da takviye ürünü olarak alınmamalıdır.
+
+### Bilim ne diyor
+Yılankökü, kataloğumuzda bitkiden ilaca geçişin en net örneği: kökündeki reserpin ruhsatlı bir tansiyon ilacı. 2016 Cochrane derlemesi reserpinin birincil hipertansiyondaki etkisini inceledi: 237 katılımcılı dört randomize çalışmada reserpin plaseboya göre sistolik kan basıncını anlamlı ölçüde düşürdü ve yazarlar etkiyi "kabaca öteki birinci basamak tansiyon ilaçları kadar" diye niteledi; ama çalışma sayısı az olduğu için doz-yanıt ilişkisi ve doza bağlı güvenlik profili belirlenemedi. DSÖ monografı da hipertansiyonu "klinik veriyle desteklenen" tek kullanım sayıyor. Kanıt düzeyini "klinik" yazıyoruz — ama bu kanıt bitkinin çayına değil, kökünden ayrılmış ve dozu ayarlanmış alkaloide aittir. Bitkinin kendisi için aynı sonuç geçerli değildir: alkaloit içeriği kökten köke değişir ve dozlanamaz.
+
+### Güvenlik
+Depresyona yol açabilir — DSÖ monografının en ağır uyarısı: ilaç kaynaklı depresyon kesildikten sonra aylarca sürebilir ve intiharla sonuçlanacak kadar ağır olabilir; depresyon belirtisi (çökkünlük, sabah erken uyanma, iştahsızlık, cinsel isteksizlik, kendini küçümseme) başlar başlamaz kesilmeli. Depresyon öyküsü olanlarda, MAO inhibitörü kullananlarda, aktif ülserde, sinüs düğümü bozukluklarında, ülseratif kolitte, epilepside ve böbrek yetmezliğinde kontrendike. Uyanıklığı azaltır; araç ve makine kullanımı sakıncalıdır. Bradikardi ve aritmi (özellikle digoksin ya da kinidinle birlikte), burun tıkanıklığı, ödem, mide salgısında artış bildirilmiş. Gebelikte ve emzirirken kullanılmaz. Güvenlik düzeyi "düşük": bu bir bitki değil, bitki biçiminde bir ilaçtır.
+
+### İlaç etkileşimleri
+- Digoksin ve kinidin: DSÖ monografı birlikte kullanımda bradikardi ve aritmi riskinin arttığını yazıyor.
+- MAO inhibitörleri: Monografın kontrendikasyonu: MAO inhibitörü tedavisi sırasında ve hemen sonrasında kullanılmaz.
+- Alkol ve merkezi sinir sistemi depresanları, antihipertansifler, diüretikler: Monograf bunların yılankökünün etkisini güçlendirebileceğini yazıyor: sedasyon derinleşir, kan basıncı fazla düşer.
+- Levodopa ve trisiklik antidepresanlar: Reserpin beyinde monoaminleri boşalttığı için antidepresanların ve Parkinson ilaçlarının etkisiyle çatışır; monograf etkileşim listesinde sayıyor.
+
+### Doğada
+Nerede yetişir: Hindistan, Bangladeş, Sri Lanka ve Güneydoğu Asya’nın nemli ormanları; aşırı toplama nedeniyle doğada azalmış, CITES Ek II’de. Türkiye’de yetişmiyor.
+Toplama mevsimi: Yaz başında beyaz-pembe çiçek demetleri; kök 3–4 yıllık bitkilerden sonbaharda sökülür.
+Yöresel adlar: Yılankökü, Hint yılankökü; Sanskritçe sarpagandha, Hintçe chandrika.
+Karıştırma riski: Aynı cinsin Afrika türü (Rauvolfia vomitoria) de reserpin kaynağıdır; "yılankökü" adı Türkçede başka bitkiler (Polygala senega gibi) için de kullanılıyor. Hiçbiri kendi başına kullanılacak bitki değildir.
+
+### İlginç bilgi
+Bir bitki kökünden, ilaç tarihinin en önemli maddelerinden biri çıktı: reserpin, 1950’lerde hem ilk etkili tansiyon ilaçlarından hem de ilk antipsikotiklerden biri oldu ve beyinde nörotransmitterlerin nasıl depolandığını anlamanın kapısını açtı. DSÖ monografı bu yüzden yılankökünü bir çay bitkisi gibi değil, bir reçeteli ilaç gibi yazıyor: iki sayfa kontrendikasyon, depresyon ve intihar uyarısı, on günlük doz ayarlama aralıkları. Kataloğumuzda "doğal" ile "zararsız" arasındaki mesafenin en uzun olduğu kayıt.
