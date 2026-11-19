@@ -639,6 +639,27 @@ def toc_and_ids(html):
     nav_ = '<div class="toc"><p class="toc-h"><span class="eyebrow">Bu sayfada</span></p><nav aria-label="Bu sayfada"><ol>' + ''.join(f'<li><a href="#{s}">{t}</a></li>' for s, t in items) + '</ol></nav></div>'
     return html.replace('<!--TOC-->', nav_)
 
+# ---------- motif ↔ bitki bağı (B4: iç bağlantı) ----------
+# Bağ motifler.py'de motiften bitkiye yazılı; bitki sayfasında karşılığı yoktu.
+# Dışarıda bırakılan çift: /semboller/karanfil-motifi/ ile /karanfil/ — motifteki karanfil
+# Dianthus (çiçek), katalogdaki Syzygium aromaticum (baharat); aynı ad, akraba olmayan iki bitki.
+MOTIF_BAG_DISI = {('karanfil-motifi', 'karanfil')}
+MOTIF_BITKI = {}
+for _mo in MOTIFLER:
+    for _x, _n in (_mo.get('bitkiler') or []):
+        if (_mo['slug'], _x) in MOTIF_BAG_DISI: continue
+        MOTIF_BITKI.setdefault(_x, []).append((_mo, _n))
+
+def motif_bag(pid):
+    """Bitki sayfasındaki 'Sembollerde' bölümü: çizim, motif adı ve bağın ne olduğu."""
+    ms = MOTIF_BITKI.get(pid) or []
+    if not ms: return ''
+    li = ''.join(f'<li><a class="mb-a" href="/semboller/{m["slug"]}/">'
+                 f'<img class="motif-svg" src="/img/motif/{m["slug"]}.svg" width="512" height="512" alt="{e(m["ad"])} motifi çizimi" loading="lazy" decoding="async">'
+                 f'<b>{e(m["ad"])}</b></a><span>{e(n)}</span></li>' for m, n in ms)
+    return ('<section class="sec"><h2>Sembollerde</h2><p class="muted-s">Motifin bu bitkiyi gösterdiği ileri sürülmez; '
+            'bağın ne olduğu her satırda yazılıdır.</p><ul class="motif-bag">' + li + '</ul></section>')
+
 # ---------- bitki sayfaları ----------
 for i, p in enumerate(P):
     pid = p['id']; rel = related(pid)
@@ -744,6 +765,7 @@ for i, p in enumerate(P):
   {der_hata}
   {der_sss}
   {relhtml}
+  {motif_bag(pid)}
   <section class="sec"><h2>Kaynaklar</h2>{refs(p)}</section>
   <aside class="disclaimer" role="note"><b>Tıbbi tavsiye değildir.</b> Bu sayfa geleneksel kullanımları kültürel bir kayıt olarak anlatır ve bilimsel bilgiyi özetler; teşhis ya da tedavi önerisi değildir. {e(p["tr"])} ya da başka bir bitkiyi kullanmadan önce, özellikle ilaç kullanıyorsan, hamileysen, emziriyorsan ya da bir hastalığın varsa hekimine veya eczacına danış. Zehirlenme şüphesinde Ulusal Zehir Danışma Merkezi’ni (UZEM) <b>114</b> numaradan ara.</aside>
   <p class="updated">Hazırlayan: <a href="/yontem/#hazirlayan">Edanaz Tınmazlar</a> · {('Gözden geçiren: <a href="/yontem/#gozden">' + e(GZ_KISI['ad']) + '</a> (<time datetime="' + GZ[pid] + '">' + tr_date(datetime.date.fromisoformat(GZ[pid])).rsplit(',', 1)[0] + '</time>) · ') if GZ_KISI and pid in GZ else ''}{('Eklendi: <time datetime="' + YENI[pid].isoformat() + '">' + tr_date(YENI[pid]).rsplit(',', 1)[0] + '</time> · ') if pid in YENI else ''}Son gözden geçirme: <time datetime="{CONTENT_DATE}">{DATE_TXT}</time></p>
@@ -1705,7 +1727,8 @@ def motif_og(mo):    # paylaşım önizlemesi SVG oluşturamıyor; PNG varsa o, 
 for mo in MOTIFLER:
     open(os.path.join(MOTIF_DIR, f'{mo["slug"]}.svg'), 'w', encoding='utf-8').write(motif_svg(mo, dosya=True))
     path = f'/semboller/{mo["slug"]}/'
-    bit = ''.join(f'<li><a href="/{x}/"><b>{e(byId[x]["tr"])}</b></a>: {e(n)}</li>' for x, n in mo['bitkiler'] if x in byId)
+    bit = ''.join(f'<li><a href="/{x}/"><b>{e(byId[x]["tr"])}</b></a>: {e(n)}</li>' for x, n in mo['bitkiler']
+                  if x in byId and (mo['slug'], x) not in MOTIF_BAG_DISI)
     same = [o for o in MOTIFLER if o['tema'] == mo['tema'] and o is not mo]
     _ilg = [o for o in MOTIFLER if o['slug'] in (mo.get('ilgili') or [])]
     kay = '<ol class="refs">' + ''.join((f'<li id="k{j}"><a href="{e(u)}" target="_blank" rel="noopener">{e(_apa(u, t))}</a></li>' if u else f'<li id="k{j}"><cite>{e(_apa(u, t))}</cite></li>') for j, (t, u) in enumerate(mo['kaynaklar'], 1)) + '</ol>'
