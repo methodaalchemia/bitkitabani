@@ -116,6 +116,18 @@ const LAUNCH = 14; // 12 post + yeni stille yeniden paylaşılan ilk 2
 function trHour(d = new Date()) { return new Date(d.getTime() + 3 * 3600e3).getUTCHours(); }
 function trH(d = new Date()) { const x = new Date(d.getTime() + 3 * 3600e3); return x.getUTCHours() + x.getUTCMinutes() / 60; }   // ondalıklı saat (20.5 = 20:30)
 // Paylaşım saatleri (Türkiye): akşam 20:30 günlük bitki; öğlen 12:30 ek postlar; Threads 08:30 kavram, 12:30 'Biliyor muydunuz?', 15:00 yöresel ad sorusu, 17:30 rehber/tarif/sembol, 21:30 soru.
+// Yayın öncesi tek kontrol: seslendirmenin üretildiği metin hangi sayfadan geldi?
+// (tools/reel.py ses üretmeden önce <video>.ses.json yazar.) Eşleşmiyorsa video yayımlanmaz.
+async function sesKapi(yol, slug) {
+  try {
+    const r = await igAsset(yol);
+    if (!r.ok) return { ok: false, sebep: 'ses kaydı yok' };
+    const k = await r.json();
+    if (!k.slug) return { ok: false, sebep: 'ses kaydında slug yok' };
+    if (k.slug !== slug) return { ok: false, sebep: 'ses kaydı ' + k.slug + ', video ' + slug };
+    return { ok: true, sebep: k.geriye_donuk ? 'geriye dönük kayıt' : 'tamam' };
+  } catch (e) { return { ok: false, sebep: 'ses kaydı okunamadı' }; }
+}
 async function igPost(env) {
   const st = (await call(env, 'ig:state', 'get')) || {};
   if (st.reelPending && st.token) {   // video işlenince yayımla
@@ -183,7 +195,9 @@ async function igPost(env) {
       } catch (e) { st.storyError = String(e.message || e).slice(0, 200); }
     }
     if (!launching && post.reel) {
-      try {
+      const g = await sesKapi('p/' + n + '/reel.ses.json', post.id);
+      if (!g.ok) { st.reelError = 'kapı: ' + g.sebep; }
+      else try {
         const rid = (await igJson(await fetch(IG + '/' + st.uid + '/media', form({ media_type: 'REELS', video_url: post.reel, caption: post.caption, share_to_feed: 'true' })))).id;
         st.reelPending = rid; st.reelAt = Date.now(); st.reelError = null;
       } catch (e) { st.reelError = String(e.message || e).slice(0, 200); }
@@ -336,16 +350,16 @@ async function ytPost(env, force) {   // günde YT_GUNLUK Shorts, 10:00–22:00 
   if (!force && ((st.dayN || 0) >= YT_GUNLUK || trH() < 10 || trH() > 22)) return { skipped: 'sırası değil' };
   if (st.errorAt && Date.now() - st.errorAt < 3 * 3600e3 && !force) return { skipped: 'hata sonrası bekleniyor' };
   try {
-    let videoUrl, meta, key;
+    let videoUrl, meta, key, sesYol, sesSlug;
     const cay = await (await igAsset('cay/index.json')).json().catch(() => ({}));
     const bekleyen = Object.keys(cay).filter(k => !(st.done || {})['cay:' + k]);
     if (bekleyen.length) {
       const pid = bekleyen[0], c = cay[pid];
-      key = 'cay:' + pid; videoUrl = c.reel; meta = ytMeta(c.tr, pid, c.caption, c.tarif || null);
+      key = 'cay:' + pid; videoUrl = c.reel; sesYol = 'cay/' + pid + '/reel.ses.json'; sesSlug = pid; meta = ytMeta(c.tr, pid, c.caption, c.tarif || null);
     } else if (Object.keys(await (await igAsset('yt/index.json')).json().catch(() => ({}))).some(k => !(st.done || {})['yt:' + k])) {
       const ytx = await (await igAsset('yt/index.json')).json();
       const pid = Object.keys(ytx).find(k => !(st.done || {})['yt:' + k]), c = ytx[pid];
-      key = 'yt:' + pid; videoUrl = c.reel; meta = ytMeta(c.tr, pid, c.caption, c.tarif || null);
+      key = 'yt:' + pid; videoUrl = c.reel; sesYol = 'yt/' + pid + '/reel.ses.json'; sesSlug = pid; meta = ytMeta(c.tr, pid, c.caption, c.tarif || null);
     } else {
       const ig = (await call(env, 'ig:state', 'get')) || {};
       if (!ig.lastPlant || ig.last !== day) return { skipped: 'günün videosu yok' };
@@ -354,8 +368,10 @@ async function ytPost(env, force) {   // günde YT_GUNLUK Shorts, 10:00–22:00 
       if (!post.reel) return { skipped: 'reel yok' };
       key = 'gun:' + post.id; if ((st.done || {})[key]) return { skipped: 'zaten yüklendi' };
       const tr = (post.caption || '').split(/[:\n]/)[0].replace(/[^\p{L}\s]/gu, '').trim() || post.id;
-      videoUrl = post.reel; meta = ytMeta(tr, post.id, post.caption, null);
+      videoUrl = post.reel; sesYol = 'p/' + (ig.n - 1) + '/reel.ses.json'; sesSlug = post.id; meta = ytMeta(tr, post.id, post.caption, null);
     }
+    const g = await sesKapi(sesYol, sesSlug);   // yayın kapısı
+    if (!g.ok) throw new Error('kapı: ' + g.sebep);
     const id = await ytUpload(env, st, videoUrl, meta);
     st.done = st.done || {}; st.done[key] = id; st.last = day; st.day = day; st.dayN = (st.dayN || 0) + 1; st.n = (st.n || 0) + 1; st.lastVideo = 'https://youtube.com/shorts/' + id; st.error = null;
   } catch (e) { st.error = String(e.message || e).slice(0, 300); st.errorAt = Date.now(); }

@@ -5,7 +5,7 @@ Ses: Microsoft Edge'in Türkçe sinir ağı sesi (edge-tts, tr-TR-EmelNeural). A
 üretilir ve videoya gömülür. edge-tts kurulu değilse ya da ulaşılamazsa video yine üretilir: altyazı tahmini
 zamanlamayla gösterilir, arkada yalnızca ambiyans müziği çalar.
 """
-import os, re, json, asyncio, shutil, subprocess, tempfile, random, time
+import os, re, json, asyncio, shutil, subprocess, tempfile, random, time, hashlib, datetime
 from PIL import Image, ImageDraw, ImageFilter
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -130,6 +130,74 @@ def _estimate(s):
         d = tot * k / sum(w8); out.append([t, t + d * 0.92, w]); t += d
     return out, tot + 0.1
 
+# ---------- ses kaydı ve yayın kapısı ----------
+# 19 Kasım 2026: bir videonun seslendirmesi yanlış metinden üretildi ve bu gözden kaçtı.
+# Kapı, elle kontrole değil dosyalara dayanır:
+#   1. Ses üretilmeden ÖNCE metnin hangi sayfadan geldiği (slug/adres) <video>.ses.json'a yazılır.
+#   2. Okunacak metin <video>.ses.txt'ye düz metin olarak kaydedilir; seslendirme YALNIZCA bu
+#      dosyadan okunur, böylece metin ile ses aynı işin çıktısı olur.
+#   3. Yayından önce kapi() çalışır: kayıttaki slug videonun konusuyla aynı değilse hat durur.
+
+YONERGE_IZI = ('ses tonu', 'üslupla', 'üslupta', 'seslendir', 'aşağıdaki metni', 'oku:', 'voice:', 'style:', 'instruction')
+
+def _kucuk(t): return (t or '').replace('I', 'ı').replace('İ', 'i').lower()
+def _taban(out): return os.path.splitext(out)[0]
+def _ozet(metin): return hashlib.sha256(metin.encode('utf-8')).hexdigest()[:16]
+
+def ses_kaydi(p, sents, out, sesli=None, not_=''):
+    """Seslendirmeden ÖNCE çağrılır: metnin kaynağını ve kendisini diske yazar."""
+    t = _taban(out); metin = '\n'.join(sents)
+    open(t + '.ses.txt', 'w', encoding='utf-8').write(metin + '\n')
+    k = {'slug': p['id'], 'adres': 'https://bitkitabani.com/%s/' % p['id'], 'tr': p.get('tr', ''),
+         'metin_dosyasi': os.path.basename(t) + '.ses.txt', 'ozet': _ozet(metin),
+         'yazilma': datetime.datetime.now().isoformat(timespec='seconds')}
+    if sesli is not None: k['sesli'] = bool(sesli)
+    if not_: k['not'] = not_
+    json.dump(k, open(t + '.ses.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    return k
+
+def okunacak(out):
+    """Seslendirilecek cümleler yalnızca kayıttan okunur (tek kaynak)."""
+    return [x.strip() for x in open(_taban(out) + '.ses.txt', encoding='utf-8').read().split('\n') if x.strip()]
+
+def kayda_ekle(out, **alanlar):
+    t = _taban(out) + '.ses.json'
+    k = json.load(open(t, encoding='utf-8')); k.update(alanlar)
+    json.dump(k, open(t, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    return k
+
+def _ses_sakla(segs, tmp, hedef):
+    """Seslendirmenin tamamı metnin yanında dursun diye tek mp3'e birleştirilir."""
+    parcalar = [s[2] for s in segs if s[2] and os.path.exists(s[2])]
+    if not parcalar: return False
+    lst = os.path.join(tmp, 'ses-liste.txt')
+    open(lst, 'w', encoding='utf-8').write(''.join("file '%s'\n" % x for x in parcalar))
+    r = subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', lst, '-c', 'copy', hedef])
+    return r.returncode == 0 and os.path.exists(hedef)
+
+def kapi(out, slug):
+    """Yayın öncesi tek kontrol. (tamam, sebep) döner; tamam değilse video yayımlanmaz."""
+    t = _taban(out)
+    if not os.path.exists(out): return False, 'video yok'
+    try: k = json.load(open(t + '.ses.json', encoding='utf-8'))
+    except Exception: return False, 'ses kaydı yok'
+    if not k.get('slug'): return False, 'ses kaydında slug yok'
+    if k['slug'] != slug: return False, 'ses kaydı %s, video %s' % (k['slug'], slug)
+    if k.get('sesli') is False: return True, 'sessiz video'
+    try: metin = open(t + '.ses.txt', encoding='utf-8').read().strip()
+    except Exception: return False, 'metin dosyası yok'
+    if not metin: return False, 'metin boş'
+    if k.get('ozet') and k['ozet'] != _ozet(metin): return False, 'metin kayıttan sonra değişmiş'
+    ad = _kucuk(k.get('tr') or '').split()
+    if ad and ad[0] not in _kucuk(metin): return False, 'metinde "%s" geçmiyor' % ad[0]
+    dusuk = _kucuk(metin)
+    for iz in YONERGE_IZI:
+        if iz in dusuk: return False, 'metinde yönerge izi: "%s"' % iz
+    ses = t + '.ses.mp3'
+    if not os.path.exists(ses) or _dur(ses) <= 0: return False, 'ses dosyası yok'
+    return True, 'tamam'
+
+
 def voice(sents, tmp, gem=None):
     """Her cümle ayrı seslendirilir: [(başlangıç, süre, mp3 ya da None, kelimeler)] ve sesli mi?"""
     if gem is None: gem = bool(os.environ.get('GEMINI_API_KEY'))
@@ -250,7 +318,11 @@ def make(p, m, img_path, out, photos=None):
     tmp = tempfile.mkdtemp()
     try:
         sents = script(p, m)
+        ses_kaydi(p, sents, out)          # ses üretilmeden ÖNCE: metin ve kaynağı diske yazılır
+        sents = okunacak(out)             # seslendirme yalnızca o dosyadan okunur
         segs, spoken, total = voice(sents, tmp)
+        _ses_sakla(segs, tmp, _taban(out) + '.ses.mp3')
+        kayda_ekle(out, sesli=bool(spoken), ses_dosyasi=os.path.basename(_taban(out)) + '.ses.mp3', sure=round(total, 1))
         total += 0.5
         credits = ''
         if photos is None:   # ana fotoğraf + varsa tools/tanima.py'nin seçtiği çiçekli hâl, çizim, kurutulmuş hâl
@@ -295,7 +367,14 @@ def make(p, m, img_path, out, photos=None):
                  '-c:v', 'libx264', '-preset', 'medium', '-crf', '22', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '128k', '-movflags', '+faststart', out]
         r = subprocess.run(args, capture_output=True, text=True)
         if r.returncode != 0: print('reel hatası:', r.stderr[-600:]); return False
-        json.dump({'sesli': spoken, 'metin': sents, 'sure': round(total, 1)}, open(os.path.splitext(out)[0] + '.json', 'w', encoding='utf-8'), ensure_ascii=False)
+        json.dump({'sesli': spoken, 'metin': sents, 'sure': round(total, 1), 'slug': p['id']},
+                  open(os.path.splitext(out)[0] + '.json', 'w', encoding='utf-8'), ensure_ascii=False)
+        tamam, sebep = kapi(out, p['id'])   # yayın kapısı: geçmezse video bırakılmaz
+        if not tamam:
+            print('reel: KAPI DURDURDU —', p['id'], '—', sebep)
+            for x in (out, _taban(out) + '.ses.mp3'):
+                if os.path.exists(x): os.remove(x)
+            return False
         return True
     finally:
         shutil.rmtree(tmp, ignore_errors=True)

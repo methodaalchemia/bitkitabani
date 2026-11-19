@@ -18,7 +18,10 @@ def main():
         od = os.path.join(out_root, pid); os.makedirs(od, exist_ok=True)
         hedef = os.path.join(od, 'reel.mp4')
         ok = True if os.path.exists(hedef) else reel.make(p, ig2.text_for(p), img, hedef)
-        print('cay reel:', pid, 'hazır' if ok and os.path.exists(hedef) else ('ok' if ok else 'HATA'))
+        if ok:   # yayın kapısı: ses kaydındaki slug videonun konusuyla aynı mı
+            ok, sebep = reel.kapi(hedef, pid)
+            if not ok: print('cay reel: KAPI DURDURDU —', pid, '—', sebep)
+        print('cay reel:', pid, 'hazır' if ok else 'HATA')
         if ok: done[pid] = {'reel': f'https://bitkitabani.com/ig/cay/{pid}/reel.mp4', 'caption': ig2.caption2(p, 'Çay tarifi'), 'tr': p['tr'], 'tarif': next(t['slug'] for t in TARIFLER if t['bitki'] == pid)}
     json.dump(done, open(os.path.join(out_root, 'index.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 

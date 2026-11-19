@@ -41,6 +41,8 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           YT_REEL_LIMIT: ${{ inputs.limit }}
         run: python3 tools/yt_reel.py
+      - name: Ses kapısı (metin–video eşleşmesi)
+        run: python3 tools/ses_kapi.py
       - name: igmedia dalına yaz
         run: |
           cd igout && git init -q && git checkout -q -b igmedia && git add -A

@@ -36,7 +36,11 @@ def main():
         img = next((x for x in [os.path.join(ROOT, 'img', f'{pid}-1280.jpg'), os.path.join(ROOT, 'img', f'{pid}-960.jpg')] if os.path.exists(x)), None)
         if not img: print('yt reel: fotoğraf yok', pid); continue
         od = os.path.join(out_root, pid); os.makedirs(od, exist_ok=True)
-        ok = reel.make(p, ig2.text_for(p), img, os.path.join(od, 'reel.mp4'))
+        hedef = os.path.join(od, 'reel.mp4')
+        ok = reel.make(p, ig2.text_for(p), img, hedef)
+        if ok:   # yayın kapısı: ses kaydındaki slug videonun konusuyla aynı mı
+            ok, sebep = reel.kapi(hedef, pid)
+            if not ok: print('yt reel: KAPI DURDURDU —', pid, '—', sebep)
         print('yt reel:', pid, 'ok' if ok else 'HATA')
         if ok:
             done[pid] = {'reel': f'https://bitkitabani.com/ig/yt/{pid}/reel.mp4',
@@ -44,7 +48,10 @@ def main():
 
     # dosyası silinmiş olanları indeksten düş
     for pid in list(done):
-        if not os.path.exists(os.path.join(out_root, pid, 'reel.mp4')): done.pop(pid)
+        hedef = os.path.join(out_root, pid, 'reel.mp4')
+        if not os.path.exists(hedef): done.pop(pid); continue
+        gecti, sebep = reel.kapi(hedef, pid)   # eski dosyalar da kapıdan geçsin
+        if not gecti: print('yt reel: indeksten düştü —', pid, '—', sebep); done.pop(pid)
     json.dump(done, open(ix, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     print('yt indeks:', len(done), 'video')
 
