@@ -109,14 +109,27 @@ jobs:
           # canlıda görünmüyordu (17 Kasım 2026'da iki kez oldu).
           # Doğrusu: çakışmada karşı tarafı koru, sonra site/'ı birleşmiş
           # kaynaktan YENİDEN DERLE ve commit'i tazele.
-          for i in 1 2 3; do
+          # ⚠️ İkinci tuzak (17-19 Kasım 2026'da üç derlemeyi düşürdü): rebase
+          # sırasında botun kendi commit'i "patch contents already upstream"
+          # diye DÜŞEBİLİYOR. O durumda `git commit --amend` botun commit'ini
+          # değil, tepedeki BAŞKASININ commit'ini yeniden yazıyor; dal remote'tan
+          # ayrılıyor ve push "non-fast-forward / branch is behind" diye reddediliyor.
+          # Doğrusu: tepede hâlâ botun kendi commit'i varsa tazele, yoksa yeni commit aç.
+          MESAJ="Görseller ve site güncellendi [bot]"
+          for i in 1 2 3 4 5; do
             if git push; then exit 0; fi
+            sleep $(( (RANDOM % 10) + 5 ))     # araya giren push'la yarışmayalım
             git pull --rebase -X ours || { git rebase --abort || true; exit 1; }
             python3 build.py
             ekle
-            git diff --cached --quiet || git commit --amend --no-edit
+            if git diff --cached --quiet; then continue; fi
+            if [ "$(git log -1 --format=%s)" = "$MESAJ" ]; then
+              git commit --amend --no-edit
+            else
+              git commit -m "$MESAJ"
+            fi
           done
-          echo "üç denemede push edilemedi"; exit 1
+          echo "beş denemede push edilemedi"; exit 1
       - name: IndexNow bildirimi (yayına alınması için kısa bekleme)
         if: always()
         continue-on-error: true

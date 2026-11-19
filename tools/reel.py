@@ -59,7 +59,9 @@ def _gemini1(text, path):
     import json as _j, base64, urllib.request, urllib.error
     key = os.environ.get('GEMINI_API_KEY')
     if not key: raise RuntimeError('GEMINI_API_KEY yok')
-    body = {'contents': [{'parts': [{'text': 'Sakin, sıcak ve doğal bir belgesel anlatıcısı gibi, acele etmeden Türkçe oku: ' + text}]}],
+    # ⚠️ Metnin başına üslup yönergesi EKLENMEYECEK: Gemini onu da sesli okuyor
+    # (19 Kasım 2026, reishi videosunda yönerge seslendirildi). Sadece okunacak metin gider.
+    body = {'contents': [{'parts': [{'text': text}]}],
             'generationConfig': {'responseModalities': ['AUDIO'], 'speechConfig': {'voiceConfig': {'prebuiltVoiceConfig': {'voiceName': GEMINI_VOICE}}}}}
     req = urllib.request.Request('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent',
                                  data=_j.dumps(body).encode(), headers={'content-type': 'application/json', 'x-goog-api-key': key})
@@ -93,9 +95,7 @@ def _gemini_hepsi(sents, tmp):
     tek istek hem kotaya sığar hem de tonu video boyunca tutarlı tutar.
     """
     tam = os.path.join(tmp, 'gem-tam.mp3')
-    yonerge = ('Sakin, sıcak ve doğal bir belgesel anlatıcısı gibi, acele etmeden Türkçe oku. '
-               'Her satır ayrı bir cümledir; cümleler arasında kısa birer duraklama bırak:\n')
-    _gemini1(yonerge + '\n'.join(sents), tam)
+    _gemini1('\n'.join(sents), tam)   # yalnızca okunacak cümleler; yönerge yok (sesli okunuyordu)
     toplam = _dur(tam)
     if toplam <= 0: raise RuntimeError('boş ses')
     n = len(sents)
