@@ -138,6 +138,37 @@ for _q in _K.Q:
     for _k in ('etk', 'etk_en', 'ema', 'nccih', 'kaynak', 'koruma', 'yasal', 'rel', 'yayin', 'foto', 'ig'): _q.pop(_k, None)
     P.append(_q); byId[_id] = _q
 for i, p in enumerate(P): p['no'] = i + 1
+
+# ---------- familya adının normalleştirilmesi ----------
+# Katalogda `fam` alanı iki biçimde yazılmış: "Lamiaceae" ve "Lamiaceae (ballıbabagiller)".
+# Bu, 30 familyayı ikiye bölüyordu (Lamiaceae 14 + 7 ayrı sayfa sayılıyordu) ve slug
+# parantezli addan üretildiği için sitemap'e boşluklu, istenemeyen 8 adres giriyordu.
+# Latince ad tek doğru anahtar; Türkçe karşılık zaten familya.py'deki FAM_TR'de duruyor.
+# Parantez dışı kalan serbest not (tek kayıtta "eski sınıflamalarda Dracaenaceae")
+# atılmıyor, `fam_not` alanında saklanıp bitki sayfasında gösteriliyor.
+def _fam_ayir(f):
+    """'Adoxaceae (mürvergiller; TİTCK Caprifoliaceae de yazıyor)'
+       -> ('Adoxaceae', 'mürvergiller', 'TİTCK Caprifoliaceae de yazıyor')"""
+    lat = re.split(r'[(;]', f)[0].strip().rstrip(',').strip()
+    notlar = []
+    m = re.search(r'\(([^)]*)\)', f)
+    tr = ''
+    if m:
+        tr, _, ic_not = m.group(1).partition(';')
+        tr = tr.strip()
+        if ic_not.strip(): notlar.append(ic_not.strip())
+        dis = f[m.end():]                      # parantezden sonra kalan ("; eski sınıflamalarda ...")
+    else:
+        dis = f[len(lat):]
+    d = dis.lstrip(' ;').strip().rstrip('.')
+    if d: notlar.append(d)
+    return lat, tr, '; '.join(notlar)
+FAM_TR_VERI = {}        # veride parantez içinde duran Türkçe familya adları
+for p in P:
+    _lat, _ftr, _fnot = _fam_ayir(p['fam'])
+    if _ftr: FAM_TR_VERI.setdefault(_lat, _ftr)
+    if _fnot: p['fam_not'] = _fnot
+    p['fam'] = _lat
 NEWEST = sorted(YENI, key=lambda k: YENI[k], reverse=True)
 def is_new(pid, days=7): return pid in YENI and (LOCAL_DAY - YENI[pid]).days < days
 AYLAR =['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık']
@@ -617,13 +648,22 @@ def card(p):
 import collections, re as _re
 FAMC = collections.Counter(p['fam'] for p in P)
 from familya import FAM_TR, FAM_BILGI, fam_kaynak
+# familya.py elle tutulan 20 adı veriyor; kalanlar veriden gelen parantez içi adlar.
+# Çakışmada familya.py kazanır (ör. Anacardiaceae: "sakızağacıgiller", veride "sumakgiller").
+for _k, _v in FAM_TR_VERI.items(): FAM_TR.setdefault(_k, _v)
 FAM_MIN = 3   # kendi sayfası olan familya için en az bitki sayısı; altındakiler /familya/ sayfasında toplanır
-def fam_slug(f): return f.lower()
+def fam_slug(f):
+    """Familya adresi yalnız Latince addan üretilir (boşluk ve parantez adrese girmez)."""
+    return re.sub(r'[^a-z0-9-]+', '-', _fam_ayir(f)[0].lower()).strip('-')
 def fam_link(p):
     f = p['fam']
-    if FAMC[f] >= FAM_MIN: return f'<a href="/familya/{fam_slug(f)}/" lang="la">{e(f)}</a>'
-    if f in FAM_BILGI: return f'<a href="/familya/#{fam_slug(f)}" lang="la">{e(f)}</a>'
-    return f'<span lang="la">{e(f)}</span>'
+    # Türkçe karşılık FAM_TR'den; eskiden `fam` alanının içinde parantezle duruyordu
+    tr = FAM_TR.get(f)
+    ad = f'<span lang="la">{e(f)}</span>' + (f' <span class="fam-tr">({e(tr)})</span>' if tr else '')
+    _not = f' <span class="fam-tr">· {e(p["fam_not"])}</span>' if p.get('fam_not') else ''
+    if FAMC[f] >= FAM_MIN: return f'<a href="/familya/{fam_slug(f)}/">{ad}</a>' + _not
+    if f in FAM_BILGI: return f'<a href="/familya/#{fam_slug(f)}">{ad}</a>' + _not
+    return ad + _not
 DATE_TXT = tr_date(datetime.date.fromisoformat(CONTENT_DATE)).rsplit(',', 1)[0]
 CONTACT = 'iletisim@bitkitabani.com'
 def contrib(p):

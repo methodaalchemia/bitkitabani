@@ -972,11 +972,28 @@ ${thEn ? `<div class=not>Threads'te en çok görülen: <a href="${e(thEn.link)}"
 <p class=mut><small>Son güncelleme: Instagram ${e(ist.igGun || '–')}, Threads ${e(ist.thGun || '–')}</small></p></body></html>`;
 }
 
+// Güvenlik başlıkları. Sayfalar ASSETS'ten geliyordu ve hiçbir başlık taşımıyordu.
+// CSP yok: sayfalarda satır içi betik ve stil var; onlar nonce'a geçmeden CSP koymak
+// sayfaları bozar (bu yüzden ayrı iş olarak bırakıldı).
+const GUVENLIK = {
+  'strict-transport-security': 'max-age=31536000; includeSubDomains; preload',
+  'x-content-type-options': 'nosniff',
+  'x-frame-options': 'SAMEORIGIN',
+  'referrer-policy': 'strict-origin-when-cross-origin',
+  'permissions-policy': 'camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()',
+  'cross-origin-opener-policy': 'same-origin-allow-popups',   // Google ile giriş açılır pencere kullanıyor
+};
+function guvenli(r) {
+  const h = new Headers(r.headers);
+  for (const [k, v] of Object.entries(GUVENLIK)) h.set(k, v);
+  return new Response(r.body, { status: r.status, statusText: r.statusText, headers: h });
+}
+
 export default {
   async fetch(req, env) {
     const url = new URL(req.url);
-    if (url.pathname.startsWith('/ig/')) return igAsset(url.pathname.slice(4));
-    if (!url.pathname.startsWith('/api/')) return env.ASSETS.fetch(req);
+    if (url.pathname.startsWith('/ig/')) return guvenli(await igAsset(url.pathname.slice(4)));
+    if (!url.pathname.startsWith('/api/')) return guvenli(await env.ASSETS.fetch(req));
     // Bir Instagram postunu yeniden ürettirip yeniden paylaştırmak için sayaç geri alınır.
     // Gece derlemesi o sıradaki postu (ses ve video dâhil) sıfırdan üretir, akşam paylaşılır.
     if (url.pathname === '/api/ig-geri' && req.method === 'POST') {

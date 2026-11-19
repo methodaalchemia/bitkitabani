@@ -1568,7 +1568,7 @@ Bir efsaneye göre yaralı İspanyol asker Matico kanamasını bu yaprakla durdu
 ## Sinek mantarı (Amanita muscaria)
 
 URL: https://bitkitabani.com/sinekmantari/
-Familya: Amanitaceae (mantar) · Bölge: Asya ve Sibirya · Kullanılan kısım: Şapka
+Familya: Amanitaceae · Bölge: Asya ve Sibirya · Kullanılan kısım: Şapka
 Bilimsel kanıt: Geleneksel · Güvenlik: Yüksek risk
 
 ### Geleneksel kullanım
@@ -4654,7 +4654,7 @@ Karıştırma riski: Gerçek adamotuyla (Mandragora) akraba değildir; İngilizc
 ## Kâhin adaçayı (Salvia divinorum)
 
 URL: https://bitkitabani.com/salviadivinorum/
-Familya: Lamiaceae (ballıbabagiller) · Bölge: Kuzey Amerika · Kullanılan kısım: Yaprak
+Familya: Lamiaceae · Bölge: Kuzey Amerika · Kullanılan kısım: Yaprak
 Bilimsel kanıt: Geleneksel · Güvenlik: Yüksek risk
 
 ### Geleneksel kullanım
@@ -4682,7 +4682,7 @@ Doğal olarak yalnızca güney Meksika’nın Mazatek dağlarında yetişir. Maz
 ## Ormangülü (Rhododendron ponticum)
 
 URL: https://bitkitabani.com/ormangulu/
-Familya: Ericaceae (fundagiller) · Bölge: Anadolu ve Akdeniz · Kullanılan kısım: Çiçek ve nektarı (deli bal); bütün bitki zehirli
+Familya: Ericaceae · Bölge: Anadolu ve Akdeniz · Kullanılan kısım: Çiçek ve nektarı (deli bal); bütün bitki zehirli
 Bilimsel kanıt: Geleneksel · Güvenlik: Yüksek risk
 
 ### Geleneksel kullanım
@@ -4713,7 +4713,7 @@ Deli bal, içindeki ormangülü poleni mikroskopla görülerek öteki ballardan 
 ## Baldıran (Conium maculatum)
 
 URL: https://bitkitabani.com/baldiran/
-Familya: Apiaceae (maydanozgiller) · Bölge: Anadolu ve Akdeniz · Kullanılan kısım: Bütün bitki; en zehirlisi meyve ve çiçek durumu
+Familya: Apiaceae · Bölge: Anadolu ve Akdeniz · Kullanılan kısım: Bütün bitki; en zehirlisi meyve ve çiçek durumu
 Bilimsel kanıt: Geleneksel · Güvenlik: Yüksek risk
 
 ### Geleneksel kullanım
@@ -4741,7 +4741,7 @@ Koniin, kimyasal yapısı aydınlatılan ve laboratuvarda sentezlenen ilk alkalo
 ## Yüksük otu (Digitalis spp.)
 
 URL: https://bitkitabani.com/yuksukotu/
-Familya: Plantaginaceae (sinirotugiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Yaprak (yalnızca ilaç hammaddesi olarak)
+Familya: Plantaginaceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Yaprak (yalnızca ilaç hammaddesi olarak)
 Bilimsel kanıt: Klinik · Güvenlik: Yüksek risk
 
 ### Geleneksel kullanım
@@ -4773,7 +4773,7 @@ Adını parmağa geçirilen yüksüğe benzeyen çiçeklerinden alır; Almancada
 ## Camalonga (sarı zakkum) (Thevetia peruviana (Cascabela thevetia))
 
 URL: https://bitkitabani.com/camalonga/
-Familya: Apocynaceae (zakkumgiller) · Bölge: And Dağları · Kullanılan kısım: Tohum (ritüelde); bütün bitki zehirli
+Familya: Apocynaceae · Bölge: And Dağları · Kullanılan kısım: Tohum (ritüelde); bütün bitki zehirli
 Bilimsel kanıt: Geleneksel · Güvenlik: Yüksek risk
 
 ### Geleneksel kullanım
@@ -4805,7 +4805,7 @@ Kuzey Peru’da bir tohum bir şişe şaraba konup sekiz gün bekletildikten son
 ## Huayruro (Ormosia spp.)
 
 URL: https://bitkitabani.com/huayruro/
-Familya: Fabaceae (baklagiller) · Bölge: Amazon · Kullanılan kısım: Tohum (muska olarak)
+Familya: Fabaceae · Bölge: Amazon · Kullanılan kısım: Tohum (muska olarak)
 Bilimsel kanıt: Geleneksel · Güvenlik: Yüksek risk
 
 ### Geleneksel kullanım
@@ -4833,7 +4833,7 @@ Parlak kırmızı-siyah tohumlar Peru’da bugün de en yaygın uğur takıları
 ## Piri piri (Cyperus spp.)
 
 URL: https://bitkitabani.com/piripiri/
-Familya: Cyperaceae (sazgiller) · Bölge: Amazon · Kullanılan kısım: Yumrulu kök sap (rizom)
+Familya: Cyperaceae · Bölge: Amazon · Kullanılan kısım: Yumrulu kök sap (rizom)
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -4861,7 +4861,7 @@ Kuzey Peru pazarlarında “piri piri” adı bambaşka bitkilere, örneğin Iso
 ## Ajo sacha (orman sarımsağı) (Mansoa alliacea)
 
 URL: https://bitkitabani.com/ajosacha/
-Familya: Bignoniaceae (katalpagiller) · Bölge: Amazon · Kullanılan kısım: Yaprak, sap, kök
+Familya: Bignoniaceae · Bölge: Amazon · Kullanılan kısım: Yaprak, sap, kök
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -4891,7 +4891,7 @@ Kuzey Peru pazarlarında aynı ad bambaşka bir ağaca, Cordia alliodora’ya da
 ## Bobinsana (Calliandra angustifolia)
 
 URL: https://bitkitabani.com/bobinsana/
-Familya: Fabaceae (baklagiller) · Bölge: Amazon · Kullanılan kısım: Gövde, kabuk
+Familya: Fabaceae · Bölge: Amazon · Kullanılan kısım: Gövde, kabuk
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -4948,7 +4948,7 @@ Kuzey Peru şifacılarının banyolarında çiçek, parfüm ve kutsal suyla birl
 ## Gül (Rosa damascena)
 
 URL: https://bitkitabani.com/gul/
-Familya: Rosaceae (gülgiller) · Bölge: Anadolu ve Akdeniz, Asya ve Sibirya · Kullanılan kısım: Taç yaprakları (çiçek)
+Familya: Rosaceae · Bölge: Anadolu ve Akdeniz, Asya ve Sibirya · Kullanılan kısım: Taç yaprakları (çiçek)
 Bilimsel kanıt: Sınırlı · Güvenlik: Genelde güvenli
 
 ### Geleneksel kullanım
@@ -4976,7 +4976,7 @@ Bir kilogram gül yağı için tonlarca gül yaprağı gerekir; bu yüzden gül 
 ## Mısır (Zea mays)
 
 URL: https://bitkitabani.com/misir/
-Familya: Poaceae (buğdaygiller) · Bölge: Kuzey Amerika, And Dağları · Kullanılan kısım: Püskül (dişicik telleri), tane
+Familya: Poaceae · Bölge: Kuzey Amerika, And Dağları · Kullanılan kısım: Püskül (dişicik telleri), tane
 Bilimsel kanıt: Geleneksel · Güvenlik: Genelde güvenli
 
 ### Geleneksel kullanım
@@ -5004,7 +5004,7 @@ Bir mısır koçanındaki her tanenin kendi püskül teli vardır; tel tozlanmaz
 ## Hünnap (Ziziphus jujuba)
 
 URL: https://bitkitabani.com/hunnap/
-Familya: Rhamnaceae (cehrigiller) · Bölge: Asya ve Sibirya, Anadolu ve Akdeniz · Kullanılan kısım: Meyve
+Familya: Rhamnaceae · Bölge: Asya ve Sibirya, Anadolu ve Akdeniz · Kullanılan kısım: Meyve
 Bilimsel kanıt: Sınırlı · Güvenlik: Genelde güvenli
 
 ### Geleneksel kullanım
@@ -5032,7 +5032,7 @@ Hünnap, olgunlaştıkça yeşilden kızıl kahverengiye döner ve dalında kuru
 ## Şerbetçiotu (Humulus lupulus)
 
 URL: https://bitkitabani.com/serbetciotu/
-Familya: Cannabaceae (kenevirgiller) · Bölge: Anadolu ve Akdeniz · Kullanılan kısım: Dişi çiçek kozalakları
+Familya: Cannabaceae · Bölge: Anadolu ve Akdeniz · Kullanılan kısım: Dişi çiçek kozalakları
 Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -5092,7 +5092,7 @@ Umman’daki tütsü ağaçları, eski liman ve kervan şehirleri “Tütsü Diy
 ## Huş ağacı (Betula pendula)
 
 URL: https://bitkitabani.com/hus/
-Familya: Betulaceae (huşgiller) · Bölge: Asya ve Sibirya, Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Yaprak, kabuk, özsu
+Familya: Betulaceae · Bölge: Asya ve Sibirya, Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Yaprak, kabuk, özsu
 Bilimsel kanıt: Klinik · Güvenlik: Genelde güvenli
 
 ### Geleneksel kullanım
@@ -5120,7 +5120,7 @@ Türkçede “kayın” sözcüğü Orta Asya’da huş ağacını anlatır; Ana
 ## Buğday (Triticum aestivum)
 
 URL: https://bitkitabani.com/bugday/
-Familya: Poaceae (buğdaygiller) · Bölge: Anadolu ve Akdeniz · Kullanılan kısım: Tane, genç filiz (çim)
+Familya: Poaceae · Bölge: Anadolu ve Akdeniz · Kullanılan kısım: Tane, genç filiz (çim)
 Bilimsel kanıt: Geleneksel · Güvenlik: Genelde güvenli
 
 ### Geleneksel kullanım
@@ -5148,7 +5148,7 @@ Ekmeklik buğday, üç farklı yabani otun binlerce yıl içinde kendiliğinden 
 ## Meşe (Quercus robur)
 
 URL: https://bitkitabani.com/mese/
-Familya: Fagaceae (kayıngiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Genç dalların kabuğu
+Familya: Fagaceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Genç dalların kabuğu
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -5182,7 +5182,7 @@ Galatların Orta Anadolu’daki toplanma yeri Drynemetum’un adı, Frazer’e g
 ## Porsuk ağacı (Taxus baccata)
 
 URL: https://bitkitabani.com/porsuk/
-Familya: Taxaceae (porsukgiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Hiçbir kısmı halk arasında kullanılmamalı; iğne yapraklar ilaç sanayisinde hammadde
+Familya: Taxaceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Hiçbir kısmı halk arasında kullanılmamalı; iğne yapraklar ilaç sanayisinde hammadde
 Bilimsel kanıt: Klinik · Güvenlik: Yüksek risk
 
 ### Geleneksel kullanım
@@ -5215,7 +5215,7 @@ Tek bir hastayı 2 g Taxol ile tedavi etmek için dört Pasifik porsuğunun kesi
 ## Kuş üvezi (Sorbus aucuparia)
 
 URL: https://bitkitabani.com/kusuvezi/
-Familya: Rosaceae (gülgiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Meyve (pişirilmiş ya da donmuş)
+Familya: Rosaceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Meyve (pişirilmiş ya da donmuş)
 Bilimsel kanıt: Geleneksel · Güvenlik: Genelde güvenli
 
 ### Geleneksel kullanım
@@ -5244,7 +5244,7 @@ Gıda koruyucusu sorbik asit (E200) adını bu ağaçtan alır: A. W. Hofmann on
 ## Dişbudak (Fraxinus excelsior)
 
 URL: https://bitkitabani.com/disbudak/
-Familya: Oleaceae (zeytingiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Yaprak
+Familya: Oleaceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Yaprak
 Bilimsel kanıt: Geleneksel · Güvenlik: Genelde güvenli
 
 ### Geleneksel kullanım
@@ -5274,7 +5274,7 @@ Gilbert White 1789’da, fıtık tedavisi için içinden çocuk geçirilen ve ya
 ## Mine çiçeği (Verbena officinalis)
 
 URL: https://bitkitabani.com/minecicegi/
-Familya: Verbenaceae (minegiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Toprak üstü kısımlar
+Familya: Verbenaceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Toprak üstü kısımlar
 Bilimsel kanıt: Geleneksel · Güvenlik: Genelde güvenli
 
 ### Geleneksel kullanım
@@ -5304,7 +5304,7 @@ Romalı elçiler düşmanla barış görüşmesine giderken yanlarında mine çi
 ## Ejder kanı (Dracaena cinnabari Balf.f.)
 
 URL: https://bitkitabani.com/ejderkani/
-Familya: Asparagaceae (kuşkonmazgiller); eski sınıflamalarda Dracaenaceae · Bölge: Asya ve Sibirya, Anadolu ve Akdeniz · Kullanılan kısım: Gövdeden sızan koyu kırmızı reçine
+Familya: Asparagaceae · Bölge: Asya ve Sibirya, Anadolu ve Akdeniz · Kullanılan kısım: Gövdeden sızan koyu kırmızı reçine
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -5337,7 +5337,7 @@ Plinius MS 77’de ejder kanının, ölmekte olan bir filin altında ezilen ejde
 ## Badem (Prunus dulcis (Mill.) D.A.Webb)
 
 URL: https://bitkitabani.com/badem/
-Familya: Rosaceae (gülgiller) · Bölge: Anadolu ve Akdeniz · Kullanılan kısım: Çekirdek (tohum içi); yaprak ve reçine yerel olarak
+Familya: Rosaceae · Bölge: Anadolu ve Akdeniz · Kullanılan kısım: Çekirdek (tohum içi); yaprak ve reçine yerel olarak
 Bilimsel kanıt: Klinik · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -5370,7 +5370,7 @@ Bugün yediğimiz tatlı badem, tek bir gen arızasının ürünü: yabani badem
 ## Antep fıstığı (Pistacia vera L.)
 
 URL: https://bitkitabani.com/antepfistigi/
-Familya: Anacardiaceae (sakızağacıgiller) · Bölge: Anadolu ve Akdeniz · Kullanılan kısım: Çekirdek (tohum içi)
+Familya: Anacardiaceae · Bölge: Anadolu ve Akdeniz · Kullanılan kısım: Çekirdek (tohum içi)
 Bilimsel kanıt: Klinik · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -5402,7 +5402,7 @@ Antep fıstığı iki evcikli bir ağaçtır ve kuşlarla bazı memelilerde gör
 ## Mercimek (Lens culinaris Medik.)
 
 URL: https://bitkitabani.com/mercimek/
-Familya: Fabaceae (baklagiller) · Bölge: Anadolu ve Akdeniz · Kullanılan kısım: Tohum
+Familya: Fabaceae · Bölge: Anadolu ve Akdeniz · Kullanılan kısım: Tohum
 Bilimsel kanıt: Klinik · Güvenlik: Genelde güvenli
 
 ### Geleneksel kullanım
@@ -5431,7 +5431,7 @@ Göbekli Tepe’den 1950 litre toprağın yüzdürülmesiyle elde edilen tüm me
 ## Arpa (Hordeum vulgare L.)
 
 URL: https://bitkitabani.com/arpa/
-Familya: Poaceae (buğdaygiller) · Bölge: Anadolu ve Akdeniz · Kullanılan kısım: Tane; gövde zanaatta
+Familya: Poaceae · Bölge: Anadolu ve Akdeniz · Kullanılan kısım: Tane; gövde zanaatta
 Bilimsel kanıt: Klinik · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -5465,7 +5465,7 @@ Mardin’in kırsal köylerinde arpa taneleri bugün hâlâ, üzerlerine dua oku
 ## Sarmaşık (Hedera helix L.)
 
 URL: https://bitkitabani.com/sarmasik/
-Familya: Araliaceae (sarmaşıkgiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Yaprak
+Familya: Araliaceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Yaprak
 Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -5498,7 +5498,7 @@ Sarmaşığın tıbbi kullanımı yaprakta; oysa bitkinin ünü meyvesinden gele
 ## Karnıyarık otu (Plantago ovata Forssk.)
 
 URL: https://bitkitabani.com/karniyarik/
-Familya: Plantaginaceae (sinirotugiller) · Bölge: Asya ve Sibirya · Kullanılan kısım: Tohum, tohum kabuğu
+Familya: Plantaginaceae · Bölge: Asya ve Sibirya · Kullanılan kısım: Tohum, tohum kabuğu
 Bilimsel kanıt: Klinik · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -5532,7 +5532,7 @@ Etkisi kimyasal değil fiziksel: psyllium kabuğu bağırsakta fermente olmayan,
 ## Asma yaprağı (Vitis vinifera L.)
 
 URL: https://bitkitabani.com/asmayapragi/
-Familya: Vitaceae (asmagiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Yaprak
+Familya: Vitaceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Yaprak
 Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -5565,7 +5565,7 @@ Aynı bitkinin aynı kısmı, iki ayrı kullanım kategorisinde: Anadolu mutfağ
 ## Acı biber (Capsicum annuum L. var. minimum (Miller) Heiser)
 
 URL: https://bitkitabani.com/acibiber/
-Familya: Solanaceae (patlıcangiller) · Bölge: Anadolu ve Akdeniz, Kuzey Amerika · Kullanılan kısım: Kurutulmuş olgun meyve
+Familya: Solanaceae · Bölge: Anadolu ve Akdeniz, Kuzey Amerika · Kullanılan kısım: Kurutulmuş olgun meyve
 Bilimsel kanıt: Klinik · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -5599,7 +5599,7 @@ Türkçede "kırmızı biber" hem tatlı pul biberi hem acı biberi anlatıyor; 
 ## Barut ağacı (Rhamnus frangula L.)
 
 URL: https://bitkitabani.com/barutagaci/
-Familya: Rhamnaceae (cehrigiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Gövde ve dal kabuğu
+Familya: Rhamnaceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Gövde ve dal kabuğu
 Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -5634,7 +5634,7 @@ Taze kabuk kullanılmaz; kurutulması ya da ısıtılması gerekir. Sebebi kimya
 ## Ravent (Rheum palmatum L.)
 
 URL: https://bitkitabani.com/ravent/
-Familya: Polygonaceae (karabuğdaygiller) · Bölge: Asya ve Sibirya · Kullanılan kısım: Kök ve kök sapı
+Familya: Polygonaceae · Bölge: Asya ve Sibirya · Kullanılan kısım: Kök ve kök sapı
 Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -5669,7 +5669,7 @@ Mutfakta turta ve reçel yapılan ravent ile buradaki ravent aynı cins ama ayn�
 ## Şeytanpençesi (Harpagophytum procumbens DC.)
 
 URL: https://bitkitabani.com/seytanpencesi/
-Familya: Pedaliaceae (susamgiller) · Bölge: Afrika · Kullanılan kısım: Kök
+Familya: Pedaliaceae · Bölge: Afrika · Kullanılan kısım: Kök
 Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -5703,7 +5703,7 @@ Adı meyvesinden geliyor: olgun meyve, uçları çengelli sert kollarla kaplı v
 ## Karakafesotu (Symphytum officinale L.)
 
 URL: https://bitkitabani.com/karakafesotu/
-Familya: Boraginaceae (hodangiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Kök
+Familya: Boraginaceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Kök
 Bilimsel kanıt: Sınırlı · Güvenlik: Yüksek risk
 
 ### Geleneksel kullanım
@@ -5736,7 +5736,7 @@ Halk adı "kemik otu", bitkinin kırık iyileştirdiği inancından geliyor ve L
 ## Güney Afrika sardunyası (Pelargonium sidoides DC.)
 
 URL: https://bitkitabani.com/guneyafrikasardunyasi/
-Familya: Geraniaceae (turnagagasıgiller) · Bölge: Afrika · Kullanılan kısım: Kök
+Familya: Geraniaceae · Bölge: Afrika · Kullanılan kısım: Kök
 Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -5769,7 +5769,7 @@ Cochrane derlemesinin en pratik bulgusu etkinin kendisi değil, biçime bağlı 
 ## Gümüş düğme (Tanacetum parthenium (L.) Schultz Bip.)
 
 URL: https://bitkitabani.com/gumusdugme/
-Familya: Asteraceae (papatyagiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Toprak üstü kısımları
+Familya: Asteraceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Toprak üstü kısımları
 Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -5803,7 +5803,7 @@ Bitkinin iki adı da bugünkü kullanımını anlatmıyor. İngilizce feverfew a
 ## Çay ağacı (Melaleuca alternifolia (Maiden & Betche) Cheel)
 
 URL: https://bitkitabani.com/cayagaci/
-Familya: Myrtaceae (mersingiller) · Bölge: Okyanusya · Kullanılan kısım: Yaprak ve dal uçları, uçucu yağı
+Familya: Myrtaceae · Bölge: Okyanusya · Kullanılan kısım: Yaprak ve dal uçları, uçucu yağı
 Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -5836,7 +5836,7 @@ Adı en çok yanıltan bitkilerden biri: Türkçede de İngilizcede de "çay ağ
 ## At kuyruğu (Equisetum arvense L.)
 
 URL: https://bitkitabani.com/atkuyrugu/
-Familya: Equisetaceae (atkuyruğugiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Toprak üstü kısımları
+Familya: Equisetaceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Toprak üstü kısımları
 Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -5871,7 +5871,7 @@ Bitkinin yapısında silis (silisyum dioksit) olağandışı ölçüde bol — k
 ## Kabak çekirdeği (Cucurbita pepo L.)
 
 URL: https://bitkitabani.com/kabakcekirdegi/
-Familya: Cucurbitaceae (kabakgiller) · Bölge: Anadolu ve Akdeniz, Kuzey Amerika · Kullanılan kısım: Tohum ve sabit yağı
+Familya: Cucurbitaceae · Bölge: Anadolu ve Akdeniz, Kuzey Amerika · Kullanılan kısım: Tohum ve sabit yağı
 Bilimsel kanıt: Sınırlı · Güvenlik: Genelde güvenli
 
 ### Geleneksel kullanım
@@ -5905,7 +5905,7 @@ Monograflardaki bitkilerin çoğu mutfakta işi olmayan bitkiler. Kabak çekirde
 ## Arnika (Arnica montana L.)
 
 URL: https://bitkitabani.com/arnika/
-Familya: Asteraceae (papatyagiller) · Bölge: Avrupa · Kullanılan kısım: Çiçek durumu
+Familya: Asteraceae · Bölge: Avrupa · Kullanılan kısım: Çiçek durumu
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -5939,7 +5939,7 @@ Arnika, bir bitkisel ürünün en titiz çalışmasının nasıl okunacağına i
 ## Yaban mersini (Vaccinium myrtillus L.)
 
 URL: https://bitkitabani.com/yabanmersini/
-Familya: Ericaceae (fundagiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Meyve
+Familya: Ericaceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Meyve
 Bilimsel kanıt: Geleneksel · Güvenlik: Genelde güvenli
 
 ### Geleneksel kullanım
@@ -5974,7 +5974,7 @@ Yaban mersininin ünü bir savaş anlatısına dayanıyor: İkinci Dünya Savaş
 ## Aynısefa (Calendula officinalis L.)
 
 URL: https://bitkitabani.com/aynisefa/
-Familya: Asteraceae (papatyagiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Çiçek
+Familya: Asteraceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Çiçek
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -6007,7 +6007,7 @@ TİTCK monografı bitkinin güvenlik uyarıları arasına bir ad uyarısı koymu
 ## Kırmızı kantaron (Centaurium erythraea Rafn)
 
 URL: https://bitkitabani.com/kirmizikantaron/
-Familya: Gentianaceae (centiyangiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Toprak üstü kısmı
+Familya: Gentianaceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Toprak üstü kısmı
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -6040,7 +6040,7 @@ Türkçede "kantaron" iki bambaşka bitkiyi anlatıyor ve ikisi akraba bile değ
 ## Ölmez çiçek (Helichrysum arenarium (L.) Moench)
 
 URL: https://bitkitabani.com/olmezcicek/
-Familya: Asteraceae (papatyagiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Çiçek
+Familya: Asteraceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Çiçek
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -6074,7 +6074,7 @@ Bitkinin adı, kurutulduğunda çiçeğinin biçimini ve sarı rengini yıllarca
 ## Çoban çantası (Capsella bursa-pastoris (L.) Medik.)
 
 URL: https://bitkitabani.com/cobancantasi/
-Familya: Brassicaceae (turpgiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Toprak üstü kısımları
+Familya: Brassicaceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Toprak üstü kısımları
 Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -6108,7 +6108,7 @@ Bitkinin adı dört dilde de aynı resmi veriyor: Türkçede "çoban çantası",
 ## Şahtere (Fumaria officinalis L.)
 
 URL: https://bitkitabani.com/sahtere/
-Familya: Papaveraceae (gelincikgiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Toprak üstü kısımları
+Familya: Papaveraceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Toprak üstü kısımları
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -6142,7 +6142,7 @@ Bitkinin adı üç dilde de aynı görüntüyü anlatıyor ve görüntü şaşı
 ## Sinirli ot (Plantago lanceolata L.)
 
 URL: https://bitkitabani.com/sinirliot/
-Familya: Plantaginaceae (sinirotugiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Yaprak
+Familya: Plantaginaceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Yaprak
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -6176,7 +6176,7 @@ Bitkinin Türkçe adı bir anatomi benzetmesi: yaprağın boyunca uzanan belirgi
 ## Ahududu yaprağı (Rubus idaeus L.)
 
 URL: https://bitkitabani.com/ahududuyapragi/
-Familya: Rosaceae (gülgiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Yaprak
+Familya: Rosaceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Yaprak
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -6211,7 +6211,7 @@ Bu bitkide ün, kanıt ve resmî kullanım üç ayrı yere gidiyor — ama ayrı
 ## Tavşan memesi (Ruscus aculeatus L.)
 
 URL: https://bitkitabani.com/tavsanmemesi/
-Familya: Asparagaceae (kuşkonmazgiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Kök ve rizom
+Familya: Asparagaceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Kök ve rizom
 Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -6245,7 +6245,7 @@ Karıştırma riski: Aynı cinsten Ruscus hypoglossum ve R. hypophyllum Türkiye
 ## Yakıotu (Epilobium angustifolium L.)
 
 URL: https://bitkitabani.com/yakiotu/
-Familya: Onagraceae (çuhaçiçeğigiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Toprak üstü kısımları
+Familya: Onagraceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Toprak üstü kısımları
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -6279,7 +6279,7 @@ Bitkinin adı iki dilde de aynı olaya bakıyor: İngilizcede "fireweed", Türk�
 ## Hindiba (Cichorium intybus L.)
 
 URL: https://bitkitabani.com/hindiba/
-Familya: Asteraceae (papatyagiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Kök
+Familya: Asteraceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Kök
 Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -6313,7 +6313,7 @@ Türkçede "hindiba" ve "karahindiba" bir harf farkıyla iki ayrı bitkiyi anlat
 ## Centiyan (Gentiana lutea L.)
 
 URL: https://bitkitabani.com/centiyan/
-Familya: Gentianaceae (centiyangiller) · Bölge: Avrupa · Kullanılan kısım: Kök
+Familya: Gentianaceae · Bölge: Avrupa · Kullanılan kısım: Kök
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -6348,7 +6348,7 @@ Centiyan kökündeki amarogentin, bilinen en acı doğal maddelerden biri: seyre
 ## Tüylü laden (Cistus creticus L.)
 
 URL: https://bitkitabani.com/tuyluladen/
-Familya: Cistaceae (ladengiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Toprak üstü kısımları, uçucu yağ ve reçine
+Familya: Cistaceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Toprak üstü kısımları, uçucu yağ ve reçine
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -6382,7 +6382,7 @@ Ladenin kültürel ağırlığı ilacından değil reçinesinden geliyor. Yaz s�
 ## Altınbaşak (Solidago virgaurea L.)
 
 URL: https://bitkitabani.com/altinbasak/
-Familya: Asteraceae (papatyagiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Toprak üstü kısımları
+Familya: Asteraceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Toprak üstü kısımları
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -6416,7 +6416,7 @@ TİTCK monografının tek bir cümlesi, idrar söktürücü bitkilerin tümü i�
 ## Kayışkıran (Ononis spinosa L.)
 
 URL: https://bitkitabani.com/kayiskiran/
-Familya: Fabaceae (baklagiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Kök
+Familya: Fabaceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Kök
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -6486,7 +6486,7 @@ Boldo, bu kataloğun bir ayrımı en açık gösterdiği bitkilerden: aynı bitk
 ## Çayır kraliçesi (Filipendula ulmaria (L.) Maxim.)
 
 URL: https://bitkitabani.com/cayirkralicesi/
-Familya: Rosaceae (gülgiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Çiçek ve toprak üstü kısımları
+Familya: Rosaceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Çiçek ve toprak üstü kısımları
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -6520,7 +6520,7 @@ Bitkinin eski cins adı Spiraea’dır ve TİTCK monografı sinonim olarak "Spir
 ## Bozotu (Marrubium vulgare L.)
 
 URL: https://bitkitabani.com/bozotu/
-Familya: Lamiaceae (ballıbabagiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Çiçekli toprak üstü kısımları
+Familya: Lamiaceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Çiçekli toprak üstü kısımları
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -6554,7 +6554,7 @@ TİTCK monografı bu bitkide alışılmadık bir şey yapıyor: etkileşen ilaç
 ## Aslan kuyruğu (Leonurus cardiaca L.)
 
 URL: https://bitkitabani.com/aslankuyrugu/
-Familya: Lamiaceae (ballıbabagiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Toprak üstü kısımları
+Familya: Lamiaceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Toprak üstü kısımları
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -6589,7 +6589,7 @@ Bitkinin iki adı iki ayrı geleneksel kullanımı taşıyor. Latince tür adı 
 ## Esmer su yosunu (Fucus vesiculosus L.)
 
 URL: https://bitkitabani.com/esmersuyosunu/
-Familya: Fucaceae (fukusgiller) · Bölge: Avrupa · Kullanılan kısım: Tallus
+Familya: Fucaceae · Bölge: Avrupa · Kullanılan kısım: Tallus
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -6623,7 +6623,7 @@ Bu, kataloğumuzda içerik şartı sayıyla verilmiş ender kayıtlardan biri: A
 ## İzlanda likeni (Cetraria islandica (L.) Ach.)
 
 URL: https://bitkitabani.com/izlandalikeni/
-Familya: Parmeliaceae (parmelyagiller) · Bölge: Avrupa · Kullanılan kısım: Tallus
+Familya: Parmeliaceae · Bölge: Avrupa · Kullanılan kısım: Tallus
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -6657,7 +6657,7 @@ Karıştırma riski: ⚠️ Asıl karışma kategoridedir: adındaki "yosun" sö
 ## Mate (Ilex paraguariensis A.St.-Hil.)
 
 URL: https://bitkitabani.com/mate/
-Familya: Aquifoliaceae (çobanpüskülügiller) · Bölge: And Dağları · Kullanılan kısım: Yaprak
+Familya: Aquifoliaceae · Bölge: And Dağları · Kullanılan kısım: Yaprak
 Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -6692,7 +6692,7 @@ Matenin kanserle ilişkisi sık duyulan ama çoğu zaman yanlış aktarılan bir
 ## Çuha çiçeği (Primula veris L.)
 
 URL: https://bitkitabani.com/cuhacicegi/
-Familya: Primulaceae (çuhaçiçeğigiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Kök ve çiçek
+Familya: Primulaceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Kök ve çiçek
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -6726,7 +6726,7 @@ TİTCK monografındaki bir not, bitkisel ürünlerde nedensellik kurmanın neden
 ## Beşparmak otu (Potentilla erecta (L.) Raeusch.)
 
 URL: https://bitkitabani.com/besparmakotu/
-Familya: Rosaceae (gülgiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Rizom
+Familya: Rosaceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Rizom
 Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -6759,7 +6759,7 @@ Bu bitkide klinik kanıt ile onaylı kullanım farklı yaş gruplarında duruyor
 ## Koyunotu (Agrimonia eupatoria L.)
 
 URL: https://bitkitabani.com/koyunotu/
-Familya: Rosaceae (gülgiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Toprak üstü kısımları
+Familya: Rosaceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Toprak üstü kısımları
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -6793,7 +6793,7 @@ Bitkinin üç endikasyonu üç ayrı yoldan uygulanıyor — ağızdan, gargara 
 ## Kasık otu (Herniaria glabra L.)
 
 URL: https://bitkitabani.com/kasikotu/
-Familya: Caryophyllaceae (karanfilgiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Toprak üstü kısımları
+Familya: Caryophyllaceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Toprak üstü kısımları
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -6827,7 +6827,7 @@ Bitkinin adları bir kullanımı anlatıyor ama o kullanım bugün hiçbir monog
 ## Dulavrat otu (Arctium lappa L.)
 
 URL: https://bitkitabani.com/dulavratotu/
-Familya: Asteraceae (papatyagiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Kök
+Familya: Asteraceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Kök
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -6861,7 +6861,7 @@ TİTCK monografı bu bitkide bir ad uyarısını güvenlik bölümüne koymuş: 
 ## Ayrık otu (Elymus repens (L.) Gould)
 
 URL: https://bitkitabani.com/ayrikotu/
-Familya: Poaceae (buğdaygiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Rizom
+Familya: Poaceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Rizom
 Bilimsel kanıt: Geleneksel · Güvenlik: Genelde güvenli
 
 ### Geleneksel kullanım
@@ -6894,7 +6894,7 @@ Ayrık otunu tarlada belâ yapan şey, eczanede drog yapan şeyle aynı: toprak 
 ## Kaliforniya haşhaşı (Eschscholzia californica Cham.)
 
 URL: https://bitkitabani.com/kaliforniyahashasi/
-Familya: Papaveraceae (gelincikgiller) · Bölge: Kuzey Amerika · Kullanılan kısım: Toprak üstü kısımları
+Familya: Papaveraceae · Bölge: Kuzey Amerika · Kullanılan kısım: Toprak üstü kısımları
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -6928,7 +6928,7 @@ Türkçe adı bitkiyi olduğundan tehlikeli gösteriyor: "Kaliforniya haşhaşı
 ## Kokulu yonca (Melilotus officinalis (L.) Lam.)
 
 URL: https://bitkitabani.com/kokuluyonca/
-Familya: Fabaceae (baklagiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Toprak üstü kısımları
+Familya: Fabaceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Toprak üstü kısımları
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -6962,7 +6962,7 @@ Modern kan sulandırıcıların tarihi bu bitkinin küflenmiş kuru otundan baş
 ## Acı yonca (Menyanthes trifoliata L.)
 
 URL: https://bitkitabani.com/aciyonca/
-Familya: Menyanthaceae (acıyoncagiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Yaprak
+Familya: Menyanthaceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Yaprak
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -6995,7 +6995,7 @@ Adındaki "yonca" bitkiyi tanımak için yanlış yere bakmaya yol açıyor: ac�
 ## Yulaf (Avena sativa L.)
 
 URL: https://bitkitabani.com/yulaf/
-Familya: Poaceae (buğdaygiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Çiçeklenmeden önce toplanmış kuru veya taze toprak üstü kısımları; meyveleri
+Familya: Poaceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Çiçeklenmeden önce toplanmış kuru veya taze toprak üstü kısımları; meyveleri
 Bilimsel kanıt: Klinik · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -7028,7 +7028,7 @@ Yulafın ünü ile resmî onayı aynı yerde durmuyor. Herkes yulafı kolesterol
 ## Frenk kimyonu (Carum carvi L.)
 
 URL: https://bitkitabani.com/frenkkimyonu/
-Familya: Apiaceae (maydanozgiller) · Bölge: Anadolu ve Akdeniz, Avrupa, Asya ve Sibirya · Kullanılan kısım: Meyveleri (parçalanmış) ve meyvelerinden buhar distilasyonuyla elde edilen uçucu yağı
+Familya: Apiaceae · Bölge: Anadolu ve Akdeniz, Avrupa, Asya ve Sibirya · Kullanılan kısım: Meyveleri (parçalanmış) ve meyvelerinden buhar distilasyonuyla elde edilen uçucu yağı
 Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -7062,7 +7062,7 @@ Türkçede "kimyon" iki ayrı bitkiye işaret ediyor ve ikisi de maydanozgillerd
 ## Romen papatyası (Chamaemelum nobile (L.) All.)
 
 URL: https://bitkitabani.com/romenpapatyasi/
-Familya: Asteraceae (papatyagiller) · Bölge: Avrupa · Kullanılan kısım: Çiçek durumu (kapitulum)
+Familya: Asteraceae · Bölge: Avrupa · Kullanılan kısım: Çiçek durumu (kapitulum)
 Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -7097,7 +7097,7 @@ Türkçede "papatya" deyince akla gelen bitki bu değil. Kataloğumuzdaki papaty
 ## Kola (Cola nitida (Vent.) Schott et Endl. ve varyeteleri; Cola acuminata (P. Beauv.) Schott et Endl.)
 
 URL: https://bitkitabani.com/kola/
-Familya: Malvaceae (ebegümecigiller) · Bölge: Afrika · Kullanılan kısım: Tohumları
+Familya: Malvaceae · Bölge: Afrika · Kullanılan kısım: Tohumları
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -7132,7 +7132,7 @@ Monograf iki Cola türünü tek başlık altında topluyor — oysa bitkinin gel
 ## Java zerdeçalı (Curcuma xanthorrhiza Roxb.)
 
 URL: https://bitkitabani.com/javazerdecali/
-Familya: Zingiberaceae (zencefilgiller) · Bölge: Asya ve Sibirya · Kullanılan kısım: Rizomları
+Familya: Zingiberaceae · Bölge: Asya ve Sibirya · Kullanılan kısım: Rizomları
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -7166,7 +7166,7 @@ Bu bitkinin TİTCK listesindeki Türkçe ad hanesi boş: tabloda "-" yazıyor. T
 ## Sibirya ginsengi (Eleutherococcus senticosus (Rupr. et Maxim.) Maxim.)
 
 URL: https://bitkitabani.com/sibiryaginsengi/
-Familya: Araliaceae (sarmaşıkgiller) · Bölge: Asya ve Sibirya · Kullanılan kısım: Kökleri
+Familya: Araliaceae · Bölge: Asya ve Sibirya · Kullanılan kısım: Kökleri
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -7201,7 +7201,7 @@ Adı bir pazarlama kararının kalıntısı. Bitki ne ginseng cinsinden, ne de g
 ## Yabani çilek (Fragaria vesca L.; F. moschata Weston; F. viridis Weston; F. × ananassa (Weston) Duchesne ex Rozier)
 
 URL: https://bitkitabani.com/yabanicilek/
-Familya: Rosaceae (gülgiller) · Bölge: Anadolu ve Akdeniz, Avrupa, Asya ve Sibirya · Kullanılan kısım: Kurutulmuş yaprakları
+Familya: Rosaceae · Bölge: Anadolu ve Akdeniz, Avrupa, Asya ve Sibirya · Kullanılan kısım: Kurutulmuş yaprakları
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -7234,7 +7234,7 @@ Monograf dört Fragaria türünü birlikte kapsıyor ve bunlardan biri bahçe ç
 ## Soya fasulyesi (Glycine max (L.) Merr.)
 
 URL: https://bitkitabani.com/soya/
-Familya: Fabaceae (baklagiller) · Bölge: Asya ve Sibirya · Kullanılan kısım: Tohumları, tohumlarından elde edilen sabit yağı ve lesitini
+Familya: Fabaceae · Bölge: Asya ve Sibirya · Kullanılan kısım: Tohumları, tohumlarından elde edilen sabit yağı ve lesitini
 Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -7269,7 +7269,7 @@ Soya resmî listede soya olarak değil, iki fraksiyonu olarak duruyor: lesitin v
 ## Fasulye (Phaseolus vulgaris L.)
 
 URL: https://bitkitabani.com/fasulye/
-Familya: Fabaceae (baklagiller) · Bölge: Kuzey Amerika, And Dağları · Kullanılan kısım: Meyveleri (tohumları çıkarılmış bakla)
+Familya: Fabaceae · Bölge: Kuzey Amerika, And Dağları · Kullanılan kısım: Meyveleri (tohumları çıkarılmış bakla)
 Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -7303,7 +7303,7 @@ Resmî listede onaylı olan kısım, mutfakta çöpe atılan kısımdır: tohuml
 ## Grindelya (Grindelia robusta Nutt.; G. squarrosa (Pursh) Dunal; G. humilis Hook. et Arn.; G. camporum Greene)
 
 URL: https://bitkitabani.com/grindelya/
-Familya: Asteraceae (papatyagiller) · Bölge: Kuzey Amerika · Kullanılan kısım: Toprak üstü kısımları
+Familya: Asteraceae · Bölge: Kuzey Amerika · Kullanılan kısım: Toprak üstü kısımları
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -7335,7 +7335,7 @@ TİTCK listesindeki Türkçe adı bir çeviri bile değil, Latince cins adının
 ## Kaya eğreltisi (Polypodium vulgare L.)
 
 URL: https://bitkitabani.com/kayaegreltisi/
-Familya: Polypodiaceae (çokayakgiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Rizomları
+Familya: Polypodiaceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Rizomları
 Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -7368,7 +7368,7 @@ Aynı özellik, aynı monografta hem endikasyon hem yan etki. Monograf kaya eğr
 ## Ergelen hardalı (Sisymbrium officinale (L.) Scop.)
 
 URL: https://bitkitabani.com/ergelenhardali/
-Familya: Brassicaceae (turpgiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Çiçekli toprak üstü kısımları
+Familya: Brassicaceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Çiçekli toprak üstü kısımları
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -7403,7 +7403,7 @@ Resmî listede iki Türkçe adı var ki bitkinin ne işe yaradığını söylüy
 ## Selam otu (Levisticum officinale W.D.J. Koch)
 
 URL: https://bitkitabani.com/selamotu/
-Familya: Apiaceae (maydanozgiller) · Bölge: Avrupa, Asya ve Sibirya · Kullanılan kısım: Kökleri; uçucu yağı
+Familya: Apiaceae · Bölge: Avrupa, Asya ve Sibirya · Kullanılan kısım: Kökleri; uçucu yağı
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -7437,7 +7437,7 @@ Aynı bitkinin yaprağı Avrupa’da yüzyıllardır çorba otu, kökü ise idra
 ## Siyah frenk üzümü (Ribes nigrum L.)
 
 URL: https://bitkitabani.com/frenkuzumu/
-Familya: Grossulariaceae (frenküzümügiller) · Bölge: Avrupa, Asya ve Sibirya · Kullanılan kısım: Yaprakları
+Familya: Grossulariaceae · Bölge: Avrupa, Asya ve Sibirya · Kullanılan kısım: Yaprakları
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -7470,7 +7470,7 @@ Kataloğumuzda meyvesi herkesçe bilinen ama resmî listede yaprağıyla yer ala
 ## Eşek otu (Oenothera biennis L.; Oenothera lamarckiana L.)
 
 URL: https://bitkitabani.com/esekotu/
-Familya: Onagraceae (eşekotugiller) · Bölge: Kuzey Amerika · Kullanılan kısım: Tohumlarından elde edilen sabit yağ
+Familya: Onagraceae · Bölge: Kuzey Amerika · Kullanılan kısım: Tohumlarından elde edilen sabit yağ
 Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -7504,7 +7504,7 @@ Türkiye’de bu yağ "çuha çiçeği yağı" adıyla satılıyor ve ad yanlı�
 ## Girit kekiği (Origanum dictamnus L.)
 
 URL: https://bitkitabani.com/giritkekigi/
-Familya: Lamiaceae (ballıbabagiller) · Bölge: Avrupa, Anadolu ve Akdeniz · Kullanılan kısım: Çiçekli toprak üstü kısımları
+Familya: Lamiaceae · Bölge: Avrupa, Anadolu ve Akdeniz · Kullanılan kısım: Çiçekli toprak üstü kısımları
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -7536,7 +7536,7 @@ Antik kaynaklarda "dictamnus" ok yarasını iyileştiren bitki olarak geçer; 20
 ## Çobandeğneği (Polygonum aviculare L.)
 
 URL: https://bitkitabani.com/cobandegnegi/
-Familya: Polygonaceae (kuzukulağıgiller) · Bölge: Anadolu ve Akdeniz, Avrupa, Asya ve Sibirya · Kullanılan kısım: Çiçekli toprak üstü kısımları
+Familya: Polygonaceae · Bölge: Anadolu ve Akdeniz, Avrupa, Asya ve Sibirya · Kullanılan kısım: Çiçekli toprak üstü kısımları
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -7568,7 +7568,7 @@ Resmî listedeki dört Türkçe adının hiçbiri bitkinin şifasını değil, s
 ## Mercanköşk (Origanum majorana L.)
 
 URL: https://bitkitabani.com/mercankosk/
-Familya: Lamiaceae (ballıbabagiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Toprak üstü kısımları
+Familya: Lamiaceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Toprak üstü kısımları
 Bilimsel kanıt: Sınırlı · Güvenlik: Yüksek risk
 
 ### Geleneksel kullanım
@@ -7600,7 +7600,7 @@ Monografın ikinci endikasyonu kataloğumuzda eşsiz: burun deliklerinin çevres
 ## Mür (Commiphora molmol Engler (C. myrrha (Nees) Engl.))
 
 URL: https://bitkitabani.com/mur/
-Familya: Burseraceae (günlükağacıgiller) · Bölge: Afrika, Asya ve Sibirya · Kullanılan kısım: Zamk-reçinesi (gummi-resina); tentür hâlinde
+Familya: Burseraceae · Bölge: Afrika, Asya ve Sibirya · Kullanılan kısım: Zamk-reçinesi (gummi-resina); tentür hâlinde
 Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -7632,7 +7632,7 @@ Aynı reçine iki bin yıldır hem tütsü hem ilaç: Arap Yarımadası’ndan A
 ## Limon verbena (Aloysia citrodora Paláu (syn. Lippia citriodora Kunth))
 
 URL: https://bitkitabani.com/limonverbena/
-Familya: Verbenaceae (mineçiçeğigiller) · Bölge: And Dağları · Kullanılan kısım: Yaprakları
+Familya: Verbenaceae · Bölge: And Dağları · Kullanılan kısım: Yaprakları
 Bilimsel kanıt: Sınırlı · Güvenlik: Yüksek risk
 
 ### Geleneksel kullanım
@@ -7664,7 +7664,7 @@ Türkçede "limon otu" adı iki ayrı bitkiye birden yapıştırılmış: melisa
 ## Hercai menekşe (Viola tricolor L.; V. arvensis Murray; V. vulgaris Koch)
 
 URL: https://bitkitabani.com/hercaimenekse/
-Familya: Violaceae (menekşegiller) · Bölge: Avrupa, Anadolu ve Akdeniz · Kullanılan kısım: Çiçekli toprak üstü kısımları
+Familya: Violaceae · Bölge: Avrupa, Anadolu ve Akdeniz · Kullanılan kısım: Çiçekli toprak üstü kısımları
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -7697,7 +7697,7 @@ Orta Avrupa’da yüzyıllardır bebek egzaması için içirilen bitki, AB monog
 ## Java çayı (Orthosiphon aristatus (Blume) Miq. var. aristatus (syn. O. stamineus Benth.))
 
 URL: https://bitkitabani.com/javacayi/
-Familya: Lamiaceae (ballıbabagiller) · Bölge: Asya ve Sibirya · Kullanılan kısım: Yaprakları ve gövde uçları
+Familya: Lamiaceae · Bölge: Asya ve Sibirya · Kullanılan kısım: Yaprakları ve gövde uçları
 Bilimsel kanıt: Sınırlı · Güvenlik: Yüksek risk
 
 ### Geleneksel kullanım
@@ -7729,7 +7729,7 @@ Adı bir sömürge yolunun izi: Endonezya’nın "kumis kucing"i (kedi bıyığ�
 ## Tüylü şahinotu (Hieracium pilosella L. (syn. Pilosella officinarum Vaill.))
 
 URL: https://bitkitabani.com/tuylusahinotu/
-Familya: Asteraceae (papatyagiller) · Bölge: Avrupa, Anadolu ve Akdeniz · Kullanılan kısım: Kökü ile birlikte bütün bitki
+Familya: Asteraceae · Bölge: Avrupa, Anadolu ve Akdeniz · Kullanılan kısım: Kökü ile birlikte bütün bitki
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -7761,7 +7761,7 @@ Kataloğumuzda drogu "kökü ile birlikte bütün bitki" olarak tanımlanan tek 
 ## Yaban yasemini (Solanum dulcamara L.)
 
 URL: https://bitkitabani.com/yabanyasemini/
-Familya: Solanaceae (patlıcangiller) · Bölge: Anadolu ve Akdeniz, Avrupa, Asya ve Sibirya · Kullanılan kısım: İlkbaharda yapraklanmadan önce toplanan 2–3 yıllık gövdeleri
+Familya: Solanaceae · Bölge: Anadolu ve Akdeniz, Avrupa, Asya ve Sibirya · Kullanılan kısım: İlkbaharda yapraklanmadan önce toplanan 2–3 yıllık gövdeleri
 Bilimsel kanıt: Geleneksel · Güvenlik: Genelde güvenli
 
 ### Geleneksel kullanım
@@ -7794,7 +7794,7 @@ Adı iki kez yanıltıyor. "Yaban yasemini" denir ama yaseminle hiç ilgisi yok;
 ## Hintyağı bitkisi (Ricinus communis L.)
 
 URL: https://bitkitabani.com/hintyagi/
-Familya: Euphorbiaceae (sütleğengiller) · Bölge: Afrika, Asya ve Sibirya · Kullanılan kısım: Tohumlarından soğuk sıkımla elde edilen sabit yağ
+Familya: Euphorbiaceae · Bölge: Afrika, Asya ve Sibirya · Kullanılan kısım: Tohumlarından soğuk sıkımla elde edilen sabit yağ
 Bilimsel kanıt: Klinik · Güvenlik: Genelde güvenli
 
 ### Geleneksel kullanım
@@ -7828,7 +7828,7 @@ Aynı tohumdan iki şey çıkar: bir yanda dünyanın en eski ve en bilinen müs
 ## Kutsal devedikeni (Cnicus benedictus L. (syn. Centaurea benedicta (L.) L.))
 
 URL: https://bitkitabani.com/kutsaldevedikeni/
-Familya: Asteraceae (papatyagiller) · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Çiçekli toprak üstü kısımları
+Familya: Asteraceae · Bölge: Anadolu ve Akdeniz, Avrupa · Kullanılan kısım: Çiçekli toprak üstü kısımları
 Bilimsel kanıt: Geleneksel · Güvenlik: Yüksek risk
 
 ### Geleneksel kullanım
@@ -7860,7 +7860,7 @@ Adı bir dönemin iddiasını taşıyor: "kutsanmış diken", Orta Çağ’da ve
 ## Kırlangıçotu (Chelidonium majus L.)
 
 URL: https://bitkitabani.com/kirlangicotu/
-Familya: Papaveraceae (gelincikgiller) · Bölge: Anadolu ve Akdeniz, Avrupa, Asya ve Sibirya · Kullanılan kısım: Çiçekli toprak üstü kısımları; taze sütü (halk kullanımı)
+Familya: Papaveraceae · Bölge: Anadolu ve Akdeniz, Avrupa, Asya ve Sibirya · Kullanılan kısım: Çiçekli toprak üstü kısımları; taze sütü (halk kullanımı)
 Bilimsel kanıt: Geleneksel · Güvenlik: Genelde güvenli
 
 ### Geleneksel kullanım
@@ -7893,7 +7893,7 @@ Kataloğumuzda Avrupa düzenleyicisinin açıkça "hayır" dediği ilk bitki. Mo
 ## Demirdikeni (Tribulus terrestris L.)
 
 URL: https://bitkitabani.com/demirdikeni/
-Familya: Zygophyllaceae (demirdikenigiller) · Bölge: Anadolu ve Akdeniz, Asya ve Sibirya, Avrupa · Kullanılan kısım: Toprak üstü kısımları
+Familya: Zygophyllaceae · Bölge: Anadolu ve Akdeniz, Asya ve Sibirya, Avrupa · Kullanılan kısım: Toprak üstü kısımları
 Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -7925,7 +7925,7 @@ Avrupa düzenleyicisi bu bitki için üç yıl çalıştı ve 2024’te şu cüm
 ## Andrographis (Andrographis paniculata (Burm.f.) Nees)
 
 URL: https://bitkitabani.com/andrographis/
-Familya: Acanthaceae (ayıkulağıgiller) · Bölge: Asya ve Sibirya · Kullanılan kısım: Yaprakları
+Familya: Acanthaceae · Bölge: Asya ve Sibirya · Kullanılan kısım: Yaprakları
 Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -7958,7 +7958,7 @@ Kataloğumuzun 250. bitkisi, resmî listelerin dışında bir bitki — ve bu bi
 ## Geven (Astragalus gummifer Labill.; A. longifolius Lam.; A. muschianus Kotschy & Boiss. ex Boiss.)
 
 URL: https://bitkitabani.com/geven/
-Familya: Fabaceae (baklagiller) · Bölge: Anadolu ve Akdeniz, Asya ve Sibirya · Kullanılan kısım: Gövdesinden sızan zamk (kitre); çiçekli dalları bal ve otlak bitkisi olarak
+Familya: Fabaceae · Bölge: Anadolu ve Akdeniz, Asya ve Sibirya · Kullanılan kısım: Gövdesinden sızan zamk (kitre); çiçekli dalları bal ve otlak bitkisi olarak
 Bilimsel kanıt: Geleneksel · Güvenlik: Genelde güvenli
 
 ### Geleneksel kullanım
@@ -7992,7 +7992,7 @@ Türkiye, dünyada *Astragalus* çeşitliliğinin merkezi — dört yüzü aşk�
 ## Üçgül (Trifolium pratense L.)
 
 URL: https://bitkitabani.com/ucgul/
-Familya: Fabaceae (baklagiller) · Bölge: Anadolu ve Akdeniz, Avrupa, Asya ve Sibirya · Kullanılan kısım: Çiçekleri
+Familya: Fabaceae · Bölge: Anadolu ve Akdeniz, Avrupa, Asya ve Sibirya · Kullanılan kısım: Çiçekleri
 Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -8027,7 +8027,7 @@ Karıştırma riski: ⚠️ "Yonca" adı Türkçede üç ayrı cinsi kapsıyor. 
 ## Kağıtçiçeği (Xeranthemum annuum L.)
 
 URL: https://bitkitabani.com/kagitcicegi/
-Familya: Asteraceae (papatyagiller) · Bölge: Anadolu ve Akdeniz, Avrupa, Asya ve Sibirya · Kullanılan kısım: Çiçekli toprak üstü kısımları
+Familya: Asteraceae · Bölge: Anadolu ve Akdeniz, Avrupa, Asya ve Sibirya · Kullanılan kısım: Çiçekli toprak üstü kısımları
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -8060,7 +8060,7 @@ Karıştırma riski: ⚠️ Ölmez çiçek (*Helichrysum arenarium*) ayrı bitki
 ## Gazalboynuzu (Lotus corniculatus L.)
 
 URL: https://bitkitabani.com/gazalboynuzu/
-Familya: Fabaceae (baklagiller) · Bölge: Anadolu ve Akdeniz, Avrupa, Asya ve Sibirya · Kullanılan kısım: Çiçekli toprak üstü kısımları
+Familya: Fabaceae · Bölge: Anadolu ve Akdeniz, Avrupa, Asya ve Sibirya · Kullanılan kısım: Çiçekli toprak üstü kısımları
 Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -8093,7 +8093,7 @@ Adı meyvesinden geliyor: olgunlaşan baklalar bir noktadan parmaklar gibi açı
 ## Ak ballıbaba (Lamium album L.)
 
 URL: https://bitkitabani.com/ballibaba/
-Familya: Lamiaceae (ballıbabagiller) · Bölge: Anadolu ve Akdeniz, Avrupa, Asya ve Sibirya · Kullanılan kısım: Çiçekleri ve çiçekli dalları
+Familya: Lamiaceae · Bölge: Anadolu ve Akdeniz, Avrupa, Asya ve Sibirya · Kullanılan kısım: Çiçekleri ve çiçekli dalları
 Bilimsel kanıt: Geleneksel · Güvenlik: Genelde güvenli
 
 ### Geleneksel kullanım
@@ -8126,7 +8126,7 @@ Türkçesi bitkiyi tam yerinden yakalamış: "ballı baba". Çocuklar çiçeği 
 ## Soğan (Allium cepa L.)
 
 URL: https://bitkitabani.com/sogan/
-Familya: Amaryllidaceae (nergisgiller) · Bölge: Anadolu ve Akdeniz, Asya ve Sibirya, Avrupa · Kullanılan kısım: Taze ya da kurutulmuş soğan başı
+Familya: Amaryllidaceae · Bölge: Anadolu ve Akdeniz, Asya ve Sibirya, Avrupa · Kullanılan kısım: Taze ya da kurutulmuş soğan başı
 Bilimsel kanıt: Sınırlı · Güvenlik: Yüksek risk
 
 ### Geleneksel kullanım
@@ -8158,7 +8158,7 @@ Dünya Sağlık Örgütü bir sebzeye monograf yazdı ve güvenlik bölümünü 
 ## Şakayık (Paeonia lactiflora Pall.)
 
 URL: https://bitkitabani.com/sakayik/
-Familya: Paeoniaceae (şakayıkgiller) · Bölge: Asya ve Sibirya · Kullanılan kısım: Kurutulmuş kökü
+Familya: Paeoniaceae · Bölge: Asya ve Sibirya · Kullanılan kısım: Kurutulmuş kökü
 Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 
 ### Geleneksel kullanım
@@ -8191,7 +8191,7 @@ Karıştırma riski: ⚠️ Türkiye’de yabani şakayıklar (Paeonia mascula, 
 ## Yılankökü (Rauvolfia serpentina (L.) Benth. ex Kurz)
 
 URL: https://bitkitabani.com/yilankoku/
-Familya: Apocynaceae (zakkumgiller) · Bölge: Asya ve Sibirya · Kullanılan kısım: Kurutulmuş kökü
+Familya: Apocynaceae · Bölge: Asya ve Sibirya · Kullanılan kısım: Kurutulmuş kökü
 Bilimsel kanıt: Klinik · Güvenlik: Genelde güvenli
 
 ### Geleneksel kullanım
