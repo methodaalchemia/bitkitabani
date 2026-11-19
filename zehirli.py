@@ -62,3 +62,14 @@ LISTE_METIN = ('Fitoterapi kitabındaki Türkiye zehirli bitkiler listesinde, ka
                'bazılarının yalnızca bir kısmı (tohumu, kökü, çiğ meyvesi) zehirlidir. Kitap ayrıca zehirli bitki listesinin ülkenin florasına ve halkın alışkanlıklarına göre değiştiğini vurgular: '
                'banotu Doğu Anadolu’da zehirlenmelere yol açarken Fransa’da yol açmaz; Türkiye’de yetişen süs biberi (Solanum pseudocapsicum) ise burada değil Fransa’da zehirlenmelere neden olur. '
                'Baldıran, banotu ve güz çiğdeminin bazı türlerinin Anadolu’da yer yer yenen bitkiler arasında kaydedilmiş olması da dozun önemini gösterir.')
+
+# Yan yana karşılaştırma için: zehirli bitkinin katalogda fotoğrafı olan benzeri.
+# Yalnız kataloğumuzda kaydı ve fotoğrafı olan, künyesi belli bitkiler yazılır;
+# Crocus ya da yabani havuç gibi katalogda olmayanlar için fotoğraf konmaz.
+# (id, "fotoğrafın altına yazılacak ayırt edici cümle")
+BENZER = {
+    'baldiran':  [('rezene', 'Rezenenin gövdesi tüylü ve dolu, kokusu anasona çalar; baldıranın gövdesi tüysüz, içi boş ve esmer-mor lekelidir.')],
+    'yuksukotu': [('karakafesotu', 'Karakafes otunun yaprakları tüylü ve kaba; yüksük otu çiçeklenince yüksük biçimli, sapın tek yanına dizili çiçekleriyle ayrılır.'),
+                  ('sigirkuyrugu', 'Sığırkuyruğunun çiçekleri sarı ve sapın çevresine dizilidir; yüksük otununki sarkık ve tek yanlıdır.')],
+    'banotu':    [('hashas', 'Haşhaşın yaprağı tüysüz ve mavimsi yeşil, kapsülü düzgün; banotunun yaprağı yapışkan tüylü, çiçeği mor damarlı kirli sarıdır.')],
+}

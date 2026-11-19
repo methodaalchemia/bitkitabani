@@ -24,7 +24,7 @@ from baytop_kar import KAR as BKAR
 from extra import EK, KORUMA, YASAL, YASAL_AD, BR_GEO, ALT
 from etkilesim import ETK
 from seo import SEO
-from zehirli import KARIS as ZKARIS, HALK as ZHALK, NEDEN as ZNEDEN, KAYNAK as ZKAYNAK, EV as ZEV, EV_METIN as ZEV_M, LISTE as ZLISTE, LISTE_METIN as ZLISTE_M
+from zehirli import KARIS as ZKARIS, HALK as ZHALK, NEDEN as ZNEDEN, KAYNAK as ZKAYNAK, EV as ZEV, EV_METIN as ZEV_M, LISTE as ZLISTE, LISTE_METIN as ZLISTE_M, BENZER as ZBENZER
 from derin import D as DERIN
 from gozden import KISI as GZ_KISI, SAYFALAR as GZ
 KAN_AD = {'klinik': 'Klinik kanıt', 'sinirli': 'Sınırlı kanıt', 'geleneksel': 'Yalnızca geleneksel', 'yok': 'Kanıt yok'}
@@ -1781,17 +1781,50 @@ GUIDE_URLS.append(path)
 
 # --- zehirli bitkiler ve karıştırılanlar ---
 def _zad(d): return f'<a href="/{d["id"]}/">{e(d["ad"])}</a>' if d['id'] and d['id'] in byId else e(d['ad'])
+def _zroz(d):
+    """Şiddet rozeti: katalogdaki güvenlik düzeyi (uydurulmaz, kayıttan gelir)."""
+    p = byId.get(d['id'] or '')
+    return f' <span class="sf {p["guv"]}">{GUV[p["guv"]]}</span>' if p else ''
+def _zfoto(pid, altyazi=''):
+    q = byId.get(pid)
+    if not q: return ''
+    return (f'<figure class="zf"><a href="/{pid}/">{ph(q, 500)}</a>'
+            f'<figcaption><b>{e(q["tr"])}</b> <i lang="la">{e(sade_la(q))}</i>'
+            + (f'<span class="muted-s">{credit(q)}</span>' if pid in IMG else '')
+            + (f'<span class="zf-not">{e(altyazi)}</span>' if altyazi else '') + '</figcaption></figure>')
+def _zkaris_kart(d):
+    """Zehirli bitki ile katalogdaki benzeri yan yana; altında ayırt edici cümle."""
+    bz = ZBENZER.get(d['id'] or '') or []
+    if not (d['id'] in byId and bz): return ''
+    ciftler = ''.join(
+        f'<div class="zcift">{_zfoto(d["id"])}<span class="zvs" aria-hidden="true">≠</span>{_zfoto(bid, not_)}</div>'
+        for bid, not_ in bz if bid in byId)
+    if not ciftler: return ''
+    return (f'<div class="zkart"><p class="eyebrow">{e(d["ad"])} · neyle karıştırılıyor</p>{ciftler}'
+            f'<p class="zayirt"><b>Şuna bak:</b> {e(d["ayirt"])}</p></div>')
+
 _zhi = sorted([p for p in P if p['guv'] == 'yuksek' and 'anadolu' in p['bolge']], key=lambda p: p['tr'])
 _zbk = sorted([pid for pid in BKAR if pid in byId], key=lambda x: byId[x]['tr'])
 path = '/rehber/zehirli-bitkiler/'
 body = f"""{crumbs(('/rehber/', 'Rehberler'), (path, 'Zehirli bitkiler'))}
 <article class="sheet">
 <header class="page-head"><span class="eyebrow">Güvenlik rehberi</span><h1>Türkiye’de zehirli bitkiler ve en çok karıştırılanlar: nasıl ayırt edilir?</h1><p>Bitki zehirlenmelerinin önemli bir kısmı, yenen ya da şifalı bilinen bir bitkinin zehirli bir benzeriyle karıştırılmasından kaynaklanır. Aşağıda Anadolu’da en sık karıştırılan zehirli bitkiler, onları ayırt etmenin yolları ve halk kullanımında zehirlenmeye yol açan örnekler var.</p></header>
-<aside class="warnbox" role="note"><b>Zehirlenme şüphesinde:</b> Ulusal Zehir Danışma Merkezi’ni ara: <a href="tel:114"><b>114</b></a> (7/24, ücretsiz). Durum ağırsa <a href="tel:112"><b>112</b></a>. Bitkinin bir parçasını ya da fotoğrafını yanına al; danışmadan kusturmaya çalışma, süt ya da yağ içirme.</aside>
-<section class="sec"><h2>Türkiye’de bitki zehirlenmesinin başlıca nedenleri</h2><p>Sağlık Bakanlığı’nın Fitoterapi kitabı, Türkiye’deki bitki zehirlenmelerini şu nedenlerle özetliyor:</p><ul>{"".join(f"<li>{e(x)}</li>" for x in ZNEDEN)}</ul><p>Kitaba göre vakaların çoğu 1–12 yaş arası çocuklarda, zehirli türlerin yanlışlıkla yenmesiyle görülüyor.</p></section>
-<section class="sec"><h2>Birbirine benzeyen bitkiler</h2><div class="tablewrap"><table class="cmp etk"><thead><tr><th scope="col">Zehirli bitki</th><th scope="col">Neyle karıştırılır?</th><th scope="col">Nasıl ayırt edilir?</th><th scope="col">Zehirlenme belirtileri</th></tr></thead><tbody>
-{"".join(f'<tr><th scope="row">{_zad(d)}<br><i class="muted-s">{e(d["lat"])}</i></th><td>{e(d["benzer"])}</td><td>{e(d["ayirt"])}</td><td>{e(d["belirti"])}</td></tr>' for d in ZKARIS)}
-</tbody></table></div><p class="muted-s">Kesin tanımadığın bir bitkiyi toplama ve yeme. Fotoğraftan ya da uygulamadan yapılan tanımaya güvenme.</p></section>
+<aside class="warnbox yapiskan" role="note"><b>Zehirlenme şüphesinde:</b> Ulusal Zehir Danışma Merkezi’ni ara: <a href="tel:114"><b>114</b></a> (7/24, ücretsiz). Durum ağırsa <a href="tel:112"><b>112</b></a>. Bitkinin bir parçasını ya da fotoğrafını yanına al; danışmadan kusturmaya çalışma, süt ya da yağ içirme.</aside>
+<section class="sec"><h2>Türkiye’de bitki zehirlenmesinin başlıca nedenleri</h2><p>Sağlık Bakanlığı’nın Fitoterapi kitabı, Türkiye’deki bitki zehirlenmelerini şu nedenlerle özetliyor:</p><ul>{"".join(f"<li>{e(x)}</li>" for x in ZNEDEN)}</ul><p>Kitaba göre vakaların çoğu 1–12 yaş arası çocuklarda, zehirli türlerin yanlışlıkla yenmesiyle görülüyor.</p>
+<aside class="cocukbox" role="note"><p class="eyebrow">Evde küçük çocuk varsa</p>
+<ul>
+<li>Zehirlenmelerin çoğu 1–12 yaş arasında ve <b>yanlışlıkla yemekle</b> oluyor: renkli meyve, parlak tohum ve dikenli kapsül çocuğun ilgisini çekiyor.</li>
+<li>Saksı ve bahçedeki süs bitkilerini adıyla bil; aşağıdaki listede olanları çocuğun erişemeyeceği yere al.</li>
+<li>Kurutulmuş bitki, tohum ve aktar poşetlerini mutfakta baharatın yanında değil, kilitli ya da yüksek bir yerde tut.</li>
+<li>Şüphede <b>114</b>'ü ara; bitkinin bir parçasını ya da fotoğrafını yanına al. Danışmadan kusturma, süt ya da yağ içirme.</li>
+</ul></aside></section>
+<section class="sec"><h2>Birbirine benzeyen bitkiler</h2>
+<p>İşi görsel ayırt etme olan bir liste; yan yana fotoğrafı olan çiftlerde önce fotoğraflara bak, sonra ayırt edici özelliği oku.</p>
+{"".join(_zkaris_kart(d) for d in ZKARIS)}
+<div class="tablewrap"><table class="cmp etk"><thead><tr><th scope="col">Zehirli bitki</th><th scope="col">Neyle karıştırılır?</th><th scope="col">Nasıl ayırt edilir?</th><th scope="col">Zehirlenme belirtileri</th></tr></thead><tbody>
+{"".join(f'<tr><th scope="row">{_zad(d)}{_zroz(d)}<br><i class="muted-s">{e(d["lat"])}</i></th><td>{e(d["benzer"])}</td><td>{e(d["ayirt"])}</td><td>{e(d["belirti"])}</td></tr>' for d in ZKARIS)}
+</tbody></table></div><p class="muted-s">Kesin tanımadığın bir bitkiyi toplama ve yeme. Fotoğraftan ya da uygulamadan yapılan tanımaya güvenme.</p>
+<p><a class="cta" href="/indir/karistirilan-bitkiler/">Yazdırılabilir poster: karıştırılan bitkiler →</a> <span class="muted-s">Mutfağa, atölyeye ya da sınıfa asmak için.</span></p></section>
 <section class="sec"><h2>Halk kullanımında zehirlenmeye yol açanlar</h2>{"".join(f"<h3>{_zad(d)}</h3><p>{e(d['metin'])}</p>" for d in ZHALK)}</section>
 <section class="sec"><h2>Evdeki zehirli süs bitkileri</h2><p>{e(ZEV_M)}</p><ul class="otherlist">{"".join(f'<li>{e(a)} <i class="muted-s">{e(l)}</i></li>' for a, l in ZEV)}</ul></section>
 <section class="sec"><h2>Zehir dozdadır: listede yer alan şifalı bitkiler</h2><p>{e(ZLISTE_M)}</p><ul class="otherlist">{"".join(f'<li><a href="/{x}/">{e(byId[x]["tr"])}</a> <i class="muted-s">{e(f)}</i></li>' for x, f in ZLISTE if x in byId)}</ul></section>
@@ -2620,6 +2653,29 @@ write('/indir/eczane-karti/', page('Eczaneler için bitki–ilaç etkileşimi ka
       f'''<article class="kart ekart"><header><p class="eyebrow">Bitki Tabanı · eczaneler için</p><h1>Bu ilacı kullanıyorsanız, bu bitkilere dikkat</h1><p>Anadolu’da halk arasında sık kullanılan bitkilerden, yanındaki ilaç grubuyla etkileşimi bildirilenler. Liste eksiksiz değildir. Bitki çayı ya da bitkisel bir ürüne başlamadan önce eczacınıza sorun; ilacınızı kendi başınıza bırakmayın.</p></header>
 <div class="kart-grid">{_ekart}</div><footer class="ekart-alt">{_eqr}<p>Bitkilerin ayrıntılı etkileşimleri ve kaynakları: <b>bitkitabani.com/rehber/ilac-etkilesimi</b><br>Zehirlenme şüphesinde Ulusal Zehir Danışma Merkezi: <b>114</b> · Tıbbi tavsiye değildir.</p></footer></article>
 <p class="noprint"><button type="button" class="learn" onclick="window.print()">Yazdır / PDF olarak kaydet</button></p>''', '', narrow=True, extra='<meta name="robots" content="noindex, follow">'))
+# ---------- Yazdırılabilir poster: en çok karıştırılan bitkiler ----------
+# D8: işi görsel ayırt etme olan sayfanın çıktı alınabilir hâli (mutfağa, atölyeye, sınıfa).
+def _poz_sat(d):
+    """Poster satırı: zehirli bitki, (varsa) katalogdaki benzeri ve ayırt edici notlar."""
+    q = byId[d['id']]
+    bz = [b for b, _ in (ZBENZER.get(d['id']) or [])[:1] if b in byId]
+    ikinci = (f'<div class="poz-vs" aria-hidden="true">≠</div><div class="poz-fo">{ph(byId[bz[0]], 500)}</div>') if bz else ''
+    return (f'<div class="poz-sat"><div class="poz-ad"><b>{e(d["ad"])}</b>'
+            f'<span class="sf {q["guv"]}">{GUV[q["guv"]]}</span><i lang="la">{e(d["lat"])}</i></div>'
+            f'<div class="poz-fo">{ph(q, 500)}</div>{ikinci}'
+            f'<div class="poz-not"><p><b>Neyle karıştırılır:</b> {e(d["benzer"])}</p>'
+            f'<p><b>Nasıl ayırt edilir:</b> {e(d["ayirt"])}</p>'
+            f'<p class="poz-bel"><b>Belirtiler:</b> {e(d["belirti"])}</p></div></div>')
+_zsat = ''.join(_poz_sat(d) for d in ZKARIS if d['id'] in byId)
+_zqr = (_qr(BASE + '/rehber/zehirli-bitkiler/') if _qr else '')
+write('/indir/karistirilan-bitkiler/', page('Yazdırılabilir poster: en çok karıştırılan zehirli bitkiler | Bitki Tabanı',
+      'Mutfağa, atölyeye ya da sınıfa asılabilecek, yazdırılabilir karıştırma posteri: zehirli bitki, benzeri ve ayırt edici özelliği.', '/indir/karistirilan-bitkiler/',
+      f'''<article class="kart poz"><header><p class="eyebrow">Bitki Tabanı · yazdırılabilir</p><h1>Karıştırmayın: zehirli bitki ve benzeri</h1>
+<p>Türkiye’de bitki zehirlenmelerinin önemli bir kısmı, yenen ya da şifalı bilinen bir bitkinin zehirli benzeriyle karıştırılmasından çıkıyor. Aşağıdaki çiftlerde soldaki zehirli, sağdaki karıştırıldığı bitki.</p></header>
+{_zsat}
+<footer class="ekart-alt">{_zqr}<p><b>Zehirlenme şüphesinde Ulusal Zehir Danışma Merkezi: 114</b> (7/24, ücretsiz). Bitkinin bir parçasını ya da fotoğrafını yanına alın; danışmadan kusturmaya çalışmayın, süt ya da yağ içirmeyin.<br>Ayrıntılar, kaynaklar ve fotoğraf künyeleri: <b>bitkitabani.com/rehber/zehirli-bitkiler</b> · Tıbbi tavsiye değildir.</p></footer></article>
+<p class="noprint"><button type="button" class="learn" onclick="window.print()">Yazdır / PDF olarak kaydet</button></p>''', '', narrow=True, extra='<meta name="robots" content="noindex, follow">'))
+
 write('/eczaneler/', page('Eczaneler için ücretsiz bitki–ilaç etkileşimi kartı | Bitki Tabanı', 'Eczaneler için ücretsiz, kaynaklı ve yazdırılabilir bitki–ilaç etkileşimi kartı: kan sulandırıcı, tansiyon, şeker ilacı ve antidepresan kullananlar için.', '/eczaneler/',
       '''<header class="page-head"><span class="eyebrow">Eczaneler için</span><h1>Ücretsiz bitki–ilaç etkileşimi kartı</h1><p>Bitki çayı ya da bitkisel ürün soran müşterilere verebileceğiniz tek sayfalık bir kart. Kan sulandırıcı, tansiyon, şeker, antidepresan gibi ilaç gruplarının yanında, Anadolu’da sık kullanılan ve o grupla etkileşimi bildirilen bitkiler yer alıyor. Karttaki QR kod, her bitkinin etkileşimlerini kaynaklarıyla gösteren sayfaya götürür.</p></header>
 <section class="sec"><p><a class="cta" href="/assets/indir/bitki-ilac-etkilesimi-karti.pdf" download>Kartı indir (PDF, A4) →</a></p><p><a href="/indir/eczane-karti/">Kartı tarayıcıda aç</a> · <a href="/rehber/ilac-etkilesimi/">Etkileşim aracı</a></p></section>
