@@ -514,19 +514,29 @@ def ref_items(p):
 def refs(p):
     return '<ol class="refs">' + ''.join((f'<li><span class="kind">{e(k)}</span><a href="{e(u)}" target="_blank" rel="noopener">{e(t)}</a></li>' if u else f'<li><span class="kind">{e(k)}</span><cite>{e(t)}</cite></li>') for k, t, u in ref_items(p)) + '</ol>'
 
-# --- dış kimlikler: Taxon düğümünü POWO/IPNI ve Wikidata'ya bağlar ---
+# --- dış kimlikler: Taxon düğümünü Wikidata, POWO/IPNI ve GBIF'e bağlar ---
+# Kaynak: dis_kimlik.csv (bilimsel ada göre eşleştirildi, Türkçe ada göre değil).
+# Kayıt birden çok tür sayıyorsa (ıhlamur, ardıç, meşe…) tür yerine CİNS öğesine bağlanır
+# ve rütbe de genus yazılır; ilk türe bağlamak sayfanın söylemediği bir şeyi söylemek olurdu.
+import csv as _csv
+DIS_KIMLIK = {}
 try:
-    WIKIDATA = json.load(open(os.path.join(HERE, 'wikidata_kimlik.json'), encoding='utf-8'))
-except Exception:
-    WIKIDATA = {}
+    with open(os.path.join(HERE, 'dis_kimlik.csv'), encoding='utf-8') as _f:
+        for _r in _csv.DictReader(_f):
+            if _r.get('id'): DIS_KIMLIK[_r['id'].strip()] = _r
+except Exception as _ex:
+    print('dis_kimlik.csv okunamadı:', _ex)
 def taxon_sameas(p):
-    ad = POWO.get(p['id'], short_la(p))
+    r = DIS_KIMLIK.get(p['id']) or {}
     out = []
-    k = (POWO_KIMLIK.get(ad) or {}).get('kimlik')
-    if k: out.append(powo_adres(k))
-    q = WIKIDATA.get(ad) or WIKIDATA.get(short_la(p))
-    if q: out.append('https://www.wikidata.org/wiki/' + q)
+    if r.get('wikidata_qid'): out.append('https://www.wikidata.org/wiki/' + r['wikidata_qid'].strip())
+    if r.get('powo_id'): out.append('https://powo.science.kew.org/taxon/' + r['powo_id'].strip())
+    elif (POWO_KIMLIK.get(POWO.get(p['id'], short_la(p))) or {}).get('kimlik'):
+        out.append(powo_adres(POWO_KIMLIK[POWO.get(p['id'], short_la(p))]['kimlik']))
+    if r.get('gbif_id'): out.append('https://www.gbif.org/species/' + r['gbif_id'].strip())
     return out
+def taxon_rank(p):
+    return 'genus' if (DIS_KIMLIK.get(p['id'], {}).get('not') or '').startswith('cins') else 'species'
 
 KANIT_ICIN = {'kantaron': 'depresyonda', 'lavanta': 'kaygıda (kapsül)', 'hayit': 'adet öncesi sendromda', 'hashas': 'ağrıda (morfin)', 'kinin': 'sıtmada',
               'nane': 'huzursuz bağırsakta', 'sarimsak': 'tansiyon ve kolesterolde', 'keten': 'kabızlıkta', 'gucigdemi': 'gut ve FMF’de (kolşisin)', 'efedra': 'bronş açmada (efedrin)',
@@ -636,7 +646,7 @@ for i, p in enumerate(P):
     title = (f'{p["tr"]} zehirli mi? Etkileri, belirtileri ve tarihi' if p['guv'] == 'yuksek' else f'{p["tr"]} nedir, ne işe yarar? Faydaları ve zararları')
     if pid in SEO: title = SEO[pid][0]
     if len(title) < 44: title += ' | Bitki Tabanı'
-    ld = {"@context":"https://schema.org","@type":"Article","headline":f'{p["tr"]} ({short_la(p)})',"inLanguage":"tr","about":{"@type":"Taxon","name":short_la(p),"alternateName":[p['tr']] + adlar_of(p),"taxonRank":"species",**({"sameAs":_tsa} if (_tsa := taxon_sameas(p)) else {}),"parentTaxon":{"@type":"Taxon","name":p['fam'].split(' ')[0],"taxonRank":"family"}},"citation":cite_ld(ref_items(p)),"description":desc_for(p),"author":AUTHOR,"isPartOf":{"@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/"},"dateModified":(max(CONTENT_DATE, YENI[pid].isoformat()) if pid in YENI else CONTENT_DATE),**({"datePublished":YENI[pid].isoformat()} if pid in YENI else {}),**({"reviewedBy":{"@type":"Person","name":GZ_KISI['ad'],"jobTitle":GZ_KISI.get('unvan','Eczacı')},"lastReviewed":GZ[pid]} if GZ_KISI and pid in GZ else {}),"url":f'{BASE}/{pid}/',"image":(f'{BASE}/img/{pid}-960.jpg' if pid in IMG else None),"publisher":{"@type":"Organization","name":"Bitki Tabanı","url":BASE+"/","logo":BASE+"/assets/logo-512.png","sameAs":["https://www.instagram.com/bitkitabani/","https://www.threads.net/@bitkitabani","https://www.facebook.com/profile.php?id=61595314033889","https://www.pinterest.com/bitkitabani/","https://www.youtube.com/@bitkitabani","https://t.me/bitkitabani"]}}
+    ld = {"@context":"https://schema.org","@type":"Article","headline":f'{p["tr"]} ({short_la(p)})',"inLanguage":"tr","about":{"@type":"Taxon","name":short_la(p),"alternateName":[p['tr']] + adlar_of(p),"taxonRank":taxon_rank(p),**({"sameAs":_tsa} if (_tsa := taxon_sameas(p)) else {}),"parentTaxon":{"@type":"Taxon","name":p['fam'].split(' ')[0],"taxonRank":"family"}},"citation":cite_ld(ref_items(p)),"description":desc_for(p),"author":AUTHOR,"isPartOf":{"@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/"},"dateModified":(max(CONTENT_DATE, YENI[pid].isoformat()) if pid in YENI else CONTENT_DATE),**({"datePublished":YENI[pid].isoformat()} if pid in YENI else {}),**({"reviewedBy":{"@type":"Person","name":GZ_KISI['ad'],"jobTitle":GZ_KISI.get('unvan','Eczacı')},"lastReviewed":GZ[pid]} if GZ_KISI and pid in GZ else {}),"url":f'{BASE}/{pid}/',"image":(f'{BASE}/img/{pid}-960.jpg' if pid in IMG else None),"publisher":{"@type":"Organization","name":"Bitki Tabanı","url":BASE+"/","logo":BASE+"/assets/logo-512.png","sameAs":["https://www.instagram.com/bitkitabani/","https://www.threads.net/@bitkitabani","https://www.facebook.com/profile.php?id=61595314033889","https://www.pinterest.com/bitkitabani/","https://www.youtube.com/@bitkitabani","https://t.me/bitkitabani"]}}
     crumbs = {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana sayfa","item":BASE+"/"},{"@type":"ListItem","position":2,"name":"Katalog","item":BASE+"/katalog/"},{"@type":"ListItem","position":3,"name":p['tr'],"item":f'{BASE}/{pid}/'}]}
     uses = ''.join(f'<div class="use"><div class="who">{e(w)}</div><p>{ev(t)}</p></div>' for w, t in p['kul'])
     relhtml = ''
@@ -1170,6 +1180,24 @@ def takvim_band():
     bt = ''.join(f'<a class="chip" href="/{x}/">{e(byId[x]["tr"])}</a>' for x in o['bitkiler'] if x in byId)
     return f'<section class="takvimband"><span class="eyebrow">Takvim · {ne}</span><h2><a href="/takvim/#{o["slug"]}">{e(o["ad"])}</a></h2><p>{e(o["kisa"])}</p>{("<div class=related>" + bt + "</div>") if bt else ""}<p><a class="cta small" href="{_olink(o)[0]}">{e(_olink(o)[1])} →</a></p></section>'
 
+# Ana sayfa: kültür köprülerinden üçü, "Nereden başlamalı"nın üstünde
+def _kopru_kart(br_):
+    _ps = [byId[x] for x in (br_['a'], br_.get('b')) if x and x in byId]
+    _fo = next((q for q in _ps if q['id'] in IMG), None)
+    _ad = ' · '.join(q['tr'] for q in _ps)
+    return (f'<a class="scard" href="/kopruler/{slug_of(br_)}/">' + (ph(_fo, 500) if _fo else '')
+            + f'<span class="sc-txt"><b>{e(br_["t"])}</b><span class="sc-k">{e(br_["d"])}</span>'
+            + f'<span class="sc-b">{e(_ad)}</span></span></a>')
+_KOPRU_ANA = [x for x in BR if all((y in byId) for y in (x['a'],) if y)][:3]
+_kopru_html = ''.join(_kopru_kart(x) for x in _KOPRU_ANA)
+
+# Ana sayfa: motif modülü — sitenin kendi çizimleri, sekiz tanesi
+_MOTIF_ANA = ['elibelinde', 'pitrak', 'goz', 'hayat-agaci', 'bereket', 'su-yolu', 'chakana', 'kene']
+_mo_by = {m['slug']: m for m in MOTIFLER}
+_mo_sec = [_mo_by[x] for x in _MOTIF_ANA if x in _mo_by] or MOTIFLER[:8]
+# motif_svg() bu noktada henüz tanımlı değil; çizimler zaten /img/motif/<slug>.svg olarak yazılıyor
+_motif_html = ''.join(f'<a href="/semboller/{m["slug"]}/"><img class="motif-svg" src="/img/motif/{m["slug"]}.svg" width="512" height="512" alt="{e(m["ad"])} motifi çizimi" loading="lazy" decoding="async"><span>{e(m["ad"])}</span></a>' for m in _mo_sec[:8])
+
 # Nereden başlamalı: fotoğraflı kartlar
 _BASLA = [('papatya', 'Herkesin bildiği bir çayın arkasındaki bilim.'),
           ('kantaron', 'Kanıtı güçlü, ama ilaç etkileşimleri ciddi.'),
@@ -1203,6 +1231,14 @@ home = f'''
   <a class="pillar" href="/kultur/"><span class="eyebrow">Kültür ve ritüel</span><b>Bitkiler yalnızca ilaç değildir</b><span>Şamanizm, animizm, semboller, kutsal ağaçlar ve ritüel takvimi.</span></a>
   <div class="pchips"><a class="chip" href="/kavram/">Kavramlar</a><a class="chip" href="/semboller/">Semboller</a><a class="chip" href="/kopruler/">Kültür köprüleri</a><a class="chip" href="/blog/">Blog</a><a class="chip" href="/takvim/">Takvim</a></div>
 </section>
+<section class="sec"><h2>Kültür köprüleri</h2>
+<p class="sec-intro">Anadolu ile Amazon ve And’larda aynı işi gören bitkiler, aynı molekülün iki ayrı ritüelde karşımıza çıkışı: bir bitkinin tek bir kültüre ait olmadığı yerler.</p>
+<div class="startcards">{_kopru_html}</div>
+<p><a class="cta" href="/kopruler/">Bütün köprüler ve harita →</a></p></section>
+<section class="sec"><h2>Semboller</h2>
+<p class="sec-intro">Kilim motiflerinden Shipibo kené desenlerine: her motifin anlamı kaynağıyla yazılı, çizimleri açık lisanslı. {len(MOTIFLER)} sembol.</p>
+<div class="motif-mini ana">{_motif_html}</div>
+<p><a class="cta" href="/semboller/">Bütün semboller →</a></p></section>
 <section class="sec"><h2>Nereden başlamalı?</h2>
 <p class="sec-intro">Kataloğun tamamı {len(P)} bitki; ilk kez bakıyorsan aşağıdaki beşi iyi bir başlangıç. Her biri sitenin ne yaptığını başka bir yönüyle gösteriyor: bildiğin bir çayın arkasındaki kanıtı okumak, bir bitkinin riskini tartmak, kültürdeki yerini görmek.</p>
 <div class="startcards">{_basla_html}</div></section>
