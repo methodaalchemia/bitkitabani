@@ -743,3 +743,7 @@ button.cta{-webkit-appearance:none;appearance:none;background:var(--accent);colo
 .ecz-form label{display:flex;flex-direction:column;gap:4px;margin:0 0 12px;max-width:34rem}
 .ecz-form input,.ecz-form select{font:inherit;padding:9px 10px;border:1px solid var(--rule);background:var(--bg);color:var(--ink)}
 .ecz-form button{max-width:34rem}
+
+/* Gövde metniyle aynı boy ve fontta madde listesi (çağrı sayfası gibi okunan sayfalar) */
+.duz-list{margin:0 0 16px;padding-left:1.2em;max-width:72ch}
+.duz-list>li{margin:0 0 10px}

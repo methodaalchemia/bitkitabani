@@ -2162,7 +2162,7 @@ ecz = f'''{crumbs((ECZ_YOL, 'Eczacı çağrısı'))}
 <p>Kataloğun en hassas bölümü güvenlik katmanıdır. Bir bitkinin hangi ilaçlarla etkileşebileceğini, kimlerin kullanmaması gerektiğini, hangi hazırlanış biçimlerinde risk taşıdığını güvenilir kaynaklara dayanarak yazıyoruz. Mesleğin içinden bakan bir değerlendirmenin bundan farklı bir karşılığı olduğunu biliyoruz.</p>
 <p><b>Bu nedenle beş eczacıyı, bu bölümleri gözden geçirmeye davet ediyoruz.</b></p></section>
 <section class="sec"><h2>Katkıda bulunan eczacılara sunduklarımız</h2>
-<ul class="kart-list">
+<ul class="duz-list">
 <li>Değerlendirdiğiniz her kaydın altında adınız, unvanınız ve gözden geçirme tarihi yer alır.</li>
 <li>Sitede size ait bir gözden geçiren sayfası açılır; dilerseniz uzmanlık alanınız ve mesleki profilinize bağlantı eklenebilir.</li>
 <li>Adınız sayfalara yapılandırılmış veri olarak işlenir, böylece arama motorları ve yapay zekâ sistemleri için okunabilir hâle gelir.</li>
@@ -2170,8 +2170,8 @@ ecz = f'''{crumbs((ECZ_YOL, 'Eczacı çağrısı'))}
 <li>Değerlendirmeniz metin üzerinde bağlayıcıdır; bir bölümü hatalı bulursanız düzeltilir, düzeltilmezse adınız o sayfada yer almaz.</li>
 <li>Kayıtlar ilgi alanınıza göre dağıtılır: ilaç etkileşimleri, toksikoloji, fitoterapi veya farmakognozi.</li>
 </ul>
-<p class="muted-s">Mevzuat gereği eczane adı, adresi ve iletişim bilgisi yayımlanmaz. Sitede yer alan, kişisel mesleki kimliğinizdir.</p></section>
-<section class="sec"><h2>Katkının kapsamı</h2><p>Yüksek riskli olarak sınıflandırdığımız 39 kaydın güvenlik, etkileşim ve kontrendikasyon bölümleri gözden geçirilecek. Kişi başına sekiz kayıt düşmektedir ve değerlendirmeler ocak ayı içinde, kendi programınıza göre yapılabilir.</p></section>
+<p>Mevzuat gereği eczane adı, adresi ve iletişim bilgisi yayımlanmaz. Sitede yer alan, kişisel mesleki kimliğinizdir.</p></section>
+<section class="sec"><h2>Katkının kapsamı</h2><p>Yüksek riskli olarak sınıflandırdığımız 39 kaydın güvenlik, etkileşim ve kontrendikasyon bölümleri gözden geçirilecek. Kişi başına sekiz kayıt düşmektedir ve değerlendirmeler kasım/aralık ayı içinde, kendi programınıza göre yapılabilir.</p></section>
 <section class="sec"><h2>Değerlendirmenizin sınırı</h2><p>Adınız yalnızca güvenlik, etkileşim ve kontrendikasyon bölümlerinin altında görünür. Kültürel ve etnobotanik içerik, ritüel katmanı, kanıt düzeyi etiketleri ve yasal durum bilgisi değerlendirmenizin kapsamı dışında kalır. Bu ayrım ilgili sayfalarda da açıkça belirtilir.</p></section>
 <section class="sec"><h2>Gönüllülük esası</h2><p>Çalışma gönüllülük esasına dayanır; katkıda bulunanlardan ücret talep edilmez, kendilerine ödeme yapılmaz. Bu çalışmanın hakemli bir yayın katkısı niteliği taşımadığını ve sertifika düzenlenmediğini başvuru öncesinde belirtmek isteriz.</p>
 <p>Başvurularda eczacı odası kaydı teyit edilir. Son başvuru tarihi <b>15 Aralık</b>’tır.</p></section>
