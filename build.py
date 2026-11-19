@@ -2453,8 +2453,17 @@ for _eski, _yeni in _ESKI_ADRES:
 # kendi sayfası kapatılan familyalar: /familya/ sayfasındaki kendi bölümlerine
 _redir += ''.join(f'/familya/{fam_slug(f)}/ /familya/#{fam_slug(f)} 301\n' for f, n in sorted(FAMC.items()) if f in FAM_BILGI and n < FAM_MIN)
 open(os.path.join(OUT, '_redirects'), 'w').write(_redir)
+# Statik sayfalar Worker'a uğramıyor (run_worker_first yalnızca /api/* ve /ig/*),
+# bu yüzden güvenlik başlıkları burada, varlık sunucusunun _headers dosyasında.
+# CSP bilerek yok: sayfalarda satır içi betik ve stil var, nonce'a geçmeden sayfaları bozar.
 open(os.path.join(OUT, '_headers'), 'w').write('''/*
   Cache-Control: public, max-age=0, must-revalidate
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Cross-Origin-Opener-Policy: same-origin-allow-popups
 /assets/*
   Cache-Control: public, max-age=3600
 /assets/fonts/*
