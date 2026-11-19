@@ -31,6 +31,8 @@ jobs:
           mkdir -p igout
           for d in cay yt p; do [ -d "/tmp/old/$d" ] && cp -rn "/tmp/old/$d" igout/ || true; done
           ls igout
+      - name: Ses kapısı — eski dosyalara kayıt kur
+        run: python3 tools/ses_kapi.py
       - name: Çay Reels (eksikse)
         continue-on-error: true
         env:
