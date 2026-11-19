@@ -285,6 +285,13 @@ def threads_plan(data, day, days=4):
         try:
             from kavramlar import KAVRAMLAR
             kv = next((x for x in KAVRAMLAR if x['yayin'] == dd.isoformat() and x['bitki'] in P), None)
+            if not kv:
+                # Kavram kuyruğunda boş gün var (18, 20, 22–25 Kasım gibi): sabah slotu
+                # sessiz kalmasın diye dönen havuzdan farklı bir metin konur.
+                # Kavram uydurulmaz; yalnız var olan içerik gösterilir.
+                _alt = extra[(k * 23 + 11) % len(extra)]
+                if _alt['text'] != out[dd.isoformat()].get('ogle', {}).get('text'):
+                    out[dd.isoformat()]['kavram'] = dict(text=_alt['text'][:495], image=_alt['image'])
             if kv:
                 kb = P[kv['bitki']]
                 out[dd.isoformat()]['kavram'] = dict(text=(f"Günün kavramı: {kv['ad']} ✦\n\n{kv['kisa']}\n\nGünün bitkisi: {kb['tr']} ({kb['la']})\n\nKaynaklarıyla: bitkitabani.com/kavram/{kv['slug']}/")[:495], image=img(kb['id']))

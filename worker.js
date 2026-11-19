@@ -252,7 +252,9 @@ async function thPost(env) {
   if (st.pauseUntil && Date.now() < st.pauseUntil) return { skipped: 'bekleniyor' };
   // Hangi post sırada? Günlük bitki (Instagram'dan sonra), sabah 10'da 'Biliyor muydunuz?', öğleden sonra 14'te rehber/tarif.
   let job = null;
-  if ((ig.n || 0) >= LAUNCH && ig.last === day && ig.lastPlant && ig.lastPlant !== st.plant && st.last !== day + ':' + ig.lastPlant) job = 'gunluk';
+  // st.last zaten günü de taşıyor; ayrıca "aynı bitki" diye engellemek, bir bitki iki gün
+  // üst üste paylaşıldığında (19 Kasım reishi tekrarı) Threads'in günlük postunu düşürüyordu.
+  if ((ig.n || 0) >= LAUNCH && ig.last === day && ig.lastPlant && st.last !== day + ':' + ig.lastPlant) job = 'gunluk';
   else if (trH() >= 8.4 && st.slot.kavram !== day) job = 'kavram';
   else if (trH() >= 12.4 && st.slot.sabah !== day) job = 'sabah';
   else if (trH() >= 14.9 && st.slot.ad !== day) job = 'ad';
