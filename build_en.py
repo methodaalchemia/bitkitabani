@@ -32,6 +32,7 @@ def run(G):
     YASAL, KORUMA = G['YASAL'], G['KORUMA']
     EMA, NCCIH, OTHER, POWO, BAYTOP = G['EMA'], G['NCCIH'], G['OTHER'], G['POWO'], G['BAYTOP']
     slug_of, bridge_map, pips, acc, dot = G['slug_of'], G['bridge_map'], G['pips'], G['acc'], G['dot']
+    _dot_tr = dot   # Türkçe başlıklı sürüm (yalnızca TR sayfalarda doğru)
     FAV, FONTS, CONTENT_DATE, AUTHOR = G['FAV'], G['FONTS'], G['CONTENT_DATE'], G['AUTHOR']
     taxon_sameas, cite_ld = G['taxon_sameas'], G['cite_ld']   # şemadaki dış kimlikler ve kaynak künyeleri
     import sys; sys.path.insert(0, os.path.join(G['HERE'], 'en'))
@@ -56,11 +57,32 @@ def run(G):
         _s, _n = _s0, 2
         while _s in _seen: _s = f'{_s0}-{_n}'; _n += 1
         _seen.add(_s); _HSL[_h['slug']] = _s
-    from misc_en import ALT_EN, KORUMA_EN, YASAL_EN, YASAL_AD_EN, BR_EN, REG_EN, KAT_EN, KANIT_EN, GUV_EN, KAN_AD_EN, BIO_EN
+    from misc_en import ALT_EN, KORUMA_EN, YASAL_EN, YASAL_AD_EN, BR_EN, REG_EN, KAT_EN, KANIT_EN, GUV_EN, KAN_AD_EN, BIO_EN, FAM_EN, LA_TR_EN
     EN.update(G.get('EN_NEW', {})); ETK_EN.update(G.get('ETK_EN_NEW', {}))
+
+    # A5: Türkçe sızıntısı — bölge rozetinin başlığı, familya adı ve Latince ad alanı
+    REG_C = G['REG']
+    def dot(r): return f'<span class="dot" style="background:var({REG_C[r]["c"]})" title="{e(REG_EN[r])}"></span>'
+
+    def fam_en(p):
+        """"Asteraceae (papatyagiller)" -> "Asteraceae (daisy family)"; karşılığı yoksa yalnız Latince."""
+        lat = p['fam'].split('(')[0].strip().rstrip(';').strip()
+        ek = FAM_EN.get(lat)
+        return f'{lat} ({ek})' if ek else lat
+
+    def la_en(p):
+        """Latince ad alanındaki Türkçe bağlaçları çevirir ("Sideritis türleri" -> "Sideritis species")."""
+        t = p['la']
+        for tr, en in LA_TR_EN: t = t.replace(tr, en)
+        return t
+    def short_la_en(p): return la_en(p).split(',')[0].strip()
+
     YENI, NEWEST, LOCAL_DAY = G['YENI'], G['NEWEST'], G['LOCAL_DAY']
     missing = [p['id'] for p in P if p['id'] not in EN]
     assert not missing, ('missing English entries', missing)
+    # A5: kayıtların İngilizce görünümü — familya ve Latince ad alanındaki Türkçe temizlenir.
+    # Kopya üzerinde çalışılır; Türkçe sayfalar zaten yazıldı, asıl kayıtlar değişmez.
+    P = [dict(q, fam=fam_en(q), la=la_en(q)) for q in P]
     byId = {p['id']: p for p in P}
     name = lambda p: EN[p['id']]['name']
     PAIRS = {}   # en path -> tr path

@@ -85,3 +85,40 @@ KANIT_EN = {'klinik': 'Clinical', 'sinirli': 'Limited', 'geleneksel': 'Tradition
 GUV_EN = {'dusuk': 'Generally safe', 'orta': 'Caution', 'yuksek': 'High risk'}
 KAN_AD_EN = {'klinik': 'Clinical evidence', 'sinirli': 'Limited evidence', 'geleneksel': 'Traditional only', 'yok': 'No evidence'}
 BIO_EN = 'Edanaz Tınmazlar is an artist and herbalist. She left a white-collar life in search of healing and found herself trying to understand the singular world of plants. After travelling and living in many countries, she returned to Türkiye, making it her mission to understand her roots and share them.'
+
+# --- A5: İngilizce tarafta Türkçe sızıntısı ---
+# Familya alanı katalogda "Asteraceae (papatyagiller)" biçiminde tutuluyor; parantez içi
+# Türkçe ad İngilizce sayfalara düşüyordu. Latince ad kalır, parantez içi İngilizce karşılığıyla
+# değiştirilir; karşılığı bilinmeyen familyada yalnız Latince ad yazılır.
+FAM_EN = {
+    'Acanthaceae': 'acanthus family', 'Amaryllidaceae': 'amaryllis family',
+    'Anacardiaceae': 'cashew family', 'Apiaceae': 'carrot family',
+    'Apocynaceae': 'dogbane family', 'Aquifoliaceae': 'holly family',
+    'Araliaceae': 'ivy family', 'Asparagaceae': 'asparagus family',
+    'Asteraceae': 'daisy family', 'Betulaceae': 'birch family',
+    'Boraginaceae': 'borage family', 'Brassicaceae': 'cabbage family',
+    'Cannabaceae': 'hemp family', 'Caryophyllaceae': 'pink family',
+    'Cistaceae': 'rock-rose family', 'Cucurbitaceae': 'gourd family',
+    'Cyperaceae': 'sedge family', 'Equisetaceae': 'horsetail family',
+    'Ericaceae': 'heath family', 'Euphorbiaceae': 'spurge family',
+    'Fabaceae': 'legume family', 'Fagaceae': 'beech family',
+    'Gentianaceae': 'gentian family', 'Geraniaceae': 'geranium family',
+    'Grossulariaceae': 'currant family', 'Lamiaceae': 'mint family',
+    'Malvaceae': 'mallow family', 'Menyanthaceae': 'bogbean family',
+    'Myrtaceae': 'myrtle family', 'Oleaceae': 'olive family',
+    'Onagraceae': 'willowherb family', 'Paeoniaceae': 'peony family',
+    'Papaveraceae': 'poppy family', 'Pedaliaceae': 'sesame family',
+    'Plantaginaceae': 'plantain family', 'Poaceae': 'grass family',
+    'Polygonaceae': 'knotweed family', 'Polypodiaceae': 'polypody fern family',
+    'Primulaceae': 'primrose family', 'Rhamnaceae': 'buckthorn family',
+    'Rosaceae': 'rose family', 'Solanaceae': 'nightshade family',
+    'Taxaceae': 'yew family', 'Verbenaceae': 'verbena family',
+    'Violaceae': 'violet family', 'Vitaceae': 'grape family',
+    'Zingiberaceae': 'ginger family', 'Zygophyllaceae': 'caltrop family',
+    'Bignoniaceae': 'trumpet-creeper family', 'Burseraceae': 'incense tree family',
+}
+
+# Latince ad alanındaki Türkçe bağlaçlar ("ve diğer türler", "türleri")
+LA_TR_EN = [('ve diğer türler', 'and other species'), ('ve diğerleri', 'and others'),
+            ('ve benzerleri', 'and similar species'), ('ve varyeteleri', 'and its varieties'),
+            ('ve akrabaları', 'and relatives'), ('türleri', 'species'), ('türü', 'species')]
