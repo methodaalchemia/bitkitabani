@@ -370,7 +370,7 @@ details.fbox>summary{cursor:pointer;font-family:var(--f-mono);font-size:var(--t-
 details.fbox>summary::-webkit-details-marker{display:none}
 details.fbox>summary::before{content:"▸ ";color:var(--accent)}
 details.fbox[open]>summary::before{content:"▾ "}
-@media (min-width:721px){details.fbox>summary{display:none}}
+/* D7: filtreler masaüstünde de akordeon; kart ızgarası yukarıda başlasın */
 /* nereden başlamalı */
 ol.start{padding-left:22px}ol.start li{margin:8px 0}
 /* bilmece ilerleme */
@@ -896,3 +896,9 @@ footer.site h3{letter-spacing:.04em}
 .harita-k figcaption{font-family:var(--f-body);font-size:var(--t-sm);color:var(--accent);margin-top:6px}
 .harita-k:hover figcaption{text-decoration:underline;text-underline-offset:3px}
 .mapwrap.mini svg,.trmap-w.mini svg{max-height:380px;width:100%;height:auto}
+
+/* Fotoğrafı olmayan kayıt: kart ve sayfa başında koca boş alan bırakmasın */
+.ph.yok{aspect-ratio:16/7;min-height:92px}
+.card .ph.yok,figure.photo .ph.yok,.pmini .ph.yok,.scard .ph.yok{aspect-ratio:16/7}
+.ph.yok .ph-mark{display:flex;flex-direction:column;gap:4px;align-items:center;font-size:.95rem;padding:10px}
+.ph.yok .ph-mark small{font-family:var(--f-mono);font-size:var(--t-xs);color:var(--muted);font-style:normal;letter-spacing:.06em}
