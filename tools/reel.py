@@ -172,8 +172,11 @@ def _ses_sakla(segs, tmp, hedef):
     if not parcalar: return False
     lst = os.path.join(tmp, 'ses-liste.txt')
     open(lst, 'w', encoding='utf-8').write(''.join("file '%s'\n" % x for x in parcalar))
-    r = subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', lst, '-c', 'copy', hedef])
-    return r.returncode == 0 and os.path.exists(hedef)
+    for kodek in (['-c', 'copy'], ['-c:a', 'libmp3lame', '-b:a', '128k']):   # kopyalama tutmazsa yeniden kodla
+        r = subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', lst] + kodek + [hedef])
+        if r.returncode == 0 and os.path.exists(hedef) and _dur(hedef) > 0: return True
+    print('reel: seslendirme tek dosyada saklanamadı')
+    return False
 
 def kapi(out, slug):
     """Yayın öncesi tek kontrol. (tamam, sebep) döner; tamam değilse video yayımlanmaz."""
