@@ -902,3 +902,34 @@ footer.site h3{letter-spacing:.04em}
 .card .ph.yok,figure.photo .ph.yok,.pmini .ph.yok,.scard .ph.yok{aspect-ratio:16/7}
 .ph.yok .ph-mark{display:flex;flex-direction:column;gap:4px;align-items:center;font-size:.95rem;padding:10px}
 .ph.yok .ph-mark small{font-family:var(--f-mono);font-size:var(--t-xs);color:var(--muted);font-style:normal;letter-spacing:.06em}
+
+/* D9 · ilaç etkileşimi aracı: ilaç adları, işaretleme ve "doktoruna götür" listesi */
+.ilacad{margin:2px 0 10px}
+.ilacad b{color:var(--ink)}
+.etksec{display:inline-flex;align-items:center;gap:8px;cursor:pointer}
+.etksec input{accent-color:var(--accent);width:16px;height:16px;flex:none}
+table.etk th[scope="row"]{display:flex;flex-direction:column;gap:4px;align-items:flex-start}
+.gotur{border:1px solid var(--accent);background:var(--sheet);padding:14px 16px;margin:18px 0}
+.gotur ul{list-style:none;margin:8px 0;padding:0;display:grid;gap:4px}
+.gotur-btns{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin:10px 0 0}
+@media print{
+  body.yazdir-gotur .wrap>*:not(#gotur),body.yazdir-gotur header.site-nav,
+  body.yazdir-gotur footer.site,body.yazdir-gotur .etkgrp{display:none !important}
+  body.yazdir-gotur .gotur{border:0;padding:0}
+  body.yazdir-gotur .gotur-btns{display:none}
+}
+.grupbag{display:block;font-family:var(--f-body);font-weight:400;font-size:var(--t-xs);color:var(--accent);text-decoration:none;margin-top:3px}
+.grupbag:hover{text-decoration:underline;text-underline-offset:3px}
+/* Etkileşim satırının kanıt rozeti (kaydın kendi cümlesinden okunur) */
+.kanitr{display:inline-block;font-family:var(--f-mono);font-size:var(--t-xs);letter-spacing:.06em;
+        padding:1px 7px;border:1px solid var(--rule);border-radius:3px;color:var(--muted);white-space:nowrap;vertical-align:1px}
+.kanitr[data-k="belge"]{color:var(--s-dusuk);border-color:currentColor}
+.kanitr[data-k="vaka"]{color:var(--s-orta);border-color:currentColor}
+.kanitr[data-k="yok"]{opacity:.75}
+table.etk th[scope="row"]{min-width:150px}
+@media(min-width:900px){table.etk th[scope="row"]{min-width:190px}}
+
+/* Dosyadan gelen motif çizimi (<img>) sayfanın temasını izlesin: karanlıkta çevrilir.
+   Satır içi SVG'ler currentColor kullandığı için bu kuralın dışında. */
+:root[data-theme="dark"] img.motif-svg{filter:invert(.92) hue-rotate(180deg)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) img.motif-svg{filter:invert(.92) hue-rotate(180deg)}}

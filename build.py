@@ -296,6 +296,47 @@ from kavramlar import KAVRAMLAR
 KAV = sorted([k for k in KAVRAMLAR if datetime.date.fromisoformat(k['yayin']) <= LOCAL_DAY and k['bitki'] in byId], key=lambda k: k['yayin'])
 # yayın tarihi verilmiş motifler o tarihe kadar görünmez (bağlı bitkisi henüz yayında değilse)
 MOTIFLER = [m for m in _MOTIF_HEPSI if not m.get('yayin') or datetime.date.fromisoformat(m['yayin']) <= LOCAL_DAY]
+
+import random as _rnd
+def motif_svg(mo, size=None, cls='motif-svg', dosya=False):
+    # dosya=True: Google Görseller satır içi <svg>'yi indekslemiyor, yalnız
+    # <img src> içindeki görseli alıyor. Aynı çizim, bağımsız dosya olarak.
+    r = _rnd.Random(mo['slug'])
+    def wob(pts, amp):
+        out = []
+        for (x0, y0), (x1, y1) in zip(pts, pts[1:]):
+            n = max(2, int(math.hypot(x1 - x0, y1 - y0) / 3))
+            for k in range(n):
+                t = k / n; out.append((x0 + (x1 - x0) * t + r.uniform(-amp, amp), y0 + (y1 - y0) * t + r.uniform(-amp, amp)))
+        out.append((pts[-1][0] + r.uniform(-amp, amp), pts[-1][1] + r.uniform(-amp, amp)))
+        return out
+    def path(pts):
+        if len(pts) < 2: return ''
+        d = f'M{pts[0][0]:.1f} {pts[0][1]:.1f}'
+        for (ax, ay), (bx, by) in zip(pts[1:], pts[2:] + [pts[-1]]):
+            d += f' Q{ax:.1f} {ay:.1f} {(ax + bx) / 2:.1f} {(ay + by) / 2:.1f}'
+        return d
+    _ink = MOTIF_INK if dosya else 'currentColor'
+    body = ''.join(f'<path class="f" d="{path(wob(p, .45))}" fill="{_ink}" stroke="none" opacity=".9"/>' for p in mo.get('dolu', []))
+    body += ''.join(f'<path d="{path(wob(p, .55))}"/>' for p in mo['cizim'])
+    body += ''.join(f'<path d="{path(wob(p, .9))}" stroke-width="1.1" opacity=".55"/>' for p in mo['cizim'])
+    if dosya:
+        # Karanlık mod kuralı dosyadan çıkarıldı: <img>'e konan SVG, sayfanın temasını
+        # değil işletim sisteminin ayarını dinliyor. Telefonu karanlık modda olup siteyi
+        # aydınlıkta okuyanda çizimler krem rengine dönüp kayboluyordu. Dosya her zaman
+        # koyu çizer; karanlık temada görüntüyü CSS çeviriyor (img.motif-svg filter).
+        _st = f'path{{stroke:{MOTIF_INK}}}.f{{fill:{MOTIF_INK}}}'
+        return ('<?xml version="1.0" encoding="UTF-8"?>\n'
+                f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="-4 -4 108 108" width="512" height="512" '
+                f'fill="none" stroke="{MOTIF_INK}" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round" '
+                f'role="img" aria-labelledby="mt md">'
+                f'<title id="mt">{e(mo["ad"])} motifi</title>'
+                f'<desc id="md">{e(mo["kisa"])} Çizim: Edanaz Tınmazlar, Bitki Tabanı (bitkitabani.com). CC BY-SA 4.0.</desc>'
+                f'<style>{_st}</style>{body}</svg>\n')
+    sz = f' width="{size}" height="{size}"' if size else ''
+    return f'<svg class="{cls}" viewBox="-4 -4 108 108"{sz} fill="none" stroke="currentColor" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="{e(mo["ad"])} motifi çizimi">{body}</svg>'
+import math
+
 KAV_TODAY = KAV[-1] if KAV else None
 GLINKS = {}
 def _glinks():
@@ -702,6 +743,49 @@ def toc_and_ids(html):
     nav_ = '<div class="toc"><p class="toc-h"><span class="eyebrow">Bu sayfada</span></p><nav aria-label="Bu sayfada"><ol>' + ''.join(f'<li><a href="#{s}">{t}</a></li>' for s, t in items) + '</ol></nav></div>'
     return html.replace('<!--TOC-->', nav_)
 
+ILAC = [('kan', 'Kan sulandırıcılar (varfarin, aspirin vb.)', ['kan sulandırıcı', 'varfarin', 'kan pulcuğu']),
+        ('seker', 'Şeker ilaçları ve insülin', ['şeker']),
+        ('tansiyon', 'Tansiyon ilaçları', ['tansiyon', 'beta bloker', 'kalsiyum kanal', 'nitrat']),
+        ('kalp', 'Kalp ilaçları (digoksin, kalp ritmi ilaçları)', ['digoksin', 'kalp ritmi', 'kalp glikozit', 'qt süresini', 'kalp ilaç']),
+        ('antidep', 'Antidepresanlar ve migren ilaçları (triptanlar)', ['antidepresan', 'mao', 'ssri', 'triptan', 'serotonin']),
+        ('uyku', 'Uyku ilaçları, yatıştırıcılar ve alkol', ['yatıştırıcı', 'uyku ilaç', 'sakinleştirici', 'opioid', 'alkol']),
+        ('hormon', 'Doğum kontrol hapı ve hormon tedavisi', ['doğum kontrol', 'hormon']),
+        ('bagisiklik', 'Bağışıklığı baskılayan ve organ nakli ilaçları', ['bağışıklı', 'organ nakli', 'siklosporin']),
+        ('diuretik', 'İdrar söktürücüler (diüretikler)', ['idrar söktürücü', 'diüretik']),
+        ('lityum', 'Lityum', ['lityum']),
+        ('nobet', 'Nöbet (epilepsi) ilaçları', ['nöbet']),
+        ('karaciger', 'Karaciğerde yıkılan ya da karaciğere yük getiren ilaçlar', ['karaciğer', 'cyp3a4', 'p-glikoprotein', 'parasetamol']),
+        ('kortizon', 'Kortizon ilaçları', ['kortizon', 'kortikosteroid']),
+        ('uyarici', 'Uyarıcılar ve kafein', ['uyarıcı', 'kafein']),
+        ('antibiyotik', 'Antibiyotikler', ['antibiyotik', 'siprofloksasin']),
+        ('kanser', 'Kanser ve HIV ilaçları', ['kanser', 'hiv']),
+        ('demir', 'Demir takviyeleri', ['demir takviye']),
+        ('mide', 'Mide asidi düşürücüler', ['mide asidi']),
+        ('tum', 'Ağızdan alınan bütün ilaçlar (emilimi etkileyenler)', ['ağızdan alınan'])]
+from ilac_ticari import TICARI as ILAC_TICARI, ETKEN as ILAC_ETKEN
+def _low(s): return s.replace('I', 'ı').replace('İ', 'i').lower()
+
+# Etkileşim satırının kanıt düzeyi, kaydın KENDİ cümlesinden okunur — uydurulmaz.
+# Yalnız açık ifadeler sayılır; şüpheli satıra rozet konmaz, metin olduğu gibi durur.
+ETK_KANIT = [
+    ('yok',    'Çalışılmamış',  ('çalışılmış bir etkileşim yoktur', 'doğrulanmış bir etkileşim çalışması olmasa')),
+    ('teorik', 'Teorik',        ('teorik olarak', 'teorik bir kaygı', 'düşünülür', 'olabileceği düşünül')),
+    ('vaka',   'Vaka bildirimi',('vakaları bildirilmiş', 'vaka bildiril', 'bildirilmiştir')),
+    ('belge',  'Belgelenmiş',   ('titck monograf', 'ema monograf', 'monografı', 'klinik çalışma', 'çalışmalarda gösteril')),
+]
+def etk_kanit(w):
+    t = _low(w)
+    for kod, ad, anahtarlar in ETK_KANIT:
+        if any(k in t for k in anahtarlar): return kod, ad
+    return None, None
+
+def etk_grup(g):
+    """Bir etkileşim satırındaki ilaç tanımını ilaç grubuna bağlar (çift yönlü bağ)."""
+    t = _low(g).replace('göz tansiyonu', 'glokom')
+    for c, _, keys in ILAC:
+        if any(k in t for k in keys): return c
+    return None
+
 # ---------- komşu kayıtlar (B4: iç bağlantı dağılımı) ----------
 # Bağlar hub'larda toplanmıştı: katalogdan gelen bağ her kayda eşit düşüyor ama kayıtlar
 # arasında bağ yok denecek kadar azdı. En az bağ alan kayıtlar Amazon ve And bitkileri:
@@ -769,8 +853,7 @@ def motif_bag(pid):
     """Bitki sayfasındaki 'Sembollerde' bölümü: çizim, motif adı ve bağın ne olduğu."""
     ms = MOTIF_BITKI.get(pid) or []
     if not ms: return ''
-    li = ''.join(f'<li><a class="mb-a" href="/semboller/{m["slug"]}/">'
-                 f'<img class="motif-svg" src="/img/motif/{m["slug"]}.svg" width="512" height="512" alt="{e(m["ad"])} motifi çizimi" loading="lazy" decoding="async">'
+    li = ''.join(f'<li><a class="mb-a" href="/semboller/{m["slug"]}/">{motif_svg(m)}'
                  f'<b>{e(m["ad"])}</b></a><span>{e(n)}</span></li>' for m, n in ms)
     return ('<section class="sec"><h2>Sembollerde</h2><p class="muted-s">Motifin bu bitkiyi gösterdiği ileri sürülmez; '
             'bağın ne olduğu her satırda yazılıdır.</p><ul class="motif-bag">' + li + '</ul></section>')
@@ -808,7 +891,13 @@ for i, p in enumerate(P):
         der_sss = '<section class="sec"><h2>Sık sorulanlar</h2><div class="faq">' + ''.join(f'<details><summary>{e(q)}</summary><p>{e(a)}</p></details>' for q, a in dd['sss']) + '</div></section>'
         faqld = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q, a in dd['sss']]}
     if pid in ETK:
-        rows_ = ''.join(f'<tr><th scope="row">{e(g)}</th><td>{ev(w)}</td></tr>' for g, w in ETK[pid])
+        def _etk_sat(g, w):
+            c = etk_grup(g)
+            bag = (f' <a class="grupbag" href="/rehber/ilac-etkilesimi/#{c}" title="Bu ilaç grubuyla etkileşimi bildirilen bütün bitkiler">bu grupla etkileşenler →</a>') if c else ''
+            kk, ka = etk_kanit(w)
+            roz = f'<span class="kanitr" data-k="{kk}">{ka}</span> ' if kk else ''
+            return f'<tr><th scope="row">{e(g)}{bag}</th><td>{roz}{ev(w)}</td></tr>'
+        rows_ = ''.join(_etk_sat(g, w) for g, w in ETK[pid])
         etkhtml = f'<section class="sec" id="etk"><h2>İlaç etkileşimleri</h2><div class="tablewrap"><table class="cmp etk"><thead><tr><th scope="col">İlaç ya da madde</th><th scope="col">Neden önemli</th></tr></thead><tbody>{rows_}</tbody></table></div><p class="muted-s">Bu liste eksiksiz değildir. Düzenli ilaç kullanıyorsan {e(p["tr"])} denemeden önce eczacına ya da hekimine sor.</p></section>'
     _gp = {k['slug'] for k in KONULAR if any(x == pid for x, _ in k['bitkiler'])}
     def _sim(q):
@@ -1340,7 +1429,10 @@ _MOTIF_ANA = ['elibelinde', 'pitrak', 'goz', 'hayat-agaci', 'bereket', 'su-yolu'
 _mo_by = {m['slug']: m for m in MOTIFLER}
 _mo_sec = [_mo_by[x] for x in _MOTIF_ANA if x in _mo_by] or MOTIFLER[:8]
 # motif_svg() bu noktada henüz tanımlı değil; çizimler zaten /img/motif/<slug>.svg olarak yazılıyor
-_motif_html = ''.join(f'<a href="/semboller/{m["slug"]}/"><img class="motif-svg" src="/img/motif/{m["slug"]}.svg" width="512" height="512" alt="{e(m["ad"])} motifi çizimi" loading="lazy" decoding="async"><span>{e(m["ad"])}</span></a>' for m in _mo_sec[:8])
+# Satır içi SVG: <img>'e konan dosya, sayfanın temasını değil işletim sisteminin
+# karanlık modunu dinliyordu; telefonu karanlık modda olan okuyucuda çizimler
+# aydınlık sayfanın üstünde krem rengine dönüp kayboluyordu.
+_motif_html = ''.join(f'<a href="/semboller/{m["slug"]}/">{motif_svg(m)}<span>{e(m["ad"])}</span></a>' for m in _mo_sec[:8])
 
 # Nereden başlamalı: fotoğraflı kartlar
 _BASLA = [('papatya', 'Herkesin bildiği bir çayın arkasındaki bilim.'),
@@ -1385,7 +1477,7 @@ home = f'''
 <section class="sec"><h2>Türkiye’de nerede ne derleniyor</h2>
 <p class="sec-intro">Hakemli saha çalışmalarında kaydedilmiş bitkiler, derlendikleri illerle birlikte. Renkli iller kaydı olanlar; bir ile tıkla, o yörenin bitkilerini gör. Kişi ve köy adları yayımlanmaz.</p>
 <a class="harita-k" href="/yoreler/" aria-label="Yöre haritası: saha çalışması olan iller">
-  <figure class="trmap-w mini">{tr_haritasi()}<figcaption>{len(YORE_SAYFA)} ilin kendi sayfası var · bütün yöreler →</figcaption></figure></a></section>
+  <figure class="trmap-w mini">{tr_haritasi()}<figcaption>{len(YORE_IL)} il · {len(_YC)} saha çalışması · bütün yöreler →</figcaption></figure></a></section>
 <section class="sec"><h2>Semboller</h2>
 <p class="sec-intro">Kilim motiflerinden Shipibo kené desenlerine: her motifin anlamı kaynağıyla yazılı, çizimleri açık lisanslı. {len(MOTIFLER)} sembol.</p>
 <div class="motif-mini ana">{_motif_html}</div>
@@ -1632,26 +1724,6 @@ write(path, page('Hamilelikte ve emzirirken dikkat edilmesi gereken bitkiler | B
 GUIDE_URLS.append(path)
 
 # --- ilaç etkileşimi aracı ---
-ILAC = [('kan', 'Kan sulandırıcılar (varfarin, aspirin vb.)', ['kan sulandırıcı', 'varfarin', 'kan pulcuğu']),
-        ('seker', 'Şeker ilaçları ve insülin', ['şeker']),
-        ('tansiyon', 'Tansiyon ilaçları', ['tansiyon', 'beta bloker', 'kalsiyum kanal', 'nitrat']),
-        ('kalp', 'Kalp ilaçları (digoksin, kalp ritmi ilaçları)', ['digoksin', 'kalp ritmi', 'kalp glikozit', 'qt süresini', 'kalp ilaç']),
-        ('antidep', 'Antidepresanlar ve migren ilaçları (triptanlar)', ['antidepresan', 'mao', 'ssri', 'triptan', 'serotonin']),
-        ('uyku', 'Uyku ilaçları, yatıştırıcılar ve alkol', ['yatıştırıcı', 'uyku ilaç', 'sakinleştirici', 'opioid', 'alkol']),
-        ('hormon', 'Doğum kontrol hapı ve hormon tedavisi', ['doğum kontrol', 'hormon']),
-        ('bagisiklik', 'Bağışıklığı baskılayan ve organ nakli ilaçları', ['bağışıklı', 'organ nakli', 'siklosporin']),
-        ('diuretik', 'İdrar söktürücüler (diüretikler)', ['idrar söktürücü', 'diüretik']),
-        ('lityum', 'Lityum', ['lityum']),
-        ('nobet', 'Nöbet (epilepsi) ilaçları', ['nöbet']),
-        ('karaciger', 'Karaciğerde yıkılan ya da karaciğere yük getiren ilaçlar', ['karaciğer', 'cyp3a4', 'p-glikoprotein', 'parasetamol']),
-        ('kortizon', 'Kortizon ilaçları', ['kortizon', 'kortikosteroid']),
-        ('uyarici', 'Uyarıcılar ve kafein', ['uyarıcı', 'kafein']),
-        ('antibiyotik', 'Antibiyotikler', ['antibiyotik', 'siprofloksasin']),
-        ('kanser', 'Kanser ve HIV ilaçları', ['kanser', 'hiv']),
-        ('demir', 'Demir takviyeleri', ['demir takviye']),
-        ('mide', 'Mide asidi düşürücüler', ['mide asidi']),
-        ('tum', 'Ağızdan alınan bütün ilaçlar (emilimi etkileyenler)', ['ağızdan alınan'])]
-def _low(s): return s.replace('I', 'ı').replace('İ', 'i').lower()
 etk_by = {c: [] for c, _, _ in ILAC}
 for pid, rows in ETK.items():
     if pid not in byId: continue
@@ -1663,14 +1735,33 @@ sel = ''.join(f'<option value="{c}">{e(ad)} ({len(etk_by[c])})</option>' for c, 
 secs = ''
 for c, ad, _ in ILAC:
     if not etk_by[c]: continue
-    rows_ = ''.join(f'<tr><th scope="row"><a href="/{pid}/">{e(byId[pid]["tr"])}</a></th><td>{e(w)}</td></tr>' for pid, g, w in sorted(etk_by[c], key=lambda x: byId[x[0]]['tr']))
-    secs += f'<section class="sec etkgrp" id="{c}" data-c="{c}"><h2>{e(ad)}</h2><div class="tablewrap"><table class="cmp etk"><thead><tr><th scope="col">Bitki</th><th scope="col">Olası etkileşim</th></tr></thead><tbody>{rows_}</tbody></table></div></section>'
+    rows_ = ''.join(
+        f'<tr data-p="{pid}"><th scope="row">'
+        f'<label class="etksec"><input type="checkbox" class="etkchk" value="{pid}" aria-label="{e(byId[pid]["tr"])} kullandıklarıma ekle">'
+        f'<a href="/{pid}/">{e(byId[pid]["tr"])}</a></label>'
+        f'<span class="sf {byId[pid]["guv"]}">{GUV[byId[pid]["guv"]]}</span></th>'
+        f'<td>{("<span class=kanitr data-k=" + etk_kanit(w)[0] + ">" + etk_kanit(w)[1] + "</span> ") if etk_kanit(w)[0] else ""}{e(w)}</td></tr>'
+        for pid, g, w in sorted(etk_by[c], key=lambda x: byId[x[0]]['tr']))
+    _tic = ILAC_TICARI.get(c, []); _etk2 = ILAC_ETKEN.get(c, [])
+    _adlar = (f'<p class="ilacad muted-s"><b>Bu grupta sık kullanılanlar:</b> '
+              + ', '.join(e(x) for x in _tic + _etk2) + '</p>') if (_tic or _etk2) else ''
+    secs += (f'<section class="sec etkgrp" id="{c}" data-c="{c}" data-ara="{e(_low(" ".join([ad] + _tic + _etk2)))}">'
+             f'<h2>{e(ad)}</h2>{_adlar}<div class="tablewrap"><table class="cmp etk">'
+             f'<thead><tr><th scope="col">Bitki</th><th scope="col">Olası etkileşim</th></tr></thead>'
+             f'<tbody>{rows_}</tbody></table></div></section>')
 path = '/rehber/ilac-etkilesimi/'
 nplants = len({pid for v in etk_by.values() for pid, _, _ in v})
 body = f'''{crumbs(('/rehber/', 'Rehberler'), (path, 'İlaç etkileşimi'))}
 <article class="sheet">
 <header class="page-head"><span class="eyebrow">Güvenlik aracı · {nplants} bitki</span><h1>Bitki ve ilaç etkileşimi: kullandığın ilaçla hangi bitkiler sorun çıkarabilir?</h1><p>Bitkiler de ilaçlar gibi etken maddeler içerir. Bazıları ilacının etkisini artırır, bazıları azaltır, bazıları da aynı yan etkiyi büyütür. Kullandığın ilaç grubunu seç; katalogda o grupla etkileşimi bildirilen bitkileri gör.</p></header>
-<form class="etkform" id="etkform" onsubmit="return false"><label for="etksel" class="eyebrow">İlaç grubu</label><select id="etksel"><option value="">Bütün gruplar</option>{sel}</select><input id="etkq" type="search" placeholder="ya da bitki adı yaz" aria-label="Bitki adıyla süz"><p class="muted-s" id="etkmsg" role="status"></p></form>
+<form class="etkform" id="etkform" onsubmit="return false"><label for="etksel" class="eyebrow">İlaç grubu</label><select id="etksel"><option value="">Bütün gruplar</option>{sel}</select><input id="etkq" type="search" placeholder="ya da ilaç/bitki adı yaz: Coumadin, Beloc, kantaron…" aria-label="İlaç ya da bitki adıyla süz"><p class="muted-s" id="etkmsg" role="status"></p></form>
+<p class="muted-s">İlacının kutusundaki adı yazman yeterli; ticari adlar (Coumadin, Beloc, Glucophage…) ve etken madde adları (varfarin, metoprolol, metformin…) aranıyor.</p>
+<aside class="gotur" id="gotur" hidden>
+  <p class="eyebrow">Doktoruna ya da eczacına götür</p>
+  <p class="muted-s">Kullandığın bitkileri aşağıdaki tablolarda işaretle; liste burada birikir, yazdırabilir ya da kopyalayabilirsin.</p>
+  <ul id="goturList"></ul>
+  <p class="gotur-btns"><button class="cta" id="goturYaz" type="button">Yazdır</button> <button class="linkbtn" id="goturKopya" type="button">Kopyala</button> <button class="linkbtn" id="goturSil" type="button">Listeyi temizle</button></p>
+</aside>
 <aside class="warnbox" role="note"><b>Bu liste eksiksiz değildir.</b> Yalnızca katalogdaki kayıtlarda bildirilen etkileşimleri içerir; bir bitkinin listede olmaması ilacınla güvenle kullanılabileceği anlamına gelmez. Düzenli ilaç kullanıyorsan, bir bitkisel ürüne başlamadan önce eczacına sor. İlacını kendi başına bırakma ya da dozunu değiştirme.</aside>
 <div id="etkres">{secs}</div>
 <section class="sec"><h2>Özellikle dikkat</h2><p><a href="/kantaron/">Sarı kantaron</a>, doğum kontrol hapı, kan sulandırıcılar, bazı kalp ve organ nakli ilaçları dahil pek çok ilacın etkisini azaltan, en iyi bilinen bitkidir. Antidepresanlarla birlikte kullanıldığında serotonin sendromuna yol açabilir.</p></section>
@@ -1805,44 +1896,8 @@ write('/karsilastirma/', page('Bitki karşılaştırmaları: hangisi, ne zaman? 
 GUIDE_URLS.append('/karsilastirma/')
 
 # --- semboller: el çizimi tek renk motifler ---
-import random as _rnd
 MOTIF_INK = '#1b1b1b'       # bağımsız dosyada currentColor çalışmaz: sabit mürekkep
 MOTIF_INK_DARK = '#e9e4da'  # <img> içindeki SVG kendi medya sorgusunu okuyabiliyor
-def motif_svg(mo, size=None, cls='motif-svg', dosya=False):
-    # dosya=True: Google Görseller satır içi <svg>'yi indekslemiyor, yalnız
-    # <img src> içindeki görseli alıyor. Aynı çizim, bağımsız dosya olarak.
-    r = _rnd.Random(mo['slug'])
-    def wob(pts, amp):
-        out = []
-        for (x0, y0), (x1, y1) in zip(pts, pts[1:]):
-            n = max(2, int(math.hypot(x1 - x0, y1 - y0) / 3))
-            for k in range(n):
-                t = k / n; out.append((x0 + (x1 - x0) * t + r.uniform(-amp, amp), y0 + (y1 - y0) * t + r.uniform(-amp, amp)))
-        out.append((pts[-1][0] + r.uniform(-amp, amp), pts[-1][1] + r.uniform(-amp, amp)))
-        return out
-    def path(pts):
-        if len(pts) < 2: return ''
-        d = f'M{pts[0][0]:.1f} {pts[0][1]:.1f}'
-        for (ax, ay), (bx, by) in zip(pts[1:], pts[2:] + [pts[-1]]):
-            d += f' Q{ax:.1f} {ay:.1f} {(ax + bx) / 2:.1f} {(ay + by) / 2:.1f}'
-        return d
-    _ink = MOTIF_INK if dosya else 'currentColor'
-    body = ''.join(f'<path class="f" d="{path(wob(p, .45))}" fill="{_ink}" stroke="none" opacity=".9"/>' for p in mo.get('dolu', []))
-    body += ''.join(f'<path d="{path(wob(p, .55))}"/>' for p in mo['cizim'])
-    body += ''.join(f'<path d="{path(wob(p, .9))}" stroke-width="1.1" opacity=".55"/>' for p in mo['cizim'])
-    if dosya:
-        _st = (f'path{{stroke:{MOTIF_INK}}}.f{{fill:{MOTIF_INK}}}'
-               f'@media(prefers-color-scheme:dark){{path{{stroke:{MOTIF_INK_DARK}}}.f{{fill:{MOTIF_INK_DARK}}}}}')
-        return ('<?xml version="1.0" encoding="UTF-8"?>\n'
-                f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="-4 -4 108 108" width="512" height="512" '
-                f'fill="none" stroke="{MOTIF_INK}" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round" '
-                f'role="img" aria-labelledby="mt md">'
-                f'<title id="mt">{e(mo["ad"])} motifi</title>'
-                f'<desc id="md">{e(mo["kisa"])} Çizim: Edanaz Tınmazlar, Bitki Tabanı (bitkitabani.com). CC BY-SA 4.0.</desc>'
-                f'<style>{_st}</style>{body}</svg>\n')
-    sz = f' width="{size}" height="{size}"' if size else ''
-    return f'<svg class="{cls}" viewBox="-4 -4 108 108"{sz} fill="none" stroke="currentColor" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="{e(mo["ad"])} motifi çizimi">{body}</svg>'
-import math
 def _msrc(t):
     return re.sub(r'\[(\d+)\]', lambda m: f'<sup><a href="#k{m.group(1)}">[{m.group(1)}]</a></sup>', e(t))
 MOTIF_DIR = os.path.join(OUT, 'img', 'motif')
