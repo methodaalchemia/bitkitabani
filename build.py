@@ -2190,7 +2190,7 @@ ecz = f'''{crumbs((ECZ_YOL, 'Eczacı çağrısı'))}
 _ecz_ld = {"@context":"https://schema.org","@type":"WebPage","name":ECZ_BAS,"url":BASE+ECZ_YOL,"inLanguage":"tr","description":ECZ_OZET,
            "datePublished":CONTENT_DATE,"author":AUTHOR,"isPartOf":{"@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/"}}
 write(ECZ_YOL, page(f'{ECZ_BAS} | Bitki Tabanı', ECZ_OZET[:158], ECZ_YOL, ecz, 'about',
-      '<script src="/assets/katki.js" defer></script>', narrow=True,
+      '<script src="/assets/katki.js" defer></script>', narrow=True, image=BASE + '/img/kapak-eczaci-cagrisi.jpg',
       extra=lds(_ecz_ld, crumb_ld((ECZ_YOL, 'Eczacı çağrısı')))))
 
 urls = ['/', '/katalog/', '/kultur/', '/kopruler/', '/gunun-bitkisi/', '/yeni/', '/hakkinda/', '/yontem/', '/gizlilik/', ECZ_YOL] + [f'/kopruler/{slug_of(x)}/' for x in BR] + FAM_URLS + [f'/{p["id"]}/' for p in P] + GUIDE_URLS + EN_URLS

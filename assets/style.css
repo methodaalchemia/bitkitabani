@@ -747,3 +747,9 @@ button.cta{-webkit-appearance:none;appearance:none;background:var(--accent);colo
 /* Gövde metniyle aynı boy ve fontta madde listesi (çağrı sayfası gibi okunan sayfalar) */
 .duz-list{margin:0 0 16px;padding-left:1.2em;max-width:72ch}
 .duz-list>li{margin:0 0 10px}
+
+/* Bugünün bitkisi kartı yatay: fotoğraf solda, ad sağda */
+.today{flex-direction:row;align-items:stretch;width:380px;gap:0}
+.today-ph{flex:0 0 132px;width:132px;aspect-ratio:1/1;border-bottom:0;border-right:1px solid var(--rule)}
+.today-t{justify-content:center;min-width:0;padding:12px 16px}
+@media (max-width:640px){.today{width:100%}.today-ph{flex-basis:108px;width:108px;aspect-ratio:1/1}}
