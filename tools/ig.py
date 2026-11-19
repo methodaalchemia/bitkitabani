@@ -158,6 +158,18 @@ def slides(p, photo, label):
     block(d, (80, y), 'Bitki Tabanı geleneksel kullanımları kültürel bir kayıt olarak anlatır ve bilimsel bilgiyi özetler. Tıbbi tavsiye değildir; bir bitkiyi tedavi amacıyla kullanmadan önce hekimine ya da eczacına danış.', [sans(30), sans(27)], W - 160, 220, C['muted'], gap=1.4)
     if p.get('foto'): d.text((80, H - 160), 'Fotoğraf: ' + p['foto'][:70], font=sans(22), fill=C['muted'])
     out.append(im)
+    # Güvenlik ağı: görselsiz gönderi çıkmasın. Önce o günün başka bir slotundaki
+    # görsel, o da yoksa havuzdan fotoğraflı bir bitki, en sonda site kapağı.
+    _yedek = [f"https://bitkitabani.com/img/{q['id']}-960.jpg" for q in pool][:60]
+    _gorselsiz = []
+    for _d, _slots in out.items():
+        _var = [v.get('image') for v in _slots.values() if v.get('image')]
+        for _ad2, _v in _slots.items():
+            if not _v.get('image'):
+                _v['image'] = (_var[0] if _var else (_yedek[hash(_d + _ad2) % len(_yedek)] if _yedek
+                               else 'https://bitkitabani.com/assets/logo-512.png'))
+                _gorselsiz.append(f'{_d}:{_ad2}')
+    if _gorselsiz: print('threads: görselsiz slot yedekle dolduruldu →', ', '.join(_gorselsiz))
     return out
 
 TAG = {'anadolu': '#anadolu', 'asya': '#asya', 'and': '#andlar', 'amazon': '#amazon', 'kamerika': '#kuzeyamerika', 'avrupa': '#avrupa', 'afrika': '#afrika', 'okyanusya': '#okyanusya'}
@@ -234,7 +246,11 @@ def threads_plan(data, day, days=4):
         from motifler import MOTIFLER
         for mo in MOTIFLER:
             bt = [x for x, _ in mo['bitkiler'] if x in P]
-            extra.append(dict(text=f"Bir sembol: {mo['ad']} ({mo['bolge']})\n\n{mo['kisa']}" + (f"\n\nBağlantılı bitki: {P[bt[0]]['tr']}" if bt else '') + f"\n\nAnlamı ve kaynakları: bitkitabani.com/semboller/{mo['slug']}/", image=img(bt[0]) if bt else None))
+            # Görsel motifin kendi çizimi: bağlantılı bitki olmayan motiflerde (bukağı gibi)
+            # gönderi görselsiz çıkıyordu.
+            _mi = os.path.join(ROOT, 'img', 'motif', mo['slug'] + '.png')
+            _mu = f"https://bitkitabani.com/img/motif/{mo['slug']}.png" if os.path.exists(_mi) else (img(bt[0]) if bt else None)
+            extra.append(dict(text=f"Bir sembol: {mo['ad']} ({mo['bolge']})\n\n{mo['kisa']}" + (f"\n\nBağlantılı bitki: {P[bt[0]]['tr']}" if bt else '') + f"\n\nAnlamı ve kaynakları: bitkitabani.com/semboller/{mo['slug']}/", image=_mu))
     except Exception as ex: print('semboller threads:', ex)
     # rehber, tarif ve karşılaştırmalar karışık sırayla gelsin
     extra = [x for i, x in sorted(enumerate(extra), key=lambda t: (t[0] * 7) % max(1, len(extra)))]

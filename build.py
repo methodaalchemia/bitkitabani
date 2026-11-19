@@ -1005,7 +1005,7 @@ FEATURED = ['uzerlik','ayahuasca','salep','maca','kantaron','koka','kina','huito
 learn_note = '<p class="hint" id="learnHint"><b>Öğrendiklerim</b> sayacı, bitki sayfalarının sonundaki “Öğrendim” düğmesiyle işaretlediğin bitkileri gösterir. Giriş yapmadan da çalışır; o zaman yalnızca bu tarayıcıda saklanır. <a href="/hesap/">Google ile giriş yaparsan</a> bütün cihazlarında görünür.</p>'
 katalog = f'''
 <nav class="crumbs" aria-label="Konum"><a href="/">Ana sayfa</a><span>/</span><span>Katalog</span></nav>
-<header class="page-head"><span class="eyebrow">{len(P)} kayıt</span><h1>Bitki kataloğu</h1><p>Bütün bitkileri bölgeye, kullanıma, kanıt düzeyine, güvenliğe ve yasal duruma göre süz. Seçtiğin filtreler adres çubuğuna yazılır; bağlantıyı paylaşabilirsin.</p></header>
+<header class="page-head"><span class="eyebrow" id="headCount">{len(P)} kayıt</span><h1>Bitki kataloğu</h1><p>Bütün bitkileri bölgeye, kullanıma, kanıt düzeyine, güvenliğe ve yasal duruma göre süz. Seçtiğin filtreler adres çubuğuna yazılır; bağlantıyı paylaşabilirsin.</p></header>
 <section style="display:flex;flex-direction:column;gap:18px" aria-label="Katalog">
   <div class="controls">
     <label class="search" for="q">

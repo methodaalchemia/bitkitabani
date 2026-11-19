@@ -89,6 +89,8 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python3 tools/cay_reel.py
+      - name: Paylaşım kontrolü (her gönderide görsel)
+        run: python3 tools/paylasim_kontrol.py
       - name: Ses kapısı (metin–video eşleşmesi)
         run: python3 tools/ses_kapi.py
       - name: Instagram dosyalarını ayrı dala yaz (geçmiş tutulmaz)

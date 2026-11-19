@@ -212,10 +212,14 @@ async function igPost(env) {
 // ---------- Threads: Instagram'daki günlük postun kısa metni ve aynı görselleri ----------
 // Gerekli gizli değişken: TH_TOKEN (Threads API, uzun ömürlü token). 20 günde bir kendiliğinden yenilenir.
 const TH = 'https://graph.threads.net/v1.0';
-async function thPublish(tok, o) {   // tek görselli ya da yalnızca metin Threads postu
+// Görselsiz gönderi çıkmasın: metin üreten taraf bir görsel koymayı atlarsa
+// (bağlantılı bitkisi olmayan sembollerde oluyordu) site kapağı kullanılır.
+const TH_YEDEK_GORSEL = 'https://bitkitabani.com/assets/logo-512.png';
+async function thPublish(tok, o) {   // her zaman tek görselli Threads postu
   if (!/#\S/.test(o.text)) o = { ...o, text: (o.text + '\n\n#şifalıbitkiler').slice(0, 500) };   // Threads'te tek konu etiketi
+  if (!o.image) o = { ...o, image: TH_YEDEK_GORSEL, gorselYedek: true };
   const form = x => { const f = new URLSearchParams(x); f.set('access_token', tok); return { method: 'POST', body: f }; };
-  const box = (await igJson(await fetch(TH + '/me/threads', form(o.image ? { media_type: 'IMAGE', image_url: o.image, text: o.text } : { media_type: 'TEXT', text: o.text })))).id;
+  const box = (await igJson(await fetch(TH + '/me/threads', form({ media_type: 'IMAGE', image_url: o.image, text: o.text })))).id;
   for (let i = 0; i < 6; i++) {
     await new Promise(r => setTimeout(r, 5000));
     const s = await igJson(await fetch(TH + '/' + box + '?fields=status&access_token=' + encodeURIComponent(tok)));
@@ -428,8 +432,9 @@ async function fbPost(env) {   // günde en fazla 3 post: 12:30 günün kavramı
       const p = job === 'oglen' ? (ritual ? plan.sabah : (plan.kavram || plan.sabah)) : plan.ogle;
       if (!p) throw new Error('bugün için ' + job + ' metni yok');
       const text = linkify(p.text);
-      st.lastId = p.image ? (await igJson(await fetch(FB + '/' + st.page + '/photos', form({ url: p.image, caption: text })))).id
-                          : (await igJson(await fetch(FB + '/' + st.page + '/feed', form({ message: text })))).id;
+      // Görselsiz gönderi çıkmasın: görsel yoksa site kapağı kullanılır.
+      st.lastId = (await igJson(await fetch(FB + '/' + st.page + '/photos', form({ url: p.image || TH_YEDEK_GORSEL, caption: text })))).id;
+      if (!p.image) st.gorselYedek = trDay();
     }
     st.last = day; st.n = (st.n || 0) + 1; st.error = null; st.fails = 0;
   } catch (e) {

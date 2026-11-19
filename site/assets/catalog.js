@@ -24,6 +24,9 @@
     });
     updateCounts(words);
     var ce = document.getElementById('count'), tpl = ce.getAttribute('data-tpl'); ce.textContent = tpl ? tpl.replace('{n}', n).replace('{t}', cards.length) : n + ' / ' + cards.length + ' kayıt gösteriliyor';
+    // Üst başlıktaki sayı da süzmeyle birlikte güncellensin (sabit "258 kayıt" kalıyordu)
+    var he = document.getElementById('headCount');
+    if (he) he.textContent = (n === cards.length) ? (cards.length + ' kayıt') : (n + ' / ' + cards.length + ' kayıt');
     document.getElementById('empty').hidden = n > 0;
     document.getElementById('reset').hidden = !(state.q || G.some(function(g){ return any(state[g]); }));
     var fc = document.querySelector('.fbox .fcount');
