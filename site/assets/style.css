@@ -774,3 +774,8 @@ button.cta{-webkit-appearance:none;appearance:none;background:var(--accent);colo
 .motif-bag .motif-svg{width:44px;height:44px;flex:0 0 auto;color:var(--ink)}
 .motif-bag span{color:var(--muted);font-size:.95rem}
 @media(max-width:560px){.motif-bag li{flex-direction:column;align-items:flex-start;gap:6px}}
+
+/* B6: ritüel takvimi bütünüyle tarayıcıda çiziliyor; yer tutulmazsa altındaki
+   her şey aşağı kayıyordu (CLS 0,18). Çarkın ve künyelerin yüksekliği baştan ayrılır. */
+.tk .tk-govde{min-height:min(760px,85vh);display:flex;flex-direction:column;justify-content:flex-start}
+.tk .tk-govde>p.muted-s:only-child{margin:auto;text-align:center}

@@ -902,7 +902,7 @@ katalog = f'''
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="2" fill="none"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       <input id="q" type="search" placeholder="Bitki, Latince ad, kullanım ara… (ör. nazar, öksürük, tütsü)" autocomplete="off" aria-label="Bitki ara">
     </label>
-    <details class="fbox"><summary>Filtreler <span class="fcount" hidden></span></summary><div class="fgroups">{filters}<p class="muted-s">Bir bitki birden fazla bölgede ve kullanımda kayıtlı olabilir; bu yüzden grup sayılarının toplamı {len(P)} bitkiden fazladır.</p></div></details>
+    <details class="fbox"><summary>Filtreler <span class="fcount" hidden></span></summary><div class="fgroups">{filters}<p class="muted-s">Bir bitki birden fazla bölgede ve kullanımda kayıtlı olabilir; bu yüzden grup sayılarının toplamı {len(P)} bitkiden fazladır.</p></div></details><script>(function(){{var f=document.currentScript.previousElementSibling;if(f&&matchMedia("(min-width: 900px)").matches)f.open=true}})()</script>
   </div>
   <div class="resultbar"><span id="count" aria-live="polite">{len(P)} / {len(P)} kayıt gösteriliyor</span><button class="linkbtn" id="reset" type="button" hidden>Filtreleri temizle</button><label class="sortsel">Sırala <select id="sort"><option value="no">Katalog sırası</option><option value="az">A’dan Z’ye</option><option value="kanit">Kanıtı en güçlü</option></select></label></div>
   <div class="grid">{"".join(card(p) for p in P)}</div>

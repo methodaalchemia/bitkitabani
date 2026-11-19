@@ -93,7 +93,8 @@
   render();
 })();
 
-(function(){var f=document.querySelector('details.fbox');if(f&&window.matchMedia('(min-width: 900px)').matches)f.open=true;})();
+/* Filtre kutusu geniş ekranda açık başlar; bunu sayfanın kendi satır içi betiği yapıyor
+   (defer ile çalışınca ilk boyamadan sonra açılıyor ve sayfa sıçrıyordu — B6). */
 /* Katalog sıralaması: katalog sırası, A'dan Z'ye, kanıtı en güçlü */
 (function(){
   var sel = document.getElementById('sort'); if (!sel) return;
