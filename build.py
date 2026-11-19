@@ -526,6 +526,15 @@ try:
             if _r.get('id'): DIS_KIMLIK[_r['id'].strip()] = _r
 except Exception as _ex:
     print('dis_kimlik.csv okunamadı:', _ex)
+
+def _kimlik_uyar():
+    """Kimliksiz kayıt uyarısı: sameAs bu dosyadan geliyor, kuyruktan gelen yeni
+    bitki dosyaya eklenmezse kimliksiz yayımlanır. tools/dis_kimlik_ekle.py tamamlar."""
+    yok = [p['id'] for p in P if p['id'] not in DIS_KIMLIK]
+    eksik = [p['id'] for p in P if p['id'] in DIS_KIMLIK
+             and not (DIS_KIMLIK[p['id']].get('wikidata_qid') or '').strip()]
+    if yok: print(f'⚠ dis_kimlik.csv\'de yok ({len(yok)}): ' + ', '.join(yok) + ' — python3 tools/dis_kimlik_ekle.py')
+    if eksik: print(f'  dış kimliği eksik ({len(eksik)}): ' + ', '.join(eksik))
 def taxon_sameas(p):
     r = DIS_KIMLIK.get(p['id']) or {}
     out = []
@@ -2461,5 +2470,6 @@ _rows = ''.join(f'<section class="sec"><h2><a href="/{p["id"]}/">{e(p["tr"])}</a
 write('/tanima-kontrol/index.html', page('Tanıma görselleri kontrolü | Bitki Tabanı', 'Tanıma görselleri kontrol listesi', '/tanima-kontrol/',
       '<header class="page-head"><h1>Tanıma görselleri: kontrol</h1><p>Beğenmediğin görselin bitki kimliğini ve türünü (çizim, çiçek, kuru) Claude’a yaz; yenisiyle değiştirilir.</p></header>' + _rows,
       'kat', extra='<meta name="robots" content="noindex">'))
+_kimlik_uyar()
 print('ok', len(urls), 'sayfa')
 

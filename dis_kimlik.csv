@@ -49,7 +49,7 @@ kakao,Kakao,Theobroma cacao,Q42385,urn:lsid:ipni.org:names:320783-2,3152205,tür
 matico,Matico,Piper aduncum,Q3281616,urn:lsid:ipni.org:names:680296-1,3086337,tür · doğrudan
 sinekmantari,Sinek mantarı,Amanita muscaria,Q131227,,8168319,tür · doğrudan
 akadacayi,Ak adaçayı,Salvia apiana,Q899812,urn:lsid:ipni.org:names:290024-2,2927016,tür · doğrudan
-nane,Nane,Mentha ×piperita,Q156037,,,tür · kayıttaki yazım düzeltildi
+nane,Nane,Mentha ×piperita,Q156037,,8707933,tür · kayıttaki yazım düzeltildi
 zeytin,Zeytin yaprağı,Olea europaea,Q37083,urn:lsid:ipni.org:names:610675-1,5415040,tür · doğrudan
 sumak,Sumak,Rhus coriaria,Q159546,urn:lsid:ipni.org:names:70477-1,3190563,tür · doğrudan
 nar,Nar,Punica granatum,Q13188,urn:lsid:ipni.org:names:554129-1,5420901,tür · doğrudan
@@ -79,7 +79,7 @@ isgin,Işgın,Rheum ribes,Q1376178,urn:lsid:ipni.org:names:696789-1,4037514,tür
 zerdecal,Zerdeçal,Curcuma longa,Q42562,urn:lsid:ipni.org:names:796451-1,2757624,tür · çoklu adaydan seçildi
 yabaniigde,Yaban iğdesi,Hippophae rhamnoides,Q165378,urn:lsid:ipni.org:names:323851-1,3039285,tür · doğrudan
 ginseng,Ginseng,Panax ginseng,Q182881,urn:lsid:ipni.org:names:91472-1,5372262,tür · doğrudan
-huito,Huito,Genipa americana,,,,Wikidata öğesi doğrulanamadı — bağlanmayacak
+huito,Huito,Genipa americana,,,2895593,Wikidata öğesi doğrulanamadı — bağlanmayacak
 guarana,Guaraná,Paullinia cupana,Q209089,urn:lsid:ipni.org:names:784110-1,3189949,tür · doğrudan
 camucamu,Camu camu,Myrciaria dubia,Q1031775,urn:lsid:ipni.org:names:166146-2,3186519,tür · doğrudan
 acai,Açaí,Euterpe oleracea,Q33943,urn:lsid:ipni.org:names:666941-1,5293398,tür · doğrudan
@@ -114,11 +114,11 @@ mersin,Mersin,Myrtus communis,Q6122027,urn:lsid:ipni.org:names:599719-1,3180085,
 enginar,Enginar,Cynara cardunculus var. scolymus,Q23043615,urn:lsid:ipni.org:names:125755-3,4241126,tür · doğrudan
 devedikeni,Deve dikeni,Silybum marianum,Q193798,urn:lsid:ipni.org:names:249211-1,3145214,tür · doğrudan
 altinmuhur,Altınmühür,Hydrastis canadensis,Q1051710,urn:lsid:ipni.org:names:305699-2,3033110,tür · doğrudan
-tatliot,Tatlı ot,Anthoxanthum nitens,Q22104468,,,tür · kayıttaki yazım düzeltildi
+tatliot,Tatlı ot,Anthoxanthum nitens,Q22104468,,2703346,tür · kayıttaki yazım düzeltildi
 ayiuzumu,Ayı üzümü,Arctostaphylos uva-ursi,Q208032,urn:lsid:ipni.org:names:1024084-2,2882580,tür · doğrudan
 kirmizikaraagac,Kırmızı karaağaç,Ulmus rubra,Q1534893,urn:lsid:ipni.org:names:306680-2,5361867,tür · doğrudan
 kankoku,Kan kökü,Sanguinaria canadensis,Q2724394,urn:lsid:ipni.org:names:673993-1,5334192,tür · doğrudan
-dagcayi,Dağ çayı,Sideritis,Q431310,,,cins · kayıt birden çok tür sayıyor
+dagcayi,Dağ çayı,Sideritis,Q431310,,2926685,cins · kayıt birden çok tür sayıyor
 atkestanesi,At kestanesi,Aesculus hippocastanum,Q26899,urn:lsid:ipni.org:names:781594-1,3189815,tür · doğrudan
 ceviz,Ceviz,Juglans regia,Q46871,urn:lsid:ipni.org:names:442427-1,3054368,tür · doğrudan
 incir,İncir,Ficus carica,Q36146,urn:lsid:ipni.org:names:852556-1,5361909,tür · doğrudan
@@ -151,14 +151,14 @@ mayiselmasi,Mayıs elması,Podophyllum peltatum,Q1572090,urn:lsid:ipni.org:names
 salviadivinorum,Kâhin adaçayı,Salvia divinorum,Q320584,urn:lsid:ipni.org:names:456121-1,2927020,tür · doğrudan
 ormangulu,Ormangülü,Rhododendron ponticum,Q557928,urn:lsid:ipni.org:names:333114-1,7327990,tür · doğrudan
 baldiran,Baldıran,Conium maculatum,Q218041,urn:lsid:ipni.org:names:840668-1,3034807,tür · doğrudan
-yuksukotu,Yüksük otu,Digitalis,Q156533,,,cins · kayıt birden çok tür sayıyor
+yuksukotu,Yüksük otu,Digitalis,Q156533,,3172032,cins · kayıt birden çok tür sayıyor
 camalonga,Camalonga (sarı zakkum),Thevetia peruviana,Q312147,urn:lsid:ipni.org:names:252580-2,5414405,tür · doğrudan
 huayruro,Huayruro,Ormosia,Q2872596,,,cins · kayıt birden çok tür sayıyor
-piripiri,Piri piri,Cyperus,Q161224,,,cins · kayıt birden çok tür sayıyor
+piripiri,Piri piri,Cyperus,Q161224,,2713455,cins · kayıt birden çok tür sayıyor
 ajosacha,Ajo sacha (orman sarımsağı),Mansoa alliacea,Q6751798,urn:lsid:ipni.org:names:152672-2,3172603,tür · doğrudan
 bobinsana,Bobinsana,Calliandra angustifolia,Q14934043,urn:lsid:ipni.org:names:42066-2,2982331,tür · doğrudan
 mucura,Mucura,Petiveria alliacea,Q311518,urn:lsid:ipni.org:names:323288-2,3084012,tür · doğrudan
-gul,Gül,Rosa × damascena,Q578904,,,tür · kayıttaki yazım düzeltildi
+gul,Gül,Rosa × damascena,Q578904,,7390572,tür · kayıttaki yazım düzeltildi
 misir,Mısır,Zea mays,Q11575,urn:lsid:ipni.org:names:426810-1,5290052,tür · doğrudan
 hunnap,Hünnap,Ziziphus jujuba,Q11181633,urn:lsid:ipni.org:names:719213-1,3039423,tür · doğrudan
 serbetciotu,Şerbetçiotu,Humulus lupulus,Q104212,urn:lsid:ipni.org:names:303502-2,2984535,tür · doğrudan

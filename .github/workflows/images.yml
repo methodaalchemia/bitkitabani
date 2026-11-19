@@ -61,6 +61,9 @@ jobs:
         run: pip install -q pillow segno && python3 tools/tanima.py
       - name: Hikâye kapakları
         run: python3 tools/kapak.py
+      - name: Dış kimlikler (yeni bitkiler için Wikidata ve GBIF)
+        continue-on-error: true
+        run: python3 build.py >/dev/null && python3 tools/dis_kimlik_ekle.py
       - run: python3 build.py
       - name: ffmpeg (Reels videoları için)
         continue-on-error: true
@@ -98,7 +101,7 @@ jobs:
           git config user.name "bitkitabani-bot"
           git config user.email "actions@users.noreply.github.com"
           ekle() {
-            git add img images.json site tools/fonts assets/fonts assets/icons
+            git add img images.json site tools/fonts assets/fonts assets/icons dis_kimlik.csv
             if [ -f inat.json ]; then git add inat.json; fi
           }
           ekle
