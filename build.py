@@ -348,7 +348,8 @@ def _glinks():
         if t['bitki'] in byId: GLINKS.setdefault(t['bitki'], []).append((f'/tarif/{t["slug"]}/', 'Tarif: ' + t['ad']))
     for mo in MOTIFLER:
         for x, _ in mo['bitkiler']:
-            if x in byId: GLINKS.setdefault(x, []).append((f'/semboller/{mo["slug"]}/', 'Sembol: ' + mo['ad']))
+            if x in byId and (mo['slug'], x) not in (('karanfil-motifi', 'karanfil'),):
+                GLINKS.setdefault(x, []).append((f'/semboller/{mo["slug"]}/', 'Sembol: ' + mo['ad']))
     for c in KARS:
         if c['a'] in byId and c['b'] in byId:
             for x in (c['a'], c['b']): GLINKS.setdefault(x, []).append((f'/karsilastirma/{c["a"]}-ve-{c["b"]}/', c['baslik']))
@@ -908,7 +909,10 @@ for i, p in enumerate(P):
     simhtml = '<section class="sec"><h2>Benzer bitkiler</h2><p class="muted-s">Aynı derde kullanılan ya da aynı familyadan bitkiler.</p><div class="grid sim">' + ''.join(card(q) for q in similar) + '</div></section>'
     mybridges = [(i, x) for i, x in enumerate(BR, 1) if pid in (x['a'], x.get('b'))]
     brlinks = ''.join(f'<a class="chip" href="/kopruler/{slug_of(x)}/">Karşılaştırma: {e(x["t"])}</a>' for i, x in mybridges)
-    brlinks += ''.join(f'<a class="chip" href="{u}">{e(t)}</a>' for u, t in GLINKS.get(pid, []) if not t.startswith('Tarif: '))
+    # Motifler "Sembollerde" bölümünde çizimiyle ve bağıyla duruyor; çip olarak tekrarlanmaz.
+    _mb_var = bool(MOTIF_BITKI.get(pid))
+    brlinks += ''.join(f'<a class="chip" href="{u}">{e(t)}</a>' for u, t in GLINKS.get(pid, [])
+                       if not t.startswith('Tarif: ') and not (_mb_var and t.startswith('Sembol: ')))
     tarifler = ''.join(f'<a class="chip" href="{u}">{e(t)}</a>' for u, t in GLINKS.get(pid, []) if t.startswith('Tarif: '))
     if rel:
         relhtml = '<section class="sec"><h2>Kültür köprüsü</h2><div class="related">' + ''.join(f'<a class="chip" href="/{r}/">{"".join(dot(x) for x in byId[r]["bolge"])}{e(byId[r]["tr"])}</a>' for r in rel) + '</div></section>'
