@@ -32,7 +32,7 @@ img{max-width:100%;display:block}
 [hidden]{display:none!important}
 a{color:inherit}
 .wrap{max-width:1180px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));padding-block:20px 56px;display:flex;flex-direction:column;gap:28px}
-.narrow{max-width:820px}
+.narrow{max-width:1180px}   /* dar okuma sütunu kaldırıldı: her sayfa ana sayfa genişliğinde */
 h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.1}
 button{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
@@ -726,7 +726,7 @@ button.cta{-webkit-appearance:none;appearance:none;background:var(--accent);colo
 .sc-b{font-family:var(--f-mono);font-size:var(--t-xs);color:var(--muted)}
 
 /* Geniş sayfalarda metin satırı okunur kalsın (ızgaralar tam genişlikte) */
-.wrap:not(.narrow) .page-head p,.wrap:not(.narrow) .sec>p,.wrap:not(.narrow) .sec>ul:not([class]),.wrap:not(.narrow) .sec>ol:not([class]),.wrap:not(.narrow) .sec-intro{max-width:72ch}
+.wrap .page-head p,.wrap .page-head>.lede,.wrap .sec>p,.wrap .sec>ul:not([class]),.wrap .sec>ol:not([class]),.wrap .sec-intro,.wrap .duz-list,.wrap article>p,.wrap .sheet>p{max-width:72ch}
 
 /* Masaüstünde tek sütun liste yerine ızgara: rehber ve karşılaştırma dizinleri */
 @media (min-width:860px){
@@ -753,3 +753,12 @@ button.cta{-webkit-appearance:none;appearance:none;background:var(--accent);colo
 .today-ph{flex:0 0 132px;width:132px;aspect-ratio:1/1;border-bottom:0;border-right:1px solid var(--rule)}
 .today-t{justify-content:center;min-width:0;padding:12px 16px}
 @media (max-width:640px){.today{width:100%}.today-ph{flex-basis:108px;width:108px;aspect-ratio:1/1}}
+
+/* Çağrı bandı masaüstünde tek satır: metin solda, düğme sağda */
+@media (min-width:900px){
+  .cagri{flex-direction:row;align-items:center;gap:24px;padding:18px 22px}
+  .cagri-t{flex:0 0 auto}
+  .cagri-d{flex:1 1 auto;margin:0}
+  .cagri-c{margin:0;flex:0 0 auto;border:1px solid var(--accent);padding:8px 14px;white-space:nowrap}
+  .cagri:hover .cagri-c{background:var(--accent);color:var(--paper)}
+}
