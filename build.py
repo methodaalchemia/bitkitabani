@@ -324,6 +324,13 @@ def pips(k):
     n = KANIT[k]['n']
     return '<span class="pips" aria-hidden="true">' + ''.join(f'<i class="{"on" if i <= n else ""}"></i>' for i in (1,2,3)) + '</span>'
 short_la = lambda p: p['la'].split(',')[0].strip()
+def sade_la(p):
+    """Yazar atıfsız yalın ad: 'Cola nitida (Vent.) Schott et Endl. ve varyeteleri' -> 'Cola nitida'."""
+    t = re.split(r'[;,]', p['la'])[0].strip()
+    t = re.sub(r'\([^)]*\)', ' ', t)
+    w = t.split()
+    n = 3 if len(w) > 2 and w[1] in ('×', 'x', 'X') else 2
+    return ' '.join(w[:n])
 
 FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;0,700;0,800;1,400&family=Alegreya+Sans:ital,wght@0,400;0,700;1,400&family=Courier+Prime&display=swap">'
 FONTS = '<script>try{var t=localStorage.getItem("bt-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>' + FONTS
@@ -636,7 +643,7 @@ def card(p):
     return f'''<a class="card" href="/{p["id"]}/" data-id="{p["id"]}" data-bolge="{" ".join(p["bolge"])}" data-kat="{" ".join(p["kat"])}" data-kanit="{p["kanit"]}" data-no="{p["no"]}" data-ad="{e(p["tr"])}" data-guv="{p["guv"]}" data-kisim="{kisim_of(p)}" data-ay="{ay_of(p)}" data-durum="{" ".join(([YASAL[p["id"]][0] if YASAL[p["id"]][0]=="yasak" else "kisitli"] if p["id"] in YASAL else []) + (["zehir"] if "zehir" in p["kat"] else []) + (["koruma"] if KORUMA.get(p["id"], {}).get("rozet") else []))}" data-s="{e(s)}">
   {ph(p, 500)}
   <div class="body">
-    <div class="row"><span class="acc">{acc(p["no"])}{'<span class="newb">Yeni</span>' if is_new(p["id"]) else ''}</span><span class="regs">{"".join(dot(r) for r in p["bolge"])}</span></div>
+    <div class="row"><span class="acc">{'<span class="newb">Yeni</span>' if is_new(p["id"]) else ''}</span><span class="regs">{"".join(dot(r) for r in p["bolge"])}</span></div>
     <h2>{e(p["tr"])}</h2>
     <div class="latin">{e(p["la"])}</div>
     <div class="fam" lang="la">{e(p["fam"])}</div>
@@ -786,7 +793,7 @@ for i, p in enumerate(P):
     q_guv = (q_guv[0], q_guv[1].replace(' Ayrıntılar “Güvenlik” bölümünde.', ''))
     kisaca = [q_nedir, q_ne, q_guv]
     _kl = ['<a href="#geleneksel-kullanim">Gelenekte nasıl kullanılıyor →</a>', f'<a href="#{"faydalari-ne-kadar-kanitli" if pid in DERIN else "bilim-ne-diyor"}">Kanıtın ayrıntısı →</a>', '<a href="#guvenlik">Güvenlik ayrıntısı →</a>']
-    kisahtml = '<div class="kisaca"><p class="toc-h"><span class="eyebrow">30 saniyede</span> ' + e(p['tr']) + ' nedir, ne işe yarar?</p>' + ''.join(f'<div class="qa"><h2 class="q">{e(q)}</h2><p>{e(a)} {_kl[i]}</p></div>' for i, (q, a) in enumerate(kisaca)) + '</div>'
+    kisahtml = '<div class="kisaca"><p class="toc-h"><span class="eyebrow">30 saniyede</span></p>' + ''.join(f'<div class="qa"><h2 class="q">{e(q)}</h2><p>{e(a)} {_kl[i]}</p></div>' for i, (q, a) in enumerate(kisaca)) + '</div>'
     if pid in DERIN:
         dd = DERIN[pid]
         rows_ = ''.join(f'<tr><th scope="row">{e(i)}</th><td><span class="kv {k}">{KAN_AD[k]}</span></td><td>{e(n)}</td></tr>' for i, k, n in dd['iddia'])
@@ -1350,7 +1357,7 @@ home = f'''
     </form>
     <script id="hqData" type="application/json">{json.dumps([[p['id'], p['tr'], short_la(p), p['diger']] for p in P], ensure_ascii=False).replace('</', '<\\/')}</script>
   </div>
-  <div class="todaybox"><a class="today" id="today" href="/{today_p["id"]}/" data-pool="{e(json.dumps([[p["id"], p["tr"], p["la"], 1 if p["id"] in IMG else 0] for p in pool], ensure_ascii=False))}"><img id="todayImg" class="today-ph" src="/img/{today_p["id"]}-500.jpg" alt="" width="500" height="667" decoding="async"{'' if today_p["id"] in IMG else ' hidden'}><span class="today-t"><span class="eyebrow">Bugünün bitkisi</span><b id="todayName">{e(today_p["tr"])}</b><i id="todayLatin">{e(today_p["la"])}</i></span></a><a class="cta small" href="/gunun-bitkisi/">Geçmiş günlerin bitkileri →</a><p class="streak" id="streak" hidden></p></div>
+  <div class="todaybox"><a class="today" id="today" href="/{today_p["id"]}/" data-pool="{e(json.dumps([[p["id"], p["tr"], sade_la(p), 1 if p["id"] in IMG else 0] for p in pool], ensure_ascii=False))}"><img id="todayImg" class="today-ph" src="/img/{today_p["id"]}-500.jpg" alt="" width="500" height="667" decoding="async"{'' if today_p["id"] in IMG else ' hidden'}><span class="today-t"><span class="eyebrow">Bugünün bitkisi</span><b id="todayName">{e(today_p["tr"])}</b><i id="todayLatin">{e(sade_la(today_p))}</i></span></a><a class="cta small" href="/gunun-bitkisi/">Geçmiş günlerin bitkileri →</a><p class="streak" id="streak" hidden></p></div>
 </header>
 <a class="cagri" href="/eczaci-cagrisi/"><span class="cagri-t">Gözden geçiren eczacı arıyoruz</span><span class="cagri-d">Güvenlik, etkileşim ve kontrendikasyon bölümlerini mesleki gözle değerlendirecek beş eczacıyı davet ediyoruz. Son başvuru 15 Aralık.</span><span class="cagri-c">Ayrıntılar →</span></a>
 {takvim_band()}

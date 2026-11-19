@@ -136,7 +136,7 @@ header.top{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px 32px;a
 .sheet-head .latin{font-size:var(--t-lg);color:var(--muted)}
 .sheet-head .badges{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:6px}
 figure.photo{margin:0;display:flex;flex-direction:column;gap:6px;min-width:0}
-figure.photo .ph{aspect-ratio:3/4;max-width:100%;border:1px solid var(--rule)}
+figure.photo .ph{aspect-ratio:3/4;max-width:100%}
 figure.photo figcaption{font-family:var(--f-mono);font-size:.72rem;color:var(--muted);line-height:1.4;min-height:1.4em}
 figure.photo figcaption a{color:var(--muted)}
 @media (max-width:720px){.sheet-head{grid-template-columns:1fr}figure.photo{order:-1}}
@@ -314,7 +314,7 @@ table.cmp tbody th{font-family:var(--f-mono);font-weight:400;color:var(--muted);
 .clues{list-style:none;padding:0;margin:20px 0;display:flex;flex-direction:column;gap:10px}
 .clue{border:1px solid var(--rule);border-left:4px solid var(--ochre);background:var(--sheet);padding:12px 16px}
 .clue p{margin:6px 0 0}
-.clue.img img{display:block;margin-top:8px;width:min(100%,260px);height:auto;aspect-ratio:3/4;object-fit:cover;border:1px solid var(--rule)}
+.clue.img img{display:block;margin-top:8px;width:min(100%,260px);height:auto;aspect-ratio:3/4;object-fit:cover}
 .guess .row{display:flex;gap:8px;margin-top:6px}
 .guess input{flex:1;min-width:0;font:inherit;padding:10px 12px;border:1px solid var(--rule);background:var(--sheet);color:var(--ink)}
 .guess input:focus{outline:2px solid var(--accent);outline-offset:1px}
@@ -697,8 +697,8 @@ button.cta{-webkit-appearance:none;appearance:none;background:var(--accent);colo
 .sc-txt span{font-size:var(--t-sm);color:var(--muted);line-height:1.4}
 .pminis{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,110px),1fr));gap:12px;margin:12px 0 0}
 .pmini{display:flex;flex-direction:column;gap:6px;text-decoration:none;color:var(--ink);min-width:0}
-.pmini .ph{aspect-ratio:3/4;border:1px solid var(--rule);transition:border-color .15s ease}
-.pmini:hover .ph{border-color:var(--accent)}
+.pmini .ph{aspect-ratio:3/4}
+.pmini:hover .ph{outline:2px solid var(--accent);outline-offset:0}
 .pmini .ph .ph-mark{font-size:.85rem;padding:6px}
 .pmini b{font-size:var(--t-sm);font-weight:600;line-height:1.25;overflow-wrap:anywhere}
 .fam-sec .cta{margin-top:14px}
@@ -784,7 +784,7 @@ button.cta{-webkit-appearance:none;appearance:none;background:var(--accent);colo
 .brshots{display:grid;gap:14px;margin:18px 0 22px;max-width:840px}
 .brshots.cols2{grid-template-columns:1fr 1fr}
 .brshot{margin:0}
-.brshot .ph{aspect-ratio:4/3;max-width:100%;border-radius:12px;overflow:hidden;border:1px solid var(--rule)}
+.brshot .ph{aspect-ratio:4/3;max-width:100%;border-radius:12px;overflow:hidden}
 .brshot .ph img{height:auto;aspect-ratio:4/3;object-fit:cover}
 .brshot figcaption{margin-top:6px;font-size:var(--t-sm);line-height:1.45}
 .brshot figcaption i{color:var(--muted)}
@@ -793,3 +793,89 @@ button.cta{-webkit-appearance:none;appearance:none;background:var(--accent);colo
 
 /* Familya adının Türkçe karşılığı ve taksonomik not (önce `fam` alanının içindeydi) */
 .fam-tr{color:var(--muted);font-style:normal}
+
+/* ============================================================
+   D1 · İÇERİK IZGARASI — "bir blokta metin ve görsel öğe farklı genişlikte olamaz"
+   Önce üç genişlik yarışıyordu: metin ~72ch, kart ızgaraları %100, bölüm
+   ayıraçları %100. Metin ortada kesiliyor, sağ yarı ölü kalıyordu.
+   Kural: başlık, ayıraç ve metin aynı sütunda (72ch). Yalnızca gerçekten geniş
+   olan öğeler (kart ızgaraları, haritalar, tablolar, görseller) iki sütunu da
+   kaplar. Geniş ekranda artan sağ sütun boş bırakılmaz: sayfa içi gezinme oraya.
+   ============================================================ */
+:root{--metin:72ch;--yan:300px;--oluk:56px}
+
+@media (min-width:1100px){
+  .wrap>.sec,.wrap>article>.sec,.wrap>.page-head,.wrap>article>.page-head,
+  .wrap>article>section.sec,.wrap .sheet>.sec{
+    display:grid;
+    grid-template-columns:minmax(0,var(--metin)) minmax(0,1fr);
+    column-gap:var(--oluk);
+    align-items:start;
+  }
+  /* varsayılan: her çocuk metin sütununda — başlık ve ayıracı da dâhil */
+  .wrap>.sec>*,.wrap>article>.sec>*,.wrap>.page-head>*,.wrap>article>.page-head>*,
+  .wrap .sheet>.sec>*{grid-column:1}
+  /* gerçekten geniş olanlar iki sütunu kaplar */
+  .wrap>.sec>.grid,.wrap>.sec>.chips,.wrap>.sec>.startcards,.wrap>.sec>.hubcards,
+  .wrap>.sec>.pminis,.wrap>.sec>.motif-bag,.wrap>.sec>.brshots,.wrap>.sec>.famlist,
+  .wrap>.sec>table,.wrap>.sec>.tablo,.wrap>.sec>figure,.wrap>.sec>.mapwrap,
+  .wrap>.sec>.tk,.wrap>.sec>.cagri,.wrap>.sec>.guidelist,.wrap>.sec>.otherlist,
+  .wrap>.sec>.uses,.wrap>.sec>.brlinks,.wrap>.sec>.refs,.wrap>.sec>.yorelist,
+  .wrap>article>.sec>.grid,.wrap>article>.sec>.chips,.wrap>article>.sec>figure,
+  .wrap>article>.sec>table,.wrap>article>.sec>.uses,.wrap>article>.sec>.refs,
+  .wrap .sheet>.sec>.grid,.wrap .sheet>.sec>.chips,.wrap .sheet>.sec>figure,
+  .wrap .sheet>.sec>table,.wrap .sheet>.sec>.uses,.wrap .sheet>.sec>.refs,
+  .wrap .sheet>.sec>.motif-bag,.wrap .sheet>.sec>.brshots,.wrap .sheet>.sec>.pminis,
+  .wrap .sheet>.sec>.katki-form,.wrap .sheet>.sec>.brlinks{grid-column:1/-1}
+  /* geniş içerik varsa başlık da iki sütunu kaplasın: etiket ızgaranın üstünde dursun */
+  .wrap>.sec:has(>.grid,>.chips,>.startcards,>.hubcards,>.pminis,>.motif-bag,>.brshots,
+                 >table,>figure,>.mapwrap,>.tk,>.cagri,>.guidelist,>.otherlist,>.uses,>.refs)>h2,
+  .wrap>article>.sec:has(>.grid,>.chips,>figure,>table,>.uses,>.refs)>h2,
+  .wrap .sheet>.sec:has(>.grid,>.chips,>figure,>table,>.uses,>.refs,>.motif-bag,>.brshots,>.pminis)>h2{grid-column:1/-1}
+  /* metin genişliği artık sütunun kendisi; ayrıca kısıtlamaya gerek yok */
+  .wrap .page-head p,.wrap .page-head>.lede,.wrap .sec>p,.wrap .sec>ul:not([class]),
+  .wrap .sec>ol:not([class]),.wrap .sec-intro,.wrap .duz-list,.wrap article>p,
+  .wrap .sheet>p{max-width:none}
+  .sec p{max-width:none}
+}
+
+/* Sayfa başlığının altındaki çizgi de metin sütununda bitsin */
+@media (min-width:1100px){
+  .wrap>.page-head,.wrap>article>.page-head{border-bottom:0;padding-bottom:0}
+  .wrap>.page-head::after,.wrap>article>.page-head::after{content:"";grid-column:1;border-bottom:1.5px solid var(--ink);margin-top:16px}
+  .wrap .page-head p{max-width:none}
+}
+
+/* D7 · "Bu sayfada" kutudan çıkıp ince satıra */
+.toc{margin:16px 0 2px;padding:0 0 10px;border:0;border-bottom:1px dashed var(--rule);background:none;
+     display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px}
+.toc .toc-h{margin:0;flex:none}
+.toc ol{margin:0;gap:4px 14px}
+.toc a{border-bottom:0;color:var(--muted)}
+.toc a:hover{color:var(--accent)}
+@media (min-width:1100px){.wrap>.toc{max-width:var(--metin)}}
+
+/* ============================================================
+   D6 · MONOSPACE KURALI
+   Daktilo yüzü her yere yayılmıştı: gezinme, footer başlıkları, sıralama menüsü,
+   sayfa içi nav, künye satırları, buton ve bağ etiketleri. Kural: monospace
+   YALNIZCA bölüm kicker'ında (.eyebrow, .sec h2, .acc, .sf, .ev gibi rozet ve
+   etiketlerde). Gezinme, buton, footer ve liste başlıkları normal sans;
+   gereksiz alt çizgiler kalkar.
+   ============================================================ */
+.site-nav nav,.site-nav nav a,
+footer.site h3,
+.crumbs,
+.resultbar,
+.linkbtn,
+.pager a,
+.cta,
+.toc a,
+.stats,
+.result-box .row{font-family:var(--f-body)}
+footer.site h3{letter-spacing:.04em}
+.site-nav nav{font-size:var(--t-md);gap:20px}
+.crumbs{font-size:var(--t-sm)}
+.cta{border-bottom-width:1px}
+.toc a{text-decoration:none}
+.toc a:hover{text-decoration:underline;text-underline-offset:3px}
