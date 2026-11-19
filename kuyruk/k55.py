@@ -3,7 +3,7 @@
 Q = [
 
     dict(
-        yayin='2027-01-22',
+        yayin='2027-01-21',
         id='hiyarsembe',
         foto='',
         tr='Hiyarşembe (altın yağmur)',
@@ -187,7 +187,7 @@ Q = [
     ),
 
     dict(
-        yayin='2027-01-23',
+        yayin='2027-01-22',
         id='atlassediri',
         foto='',
         tr='Atlas sediri',
@@ -380,7 +380,7 @@ Q = [
     ),
 
     dict(
-        yayin='2027-01-24',
+        yayin='2027-01-23',
         id='japonnanesi',
         foto='',
         tr='Japon nanesi (mentol nanesi)',

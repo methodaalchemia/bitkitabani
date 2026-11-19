@@ -3,7 +3,7 @@ from kunye_elle import who_url
 Q = [
 
     dict(
-        yayin='2027-01-10',
+        yayin='2027-01-09',
         id='guggul',
         foto='',
         tr='Guggul (Hint mürü)',
@@ -214,7 +214,7 @@ Q = [
     ),
 
     dict(
-        yayin='2027-01-11',
+        yayin='2027-01-10',
         id='ipeka',
         foto='',
         tr='İpeka (kusturucu kök)',
@@ -447,7 +447,7 @@ Q = [
     ),
 
     dict(
-        yayin='2027-01-12',
+        yayin='2027-01-11',
         id='kutki',
         foto='',
         tr='Kutki (Himalaya centiyanı)',

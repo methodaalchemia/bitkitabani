@@ -3,7 +3,7 @@
 Q = [
 
     dict(
-        yayin='2026-12-26',
+        yayin='2026-12-25',
         id='sahilcami',
         foto='',
         tr='Sahil çamı',
@@ -205,7 +205,7 @@ Q = [
     ),
 
     dict(
-        yayin='2026-12-27',
+        yayin='2026-12-26',
         id='angelika',
         foto='',
         tr='Angelika (melek otu)',
@@ -399,7 +399,7 @@ Q = [
     ),
 
     dict(
-        yayin='2026-12-28',
+        yayin='2026-12-27',
         id='amerikanginsengi',
         foto='',
         tr='Amerikan ginsengi',

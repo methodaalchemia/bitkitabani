@@ -4,7 +4,7 @@
 Q = [
 
     dict(
-        yayin='2027-01-28',
+        yayin='2027-01-27',
         id='tatlipatates',
         foto='',
         tr='Tatlı patates',
@@ -265,7 +265,7 @@ Q = [
     ),
 
     dict(
-        yayin='2027-01-29',
+        yayin='2027-01-28',
         id='yerelmasi',
         foto='',
         tr='Yer elması',
@@ -486,7 +486,7 @@ Q = [
     ),
 
     dict(
-        yayin='2027-01-30',
+        yayin='2027-01-29',
         id='salgam',
         foto='',
         tr='Şalgam',
@@ -716,7 +716,7 @@ Q = [
     ),
 
     dict(
-        yayin='2027-01-31',
+        yayin='2027-01-30',
         id='patlican',
         foto='',
         tr='Patlıcan',
@@ -956,7 +956,7 @@ Q = [
     ),
 
     dict(
-        yayin='2027-02-01',
+        yayin='2027-01-31',
         id='kuskonmaz',
         foto='',
         tr='Kuşkonmaz',
@@ -1187,7 +1187,7 @@ Q = [
     ),
 
     dict(
-        yayin='2027-02-02',
+        yayin='2027-02-01',
         id='bamya',
         foto='',
         tr='Bamya',

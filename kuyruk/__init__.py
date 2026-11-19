@@ -15,7 +15,8 @@ Q.sort(key=lambda q: q['yayin'])
 _ids = [q['id'] for q in Q]
 assert len(_ids) == len(set(_ids)), 'kuyrukta tekrar eden id var'
 # Aynı güne iki bitki yazılmaması kuralı yalnızca GELECEK tarihler içindir;
-# 16 Kasım 2026'da bekleyen 104 kayıt tek seferde yayımlandı (aynı tarih).
+# 16 Kasım 2026'da bekleyen 104 kayıt tek seferde yayımlandı (aynı tarih),
+# 19 Kasım 2026'da ise kuyruğun tamamı bir gün öne alındı; o gün iki bitki yayımlandı.
 import datetime as _dt
-_days = [q['yayin'] for q in Q if _dt.date.fromisoformat(q['yayin']) > _dt.date(2026, 11, 16)]
+_days = [q['yayin'] for q in Q if _dt.date.fromisoformat(q['yayin']) > _dt.date(2026, 11, 19)]
 assert len(_days) == len(set(_days)), 'aynı güne iki bitki yazılmış'

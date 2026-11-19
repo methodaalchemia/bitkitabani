@@ -3610,5 +3610,19 @@
   "guvenlik": "Genelde güvenli",
   "turkiyede_yasal_durum": "",
   "url": "https://bitkitabani.com/yilankoku/"
+ },
+ {
+  "id": "cingeveni",
+  "turkce_ad": "Çin geveni",
+  "bilimsel_ad": "Astragalus membranaceus (Fisch.) Bunge; A. mongholicus Bunge",
+  "familya": "Fabaceae",
+  "diger_adlar": "Türkçede bu türe de geven deniyor — TİTCK monografı Türkçe adını \"geven\" diye veriyor. Çince huángqí, İngilizce astragalus root, milkvetch. DSÖ monografı droğu \"Radix Astragali\" — kurutulmuş kök — diye tanımlıyor. ⚠️ Anadolu’nun gevenleri bu bitki değildir: Türkiye’nin dört yüzü aşkın Astragalus türü (kitre zamkının kaynağı A. gummifer dahil) ne DSÖ ne TİTCK monografının kapsamında; onlar ayrı kayıtta. TİTCK monografı var, AB monografı yok.",
+  "bolgeler": "Asya ve Sibirya",
+  "kategoriler": "Şifa",
+  "kullanilan_kisim": "Kurutulmuş kökü",
+  "kanit_duzeyi": "Sınırlı",
+  "guvenlik": "Dikkat",
+  "turkiyede_yasal_durum": "",
+  "url": "https://bitkitabani.com/cingeveni/"
  }
 ]

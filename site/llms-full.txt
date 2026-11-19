@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 258 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 259 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -8222,3 +8222,35 @@ Karıştırma riski: Aynı cinsin Afrika türü (Rauvolfia vomitoria) de reserpi
 
 ### İlginç bilgi
 Bir bitki kökünden, ilaç tarihinin en önemli maddelerinden biri çıktı: reserpin, 1950’lerde hem ilk etkili tansiyon ilaçlarından hem de ilk antipsikotiklerden biri oldu ve beyinde nörotransmitterlerin nasıl depolandığını anlamanın kapısını açtı. DSÖ monografı bu yüzden yılankökünü bir çay bitkisi gibi değil, bir reçeteli ilaç gibi yazıyor: iki sayfa kontrendikasyon, depresyon ve intihar uyarısı, on günlük doz ayarlama aralıkları. Kataloğumuzda "doğal" ile "zararsız" arasındaki mesafenin en uzun olduğu kayıt.
+
+## Çin geveni (Astragalus membranaceus (Fisch.) Bunge; A. mongholicus Bunge)
+
+URL: https://bitkitabani.com/cingeveni/
+Familya: Fabaceae · Bölge: Asya ve Sibirya · Kullanılan kısım: Kurutulmuş kökü
+Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
+
+### Geleneksel kullanım
+- DSÖ monografı (1999): "Klinik veriyle desteklenen kullanım": yok. Farmakopelerde ve geleneksel sistemlerde: soğuk algınlığı ve gripte yardımcı tedavi; bağışıklığı güçlendirmek, dayanıklılığı artırmak; kronik ishal, ödem, anormal rahim kanaması, diyabet; kalp güçlendirici. Günlük 9–30 g kök. Kontrendikasyon, uyarı ve istenmeyen etki bölümleri "bilgi yok"; gebelikte ve emzirirken veri olmadığından önerilmiyor.
+- Türkiye — aynı ad, başka türler: Anadolu’da "geven" denince bozkırın dikenli yastık bitkileri akla gelir; Türkiye’de 400’den fazla Astragalus türü var ve kitre zamkı (tragacanth) onlardan birinin gövdesinden sızar. Çin eczanesindeki huángqí kökü ise iki Kuzey Çin türüne aittir. Aynı Türkçe ad, bambaşka bitkiler ve kullanımlar — TİTCK listesinde ikisi için de monograf yok.
+- Çin — qi tonisi: Huángqí, Çin tıbbının en çok kullanılan "qi güçlendirici" köklerinden; yüzlerce formülün bileşeni ve bugün Çin’de enjeksiyon dahil çok sayıda ruhsatlı ürünün ham maddesi. Batı takviye pazarında "bağışıklık" bitkisi olarak satılıyor.
+
+### Hazırlama
+DSÖ monografı günlük 9–30 g kurutulmuş kök veriyor, ağızdan (dekoksiyon). Gebelikte ve emzirirken önerilmiyor; çocuklarda veri yok. Türkiye’deki yabani gevenlerin kökü bu monografın droğu değildir.
+
+### Bilim ne diyor
+Gevenin güncel kanıtı DSÖ’nün 1999’da "yok" dediği yerde değil, onkolojide. 2025’te Integrative Cancer Therapies dergisinde yayımlanan sistematik derleme ve meta-analiz, kanserle ilişkili yorgunlukta geven eklenen tedaviyi inceleyen 8 randomize çalışmayı birleştirdi: yorgunluk skorunda büyük bir fark (SMD −1,63; %95 GA −1,90 ile −1,36) ve yaşam kalitesinde iyileşme bildirildi — ama yazarlar çalışmaların küçük ve düşük kaliteli olduğunu, sonucun bu nedenle dikkatle okunması gerektiğini yazıyor. Öteki meta-analizler (membranöz nefropati, kalp yetmezliğinde sol ventrikül yeniden biçimlenmesi, kemoradyoterapi ile birlikte polisakkaritler) aynı deseni paylaşıyor: hepsi Çin’de, hepsi standart tedaviye ek olarak, çoğu çok bileşenli formül ya da enjeksiyon biçiminde. Bu kanıt, Batı’da kapsül olarak satılan "bağışıklık gevenine" doğrudan aktarılamaz. Kanıt düzeyi "sınırlı".
+
+### Güvenlik
+DSÖ monografı kontrendikasyon, uyarı ve istenmeyen etki için "bilgi yok" yazıyor — bu, güvenli olduğu değil, 1999’da verinin bulunmadığı anlamına gelir. Gebelikte ve emzirirken önerilmiyor; çocuklarda veri yok. Bağışıklık üzerine etki atfedilen bir bitki olarak otoimmün hastalığı olanlar ve bağışıklık baskılayıcı ilaç kullananlar hekime sormadan kullanmamalı — kuramsal ama yerleşik bir uyarı. Türkiye’deki yabani gevenlerin kökü toplanıp kullanılmamalı: tür ayrımı uzman işidir ve bazı Astragalus türleri hayvanlarda zehirlidir.
+
+### İlaç etkileşimleri
+- DSÖ monografında bildirilmiş etkileşim yok: Monograf etkileşim bilgisi vermiyor. Kuramsal notlar: bağışıklık baskılayıcılar (siklofosfamid, siklosporin) ile ters yönde etki olasılığı; lityum ve diüretiklerle idrar söktürücü etki nedeniyle düzey değişikliği. Hiçbiri klinik çalışmada gösterilmiş değil.
+
+### Doğada
+Nerede yetişir: Kuzey Çin, Moğolistan ve Doğu Sibirya’nın yerlisi; Çin’de geniş çapta kültürü yapılıyor. Türkiye’de yetişmiyor.
+Toplama mevsimi: Yazın sarımsı baklagil çiçekleri; kök 4–5 yıllık bitkilerden ilkbahar ya da sonbaharda sökülür.
+Yöresel adlar: Çin geveni, geven (TİTCK), huangqi; Çince huángqí, İngilizce astragalus root.
+Karıştırma riski: ⚠️ Anadolu’nun gevenleri ayrı kayıttadır — kitre geveni (A. gummifer), A. longifolius ve A. muschianus gibi yerli türler başka bitkilerdir, bu monografın kapsamında değildir ve kullanılan kısımları kök değil, gövdeden sızan zamktır. TİTCK listesinde Türkçe adın ikisi için de "geven" olması karışıklığı resmî metne kadar taşımış durumda. Çin pazarında ayrıca kök sahteciliği (başka Astragalus ve Hedysarum türleri) biliniyor.
+
+### İlginç bilgi
+Türkçede "geven" bozkırın dikenli yastıklarının adı; Anadolu’da yüzlerce türü var ve en ünlüsü kitre zamkının kaynağı. Çin eczanesindeki huángqí de bir geven — ama Kuzey Çin’in iki türü. Aynı Türkçe ad altında Anadolu’nun zamk bitkisi ile Çin’in bağışıklık kökü duruyor ve ikisinin birbirinin kanıtını devralması söz konusu değil. DSÖ 1999’da klinik kanıt bulamamıştı; bugünkü kanıt kanser yorgunluğunda, Çin’de ve standart tedaviye ek olarak.

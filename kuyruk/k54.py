@@ -3,7 +3,7 @@ E = 'https://www.ema.europa.eu/en/medicines/herbal/'
 Q = [
 
     dict(
-        yayin='2027-01-19',
+        yayin='2027-01-18',
         id='capesarisabiri',
         foto='',
         tr='Cape sarısabırı (Aloe ferox)',
@@ -214,7 +214,7 @@ Q = [
     ),
 
     dict(
-        yayin='2027-01-20',
+        yayin='2027-01-19',
         id='kafuragaci',
         foto='',
         tr='Kafur ağacı',
@@ -436,7 +436,7 @@ Q = [
     ),
 
     dict(
-        yayin='2027-01-21',
+        yayin='2027-01-20',
         id='zedoar',
         foto='',
         tr='Zedoar (cedvar)',
