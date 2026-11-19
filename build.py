@@ -1016,7 +1016,7 @@ katalog = f'''
   </div>
   <div class="resultbar"><span id="count" aria-live="polite">{len(P)} / {len(P)} kayıt gösteriliyor</span><button class="linkbtn" id="reset" type="button" hidden>Filtreleri temizle</button><label class="sortsel">Sırala <select id="sort"><option value="no">Katalog sırası</option><option value="az">A’dan Z’ye</option><option value="kanit">Kanıtı en güçlü</option></select></label></div>
   <div class="grid">{"".join(card(p) for p in P)}</div>
-  <div class="empty" id="empty" hidden>Bu arama ve filtrelerle eşleşen bitki yok. Bir filtreyi kaldırmayı ya da farklı bir kelime denemeyi dene.</div>
+  <div class="empty" id="empty" hidden>Bu arama ve filtrelerle eşleşen bitki yok. Bir filtreyi kaldırmayı ya da farklı bir kelime denemeyi dene.<br><a class="cta" href="/bitki-bul/">Ne arayacağını bilmiyorsan: üç soruda bul →</a></div>
 </section>
 <details class="kstats"><summary>İstatistikler ve öğrendiklerim</summary><div class="stats"><span><strong>{len(P)}</strong> bitki</span><span><strong>{len(regs)}</strong> bölge</span><span><strong>{len(BR)}</strong> kültür köprüsü</span><span>Öğrendiklerim <strong id="learnedCount">0</strong>/{len(P)} <span class="muted-s">(<a href="/hesap/">giriş yaparsan</a> her cihazda)</span></span></div>
 {learn_note}</details>
@@ -1355,6 +1355,7 @@ home = f'''
       <button type="submit" class="cta">Ara</button>
       <ul id="hqList" class="hq-list" role="listbox" hidden></ul>
     </form>
+    <p class="hbul">Ne arayacağını bilmiyor musun? <a href="/bitki-bul/">Üç soruda sana uygun bitkiyi bul →</a></p>
     <script id="hqData" type="application/json">{json.dumps([[p['id'], p['tr'], short_la(p), p['diger']] for p in P], ensure_ascii=False).replace('</', '<\\/')}</script>
   </div>
   <div class="todaybox"><a class="today" id="today" href="/{today_p["id"]}/" data-pool="{e(json.dumps([[p["id"], p["tr"], sade_la(p), 1 if p["id"] in IMG else 0] for p in pool], ensure_ascii=False))}"><img id="todayImg" class="today-ph" src="/img/{today_p["id"]}-500.jpg" alt="" width="500" height="667" decoding="async"{'' if today_p["id"] in IMG else ' hidden'}><span class="today-t"><span class="eyebrow">Bugünün bitkisi</span><b id="todayName">{e(today_p["tr"])}</b><i id="todayLatin">{e(sade_la(today_p))}</i></span></a><a class="cta small" href="/gunun-bitkisi/">Geçmiş günlerin bitkileri →</a><p class="streak" id="streak" hidden></p></div>
@@ -1371,8 +1372,14 @@ home = f'''
 </section>
 <section class="sec"><h2>Kültür köprüleri</h2>
 <p class="sec-intro">Anadolu ile Amazon ve And’larda aynı işi gören bitkiler, aynı molekülün iki ayrı ritüelde karşımıza çıkışı: bir bitkinin tek bir kültüre ait olmadığı yerler.</p>
+<a class="harita-k" href="/kopruler/" aria-label="Kültür köprüleri haritası: 16 köprünün tamamı">
+  <figure class="mapwrap mini">{bridge_map()}<figcaption>16 köprünün tamamı haritada →</figcaption></figure></a>
 <div class="startcards">{_kopru_html}</div>
-<p><a class="cta" href="/kopruler/">Bütün köprüler ve harita →</a></p></section>
+<p><a class="cta" href="/kopruler/">Bütün köprüler →</a></p></section>
+<section class="sec"><h2>Türkiye’de nerede ne derleniyor</h2>
+<p class="sec-intro">Hakemli saha çalışmalarında kaydedilmiş bitkiler, derlendikleri illerle birlikte. Renkli iller kaydı olanlar; bir ile tıkla, o yörenin bitkilerini gör. Kişi ve köy adları yayımlanmaz.</p>
+<a class="harita-k" href="/yoreler/" aria-label="Yöre haritası: saha çalışması olan iller">
+  <figure class="trmap-w mini">{tr_haritasi()}<figcaption>{len(YORE_SAYFA)} ilin kendi sayfası var · bütün yöreler →</figcaption></figure></a></section>
 <section class="sec"><h2>Semboller</h2>
 <p class="sec-intro">Kilim motiflerinden Shipibo kené desenlerine: her motifin anlamı kaynağıyla yazılı, çizimleri açık lisanslı. {len(MOTIFLER)} sembol.</p>
 <div class="motif-mini ana">{_motif_html}</div>
@@ -1382,7 +1389,7 @@ home = f'''
 <div class="startcards">{_basla_html}</div></section>
 '''
 ldsite = {"@context":"https://schema.org","@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/","inLanguage":"tr","description":"Şifalı ve ritüel bitkiler için Türkçe etnobotanik kayıt defteri."}
-write('/index.html', page('Bitki Tabanı: şifalı ve ritüel bitkiler veri tabanı', f'{REG_LIST}’dan {len(P)} şifalı ve ritüel bitkisi: geleneksel kullanım, bilimsel kanıt, güvenlik ve kaynaklar.', '/', home, 'home', '<script src="/assets/streak.js" defer></script><script src="/assets/home.js" defer></script>', extra=f'<script type="application/ld+json">{json.dumps(ldsite, ensure_ascii=False)}</script>'))
+# Ana sayfa en sonda yazılıyor (bkz. 'Son hikâyeler'): hikâye kartları ancak orada hazır.
 
 
 # ---------- /yeni/: her gün eklenen bitkiler ----------
@@ -2555,6 +2562,15 @@ write('/kultur/', page('Kültür ve ritüel: şamanizm, animizm, semboller ve ku
 <div class="hubcards">{_khh}</div>
 <section class="sec"><h2>Son yazılar</h2><ul class="hklist">{"".join(_yazi_kart(y) for y in sorted(YAZILAR, key=lambda y: y["tarih"], reverse=True)[:6])}</ul><p><a class="cta" href="/blog/">Bütün yazılar ve hikâyeler →</a></p></section>''',
       'kultur', extra=lds(crumb_ld(('/kultur/', 'Kültür ve ritüel')))))
+# ---------- ana sayfa (en sonda) ----------
+# 89 hikâye ana sayfadan görünmüyordu; üç kartlık bir blok eklendi.
+_son_hik = list(reversed(HIK))[:3]
+home += ('<section class="sec"><h2>Son hikâyeler</h2>'
+         '<p class="sec-intro">Halk hekimliğinden kaynaklı anlatılar: bitkinin hangi yörede, kim tarafından, ne için kullanıldığı; '
+         'her hikâyenin altında dayandığı kaynak var.</p>'
+         f'<ul class="hklist">{"".join(_hik_kart(h) for h in _son_hik)}</ul>'
+         f'<p><a class="cta" href="/blog/">{len(HIK)} hikâyenin tamamı →</a></p></section>')
+write('/index.html', page('Bitki Tabanı: şifalı ve ritüel bitkiler veri tabanı', f'{REG_LIST}’dan {len(P)} şifalı ve ritüel bitkisi: geleneksel kullanım, bilimsel kanıt, güvenlik ve kaynaklar.', '/', home, 'home', '<script src="/assets/streak.js" defer></script><script src="/assets/home.js" defer></script>', extra=f'<script type="application/ld+json">{json.dumps(ldsite, ensure_ascii=False)}</script>'))
 # ---------- akıllı arama verisi ve sayfası ----------
 import hashlib as _hl
 def _cumleler(p):   # aramada gösterilecek cümleler: (etiket, sayfadaki bölüm, cümle)

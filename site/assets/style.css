@@ -816,6 +816,10 @@ button.cta{-webkit-appearance:none;appearance:none;background:var(--accent);colo
   .wrap>.sec>*,.wrap>article>.sec>*,.wrap>.page-head>*,.wrap>article>.page-head>*,
   .wrap .sheet>.sec>*{grid-column:1}
   /* gerçekten geniş olanlar iki sütunu kaplar */
+  .wrap>.sec>.harita-k,.wrap>.sec>.motif-mini,.wrap>.sec>.hklist,.wrap>.sec>.related,
+  .wrap>.sec>.tablewrap,.wrap>.sec>.safelinks,.wrap>.sec>.pchips,.wrap>.sec>.bridges,
+  .wrap>article>.sec>.related,.wrap>article>.sec>.tablewrap,.wrap>article>.sec>.hklist,
+  .wrap .sheet>.sec>.related,.wrap .sheet>.sec>.tablewrap,
   .wrap>.sec>.grid,.wrap>.sec>.chips,.wrap>.sec>.startcards,.wrap>.sec>.hubcards,
   .wrap>.sec>.pminis,.wrap>.sec>.motif-bag,.wrap>.sec>.brshots,.wrap>.sec>.famlist,
   .wrap>.sec>table,.wrap>.sec>.tablo,.wrap>.sec>figure,.wrap>.sec>.mapwrap,
@@ -829,7 +833,8 @@ button.cta{-webkit-appearance:none;appearance:none;background:var(--accent);colo
   .wrap .sheet>.sec>.katki-form,.wrap .sheet>.sec>.brlinks{grid-column:1/-1}
   /* geniş içerik varsa başlık da iki sütunu kaplasın: etiket ızgaranın üstünde dursun */
   .wrap>.sec:has(>.grid,>.chips,>.startcards,>.hubcards,>.pminis,>.motif-bag,>.brshots,
-                 >table,>figure,>.mapwrap,>.tk,>.cagri,>.guidelist,>.otherlist,>.uses,>.refs)>h2,
+                 >table,>figure,>.mapwrap,>.tk,>.cagri,>.guidelist,>.otherlist,>.uses,>.refs,
+                 >.harita-k,>.motif-mini,>.hklist,>.related,>.tablewrap,>.safelinks,>.pchips,>.bridges)>h2,
   .wrap>article>.sec:has(>.grid,>.chips,>figure,>table,>.uses,>.refs)>h2,
   .wrap .sheet>.sec:has(>.grid,>.chips,>figure,>table,>.uses,>.refs,>.motif-bag,>.brshots,>.pminis)>h2{grid-column:1/-1}
   /* metin genişliği artık sütunun kendisi; ayrıca kısıtlamaya gerek yok */
@@ -879,3 +884,15 @@ footer.site h3{letter-spacing:.04em}
 .cta{border-bottom-width:1px}
 .toc a{text-decoration:none}
 .toc a:hover{text-decoration:underline;text-underline-offset:3px}
+
+/* D4 · "Üç soruda bul" hero'da arama kutusunun altında */
+.hbul{margin:10px 0 0;font-size:var(--t-sm);color:var(--muted)}
+.hbul a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:1px}
+.empty .cta{display:inline-block;margin-top:10px}
+
+/* D3 · ana sayfadaki iki harita: küçültülmüş ve tıklanabilir */
+.harita-k{display:block;text-decoration:none;color:inherit}
+.harita-k figure{margin:0}
+.harita-k figcaption{font-family:var(--f-body);font-size:var(--t-sm);color:var(--accent);margin-top:6px}
+.harita-k:hover figcaption{text-decoration:underline;text-underline-offset:3px}
+.mapwrap.mini svg,.trmap-w.mini svg{max-height:380px;width:100%;height:auto}
