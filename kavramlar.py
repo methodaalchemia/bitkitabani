@@ -1,6 +1,6 @@
 # Günün kavramı: kısa, kaynaklı sözlük maddeleri (/kavram/<slug>/). Her gece yayın tarihi gelen madde yayına girer.
 # Her kavram bir bitkiyle eşleşir (bitki: katalog id); o bitki sayfada “Günün bitkisi” olarak öne çıkar.
-# Bekleyen fikirler: Umay (kayın/huş; hus 26 Kasım’da yayında), uçan merhem (banotu)
+# Bekleyen fikirler: uçan merhem (banotu)
 # Alanlar: yayin (YYYY-AA-GG), slug, ad, bitki, kisa (tek cümle), metin (paragraflar; [1] kaynak, {id} bitki bağlantısı),
 # bitkiler, semboller, yazilar (ilgili uzun yazı slug'ları), kaynaklar [(başlık, url)].
 # Kurallar: Bilgiler yalnızca kaynakta yazanlarla sınırlı; Vikipedi kaynak olarak kullanılmaz; ritüeller kültürel kayıt olarak anlatılır.
@@ -353,4 +353,155 @@ dict(yayin='2026-11-08', slug='smudging', ad='Smudging', bitki='akadacayi',
  'kaynaklar': [('Luis Eduardo Luna, “The concept of plants as teachers among four mestizo shamans of Iquitos, northeastern Peru”, Journal of Ethnopharmacology 11(2), 1984',
                 'https://doi.org/10.1016/0378-8741(84)90036-9'),
                ('Luis Eduardo Luna, “The healing practices of a Peruvian shaman”, Journal of Ethnopharmacology 11(2), 1984', 'https://doi.org/10.1016/0378-8741(84)90035-7')]},
+
+{'yayin': '2026-11-18',
+ 'slug': 'umay',
+ 'ad': 'Umay',
+ 'bitki': 'hus',
+ 'kisa': 'Eski Türk inancında doğuma yardım eden, bebeği ve loğusayı koruyan ana; en sık anılan simgesi kayın ağacıdır.',
+ 'metin': ['Umay, eski Türk inancında doğuma yardım eden, bebeği ve anneyi koruyan, kut veren ana figürüdür. Tasvirlerinde saç, tarak, iplik, kuş, ok ve yayın yanında {hus} '
+           '(kayın) ağacı da en sık kullanılan simgeler arasındadır; dağ, mağara, ateş ve ocakla birlikte anılır [1].',
+           'Kayınla kurulan bağ bir kam anlatısında açıkça görünür. Bir Sagay kamı, davulundaki iki kayın resmini şöyle açıklamıştır: atamız Ülgen’den türediğimizde, bu iki '
+           'kayın ağacı Umay Ana ile birlikte gökten yere indi [2][1]. Kayının kutsallığı bu yüzden yaratılışla ve soyun başlangıcıyla ilişkilidir.',
+           'İnanç gündelik hayata da geçmiştir. Altaylarda yeni doğan bebeğin beşiğine küçük bir kayın kökü konur, beşik kayın dallarına asılırdı; kayının kökünün bebeği '
+           'beslediğine inanılırdı [1]. Hakaslar, bebeklerin ruhlarının yeraltına değil gökteki Ak Süt Göl’e gideceğine inanarak onları kutsal kayının kovuğuna yatırırdı [1].',
+           'Türk mitolojisinde evrenin ortasında duran, kökleri yeraltına ve dalları göğe uzanan kozmik ağaç da çoğu kez kayındır; kaynaklarda Bay Kayın, Demirkazık ya da '
+           'Altınkazık gibi adlarla geçer [2][3].'],
+ 'bitkiler': ['hus', 'ardic', 'sogut'],
+ 'semboller': ['hayat-agaci', 'kupe'],
+ 'yazilar': ['kutsal-agaclar-kayin-umay-hayat-agaci', 'dunya-agaclari-kayin-yggdrasil-ceiba-bodhi'],
+ 'kaynaklar': [('Reyhan Değirmenci, Türk Mitolojisinde Yüce Ana Arketipi: Umay Üzerine Arketipsel Bir İnceleme, yüksek lisans tezi, Ege Üniversitesi, 2024', ''),
+               ('Şeyda Büyükcan Sayılır, “Türklerin Ağaç ile Mitolojik ve Tarihî Bağları Üzerine Bir Değerlendirme”, Genel Türk Tarihi Araştırmaları Dergisi 3(6), 2021',
+                'https://doi.org/10.53718/gttad.940879'),
+               ('Ülfet Dağ, “Türk ve İskandinav Mitolojisinde Ağaç Sembolizmi”, Millî Folklor 132, 2021', 'https://dergipark.org.tr/tr/pub/millifolklor/article/819200')]},
+
+{'yayin': '2026-11-19',
+ 'slug': 'jamu',
+ 'ad': 'Jamu',
+ 'bitki': 'javazerdecali',
+ 'kisa': 'Endonezya’nın sekizinci yüzyıldan beri sürdürülen bitkisel şifa kültürü; 2023’te UNESCO listesine girdi.',
+ 'metin': ['Jamu, Endonezya’da sekizinci yüzyıldan bu yana uygulanan bitkisel ilaç ve bakım geleneğidir. Dayandığı düşünce şudur: “sıcak” hastalıklar soğutucu, “soğuk” '
+           'hastalıklar ısıtıcı ilaçlarla tedavi edilir; sağlık bu unsurların bedendeki dengesidir. Bir bitkinin rengi ve biçimi, desteklemesi beklenen organla '
+           'ilişkilendirilir [1].',
+           'Jamu’yu herkes yapabilir, ama yapanların çoğu yetişkin kadınlardır. Baharatları ve bitkileri çoğu zaman kendileri yetiştirir, karışımı da müşterinin yaşına, '
+           'yaşam biçimine ve şikâyetine göre ayarlar. Bilgi büyük ölçüde aile içinde ve komşular arasında, kayıt dışı yollarla aktarılır; üniversitelerde de okutulur [1]. '
+           'Sırtta taşınan sepette şişelerle satılan biçimine “jamu gendong” denir [2].',
+           'Karışımların en bilinen bitkisi {javazerdecali} (Curcuma xanthorrhiza, temulawak) köksapıdır. Java’da {javazerdecali}, {zerdecal} ve {zencefil} birlikte '
+           'dayanıklılığı artırmak, bağışıklığı desteklemek ve sindirime iyi gelmek için kullanılır; Sulawesi’de aynı bitki, {andrographis} ve Tinospora cordifolia ile '
+           'birlikte mide rahatsızlıklarına karşı verilir [3].',
+           'Endonezya Sağlık Bakanlığı’nın RISTOJA çalışması, jamu hammaddesi olarak 2.848 bitki türü ve 32 binden fazla geleneksel tarif kaydetmiştir [2]. UNESCO, jamu '
+           'kültürünü 2023’te insanlığın somut olmayan kültürel mirası temsilî listesine aldı [1].'],
+ 'bitkiler': ['javazerdecali', 'zerdecal', 'zencefil', 'andrographis', 'kakule'],
+ 'semboller': ['bereket'],
+ 'yazilar': [],
+ 'kaynaklar': [('UNESCO, Jamu wellness culture (Endonezya), 2023', 'https://ich.unesco.org/en/RL/jamu-wellness-culture-01972'),
+               ('Endonezya Turizm ve Yaratıcı Ekonomi Bakanlığı, “Jamu, a Worldwide Famous Traditional Indonesian Herbal Potion”',
+                'https://kemenparekraf.go.id/en/articles/jamu-a-worldwide-famous-traditional-indonesian-herbal-potion'),
+               ('Endang Rahmat, Jiyong Lee, Yeonggwan Kang, “Javanese Turmeric (Curcuma xanthorrhiza Roxb.): Ethnobotany, Phytochemistry, Biotechnology, and Pharmacological '
+                'Activities”, Evidence-Based Complementary and Alternative Medicine, 2021', 'https://doi.org/10.1155/2021/9960813')]},
+
+{'yayin': '2026-11-20',
+ 'slug': 'tiryak',
+ 'ad': 'Tiryak',
+ 'bitki': 'hashas',
+ 'kisa': 'Yılan sokmasına karşı bulunup her derde deva sayılan, afyonlu ve onlarca maddeli kadim macun; iki bin yıl eczanelerde kaldı.',
+ 'metin': ['Tiryak (theriac), başlangıçta yılan ve hayvan ısırmalarına karşı bir panzehirdi; zamanla pek çok hastalığın ilacı ve zehirlenmeye karşı bir koruma sayıldı [1]. '
+           'Çekirdeğinde engerek eti, afyon, bal ve şarap bulunur; üzerine baharatlar ile başka bitkisel ve madensel maddeler eklenir [1].',
+           'Anlatıya göre ilk biçimini Pontus kralı VI. Mithridates hazırlatmış ve her gün içmiştir. Romalılar tarifi ele geçirdikten sonra İmparator Nero’nun hekimi '
+           'Andromakhos karışımı değiştirmiş, en çok da kertenkele etinin yerine engerek eti koymuştur; ortaya çıkan ilaca Theriaca Andromachi denir [2]. Madde sayısı '
+           'kaynaktan kaynağa değişir: Galenos’un tarifinde yaklaşık 70, Andromakhos’ta 64, Mithridates’e atfedilenlerde 41 ile 54 arasındadır [1].',
+           'Hazırlanışı sabır isterdi. Engerekler şarapta kaynatılır ya da bekletilir, karışım yıllarca — çoğunlukla yedi yıl — dinlendirilir, serin ve kuru yerde '
+           'saklanırdı [1]. Venedik her yıl kendi tiryakını şehir meydanında halkın önünde hazırlardı; denetim kurulları ve damgalarla “gerçek” olduğu belgelenirdi [2]. '
+           'Bu törenlerin son örneği 1790’da Paris’te yapıldı [2].',
+           'İslam tıbbında da tiryak önemli bir yer tutar. İbn Sînâ’nın el-Kânûn’unda çok sayıda tiryak tarifi vardır; “el-arbaa tiryakı” denen basit biçimi {centiyan}, '
+           '{defne}, zerâvend ve acı bir ağaç kabuğunu balla karıştırır, akrep sokmasında ılık suyla verilirdi [1]. İbn Sînâ tiryakın onlarca yıl sonra gücünü yitirdiğini '
+           'de yazar [1]. Avrupa’da 17. yüzyıldan sonra eleştiriler çoğaldı; ilaç bazı farmakopelerden 18. yüzyılda çıkarıldı, bazılarında 19. yüzyıla kadar kaldı [2].'],
+ 'bitkiler': ['hashas', 'centiyan', 'defne', 'tarcin', 'safran'],
+ 'semboller': ['hashas-tepelik', 'defne-taci'],
+ 'yazilar': ['anadoluda-bitkiyle-tedavinin-tarihi-hititlerden-osmanliya'],
+ 'kaynaklar': [('Abdulhalik Bakır, “Antikçağlardan Ortaçağlara Tiryakın Tarihsel Serüveni ve Değerlendirilmesi”, Oğuz-Türkmen Araştırmaları Dergisi 6(2), 2022',
+                'https://dergipark.org.tr/en/download/article-file/2846219'),
+               ('Wellcome Collection, “Theriac: an ancient brand”', 'https://wellcomecollection.org/stories/theriac--an-ancient-brand-')]},
+
+{'yayin': '2026-11-22',
+ 'slug': 'mesir-macunu',
+ 'ad': 'Mesir macunu',
+ 'bitki': 'tarcin',
+ 'kisa': 'Manisa’da 41 bitki ve baharattan yapılan, her yıl nevruzda minareden halka atılan macun; 2012’de UNESCO listesine girdi.',
+ 'metin': ['Anlatıya göre Kanuni Sultan Süleyman’ın annesi Hafsa Sultan Manisa’dayken hastalanmış; Sultan Camii Medresesi’nin baş hekimi Merkez Efendi, 41 ayrı bitki ve '
+           'baharattan bir macun hazırlamıştır. Hafsa Sultan iyileşince macunun her yıl nevruzda halka dağıtılmasını istemiştir [1].',
+           'Macunun bileşiminde adı geçen maddeler arasında {tarcin}, {zencefil}, {anason}, {corekotu}, {kakule}, {kimyon}, {rezene}, {safran}, {sakiz}, {ravent}, {muskat} '
+           've {karanfil} bulunur; hardal tohumu, karabiber, kişniş, yenibahar ve havlıcan da sayılır [1].',
+           'Festival her yıl nevruz haftasında, 21–24 Mart’ta yapılır [1][2]. Macunu bir usta ve çırakları geleneksel yöntemle hazırlar; on dört kadın küçük kâğıtlara sarar, '
+           'yirmi sekiz imam ve çırağı dua okur. Paketler Sultan Camii’nin minaresinden ve kubbelerinden halkın üzerine atılır; binlerce kişi bunları yakalamak için '
+           'yarışır, çünkü yakalayanın evlilik, iş ve çocuk dileğinin bir yıl içinde gerçekleşeceğine inanılır. Tören boyunca geleneksel kıyafetli 45 kişilik bir topluluk '
+           'Osmanlı müziği çalar [2].',
+           'UNESCO, Mesir Macunu Festivali’ni 2012’de insanlığın somut olmayan kültürel mirası temsilî listesine aldı [2].'],
+ 'bitkiler': ['tarcin', 'zencefil', 'anason', 'corekotu', 'kakule', 'kimyon', 'rezene', 'safran', 'sakiz', 'ravent', 'muskat', 'karanfil'],
+ 'semboller': ['bereket', 'nar-motifi'],
+ 'yazilar': ['anadoluda-bitkiyle-tedavinin-tarihi-hititlerden-osmanliya'],
+ 'kaynaklar': [('T.C. Kültür ve Turizm Bakanlığı, Yaşayan Miras ve Kültürel Etkinlikler Genel Müdürlüğü, “Mesir Macunu Festival”',
+                'https://yakegm.ktb.gov.tr/TR-345118/mesir-macunu-festival.html'),
+               ('UNESCO, Mesir Macunu festival (Türkiye), 2012', 'https://ich.unesco.org/en/RL/mesir-macunu-festival-00642')]},
+
+{'yayin': '2026-11-23',
+ 'slug': 'hilt-ogretisi',
+ 'ad': 'Hılt öğretisi',
+ 'bitki': 'arpa',
+ 'kisa': 'Kan, balgam, sarı safra ve kara safranın dengesi: iki bin yıl boyunca hangi bitkinin kime verileceğini belirleyen öğreti.',
+ 'metin': ['Hılt (humor) öğretisine göre bedende dört sıvı bulunur: kan, balgam, sarı safra ve kara safra. Sağlık bunların dengeli karışımıdır; biri baskın geldiğinde '
+           'kişinin mizacı da ona göre adlandırılır — kanlı, balgamlı, safralı ya da melankolik [1].',
+           'Her sıvının bir niteliği vardır. Kan sıcak ve nemli, balgam soğuk ve nemli, sarı safra sıcak ve kuru, kara safra soğuk ve kurudur [2][3]. Besinler, ilaçlar, '
+           'mevsimler ve yaşam biçimi de aynı niteliklerle tanımlanır; bu yüzden dengeyi bozabilir ya da düzeltebilir [2].',
+           'Tedavinin mantığı karşıtlıktır: sıcaklığa soğuk, kuruluğa nem ile karşılık verilir [2]. Bu yüzden bitkiler ve besinler nitelikleriyle seçilir. Galenos’un '
+           '“yakıcı ateşler” için önerdiği {arpa} çorbası böyle bir ilaçtır: belirli bir suyla, belirli bir biçimde pişirilen arpa, soğutucu ve nemlendirici sayılır [2]. '
+           'Fazla ya da bozulmuş hıltı dışarı atmak için müshiller ve kan alma kullanılırdı [2][3].',
+           'Öğreti Avrupa’da ve İslam dünyasında yüzyıllarca tıbbın ve beslenmenin temeli oldu [1][2]. 17. yüzyıldan başlayarak Vesalius’un anatomi çalışmaları, Harvey’nin '
+           '1628’de kan dolaşımını göstermesi ve van Helmont’un kara safranın dalakta bulunmadığını saptaması öğretiyi yıprattı; 19. yüzyılda hıltlar gerçek birer madde '
+           'olarak geçerliliğini yitirdi, 1900’lere gelindiğinde Galenik tedavi modeli bırakılmıştı [3].'],
+ 'bitkiler': ['arpa', 'hindiba', 'pelin', 'sinameki'],
+ 'semboller': ['basak'],
+ 'yazilar': ['anadoluda-bitkiyle-tedavinin-tarihi-hititlerden-osmanliya'],
+ 'kaynaklar': [('Encyclopaedia Britannica: Humour (ancient physiology)', 'https://www.britannica.com/topic/humor-ancient-physiology'),
+               ('Qatar Digital Library, “Galenic Humoral Pathology”', 'https://www.qdl.qa/en/galenic-humoral-pathology'),
+               ('Royal College of Physicians, “Science or superstition: the rise and fall of galenic medicine”',
+                'https://history.rcp.ac.uk/blog/science-or-superstition-rise-and-fall-galenic-medicine')]},
+
+{'yayin': '2026-11-24',
+ 'slug': 'materia-medica',
+ 'ad': 'De materia medica',
+ 'bitki': 'gucigdemi',
+ 'kisa': 'Dioskorides’in MS 77’de yazdığı beş kitap: yaklaşık 600 bitki, bin kadar ilaç ve on altı yüzyıl süren bir otorite.',
+ 'metin': ['Pedanios Dioskorides (y. MS 40 – y. 90), Kilikya’nın Anazarbos kentinden Yunan hekim ve ilaç bilgini. İmparator Nero’nun ordularıyla cerrah olarak dolaşmış; '
+           'bu yolculuklar ona bitkileri ve madenleri yerinde inceleme imkânı vermiştir [1].',
+           'Beş kitaptan oluşan De materia medica’yı MS 77 civarında yazdı. Yapıt yaklaşık 600 bitkiyi ve bin kadar basit ilacı tanıtır; aralarında {kenevir}, {gucigdemi}, '
+           '{baldiran} ve {nane} de vardır. İkinci kitap süt ve bal gibi hayvansal ürünlerin ilaç olarak kullanımını, beşinci kitap cıva, arsenik ve kurşun asetat gibi '
+           'kimyasal ilaçları anlatır; aynı kitapta cerrahide uyutucu olarak kullanılan {hashas} ve {adamotu} şerbetleri de geçer [1].',
+           'Metin yaklaşık on altı yüzyıl boyunca otorite olarak kaldı: 15. yüzyılın sonuna dek başlıca ilaç kitabı, bitki adlandırmasında da en önemli klasik kaynak '
+           'oldu. Yunanca aslı en az yedi dile çevrildi [1].'],
+ 'bitkiler': ['gucigdemi', 'kenevir', 'baldiran', 'nane', 'hashas', 'adamotu'],
+ 'semboller': ['hashas-tepelik'],
+ 'yazilar': ['anadoluda-bitkiyle-tedavinin-tarihi-hititlerden-osmanliya'],
+ 'kaynaklar': [('Encyclopaedia Britannica: Pedanius Dioscorides', 'https://www.britannica.com/biography/Pedanius-Dioscorides')]},
+
+{'yayin': '2026-11-25',
+ 'slug': 'umckaloabo',
+ 'ad': 'Umckaloabo',
+ 'bitki': 'guneyafrikasardunyasi',
+ 'kisa': 'Güney Afrika’da bir şifacının verdiği kök, Londra’da patentli bir ilaca dönüştü: yüz yıl sonra bitkisi laboratuvarda doğrulandı.',
+ 'metin': ['Charles Henry Stevens, vereme yakalandıktan sonra iyileşmek üzere Güney Afrika’ya gönderilmiş ve anlatıldığına göre yerel bir Sotho şifacı tarafından '
+           'iyileştirilmiştir. Yanında İngiltere’ye bir bitkisel ilaç getirdi ve bunu “Umckaloabo” adıyla verem hastalarına sattı [1].',
+           'Stevens bitkinin Basutoland’da (bugün Lesotho) bu adla bilindiğini söylüyordu. Agresif reklamları ve verem tedavisi iddiası tıp çevrelerinin tepkisini çekti; '
+           'açtığı davayı, bileşimini açıklamayı reddettiği için büyük ölçüde kaybetti [1].',
+           'Yüz yıl sonra Kew’de saklanan üç tarihî örnek analiz edildi. Örneklerin ağırlıklı olarak {guneyafrikasardunyasi} (Pelargonium sidoides) olduğu görüldü; az '
+           'miktarda P. reniforme bulunma olasılığı da dışlanamadı. İlacın Rumex cinsinden geldiğine dair eski tahmin ise doğrulanmadı [1].',
+           'Yumrulu Pelargonium türlerinin güney Afrika’da dizanteri komplikasyonları da dahil pek çok rahatsızlıkta kullanıldığı bilinir; gövde ve yumruların kullanımı, '
+           'bölge geleneksel tıbbının küçümsenmiş ama önemli bir parçasıdır [2]. Bugün aynı bitkiden hazırlanan ekstreler için en güçlü kanıt akut bronşit alanındadır [2].'],
+ 'bitkiler': ['guneyafrikasardunyasi'],
+ 'semboller': [],
+ 'yazilar': [],
+ 'kaynaklar': [('Thomas Brendler, Maria A. Stander, Ben-Erik van Wyk, “Stevens’ Cure (Umckaloabo) — the vindication of a patent medicine”, Frontiers in Pharmacology 14, 2024',
+                'https://doi.org/10.3389/fphar.2023.1294997'),
+               ('Thomas Brendler, Ben-Erik van Wyk, “A historical, scientific and commercial perspective on the medicinal use of Pelargonium sidoides (Geraniaceae)”, '
+                'Journal of Ethnopharmacology, 2008', 'https://pubmed.ncbi.nlm.nih.gov/18725280/')]},
 ]
