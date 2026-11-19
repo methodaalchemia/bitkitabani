@@ -931,3 +931,10 @@ table.etk th[scope="row"]{min-width:150px}
    Satır içi SVG'ler currentColor kullandığı için bu kuralın dışında. */
 :root[data-theme="dark"] img.motif-svg{filter:invert(.92) hue-rotate(180deg)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) img.motif-svg{filter:invert(.92) hue-rotate(180deg)}}
+
+/* D5 · yöreler dizininde künyeler kapalı durur */
+.srcdet>summary{cursor:pointer;font-family:var(--f-mono);font-size:var(--t-xs);color:var(--muted);letter-spacing:.04em;padding:4px 0;list-style:none}
+.srcdet>summary::-webkit-details-marker{display:none}
+.srcdet>summary::before{content:"▸ ";color:var(--accent)}
+.srcdet[open]>summary::before{content:"▾ "}
+.srcdet .srclist{margin-top:6px}

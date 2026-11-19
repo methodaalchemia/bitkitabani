@@ -279,7 +279,7 @@ def tr_haritasi(vurgu=None):
         x, y = _TM.P(c['lon'], c['lat'])
         out.append(f'<circle class="nokta" cx="{x:.0f}" cy="{y:.0f}" r="6"><title>{e(c["il"])}{" · " + e(c["ilce"]) if c["ilce"] else ""}: {e(c["baslik"])}</title></circle>')
     return ''.join(out) + '</svg>'
-def _il_bolum(il, d, baslik_tag='h2', kunye=True):
+def _il_bolum(il, d, baslik_tag='h2', kunye=True, kunye_acik=True):
     """kunye=False: dizinde yalnız il adı, bitki çipleri ve sayfa bağı kalır.
     Tam künyeler ilin kendi sayfasında; dizin yirmi il boyunca künye tekrarıyla ağırlaşıyordu."""
     bl = sorted(d['bitki'], key=lambda q: _trkey0(byId[q]['tr']))
@@ -288,6 +288,11 @@ def _il_bolum(il, d, baslik_tag='h2', kunye=True):
     if not kunye:
         return bas + f'<p class="muted-s">{len(d["cal"])} saha çalışmasından derlendi.</p>'
     cal = ''.join(f'<li>{e(c["ilce"] + ": ") if c["ilce"] else ""}<a href="{c["url"]}" target="_blank" rel="noopener">{e(c["baslik"])}</a> · {e(c["yazar"])}, <i>{e(c["dergi"])}</i>, {c["yil"]}</li>' for c in d['cal'])
+    if baslik_tag == 'h2' and not kunye_acik:
+        # Dizinde künyeler kapalı durur: kendi sayfası olmayan illerde de liste
+        # "il adı + bitki çipleri" olarak okunsun, künye isteyen açsın.
+        return bas + (f'<details class="srcdet"><summary>{len(d["cal"])} saha çalışmasından derlendi · kaynakları gör</summary>'
+                      f'<ul class="srclist">{cal}</ul></details>')
     return bas + f'<p class="muted-s">Kaynak saha çalışmaları:</p><ul class="srclist">{cal}</ul>'
 from karsilastirma import KARS
 from motifler import MOTIFLER as _MOTIF_HEPSI, TEMALAR, ESKI as MOTIF_ESKI, MSEO
@@ -2226,7 +2231,7 @@ _yb = sum(len(d['bitki']) for d in YORE_IL.values())
 _ybody = f'''{crumbs(('/yoreler/', 'Yöreler'))}<header class="page-head"><span class="eyebrow">Yöreler · {len(YORE_IL)} il · {len(_YC)} saha çalışması · {_ADLAR_N} yöresel ad</span><h1>Anadolu’da hangi yörede hangi bitki kullanılıyor?</h1><p>Türkiye’de yapılmış etnobotanik saha çalışmalarında katalogdaki bitkilerin kaydedildiği yöreler. Renkli illere dokun; her kayıt kaynağına bağlıdır. Harita yeni çalışmalar işlendikçe büyüyor.</p></header>
 <figure class="trmap-w">{tr_haritasi()}<figcaption>Harita: Natural Earth (kamu malı). Noktalar saha çalışmasının yapıldığı yeri gösterir. Kişi ve köy adları yayımlanmaz.</figcaption></figure>
 <aside class="warnbox" role="note"><b>Okurken:</b> Bir bitkinin bir yörede kaydedilmiş olması, o kullanımın işe yaradığını göstermez; yalnızca halk arasında bilindiğini gösterir. Kanıt ve güvenlik için bitkinin kendi sayfasına bak.</aside>
-<nav class="tabs" aria-label="Bölümler"><a href="#iller">İller</a><a href="#adlar">Yöresel adlar A–Z</a></nav><div id="iller"></div>''' + ''.join(f'<section class="sec" id="il-{_ilslug(il)}">' + _il_bolum(il, YORE_IL[il], kunye=il not in YORE_SAYFA) + (f'<p><a class="cta small" href="/yore/{_ilslug(il)}/">{e(il)} sayfası ve kaynakları →</a></p>' if il in YORE_SAYFA else '') + '</section>' for il in _ils) + _ADLAR_HTML
+<nav class="tabs" aria-label="Bölümler"><a href="#iller">İller</a><a href="#adlar">Yöresel adlar A–Z</a></nav><div id="iller"></div>''' + ''.join(f'<section class="sec" id="il-{_ilslug(il)}">' + _il_bolum(il, YORE_IL[il], kunye=il not in YORE_SAYFA, kunye_acik=False) + (f'<p><a class="cta small" href="/yore/{_ilslug(il)}/">{e(il)} sayfası ve kaynakları →</a></p>' if il in YORE_SAYFA else '') + '</section>' for il in _ils) + _ADLAR_HTML
 write('/yoreler/', page(f'Yöreler ve yöresel adlar: Anadolu’da hangi yörede hangi şifalı bitki? | Bitki Tabanı', f'{len(YORE_IL)} ilde saha çalışmalarında kaydedilen şifalı bitkiler haritada ve {_ADLAR_N} yöresel bitki adı A’dan Z’ye: hangi ad hangi bitki, kaynaklarıyla.', '/yoreler/', _ybody, 'yore', extra=lds(crumb_ld(('/yoreler/', 'Yöreler')))))
 GUIDE_URLS.append('/yoreler/')
 for il in YORE_SAYFA:
