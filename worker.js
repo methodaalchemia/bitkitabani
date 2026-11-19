@@ -961,6 +961,16 @@ export default {
     const url = new URL(req.url);
     if (url.pathname.startsWith('/ig/')) return igAsset(url.pathname.slice(4));
     if (!url.pathname.startsWith('/api/')) return env.ASSETS.fetch(req);
+    // Bir Instagram postunu yeniden ürettirip yeniden paylaştırmak için sayaç geri alınır.
+    // Gece derlemesi o sıradaki postu (ses ve video dâhil) sıfırdan üretir, akşam paylaşılır.
+    if (url.pathname === '/api/ig-geri' && req.method === 'POST') {
+      const st = (await call(env, 'ig:state', 'get')) || {};
+      const istek = Number(url.searchParams.get('n')), eski = st.n || 0;
+      st.n = Number.isFinite(istek) && istek >= 0 && istek <= eski ? istek : Math.max(0, eski - 1);
+      st.lastDaily = null; st.lastAt = 0; st.catchup = false;
+      await call(env, 'ig:state', 'put', st);
+      return json({ ok: true, eski, yeni: st.n, not: 'gece derlemesi bu postu yeniden üretecek, akşam paylaşılacak' });
+    }
     if (url.pathname === '/api/ig-durum' && req.method === 'GET') {
       const st = (await call(env, 'ig:state', 'get')) || {};
       const th = (await call(env, 'th:state', 'get')) || {};
