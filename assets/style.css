@@ -974,3 +974,23 @@ table.etk th[scope="row"]{min-width:150px}
 .tg-not{font-family:var(--f-body);font-size:var(--t-sm)}
 /* Ana sayfanın altındaki kurs satırı, bülten kutusuyla aynı genişlikte dursun. */
 .kurs-not{max-width:var(--metin);margin:14px auto 0}
+
+/* D1 revizyonu (20 Kasım) — okuma sayfaları: tablo, harita ya da kart ızgarası
+   içermeyen sayfalar iki sütunlu ızgaraya girmez. Okuma sütunu çerçevenin
+   kendisidir ve ekranın ortasında durur; medya sorgusuna bağlı olmadığı için
+   her pencere genişliğinde ve her yakınlaştırmada aynı çalışır.
+   Hangi sayfanın "okuma" olduğuna build.py içeriğe bakarak karar verir. */
+/* Çerçeve aynı genişlikte kalır (menü, şeritler ve footer sayfadan sayfaya
+   kıpırdamasın); yalnız içerik orta sütuna girer. Sütun genişliği çerçevede
+   çözülür, böylece küçük yazılı ekmek kırıntısı ile metin aynı hizada durur. */
+.wrap.okuma{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,var(--metin)) minmax(0,1fr);row-gap:28px;column-gap:0;align-content:start}
+.wrap.okuma>*{grid-column:2;min-width:0}
+.wrap.okuma>.motif,.wrap.okuma>.site-nav,.wrap.okuma>.tabbar,.wrap.okuma>footer{grid-column:1/-1}
+.wrap.okuma .page-head p,.wrap.okuma .sec>p,.wrap.okuma .sec-intro,
+.wrap.okuma article>p,.wrap.okuma .sheet>p{max-width:none}
+@media (min-width:1100px){
+  .wrap.okuma>.sec,.wrap.okuma>article>.sec,.wrap.okuma>.page-head,.wrap.okuma>article>.page-head,
+  .wrap.okuma>article>section.sec,.wrap.okuma .sheet>.sec{display:block}
+  .wrap.okuma>.page-head,.wrap.okuma>article>.page-head{display:flex;border-bottom:1.5px solid var(--ink);padding-bottom:16px}
+  .wrap.okuma>.page-head::after,.wrap.okuma>article>.page-head::after{content:none}
+}

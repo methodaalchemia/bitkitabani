@@ -496,8 +496,22 @@ CSSV = _hl.md5(open(os.path.join(HERE, 'assets', 'style.css'), 'rb').read()).hex
 def _de(ad):
     v = [c for c in ad.lower() if c in 'aıoueöüiâ']; son = v[-1] if v else 'e'
     return ('t' if ad[-1].lower() in 'fstkçşhp' else 'd') + ('a' if son in 'aıouâ' else 'e')
+# D1 revizyonu: gövdesinde geniş öğe (tablo, harita, kart ızgarası, fotoğraf
+# şeridi…) olmayan sayfa "okuma" sayfasıdır — iki sütunlu ızgaraya girmez,
+# metin sütunu ekranın ortasında durur. Elle liste yok: sayfa ne içeriyorsa
+# ona göre karar verilir, yeni sayfalar da kendiliğinden doğru sınıfı alır.
+_GENIS_OGE = re.compile(
+    r'<table|class="(?:[^"]*\s)?(?:tablewrap|harita-k|mapwrap|trmap-w|yore-top|grid|startcards|hubcards|'
+    r'pminis|brshots|hklist|famlist|motif-mini|motifgrid|tk|tk-kartlar|bridges|yorelist|cards|katlist)(?:\s[^"]*)?"')
+
+
+def okuma_sayfasi(body):
+    return not _GENIS_OGE.search(body)
+
+
 def page(title, desc, path, body, cur, scripts='', narrow=False, extra='', image=None):
-    h = head(title, desc, path, extra, image).replace('{narrow}', ' narrow' if narrow else '')
+    sinif = (' narrow' if narrow else '') + (' okuma' if okuma_sayfasi(body) else '')
+    h = head(title, desc, path, extra, image).replace('{narrow}', sinif)
     return h + nav(cur) + body + FOOT + '<script src="/assets/theme.js" defer></script><script src="/assets/streak.js" defer></script><script src="/assets/sync.js" defer></script>' + ('<script src="/assets/bulten.js" defer></script>' if 'abone-form' in body and 'bulten.js' not in scripts else '') + scripts.replace('<script src="/assets/streak.js" defer></script>', '') + '\n</body>\n</html>\n'
 
 _BIG = re.compile(re.escape(BASE) + r'/img/([a-z0-9]+)-960\.jpg')
