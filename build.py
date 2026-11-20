@@ -214,7 +214,7 @@ def abone(kaynak, baslik='Ücretsiz e-posta kursu: Şifalı bitkilere başlangı
 <input type="text" name="hp" tabindex="-1" autocomplete="off" class="vh" aria-hidden="true">
 <label class="chk"><input type="checkbox" name="riza" required><span>{'E-posta adresimin 7 günlük kurs ve ardından haftalık bülten için saklanmasına ve bana e-posta gönderilmesine izin veriyorum.' if kurs else 'E-posta adresimin haftalık bülten için saklanmasına ve bana e-posta gönderilmesine izin veriyorum.'} <a href="/gizlilik/#bulten">Ayrıntılar</a></span></label>
 <label class="chk"><input type="checkbox" name="duyuru"><span>İsteğe bağlı: Bitki Tabanı’nın atölye, doğa yürüyüşü ve gezi gibi duyurularını da almak istiyorum.</span></label>
-<p class="muted-s abone-msg" role="status"></p></form><p class="tg-cta"><a class="cta" href="https://t.me/bitkitabani" rel="noopener" target="_blank">Telegram kanalında her akşam bir bitki →</a> <span class="muted-s">Bildirimle gelir, e-posta gerekmez.</span></p></section>'''
+<p class="muted-s abone-msg" role="status"></p></form><p class="tg-cta"><a class="cta" href="https://t.me/bitkitabani" rel="noopener" target="_blank">Telegram kanalında her akşam bir bitki →</a> <span class="muted-s tg-not">Bildirimle gelir, e-posta gerekmez.</span></p></section>'''
 
 # ---------- rehber, tarif ve karşılaştırma bağlantıları (bitki sayfalarına da eklenir) ----------
 from rehber import KONULAR
@@ -2703,6 +2703,10 @@ home += ('<section class="sec"><h2>Son hikâyeler</h2>'
          'her hikâyenin altında dayandığı kaynak var.</p>'
          f'<ul class="hklist">{"".join(_hik_kart(h) for h in _son_hik)}</ul>'
          f'<p><a class="cta" href="/blog/">{len(HIK)} hikâyenin tamamı →</a></p></section>')
+# Bülten kutusu ana sayfanın en altına, footer'ın hemen üstüne.
+home += (abone('anasayfa', 'Bültene kaydol',
+               'E-posta adresini yaz; gelen e-postadaki bağlantıya tıklayınca kaydın tamamlanır.', kurs=False)
+         + '<p class="kurs-not">Yeni başlıyorsanız: <a href="/kurs/">7 günlük ücretsiz e-posta kursu “Şifalı bitkilere başlangıç” →</a></p>')
 write('/index.html', page('Bitki Tabanı: şifalı ve ritüel bitkiler veri tabanı', f'{REG_LIST}’dan {len(P)} şifalı ve ritüel bitkisi: geleneksel kullanım, bilimsel kanıt, güvenlik ve kaynaklar.', '/', home, 'home', '<script src="/assets/streak.js" defer></script><script src="/assets/home.js" defer></script>', extra=f'<script type="application/ld+json">{json.dumps(ldsite, ensure_ascii=False)}</script>'))
 # ---------- akıllı arama verisi ve sayfası ----------
 import hashlib as _hl
