@@ -146,3 +146,14 @@ OTHER.setdefault('karanfil', []).extend([
     ('Markowitz, Moynihan, Liu, Kim, Biologic properties of eugenol and zinc oxide-eugenol: a clinically oriented review (Oral Surgery, Oral Medicine, Oral Pathology 1992)', 'https://pubmed.ncbi.nlm.nih.gov/1437045/'),
     ('Mohammadi Nejad, Özgüneş, Başaran, Pharmacological and toxicological properties of eugenol (Turkish Journal of Pharmaceutical Sciences 2017)', 'https://pubmed.ncbi.nlm.nih.gov/32454614/'),
     ('LiverTox: Eugenol (Clove Oil) — ABD Ulusal Diyabet, Sindirim ve Böbrek Hastalıkları Enstitüsü', 'https://pubmed.ncbi.nlm.nih.gov/31869191/')])
+
+# C5: hazırlama bölümlerindeki doz bilgisinin dayandığı EMA belgeleri (20 Kasım 2026)
+for _k, _v in {
+ 'rezene': ('Foeniculum vulgare var. dulce fructus monografisi (revizyon 1)',
+            'https://www.ema.europa.eu/en/documents/herbal-monograph/european-union-herbal-monograph-foeniculum-vulgare-miller-subsp-vulgare-var-dulce-mill-batt-trab-fructus-revision-1_en.pdf'),
+ 'cucepalmiye': ('Serenoa repens fructus monografisi (taslak)',
+            'https://www.ema.europa.eu/en/documents/herbal-monograph/draft-european-union-herbal-monograph-serenoa-repens-w-bartram-small-fructus_en.pdf'),
+ 'unadegato': ('Uncaria tomentosa cortex değerlendirme raporu (taslak)',
+            'https://www.ema.europa.eu/en/documents/herbal-report/draft-assessment-report-uncaria-tomentosa-willd-ex-schult-dc-cortex_en.pdf'),
+}.items():
+    OTHER.setdefault(_k, []).append(_v)

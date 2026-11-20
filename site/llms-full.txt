@@ -257,7 +257,7 @@ Kuru çiçek 5–10 dakika demlenir; kaynatılmaz.
 EMA, ıhlamur çiçeğini soğuk algınlığı belirtileri ve hafif zihinsel stres için geleneksel kullanımda tanır. Flavonoit ve müsilaj içerir; klinik çalışması azdır.
 
 ### Güvenlik
-Genelde güvenlidir.
+Bilinen bir yan etkisi ve ilaç etkileşimi yok; tek kesin engel ıhlamur çiçeğine alerjidir. EMA monografisi gebelikte ve emzirirken yeterli veri olmadığı için önermiyor, dört yaşın altındaki çocuklarda soğuk algınlığı için, on iki yaşın altında ise gerginlik için kullanılmıyor. Soğuk algınlığı bir haftadan uzun sürerse ya da nefes darlığı, yüksek ateş veya iltihaplı balgam eşlik ediyorsa çay yeterli değildir.
 
 ### İddialar ve kanıt
 - Soğuk algınlığı belirtilerini hafifletir: Yalnızca geleneksel. EMA geleneksel kullanım olarak tanır; kontrollü çalışma yok denecek kadar az.
@@ -564,7 +564,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 - Anadolu: Sonbaharda meyvesi taze yenir, pekmezi yapılır. Halk arasında kalp otu olarak bilinir; çiçekli dalları çarpıntı ve tansiyon için demlenir.
 
 ### Hazırlama
-Çiçekli dal ve yaprak demlenir.
+Çiçekli dal ve yaprak demlenir. EMA monografisinin bitkisel çay için verdiği ölçü: 1–2 g doğranmış drog 150 ml kaynar suya, günde 3–4 fincan, günde 6 gramı geçmeden. Monografi 18 yaş altında kullanımı önermiyor. Şikâyet dört haftadan uzun sürerse hekime gitmek gerekir; ayak bileklerinde şişme, göğüste kola, üst karına ya da boyna yayılan ağrı veya nefes darlığı varsa çay değil, gecikmeden hekim.
 
 ### Bilim ne diyor
 EMA, alıç yaprağı ve çiçeğini geçici, sinirsel kalp şikâyetleri için geleneksel kullanımda tanır. Hafif kalp yetmezliğinde egzersiz kapasitesinde küçük iyileşmeler görülmüş, ancak büyük bir çalışma (SPICE) ölüm oranında anlamlı fark bulmamıştır.
@@ -597,7 +597,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 - Asya: Çin tıbbında en sık kullanılan bitkilerden biridir; diğer otları “uyumlu hâle getirdiği” için reçetelere eklenir.
 
 ### Hazırlama
-Kök suda bekletilir ya da kaynatılır.
+Kök suda bekletilir ya da kaynatılır. EMA monografisinin sindirim şikâyetleri için verdiği ölçü: 1,5–2 g doğranmış kök 150 ml kaynar suda, yemeklerden sonra günde 2–4 fincan (günde 3–8 g) ve dört haftayı geçmemek; şikâyet iki haftadan uzun sürerse hekime. Öksürükte tek seferde 1,5–4,5 g, günde 2–3 kez, bir haftadan uzun sürerse hekime. Monografi 18 yaş altında, gebelikte ve emzirirken kullanımı önermiyor.
 
 ### Bilim ne diyor
 Şekerden 50 kat tatlı glisirizin içerir. EMA, öksürük ve hafif mide şikâyetleri için geleneksel kullanımda tanır. Glisirizinden arındırılmış formu (DGL) mide ülseri için çalışılmıştır.
@@ -636,7 +636,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 - Anadolu: Bebeklerde gaz sancısı ve emziren annelerde süt artırmak için çayı içilir. Ege’de yumrusu ve sapı yemeklere girer.
 
 ### Hazırlama
-Tohum hafifçe ezilip demlenir.
+Tohum hafifçe ezilip demlenir — ezilmeden uçucu yağ suya geçmez. EMA’nın tatlı rezene (var. dulce) monografisindeki ölçü: 1,5 g drog 250 ml kaynar suda 15 dakika, günde 3 fincan, günde 4,5 g. Monografi çayı dört yaşın altında (şişkinlik ve öksürük için), âdet sancısı için ise on iki yaşın altında önermiyor ve iki haftadan uzun kullanılmamasını söylüyor.
 
 ### Bilim ne diyor
 EMA, rezene tohumunu hafif sindirim şikâyetleri, gaz ve adet sancısı için tanır. Bebek koliği için küçük çalışmalar vardır.
@@ -930,7 +930,7 @@ Bilimsel kanıt: Geleneksel · Güvenlik: Yüksek risk
 - Avrupa: Orta Çağ’da “cadı merhemlerinin” bileşeni olarak anılır. Almanya’da biraya katılırdı; 1516 Bira Saflık Yasası’nın nedenlerinden birinin bu olduğu düşünülür.
 
 ### Hazırlama
-Hazırlanması ve kullanılması önerilmez.
+Hazırlanması ve kullanılması önerilmez; bu sayfa bilerek tarif vermiyor. Sebebi doz değil, dozun tutturulamamasıdır: hiyosiyamin ve skopolamin miktarı bitkiden bitkiye, mevsime ve toplanan kısma göre katlarca değişir, bu yüzden evde güvenli bir ölçü diye bir şey yok. Tarihsel merhem ve ağrı kesici kullanımları kayıtlıdır, hepsi aynı riski taşır.
 
 ### Bilim ne diyor
 Hiyosiyamin ve skopolamin gibi tropan alkaloitleri içerir. Bu maddeler bugün bulantı, kramp ve göz muayenesi ilaçlarının kaynağıdır; ama bitkinin kendisinde doz ayarlamak imkânsızdır.
@@ -1094,7 +1094,7 @@ Bilimsel kanıt: Geleneksel · Güvenlik: Yüksek risk · Türkiye’de: Türkiy
 - Tarih: Chavín de Huántar’daki (MÖ 1. binyıl) taş oymalarda bu kaktüsü taşıyan figürler bulunur; 3.000 yılı aşkın bir geleneğe işaret eder.
 
 ### Hazırlama
-Gövde dilimlenip saatlerce kaynatılır.
+Gövde dilimlenip saatlerce kaynatılır. Bu sayfa ölçü vermiyor: meskalin miktarı sütuna, yaşına ve yetiştiği koşullara göre değiştiği için aynı bitkiden aynı biçimde hazırlanan iki içki aynı güçte olmaz. Türkiye’de meskalin uyuşturucu madde olarak düzenlenmiştir; bitkinin süs bitkisi olarak bulundurulması ile özütünün hazırlanması ayrı şeylerdir.
 
 ### Bilim ne diyor
 Meskalin içerir. Meskalinin klinik etkileri psilosibin ve LSD kadar çalışılmamıştır.
@@ -1185,7 +1185,7 @@ Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 - And: Cusco çevresinde mide ağrısı, gaz ve yükseklik hastalığı için çayı içilir. Çiftçiler hasattan sonra patatesleri muña dallarıyla katman katman depolar; böylece böcekler ve filizlenme engellenir.
 
 ### Hazırlama
-Taze ya da kuru dal demlenir.
+Taze ya da kuru dal demlenir; And yaylalarında yemekten sonra ve yükseklik rahatsızlığına karşı içilir. Çay olarak ölçülü içilmesi güvenli kabul edilir, ama kabul edilmiş bir günlük doz yok. Uçucu yağı ayrı bir şey: pulegon bakımından zengindir, karaciğer için zararlıdır ve içilmez.
 
 ### Bilim ne diyor
 Nanenin akrabasıdır; uçucu yağında pulegon ve menton bulunur. Böcek kovucu etkisi laboratuvarda doğrulanmıştır; tıbbi etkileri için insan çalışması yoktur.
@@ -1274,7 +1274,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 - Amazon: Asháninka halkının önemli şifa bitkilerindendir. Kabuğu kaynatılarak eklem ağrısı, iltihap, yara ve bağışıklık için içilir.
 
 ### Hazırlama
-Kabuk 20–30 dakika kaynatılır.
+Kabuk 20–30 dakika kaynatılır. Literatürdeki geleneksel ölçüler birbirini tutmuyor: bir kayıtta 20 g doğranmış kök kabuğu 1 litre suda 45 dakika kaynatılıyor, başka bir kayıtta iki kaşık kabuk 1,5 litrede 30 dakika kaynatılıp günde üç kez yarım bardak içiliyor. DSÖ monografı kapsül için günde iki–üç kez 300–500 mg veriyor. EMA değerlendirme raporu Avrupa için monografi kuramadı; yani ortak kabul görmüş tek bir doz yok.
 
 ### Bilim ne diyor
 Oksindol alkaloitleri içerir. Diz kireçlenmesi ve romatoid artritte yapılmış birkaç küçük çalışma hafif fayda bildirmiştir; daha büyük çalışmalara ihtiyaç var.
@@ -1307,7 +1307,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Genelde güvenli
 - Amazon: Kabuk çizildiğinde kan kırmızısı bir öz akar. Yaraya, böcek sokmasına ve ağız yaralarına sürülür; ishal ve mide için birkaç damla suya katılıp içilir.
 
 ### Hazırlama
-Reçine doğrudan cilde sürülür.
+Gövdeden sızan kırmızı reçine doğrudan cilde sürülür; kuruyunca ince bir tabaka bırakır. Ağızdan alınan biçimi için kabul edilmiş bir doz yok ve güvenlik verisi sınırlı — bu sayfa iç kullanım için ölçü vermiyor. Haricen kullanımda açık yaraya ve göz çevresine sürülmez.
 
 ### Bilim ne diyor
 Reçineden geliştirilen krofelemer, HIV hastalarındaki ishal için 2012’de ABD’de onaylanan ilk ağızdan bitkisel kökenli ilaçtır. Yara iyileştirici etkisi laboratuvar ve hayvan çalışmalarında gösterilmiştir.
@@ -1334,7 +1334,7 @@ Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 - Amazon: Kabuğu şeker kamışı içkisi (aguardiente) içinde bekletilerek romatizma, sırt ağrısı ve yorgunluk için içilir. Iquitos’ta satılan bitkili içkilerin en bilinenidir.
 
 ### Hazırlama
-Kabuk birkaç gün alkolde bekletilir.
+Kabuk birkaç gün alkolde bekletilir; Amazon’da çoğunlukla şeker kamışı rakısıyla hazırlanır. Kabul edilmiş bir doz yok. Hazırlık alkollü olduğu için alkolün bütün riskleri geçerli: gebelikte, karaciğer hastalığında ve alkol bırakmış kişilerde kullanılmaz.
 
 ### Bilim ne diyor
 Laboratuvar çalışmalarında iltihap giderici etkiler görülmüştür. İnsan çalışması yoktur.
@@ -1365,7 +1365,7 @@ Bilimsel kanıt: Klinik · Güvenlik: Yüksek risk
 - Avrupa: 17. yüzyılda Cizvit rahipler kabuğu Avrupa’ya götürdü; “Cizvit tozu” adıyla sıtmanın ilk etkili ilacı oldu.
 
 ### Hazırlama
-Kendi başına hazırlanması önerilmez.
+Kendi başına hazırlanması önerilmez. Kabuktaki kinin miktarı ağaca ve kabuğun yaşına göre değişir, bu yüzden ev yapımı kaynatmada alınan miktar bilinemez — ve kinin zehirli olduğu dozla tedavi ettiği doz birbirine yakındır. Sıtma tedavisi reçeteli ilaçla yapılır. Tonikteki kinin ilaç dozunun çok altındadır, tedavi değildir.
 
 ### Bilim ne diyor
 Kabuğundaki kinin yüzyıllarca sıtmanın temel ilacıydı. Bugün yerini artemisinin ve sentetik ilaçlara bıraktı, ama bazı durumlarda hâlâ kullanılır.
@@ -1398,7 +1398,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 - Amazon: Peru ve Brezilya’da böbrek ve safra taşlarını düşürmek için çayı içilir. Adı İspanyolca “taşı kıran” demektir.
 
 ### Hazırlama
-Kuru bitki demlenir.
+Kuru bitkinin toprak üstü kısmı demlenir. Yaygın geleneksel kullanımına karşın kabul edilmiş bir doz yok; klinik çalışmalarda kullanılan ekstre miktarları birbirinden farklı ve çay ile ekstre birbirinin yerine geçmez. Kan şekerini ve tansiyonu düşürebildiği için bu ilaçları kullananlarda ölçüm takibi gerekir.
 
 ### Bilim ne diyor
 Hayvan çalışmalarında ve birkaç küçük insan çalışmasında küçük böbrek taşlarının atılmasını kolaylaştırabileceği görülmüştür. Kanıt sınırlıdır.
@@ -1431,7 +1431,7 @@ Bilimsel kanıt: Geleneksel · Güvenlik: Yüksek risk
 - And: Yaprakları haricen romatizma ve şişliklere sarılır.
 
 ### Hazırlama
-Hazırlanması ve kullanılması önerilmez.
+Hazırlanması ve kullanılması önerilmez; bu sayfa bilerek tarif vermiyor. Çiçeğinde, yaprağında ve tohumunda bulunan tropan alkaloitleri bitkiden bitkiye ve mevsime göre büyük farklar gösterir; ölümcül miktar ile etki eden miktar arasındaki aralık dardır. Türkiye’de süs bitkisi olarak satılır: çocukların ve evcil hayvanların erişebileceği yerde bulundurulmamalı.
 
 ### Bilim ne diyor
 Skopolamin ve atropin içerir. Bu maddeler deliryum, unutkanlık ve sanrıya yol açar.
@@ -1462,7 +1462,7 @@ Bilimsel kanıt: Geleneksel · Güvenlik: Genelde güvenli
 - Amazon: Ekvador Amazonu’nda Kichwa aileleri sabahın 3–4’ünde kalkıp ateş başında guayusa içer, gece gördükleri rüyaları birbirine anlatır ve yorumlar. Avcılar uyanık kalmak için içer.
 
 ### Hazırlama
-Yapraklar uzun süre kaynatılır.
+Yapraklar uzun süre kaynatılır; Amazon’da sabah erken, topluca içilir. Kafein içerdiği için ölçüsü kahve gibi düşünülmeli — kabul edilmiş bir günlük doz yok, ama kafeine duyarlı olanlar, kalp ritmi sorunu, kaygı ya da uykusuzluk yaşayanlar ve gebeler toplam kafein alımını hesaba katmalı. Akşam içilirse uykuyu böler.
 
 ### Bilim ne diyor
 Kafein ve teobromin içerir; mate ile akrabadır. Tıbbi iddialar için insan çalışması azdır.
@@ -1490,7 +1490,7 @@ Bilimsel kanıt: Geleneksel · Güvenlik: Genelde güvenli
 - Mutfak: Peru ve Latin Amerika mutfağında yemeğe renk ve hafif tat verir.
 
 ### Hazırlama
-Tohumlar ezilir ya da yağda bekletilir.
+Tohumlar ezilerek toz yapılır ya da sıcak yağda bekletilerek rengi yağa alınır; yemek boyası ve beden boyası olarak kullanımı budur. Gıda olarak güvenlidir, ölçü yemeğe göredir. Tıbbi bir amaç için kabul edilmiş doz yok.
 
 ### Bilim ne diyor
 Boyası (biksin) E160b koduyla dünyada yaygın bir gıda boyasıdır; peynir ve tereyağına turuncu renk verir. Tıbbi kullanımlar için insan çalışması azdır.
@@ -1576,7 +1576,7 @@ Bilimsel kanıt: Geleneksel · Güvenlik: Yüksek risk
 - Avrupa: Adı, mantarın sütte bekletilerek sinek öldürmek için kullanılmasından gelir.
 
 ### Hazırlama
-Hazırlanması ve kullanılması önerilmez.
+Hazırlanması ve kullanılması önerilmez; bu sayfa bilerek tarif vermiyor. İbotenik asit ve muskimol miktarı mantardan mantara, hatta aynı halkadaki iki mantar arasında bile değişir. Asıl tehlike ayrı: toplarken ölümcül Amanita türleriyle karıştırılabilir ve o hata geri dönüşsüzdür.
 
 ### Bilim ne diyor
 Bitki değil, bir mantardır. İbotenik asit ve muskimol içerir; bunlar beyindeki GABA sistemini etkiler. Kurutma, ibotenik asidi daha güçlü olan muskimole çevirir.
@@ -1607,7 +1607,7 @@ Bilimsel kanıt: Geleneksel · Güvenlik: Genelde güvenli
 - Kuzey Amerika: Güney Kaliforniya’daki Kumeyaay, Chumash ve Cahuilla halklarının kutsal bitkisidir. Demet hâlinde yakılarak arınma törenlerinde kullanılır; çayı ve buharı soğuk algınlığına karşıdır.
 
 ### Hazırlama
-Kuru yaprak demeti yakılır.
+Kuru yaprak demeti bağlanıp ucu tutuşturulur, alev söndürülüp dumanı tüttürülür — tütsü olarak kullanımı budur. İçilmek için hazırlanmaz. Kapalı alanda dumanı solunum yollarını tahriş eder; astımı olanların bulunduğu odada yakılmamalı. ⚠️ Ak adaçayı Kaliforniya yerli halkları için kutsal bir bitkidir ve ticari toplama baskısı altındadır; satın alınacaksa kaynağı sorulmalı.
 
 ### Bilim ne diyor
 Uçucu yağı sineol ve kafur bakımından zengindir. Laboratuvarda antimikrobiyal etkiler görülmüştür; insan çalışması yoktur.
@@ -1859,13 +1859,13 @@ Bilimsel kanıt: Geleneksel · Güvenlik: Genelde güvenli
 - Orta Asya: Uygur halk tıbbında kapari meyvesi eklem ağrıları için kullanılır.
 
 ### Hazırlama
-Tomurcuklar tuzlanıp salamura yapılır.
+Tomurcuklar toplanıp kurutulur, sonra tuzlanarak ya da sirkeli salamurada bekletilerek acılığı alınır; bu işlem olmadan yenmez. Turşusu yemekte ölçüsüyle kullanılır. Kökkabuğunun tıbbi kullanımı için kabul edilmiş bir doz yok.
 
 ### Bilim ne diyor
 Rutin ve kaempferol gibi flavonoitler içerir. Laboratuvar çalışmaları dışında insan çalışması çok azdır.
 
 ### Güvenlik
-Yiyecek olarak güvenlidir.
+Turşusu ve tomurcuğu yiyecek olarak güvenlidir. Salamura tuz oranı yüksektir: tuz kısıtlaması olanların hesaba katması gerekir. Kökkabuğunun tıbbi kullanımı için insan güvenlik verisi yok; gebelikte bu biçimde kullanılmamalı.
 
 ### Doğada
 Nerede yetişir: Güneydoğu, Akdeniz ve İç Anadolu’nun kurak, kayalık yerleri, duvar dipleri ve yol kenarları.
@@ -1923,7 +1923,7 @@ Meyve kaynatılarak şurup ya da marmelat yapılır; kurutulur.
 Antosiyanin ve C vitamini bakımından zengindir. Küçük çalışmalarda kan yağlarında hafif iyileşmeler bildirilmiştir.
 
 ### Güvenlik
-Yiyecek olarak güvenlidir.
+Meyvesi yiyecek olarak güvenlidir. Çekirdeği sert olduğu için küçük çocuklara bütün verilmez. Ekşiliği yüksek olduğundan reflüsü olanlarda şikâyeti artırabilir. Yaprak ve kabuğunun tıbbi kullanımı için güvenlik verisi yok.
 
 ### Doğada
 Nerede yetişir: Karadeniz, Marmara ve Batı Anadolu orman kenarları.
@@ -2012,13 +2012,13 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Genelde güvenli
 - And: İspanyollarla gelen comino, Peru mutfağının temel baharatlarından biri olmuştur.
 
 ### Hazırlama
-Tohum kavrulup öğütülür; demlenir.
+Tohum kavrulup öğütülür; kavurma uçucu yağı açığa çıkardığı için kokusunu asıl bu adım verir. Hazımsızlık için bir tatlı kaşığı tohum bir bardak kaynar suda demlenir. Baharat ölçüsünün üstünde, ilaç gibi düzenli kullanım için kabul edilmiş bir doz yok.
 
 ### Bilim ne diyor
 Kuminaldehit içerir. Huzursuz bağırsak ve kilo yönetimi üzerine küçük çalışmalar vardır; kanıt zayıftır.
 
 ### Güvenlik
-Baharat olarak güvenlidir.
+Baharat olarak güvenlidir. Baharat ölçüsünün üstünde, ilaç gibi düzenli kullanımın güvenliği bilinmiyor; gebelikte bu miktarlarda kullanılmamalı. Kan şekerini düşürebildiğine dair bulgular var, şeker ilacı kullananlar ölçüm takibi yapmalı. Maydanozgiller familyasına (kereviz, havuç, anason) alerjisi olanlarda çapraz alerji görülebilir.
 
 ### Doğada
 Nerede yetişir: Kültür bitkisi; İç ve Batı Anadolu’da ekilir.
@@ -2263,7 +2263,7 @@ Bilimsel kanıt: Geleneksel · Güvenlik: Yüksek risk
 - And ve Kuzey Amerika: And’larda chamico adıyla büyü ve kehanet törenlerinde, Kuzey Amerika’da bazı yerli halkların erginlik törenlerinde kullanılmıştır.
 
 ### Hazırlama
-Hazırlanması ve kullanılması önerilmez.
+Hazırlanması ve kullanılması önerilmez; bu sayfa bilerek tarif vermiyor. Tohumdaki atropin ve skopolamin miktarı bitkiden bitkiye katlarca değişir, bu yüzden “az miktar” diye bir güvenli aralık yok. Türkiye’de kendiliğinden yetişir ve her yıl zehirlenme vakası görülür; çoğu, bitkiyi tanımayan gençlerin denemesiyle oluyor.
 
 ### Bilim ne diyor
 Atropin, hiyosiyamin ve skopolamin içerir. Etkisi toé ve banotu ile aynıdır.
@@ -2534,7 +2534,7 @@ Meyveler dondurulup toplanır; suyu sıkılır, yağı çekilir.
 C vitamini, karotenoitler ve doymamış yağ asitleri bakımından zengindir. Kuru göz ve cilt üzerine küçük çalışmalar vardır.
 
 ### Güvenlik
-Yiyecek olarak güvenlidir.
+Olgun meyvesi yiyecek olarak güvenlidir. Olgunlaşmamış meyve buruk ve ağız kurutucudur, fazlası mideyi rahatsız eder. Çekirdeği küçük çocuklar için boğulma riski taşır. Yaprak ve kabuğunun tıbbi kullanımı için güvenlik verisi yok.
 
 ### Doğada
 Nerede yetişir: Kuzeydoğu Anadolu’nun nehir yatakları; Orta Asya, Sibirya ve Himalayalar.
@@ -2658,7 +2658,7 @@ Meyve suyu sıkılır ya da kurutulup toz yapılır.
 Bilinen en yüksek C vitamini içeren meyvelerdendir; portakalın kat kat üzerinde. Küçük bir çalışmada sigara içenlerde oksidatif stres göstergelerini azalttığı bildirilmiştir.
 
 ### Güvenlik
-Yiyecek olarak güvenlidir.
+Meyvesi yiyecek olarak güvenlidir. C vitamini içeriği çok yüksektir: yoğunlaştırılmış toz biçiminde günlük alım kolayca yükselir ve fazla C vitamini ishal, mide yanması ve duyarlı kişilerde böbrek taşı riski demektir. Demir emilimini artırdığı için demir yükü olan hastalıklarda dikkat gerekir. Gebelikte toz biçiminin güvenliği bilinmiyor.
 
 ### Doğada
 Nerede yetişir: Amazon nehirlerinin her yıl su basan kıyıları; Peru, Brezilya ve Kolombiya.
@@ -2799,7 +2799,7 @@ Bilimsel kanıt: Geleneksel · Güvenlik: Genelde güvenli
 - And halk tıbbı: Yaprakları öksürük ve sarılık için demlenir.
 
 ### Hazırlama
-Çiçek ve yaprak demlenir.
+Çiçek ve yaprak demlenir. And bölgesinde bitkinin ağırlığı tıbbi değil törensel: Peru ve Bolivya’nın ulusal çiçeğidir, mezarlara ve sunulara konur. Tıbbi kullanım için kabul edilmiş bir doz yok ve güvenlik çalışması da yok — bu sayfa ölçü vermiyor.
 
 ### Bilim ne diyor
 Tıbbi kullanımları üzerine bilimsel çalışma çok azdır.
@@ -2827,7 +2827,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Genelde güvenli
 - And: Arkeolojik kazılarda Moche ve Nazca dönemine ait seramiklerde yacón tasvirleri bulunmuştur.
 
 ### Hazırlama
-Yumru çiğ yenir ya da şurubu yapılır.
+Yumru kabuğu soyulup çiğ yenir; suyu kaynatılarak koyu bir şurup elde edilir. Tatlılığı fruktooligosakkaritlerden gelir, bunlar bağırsakta sindirilmez: fazlası gaz, şişkinlik ve ishal yapar, bu yüzden küçük miktarla başlanır. Yaprak çayı ayrı bir şey — uzun süreli güvenliği bilinmiyor, bu sayfa yaprak için ölçü vermiyor.
 
 ### Bilim ne diyor
 Fruktooligosakkarit (FOS) bakımından zengindir; bu lifler kan şekerini az yükseltir. Küçük çalışmalarda kabızlıkta fayda görülmüştür.
@@ -2855,7 +2855,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 - Peru bugün: Omega-3 kaynağı olarak dünyaya ihraç edilir.
 
 ### Hazırlama
-Tohumlar mutlaka kavrularak yenir.
+Tohumlar mutlaka kavrularak yenir; çiğ tohum ve yaprak alkaloit ve saponin içerir, kavurma bunları büyük ölçüde giderir. Yağı soğuk sıkımla çıkarılır ve kızartmada kullanılmaz: omega-3 bakımından zengin olduğu için ısıda bozulur, salataya ve soğuk yemeğe konur.
 
 ### Bilim ne diyor
 Alfa-linolenik asit (omega-3) ve protein bakımından zengindir. Küçük bir çalışmada kolesterolde hafif iyileşme bildirilmiştir.
@@ -2955,7 +2955,7 @@ Tohumlar kaynatılıp birkaç hafta bekletilir, sonra yağ süzülür.
 Limonoitler içerir. Laboratuvarda böcek kovucu ve iltihap giderici etkiler görülmüştür; insan çalışması azdır.
 
 ### Güvenlik
-Haricen genelde güvenlidir. İçilmez.
+Haricen genelde güvenlidir; içilmez. Yağı ciltte tahriş ve alerjik döküntü yapabilir, geniş alana sürülmeden önce küçük bir alanda denenmeli. Açık yaraya ve göz çevresine uygulanmaz. Gebelikte ve bebeklerde güvenlik verisi yok; Amazon’da sivrisinek kovucu olarak bebeğe sürülmesi geleneksel bir kullanımdır ama bunu destekleyen güvenlik çalışması bulunmuyor.
 
 ### Doğada
 Nerede yetişir: Amazon havzasının su basan ve nemli ormanları.
@@ -2977,7 +2977,7 @@ Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 - Amazon: Bazı akraba türler ok zehirlerinde (curare) kullanılmıştır.
 
 ### Hazırlama
-Kök kaynatılır.
+Kök kaynatılır; Amazon’da genellikle uzun süre, koyu bir kaynatma elde edene kadar. Kabul edilmiş bir doz yok. Rahim kası üzerinde etkili olabildiği için gebelikte kullanılmaz; tansiyonu düşürebildiği için tansiyon ilacı kullananlarda ölçüm takibi gerekir.
 
 ### Bilim ne diyor
 Tetrandrin benzeri izokinolin alkaloitleri içerir. Laboratuvar ve hayvan çalışmalarında kas gevşetici ve iltihap giderici etkiler görülmüştür; insan çalışması yoktur.
@@ -3040,7 +3040,7 @@ Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 - Bugün: Kanser tedavisi iddiasıyla pazarlanmış, bu iddialar kanıtlanmamıştır.
 
 ### Hazırlama
-İç kabuk kaynatılır.
+Ağacın iç kabuğu (lapacho) kaynatılır; dış kabuk ve odun kullanılmaz, etkili sayılan bileşikler iç kabukta bulunur. Kabul edilmiş bir doz yok ve piyasadaki ürünlerin içeriği birbirini tutmuyor — bazı analizlerde beklenen bileşen hiç çıkmamıştır. Yüksek miktarda bulantı, kusma ve kanamaya yol açabilir.
 
 ### Bilim ne diyor
 Lapakol içerir. 1970’lerde kanser için yapılan bir çalışma, etkili dozun zehirli yan etkilere yol açması nedeniyle durduruldu.
@@ -3163,7 +3163,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Genelde güvenli
 - Bugün: Meyve ekstresi iyi huylu prostat büyümesine bağlı idrar şikâyetleri için yaygın olarak kullanılır.
 
 ### Hazırlama
-Meyve ekstresi kapsül olarak alınır.
+Çay olarak hazırlanmaz: etkiden sorumlu tutulan bileşikler yağda çözünür, suya geçmez. EMA değerlendirmesinde kabul edilen biçimler yumuşak ekstre — günde iki kez 160 mg (heksanla çekilmiş), ya da günde bir kez 320 mg (etanolle çekilmiş). Yalnız yetişkinler için; ateş, kramp ya da idrarda kan varsa ürün değil hekim gerekir, çünkü bu belirtiler prostat büyümesinin değil başka bir şeyin işareti olabilir.
 
 ### Bilim ne diyor
 Büyük ve iyi tasarlanmış çalışmalar, cüce palmiye ekstresinin prostat büyümesine bağlı idrar belirtilerinde plasebodan üstün olmadığını göstermiştir. EMA bazı ekstreler için bu kullanımı tanır.
@@ -3737,7 +3737,7 @@ Bilimsel kanıt: Geleneksel · Güvenlik: Yüksek risk
 - Bugün: “Siyah merhem” adıyla internette satılan ve kanseri “çektiği” iddia edilen yakıcı merhemlerin ana bileşenidir.
 
 ### Hazırlama
-Kullanım önerilmez.
+Kullanım önerilmez; bu sayfa tarif vermiyor. Köksapındaki sanguinarin ağızdan alındığında kusma ve görme bozukluğu, cilde sürüldüğünde doku ölümü yapar. İnternette “kara merhem” adıyla satılan karışımların ana maddesi budur ve bıraktığı yara iz bırakarak iyileşir; tümör “çektiği” iddiası doğru değildir, yaptığı şey dokuyu yakmaktır.
 
 ### Bilim ne diyor
 Kökteki sanguinarin hücre öldürücüdür. Siyah merhem, sağlam dokuyu da yakarak derin yaralar ve kalıcı izler bırakır; altında kanser hücrelerinin yaşamaya devam ettiği gösterilmiştir. ABD FDA bu ürünlere karşı tüketicileri uyarmıştır.
