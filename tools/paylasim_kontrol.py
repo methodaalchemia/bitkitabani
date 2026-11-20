@@ -25,8 +25,12 @@ def main():
     if os.path.exists(tj):
         plan = json.load(open(tj, encoding='utf-8'))
         for gun, slotlar in sorted(plan.items()):
+            if not isinstance(slotlar, dict):
+                bakilan += 1; eksik += 1; bildir(f'threads {gun}', 'gün kaydı sözlük değil'); continue
             for ad, v in slotlar.items():
                 bakilan += 1
+                if not isinstance(v, dict):
+                    eksik += 1; bildir(f'threads {gun}:{ad}', 'slot sözlük değil: ' + type(v).__name__); continue
                 if not v.get('image'): eksik += 1; bildir(f'threads {gun}:{ad}', 'image alanı boş')
 
     # 2) Instagram postları
@@ -37,12 +41,22 @@ def main():
         if not j.get('story'): print(f'  not: p/{n} hikâye görseli yok')
 
     # 3) Ek paylaşımlar (aylık, kampanya)
+    # ek.json: {tarih: paylaşım}.  aylik.json: TEK paylaşım nesnesi — gezilecek
+    # bir eşleme değil; ayırt etmeden dolaşılırsa değerler düz metin olarak gelir.
     for ad in ('ek.json', 'aylik.json'):
         f = os.path.join(IGOUT, ad)
         if not os.path.exists(f): continue
         d = json.load(open(f, encoding='utf-8'))
-        for k, a in (d.items() if isinstance(d, dict) else enumerate(d)):
+        if isinstance(d, dict) and ('image' in d or 'images' in d):
+            kayitlar = [(d.get('ay') or d.get('id') or '-', d)]
+        elif isinstance(d, dict):
+            kayitlar = list(d.items())
+        else:
+            kayitlar = list(enumerate(d))
+        for k, a in kayitlar:
             bakilan += 1
+            if not isinstance(a, dict):
+                eksik += 1; bildir(f'{ad}:{k}', 'kayıt sözlük değil: ' + type(a).__name__); continue
             if not (a.get('images') or a.get('image')): eksik += 1; bildir(f'{ad}:{k}', 'görsel yok')
 
     print(f'paylaşım kontrolü: {bakilan} paylaşım · görselsiz {eksik}')
@@ -50,4 +64,12 @@ def main():
 
 
 if __name__ == '__main__':
-    sys.exit(main())
+    # Bu betik yalnızca rapor verir. Beklenmedik bir hata yüzünden iş akışını
+    # durdurup "Değişiklikleri kaydet" adımını atlatmamalı: hata bildirilir,
+    # çıkış kodu 0 kalır.
+    try:
+        sys.exit(main())
+    except Exception as e:
+        print(('::error::paylaşım kontrolü çalışamadı: ' if CI else '  KONTROL HATASI: ')
+              + f'{type(e).__name__}: {e}')
+        sys.exit(0)
