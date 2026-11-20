@@ -2,6 +2,7 @@ import json, os, shutil, html, re, urllib.parse, datetime
 from kunye_ld import cite_ld
 HERE = os.path.dirname(os.path.abspath(__file__))
 from refs import WIKI, POWO, NCCIH, EMA, OTHER, FILES, BAYTOP
+from metinler import UI
 from kunye_elle import ELLE as APA_ELLE, BAYTOP_APA, ema_apa, nccih_apa, powo_apa, powo_adres
 from kunye_elle import METIN as APA_METIN
 
@@ -61,7 +62,7 @@ def tanima_html(pid, h2=True):
         if isinstance(x, dict) and os.path.exists(os.path.join(HERE, 'img', 'tanima', f'{pid}-{t}.jpg')):
             figs.append(f'<figure class="tn-{t}"><img src="/img/tanima/{pid}-{t}.jpg" alt="{TANIMA_AD[t]}" loading="lazy" width="400" height="500"><figcaption><b>{TANIMA_AD[t]}</b><br><a href="{x["page"]}" rel="noopener">{e(x.get("artist", ""))}</a> · {e(x.get("license", ""))}</figcaption></figure>')
     if not figs: return ''
-    return (f'<section class="sec" id="tanima"><h2>Nasıl tanınır?</h2>' if h2 else '') + f'<div class="tanima">{"".join(figs)}</div>' + ('</section>' if h2 else '')
+    return (f'<section class="sec" id="tanima"><h2>{UI.TANIMA}</h2>' if h2 else '') + f'<div class="tanima">{"".join(figs)}</div>' + ('</section>' if h2 else '')
 # kaynaklı halk hekimliği kayıtları (halk.py): bitki sayfasının geleneksel kullanım bölümüne ve kaynaklarına eklenir
 from halk import site_kul as _site_kul
 from ege import EGE, KAYNAK as EGE_KAYNAK
@@ -840,7 +841,7 @@ def komsu_html(pid):
     ks = komsular(pid)
     if not ks: return ''
     chips = ''.join(f'<a class="chip" href="/{q}/">{e(byId[q]["tr"])}</a>' for q in ks)
-    return ('<section class="sec"><h2>Aynı bölgeden, aynı kullanımdan</h2>'
+    return (f'<section class="sec"><h2>{UI.KOMSULAR}</h2>'
             '<p class="muted-s">Aynı kültür bölgesinden ve aynı kullanım başlığından başka kayıtlar.</p>'
             f'<nav class="chips">{chips}</nav></section>')
 
@@ -861,7 +862,7 @@ def motif_bag(pid):
     if not ms: return ''
     li = ''.join(f'<li><a class="mb-a" href="/semboller/{m["slug"]}/">{motif_svg(m)}'
                  f'<b>{e(m["ad"])}</b></a><span>{e(n)}</span></li>' for m, n in ms)
-    return ('<section class="sec"><h2>Kültürdeki simgesi</h2><p class="muted-s">Motifin bu bitkiyi gösterdiği ileri sürülmez; '
+    return (f'<section class="sec"><h2>{UI.SIMGE}</h2><p class="muted-s">Motifin bu bitkiyi gösterdiği ileri sürülmez; '
             'bağın ne olduğu her satırda yazılıdır.</p><ul class="motif-bag">' + li + '</ul></section>')
 
 # ---------- bitki sayfaları ----------
@@ -892,9 +893,9 @@ for i, p in enumerate(P):
     if pid in DERIN:
         dd = DERIN[pid]
         rows_ = ''.join(f'<tr><th scope="row">{e(i)}</th><td><span class="kv {k}">{KAN_AD[k]}</span></td><td>{e(n)}</td></tr>' for i, k, n in dd['iddia'])
-        der_fayda = f'<section class="sec"><h2>Faydaları ne kadar kanıtlı?</h2><p>{ev(p["bilim"])}</p><p class="muted-s">İnternette {e(p["tr"].replace("I","ı").replace("İ","i").lower())} için sık tekrarlanan iddialar ve bilimin bugün söyledikleri.</p><div class="tablewrap"><table class="cmp etk kanit"><thead><tr><th scope="col">İddia</th><th scope="col">Kanıt</th><th scope="col">Açıklama</th></tr></thead><tbody>{rows_}</tbody></table></div></section>'
-        der_hata = '<section class="sec"><h2>Sık yapılan hatalar</h2><ul class="hatalar">' + ''.join(f'<li>{e(h)}</li>' for h in dd['hata']) + '</ul></section>'
-        der_sss = '<section class="sec"><h2>Sık sorulanlar</h2><div class="faq">' + ''.join(f'<details><summary>{e(q)}</summary><p>{e(a)}</p></details>' for q, a in dd['sss']) + '</div></section>'
+        der_fayda = f'<section class="sec"><h2>{UI.KANIT}</h2><p>{ev(p["bilim"])}</p><p class="muted-s">İnternette {e(p["tr"].replace("I","ı").replace("İ","i").lower())} için sık tekrarlanan iddialar ve bilimin bugün söyledikleri.</p><div class="tablewrap"><table class="cmp etk kanit"><thead><tr><th scope="col">İddia</th><th scope="col">Kanıt</th><th scope="col">Açıklama</th></tr></thead><tbody>{rows_}</tbody></table></div></section>'
+        der_hata = f'<section class="sec"><h2>{UI.HATALAR}</h2><ul class="hatalar">' + ''.join(f'<li>{e(h)}</li>' for h in dd['hata']) + '</ul></section>'
+        der_sss = f'<section class="sec"><h2>{UI.SSS}</h2><div class="faq">' + ''.join(f'<details><summary>{e(q)}</summary><p>{e(a)}</p></details>' for q, a in dd['sss']) + '</div></section>'
         faqld = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q, a in dd['sss']]}
     if pid in ETK:
         def _etk_sat(g, w):
@@ -904,14 +905,14 @@ for i, p in enumerate(P):
             roz = f'<span class="kanitr" data-k="{kk}">{ka}</span> ' if kk else ''
             return f'<tr><th scope="row">{e(g)}{bag}</th><td>{roz}{ev(w)}</td></tr>'
         rows_ = ''.join(_etk_sat(g, w) for g, w in ETK[pid])
-        etkhtml = f'<section class="sec" id="etk"><h2>İlaç etkileşimleri</h2><div class="tablewrap"><table class="cmp etk"><thead><tr><th scope="col">İlaç ya da madde</th><th scope="col">Neden önemli</th></tr></thead><tbody>{rows_}</tbody></table></div><p class="muted-s">Bu liste eksiksiz değildir. Düzenli ilaç kullanıyorsan {e(p["tr"])} denemeden önce eczacına ya da hekimine sor.</p></section>'
+        etkhtml = f'<section class="sec" id="etk"><h2>{UI.ETKILESIM}</h2><div class="tablewrap"><table class="cmp etk"><thead><tr><th scope="col">İlaç ya da madde</th><th scope="col">Neden önemli</th></tr></thead><tbody>{rows_}</tbody></table></div><p class="muted-s">Bu liste eksiksiz değildir. Düzenli ilaç kullanıyorsan {e(p["tr"])} denemeden önce eczacına ya da hekimine sor.</p></section>'
     _gp = {k['slug'] for k in KONULAR if any(x == pid for x, _ in k['bitkiler'])}
     def _sim(q):
         _gq = {k['slug'] for k in KONULAR if any(x == q['id'] for x, _ in k['bitkiler'])}
         return 4 * len(_gp & _gq) + 2 * len(set(q['kat']) & set(p['kat'])) + (2 if q['fam'] == p['fam'] else 0) + len(set(q['bolge']) & set(p['bolge']))
     similar = sorted((q for q in P if q['id'] != pid and q['id'] not in rel), key=lambda q: (-_sim(q), q['no']))[:3]
     _rg = [k for k in KONULAR if any(x == pid for x, _ in k['bitkiler']) and sum(1 for y, _ in k['bitkiler'] if y in byId) >= 2]
-    simhtml = '<section class="sec"><h2>Benzer bitkiler</h2><p class="muted-s">Aynı derde kullanılan ya da aynı familyadan bitkiler.</p><div class="grid sim">' + ''.join(card(q) for q in similar) + '</div></section>'
+    simhtml = f'<section class="sec"><h2>{UI.BENZER}</h2><p class="muted-s">Aynı derde kullanılan ya da aynı familyadan bitkiler.</p><div class="grid sim">' + ''.join(card(q) for q in similar) + '</div></section>'
     mybridges = [(i, x) for i, x in enumerate(BR, 1) if pid in (x['a'], x.get('b'))]
     brlinks = ''.join(f'<a class="chip" href="/kopruler/{slug_of(x)}/">Karşılaştırma: {e(x["t"])}</a>' for i, x in mybridges)
     # Motifler "Kültürdeki simgesi" bölümünde çizimiyle ve bağıyla duruyor; çip olarak tekrarlanmaz.
@@ -920,7 +921,7 @@ for i, p in enumerate(P):
                        if not t.startswith('Tarif: ') and not (_mb_var and t.startswith('Sembol: ')))
     tarifler = ''.join(f'<a class="chip" href="{u}">{e(t)}</a>' for u, t in GLINKS.get(pid, []) if t.startswith('Tarif: '))
     if rel:
-        relhtml = '<section class="sec"><h2>Kültür köprüsü</h2><div class="related">' + ''.join(f'<a class="chip" href="/{r}/">{"".join(dot(x) for x in byId[r]["bolge"])}{e(byId[r]["tr"])}</a>' for r in rel) + '</div></section>'
+        relhtml = f'<section class="sec"><h2>{UI.KOPRU}</h2><div class="related">' + ''.join(f'<a class="chip" href="/{r}/">{"".join(dot(x) for x in byId[r]["bolge"])}{e(byId[r]["tr"])}</a>' for r in rel) + '</div></section>'
     ek = EK.get(pid, {})
     kor = KORUMA.get(pid)
     y = YASAL.get(pid)
@@ -929,17 +930,17 @@ for i, p in enumerate(P):
         inner = ''
         if y: inner += f'<div class="callout yasal {y[0]}"><div class="lvl">{YASAL_AD[y[0]]}</div><p>{e(y[1])}</p></div>'
         if p.get('yasal') and pid not in ('sigla', 'palosanto', 'akadacayi', 'salep'): inner += f'<p><b>Diğer ülkeler:</b> {e(p["yasal"])}</p>'
-        yas = f'<section class="sec"><h2>Yasal durum</h2>{inner}</section>'
+        yas = f'<section class="sec"><h2>{UI.YASAL}</h2>{inner}</section>'
     korhtml = ''
     if kor:
         rows = []
         if kor.get('iucn'): rows.append(f'<div><dt>IUCN Kırmızı Liste</dt><dd>{e(kor["iucn"])}</dd></div>')
         if kor.get('cites'): rows.append(f'<div><dt>CITES</dt><dd>{e(kor["cites"])}</dd></div>')
         alt = f'<div class="alt"><b>Sürdürülebilir alternatif:</b> {e(kor["alternatif"])}</div>' if kor.get('alternatif') else ''
-        korhtml = f'<section class="sec"><h2>Koruma durumu</h2>{"<dl class=meta>" + "".join(rows) + "</dl>" if rows else ""}<p>{e(kor["not_"])}</p>{alt}</section>'
+        korhtml = f'<section class="sec"><h2>{UI.KORUMA}</h2>{"<dl class=meta>" + "".join(rows) + "</dl>" if rows else ""}<p>{e(kor["not_"])}</p>{alt}</section>'
     dogada = ''
     if ek:
-        dogada = f'''<section class="sec"><h2>Doğada nasıl görünür</h2><dl class="meta wide">
+        dogada = f'''<section class="sec"><h2>{UI.DOGADA}</h2><dl class="meta wide">
       <div><dt>Nerede yetişir</dt><dd>{e(ek["yetisme"])}</dd></div>
       <div><dt>Toplama mevsimi</dt><dd>{e(ek["mevsim"])}</dd></div>
       <div><dt>Yöresel adlar</dt><dd>{e(ek["yoresel"])}</dd></div>
@@ -967,12 +968,12 @@ for i, p in enumerate(P):
   {sharebar(p['tr'] + ': ne işe yarar, kanıtı ve güvenliği', '/' + pid + '/')}
   {kisahtml}
   <!--TOC-->
-  <section class="sec"><h2>Geleneksel kullanım</h2><div class="uses">{uses}</div>{halk_kutu(pid, p["tr"])}</section>
-  {der_fayda if pid in DERIN else '<section class="sec"><h2>Araştırmalar ne gösteriyor</h2><p>' + ev(p["bilim"]) + '</p></section>'}
-  <section class="sec"><h2>Güvenlik</h2><div class="callout {p["guv"]}"><div class="lvl">{GUV[p["guv"]]}</div><p>{ev(p["guvNot"])}</p></div><div class="safelinks"><a href="{('#etk' if pid in ETK else '/rehber/ilac-etkilesimi/?q=' + urllib.parse.quote(p["tr"]))}">{ico('etk','ico-s')}<span>{'Bu bitkinin ilaç etkileşimleri' if pid in ETK else 'İlaç kullanıyorsan: etkileşim aracı'}</span></a><a href="/rehber/hamilelik-emzirme/">{ico('gebe','ico-s')}<span>Hamilelik ve emzirme</span></a>{('<a href="/rehber/zehirli-bitkiler/">' + ico('etk','ico-s') + '<span>Zehirli bitkiler ve karıştırılanlar</span></a>') if p["guv"] == "yuksek" or pid in BKAR else ""}</div>{(f'<p class="titck">Türkiye İlaç ve Tıbbi Cihaz Kurumu (TİTCK) bu bitki için resmî bir monograf yayımladı: kullanım alanları, dozu, kimlerin kullanmaması gerektiği ve etkileşimleri. <a href="{TITCK_B + TITCK[pid][1]}" target="_blank" rel="noopener">TİTCK monografı ({e(TITCK[pid][0])}, {('DOCX' if TITCK[pid][1].endswith('.docx') else 'PDF')}) →</a></p>' if pid in TITCK else '')}</section>
+  <section class="sec"><h2>{UI.GELENEKSEL}</h2><div class="uses">{uses}</div>{halk_kutu(pid, p["tr"])}</section>
+  {der_fayda if pid in DERIN else f'<section class="sec"><h2>{UI.ARASTIRMALAR}</h2><p>' + ev(p["bilim"]) + '</p></section>'}
+  <section class="sec"><h2>{UI.GUVENLIK}</h2><div class="callout {p["guv"]}"><div class="lvl">{GUV[p["guv"]]}</div><p>{ev(p["guvNot"])}</p></div><div class="safelinks"><a href="{('#etk' if pid in ETK else '/rehber/ilac-etkilesimi/?q=' + urllib.parse.quote(p["tr"]))}">{ico('etk','ico-s')}<span>{'Bu bitkinin ilaç etkileşimleri' if pid in ETK else 'İlaç kullanıyorsan: etkileşim aracı'}</span></a><a href="/rehber/hamilelik-emzirme/">{ico('gebe','ico-s')}<span>Hamilelik ve emzirme</span></a>{('<a href="/rehber/zehirli-bitkiler/">' + ico('etk','ico-s') + '<span>Zehirli bitkiler ve karıştırılanlar</span></a>') if p["guv"] == "yuksek" or pid in BKAR else ""}</div>{(f'<p class="titck">Türkiye İlaç ve Tıbbi Cihaz Kurumu (TİTCK) bu bitki için resmî bir monograf yayımladı: kullanım alanları, dozu, kimlerin kullanmaması gerektiği ve etkileşimleri. <a href="{TITCK_B + TITCK[pid][1]}" target="_blank" rel="noopener">TİTCK monografı ({e(TITCK[pid][0])}, {('DOCX' if TITCK[pid][1].endswith('.docx') else 'PDF')}) →</a></p>' if pid in TITCK else '')}</section>
   {etkhtml}
   {yas}
-  <section class="sec"><h2>Nasıl hazırlanır</h2><p>{ev(p["haz"])}</p>{('<div class="brlinks" style="margin-top:10px">' + tarifler + '</div>') if tarifler else ''}</section>
+  <section class="sec"><h2>{UI.HAZIRLAMA}</h2><p>{ev(p["haz"])}</p>{('<div class="brlinks" style="margin-top:10px">' + tarifler + '</div>') if tarifler else ''}</section>
   {dogada}
   {korhtml}
   {der_hata}
@@ -980,15 +981,15 @@ for i, p in enumerate(P):
   {relhtml}
   {motif_bag(pid)}
   {komsu_html(pid)}
-  <section class="sec"><h2>Kaynaklar</h2>{refs(p)}</section>
+  <section class="sec"><h2>{UI.KAYNAKLAR}</h2>{refs(p)}</section>
   <aside class="disclaimer" role="note"><b>Tıbbi tavsiye değildir.</b> Bu sayfa geleneksel kullanımları kültürel bir kayıt olarak anlatır ve bilimsel bilgiyi özetler; teşhis ya da tedavi önerisi değildir. {e(p["tr"])} ya da başka bir bitkiyi kullanmadan önce, özellikle ilaç kullanıyorsan, hamileysen, emziriyorsan ya da bir hastalığın varsa hekimine veya eczacına danış. Zehirlenme şüphesinde Ulusal Zehir Danışma Merkezi’ni (UZEM) <b>114</b> numaradan ara.</aside>
   <p class="updated">Hazırlayan: <a href="/yontem/#hazirlayan">Edanaz Tınmazlar</a> · {('Gözden geçiren: <a href="/yontem/#gozden">' + e(GZ_KISI['ad']) + '</a> (<time datetime="' + GZ[pid] + '">' + tr_date(datetime.date.fromisoformat(GZ[pid])).rsplit(',', 1)[0] + '</time>) · ') if GZ_KISI and pid in GZ else ''}{('Eklendi: <time datetime="' + YENI[pid].isoformat() + '">' + tr_date(YENI[pid]).rsplit(',', 1)[0] + '</time> · ') if pid in YENI else ''}Son gözden geçirme: <time datetime="{CONTENT_DATE}">{DATE_TXT}</time></p>
   {contrib(p)}
   {abone('bitki:' + pid)}
-  {('<section class="sec"><h2>Bununla ilgili başka sayfalar</h2><div class="brlinks">' + brlinks + '</div></section>') if brlinks else ''}
+  {(f'<section class="sec"><h2>{UI.DEVAM}</h2><div class="brlinks">' + brlinks + '</div></section>') if brlinks else ''}
   {simhtml}
   <div class="sheet-foot">
-    <div class="learnbox"><button type="button" class="learn" id="learnBtn" data-id="{pid}" aria-pressed="false">Öğrendim</button><span class="muted-s">Bu tarayıcıda saklanır. <a href="/hesap/">Google ile giriş yaparsan</a> bütün cihazlarında görünür.</span><span class="muted-s streak" id="streakNote"></span></div>
+    <div class="learnbox"><button type="button" class="learn" id="learnBtn" data-id="{pid}" aria-pressed="false">{UI.OGRENDIM}</button><span class="muted-s">Bu tarayıcıda saklanır. <a href="/hesap/">Google ile giriş yaparsan</a> bütün cihazlarında görünür.</span><span class="muted-s streak" id="streakNote"></span></div>
     <div class="pager"><a href="/{prev["id"]}/">← {e(prev["tr"])}</a><a href="/{nxt["id"]}/">{e(nxt["tr"])} →</a></div>
   </div>
 </article>
@@ -1037,7 +1038,7 @@ for f, n in sorted(FAMC.items()):
 <header class="page-head"><span class="eyebrow">Familya · {n} bitki</span><h1 lang="la">{f}</h1><p class="lede">{(trn[0].upper() + trn[1:] + ' familyası. ') if trn else ''}{e(ortak)}</p></header>
 {('<aside class="warnbox" role="note"><b>Familya düzeyinde dikkat:</b> ' + e(dikkat) + '</aside>') if dikkat else ''}
 <section class="sec"><h2>Bu familyadan {n} bitki</h2><div class="grid">{"".join(card(p) for p in ps)}</div></section>
-<section class="sec"><h2>Kaynaklar</h2>{_fam_kaynak_html(f, ps)}<p class="muted-s">Familya düzeyindeki bilgiler bitkiye özel öneri değildir; her bitkinin kendi sayfasındaki kanıt düzeyine ve güvenlik notuna bakın.</p></section>
+<section class="sec"><h2>{UI.KAYNAKLAR}</h2>{_fam_kaynak_html(f, ps)}<p class="muted-s">Familya düzeyindeki bilgiler bitkiye özel öneri değildir; her bitkinin kendi sayfasındaki kanıt düzeyine ve güvenlik notuna bakın.</p></section>
 <section class="sec"><h2>Diğer familyalar</h2><p class="famlist">{others}</p><p><a class="cta" href="/familya/">Bütün familyalar →</a></p></section>'''
     url = f'/familya/{fam_slug(f)}/'; FAM_URLS.append(url)
     ldf = {"@context":"https://schema.org","@type":"CollectionPage","name":f,"url":BASE+url,"inLanguage":"tr","mainEntity":{"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":k+1,"url":f'{BASE}/{p["id"]}/',"name":p['tr']} for k, p in enumerate(ps)]}}
@@ -1055,7 +1056,7 @@ _fi = f'''{_crumbs(('/katalog/', 'Katalog'), ('/familya/', 'Familyalar'))}
 <aside class="warnbox" role="note"><b>Familya her şeyi söylemez:</b> aynı familyada hem gıda hem ölümcül zehirli tür bulunabilir. Familya bilgisi bir bitkiyi tanımaya başlamanın yolu, teşhis yerine geçmez.</aside>
 <nav class="pchips" aria-label="Familyalar">{"".join(f'<a class="chip" href="#{fam_slug(_f)}" lang="la">{e(_f)} <small>{_n}</small></a>' for _f, _n in _FAMS)}</nav>
 {''.join(_bolumler)}
-<section class="sec"><h2>Kaynaklar</h2>{_fam_kaynak_html('Lamiaceae', P)}<p class="muted-s">Familya düzeyindeki bileşik grupları farmakognozi el kitabına, taksonomi Kew Plants of the World Online kaydına dayanır.</p></section>'''
+<section class="sec"><h2>{UI.KAYNAKLAR}</h2>{_fam_kaynak_html('Lamiaceae', P)}<p class="muted-s">Familya düzeyindeki bileşik grupları farmakognozi el kitabına, taksonomi Kew Plants of the World Online kaydına dayanır.</p></section>'''
 _ldfi = {"@context": "https://schema.org", "@type": "CollectionPage", "name": "Bitki familyaları", "url": BASE + "/familya/", "inLanguage": "tr",
          "mainEntity": {"@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": k + 1, "name": f,
                         "url": (BASE + f'/familya/{fam_slug(f)}/' if n >= FAM_MIN else BASE + f'/familya/#{fam_slug(f)}')} for k, (f, n) in enumerate(_FAMS)]}}
@@ -1120,7 +1121,7 @@ katalog = f'''
   </div>
   <div class="resultbar"><span id="count" aria-live="polite">{len(P)} / {len(P)} kayıt gösteriliyor</span><button class="linkbtn" id="reset" type="button" hidden>Filtreleri temizle</button><label class="sortsel">Sırala <select id="sort"><option value="no">Katalog sırası</option><option value="az">A’dan Z’ye</option><option value="kanit">Kanıtı en güçlü</option></select></label></div>
   <div class="grid">{"".join(card(p) for p in P)}</div>
-  <div class="empty" id="empty" hidden>Bu arama ve filtrelere uyan bitki yok. Bir filtreyi kaldırmayı ya da farklı bir kelime denemeyi dene.<br><a class="cta" href="/bitki-bul/">Ne arayacağını bilmiyorsan: üç soruda bul →</a></div>
+  <div class="empty" id="empty" hidden>{UI.KATALOG_BOS} {UI.KATALOG_BOS_NOT}<br><a class="cta" href="/bitki-bul/">Ne arayacağını bilmiyorsan: üç soruda bul →</a></div>
 </section>
 <details class="kstats"><summary>İstatistikler ve öğrendiklerim</summary><div class="stats"><span><strong>{len(P)}</strong> bitki</span><span><strong>{len(regs)}</strong> bölge</span><span><strong>{len(BR)}</strong> kültür köprüsü</span><span>Öğrendiklerim <strong id="learnedCount">0</strong>/{len(P)} <span class="muted-s">(<a href="/hesap/">giriş yaparsan</a> her cihazda)</span></span></div>
 {learn_note}</details>
@@ -1274,7 +1275,7 @@ for i, br_ in enumerate(BR, 1):
         uses = ''.join(f'<div class="use"><div class="who">{e(w)}</div><p>{e(t)}</p></div>' for w, t in q['kul'])
         blocks += f'<section class="sec"><h2>{e(q["tr"])}</h2><div class="uses">{uses}</div><p><b>Bilim:</b> {e(q["bilim"])}</p><p><b>Güvenlik:</b> {e(q["guvNot"])}</p><p><a class="cta" href="/{q["id"]}/">{e(q["tr"])} sayfasının tamamı →</a></p></section>'
     others = ''.join(f'<li><a href="/kopruler/{slug_of(x)}/">{e(x["t"])}</a></li>' for x in BR if x is not br_)
-    kay_br = ('<section class="sec"><h2>Kaynaklar</h2>'
+    kay_br = (f'<section class="sec"><h2>{UI.KAYNAKLAR}</h2>'
               '<p class="muted-s">Bu sayfadaki karşılaştırma, aşağıdaki bitki kayıtlarına dayanır; tarihsel ve kimyasal iddialar ilgili kaydın kaynaklarıyla desteklenir.</p>'
               + ''.join(f'<h3>{e(q["tr"])} <span class="muted-s" lang="la">{e(short_la(q))}</span></h3>{refs(q)}' for q in ps)
               + '</section>')
@@ -1285,12 +1286,12 @@ for i, br_ in enumerate(BR, 1):
 <header class="page-head"><span class="eyebrow">Kültür köprüsü {i} · {e(title_names)}</span><h1>{e(br_["t"])}</h1><p>{e(br_["d"])}</p></header>
 {shots}
 <figure class="mapwrap">{bridge_map(only=i)}<figcaption>Harita: Natural Earth (kamu malı). Noktalar bölgeyi temsil eder, kesin toplama yerini değil.</figcaption></figure>
-<section class="sec"><h2>İki bitki yan yana</h2>{cmp_rows(ps)}</section>
+<section class="sec"><h2>{UI.YANYANA}</h2>{cmp_rows(ps)}</section>
 {blocks}
 <aside class="disclaimer" role="note"><b>Tıbbi tavsiye değildir.</b> Bu sayfa geleneksel kullanımları kültürel bir kayıt olarak karşılaştırır; teşhis ya da tedavi önerisi değildir. Herhangi bir bitkiyi kullanmadan önce hekimine ya da eczacına danış. Zehirlenme şüphesinde Ulusal Zehir Danışma Merkezi’ni (UZEM) <b>114</b> numaradan ara.</aside>
 {kay_br}
 <p class="updated">Son gözden geçirme: <time datetime="{CONTENT_DATE}">{DATE_TXT}</time></p>
-<section class="sec"><h2>Diğer köprüler</h2><ul class="otherlist">{others}</ul></section>
+<section class="sec"><h2>{UI.DIGER_KOPRU}</h2><ul class="otherlist">{others}</ul></section>
 <div class="sheet-foot"><a class="cta" href="/kopruler/">Bütün köprüler ve harita →</a><div class="pager"><a href="/kopruler/{slug_of(prev_)}/">← {e(prev_["t"])}</a><a href="/kopruler/{slug_of(next_)}/">{e(next_["t"])} →</a></div></div>
 </article>'''
     ldb = [{"@context":"https://schema.org","@type":"Article","author":AUTHOR,"headline":br_['t'],"description":br_['d'],"inLanguage":"tr","url":f'{BASE}/kopruler/{slug}/',"dateModified":CONTENT_DATE,
@@ -1467,7 +1468,7 @@ home = f'''
   </div>
   <div class="todaybox"><a class="today" id="today" href="/{today_p["id"]}/" data-pool="{e(json.dumps([[p["id"], p["tr"], sade_la(p), 1 if p["id"] in IMG else 0] for p in pool], ensure_ascii=False))}"><img id="todayImg" class="today-ph" src="/img/{today_p["id"]}-500.jpg" alt="" width="500" height="667" decoding="async"{'' if today_p["id"] in IMG else ' hidden'}><span class="today-t"><span class="eyebrow">Bugünün bitkisi</span><b id="todayName">{e(today_p["tr"])}</b><i id="todayLatin">{e(sade_la(today_p))}</i></span></a><a class="cta small" href="/gunun-bitkisi/">Geçmiş günlerin bitkileri →</a><p class="streak" id="streak" hidden></p></div>
 </header>
-<a class="cagri" href="/eczaci-cagrisi/"><span class="cagri-t">İçeriği eczacı gözüyle değerlendirecek beş eczacı arıyoruz</span><span class="cagri-d">Güvenlik, etkileşim ve kontrendikasyon bölümlerini mesleki gözle değerlendirecek beş eczacıyı davet ediyoruz. Son başvuru 15 Aralık.</span><span class="cagri-c">Ayrıntılar →</span></a>
+<a class="cagri" href="/eczaci-cagrisi/"><span class="cagri-t">{UI.ECZACI_BASLIK}</span><span class="cagri-d">Güvenlik, etkileşim ve kontrendikasyon bölümlerini mesleki gözle değerlendirecek beş eczacıyı davet ediyoruz. Son başvuru 15 Aralık.</span><span class="cagri-c">Ayrıntılar →</span></a>
 {takvim_band()}
 <section class="pillars">
   <a class="pillar" href="/katalog/"><span class="eyebrow">Bitkiler</span><b>{len(P)} bitki, {len(REG_DOLU)} bölge</b><span>Anadolu’dan Amazon’a, fotoğrafı, çizimi ve kaynaklarıyla her bitki.</span></a>
@@ -1679,7 +1680,7 @@ for k in LIVE_K + BLOG_K:
     _sss = [(f'{_kn} için hangi bitkiler kullanılır?', f'Bu rehberde {len(_ad)} bitki var: {", ".join(_ad)}.' + (f' Bilimsel çalışması olanlar (kanıt düzeyi klinik ya da sınırlı): {", ".join(_guclu)}.' if _guclu else ' Hiçbirinin güçlü bilimsel kanıtı yok; kullanımları geleneğe dayanıyor.')),
             ('Bu bitkileri ilaçla birlikte kullanabilir miyim?', (f'{", ".join(_etk)} için bilinen ilaç etkileşimleri var; ayrıntılar her bitkinin sayfasında. ' if _etk else 'Bu rehberdeki bitkiler için kayıtlarımızda önemli bir ilaç etkileşimi yok. ') + 'Düzenli ilaç kullanıyorsan bitkisel bir ürüne başlamadan önce eczacına ya da hekimine danış.'),
             ('Hamilelikte ve emzirirken kullanılabilir mi?', (f'Güvenlik etiketi “dikkat” ya da “yüksek risk” olanlar: {", ".join(_risk)}. ' if _risk else '') + 'Hamilelikte ve emzirirken bitkisel ürünlere hekime danışmadan başlama. Ayrıntılı liste Hamilelik ve emzirme rehberinde.')]
-    _sss_html = '<section class="sec"><h2>Sık sorulanlar</h2><div class="faq">' + ''.join(f'<details><summary>{e(q)}</summary><p>{e(a)}</p></details>' for q, a in _sss) + '</div></section>'
+    _sss_html = f'<section class="sec"><h2>{UI.SSS}</h2><div class="faq">' + ''.join(f'<details><summary>{e(q)}</summary><p>{e(a)}</p></details>' for q, a in _sss) + '</div></section>'
 
     body = f'''{crumbs(_ust, (path, k['kisa']))}
 <article class="sheet">
@@ -1689,7 +1690,7 @@ for k in LIVE_K + BLOG_K:
 <section class="sec"><h2>Bitkiler, kanıtı en güçlü olandan başlayarak</h2><div class="rb-list">{"".join(rb_item(p, n) for p, n in ps)}</div></section>
 <aside class="warnbox" role="note"><b>Ne zaman hekime gitmeli?</b> {e(k["uyari"])}</aside>
 {"".join(f'<section class="sec"><h2>{e(h)}</h2>' + "".join(f'<p>{e(x)}</p>' for x in ps_) + '</section>' for h, ps_ in k.get('ek', []))}
-{('<section class="sec"><h2>Kaynaklar</h2><ol class="refs">' + "".join(f'<li><a href="{e(u)}" target="_blank" rel="noopener">{e(_apa(u, t))}</a></li>' for t, u in k['kaynaklar']) + '</ol></section>') if k.get('kaynaklar') else ''}
+{(f'<section class="sec"><h2>{UI.KAYNAKLAR}</h2><ol class="refs">' + "".join(f'<li><a href="{e(u)}" target="_blank" rel="noopener">{e(_apa(u, t))}</a></li>' for t, u in k['kaynaklar']) + '</ol></section>') if k.get('kaynaklar') else ''}
 {extra_links}
 {_sss_html}
 {abone('rehber:' + k['slug'])}
@@ -1723,7 +1724,7 @@ body = f'''{crumbs(('/rehber/', 'Rehberler'), (path, 'Hamilelik ve emzirme'))}
 <section class="sec"><h2>Bulantı için</h2><p>Hamilelik bulantısında en çok araştırılan bitki zencefil; küçük çalışmalar olumlu sonuç veriyor. Bunu da kullanmadan önce hekimine danış. <a href="/rehber/bulanti/">Bulantı rehberine bak →</a></p></section>
 {DISCL}
 {UPD}
-<section class="sec"><h2>Diğer rehberler</h2>{other_guides("")}</section>
+<section class="sec"><h2>{UI.DIGER_REHBER}</h2>{other_guides("")}</section>
 </article>'''
 write(path, page('Hamilelikte ve emzirirken dikkat edilmesi gereken bitkiler | Bitki Tabanı', f'Hamilelikte ve emzirirken kullanılmaması ya da dikkatle kullanılması gereken {len(preg)} şifalı bitki ve uyarıları: adaçayı, rezene, sinameki, hayıt ve diğerleri.', path, body, 'gebe', narrow=True,
       extra=lds({"@context":"https://schema.org","@type":"Article","headline":"Hamilelikte ve emzirirken dikkat edilmesi gereken bitkiler","inLanguage":"tr","url":BASE+path,"author":AUTHOR,"dateModified":CONTENT_DATE}, crumb_ld(('/rehber/', 'Rehberler'), (path, 'Hamilelik ve emzirme')))))
@@ -1760,7 +1761,7 @@ nplants = len({pid for v in etk_by.values() for pid, _, _ in v})
 body = f'''{crumbs(('/rehber/', 'Rehberler'), (path, 'İlaç etkileşimi'))}
 <article class="sheet">
 <header class="page-head"><span class="eyebrow">Güvenlik aracı · {nplants} bitki</span><h1>Bitki ve ilaç etkileşimi: kullandığın ilaçla hangi bitkiler sorun çıkarabilir?</h1><p>Bitkiler de ilaçlar gibi etken maddeler içerir. Bazıları ilacının etkisini artırır, bazıları azaltır, bazıları da aynı yan etkiyi büyütür. Kullandığın ilaç grubunu seç; katalogda o grupla etkileşimi bildirilen bitkileri gör.</p></header>
-<form class="etkform" id="etkform" onsubmit="return false"><label for="etksel" class="eyebrow">İlaç grubu</label><select id="etksel"><option value="">Bütün ilaç grupları</option>{sel}</select><input id="etkq" type="search" placeholder="ya da ilaç/bitki adı yaz: Coumadin, Beloc, kantaron…" aria-label="İlaç ya da bitki adıyla süz"><p class="muted-s" id="etkmsg" role="status"></p></form>
+<form class="etkform" id="etkform" onsubmit="return false"><label for="etksel" class="eyebrow">İlaç grubu</label><select id="etksel"><option value="">{UI.ILAC_HEPSI}</option>{sel}</select><input id="etkq" type="search" placeholder="ya da ilaç/bitki adı yaz: Coumadin, Beloc, kantaron…" aria-label="İlaç ya da bitki adıyla süz"><p class="muted-s" id="etkmsg" role="status"></p></form>
 <p class="muted-s">İlacının kutusundaki adı yazman yeterli; ticari adlar (Coumadin, Beloc, Glucophage…) ve etken madde adları (varfarin, metoprolol, metformin…) aranıyor.</p>
 <aside class="gotur" id="gotur" hidden>
   <p class="eyebrow">Doktoruna ya da eczacına götür</p>
@@ -1773,7 +1774,7 @@ body = f'''{crumbs(('/rehber/', 'Rehberler'), (path, 'İlaç etkileşimi'))}
 <section class="sec"><h2>Özellikle dikkat</h2><p><a href="/kantaron/">Sarı kantaron</a>, doğum kontrol hapı, kan sulandırıcılar, bazı kalp ve organ nakli ilaçları dahil pek çok ilacın etkisini azaltan, en iyi bilinen bitkidir. Antidepresanlarla birlikte kullanıldığında serotonin sendromuna yol açabilir.</p></section>
 {DISCL}
 {UPD}
-<section class="sec"><h2>Diğer rehberler</h2>{other_guides("")}</section>
+<section class="sec"><h2>{UI.DIGER_REHBER}</h2>{other_guides("")}</section>
 </article>'''
 write(path, page('Bitki ve ilaç etkileşimi: hangi bitki hangi ilaçla sorun çıkarır? | Bitki Tabanı', f'Kan sulandırıcı, tansiyon, şeker, antidepresan ve doğum kontrol hapı gibi ilaçlarla etkileşen {nplants} şifalı bitki. İlaç grubunu seç, etkileşimleri gör.', path, body, 'etk', '<script src="/assets/etkilesim.js" defer></script>', narrow=True,
       extra=lds({"@context":"https://schema.org","@type":"Article","headline":"Bitki ve ilaç etkileşimi","inLanguage":"tr","url":BASE+path,"author":AUTHOR,"dateModified":CONTENT_DATE}, crumb_ld(('/rehber/', 'Rehberler'), (path, 'İlaç etkileşimi')))))
@@ -1830,10 +1831,10 @@ body = f"""{crumbs(('/rehber/', 'Rehberler'), (path, 'Zehirli bitkiler'))}
 <section class="sec"><h2>Zehir dozdadır: listede yer alan şifalı bitkiler</h2><p>{e(ZLISTE_M)}</p><ul class="otherlist">{"".join(f'<li><a href="/{x}/">{e(byId[x]["tr"])}</a> <i class="muted-s">{e(f)}</i></li>' for x, f in ZLISTE if x in byId)}</ul></section>
 {('<section class="sec"><h2>Katalogdaki yüksek riskli Anadolu bitkileri</h2><p>Bu bitkiler zehirli ya da ciddi yan etkili; katalogda kültürel ve tarihî önemleri için yer alırlar, kullanım önerisi değildir.</p><ul class="otherlist">' + "".join(f'<li><a href="/{p["id"]}/">{e(p["tr"])}</a></li>' for p in _zhi) + '</ul></section>') if _zhi else ''}
 <section class="sec"><h2>Aktarda karıştırılanlar ve yöresel adlar</h2><p>Zehirli olmasa da aktarlarda başka bir bitkiyle karıştırılan ya da yerine başkası satılan bitkilerin notları kendi sayfalarında: {", ".join(f'<a href="/{x}/">{e(byId[x]["tr"])}</a>' for x in _zbk)}. Aynı yöresel adın birden fazla bitkiye verildiği durumlar için <a href="/yoreler/#adlar">yöresel adlar dizinine</a>, toplama mevsimleri için <a href="/toplama-takvimi/">toplama takvimine</a> bak.</p></section>
-<section class="sec"><h2>Kaynaklar</h2><ol class="refs">{"".join(f"<li><cite>{e(t)}</cite></li>" for t, u in ZKAYNAK)}</ol></section>
+<section class="sec"><h2>{UI.KAYNAKLAR}</h2><ol class="refs">{"".join(f"<li><cite>{e(t)}</cite></li>" for t, u in ZKAYNAK)}</ol></section>
 {DISCL}
 {UPD}
-<section class="sec"><h2>Diğer rehberler</h2>{other_guides("")}</section>
+<section class="sec"><h2>{UI.DIGER_REHBER}</h2>{other_guides("")}</section>
 </article>"""
 write(path, page('Türkiye’de zehirli bitkiler ve en çok karıştırılanlar | Bitki Tabanı', 'Güz çiğdemi, baldıran, tatula, deli bal, zakkum ve evdeki zehirli süs bitkileri: zehirli bitkiler neyle karıştırılır, nasıl ayırt edilir, zehirlenmede ne yapılır?', path, body, 'zehir', narrow=True,
       extra=lds({"@context":"https://schema.org","@type":"Article","headline":"Türkiye’de zehirli bitkiler ve en çok karıştırılanlar","inLanguage":"tr","url":BASE+path,"author":AUTHOR,"dateModified":CONTENT_DATE,"citation":[t for t, u in ZKAYNAK]}, crumb_ld(('/rehber/', 'Rehberler'), (path, 'Zehirli bitkiler')))))
@@ -1862,7 +1863,7 @@ body = f'''{crumbs((path, 'Bitki bulucu'))}
 </div>
 <noscript><p>Bu araç JavaScript ile çalışır. <a href="/rehber/">Derde göre bitkiler</a> sayfasından da aynı listelere ulaşabilirsin.</p></noscript>
 {DISCL}
-<section class="sec"><h2>Diğer rehberler</h2>{other_guides("")}</section>
+<section class="sec"><h2>{UI.DIGER_REHBER}</h2>{other_guides("")}</section>
 </article>
 <script id="bbdata" type="application/json">{json.dumps(_BB, ensure_ascii=False).replace("</", "<\\/")}</script>'''
 write(path, page('Bana uygun bitki hangisi? Derde göre bitki bulucu | Bitki Tabanı', 'Derdini seç, hamilelik ve ilaç durumunu belirt: katalogdan sana uygun şifalı bitkiler, kanıtı en güçlü olandan başlayarak. Riskli olanlar kendiliğinden elenir.', path, body, 'bul', scripts='<script src="/assets/bitkibul.js" defer></script>',
@@ -1914,7 +1915,7 @@ for c in LIVE_C:
 <header class="page-head"><span class="eyebrow">Karşılaştırma</span><h1>{e(c["baslik"])}</h1><p>{e(c["giris"])}</p></header>
 <div class="vs">{''.join(f'<a href="/{q["id"]}/" class="vs-p">{ph(q, 500)}<b>{e(q["tr"])}</b><i>{e(short_la(q))}</i></a>' for q in (a, b))}</div>
 {sharebar(c['baslik'], path)}
-<section class="sec"><h2>İki bitki yan yana</h2>{cmp_rows([a, b])}</section>
+<section class="sec"><h2>{UI.YANYANA}</h2>{cmp_rows([a, b])}</section>
 <section class="sec"><h2>Başlıca farklar</h2><ul class="farklar">{"".join(f'<li>{e(x)}</li>' for x in c["fark"])}</ul></section>
 <section class="kisaca"><h2>Hangisi, ne zaman?</h2><p>{e(c["sonuc"])}</p></section>
 <section class="sec"><h2>Ayrıntılar</h2><p>Bilimsel kanıtın tamamı, güvenlik notları, ilaç etkileşimleri ve kaynaklar her bitkinin kendi sayfasında:</p><p class="brlinks">{"".join(f'<a class="cta" href="/{q["id"]}/">{e(q["tr"])} →</a> ' for q in (a, b))}</p></section>
@@ -1959,11 +1960,11 @@ for mo in MOTIFLER:
 <article class="sheet">
 <header class="motif-head"><div class="motif-art"><img class="motif-svg" src="/img/motif/{mo["slug"]}.svg" width="512" height="512" alt="{e(motif_alt(mo))}" decoding="async"></div><div><span class="eyebrow">{e(mo["bolge"])} · {e(TEMALAR[mo["tema"]])}</span><h1>{e(mo["ad"])}</h1><p class="lede">{e(mo["kisa"])}</p></div></header>
 {sharebar(mo['ad'] + ' motifi: ' + mo['kisa'], path)}
-<section class="sec"><h2>Motif ne anlatır</h2><p>{_msrc(mo["anlam"])}</p></section>
+<section class="sec"><h2>{UI.MOTIF_ANLAM}</h2><p>{_msrc(mo["anlam"])}</p></section>
 {('<section class="sec"><h2>Bağlantılı bitkiler</h2><ul class="otherlist">' + bit + '</ul></section>') if bit else ''}
 {('<section class="sec"><h2>Yakın motif</h2><div class="motif-mini">' + ''.join(f'<a href="/semboller/{o["slug"]}/">{motif_svg(o)}<span>{e(o["ad"])}</span></a>' for o in _ilg) + '</div></section>') if _ilg else ''}
 {('<section class="sec"><h2>Aynı temadan</h2><div class="motif-mini">' + ''.join(f'<a href="/semboller/{o["slug"]}/">{motif_svg(o)}<span>{e(o["ad"])}</span></a>' for o in same) + '</div></section>') if same else ''}
-<section class="sec"><h2>Kaynaklar</h2>{kay}</section>
+<section class="sec"><h2>{UI.KAYNAKLAR}</h2>{kay}</section>
 <aside class="disclaimer" role="note"><b>Kültürel kayıt.</b> Motiflerin anlamları kaynaklarda yazdığı biçimde verilmiştir; aynı motif farklı yörelerde farklı yorumlanabilir.</aside>
 <p class="updated">Çizim: Bitki Tabanı, geleneksel motiften yorumlanmıştır.</p>
 </article>'''
@@ -2029,8 +2030,8 @@ for y in YAZILAR:
 {sharebar(y['baslik'], path)}
 {secs}
 {('<section class="sec"><h2>Yazıda geçen bitkiler</h2><div class="related">' + bit + '</div></section>') if bit else ''}
-{('<section class="sec"><h2>İlgili semboller</h2><ul class="otherlist">' + sem + '</ul></section>') if sem else ''}
-<section class="sec"><h2>Kaynaklar</h2>{kay}</section>
+{(f'<section class="sec"><h2>{UI.ILGILI_SEMBOL}</h2><ul class="otherlist">' + sem + '</ul></section>') if sem else ''}
+<section class="sec"><h2>{UI.KAYNAKLAR}</h2>{kay}</section>
 <p class="updated">Yazan: <a href="/yontem/#hazirlayan">Edanaz Tınmazlar</a> · <time datetime="{y["tarih"]}">{tr_date(datetime.date.fromisoformat(y["tarih"])).rsplit(",", 1)[0]}</time></p>
 {abone('yazi:' + y['slug'])}
 </article>'''
@@ -2059,9 +2060,9 @@ for i, k in enumerate(KAV):
 {kav_plant(k)}
 <section class="sec">{secs}</section>
 {('<section class="sec"><h2>İlgili bitkiler</h2><div class="related">' + bit + '</div></section>') if bit else ''}
-{('<section class="sec"><h2>İlgili semboller</h2><ul class="otherlist">' + sem + '</ul></section>') if sem else ''}
+{(f'<section class="sec"><h2>{UI.ILGILI_SEMBOL}</h2><ul class="otherlist">' + sem + '</ul></section>') if sem else ''}
 {('<section class="sec"><h2>Daha fazlası</h2><ul class="otherlist">' + yz + '</ul></section>') if yz else ''}
-<section class="sec"><h2>Kaynaklar</h2>{kay}</section>
+<section class="sec"><h2>{UI.KAYNAKLAR}</h2>{kay}</section>
 <aside class="disclaimer" role="note"><b>Kültürel kayıt.</b> Ritüel ve inançlar, onları yaşatan toplulukların mirası olarak anlatılır; kullanım önerisi değildir.</aside>
 <div class="sheet-foot"><a class="cta" href="/kavram/">Bütün kavramlar →</a><div class="pager">{(f'<a href="/kavram/{prev_["slug"]}/">← {e(prev_["ad"])}</a>') if prev_ else ''}{(f'<a href="/kavram/{next_["slug"]}/">{e(next_["ad"])} →</a>') if next_ else ''}</div></div>
 {abone('kavram:' + k['slug'])}
@@ -2237,7 +2238,7 @@ def _yazi_kart(y):
     img = f'<img src="{k}" alt="" loading="lazy" width="1200" height="800">' if os.path.exists(os.path.join(HERE, k.lstrip('/'))) else ''
     return f'<li class="hk uzun" data-etk="{" ".join(_yazi_etk(y))}"><a href="/yazilar/{y["slug"]}/">{img}<b>{e(y["baslik"])}</b><span class="muted-s">Uzun yazı · {e(y["aciklama"][:90])}</span></a></li>'
 _cagri_kart = ('<li class="hk uzun" data-etk=""><a href="/eczaci-cagrisi/">'
-               '<b>İçeriği eczacı gözüyle değerlendirecek beş eczacı arıyoruz</b>'
+               f'<b>{UI.ECZACI_BASLIK}</b>'
                '<span class="muted-s">Çağrı · güvenlik bölümlerini değerlendirecek beş eczacı, son başvuru 15 Aralık</span></a></li>')
 def _rehber_kart(k):   # blog=True işaretli uzun rehber yazıları blog listesinde
     _p = next((byId[pid] for pid, _ in k['bitkiler'] if pid in byId and pid in IMG), None)
@@ -2297,7 +2298,7 @@ GUIDE_URLS.append(path)
 gl = ''.join(f'<li class="gi"><a href="/rehber/{k["slug"]}/">{ico(k["slug"], "ico-b")}<b>{e(k["kisa"])}</b></a><span>{e(k["aciklama"])}</span></li>' for k in LIVE_K)
 hub = f'''{crumbs(('/rehber/', 'Rehberler'))}
 <header class="page-head"><span class="eyebrow">Şifa</span><h1>Hangi derde hangi bitki? Kanıtıyla ve riskleriyle</h1><p>Derdini kendi cümlelerinle yaz, üç soruda bul ya da aşağıdaki rehberlerden birini seç. Her rehberde bitkiler kanıtı en güçlü olandan başlayarak sıralanır; her birinin yanında güvenlik etiketi var.</p></header><section class="sec" id="ara"><h2>Derdini yaz</h2><form id="araForm" class="katki-form"><input id="araQ" name="q" maxlength="200" placeholder="Örn. uykuya dalmakta zorlanıyorum; hamileyim, mide bulantısı" required><button class="cta" type="submit">Ara</button></form><div id="araSonuc" role="status"></div><p class="muted-s">Yapay zekâ destekli anlam araması. Sonuçlar tavsiye değildir; her bitkinin güvenlik notuna bak. Ya da <a href="/bitki-bul/"><b>üç soruda bul</b></a>: hamilelik ve ilaç durumuna göre riskli olanlar kendiliğinden elenir.</p></section>
-<section class="sec"><h2>Güvenlik</h2><ul class="guidelist"><li><a href="/rehber/ilac-etkilesimi/"><b>İlaç etkileşimi aracı</b></a><span>Kullandığın ilaç grubunu seç, katalogda o ilaçla etkileşimi bildirilen bitkileri gör.</span></li><li><a href="/rehber/hamilelik-emzirme/"><b>Hamilelik ve emzirme</b></a><span>Hamilelikte ve emzirirken kullanılmaması ya da dikkatle kullanılması gereken bitkiler.</span></li><li><a href="/rehber/zehirli-bitkiler/"><b>Zehirli bitkiler ve karıştırılanlar</b></a><span>Güz çiğdemi, baldıran, tatula, deli bal: neyle karıştırılır, nasıl ayırt edilir?</span></li></ul></section>
+<section class="sec"><h2>{UI.GUVENLIK}</h2><ul class="guidelist"><li><a href="/rehber/ilac-etkilesimi/"><b>İlaç etkileşimi aracı</b></a><span>Kullandığın ilaç grubunu seç, katalogda o ilaçla etkileşimi bildirilen bitkileri gör.</span></li><li><a href="/rehber/hamilelik-emzirme/"><b>Hamilelik ve emzirme</b></a><span>Hamilelikte ve emzirirken kullanılmaması ya da dikkatle kullanılması gereken bitkiler.</span></li><li><a href="/rehber/zehirli-bitkiler/"><b>Zehirli bitkiler ve karıştırılanlar</b></a><span>Güz çiğdemi, baldıran, tatula, deli bal: neyle karıştırılır, nasıl ayırt edilir?</span></li></ul></section>
 <section class="sec"><h2>Derde göre</h2><ul class="guidelist">{gl}</ul></section>
 <section class="sec"><h2>Karşılaştırmalar</h2><ul class="otherlist">{"".join(f'<li><a href="/karsilastirma/{c["a"]}-ve-{c["b"]}/">{e(c["baslik"])}</a></li>' for c in LIVE_C)}</ul></section>
 <section class="sec"><h2>Tarifler</h2><ul class="otherlist">{"".join(f'<li><a href="/tarif/{t["slug"]}/">{e(t["ad"])}</a></li>' for t in LIVE_T)}</ul></section>
@@ -2411,7 +2412,7 @@ IST = f'''{_crumbs(('/hakkinda/', 'Hakkında'), ('/istatistik/', 'Rakamlar'))}
 {_bar('Güvenlik düzeyi', [(GUV[g], _guv[g]) for g in ('dusuk', 'orta', 'yuksek') if _guv[g]], len(P))}
 <p class="muted-s">Klinik kanıtlı kayıt sayısının düşük olması bir eksiklik değil, alanın gerçeği: bitkisel kullanımların çoğu kontrollü insan çalışmasıyla sınanmamıştır. Sitenin işi bunu gizlemek değil, etiketlemek.</p></section>
 
-<section class="sec"><h2>Kaynaklar</h2>
+<section class="sec"><h2>{UI.KAYNAKLAR}</h2>
 <ul class="ist-kutu">
 <li><b>{_ema}</b> kayıtta EMA–HMPC monografı</li>
 <li><b>{_ncc}</b> kayıtta NCCIH özeti</li>
@@ -2451,7 +2452,7 @@ write('/istatistik/', page('Bitki Tabanı rakamlarla: kapsam, kanıt dağılım�
 
 # ---------- gözden geçiren eczacı çağrısı ----------
 ECZ_YOL = '/eczaci-cagrisi/'
-ECZ_BAS = 'İçeriği eczacı gözüyle değerlendirecek beş eczacı arıyoruz'
+ECZ_BAS = UI.ECZACI_BASLIK
 ECZ_OZET = 'Bitki Tabanı’nın güvenlik, etkileşim ve kontrendikasyon bölümlerini mesleki gözle değerlendirecek beş eczacıyı davet ediyoruz. Son başvuru 15 Aralık.'
 ECZ_ALAN = ['Fark etmez', 'İlaç etkileşimleri', 'Toksikoloji', 'Fitoterapi', 'Farmakognozi']
 ecz = f'''{crumbs((ECZ_YOL, 'Eczacı çağrısı'))}
