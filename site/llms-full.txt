@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 259 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 260 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -8254,3 +8254,36 @@ Karıştırma riski: ⚠️ Anadolu’nun gevenleri ayrı kayıttadır — kitre
 
 ### İlginç bilgi
 Türkçede "geven" bozkırın dikenli yastıklarının adı; Anadolu’da yüzlerce türü var ve en ünlüsü kitre zamkının kaynağı. Çin eczanesindeki huángqí de bir geven — ama Kuzey Çin’in iki türü. Aynı Türkçe ad altında Anadolu’nun zamk bitkisi ile Çin’in bağışıklık kökü duruyor ve ikisinin birbirinin kanıtını devralması söz konusu değil. DSÖ 1999’da klinik kanıt bulamamıştı; bugünkü kanıt kanser yorgunluğunda, Çin’de ve standart tedaviye ek olarak.
+
+## Tavşankulağı (Bupleurum falcatum L.; B. chinense DC.)
+
+URL: https://bitkitabani.com/tavsankulagi/
+Familya: Apiaceae · Bölge: Asya ve Sibirya · Kullanılan kısım: Kurutulmuş kökü
+Bilimsel kanıt: Geleneksel · Güvenlik: Genelde güvenli
+
+### Geleneksel kullanım
+- DSÖ monografı (1999): "Klinik veriyle desteklenen kullanım": yok. Farmakopelerde ve geleneksel sistemlerde: grip ve soğuk algınlığına bağlı ateş, ağrı ve iltihap; göğüs ve böğür ağrısında ağrı kesici; amenore; özütleri kronik hepatit, nefrotik sendrom ve otoimmün hastalıklarda. Günlük 3–9 g. Yüksek dozda sedasyon yapar; araç ve makine kullanımında dikkat. Sık istenmeyen etkiler: halsizlik, uyuşukluk; yüksek dozda iştahsızlık, gaz ve karın şişkinliği.
+- Türkiye: Türkiye’de Bupleurum cinsinin çok sayıda yerli türü var ve "tavşankulağı" adı bu cins için kullanılıyor; ama Çin tıbbının cháihú kökü iki Doğu Asya türüne aittir. TİTCK listesinde yok; aktarlarda bulunmaz.
+- Çin ve Japonya — formül bitkisi: Cháihú tek başına değil, hemen her zaman formül içinde kullanılır; en ünlüsü Japonya’da Kampo tıbbının sho-saiko-to’su (xiao chai hu tang) — kronik hepatit için Japonya’da reçeteli bir ilaç. Bu formülün tarihi, güvenlik bölümündeki en önemli uyarının da kaynağı.
+
+### Hazırlama
+DSÖ monografı günlük 3–9 g kurutulmuş kök veriyor, dekoksiyon olarak. Gebelikte ve emzirirken veri olmadığından kullanılmamalı. Tek başına kullanımı Çin tıbbında da nadirdir; formül bileşeni olarak uzman gözetiminde kullanılır.
+
+### Bilim ne diyor
+Tavşankulağının tek başına sınandığı klinik çalışma yok; insan verisi neredeyse tamamen çok bileşenli Kampo ve Çin formüllerine, özellikle sho-saiko-to’ya ait. 2011’de Hepatology Research dergisinde yayımlanan derleme, sho-saiko-to’nun kronik karaciğer hastalığında Japonya’daki klinik kullanımını topluyor ve aynı zamanda sınırını çiziyor: formül yedi bitkiden oluşuyor, dolayısıyla hangi etkinin tavşankulağına ait olduğu ayrıştırılamıyor. Laboratuvar düzeyinde saikosaponinlerin iltihap karşıtı ve karaciğer koruyucu etkileri çok çalışılmış, ama laboratuvar bulgusu klinik kanıt değildir. Kanıt düzeyi "geleneksel".
+
+### Güvenlik
+Sho-saiko-to ile interstisyel pnömoni. Tavşankulağı içeren bu Kampo formülüne bağlı interstisyel pnömoni ve akut solunum yetmezliği olguları Japonya’da bildirilmiş; 2011 derlemesine göre risk interferonla birlikte kullanımda, uzun süreli kullanımda ve yaşlılarda artıyor. Bu, tek başına köke değil formüle ait bir bulgu — ama tavşankulağı o formülün adını veren bitkisidir ve kataloğumuz bunu atlamaz. DSÖ monografı: yüksek dozda sedasyon, araç ve makine kullanımında dikkat; alkol ve öteki merkezi sinir sistemi depresanlarıyla sedasyon artabilir; halsizlik ve uyuşukluk sık; gebelikte ve emzirirken kullanılmaz. Güvenlik düzeyi "düşük": pnömoni olguları nedeniyle.
+
+### İlaç etkileşimleri
+- İnterferon (sho-saiko-to formülü içinde): Japonya’da sho-saiko-to ile interferonun birlikte kullanımı interstisyel pnömoni riskini artırdığı için kontrendike sayılıyor. Hepatit tedavisi gören birinin tavşankulağı içeren herhangi bir formülü hekimine söylemesi şarttır.
+- Alkol, sedatifler ve merkezi sinir sistemi depresanları: DSÖ monografı sedasyonun sinerjik olarak artabileceğini yazıyor; klinik çalışmayla değerlendirilmemiş ama hastalar uyarılmalı.
+
+### Doğada
+Nerede yetişir: Çin, Kore, Japonya ve Sibirya’nın çayır ve yamaçları; Çin’de kültürü yapılıyor. Türkiye’de bu iki tür yetişmiyor.
+Toplama mevsimi: Yaz sonunda küçük sarı şemsiyeler; kök ilkbahar ya da sonbaharda sökülür.
+Yöresel adlar: Tavşankulağı; Çince cháihú, Japonca saiko.
+Karıştırma riski: ⚠️ Türkiye’nin yerli Bupleurum türleri monografın kapsamında değil. Çin pazarında "cháihú" adıyla satılan bazı Bupleurum türleri (B. longiradiatum) zehirlidir — tür doğrulaması uzman işidir.
+
+### İlginç bilgi
+Tavşankulağı Çin tıbbında hemen hiç tek başına kullanılmaz; adı bir formülün adıyla anılır: sho-saiko-to, Japonya’da hepatit için reçeteli bir Kampo ilacı. O formülün ünü de, karası da bu bitkiye yapışmış: Japonya’da interferonla birlikte kullanımda ortaya çıkan interstisyel pnömoni olguları, bitkisel ilaç güvenliğinin ders kitabı örneklerinden biri oldu. Bir bitkinin güvenlik kaydı, hiç tek başına sınanmadan, içinde bulunduğu karışım üzerinden yazılabiliyor.
