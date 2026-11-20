@@ -19,7 +19,9 @@ TMP = os.path.join(OUT, '.tmp')
 PORT = 8787
 FPS = 24
 GENISLIK, YUKSEKLIK, OLCEK = 360, 640, 3      # 360*3 = 1080, 640*3 = 1920
+# Ses sabittir: Emel. Eski sese (tr-TR-AhmetNeural) dönülmeyecek.
 SES = os.environ.get('TANITIM_SES', 'tr-TR-EmelNeural')
+if 'Emel' not in SES: SES = 'tr-TR-EmelNeural'
 ARA = 0.55                                     # cümleler arası sessizlik (sn)
 
 

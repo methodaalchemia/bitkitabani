@@ -11,7 +11,10 @@ from PIL import Image, ImageDraw, ImageFilter
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 FONTS = os.path.join(HERE, 'fonts')
+# Ses sabittir: Emel. Eski sese (tr-TR-AhmetNeural) dönülmeyecek; bu yüzden
+# ortam değişkeni yalnızca başka bir Emel varyantını seçebilir.
 VOICE = os.environ.get('REEL_VOICE', 'tr-TR-EmelNeural')
+if 'Emel' not in VOICE: VOICE = 'tr-TR-EmelNeural'
 SW, SH, FPS, XF = 1080, 1920, 30, 0.45
 GAP = 0.28   # cümleler arası sessizlik (sn)
 
