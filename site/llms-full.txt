@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 260 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 261 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -8287,3 +8287,36 @@ Karıştırma riski: ⚠️ Türkiye’nin yerli Bupleurum türleri monografın 
 
 ### İlginç bilgi
 Tavşankulağı Çin tıbbında hemen hiç tek başına kullanılmaz; adı bir formülün adıyla anılır: sho-saiko-to, Japonya’da hepatit için reçeteli bir Kampo ilacı. O formülün ünü de, karası da bu bitkiye yapışmış: Japonya’da interferonla birlikte kullanımda ortaya çıkan interstisyel pnömoni olguları, bitkisel ilaç güvenliğinin ders kitabı örneklerinden biri oldu. Bir bitkinin güvenlik kaydı, hiç tek başına sınanmadan, içinde bulunduğu karışım üzerinden yazılabiliyor.
+
+## Balon çiçeği (Platycodon grandiflorus (Jacq.) A. DC.)
+
+URL: https://bitkitabani.com/baloncicegi/
+Familya: Campanulaceae · Bölge: Asya ve Sibirya · Kullanılan kısım: Kökü
+Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
+
+### Geleneksel kullanım
+- DSÖ monografı (1999): "Klinik veriyle desteklenen kullanım": yok. Farmakopelerde ve geleneksel sistemlerde: balgam söktürücü ve öksürük kesici — öksürük, soğuk algınlığı, üst solunum yolu enfeksiyonu, boğaz ağrısı, bademcik iltihabı, göğüs tıkanıklığı; Çin tıbbında balgamlı öksürük, boğmaca ve astım. Günlük 2–9 g. Uyarı: özütleri belirgin hemolitik etkilidir, enjeksiyonla verilmemelidir. Merkezi sinir sistemini baskılar; alkolle birlikte araç kullanımı sakıncalı.
+- Türkiye: TİTCK listesinde yok; Türkiye’de süs bitkisi olarak bahçelerde yetiştiriliyor, tıbbi kullanımı yok.
+- Kore — doraji: Kore mutfağında kökü (doraji) sebze ve turşu; Kore ve Japonya’da öksürük şurubu ve pastillerin bileşeni. Çin tıbbında "ilacı yukarı, akciğere taşıyan" kök sayılır — formüllerde yönlendirici bileşen.
+
+### Hazırlama
+DSÖ monografı günlük 2–9 g kök veriyor, dekoksiyon ya da özüt olarak, yalnızca ağızdan. Enjeksiyonla asla. Gebelikte ve emzirirken veri olmadığından önerilmiyor.
+
+### Araştırmalar ne gösteriyor
+Balon çiçeğinin monograf endikasyonunda (öksürük) klinik çalışması yok; ama tek bileşenli, plasebo kontrollü randomize çalışmaları var — bambaşka bir alanda. 2020’de Integrative Cancer Therapies dergisinde yayımlanan çalışma, antrasiklin kemoterapisi alan 125 erken evre meme kanseri hastasını balon çiçeği granülü ya da plaseboya ayırdı: ağır kalp yetmezliğinde fark yoktu (seyrek olgular), ama subklinik kalp yetmezliği (%8,2’ye karşı %21,9) ve troponin yükselmesi balon çiçeği grubunda daha azdı; kemoterapinin tümör üzerindeki etkisi değişmedi. 2026’da aynı ekibin trastuzumab alan hastalardaki çalışması bu çizgiyi sürdürüyor. Tek merkez, aynı ekip, Çin — ve DSÖ’nün yazdığı öksürük endikasyonuyla ilgisi yok. Kanıt düzeyi "sınırlı".
+
+### Güvenlik
+Enjeksiyonla verilmemeli — DSÖ monografının tek uyarısı: özütleri belirgin hemolitik etkilidir (alyuvarları parçalar); ağızdan alındığında saponinler emilmediği için bu sorun olmuyor. Merkezi sinir sistemini baskılar; alkol ve öteki depresanlarla birlikte araç ve makine kullanımı sakıncalı. Gebelikte ve emzirirken önerilmiyor. İstenmeyen etki bilgisi monografta yok; kalp çalışmalarında ciddi yan etki bildirilmemiş. Çin tıbbı geleneği centiyan (Gentiana scabra) ve Bletilla ile birlikte kullanmaz.
+
+### İlaç etkileşimleri
+- Alkol, sakinleştiriciler ve uyku ilaçları: DSÖ monografı merkezi sinir sistemi depresanlarıyla sinerjik etki olasılığını yazıyor.
+- Gentiana scabra ve Bletilla (geleneksel uyumsuzluk): Monograf Çin kaynaklarına dayanarak bu iki drogla birleştirilmemesini aktarıyor — farmakolojik veri değil, gelenek kuralı.
+
+### Doğada
+Nerede yetişir: Çin, Kore, Japonya ve Doğu Sibirya’nın yerlisi; Kore ve Çin’de geniş çapta kültürü yapılıyor. Türkiye’de süs bitkisi.
+Toplama mevsimi: Yazın balon gibi şişen tomurcuklardan açan mavi-mor çan çiçekler; kök 2–3 yıllık bitkilerden sonbaharda sökülür.
+Yöresel adlar: Balon çiçeği; Çince jiégěng, Korece doraji, Japonca kikyō.
+Karıştırma riski: Kore pazarında doraji ile ginseng ve Adenophora kökleri birbirine benzer; monograf yalnızca Platycodon içindir. Bahçe çeşitleri beyaz ve pembe de olabilir.
+
+### İlginç bilgi
+Aynı kök Kore sofrasında turşu, Çin eczanesinde öksürük ilacı, Türkiye’de bahçede süs — ve son klinik çalışmalarında meme kanseri hastalarının kalbini kemoterapiden koruyan bir granül. DSÖ 1999’da bu bitkinin hiçbir kullanımı için klinik veri bulamamıştı; yirmi yıl sonra gelen randomize çalışmalar da monografın yazdığı hiçbir endikasyonda değil. Bir bitkinin kanıtı, geleneğin aradığı yerden tamamen başka bir yerde çıkabiliyor.
