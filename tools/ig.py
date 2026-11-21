@@ -80,13 +80,13 @@ def motif(d, y, color, h=22):
         d.polygon([(cx, cy - 5), (cx + 5, cy), (cx, cy + 5), (cx - 5, cy)], fill=color)
         x += 48
 
-def frame(p, n, total):
+def frame(p, n, total, kod=None, alt=None):
     im = Image.new('RGB', (W, H), C['paper']); d = ImageDraw.Draw(im)
     motif(d, 34, C['accent'])
-    d.text((80, 96), f'BİTKİ TABANI · BT-{p["no"]:03d}', font=mono(28), fill=C['muted'])
+    d.text((80, 96), f'BİTKİ TABANI · {kod or "BT-%03d" % p["no"]}', font=mono(28), fill=C['muted'])
     t = f'{n}/{total}'; d.text((W - 80 - d.textlength(t, font=mono(28)), 96), t, font=mono(28), fill=C['muted'])
     d.line([(80, H - 120), (W - 80, H - 120)], fill=C['rule'], width=2)
-    d.text((80, H - 96), p['tr'], font=serif(34), fill=C['ink'])
+    d.text((80, H - 96), alt or p['tr'], font=serif(34), fill=C['ink'])
     u = 'bitkitabani.com'; d.text((W - 80 - d.textlength(u, font=mono(28)), H - 90), u, font=mono(28), fill=C['accent'])
     return im, d
 
@@ -250,7 +250,7 @@ def threads_plan(data, day, days=4):
             # gönderi görselsiz çıkıyordu.
             _mi = os.path.join(ROOT, 'img', 'motif', mo['slug'] + '.png')
             _mu = f"https://bitkitabani.com/img/motif/{mo['slug']}.png" if os.path.exists(_mi) else (img(bt[0]) if bt else None)
-            extra.append(dict(text=f"Bir sembol: {mo['ad']} ({mo['bolge']})\n\n{mo['kisa']}" + (f"\n\nBağlantılı bitki: {P[bt[0]]['tr']}" if bt else '') + f"\n\nAnlamı ve kaynakları: bitkitabani.com/semboller/{mo['slug']}/", image=_mu))
+            extra.append(dict(text=f"Bir sembol: {mo['ad']} · {mo['bolge']}\n\n{mo['kisa']}" + (f"\n\nBağlantılı bitki: {P[bt[0]]['tr']}" if bt else '') + f"\n\nAnlamı ve kaynakları: bitkitabani.com/semboller/{mo['slug']}/", image=_mu))
     except Exception as ex: print('semboller threads:', ex)
     # rehber, tarif ve karşılaştırmalar karışık sırayla gelsin
     extra = [x for i, x in sorted(enumerate(extra), key=lambda t: (t[0] * 7) % max(1, len(extra)))]
@@ -330,6 +330,30 @@ def aylik(data, day, out_root):
     json.dump({'ay': key, 'image': f'{BASE}/ig/aylik/{key}.jpg', 'caption': cap, 'threads': th[:495],
                'alt': f'{AYDA[m-1]} toplanan şifalı bitkilerin listesi: {names}.'}, open(os.path.join(out_root, 'aylik.json'), 'w', encoding='utf-8'), ensure_ascii=False)
 
+def motif_slide(p, mo, anlam, bag, n=2, total=2):
+    """Sembol gönderisinin metin slaytı.
+
+    İki şeyi düzeltir (21 Kasım 2026):
+      * Kimlik: sembolün bağlantılı bitkisi yoksa eskiden katalogdaki ilk bitkinin adı ve
+        numarası basılıyordu (Lale slaytında 'Üzerlik' / BT-001). Artık slayt 1 ile aynı
+        kimliği taşır: 'SEMBOL' ve 'Semboller'.
+      * Kırpma: metin sabit 420 karakterde, cümlenin hatta kelimenin ortasında kesiliyordu.
+        Artık cümle sonunda biter ve kutuya SIĞDIĞI ölçülerek seçilir; en küçük puntoda bile
+        sığmayan metin kısaltılır (eskiden taşıyordu).
+    """
+    fonts = [sans(62), sans(56), sans(50), sans(44), sans(38)]
+    im, d = frame(p, n, total, 'SEMBOL', 'Semboller')
+    y = heading(d, 190, 'Ne anlatır?', mo['ad'])
+    ust, kutu_h, tavan = y + 20, H - y - 230, H - 230
+    olcu = ImageDraw.Draw(Image.new('RGB', (W, H), C['paper']))
+    govde = None
+    for lim in (640, 560, 500, 440, 380, 320, 260, 200):
+        aday = _kirp(anlam, lim) + _kirp(bag, 200)
+        if ust + block(olcu, (80, ust), aday, fonts, W - 160, kutu_h, C['ink'], gap=1.34) <= tavan:
+            govde = aday; break
+    block(d, (80, ust), govde or (_kirp(anlam, 200) + _kirp(bag, 120)), fonts, W - 160, kutu_h, C['ink'], gap=1.34)
+    return im
+
 def motif_image(mo, seed=None):
     """Sembol paylaşım görseli (1080x1350): el çizimi görünümlü tek renk motif, ad ve kısa anlam."""
     import random
@@ -360,6 +384,15 @@ def motif_image(mo, seed=None):
 
 ONE_CIKAN = ['anadolu-nazara-karsi-tutsulenen-uzerligin-tohumlarinda', 'kuyumcularin-kirat-keciboynuzundan-gelir', 'hakkari-nin-guneyindeki-sanidar-magarasinda-yaklasik',
              'orta-cag-salgin-donemlerinde-hekimler-yuzlerine', 'peru-amazonu-nda-sifaci-olmak-isteyen', 'avrupa-turk-kirmizisi-edirne-kirmizisi-diye']
+def _kirp(t, lim):
+    """Metni cümle ortasında kesmez: sınırdan önceki son cümle sonunda bitirir."""
+    t = t.strip()
+    if len(t) <= lim: return t
+    kes = t[:lim]
+    son = max(kes.rfind('. '), kes.rfind('.\n'), kes.rfind('! '), kes.rfind('? '), kes.rfind('.”'))
+    if son > lim * 0.45: return kes[:son + 1].rstrip()
+    return kes.rsplit(' ', 1)[0].rstrip(' ,;:·—-') + '…'
+
 def _threads_fit(t, lim=478):
     """Threads 500 karakter sınırı (worker sona '#şifalıbitkiler' ekler): bağlantıyı kesmeden kısaltır."""
     if len(t) <= lim: return t
@@ -370,8 +403,7 @@ def _threads_fit(t, lim=478):
     while len('\n\n'.join(paras)) > lim:
         i = max(range(len(paras)), key=lambda k: 0 if 'bitkitabani.com' in paras[k] else len(paras[k]))
         cut = len('\n\n'.join(paras)) - lim + 1
-        x = paras[i][:max(20, len(paras[i]) - cut)]
-        paras[i] = (x[:x.rfind(' ')] if ' ' in x else x).rstrip(' ,;:') + '…'
+        paras[i] = _kirp(paras[i], max(20, len(paras[i]) - cut))
     return '\n\n'.join(paras)
 
 def ek_postlar(data, day, out_root, days=7):
@@ -393,8 +425,8 @@ def ek_postlar(data, day, out_root, days=7):
         if sub: ig2.wrap_block(d, (ig2.PAD, min(y + 24, H - 250)), sub, [sans(46), sans(40), sans(36)], W - 2 * ig2.PAD, 160, (236, 230, 218))
         d.text((ig2.PAD, H - 92), 'bitkitabani', font=serif(34, 700), fill=(236, 230, 218))
         return im
-    def paper_slide(p, eyebrow, title, body, n, total):
-        im, d = frame(p, n, total)
+    def paper_slide(p, eyebrow, title, body, n, total, kod=None, alt=None):
+        im, d = frame(p, n, total, kod, alt)
         y = heading(d, 190, eyebrow, title)
         block(d, (80, y + 20), body, [sans(62), sans(56), sans(50), sans(44), sans(38)], W - 160, H - y - 230, C['ink'], gap=1.34)
         return im
@@ -439,8 +471,8 @@ def ek_postlar(data, day, out_root, days=7):
             p = P[bt[0]] if bt else next(iter(P.values())); pid = mo['slug']
             anlam = re.sub(r'\s*\[\d+\]', '', mo['anlam'])
             bag = ('\n\nBağlantılı bitki: ' + P[bt[0]]['tr'] + '. ' + dict(mo['bitkiler'])[bt[0]]) if bt else ''
-            ims = [motif_image(mo), paper_slide(p, 'Ne anlatır?', mo['ad'], anlam[:420] + bag[:200], 2, 2)]
-            cap = (f'Bir sembol: {mo["ad"]} ({mo["bolge"]})\n\n{anlam}{bag}\n\nSizin evinizde, kiliminizde bu motif var mı? Yorumlarda buluşalım. 👇\n\n'
+            ims = [motif_image(mo), motif_slide(p, mo, anlam, bag)]
+            cap = (f'Bir sembol: {mo["ad"]} · {mo["bolge"]}\n\n{anlam}{bag}\n\nSizin evinizde, kiliminizde bu motif var mı? Yorumlarda buluşalım. 👇\n\n'
                    f'Kaynaklarıyla: bitkitabani.com/semboller/{mo["slug"]} (bağlantı profilde)\n\n#semboller #kilimmotifleri #etnobotanik #kültür')
         elif wd in (1, 6) and hik:
             h = hik[((wk - (45 + 2026 * 53)) * 2 + (wd == 6)) % len(hik)]; tur = 'hikaye'; pid = h['slug']

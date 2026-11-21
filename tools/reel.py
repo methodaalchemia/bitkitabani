@@ -91,35 +91,87 @@ def _sessizlikler(path):
         elif bas is not None: out.append((bas, float(m.group(2)))); bas = None
     return out
 
-def _gemini_hepsi(sents, tmp):
-    """Bütün metni TEK istekte seslendirir, sonra cümleleri aradaki sessizliklerden keser.
+_SON_HIZA = None   # son hizalamanın en kötü sapması (ses kaydına yazılır)
 
-    Cümle başına bir istek atmak Gemini'nin ücretsiz katmanındaki günlük hakkı bir videoda bitiriyordu;
-    tek istek hem kotaya sığar hem de tonu video boyunca tutarlı tutar.
+def _edge_referans(sents, tmp):
+    """Cümlelerin gerçek okunma süreleri ve kelime sınırları — hizalama referansı.
+
+    Gemini TTS zaman bilgisi vermiyor; bu yüzden SES Gemini'nin, ZAMANLAMA bu referansın.
+    Aynı metni edge-tts cümle cümle okur, kelime sınırlarını verir; sesi atılır, yalnız
+    süreleri kullanılır. edge-tts ücretsiz ve kotasız olduğu için cümle başına istek
+    sorun değil — Gemini'de olan oydu (tek istek zorunluluğu).
     """
+    ref = []
+    for i, c in enumerate(sents):
+        yol = os.path.join(tmp, 'ref%d.mp3' % i)
+        ws = asyncio.run(_tts1(c, yol))
+        d = _dur(yol)
+        if not ws or d <= 0: raise RuntimeError('referans ses alınamadı')
+        ref.append((d, ws))
+        try: os.remove(yol)
+        except OSError: pass
+    return ref
+
+
+def _araliklar(sents, toplam, sessiz, ref):
+    """Cümle sınırlarını seçer.
+
+    Önceden "en uzun n-1 sessizlik" alınıyordu; cümle içindeki doğal duraklama cümle sonu
+    sanılınca kesim kayıyor, sahne ve altyazı sesten ayrılıyordu (19-21 Kasım: reishi,
+    çemen, muskat). Artık her sınırın BEKLENEN yeri referans sürelerden ölçeklenerek
+    bulunuyor, sonra yalnızca o civardaki gerçek sessizliğe oturtuluyor. Yakınında
+    sessizlik yoksa beklenen yerde kesiliyor — uzaktaki yanlış sessizliğe atlamıyor.
+    """
+    n = len(sents)
+    if n == 1: return [(0.0, toplam)], 0.0
+    sure = [d for d, _ in ref] if ref else [max(1.0, _estimate(c)[1]) for c in sents]
+    S = sum(sure) or 1.0
+    bek, t = [], 0.0
+    for k in sure[:-1]:
+        t += k; bek.append(toplam * t / S)
+    pencere = max(0.8, toplam / n * 0.35)
+    secim, onceki, kalan = [], 0.0, sorted(sessiz)
+    for b in bek:
+        uygun = [(a, c) for a, c in kalan if a > onceki + 0.15 and abs((a + c) / 2 - b) <= pencere]
+        if uygun:
+            a, c = min(uygun, key=lambda x: abs((x[0] + x[1]) / 2 - b))
+            kalan = [x for x in kalan if x[0] > a]
+        else:
+            a = c = min(max(b, onceki + 0.15), toplam - 0.1)
+        secim.append((a, c)); onceki = c
+    araliklar, onceki = [], 0.0
+    for a, c in secim: araliklar.append((onceki, a)); onceki = c
+    araliklar.append((onceki, toplam))
+    sapma = max(abs((a + c) / 2 - b) for (a, c), b in zip(secim, bek)) / toplam
+    return araliklar, sapma
+
+
+def _gemini_hepsi(sents, tmp):
+    """Bütün metni TEK istekte seslendirir (ücretsiz katman günlük hakkı cümle başına
+    istek atmaya yetmiyor), sonra cümleleri referans zamanlamaya göre keser."""
+    global _SON_HIZA
     tam = os.path.join(tmp, 'gem-tam.mp3')
     _gemini1('\n'.join(sents), tam)   # yalnızca okunacak cümleler; yönerge yok (sesli okunuyordu)
     toplam = _dur(tam)
     if toplam <= 0: raise RuntimeError('boş ses')
-    n = len(sents)
     ic = [(a, b) for a, b in _sessizlikler(tam) if a > 0.25 and b < toplam - 0.25]
-    if n > 1 and len(ic) >= n - 1:   # en uzun n-1 sessizlikten kes
-        sec = sorted(sorted(ic, key=lambda s: s[0] - s[1])[:n - 1])
-        araliklar, onceki = [], 0.0
-        for a, b in sec: araliklar.append((onceki, a)); onceki = b
-        araliklar.append((onceki, toplam))
-    else:                            # sessizlik bulunamazsa metin uzunluğuna göre böl
-        w = [max(1, len(s)) for s in sents]; t, araliklar = 0.0, []
-        for k in w:
-            d = toplam * k / sum(w); araliklar.append((t, t + d)); t += d
+    try:
+        ref = _edge_referans(sents, tmp)
+    except Exception as ex:
+        print('reel: hizalama referansı alınamadı, süre tahminine düşülüyor:', str(ex)[:120]); ref = None
+    araliklar, _SON_HIZA = _araliklar(sents, toplam, ic, ref)
     out = []
-    for i, ((a, b), s) in enumerate(zip(araliklar, sents)):
-        mp3 = os.path.join(tmp, f's{i}.mp3')
-        subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-ss', f'{a:.3f}', '-to', f'{b:.3f}', '-i', tam, '-b:a', '128k', mp3], check=True)
+    for i, ((a, b), c) in enumerate(zip(araliklar, sents)):
+        mp3 = os.path.join(tmp, 's%d.mp3' % i)
+        subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-ss', '%.3f' % a, '-to', '%.3f' % b, '-i', tam, '-b:a', '128k', mp3], check=True)
         d = _dur(mp3)
-        ws, est = _estimate(s); k = max(0.05, d - 0.12) / max(0.1, est)
+        if ref:                      # kelime sınırları da referanstan: altyazı kelime öbeği düzeyinde
+            rd, ws = ref[i]; k = d / max(0.1, rd)
+        else:
+            ws, est = _estimate(c); k = max(0.05, d - 0.12) / max(0.1, est)
         out.append((mp3, d, [[x * k, y * k, w] for x, y, w in ws]))
     return out
+
 
 def _dur(path):
     r = subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', path], capture_output=True, text=True)
@@ -189,7 +241,10 @@ def kapi(out, slug):
     except Exception: return False, 'ses kaydı yok'
     if not k.get('slug'): return False, 'ses kaydında slug yok'
     if k['slug'] != slug: return False, 'ses kaydı %s, video %s' % (k['slug'], slug)
-    if k.get('sesli') is False: return True, 'sessiz video'
+    # Seslendirme alınamadıysa video yayımlanmaz. Önceden sessiz video kapıdan geçiyordu;
+    # tek ses motoru kaldığı için (bkz. voice(), REEL_GEMINI) bir edge-tts kesintisi
+    # doğrudan sessiz Reels demek olurdu. Eda'nın kararı, 21 Kasım 2026.
+    if k.get('sesli') is False: return False, 'ses üretilemedi (sessiz video)'
     try: metin = open(t + '.ses.txt', encoding='utf-8').read().strip()
     except Exception: return False, 'metin dosyası yok'
     if not metin: return False, 'metin boş'
@@ -328,7 +383,8 @@ def make(p, m, img_path, out, photos=None):
         sents = okunacak(out)             # seslendirme yalnızca o dosyadan okunur
         segs, spoken, total = voice(sents, tmp)
         _ses_sakla(segs, tmp, _taban(out) + '.ses.mp3')
-        kayda_ekle(out, sesli=bool(spoken), ses_dosyasi=os.path.basename(_taban(out)) + '.ses.mp3', sure=round(total, 1))
+        kayda_ekle(out, sesli=bool(spoken), ses_dosyasi=os.path.basename(_taban(out)) + '.ses.mp3', sure=round(total, 1),
+                   **({'hiza': round(_SON_HIZA, 4)} if _SON_HIZA is not None else {}))
         total += 0.5
         credits = ''
         if photos is None:   # ana fotoğraf + varsa tools/tanima.py'nin seçtiği çiçekli hâl, çizim, kurutulmuş hâl
