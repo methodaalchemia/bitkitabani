@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 262 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 263 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 
@@ -274,6 +274,7 @@ Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 - [Tavşankulağı (Bupleurum falcatum L.; B. chinense DC.)](https://bitkitabani.com/tavsankulagi/): Genelde güvenli, kanıt: geleneksel
 - [Balon çiçeği (Platycodon grandiflorus (Jacq.) A. DC.)](https://bitkitabani.com/baloncicegi/): Dikkat, kanıt: sınırlı
 - [Karamuk (Berberis vulgaris L.)](https://bitkitabani.com/karamuk/): Dikkat, kanıt: sınırlı
+- [Dereotu (Anethum graveolens L.)](https://bitkitabani.com/dereotu/): Dikkat, kanıt: sınırlı
 
 ## Kültür köprüleri
 - [Aynı molekül, iki ayrı ritüel](https://bitkitabani.com/kopruler/uzerlik-ayahuasca/): İkisi de harmin ve harmalin taşır. Anadolu’da bu alkaloitler nazar dumanında yanar; Amazon’da tören içeceğinin omurgasını oluşturur.

@@ -653,6 +653,18 @@ DESCRIPTION:Yazın küçük sarı çiçekler\; sonbahara doğru beş par
 URL:https://bitkitabani.com/demirdikeni/
 END:VEVENT
 BEGIN:VEVENT
+UID:toplama-dereotu@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260301
+DTEND;VALUE=DATE:20260302
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Dereotu toplama mevsimi
+DESCRIPTION:Yazın sarı şemsiye çiçekler\; meyveler yaz sonunda olgun
+ laşıp kurutulur. Yaprak ilkbahardan itibaren taze toplanır. https://bi
+ tkitabani.com/dereotu/
+URL:https://bitkitabani.com/dereotu/
+END:VEVENT
+BEGIN:VEVENT
 UID:toplama-devedikeni@bitkitabani.com
 DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260701
