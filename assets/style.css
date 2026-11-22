@@ -668,7 +668,7 @@ button.tk-cz-ad:hover{text-decoration:underline}
 .hikaye .lead{font-size:1.2rem;line-height:1.6}
 .hk-kapak{width:100%;height:auto;display:block;margin:0 0 14px}
 
-/* blog */.blog-etk .chip.on{background:var(--accent);color:#fff;border-color:transparent}.blog-etk small{opacity:.7}.etks{margin:6px 0 0}.etk{display:inline-block;margin:0 10px 4px 0;font-size:.9em;text-decoration:none;color:var(--accent)}.hk[hidden]{display:none}
+/* blog */.blog-etk .chip.on{background:var(--accent);color:#fff;border-color:transparent}.blog-etk small{opacity:.7}.etks{margin:6px 0 0}a.etk{display:inline-block;margin:0 10px 4px 0;font-size:.9em;text-decoration:none;color:var(--accent)}.hk[hidden]{display:none}
 .toc-h{margin:0;font-weight:600}.toc-h .eyebrow{margin-right:6px}
 button.cta{-webkit-appearance:none;appearance:none;background:var(--accent);color:var(--paper);border:0;border-radius:8px;padding:10px 20px;font-weight:700;cursor:pointer;letter-spacing:.04em}button.cta:hover{background:var(--ink);color:var(--paper)}
 .htarif{margin:22px 0;padding:18px 20px;background:var(--sheet);border:1px solid var(--rule);border-top:4px solid var(--accent);border-radius:10px}.htarif h2{margin:0 0 12px;font-size:var(--t-lg)}.htarif h2 .eyebrow{display:block;margin-bottom:4px}.htarif h3{font-size:var(--t-md);margin:0 0 6px}.ht-g{display:grid;gap:16px}@media(min-width:700px){.ht-g{grid-template-columns:1fr 1.4fr}}.htarif ul,.htarif ol{margin:0;padding-left:20px}.htarif li{margin:3px 0}.ht-uyari{margin:10px 0 0;padding:10px 12px;border-left:3px solid var(--s-yuksek);background:var(--paper)}
@@ -1006,3 +1006,31 @@ table.etk th[scope="row"]{min-width:150px}
   .duzen-ana table{width:100%}
 }
 html{scroll-padding-top:80px}
+/* Günün bitkisi: kart ve okuma metni masaüstünde yan yana */
+@media (min-width:900px){.gun-ust{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:start}.gun-ust .grid.sim{grid-template-columns:1fr}.gun-ust .sec{margin:0}}
+
+/* 22 Kasım — ilaç etkileşimi sayfası masaüstü düzeni */
+.etk-ipucu{font-size:var(--t-sm);color:var(--muted);max-width:none;line-height:1.55}
+.etk-ipucu b{color:var(--ink)}
+table.etk{width:100%;border-collapse:collapse}
+table.etk thead th{font-family:var(--f-body);font-size:var(--t-sm);font-weight:600;color:var(--muted);text-transform:none}
+.th-not{font-weight:400;font-size:var(--t-xs);color:var(--muted);margin-left:6px}
+table.etk tbody th[scope="row"]{flex-direction:row;flex-wrap:wrap;align-items:center;gap:6px 10px;width:auto;min-width:0}
+@media(min-width:900px){table.etk tbody th[scope="row"]{width:280px}}
+table.etk td{color:var(--ink);line-height:1.55;font-size:var(--t-sm)}
+table.etk tbody tr:hover{background:color-mix(in srgb,var(--sheet) 70%,transparent)}
+.etksec{display:inline-flex;align-items:center;gap:8px;cursor:pointer}
+.etksec input{width:18px;height:18px;accent-color:var(--accent);flex:none}
+table.etk tbody tr:has(.etkchk:checked){background:color-mix(in srgb,var(--accent) 7%,transparent)}
+/* Hekime götür listesi: sağ sütunda hep görünür */
+.gotur.yanda{margin-top:22px;border:1.5px solid var(--ink);background:var(--sheet);padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.gotur.yanda .eyebrow{margin:0;color:var(--ink)}
+.gotur.yanda ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;font-size:var(--t-sm)}
+.gotur.yanda li span{display:block;font-size:var(--t-xs);color:var(--muted)}
+.gotur .gotur-bos{display:none;margin:0}
+.gotur.bos .gotur-bos{display:block}
+.gotur.bos .gotur-btns{display:none}
+.gotur.yanda .gotur-btns{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 0}
+.gotur-serit{position:fixed;left:12px;right:12px;bottom:calc(66px + env(safe-area-inset-bottom,0px));z-index:40;background:var(--accent);color:var(--sheet);text-align:center;padding:12px 14px;font-weight:600;text-decoration:none;box-shadow:0 8px 22px rgba(0,0,0,.2)}
+.gotur-serit[hidden]{display:none}
+.gotur.yanda{margin:0 0 22px}

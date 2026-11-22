@@ -27,13 +27,26 @@
 
   // --- "doktoruna götür" listesi: işaretlenen bitkiler burada birikir ---
   var kutu = document.getElementById('gotur'), liste = document.getElementById('goturList'), secili = [];
+  // Masaüstünde liste sağ sütunda, "Bu sayfada"nın altında hep görünür durur;
+  // telefonda ekranın altında, işaretli bitki sayısını gösteren bir şerit olur.
+  var yan = document.querySelector('.duzen-yan'), serit = null;
+  if (kutu && yan) { yan.insertBefore(kutu, yan.firstChild); kutu.hidden = false; kutu.classList.add('yanda'); }
+  if (kutu) {
+    serit = document.createElement('a'); serit.className = 'gotur-serit'; serit.href = '#gotur'; serit.hidden = true;
+    document.body.appendChild(serit);
+    serit.addEventListener('click', function (ev) { ev.preventDefault(); kutu.hidden = false; kutu.scrollIntoView({ block: 'center' }); });
+  }
   function yenile() {
     if (!kutu) return;
-    kutu.hidden = !secili.length;
+    if (!kutu.classList.contains('yanda')) kutu.hidden = !secili.length;
+    kutu.classList.toggle('bos', !secili.length);
     liste.innerHTML = secili.map(function (x) {
-      return '<li><b>' + x.ad + '</b>' + (x.grup ? ' — ' + x.grup : '') + '</li>';
+      return '<li><b>' + x.ad + '</b>' + (x.grup ? '<span>' + x.grup + '</span>' : '') + '</li>';
     }).join('');
+    var say = document.getElementById('goturSay'); if (say) say.textContent = secili.length ? '(' + secili.length + ')' : '';
+    if (serit) { serit.hidden = !secili.length || !!(yan && getComputedStyle(yan).display !== 'none'); serit.textContent = 'Hekime götür listem: ' + secili.length + ' bitki →'; }
   }
+  yenile();
   function metin() {
     return 'Kullandığım bitkiler ve bildirilen ilaç etkileşimleri\n\n'
       + secili.map(function (x) { return '• ' + x.ad + (x.grup ? ' — ' + x.grup : ''); }).join('\n')

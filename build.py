@@ -482,7 +482,7 @@ FOOT = '''<div class="motif indigo" aria-hidden="true"></div>
 FOOT_GIZLI = {'/kartlar/', '/hesap/'}   # menüde var, altbilgide yok
 FOOTNAV = '<nav class="footnav" aria-label="Site haritası">' + ''.join(f'<div><h3>{g}</h3><ul>' + ''.join(f'<li><a href="{h}"' + (' rel="noopener"' if h.startswith('http') else '') + f'>{l}</a></li>' for h, l, k in items if h not in FOOT_GIZLI) + '</ul></div>' for g, items in sorted(MENU, key=lambda m: m[0] != 'Bitki Tabanı')) + '</nav>'   # footer'da Bitki Tabanı en başta
 SOSYAL = [('instagram', 'Instagram', 'https://www.instagram.com/bitkitabani/'), ('threads', 'Threads', 'https://www.threads.net/@bitkitabani'),
-          ('facebook', 'Facebook', 'https://www.facebook.com/profile.php?id=61595314033889'), ('pinterest', 'Pinterest', 'https://www.pinterest.com/bitkitabani/'), ('youtube', 'YouTube', 'https://www.youtube.com/@bitkitabani'), ('telegram', 'Telegram', 'https://t.me/bitkitabani'), ('rss', 'RSS', '/yeni/rss.xml')]
+          ('facebook', 'Facebook', 'https://www.facebook.com/profile.php?id=61595314033889'), ('pinterest', 'Pinterest', 'https://www.pinterest.com/bitkitabani/'), ('youtube', 'YouTube', 'https://www.youtube.com/@bitkitabani'), ('telegram', 'Telegram', 'https://t.me/bitkitabani')]
 def _icon(n, label):
     f = os.path.join(HERE, 'assets', 'icons', n + '.svg')
     if os.path.exists(f):
@@ -510,7 +510,7 @@ _YAN_TIP = {'plant', 'br', 'kavram', 'yazi', 'hikaye', 'about', 'yontem', 'kars'
             'rehber', 'gebe', 'zehir', 'etk', 'aile', 'fam'}
 _YAN_YOL = ('/eczaci-cagrisi/', '/gizlilik/', '/iletisim/', '/hakkinda/', '/yontem/', '/lisans/')
 _YAN_DIZIN = ('/rehber/', '/kavram/', '/semboller/', '/kopruler/', '/karsilastirma/', '/yoreler/', '/familya/',
-              '/blog/', '/tarif/', '/katalog/')
+              '/blog/', '/tarif/', '/katalog/', '/toplama-takvimi/', '/takvim/', '/gunun-bitkisi/', '/yeni/')
 _H2 = re.compile(r'<h2(\s[^>]*)?>(.*?)</h2>', re.S)
 
 
@@ -1595,9 +1595,8 @@ past = ''.join(f'<li><span class="mono-d">{tr_date(d)}</span><a href="/{day_pick
 gb = f'''
 <nav class="crumbs" aria-label="Konum"><a href="/">Ana sayfa</a><span>/</span><span>Günün bitkisi</span></nav>
 <header class="page-head"><span class="eyebrow">{tr_date(LOCAL_DAY)}</span><h1>Günün bitkisi: {e(tp["tr"])}</h1><p>Her gün katalogdan bir bitki öne çıkıyor. Ölümcül zehirli ya da yüksek riskli bitkiler bu döngüye alınmaz.</p></header>
-<div class="grid sim">{card(tp)}</div>
-<section class="sec"><h2>Bugün okumak için</h2><p>{e(tp["kul"][0][1])}</p><p class="fact">{e(tp["ilginc"])}</p><p><a class="cta" href="/{tp["id"]}/">{e(tp["tr"])} sayfasının tamamı →</a></p></section>
-<section class="sec"><h2>Her gün</h2><p class="tg-cta"><a class="cta" href="https://t.me/bitkitabani" rel="noopener" target="_blank">Telegram kanalında her akşam bir bitki →</a> <span class="muted-s">Bildirimle gelir, e-posta gerekmez.</span></p><p><a class="cta" href="/gunun-bitkisi/rss.xml">RSS ile takip et →</a> <span class="muted-s">Bir RSS okuyucusu (Feedly, NetNewsWire gibi) her sabah yeni bitkiyi getirir; bildirim ya da e-posta yok.</span></p></section>
+<div class="gun-ust"><div class="grid sim">{card(tp)}</div>
+<section class="sec"><h2>Bugün okumak için</h2><p>{e(tp["kul"][0][1])}</p><p class="fact">{e(tp["ilginc"])}</p><p><a class="cta" href="/{tp["id"]}/">{e(tp["tr"])} sayfasının tamamı →</a></p></section></div>
 <section class="sec"><h2>Son iki hafta</h2><ul class="daylist">{past}</ul></section>
 '''
 write('/gunun-bitkisi/', page(f'Günün bitkisi: {tp["tr"]} | Bitki Tabanı', f'Bugünün bitkisi {tp["tr"]} ({short_la(tp)}) ve son iki haftanın bitkileri.', '/gunun-bitkisi/', gb, '', narrow=True,
@@ -1827,7 +1826,7 @@ for c, ad, _ in ILAC:
               + ', '.join(e(x) for x in _tic + _etk2) + '</p>') if (_tic or _etk2) else ''
     secs += (f'<section class="sec etkgrp" id="{c}" data-c="{c}" data-ara="{e(_low(" ".join([ad] + _tic + _etk2)))}">'
              f'<h2>{e(ad)}</h2>{_adlar}<div class="tablewrap"><table class="cmp etk">'
-             f'<thead><tr><th scope="col">Bitki</th><th scope="col">Olası etkileşim</th></tr></thead>'
+             f'<thead><tr><th scope="col">Bitki <span class="th-not">kullanıyorsan işaretle</span></th><th scope="col">Olası etkileşim</th></tr></thead>'
              f'<tbody>{rows_}</tbody></table></div></section>')
 path = '/rehber/ilac-etkilesimi/'
 nplants = len({pid for v in etk_by.values() for pid, _, _ in v})
@@ -1835,10 +1834,10 @@ body = f'''{crumbs(('/rehber/', 'Rehberler'), (path, 'İlaç etkileşimi'))}
 <article class="sheet">
 <header class="page-head"><span class="eyebrow">Güvenlik aracı · {nplants} bitki</span><h1>Bitki ve ilaç etkileşimi: kullandığın ilaçla hangi bitkiler sorun çıkarabilir?</h1><p>Bitkiler de ilaçlar gibi etken maddeler içerir. Bazıları ilacının etkisini artırır, bazıları azaltır, bazıları da aynı yan etkiyi büyütür. Kullandığın ilaç grubunu seç; katalogda o grupla etkileşimi bildirilen bitkileri gör.</p></header>
 <form class="etkform" id="etkform" onsubmit="return false"><label for="etksel" class="eyebrow">İlaç grubu</label><select id="etksel"><option value="">{UI.ILAC_HEPSI}</option>{sel}</select><input id="etkq" type="search" placeholder="ya da ilaç/bitki adı yaz: Coumadin, Beloc, kantaron…" aria-label="İlaç ya da bitki adıyla süz"><p class="muted-s" id="etkmsg" role="status"></p></form>
-<p class="muted-s">İlacının kutusundaki adı yazman yeterli; ticari adlar (Coumadin, Beloc, Glucophage…) ve etken madde adları (varfarin, metoprolol, metformin…) aranıyor.</p>
+<p class="etk-ipucu">İlacının kutusundaki adı yazman yeterli: ticari adlar (Coumadin, Beloc, Glucophage…) ve etken maddeler (varfarin, metoprolol, metformin…) aranıyor. <b>Kullandığın bitkilerin yanındaki kutuyu işaretlersen</b> “Hekime götür” listen oluşur.</p>
 <aside class="gotur" id="gotur" hidden>
-  <p class="eyebrow">Doktoruna ya da eczacına götür</p>
-  <p class="muted-s">Kullandığın bitkileri aşağıdaki tablolarda işaretle; liste burada birikir, yazdırabilir ya da kopyalayabilirsin.</p>
+  <p class="eyebrow">Hekime götür listem <span id="goturSay"></span></p>
+  <p class="muted-s gotur-bos">Kullandığın bitkilerin yanındaki kutuyu işaretle. Liste burada birikir; yazdırıp ya da kopyalayıp hekimine veya eczacına gösterebilirsin.</p>
   <ul id="goturList"></ul>
   <p class="gotur-btns"><button class="cta" id="goturYaz" type="button">Yazdır</button> <button class="linkbtn" id="goturKopya" type="button">Kopyala</button> <button class="linkbtn" id="goturSil" type="button">Listeyi temizle</button></p>
 </aside>
