@@ -611,6 +611,8 @@ def main():
             extra['story'] = f'{BASE}/ig/p/{n}/story.jpg'
             rimg = next((x for x in [os.path.join(ROOT, 'img', f'{pid}-1280.jpg'), os.path.join(ROOT, 'img', f'{pid}-960.jpg')] if p['img'] and os.path.exists(x)), None)
             import reel as _reel
+            # Cümle başına Gemini isteği yalnız sırada olan posta: kota dar (bkz. reel.TAM_HIZA)
+            _reel.TAM_HIZA = (n == n0)
             hedef = os.path.join(od, 'reel.mp4')
             try:   # seslendirmeli + altyazılı Reels; olmazsa eski slayt videosu
                 ok = _reel.make(p, ig2.text_for(p), rimg, hedef)

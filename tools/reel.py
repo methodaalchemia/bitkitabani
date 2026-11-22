@@ -93,6 +93,10 @@ def _sessizlikler(path):
 
 _SON_HIZA = None     # son hizalamanın en kötü sapması (ses kaydına yazılır)
 _SON_YONTEM = None   # 'cumle' (her cümle ayrı istek) ya da 'tek-istek' (yedek yol)
+TAM_HIZA = False     # yalnız o gün yayımlanacak video için True: cümle başına istek atılır.
+                     # Gemini'nin ücretsiz katmanında günlük istek hakkı dar; koşu başına 4
+                     # post üretiliyor, hepsine cümle başına istek atınca kota doluyor ve ses
+                     # Emel'e düşüyordu (22 Kasım). Yayımlanacak tek videoya ayrılıyor.
 
 def _edge_referans(sents, tmp):
     """Cümlelerin gerçek okunma süreleri ve kelime sınırları — hizalama referansı.
@@ -190,6 +194,7 @@ def _gemini_cumle(sents, tmp):
     out = []
     for i, c in enumerate(sents):
         mp3 = os.path.join(tmp, 'c%d.mp3' % i)
+        if i: time.sleep(1.5)        # dakikalık istek sınırına çarpmamak için
         _gemini1(c, mp3)
         d = _dur(mp3)
         if d <= 0: raise RuntimeError('boş ses: cümle %d' % (i + 1))
@@ -341,9 +346,10 @@ def voice(sents, tmp, gem=None):
     """Her cümle ayrı seslendirilir: [(başlangıç, süre, mp3 ya da None, kelimeler)] ve sesli mi?"""
     if gem is None: gem = bool(os.environ.get('GEMINI_API_KEY'))
     if gem:
-        for yol in (_gemini_cumle, _gemini_hepsi):   # önce cümle başına istek; kota dolarsa tek istek
+        yollar = (_gemini_cumle, _gemini_hepsi) if TAM_HIZA else (_gemini_hepsi,)
+        for yol in yollar:   # önce cümle başına istek; kota dolarsa tek istek
             hata = ''
-            for bekle in (0, 20, 40):   # ücretsiz katman dakikada az istek alır
+            for bekle in ((0,) if yol is _gemini_cumle else (0, 20, 40)):   # cümle yolu tekrar denenmez: kotayı tüketir
                 if bekle: time.sleep(bekle)
                 try:
                     parcalar = yol(sents, tmp)
