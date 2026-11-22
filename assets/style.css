@@ -1035,7 +1035,7 @@ table.etk tbody tr:has(.etkchk:checked){background:color-mix(in srgb,var(--accen
 .gotur-serit[hidden]{display:none}
 .gotur.yanda{margin:0 0 22px}
 .wrap .sec-intro.genis{max-width:none}
-.takip-not{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;margin:4px 0 22px}
+.takip-not{display:flex;margin:0 0 22px}
 .takip-not p{margin:0;font-size:.95rem;color:var(--muted)}
 .takip-not .sosyal{display:flex;gap:10px;margin:0;padding:0;border:0}
 .takip-not .sosyal a{color:var(--ink);opacity:.75}.takip-not .sosyal a:hover{opacity:1;color:var(--accent,#a3271c)}
