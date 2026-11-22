@@ -181,7 +181,7 @@ dict(yayin='2026-11-08', id='mahlep', tr='Mahlep', la='Prunus mahaleb', fam='Ros
 
 dict(yayin='2026-11-09', id='yildizanason', tr='Yıldız anason', la='Illicium verum', fam='Schisandraceae',
  diger='Badyan, star anise, ba jiao', bolge=['asya'], kat=['besin', 'sifa', 'zehir'], kisim='Meyve', taxon='Illicium verum',
- foto='Dried Star Anise Fruit Seeds.jpg',
+ foto='',   # beyaz fonlu stüdyo fotoğrafıydı; seçici doğal ortam fotoğrafı bulacak
  kul=[['Çin ve Vietnam', 'Çin mutfağının beş baharat karışımının temelidir; Vietnam’ın pho çorbasına kokusunu verir. Çin tıbbında soğuk algınlığı ve gaz sancısı için kullanılır.'],
       ['Osmanlı ve Türkiye', 'Osmanlı’da “badyan” adıyla bilinir, şerbet ve macunlara katılırdı; bugün kış çaylarına konur.']],
  haz='Bir iki yıldız çaya ya da yemeğe atılıp birlikte pişirilir.',

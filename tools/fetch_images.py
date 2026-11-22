@@ -61,6 +61,21 @@ def get(url, binary=False):
             print('  tekrar', attempt + 1, e); time.sleep(3 * (attempt + 1))
     raise RuntimeError('indirilemedi: ' + url)
 
+def beyaz_fon(veri):
+    """Görüntünün kenar piksellerinin ne kadarı düz beyaz: stüdyo/katalog fotoğrafını yakalar
+    (beyaz zemin üzerinde tohum, sebze, meyve). 0–1 arası oran döner; ölçülemezse 0."""
+    try:
+        from PIL import Image
+        import io
+        im = Image.open(io.BytesIO(veri) if isinstance(veri, (bytes, bytearray)) else veri).convert('RGB')
+        im.thumbnail((240, 240)); w, h = im.size; px = im.load()
+        k = [px[x, y] for x in range(0, w, 2) for y in (0, 1, h - 1, h - 2)] + [px[x, y] for y in range(0, h, 2) for x in (0, 1, w - 1, w - 2)]
+        return sum(1 for r, g, b in k if r > 228 and g > 228 and b > 228 and max(r, g, b) - min(r, g, b) < 22) / max(1, len(k))
+    except Exception:
+        return 0.0
+BEYAZ_SINIR = 0.35   # kenarın üçte birinden fazlası düz beyazsa ilk görsel olmaz
+
+
 def clean(h):
     t = re.sub(r'<[^>]+>', ' ', h or '')
     return re.sub(r'\s+', ' ', html.unescape(t)).strip()[:140]
@@ -69,7 +84,7 @@ def taxon_of(p):
     t = POWO.get(p['id']) or p['la'].split(',')[0].strip()
     return re.sub(r'\s+ve diğer.*$', '', t)
 
-def auto_pick(taxon):
+def auto_pick(taxon, haric=()):
     """Wikidata P18, sonra Commons 'Quality images' araması; yalnızca gerçek fotoğraflar."""
     cands = []
     try:
@@ -101,14 +116,31 @@ def auto_pick(taxon):
         score = (3 if src == 'qi' else 0) + (2 if GOOD.search(text) else 0) + (1 if (ii.get('height') or 0) >= (ii.get('width') or 1) else 0) - rank * 0.01
         scored.append((score, f))
     scored.sort(reverse=True)
-    return scored[0][1] if scored else None
+    # Beyaz fonlu stüdyo fotoğrafı ilk görsel olmasın: sırayla küçük önizlemeye bakılır.
+    for _, f in scored:
+        if f in haric: continue
+        try:
+            j = get('https://commons.wikimedia.org/w/api.php?format=json&action=query&prop=imageinfo&iiprop=url&iiurlwidth=240&titles=' + urllib.parse.quote('File:' + f))
+            ii = (list(j['query']['pages'].values())[0].get('imageinfo') or [{}])[0]
+            if beyaz_fon(get(ii.get('thumburl') or ii['url'], binary=True)) > 0.12:
+                print('  beyaz fon, geçildi:', f); continue
+        except Exception as e:
+            print('  önizleme alınamadı', f, e)
+        return f
+    return None
 
 WANT = dict(FILES)
 for p in _D['P']:
     if p['id'] in WANT: continue
+    _kucuk = os.path.join(OUT, f"{p['id']}-500.jpg")
+    _haric = ()
     if meta.get(p['id'], {}).get('auto') and meta[p['id']].get('file'):
-        WANT[p['id']] = meta[p['id']]['file']; continue
-    f = auto_pick(taxon_of(p))
+        if os.path.exists(_kucuk) and beyaz_fon(_kucuk) > BEYAZ_SINIR:
+            print('beyaz fonlu ilk görsel, yeniden seçiliyor:', p['id'], meta[p['id']]['file'])
+            _haric = (meta[p['id']]['file'],)
+        else:
+            WANT[p['id']] = meta[p['id']]['file']; continue
+    f = auto_pick(taxon_of(p), _haric)
     print('otomatik seçim:', p['id'], '→', f)
     if f: WANT[p['id']] = f; meta.setdefault(p['id'], {})['auto'] = True
 

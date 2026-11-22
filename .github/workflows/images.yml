@@ -37,7 +37,7 @@ jobs:
         with: { fetch-depth: 0 }
       - uses: actions/setup-python@v5
         with: { python-version: '3.12' }
-      - run: python3 tools/fetch_images.py
+      - run: pip install -q pillow && python3 tools/fetch_images.py
       - run: pip install pillow && python3 tools/webp.py
       - name: Yazı tipleri (Instagram slaytları için, OFL lisanslı)
         run: |
