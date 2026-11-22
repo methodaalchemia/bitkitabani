@@ -1443,7 +1443,7 @@ def day_pick(d):
     pl = [p for p in pool if YENI.get(p['id'], datetime.date.min) <= d]
     return pl[(d - datetime.date(1970, 1, 1)).days % len(pl)]
 today_p = day_pick(LOCAL_DAY)
-LEDE = f'Anadolu’dan Amazon’a şifalı ve ritüel bitkiler: her birinin hikâyesi, bilimsel araştırmaları ve riskleri, kaynaklarıyla. Şu an {len(P)} bitki; her akşam yenisi ekleniyor.'
+LEDE = f'Anadolu’dan Amazon’a şifalı ve ritüel bitkiler: her birinin hikâyesi, bilimsel araştırmaları ve riskleri, kaynaklarıyla. Şu an {len(P)} bitki.'
 
 REG_TXT = {'anadolu':'Nazar tütsüsünden kına gecesine, Anadolu’nun şifa ve ritüel otları.','asya':'İskit tütsülerinden Sibirya şamanlarına, bozkırın ve taygaların bitkileri.',
            'and':'Koka yaprağından kantuta çiçeğine, And Dağları’nın kutsal bitkileri.','amazon':'Ayahuasca sarmaşığından huito boyasına, yağmur ormanının öğretmen bitkileri.',
@@ -1533,6 +1533,7 @@ home = f'''
     <span class="eyebrow">Şifalı ve ritüel bitkiler</span>
     <h1 class="wordmark">Bitki <em>Tabanı</em></h1>
     <p class="lede">{LEDE}</p>
+    <div class="takip-not"><p>Her akşam yeni bir bitki için sitemizi ve sosyal medya hesaplarımızı takip etmeyi unutma.</p><div class="sosyal" aria-label="Sosyal medya">{"".join(f'<a href="{u}" title="{l}" aria-label="Bitki Tabanı {l}" rel="noopener" target="_blank">{_icon(n, l)}</a>' for n, l, u in SOSYAL)}</div></div>
     <form class="hsearch" id="ara" action="/katalog/" method="get" role="search" autocomplete="off">
       <input id="hq" name="q" type="search" placeholder="Bitki ara ya da derdini yaz: kantaron, ardıç, uyku tutmuyor…" aria-label="Bitki ara" aria-controls="hqList" aria-autocomplete="list">
       <button type="submit" class="cta">Ara</button>
