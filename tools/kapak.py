@@ -6,6 +6,7 @@ HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, HERE)
 from halk import hikayeler
 from yazilar import YAZILAR
+from metinler import UI
 OUT = os.path.join(HERE, 'img', 'hikaye'); os.makedirs(OUT, exist_ok=True)
 F = os.path.join(HERE, 'tools', 'fonts')
 def font(n, s): return ImageFont.truetype(os.path.join(F, n), s)
@@ -115,7 +116,7 @@ def kapak(h, i):
     return im
 
 def main():
-    H_ = hikayeler() + [dict(slug='yazi-' + y['slug'], baslik=y['baslik'], kisa='Edanaz Tınmazlar · ' + str(len(y['kaynaklar'])) + ' kaynak', ust='YAZI · ' + y['tarih'][:4]) for y in YAZILAR]; n = 0
+    H_ = hikayeler() + [dict(slug='yazi-' + y['slug'], baslik=y['baslik'], kisa='Edanaz Tınmazlar · ' + str(len(y['kaynaklar'])) + ' kaynak', ust='YAZI · ' + y['tarih'][:4]) for y in YAZILAR] + [dict(slug='cagri-eczaci', baslik=UI.ECZACI_BASLIK, ust='ÇAĞRI · SON BAŞVURU 15 ARALIK')]; n = 0
     idx = os.path.join(OUT, 'basliklar.json')
     eski = json.load(open(idx, encoding='utf-8')) if os.path.exists(idx) else {}
     for i, h in enumerate(H_):

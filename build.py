@@ -442,7 +442,7 @@ MENU = [('Bitkiler', [('/katalog/', 'Katalog', 'kat'), ('/familya/', 'Familyalar
         ('Şifa', [('/rehber/', 'Derde göre bitkiler', 'rehber'), ('/tarif/', 'Çay tarifleri', 'tarif'), ('/karsilastirma/', 'Karşılaştırmalar', 'kars'), ('/rehber/ilac-etkilesimi/', 'İlaç etkileşimi', 'etk'), ('/rehber/zehirli-bitkiler/', 'Zehirli bitkiler', 'zehir')]),
         ('Kültür', [('/kavram/', 'Kavramlar', 'kavram'), ('/semboller/', 'Semboller', 'sembol'), ('/kopruler/', 'Kültür köprüleri', 'br'), ('/blog/', 'Blog', 'yazi'), ('/takvim/', 'Ritüel takvimi', 'takvim')]),
         ('Bitki Tabanı', [('/hakkinda/', 'Hakkında', 'about'), ('/yontem/', 'Yöntem, kaynaklar ve veri', 'yontem'), ('/bulten/', 'Bülten ve e-posta kursu', 'bulten'), ('/kartlar/', 'Yazdırılabilir kartlar', 'kartlar'), ('/hesap/', 'Hesabım', 'acct'), ('/iletisim/', 'İletişim', 'mail')])]
-MENU_HUB = {'Bitkiler': '/katalog/', 'Şifa': '/rehber/', 'Kültür': '/kultur/'}
+MENU_HUB = {'Bitkiler': '/katalog/', 'Şifa': '/rehber/', 'Kültür': '/kultur/', 'Bitki Tabanı': '/hakkinda/'}
 _TABICO = {'ara': '<circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/>', 'kat': '<path d="M12 21V9"/><path d="M12 13c-4 0-6-3-6-7 4 0 6 3 6 7z"/><path d="M12 11c3 0 5-2 5-5-3 0-5 2-5 5z"/>',
            'rehber': '<path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/>', 'kultur': '<path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/>', 'gun': '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M5 19l1.5-1.5M17.5 6.5L19 5"/>'}
 def tabbar(cur):
@@ -496,22 +496,8 @@ CSSV = _hl.md5(open(os.path.join(HERE, 'assets', 'style.css'), 'rb').read()).hex
 def _de(ad):
     v = [c for c in ad.lower() if c in 'aıoueöüiâ']; son = v[-1] if v else 'e'
     return ('t' if ad[-1].lower() in 'fstkçşhp' else 'd') + ('a' if son in 'aıouâ' else 'e')
-# D1 revizyonu: gövdesinde geniş öğe (tablo, harita, kart ızgarası, fotoğraf
-# şeridi…) olmayan sayfa "okuma" sayfasıdır — iki sütunlu ızgaraya girmez,
-# metin sütunu ekranın ortasında durur. Elle liste yok: sayfa ne içeriyorsa
-# ona göre karar verilir, yeni sayfalar da kendiliğinden doğru sınıfı alır.
-_GENIS_OGE = re.compile(
-    r'<table|class="(?:[^"]*\s)?(?:tablewrap|harita-k|mapwrap|trmap-w|yore-top|grid|startcards|hubcards|'
-    r'pminis|brshots|hklist|famlist|motif-mini|motifgrid|tk|tk-kartlar|bridges|yorelist|cards|katlist)(?:\s[^"]*)?"')
-
-
-def okuma_sayfasi(body):
-    return not _GENIS_OGE.search(body)
-
-
 def page(title, desc, path, body, cur, scripts='', narrow=False, extra='', image=None):
-    sinif = (' narrow' if narrow else '') + (' okuma' if okuma_sayfasi(body) else '')
-    h = head(title, desc, path, extra, image).replace('{narrow}', sinif)
+    h = head(title, desc, path, extra, image).replace('{narrow}', ' narrow' if narrow else '')
     return h + nav(cur) + body + FOOT + '<script src="/assets/theme.js" defer></script><script src="/assets/streak.js" defer></script><script src="/assets/sync.js" defer></script>' + ('<script src="/assets/bulten.js" defer></script>' if 'abone-form' in body and 'bulten.js' not in scripts else '') + scripts.replace('<script src="/assets/streak.js" defer></script>', '') + '\n</body>\n</html>\n'
 
 _BIG = re.compile(re.escape(BASE) + r'/img/([a-z0-9]+)-960\.jpg')
@@ -1447,6 +1433,13 @@ def _kopru_kart(br_):
             + f'<span class="sc-b">{e(_ad)}</span></span></a>')
 _KOPRU_ANA = [x for x in BR if all((y in byId) for y in (x['a'],) if y)][:3]
 _kopru_html = ''.join(_kopru_kart(x) for x in _KOPRU_ANA)
+# Ana sayfadaki köprü haritası için üzerine gelince açılan kart verisi
+def _kopru_veri(i, br_):
+    _ps = [byId[x] for x in (br_['a'], br_.get('b')) if x and x in byId]
+    return {'i': str(i), 'u': f'/kopruler/{slug_of(br_)}/', 't': br_['t'], 'd': br_['d'],
+            'b': ' · '.join(q['tr'] for q in _ps),
+            'f': [f'/img/{q["id"]}-500.jpg' for q in _ps if q['id'] in IMG][:2]}
+_KOPRU_VERI = json.dumps([_kopru_veri(i, x) for i, x in enumerate(BR, 1)], ensure_ascii=False).replace('</', '<\\/')
 
 # Ana sayfa: motif modülü — sitenin kendi çizimleri, sekiz tanesi
 _MOTIF_ANA = ['elibelinde', 'pitrak', 'goz', 'hayat-agaci', 'bereket', 'su-yolu', 'chakana', 'kene']
@@ -1494,11 +1487,10 @@ home = f'''
 </section>
 <section class="sec"><h2>Kültür köprüleri</h2>
 <p class="sec-intro">Anadolu ile Amazon ve And’larda aynı işi gören bitkiler, aynı molekülün iki ayrı ritüelde karşımıza çıkışı: bir bitkinin tek bir kültüre ait olmadığı yerler.</p>
-<figure class="mapwrap mini">{bridge_map()}<figcaption>Haritadaki her yay bir köprü; üzerine gel ya da <a href="/kopruler/">on altısını birden gör →</a></figcaption></figure>
-<div class="startcards">{_kopru_html}</div></section>
+<figure class="mapwrap mini harita-ana" id="kopru-harita">{bridge_map()}<div class="hk-ipucu" hidden></div><script type="application/json" id="kopru-veri">{_KOPRU_VERI}</script><figcaption>Haritadaki her yay bir köprü; üzerine gel ya da <a href="/kopruler/">{len(BR)} köprünün hepsini gör →</a></figcaption></figure></section>
 <section class="sec"><h2>Türkiye’de nerede ne derleniyor</h2>
 <p class="sec-intro">Hakemli saha çalışmalarında kaydedilmiş bitkiler, derlendikleri illerle birlikte. Renkli iller kaydı olanlar; bir ile tıkla, o yörenin bitkilerini gör. Kişi ve köy adları yayımlanmaz.</p>
-<figure class="trmap-w mini">{tr_haritasi()}<figcaption>Renkli bir ile tıkla ya da <a href="/yoreler/">{len(YORE_IL)} ilin ve {len(_YC)} saha çalışmasının tamamına bak →</a></figcaption></figure></section>
+<figure class="trmap-w mini harita-ana">{tr_haritasi()}<figcaption>Renkli bir ile tıkla ya da <a href="/yoreler/">{len(YORE_IL)} ilin ve {len(_YC)} saha çalışmasının tamamına bak →</a></figcaption></figure></section>
 <section class="sec"><h2>Semboller</h2>
 <p class="sec-intro">Kilim motiflerinden Shipibo kené desenlerine: her motifin anlamı kaynağıyla yazılı, çizimleri açık lisanslı. {len(MOTIFLER)} sembol.</p>
 <div class="motif-mini ana">{_motif_html}</div>
@@ -2224,10 +2216,10 @@ def _htarif(sl):
                 + (f'<p class="ht-uyari"><b>Dikkat:</b> {e(t["uyari"])}</p>' if t.get('uyari') else '') + '</section>')
     return out
 def _etk_html(L): return ''.join(f'<a class="etk" href="/blog/#{k}">#{e(_ET[k])}</a>' for k in L)
-def _hik_kart(h):
+def _hik_kart(h, kat=None):
     b = _hik_bitki(h)
     img = f'<img src="/img/hikaye/{h["slug"]}.jpg" alt="" loading="lazy" width="1200" height="800">' if os.path.exists(os.path.join(HERE, 'img', 'hikaye', h['slug'] + '.jpg')) else ''
-    return f'<li class="hk" data-etk="{" ".join(etiketler(h))}"><a href="/hikaye/{h["slug"]}/">{img}<b>{e(h["baslik"])}</b><span class="muted-s">{e(h.get("yore") or h["kisa"])}</span></a></li>'
+    return f'<li class="hk" data-etk="{" ".join(etiketler(h))}"><a href="/hikaye/{h["slug"]}/">{img}{f'<span class="hk-kat">{e(kat)}</span>' if kat else ''}<b>{e(h["baslik"])}</b><span class="muted-s">{e(h.get("yore") or h["kisa"])}</span></a></li>'
 for h in HIK:
     pth = f'/hikaye/{h["slug"]}/'
     b = _hik_bitki(h)
@@ -2252,7 +2244,8 @@ def _yazi_kart(y):
     img = f'<img src="{k}" alt="" loading="lazy" width="1200" height="800">' if os.path.exists(os.path.join(HERE, k.lstrip('/'))) else ''
     return f'<li class="hk uzun" data-etk="{" ".join(_yazi_etk(y))}"><a href="/yazilar/{y["slug"]}/">{img}<b>{e(y["baslik"])}</b><span class="muted-s">Uzun yazı · {e(y["aciklama"][:90])}</span></a></li>'
 _cagri_kart = ('<li class="hk uzun" data-etk=""><a href="/eczaci-cagrisi/">'
-               f'<b>{UI.ECZACI_BASLIK}</b>'
+               + ('<img src="/img/hikaye/cagri-eczaci.jpg" alt="" loading="lazy" width="1200" height="800">' if os.path.exists(os.path.join(HERE, 'img', 'hikaye', 'cagri-eczaci.jpg')) else '')
+               + f'<b>{UI.ECZACI_BASLIK}</b>'
                '<span class="muted-s">Çağrı · güvenlik bölümlerini değerlendirecek beş eczacı, son başvuru 15 Aralık</span></a></li>')
 def _rehber_kart(k):   # blog=True işaretli uzun rehber yazıları blog listesinde
     _p = next((byId[pid] for pid, _ in k['bitkiler'] if pid in byId and pid in IMG), None)
@@ -2708,21 +2701,30 @@ write('/kultur/', page('Kültür ve ritüel: şamanizm, animizm, semboller ve ku
       f'''{crumbs(('/kultur/', 'Kültür ve ritüel'))}<header class="page-head"><span class="eyebrow">Kültür ve ritüel</span><h1>Bitkiler yalnızca ilaç değildir</h1>
 <p>Anadolu’da ardıç dumanıyla arınılır, dut ağacına dilek bezi bağlanır; And’larda koka yaprağı toprak anaya sunulur, Amazon’da bazı bitkilerin öğretmen olduğuna inanılır. Bu bölüm, bitkilerin insanlarla kurduğu bu ilişkiyi, onu yaşatan toplulukların adıyla ve kaynaklarıyla anlatır. Ritüel kullanım önerisi değil, kültürel bir kayıttır.</p></header>
 <div class="hubcards">{_khh}</div>
-<section class="sec"><h2>Son yazılar</h2><ul class="hklist">{"".join(_yazi_kart(y) for y in sorted(YAZILAR, key=lambda y: y["tarih"], reverse=True)[:6])}</ul><p><a class="cta" href="/blog/">Bütün yazılar ve hikâyeler →</a></p></section>''',
+<section class="sec"><h2>Son yazılar</h2><ul class="hklist dort">{"".join(_yazi_kart(y) for y in sorted(YAZILAR, key=lambda y: y["tarih"], reverse=True)[:4])}</ul><p><a class="cta" href="/blog/">Bütün yazılar ve hikâyeler →</a></p></section>''',
       'kultur', extra=lds(crumb_ld(('/kultur/', 'Kültür ve ritüel')))))
 # ---------- ana sayfa (en sonda) ----------
 # 89 hikâye ana sayfadan görünmüyordu; üç kartlık bir blok eklendi.
-_son_hik = list(reversed(HIK))[:3]
+# Her kategoriden bir hikâye: en yeniden geriye, henüz temsil edilmemiş ilk
+# kategoriyi taşıyan hikâye seçilir. "Halk hekimliği" ve "saha" her hikâyede
+# olduğu için kategori sayılmaz.
+_GENEL_ETK = {'halk-hekimligi', 'saha'}
+_son_hik, _kat_gor = [], set()
+for _h in reversed(HIK):
+    _k = next((t for t in etiketler(_h) if t not in _GENEL_ETK and t not in _kat_gor), None)
+    if _k:
+        _son_hik.append((_h, _k)); _kat_gor.add(_k)
+    if len(_son_hik) == 4: break
 home += ('<section class="sec"><h2>Son hikâyeler</h2>'
          '<p class="sec-intro">Halk hekimliğinden kaynaklı anlatılar: bitkinin hangi yörede, kim tarafından, ne için kullanıldığı; '
          'her hikâyenin altında dayandığı kaynak var.</p>'
-         f'<ul class="hklist">{"".join(_hik_kart(h) for h in _son_hik)}</ul>'
+         f'<ul class="hklist dort">{"".join(_hik_kart(h, _ET[k]) for h, k in _son_hik)}</ul>'
          f'<p><a class="cta" href="/blog/">{len(HIK)} hikâyenin tamamı →</a></p></section>')
 # Bülten kutusu ana sayfanın en altına, footer'ın hemen üstüne.
 home += (abone('anasayfa', 'Bültene kaydol',
                'E-posta adresini yaz; gelen e-postadaki bağlantıya tıklayınca kaydın tamamlanır.', kurs=False)
          + '<p class="kurs-not">Yeni başlıyorsanız: <a href="/kurs/">7 günlük ücretsiz e-posta kursu “Şifalı bitkilere başlangıç” →</a></p>')
-write('/index.html', page('Bitki Tabanı: şifalı ve ritüel bitkiler veri tabanı', f'{REG_LIST}’dan {len(P)} şifalı ve ritüel bitkisi: geleneksel kullanım, bilimsel kanıt, güvenlik ve kaynaklar.', '/', home, 'home', '<script src="/assets/streak.js" defer></script><script src="/assets/home.js" defer></script>', extra=f'<script type="application/ld+json">{json.dumps(ldsite, ensure_ascii=False)}</script>'))
+write('/index.html', page('Bitki Tabanı: şifalı ve ritüel bitkiler veri tabanı', f'{REG_LIST}’dan {len(P)} şifalı ve ritüel bitkisi: geleneksel kullanım, bilimsel kanıt, güvenlik ve kaynaklar.', '/', home, 'home', '<script src="/assets/streak.js" defer></script><script src="/assets/home.js" defer></script><script src="/assets/kopru-ipucu.js" defer></script>', extra=f'<script type="application/ld+json">{json.dumps(ldsite, ensure_ascii=False)}</script>'))
 # ---------- akıllı arama verisi ve sayfası ----------
 import hashlib as _hl
 def _cumleler(p):   # aramada gösterilecek cümleler: (etiket, sayfadaki bölüm, cümle)

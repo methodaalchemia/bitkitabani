@@ -162,8 +162,7 @@ def run(G):
 '''
     FOOT = FOOT.replace('<!--FOOTNAV-->', '<nav class="footnav" aria-label="Site map">' + ''.join(f'<div><h3>{g}</h3><ul>' + ''.join(f'<li><a href="{h}"' + (' rel="noopener"' if h.startswith('http') else '') + f'>{l}</a></li>' for h, l, k in items) + '</ul></div>' for g, items in MENU_EN) + '</nav>')
     def page(title, desc, path, tr_path, body, cur, scripts='', narrow=False, extra='', image=None):
-        sinif = (' narrow' if narrow else '') + (' okuma' if G['okuma_sayfasi'](body) else '')   # D1 revizyonu, TR ile aynı kural
-        h = head(title, desc, path, tr_path, extra, image).replace('{narrow}', sinif)
+        h = head(title, desc, path, tr_path, extra, image).replace('{narrow}', ' narrow' if narrow else '')
         return h + nav(cur, tr_path) + body + FOOT + '<script src="/assets/theme.js" defer></script><script src="/assets/streak.js" defer></script><script src="/assets/sync.js" defer></script>' + scripts + '\n</body>\n</html>\n'
 
     def ph(p, size, eager=False):
