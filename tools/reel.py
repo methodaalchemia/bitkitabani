@@ -91,7 +91,8 @@ def _sessizlikler(path):
         elif bas is not None: out.append((bas, float(m.group(2)))); bas = None
     return out
 
-_SON_HIZA = None   # son hizalamanın en kötü sapması (ses kaydına yazılır)
+_SON_HIZA = None     # son hizalamanın en kötü sapması (ses kaydına yazılır)
+_SON_YONTEM = None   # 'cumle' (her cümle ayrı istek) ya da 'tek-istek' (yedek yol)
 
 def _edge_referans(sents, tmp):
     """Cümlelerin gerçek okunma süreleri ve kelime sınırları — hizalama referansı.
@@ -170,10 +171,53 @@ def _araliklar(sents, toplam, sessiz, ref):
     return araliklar, sapma
 
 
+def _gemini_cumle(sents, tmp):
+    """Her cümleyi AYRI istekle seslendirir — tercih edilen yol.
+
+    Gemini zaman bilgisi vermiyor. Tek istekte seslendirilince cümleleri sessizliklerden
+    kesmek gerekiyordu ve kesim yeri tahmindi; altyazı sesten kayıyordu (19-22 Kasım:
+    reishi, çemen, muskat, kimyon). Cümle başına istek bu tahmini tamamen kaldırır:
+    her cümlenin süresi ölçülür.
+
+    Maliyet: ig.py koşu başına 4 post üretiyor, cümle de ~6, yani ~24 istek. Tek istekli
+    yol (_gemini_hepsi) kota hatasında yedek olarak duruyor.
+    """
+    global _SON_YONTEM, _SON_HIZA
+    try:
+        ref = _edge_referans(sents, tmp)
+    except Exception as ex:
+        print('reel: kelime zamanı referansı alınamadı, süre tahminine düşülüyor:', str(ex)[:120]); ref = None
+    out = []
+    for i, c in enumerate(sents):
+        mp3 = os.path.join(tmp, 'c%d.mp3' % i)
+        _gemini1(c, mp3)
+        d = _dur(mp3)
+        if d <= 0: raise RuntimeError('boş ses: cümle %d' % (i + 1))
+        sb, ss = _konusma_araligi(mp3)
+        if ss - sb > 0.3 and (sb > 0.05 or ss < d - 0.05):   # baş/son sessizliği at: araları GAP belirlesin
+            kes = os.path.join(tmp, 'k%d.mp3' % i)
+            subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-ss', '%.3f' % max(0.0, sb - 0.06),
+                            '-to', '%.3f' % min(d, ss + 0.08), '-i', mp3, '-b:a', '128k', kes], check=True)
+            mp3, d = kes, _dur(kes)
+            sb, ss = _konusma_araligi(mp3)
+        if ref:
+            _, ws = ref[i]
+            rb, rs = ws[0][0], ws[-1][1]
+            k = (ss - sb) / max(0.1, rs - rb)
+            ws = [[sb + (x - rb) * k, sb + (y - rb) * k, w] for x, y, w in ws]
+        else:
+            ws, est = _estimate(c)
+            k = (ss - sb) / max(0.1, est)
+            ws = [[sb + x * k, sb + y * k, w] for x, y, w in ws]
+        out.append((mp3, d, ws))
+    _SON_YONTEM, _SON_HIZA = 'cumle', 0.0      # cümle sınırı tahmin değil: sapma yok
+    return out
+
+
 def _gemini_hepsi(sents, tmp):
     """Bütün metni TEK istekte seslendirir (ücretsiz katman günlük hakkı cümle başına
     istek atmaya yetmiyor), sonra cümleleri referans zamanlamaya göre keser."""
-    global _SON_HIZA
+    global _SON_HIZA, _SON_YONTEM
     tam = os.path.join(tmp, 'gem-tam.mp3')
     _gemini1('\n'.join(sents), tam)   # yalnızca okunacak cümleler; yönerge yok (sesli okunuyordu)
     toplam = _dur(tam)
@@ -184,6 +228,7 @@ def _gemini_hepsi(sents, tmp):
     except Exception as ex:
         print('reel: hizalama referansı alınamadı, süre tahminine düşülüyor:', str(ex)[:120]); ref = None
     araliklar, _SON_HIZA = _araliklar(sents, toplam, ic, ref)
+    _SON_YONTEM = 'tek-istek'
     out = []
     for i, ((a, b), c) in enumerate(zip(araliklar, sents)):
         mp3 = os.path.join(tmp, 's%d.mp3' % i)
@@ -296,19 +341,22 @@ def voice(sents, tmp, gem=None):
     """Her cümle ayrı seslendirilir: [(başlangıç, süre, mp3 ya da None, kelimeler)] ve sesli mi?"""
     if gem is None: gem = bool(os.environ.get('GEMINI_API_KEY'))
     if gem:
-        hata = ''
-        for bekle in (0, 20, 40):   # ücretsiz katman dakikada az istek alır
-            if bekle: time.sleep(bekle)
-            try:
-                parcalar = _gemini_hepsi(sents, tmp)
-                segs, t = [], 0.15
-                for d, (mp3, dur, ws) in zip(sents, parcalar):
-                    segs.append((t, dur, mp3, [[a + t, b + t, w] for a, b, w in ws])); t += dur + GAP
-                return segs, True, t
-            except Exception as ex:
-                hata = str(ex)[:300]
-                if '429' not in hata: break
-        print('reel: Gemini sesi alınamadı, video Edge sesiyle yapılıyor:', hata)
+        for yol in (_gemini_cumle, _gemini_hepsi):   # önce cümle başına istek; kota dolarsa tek istek
+            hata = ''
+            for bekle in (0, 20, 40):   # ücretsiz katman dakikada az istek alır
+                if bekle: time.sleep(bekle)
+                try:
+                    parcalar = yol(sents, tmp)
+                    segs, t = [], 0.15
+                    for d, (mp3, dur, ws) in zip(sents, parcalar):
+                        segs.append((t, dur, mp3, [[a + t, b + t, w] for a, b, w in ws])); t += dur + GAP
+                    print('reel: ses yolu =', _SON_YONTEM)
+                    return segs, True, t
+                except Exception as ex:
+                    hata = str(ex)[:300]
+                    if '429' not in hata: break
+            print('reel: %s yolu olmadı: %s' % (yol.__name__, hata))
+        print('reel: Gemini sesi alınamadı, video Edge sesiyle yapılıyor')
         return voice(sents, tmp, gem=False)
     segs, t, ok = [], 0.15, True
     for i, s in enumerate(sents):
@@ -417,7 +465,8 @@ def make(p, m, img_path, out, photos=None):
         segs, spoken, total = voice(sents, tmp)
         _ses_sakla(segs, tmp, _taban(out) + '.ses.mp3')
         kayda_ekle(out, sesli=bool(spoken), ses_dosyasi=os.path.basename(_taban(out)) + '.ses.mp3', sure=round(total, 1),
-                   **({'hiza': round(_SON_HIZA, 4)} if _SON_HIZA is not None else {}))
+                   **({'hiza': round(_SON_HIZA, 4)} if _SON_HIZA is not None else {}),
+                   **({'yontem': _SON_YONTEM} if _SON_YONTEM else {}))
         total += 0.5
         credits = ''
         if photos is None:   # ana fotoğraf + varsa tools/tanima.py'nin seçtiği çiçekli hâl, çizim, kurutulmuş hâl
