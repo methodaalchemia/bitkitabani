@@ -2585,6 +2585,7 @@ def _imgtag(u):   # görsel site haritası: bitki sayfalarına fotoğraflarını
     if pid not in IMG or pid not in byId: return ''
     f = f'{pid}-1280.jpg' if os.path.exists(os.path.join(HERE, 'img', f'{pid}-1280.jpg')) else f'{pid}-960.jpg'
     return f'<image:image><image:loc>{BASE}/img/{f}</image:loc></image:image>'
+urls = [u for u in urls if u != '/familya/amaranthaceae/']   # Eda'nın kararı, 22 Kasım
 open(os.path.join(OUT,'sitemap.xml'),'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n' + ''.join(f'  <url><loc>{BASE}{u}</loc><lastmod>{(LOCAL_DAY.isoformat() if u in ('/', '/gunun-bitkisi/', '/oyun/', '/yeni/', '/katalog/', '/en/', '/en/catalog/') else max(CONTENT_DATE, YENI[u.strip('/').split('/')[-1]].isoformat()) if u.strip('/').split('/')[-1] in YENI else CONTENT_DATE)}</lastmod>{_imgtag(u)}</url>\n' for u in urls) + '</urlset>\n')
 # ---------- llms.txt: yapay zekâ asistanları için özet ve tam metin ----------
 def _md_plant(p, full=False):
