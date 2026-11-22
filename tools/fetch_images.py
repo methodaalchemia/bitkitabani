@@ -23,9 +23,9 @@ URUN = re.compile(r'\b(seeds?|dried|dry|pods?|beans?|spices?|powder|ground|grain
 CANLI = re.compile(r'\b(plants?|trees?|shrubs?|fields?|flowers?|flowering|leaves|leaf|habit|bloom|blossom|in situ|wild|garden|cultivat\w*|farm|growing)\b', re.I)
 # Elle reddedilen dosyalar: seçici bunları bir daha önermez (bitki değil ürün fotoğrafı).
 RED = {
-    'yildizanason': ['Dried Star Anise Fruit Seeds.jpg', 'Illicium verum20170511 7548.jpg', 'Illicium verum20170511 7552.jpg', 'Illicium verum20170511 7549.jpg'],
-    'kimyon': ['Seeds of Cumin.jpg', 'Dried cumin seeds.jpg'],
-    'fasulye': ['Pinto Beans Seeds.jpg', 'Black Turtle Bean.jpg'],
+    'yildizanason': ['Dried Star Anise Fruit Seeds.jpg', 'Illicium verum20170511 7548.jpg', 'Illicium verum20170511 7552.jpg', 'Illicium verum20170511 7549.jpg', 'Illicium verum20170511 7551.jpg'],
+    'kimyon': ['Seeds of Cumin.jpg', 'Dried cumin seeds.jpg', 'Jeragam.jpg'],  # Jeragam aslında rezene
+    'fasulye': ['Pinto Beans Seeds.jpg', 'Black Turtle Bean.jpg', 'Haricot rouge cultivé au Bénin.jpg'],
     'kakule': ['Cardamom pods - Green BNC.jpg'],
 }
 
@@ -96,7 +96,7 @@ def taxon_of(p):
     t = POWO.get(p['id']) or p['la'].split(',')[0].strip()
     return re.sub(r'\s+ve diğer.*$', '', t)
 
-def auto_pick(taxon, haric=()):
+def auto_pick(taxon, haric=(), siki=False):
     """Wikidata P18, sonra Commons 'Quality images' araması; yalnızca gerçek fotoğraflar."""
     cands = []
     try:
@@ -126,6 +126,7 @@ def auto_pick(taxon, haric=()):
         if BAD.search(text): continue
         if taxon.split()[0].lower() not in text.lower(): continue
         canli = bool(CANLI.search(text))
+        if siki and (not canli or URUN.search(f) or any(f.startswith(h.rsplit(' ',1)[0]) for h in haric if h[-4:]=='.jpg' and re.search(r'\d{8} \d+\.jpg$', h))): continue
         score = ((3 if src == 'qi' else 0) + (2 if GOOD.search(text) else 0) + (1 if (ii.get('height') or 0) >= (ii.get('width') or 1) else 0)
                  + (1 if canli else 0) - (4 if URUN.search(text) and not canli else 0) - rank * 0.01)
         scored.append((score, f))
@@ -156,7 +157,7 @@ for p in _D['P']:
             _haric = tuple(RED.get(p['id'], ())) + (_f,)
         else:
             WANT[p['id']] = meta[p['id']]['file']; continue
-    f = auto_pick(taxon_of(p), _haric or tuple(RED.get(p['id'], ())))
+    f = auto_pick(taxon_of(p), _haric or tuple(RED.get(p['id'], ())), siki=p['id'] in RED)
     print('otomatik seçim:', p['id'], '→', f)
     if f: WANT[p['id']] = f; meta.setdefault(p['id'], {})['auto'] = True
 
