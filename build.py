@@ -284,8 +284,8 @@ def _il_bolum(il, d, baslik_tag='h2', kunye=True, kunye_acik=True):
     """kunye=False: dizinde yalnız il adı, bitki çipleri ve sayfa bağı kalır.
     Tam künyeler ilin kendi sayfasında; dizin yirmi il boyunca künye tekrarıyla ağırlaşıyordu."""
     bl = sorted(d['bitki'], key=lambda q: _trkey0(byId[q]['tr']))
-    chips = ''.join(f'<a class="chip" href="/{q}/">{e(byId[q]["tr"])}</a>' for q in bl)
-    bas = f'<{baslik_tag}>{e(il)} <small class="muted-s">· {len(bl)} bitki</small></{baslik_tag}><div class="related">{chips}</div>'
+    kartlar = ''.join(card(byId[q]) for q in bl)
+    bas = f'<{baslik_tag}>{e(il)} <small class="muted-s">· {len(bl)} bitki</small></{baslik_tag}><div class="grid yore-grid">{kartlar}</div>'
     if not kunye:
         return bas + f'<p class="muted-s">{len(d["cal"])} saha çalışmasından derlendi.</p>'
     cal = ''.join(f'<li>{e(c["ilce"] + ": ") if c["ilce"] else ""}<a href="{c["url"]}" target="_blank" rel="noopener">{e(c["baslik"])}</a> · {e(c["yazar"])}, <i>{e(c["dergi"])}</i>, {c["yil"]}</li>' for c in d['cal'])
@@ -506,7 +506,7 @@ _KURS_YOK = ('/bulten/', '/kurs/', '/katki-onay/', '/hesap/', '/404.html')
 # Masaüstünde metin 72 karakterde kesilip sağ yarı boş kalıyordu ("telefonda
 # açılmış gibi"). Uzun sayfalar artık iki sütun: içerik solda, sağda kayarken
 # yerinde duran "Bu sayfada" sütunu. Başlıklardan kendiliğinden kurulur.
-_YAN_TIP = {'plant', 'br', 'kavram', 'yazi', 'hikaye', 'about', 'yontem', 'kars', 'sembol', 'yore',
+_YAN_TIP = {'plant', 'br', 'kavram', 'yazi', 'hikaye', 'about', 'yontem', 'kars', 'sembol', 
             'rehber', 'gebe', 'zehir', 'etk', 'aile', 'fam'}
 _YAN_YOL = ('/eczaci-cagrisi/', '/gizlilik/', '/iletisim/', '/hakkinda/', '/yontem/', '/lisans/')
 _YAN_DIZIN = ('/rehber/', '/kavram/', '/semboller/', '/kopruler/', '/karsilastirma/', '/yoreler/', '/familya/',
@@ -1314,7 +1314,7 @@ for i, b in enumerate(BR, 1):
     a = byId[b['a']]; c = byId.get(b.get('b')) if b.get('b') else None
     txt = f'<div class="txt"><h2><span class="bn">{i}</span><a href="/kopruler/{slug_of(b)}/">{e(b["t"])}</a></h2><p>{e(b["d"])}</p><p><a class="cta" href="/kopruler/{slug_of(b)}/">Karşılaştırmayı oku →</a></p></div>'
     items.append(f'<article class="bridge" id="kopru-{i}" data-i="{i}" tabindex="-1">{mini(a)}<span class="arrow" aria-hidden="true">↔</span>{mini(c)}{txt}</article>' if c else f'<article class="bridge single" id="kopru-{i}" data-i="{i}" tabindex="-1">{mini(a)}<span class="note">Aynı bitki, birden fazla kültür</span>{txt}</article>')
-br = f'''<header class="page-head"><span class="eyebrow">{len(BR)} karşılaştırma</span><h1>Kültür köprüleri</h1><p>Birbirinden binlerce kilometre uzaktaki kültürler, çoğu zaman aynı molekülleri ya da aynı bitkiyi benzer dertlere kullanmış. Haritadaki her yay bir köprü; üzerine gel ya da aşağıdaki listeden birini seç.</p></header>
+br = f'''<header class="page-head"><span class="eyebrow">{len(BR)} karşılaştırma</span><h1>Kültür köprüleri</h1><p>Birbirinden binlerce kilometre uzaktaki kültürler, çoğu zaman aynı molekülleri ya da aynı bitkiyi benzer dertlere kullanmış. Haritadaki her yay bir köprü; üzerine gel ya da numarasına dokun, ya da aşağıdaki listeden birini seç.</p></header>
 <figure class="mapwrap">{bridge_map()}<figcaption>Harita: Natural Earth (kamu malı), Natural Earth izdüşümü. Noktalar bölgeyi temsil eder, kesin toplama yerini değil.</figcaption></figure>
 <div class="bridges">{"".join(items)}</div>'''
 write('/kopruler/', page(f'Kültür köprüleri haritası: {len(BR)} bitki karşılaştırması | Bitki Tabanı', f'{REG_LIST} arasındaki {len(BR)} kültür köprüsü: üzerlik ve ayahuasca, efedra ve koka, salep ve maca gibi bitkileri yan yana karşılaştır.', '/kopruler/', br, 'br', '<script src="/assets/kopruler.js" defer></script>'))
@@ -1556,7 +1556,7 @@ home = f'''
 </section>
 <section class="sec"><h2>Kültür köprüleri</h2>
 <p class="sec-intro genis">Anadolu ile Amazon ve And’larda aynı işi gören bitkiler, aynı molekülün iki ayrı ritüelde karşımıza çıkışı: bir bitkinin tek bir kültüre ait olmadığı yerler.</p>
-<figure class="mapwrap mini harita-ana" id="kopru-harita">{bridge_map()}<div class="hk-ipucu" hidden></div><script type="application/json" id="kopru-veri">{_KOPRU_VERI}</script><figcaption>Haritadaki her yay bir köprü; üzerine gel ya da <a href="/kopruler/">{len(BR)} köprünün hepsini gör →</a></figcaption></figure></section>
+<figure class="mapwrap mini harita-ana" id="kopru-harita">{bridge_map()}<div class="hk-ipucu" hidden></div><script type="application/json" id="kopru-veri">{_KOPRU_VERI}</script><figcaption>Haritadaki her yay bir köprü; üzerine gel ya da numarasına dokun, ya da <a href="/kopruler/">{len(BR)} köprünün hepsini gör →</a></figcaption></figure></section>
 <section class="sec"><h2>Türkiye’de nerede ne derleniyor</h2>
 <p class="sec-intro genis">Türkiye’de yapılmış hakemli bilimsel saha çalışmalarında kayda geçen bitkileri il il gösteriyor. Yeşil renkli illerde kayıt var; bir ile tıklayınca o ilde derlenen bitkiler açılır. Bilgi veren kişilerin ve köylerin adları yer almaz.</p>
 <figure class="trmap-w mini harita-ana">{tr_haritasi()}<figcaption>Renkli bir ile tıkla ya da <a href="/yoreler/">{len(YORE_IL)} ilin ve {len(_YC)} saha çalışmasının tamamına bak →</a></figcaption></figure></section>
@@ -2345,22 +2345,22 @@ GUIDE_URLS.insert(0, '/blog/')
 # --- yöre sayfaları ---
 _ils = sorted(YORE_IL, key=_trkey0)
 _yb = sum(len(d['bitki']) for d in YORE_IL.values())
-_ybody = f'''{crumbs(('/yoreler/', 'Yöreler'))}<header class="page-head"><span class="eyebrow">Yöreler · {len(YORE_IL)} il · {len(_YC)} saha çalışması · {_ADLAR_N} yöresel ad</span><h1>Anadolu’da hangi yörede hangi bitki kullanılıyor?</h1><p>Türkiye’de yapılmış etnobotanik saha çalışmalarında katalogdaki bitkilerin kaydedildiği yöreler. Renkli illere dokun; her kayıt kaynağına bağlıdır. Harita yeni çalışmalar işlendikçe büyüyor.</p></header>
+_ybody = f'''{crumbs(('/yoreler/', 'Yöreler'))}<header class="page-head"><span class="eyebrow">Yöreler · {len(YORE_IL)} il · {len(_YC)} saha çalışması</span><h1>Anadolu’da hangi yörede hangi bitki kullanılıyor?</h1><p>Türkiye’de yapılmış bilimsel saha çalışmalarında katalogdaki bitkilerin kaydedildiği yöreler. Renkli illere dokun; her kayıt kaynağına bağlıdır. Harita yeni çalışmalar işlendikçe büyüyor.</p></header>
 <figure class="trmap-w">{tr_haritasi()}<figcaption>Harita: Natural Earth (kamu malı). Noktalar saha çalışmasının yapıldığı yeri gösterir. Kişi ve köy adları yayımlanmaz.</figcaption></figure>
 <aside class="warnbox" role="note"><b>Okurken:</b> Bir bitkinin bir yörede kaydedilmiş olması, o kullanımın işe yaradığını göstermez; yalnızca halk arasında bilindiğini gösterir. Kanıt ve güvenlik için bitkinin kendi sayfasına bak.</aside>
-<nav class="tabs" aria-label="Bölümler"><a href="#iller">İller</a><a href="#adlar">Yöresel adlar A–Z</a></nav><div id="iller"></div>''' + ''.join(f'<section class="sec" id="il-{_ilslug(il)}">' + _il_bolum(il, YORE_IL[il], kunye=il not in YORE_SAYFA, kunye_acik=False) + (f'<p><a class="cta small" href="/yore/{_ilslug(il)}/">{e(il)} sayfası ve kaynakları →</a></p>' if il in YORE_SAYFA else '') + '</section>' for il in _ils) + _ADLAR_HTML
-write('/yoreler/', page(f'Yöreler ve yöresel adlar: Anadolu’da hangi yörede hangi şifalı bitki? | Bitki Tabanı', f'{len(YORE_IL)} ilde saha çalışmalarında kaydedilen şifalı bitkiler haritada ve {_ADLAR_N} yöresel bitki adı A’dan Z’ye: hangi ad hangi bitki, kaynaklarıyla.', '/yoreler/', _ybody, 'yore', extra=lds(crumb_ld(('/yoreler/', 'Yöreler')))))
+<div id="iller"></div>''' + ''.join(f'<section class="sec" id="il-{_ilslug(il)}">' + _il_bolum(il, YORE_IL[il], kunye=il not in YORE_SAYFA, kunye_acik=False) + (f'<p><a class="cta small" href="/yore/{_ilslug(il)}/">{e(il)} sayfası ve kaynakları →</a></p>' if il in YORE_SAYFA else '') + '</section>' for il in _ils)
+write('/yoreler/', page(f'Yöreler: Anadolu’da hangi yörede hangi şifalı bitki? | Bitki Tabanı', f'{len(YORE_IL)} ilde bilimsel saha çalışmalarında kaydedilen şifalı bitkiler haritada, il il ve kaynaklarıyla.', '/yoreler/', _ybody, 'yore', extra=lds(crumb_ld(('/yoreler/', 'Yöreler')))))
 GUIDE_URLS.append('/yoreler/')
 for il in YORE_SAYFA:
     _p = f'/yore/{_ilslug(il)}/'
     _d = YORE_IL[il]
     _ad3 = ', '.join(byId[q]['tr'].lower() for q in sorted(_d['bitki'], key=lambda q: -len(_d['bitki'][q]))[:3])
-    _body = f'''{crumbs(('/yoreler/', 'Yöreler'), (_p, il))}<div class="yore-top"><header class="page-head"><span class="eyebrow">Yöre · {len(_d['bitki'])} bitki · {len(_d['cal'])} saha çalışması</span><h1>{e(il)} yöresinde kullanılan şifalı bitkiler</h1><p>{e(il)}’{_de(il)} yapılmış etnobotanik saha çalışmalarında halk arasında kullanıldığı kaydedilen ve Bitki Tabanı kataloğunda yer alan bitkiler. Her bitkinin kanıtı ve güvenlik notu kendi sayfasında.</p></header>
+    _body = f'''{crumbs(('/yoreler/', 'Yöreler'), (_p, il))}<div class="yore-top"><header class="page-head"><span class="eyebrow">Yöre · {len(_d['bitki'])} bitki · {len(_d['cal'])} saha çalışması</span><h1>{e(il)} yöresinde kullanılan şifalı bitkiler</h1><p>{e(il)}’{_de(il)} yapılmış bilimsel saha çalışmalarında halk arasında kullanıldığı kaydedilen ve Bitki Tabanı kataloğunda yer alan bitkiler. Her bitkinin kanıtı ve güvenlik notu kendi sayfasında.</p></header>
 <figure class="trmap-w mini">{tr_haritasi(il)}</figure></div>
 <section class="sec">{_il_bolum(il, _d, 'h2')}</section>
 <aside class="warnbox" role="note"><b>Okurken:</b> Halk arasında kaydedilmiş bir kullanım, bitkinin o derde iyi geldiğini göstermez. İlaç kullanıyorsan, hamileysen ya da emziriyorsan bitkileri kullanmadan önce eczacına danış.</aside>
 <p><a href="/yoreler/">Bütün yöreler →</a></p>'''
-    write(_p, page(f'{il} yöresinde kullanılan şifalı bitkiler | Bitki Tabanı', f'{il}’{_de(il)} etnobotanik saha çalışmalarında kaydedilen {len(_d["bitki"])} şifalı bitki: {_ad3} ve diğerleri. Kaynaklarıyla.', _p, _body, 'yore', narrow=True, extra=lds(crumb_ld(('/yoreler/', 'Yöreler'), (_p, il)))))
+    write(_p, page(f'{il} yöresinde kullanılan şifalı bitkiler | Bitki Tabanı', f'{il}’{_de(il)} bilimsel saha çalışmalarında kaydedilen {len(_d["bitki"])} şifalı bitki: {_ad3} ve diğerleri. Kaynaklarıyla.', _p, _body, 'yore', extra=lds(crumb_ld(('/yoreler/', 'Yöreler'), (_p, il)))))
     GUIDE_URLS.append(_p)
 
 # --- toplama takvimi (ay ay) ---

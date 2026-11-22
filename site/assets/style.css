@@ -548,7 +548,7 @@ html{scroll-padding-top:84px}
 .katki-form{display:grid;gap:10px;margin:12px 0}.katki-form label{display:grid;gap:4px;font-size:var(--t-sm)}.katki-form textarea,.katki-form input,.katki-form select{font:inherit;padding:8px;border:1px solid var(--rule);border-radius:6px;background:var(--paper,#fff);color:inherit}.katki-form .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
 .inat-bar{display:inline-flex;align-items:flex-end;gap:2px;height:28px;vertical-align:middle;margin-right:6px}.inat-bar span{width:6px;background:var(--leaf,#2e5c40);border-radius:2px 2px 0 0;opacity:.8}
 .tabs{display:flex;gap:6px;margin:8px 0 4px;border-bottom:1px solid var(--rule)}.tabs a{padding:8px 14px;text-decoration:none;color:var(--muted);border-bottom:3px solid transparent;margin-bottom:-1px}.tabs a[aria-current]{color:inherit;border-color:var(--accent);font-weight:600}
-.hsearch{position:relative;display:flex;gap:8px;max-width:620px;margin:18px 0 6px}.hsearch input{flex:1;font:inherit;font-size:1.1rem;padding:12px 14px;border:1.5px solid var(--rule);border-radius:10px;background:var(--paper,#fff);color:inherit}.hsearch input:focus{outline:2px solid var(--accent);outline-offset:1px}
+.hsearch{position:relative;display:flex;gap:8px;max-width:none;margin:18px 0 6px}.hsearch input{flex:1;font:inherit;font-size:1.1rem;padding:12px 14px;border:1.5px solid var(--rule);border-radius:10px;background:var(--paper,#fff);color:inherit}.hsearch input:focus{outline:2px solid var(--accent);outline-offset:1px}
 .hq-list{position:absolute;top:100%;left:0;right:0;z-index:20;list-style:none;margin:4px 0 0;padding:4px;background:var(--paper,#fbf6ec);border:1px solid var(--rule);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.12)}.hq-list a{display:block;padding:8px 10px;border-radius:6px;text-decoration:none;color:inherit}.hq-list a:hover,.hq-list a:focus{background:rgba(163,39,27,.08)}
 /* bitki sayfası üst galerisi: telefonda kaydırmalı, geniş ekranda büyük + küçük ızgara */
 .galeri{position:relative}.g-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:8px;scrollbar-width:none;-webkit-overflow-scrolling:touch}.g-track::-webkit-scrollbar{display:none}
@@ -1040,3 +1040,15 @@ table.etk tbody tr:has(.etkchk:checked){background:color-mix(in srgb,var(--accen
 .takip-not .sosyal{display:flex;gap:10px;margin:0;padding:0;border:0}
 .takip-not .sosyal a{color:var(--ink);opacity:.75}.takip-not .sosyal a:hover{opacity:1;color:var(--accent,#a3271c)}
 .takip-not .sosyal svg{width:20px;height:20px}
+/* Bugünün bitkisi: masaüstünde dik kart, başlık alanının tüm yüksekliği */
+@media (min-width:641px){
+  header.top .todaybox{align-self:stretch;display:flex;flex-direction:column;gap:8px}
+  header.top .today{flex-direction:column;width:320px;flex:1;min-height:0}
+  header.top .today-ph{flex:1 1 0;width:100%;height:0;min-height:160px;aspect-ratio:auto;object-fit:cover;border-right:0;border-bottom:1px solid var(--rule)}
+  header.top .today-t{flex:0 0 auto;padding:14px 16px}
+}
+/* Dokunmatik: köprü kartı haritanın altında, sayfa değiştirmeden */
+.mapwrap.dokun .hk-ipucu{position:relative;left:auto!important;top:auto!important;width:auto;margin-top:10px}
+.hk-ipucu .hi-git{margin-top:6px;font-size:var(--t-sm);color:var(--accent);font-weight:600}
+.hk-ipucu .hi-kapat{position:absolute;top:6px;right:6px;z-index:1;width:30px;height:30px;border-radius:50%;border:1px solid var(--rule);background:var(--sheet);font-size:18px;line-height:1;cursor:pointer;color:var(--ink)}
+.yore-grid{margin:12px 0 16px}

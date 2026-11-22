@@ -1,5 +1,5 @@
 /* Ana sayfa köprü haritası: yayın ya da numaranın üzerine gelince o köprünün kartı.
-   Dokunmatik ekranda numaraya dokunmak doğrudan köprü sayfasını açar. */
+   Dokunmatik ekranda yaya dokununca kart haritanın altında açılır; sayfaya gitmek için karttaki bağlantı. */
 (function(){
   var fig = document.getElementById('kopru-harita'); if (!fig) return;
   var map = fig.querySelector('svg.map'), kut = fig.querySelector('.hk-ipucu'), veri;
@@ -27,7 +27,22 @@
     kut.hidden = true; map.classList.remove('focus');
     map.querySelectorAll('.arc').forEach(function(a){ a.classList.remove('on'); });
   }
-  if (!matchMedia('(hover: hover)').matches) return;
+  if (!matchMedia('(hover: hover)').matches) {
+    fig.classList.add('dokun');
+    map.querySelectorAll('.arc').forEach(function(a){
+      a.addEventListener('click', function(ev){
+        ev.preventDefault(); ev.stopPropagation();
+        if (a.classList.contains('on') && !kut.hidden) { gizle(); return; }
+        goster(a, null);
+        var v = byI[a.dataset.i], u = v && v.u ? v.u : a.getAttribute('href');
+        kut.querySelector('.hi-t').insertAdjacentHTML('beforeend', '<a class="hi-git" href="' + esc(u) + '">Köprüyü aç →</a>');
+        kut.insertAdjacentHTML('afterbegin', '<button type="button" class="hi-kapat" aria-label="Kapat">×</button>');
+        kut.querySelector('.hi-kapat').addEventListener('click', function(e){ e.stopPropagation(); gizle(); });
+      });
+    });
+    document.addEventListener('click', function(ev){ if (!kut.hidden && !kut.contains(ev.target)) gizle(); });
+    return;
+  }
   map.querySelectorAll('.arc').forEach(function(a){
     a.addEventListener('mouseenter', function(ev){ goster(a, ev); });
     a.addEventListener('mousemove', konum);
