@@ -7,7 +7,7 @@ Paylaşımı worker.js yapar: açılış günü 12 post yarım saat arayla, sonr
 Sıra: Türkiye’de en çok arandığını tahmin ettiğimiz bitkilerden başlar (IG_ORDER), sonra kataloğun geri kalanı.
 Yüksek riskli ve Türkiye’de yasak/kısıtlı bitkiler Instagram’a konmaz. Kuyruktaki bitkiler yayın gününden önce paylaşılmaz.
 """
-import json, os, re, sys, datetime, textwrap, html, math
+import json, os, re, sys, datetime, textwrap, html, math, shutil
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -406,6 +406,29 @@ def _threads_fit(t, lim=478):
         paras[i] = _kirp(paras[i], max(20, len(paras[i]) - cut))
     return '\n\n'.join(paras)
 
+def _reel_elde_var(n, pid, yayimlanacak, od):
+    """igmedia klonundaki hazır Reels'i kullanır; uygunsa od'ye kopyalar, True döner.
+
+    Uygun sayılması için: video ve ses kaydı duruyor, kayıttaki bitki bu postunki ile aynı,
+    ve yayımlanacak post ise sesin cümle başına istekle üretilmiş olması (yontem='cumle').
+    """
+    kok = os.environ.get('ESKI_MEDYA')
+    if not kok: return False
+    kaynak = os.path.join(kok, 'p', str(n))
+    vid, kyt = os.path.join(kaynak, 'reel.mp4'), os.path.join(kaynak, 'reel.ses.json')
+    if not (os.path.exists(vid) and os.path.exists(kyt)): return False
+    try:
+        with open(kyt, encoding='utf-8') as f: k = json.load(f)
+    except Exception:
+        return False
+    if k.get('slug') != pid: return False                      # kuyruk kaymışsa yanlış video
+    if yayimlanacak and k.get('yontem') != 'cumle': return False
+    for ad in os.listdir(kaynak):
+        if ad.startswith('reel.'):
+            shutil.copy2(os.path.join(kaynak, ad), os.path.join(od, ad))
+    return True
+
+
 def ek_postlar(data, day, out_root, days=7):
     """Haftalık ek postlar (Instagram + Threads, öğlen): Pazartesi 'Doğru mu, efsane mi?', Çarşamba 'Bunu karıştırmayın', Cuma 'Bu hangi bitki?'."""
     import ig2
@@ -614,12 +637,20 @@ def main():
             # Cümle başına Gemini isteği yalnız sırada olan posta: kota dar (bkz. reel.TAM_HIZA)
             _reel.TAM_HIZA = (n == n0)
             hedef = os.path.join(od, 'reel.mp4')
-            try:   # seslendirmeli + altyazılı Reels; olmazsa eski slayt videosu
-                ok = _reel.make(p, ig2.text_for(p), rimg, hedef)
-            except Exception as ex: print('reel (sesli) hatası:', ex); ok = False
-            if not ok and ig2.reel(ims, img_path=os.path.join(ROOT, 'img', f'{pid}-960.jpg') if p['img'] else None, out=hedef, p=p):
-                _reel.ses_kaydi(p, [f'{p["tr"]} — sessiz slayt videosu'], hedef, sesli=False, not_='seslendirme yok')
+            # Var olan video yeniden üretilmesin. Her push bütün videoları baştan üretiyordu;
+            # her üretim Gemini'ye gittiği için günlük kota doluyor ve ses yedek yola (hatta
+            # Emel'e) düşüyordu — 22 Kasım'da olan buydu. Yayımlanacak post için kayıtta
+            # yontem='cumle' aranır; o yoksa bir kez daha denenir.
+            if _reel_elde_var(n, p['id'], n == n0, od):
+                print('reel: p/%d eski dosyadan alındı' % n)
                 ok = True
+            else:
+                try:   # seslendirmeli + altyazılı Reels; olmazsa eski slayt videosu
+                    ok = _reel.make(p, ig2.text_for(p), rimg, hedef)
+                except Exception as ex: print('reel (sesli) hatası:', ex); ok = False
+                if not ok and ig2.reel(ims, img_path=os.path.join(ROOT, 'img', f'{pid}-960.jpg') if p['img'] else None, out=hedef, p=p):
+                    _reel.ses_kaydi(p, [f'{p["tr"]} — sessiz slayt videosu'], hedef, sesli=False, not_='seslendirme yok')
+                    ok = True
             if ok:   # yayın kapısı: ses kaydındaki slug videonun konusuyla aynı mı
                 gecti, sebep = _reel.kapi(hedef, pid)
                 if gecti:

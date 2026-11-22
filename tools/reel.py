@@ -343,6 +343,8 @@ def kapi(out, slug):
 
 
 def voice(sents, tmp, gem=None):
+    global _SON_HIZA, _SON_YONTEM
+    _SON_HIZA = _SON_YONTEM = None      # her video kendi değerini yazsın (22 Kasım: üç kayıtta aynı hiza)
     """Her cümle ayrı seslendirilir: [(başlangıç, süre, mp3 ya da None, kelimeler)] ve sesli mi?"""
     if gem is None: gem = bool(os.environ.get('GEMINI_API_KEY'))
     if gem:

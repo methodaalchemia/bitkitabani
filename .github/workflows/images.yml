@@ -26,6 +26,9 @@ on:
         default: '0'
   schedule:
     - cron: '5 21 * * *'
+    # Gemini'nin günlük kotası gece yarısı Pasifik saatinde (08:00 UTC) sıfırlanıyor.
+    # Akşam yayımlanacak videonun sesi taze kotayla üretilsin diye öğlen bir koşu daha.
+    - cron: '30 9 * * *'
 permissions:
   contents: write
 concurrency: images   # koşular sıraya girer; iki derleme aynı anda push etmez
@@ -71,10 +74,15 @@ jobs:
       - name: Reels seslendirmesi (edge-tts)
         continue-on-error: true
         run: pip install -q edge-tts
+      - name: Önceki Reels dosyalarını getir (ig.py önbellek için okur)
+        continue-on-error: true
+        run: |
+          git clone -q --depth 1 --branch igmedia "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" /tmp/old || true
       - name: Instagram postları
         continue-on-error: true
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          ESKI_MEDYA: /tmp/old
         run: python3 tools/ig.py
       - name: Önceki Reels dosyalarını geri al (igmedia dalı silinmesin)
         continue-on-error: true
