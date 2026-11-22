@@ -1443,7 +1443,7 @@ def day_pick(d):
     pl = [p for p in pool if YENI.get(p['id'], datetime.date.min) <= d]
     return pl[(d - datetime.date(1970, 1, 1)).days % len(pl)]
 today_p = day_pick(LOCAL_DAY)
-LEDE = f'{REG_LIST}’dan {len(P)} şifalı ve ritüel bitkisi. Her kayıtta geleneksel kullanım, bilimin söyledikleri, güvenlik notu ve kaynaklar bir arada.'
+LEDE = f'Anadolu’dan Amazon’a şifalı ve ritüel bitkiler: her birinin hikâyesi, bilimsel araştırmaları ve riskleri, kaynaklarıyla. Şu an {len(P)} bitki; her akşam yenisi ekleniyor.'
 
 REG_TXT = {'anadolu':'Nazar tütsüsünden kına gecesine, Anadolu’nun şifa ve ritüel otları.','asya':'İskit tütsülerinden Sibirya şamanlarına, bozkırın ve taygaların bitkileri.',
            'and':'Koka yaprağından kantuta çiçeğine, And Dağları’nın kutsal bitkileri.','amazon':'Ayahuasca sarmaşığından huito boyasına, yağmur ormanının öğretmen bitkileri.',
