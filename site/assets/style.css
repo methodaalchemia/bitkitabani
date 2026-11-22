@@ -1052,3 +1052,10 @@ table.etk tbody tr:has(.etkchk:checked){background:color-mix(in srgb,var(--accen
 .hk-ipucu .hi-git{margin-top:6px;font-size:var(--t-sm);color:var(--accent);font-weight:600}
 .hk-ipucu .hi-kapat{position:absolute;top:6px;right:6px;z-index:1;width:30px;height:30px;border-radius:50%;border:1px solid var(--rule);background:var(--sheet);font-size:18px;line-height:1;cursor:pointer;color:var(--ink)}
 .yore-grid{margin:12px 0 16px}
+/* Dikkat grubundaki tariflerde doz ve kullanım sınırı kutusu */
+.doz-kut{border:1.5px solid var(--accent,#a3271c);border-left-width:5px;background:var(--sheet);padding:14px 16px;margin:14px 0}
+.doz-kut>b{display:block;font-family:var(--f-mono);font-size:var(--t-xs);letter-spacing:.1em;text-transform:uppercase;color:var(--accent,#a3271c);margin-bottom:8px}
+.doz-kut dl{margin:0;display:grid;gap:6px}
+.doz-kut dl>div{display:grid;grid-template-columns:150px minmax(0,1fr);gap:10px}
+.doz-kut dt{font-weight:600;font-size:var(--t-sm)}.doz-kut dd{margin:0;font-size:var(--t-sm)}
+@media(max-width:520px){.doz-kut dl>div{grid-template-columns:1fr;gap:0}}

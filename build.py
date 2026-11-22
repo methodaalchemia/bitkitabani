@@ -1964,6 +1964,7 @@ for t in LIVE_T:
 <div class="tarif-ust">
 <header class="page-head"><span class="eyebrow">Tarif · {e(p["tr"])}</span><h1>{e(t["ad"])}</h1><p>{e(t["kisa"])}</p></header>
 <dl class="tarif-sayi"><div><dt>Hazırlık</dt><dd>{sure(t["hazirlik"])}</dd></div><div><dt>Toplam</dt><dd>{sure(t["toplam"])}</dd></div><div><dt>Verim</dt><dd>{e(t["verim"])}</dd></div></dl>
+{('<aside class="doz-kut" role="note"><b>Önce bunu oku</b><dl>' + ''.join(f'<div><dt>{e(k)}</dt><dd>{e(v)}</dd></div>' for k, v in t["doz"]) + '</dl></aside>') if t.get("doz") else ''}
 {sharebar(t['ad'] + ' nasıl yapılır?', path)}
 {img}
 </div>
