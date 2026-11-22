@@ -502,6 +502,60 @@ _KURS_ICI = re.compile(r'<section class="abone"[^>]*>(?:(?!</section>).)*?data-k
 _KURS_YOK = ('/bulten/', '/kurs/', '/katki-onay/', '/hesap/', '/404.html')
 
 
+# ---------- Uzun sayfa düzeni (22 Kasım) ----------
+# Masaüstünde metin 72 karakterde kesilip sağ yarı boş kalıyordu ("telefonda
+# açılmış gibi"). Uzun sayfalar artık iki sütun: içerik solda, sağda kayarken
+# yerinde duran "Bu sayfada" sütunu. Başlıklardan kendiliğinden kurulur.
+_YAN_TIP = {'plant', 'br', 'kavram', 'yazi', 'hikaye', 'about', 'yontem', 'kars', 'sembol', 'yore',
+            'rehber', 'gebe', 'zehir', 'etk', 'aile', 'fam'}
+_YAN_YOL = ('/eczaci-cagrisi/', '/gizlilik/', '/iletisim/', '/hakkinda/', '/yontem/', '/lisans/')
+_YAN_DIZIN = ('/rehber/', '/kavram/', '/semboller/', '/kopruler/', '/karsilastirma/', '/yoreler/', '/familya/',
+              '/blog/', '/tarif/', '/katalog/')
+_H2 = re.compile(r'<h2(\s[^>]*)?>(.*?)</h2>', re.S)
+
+
+def _yan_slug(t):
+    t = re.sub(r'<[^>]+>', '', t)
+    t = t.translate(str.maketrans('çğıöşüâîûÇĞİÖŞÜ', 'cgiosuaiucgiosu')).lower()
+    return re.sub(r'[^a-z0-9]+', '-', t).strip('-')[:48] or 'bolum'
+
+
+def uzun_duzen(body, path, cur):
+    if path in _YAN_DIZIN or path == '/':
+        return body
+    if cur not in _YAN_TIP and path not in _YAN_YOL and not (cur == '' and path.startswith(('/hikaye/', '/yazilar/'))):
+        return body
+    basliklar, kullanilan = [], set()
+
+    def _ekle(m):
+        attr, metin = m.group(1) or '', m.group(2)
+        if 'id="ab-' in attr:
+            return m.group(0)
+        duz = re.sub(r'<[^>]+>', '', metin).strip()
+        if not duz:
+            return m.group(0)
+        mid = re.search(r'id="([^"]+)"', attr)
+        if mid:
+            hid = mid.group(1); yeni = m.group(0)
+        else:
+            hid = _yan_slug(duz); k = 2
+            while hid in kullanilan:
+                hid = f'{_yan_slug(duz)}-{k}'; k += 1
+            yeni = f'<h2 id="{hid}"{attr}>{metin}</h2>'
+        kullanilan.add(hid); basliklar.append((hid, duz))
+        return yeni
+    body2 = _H2.sub(_ekle, body)
+    if len(basliklar) < 3:
+        return body
+    kirinti = ''
+    if body2.lstrip().startswith('<nav class="crumbs"'):
+        b = body2.lstrip(); j = b.find('</nav>') + 6
+        kirinti, body2 = b[:j], b[j:]
+    yan = ('<aside class="duzen-yan" aria-label="Bu sayfada"><nav class="yan-toc"><b>Bu sayfada</b><ol>'
+           + ''.join(f'<li><a href="#{h}">{e(t)}</a></li>' for h, t in basliklar) + '</ol></nav></aside>')
+    return f'{kirinti}<div class="duzen"><div class="duzen-ana">{body2}</div>{yan}</div>'
+
+
 def kurs_alti(body, path):
     if path.startswith(_KURS_YOK) or path.startswith('/bulten/') or path.startswith('/kartlar/') or path.startswith('/indir/'):
         return body
@@ -510,9 +564,9 @@ def kurs_alti(body, path):
 
 
 def page(title, desc, path, body, cur, scripts='', narrow=False, extra='', image=None):
-    body = kurs_alti(body, path)
+    body = kurs_alti(uzun_duzen(body, path, cur), path)
     h = head(title, desc, path, extra, image).replace('{narrow}', ' narrow' if narrow else '')
-    return h + nav(cur) + body + FOOT + '<script src="/assets/theme.js" defer></script><script src="/assets/streak.js" defer></script><script src="/assets/sync.js" defer></script>' + ('<script src="/assets/bulten.js" defer></script>' if 'abone-form' in body and 'bulten.js' not in scripts else '') + scripts.replace('<script src="/assets/streak.js" defer></script>', '') + '\n</body>\n</html>\n'
+    return h + nav(cur) + body + FOOT + ('<script src="/assets/yan.js" defer></script>' if 'class="duzen-yan"' in body else '') + '<script src="/assets/theme.js" defer></script><script src="/assets/streak.js" defer></script><script src="/assets/sync.js" defer></script>' + ('<script src="/assets/bulten.js" defer></script>' if 'abone-form' in body and 'bulten.js' not in scripts else '') + scripts.replace('<script src="/assets/streak.js" defer></script>', '') + '\n</body>\n</html>\n'
 
 _BIG = re.compile(re.escape(BASE) + r'/img/([a-z0-9]+)-960\.jpg')
 def _big(m):   # paylaşım önizlemesi ve Google Discover için 1280 px görsel (varsa)
@@ -1894,21 +1948,30 @@ def iso_min(m): return f'PT{m}M'
 for t in LIVE_T:
     p = byId[t['bitki']]; path = f'/tarif/{t["slug"]}/'
     others = [x for x in LIVE_T if x is not t][:8]
-    img = f'<figure class="tarif-img">{ph(p, 960)}<figcaption>{credit(p)}</figcaption></figure>' if p['id'] in IMG else ''
+    img = f'<figure class="tarif-img">{ph(p, 960, eager=True)}<figcaption>{credit(p)}</figcaption></figure>' if p['id'] in IMG else ''
+    def _tk(x):
+        q = byId[x['bitki']]
+        f = (f'<img src="/img/{q["id"]}-500.jpg" alt="" loading="lazy" width="500" height="375">' if q['id'] in IMG else '')
+        return f'<li><a href="/tarif/{x["slug"]}/">{f}<b>{e(x["ad"])}</b><span>{x["toplam"]} dk · {e(x["verim"])}</span></a></li>'
     body = f'''{crumbs(('/tarif/', 'Tarifler'), (path, t['ad']))}
-<article class="sheet">
-<header class="page-head"><span class="eyebrow">Tarif · {e(p["tr"])}</span><h1>{e(t["ad"])}</h1><p>{e(t["kisa"])}</p>
-<p class="tarif-meta"><span>Hazırlık: <b>{t["hazirlik"]} dk</b></span><span>Toplam: <b>{t["toplam"]} dk</b></span><span>Verim: <b>{e(t["verim"])}</b></span></p></header>
+<article class="sheet tarif">
+<div class="tarif-ust">
+<header class="page-head"><span class="eyebrow">Tarif · {e(p["tr"])}</span><h1>{e(t["ad"])}</h1><p>{e(t["kisa"])}</p></header>
+<dl class="tarif-sayi"><div><dt>Hazırlık</dt><dd>{t["hazirlik"]} dk</dd></div><div><dt>Toplam</dt><dd>{t["toplam"]} dk</dd></div><div><dt>Verim</dt><dd>{e(t["verim"])}</dd></div></dl>
 {sharebar(t['ad'] + ' nasıl yapılır?', path)}
 {img}
-<section class="sec"><h2>Malzemeler</h2><ul class="malz">{"".join(f'<li>{e(m)}</li>' for m in t["malzeme"])}</ul></section>
+</div>
+<div class="tarif-govde">
+<section class="sec malz-kut"><h2>Malzemeler</h2><ul class="malz">{"".join(f'<li>{e(m)}</li>' for m in t["malzeme"])}</ul></section>
 <section class="sec"><h2>Hazırlanışı</h2><ol class="adim">{"".join(f'<li>{e(a)}</li>' for a in t["adim"])}</ol></section>
+</div>
+<div class="tarif-not">
 <p class="fact">{e(t["ipucu"])}</p>
 <aside class="warnbox" role="note"><b>Kimler dikkat etmeli?</b> {ev(p["guvNot"])}{(' <a href="/' + p["id"] + '/">İlaç etkileşimleri bitkinin sayfasında.</a>') if p["id"] in ETK else ''}</aside>
-<p><a class="cta" href="/{p["id"]}/">{e(p["tr"])}: bilim ne diyor, ilaç etkileşimleri ve kaynaklar →</a></p>
-{abone('tarif:' + t['slug'])}
+</div>
+<p><a class="cta" href="/{p["id"]}/">{e(p["tr"])}: araştırmalar, ilaç etkileşimleri ve kaynaklar →</a></p>
 {DISCL}
-<section class="sec"><h2>Diğer tarifler</h2><ul class="otherlist">{"".join(f'<li><a href="/tarif/{x["slug"]}/">{e(x["ad"])}</a></li>' for x in others)}</ul><p><a class="cta" href="/tarif/">Bütün tarifler →</a></p></section>
+<section class="sec"><h2>Diğer tarifler</h2><ul class="tarif-kart">{"".join(_tk(x) for x in others)}</ul><p><a class="cta" href="/tarif/">Bütün tarifler →</a></p></section>
 </article>'''
     ld = {"@context":"https://schema.org","@type":"Recipe","name":t['ad'],"description":t['kisa'],"inLanguage":"tr","author":AUTHOR,"datePublished":CONTENT_DATE,
           "prepTime":iso_min(t['hazirlik']),"totalTime":iso_min(t['toplam']),"recipeYield":t['verim'],"recipeCategory":"İçecek" if 'corba' not in t['slug'] else 'Çorba',"recipeCuisine":"Türk",
