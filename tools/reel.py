@@ -113,6 +113,26 @@ def _edge_referans(sents, tmp):
     return ref
 
 
+def _konusma_araligi(mp3):
+    """Bir parçanın baş ve sondaki sessizliğini atar: gerçek konuşmanın başı ve sonu."""
+    d = _dur(mp3)
+    bas, son = 0.0, d
+    for a, b in _sessizlikler(mp3):
+        if a <= 0.05: bas = max(bas, b)
+        if b >= d - 0.05: son = min(son, a)
+    return (bas, son) if son - bas > 0.15 else (0.0, d)
+
+
+def _konusma_saati(toplam, sessiz, hedef):
+    """Konuşma-zamanı hedefini duvar saatine çevirir (aradaki duraklamaları atlayarak)."""
+    t = k = 0.0
+    for a, b in sessiz:
+        if a <= t: continue
+        if k + (a - t) >= hedef: return t + (hedef - k)
+        k += a - t; t = b
+    return min(toplam, t + (hedef - k))
+
+
 def _araliklar(sents, toplam, sessiz, ref):
     """Cümle sınırlarını seçer.
 
@@ -126,9 +146,13 @@ def _araliklar(sents, toplam, sessiz, ref):
     if n == 1: return [(0.0, toplam)], 0.0
     sure = [d for d, _ in ref] if ref else [max(1.0, _estimate(c)[1]) for c in sents]
     S = sum(sure) or 1.0
+    # Duraklamalar toplam süreye dahil; oranı doğrudan toplam süreye uygularsak her sınır
+    # biraz daha ileri kayıyordu. Beklenen yer KONUŞMA zamanında hesaplanıp duvar saatine
+    # çevriliyor, böylece aradaki duraklamalar sınırı ötelemiyor.
+    kon = max(0.1, toplam - sum(max(0.0, b - a) for a, b in sessiz))
     bek, t = [], 0.0
     for k in sure[:-1]:
-        t += k; bek.append(toplam * t / S)
+        t += k; bek.append(_konusma_saati(toplam, sessiz, kon * t / S))
     pencere = max(0.8, toplam / n * 0.35)
     secim, onceki, kalan = [], 0.0, sorted(sessiz)
     for b in bek:
@@ -165,11 +189,20 @@ def _gemini_hepsi(sents, tmp):
         mp3 = os.path.join(tmp, 's%d.mp3' % i)
         subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-ss', '%.3f' % a, '-to', '%.3f' % b, '-i', tam, '-b:a', '128k', mp3], check=True)
         d = _dur(mp3)
-        if ref:                      # kelime sınırları da referanstan: altyazı kelime öbeği düzeyinde
-            rd, ws = ref[i]; k = d / max(0.1, rd)
+        if ref:
+            # Referansın dosya süresine göre ölçeklemek yanlıştı: hem referansın hem parçanın
+            # baş/son sessizlik payı sayıya giriyor, kelimeler video boyunca giderek geç
+            # düşüyordu ("yazı geç kalıyor, ses daha hızlı gidiyor"). Artık iki tarafın da
+            # KONUŞMA aralığı eşleniyor: ilk kelime konuşmanın başına, son kelime sonuna oturur.
+            _, ws = ref[i]
+            rb, rs = ws[0][0], ws[-1][1]
+            sb, ss = _konusma_araligi(mp3)
+            k = (ss - sb) / max(0.1, rs - rb)
+            ws = [[sb + (x - rb) * k, sb + (y - rb) * k, w] for x, y, w in ws]
         else:
             ws, est = _estimate(c); k = max(0.05, d - 0.12) / max(0.1, est)
-        out.append((mp3, d, [[x * k, y * k, w] for x, y, w in ws]))
+            ws = [[x * k, y * k, w] for x, y, w in ws]
+        out.append((mp3, d, ws))
     return out
 
 
