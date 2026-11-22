@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 261 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 262 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -8320,3 +8320,37 @@ Karıştırma riski: Kore pazarında doraji ile ginseng ve Adenophora kökleri b
 
 ### İlginç bilgi
 Aynı kök Kore sofrasında turşu, Çin eczanesinde öksürük ilacı, Türkiye’de bahçede süs — ve son klinik çalışmalarında meme kanseri hastalarının kalbini kemoterapiden koruyan bir granül. DSÖ 1999’da bu bitkinin hiçbir kullanımı için klinik veri bulamamıştı; yirmi yıl sonra gelen randomize çalışmalar da monografın yazdığı hiçbir endikasyonda değil. Bir bitkinin kanıtı, geleneğin aradığı yerden tamamen başka bir yerde çıkabiliyor.
+
+## Karamuk (Berberis vulgaris L.)
+
+URL: https://bitkitabani.com/karamuk/
+Familya: Berberidaceae · Bölge: Anadolu ve Akdeniz, Avrupa, Asya ve Sibirya · Kullanılan kısım: Kurutulmuş gövde kabuğu (DSÖ); meyvesi (gıda ve klinik çalışmalar)
+Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
+
+### Geleneksel kullanım
+- DSÖ monografı — kabuk: Dünya Sağlık Örgütü monografı (Cilt 4, 2009) gövde kabuğunu üç başlıkta değerlendiriyor. Klinik veriyle desteklenen kullanım: yok. Farmakopelerde tanımlanan kullanım: dispepsi, ishal, gastrit, dolgunluk ve gaz gibi sindirim şikâyetleri — ağızdan. Geleneksel tıpta: sistit, dismenore, egzama, ateş, basur, burun tıkanıklığı, romatizma; safra söktürücü, idrar söktürücü, tonik. Monograf açıkça yazıyor: kabukla yapılmış klinik çalışma yok; bilinen etkin madde berberin ve berberinin kendisi bakteriyel ishalde, trahomda ve deri leishmaniasisinde sınanmış.
+- Türkiye: TİTCK Tıbbi Bitki Listesi’nde karamuk için monograf yok. Bitki Anadolu’da yaygın bir diken çalısı; ekşi kırmızı meyvesi kurutulup yenir, pilava katılır (İran mutfağındaki zereşk aynı meyve). Sarı kökü ve kabuğu yün boyar; "kadıntuzluğu" adı yaygın halk adıdır.
+- İran — meyvenin klinik çalışmaları: Son yirmi yılda yapılan randomize çalışmaların neredeyse tamamı İran’dan ve DSÖ’nün drogu olan kabukla değil, meyve ya da meyve özütüyle yapılmış: kan yağları, kan şekeri, kan basıncı. Yani monografın bitkisi ile klinik literatürün bitkisi aynı tür, ama ayrı kısım.
+
+### Hazırlama
+DSÖ monografı kabuk için günlük doz veriyor: 0,5–1,0 g drog günde 3 kez, dekoksiyon olarak; sıvı özüt (1:1, %60 etanol) 0,3–1,0 ml günde 3 kez; tentür (1:10) 2–4 ml günde 3 kez. Meyvenin klinik çalışmalarındaki dozlar ayrıdır (çoğunlukla günde 1–3 g kuru meyve ya da özüt). 12 yaş altında, gebelikte ve emzirirken önerilmiyor.
+
+### Araştırmalar ne gösteriyor
+Karamukta kanıt var ama DSÖ’nün onayladığı endikasyonda değil ve DSÖ’nün drogu olan kısımla değil. 2019’da Complementary Therapies in Medicine dergisinde yayımlanan meta-analiz 5 randomize çalışmayı (339 kişi) birleştirdi: karamuk takviyesi toplam kolesterolü 23,6 mg/dL, trigliseriti 29,2 mg/dL ve LDL’yi 13,8 mg/dL düşürdü; HDL’de anlamlı fark yok. 2020’de aynı dergide yayımlanan ikinci meta-analiz (7 çalışma, 452 kişi) kan şekeri tarafında daha temkinli: insülin düzeyi düştü ama açlık kan şekeri, HbA1c ve HOMA-IR’de anlamlı değişiklik yok; heterojenlik çok yüksek. 2021’de üçüncü bir meta-analiz kan basıncını inceledi. Üç derleme de daha büyük ve uzun çalışmalar istiyor; çalışmaların neredeyse hepsi tek ülkeden ve küçük. Kanıt düzeyi "sınırlı" — ve not: bu kanıt meyveye ait, DSÖ monografının kabuğuna değil. Kabuğun kendisi için monografın dediği geçerli: klinik çalışma yok.
+
+### Güvenlik
+Yüksek tansiyon, diyabet, glokom ve kalp-damar hastalığı öyküsü olanlar dikkatli kullanmalı — DSÖ monografının genel uyarısı; berberinin kan basıncı ve kan şekeri üzerindeki etkileri ilaçla çakışabilir. Berberin içeren topikal hazırlıklar sürüldükten sonra güneşe ve UVA ışığına çıkılmamalı. Bitkiye alerjisi olanlar kullanmamalı. 12 yaş altında, gebelikte ve emzirirken veri yokluğu nedeniyle önerilmiyor. Meyvenin çalışmalarında ciddi yan etki bildirilmemiş; kabuk ve kök alkaloit bakımından zengindir ve meyve gibi gıda sayılmaz.
+
+### İlaç etkileşimleri
+- Siklosporin: DSÖ monografı böbrek nakli hastalarında berberin hidroklorürün siklosporin kan düzeyini %75 artırdığını bildiren çalışmayı aktarıyor; toksisite artmamış ama düzey artışı dar güvenlik aralığı olan bir ilaç için önemlidir. Nakil hastası bu bitkiyi kullanmamalı.
+- Kemoterapi ilaçları (paklitaksel): Monograf berberinin çoklu ilaç direnci taşıyıcısının (P-gp) ifadesini artırdığını ve kemoterapötiklerin hücrede tutulmasını azaltabileceğini yazıyor. Kemoterapi gören biri hekimine sormadan kullanmamalı.
+- Antidiyabetikler ve antihipertansifler (kuramsal): Monografın "dikkatli kullanım" uyarısının karşılığı: kan şekerini ve basıncını etkileyen bir bitki, aynı yöndeki ilaçla üst üste binebilir.
+
+### Doğada
+Nerede yetişir: Avrupa ve Kuzey Asya; Türkiye’de Kuzey ve İç Anadolu’nun orman kenarları ve çalılıkları.
+Toplama mevsimi: Mayısta sarı salkım çiçekler; eylül–ekimde ekşi kırmızı meyveler. Kabuk ilkbahar ya da sonbaharda soyulur.
+Yöresel adlar: Karamuk, kadıntuzluğu, amberbaris — yaygın Türkçe adlar; Farsça zereşk.
+Karıştırma riski: Berberis cinsinin Türkiye’de başka türleri de var (B. crataegina gibi) ve meyveleri birlikte toplanır; DSÖ monografı yalnızca B. vulgaris içindir. Altınmühür (Hydrastis) ve Coptis de berberin taşır; "berberin" takviyesi genellikle bu bitkiden değil, başka kaynaklardan üretilir.
+
+### İlginç bilgi
+Aynı bitkinin iki hayatı var: DSÖ kabuğunu yazdı, bilim meyvesini çalıştı. Monograf 2009’da "kabukla klinik çalışma yok, bildiğimiz şey berberin" derken, sonraki on yılda İran’da ekşi meyvenin kan yağları üzerine randomize çalışmaları birikti. Kataloğumuzun kuralı kısmı ayırmaktır: meyvenin meta-analizi kabuğun kanıtı değil, kabuğun berberini meyvenin güvenliği değil. Anadolu’da pilavın üstündeki kırmızı tane ile eczacının sarı kabuğu aynı çalıdan ama aynı şey değil.

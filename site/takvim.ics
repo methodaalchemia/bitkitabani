@@ -986,6 +986,18 @@ DESCRIPTION:Yapraklar ilkbaharda\, kökler sonbaharda toplanır. https://
 URL:https://bitkitabani.com/karahindiba/
 END:VEVENT
 BEGIN:VEVENT
+UID:toplama-karamuk@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260301
+DTEND;VALUE=DATE:20260302
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Karamuk toplama mevsimi
+DESCRIPTION:Mayısta sarı salkım çiçekler\; eylül–ekimde ekşi kı
+ rmızı meyveler. Kabuk ilkbahar ya da sonbaharda soyulur. https://bitkit
+ abani.com/karamuk/
+URL:https://bitkitabani.com/karamuk/
+END:VEVENT
+BEGIN:VEVENT
 UID:toplama-kasikotu@bitkitabani.com
 DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260601
