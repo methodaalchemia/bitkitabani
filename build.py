@@ -1372,7 +1372,7 @@ for i, br_ in enumerate(BR, 1):
 
 # ---------- hakkında ----------
 about = '''<header class="page-head"><span class="eyebrow">Hakkında</span><h1>Bitki Tabanı nedir?</h1></header>
-<section class="sec"><p>Bitki Tabanı, farklı kültürlerde şifa ve ritüel için kullanılan bitkileri bir araya getiren bağımsız bir etnobotanik kayıt defteridir. Amacı merak uyandırmak ve geleneksel bilgiyi bugünkü bilimsel bilgiyle yan yana koymak.</p></section>
+<section class="sec"><p>Bitki Tabanı, farklı kültürlerde şifa ve ritüel için kullanılan bitkileri bir araya getiren bağımsız ve kaynaklı bir başvuru sitesidir. Amacı merak uyandırmak ve geleneksel bilgiyi bugünkü bilimsel bilgiyle yan yana koymak.</p></section>
 <section class="sec"><h2>Kim hazırlıyor</h2><p>''' + BIO + '''</p><p>''' + SOCIAL + ''' · <a href="/yontem/">Kayıtları nasıl hazırladığını oku →</a></p></section>
 <section class="sec"><h2>Bağımsız</h2><p>Bitki Tabanı’nın bilgi içeriği hiçbir satıcıdan ve şirketten bağımsızdır: bitki, takviye ya da tören satmaz; inziva veya ayahuasca seremonisi düzenlemez, bunlara yönlendirmez ve reklam almaz. İleride düzenlenebilecek atölye ve doğa yürüyüşleri ayrıca duyurulur; sitedeki bilgiyi etkilemez. Kayıtlarda adı geçen hiçbir marka ya da satıcıyla bağı yoktur.</p></section>
 <section class="sec"><h2>İletişim</h2><p>Bir hata gördüysen ya da yöresel bir kullanım biliyorsan <a href="mailto:iletisim@bitkitabani.com">iletisim@bitkitabani.com</a> adresine yaz.</p></section>
@@ -1402,7 +1402,7 @@ ILETISIM = '''<header class="page-head"><span class="eyebrow">İletişim</span><
 <p class="muted-s">E-postayla da yazabilirsin: <a href="mailto:iletisim@bitkitabani.com">iletisim@bitkitabani.com</a></p></section>'''
 write('/iletisim/', page('İletişim | Bitki Tabanı', 'Bitki Tabanı ile iletişime geç: soru, öneri, iş birliği, basın ya da yöresel bir bitki adı ve kullanımı.', '/iletisim/', ILETISIM, 'about', '<script src="/assets/katki.js" defer></script>', narrow=True))
 ld_about = {"@context":"https://schema.org","@type":"AboutPage","name":"Hakkında | Bitki Tabanı","url":BASE+"/hakkinda/","inLanguage":"tr","license":"https://creativecommons.org/licenses/by-sa/4.0/",
-            "mainEntity":{"@type":"Organization","name":"Bitki Tabanı","url":BASE+"/","email":"iletisim@bitkitabani.com","logo":BASE+"/assets/logo-512.png","founder":AUTHOR,"description":"Şifalı ve ritüel bitkiler için kaynaklı, reklamsız ve ticari olmayan bir etnobotanik kayıt defteri."},
+            "mainEntity":{"@type":"Organization","name":"Bitki Tabanı","url":BASE+"/","email":"iletisim@bitkitabani.com","logo":BASE+"/assets/logo-512.png","founder":AUTHOR,"description":"Şifalı ve ritüel bitkiler için kaynaklı, reklamsız ve ticari olmayan bir bitki veritabanı."},
             "about":AUTHOR}
 write('/hakkinda/', page('Hakkında | Bitki Tabanı', 'Bitki Tabanı’nın amacı, kayıtların nasıl hazırlandığı ve kaynak yaklaşımı.', '/hakkinda/', about, 'about', narrow=True,
       extra=f'<script type="application/ld+json">{json.dumps(ld_about, ensure_ascii=False)}</script>'))
@@ -1530,7 +1530,7 @@ _basla_html = ''.join(f'<a class="scard" href="/{pid}/">{ph(byId[pid], 500)}<spa
 home = f'''
 <header class="top">
   <div class="brand">
-    <span class="eyebrow">Etnobotanik kayıt defteri</span>
+    <span class="eyebrow">Şifalı ve ritüel bitkiler</span>
     <h1 class="wordmark">Bitki <em>Tabanı</em></h1>
     <p class="lede">{LEDE}</p>
     <form class="hsearch" id="ara" action="/katalog/" method="get" role="search" autocomplete="off">
@@ -1554,20 +1554,20 @@ home = f'''
   <div class="pchips"><a class="chip" href="/kavram/">Kavramlar</a><a class="chip" href="/semboller/">Semboller</a><a class="chip" href="/kopruler/">Kültür köprüleri</a><a class="chip" href="/blog/">Blog</a><a class="chip" href="/takvim/">Takvim</a></div>
 </section>
 <section class="sec"><h2>Kültür köprüleri</h2>
-<p class="sec-intro">Anadolu ile Amazon ve And’larda aynı işi gören bitkiler, aynı molekülün iki ayrı ritüelde karşımıza çıkışı: bir bitkinin tek bir kültüre ait olmadığı yerler.</p>
+<p class="sec-intro genis">Anadolu ile Amazon ve And’larda aynı işi gören bitkiler, aynı molekülün iki ayrı ritüelde karşımıza çıkışı: bir bitkinin tek bir kültüre ait olmadığı yerler.</p>
 <figure class="mapwrap mini harita-ana" id="kopru-harita">{bridge_map()}<div class="hk-ipucu" hidden></div><script type="application/json" id="kopru-veri">{_KOPRU_VERI}</script><figcaption>Haritadaki her yay bir köprü; üzerine gel ya da <a href="/kopruler/">{len(BR)} köprünün hepsini gör →</a></figcaption></figure></section>
 <section class="sec"><h2>Türkiye’de nerede ne derleniyor</h2>
-<p class="sec-intro">Hakemli saha çalışmalarında kaydedilmiş bitkiler, derlendikleri illerle birlikte. Renkli iller kaydı olanlar; bir ile tıkla, o yörenin bitkilerini gör. Kişi ve köy adları yayımlanmaz.</p>
+<p class="sec-intro genis">Türkiye’de yapılmış hakemli bilimsel saha çalışmalarında kayda geçen bitkileri il il gösteriyor. Yeşil renkli illerde kayıt var; bir ile tıklayınca o ilde derlenen bitkiler açılır. Bilgi veren kişilerin ve köylerin adları yer almaz.</p>
 <figure class="trmap-w mini harita-ana">{tr_haritasi()}<figcaption>Renkli bir ile tıkla ya da <a href="/yoreler/">{len(YORE_IL)} ilin ve {len(_YC)} saha çalışmasının tamamına bak →</a></figcaption></figure></section>
 <section class="sec"><h2>Semboller</h2>
-<p class="sec-intro">Kilim motiflerinden Shipibo kené desenlerine: her motifin anlamı kaynağıyla yazılı, çizimleri açık lisanslı. {len(MOTIFLER)} sembol.</p>
+<p class="sec-intro genis">Kilim motiflerinden Shipibo kené desenlerine: her motifin anlamı kaynağıyla yazılı, çizimleri açık lisanslı. {len(MOTIFLER)} sembol.</p>
 <div class="motif-mini ana">{_motif_html}</div>
 <p><a class="cta" href="/semboller/">Bütün semboller →</a></p></section>
 <section class="sec"><h2>Nereden başlamalı?</h2>
-<p class="sec-intro">Kataloğun tamamı {len(P)} bitki; ilk kez bakıyorsan aşağıdaki beşi iyi bir başlangıç. Her biri sitenin ne yaptığını başka bir yönüyle gösteriyor: bildiğin bir çayın arkasındaki kanıtı okumak, bir bitkinin riskini tartmak, kültürdeki yerini görmek.</p>
+<p class="sec-intro genis">Kataloğun tamamı {len(P)} bitki; ilk kez bakıyorsan aşağıdaki beşi iyi bir başlangıç. Her biri sitenin ne yaptığını başka bir yönüyle gösteriyor: bildiğin bir çayın arkasındaki kanıtı okumak, bir bitkinin riskini tartmak, kültürdeki yerini görmek.</p>
 <div class="startcards">{_basla_html}</div></section>
 '''
-ldsite = {"@context":"https://schema.org","@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/","inLanguage":"tr","description":"Şifalı ve ritüel bitkiler için Türkçe etnobotanik kayıt defteri."}
+ldsite = {"@context":"https://schema.org","@type":"WebSite","name":"Bitki Tabanı","url":BASE+"/","inLanguage":"tr","description":"Şifalı ve ritüel bitkiler: kaynaklı, Türkçe bitki veritabanı."}
 # Ana sayfa en sonda yazılıyor (bkz. 'Son hikâyeler'): hikâye kartları ancak orada hazır.
 
 

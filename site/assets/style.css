@@ -1034,3 +1034,4 @@ table.etk tbody tr:has(.etkchk:checked){background:color-mix(in srgb,var(--accen
 .gotur-serit{position:fixed;left:12px;right:12px;bottom:calc(66px + env(safe-area-inset-bottom,0px));z-index:40;background:var(--accent);color:var(--sheet);text-align:center;padding:12px 14px;font-weight:600;text-decoration:none;box-shadow:0 8px 22px rgba(0,0,0,.2)}
 .gotur-serit[hidden]{display:none}
 .gotur.yanda{margin:0 0 22px}
+.wrap .sec-intro.genis{max-width:none}
