@@ -17,6 +17,18 @@ for _q in _K.Q:
 BAD = re.compile(r'illustrat|drawing|k[öo]e?hler|medizinal-pflanzen|botanical (art|plate|print)|\bplate\b|tafel|lithograph|engraving|woodcut|painting|watercolou?r|herbari|exsiccat|\bmaps?\b|distribution|diagram|molecule|stamp|coin|logo|bottle|drink|beverage|powder|capsule|svg|specimen|museum|montage|collage|mhnt|landscape|panorama|habitat|forest|plantation|market|óleo|\\boil\\b|bowl|bottle', re.I)
 GOOD = re.compile(r'flower|flor|blüte|fleur|fruit|fruto|frucht|leaf|leaves|hoja|blatt|blossom|close|macro|inflorescence|bloom|berries|berry', re.I)
 
+# İlk görsel bitkinin kendisi olsun: ürün/baharat fotoğrafı (tohum, kuru meyve, kabuk,
+# tane) geriye düşer. Metinde canlı bitkiyi anlatan bir sözcük de varsa ceza kalkar.
+URUN = re.compile(r'\b(seeds?|dried|dry|pods?|beans?|spices?|powder|ground|grains?|kernels?|market|bazaar|isolated|white background|tohum|baharat)\b', re.I)
+CANLI = re.compile(r'\b(plants?|trees?|shrubs?|fields?|flowers?|flowering|leaves|leaf|habit|bloom|blossom|in situ|wild|garden|cultivat\w*|farm|growing)\b', re.I)
+# Elle reddedilen dosyalar: seçici bunları bir daha önermez (bitki değil ürün fotoğrafı).
+RED = {
+    'yildizanason': ['Dried Star Anise Fruit Seeds.jpg', 'Illicium verum20170511 7548.jpg', 'Illicium verum20170511 7552.jpg', 'Illicium verum20170511 7549.jpg'],
+    'kimyon': ['Seeds of Cumin.jpg', 'Dried cumin seeds.jpg'],
+    'fasulye': ['Pinto Beans Seeds.jpg', 'Black Turtle Bean.jpg'],
+    'kakule': ['Cardamom pods - Green BNC.jpg'],
+}
+
 UA = 'BitkiTabani/1.0 (https://bitkitabani.com; image sync)'
 OUT = os.path.join(ROOT, 'img')
 META = os.path.join(ROOT, 'images.json')
@@ -113,7 +125,9 @@ def auto_pick(taxon, haric=()):
         text = ' '.join([f, m.get('Categories', {}).get('value', ''), m.get('ImageDescription', {}).get('value', '')])
         if BAD.search(text): continue
         if taxon.split()[0].lower() not in text.lower(): continue
-        score = (3 if src == 'qi' else 0) + (2 if GOOD.search(text) else 0) + (1 if (ii.get('height') or 0) >= (ii.get('width') or 1) else 0) - rank * 0.01
+        canli = bool(CANLI.search(text))
+        score = ((3 if src == 'qi' else 0) + (2 if GOOD.search(text) else 0) + (1 if (ii.get('height') or 0) >= (ii.get('width') or 1) else 0)
+                 + (1 if canli else 0) - (4 if URUN.search(text) and not canli else 0) - rank * 0.01)
         scored.append((score, f))
     scored.sort(reverse=True)
     # Beyaz fonlu stüdyo fotoğrafı ilk görsel olmasın: sırayla küçük önizlemeye bakılır.
@@ -135,12 +149,14 @@ for p in _D['P']:
     _kucuk = os.path.join(OUT, f"{p['id']}-500.jpg")
     _haric = ()
     if meta.get(p['id'], {}).get('auto') and meta[p['id']].get('file'):
-        if os.path.exists(_kucuk) and beyaz_fon(_kucuk) > BEYAZ_SINIR:
-            print('beyaz fonlu ilk görsel, yeniden seçiliyor:', p['id'], meta[p['id']]['file'])
-            _haric = (meta[p['id']]['file'],)
+        _f = meta[p['id']]['file']
+        if (os.path.exists(_kucuk) and beyaz_fon(_kucuk) > BEYAZ_SINIR) or _f in RED.get(p['id'], ()) \
+                or (URUN.search(_f) and not CANLI.search(_f)):
+            print('ilk görsel bitki değil ya da beyaz fonlu, yeniden seçiliyor:', p['id'], _f)
+            _haric = tuple(RED.get(p['id'], ())) + (_f,)
         else:
             WANT[p['id']] = meta[p['id']]['file']; continue
-    f = auto_pick(taxon_of(p), _haric)
+    f = auto_pick(taxon_of(p), _haric or tuple(RED.get(p['id'], ())))
     print('otomatik seçim:', p['id'], '→', f)
     if f: WANT[p['id']] = f; meta.setdefault(p['id'], {})['auto'] = True
 
