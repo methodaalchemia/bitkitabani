@@ -480,7 +480,7 @@ FOOT = '''<div class="motif indigo" aria-hidden="true"></div>
 '''
 
 FOOT_GIZLI = {'/kartlar/', '/hesap/'}   # menüde var, altbilgide yok
-FOOTNAV = '<nav class="footnav" aria-label="Site haritası">' + ''.join(f'<div><h3>{g}</h3><ul>' + ''.join(f'<li><a href="{h}"' + (' rel="noopener"' if h.startswith('http') else '') + f'>{l}</a></li>' for h, l, k in items if h not in FOOT_GIZLI) + '</ul></div>' for g, items in MENU) + '</nav>'
+FOOTNAV = '<nav class="footnav" aria-label="Site haritası">' + ''.join(f'<div><h3>{g}</h3><ul>' + ''.join(f'<li><a href="{h}"' + (' rel="noopener"' if h.startswith('http') else '') + f'>{l}</a></li>' for h, l, k in items if h not in FOOT_GIZLI) + '</ul></div>' for g, items in sorted(MENU, key=lambda m: m[0] != 'Bitki Tabanı')) + '</nav>'   # footer'da Bitki Tabanı en başta
 SOSYAL = [('instagram', 'Instagram', 'https://www.instagram.com/bitkitabani/'), ('threads', 'Threads', 'https://www.threads.net/@bitkitabani'),
           ('facebook', 'Facebook', 'https://www.facebook.com/profile.php?id=61595314033889'), ('pinterest', 'Pinterest', 'https://www.pinterest.com/bitkitabani/'), ('youtube', 'YouTube', 'https://www.youtube.com/@bitkitabani'), ('telegram', 'Telegram', 'https://t.me/bitkitabani'), ('rss', 'RSS', '/yeni/rss.xml')]
 def _icon(n, label):
@@ -496,7 +496,21 @@ CSSV = _hl.md5(open(os.path.join(HERE, 'assets', 'style.css'), 'rb').read()).hex
 def _de(ad):
     v = [c for c in ad.lower() if c in 'aıoueöüiâ']; son = v[-1] if v else 'e'
     return ('t' if ad[-1].lower() in 'fstkçşhp' else 'd') + ('a' if son in 'aıouâ' else 'e')
+# Ücretsiz e-posta kursu her sayfanın sonunda, footer'ın hemen üstünde (Eda, 22 Kasım).
+# Gövdenin ortasındaki kurs kutuları buraya taşınır; bir sayfada tek kutu olur.
+_KURS_ICI = re.compile(r'<section class="abone"[^>]*>(?:(?!</section>).)*?data-kurs="1"(?:(?!</section>).)*?</section>', re.S)
+_KURS_YOK = ('/bulten/', '/kurs/', '/katki-onay/', '/hesap/', '/404.html')
+
+
+def kurs_alti(body, path):
+    if path.startswith(_KURS_YOK) or path.startswith('/bulten/') or path.startswith('/kartlar/') or path.startswith('/indir/'):
+        return body
+    kaynak = 'alt-' + (re.sub(r'[^a-z0-9]+', '-', path.lower()).strip('-') or 'anasayfa')
+    return _KURS_ICI.sub('', body) + abone(kaynak[:40])
+
+
 def page(title, desc, path, body, cur, scripts='', narrow=False, extra='', image=None):
+    body = kurs_alti(body, path)
     h = head(title, desc, path, extra, image).replace('{narrow}', ' narrow' if narrow else '')
     return h + nav(cur) + body + FOOT + '<script src="/assets/theme.js" defer></script><script src="/assets/streak.js" defer></script><script src="/assets/sync.js" defer></script>' + ('<script src="/assets/bulten.js" defer></script>' if 'abone-form' in body and 'bulten.js' not in scripts else '') + scripts.replace('<script src="/assets/streak.js" defer></script>', '') + '\n</body>\n</html>\n'
 
@@ -1510,8 +1524,7 @@ yn = f"""
 <header class="page-head"><span class="eyebrow">Her gün yeni bir bitki</span><h1>Yeni eklenenler</h1><p>Bitki Tabanı her gece yarısı bir kayıt büyüyor. Her yeni bitki öteki kayıtlar gibi geleneksel kullanım, bilimsel kanıt, güvenlik notu ve kaynaklarla gelir. Şu an katalogda {len(P)} bitki var.</p></header>
 {teaser()}
 {('<div class="grid">' + ''.join(card(byId[i]) for i in NEWEST[:12]) + '</div>') if NEWEST else '<p>İlk yeni bitki bu gece geliyor.</p>'}
-{abone("yeni")}<section class="sec"><h2>Takip et</h2><p><a class="cta" href="{IG_URL}" rel="noopener">Instagram’da her gün bir bitki →</a> <a class="cta" href="https://www.youtube.com/@bitkitabani" rel="noopener" target="_blank">YouTube’da kısa videolar →</a></p><p><a class="cta" href="/yeni/rss.xml">RSS ile takip et →</a> <span class="muted-s">Bir RSS okuyucusu her yeni bitkiyi getirir; bildirim ya da e-posta yok.</span></p></section>
-{('<section class="sec"><h2>Bütün liste</h2><ul class="daylist">' + nl + '</ul></section>') if nl else ''}
+
 """
 write('/yeni/', page(f'Yeni eklenen bitkiler | Bitki Tabanı', f'Bitki Tabanı’na her gün yeni bir şifalı ya da ritüel bitki ekleniyor. Son eklenenler ve tarihleri.', '/yeni/', yn, 'yeni', image=(f'{BASE}/img/{NEWEST[0]}-960.jpg' if NEWEST and NEWEST[0] in IMG else None)))
 from email.utils import format_datetime as _fd
@@ -2720,10 +2733,6 @@ home += ('<section class="sec"><h2>Son hikâyeler</h2>'
          'her hikâyenin altında dayandığı kaynak var.</p>'
          f'<ul class="hklist dort">{"".join(_hik_kart(h, _ET[k]) for h, k in _son_hik)}</ul>'
          f'<p><a class="cta" href="/blog/">{len(HIK)} hikâyenin tamamı →</a></p></section>')
-# Bülten kutusu ana sayfanın en altına, footer'ın hemen üstüne.
-home += (abone('anasayfa', 'Bültene kaydol',
-               'E-posta adresini yaz; gelen e-postadaki bağlantıya tıklayınca kaydın tamamlanır.', kurs=False)
-         + '<p class="kurs-not">Yeni başlıyorsanız: <a href="/kurs/">7 günlük ücretsiz e-posta kursu “Şifalı bitkilere başlangıç” →</a></p>')
 write('/index.html', page('Bitki Tabanı: şifalı ve ritüel bitkiler veri tabanı', f'{REG_LIST}’dan {len(P)} şifalı ve ritüel bitkisi: geleneksel kullanım, bilimsel kanıt, güvenlik ve kaynaklar.', '/', home, 'home', '<script src="/assets/streak.js" defer></script><script src="/assets/home.js" defer></script><script src="/assets/kopru-ipucu.js" defer></script>', extra=f'<script type="application/ld+json">{json.dumps(ldsite, ensure_ascii=False)}</script>'))
 # ---------- akıllı arama verisi ve sayfası ----------
 import hashlib as _hl
