@@ -157,3 +157,5 @@ for _k, _v in {
             'https://www.ema.europa.eu/en/documents/herbal-report/draft-assessment-report-uncaria-tomentosa-willd-ex-schult-dc-cortex_en.pdf'),
 }.items():
     OTHER.setdefault(_k, []).append(_v)
+# Elle seçildi (22 Kasım): otomatik seçici ürün/stüdyo fotoğrafı getiriyordu; canlı bitki
+FILES.update({'kimyon': 'Cuminum cyminum.jpg', 'yildizanason': 'Illicium verum 0zz.jpg', 'fasulye': 'Strąki fasoli - 2023.08.08.jpg'})
