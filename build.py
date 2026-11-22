@@ -438,7 +438,7 @@ def head(title, desc, path, extra='', image=None):
 <div class="wrap{{narrow}}">
 '''
 
-MENU = [('Bitkiler', [('/katalog/', 'Katalog', 'kat'), ('/familya/', 'Familyalar', 'kat'), ('/toplama-takvimi/', 'Doğada bu ay', 'toplama'), ('/yoreler/', 'Yöreler ve yöresel adlar', 'yore'), ('/yeni/', 'Yeni eklenenler', 'yeni')]),
+MENU = [('Bitkiler', [('/katalog/', 'Katalog', 'kat'), ('/familya/', 'Familyalar', 'kat'), ('/toplama-takvimi/', 'Doğada bu ay', 'toplama'), ('/yoreler/', 'Yöreler', 'yore'), ('/yeni/', 'Yeni eklenenler', 'yeni')]),
         ('Şifa', [('/rehber/', 'Derde göre bitkiler', 'rehber'), ('/tarif/', 'Çay tarifleri', 'tarif'), ('/karsilastirma/', 'Karşılaştırmalar', 'kars'), ('/rehber/ilac-etkilesimi/', 'İlaç etkileşimi', 'etk'), ('/rehber/zehirli-bitkiler/', 'Zehirli bitkiler', 'zehir')]),
         ('Kültür', [('/kavram/', 'Kavramlar', 'kavram'), ('/semboller/', 'Semboller', 'sembol'), ('/kopruler/', 'Kültür köprüleri', 'br'), ('/blog/', 'Blog', 'yazi'), ('/takvim/', 'Ritüel takvimi', 'takvim')]),
         ('Bitki Tabanı', [('/hakkinda/', 'Hakkında', 'about'), ('/yontem/', 'Yöntem, kaynaklar ve veri', 'yontem'), ('/bulten/', 'Bülten ve e-posta kursu', 'bulten'), ('/kartlar/', 'Yazdırılabilir kartlar', 'kartlar'), ('/hesap/', 'Hesabım', 'acct'), ('/iletisim/', 'İletişim', 'mail')])]
@@ -1945,6 +1945,12 @@ GUIDE_URLS.append(path)
 
 # --- tarifler ---
 def iso_min(m): return f'PT{m}M'
+def sure(m):
+    m = int(m)
+    if m < 60: return f'{m} dk'
+    if m < 1440: return f'{m // 60} saat' + (f' {m % 60} dk' if m % 60 else '')
+    g = m // 1440
+    return f'{g // 7} hafta' if g % 7 == 0 and g >= 7 else f'{g} gün'
 for t in LIVE_T:
     p = byId[t['bitki']]; path = f'/tarif/{t["slug"]}/'
     others = [x for x in LIVE_T if x is not t][:8]
@@ -1952,12 +1958,12 @@ for t in LIVE_T:
     def _tk(x):
         q = byId[x['bitki']]
         f = (f'<img src="/img/{q["id"]}-500.jpg" alt="" loading="lazy" width="500" height="375">' if q['id'] in IMG else '')
-        return f'<li><a href="/tarif/{x["slug"]}/">{f}<b>{e(x["ad"])}</b><span>{x["toplam"]} dk · {e(x["verim"])}</span></a></li>'
+        return f'<li><a href="/tarif/{x["slug"]}/">{f}<b>{e(x["ad"])}</b><span>{sure(x["toplam"])} · {e(x["verim"])}</span></a></li>'
     body = f'''{crumbs(('/tarif/', 'Tarifler'), (path, t['ad']))}
 <article class="sheet tarif">
 <div class="tarif-ust">
 <header class="page-head"><span class="eyebrow">Tarif · {e(p["tr"])}</span><h1>{e(t["ad"])}</h1><p>{e(t["kisa"])}</p></header>
-<dl class="tarif-sayi"><div><dt>Hazırlık</dt><dd>{t["hazirlik"]} dk</dd></div><div><dt>Toplam</dt><dd>{t["toplam"]} dk</dd></div><div><dt>Verim</dt><dd>{e(t["verim"])}</dd></div></dl>
+<dl class="tarif-sayi"><div><dt>Hazırlık</dt><dd>{sure(t["hazirlik"])}</dd></div><div><dt>Toplam</dt><dd>{sure(t["toplam"])}</dd></div><div><dt>Verim</dt><dd>{e(t["verim"])}</dd></div></dl>
 {sharebar(t['ad'] + ' nasıl yapılır?', path)}
 {img}
 </div>
