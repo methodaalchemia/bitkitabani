@@ -1,0 +1,10 @@
+name: Aday fotoğraflar
+on: workflow_dispatch
+jobs:
+  aday:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q pillow && mkdir -p aday && python3 tools/aday_foto.py "Cuminum cyminum" "Illicium verum" "Phaseolus vulgaris"
+      - uses: actions/upload-artifact@v4
+        with: {name: aday, path: aday/}
