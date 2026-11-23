@@ -57,6 +57,12 @@ async def _tts1(text, path):
     return words
 
 GEMINI_VOICE = os.environ.get('GEMINI_VOICE', 'Kore')
+class KotaHatasi(RuntimeError):
+    """Gemini 429. gunluk=True ise beklemenin faydası yok, doğrudan Edge'e düşülür."""
+    def __init__(self, mesaj, gunluk=False, bekle=0.0):
+        super().__init__(mesaj); self.gunluk = gunluk; self.bekle = bekle
+
+
 def _gemini1(text, path):
     """Gemini TTS: 24 kHz PCM döner; ffmpeg ile mp3'e çevrilir. Kelime zamanı vermez, süreye orantılı tahmin edilir."""
     import json as _j, base64, urllib.request, urllib.error
@@ -71,9 +77,14 @@ def _gemini1(text, path):
     try:
         with urllib.request.urlopen(req, timeout=120) as r: j = _j.loads(r.read())
     except urllib.error.HTTPError as ex:   # kota mesajı gövdede: hangi sınıra takıldığımız görünsün
-        try: govde = ex.read().decode('utf-8', 'replace')[:400]
+        try: govde = ex.read().decode('utf-8', 'replace')
         except Exception: govde = ''
-        raise RuntimeError(f'HTTP {ex.code} {govde}') from None
+        if ex.code == 429:
+            d = govde.lower()
+            gunluk = 'per day' in d or 'perday' in d or 'requests per day' in d
+            m = re.search(r'"retryDelay"\s*:\s*"([\d.]+)s"', govde)
+            raise KotaHatasi('HTTP 429 %s' % govde[:400], gunluk, float(m.group(1)) if m else 0.0) from None
+        raise RuntimeError('HTTP %d %s' % (ex.code, govde[:400])) from None
     part = j['candidates'][0]['content']['parts'][0]['inlineData']
     pcm = path + '.pcm'; open(pcm, 'wb').write(base64.b64decode(part['data']))
     hiz = os.environ.get('GEMINI_RATE', '1.18')
@@ -91,6 +102,8 @@ def _sessizlikler(path):
         elif bas is not None: out.append((bas, float(m.group(2)))); bas = None
     return out
 
+GEMINI_ARALIK = float(os.environ.get('GEMINI_ARALIK', '8'))   # cümleler arası bekleme (dakikalık sınır)
+_GUNLUK_DOLDU = False   # günlük kota bir kez dolunca koşunun kalanında Gemini denenmez
 _SON_HIZA = None     # son hizalamanın en kötü sapması (ses kaydına yazılır)
 _SON_YONTEM = None   # 'cumle' (her cümle ayrı istek) ya da 'tek-istek' (yedek yol)
 TAM_HIZA = False     # yalnız o gün yayımlanacak video için True: cümle başına istek atılır.
@@ -194,8 +207,16 @@ def _gemini_cumle(sents, tmp):
     out = []
     for i, c in enumerate(sents):
         mp3 = os.path.join(tmp, 'c%d.mp3' % i)
-        if i: time.sleep(1.5)        # dakikalık istek sınırına çarpmamak için
-        _gemini1(c, mp3)
+        if i: time.sleep(GEMINI_ARALIK)   # dakikalık istek sınırına çarpmamak için
+        for deneme in range(4):
+            try:
+                _gemini1(c, mp3); break
+            except KotaHatasi as ex:
+                # Günlükse beklemek işe yaramaz; dakikalıksa Google'ın önerdiği kadar bekle.
+                if ex.gunluk or deneme == 3: raise
+                b = max(ex.bekle, 20.0) * (deneme + 1)
+                print('reel: dakikalık sınır — cümle %d için %.0f sn bekleniyor' % (i + 1, b))
+                time.sleep(b)
         d = _dur(mp3)
         if d <= 0: raise RuntimeError('boş ses: cümle %d' % (i + 1))
         sb, ss = _konusma_araligi(mp3)
@@ -347,11 +368,15 @@ def voice(sents, tmp, gem=None):
     _SON_HIZA = _SON_YONTEM = None      # her video kendi değerini yazsın (22 Kasım: üç kayıtta aynı hiza)
     """Her cümle ayrı seslendirilir: [(başlangıç, süre, mp3 ya da None, kelimeler)] ve sesli mi?"""
     if gem is None: gem = bool(os.environ.get('GEMINI_API_KEY'))
+    if gem and _GUNLUK_DOLDU:
+        gem = False   # bugünkü hak bitti; her video için yeniden denemek zaman kaybı
     if gem:
         yollar = (_gemini_cumle, _gemini_hepsi) if TAM_HIZA else (_gemini_hepsi,)
+        gunluk_doldu = False
         for yol in yollar:   # önce cümle başına istek; kota dolarsa tek istek
             hata = ''
-            for bekle in ((0,) if yol is _gemini_cumle else (0, 20, 40)):   # cümle yolu tekrar denenmez: kotayı tüketir
+            if gunluk_doldu: break
+            for bekle in ((0,) if yol is _gemini_cumle else (0, 20, 40)):   # cümle yolu kendi içinde bekler
                 if bekle: time.sleep(bekle)
                 try:
                     parcalar = yol(sents, tmp)
@@ -360,6 +385,13 @@ def voice(sents, tmp, gem=None):
                         segs.append((t, dur, mp3, [[a + t, b + t, w] for a, b, w in ws])); t += dur + GAP
                     print('reel: ses yolu =', _SON_YONTEM)
                     return segs, True, t
+                except KotaHatasi as ex:
+                    hata = str(ex)[:300]
+                    if ex.gunluk:
+                        # Günlük hak bitti: kalan videolar için beklemek zaman kaybı.
+                        globals()['_GUNLUK_DOLDU'] = gunluk_doldu = True
+                        print('reel: Gemini günlük kotası dolu, bugün Edge sesiyle devam')
+                        break
                 except Exception as ex:
                     hata = str(ex)[:300]
                     if '429' not in hata: break
