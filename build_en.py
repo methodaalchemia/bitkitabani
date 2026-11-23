@@ -555,19 +555,29 @@ def run(G):
     TL = [t for t in G['TARIFLER'] if t['bitki'] in byId and t['slug'] in T_EN]
     KL = [c for c in G['KARS'] if c['a'] in byId and c['b'] in byId and f'{c["a"]}-{c["b"]}' in K_EN]
     ld = lambda *xs: ''.join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>' for x in xs)
+    def dur(m):
+        m = int(m)
+        if m < 60: return f'{m} min'
+        if m < 1440: return f'{m // 60} h' + (f' {m % 60} min' if m % 60 else '')
+        g = m // 1440
+        return (f'{g // 7} week' + ('s' if g // 7 > 1 else '')) if g % 7 == 0 and g >= 7 else f'{g} day' + ('s' if g > 1 else '')
     for t in TL:
         r = T_EN[t['slug']]; p = byId[t['bitki']]; path = f'/en/recipes/{r["slug"]}/'; x = EN[p['id']]
         img = f'<figure class="tarif-img">{ph(p, 960)}<figcaption>{credit(p)}</figcaption></figure>' if p['id'] in IMG else ''
         others = ''.join(f'<li><a href="/en/recipes/{T_EN[o["slug"]]["slug"]}/">{e(T_EN[o["slug"]]["ad"])}</a></li>' for o in TL if o is not t)
         body = f'''<nav class="crumbs" aria-label="Breadcrumb"><a href="/en/">Home</a><span>/</span><a href="/en/recipes/">Recipes</a><span>/</span><span>{e(r["ad"])}</span></nav>
-<article class="sheet">
-<header class="page-head"><span class="eyebrow">Recipe · {e(name(p))}</span><h1>{e(r["ad"])}</h1><p>{e(r["kisa"])}</p>
-<p class="tarif-meta"><span>Prep: <b>{t["hazirlik"]} min</b></span><span>Total: <b>{t["toplam"]} min</b></span><span>Makes: <b>{e(r["verim"])}</b></span></p></header>
+<article class="sheet tarif">
+<div class="tarif-ust"><header class="page-head"><span class="eyebrow">Recipe · {e(name(p))}</span><h1>{e(r["ad"])}</h1><p>{e(r["kisa"])}</p></header>
+<dl class="tarif-sayi"><div><dt>Prep</dt><dd>{dur(t["hazirlik"])}</dd></div><div><dt>Total</dt><dd>{dur(t["toplam"])}</dd></div><div><dt>Makes</dt><dd>{e(r["verim"])}</dd></div></dl>
+{('<aside class="doz-kut" role="note"><b>Read this first</b><dl>' + ''.join(f'<div><dt>{e(k)}</dt><dd>{e(v)}</dd></div>' for k, v in r["doz"]) + '</dl></aside>') if r.get("doz") else ''}
 {img}
-<section class="sec"><h2>Ingredients</h2><ul class="malz">{"".join(f"<li>{e(m)}</li>" for m in r["malzeme"])}</ul></section>
+</div>
+<div class="tarif-govde">
+<section class="sec malz-kut"><h2>Ingredients</h2><ul class="malz">{"".join(f"<li>{e(m)}</li>" for m in r["malzeme"])}</ul></section>
 <section class="sec"><h2>Method</h2><ol class="adim">{"".join(f"<li>{e(a)}</li>" for a in r["adim"])}</ol></section>
-<p class="fact">{e(r["ipucu"])}</p>
-<aside class="warnbox" role="note"><b>Who should be careful?</b> {ev(x["safety"])}</aside>
+</div>
+<div class="tarif-not"><p class="fact">{e(r["ipucu"])}</p>
+<aside class="warnbox" role="note"><b>Who should be careful?</b> {ev(x["safety"])}</aside></div>
 <p><a class="cta" href="/en/{p["id"]}/">{e(name(p))}: the science, drug interactions and sources →</a></p>
 {DIS}
 <section class="sec"><h2>More recipes</h2><ul class="otherlist">{others}</ul></section>
