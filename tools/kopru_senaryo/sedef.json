@@ -1,0 +1,167 @@
+{
+ "slug": "sedef",
+ "baslik": "Sedef otu: nazara karşı neden asılır, neden içilmez?",
+ "kayit": "BT-002 · Ruta graveolens · Rutaceae",
+ "sahneler": [
+  {
+   "bolum": "Aynı bitki, iki kıta",
+   "metin": [
+    "Peru'da bir pazara girsen, tezgâhlarda demet demet satılan keskin kokulu bir ot görürsün.",
+    "Adı ruda. Arınma törenlerinin baş otudur.",
+    "Aynı bitki Anadolu'da bir evin balkonunda saksıda durur, nazara karşı.",
+    "İkisi aynı tür: sedef otu.",
+    "Ve bu benzerlik tesadüf değil — bitkinin iki kıtaya yayılması belgeli bir tarih."
+   ],
+   "gorsel": {
+    "tip": "foto",
+    "yol": "img/sedef-1280.jpg"
+   },
+   "yazi": [
+    "Sedef otu",
+    "Ruta graveolens"
+   ],
+   "kunye": "Fotoğraf: Robert Flogaus-Faust · CC BY 4.0 · Wikimedia Commons"
+  },
+  {
+   "bolum": "Sedef otu nedir",
+   "metin": [
+    "Sedef otunun bilimsel adı Ruta graveolens. Sedefotugiller, yani Rutaceae familyasından.",
+    "Mavi-gri, etli yaprakları ve bir kez kokladıktan sonra unutulmayan keskin kokusuyla tanınır.",
+    "Akdeniz kökenli bir bitki.",
+    "Anadolu'da çoğunlukla yabani değil, bahçede ve saksıda yetiştirilir; yakın akrabası Ruta chalepensis ise Akdeniz kıyılarında yabani olarak bulunur.",
+    "Yaprakları ve çiçekli dalları kullanılır; toplama zamanı çiçeklenmeden önce, ilkbahar sonu ile yaz başı."
+   ],
+   "gorsel": {
+    "tip": "cizim",
+    "yol": "img/tanima/sedef-cizim.jpg"
+   },
+   "yazi": [
+    "Rutaceae · sedefotugiller",
+    "Mavi-gri yaprak, keskin koku"
+   ],
+   "kunye": "Botanik çizim: Köhler's Medizinal-Pflanzen · kamu malı"
+  },
+  {
+   "bolum": "Anadolu'da nazarlık",
+   "metin": [
+    "Anadolu'da sedef otunun ilk işi korumadır.",
+    "Kötü göze karşı evde yetiştirilir, ya da bir dalı yanında taşınır.",
+    "Saha çalışmalarında Kırklareli'nde kayda geçmiş.",
+    "Halk hekimliğinde başka kullanımları da anlatılır — adet söktürücü ve kurt düşürücü olarak bilinir.",
+    "Ama bu ikinci grup kullanım, bu bitkide ciddi risk taşıyor; videonun sonunda neden olduğunu anlatacağım.",
+    "Sitedeki kayıt da bunu açıkça yazıyor: sedef otunun demlenip içilmesi önerilmez."
+   ],
+   "gorsel": {
+    "tip": "foto",
+    "yol": "img/sedef-1280.jpg",
+    "kirp": "sag",
+    "yakin": 2.25
+   },
+   "yazi": [
+    "Saha kaydı: Kırklareli · Kültür, 2007"
+   ],
+   "uyari": "Demlenip içilmesi önerilmez.",
+   "kunye": "Fotoğraf: Robert Flogaus-Faust · CC BY 4.0 · Wikimedia Commons"
+  },
+  {
+   "bolum": "Bitki Amerika'ya nasıl gitti",
+   "metin": [
+    "Peki aynı bitki And Dağları'na nasıl vardı?",
+    "Yolu belgeli: İspanyollar ruda'yı Amerika kıtasına götürdü.",
+    "Yerli şifacılar da onu kendi arınma törenlerinin içine aldı.",
+    "Burada dikkat edilecek bir ayrım var.",
+    "İki kıtada benzer bir kullanım görmek, iki kültürün gizli bir ortak kökten geldiği anlamına gelmez.",
+    "Olan şey daha somut: bitki gemiyle gitti, onunla birlikte giden inanç yerli geleneğin içinde kendine yer buldu ve orada yeni bir biçim aldı."
+   ],
+   "gorsel": {
+    "tip": "harita",
+    "durum": "genel"
+   },
+   "yazi": [
+    "Belgelenmiş taşınma",
+    "ortak köken iddiası değil"
+   ],
+   "kunye": "Harita: Natural Earth · kamu malı"
+  },
+  {
+   "bolum": "And'larda limpia",
+   "metin": [
+    "And geleneğinde ruda, limpia yani arınma törenlerinin temel bitkisi.",
+    "Peru ve Bolivya pazarlarında demetlerle satılır.",
+    "Nazar için — orada adı mal de ojo — ve kötü hava, mal aire için bedene sürülür.",
+    "Kuzey Arjantin ile Bolivya'da ise takvime girmiş bir geleneği var: 1 Ağustos'ta, Pachamama ayının başında, kış hastalıklarından korunmak için caña con ruda içilir.",
+    "Yani Anadolu'da nazara karşı asılan bitki, orada aynı derdin karşısında ama kendi töreniyle duruyor."
+   ],
+   "gorsel": {
+    "tip": "harita",
+    "kirp": "and"
+   },
+   "yazi": [
+    "limpia · mal de ojo · mal aire",
+    "1 Ağustos: caña con ruda"
+   ],
+   "kunye": "Harita: Natural Earth · kamu malı"
+  },
+  {
+   "bolum": "Göz motifi",
+   "metin": [
+    "İki gelenekte ortak olan bir şey daha var: göz.",
+    "Hem Anadolu'da hem And'larda nazara karşı göz simgesi kullanılır.",
+    "Bunu söylerken bir şeyi karıştırmamak gerekir — göz motifinin sedef otunu gösterdiğini ileri sürmüyoruz.",
+    "Bağ simgede değil, kullanımda: iki yerde de aynı derdin karşısına konmuş iki ayrı araç."
+   ],
+   "gorsel": {
+    "tip": "motif",
+    "yol": "commons/svg/Göz motifi - Bitki Tabani cizimi.svg"
+   },
+   "yazi": [
+    "Bağ kullanımda, simgede değil"
+   ]
+  },
+  {
+   "bolum": "İçinde ne var, neden riskli",
+   "metin": [
+    "Şimdi kimyası. Sedef otu furanokumarinler ve rutin içerir.",
+    "Furanokumarinler deriyi güneşe karşı aşırı duyarlı hâle getirir.",
+    "Yani taze bitkiye eldivensiz dokunup güneşe çıkmak ağır deri yanıklarına yol açabilir; bunun adı fitofotodermatit.",
+    "Rutin ise damar sağlığı açısından çalışılmış bir flavonoit, ama bitkinin kendisi için klinik kanıt yok.",
+    "Güvenlik tarafı ağır: gebelikte düşük yaptırabilir, yüksek dozda karaciğer ve böbrek için zehirlidir.",
+    "Kumarin türevleri içerdiği için kan sulandırıcılarla, örneğin varfarinle etkileşir.",
+    "Bu yüzden sitedeki kayıtta güvenlik düzeyi yüksek risk olarak işaretli.",
+    "Hazırlama satırında da tek bir cümle var: taze dal bedene sürülür ya da cebe konur, demlenip içilmesi önerilmez."
+   ],
+   "gorsel": {
+    "tip": "kutular",
+    "kutular": [
+     "Furanokumarin → güneşte deri yanığı",
+     "Gebelikte düşük riski",
+     "Varfarin etkileşimi"
+    ]
+   },
+   "yazi": [
+    "Güvenlik düzeyi: yüksek risk"
+   ]
+  },
+  {
+   "bolum": "Kaynaklar",
+   "metin": [
+    "Bu videodaki bilgiler sedef otu kaydının kaynaklarına dayanıyor.",
+    "Ruta uçucu yağları üzerine 2021 tarihli bir derleme, bir zehirlenme vakası bildirimi, Turhan Baytop'un Türkiye'de Bitkiler ile Tedavi kitabı ve Kew'in Plants of the World Online kaydı.",
+    "Hepsi sayfada listeli.",
+    "Bilgi amaçlıdır, tedavi önerisi değildir."
+   ],
+   "gorsel": {
+    "tip": "kaynaklar"
+   },
+   "yazi": [
+    "bitkitabani.com/sedef"
+   ]
+  }
+ ],
+ "kaynaklar": [
+  "Nahar, L., El-Seedi, H. R., Khalifa, S. A. M., Mohammadhosseini, M., & Sarker, S. D. (2021). Ruta Essential Oils: Composition and Bioactivities. Molecules, 26(16).",
+  "Seak, C. J., & Lin, C. C. (2007). Ruta Graveolens intoxication. Clinical Toxicology, 45(2), 173–175.",
+  "Baytop, T. (2021). Türkiye'de bitkiler ile tedavi: Geçmişte ve bugün (3. baskı). Nobel Tıp Kitabevleri.",
+  "Plants of the World Online. (t.y.). Ruta graveolens L. Royal Botanic Gardens, Kew."
+ ]
+}
