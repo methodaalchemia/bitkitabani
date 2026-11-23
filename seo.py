@@ -1,6 +1,10 @@
 # Arama sonucu başlık ve açıklamaları için elle yazılmış metinler (Search Console: ilk sayfada görünüp tıklanmayan sayfalar).
 # Anahtar: bitki id. (başlık ≤60 karakter, açıklama ≤155 karakter, kesme yok.)
 SEO = {
+ 'turunc': ('Turunç zararları: turunç suyu, kabuğu ve sinefrin',
+            'Turunç suyunun zararları neler? Bazı ilaçların etkisini değiştirebilir; sinefrinli zayıflama hapları kalp için risklidir. Reçel güvenli mi? Kaynaklarıyla.'),
+ 'dagcayi': ('Dağ çayı faydaları ve zararları: kimler içmemeli?',
+             'Dağ çayının zararları ve faydaları: öksürük ve hazımsızlıkta geleneksel kullanımı, gebelik ve çocuklar için uyarı, nasıl demlenir. Kaynaklarıyla.'),
  'kantuta': ('Kantuta: İnkaların kutsal çiçeği neden Bolivya bayrağında?',
              'Kantuta (Cantua buxifolia): İnka törenlerinde yollara serilen, Peru ve Bolivya’nın ulusal çiçeği. Efsanesi, bayraktaki üç rengi, yetiştiği yer ve kaynakları.'),
  'ayiuzumu': ('Ayı üzümü yaprağı: idrar yoluna iyi gelir mi, zararı var mı?',

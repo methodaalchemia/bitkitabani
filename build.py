@@ -723,6 +723,16 @@ def desc_for(p):
     g = p['guv']
     gc = ('zehirli ya da yüksek riskli, kullanım önerisi değildir' if g == 'yuksek' else
           ('ilaç etkileşimleri nedeniyle dikkat ister' if p['id'] in ETK else 'bazı gruplar için dikkat ister') if g == 'orta' else 'ölçülü kullanımda genelde güvenli')
+    # 23 Kasım: aramalar "X zararları" diye geliyor; zarar cümlesi açıklamanın başında olsun
+    if g != 'yuksek':
+        ilk = re.sub(r'\*\*|—', '', str(p.get('guvNot') or '')).strip()
+        cs = [c.rstrip('.').strip() for c in re.split(r'(?<=[a-zçğıöşü\)])\.\s', ilk) if c.strip()]
+        risk = [c for c in cs if re.search(r'kullanılmamal|kullanmamal|yapabilir|zehirli|etkileş|zarar|vaka|tahriş|alerji|yükselt|düşür|kaçınmal|dikkat|önerilmez|yol açabilir', c, re.I)]
+        ilk = risk[0] if risk else (cs[0] if cs else '')
+        if 15 < len(ilk) <= 125:
+            d = f'{p["tr"]} zararları ve faydaları: {ilk}.'
+            for son in (f' {kc}; kaynaklarıyla.', f' {kc}.', ' Kanıtı ve kaynakları.', ''):
+                if len(d + son) <= 160: return d + son
     bas = f'{p["tr"]} ({short_la(p)}) ne işe yarar? {kc}; {gc}.'
     for son in (' Geleneksel kullanımı, kanıtı ve kaynakları.', ' Kanıtı ve kaynakları.', ''):
         if len(bas + son) <= 160: return bas + son
