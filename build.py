@@ -1844,7 +1844,7 @@ nplants = len({pid for v in etk_by.values() for pid, _, _ in v})
 body = f'''{crumbs(('/rehber/', 'Rehberler'), (path, 'İlaç etkileşimi'))}
 <article class="sheet">
 <header class="page-head"><span class="eyebrow">Güvenlik aracı · {nplants} bitki</span><h1>Bitki ve ilaç etkileşimi: kullandığın ilaçla hangi bitkiler sorun çıkarabilir?</h1><p>Bitkiler de ilaçlar gibi etken maddeler içerir. Bazıları ilacının etkisini artırır, bazıları azaltır, bazıları da aynı yan etkiyi büyütür. Kullandığın ilaç grubunu seç; katalogda o grupla etkileşimi bildirilen bitkileri gör.</p></header>
-<form class="etkform" id="etkform" onsubmit="return false"><label for="etksel" class="eyebrow">İlaç grubu</label><select id="etksel"><option value="">{UI.ILAC_HEPSI}</option>{sel}</select><input id="etkq" type="search" placeholder="ya da ilaç/bitki adı yaz: Coumadin, Beloc, kantaron…" aria-label="İlaç ya da bitki adıyla süz"><p class="muted-s" id="etkmsg" role="status"></p></form>
+<form class="etkform" id="etkform" data-gonderme><label for="etksel" class="eyebrow">İlaç grubu</label><select id="etksel"><option value="">{UI.ILAC_HEPSI}</option>{sel}</select><input id="etkq" type="search" placeholder="ya da ilaç/bitki adı yaz: Coumadin, Beloc, kantaron…" aria-label="İlaç ya da bitki adıyla süz"><p class="muted-s" id="etkmsg" role="status"></p></form>
 <p class="etk-ipucu">İlacının kutusundaki adı yazman yeterli: ticari adlar (Coumadin, Beloc, Glucophage…) ve etken maddeler (varfarin, metoprolol, metformin…) aranıyor. <b>Kullandığın bitkilerin yanındaki kutuyu işaretlersen</b> “Hekime götür” listen oluşur.</p>
 <aside class="gotur" id="gotur" hidden>
   <p class="eyebrow">Hekime götür listem <span id="goturSay"></span></p>
@@ -2463,11 +2463,11 @@ _kart = ''.join(f'<div class="kart-g"><h2>{e(ad)}</h2><p>{", ".join(e(byId[pid][
 write('/indir/etkilesim-karti/', page('Bitki–ilaç etkileşimi kartı (yazdırılabilir) | Bitki Tabanı', 'Yazdırılabilir bitki–ilaç etkileşimi kartı.', '/indir/etkilesim-karti/',
       f'''<article class="kart"><header><p class="eyebrow">Bitki Tabanı · yazdırılabilir kart</p><h1>Bu ilacı kullanıyorsanız, bu bitkilere dikkat</h1><p>Aşağıdaki bitkilerle, yanındaki ilaç grubu arasında etkileşim bildirilmiştir. Liste eksiksiz değildir; bir bitkisel ürüne başlamadan önce eczacına sorun. İlacını kendi başına bırakma.</p></header>
 <div class="kart-grid">{_kart}</div><footer><p>Ayrıntılar ve kaynaklar: bitkitabani.com/rehber/ilac-etkilesimi · Zehir Danışma: 114 · Tıbbi tavsiye değildir.</p></footer></article>
-<p class="noprint"><button type="button" class="learn" onclick="window.print()">Yazdır / PDF olarak kaydet</button></p>''', '', narrow=True, extra='<meta name="robots" content="noindex, follow">'))
+<p class="noprint"><button type="button" class="learn" data-yazdir>Yazdır / PDF olarak kaydet</button></p>''', '', narrow=True, extra='<meta name="robots" content="noindex, follow">'))
 write('/indir/hamilelik-listesi/', page('Hamilelikte dikkat listesi (yazdırılabilir) | Bitki Tabanı', 'Yazdırılabilir hamilelikte dikkat listesi.', '/indir/hamilelik-listesi/',
       f'''<article class="kart"><header><p class="eyebrow">Bitki Tabanı · yazdırılabilir liste</p><h1>Hamilelikte ve emzirirken dikkat edilecek bitkiler</h1><p>Bu bitkilerin güvenlik notunda hamilelik ya da emzirme için ayrıca uyarı vardır. Listede olmayan bir bitki de güvenli demek değildir; yemekteki miktarı aşan her bitkisel ürün için hekimine danış.</p></header>
 <ul class="kart-list">{"".join(f'<li><b>{e(p["tr"])}</b>: {e(t)}</li>' for p, t in preg)}</ul><footer><p>Ayrıntılar ve kaynaklar: bitkitabani.com/rehber/hamilelik-emzirme · Tıbbi tavsiye değildir.</p></footer></article>
-<p class="noprint"><button type="button" class="learn" onclick="window.print()">Yazdır / PDF olarak kaydet</button></p>''', '', narrow=True, extra='<meta name="robots" content="noindex, follow">'))
+<p class="noprint"><button type="button" class="learn" data-yazdir>Yazdır / PDF olarak kaydet</button></p>''', '', narrow=True, extra='<meta name="robots" content="noindex, follow">'))
 GUIDE_URLS.append('/bulten/')
 
 # ---------- 404, robots, sitemap, favicon ----------
@@ -2683,7 +2683,7 @@ _redir += ''.join(f'/familya/{fam_slug(f)}/ /familya/#{fam_slug(f)} 301\n' for f
 open(os.path.join(OUT, '_redirects'), 'w').write(_redir)
 # Statik sayfalar Worker'a uğramıyor (run_worker_first yalnızca /api/* ve /ig/*),
 # bu yüzden güvenlik başlıkları burada, varlık sunucusunun _headers dosyasında.
-# CSP bilerek yok: sayfalarda satır içi betik ve stil var, nonce'a geçmeden sayfaları bozar.
+# CSP en sonda _csp() ile eklenir (satır içi betik özetleri derlemenin bütün çıktısından hesaplanır).
 open(os.path.join(OUT, '_headers'), 'w').write('''/*
   Cache-Control: public, max-age=0, must-revalidate
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
@@ -2739,7 +2739,7 @@ if _qr:
              '@media print{header.site,nav,footer,.page-head,.noprint{display:none!important}body{background:#fff}.kartlar{grid-template-columns:1fr 1fr;gap:8mm}.kart{height:95mm;overflow:hidden}}</style>')
     _ks = ''.join(_kart(p) for p in P if p['guv'] != 'yuksek')
     write('/kartlar/index.html', page('Yazdırılabilir bitki kartları (QR kodlu) | Bitki Tabanı', 'Aktarlar, pazarlar ve atölyeler için QR kodlu, yazdırılabilir şifalı bitki kartları.', '/kartlar/',
-          _KCSS + '<header class="page-head"><h1>Yazdırılabilir bitki kartları</h1><p>Aktar, pazar ve atölyeler için: her kartta bitkinin adı, güvenlik düzeyi, kısa bir bilgi ve okutunca sayfasına götüren bir QR kod var. Yazdır de; A4 sayfaya dört kart sığar. Yüksek riskli bitkiler bu listede yok.</p><p class="noprint"><button type="button" onclick="print()">Yazdır</button></p></header><div class="kartlar">' + _ks + '</div>', 'kat'))
+          _KCSS + '<header class="page-head"><h1>Yazdırılabilir bitki kartları</h1><p>Aktar, pazar ve atölyeler için: her kartta bitkinin adı, güvenlik düzeyi, kısa bir bilgi ve okutunca sayfasına götüren bir QR kod var. Yazdır de; A4 sayfaya dört kart sığar. Yüksek riskli bitkiler bu listede yok.</p><p class="noprint"><button type="button" data-yazdir>Yazdır</button></p></header><div class="kartlar">' + _ks + '</div>', 'kat'))
     # Aktar başına kart sayfası: QR okutmaları aktar koduyla sayılır (aktar.py). Arama motorlarına kapalı.
     try:
         from aktar import AKTAR
@@ -2747,7 +2747,7 @@ if _qr:
         AKTAR = {}
     for _k, _ad in AKTAR.items():
         write(f'/kartlar/{_k}/index.html', page(f'{_ad} için bitki kartları | Bitki Tabanı', 'QR kodlu, yazdırılabilir şifalı bitki kartları.', f'/kartlar/{_k}/',
-              _KCSS + f'<header class="page-head"><h1>{e(_ad)} için bitki kartları</h1><p>Rafınıza ya da tezgâhınıza koyabileceğiniz ücretsiz kartlar: her kartta bitkinin adı, güvenlik düzeyi, kısa bir bilgi ve okutunca bitkinin geleneksel kullanımını, bilimsel kanıtını ve güvenlik notunu gösteren bir QR kod var. A4 sayfaya dört kart sığar. İstediğiniz kartları yazdırabilirsiniz.</p><p class="noprint"><button type="button" onclick="print()">Yazdır</button></p></header><div class="kartlar">' + ''.join(_kart(p, _k) for p in P if p['guv'] != 'yuksek') + '</div>',
+              _KCSS + f'<header class="page-head"><h1>{e(_ad)} için bitki kartları</h1><p>Rafınıza ya da tezgâhınıza koyabileceğiniz ücretsiz kartlar: her kartta bitkinin adı, güvenlik düzeyi, kısa bir bilgi ve okutunca bitkinin geleneksel kullanımını, bilimsel kanıtını ve güvenlik notunu gösteren bir QR kod var. A4 sayfaya dört kart sığar. İstediğiniz kartları yazdırabilirsiniz.</p><p class="noprint"><button type="button" data-yazdir>Yazdır</button></p></header><div class="kartlar">' + ''.join(_kart(p, _k) for p in P if p['guv'] != 'yuksek') + '</div>',
               'kat', extra='<meta name="robots" content="noindex, nofollow">'))
 # ---------- Eczaneler için bitki–ilaç etkileşimi kartı (yalnızca Anadolu'da kullanılan bitkiler) ----------
 _ana = lambda pid: 'anadolu' in byId[pid]['bolge']
@@ -2756,7 +2756,7 @@ _eqr = (_qr(BASE + '/rehber/ilac-etkilesimi/') if _qr else '')
 write('/indir/eczane-karti/', page('Eczaneler için bitki–ilaç etkileşimi kartı | Bitki Tabanı', 'Eczanede müşterilere verilebilecek, yazdırılabilir bitki–ilaç etkileşimi kartı.', '/indir/eczane-karti/',
       f'''<article class="kart ekart"><header><p class="eyebrow">Bitki Tabanı · eczaneler için</p><h1>Bu ilacı kullanıyorsanız, bu bitkilere dikkat</h1><p>Anadolu’da halk arasında sık kullanılan bitkilerden, yanındaki ilaç grubuyla etkileşimi bildirilenler. Liste eksiksiz değildir. Bitki çayı ya da bitkisel bir ürüne başlamadan önce eczacınıza sorun; ilacınızı kendi başınıza bırakmayın.</p></header>
 <div class="kart-grid">{_ekart}</div><footer class="ekart-alt">{_eqr}<p>Bitkilerin ayrıntılı etkileşimleri ve kaynakları: <b>bitkitabani.com/rehber/ilac-etkilesimi</b><br>Zehirlenme şüphesinde Ulusal Zehir Danışma Merkezi: <b>114</b> · Tıbbi tavsiye değildir.</p></footer></article>
-<p class="noprint"><button type="button" class="learn" onclick="window.print()">Yazdır / PDF olarak kaydet</button></p>''', '', narrow=True, extra='<meta name="robots" content="noindex, follow">'))
+<p class="noprint"><button type="button" class="learn" data-yazdir>Yazdır / PDF olarak kaydet</button></p>''', '', narrow=True, extra='<meta name="robots" content="noindex, follow">'))
 # ---------- Yazdırılabilir poster: en çok karıştırılan bitkiler ----------
 # D8: işi görsel ayırt etme olan sayfanın çıktı alınabilir hâli (mutfağa, atölyeye, sınıfa).
 def _poz_sat(d):
@@ -2778,7 +2778,7 @@ write('/indir/karistirilan-bitkiler/', page('Yazdırılabilir poster: en çok ka
 <p>Türkiye’de bitki zehirlenmelerinin önemli bir kısmı, yenen ya da şifalı bilinen bir bitkinin zehirli benzeriyle karıştırılmasından çıkıyor. Aşağıdaki çiftlerde soldaki zehirli, sağdaki karıştırıldığı bitki.</p></header>
 {_zsat}
 <footer class="ekart-alt">{_zqr}<p><b>Zehirlenme şüphesinde Ulusal Zehir Danışma Merkezi: 114</b> (7/24, ücretsiz). Bitkinin bir parçasını ya da fotoğrafını yanına alın; danışmadan kusturmaya çalışmayın, süt ya da yağ içirmeyin.<br>Ayrıntılar, kaynaklar ve fotoğraf künyeleri: <b>bitkitabani.com/rehber/zehirli-bitkiler</b> · Tıbbi tavsiye değildir.</p></footer></article>
-<p class="noprint"><button type="button" class="learn" onclick="window.print()">Yazdır / PDF olarak kaydet</button></p>''', '', narrow=True, extra='<meta name="robots" content="noindex, follow">'))
+<p class="noprint"><button type="button" class="learn" data-yazdir>Yazdır / PDF olarak kaydet</button></p>''', '', narrow=True, extra='<meta name="robots" content="noindex, follow">'))
 
 write('/eczaneler/', page('Eczaneler için ücretsiz bitki–ilaç etkileşimi kartı | Bitki Tabanı', 'Eczaneler için ücretsiz, kaynaklı ve yazdırılabilir bitki–ilaç etkileşimi kartı: kan sulandırıcı, tansiyon, şeker ilacı ve antidepresan kullananlar için.', '/eczaneler/',
       '''<header class="page-head"><span class="eyebrow">Eczaneler için</span><h1>Ücretsiz bitki–ilaç etkileşimi kartı</h1><p>Bitki çayı ya da bitkisel ürün soran müşterilere verebileceğiniz tek sayfalık bir kart. Kan sulandırıcı, tansiyon, şeker, antidepresan gibi ilaç gruplarının yanında, Anadolu’da sık kullanılan ve o grupla etkileşimi bildirilen bitkiler yer alıyor. Karttaki QR kod, her bitkinin etkileşimlerini kaynaklarıyla gösteren sayfaya götürür.</p></header>
@@ -2843,5 +2843,27 @@ write('/tanima-kontrol/index.html', page('Tanıma görselleri kontrolü | Bitki 
       '<header class="page-head"><h1>Tanıma görselleri: kontrol</h1><p>Beğenmediğin görselin bitki kimliğini ve türünü (çizim, çiçek, kuru) Claude’a yaz; yenisiyle değiştirilir.</p></header>' + _rows,
       'kat', extra='<meta name="robots" content="noindex">'))
 _kimlik_uyar()
+# ---------- CSP (23 Kasım): satır içi betiklerin özetleri her derlemede yeniden hesaplanır ----------
+def _csp():
+    import hashlib, base64, glob
+    oz = set()
+    for f in glob.glob(os.path.join(OUT, '**', '*.html'), recursive=True):
+        h = open(f, encoding='utf-8').read()
+        for m in re.finditer(r'<script(?![^>]*\bsrc=)([^>]*)>(.*?)</script>', h, re.S):
+            if re.search(r'type="application/(ld\+)?json"', m.group(1)): continue
+            oz.add("'sha256-" + base64.b64encode(hashlib.sha256(m.group(2).encode('utf-8')).digest()).decode() + "'")
+        if re.search(r'\son[a-z]+="', h): raise SystemExit(f'CSP: satır içi olay işleyicisi kaldı: {f}')
+    pol = ("default-src 'self'; "
+           "script-src 'self' " + ' '.join(sorted(oz)) + " https://www.googletagmanager.com https://accounts.google.com https://static.cloudflareinsights.com; "
+           "style-src 'self' 'unsafe-inline' https://accounts.google.com; "
+           "img-src 'self' data: blob: https:; font-src 'self' data:; media-src 'self' blob: https:; "
+           "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://accounts.google.com https://cloudflareinsights.com https://commons.wikimedia.org https://www.wikidata.org; "
+           "frame-src https://accounts.google.com https://www.youtube.com https://www.youtube-nocookie.com; "
+           "object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests")
+    hp = os.path.join(OUT, '_headers'); hs = open(hp).read()
+    hs = hs.replace('/*\n', '/*\n  Content-Security-Policy: ' + pol + '\n', 1)
+    open(hp, 'w').write(hs)
+    return len(oz)
+print('CSP', _csp(), 'satır içi betik özeti')
 print('ok', len(urls), 'sayfa')
 

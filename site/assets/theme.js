@@ -35,4 +35,7 @@ b.querySelector('.sb-print').addEventListener('click',function(){window.print()}
   window.addEventListener('scroll',f,{passive:true});f();
   document.addEventListener('click',function(ev){var m=document.querySelector('details.menu[open]');if(m&&!m.contains(ev.target))m.removeAttribute('open')});
   document.addEventListener('keydown',function(ev){if(ev.key==='Escape'){var m=document.querySelector('details.menu[open]');if(m)m.removeAttribute('open')}});
+  // CSP: satır içi olay işleyicileri yerine (onclick/onsubmit) veri öznitelikleri
+  document.addEventListener('click',function(ev){var b=ev.target.closest&&ev.target.closest('[data-yazdir]');if(b){ev.preventDefault();window.print()}});
+  document.addEventListener('submit',function(ev){if(ev.target.hasAttribute&&ev.target.hasAttribute('data-gonderme'))ev.preventDefault()},true);
 })();

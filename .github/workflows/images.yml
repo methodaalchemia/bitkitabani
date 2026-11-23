@@ -152,4 +152,5 @@ jobs:
         continue-on-error: true
         env:
           ALL: ${{ github.event.inputs.indexnow_all }}
+          ONCE: ${{ github.event.before }}
         run: sleep 120 && python3 tools/indexnow.py
