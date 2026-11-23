@@ -546,7 +546,7 @@
      "Marmelatı, çayı ve pekmezi yapılır. Kışın soğuk algınlığına karşı içilir; Gümüşhane ve Bayburt’un yöresel ürünüdür."
     ]
    ],
-   "haz": "Meyve ezilip demlenir ya da kaynatılır; tüylü çekirdekleri süzülür.",
+   "haz": "Meyve ezilip demlenir ya da kaynatılır; tüylü çekirdekleri süzülür. ⚠️ Kuşburnu meyvesi için EMA monografı yoktur: elimizdeki tek gül monografı (rosae-flos) Rosa centifolia, R. gallica ve R. damascena'nın çiçeği içindir — farklı tür ve farklı kısım. Dolayısıyla bu bitki için resmî bir doz yoktur.",
    "bilim": "Taze meyve C vitamini bakımından çok zengindir; kurutma ve kaynatma bu vitamini büyük ölçüde azaltır. Kuşburnu tozuyla yapılan birkaç klinik çalışmada diz kireçlenmesinde ağrının hafiflediği bildirilmiştir.",
    "kanit": "sinirli",
    "guv": "dusuk",
@@ -824,7 +824,7 @@
      "Kırgız, Kazak ve Moğol şamanizminde arça dumanı kötü ruhları kovar; törenlerden önce mekân ve insanlar arça ile arındırılır."
     ]
    ],
-   "haz": "Dal tütsü olarak yakılır; kozalak demlenir; katran haricen sürülür.",
+   "haz": "Dal tütsü olarak yakılır; kozalak demlenir; katran haricen sürülür. EMA monografı yalnız Juniperus communis için geçerlidir; kaydımızdaki J. excelsa ve J. oxycedrus kapsam dışıdır. Çay için 2–2,5 g kozalak 150 ml kaynar suda: idrar yolu yıkamasında günde 1–3 kez (günlük 2,5–6 g), hazımsızlıkta günde 1–4 kez (günlük 2,5–10 g). 18 yaşından küçüklerde önerilmiyor; şikâyet iki haftadan uzun sürerse hekime. Ardıç katranı monografın konusu değildir ve yutulmaz.",
    "bilim": "EMA, kozalağını hafif idrar söktürücü ve sindirim için geleneksel kullanımda tanır. Laboratuvarda antimikrobiyal etkiler görülmüştür.",
    "kanit": "geleneksel",
    "guv": "orta",
@@ -1516,7 +1516,7 @@
      "Peru’da yaprakları ezilip yaralara konur; çayı mide ağrısı, ishal ve öksürük için içilir."
     ]
    ],
-   "haz": "Taze yaprak ezilip yaraya konur; kuru yaprak demlenir.",
+   "haz": "Taze yaprak ezilip yaraya konur; kuru yaprak demlenir. ⚠️ Matico (Piper aduncum) için EMA monografı yoktur. Aynı cinsten kava (Piper methysticum) değerlendirilmiş ama sonuç monograf değil public statement olmuştur; kavanın karaciğer uyarısı ve ölçüsü bu bitkiye uygulanamaz. Bu bitki için resmî bir doz yoktur.",
    "bilim": "Yaprak yağı laboratuvarda antibakteriyel ve antifungal etki gösterir. İnsan çalışması yoktur.",
    "kanit": "geleneksel",
    "guv": "orta",
@@ -1608,7 +1608,7 @@
      "Hierbabuena, Peru ve Bolivya’da mide ağrısı ve gaz için en sık demlenen otlardandır."
     ]
    ],
-   "haz": "Taze ya da kuru yaprak kapağı kapalı demlenir; uçucu yağı seyreltilerek şakaklara sürülür.",
+   "haz": "Taze ya da kuru yaprak kapağı kapalı demlenir; uçucu yağı seyreltilerek şakaklara sürülür. EMA monografı Mentha × piperita yaprağı için ölçü veriyor: yetişkinde 1,5–3 g yaprak 100–150 ml kaynar suda, günde 3 kez; 4–11 yaş ve ergenlerde 1–2 g, günde 3 kez. 4 yaşından küçüklerde önerilmiyor; şikâyet iki haftadan uzun sürerse hekime. Kaydımızdaki M. spicata (yeşil nane) monografın kapsamı dışındadır.",
    "bilim": "Nane yağı (Mentha × piperita) kapsülleri, birçok kontrollü çalışmada huzursuz bağırsak sendromunun belirtilerini plaseboya göre azaltmıştır. EMA nane yaprağını hazımsızlık ve gaz için geleneksel kullanımda tanır.",
    "kanit": "klinik",
    "guv": "dusuk",
@@ -1735,7 +1735,7 @@
      "Tarih boyunca adet söktürücü ve düşük yaptırıcı olarak kullanılmıştır; bu kullanım ölümlere yol açmıştır."
     ]
    ],
-   "haz": "Çok az miktarda demlenir. Uçucu yağı kesinlikle içilmez.",
+   "haz": "Çok az miktarda demlenir. Uçucu yağı kesinlikle içilmez. ⚠️ Yarpuz (Mentha pulegium) için EMA monografı yoktur; aynı cinsten olan nanenin (Mentha × piperita) monografı ve dozu bu bitkiye uygulanamaz, çünkü yarpuz pulegon taşır ve nane taşımaz. Bu bitki için güvenli bir ev dozu tanımlanmamıştır.",
    "bilim": "Uçucu yağı yüksek oranda pulegon içerir. Pulegon karaciğer ve böbrek için zehirlidir; yağın içilmesiyle ölümler bildirilmiştir.",
    "kanit": "geleneksel",
    "guv": "yuksek",
@@ -2272,7 +2272,7 @@
      "Akrabası Rhamnus cathartica ve kabuk (Frangula) uzun süre müshil olarak kullanıldı."
     ]
    ],
-   "haz": "Meyveler kurutulup boya banyosunda kullanılır.",
+   "haz": "Meyveler kurutulup boya banyosunda kullanılır. ⚠️ Cehri (Rhamnus petiolaris ve diğer yerli türler) için EMA monografı yoktur. Aynı cinsin monografı olan türler barut ağacı (R. frangula) ve cascara (R. purshianus) kabuğudur — farklı tür, farklı kısım ve antrakinonlu müshil dozları. Bu bitki için resmî bir doz yoktur; kayıttaki kullanım boyacılıktır.",
    "bilim": "Antrakinon içerir; bunlar bağırsağı uyararak müshil etkisi yapar. EMA akrabası Frangula kabuğunu kısa süreli kabızlık için tanır.",
    "kanit": "geleneksel",
    "guv": "orta",
@@ -2435,7 +2435,7 @@
      "Kökü ve sapları şeker ve sindirim şikâyetleri için kullanılır."
     ]
    ],
-   "haz": "Saplar soyulup çiğ yenir, turşusu ya da reçeli yapılır.",
+   "haz": "Saplar soyulup çiğ yenir, turşusu ya da reçeli yapılır. ⚠️ Işgın (Rheum ribes) için EMA monografı yoktur. Monografı olan ravent türleri Rheum palmatum ve R. officinale'dir; onların kök dozu müshil kullanımı içindir ve bu bitkiye uygulanamaz. Kayıttaki kullanım gıdadır.",
    "bilim": "Kökü antrakinon içerir ve müshil etkisi vardır. EMA akrabası Çin raventi (Rheum palmatum) kökünü kısa süreli kabızlık için tanır.",
    "kanit": "geleneksel",
    "guv": "orta",
