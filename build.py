@@ -1755,6 +1755,11 @@ LIVE_K = [k for k in _K_HAZIR if not k.get('blog')]      # "derde göre" rehber 
 BLOG_K = [k for k in _K_HAZIR if k.get('blog')]          # rehber değil: blogun altında duran uzun yazılar
 LIVE_T = [t for t in TARIFLER if t['bitki'] in byId]
 LIVE_C = [c for c in KARS if c['a'] in byId and c['b'] in byId]
+# 23 Kasım (Eda): bitkilerinden biri henüz kuyrukta olan karşılaştırmalar da yayında; o bitkinin adı
+# yayımlandığı gün kendiliğinden bağlantıya dönüşür (site her gün yeniden derleniyor).
+_QBY = {q['id']: q for q in KUYRUK_LEFT}
+PEND_C = [c for c in KARS if c not in LIVE_C and all(x in byId or x in _QBY for x in (c['a'], c['b']))]
+ALL_C = LIVE_C + PEND_C
 def takvim_tabs(cur): return '<nav class="tabs" aria-label="Takvim">' + ''.join(f'<a href="{h}"' + (' aria-current="page"' if k == cur else '') + f'>{l}</a>' for h, l, k in [('/takvim/', 'Ritüeller', 'r'), ('/toplama-takvimi/', 'Doğada bu ay', 'd')]) + '</nav>'
 def other_guides(cur):
     return '<ul class="otherlist">' + ''.join(f'<li><a href="/rehber/{k["slug"]}/">{e(k["kisa"])}</a></li>' for k in LIVE_K if k['slug'] != cur) + '<li><a href="/rehber/hamilelik-emzirme/">Hamilelik ve emzirme</a></li><li><a href="/rehber/ilac-etkilesimi/">İlaç etkileşimi</a></li></ul>'
@@ -2018,23 +2023,35 @@ write('/tarif/', page('Bitki çayı tarifleri: ölçüleri ve demleme süreleriy
 GUIDE_URLS.append('/tarif/')
 
 # --- karşılaştırmalar ---
-for c in LIVE_C:
-    a, b = byId[c['a']], byId[c['b']]; path = f'/karsilastirma/{c["a"]}-ve-{c["b"]}/'
+def _vs_kart(q):
+    if q['id'] in byId:
+        return f'<a href="/{q["id"]}/" class="vs-p">{ph(q, 500)}<b>{e(q["tr"])}</b><i>{e(short_la(q))}</i></a>'
+    _g = datetime.date.fromisoformat(q['yayin'])
+    return (f'<div class="vs-p vs-yakinda">{ph(q, 500) if q["id"] in IMG else "<span class=\"rb-ph\"></span>"}<b>{e(q["tr"])}</b><i>{e(short_la(q))}</i>'
+            f'<small>Sayfası {_g.day} {AYLAR[_g.month - 1]} {_g.year} günü yayında</small></div>')
+def _mini_rows(ps):
+    return ('<table class="cmp"><thead><tr><th></th>' + ''.join(f'<th>{e(q["tr"])}</th>' for q in ps) + '</tr></thead><tbody>'
+            + '<tr><th>Bilimsel ad</th>' + ''.join(f'<td><i>{e(short_la(q))}</i></td>' for q in ps) + '</tr>'
+            + '<tr><th>Kanıt düzeyi</th>' + ''.join(f'<td>{e(KANIT.get(q["kanit"], {}).get("ad", q["kanit"]))}</td>' for q in ps) + '</tr>'
+            + '<tr><th>Güvenlik</th>' + ''.join(f'<td><span class="sf {q["guv"]}">{GUV[q["guv"]]}</span></td>' for q in ps) + '</tr></tbody></table>')
+for c in ALL_C:
+    a, b = (byId.get(c['a']) or _QBY[c['a']]), (byId.get(c['b']) or _QBY[c['b']]); path = f'/karsilastirma/{c["a"]}-ve-{c["b"]}/'
+    _ikisi = a['id'] in byId and b['id'] in byId
     ets = ''
     for q in (a, b):
         if q['id'] in ETK: ets += f'<p><b>{e(q["tr"])}:</b> ' + '; '.join(f'{e(g)} ({e(w.rstrip("."))})' for g, w in ETK[q['id']]) + '.</p>'
     body = f'''{crumbs(('/rehber/', 'Rehberler'), (path, c['baslik']))}
 <article class="sheet">
 <header class="page-head"><span class="eyebrow">Karşılaştırma</span><h1>{e(c["baslik"])}</h1><p>{e(c["giris"])}</p></header>
-<div class="vs">{''.join(f'<a href="/{q["id"]}/" class="vs-p">{ph(q, 500)}<b>{e(q["tr"])}</b><i>{e(short_la(q))}</i></a>' for q in (a, b))}</div>
+<div class="vs">{''.join(_vs_kart(q) for q in (a, b))}</div>
 {sharebar(c['baslik'], path)}
-<section class="sec"><h2>{UI.YANYANA}</h2>{cmp_rows([a, b])}</section>
+<section class="sec"><h2>{UI.YANYANA}</h2>{cmp_rows([a, b]) if _ikisi else _mini_rows([a, b])}</section>
 <section class="sec"><h2>Başlıca farklar</h2><ul class="farklar">{"".join(f'<li>{e(x)}</li>' for x in c["fark"])}</ul></section>
 <section class="kisaca"><h2>Hangisi, ne zaman?</h2><p>{e(c["sonuc"])}</p></section>
-<section class="sec"><h2>Ayrıntılar</h2><p>Bilimsel kanıtın tamamı, güvenlik notları, ilaç etkileşimleri ve kaynaklar her bitkinin kendi sayfasında:</p><p class="brlinks">{"".join(f'<a class="cta" href="/{q["id"]}/">{e(q["tr"])} →</a> ' for q in (a, b))}</p></section>
+<section class="sec"><h2>Ayrıntılar</h2><p>Bilimsel kanıtın tamamı, güvenlik notları, ilaç etkileşimleri ve kaynaklar her bitkinin kendi sayfasında:</p><p class="brlinks">{"".join(f'<a class="cta" href="/{q["id"]}/">{e(q["tr"])} →</a> ' for q in (a, b) if q['id'] in byId)}</p>{'' if _ikisi else '<p class="muted-s">' + ''.join(e(q['tr']) for q in (a, b) if q['id'] not in byId) + ' sayfası yayımlandığında bağlantısı burada açılacak.</p>'}</section>
 {DISCL}
 {UPD}
-<section class="sec"><h2>Diğer karşılaştırmalar</h2><ul class="otherlist">{"".join(f'<li><a href="/karsilastirma/{x["a"]}-ve-{x["b"]}/">{e(x["baslik"])}</a></li>' for x in LIVE_C if x is not c)}</ul></section>
+<section class="sec"><h2>Diğer karşılaştırmalar</h2><ul class="otherlist">{"".join(f'<li><a href="/karsilastirma/{x["a"]}-ve-{x["b"]}/">{e(x["baslik"])}</a></li>' for x in ALL_C if x is not c)}</ul></section>
 </article>'''
     desc = f'{a["tr"]} ve {b["tr"]} arasındaki farklar: bilimsel kanıt, kullanım, güvenlik ve ilaç etkileşimleri yan yana.'
     write(path, page(f'{c["baslik"]} | Bitki Tabanı', desc, path, body, 'kars', narrow=True,
@@ -2043,9 +2060,9 @@ for c in LIVE_C:
                     crumb_ld(('/rehber/', 'Rehberler'), (path, c['baslik']))), image=gimage([a['id'], b['id']])))
     GUIDE_URLS.append(path)
 
-kl = ''.join(f'<li><a href="/karsilastirma/{c["a"]}-ve-{c["b"]}/"><b>{e(c["baslik"])}</b></a><span>{e(c["sonuc"])}</span></li>' for c in LIVE_C)
+kl = ''.join(f'<li><a href="/karsilastirma/{c["a"]}-ve-{c["b"]}/"><b>{e(c["baslik"])}</b></a><span>{e(c["sonuc"])}</span></li>' for c in ALL_C)
 write('/karsilastirma/', page('Bitki karşılaştırmaları: hangisi, ne zaman? | Bitki Tabanı', 'Zencefil mi zerdeçal mı, adaçayı mı dağ çayı mı? Sık karıştırılan şifalı bitkiler kanıt, kullanım ve güvenlik açısından yan yana.', '/karsilastirma/',
-      f'{crumbs(("/karsilastirma/", "Karşılaştırmalar"))}<header class="page-head"><span class="eyebrow">{len(LIVE_C)} karşılaştırma</span><h1>Hangisi, ne zaman?</h1><p>Sık karıştırılan ya da aynı dert için kullanılan bitkiler yan yana: kanıt düzeyi, güvenlik ve başlıca farklar.</p></header><section class="sec"><ul class="guidelist">{kl}</ul></section>{DISCL}', 'kars', narrow=True, extra=lds(crumb_ld(('/karsilastirma/', 'Karşılaştırmalar')))))
+      f'{crumbs(("/karsilastirma/", "Karşılaştırmalar"))}<header class="page-head"><span class="eyebrow">{len(ALL_C)} karşılaştırma</span><h1>Hangisi, ne zaman?</h1><p>Sık karıştırılan ya da aynı dert için kullanılan bitkiler yan yana: kanıt düzeyi, güvenlik ve başlıca farklar.</p></header><section class="sec"><ul class="guidelist">{kl}</ul></section>{DISCL}', 'kars', narrow=True, extra=lds(crumb_ld(('/karsilastirma/', 'Karşılaştırmalar')))))
 GUIDE_URLS.append('/karsilastirma/')
 
 # --- semboller: el çizimi tek renk motifler ---
@@ -2416,7 +2433,7 @@ hub = f'''{crumbs(('/rehber/', 'Rehberler'))}
 <header class="page-head"><span class="eyebrow">Şifa</span><h1>Hangi derde hangi bitki? Kanıtıyla ve riskleriyle</h1><p>Derdini kendi cümlelerinle yaz, üç soruda bul ya da aşağıdaki rehberlerden birini seç. Her rehberde bitkiler kanıtı en güçlü olandan başlayarak sıralanır; her birinin yanında güvenlik etiketi var.</p></header><section class="sec" id="ara"><h2>Derdini yaz</h2><form id="araForm" class="katki-form"><input id="araQ" name="q" maxlength="200" placeholder="Örn. uykuya dalmakta zorlanıyorum; hamileyim, mide bulantısı" required><button class="cta" type="submit">Ara</button></form><div id="araSonuc" role="status"></div><p class="muted-s">Yapay zekâ destekli anlam araması. Sonuçlar tavsiye değildir; her bitkinin güvenlik notuna bak. Ya da <a href="/bitki-bul/"><b>üç soruda bul</b></a>: hamilelik ve ilaç durumuna göre riskli olanlar kendiliğinden elenir.</p></section>
 <section class="sec"><h2>{UI.GUVENLIK}</h2><ul class="guidelist"><li><a href="/rehber/ilac-etkilesimi/"><b>İlaç etkileşimi aracı</b></a><span>Kullandığın ilaç grubunu seç, katalogda o ilaçla etkileşimi bildirilen bitkileri gör.</span></li><li><a href="/rehber/hamilelik-emzirme/"><b>Hamilelik ve emzirme</b></a><span>Hamilelikte ve emzirirken kullanılmaması ya da dikkatle kullanılması gereken bitkiler.</span></li><li><a href="/rehber/zehirli-bitkiler/"><b>Zehirli bitkiler ve karıştırılanlar</b></a><span>Güz çiğdemi, baldıran, tatula, deli bal: neyle karıştırılır, nasıl ayırt edilir?</span></li></ul></section>
 <section class="sec"><h2>Derde göre</h2><ul class="guidelist">{gl}</ul></section>
-<section class="sec"><h2>Karşılaştırmalar</h2><ul class="otherlist">{"".join(f'<li><a href="/karsilastirma/{c["a"]}-ve-{c["b"]}/">{e(c["baslik"])}</a></li>' for c in LIVE_C)}</ul></section>
+<section class="sec"><h2>Karşılaştırmalar</h2><ul class="otherlist">{"".join(f'<li><a href="/karsilastirma/{c["a"]}-ve-{c["b"]}/">{e(c["baslik"])}</a></li>' for c in ALL_C)}</ul></section>
 <section class="sec"><h2>Tarifler</h2><ul class="otherlist">{"".join(f'<li><a href="/tarif/{t["slug"]}/">{e(t["ad"])}</a></li>' for t in LIVE_T)}</ul></section>
 {DISCL}'''
 write('/rehber/', page('Hangi derde hangi bitki? Şifalı bitki bulucu ve rehberler | Bitki Tabanı', 'Uyku, öksürük, mide, soğuk algınlığı, kaygı ve daha fazlası için şifalı bitkiler: kanıt düzeyleri, güvenlik notları, ilaç etkileşimleri ve tarifler.', '/rehber/', hub, 'rehber', '<script src="/assets/ara.js" defer></script>', narrow=True,
