@@ -2443,7 +2443,8 @@ open(os.path.join(OUT, 'pinterest.xml'), 'w', encoding='utf-8').write(f'<?xml ve
 def _pfeed(fn, title, desc, items):
     open(os.path.join(OUT, fn), 'w', encoding='utf-8').write(f'<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>{e(title)}</title><link>{BASE}/</link><description>{e(desc)}</description><language>tr</language>{"".join(items)}</channel></rss>')
 def _pimg(title, url, desc, img, when):
-    return f'<item><title>{e(title)}</title><link>{BASE}{url}</link><guid>{BASE}{url}#{img.rsplit("/",1)[-1]}</guid><pubDate>{_fdp(when)}</pubDate><description>{e(f'<img src="{BASE}{img}" alt="{title}"/><p>{desc}</p>')}</description><enclosure url="{BASE}{img}" type="image/jpeg" length="0"/><media:content url="{BASE}{img}" medium="image" type="image/jpeg"/></item>'
+    _t = 'image/png' if img.lower().endswith('.png') else 'image/jpeg'
+    return f'<item><title>{e(title)}</title><link>{BASE}{url}</link><guid>{BASE}{url}#{img.rsplit("/",1)[-1]}</guid><pubDate>{_fdp(when)}</pubDate><description>{e(f'<img src="{BASE}{img}" alt="{title}"/><p>{desc}</p>')}</description><enclosure url="{BASE}{img}" type="{_t}" length="0"/><media:content url="{BASE}{img}" medium="image" type="{_t}"/></item>'
 # katalogun tamamı (her bitki bir pin)
 _pfeed('pinterest-katalog.xml', 'Bitki Tabanı: şifalı bitkiler kataloğu', 'Her şifalı bitki: ne işe yarar, kanıtı ve uyarıları.',
        [_pitem(f'{q["tr"]} ({short_la(q)}): ne işe yarar, kimler kullanmamalı?', f'/{q["id"]}/', q['ilginc'], q['id'], _d0) for q in P if q['id'] in IMG])
@@ -2451,6 +2452,15 @@ _pfeed('pinterest-katalog.xml', 'Bitki Tabanı: şifalı bitkiler kataloğu', 'H
 _pfeed('pinterest-cizim.xml', 'Bitki Tabanı: botanik çizimler', 'Köhler ve Thomé’nin 19. yüzyıl tıbbi bitki levhaları.',
        [_pimg(f'{byId[k.split(":")[0]]["tr"]} botanik çizimi ({short_la(byId[k.split(":")[0]])})', f'/{k.split(":")[0]}/', (v.get('artist') or '') + '. ' + byId[k.split(":")[0]]['ilginc'], f'/img/tanima/{k.split(":")[0]}-cizim.jpg', _d0)
         for k, v in sorted(TANIMA.items()) if k.endswith(':cizim') and isinstance(v, dict) and k.split(':')[0] in byId])
+# kilim motifleri (Pinterest için dikey 1000x1500 kartlar)
+_pfeed('pinterest-motif.xml', 'Bitki Tabanı: kilim motifleri ve semboller',
+       'Anadolu kilim motifleri: anlamı, yöresi ve eşleştiği bitkiler. Çizimler CC BY-SA 4.0.',
+       [_pimg(f'{mo["ad"]} motifi — {mo.get("bolge", "")} kilim sembolü'.strip(' —'),
+              f'/semboller/{mo["slug"]}/',
+              re.sub(r'\s*\[\d+\]', '', duz(mo['kisa'])).strip(),
+              f'/img/pin/{mo["slug"]}.png', _d0)
+        for mo in MOTIFLER if os.path.exists(os.path.join(HERE, 'img', 'pin', mo['slug'] + '.png'))])
+
 # kavramlar ve kültür
 _pfeed('pinterest-kultur.xml', 'Bitki Tabanı: şamanizm, ritüel ve kavramlar', 'Bitkilerle ilgili kavramlar, ritüeller ve semboller.',
        [_pitem(f'{k["ad"]} nedir? {k["kisa"]}'[:100], f'/kavram/{k["slug"]}/', k['kisa'], k['bitki'], _d0) for k in KAV if k['bitki'] in IMG] + [_pimg(h['baslik'][:100], f'/hikaye/{h["slug"]}/', h['post'][:300], f'/img/hikaye/{h["slug"]}.jpg', _d0) for h in HIK if os.path.exists(os.path.join(HERE, 'img', 'hikaye', h['slug'] + '.jpg'))])
