@@ -2469,6 +2469,14 @@ _pfeed('pinterest-katalog.xml', 'Bitki Tabanı: şifalı bitkiler kataloğu', 'H
 _pfeed('pinterest-cizim.xml', 'Bitki Tabanı: botanik çizimler', 'Köhler ve Thomé’nin 19. yüzyıl tıbbi bitki levhaları.',
        [_pimg(f'{byId[k.split(":")[0]]["tr"]} botanik çizimi ({short_la(byId[k.split(":")[0]])})', f'/{k.split(":")[0]}/', (v.get('artist') or '') + '. ' + byId[k.split(":")[0]]['ilginc'], f'/img/tanima/{k.split(":")[0]}-cizim.jpg', _d0)
         for k, v in sorted(TANIMA.items()) if k.endswith(':cizim') and isinstance(v, dict) and k.split(':')[0] in byId])
+# tarifler (dikey kart: tarifler zaten pinterest.xml'de ama yatay bitki fotoğrafıyla;
+# bu besleme ölçü, süre ve adımların okunduğu dikey kartı veriyor)
+_pfeed('pinterest-tarif.xml', 'Bitki Tabanı: bitki çayı ve şifalı bitki tarifleri',
+       'Ölçüsü ve süresiyle: hangi bitki nasıl demlenir, nasıl pişirilir.',
+       [_pimg(f'{t["ad"]} — ölçüsü ve süresiyle tarif', f'/tarif/{t["slug"]}/', t['kisa'],
+              f'/img/tarif-pin/{t["slug"]}.png', _d0)
+        for t in LIVE_T if os.path.exists(os.path.join(HERE, 'img', 'tarif-pin', t['slug'] + '.png'))])
+
 # kilim motifleri (Pinterest için dikey 1000x1500 kartlar)
 _pfeed('pinterest-motif.xml', 'Bitki Tabanı: kilim motifleri ve semboller',
        'Anadolu kilim motifleri: anlamı, yöresi ve eşleştiği bitkiler. Çizimler CC BY-SA 4.0.',
