@@ -2,7 +2,13 @@
 # ALL=1 verilirse site haritasındaki bütün adresler gönderilir (ilk kurulumda bir kez).
 import json, os, re, urllib.request
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-d = json.load(open(os.path.join(HERE, '.cache', 'indexnow.json')))
+_c = os.path.join(HERE, '.cache', 'indexnow.json')
+if os.path.exists(_c):
+    d = json.load(open(_c))
+else:  # derleme yapılmadan çalıştırıldıysa (indexnow.yml): anahtar sitedeki doğrulama dosyasından
+    import glob
+    _k = [os.path.basename(f)[:-4] for f in glob.glob(os.path.join(HERE, 'site', '*.txt')) if re.fullmatch(r'[0-9a-f]{32}', os.path.basename(f)[:-4])]
+    d = {'key': _k[0], 'urls': []}
 urls = d['urls']
 # 23 Kasım: kapsam genişledi. Derlemenin verdiği günlük liste (bugünün bitkisi ve sabit sayfalar) yetmiyordu:
 # yeni karşılaştırma, tarif, İngilizce sayfa ya da açıklaması değişen bitki hiç bildirilmiyordu.

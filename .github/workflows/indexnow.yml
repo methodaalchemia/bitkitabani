@@ -1,0 +1,14 @@
+name: IndexNow — bütün adresleri gönder
+# Derleme kuyruğundan (images) bağımsız: yayındaki site haritasının tamamını Bing/Yandex'e bir kez bildirir.
+on: workflow_dispatch
+concurrency: indexnow
+jobs:
+  gonder:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 2 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: python3 tools/indexnow.py
+        env: { ALL: '1' }
