@@ -771,6 +771,22 @@ async function araVek(env, req, data) {
   }
   await call(env, 'ara:meta', 'put', { ver, n: k }); return out;
 }
+// ---------- Arama talebi kaydı (23 Kasım): yalnız sorgu metni ve sayısı; IP, kimlik, zaman damgası saklanmaz ----------
+// Ay ay tutulur, son 3 ay kalır; ayda en çok 3.000 farklı sorgu. E-posta, telefon ya da adres gibi görünen metin kaydedilmez.
+async function sorguKaydet(env, q, kaynak, n) {
+  try {
+    q = String(q || '').toLocaleLowerCase('tr').replace(/\s+/g, ' ').trim().slice(0, 80);
+    if (q.length < 2 || /@|https?:|www\.|\d{6,}|\d{3}[\s.-]\d{3}/.test(q)) return;
+    const ay = trDay().slice(0, 7), L = (await call(env, 'arama:log', 'get')) || {};
+    for (const k of Object.keys(L).sort().slice(0, -3)) delete L[k];
+    const A = L[ay] || (L[ay] = {});
+    if (!A[q] && Object.keys(A).length >= 3000) return;
+    const r = A[q] || (A[q] = [0, 0, {}]);
+    r[0]++; if (!n) r[1]++; r[2][kaynak] = (r[2][kaynak] || 0) + 1;
+    await call(env, 'arama:log', 'put', L);
+  } catch (e) {}
+}
+
 async function araApi(req, env, url) {
   const q = String(url.searchParams.get('q') || '').trim().slice(0, 200);
   if (q.length < 3) return json({ error: 'Biraz daha uzun yaz.' }, 400);
@@ -797,6 +813,7 @@ async function araApi(req, env, url) {
   const sonuc = L.filter(x => tam ? x.c.kw === 1 || (x.sem > 0.5 && x.c.kw >= 0.5) : x.sem > 0.42 || x.c.kw >= 0.5)
     .sort((a, b) => b.s - a.s).slice(0, 10)
     .map(x => { const p = data.p[x.i]; return { id: p.id, tr: p.tr, la: p.la, guv: p.guv, ...(x.c.best || { etiket: 'Sayfa', bolum: '', cumle: p.kisa }), skor: Math.round(x.s * 100) / 100 }; });
+  await sorguKaydet(env, q, 'akilli', sonuc.length);
   return json({ q, sonuc }, 200, { 'cache-control': 'no-store' });
 }
 
@@ -1029,6 +1046,23 @@ export default {
     if (url.pathname === '/api/qr-durum' && req.method === 'GET') return json((await call(env, 'qr:sayac', 'get')) || {});
     if (url.pathname.startsWith('/api/abone/') && (req.method === 'GET' || url.pathname === '/api/abone/cik')) return aboneApi(req, env, url);
     if (req.method !== 'GET' && req.headers.get('x-bt') !== '1') return json({ error: 'csrf' }, 403);
+    if (url.pathname === '/api/sorgu' && req.method === 'POST') {   // arama kutusu: sorgu metni ve sonuç sayısı
+      const b = await req.json().catch(() => ({}));
+      await sorguKaydet(env, b.q, ['ana', 'katalog', 'rehber'].includes(b.k) ? b.k : 'diger', Number(b.n) || 0);
+      return json({ ok: true });
+    }
+    if (url.pathname === '/api/sorgu-rapor' && req.method === 'GET') {   // yalnızca site sahibi
+      const s3 = await session(req, env);
+      if (!s3 || !s3.admin) return json({ error: s3 ? 'yetki' : 'giriş yok', not: 'bitkitabani.com/hesap/ sayfasından giriş yap' }, s3 ? 403 : 401);
+      const L = (await call(env, 'arama:log', 'get')) || {};
+      const q = v => '"' + String(v == null ? '' : v).replace(/"/g, '""') + '"';
+      const satir = [];
+      for (const ay of Object.keys(L).sort().reverse()) for (const [t, r] of Object.entries(L[ay]).sort((a, b) => b[1][0] - a[1][0]))
+        satir.push([ay, t, r[0], r[1], Object.entries(r[2] || {}).map(([k, v]) => k + ':' + v).join(' ')].map(q).join(','));
+      const csv = '\ufeff' + ['ay', 'sorgu', 'sayı', 'sonuçsuz', 'nereden'].map(q).join(',') + '\n' + satir.join('\n') + '\n';
+      const indir = url.searchParams.get('indir') === '1';
+      return new Response(csv, { headers: { 'content-type': indir ? 'text/csv; charset=utf-8' : 'text/plain; charset=utf-8', ...(indir ? { 'content-disposition': 'attachment; filename="bitkitabani-aramalar.csv"' } : {}), 'cache-control': 'no-store', 'x-robots-tag': 'noindex' } });
+    }
     if (url.pathname === '/api/abone') return aboneApi(req, env, url);
     if (url.pathname.startsWith('/api/katki')) return katkiApi(req, env, url);
     if (url.pathname === '/api/abone-liste' && req.method === 'GET') {   // yalnızca site sahibi: bülten kayıtları

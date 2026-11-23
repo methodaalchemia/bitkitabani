@@ -77,7 +77,14 @@
   });
   var q = document.getElementById('q');
   readUrl();
-  q.addEventListener('input', function(){ state.q = q.value.trim(); render(); });
+  // arama talebi kaydı: yazmayı bitirdikten 2 sn sonra, yalnız sorgu metni ve sonuç sayısı (kimlik yok); İngilizce katalogda kaydedilmez
+  var sqT, sqSon = '';
+  function sorguGonder(){
+    var v = q.value.trim(); if (v.length < 2 || v === sqSon || location.pathname.indexOf('/en/') === 0) return; sqSon = v;
+    var n = cards.filter(function(c){ return !c.hidden; }).length;
+    try { fetch('/api/sorgu', { method: 'POST', keepalive: true, headers: { 'content-type': 'application/json', 'x-bt': '1' }, body: JSON.stringify({ q: v, k: 'katalog', n: n }) }); } catch (e) {}
+  }
+  q.addEventListener('input', function(){ state.q = q.value.trim(); render(); clearTimeout(sqT); sqT = setTimeout(sorguGonder, 2000); });
   document.getElementById('reset').addEventListener('click', function(){
     state = { q:'', bolge:{}, kat:{}, kanit:{}, guv:{}, durum:{}, kisim:{}, ay:{} }; q.value = '';
     document.querySelectorAll('.chip[data-g]').forEach(function(c){ c.setAttribute('aria-pressed','false'); });

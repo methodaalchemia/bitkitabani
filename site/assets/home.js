@@ -34,6 +34,8 @@
   f.addEventListener('submit', function(ev){
     var v = q.value.trim(); if (!v) { ev.preventDefault(); return; }
     var m = matches(v);
+    // arama talebi kaydı: yalnız sorgu metni ve eşleşme sayısı (kimlik yok)
+    try { fetch('/api/sorgu', { method: 'POST', keepalive: true, headers: { 'content-type': 'application/json', 'x-bt': '1' }, body: JSON.stringify({ q: v, k: 'ana', n: m.length }) }); } catch (e) {}
     if (m.length === 1 || (m.length && norm(m[0][1]) === norm(v))) { ev.preventDefault(); location.href = '/' + m[0][0] + '/'; return; }
     if (v.split(/\s+/).length >= 3 || !m.length) { ev.preventDefault(); location.href = '/rehber/?q=' + encodeURIComponent(v) + '#ara'; }
   });
