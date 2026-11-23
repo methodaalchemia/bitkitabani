@@ -1227,6 +1227,19 @@ json.dump([dict(zip(_VERI_BASLIK, r)) for r in _VERI],
 # Güncel sayılar: tek yetkili kaynak. Hibe başvurusu, seminer ve doküman metinleri
 # sayıyı elle yazmak yerine buradan okur; her derlemede kendiliğinden tazelenir.
 _bek = [q for q in _K.Q if datetime.date.fromisoformat(q['yayin']) > LOCAL_DAY]
+# Panel sayfası için kuyruk: hangi kayıt hangi gün çıkacak. Tam kayıt değil,
+# yalnızca listede gösterilecek alanlar — dosya küçük kalsın.
+def _kis(t, n=240):
+    t = re.sub(r'\*\*|\[|\]\(.*?\)', '', str(t or '')).strip()
+    return t if len(t) <= n else t[:n].rsplit(' ', 1)[0] + '…'
+os.makedirs(os.path.join(OUT, 'veri'), exist_ok=True)
+json.dump([{'yayin': q['yayin'], 'id': q['id'], 'tr': q.get('tr', ''), 'la': q.get('la', ''),
+            'fam': q.get('fam', ''), 'kanit': q.get('kanit', ''), 'guv': q.get('guv', ''),
+            'ozet': _kis(q.get('ilginc') or (q.get('kul') or [['', '']])[0][1])} for q in _bek],
+          open(os.path.join(OUT, 'veri', 'kuyruk.json'), 'w', encoding='utf-8'), ensure_ascii=False)
+# Dosyaları artık igmedia'da bulunmayan eski YouTube videolarının caption arşivi
+_ars = os.path.join(HERE, 'veri', 'arsiv.json')
+if os.path.exists(_ars): shutil.copy(_ars, os.path.join(OUT, 'veri', 'arsiv.json'))
 json.dump({
     'tarih': LOCAL_DAY.isoformat(),
     'bitki': len(P),

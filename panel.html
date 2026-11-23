@@ -57,7 +57,8 @@ function oku(){ try{ return JSON.parse(localStorage.getItem(AN)||'{}'); }catch(e
 function yaz(o){ try{ localStorage.setItem(AN, JSON.stringify(o)); }catch(e){} }
 
 async function jget(yol){
-  try{ const r = await fetch(IG + yol, {cache:'no-cache'}); if(!r.ok) return null; return await r.json(); }
+  const tam = yol.startsWith('/') ? yol : IG + yol;
+  try{ const r = await fetch(tam, {cache:'no-cache'}); if(!r.ok) return null; return await r.json(); }
   catch(e){ return null; }
 }
 
@@ -88,6 +89,8 @@ function kartYap(k){
       setTimeout(()=>{b.textContent='Caption kopyala'; b.classList.remove('ok');}, 1400);}catch(err){ b.textContent='Kopyalanamadı'; } };
     d.appendChild(b);
   }
+  if (k.kuyruk){ const n = document.createElement('span'); n.className='etik'; n.style.marginLeft='0';
+    n.textContent = 'henüz yayımlanmadı'; d.appendChild(n); }
   const dosya = k.video || k.gorsel;
   if (dosya){ const a = document.createElement('a'); a.href = dosya; a.download = ''; a.textContent = 'İndir'; a.target='_blank'; d.appendChild(a); }
   if (k.sayfa){ const a = document.createElement('a'); a.href = k.sayfa; a.textContent = 'Sayfası'; a.target='_blank'; d.appendChild(a); }
@@ -130,6 +133,21 @@ async function topla(){
   const ay = await jget('aylik.json');
   if (ay && ay.caption) out.push({ id:'ay:'+(ay.ay||''), grup:'Aylık', etiket:'AYLIK · '+(ay.ay||''),
     baslik:'Ayın gönderisi', caption:ay.caption, gorsel:ay.image||'' });
+
+  // Dosyaları igmedia'dan düşmüş eski YouTube videoları: caption'ları duruyor
+  const ars = await jget('/veri/arsiv.json');
+  if (ars) for (const v of ars) out.push({
+    id:'ars:'+v.id, grup:'YouTube arşivi', etiket:'YOUTUBE · DOSYA YOK', baslik:v.tr||v.id,
+    caption:v.caption||'', sayfa:'https://bitkitabani.com/'+v.id+'/'
+  });
+
+  // Kuyruk: hazır ama henüz yayımlanmamış kayıtlar, çıkacakları günle
+  const kuy = await jget('/veri/kuyruk.json');
+  if (kuy) for (const q of kuy) out.push({
+    id:'kuy:'+q.id, grup:'Kuyruk', etiket:'KUYRUK · '+q.yayin, baslik:q.tr||q.id,
+    caption:[q.la, q.fam, q.ozet].filter(Boolean).join('\n\n'),
+    sayfa:'', kuyruk:true, tarih:q.yayin
+  });
   return out;
 }
 
