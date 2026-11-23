@@ -152,7 +152,12 @@
   dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
   if (root.dataset.odak === 'o') ritueller(); else cizelge();
   function detayAc() { var id = decodeURIComponent(location.hash.slice(1)), a = id && document.getElementById(id), d = a && a.closest('details'); if (d) { d.open = true; setTimeout(function () { a.scrollIntoView({ block: 'start' }); }, 50); } }
-  window.addEventListener('hashchange', detayAc); detayAc();
-  var h = decodeURIComponent(location.hash.slice(1)), k0 = h && root.querySelector('#k-' + CSS.escape(h));
-  if (k0) setTimeout(function () { k0.scrollIntoView({ block: 'center' }); k0.classList.add('tk-vurgu'); }, 200);
+  window.addEventListener('hashchange', detayAc);
+  // Betik artık sayfa ayrıştırılırken çalışıyor; sayfanın geri kalanına dokunan işler DOM hazır olunca
+  function hazir() {
+    detayAc();
+    var h = decodeURIComponent(location.hash.slice(1)), k0 = h && root.querySelector('#k-' + CSS.escape(h));
+    if (k0) setTimeout(function () { k0.scrollIntoView({ block: 'center' }); k0.classList.add('tk-vurgu'); }, 200);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', hazir); else hazir();
 })();

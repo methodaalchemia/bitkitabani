@@ -2201,7 +2201,9 @@ def takvim_widget(odak):
     return ('<section class="tk" data-odak="' + odak + '" aria-label="Takvim"><div class="tk-govde"><p class="muted-s">Takvim yükleniyor…</p></div>'
         '<p class="tk-abone muted-s">Bütün ritüelleri ve toplama mevsimlerini telefonunun takvimine ekle: <a href="webcal://bitkitabani.com/takvim.ics">Takvime abone ol</a> · <a href="/takvim.ics" download>.ics indir</a></p>'
         '<dialog class="tk-dlg"><form method="dialog"><button class="tk-x" aria-label="Kapat">×</button></form><div class="tk-ic"></div></dialog>'
-        '<script type="application/json" id="tkData">' + json.dumps(TK, ensure_ascii=False).replace('</', '<\\/') + '</script></section>')
+        '<script type="application/json" id="tkData">' + json.dumps(TK, ensure_ascii=False).replace('</', '<\\/') + '</script></section>'
+        # 23 Kasım CLS: takvim yer tutucuyla değil, doğrudan son hâliyle boyansın diye betik bölümün hemen ardından, ertelenmeden çalışır
+        '<script src="/assets/takvim.js"></script>')
 def _ics_esc(t): return str(t).replace('\\', '\\\\').replace(';', '\\;').replace(',', '\\,').replace('\n', '\\n')
 _ics = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Bitki Tabani//Takvim//TR', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH', 'X-WR-CALNAME:Bitki Tabanı', 'X-WR-TIMEZONE:Europe/Istanbul', 'REFRESH-INTERVAL;VALUE=DURATION:P7D']
 _y0 = LOCAL_DAY.year
@@ -2241,7 +2243,7 @@ def _olay_html(bas, o):
 write('/takvim/', page('Ritüel ve mevsim takvimi: Nevruz, Hıdrellez, gündönümleri | Bitki Tabanı', 'Nevruz, Hıdrellez, gündönümleri, ekinokslar ve And’larda Pachamama ayı: yılın ritüel ve mevsim takvimi, bitkileri ve sembolleriyle.', '/takvim/',
       f'''{crumbs(('/takvim/', 'Takvim'))}{takvim_tabs('r')}<header class="page-head"><span class="eyebrow">Ritüel ve mevsim takvimi</span><h1>Yılın dönüm noktaları</h1><p>Bayramlar, gündönümleri ve doğadaki büyük değişimler; her biri kendi bitkileri ve sembolleriyle. Çarktaki noktalar yılın dönüm noktaları; birine dokun, takvimine ekle ya da paylaş.</p></header>
 {takvim_widget('o')}<details class="tk-detay" id="ayrinti"><summary>Ayrıntılar, semboller ve kaynaklar</summary>
-<div class="olaylar">{"".join(_olay_html(b, o) for b, o in _ol)}</div></details>''', 'takvim', '<script src="/assets/takvim.js" defer></script>', extra=lds(crumb_ld(('/takvim/', 'Takvim')))))
+<div class="olaylar">{"".join(_olay_html(b, o) for b, o in _ol)}</div></details>''', 'takvim', '', extra=lds(crumb_ld(('/takvim/', 'Takvim')))))
 GUIDE_URLS.append('/takvim/')
 
 # --- yöresel ve diğer adlar sözlüğü ---
@@ -2391,7 +2393,7 @@ _cs = ''.join(f'<section class="sec" id="ay-{m}"><h2>{AYLAR[m-1]}{" (bu ay)" if 
 path = '/toplama-takvimi/'
 write(path, page(f'Şifalı bitki toplama takvimi: {AYLAR[_cur-1]} ayında hangi bitkiler toplanır? | Bitki Tabanı', f'Anadolu’da ay ay toplanan şifalı bitkiler. {AYLAR[_cur-1]} ayında toplama mevsimi olan {len(_cal[_cur])} bitki ve yılın geri kalanı.', path,
       f'''{crumbs(('/takvim/', 'Takvim'), (path, 'Doğada bu ay'))}{takvim_tabs('d')}<header class="page-head"><span class="eyebrow">Ay ay · {AYLAR[_cur-1]} başta</span><h1>Şifalı bitki toplama takvimi</h1><p>Anadolu’da yetişen bitkilerin toplama mevsimleri, kayıtlardaki “Doğada” bilgisinden derlendi. Liste her ay kendiliğinden içinde bulunduğumuz aydan başlar. Koruma altındaki, yasal kısıtlı ve yüksek riskli bitkiler bu listeye alınmaz.</p></header>
-<aside class="warnbox" role="note"><b>Toplarken:</b> Yalnızca kesin tanıdığın bitkileri (<a href="/rehber/zehirli-bitkiler/">en çok karıştırılan zehirli bitkiler</a>), yol kenarından ve ilaçlanmış alanlardan uzakta topla; bir bitkinin tamamını değil bir kısmını alın ki yeniden büyüyebilsin.</aside>{takvim_widget('p')}<details class="tk-detay"><summary>Ay ay liste</summary>{_cs}</details>''', 'rehber', '<script src="/assets/takvim.js" defer></script>', extra=lds(crumb_ld(('/rehber/', 'Rehberler'), (path, 'Toplama takvimi')))))
+<aside class="warnbox" role="note"><b>Toplarken:</b> Yalnızca kesin tanıdığın bitkileri (<a href="/rehber/zehirli-bitkiler/">en çok karıştırılan zehirli bitkiler</a>), yol kenarından ve ilaçlanmış alanlardan uzakta topla; bir bitkinin tamamını değil bir kısmını alın ki yeniden büyüyebilsin.</aside>{takvim_widget('p')}<details class="tk-detay"><summary>Ay ay liste</summary>{_cs}</details>''', 'rehber', '', extra=lds(crumb_ld(('/rehber/', 'Rehberler'), (path, 'Toplama takvimi')))))
 GUIDE_URLS.append(path)
 
 # --- rehber ana sayfası ---
