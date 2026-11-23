@@ -2864,6 +2864,15 @@ def _csp():
     hs = hs.replace('/*\n', '/*\n  Content-Security-Policy: ' + pol + '\n', 1)
     open(hp, 'w').write(hs)
     return len(oz)
+# İçerik paneli: yayımlanan görsel/video/metinleri tek sayfada toplar. Menüde yok,
+# noindex. Veriyi çalışma anında /ig/ altındaki index dosyalarından çeker, derlemeye
+# yük bindirmez. _csp()'den önce kopyalanır ki satır içi betiği özete girsin.
+_pnl = os.path.join(HERE, 'panel.html')
+if os.path.exists(_pnl):
+    os.makedirs(os.path.join(OUT, 'panel'), exist_ok=True)
+    shutil.copy(_pnl, os.path.join(OUT, 'panel', 'index.html'))
+    print('panel sayfası yazıldı')
+
 print('CSP', _csp(), 'satır içi betik özeti')
 print('ok', len(urls), 'sayfa')
 
