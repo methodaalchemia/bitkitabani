@@ -8,32 +8,34 @@
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/style.css">
 <style>
-:root{--paper:#F2EDE3;--kart:#FBF8F2;--ink:#16202B;--mut:#7A7468;--acc:#9C3A24;--cizgi:#E2D9C8}
+/* Sitenin kendi tema değişkenlerini kullanır: açık/karanlık modu takip eder.
+   Kendi adlarımızı yeniden tanımlamıyoruz, yoksa site paletiyle çakışıyor. */
+:root{--p-kart:var(--sheet,#FBF8F2);--p-mut:var(--muted,#7A7468);--p-acc:var(--accent,#9C3A24);--p-cizgi:var(--rule,#E2D9C8)}
 *{box-sizing:border-box}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body,system-ui,sans-serif);font-size:16px;line-height:1.5}
+body{margin:0;background:var(--paper,#F2EDE3);color:var(--ink,#16202B);font-family:var(--f-body,system-ui,sans-serif);font-size:16px;line-height:1.5}
 .sar{max-width:900px;margin:0 auto;padding:22px 16px 80px}
 h1{font-family:var(--f-display,Georgia,serif);font-size:30px;line-height:1.15;margin:0 0 6px;letter-spacing:-.01em}
-.alt{color:var(--mut);margin:0 0 18px;font-size:15px}
-.araclar{position:sticky;top:0;z-index:5;background:var(--paper);padding:10px 0 12px;border-bottom:1px solid var(--cizgi);margin-bottom:16px}
-input[type=search]{width:100%;padding:11px 14px;border:1px solid var(--cizgi);border-radius:10px;background:var(--kart);font:inherit;color:inherit}
-input[type=search]:focus{outline:2px solid var(--acc);outline-offset:-1px}
+.alt{color:var(--p-mut);margin:0 0 18px;font-size:15px}
+.araclar{position:sticky;top:0;z-index:5;background:var(--paper,#F2EDE3);padding:10px 0 12px;border-bottom:1px solid var(--p-cizgi);margin-bottom:16px}
+input[type=search]{width:100%;padding:11px 14px;border:1px solid var(--p-cizgi);border-radius:10px;background:var(--p-kart);font:inherit;color:inherit}
+input[type=search]:focus{outline:2px solid var(--p-acc);outline-offset:-1px}
 .sekme{display:flex;gap:7px;margin-top:10px;flex-wrap:wrap}
-.sekme button{flex:0 0 auto;padding:7px 13px;border:1px solid var(--cizgi);border-radius:999px;background:var(--kart);font:inherit;font-size:14px;color:var(--mut);cursor:pointer}
-.sekme button[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:var(--kart)}
-.sayac{font-size:13px;color:var(--mut);margin:10px 2px 0}
-.kart{background:var(--kart);border:1px solid var(--cizgi);border-radius:14px;padding:14px;margin-bottom:14px;display:grid;grid-template-columns:150px 1fr;gap:14px}
+.sekme button{flex:0 0 auto;padding:7px 13px;border:1px solid var(--p-cizgi);border-radius:999px;background:var(--p-kart);font:inherit;font-size:14px;color:var(--p-mut);cursor:pointer}
+.sekme button[aria-pressed=true]{background:var(--ink);border-color:var(--ink,#16202B);color:var(--p-kart)}
+.sayac{font-size:13px;color:var(--p-mut);margin:10px 2px 0}
+.kart{background:var(--p-kart);border:1px solid var(--p-cizgi);border-radius:14px;padding:14px;margin-bottom:14px;display:grid;grid-template-columns:150px 1fr;gap:14px}
 @media(max-width:560px){.kart{grid-template-columns:1fr}}
-.gor{width:100%;border-radius:10px;background:#E8E0D2;aspect-ratio:9/16;object-fit:cover;display:block}
+.gor{width:100%;border-radius:10px;background:var(--p-cizgi);aspect-ratio:9/16;object-fit:cover;display:block}
 .gor.kare{aspect-ratio:4/5}
 .bas{font-family:var(--f-display,Georgia,serif);font-weight:700;font-size:19px;margin:0 0 2px}
-.etik{font-size:12px;color:var(--mut);letter-spacing:.04em;text-transform:uppercase;margin:0 0 8px}
-.cap{white-space:pre-wrap;font-size:14.5px;background:#fff;border:1px solid var(--cizgi);border-radius:9px;padding:10px 11px;max-height:168px;overflow:auto;margin:0 0 9px}
+.etik{font-size:12px;color:var(--p-mut);letter-spacing:.04em;text-transform:uppercase;margin:0 0 8px}
+.cap{white-space:pre-wrap;font-size:14.5px;background:var(--paper,#fff);border:1px solid var(--p-cizgi);border-radius:9px;padding:10px 11px;max-height:168px;overflow:auto;margin:0 0 9px}
 .dug{display:flex;gap:7px;flex-wrap:wrap;align-items:center}
-.dug button,.dug a{padding:6px 12px;border:1px solid var(--cizgi);border-radius:8px;background:#fff;font:inherit;font-size:13.5px;color:var(--ink);cursor:pointer;text-decoration:none}
-.dug button:hover,.dug a:hover{border-color:var(--acc);color:var(--acc)}
+.dug button,.dug a{padding:6px 12px;border:1px solid var(--p-cizgi);border-radius:8px;background:var(--paper,#fff);font:inherit;font-size:13.5px;color:var(--ink,#16202B);cursor:pointer;text-decoration:none}
+.dug button:hover,.dug a:hover{border-color:var(--p-acc);color:var(--p-acc)}
 .dug .ok{color:#2E6A45;border-color:#2E6A45}
-.pay{margin-left:auto;font-size:13px;color:var(--mut);display:flex;gap:6px;align-items:center;cursor:pointer}
-.yok{color:var(--mut);padding:30px 4px}
+.pay{margin-left:auto;font-size:13px;color:var(--p-mut);display:flex;gap:6px;align-items:center;cursor:pointer}
+.yok{color:var(--p-mut);padding:30px 4px}
 </style>
 </head>
 <body>
@@ -57,7 +59,8 @@ function oku(){ try{ return JSON.parse(localStorage.getItem(AN)||'{}'); }catch(e
 function yaz(o){ try{ localStorage.setItem(AN, JSON.stringify(o)); }catch(e){} }
 
 async function jget(yol){
-  try{ const r = await fetch(IG + yol, {cache:'no-cache'}); if(!r.ok) return null; return await r.json(); }
+  const tam = yol.startsWith('/') ? yol : IG + yol;
+  try{ const r = await fetch(tam, {cache:'no-cache'}); if(!r.ok) return null; return await r.json(); }
   catch(e){ return null; }
 }
 
@@ -88,6 +91,8 @@ function kartYap(k){
       setTimeout(()=>{b.textContent='Caption kopyala'; b.classList.remove('ok');}, 1400);}catch(err){ b.textContent='Kopyalanamadı'; } };
     d.appendChild(b);
   }
+  if (k.kuyruk){ const n = document.createElement('span'); n.className='etik'; n.style.marginLeft='0';
+    n.textContent = 'henüz yayımlanmadı'; d.appendChild(n); }
   const dosya = k.video || k.gorsel;
   if (dosya){ const a = document.createElement('a'); a.href = dosya; a.download = ''; a.textContent = 'İndir'; a.target='_blank'; d.appendChild(a); }
   if (k.sayfa){ const a = document.createElement('a'); a.href = k.sayfa; a.textContent = 'Sayfası'; a.target='_blank'; d.appendChild(a); }
@@ -130,6 +135,21 @@ async function topla(){
   const ay = await jget('aylik.json');
   if (ay && ay.caption) out.push({ id:'ay:'+(ay.ay||''), grup:'Aylık', etiket:'AYLIK · '+(ay.ay||''),
     baslik:'Ayın gönderisi', caption:ay.caption, gorsel:ay.image||'' });
+
+  // Dosyaları igmedia'dan düşmüş eski YouTube videoları: caption'ları duruyor
+  const ars = await jget('/veri/arsiv.json');
+  if (ars) for (const v of ars) out.push({
+    id:'ars:'+v.id, grup:'YouTube arşivi', etiket:'YOUTUBE · DOSYA YOK', baslik:v.tr||v.id,
+    caption:v.caption||'', sayfa:'https://bitkitabani.com/'+v.id+'/'
+  });
+
+  // Kuyruk: hazır ama henüz yayımlanmamış kayıtlar, çıkacakları günle
+  const kuy = await jget('/veri/kuyruk.json');
+  if (kuy) for (const q of kuy) out.push({
+    id:'kuy:'+q.id, grup:'Kuyruk', etiket:'KUYRUK · '+q.yayin, baslik:q.tr||q.id,
+    caption:[q.la, q.fam, q.ozet].filter(Boolean).join('\n\n'),
+    sayfa:'', kuyruk:true, tarih:q.yayin
+  });
   return out;
 }
 
