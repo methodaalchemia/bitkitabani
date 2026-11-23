@@ -573,6 +573,18 @@ DESCRIPTION:Haziran–Ağustos arasında krem rengi\, yoğun bal kokulu
 URL:https://bitkitabani.com/cayirkralicesi/
 END:VEVENT
 BEGIN:VEVENT
+UID:toplama-cayirucgulu@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260501
+DTEND;VALUE=DATE:20260502
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Çayır üçgülü toplama mevsimi
+DESCRIPTION:Mayıs–Eylül arasında pembe-mor küre çiçekler\; çiçe
+ k durumları tam açılmışken toplanıp kurutulur. https://bitkitabani.
+ com/cayirucgulu/
+URL:https://bitkitabani.com/cayirucgulu/
+END:VEVENT
+BEGIN:VEVENT
 UID:toplama-cemen@bitkitabani.com
 DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260701

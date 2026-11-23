@@ -59,6 +59,11 @@ def run(G):
         _seen.add(_s); _HSL[_h['slug']] = _s
     from misc_en import ALT_EN, KORUMA_EN, YASAL_EN, YASAL_AD_EN, BR_EN, REG_EN, KAT_EN, KANIT_EN, GUV_EN, KAN_AD_EN, BIO_EN, FAM_EN, LA_TR_EN
     EN.update(G.get('EN_NEW', {})); ETK_EN.update(G.get('ETK_EN_NEW', {}))
+    # 24 Kasım (Eda): İngilizce metin Türkçenin birebir çevirisi olacak. Türkçesi sonradan genişleyip
+    # İngilizcesi eski kalan alanların yeni çevirileri en/birebir.py'de; burada asıl metnin üzerine yazılır.
+    from birebir import EN_FIX
+    for _i, _f in EN_FIX.items():
+        if _i in EN: EN[_i] = {**EN[_i], **_f}
 
     # A5: Türkçe sızıntısı — bölge rozetinin başlığı, familya adı ve Latince ad alanı
     REG_C = G['REG']
@@ -306,15 +311,30 @@ def run(G):
             body_s += sec('Conservation', f'<dl class="meta wide">{rows}</dl>')
         if pid in bridges_of:
             body_s += sec('Culture bridge', ''.join(f'<p><b>{e(BR_EN[i-1][0])}.</b> {e(BR_EN[i-1][1])} <a class="cta" href="/en/bridges/{slug_of(BR[i-1])}/">Read the comparison →</a></p>' for i in bridges_of[pid]))
-        rel = [byId[r] for r in EXTRA.get(pid, []) if r in byId]
+        rel = [byId[r] for r in dict.fromkeys(EXTRA.get(pid, [])) if r in byId and r != pid]
         def sim(q): return 2 * len(set(q['bolge']) & set(p['bolge'])) + len(set(q['kat']) & set(p['kat'])) + (2 if q['fam'] == p['fam'] else 0)
         similar = rel[:1] + sorted((q for q in P if q['id'] != pid and q not in rel), key=lambda q: (-sim(q), q['no']))[:3 - len(rel[:1])]
         if rel:
             body_s += '<section class="sec"><h2>Related plants in other cultures</h2><div class="related">' + ''.join(f'<a class="chip" href="/en/{q["id"]}/">{"".join(dot(r) for r in q["bolge"])}{e(name(q))}</a>' for q in rel) + '</div></section>'
+        from birebir import MOTIF_NOT
+        _mb = []
+        for m, n in G['MOTIF_BITKI'].get(pid, []):
+            if m['slug'] in M_EN2 and pid in (M_EN2[m['slug']].get('notes') or {}):
+                _mb.append((m, f'/en/symbols/{M_EN2[m["slug"]]["slug"]}/', M_EN2[m['slug']]['ad'], M_EN2[m['slug']]['notes'][pid], ''))
+            elif (m['slug'], pid) in MOTIF_NOT:
+                _ad, _nt = MOTIF_NOT[(m['slug'], pid)]
+                _mb.append((m, f'/semboller/{m["slug"]}/', _ad, _nt, ' lang="tr" hreflang="tr"'))
+        if _mb:
+            body_s += ('<section class="sec"><h2>Symbol in culture</h2><p class="muted-s">It is not claimed that the motif depicts this plant; '
+                       'what the link is is written on each line.</p><ul class="motif-bag">'
+                       + ''.join(f'<li><a class="mb-a" href="{u}"{hl}>'
+                                 + G['motif_svg'](m).replace(f'aria-label="{e(m["ad"])} motifi çizimi"', f'aria-label="{e(ad)} motif drawing"').replace(f'{e(m["ad"])} motifi</title>', f'{e(ad)} motif</title>')
+                                 + f'<b>{e(ad)}</b></a><span>{e(nt)}{" (Symbol page in Turkish.)" if hl else ""}</span></li>' for m, u, ad, nt, hl in _mb)
+                       + '</ul></section>')
         _rm = [(f'/en/guides/{R_EN[k["slug"]]["slug"]}/', 'Guide: ' + R_EN[k['slug']]['kisa']) for k in G['KONULAR'] if k['slug'] in R_EN and any(x == pid for x, _ in k['bitkiler']) and sum(1 for z, _ in k['bitkiler'] if z in byId) >= 2]
         _rm += [(f'/en/recipes/{T_EN2[t["slug"]]["slug"]}/', 'Recipe: ' + T_EN2[t['slug']]['ad']) for t in G['LIVE_T'] if t['bitki'] == pid and t['slug'] in T_EN2]
         _rm += [(f'/en/articles/{Y_EN2[y["slug"]]["slug"]}/', 'Article: ' + Y_EN2[y['slug']]['baslik']) for y in G['YAZILAR'] if y['slug'] in Y_EN2 and pid in y['bitkiler']]
-        _rm += [(f'/en/symbols/{M_EN2[m["slug"]]["slug"]}/', 'Symbol: ' + M_EN2[m['slug']]['ad']) for m in G['MOTIFLER'] if m['slug'] in M_EN2 and any(x == pid for x, _ in m['bitkiler'])]
+        if False: _rm += [(f'/en/symbols/{M_EN2[m["slug"]]["slug"]}/', 'Symbol: ' + M_EN2[m['slug']]['ad']) for m in G['MOTIFLER'] if m['slug'] in M_EN2 and any(x == pid for x, _ in m['bitkiler'])]
         _rm += [(f'/en/stories/{_HSL[h["slug"]]}/', 'Story: ' + H_EN2[h['slug']]['baslik']) for h in G['HIK'] if h['slug'] in H_EN2 and h['slug'] in _HSL and G['_hik_bitki'](h) == pid][:3]
         if p['guv'] == 'yuksek' or pid in BKAR_EN: _rm.append(('/en/guides/poisonous-plants/', 'Poisonous plants and look-alikes'))
         if _rm:
