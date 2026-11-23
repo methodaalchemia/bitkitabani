@@ -2474,8 +2474,8 @@ _pfeed('pinterest-cizim.xml', 'Bitki Tabanı: botanik çizimler', 'Köhler ve Th
 _pfeed('pinterest-tarif.xml', 'Bitki Tabanı: bitki çayı ve şifalı bitki tarifleri',
        'Ölçüsü ve süresiyle: hangi bitki nasıl demlenir, nasıl pişirilir.',
        [_pimg(f'{t["ad"]} — ölçüsü ve süresiyle tarif', f'/tarif/{t["slug"]}/', t['kisa'],
-              f'/img/tarif-pin/{t["slug"]}.png', _d0)
-        for t in LIVE_T if os.path.exists(os.path.join(HERE, 'img', 'tarif-pin', t['slug'] + '.png'))])
+              f'/img/tarif-pin/{t["slug"]}.jpg', _d0)
+        for t in LIVE_T if os.path.exists(os.path.join(HERE, 'img', 'tarif-pin', t['slug'] + '.jpg'))])
 
 # kilim motifleri (Pinterest için dikey 1000x1500 kartlar)
 _pfeed('pinterest-motif.xml', 'Bitki Tabanı: kilim motifleri ve semboller',
