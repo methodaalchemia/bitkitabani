@@ -34,6 +34,9 @@ Her kayıtta şu alanlar olmalı:
 - `en`: `name, other, part, uses, prep, science, safety, fact, season, habitat, local, confusion` (karisma yoksa confusion da yok).
 - `etk_en`: `etk` varsa onun çevirisi.
 
+## Çalışma sırası (kullanım sınırı yüzünden zorunlu)
+Bitkileri TEK TEK bitir: bir bitkinin araştırmasını yap, kaydını hemen `kuyruk/aNNN.py` dosyasına ekle (dosya her an geçerli Python olsun), sonra sıradakine geç. Sekiz bitkinin araştırmasını biriktirip sona yazma; oturum yarıda kesilirse yazılmamış araştırma kaybolur. Bitki başına en fazla 6-8 arama/sayfa açma yeter.
+
 ## Kaynak kuralları (en önemli bölüm)
 1. **Her adres bu oturumda WebSearch sonucunda görülmüş ya da WebFetch ile açılmış olmalı.** Bellekten PMID, DOI ya da adres yazma. Açamadığın, doğrulayamadığın kaynağı kayda koyma.
 2. Künyedeki yazar, başlık, dergi, yıl kaynağın kendi sayfasından alınır; tahmin edilmez.
