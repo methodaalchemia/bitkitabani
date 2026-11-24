@@ -3518,7 +3518,7 @@
   "turkce_ad": "Üçgül",
   "bilimsel_ad": "Trifolium pratense L.",
   "familya": "Fabaceae",
-  "diger_adlar": "TİTCK monografı Türkçe adları \"kırmızı yonca, çayır tırfılı, çayır dutu, çayır üçgülü\" diye veriyor; İngilizce red clover, cow clover, meadow clover. Kullanılan kısım çiçekleri. AB ve DSÖ monografı yok, TİTCK monografı var. Bingöl Balı tescilinde üçgül, balın ayırt edici beş taksonundan biri.",
+  "diger_adlar": "TİTCK monografı Türkçe adları \"kırmızı yonca, çayır tırfılı, çayır dutu, çayır üçgülü\" diye veriyor; İngilizce red clover, cow clover, meadow clover. Kullanılan kısım çiçekleri. TİTCK monografı ve DSÖ monografı (Flos Trifolii) var, AB monografı yok. Bingöl Balı tescilinde üçgül, balın ayırt edici beş taksonundan biri.",
   "bolgeler": "Anadolu ve Akdeniz; Avrupa; Asya ve Sibirya",
   "kategoriler": "Şifa; Besin",
   "kullanilan_kisim": "Çiçekleri",
@@ -3680,20 +3680,6 @@
   "guvenlik": "Dikkat",
   "turkiyede_yasal_durum": "",
   "url": "https://bitkitabani.com/dereotu/"
- },
- {
-  "id": "cayirucgulu",
-  "turkce_ad": "Çayır üçgülü",
-  "bilimsel_ad": "Trifolium pratense L.",
-  "familya": "Fabaceae",
-  "diger_adlar": "Türkçe çayır üçgülü, kırmızı yonca, çayır yoncası; İngilizce red clover. DSÖ monografının drogu kurutulmuş çiçek durumları (Flos Trifolii). TİTCK ve AB monografı yok; kayıt DSÖ monografına (Cilt 4, 2009) ve PubMed’e dayanıyor. ⚠️ Kokulu yonca (Melilotus) ve acı yonca (Menyanthes) ile adı karışır; üçü ayrı cins.",
-  "bolgeler": "Anadolu ve Akdeniz; Avrupa; Asya ve Sibirya",
-  "kategoriler": "Şifa",
-  "kullanilan_kisim": "Kurutulmuş çiçek durumları",
-  "kanit_duzeyi": "Sınırlı",
-  "guvenlik": "Dikkat",
-  "turkiyede_yasal_durum": "",
-  "url": "https://bitkitabani.com/cayirucgulu/"
  },
  {
   "id": "yabanikekik",

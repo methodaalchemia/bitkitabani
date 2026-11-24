@@ -2737,6 +2737,10 @@ _ESKI_ADRES = [
     ('/familya/fabaceae (baklagiller)/', '/familya/fabaceae/'),
     ('/familya/poaceae (buğdaygiller)/', '/familya/'),
     ('/familya/rosaceae (gülgiller)/', '/familya/rosaceae/'),
+    # Mükerrer kayıt: çayır üçgülü ve üçgül aynı tür (Trifolium pratense);
+    # içeriği üçgüle taşındı (24 Kasım 2026).
+    ('/cayirucgulu/', '/ucgul/'),
+    ('/en/cayirucgulu/', '/en/ucgul/'),
     # Hikâyenin slug'ı uzadı, eskisi dizinde kaldı
     ('/hikaye/hititlerin-yaklasik-bayramindan-biri-antahsum/',
      '/hikaye/hititlerin-yaklasik-bayramindan-biri-antahsum-adini/'),

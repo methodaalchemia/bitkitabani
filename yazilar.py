@@ -516,6 +516,13 @@ YAZILAR.append(dict(
             'Yani bu çanta bir bitki listesi değil, bir ağın kanıtı. Birinin hangi bitkinin nerede '
             'yetiştiğini, hangisinin hangisiyle birlikte işe yaradığını ve onu yüzlerce kilometre '
             'öteden nasıl getirteceğini bilmesi gerekiyordu.',
+            'Aynı sayıda yayımlanan yorum yazısı buluntuyu “ilaçları vermeye yarayan '
+            'araçlarıyla birlikte eski bir farmakope” diye tanımlıyor ve iki noktaya dikkat '
+            'çekiyor: ayahuascanın temel alkaloitlerinin bin yıllık bir torbada bulunması, And '
+            'mumyalarının saç analizlerinde DMT çıkmamasının bıraktığı boşluğu dolduruyor; '
+            'torbadaki enfiye tabletleri ve borusu ise bu bitkilerin içecek olarak kaynatılmadan '
+            'önce buruna çekilmiş olabileceğini düşündürüyor. Yazar baş bandını olası bir şaman '
+            'nişanı sayıyor ama bunu sonuç değil açık soru olarak bırakıyor [2].',
             'Bu yazı arkeolojik ve tarihsel bir bulguyu anlatır; kullanım önerisi değildir. '
             'Bitkilerin güvenlik, yasal durum ve ilaç etkileşimi bilgileri kendi sayfalarında.',
         ]),

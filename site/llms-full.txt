@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 294 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 293 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -251,13 +251,13 @@ Bilimsel kanıt: Geleneksel · Güvenlik: Genelde güvenli
 - Anadolu: Kış akşamlarının çayıdır. Soğuk algınlığında terletmek ve rahatlamak için içilir. İstanbul’da sokak ağacı olarak yaygındır; çiçekleri Haziran’da toplanır.
 
 ### Hazırlama
-Kuru çiçek 5–10 dakika demlenir; kaynatılmaz. ⚠️ EMA bu tür için monograf kabul etmemiş, yerine bir kamuoyu açıklaması (public statement) yayımlamıştır; dolayısıyla AB düzeyinde tanımlanmış bir doz yoktur.
+Kuru çiçek 5–10 dakika demlenir; kaynatılmaz. EMA monografı ölçüyü veriyor: 1,5 g parçalanmış drog 150 ml kaynar suda, günde 2–4 kez (günlük 3–6 g). Soğuk algınlığı için 4–12 yaş arasında 1 g, 150 ml suda, günde 2–4 kez (günlük 2–4 g). Dört yaşından küçüklerde önerilmiyor; gerginlik için on iki yaşından küçüklerde kullanılmıyor. Soğuk algınlığı belirtileri bir haftadan uzun sürerse hekime başvurulmalı.
 
 ### Araştırmalar ne gösteriyor
 EMA, ıhlamur çiçeğini soğuk algınlığı belirtileri ve hafif zihinsel stres için geleneksel kullanımda tanır. Flavonoit ve müsilaj içerir; klinik çalışması azdır.
 
 ### Güvenlik
-Bilinen bir yan etkisi ve ilaç etkileşimi yok; tek kesin engel ıhlamur çiçeğine alerjidir. EMA monografisi gebelikte ve emzirirken yeterli veri olmadığı için önermiyor, dört yaşın altındaki çocuklarda soğuk algınlığı için, on iki yaşın altında ise gerginlik için kullanılmıyor. Soğuk algınlığı bir haftadan uzun sürerse ya da nefes darlığı, yüksek ateş veya iltihaplı balgam eşlik ediyorsa çay yeterli değildir.
+Bilinen bir yan etkisi yok; tek kesin engel ıhlamur çiçeğine alerjidir. TİTCK monografı lityumla etkileşim bildiriyor. EMA monografisi gebelikte ve emzirirken yeterli veri olmadığı için önermiyor, dört yaşın altındaki çocuklarda soğuk algınlığı için, on iki yaşın altında ise gerginlik için kullanılmıyor. Soğuk algınlığı bir haftadan uzun sürerse ya da nefes darlığı, yüksek ateş veya iltihaplı balgam eşlik ediyorsa çay yeterli değildir.
 
 ### İddialar ve kanıt
 - Soğuk algınlığı belirtilerini hafifletir: Yalnızca geleneksel. EMA geleneksel kullanım olarak tanır; kontrollü çalışma yok denecek kadar az.
@@ -504,7 +504,7 @@ Tohum yemeğe katılır; soğuk sıkım yağı kaşıkla alınır.
 Etken maddesi timokinondur. Küçük klinik çalışmalarda kolesterol, kan şekeri ve tansiyonda hafif düşüş görülmüştür; çalışmaların kalitesi düşük ve süreleri kısadır.
 
 ### Güvenlik
-Yemek miktarında güvenlidir. Yüksek doz yağ, kan şekeri ve tansiyon ilaçlarının etkisini artırabilir.
+Yemek miktarında güvenlidir. Yüksek doz yağ, kan şekeri ve tansiyon ilaçlarının etkisini artırabilir. TİTCK monografı karaciğer ve böbrek yetmezliğinde kullanılmamasını, altı yaşından küçüklerde önerilmediğini, hamilelikte kullanılmamasını ve emzirirken önerilmediğini yazıyor; tansiyon ilaçları ve kan sulandırıcılarla etkileşebilir.
 
 ### İddialar ve kanıt
 - Kolesterolü ve kan şekerini düşürür: Sınırlı kanıt. Küçük ve kısa çalışmalarda hafif düşüş; çalışmaların kalitesi düşük.
@@ -537,7 +537,7 @@ Meyve ezilip demlenir ya da kaynatılır; tüylü çekirdekleri süzülür. ⚠�
 Taze meyve C vitamini bakımından çok zengindir; kurutma ve kaynatma bu vitamini büyük ölçüde azaltır. Kuşburnu tozuyla yapılan birkaç klinik çalışmada diz kireçlenmesinde ağrının hafiflediği bildirilmiştir.
 
 ### Güvenlik
-Genelde güvenlidir. Çekirdeklerin çevresindeki tüyler ağzı ve bağırsağı tahriş eder; süzülmeden tüketilmemeli.
+Genelde güvenlidir. Çekirdeklerin çevresindeki tüyler ağzı ve bağırsağı tahriş eder; süzülmeden tüketilmemeli. TİTCK monografı diyabet, G6PD eksikliği, hemokromatoz, talasemi ve anemi gibi demir metabolizması bozukluğu olanlarla kalp krizi, orak hücre hastalığı, inme, derin ven trombozu ve akciğer embolisi geçirenlerin kullanmamasını yazıyor; 18 yaşından küçüklerde, hamilelikte ve emzirirken önerilmiyor. Antiasitler, flufenazin, östrojenler, lityum ve varfarinle etkileşir.
 
 ### İddialar ve kanıt
 - C vitamini bakımından zengindir: Klinik kanıt. Taze meyvede çok yüksek; kurutma ve kaynatma büyük ölçüde azaltır.
@@ -809,7 +809,7 @@ Reçine çiğnenir ya da toz edilip yemeğe katılır.
 EMA, damla sakızını hafif hazımsızlık ve küçük yaraların iyileşmesi için geleneksel kullanımda tanır. Küçük çalışmalarda mide bakterisi H. pylori üzerinde sınırlı etki görülmüştür.
 
 ### Güvenlik
-Genelde güvenlidir. Antep fıstığı alerjisi olanlarda alerji yapabilir.
+Genelde güvenlidir. Antep fıstığı alerjisi olanlarda alerji yapabilir. TİTCK monografı 18 yaşından küçüklerde ağızdan, 12 yaşından küçüklerde cilt üzerine kullanılmamasını; hamilelikte ve emzirirken kullanılmamasını yazıyor. Karaciğer ve böbrek toksisitesine yol açabileceği için dikkatli kullanılması gerekiyor; cilt üzerinde kontakt dermatit yapabilir.
 
 ### Doğada
 Nerede yetişir: Ege ve Akdeniz makiliklerinde yaygın bir çalı; bol reçine veren ağaçlar ise Sakız Adası’nın güneyinde.
@@ -1164,7 +1164,7 @@ Kök kurutulur, kaynatılarak ya da toz hâlinde yenir. Gelenekte çiğ yenmez.
 Küçük klinik çalışmalarda cinsel istek ve menopoz belirtilerinde hafif iyileşme görülmüştür. Çalışmalar küçük ve bir kısmı üretici destekli.
 
 ### Güvenlik
-Gıda olarak güvenlidir. Çiğ ya da çok yüksek miktarda tüketim mideyi rahatsız edebilir. Tiroit sorunu olanlar dikkatli olmalı.
+Gıda olarak güvenlidir. Çiğ ya da çok yüksek miktarda tüketim mideyi rahatsız edebilir. Tiroit sorunu olanlar dikkatli olmalı. TİTCK monografı tiroit rahatsızlığı olanlarda kullanılmamasını yazıyor; meme, rahim ve yumurtalık kanseri, endometriyozis ve rahim miyomu gibi hormona bağlı hastalıklarda ve hormon replasman tedavisinde kullanılmaz. Hipertansiyonda kullanılmaz. 12 yaşından küçüklerde, hamilelikte ve emzirirken önerilmiyor.
 
 ### Doğada
 Nerede yetişir: Peru’nun Junín platosunda 3.800–4.500 metre yükseklikte.
@@ -1738,7 +1738,7 @@ Meyve taze yenir ya da suyu sıkılır; kabuk kurutulup kaynatılır; nar ekşis
 Polifenol bakımından zengindir. Küçük çalışmalarda nar suyunun tansiyonu hafifçe düşürdüğü bildirilmiştir; prostat kanseri gibi iddialar için kanıt yetersizdir.
 
 ### Güvenlik
-Meyve güvenlidir. Kabuk ve kök kabuğu yüksek dozda zehirlidir. Nar suyu bazı ilaçların yıkımını etkileyebilir.
+Meyve güvenlidir. Kabuk ve kök kabuğu yüksek dozda zehirlidir. Nar suyu bazı ilaçların yıkımını etkileyebilir. TİTCK monografı gövde kabuğu ve kökün alkaloit taşıdığını, yüksek dozda kusma, baş dönmesi, görme bozukluğu ve solunum güçlüğü yapabileceğini yazıyor; geçici görme kaybı birkaç hafta sürebiliyor. Meyve suyu tansiyonu düşük olanlarda önerilmiyor ve ameliyattan iki hafta önce bırakılmalı. 18 yaşından küçüklerde, hamilelikte ve emzirirken önerilmiyor.
 
 ### Doğada
 Nerede yetişir: Ege, Akdeniz ve Güneydoğu; en bilinenleri Hicaz narı ve Siirt narı.
@@ -2080,7 +2080,7 @@ Olgun meyve zeytinyağına doldurulup güneşte bekletilir.
 Bazı küçük çalışmalarda kan şekerini düşürdüğü görülmüştür; sistematik derlemeler kanıtın yetersiz ve tutarsız olduğunu belirtir.
 
 ### Güvenlik
-Şeker ilaçlarıyla birlikte kan şekerini tehlikeli düşürebilir. Gebelikte kullanılmamalıdır. Kırmızı tohum kabuğu çocuklarda zehirlenmeye yol açmıştır.
+Şeker ilaçlarıyla birlikte kan şekerini tehlikeli düşürebilir. Gebelikte kullanılmamalıdır. Kırmızı tohum kabuğu çocuklarda zehirlenmeye yol açmıştır. TİTCK monografı emzirirken kullanılmamasını ve kan şekeri ya da kan yağları düşük olanlarda kullanılmamasını yazıyor.
 
 ### İlaç etkileşimleri
 - Şeker ilaçları ve insülin: Kan şekerini tehlikeli düşürebilir.
@@ -3137,7 +3137,7 @@ Standart kök ekstresi olarak kullanılır.
 EMA, kök ekstresini sıcak basması gibi menopoz belirtileri için iyi yerleşmiş kullanımda tanır. NCCIH çalışmaların sonuçlarının tutarsız olduğunu belirtir.
 
 ### Güvenlik
-Nadir de olsa karaciğer hasarı vakaları bildirilmiştir; karaciğer hastalığı olanlar kullanmamalıdır.
+Nadir de olsa karaciğer hasarı vakaları bildirilmiştir; karaciğer hastalığı olanlar kullanmamalıdır. TİTCK monografı hamilelikte ve emzirirken kullanılmamasını, meme kanseri olanların ancak hekim denetiminde kullanmasını yazıyor; seyrek de olsa karaciğer toksisitesi, alerjik deri tepkimeleri ve yüzde, kol ve bacaklarda şişme bildirilmiş.
 
 ### İlaç etkileşimleri
 - Karaciğere yük getiren ilaçlar: Nadir karaciğer hasarı vakaları bildirilmiştir.
@@ -3345,7 +3345,7 @@ Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 - Anadolu: Diş ağrısında ağrıyan dişin yanına bir tane karanfil konur; kış çaylarına, kompostoya ve hoşaflara katılır. Kötü kokuya karşı limon ya da portakala batırılarak odaya asılır.
 
 ### Hazırlama
-Bütün tomurcuk kaynatılır ya da öğütülür. Uçucu yağı diş hekimliğinde çok az miktarda kullanılır. ⚠️ EMA bu tür için monograf kabul etmemiş, yerine bir kamuoyu açıklaması (public statement) yayımlamıştır; dolayısıyla AB düzeyinde tanımlanmış bir doz yoktur.
+Bütün tomurcuk kaynatılır ya da öğütülür. ⚠️ EMA monografı tomurcuğu değil uçucu yağı kapsıyor (Caryophylli floris aetheroleum): ağız ve boğaz iltihabında %1–5 uçucu yağ içeren gargara, günde birkaç kez; çürük dişin geçici ağrısında seyreltilmemiş yağ ya da en az %50'lik çözelti veya %20'lik jel, küçük bir pamuğa emdirilip çürük bölgeye uygulanır, 20 dakika sonra yinelenir, sonra gerekirse iki saatte bir. İki kullanımda da bir haftadan uzun sürdürülmez ve 18 yaşından küçüklerde önerilmiyor. Baharat olarak kullanılan tomurcuk için tanımlanmış bir doz yoktur.
 
 ### Araştırmalar ne gösteriyor
 Karanfil yağındaki öjenol, diş hekimliğinde lokal ağrı kesici ve antiseptik olarak uzun süredir kullanılır. EMA karanfil yağını ağız ve boğaz iltihabı ile diş ağrısında geleneksel kullanımda tanır. Diğer iddialar için insan çalışması azdır.
@@ -3448,7 +3448,7 @@ Meyve kurutulup yenir, öğütülüp un yapılır ya da kaynatılıp pekmeze dö
 Lif ve doğal şeker bakımından zengindir. Küçük çalışmalarda keçiboynuzu lifinin kolesterolü hafifçe düşürdüğü ve çocuk ishalinde iyileşmeyi hızlandırdığı bildirilmiştir. Tohumundan elde edilen keçiboynuzu gamı (E410) gıdalarda kıvam verici olarak kullanılır.
 
 ### Güvenlik
-Genelde güvenlidir. Pekmezi şeker bakımından zengindir; şeker hastaları ölçülü tüketmelidir.
+Genelde güvenlidir. Pekmezi şeker bakımından zengindir; şeker hastaları ölçülü tüketmelidir. TİTCK monografı yeterli veri bulunmadığı için hamilelikte ve emzirirken kullanılmamasını yazıyor.
 
 ### Doğada
 Nerede yetişir: Akdeniz ve Ege kıyıları; Antalya, Mersin ve Muğla’da yaygın.
@@ -3504,7 +3504,7 @@ Yaprak ya da bakla soğuk ya da ılık suda bekletilir; kısa süreli kullanıl�
 EMA sinameki yaprağı ve meyvesini ara sıra görülen kabızlığın kısa süreli tedavisinde iyi yerleşmiş kullanımda tanır. Etken maddeleri sennosidlerdir.
 
 ### Güvenlik
-Bir haftadan uzun kullanılmamalıdır; uzun süreli kullanım bağırsak tembelliği ve potasyum kaybı yapar. Zayıflama için kullanmak tehlikelidir: yalnızca su ve tuz kaybettirir. 12 yaş altında, gebelikte ve bağırsak tıkanıklığında kullanılmamalı.
+Bir haftadan uzun kullanılmamalıdır; uzun süreli kullanım bağırsak tembelliği ve potasyum kaybı yapar. Zayıflama için kullanmak tehlikelidir: yalnızca su ve tuz kaybettirir. 12 yaş altında, gebelikte ve bağırsak tıkanıklığında kullanılmamalı. TİTCK monografı ayrıca şunları yazıyor: bağırsak tıkanıklığında, iltihaplı bağırsak hastalıklarında (Crohn, ülseratif kolit), apandisitte ve elektrolit eksikliğinde kullanılmaz; böbrek bozukluğu olanlar olası elektrolit dengesizliğine dikkat etmeli; gün aşırı olmak koşuluyla en çok bir hafta önerilir; 18 yaşından küçüklerde ve emzirirken önerilmez. İdrarı renklendirdiği için biyokimya sonuçlarını yanıltabilir.
 
 ### İlaç etkileşimleri
 - İdrar söktürücüler, kortizon, meyan kökü: Potasyum kaybını artırır.
@@ -3538,7 +3538,7 @@ Yaprak demlenir ya da kaynatılır; meyve taze yenir veya likör yapılır.
 Yaprak ve uçucu yağın antimikrobiyal etkisi laboratuvarda gösterilmiştir. Sinüzit ve ağız yaralarında küçük klinik çalışmalar vardır; kanıt sınırlıdır.
 
 ### Güvenlik
-Yaprak çayı ve meyve genelde güvenlidir. Uçucu yağı içilmemeli, bebeklerin ve küçük çocukların yüzüne sürülmemelidir.
+Yaprak çayı ve meyve genelde güvenlidir. Uçucu yağı içilmemeli, bebeklerin ve küçük çocukların yüzüne sürülmemelidir. TİTCK monografı ciddi karaciğer hastalığı, safra kanalı ya da sindirim yolunda iltihabi hastalık varsa içten kullanılmamasını yazıyor; hamilelikte ve emzirirken önerilmiyor.
 
 ### Doğada
 Nerede yetişir: Ege, Akdeniz ve Marmara’nın kıyı makileri; dere yatakları.
@@ -3623,7 +3623,7 @@ Kök tozu kapsül ya da tentür olarak kullanılır; ağız gargarası yapılır
 Etken maddesi berberindir. Altınmühürün kendisiyle yapılmış insan çalışması çok azdır; NCCIH soğuk algınlığı dahil hiçbir kullanım için güvenilir kanıt olmadığını belirtir. İlaç testlerini “temizlediği” iddiası yanlıştır.
 
 ### Güvenlik
-Birçok ilacın karaciğerde yıkımını yavaşlatır (CYP2D6 ve CYP3A4). Gebelikte, emzirmede ve yeni doğanlarda kullanılmamalıdır; berberin bebeklerde sarılığı ağırlaştırabilir.
+Birçok ilacın karaciğerde yıkımını yavaşlatır (CYP2D6 ve CYP3A4). Gebelikte, emzirmede ve yeni doğanlarda kullanılmamalıdır; berberin bebeklerde sarılığı ağırlaştırabilir. TİTCK monografı böbrek rahatsızlığında ve midede akut iltihap varken kullanılmamasını; hipertansiyon, glokom, diyabet ve kalp hastalarının kullanmadan önce hekime danışmasını yazıyor. Uzun süreli kullanımda solunum yolu bozukluğu, havale, felç ve ölüm bildirilmiş. İki yaşından küçüklerde önerilmiyor; hamilelikte ve emzirirken kullanılmamalı.
 
 ### İlaç etkileşimleri
 - CYP2D6 ve CYP3A4 ile yıkılan ilaçlar (bazı antidepresanlar, kalp ilaçları, statinler, midazolam): İlaç düzeyini yükseltebilir.
@@ -8000,26 +8000,30 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 - Türkiye — resmî listede: TİTCK monografı çiçeklerini listeliyor ve uyarıları ağır: aktif bileşiğe hassasiyeti olanlarda kullanılmaz; hormonal hastalıklarda, östrojen bağımlı kanserlerde ve ailesinde bu kanser öyküsü olanlarda kullanılmaz; döküntü, kas ağrısı, baş ağrısı, bulantı ve bazı kadınlarda vajinal kanama yapabilir; infertilite, uterusta sarkma, doğum ve laktasyonda zorluk bildirilmiş; protein S eksikliğinde kullanılmaz; ameliyattan iki hafta önce bırakılmalı; 12 yaş altında, gebelikte ve emzirmede veri yetersiz.
 - Bingöl — balın gösterge bitkisi: Bingöl Balı menşe adı tescil belgesi üçgülü, balın ayırt edici beş taksonundan biri olarak sayıyor. Polen tablosunda *T. nigrescens* sekonder; *T. campestre*, *T. diffusum*, *T. pratense* ve *T. repens* minör ya da eser düzeyde. Üçgül arının gerçek nektar kaynaklarından — "cow clover" adı da hayvanın değil arının bitkisi olmasından gelmez, otlaktan gelir.
 - Batı — menopoz takviyesi: 1990’lardan beri kırmızı yonca özütleri izoflavon içeriği nedeniyle menopoz sıcak basmaları için takviye olarak satılıyor. İddianın klinik karşılığı aşağıda — ve zayıf.
+- DSÖ monografı — çiçek: Dünya Sağlık Örgütü monografı (Cilt 4, 2009) olağandışı bir şey yapıyor: "farmakopelerde tanımlanan kullanım" başlığında bir endikasyon vermek yerine şunu yazıyor — menopoz belirtileri, hiperlipidemi, osteoporoz ve prostat kanseri için çok sayıda klinik çalışma yapılmış olsa da veriler henüz bu endikasyonlardan hiçbirini desteklemeye yetmiyor. Geleneksel tıpta: sedef ve egzamaya cilt üstü, astım ve öksürüğe ağızdan. Klinik veriyle desteklenen kullanım: yok.
+- Avustralya — "yonca hastalığı": Bitkinin hormonal etkisi ilk kez koyunlarda görüldü: Avustralya’da bol üçgül yiyen koyun sürülerinde kısırlık, anormal süt salgısı ve rahim sarkması — izoflavonların östrojen benzeri etkisine bağlanan "yonca hastalığı". DSÖ monografı bunu kaydediyor ve ekliyor: insan çalışmalarında günde 160 mg izoflavona kadar yan etki bildirilmemiş.
 
 ### Hazırlama
-Kurutulmuş çiçeklerden demleme olarak hazırlanıyor. Takviye ürünleri standart izoflavon özütü hâlinde satılıyor ve çiçek çayıyla aynı şey değil. TİTCK monografı doz vermiyor; bitkisel ürünlerle tedavi konusunda eğitim görmüş hekim ve eczacı denetiminde kullanılması gerektiğini yazıyor. Yem bitkisi olarak taze ya da kuru ot hâlinde.
+Kurutulmuş çiçeklerden demleme olarak hazırlanıyor. Takviye ürünleri standart izoflavon özütü hâlinde satılıyor ve çiçek çayıyla aynı şey değil. TİTCK monografı doz vermiyor; bitkisel ürünlerle tedavi konusunda eğitim görmüş hekim ve eczacı denetiminde kullanılması gerektiğini yazıyor. Yem bitkisi olarak taze ya da kuru ot hâlinde. DSÖ monografı ağızdan doz veriyor: 240–480 mg drog özütü, günde 40–80 mg izoflavona karşılık.
 
 ### Araştırmalar ne gösteriyor
-Kırmızı yoncanın iddiası menopoz sıcak basmaları ve bu iddia defalarca sınandı; toplu sonuç ikna edici değil. Cochrane derlemesi fitoöstrojenleri vazomotor menopoz belirtileri için inceledi ve genel olarak etkinlik kanıtı bulamadı (*Cochrane Database Syst Rev*, 2007). 2015 tarihli meta-analiz ve sistematik derleme fitoöstrojenlerde küçük bir etki tarif ediyor ama çalışmalar arası tutarsızlığı vurguluyor (*Climacteric*, 2015); daha önce *JAMA*’da yayımlanan derleme de hormon dışı seçenekler arasında kırmızı yoncayı ikna edici bulmamıştı (2006). 2021’de yapılan değerlendirme özütün sıcak basmalarındaki etkisinin klinik olarak anlamlı olup olmadığını ayrıca sorguluyor (*Nutrients*, 2021). ⚠️ İzoflavonlar östrojen reseptörüne bağlanan maddeler; bu yüzden mesele yalnız "işe yarıyor mu" değil, kime verilmemeli sorusu. TİTCK’nin östrojen bağımlı kanser kontrendikasyonu buradan geliyor. Kanıt düzeyi "sınırlı".
+Kırmızı yoncanın iddiası menopoz sıcak basmaları ve bu iddia defalarca sınandı; toplu sonuç ikna edici değil. Cochrane derlemesi fitoöstrojenleri vazomotor menopoz belirtileri için inceledi ve genel olarak etkinlik kanıtı bulamadı (*Cochrane Database Syst Rev*, 2007). 2015 tarihli meta-analiz ve sistematik derleme fitoöstrojenlerde küçük bir etki tarif ediyor ama çalışmalar arası tutarsızlığı vurguluyor (*Climacteric*, 2015); daha önce *JAMA*’da yayımlanan derleme de hormon dışı seçenekler arasında kırmızı yoncayı ikna edici bulmamıştı (2006). 2021’de yapılan değerlendirme özütün sıcak basmalarındaki etkisinin klinik olarak anlamlı olup olmadığını ayrıca sorguluyor (*Nutrients*, 2021). ⚠️ İzoflavonlar östrojen reseptörüne bağlanan maddeler; bu yüzden mesele yalnız "işe yarıyor mu" değil, kime verilmemeli sorusu. TİTCK’nin östrojen bağımlı kanser kontrendikasyonu buradan geliyor. Kanıt düzeyi "sınırlı". Çayır üçgülü, DSÖ’nün 2009’da "veri yetmiyor" dediği bitki — ve sonraki on beş yılda veri birikti. 2021’de Nutrients dergisinde yayımlanan meta-analiz özütün sıcak basması üzerindeki etkisinin klinik anlamlılığını sorguladı. 2026’da European Journal of Obstetrics & Gynecology and Reproductive Biology dergisinde yayımlanan GRADE değerlendirmeli meta-analiz 9 randomize çalışmayı (40–65 yaş kadınlar, günde 37–160 mg izoflavon, 12 hafta–12 ay) birleştirdi: sıcak basması sıklığında plaseboya karşı küçük-orta bir azalma (SMD −0,45; %95 GA −0,81 ile −0,08), çalışmaların çoğu düşük yanlılık riskinde, yayın yanlılığı saptanmadı. Yazarların sonucu "mütevazı ama istatistiksel olarak anlamlı". Karşılaştırma için: aynı kataloğumuzda soya izoflavonları sıcak basmasında anlamlı etki göstermemişti. Kanıt düzeyi "sınırlı": etki var, küçük, ve DSÖ’nün o günkü tereddüdü kısmen aşılmış.
 
 ### Güvenlik
-Çayırda otlayan hayvanın yediği bir bitki, ama takviye olarak başka bir şey. TİTCK kontrendikasyonları net: hormonal hastalık, östrojen bağımlı kanser ya da ailede bu kanser öyküsü varsa kullanılmaz; protein S eksikliğinde kullanılmaz; ameliyattan iki hafta önce bırakılır; 12 yaş altında, gebelikte ve emzirmede kullanılmaz. Bildirilen istenmeyen etkiler: döküntü benzeri reaksiyonlar, kas ağrısı, baş ağrısı, bulantı, bazı kadınlarda vajinal kanama. İnfertilite, uterusta sarkma, doğum ve laktasyonda zorluk da monografta yazılı. Antikoagülanla birlikte kanama riski artar. Güvenlik düzeyi "dikkat".
+Çayırda otlayan hayvanın yediği bir bitki, ama takviye olarak başka bir şey. TİTCK kontrendikasyonları net: hormonal hastalık, östrojen bağımlı kanser ya da ailede bu kanser öyküsü varsa kullanılmaz; protein S eksikliğinde kullanılmaz; ameliyattan iki hafta önce bırakılır; 12 yaş altında, gebelikte ve emzirmede kullanılmaz. Bildirilen istenmeyen etkiler: döküntü benzeri reaksiyonlar, kas ağrısı, baş ağrısı, bulantı, bazı kadınlarda vajinal kanama. İnfertilite, uterusta sarkma, doğum ve laktasyonda zorluk da monografta yazılı. Antikoagülanla birlikte kanama riski artar. Güvenlik düzeyi "dikkat". DSÖ monografı bir efsaneyi de düzeltiyor: çayır üçgülü kumarin içermez, dolayısıyla kan pıhtılaşmasına dair kaygılar temelsizdir (kokulu yonca ile karıştırmadan kaynaklanan bir yanılgı). Klinik çalışmalarda günde 160 mg izoflavona kadar yan etki bildirilmemiş.
 
 ### İlaç etkileşimleri
 - Antikoagülanlar, trombolitikler, düşük molekül ağırlıklı heparinler, varfarin: TİTCK listesinde; kanama riski artar. Birlikte kullanılmaz, ameliyattan iki hafta önce bırakılır.
 - Kontraseptifler, östrojen, progesteron ve tamoksifen gibi antiöstrojenik ilaçlar: TİTCK listesinde; izoflavonlar östrojen reseptörüne bağlandığı için hormonal tedavinin etkisini bozabilir. Tamoksifen kullanan hasta için özellikle önemli.
 - Sitokrom P450 3A4, 1A2, 2C19 ve 2C9 ile metabolize edilen ilaçlar: TİTCK listesinde; bu enzimlerle yıkılan ilaçların kan düzeyi değişebilir. Düzenli ilaç kullanan herkes hekimine söylemeli.
+- Tamoksifen ve diğer antiöstrojenik ilaçlar: DSÖ monografı çelişkili verileri özetliyor: bazı çalışmalar izoflavonların tamoksifenin etkisini artırdığını, kemirgen modellerinde genisteinin ise tamoksifenin etkisini azalttığını gösteriyor. Monografın sonucu kesin: tamoksifen ya da diğer antiöstrojenik ilaçlarla tedavi görenlerde, yeni araştırma yapılana kadar kullanılması önerilmez.
+- Hormon tedavileri (kuramsal): Östrojen benzeri etkisi olan bir bitki, hormon replasman tedavisi ya da doğum kontrol hapıyla aynı yolda çalışır; monograf bunu ayrıca listelemiyor ama "hormona bağlı hastalıklarda kontrendike" hükmünün uzantısıdır.
 
 ### Doğada
 Nerede yetişir: Avrupa, Batı Asya ve Kuzey Afrika kökenli, bugün ılıman kuşağın her yerinde. Türkiye’de çayır ve meralarda yaygın, yem bitkisi olarak da ekiliyor. Bingöl’de bozkır ve çayır geçişlerinde.
 Toplama mevsimi: Mayıs–eylül arasında çiçekte; çiçekler tam açmışken toplanıp gölgede kurutulur.
 Yöresel adlar: Üçgül, kırmızı yonca, çayır tırfılı, çayır dutu, çayır üçgülü (TİTCK); tırfıl, yonca.
-Karıştırma riski: ⚠️ "Yonca" adı Türkçede üç ayrı cinsi kapsıyor. Kokulu yonca *Melilotus officinalis*, acı yonca *Menyanthes trifoliata*, üçgül *Trifolium* — üçü de ayrı bitki, ayrı kullanım, ayrı güvenlik profili. *Menyanthes trifoliata* tür adında "trifoliata" taşıdığı için özellikle karışıyor ama *Trifolium* değil, hatta aynı familyadan bile değil. ⚠️ Beyaz üçgül (*T. repens*) ayrı türdür; tıbbi literatür kırmızı yonca üzerinedir.
+Karıştırma riski: ⚠️ "Yonca" adı Türkçede üç ayrı cinsi kapsıyor. Kokulu yonca *Melilotus officinalis*, acı yonca *Menyanthes trifoliata*, üçgül *Trifolium* — üçü de ayrı bitki, ayrı kullanım, ayrı güvenlik profili. *Menyanthes trifoliata* tür adında "trifoliata" taşıdığı için özellikle karışıyor ama *Trifolium* değil, hatta aynı familyadan bile değil. ⚠️ Beyaz üçgül (*T. repens*) ayrı türdür; tıbbi literatür kırmızı yonca üzerinedir. Ak üçgül (Trifolium repens) ayrı bir türdür ve monografların kapsamında değildir.
 
 ### İlginç bilgi
 Üçgülün tarımdaki asıl marifeti ilaç değil azot: köklerindeki yumrularda yaşayan bakteriler havadaki azotu toprağa bağlar. On sekizinci yüzyılda Avrupa’da nadasın yerine üçgül ekilmesi, tarlanın her yıl ürün vermesini sağladı ve tarım devriminin sessiz parçalarından biri oldu. Dört yapraklı yonca batıl inancı da bu bitkiye ait — olağan yaprak sayısı üçtür, adı da oradan gelir.
@@ -8386,39 +8390,6 @@ Karıştırma riski: ⚠️ Rezene ile görünüşü ve kokusu karışır; ikisi
 
 ### İlginç bilgi
 Türkiye’de dereotu denince yaprak akla gelir; DSÖ monografı yaprağı hiç anmaz, yalnızca tohumu yazar. Ve o tohum için monografın en kesin cümlesi şudur: gebelikte kullanılmaz, çünkü geleneksel tıpta tam tersi amaçla — gebeliği önlemek ve doğumu başlatmak için — kullanılmıştır. Cacığın üstündeki yeşillik ile eczacının tohum özütü aynı bitkiden, ama monografın uyarısı ikisini ayırıyor.
-
-## Çayır üçgülü (Trifolium pratense L.)
-
-URL: https://bitkitabani.com/cayirucgulu/
-Familya: Fabaceae · Bölge: Anadolu ve Akdeniz, Avrupa, Asya ve Sibirya · Kullanılan kısım: Kurutulmuş çiçek durumları
-Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
-
-### Geleneksel kullanım
-- DSÖ monografı — çiçek: Dünya Sağlık Örgütü monografı (Cilt 4, 2009) olağandışı bir şey yapıyor: "farmakopelerde tanımlanan kullanım" başlığında bir endikasyon vermek yerine şunu yazıyor — menopoz belirtileri, hiperlipidemi, osteoporoz ve prostat kanseri için çok sayıda klinik çalışma yapılmış olsa da veriler henüz bu endikasyonlardan hiçbirini desteklemeye yetmiyor. Geleneksel tıpta: sedef ve egzamaya cilt üstü, astım ve öksürüğe ağızdan. Klinik veriyle desteklenen kullanım: yok.
-- Türkiye: TİTCK Tıbbi Bitki Listesi’nde çayır üçgülü için monograf yok. Bitki Türkiye’nin çayırlarında yaygın ve yem bitkisi olarak ekiliyor; halk hekimliğinde kaynaklı bir kullanımı kataloğumuzda yok. Takviye pazarında "menopoz için izoflavon" olarak satılıyor.
-- Avustralya — "yonca hastalığı": Bitkinin hormonal etkisi ilk kez koyunlarda görüldü: Avustralya’da bol üçgül yiyen koyun sürülerinde kısırlık, anormal süt salgısı ve rahim sarkması — izoflavonların östrojen benzeri etkisine bağlanan "yonca hastalığı". DSÖ monografı bunu kaydediyor ve ekliyor: insan çalışmalarında günde 160 mg izoflavona kadar yan etki bildirilmemiş.
-
-### Hazırlama
-DSÖ monografı ağızdan doz veriyor: 240–480 mg drog özütü, günde 40–80 mg izoflavona karşılık. Drog ve tablet biçimleri. Gebelikte, emzirirken, 12 yaş altında ve hormona bağlı hastalıklarda kontrendike.
-
-### Araştırmalar ne gösteriyor
-Çayır üçgülü, DSÖ’nün 2009’da "veri yetmiyor" dediği bitki — ve sonraki on beş yılda veri birikti. 2021’de Nutrients dergisinde yayımlanan meta-analiz özütün sıcak basması üzerindeki etkisinin klinik anlamlılığını sorguladı. 2026’da European Journal of Obstetrics & Gynecology and Reproductive Biology dergisinde yayımlanan GRADE değerlendirmeli meta-analiz 9 randomize çalışmayı (40–65 yaş kadınlar, günde 37–160 mg izoflavon, 12 hafta–12 ay) birleştirdi: sıcak basması sıklığında plaseboya karşı küçük-orta bir azalma (SMD −0,45; %95 GA −0,81 ile −0,08), çalışmaların çoğu düşük yanlılık riskinde, yayın yanlılığı saptanmadı. Yazarların sonucu "mütevazı ama istatistiksel olarak anlamlı". Karşılaştırma için: aynı kataloğumuzda soya izoflavonları sıcak basmasında anlamlı etki göstermemişti. Kanıt düzeyi "sınırlı": etki var, küçük, ve DSÖ’nün o günkü tereddüdü kısmen aşılmış.
-
-### Güvenlik
-Hormona bağlı hastalıklarda, östrojene bağımlı kanserlerde ve ailede bu kanserlerin öyküsü olanlarda hekime danışmadan kullanılmamalı — DSÖ monografının uyarısı; bitki östrojen benzeri izoflavonlar taşıyor. Gebelikte, emzirirken ve 12 yaş altında kontrendike. Monograf bir efsaneyi de düzeltiyor: çayır üçgülü kumarin içermez, dolayısıyla kan pıhtılaşmasına dair kaygılar temelsizdir (kokulu yonca ile karıştırmadan kaynaklanan bir yanılgı). Klinik çalışmalarda günde 160 mg izoflavona kadar yan etki bildirilmemiş. Bitkiye alerjisi olanlar kullanmamalı.
-
-### İlaç etkileşimleri
-- Tamoksifen ve diğer antiöstrojenik ilaçlar: DSÖ monografı çelişkili verileri özetliyor: bazı çalışmalar izoflavonların tamoksifenin etkisini artırdığını, kemirgen modellerinde genisteinin ise tamoksifenin etkisini azalttığını gösteriyor. Monografın sonucu kesin: tamoksifen ya da diğer antiöstrojenik ilaçlarla tedavi görenlerde, yeni araştırma yapılana kadar kullanılması önerilmez.
-- Hormon tedavileri (kuramsal): Östrojen benzeri etkisi olan bir bitki, hormon replasman tedavisi ya da doğum kontrol hapıyla aynı yolda çalışır; monograf bunu ayrıca listelemiyor ama "hormona bağlı hastalıklarda kontrendike" hükmünün uzantısıdır.
-
-### Doğada
-Nerede yetişir: Avrupa kökenli, bütün dünyada; çayırlar, yol kenarları. Türkiye’de yaygın ve yem bitkisi olarak ekiliyor.
-Toplama mevsimi: Mayıs–Eylül arasında pembe-mor küre çiçekler; çiçek durumları tam açılmışken toplanıp kurutulur.
-Yöresel adlar: Çayır üçgülü, kırmızı yonca, çayır yoncası — yaygın Türkçe adlar.
-Karıştırma riski: ⚠️ "Yonca" adı Türkçede Medicago, Melilotus ve Menyanthes cinslerini de kapsıyor. Kokulu yonca kumarin taşır, çayır üçgülü taşımaz; ikisini karıştırmak yanlış uyarıya yol açar. Ak üçgül (Trifolium repens) ayrı bir tür ve monografın kapsamında değil.
-
-### İlginç bilgi
-DSÖ monografı 2009’da "çok çalışma var ama veri yetmiyor" yazdı; 2026 tarihli GRADE değerlendirmeli meta-analiz sıcak basmasında küçük ama anlamlı bir etki buldu. Kataloğumuzda soyanın tersi bir hikâye: soyada en ünlü iddia (sıcak basması) çıkmamış, çayır üçgülünde çıkmıştı. İki bitki aynı sınıftan izoflavon taşıyor; farkın bileşimden mi, çalışmalardan mı geldiği açık değil. Ve monografın ikinci dersi: "yonca" adını taşıyan üç bitki (çayır üçgülü, kokulu yonca, acı yonca) birbirine karıştırılınca, kumarin taşımayan bitkiye kan sulandırma uyarısı yapıştırılabiliyor.
 
 ## Yabani kekik (Thymus serpyllum L.)
 

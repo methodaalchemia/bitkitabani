@@ -270,257 +270,245 @@ Q = [
         tr='Üçgül',
         la='Trifolium pratense L.',
         fam='Fabaceae (baklagiller)',
-        diger='TİTCK monografı Türkçe adları "kırmızı yonca, çayır tırfılı, '
-              'çayır dutu, çayır üçgülü" diye veriyor; İngilizce red clover, '
-              'cow clover, meadow clover. Kullanılan kısım **çiçekleri**. '
-              'AB ve DSÖ monografı yok, **TİTCK monografı var**. Bingöl '
-              'Balı tescilinde üçgül, balın ayırt edici beş taksonundan biri.',
+        diger='TİTCK monografı Türkçe adları "kırmızı yonca, çayır tırfılı, çayır dutu, çayır'
+              ' üçgülü" diye veriyor; İngilizce red clover, cow clover, meadow clover. '
+              'Kullanılan kısım **çiçekleri**. **TİTCK monografı** ve **DSÖ monografı** (Flos'
+              ' Trifolii) var, AB monografı yok. Bingöl Balı tescilinde üçgül, balın ayırt '
+              'edici beş taksonundan biri.',
         bolge=['anadolu', 'avrupa', 'asya'],
         kat=['sifa', 'besin'],
         kisim='Çiçekleri',
         taxon='Trifolium pratense',
         kul=[
-            ['Anadolu ve Avrupa — önce yem, sonra ilaç', 'Üçgül Avrupa ve '
-             'Anadolu çayırlarının temel bitkisi; tarımda azot bağladığı için '
-             'yüzyıllardır nadas yerine ekilen bir yeşil gübre ve yem '
-             'bitkisi. Halk hekimliğinde çiçeklerinden yapılan çay öksürük ve '
-             'cilt şikâyetleri için içilmiş, lapası yaraya konmuştur. '
-             'Çiçeğin dibindeki nektar tatlıdır; çocukların çiçekleri '
-             'emmesi Avrupa ve Anadolu’da ortak bir alışkanlık.'],
-            ['Türkiye — resmî listede', 'TİTCK monografı çiçeklerini '
-             'listeliyor ve **uyarıları ağır**: aktif bileşiğe hassasiyeti '
-             'olanlarda kullanılmaz; **hormonal hastalıklarda, östrojen '
-             'bağımlı kanserlerde ve ailesinde bu kanser öyküsü olanlarda '
-             'kullanılmaz**; döküntü, kas ağrısı, baş ağrısı, bulantı ve '
-             'bazı kadınlarda vajinal kanama yapabilir; infertilite, '
-             'uterusta sarkma, doğum ve laktasyonda zorluk bildirilmiş; '
-             'protein S eksikliğinde kullanılmaz; **ameliyattan iki hafta '
-             'önce bırakılmalı**; 12 yaş altında, gebelikte ve emzirmede '
-             'veri yetersiz.'],
-            ['Bingöl — balın gösterge bitkisi', 'Bingöl Balı menşe adı '
-             'tescil belgesi üçgülü, balın ayırt edici beş taksonundan biri '
-             'olarak sayıyor. Polen tablosunda *T. nigrescens* sekonder; '
-             '*T. campestre*, *T. diffusum*, *T. pratense* ve *T. repens* '
-             'minör ya da eser düzeyde. Üçgül arının gerçek nektar '
-             'kaynaklarından — "cow clover" adı da hayvanın değil arının '
-             'bitkisi olmasından gelmez, otlaktan gelir.'],
-            ['Batı — menopoz takviyesi', '1990’lardan beri kırmızı yonca '
-             'özütleri **izoflavon** içeriği nedeniyle menopoz sıcak '
-             'basmaları için takviye olarak satılıyor. İddianın klinik '
-             'karşılığı aşağıda — ve zayıf.'],
+            ['Anadolu ve Avrupa — önce yem, sonra ilaç', 'Üçgül Avrupa ve Anadolu çayırlarının temel bitkisi; tarımda azot bağladığı '
+              'için yüzyıllardır nadas yerine ekilen bir yeşil gübre ve yem bitkisi. Halk '
+              'hekimliğinde çiçeklerinden yapılan çay öksürük ve cilt şikâyetleri için '
+              'içilmiş, lapası yaraya konmuştur. Çiçeğin dibindeki nektar tatlıdır; '
+              'çocukların çiçekleri emmesi Avrupa ve Anadolu’da ortak bir alışkanlık.'],
+            ['Türkiye — resmî listede', 'TİTCK monografı çiçeklerini listeliyor ve **uyarıları ağır**: aktif bileşiğe '
+              'hassasiyeti olanlarda kullanılmaz; **hormonal hastalıklarda, östrojen bağımlı '
+              'kanserlerde ve ailesinde bu kanser öyküsü olanlarda kullanılmaz**; döküntü, '
+              'kas ağrısı, baş ağrısı, bulantı ve bazı kadınlarda vajinal kanama yapabilir; '
+              'infertilite, uterusta sarkma, doğum ve laktasyonda zorluk bildirilmiş; protein'
+              ' S eksikliğinde kullanılmaz; **ameliyattan iki hafta önce bırakılmalı**; 12 '
+              'yaş altında, gebelikte ve emzirmede veri yetersiz.'],
+            ['Bingöl — balın gösterge bitkisi', 'Bingöl Balı menşe adı tescil belgesi üçgülü, balın ayırt edici beş taksonundan'
+              ' biri olarak sayıyor. Polen tablosunda *T. nigrescens* sekonder; *T. '
+              'campestre*, *T. diffusum*, *T. pratense* ve *T. repens* minör ya da eser '
+              'düzeyde. Üçgül arının gerçek nektar kaynaklarından — "cow clover" adı da '
+              'hayvanın değil arının bitkisi olmasından gelmez, otlaktan gelir.'],
+            ['Batı — menopoz takviyesi', '1990’lardan beri kırmızı yonca özütleri **izoflavon** içeriği nedeniyle '
+              'menopoz sıcak basmaları için takviye olarak satılıyor. İddianın klinik '
+              'karşılığı aşağıda — ve zayıf.'],
+            ['DSÖ monografı — çiçek', 'Dünya Sağlık Örgütü monografı (Cilt 4, 2009) olağandışı bir şey yapıyor: '
+              '"farmakopelerde tanımlanan kullanım" başlığında bir endikasyon vermek yerine '
+              'şunu yazıyor — menopoz belirtileri, hiperlipidemi, osteoporoz ve prostat '
+              'kanseri için çok sayıda klinik çalışma yapılmış olsa da **veriler henüz bu '
+              'endikasyonlardan hiçbirini desteklemeye yetmiyor.** Geleneksel tıpta: sedef ve'
+              ' egzamaya cilt üstü, astım ve öksürüğe ağızdan. Klinik veriyle desteklenen '
+              'kullanım: yok.'],
+            ['Avustralya — "yonca hastalığı"', 'Bitkinin hormonal etkisi ilk kez koyunlarda görüldü: Avustralya’da bol üçgül '
+              'yiyen koyun sürülerinde kısırlık, anormal süt salgısı ve rahim sarkması — '
+              'izoflavonların östrojen benzeri etkisine bağlanan "yonca hastalığı". DSÖ '
+              'monografı bunu kaydediyor ve ekliyor: insan çalışmalarında günde 160 mg '
+              'izoflavona kadar yan etki bildirilmemiş.'],
         ],
-        haz='Kurutulmuş çiçeklerden demleme olarak hazırlanıyor. Takviye '
-            'ürünleri standart izoflavon özütü hâlinde satılıyor ve '
-            'çiçek çayıyla aynı şey değil. TİTCK monografı doz vermiyor; '
-            '**bitkisel ürünlerle tedavi konusunda eğitim görmüş hekim ve '
-            'eczacı denetiminde** kullanılması gerektiğini yazıyor. '
-            'Yem bitkisi olarak taze ya da kuru ot hâlinde.',
-        bilim='Kırmızı yoncanın iddiası menopoz sıcak basmaları ve bu iddia '
-              'defalarca sınandı; **toplu sonuç ikna edici değil.** Cochrane '
-              'derlemesi fitoöstrojenleri vazomotor menopoz belirtileri için '
-              'inceledi ve genel olarak etkinlik kanıtı bulamadı (*Cochrane '
-              'Database Syst Rev*, 2007). 2015 tarihli meta-analiz ve '
-              'sistematik derleme fitoöstrojenlerde küçük bir etki tarif '
-              'ediyor ama çalışmalar arası tutarsızlığı vurguluyor '
-              '(*Climacteric*, 2015); daha önce *JAMA*’da yayımlanan '
-              'derleme de hormon dışı seçenekler arasında kırmızı yoncayı '
-              'ikna edici bulmamıştı (2006). 2021’de yapılan değerlendirme '
-              'özütün sıcak basmalarındaki etkisinin **klinik olarak anlamlı '
-              'olup olmadığını** ayrıca sorguluyor (*Nutrients*, 2021). '
-              '⚠️ İzoflavonlar östrojen reseptörüne bağlanan maddeler; '
-              'bu yüzden mesele yalnız "işe yarıyor mu" değil, **kime '
-              'verilmemeli** sorusu. TİTCK’nin östrojen bağımlı kanser '
-              'kontrendikasyonu buradan geliyor. Kanıt düzeyi "sınırlı".',
+        haz='Kurutulmuş çiçeklerden demleme olarak hazırlanıyor. Takviye ürünleri standart '
+            'izoflavon özütü hâlinde satılıyor ve çiçek çayıyla aynı şey değil. TİTCK '
+            'monografı doz vermiyor; **bitkisel ürünlerle tedavi konusunda eğitim görmüş '
+            'hekim ve eczacı denetiminde** kullanılması gerektiğini yazıyor. Yem bitkisi '
+            'olarak taze ya da kuru ot hâlinde. DSÖ monografı ağızdan doz veriyor: 240–480 '
+            'mg drog özütü, günde 40–80 mg izoflavona karşılık.',
+        bilim='Kırmızı yoncanın iddiası menopoz sıcak basmaları ve bu iddia defalarca '
+              'sınandı; **toplu sonuç ikna edici değil.** Cochrane derlemesi fitoöstrojenleri'
+              ' vazomotor menopoz belirtileri için inceledi ve genel olarak etkinlik kanıtı '
+              'bulamadı (*Cochrane Database Syst Rev*, 2007). 2015 tarihli meta-analiz ve '
+              'sistematik derleme fitoöstrojenlerde küçük bir etki tarif ediyor ama '
+              'çalışmalar arası tutarsızlığı vurguluyor (*Climacteric*, 2015); daha önce '
+              '*JAMA*’da yayımlanan derleme de hormon dışı seçenekler arasında kırmızı '
+              'yoncayı ikna edici bulmamıştı (2006). 2021’de yapılan değerlendirme özütün '
+              'sıcak basmalarındaki etkisinin **klinik olarak anlamlı olup olmadığını** '
+              'ayrıca sorguluyor (*Nutrients*, 2021). ⚠️ İzoflavonlar östrojen reseptörüne '
+              'bağlanan maddeler; bu yüzden mesele yalnız "işe yarıyor mu" değil, **kime '
+              'verilmemeli** sorusu. TİTCK’nin östrojen bağımlı kanser kontrendikasyonu '
+              'buradan geliyor. Kanıt düzeyi "sınırlı". Çayır üçgülü, DSÖ’nün 2009’da "veri '
+              'yetmiyor" dediği bitki — ve sonraki on beş yılda veri birikti. 2021’de '
+              'Nutrients dergisinde yayımlanan meta-analiz özütün sıcak basması üzerindeki '
+              'etkisinin klinik anlamlılığını sorguladı. 2026’da European Journal of '
+              'Obstetrics & Gynecology and Reproductive Biology dergisinde yayımlanan GRADE '
+              'değerlendirmeli meta-analiz 9 randomize çalışmayı (40–65 yaş kadınlar, günde '
+              '37–160 mg izoflavon, 12 hafta–12 ay) birleştirdi: sıcak basması sıklığında '
+              'plaseboya karşı **küçük-orta bir azalma** (SMD −0,45; %95 GA −0,81 ile −0,08),'
+              ' çalışmaların çoğu düşük yanlılık riskinde, yayın yanlılığı saptanmadı. '
+              'Yazarların sonucu "mütevazı ama istatistiksel olarak anlamlı". Karşılaştırma '
+              'için: aynı kataloğumuzda soya izoflavonları sıcak basmasında anlamlı etki '
+              'göstermemişti. Kanıt düzeyi "sınırlı": etki var, küçük, ve DSÖ’nün o günkü '
+              'tereddüdü kısmen aşılmış.',
         kanit='sinirli',
         guv='orta',
-        guvNot='Çayırda otlayan hayvanın yediği bir bitki, ama **takviye '
-               'olarak başka bir şey.** TİTCK kontrendikasyonları net: '
-               '**hormonal hastalık, östrojen bağımlı kanser ya da ailede '
-               'bu kanser öyküsü varsa kullanılmaz**; protein S '
-               'eksikliğinde kullanılmaz; **ameliyattan iki hafta önce '
-               'bırakılır**; 12 yaş altında, gebelikte ve emzirmede '
-               'kullanılmaz. Bildirilen istenmeyen etkiler: döküntü benzeri '
-               'reaksiyonlar, kas ağrısı, baş ağrısı, bulantı, bazı '
-               'kadınlarda vajinal kanama. İnfertilite, uterusta sarkma, '
-               'doğum ve laktasyonda zorluk da monografta yazılı. '
-               'Antikoagülanla birlikte kanama riski artar. Güvenlik düzeyi '
-               '"dikkat".',
+        guvNot='Çayırda otlayan hayvanın yediği bir bitki, ama **takviye olarak başka bir '
+               'şey.** TİTCK kontrendikasyonları net: **hormonal hastalık, östrojen bağımlı '
+               'kanser ya da ailede bu kanser öyküsü varsa kullanılmaz**; protein S '
+               'eksikliğinde kullanılmaz; **ameliyattan iki hafta önce bırakılır**; 12 yaş '
+               'altında, gebelikte ve emzirmede kullanılmaz. Bildirilen istenmeyen etkiler: '
+               'döküntü benzeri reaksiyonlar, kas ağrısı, baş ağrısı, bulantı, bazı kadınlarda'
+               ' vajinal kanama. İnfertilite, uterusta sarkma, doğum ve laktasyonda zorluk da '
+               'monografta yazılı. Antikoagülanla birlikte kanama riski artar. Güvenlik düzeyi'
+               ' "dikkat". DSÖ monografı bir efsaneyi de düzeltiyor: çayır üçgülü **kumarin '
+               'içermez**, dolayısıyla kan pıhtılaşmasına dair kaygılar temelsizdir (kokulu '
+               'yonca ile karıştırmadan kaynaklanan bir yanılgı). Klinik çalışmalarda günde '
+               '160 mg izoflavona kadar yan etki bildirilmemiş.',
         etk=[
-            ['Antikoagülanlar, trombolitikler, düşük molekül ağırlıklı '
-             'heparinler, varfarin',
-             'TİTCK listesinde; kanama riski artar. Birlikte kullanılmaz, '
-             'ameliyattan iki hafta önce bırakılır.'],
-            ['Kontraseptifler, östrojen, progesteron ve tamoksifen gibi '
-             'antiöstrojenik ilaçlar',
-             'TİTCK listesinde; izoflavonlar östrojen reseptörüne bağlandığı '
-             'için hormonal tedavinin etkisini bozabilir. Tamoksifen '
-             'kullanan hasta için özellikle önemli.'],
-            ['Sitokrom P450 3A4, 1A2, 2C19 ve 2C9 ile metabolize edilen '
-             'ilaçlar',
-             'TİTCK listesinde; bu enzimlerle yıkılan ilaçların kan düzeyi '
-             'değişebilir. Düzenli ilaç kullanan herkes hekimine '
-             'söylemeli.'],
+            ['Antikoagülanlar, trombolitikler, düşük molekül ağırlıklı heparinler, varfarin', 'TİTCK listesinde; kanama riski artar. Birlikte kullanılmaz, ameliyattan iki '
+              'hafta önce bırakılır.'],
+            ['Kontraseptifler, östrojen, progesteron ve tamoksifen gibi antiöstrojenik '
+              'ilaçlar', 'TİTCK listesinde; izoflavonlar östrojen reseptörüne bağlandığı için hormonal '
+              'tedavinin etkisini bozabilir. Tamoksifen kullanan hasta için özellikle önemli.'],
+            ['Sitokrom P450 3A4, 1A2, 2C19 ve 2C9 ile metabolize edilen ilaçlar', 'TİTCK listesinde; bu enzimlerle yıkılan ilaçların kan düzeyi değişebilir. '
+              'Düzenli ilaç kullanan herkes hekimine söylemeli.'],
+            ['Tamoksifen ve diğer antiöstrojenik ilaçlar', 'DSÖ monografı çelişkili verileri özetliyor: bazı çalışmalar izoflavonların '
+              'tamoksifenin etkisini artırdığını, kemirgen modellerinde genisteinin ise '
+              'tamoksifenin etkisini azalttığını gösteriyor. Monografın sonucu kesin: '
+              '**tamoksifen ya da diğer antiöstrojenik ilaçlarla tedavi görenlerde, yeni '
+              'araştırma yapılana kadar kullanılması önerilmez.**'],
+            ['Hormon tedavileri (kuramsal)', 'Östrojen benzeri etkisi olan bir bitki, hormon replasman tedavisi ya da doğum '
+              'kontrol hapıyla aynı yolda çalışır; monograf bunu ayrıca listelemiyor ama '
+              '"hormona bağlı hastalıklarda kontrendike" hükmünün uzantısıdır.'],
         ],
-        ilginc='Üçgülün tarımdaki asıl marifeti ilaç değil **azot**: '
-               'köklerindeki yumrularda yaşayan bakteriler havadaki azotu '
-               'toprağa bağlar. On sekizinci yüzyılda Avrupa’da nadasın '
-               'yerine üçgül ekilmesi, tarlanın her yıl ürün vermesini '
-               'sağladı ve tarım devriminin sessiz parçalarından biri '
-               'oldu. Dört yapraklı yonca batıl inancı da bu bitkiye ait — '
-               'olağan yaprak sayısı üçtür, adı da oradan gelir.',
-        ek=dict(
-            mevsim='Mayıs–eylül arasında çiçekte; **çiçekler tam açmışken** '
-                   'toplanıp gölgede kurutulur.',
-            yetisme='Avrupa, Batı Asya ve Kuzey Afrika kökenli, bugün ılıman '
-                    'kuşağın her yerinde. Türkiye’de çayır ve meralarda '
-                    'yaygın, yem bitkisi olarak da ekiliyor. Bingöl’de '
-                    'bozkır ve çayır geçişlerinde.',
-            yoresel='Üçgül, kırmızı yonca, çayır tırfılı, çayır dutu, çayır '
-                    'üçgülü (TİTCK); tırfıl, yonca.',
-            karisma='⚠️ **"Yonca" adı Türkçede üç ayrı cinsi kapsıyor.** '
-                    'Kokulu yonca *Melilotus officinalis*, acı yonca '
-                    '*Menyanthes trifoliata*, üçgül *Trifolium* — üçü de '
-                    'ayrı bitki, ayrı kullanım, ayrı güvenlik profili. '
-                    '*Menyanthes trifoliata* tür adında "trifoliata" '
-                    'taşıdığı için özellikle karışıyor ama *Trifolium* '
-                    'değil, hatta aynı familyadan bile değil. ⚠️ Beyaz '
-                    'üçgül (*T. repens*) ayrı türdür; tıbbi literatür '
-                    'kırmızı yonca üzerinedir.',
-        ),
+        ilginc='Üçgülün tarımdaki asıl marifeti ilaç değil **azot**: köklerindeki yumrularda '
+               'yaşayan bakteriler havadaki azotu toprağa bağlar. On sekizinci yüzyılda '
+               'Avrupa’da nadasın yerine üçgül ekilmesi, tarlanın her yıl ürün vermesini '
+               'sağladı ve tarım devriminin sessiz parçalarından biri oldu. Dört yapraklı '
+               'yonca batıl inancı da bu bitkiye ait — olağan yaprak sayısı üçtür, adı da '
+               'oradan gelir.',
+        ek={
+            'mevsim': 'Mayıs–eylül arasında çiçekte; **çiçekler tam açmışken** toplanıp gölgede '
+                      'kurutulur.',
+            'yetisme': 'Avrupa, Batı Asya ve Kuzey Afrika kökenli, bugün ılıman kuşağın her yerinde. '
+                       'Türkiye’de çayır ve meralarda yaygın, yem bitkisi olarak da ekiliyor. '
+                       'Bingöl’de bozkır ve çayır geçişlerinde.',
+            'yoresel': 'Üçgül, kırmızı yonca, çayır tırfılı, çayır dutu, çayır üçgülü (TİTCK); tırfıl,'
+                       ' yonca.',
+            'karisma': '⚠️ **"Yonca" adı Türkçede üç ayrı cinsi kapsıyor.** Kokulu yonca *Melilotus '
+                       'officinalis*, acı yonca *Menyanthes trifoliata*, üçgül *Trifolium* — üçü de '
+                       'ayrı bitki, ayrı kullanım, ayrı güvenlik profili. *Menyanthes trifoliata* tür '
+                       'adında "trifoliata" taşıdığı için özellikle karışıyor ama *Trifolium* değil, '
+                       'hatta aynı familyadan bile değil. ⚠️ Beyaz üçgül (*T. repens*) ayrı türdür; '
+                       'tıbbi literatür kırmızı yonca üzerinedir. Ak üçgül (Trifolium repens) ayrı bir'
+                       ' türdür ve monografların kapsamında değildir.',
+        },
         ema=[],
         kaynak=[
-            ['Trifolium pratense L. monografı, TİTCK Tıbbi Bitki Listesi',
-             'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/TrifoliumpratenseL.03d59e5f8c6844d4a63937bb3fca382f_fa81373a-b038-4849-986d-6d8916555033.pdf'],
-            ['A. E. Lethaby ve ark., “Phytoestrogens for vasomotor menopausal '
-             'symptoms”, Cochrane Database of Systematic Reviews, 2007',
-             'https://pubmed.ncbi.nlm.nih.gov/17943751/'],
-            ['M. N. Chen ve ark., “Efficacy of phytoestrogens for menopausal '
-             'symptoms: a meta-analysis and systematic review”, Climacteric '
-             '18(2), 2015',
-             'https://pubmed.ncbi.nlm.nih.gov/25263312/'],
-            ['H. D. Nelson ve ark., “Nonhormonal therapies for menopausal hot '
-             'flashes: systematic review and meta-analysis”, JAMA 295(17), '
-             '2006',
-             'https://pubmed.ncbi.nlm.nih.gov/16670414/'],
-            list(CI),
+            ['Trifolium pratense L. monografı, TİTCK Tıbbi Bitki Listesi', 'https://titck.gov.tr/storage/Archive/2022/dynamicModulesAttachment/TrifoliumpratenseL.03d59e5f8c6844d4a63937bb3fca382f_fa81373a-b038-4849-986d-6d8916555033.pdf'],
+            ['A. E. Lethaby ve ark., “Phytoestrogens for vasomotor menopausal symptoms”, '
+              'Cochrane Database of Systematic Reviews, 2007', 'https://pubmed.ncbi.nlm.nih.gov/17943751/'],
+            ['M. N. Chen ve ark., “Efficacy of phytoestrogens for menopausal symptoms: a '
+              'meta-analysis and systematic review”, Climacteric 18(2), 2015', 'https://pubmed.ncbi.nlm.nih.gov/25263312/'],
+            ['H. D. Nelson ve ark., “Nonhormonal therapies for menopausal hot flashes: '
+              'systematic review and meta-analysis”, JAMA 295(17), 2006', 'https://pubmed.ncbi.nlm.nih.gov/16670414/'],
+            ['Bingöl Balı menşe adı tescil belgesi, Tescil No 1237, tescil ettiren Bingöl '
+              'Üniversitesi, 07.10.2022, Türk Patent ve Marka Kurumu', 'https://ci.turkpatent.gov.tr/Files/GeographicalSigns/2959a6e7-1841-454b-9530-3f34c807ee9a.pdf'],
+            ['W. Jiang ve ark., “The effectiveness of red clover on hot-flash in menopausal '
+              'women: a GRADE-assessed systematic review and meta-analysis”, European Journal'
+              ' of Obstetrics & Gynecology and Reproductive Biology 324, 2026', 'https://pubmed.ncbi.nlm.nih.gov/42269521/'],
+            ['W. Kanadys ve ark., “Evaluation of Clinical Meaningfulness of Red Clover '
+              '(Trifolium pratense L.) Extract to Relieve Hot Flushes and Menopausal Symptoms'
+              ' in Peri- and Post-Menopausal Women: A Systematic Review and Meta-Analysis of '
+              'Randomized Controlled Trials”, Nutrients 13(4), 2021', 'https://pubmed.ncbi.nlm.nih.gov/33920485/'],
+            ['Flos Trifolii, DSÖ Monographs on Selected Medicinal Plants, Cilt 4, 2009', 'https://iris.who.int/handle/10665/42052?cilt=4&mono=flos-trifolii'],
         ],
         rel=['kokuluyonca', 'aciyonca', 'geven', 'gazalboynuzu'],
-        en=dict(
-            name='Red clover',
-            other='The Turkish monograph gives the names "kırmızı yonca, '
-                  'çayır tırfılı, çayır dutu, çayır üçgülü"; English red '
-                  'clover, cow clover, meadow clover. The part used is the '
-                  '**flowers**. No EU or WHO monograph, but **there is a '
-                  'Turkish monograph**. In the Bingöl honey registration, '
-                  'clover is one of the five taxa that distinguish the honey.',
-            part='The flowers',
-            uses=[
-                ['Anatolia and Europe — fodder first, medicine after',
-                 'Red clover is a staple of European and Anatolian meadows, '
-                 'and because it fixes nitrogen it has been sown for centuries '
-                 'as green manure and fodder in place of fallow. In folk '
-                 'medicine a tea of the flowers was drunk for coughs and skin '
-                 'complaints and the mash put on wounds. The nectar at the '
-                 'base of the floret is sweet; children sucking the flowers is '
-                 'a habit shared across Europe and Anatolia.'],
-                ['Turkey — on the official list', 'The Turkish monograph lists '
-                 'the flowers, and **its warnings are heavy**: not for anyone '
-                 'sensitive to the active compound; **not in hormonal '
-                 'disorders, in oestrogen-dependent cancers, or where there is '
-                 'a family history of such cancer**; it may cause rash-like '
-                 'reactions, muscle pain, headache, nausea and, in some women, '
-                 'vaginal bleeding; infertility, uterine prolapse and '
-                 'difficulty in labour and lactation are recorded; not in '
-                 'protein S deficiency; **stopped two weeks before surgery**; '
-                 'insufficient data under 12, in pregnancy and in lactation.'],
-                ['Bingöl — an indicator plant of the honey', 'The '
-                 'denomination-of-origin registration counts clover among the '
-                 'five taxa that distinguish Bingöl honey. In the pollen table '
-                 '*T. nigrescens* is secondary, while *T. campestre*, *T. '
-                 'diffusum*, *T. pratense* and *T. repens* are minor or trace. '
-                 'Clover is a genuine nectar source for bees.'],
-                ['The West — a menopause supplement', 'Since the 1990s red '
-                 'clover extracts have been sold as supplements for menopausal '
-                 'hot flushes, on the strength of their **isoflavone** '
-                 'content. What the clinical record says is below — and it is '
-                 'weak.'],
-            ],
-            prep='Prepared as an infusion of the dried flowers. Supplements '
-                 'are sold as standardised isoflavone extracts and are not the '
-                 'same thing as flower tea. The Turkish monograph gives no '
-                 'dose; it says the plant should be used **under the '
-                 'supervision of a doctor or pharmacist trained in herbal '
-                 'treatment**. As fodder it is used fresh or as hay.',
-            science='Red clover’s claim is menopausal hot flushes, and the '
-                    'claim has been tested repeatedly; **the overall result is '
-                    'not convincing.** A Cochrane review examined '
-                    'phytoestrogens for vasomotor menopausal symptoms and found '
-                    'no evidence of effectiveness overall (*Cochrane Database '
-                    'Syst Rev*, 2007). A 2015 meta-analysis and systematic '
-                    'review describes a small effect for phytoestrogens while '
-                    'stressing the inconsistency between trials '
-                    '(*Climacteric*, 2015); an earlier review in *JAMA* did not '
-                    'find red clover convincing among non-hormonal options '
-                    '(2006). A 2021 assessment asks separately whether the '
-                    'extract’s effect on hot flushes is **clinically '
-                    'meaningful** at all (*Nutrients*, 2021). ⚠️ Isoflavones '
-                    'bind to the oestrogen receptor, so the question is not '
-                    'only whether it works but **who must not take it**. That '
-                    'is where the Turkish contraindication for '
-                    'oestrogen-dependent cancer comes from. Evidence rating '
-                    '"limited".',
-            safety='A plant that grazing animals eat in the meadow — but **a '
-                   'supplement is another matter.** The Turkish '
-                   'contraindications are clear: **not used in hormonal '
-                   'disease, in oestrogen-dependent cancer, or where there is a '
-                   'family history of it**; not in protein S deficiency; '
-                   '**stopped two weeks before surgery**; not under 12, in '
-                   'pregnancy or in lactation. Reported adverse effects: '
-                   'rash-like reactions, muscle pain, headache, nausea and, in '
-                   'some women, vaginal bleeding. Infertility, uterine prolapse '
-                   'and difficulty in labour and lactation are also in the '
-                   'monograph. With an anticoagulant the bleeding risk rises.',
-            fact='Clover’s real feat in farming is not medicine but '
-                 '**nitrogen**: bacteria living in nodules on its roots fix '
-                 'nitrogen from the air into the soil. Sowing clover instead of '
-                 'leaving land fallow let eighteenth-century European fields '
-                 'yield every year, and was one of the quiet parts of the '
-                 'agricultural revolution. The four-leaf-clover superstition '
-                 'belongs to this plant too — three is the ordinary number, and '
-                 'the name says so.',
-            season='In flower from May to September; the flowers are gathered '
-                   '**fully open** and dried in the shade.',
-            habitat='Native to Europe, western Asia and north Africa, now '
-                    'across the temperate world. Common in Turkish meadows and '
-                    'pastures and sown as fodder. In Bingöl it grows where '
-                    'steppe gives way to meadow.',
-            local='Üçgül, kırmızı yonca, çayır tırfılı, çayır dutu, çayır '
-                  'üçgülü; tırfıl, yonca.',
-            confusion='⚠️ **The Turkish word "yonca" covers three separate '
-                      'genera.** Sweet clover is *Melilotus officinalis*, '
-                      'bogbean is *Menyanthes trifoliata*, and clover is '
-                      '*Trifolium* — three different plants with different '
-                      'uses and different safety profiles. *Menyanthes '
-                      'trifoliata* is confused especially often because '
-                      '"trifoliata" sits in its name, but it is not a '
-                      '*Trifolium* and not even in the same family. ⚠️ White '
-                      'clover (*T. repens*) is a different species; the medical '
-                      'literature is on red clover.',
-        ),
+        en={
+            'name': 'Red clover',
+            'other': 'The Turkish monograph gives the names "kırmızı yonca, çayır tırfılı, çayır '
+                     'dutu, çayır üçgülü"; English red clover, cow clover, meadow clover. The part '
+                     'used is the **flowers**. No EU or WHO monograph, but **there is a Turkish '
+                     'monograph**. In the Bingöl honey registration, clover is one of the five taxa '
+                     'that distinguish the honey.',
+            'part': 'The flowers',
+            'uses': [['Anatolia and Europe — fodder first, medicine after', 'Red clover is a staple of European and Anatolian meadows, and because it fixes nitrogen it has been sown for centuries as green manure and fodder in place of fallow. In folk medicine a tea of the flowers was drunk for coughs and skin complaints and the mash put on wounds. The nectar at the base of the floret is sweet; children sucking the flowers is a habit shared across Europe and Anatolia.'], ['Turkey — on the official list', 'The Turkish monograph lists the flowers, and **its warnings are heavy**: not for anyone sensitive to the active compound; **not in hormonal disorders, in oestrogen-dependent cancers, or where there is a family history of such cancer**; it may cause rash-like reactions, muscle pain, headache, nausea and, in some women, vaginal bleeding; infertility, uterine prolapse and difficulty in labour and lactation are recorded; not in protein S deficiency; **stopped two weeks before surgery**; insufficient data under 12, in pregnancy and in lactation.'], ['Bingöl — an indicator plant of the honey', 'The denomination-of-origin registration counts clover among the five taxa that distinguish Bingöl honey. In the pollen table *T. nigrescens* is secondary, while *T. campestre*, *T. diffusum*, *T. pratense* and *T. repens* are minor or trace. Clover is a genuine nectar source for bees.'], ['The West — a menopause supplement', 'Since the 1990s red clover extracts have been sold as supplements for menopausal hot flushes, on the strength of their **isoflavone** content. What the clinical record says is below — and it is weak.'], ['WHO monograph — the flower', 'The World Health Organization monograph (Vol. 4, 2009) does something unusual: instead of giving an indication under "uses described in pharmacopoeias" it writes that although numerous clinical trials have assessed red clover extracts for menopausal symptoms, hyperlipidaemia, osteoporosis and prostate cancer, **the data are as yet insufficient to support any of these indications.** In traditional medicine: topically for psoriasis and eczema, orally for asthma and cough. Uses supported by clinical data: none.'], ['Australia — "clover disease"', 'The plant’s hormonal effect was first seen in sheep: in Australian flocks grazing heavily on clover, infertility, abnormal lactation and prolapsed uterus — "clover disease", attributed to the oestrogen-like effect of isoflavones. The WHO monograph records this and adds: in human trials no adverse effects were reported at up to 160 mg of isoflavones a day.']],
+            'prep': 'Prepared as an infusion of the dried flowers. Supplements are sold as '
+                    'standardised isoflavone extracts and are not the same thing as flower tea. The'
+                    ' Turkish monograph gives no dose; it says the plant should be used **under the'
+                    ' supervision of a doctor or pharmacist trained in herbal treatment**. As '
+                    'fodder it is used fresh or as hay. The WHO monograph gives an oral dose: '
+                    '240–480 mg of extract of the herbal substance, corresponding to 40–80 mg of '
+                    'isoflavones a day.',
+            'science': 'Red clover’s claim is menopausal hot flushes, and the claim has been tested '
+                       'repeatedly; **the overall result is not convincing.** A Cochrane review '
+                       'examined phytoestrogens for vasomotor menopausal symptoms and found no '
+                       'evidence of effectiveness overall (*Cochrane Database Syst Rev*, 2007). A 2015'
+                       ' meta-analysis and systematic review describes a small effect for '
+                       'phytoestrogens while stressing the inconsistency between trials '
+                       '(*Climacteric*, 2015); an earlier review in *JAMA* did not find red clover '
+                       'convincing among non-hormonal options (2006). A 2021 assessment asks '
+                       'separately whether the extract’s effect on hot flushes is **clinically '
+                       'meaningful** at all (*Nutrients*, 2021). ⚠️ Isoflavones bind to the oestrogen '
+                       'receptor, so the question is not only whether it works but **who must not take'
+                       ' it**. That is where the Turkish contraindication for oestrogen-dependent '
+                       'cancer comes from. Evidence rating "limited". Red clover is the plant the WHO '
+                       'said "insufficient data" about in 2009 — and in the fifteen years since, data '
+                       'accumulated. A meta-analysis published in 2021 in Nutrients questioned the '
+                       'clinical meaningfulness of the extract’s effect on hot flushes. A GRADE-'
+                       'assessed meta-analysis published in 2026 in the European Journal of Obstetrics'
+                       ' & Gynecology and Reproductive Biology pooled 9 randomised trials (women aged '
+                       '40–65, 37–160 mg isoflavones a day, 12 weeks to 12 months): a **small-to-'
+                       'moderate reduction** in hot-flush frequency against placebo (SMD −0.45; 95% CI'
+                       ' −0.81 to −0.08), most trials at low risk of bias, no publication bias '
+                       'detected. The authors’ conclusion: "modest but statistically significant". For'
+                       ' comparison: in this same catalog, soy isoflavones showed no significant '
+                       'effect on hot flushes. Evidence level Limited: an effect exists, it is small, '
+                       'and the WHO’s hesitation of that day has been partly overtaken.',
+            'safety': 'A plant that grazing animals eat in the meadow — but **a supplement is another'
+                      ' matter.** The Turkish contraindications are clear: **not used in hormonal '
+                      'disease, in oestrogen-dependent cancer, or where there is a family history of '
+                      'it**; not in protein S deficiency; **stopped two weeks before surgery**; not '
+                      'under 12, in pregnancy or in lactation. Reported adverse effects: rash-like '
+                      'reactions, muscle pain, headache, nausea and, in some women, vaginal bleeding.'
+                      ' Infertility, uterine prolapse and difficulty in labour and lactation are also'
+                      ' in the monograph. With an anticoagulant the bleeding risk rises. The WHO '
+                      'monograph also corrects a myth: red clover **contains no coumarin**, so '
+                      'concerns about blood clotting are groundless (a mistake that comes from '
+                      'confusing it with sweet clover). In clinical studies no adverse effect was '
+                      'reported up to 160 mg of isoflavones a day.',
+            'fact': 'Clover’s real feat in farming is not medicine but **nitrogen**: bacteria '
+                    'living in nodules on its roots fix nitrogen from the air into the soil. Sowing'
+                    ' clover instead of leaving land fallow let eighteenth-century European fields '
+                    'yield every year, and was one of the quiet parts of the agricultural '
+                    'revolution. The four-leaf-clover superstition belongs to this plant too — '
+                    'three is the ordinary number, and the name says so.',
+            'season': 'In flower from May to September; the flowers are gathered **fully open** and '
+                      'dried in the shade.',
+            'habitat': 'Native to Europe, western Asia and north Africa, now across the temperate '
+                       'world. Common in Turkish meadows and pastures and sown as fodder. In Bingöl it'
+                       ' grows where steppe gives way to meadow.',
+            'local': 'Üçgül, kırmızı yonca, çayır tırfılı, çayır dutu, çayır üçgülü; tırfıl, yonca.',
+            'confusion': '⚠️ **The Turkish word "yonca" covers three separate genera.** Sweet clover is '
+                         '*Melilotus officinalis*, bogbean is *Menyanthes trifoliata*, and clover is '
+                         '*Trifolium* — three different plants with different uses and different safety '
+                         'profiles. *Menyanthes trifoliata* is confused especially often because '
+                         '"trifoliata" sits in its name, but it is not a *Trifolium* and not even in the'
+                         ' same family. ⚠️ White clover (*T. repens*) is a different species; the '
+                         'medical literature is on red clover. White clover (Trifolium repens) is a '
+                         'separate species and is not within the scope of the monographs.',
+        },
         etk_en=[
-            ['Anticoagulants, thrombolytics, low-molecular-weight heparins, '
-             'warfarin',
-             'On the Turkish list; the risk of bleeding rises. Not used '
-             'together, and stopped two weeks before surgery.'],
-            ['Contraceptives, oestrogen, progesterone and antioestrogens such '
-             'as tamoxifen',
-             'On the Turkish list; because isoflavones bind the oestrogen '
-             'receptor they may disturb hormonal treatment. This matters '
-             'particularly for anyone taking tamoxifen.'],
-            ['Drugs metabolised by cytochrome P450 3A4, 1A2, 2C19 and 2C9',
-             'On the Turkish list; blood levels of drugs broken down by these '
-             'enzymes may change. Anyone on regular medication should tell '
-             'their doctor.'],
+            ['Anticoagulants, thrombolytics, low-molecular-weight heparins, warfarin', 'On the Turkish list; the risk of bleeding rises. Not used together, and '
+              'stopped two weeks before surgery.'],
+            ['Contraceptives, oestrogen, progesterone and antioestrogens such as tamoxifen', 'On the Turkish list; because isoflavones bind the oestrogen receptor they may '
+              'disturb hormonal treatment. This matters particularly for anyone taking '
+              'tamoxifen.'],
+            ['Drugs metabolised by cytochrome P450 3A4, 1A2, 2C19 and 2C9', 'On the Turkish list; blood levels of drugs broken down by these enzymes may '
+              'change. Anyone on regular medication should tell their doctor.'],
+            ['Tamoxifen and other anti-oestrogenic drugs', 'The WHO monograph summarises conflicting data: some studies suggest '
+              'isoflavones enhance tamoxifen’s effect, while in rodent models genistein '
+              'reduced it. The monograph’s conclusion is firm: **not recommended in those '
+              'being treated with tamoxifen or other anti-oestrogenic drugs until further '
+              'research has been done.**'],
+            ['Hormone therapies (theoretical)', 'A plant with oestrogen-like effects works along the same pathway as hormone '
+              'replacement therapy or the contraceptive pill; the monograph does not list '
+              'this separately, but it is an extension of its "contraindicated in hormone-'
+              'associated diseases".'],
         ],
     ),
 

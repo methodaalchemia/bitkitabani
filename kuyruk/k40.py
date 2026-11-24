@@ -194,7 +194,7 @@ Q = [
         foto='',
         tr='Menengiç',
         la='Pistacia terebinthus L.',
-        fam='Anacardiaceae (sumakgiller)',
+        fam='Anacardiaceae (sakızağacıgiller)',
         diger='Türkçe menengiç, çitlembik, bıttım (Siirt), melengiç, çedene; '
               'İngilizce terebinth, turpentine tree — Kitab-ı Mukaddes’in '
               '"terebinth" ağacı. TİTCK listesinde yakın akrabası sakız ağacı '
