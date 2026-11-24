@@ -1,0 +1,967 @@
+# 1000 bitki hedefi için aday listesi (24 Kasım 2026). Biçim: Latince ad ; Türkçe ad ; bölge ; kategori
+# Her aday kayda dönmeden önce POWO'da ad doğrulanır, kaynak bulunamazsa listeden çıkarılır.
+# --- Anadolu ve Akdeniz ---
+Satureja hortensis ; Sater ; anadolu ; besin,sifa
+Satureja cuneifolia ; Dağ sateri ; anadolu ; sifa
+Origanum onites ; İzmir kekiği ; anadolu ; besin,sifa
+Origanum syriacum ; Suriye kekiği ; anadolu ; besin
+Thymus serpyllum ; Yabani kekik ; avrupa ; sifa
+Micromeria fruticosa ; Taş nanesi ; anadolu ; sifa
+Ziziphora clinopodioides ; Dağ reyhanı ; anadolu ; sifa,besin
+Ziziphora tenuior ; Filiskin ; anadolu ; besin,sifa
+Mentha longifolia ; Pungo ; anadolu ; sifa,besin
+Mentha spicata ; Bahçe nanesi ; anadolu ; besin,sifa
+Mentha aquatica ; Su nanesi ; avrupa ; sifa
+Teucrium polium ; Acı yavşan ; anadolu ; sifa
+Teucrium chamaedrys ; Kısamahmut otu ; anadolu ; sifa,zehir
+Stachys lavandulifolia ; Dağ çayı (tüylü) ; anadolu ; sifa
+Phlomis grandiflora ; Çalba ; anadolu ; sifa
+Salvia sclarea ; Misk adaçayı ; anadolu ; sifa,tutsu
+Salvia tomentosa ; Büyük çiçekli adaçayı ; anadolu ; sifa
+Salvia multicaulis ; Kürt reyhanı ; anadolu ; sifa
+Salvia hispanica ; Chia ; kamerika ; besin
+Hyssopus officinalis ; Zufa otu ; avrupa ; sifa
+Nepeta cataria ; Kedi nanesi ; avrupa ; sifa
+Glechoma hederacea ; Yer sarmaşığı ; avrupa ; sifa
+Prunella vulgaris ; Gelin otu ; avrupa ; sifa
+Ajuga chamaepitys ; Mayasıl otu ; anadolu ; sifa
+Ballota nigra ; Kara yer pırasası ; avrupa ; sifa
+Lycopus europaeus ; Kurt ayağı ; avrupa ; sifa
+Scutellaria lateriflora ; Amerikan kasidesi ; kamerika ; sifa
+Betonica officinalis ; Betonika ; avrupa ; sifa
+Cyclotrichium niveum ; Dağ nanesi ; anadolu ; sifa
+Achillea biebersteinii ; Sarı civanperçemi ; anadolu ; sifa
+Artemisia vulgaris ; Ayvadana ; avrupa ; sifa,ritual
+Artemisia annua ; Peygamber süpürgesi ; asya ; sifa
+Artemisia dracunculus ; Tarhun ; anadolu ; besin
+Artemisia abrotanum ; Kara pelin ; avrupa ; sifa
+Artemisia herba-alba ; Beyaz pelin ; afrika ; sifa
+Tanacetum vulgare ; Solucan otu ; avrupa ; sifa,zehir
+Tanacetum balsamita ; Marsuvan otu ; anadolu ; sifa,besin
+Inula helenium ; Andız otu ; anadolu ; sifa
+Inula viscosa ; Yapışkan andız ; anadolu ; sifa
+Tussilago farfara ; Öksürük otu ; avrupa ; sifa
+Petasites hybridus ; Kabalak ; avrupa ; sifa
+Bellis perennis ; Koyungözü ; avrupa ; sifa
+Centaurea cyanus ; Peygamber çiçeği ; avrupa ; sifa
+Gundelia tournefortii ; Kenger ; anadolu ; besin,sifa
+Scolymus hispanicus ; Şevketibostan ; anadolu ; besin
+Onopordum acanthium ; Eşek dikeni ; anadolu ; sifa
+Carthamus lanatus ; Yabani aspir ; anadolu ; sifa
+Tragopogon porrifolius ; Yemlik ; anadolu ; besin
+Scorzonera hispanica ; İskorçina ; avrupa ; besin
+Chondrilla juncea ; Çengel sakızı ; anadolu ; besin
+Lactuca virosa ; Yabani marul ; avrupa ; sifa,zehir
+Lactuca sativa ; Marul ; anadolu ; besin
+Sonchus oleraceus ; Eşek marulu ; anadolu ; besin
+Anthemis tinctoria ; Boyacı papatyası ; anadolu ; sifa
+Matricaria discoidea ; Ananas papatyası ; kamerika ; sifa
+Xanthium strumarium ; Pıtrak ; anadolu ; sifa,zehir
+Senecio vulgaris ; Kanarya otu ; avrupa ; zehir
+Eupatorium cannabinum ; Koyun pıtrağı ; avrupa ; sifa
+Bidens tripartita ; Su keneviri ; avrupa ; sifa
+Carlina acaulis ; Domuz dikeni ; avrupa ; sifa
+Arctium minus ; Küçük dulavratotu ; avrupa ; sifa
+Helianthus annuus ; Ayçiçeği ; kamerika ; besin
+Urtica urens ; Küçük ısırgan ; anadolu ; sifa,besin
+Parietaria officinalis ; Duvar fesleğeni ; avrupa ; sifa
+Malva neglecta ; Çobançöreği ; anadolu ; besin,sifa
+Alcea rosea ; Gül hatmi ; anadolu ; sifa
+Portulaca oleracea ; Semizotu ; anadolu ; besin,sifa
+Stellaria media ; Kuş otu ; avrupa ; besin,sifa
+Saponaria officinalis ; Sabun otu ; avrupa ; sifa
+Gypsophila arrostii ; Çöven ; anadolu ; besin
+Polygonum cognatum ; Madımak ; anadolu ; besin
+Bistorta officinalis ; Kurt pençesi ; avrupa ; sifa
+Rumex acetosella ; Küçük kuzukulağı ; avrupa ; besin
+Rheum rhabarbarum ; Sap raventi ; avrupa ; besin
+Fagopyrum esculentum ; Karabuğday ; asya ; besin,sifa
+Chenopodium album ; Sirken ; anadolu ; besin
+Atriplex hortensis ; Karapazı ; anadolu ; besin
+Beta vulgaris ; Pancar ; anadolu ; besin
+Spinacia oleracea ; Ispanak ; asya ; besin
+Amaranthus retroflexus ; Horoz ibiği ; anadolu ; besin
+Salicornia europaea ; Deniz börülcesi ; anadolu ; besin
+Crithmum maritimum ; Deniz rezenesi ; anadolu ; besin
+Smilax aspera ; Saparna (Akdeniz) ; anadolu ; besin,sifa
+Tamus communis ; Sarmaşık (acı ot) ; anadolu ; besin,zehir
+Asparagus acutifolius ; Yabani kuşkonmaz ; anadolu ; besin
+Ornithogalum umbellatum ; Tükürük otu ; anadolu ; besin,zehir
+Muscari comosum ; Arap sümbülü ; anadolu ; besin
+Allium ursinum ; Ayı sarımsağı ; avrupa ; besin,sifa
+Allium ampeloprasum ; Pırasa ; anadolu ; besin
+Allium schoenoprasum ; Frenk soğanı ; avrupa ; besin
+Allium scorodoprasum ; Körmen ; anadolu ; besin
+Allium tuncelianum ; Tunceli sarımsağı ; anadolu ; besin,sifa
+Eremurus spectabilis ; Çiriş ; anadolu ; besin,sifa
+Asphodelus aestivus ; Çiriş otu (kirgiç) ; anadolu ; sifa
+Urginea maritima ; Adasoğanı ; anadolu ; sifa,zehir
+Colchicum speciosum ; Vargit çiçeği ; anadolu ; zehir
+Veratrum album ; Çöpleme ; avrupa ; zehir
+Arum maculatum ; Yılan yastığı ; anadolu ; besin,zehir
+Arum italicum ; Nivik ; anadolu ; besin,zehir
+Dracunculus vulgaris ; Yılan bıçağı ; anadolu ; zehir
+Acorus calamus ; Eğir kökü ; asya ; sifa,ritual
+Iris germanica ; Süsen ; anadolu ; sifa,ritual
+Iris pseudacorus ; Bataklık süseni ; avrupa ; sifa
+Crocus cancellatus ; Yabani çiğdem ; anadolu ; besin
+Sternbergia lutea ; Karaçiğdem ; anadolu ; zehir
+Galanthus woronowii ; Kardelen ; anadolu ; sifa,zehir
+Leucojum aestivum ; Göl soğanı ; anadolu ; sifa,zehir
+Narcissus tazetta ; Nergis ; anadolu ; ritual,zehir
+Hyacinthus orientalis ; Sümbül ; anadolu ; ritual
+Tulipa gesneriana ; Lale ; anadolu ; ritual
+Lilium candidum ; Ak zambak ; anadolu ; sifa,ritual
+Fritillaria imperialis ; Ağlayan gelin ; anadolu ; ritual,zehir
+Paeonia mascula ; Ayı gülü ; anadolu ; sifa
+Helleborus orientalis ; Çöpleme (bohça otu) ; anadolu ; zehir
+Aconitum napellus ; Kurtboğan ; avrupa ; zehir
+Delphinium staphisagria ; Bit otu ; anadolu ; zehir
+Consolida orientalis ; Hezaren ; anadolu ; zehir
+Adonis vernalis ; Kanavcı otu ; avrupa ; sifa,zehir
+Anemone coronaria ; Manisa lalesi ; anadolu ; ritual,zehir
+Ranunculus ficaria ; Basur otu ; avrupa ; sifa,zehir
+Nigella damascena ; Şam çörekotu ; anadolu ; besin
+Clematis vitalba ; Akasma ; avrupa ; zehir,sifa
+Berberis crataegina ; Karamuk (Anadolu) ; anadolu ; besin,sifa
+Mahonia aquifolium ; Mahonya ; kamerika ; sifa
+Glaucium flavum ; Boynuzlu gelincik ; anadolu ; sifa,zehir
+Corydalis cava ; Kazgagası ; avrupa ; sifa
+Sinapis alba ; Beyaz hardal ; anadolu ; besin,sifa
+Brassica nigra ; Siyah hardal ; anadolu ; besin,sifa
+Brassica oleracea ; Lahana ; avrupa ; besin,sifa
+Raphanus sativus ; Turp ; anadolu ; besin,sifa
+Armoracia rusticana ; Bayır turpu ; avrupa ; besin,sifa
+Nasturtium officinale ; Su teresi ; anadolu ; besin,sifa
+Lepidium sativum ; Tere ; anadolu ; besin
+Eruca vesicaria ; Roka ; anadolu ; besin
+Isatis tinctoria ; Çivit otu ; anadolu ; sifa
+Cochlearia officinalis ; Kaşık otu ; avrupa ; sifa
+Cardamine pratensis ; Çayır teresi ; avrupa ; besin
+Sedum acre ; Damkoruğu ; avrupa ; sifa,zehir
+Sempervivum tectorum ; Dam koruğu (kaya güzeli) ; avrupa ; sifa,ritual
+Umbilicus rupestris ; Göbek otu ; anadolu ; besin,sifa
+Ribes rubrum ; Kırmızı frenk üzümü ; avrupa ; besin
+Ribes uva-crispa ; Bektaşi üzümü ; avrupa ; besin
+Alchemilla vulgaris ; Aslan pençesi ; avrupa ; sifa
+Potentilla anserina ; Kaz otu ; avrupa ; sifa
+Geum urbanum ; Meryemana otu ; avrupa ; sifa
+Sanguisorba officinalis ; Çayır düğmesi ; avrupa ; sifa
+Sanguisorba minor ; Çayır otu (salata) ; anadolu ; besin
+Rubus fruticosus ; Böğürtlen ; anadolu ; besin,sifa
+Rubus sanctus ; Kara böğürtlen ; anadolu ; besin,sifa
+Fragaria × ananassa ; Çilek ; avrupa ; besin
+Rosa gallica ; Kırmızı gül ; avrupa ; sifa
+Prunus spinosa ; Çakal eriği ; anadolu ; besin,sifa
+Prunus laurocerasus ; Karayemiş ; anadolu ; besin,sifa
+Prunus armeniaca ; Kayısı ; anadolu ; besin
+Prunus persica ; Şeftali ; asya ; besin
+Prunus domestica ; Erik ; anadolu ; besin,sifa
+Prunus cerasus ; Vişne ; anadolu ; besin
+Prunus avium ; Kiraz ; anadolu ; besin,sifa
+Cydonia oblonga ; Ayva ; anadolu ; besin,sifa
+Mespilus germanica ; Muşmula ; anadolu ; besin,sifa
+Eriobotrya japonica ; Yenidünya ; asya ; besin,sifa
+Pyrus communis ; Armut ; anadolu ; besin
+Pyrus elaeagnifolia ; Ahlat ; anadolu ; besin,sifa
+Malus domestica ; Elma ; anadolu ; besin
+Sorbus domestica ; Üvez ; anadolu ; besin
+Crataegus azarolus ; Sarı alıç ; anadolu ; besin,sifa
+Pyracantha coccinea ; Ateş dikeni ; anadolu ; besin
+Cotoneaster nummularius ; Dağ muşmulası ; anadolu ; besin
+Amygdalus orientalis ; Yabani badem ; anadolu ; besin
+Glycyrrhiza echinata ; Dikenli meyan ; anadolu ; sifa
+Trigonella caerulea ; Çemen (mavi) ; anadolu ; besin
+Medicago sativa ; Yonca ; anadolu ; besin,sifa
+Melilotus albus ; Ak taş yoncası ; avrupa ; sifa
+Cicer arietinum ; Nohut ; anadolu ; besin
+Vicia faba ; Bakla ; anadolu ; besin,zehir
+Pisum sativum ; Bezelye ; anadolu ; besin
+Lathyrus sativus ; Mürdümük ; anadolu ; besin,zehir
+Lupinus albus ; Acı bakla ; anadolu ; besin,zehir
+Vicia ervilia ; Burçak ; anadolu ; besin
+Spartium junceum ; Katır tırnağı ; anadolu ; zehir,sifa
+Cytisus scoparius ; Süpürge çalısı ; avrupa ; sifa,zehir
+Genista tinctoria ; Boyacı katırtırnağı ; avrupa ; sifa
+Galega officinalis ; Keçi sedefi ; avrupa ; sifa
+Anthyllis vulneraria ; Yara otu ; avrupa ; sifa
+Robinia pseudoacacia ; Yalancı akasya ; kamerika ; besin,zehir
+Cercis siliquastrum ; Erguvan ; anadolu ; besin,ritual
+Laburnum anagyroides ; Sarısalkım ; avrupa ; zehir
+Anagyris foetida ; Zivircik ; anadolu ; zehir
+Linum bienne ; Yabani keten ; anadolu ; sifa
+Geranium robertianum ; Turnagagası ; avrupa ; sifa
+Erodium cicutarium ; Dönbaba ; anadolu ; besin,sifa
+Zygophyllum fabago ; Deve dili ; anadolu ; sifa
+Ruta chalepensis ; Sedef otu (Akdeniz) ; anadolu ; sifa,ritual
+Dictamnus albus ; Geyik otu ; avrupa ; sifa,zehir
+Citrus limon ; Limon ; asya ; besin,sifa
+Citrus sinensis ; Portakal ; asya ; besin
+Citrus bergamia ; Bergamot ; avrupa ; sifa,tutsu
+Citrus paradisi ; Greyfurt ; kamerika ; besin
+Citrus medica ; Ağaç kavunu ; asya ; besin,ritual
+Citrus reticulata ; Mandalina ; asya ; besin,sifa
+Pistacia atlantica ; Buttum ; anadolu ; besin,sifa
+Cotinus coggygria ; Boyacı sumağı ; anadolu ; sifa
+Acer pseudoplatanus ; Dağ akçaağacı ; avrupa ; besin
+Euonymus europaeus ; Papaz külahı ; avrupa ; zehir
+Ilex aquifolium ; Çoban püskülü ; avrupa ; ritual,zehir
+Buxus sempervirens ; Şimşir ; anadolu ; ritual,zehir
+Paliurus spina-christi ; Karaçalı ; anadolu ; sifa,ritual
+Rhamnus cathartica ; Akdiken ; avrupa ; sifa,zehir
+Ziziphus lotus ; Yabani hünnap ; afrika ; besin
+Vitis sylvestris ; Yabani asma ; anadolu ; besin
+Gossypium herbaceum ; Pamuk ; asya ; sifa
+Hibiscus trionum ; Yabani bamya ; anadolu ; sifa
+Hypericum scabrum ; Mayasıl otu (sarı) ; anadolu ; sifa
+Hypericum triquetrifolium ; Kılıç otu ; anadolu ; sifa
+Hypericum empetrifolium ; Püren kantaronu ; anadolu ; sifa
+Viola odorata ; Kokulu menekşe ; avrupa ; sifa,besin
+Cistus laurifolius ; Defne yapraklı laden ; anadolu ; sifa
+Cistus salviifolius ; Adaçayı yapraklı laden ; anadolu ; sifa
+Tamarix smyrnensis ; Ilgın ; anadolu ; sifa,ritual
+Daphne mezereum ; Defne (mezeryon) ; avrupa ; zehir
+Daphne oleoides ; Gövçek ; anadolu ; zehir,sifa
+Elaeagnus angustifolia ; İğde ; anadolu ; besin,sifa
+Lythrum salicaria ; Hevhulma ; avrupa ; sifa
+Epilobium parviflorum ; Küçük çiçekli yakı otu ; avrupa ; sifa
+Trapa natans ; Su kestanesi ; anadolu ; besin
+Cornus sanguinea ; Kızılcık (kan) ; avrupa ; sifa
+Hedera colchica ; Kolşik sarmaşığı ; anadolu ; sifa
+Eryngium campestre ; Boğa dikeni ; anadolu ; sifa,besin
+Eryngium maritimum ; Kum dikeni ; anadolu ; sifa
+Ferula communis ; Çakşır otu ; anadolu ; zehir,sifa
+Ferula orientalis ; Çaşır ; anadolu ; besin,sifa
+Ferulago trachycarpa ; Çakşır (kişniş) ; anadolu ; besin
+Prangos ferulacea ; Heliz ; anadolu ; besin,sifa
+Heracleum persicum ; Tavşancıl otu (sov) ; anadolu ; besin
+Chaerophyllum macropodum ; Mendi ; anadolu ; besin
+Anthriscus cerefolium ; Frenk maydanozu ; avrupa ; besin
+Petroselinum crispum ; Maydanoz ; anadolu ; besin,sifa
+Apium graveolens ; Kereviz ; anadolu ; besin,sifa
+Daucus carota ; Havuç ; anadolu ; besin,sifa
+Pastinaca sativa ; Yabani havuç (kara kavza) ; avrupa ; besin
+Pimpinella saxifraga ; Taş anasonu ; avrupa ; sifa
+Bunium persicum ; Dağ kimyonu ; asya ; besin
+Echinophora tenuifolia ; Çörtük ; anadolu ; besin
+Smyrnium olusatrum ; Yabani kereviz (baldıran kerevizi) ; anadolu ; besin
+Cicuta virosa ; Su baldıranı ; avrupa ; zehir
+Oenanthe crocata ; Zehirli maydanoz ; avrupa ; zehir
+Aegopodium podagraria ; Keçi ayağı ; avrupa ; besin,sifa
+Sanicula europaea ; Sanikül ; avrupa ; sifa
+Arbutus unedo ; Kocayemiş ; anadolu ; besin,sifa
+Arbutus andrachne ; Sandal ağacı (Anadolu) ; anadolu ; besin
+Erica arborea ; Funda ; anadolu ; sifa
+Calluna vulgaris ; Süpürge otu ; avrupa ; sifa
+Vaccinium arctostaphylos ; Likapa ; anadolu ; besin,sifa
+Vaccinium vitis-idaea ; Kırmızı yaban mersini ; avrupa ; besin,sifa
+Rhododendron luteum ; Sarı ormangülü ; anadolu ; zehir
+Primula vulgaris ; Çuha çiçeği (bahçe) ; anadolu ; sifa
+Cyclamen coum ; Sıklamen ; anadolu ; zehir,sifa
+Anagallis arvensis ; Fare kulağı ; avrupa ; zehir,sifa
+Lysimachia vulgaris ; Karga otu ; avrupa ; sifa
+Styrax officinalis ; Tesbih ağacı ; anadolu ; tutsu,ritual
+Fraxinus ornus ; Çiçekli dişbudak ; anadolu ; sifa
+Jasminum officinale ; Yasemin ; asya ; tutsu,ritual
+Ligustrum vulgare ; Kurtbağrı ; avrupa ; zehir
+Phillyrea latifolia ; Akçakesme ; anadolu ; sifa
+Syringa vulgaris ; Leylak ; avrupa ; ritual
+Gentiana asclepiadea ; Yılan otu (centiyane) ; anadolu ; sifa
+Vinca minor ; Cezayir menekşesi ; avrupa ; sifa,zehir
+Vincetoxicum hirundinaria ; Panzehir otu ; avrupa ; zehir
+Periploca graeca ; İpek sarmaşığı ; anadolu ; zehir
+Galium verum ; Yoğurt otu ; avrupa ; sifa,besin
+Galium aparine ; Yapışkan ot ; avrupa ; sifa
+Asperula odorata ; Kokulu yoğurt otu ; avrupa ; sifa
+Rubia peregrina ; Yabani kökboya ; anadolu ; sifa
+Sambucus ebulus ; Yer mürveri ; anadolu ; sifa,zehir
+Viburnum lantana ; Germişek ; anadolu ; besin
+Lonicera caprifolium ; Hanımeli ; avrupa ; sifa,zehir
+Valeriana dioscoridis ; Kedi otu (Anadolu) ; anadolu ; sifa
+Centranthus ruber ; Kırmızı kediotu ; anadolu ; sifa
+Dipsacus fullonum ; Fesçi tarağı ; avrupa ; sifa
+Scabiosa columbaria ; Uyuz otu ; avrupa ; sifa
+Knautia arvensis ; Eşek kulağı ; avrupa ; sifa
+Convolvulus arvensis ; Tarla sarmaşığı ; anadolu ; sifa
+Convolvulus scammonia ; Mahmude otu ; anadolu ; sifa,zehir
+Calystegia sepium ; Çit sarmaşığı ; avrupa ; sifa
+Cuscuta europaea ; Küsküt ; avrupa ; sifa
+Symphytum asperum ; Kaba karakafes ; anadolu ; sifa
+Anchusa azurea ; Sığırdili ; anadolu ; besin,sifa
+Alkanna tinctoria ; Havacıva ; anadolu ; sifa
+Echium italicum ; Engerek otu ; anadolu ; sifa
+Pulmonaria officinalis ; Ciğer otu ; avrupa ; sifa
+Lithospermum officinale ; Taş kesen ; avrupa ; sifa
+Cynoglossum officinale ; Köpek dili ; avrupa ; zehir,sifa
+Heliotropium europaeum ; Siğil otu ; anadolu ; zehir
+Vitex pseudo-negundo ; Hayıt (doğu) ; anadolu ; sifa
+Solanum tuberosum ; Patates ; and ; besin
+Solanum lycopersicum ; Domates ; and ; besin
+Capsicum frutescens ; Arnavut biberi ; kamerika ; besin,sifa
+Lycium europaeum ; Teke dikeni ; anadolu ; besin
+Physalis alkekengi ; Güveyfeneri ; anadolu ; sifa
+Hyoscyamus albus ; Beyaz banotu ; anadolu ; zehir
+Hyoscyamus reticulatus ; Ağlı banotu ; anadolu ; zehir
+Scopolia carniolica ; Skopolya ; avrupa ; zehir
+Datura metel ; Hint tatulası ; asya ; zehir,ritual
+Verbascum speciosum ; Sığırkuyruğu (gösterişli) ; anadolu ; sifa
+Scrophularia nodosa ; Sıraca otu ; avrupa ; sifa
+Veronica officinalis ; Yavşan otu ; avrupa ; sifa
+Veronica beccabunga ; At teresi ; avrupa ; besin,sifa
+Linaria vulgaris ; Nevruz otu ; avrupa ; sifa
+Euphrasia officinalis ; Göz otu ; avrupa ; sifa
+Gratiola officinalis ; Sıtma otu ; avrupa ; zehir
+Plantago major ; Büyük sinirotu ; anadolu ; sifa,besin
+Plantago coronopus ; Geyik boynuzu ; anadolu ; besin
+Acanthus mollis ; Ayı pençesi ; anadolu ; sifa
+Orobanche ramosa ; Canavar otu ; anadolu ; sifa
+Aristolochia clematitis ; Loğusa otu ; avrupa ; zehir
+Asarum europaeum ; Çoban düdüğü ; avrupa ; zehir
+Loranthus europaeus ; Meşe burcu ; anadolu ; sifa
+Morus rubra ; Kırmızı dut ; kamerika ; besin
+Ficus sycomorus ; Firavun inciri ; afrika ; besin,ritual
+Celtis australis ; Çitlembik ; anadolu ; besin
+Ulmus minor ; Karaağaç ; anadolu ; sifa
+Juglans nigra ; Kara ceviz ; kamerika ; sifa
+Castanea sativa ; Kestane ; anadolu ; besin,sifa
+Fagus orientalis ; Kayın ; anadolu ; sifa
+Quercus ithaburensis ; Palamut meşesi ; anadolu ; sifa
+Quercus coccifera ; Kermes meşesi ; anadolu ; sifa
+Quercus infectoria ; Mazı meşesi ; anadolu ; sifa
+Corylus colurna ; Türk fındığı ; anadolu ; besin
+Alnus glutinosa ; Kızılağaç ; anadolu ; sifa
+Carpinus betulus ; Gürgen ; anadolu ; sifa
+Populus tremula ; Titrek kavak ; avrupa ; sifa
+Salix babylonica ; Salkım söğüt ; asya ; ritual
+Platanus orientalis ; Çınar ; anadolu ; sifa,ritual
+Cupressus sempervirens ; Servi ; anadolu ; sifa,ritual
+Juniperus oxycedrus ; Katran ardıcı ; anadolu ; sifa
+Juniperus sabina ; Sabin ardıcı ; avrupa ; zehir
+Cedrus libani ; Toros sediri ; anadolu ; sifa,ritual
+Pinus brutia ; Kızılçam ; anadolu ; sifa
+Pinus sylvestris ; Sarıçam ; avrupa ; sifa
+Pinus pinea ; Fıstık çamı ; anadolu ; besin
+Pinus nigra ; Karaçam ; anadolu ; sifa
+Abies nordmanniana ; Göknar ; anadolu ; sifa
+Picea orientalis ; Doğu ladini ; anadolu ; sifa
+Ephedra major ; Büyük deniz üzümü ; anadolu ; sifa,zehir
+Equisetum telmateia ; Dev atkuyruğu ; anadolu ; sifa
+Dryopteris filix-mas ; Erkek eğrelti ; avrupa ; sifa,zehir
+Adiantum capillus-veneris ; Baldırıkara ; anadolu ; sifa
+Asplenium scolopendrium ; Geyik dili ; avrupa ; sifa
+Pteridium aquilinum ; Kartal eğreltisi ; avrupa ; zehir,besin
+Lycopodium clavatum ; Kurt ayağı (kibrit otu) ; avrupa ; sifa
+Usnea barbata ; Sakal likeni ; avrupa ; sifa
+Evernia prunastri ; Meşe yosunu ; avrupa ; tutsu
+Sphagnum palustre ; Turba yosunu ; avrupa ; sifa
+Laminaria digitata ; Kelp ; avrupa ; besin,sifa
+Chondrus crispus ; İrlanda yosunu ; avrupa ; besin
+Arthrospira platensis ; Spirulina ; afrika ; besin
+Triticum monococcum ; Siyez ; anadolu ; besin
+Triticum dicoccon ; Gernik ; anadolu ; besin
+Secale cereale ; Çavdar ; anadolu ; besin
+Claviceps purpurea ; Çavdar mahmuzu ; avrupa ; zehir,sifa
+Panicum miliaceum ; Darı ; asya ; besin
+Oryza sativa ; Pirinç ; asya ; besin
+Sorghum bicolor ; Süpürge darısı ; afrika ; besin
+Phragmites australis ; Kamış ; anadolu ; sifa
+Arundo donax ; Kargı ; anadolu ; sifa
+Cynodon dactylon ; Köpek dişi ayrığı ; anadolu ; sifa
+Cyperus rotundus ; Topalak ; asya ; sifa
+Cyperus esculentus ; Yer bademi ; afrika ; besin
+Typha latifolia ; Su kamışı ; avrupa ; besin,sifa
+Juncus effusus ; Kofa ; avrupa ; sifa
+Orchis mascula ; Erkek salep ; anadolu ; besin
+Agaricus bisporus ; Kültür mantarı ; avrupa ; besin
+Morchella esculenta ; Kuzugöbeği ; anadolu ; besin
+Lactarius deliciosus ; Kanlıca ; anadolu ; besin
+Boletus edulis ; Ayı mantarı ; avrupa ; besin
+Amanita phalloides ; Köygöçüren ; avrupa ; zehir
+Amanita pantherina ; Panter mantarı ; avrupa ; zehir
+Fomes fomentarius ; Kav mantarı ; avrupa ; sifa,ritual
+Piptoporus betulinus ; Huş mantarı ; avrupa ; sifa
+Inonotus obliquus ; Çaga ; avrupa ; sifa
+Tuber aestivum ; Trüf ; avrupa ; besin
+Terfezia boudieri ; Domalan ; anadolu ; besin
+Pleurotus eryngii ; Çakşır mantarı ; anadolu ; besin
+# --- Asya (Çin, Hint, Japon, Orta Asya, Güneydoğu Asya) ---
+Codonopsis pilosula ; Dang shen ; asya ; sifa
+Atractylodes macrocephala ; Bai zhu ; asya ; sifa
+Poria cocos ; Fu ling ; asya ; sifa
+Ligusticum chuanxiong ; Chuan xiong ; asya ; sifa
+Bupleurum chinense ; Chai hu ; asya ; sifa
+Pinellia ternata ; Ban xia ; asya ; sifa,zehir
+Cinnamomum cassia ; Çin tarçını ; asya ; besin,sifa
+Glycyrrhiza uralensis ; Çin meyanı ; asya ; sifa
+Panax notoginseng ; San qi ; asya ; sifa
+Ophiopogon japonicus ; Mai dong ; asya ; sifa
+Dendrobium nobile ; Shi hu ; asya ; sifa
+Gastrodia elata ; Tian ma ; asya ; sifa
+Eucommia ulmoides ; Du zhong ; asya ; sifa
+Polygonum multiflorum ; He shou wu ; asya ; sifa,zehir
+Reynoutria japonica ; Japon kargı otu ; asya ; sifa,besin
+Lonicera japonica ; Japon hanımeli ; asya ; sifa
+Forsythia suspensa ; Lian qiao ; asya ; sifa
+Chrysanthemum morifolium ; Kasımpatı ; asya ; sifa,besin
+Houttuynia cordata ; Balık nanesi ; asya ; besin,sifa
+Perilla frutescens ; Şiso ; asya ; besin,sifa
+Pueraria montana ; Kudzu ; asya ; sifa,besin
+Sophora flavescens ; Ku shen ; asya ; sifa
+Styphnolobium japonicum ; Japon sophorası ; asya ; sifa
+Corydalis yanhusuo ; Yan hu suo ; asya ; sifa
+Aconitum carmichaelii ; Fu zi ; asya ; zehir,sifa
+Tripterygium wilfordii ; Yıldırım tanrısı asması ; asya ; zehir,sifa
+Aristolochia fangchi ; Guang fang ji ; asya ; zehir
+Stephania tetrandra ; Fang ji ; asya ; sifa
+Magnolia biondii ; Xin yi ; asya ; sifa
+Zanthoxylum bungeanum ; Siçuan biberi ; asya ; besin,sifa
+Evodia rutaecarpa ; Wu zhu yu ; asya ; sifa
+Cornus officinalis ; Shan zhu yu ; asya ; sifa
+Dioscorea polystachya ; Çin yamı ; asya ; besin,sifa
+Coix lacryma-jobi ; Gözyaşı otu ; asya ; besin,sifa
+Euryale ferox ; Tilki cevizi ; asya ; besin
+Lycium chinense ; Çin gojisi (kök kabuğu) ; asya ; sifa
+Crataegus pinnatifida ; Çin alıcı ; asya ; besin,sifa
+Camellia oleifera ; Çay yağı ağacı ; asya ; besin
+Cordyceps sinensis ; Tırtıl mantarı ; asya ; sifa
+Lentinula edodes ; Şitaki ; asya ; besin,sifa
+Grifola frondosa ; Maitake ; asya ; besin,sifa
+Trametes versicolor ; Hindi kuyruğu mantarı ; asya ; sifa
+Hericium erinaceus ; Aslan yelesi mantarı ; asya ; besin,sifa
+Tremella fuciformis ; Gümüş kulak mantarı ; asya ; besin
+Auricularia auricula-judae ; Kulak mantarı ; asya ; besin
+Gynostemma pentaphyllum ; Jiaogulan ; asya ; sifa
+Siraitia grosvenorii ; Keşiş meyvesi ; asya ; besin
+Momordica cochinchinensis ; Gac ; asya ; besin
+Wasabia japonica ; Wasabi ; asya ; besin
+Cryptotaenia japonica ; Mitsuba ; asya ; besin
+Aralia elata ; Japon anjeliği ; asya ; besin,sifa
+Petasites japonicus ; Fuki ; asya ; besin,zehir
+Citrus junos ; Yuzu ; asya ; besin,ritual
+Prunus mume ; Japon kayısısı (ume) ; asya ; besin,sifa
+Diospyros lotus ; Kara hurma ; asya ; besin
+Illicium anisatum ; Japon anasonu (şikimi) ; asya ; zehir,ritual
+Cryptomeria japonica ; Japon sediri ; asya ; ritual
+Cleyera japonica ; Sakaki ; asya ; ritual
+Bambusa vulgaris ; Bambu ; asya ; besin,sifa
+Phyllostachys edulis ; Moso bambusu ; asya ; besin
+Withania coagulans ; Peynir mayası otu ; asya ; sifa
+Bacopa monnieri ; Brahmi ; asya ; sifa
+Asparagus racemosus ; Şatavari ; asya ; sifa
+Tinospora cordifolia ; Guduçi ; asya ; sifa
+Terminalia bellirica ; Bibhitaki ; asya ; sifa
+Terminalia arjuna ; Arjuna ; asya ; sifa
+Gymnema sylvestre ; Gurmar ; asya ; sifa
+Boerhavia diffusa ; Punarnava ; asya ; sifa
+Tribulus cistoides ; Gokşura (sahil) ; asya ; sifa
+Mucuna pruriens ; Kadife fasulyesi ; asya ; sifa
+Piper longum ; Uzun biber ; asya ; besin,sifa
+Piper betle ; Betel yaprağı ; asya ; ritual,sifa
+Areca catechu ; Areka cevizi ; asya ; ritual,zehir
+Acacia catechu ; Kateşu ; asya ; sifa
+Santalum album ; Sandal ağacı ; asya ; tutsu,ritual
+Aquilaria malaccensis ; Öd ağacı ; asya ; tutsu,ritual
+Nardostachys jatamansi ; Hint sümbülü ; asya ; tutsu,sifa
+Saussurea costus ; Kust ; asya ; sifa,tutsu
+Vetiveria zizanioides ; Vetiver ; asya ; tutsu,sifa
+Cymbopogon citratus ; Limon otu ; asya ; besin,sifa
+Cymbopogon nardus ; Sitronella ; asya ; sifa
+Pogostemon cablin ; Paçuli ; asya ; tutsu
+Cananga odorata ; Ylang ylang ; asya ; tutsu
+Michelia champaca ; Çampaka ; asya ; ritual,tutsu
+Nyctanthes arbor-tristis ; Gece yasemini ; asya ; ritual,sifa
+Aegle marmelos ; Bael ; asya ; besin,ritual,sifa
+Ficus religiosa ; Bodhi ağacı ; asya ; ritual
+Ficus benghalensis ; Banyan ; asya ; ritual,sifa
+Saraca asoca ; Aşoka ; asya ; ritual,sifa
+Butea monosperma ; Palaş ; asya ; ritual,sifa
+Desmostachya bipinnata ; Kuşa otu ; asya ; ritual
+Elaeocarpus ganitrus ; Rudrakşa ; asya ; ritual
+Syzygium cumini ; Jamun ; asya ; besin,sifa
+Mangifera indica ; Mango ; asya ; besin,ritual
+Musa paradisiaca ; Muz ; asya ; besin
+Cocos nucifera ; Hindistan cevizi ; asya ; besin,ritual
+Borassus flabellifer ; Palmira palmiyesi ; asya ; besin
+Artocarpus heterophyllus ; Jackfruit ; asya ; besin
+Moringa oleifera ; Moringa ; asya ; besin,sifa
+Murraya koenigii ; Köri yaprağı ; asya ; besin,sifa
+Trachyspermum ammi ; Ajvan ; asya ; besin,sifa
+Garcinia gummi-gutta ; Garsinya ; asya ; besin,sifa
+Garcinia mangostana ; Mangostan ; asya ; besin
+Phyllanthus amarus ; Bhumi amla ; asya ; sifa
+Plumbago zeylanica ; Çitrak ; asya ; sifa,zehir
+Calotropis gigantea ; Taç çiçeği ; asya ; zehir,ritual
+Abrus precatorius ; Tespih fasulyesi ; asya ; zehir
+Strychnos nux-vomica ; Kargabüken ; asya ; zehir
+Gloriosa superba ; Alev zambağı ; asya ; zehir
+Cannabis indica ; Hint keneviri (bhang) ; asya ; ritual
+Coleus forskohlii ; Hint koleusu ; asya ; sifa
+Sida cordifolia ; Bala ; asya ; sifa
+Hemidesmus indicus ; Hint saparnası ; asya ; sifa
+Eclipta prostrata ; Bhringraj ; asya ; sifa
+Acorus gramineus ; Japon eğiri ; asya ; sifa
+Alpinia galanga ; Havlıcan ; asya ; besin,sifa
+Alpinia officinarum ; Küçük havlıcan ; asya ; sifa
+Kaempferia galanga ; Kokulu zencefil ; asya ; besin,sifa
+Kaempferia parviflora ; Siyah zencefil ; asya ; sifa
+Boesenbergia rotunda ; Parmak kökü ; asya ; besin,sifa
+Amomum subulatum ; Kara kakule ; asya ; besin
+Curcuma aromatica ; Yabani zerdeçal ; asya ; sifa
+Zingiber zerumbet ; Acı zencefil ; asya ; sifa
+Mitragyna speciosa ; Kratom ; asya ; zehir,sifa
+Eurycoma longifolia ; Tongkat ali ; asya ; sifa
+Morinda officinalis ; Ba ji tian ; asya ; sifa
+Clitoria ternatea ; Kelebek bezelyesi ; asya ; besin,sifa
+Pandanus amaryllifolius ; Pandan ; asya ; besin
+Cinnamomum burmanni ; Endonezya tarçını ; asya ; besin
+Syzygium polyanthum ; Endonezya defnesi ; asya ; besin
+Averrhoa carambola ; Yıldız meyvesi ; asya ; besin,zehir
+Durio zibethinus ; Duryan ; asya ; besin
+Nephelium lappaceum ; Rambutan ; asya ; besin
+Litchi chinensis ; Liçi ; asya ; besin
+Dimocarpus longan ; Longan ; asya ; besin,sifa
+Sesbania grandiflora ; Agati ; asya ; besin
+Azadirachta excelsa ; Sentang ; asya ; sifa
+Styrax benzoin ; Aselbent ; asya ; tutsu
+Dryobalanops aromatica ; Borneo kafuru ; asya ; tutsu,sifa
+Daemonorops draco ; Ejder kanı palmiyesi ; asya ; sifa
+Shorea robusta ; Sal ağacı ; asya ; ritual,tutsu
+Ferula gummosa ; Kasnı ; asya ; tutsu,sifa
+Ferula moschata ; Sümbül kökü ; asya ; tutsu
+Dorema ammoniacum ; Uşak ; asya ; sifa
+Vigna radiata ; Maş fasulyesi ; asya ; besin
+Vigna angularis ; Azuki ; asya ; besin
+Cajanus cajan ; Güvercin bezelyesi ; asya ; besin
+Sesamum radiatum ; Kara susam ; afrika ; besin
+Camellia japonica ; Kamelya ; asya ; ritual
+Rhodiola crenulata ; Tibet rodyolası ; asya ; sifa
+Hippophae tibetana ; Tibet deniz iğdesi ; asya ; besin
+Meconopsis horridula ; Tibet mavi gelinciği ; asya ; sifa
+Juniperus indica ; Himalaya ardıcı ; asya ; tutsu,ritual
+Rhododendron anthopogon ; Sunpati ; asya ; tutsu,ritual
+Betula utilis ; Himalaya huşu ; asya ; ritual
+Picrorhiza scrophulariiflora ; Tibet kutkisi ; asya ; sifa
+Swertia chirayita ; Çirata ; asya ; sifa
+Berberis aristata ; Hint karamuğu ; asya ; sifa
+Thuja orientalis ; Doğu mazısı ; asya ; sifa
+Rheum tanguticum ; Tangut raventi ; asya ; sifa
+Leonurus japonicus ; Çin aslankuyruğu ; asya ; sifa
+Xanthium sibiricum ; Cang er zi ; asya ; sifa,zehir
+Taraxacum mongolicum ; Çin karahindibası ; asya ; sifa
+Artemisia argyi ; Moksa otu ; asya ; sifa,ritual
+Artemisia capillaris ; Yin chen ; asya ; sifa
+Isatis indigotica ; Ban lan gen ; asya ; sifa
+Scrophularia ningpoensis ; Xuan shen ; asya ; sifa
+Anemarrhena asphodeloides ; Zhi mu ; asya ; sifa
+Fritillaria cirrhosa ; Chuan bei mu ; asya ; sifa
+Lilium brownii ; Bai he ; asya ; besin,sifa
+Polygonatum sibiricum ; Huang jing ; asya ; sifa,besin
+Epimedium brevicornum ; Keçi otu ; asya ; sifa
+Cuscuta chinensis ; Çin küskütü ; asya ; sifa
+Cistanche deserticola ; Çöl ginsengi ; asya ; sifa
+Cynomorium songaricum ; Suo yang ; asya ; sifa
+Albizia julibrissin ; Gülibrişim ; asya ; sifa
+Uncaria rhynchophylla ; Gou teng ; asya ; sifa
+Salvia miltiorrhiza ; Dan şen ; asya ; sifa
+Scutellaria barbata ; Ban zhi lian ; asya ; sifa
+Oldenlandia diffusa ; Yılan dili otu ; asya ; sifa
+Benincasa hispida ; Kış kavunu ; asya ; besin
+Luffa cylindrica ; Lif kabağı ; asya ; besin
+Trichosanthes kirilowii ; Gua lou ; asya ; sifa
+Lagenaria siceraria ; Su kabağı ; afrika ; besin,ritual
+Colocasia esculenta ; Taro ; asya ; besin,zehir
+Amorphophallus konjac ; Konjak ; asya ; besin,sifa
+Rosa rugosa ; Japon gülü ; asya ; besin,sifa
+Rosa laevigata ; Jin ying zi ; asya ; sifa
+Chaenomeles speciosa ; Japon ayvası ; asya ; sifa
+Broussonetia papyrifera ; Kâğıt dutu ; asya ; sifa
+# --- Afrika ve Arap Yarımadası ---
+Aspalathus linearis ; Rooibos ; afrika ; besin,sifa
+Cyclopia intermedia ; Bal çalısı çayı ; afrika ; besin
+Agathosma betulina ; Buçu ; afrika ; sifa
+Sutherlandia frutescens ; Kanser çalısı ; afrika ; sifa
+Hoodia gordonii ; Hoodia ; afrika ; sifa
+Sceletium tortuosum ; Kanna ; afrika ; ritual,sifa
+Hypoxis hemerocallidea ; Afrika patatesi ; afrika ; sifa
+Siphonochilus aethiopicus ; Afrika zencefili ; afrika ; sifa
+Warburgia salutaris ; Biber kabuğu ağacı ; afrika ; sifa
+Artemisia afra ; Afrika pelini ; afrika ; sifa
+Leonotis leonurus ; Aslan kulağı ; afrika ; sifa,ritual
+Silene undulata ; Rüya kökü ; afrika ; ritual
+Boophone disticha ; Zehir soğanı ; afrika ; zehir,ritual
+Catha edulis ; Kat ; afrika ; ritual,zehir
+Coffea canephora ; Robusta kahve ; afrika ; besin
+Tabernanthe iboga ; İboga ; afrika ; ritual,zehir
+Pausinystalia johimbe ; Yohimbe ; afrika ; sifa,zehir
+Griffonia simplicifolia ; Grifonya ; afrika ; sifa
+Voacanga africana ; Voakanga ; afrika ; sifa,zehir
+Physostigma venenosum ; Kalabar fasulyesi ; afrika ; zehir,ritual
+Strophanthus gratus ; Ok zehiri sarmaşığı ; afrika ; zehir
+Garcinia kola ; Acı kola ; afrika ; sifa,ritual
+Aframomum melegueta ; Cennet tanesi ; afrika ; besin,sifa
+Xylopia aethiopica ; Habeş biberi ; afrika ; besin,sifa
+Piper guineense ; Gine biberi ; afrika ; besin
+Monodora myristica ; Afrika muskatı ; afrika ; besin
+Vernonia amygdalina ; Acı yaprak ; afrika ; besin,sifa
+Ocimum gratissimum ; Afrika fesleğeni ; afrika ; besin,sifa
+Adansonia digitata ; Baobab ; afrika ; besin,sifa
+Vitellaria paradoxa ; Shea ağacı ; afrika ; besin,sifa
+Elaeis guineensis ; Yağ palmiyesi ; afrika ; besin,ritual
+Parkia biglobosa ; Néré ; afrika ; besin
+Balanites aegyptiaca ; Çöl hurması ; afrika ; besin,sifa
+Sclerocarya birrea ; Marula ; afrika ; besin
+Kigelia africana ; Sosis ağacı ; afrika ; sifa
+Khaya senegalensis ; Afrika maunu ; afrika ; sifa
+Acacia senegal ; Arap zamkı ağacı ; afrika ; besin,sifa
+Acacia nilotica ; Mısır akasyası ; afrika ; sifa
+Cassia occidentalis ; Kahve sinamekisi ; afrika ; sifa
+Senna italica ; Senegal sinamekisi ; afrika ; sifa
+Hibiscus cannabinus ; Kenaf ; afrika ; besin
+Corchorus olitorius ; Mülhiye ; afrika ; besin
+Abelmoschus moschatus ; Amber çiçeği ; asya ; tutsu
+Cucumis metuliferus ; Boynuzlu kavun ; afrika ; besin
+Citrullus colocynthis ; Ebucehil karpuzu ; afrika ; zehir,sifa
+Citrullus lanatus ; Karpuz ; afrika ; besin
+Cucumis melo ; Kavun ; asya ; besin
+Cucumis sativus ; Salatalık ; asya ; besin
+Eragrostis tef ; Tef ; afrika ; besin
+Ensete ventricosum ; Yalancı muz ; afrika ; besin
+Hagenia abyssinica ; Kosso ; afrika ; sifa
+Rhamnus prinoides ; Geşo ; afrika ; besin
+Boswellia papyrifera ; Habeş günlüğü ; afrika ; tutsu
+Boswellia frereana ; Maydi ; afrika ; tutsu
+Commiphora gileadensis ; Mekke pelesengi ; afrika ; tutsu,sifa
+Salvadora persica ; Misvak ; afrika ; sifa,ritual
+Ziziphus spina-christi ; Sidr ; afrika ; sifa,ritual
+Calotropis procera ; Sodom elması ; afrika ; zehir,sifa
+Anastatica hierochuntica ; Meryem eli ; afrika ; ritual,sifa
+Argania spinosa ; Argan ; afrika ; besin,sifa
+Tetraclinis articulata ; Sandarak ; afrika ; tutsu
+Ajuga iva ; Şendgura ; afrika ; sifa
+Marrubium deserti ; Çöl bozotu ; afrika ; sifa
+Thymus saturejoides ; Fas kekiği ; afrika ; sifa
+Nigella arvensis ; Tarla çörekotu ; afrika ; besin
+Moringa peregrina ; Arap moringası ; afrika ; sifa
+Cymbopogon schoenanthus ; Deve otu ; afrika ; sifa
+Nymphaea caerulea ; Mavi nilüfer ; afrika ; ritual
+Cyperus papyrus ; Papirüs ; afrika ; ritual
+Harpagophytum zeyheri ; Şeytan pençesi (Zeyher) ; afrika ; sifa
+Pelargonium reniforme ; Umckaloabo (böbrek yapraklı) ; afrika ; sifa
+Combretum micranthum ; Kinkeliba ; afrika ; besin,sifa
+Cryptolepis sanguinolenta ; Gana kinini ; afrika ; sifa
+Alstonia boonei ; Taburecik ağacı ; afrika ; sifa
+Securidaca longepedunculata ; Menekşe ağacı ; afrika ; sifa,zehir
+Euphorbia hirta ; Astım otu ; afrika ; sifa
+Jatropha curcas ; Fındık ağacı (jatrofa) ; kamerika ; zehir,sifa
+Dioscorea rotundata ; Beyaz yam ; afrika ; besin
+Manihot esculenta ; Manyok ; amazon ; besin,zehir
+Vigna unguiculata ; Börülce ; afrika ; besin
+Vigna subterranea ; Bambara fıstığı ; afrika ; besin
+Digitaria exilis ; Fonyo ; afrika ; besin
+Pennisetum glaucum ; İnci darı ; afrika ; besin
+Coffea liberica ; Liberya kahvesi ; afrika ; besin
+Datura innoxia ; Tüylü tatula ; kamerika ; zehir,ritual
+# --- Kuzey Amerika ve Mezoamerika ---
+Caulophyllum thalictroides ; Mavi kohoş ; kamerika ; sifa,zehir
+Lobelia inflata ; Hint tütünü ; kamerika ; sifa,zehir
+Eupatorium perfoliatum ; Kemik otu ; kamerika ; sifa
+Asclepias tuberosa ; Plörezi kökü ; kamerika ; sifa
+Dioscorea villosa ; Yabani yam ; kamerika ; sifa
+Chamaelirium luteum ; Yalancı tekboynuz ; kamerika ; sifa
+Trillium erectum ; Beth kökü ; kamerika ; sifa
+Aralia racemosa ; Amerikan sümbülü ; kamerika ; sifa
+Aralia nudicaulis ; Yabani saparna ; kamerika ; sifa
+Gaultheria procumbens ; Keklik üzümü ; kamerika ; sifa,besin
+Mitchella repens ; Keklik asması ; kamerika ; sifa
+Monarda fistulosa ; Yabani bergamot ; kamerika ; sifa,besin
+Monarda didyma ; Oswego çayı ; kamerika ; besin,sifa
+Agastache foeniculum ; Anason çördüğü ; kamerika ; besin,sifa
+Salvia columbariae ; Altın chia ; kamerika ; besin
+Artemisia tridentata ; Büyük yavşan ; kamerika ; tutsu,ritual
+Artemisia ludoviciana ; Çayır yavşanı ; kamerika ; tutsu,ritual
+Juniperus virginiana ; Virjinya ardıcı ; kamerika ; tutsu,ritual
+Thuja plicata ; Kırmızı sedir ; kamerika ; ritual
+Larrea tridentata ; Kreozot çalısı ; kamerika ; sifa,zehir
+Yucca schidigera ; Yuka ; kamerika ; sifa,besin
+Agave americana ; Agav ; kamerika ; besin,sifa
+Opuntia ficus-indica ; Frenk inciri ; kamerika ; besin,sifa
+Simmondsia chinensis ; Jojoba ; kamerika ; sifa
+Turnera diffusa ; Damiana ; kamerika ; sifa
+Eriodictyon californicum ; Yerba santa ; kamerika ; sifa
+Umbellularia californica ; Kaliforniya defnesi ; kamerika ; sifa
+Arctostaphylos pungens ; Manzanita ; kamerika ; besin,sifa
+Ligusticum porteri ; Oşa ; kamerika ; sifa,ritual
+Lomatium dissectum ; Çöl maydanozu ; kamerika ; sifa
+Oplopanax horridus ; Şeytan sopası ; kamerika ; sifa,ritual
+Rhus glabra ; Düz sumak ; kamerika ; besin,sifa
+Prunus serotina ; Yabani kiraz kabuğu ; kamerika ; sifa
+Prunus virginiana ; Boğan kiraz ; kamerika ; besin
+Amelanchier alnifolia ; Saskatoon ; kamerika ; besin
+Aronia arbutifolia ; Kırmızı aronya ; kamerika ; besin
+Sambucus canadensis ; Amerikan mürveri ; kamerika ; besin,sifa
+Ceanothus americanus ; New Jersey çayı ; kamerika ; sifa
+Myrica cerifera ; Mum mersini ; kamerika ; sifa
+Geranium maculatum ; Benekli turnagagası ; kamerika ; sifa
+Heuchera americana ; Şap kökü ; kamerika ; sifa
+Apocynum cannabinum ; Kızılderili keneviri ; kamerika ; zehir,sifa
+Veratrum viride ; Yeşil çöpleme ; kamerika ; zehir
+Toxicodendron radicans ; Zehirli sarmaşık ; kamerika ; zehir
+Gelsemium sempervirens ; Sarı yasemin ; kamerika ; zehir
+Aesculus glabra ; Ohio at kestanesi ; kamerika ; zehir
+Ilex vomitoria ; Yaupon ; kamerika ; ritual,besin
+Acer saccharum ; Şeker akçaağacı ; kamerika ; besin
+Carya illinoinensis ; Pekan cevizi ; kamerika ; besin
+Zizania palustris ; Yabani pirinç ; kamerika ; besin
+Apios americana ; Yer fıstığı sarmaşığı ; kamerika ; besin
+Asimina triloba ; Pawpaw ; kamerika ; besin
+Diospyros virginiana ; Amerikan hurması ; kamerika ; besin
+Vaccinium corymbosum ; Maviyemiş ; kamerika ; besin
+Vaccinium angustifolium ; Yabani maviyemiş ; kamerika ; besin
+Rubus occidentalis ; Siyah ahududu ; kamerika ; besin
+Fragaria virginiana ; Virjinya çileği ; kamerika ; besin
+Cucurbita maxima ; Bal kabağı ; and ; besin
+Cucurbita moschata ; Helvacı kabağı ; kamerika ; besin
+Phaseolus coccineus ; Ateş fasulyesi ; kamerika ; besin
+Phaseolus lunatus ; Lima fasulyesi ; and ; besin,zehir
+Arachis hypogaea ; Yer fıstığı ; amazon ; besin
+Capsicum chinense ; Habanero ; amazon ; besin
+Capsicum pubescens ; Rocoto ; and ; besin
+Vanilla planifolia ; Vanilya ; kamerika ; besin,ritual
+Pimenta dioica ; Yenibahar ; kamerika ; besin,sifa
+Sechium edule ; Chayote ; kamerika ; besin
+Pachyrhizus erosus ; Jicama ; kamerika ; besin,zehir
+Physalis philadelphica ; Tomatillo ; kamerika ; besin
+Chenopodium berlandieri ; Huauzontle ; kamerika ; besin
+Amaranthus cruentus ; Meksika amarantı ; kamerika ; besin,ritual
+Tagetes erecta ; Kadife çiçeği (cempasúchil) ; kamerika ; ritual,sifa
+Tagetes lucida ; Meksika tarhunu ; kamerika ; ritual,besin
+Tagetes minuta ; Huacatay ; and ; besin,sifa
+Heimia salicifolia ; Sinicuichi ; kamerika ; ritual
+Calea ternifolia ; Rüya otu ; kamerika ; ritual
+Turbina corymbosa ; Ololiuqui ; kamerika ; ritual,zehir
+Ipomoea tricolor ; Gündüzsefası (tlitliltzin) ; kamerika ; ritual,zehir
+Psilocybe cubensis ; Sihirli mantar ; kamerika ; ritual,zehir
+Psilocybe mexicana ; Teonanácatl ; kamerika ; ritual,zehir
+Argemone mexicana ; Meksika gelinciği ; kamerika ; zehir,sifa
+Bursera bipinnata ; Kopal ; kamerika ; tutsu,ritual
+Protium copal ; Maya kopalı ; kamerika ; tutsu,ritual
+Pinus edulis ; Pinyon çamı ; kamerika ; besin,tutsu
+Cornus sericea ; Kırmızı söğüt (kızılcık) ; kamerika ; ritual
+Sophora secundiflora ; Meskal fasulyesi ; kamerika ; zehir,ritual
+Ariocarpus fissuratus ; Yalancı peyote ; kamerika ; ritual
+Agave tequilana ; Mavi agav ; kamerika ; besin
+Theobroma bicolor ; Pataxte ; kamerika ; besin,ritual
+Brosimum alicastrum ; Ramón ; kamerika ; besin
+Cnidoscolus aconitifolius ; Chaya ; kamerika ; besin,zehir
+Dysphania graveolens ; Epazote de zorrillo ; kamerika ; sifa
+Lippia graveolens ; Meksika kekiği ; kamerika ; besin,sifa
+Lippia alba ; Pronto alivio ; amazon ; sifa
+Porophyllum ruderale ; Papalo ; kamerika ; besin
+Piper auritum ; Hoja santa ; kamerika ; besin
+Smilax aristolochiifolia ; Meksika saparnası ; kamerika ; sifa
+Guaiacum officinale ; Peygamber ağacı (guayak) ; kamerika ; sifa
+Quassia amara ; Kuasya ; amazon ; sifa
+Picrasma excelsa ; Jamaika kuasyası ; kamerika ; sifa
+Annona squamosa ; Şeker elması ; kamerika ; besin
+Annona cherimola ; Çerimoya ; and ; besin
+Pouteria sapota ; Mamey ; kamerika ; besin
+Manilkara zapota ; Sapodilla ; kamerika ; besin
+Ananas comosus ; Ananas ; amazon ; besin,sifa
+Passiflora edulis ; Çarkıfelek meyvesi ; amazon ; besin
+Echinacea angustifolia ; Dar yapraklı ekinezya ; kamerika ; sifa
+Echinacea pallida ; Soluk ekinezya ; kamerika ; sifa
+Solidago canadensis ; Kanada altınbaşağı ; kamerika ; sifa
+Grindelia squarrosa ; Zamk otu ; kamerika ; sifa
+Verbena hastata ; Mavi mine ; kamerika ; sifa
+Scutellaria galericulata ; Bataklık kasidesi ; avrupa ; sifa
+Cypripedium parviflorum ; Hanım terliği ; kamerika ; sifa
+Chimaphila umbellata ; Pipsissewa ; kamerika ; sifa
+Collinsonia canadensis ; Taş kökü ; kamerika ; sifa
+Stillingia sylvatica ; Kraliçe kökü ; kamerika ; sifa,zehir
+Iris versicolor ; Mavi bayrak ; kamerika ; sifa,zehir
+Euonymus atropurpureus ; Wahoo ; kamerika ; sifa,zehir
+Chionanthus virginicus ; Saçak ağacı ; kamerika ; sifa
+Xanthoxylum americanum ; Diş ağrısı ağacı ; kamerika ; sifa
+Populus balsamifera ; Pelesenk kavağı ; kamerika ; sifa
+Abies balsamea ; Balsam göknarı ; kamerika ; sifa
+Tsuga canadensis ; Kanada çamı ; kamerika ; sifa
+Picea mariana ; Kara ladin ; kamerika ; sifa,besin
+Comptonia peregrina ; Tatlı eğrelti ; kamerika ; sifa
+# --- Amazon ve And ---
+Diplopterys cabrerana ; Chaliponga ; amazon ; ritual
+Brunfelsia uniflora ; Manacá ; amazon ; sifa,zehir
+Brugmansia sanguinea ; Kırmızı melek borazanı ; and ; zehir,ritual
+Virola theiodora ; Epená ; amazon ; ritual
+Justicia pectoralis ; Tilo (mashi-hiri) ; amazon ; ritual,sifa
+Mimosa tenuiflora ; Jurema ; amazon ; ritual,sifa
+Anadenanthera colubrina ; Vilca ; and ; ritual
+Erythroxylum novogranatense ; Kolombiya kokası ; and ; ritual
+Trichocereus peruvianus ; Peru meşalesi ; and ; ritual
+Trichocereus bridgesii ; Achuma ; and ; ritual
+Paullinia yoco ; Yoco ; amazon ; ritual,besin
+Theobroma grandiflorum ; Cupuaçu ; amazon ; besin
+Bertholletia excelsa ; Brezilya cevizi ; amazon ; besin
+Anacardium occidentale ; Kaju ; amazon ; besin,sifa
+Euterpe precatoria ; Huasaí ; amazon ; besin
+Mauritia flexuosa ; Aguaje ; amazon ; besin
+Bactris gasipaes ; Şeftali palmiyesi ; amazon ; besin
+Oenocarpus bataua ; Ungurahui ; amazon ; besin,sifa
+Astrocaryum chambira ; Chambira ; amazon ; ritual
+Attalea speciosa ; Babassu ; amazon ; besin
+Inga edulis ; Guaba (dondurma fasulyesi) ; amazon ; besin
+Pouteria lucuma ; Lucuma ; and ; besin
+Solanum sessiliflorum ; Cocona ; amazon ; besin
+Solanum betaceum ; Ağaç domatesi ; and ; besin
+Solanum quitoense ; Naranjilla ; and ; besin
+Passiflora ligularis ; Granadilla ; and ; besin
+Passiflora tripartita ; Tumbo ; and ; besin
+Myrciaria cauliflora ; Jabuticaba ; amazon ; besin
+Eugenia uniflora ; Pitanga ; amazon ; besin,sifa
+Eugenia stipitata ; Arazá ; amazon ; besin
+Spondias mombin ; Ubos ; amazon ; besin,sifa
+Hymenaea courbaril ; Jatobá ; amazon ; sifa,besin
+Dipteryx odorata ; Tonka fasulyesi ; amazon ; tutsu,zehir
+Myroxylon balsamum ; Peru balsamı ; amazon ; sifa,tutsu
+Myroxylon peruiferum ; Quina-quina ; and ; sifa
+Protium heptaphyllum ; Breu branco ; amazon ; tutsu,ritual
+Aniba rosaeodora ; Gül ağacı ; amazon ; tutsu
+Ocotea quixos ; Ishpingo ; amazon ; besin,ritual
+Jatropha gossypiifolia ; Piñón colorado ; amazon ; sifa,ritual
+Hura crepitans ; Catahua ; amazon ; zehir,ritual
+Ficus insipida ; Ojé ; amazon ; sifa,zehir
+Brosimum acutifolium ; Tamamuri ; amazon ; sifa
+Maytenus ilicifolia ; Espinheira santa ; amazon ; sifa
+Tynanthus panurensis ; Clavo huasca ; amazon ; sifa
+Ptychopetalum olacoides ; Muira puama ; amazon ; sifa
+Trichilia catigua ; Catuaba ; amazon ; sifa
+Pfaffia paniculata ; Suma ; amazon ; sifa
+Uncaria guianensis ; Kedi tırnağı (Guyana) ; amazon ; sifa
+Tabebuia serratifolia ; Sarı lapaço ; amazon ; sifa
+Jacaranda copaia ; Huamansamana ; amazon ; sifa
+Mansoa hymenaea ; Sarımsak sarmaşığı ; amazon ; sifa
+Calycophyllum spruceanum ; Capirona ; amazon ; sifa
+Couroupita guianensis ; Top güllesi ağacı ; amazon ; sifa,ritual
+Ceiba pentandra ; Lupuna ; amazon ; ritual
+Cedrela odorata ; İspanyol sediri ; amazon ; sifa,ritual
+Swietenia macrophylla ; Maun ; amazon ; sifa
+Himatanthus sucuuba ; Bellaco caspi ; amazon ; sifa
+Aspidosperma quebracho-blanco ; Kebrako ; amazon ; sifa
+Geissospermum reticulatum ; Pao pereira ; amazon ; sifa
+Tabernaemontana sananho ; Uchu sanango ; amazon ; sifa,ritual
+Brunfelsia chiricaspi ; Chiricaspi ; amazon ; ritual,zehir
+Couma macrocarpa ; Leche caspi ; amazon ; besin,sifa
+Chondrodendron tomentosum ; Kürar ; amazon ; zehir
+Strychnos toxifera ; Kürar sarmaşığı ; amazon ; zehir
+Lonchocarpus utilis ; Barbasco ; amazon ; zehir
+Phyllanthus acuminatus ; Balık zehiri çalısı ; amazon ; zehir
+Dieffenbachia seguine ; Difenbahya ; amazon ; zehir
+Dracontium loretense ; Jergón sacha ; amazon ; sifa
+Costus spicatus ; Caña agria ; amazon ; sifa
+Renealmia alpinia ; Mishquipanga ; amazon ; besin,sifa
+Calathea allouia ; Dale dale ; amazon ; besin
+Xanthosoma sagittifolium ; Pituca ; amazon ; besin
+Dioscorea trifida ; Sachapapa ; amazon ; besin
+Maranta arundinacea ; Ararot ; amazon ; besin,sifa
+Cyperus prolixus ; Piripiri (iri) ; amazon ; ritual
+Scoparia dulcis ; Ñuñu pichana ; amazon ; sifa
+Kalanchoe pinnata ; Aşk yaprağı ; amazon ; sifa
+Bryophyllum gastonis-bonnieri ; Yaşam yaprağı ; amazon ; sifa
+Alternanthera brasiliana ; Lancetilla ; amazon ; sifa
+Verbena litoralis ; Verbena (And) ; and ; sifa
+Desmodium adscendens ; Amor seco ; amazon ; sifa
+Senna reticulata ; Retama ; amazon ; sifa
+Erythrina falcata ; Pisonay ; and ; ritual
+Erythrina mulungu ; Mulungu ; amazon ; sifa
+Zanthoxylum rhoifolium ; Mamica de cadela ; amazon ; sifa
+Piper hispidum ; Cordoncillo ; amazon ; sifa
+Peperomia inaequalifolia ; Congona ; and ; sifa,ritual
+Polylepis racemosa ; Queñua ; and ; sifa
+Buddleja coriacea ; Colle ; and ; sifa
+Baccharis genistelloides ; Carqueja ; and ; sifa
+Baccharis latifolia ; Chilca ; and ; sifa
+Senecio nutans ; Chachacoma ; and ; sifa
+Perezia multiflora ; Escorzonera ; and ; sifa
+Werneria nubigena ; Pupusa ; and ; sifa
+Culcitium canescens ; Vira vira ; and ; sifa
+Gentianella alborosea ; Hercampuri ; and ; sifa
+Valeriana pilosa ; And kediotu ; and ; sifa
+Clinopodium bolivianum ; Khoa ; and ; sifa,tutsu
+Minthostachys setosa ; Arash muña ; and ; sifa
+Satureja brevicalyx ; Inca muña ; and ; sifa
+Salvia sagittata ; Salvia real ; and ; sifa
+Schkuhria pinnata ; Canchalagua ; and ; sifa
+Mutisia acuminata ; Chinchircuma ; and ; sifa
+Chuquiraga spinosa ; Huamanpinta ; and ; sifa
+Xanthium spinosum ; Juan alonso ; and ; sifa
+Equisetum giganteum ; Cola de caballo ; and ; sifa
+Ephedra americana ; Pinco pinco ; and ; sifa
+Azorella compacta ; Yareta ; and ; sifa
+Ullucus tuberosus ; Olluco ; and ; besin
+Oxalis tuberosa ; Oca ; and ; besin
+Tropaeolum tuberosum ; Mashua ; and ; besin,sifa
+Tropaeolum majus ; Latin çiçeği ; and ; besin,sifa
+Arracacia xanthorrhiza ; Arracacha ; and ; besin
+Mirabilis expansa ; Mauka ; and ; besin
+Canna edulis ; Achira ; and ; besin
+Chenopodium pallidicaule ; Cañihua ; and ; besin
+Lupinus mutabilis ; Tarwi ; and ; besin,zehir
+Solanum muricatum ; Pepino ; and ; besin
+Physalis pubescens ; Capulí ; and ; besin
+Sambucus peruviana ; And mürveri ; and ; besin,sifa
+Caesalpinia spinosa ; Tara ; and ; sifa
+Schinus terebinthifolia ; Pembe biber ; amazon ; besin,sifa
+Krameria lappacea ; Ratanya ; and ; sifa
+Cinchona pubescens ; Kırmızı kınakına ; and ; sifa
+Bidens pilosa ; Amor seco (cadillo) ; and ; sifa
+Plantago australis ; Llantén ; and ; sifa
+Otholobium pubescens ; Culén ; and ; sifa
+Buddleja globosa ; Matico (Şili) ; and ; sifa
+Aristotelia chilensis ; Maqui ; and ; besin,sifa
+Ugni molinae ; Murta ; and ; besin
+Quillaja saponaria ; Sabun ağacı ; and ; sifa
+Drimys winteri ; Canelo ; and ; ritual,sifa
+Latua pubiflora ; Latué ; and ; zehir,ritual
+Araucaria araucana ; Pehuén ; and ; besin,ritual
+Lapageria rosea ; Copihue ; and ; ritual
+Fabiana imbricata ; Pichi ; and ; sifa
+Haplopappus baylahuen ; Bailahuén ; and ; sifa
+# --- Okyanusya ---
+Eucalyptus citriodora ; Limon okaliptüsü ; okyanusya ; sifa
+Eucalyptus radiata ; Dar yapraklı okaliptüs ; okyanusya ; sifa
+Melaleuca quinquenervia ; Niaouli ; okyanusya ; sifa
+Leptospermum petersonii ; Limon çay ağacı ; okyanusya ; sifa
+Backhousia citriodora ; Limon mersini ; okyanusya ; besin,sifa
+Syzygium anisatum ; Anason mersini ; okyanusya ; besin
+Tasmannia lanceolata ; Dağ biberi ; okyanusya ; besin
+Terminalia ferdinandiana ; Kakadu eriği ; okyanusya ; besin
+Acacia victoriae ; Wattleseed ; okyanusya ; besin
+Santalum spicatum ; Avustralya sandalı ; okyanusya ; tutsu,ritual
+Santalum acuminatum ; Quandong ; okyanusya ; besin
+Duboisia hopwoodii ; Pituri ; okyanusya ; ritual,zehir
+Duboisia myoporoides ; Mantar ağacı ; okyanusya ; zehir,sifa
+Eremophila longifolia ; Emu çalısı ; okyanusya ; ritual,sifa
+Centipeda cunninghamii ; Yaşlı adam otu ; okyanusya ; sifa
+Macadamia integrifolia ; Makadamya ; okyanusya ; besin
+Citrus australasica ; Parmak limonu ; okyanusya ; besin
+Solanum centrale ; Çöl kuru üzümü ; okyanusya ; besin
+Prostanthera rotundifolia ; Avustralya nanesi ; okyanusya ; sifa
+Xanthorrhoea australis ; Ot ağacı ; okyanusya ; ritual
+Macropiper excelsum ; Kawakawa ; okyanusya ; sifa,ritual
+Phormium tenax ; Harakeke ; okyanusya ; sifa
+Cordyline australis ; Lahana ağacı ; okyanusya ; besin
+Kunzea ericoides ; Kanuka ; okyanusya ; sifa
+Pseudowintera colorata ; Horopito ; okyanusya ; besin,sifa
+Coprosma robusta ; Karamu ; okyanusya ; ritual,sifa
+Artocarpus altilis ; Ekmek ağacı ; okyanusya ; besin
+Pandanus tectorius ; Hala ; okyanusya ; besin,ritual
+Cordyline fruticosa ; Ti bitkisi ; okyanusya ; ritual
+Aleurites moluccanus ; Kukui ; okyanusya ; ritual,sifa
+Calophyllum inophyllum ; Tamanu ; okyanusya ; sifa
+Alyxia stellata ; Maile ; okyanusya ; ritual
+Saccharum officinarum ; Şeker kamışı ; okyanusya ; besin
+Metroxylon sagu ; Sago palmiyesi ; okyanusya ; besin
+Canarium indicum ; Galip cevizi ; okyanusya ; besin
+Inocarpus fagifer ; Tahiti kestanesi ; okyanusya ; besin
+Barringtonia asiatica ; Balık zehiri ağacı ; okyanusya ; zehir
+Hibiscus tiliaceus ; Deniz hibiskusu ; okyanusya ; sifa
+Gardenia taitensis ; Tiare ; okyanusya ; tutsu,ritual
