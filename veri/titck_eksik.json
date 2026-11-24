@@ -1,0 +1,236 @@
+{
+ "aciyonca": [
+  "ameliyat"
+ ],
+ "adacayi": [
+  "yaş sınırı",
+  "diyabet"
+ ],
+ "alic": [
+  "hamilelik",
+  "emzirme",
+  "tansiyon",
+  "ameliyat"
+ ],
+ "aloe": [
+  "emzirme",
+  "yaş sınırı",
+  "böbrek"
+ ],
+ "altinkok": [
+  "hamilelik",
+  "emzirme"
+ ],
+ "cay": [
+  "hamilelik",
+  "emzirme",
+  "böbrek",
+  "tiroit",
+  "tansiyon"
+ ],
+ "cingeveni": [
+  "kan sulandırıcı"
+ ],
+ "cinmelekotu": [
+  "emzirme"
+ ],
+ "civanpercemi": [
+  "emzirme",
+  "ameliyat",
+  "kan sulandırıcı"
+ ],
+ "corekotu": [
+  "yaş sınırı"
+ ],
+ "cucepalmiye": [
+  "hamilelik",
+  "emzirme",
+  "yaş sınırı",
+  "karaciğer",
+  "tansiyon",
+  "ameliyat"
+ ],
+ "devedikeni": [
+  "hamilelik",
+  "emzirme",
+  "diyabet"
+ ],
+ "ebegumeci": [
+  "hamilelik",
+  "emzirme"
+ ],
+ "ekinezya": [
+  "hamilelik",
+  "emzirme",
+  "tansiyon"
+ ],
+ "enginar": [
+  "hamilelik",
+  "emzirme",
+  "karaciğer",
+  "diyabet",
+  "tansiyon",
+  "kan sulandırıcı"
+ ],
+ "esmersuyosunu": [
+  "ameliyat",
+  "kan sulandırıcı"
+ ],
+ "ginkgo": [
+  "hamilelik",
+  "emzirme"
+ ],
+ "ginseng": [
+  "hamilelik",
+  "emzirme",
+  "tansiyon",
+  "ameliyat"
+ ],
+ "guarana": [
+  "hamilelik",
+  "emzirme",
+  "tiroit",
+  "diyabet",
+  "tansiyon",
+  "glokom",
+  "kan sulandırıcı"
+ ],
+ "hatmi": [
+  "hamilelik",
+  "emzirme",
+  "ameliyat",
+  "kan sulandırıcı"
+ ],
+ "hayit": [
+  "kanser"
+ ],
+ "isirgan": [
+  "hamilelik",
+  "emzirme",
+  "böbrek",
+  "kan sulandırıcı"
+ ],
+ "kantaron": [
+  "hamilelik",
+  "emzirme",
+  "yaş sınırı"
+ ],
+ "karahindiba": [
+  "hamilelik",
+  "emzirme",
+  "karaciğer",
+  "diyabet"
+ ],
+ "karanfil": [
+  "hamilelik",
+  "emzirme",
+  "kanser",
+  "diyabet"
+ ],
+ "karayilan": [
+  "tansiyon",
+  "kan sulandırıcı"
+ ],
+ "kediotu": [
+  "hamilelik",
+  "emzirme"
+ ],
+ "kekik": [
+  "hamilelik",
+  "emzirme",
+  "kanser",
+  "tansiyon",
+  "ameliyat",
+  "kan sulandırıcı"
+ ],
+ "keten": [
+  "hamilelik",
+  "emzirme",
+  "diyabet",
+  "kan sulandırıcı"
+ ],
+ "lavanta": [
+  "hamilelik",
+  "emzirme",
+  "kan sulandırıcı"
+ ],
+ "maca": [
+  "kan sulandırıcı"
+ ],
+ "mate": [
+  "kan sulandırıcı"
+ ],
+ "melisa": [
+  "hamilelik",
+  "emzirme",
+  "diyabet"
+ ],
+ "meyan": [
+  "karaciğer"
+ ],
+ "murver": [
+  "hamilelik",
+  "emzirme"
+ ],
+ "nane": [
+  "hamilelik",
+  "emzirme"
+ ],
+ "okaliptus": [
+  "hamilelik",
+  "emzirme",
+  "karaciğer",
+  "diyabet"
+ ],
+ "okseotu": [
+  "hamilelik",
+  "emzirme"
+ ],
+ "papatya": [
+  "hamilelik",
+  "emzirme",
+  "böbrek"
+ ],
+ "pelin": [
+  "emzirme",
+  "karaciğer"
+ ],
+ "rezene": [
+  "emzirme"
+ ],
+ "sarimsak": [
+  "hamilelik",
+  "emzirme",
+  "diyabet",
+  "tansiyon"
+ ],
+ "sigirkuyrugu": [
+  "hamilelik",
+  "emzirme",
+  "kan sulandırıcı"
+ ],
+ "tarcin": [
+  "hamilelik",
+  "emzirme",
+  "diyabet",
+  "ameliyat"
+ ],
+ "unadegato": [
+  "emzirme"
+ ],
+ "zencefil": [
+  "hamilelik",
+  "emzirme",
+  "diyabet"
+ ],
+ "zerdecal": [
+  "hamilelik",
+  "emzirme"
+ ],
+ "zeytin": [
+  "hamilelik",
+  "emzirme",
+  "böbrek",
+  "kan sulandırıcı"
+ ]
+}

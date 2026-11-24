@@ -14,7 +14,7 @@ Kullanım:
 import json, os, re, sys, subprocess
 KOK = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, KOK)
-DOSYA = os.path.join(KOK, 'veri', 'onbellek', 'ema-herbal.xlsx')
+DOSYA = os.path.join(KOK, 'veri', 'onbellek', 'ema-herbal.xlsx')  # git'e girmez; tools/ema_tablo.py indir ile tazelenir
 ADRES = 'https://www.ema.europa.eu/en/documents/report/medicines-output-herbal_medicines-report_en.xlsx'
 UA = 'Mozilla/5.0 (compatible; bitkitabani/1.0; +https://bitkitabani.com)'
 
