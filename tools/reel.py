@@ -5,7 +5,7 @@ Ses: Microsoft Edge'in Türkçe sinir ağı sesi (edge-tts, tr-TR-EmelNeural). A
 üretilir ve videoya gömülür. edge-tts kurulu değilse ya da ulaşılamazsa video yine üretilir: altyazı tahmini
 zamanlamayla gösterilir, arkada yalnızca ambiyans müziği çalar.
 """
-import os, re, json, asyncio, shutil, subprocess, tempfile, random, time, hashlib, datetime
+import os, difflib, re, json, asyncio, shutil, subprocess, tempfile, random, time, hashlib, datetime
 from PIL import Image, ImageDraw, ImageFilter
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -240,6 +240,94 @@ def _gemini_cumle(sents, tmp):
     return out
 
 
+# ——— Sesin kendisinden hizalama ———————————————————————————————————
+# Gemini kelime zamanı vermiyor; eskiden sınırlar referans sürelerden tahmin
+# ediliyordu ve altyazı kayıyordu. Artık üretilen ses çözümlenip kelimelerin
+# gerçekte nerede söylendiği okunuyor. Hangi ses motoru kullanılırsa kullanılsın
+# çalışır ve kota gerektirmez.
+_WMODEL = None
+_WYOK = False
+
+
+def _wmodel():
+    global _WMODEL, _WYOK
+    if _WMODEL is None and not _WYOK:
+        try:
+            from faster_whisper import WhisperModel
+            _WMODEL = WhisperModel(os.environ.get('HIZA_MODEL', 'base'), device='cpu', compute_type='int8')
+        except Exception as ex:
+            _WYOK = True
+            print('reel: ses hizalama motoru yok (%s), süre tahminine düşülüyor' % str(ex)[:90])
+    return _WMODEL
+
+
+def _sade(k):
+    return re.sub(r'[^0-9a-zçğıöşü]', '', k.lower().replace('İ', 'i').replace('I', 'ı'))
+
+
+def _duyulan(mp3):
+    """(başlangıç, bitiş, kelime) listesi ve sesin süresi."""
+    m = _wmodel()
+    if m is None: return None, 0.0
+    import wave, numpy as np
+    wav = mp3 + '.16k.wav'
+    subprocess.run(['ffmpeg', '-v', 'error', '-i', mp3, '-ar', '16000', '-ac', '1', '-f', 'wav', wav, '-y'], check=True)
+    with wave.open(wav) as w:
+        ses = np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32) / 32768.0
+    try: os.remove(wav)
+    except Exception: pass
+    segs, _ = m.transcribe(ses, language='tr', word_timestamps=True, vad_filter=False)
+    return [(x.start, x.end, x.word.strip()) for sg in segs for x in (sg.words or [])], len(ses) / 16000.0
+
+
+def _ses_hizasi(sents, mp3):
+    """Her cümle için (başlangıç, bitiş, [[a, b, kelime], …]). Eşleşmeyen kelime
+    cümle içinde orantıyla yerleştirilir. Hizalama yapılamazsa None."""
+    duy, toplam = _duyulan(mp3)
+    if not duy: return None
+    duy_s = [_sade(w) for _, _, w in duy]
+    bek = []                                  # (cümle no, sade kelime, ham kelime)
+    for i, c in enumerate(sents):
+        for k in re.findall(r'\S+', c):
+            if _sade(k): bek.append((i, _sade(k), k))
+    if not bek: return None
+    es = difflib.SequenceMatcher(None, [k for _, k, _ in bek], duy_s, autojunk=False)
+    harita = {}
+    for a, b, n in es.get_matching_blocks():
+        for j in range(n): harita[a + j] = b + j
+    # eşleşen kelimelere gerçek zaman, eşleşmeyenlere komşularından orantı
+    zaman = [None] * len(bek)
+    for i in range(len(bek)):
+        j = harita.get(i)
+        if j is not None: zaman[i] = (duy[j][0], duy[j][1])
+    ilk = next((z for z in zaman if z), (0.0, 0.0))
+    son = next((z for z in reversed(zaman) if z), (toplam, toplam))
+    if zaman[0] is None: zaman[0] = (0.0, max(0.12, ilk[0]))
+    if zaman[-1] is None: zaman[-1] = (min(son[1], toplam - 0.12), toplam)
+    for i in range(len(zaman)):
+        if zaman[i] is not None: continue
+        o = next(k for k in range(i - 1, -1, -1) if zaman[k])
+        a = next((k for k in range(i + 1, len(zaman)) if zaman[k]), None)
+        if a is None: zaman[i] = (zaman[o][1], zaman[o][1] + 0.2); continue
+        pay = (i - o) / float(a - o)
+        bas = zaman[o][1] + (zaman[a][0] - zaman[o][1]) * pay
+        zaman[i] = (bas, bas + max(0.12, (zaman[a][0] - zaman[o][1]) / float(a - o) * 0.8))
+    out = []
+    for ci in range(len(sents)):
+        idx = [i for i, (c, _, _) in enumerate(bek) if c == ci]
+        if not idx: out.append((0.0, 0.0, [])); continue
+        bas, bit = zaman[idx[0]][0], zaman[idx[-1]][1]
+        ws = [[zaman[i][0] - bas, zaman[i][1] - bas, bek[i][2]] for i in idx]
+        out.append((bas, bit, ws))
+    # sınırlar artan olsun
+    for i in range(1, len(out)):
+        if out[i][0] < out[i - 1][1]:
+            out[i] = (out[i - 1][1], max(out[i][1], out[i - 1][1] + 0.2), out[i][2])
+    es_say = sum(1 for i in range(len(bek)) if harita.get(i) is not None)
+    print('reel: ses hizası — %d/%d kelime eşleşti' % (es_say, len(bek)))
+    return out
+
+
 def _gemini_hepsi(sents, tmp):
     """Bütün metni TEK istekte seslendirir (ücretsiz katman günlük hakkı cümle başına
     istek atmaya yetmiyor), sonra cümleleri referans zamanlamaya göre keser."""
@@ -248,6 +336,19 @@ def _gemini_hepsi(sents, tmp):
     _gemini1('\n'.join(sents), tam)   # yalnızca okunacak cümleler; yönerge yok (sesli okunuyordu)
     toplam = _dur(tam)
     if toplam <= 0: raise RuntimeError('boş ses')
+    # Önce sesin kendisinden hizala; olmazsa eski tahmin yoluna düş.
+    hiz = _ses_hizasi(sents, tam)
+    if hiz:
+        _SON_HIZA, _SON_YONTEM = 0.0, 'ses-hizasi'
+        out = []
+        for i, ((bas, bit, ws), c) in enumerate(zip(hiz, sents)):
+            mp3 = os.path.join(tmp, 's%d.mp3' % i)
+            a = max(0.0, bas - 0.08); b = min(toplam, bit + 0.12)
+            subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-ss', '%.3f' % a, '-to', '%.3f' % b,
+                            '-i', tam, '-b:a', '128k', mp3], check=True)
+            kay = bas - a            # kırpma payı kadar kelimeleri ötele
+            out.append((mp3, _dur(mp3), [[x + kay, y + kay, w] for x, y, w in ws]))
+        return out
     ic = [(a, b) for a, b in _sessizlikler(tam) if a > 0.25 and b < toplam - 0.25]
     try:
         ref = _edge_referans(sents, tmp)
@@ -371,6 +472,8 @@ def voice(sents, tmp, gem=None):
     if gem and _GUNLUK_DOLDU:
         gem = False   # bugünkü hak bitti; her video için yeniden denemek zaman kaybı
     if gem:
+        # Hizalama artik sesin kendisinden cikariliyor, cumle basina istek gerekmiyor:
+        # video basina 1 istek yetiyor, kota ayni hakla alti kat fazla videoya yetiyor.
         yollar = (_gemini_cumle, _gemini_hepsi) if TAM_HIZA else (_gemini_hepsi,)
         gunluk_doldu = False
         for yol in yollar:   # önce cümle başına istek; kota dolarsa tek istek
