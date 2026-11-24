@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 279 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 294 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 
@@ -291,6 +291,21 @@ Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 - [Mahonya (Berberis aquifolium Pursh)](https://bitkitabani.com/mahonya/): Dikkat, kanıt: sınırlı
 - [Yalancı akasya (Robinia pseudoacacia L.)](https://bitkitabani.com/yalanciakasya/): Yüksek risk, kanıt: geleneksel
 - [Greyfurt (Citrus × paradisi Macfad.)](https://bitkitabani.com/greyfurt/): Dikkat, kanıt: sınırlı
+- [Sater (Satureja hortensis L.)](https://bitkitabani.com/sater/): Genelde güvenli, kanıt: sınırlı
+- [Dağ sateri (Satureja cuneifolia Ten.)](https://bitkitabani.com/dagsateri/): Genelde güvenli, kanıt: sınırlı
+- [İzmir kekiği (Origanum onites L.)](https://bitkitabani.com/izmirkekigi/): Genelde güvenli, kanıt: sınırlı
+- [Suriye kekiği (Origanum syriacum L.)](https://bitkitabani.com/suriyekekigi/): Genelde güvenli, kanıt: sınırlı
+- [Taş nanesi (Clinopodium serpyllifolium (M.Bieb.) Kuntze)](https://bitkitabani.com/tasnanesi/): Dikkat, kanıt: sınırlı
+- [Dağ reyhanı (Ziziphora clinopodioides Lam.)](https://bitkitabani.com/dagreyhani/): Dikkat, kanıt: sınırlı
+- [Nane ruhu (Ziziphora tenuior L.)](https://bitkitabani.com/filiskin/): Dikkat, kanıt: sınırlı
+- [Peygamber süpürgesi (Artemisia annua L.)](https://bitkitabani.com/peygambersupurgesi/): Dikkat, kanıt: sınırlı
+- [Karabuğday (Fagopyrum esculentum Moench)](https://bitkitabani.com/karabugday/): Genelde güvenli, kanıt: sınırlı
+- [Ispanak (Spinacia oleracea L.)](https://bitkitabani.com/ispanak/): Genelde güvenli, kanıt: sınırlı
+- [Eğir kökü (Acorus calamus L.)](https://bitkitabani.com/egirkoku/): Yüksek risk, kanıt: geleneksel
+- [Şeftali (Prunus persica (L.) Batsch)](https://bitkitabani.com/seftali/): Genelde güvenli, kanıt: geleneksel
+- [Yenidünya (Eriobotrya japonica (Thunb.) Lindl.)](https://bitkitabani.com/yenidunya/): Genelde güvenli, kanıt: geleneksel
+- [Limon (Citrus × limon (L.) Osbeck)](https://bitkitabani.com/limon/): Genelde güvenli, kanıt: sınırlı
+- [Portakal (Citrus × sinensis (L.) Osbeck)](https://bitkitabani.com/portakal/): Genelde güvenli, kanıt: sınırlı
 
 ## Kültür köprüleri
 - [Aynı molekül, iki ayrı ritüel](https://bitkitabani.com/kopruler/uzerlik-ayahuasca/): İkisi de harmin ve harmalin taşır. Anadolu’da bu alkaloitler nazar dumanında yanar; Amazon’da tören içeceğinin omurgasını oluşturur.

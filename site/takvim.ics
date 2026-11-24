@@ -979,6 +979,18 @@ DESCRIPTION:Körpe yapraklar Mart–Mayıs\, tohumlar yaz sonu\, kökler
 URL:https://bitkitabani.com/isirgan/
 END:VEVENT
 BEGIN:VEVENT
+UID:toplama-ispanak@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20261001
+DTEND;VALUE=DATE:20261002
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Ispanak toplama mevsimi
+DESCRIPTION:Tek ya da iki yıllık bir sebzedir. Ekim ve hasat ayları bu
+  sayfanın dayandığı kaynaklarda verilmiyor. https://bitkitabani.com/i
+ spanak/
+URL:https://bitkitabani.com/ispanak/
+END:VEVENT
+BEGIN:VEVENT
 UID:toplama-incir@bitkitabani.com
 DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260601
@@ -1442,6 +1454,19 @@ SUMMARY:🌿 Pelin toplama mevsimi
 DESCRIPTION:Çiçeklenme döneminde\, Temmuz–Eylül arasında toplanır
  . https://bitkitabani.com/pelin/
 URL:https://bitkitabani.com/pelin/
+END:VEVENT
+BEGIN:VEVENT
+UID:toplama-peygambersupurgesi@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20261001
+DTEND;VALUE=DATE:20261002
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Peygamber süpürgesi toplama mevsimi
+DESCRIPTION:Tek yıllıktır\; her yıl tohumdan çıkar. 2023 tarihli ç
+ alışmadaki Sakarya örneği ekim ayında toplanmış. Çiçeklenme zama
+ nı için bu sayfanın kaynaklarında kesin bir ay verilmiyor. https://bi
+ tkitabani.com/peygambersupurgesi/
+URL:https://bitkitabani.com/peygambersupurgesi/
 END:VEVENT
 BEGIN:VEVENT
 UID:toplama-rezene@bitkitabani.com

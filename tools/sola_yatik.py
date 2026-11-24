@@ -25,6 +25,9 @@ JS = r"""() => {
  }
  return out;
 }"""
+STIL = "() => [...document.styleSheets].some(s => { try { return s.cssRules.length > 20 } catch (e) { return false } })"
+
+
 def main():
     srv = http.server.ThreadingHTTPServer(('127.0.0.1', 8799), functools.partial(H, directory=SITE))
     threading.Thread(target=srv.serve_forever, daemon=True).start()
@@ -39,8 +42,14 @@ def main():
         pg.route('**/*', lambda r: r.abort() if r.request.resource_type in ('image', 'media', 'font') else r.continue_())
         for i, u in enumerate(pages):
             try:
-                pg.goto('http://127.0.0.1:8799' + u, wait_until='domcontentloaded', timeout=20000)
-                pg.wait_for_timeout(60)
+                # Stil dosyası yüklenmeden ölçersek tablolar stilsiz görünür ve yanlış alarm çıkar.
+                for deneme in range(3):
+                    pg.goto('http://127.0.0.1:8799' + u, wait_until='domcontentloaded', timeout=20000)
+                    pg.wait_for_timeout(60)
+                    if pg.evaluate(STIL): break
+                    pg.wait_for_timeout(300)
+                else:
+                    print('stil yüklenmedi, atlandı:', u); continue
                 r = pg.evaluate(JS)
                 if r: bad[u] = r
             except Exception as ex:
