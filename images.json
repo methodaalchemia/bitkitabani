@@ -861,19 +861,6 @@
   "w": 960,
   "w500": 500
  },
- "cayirucgulu": {
-  "artist": "池田正樹 ( talk )masaki ikeda",
-  "auto": true,
-  "b1280": "Trifolium pratense 0522.jpg",
-  "file": "Trifolium pratense 0522.jpg",
-  "h": 1259,
-  "h500": 655,
-  "license": "CC BY-SA 3.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Trifolium_pratense_0522.jpg",
-  "w": 960,
-  "w500": 500
- },
  "cehri": {
   "artist": "Franz Xaver",
   "auto": true,
@@ -1130,6 +1117,32 @@
   "w": 960,
   "w500": 500
  },
+ "dagreyhani": {
+  "artist": "Gideon Pisanty ( Gidip )",
+  "auto": true,
+  "b1280": "Ziziphora clinopodioides.jpg",
+  "file": "Ziziphora clinopodioides.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ziziphora_clinopodioides.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "dagsateri": {
+  "artist": "Philmarin",
+  "auto": true,
+  "b1280": "S.cuneifolia-1.jpg",
+  "file": "S.cuneifolia-1.jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:S.cuneifolia-1.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "defne": {
   "artist": "Petro Stelte",
   "b1280": "Laurus-nobilis-Sitia-Crete.jpg",
@@ -1258,6 +1271,19 @@
   "w": 960,
   "w500": 500
  },
+ "egirkoku": {
+  "artist": "Christian Fischer",
+  "auto": true,
+  "b1280": "AcorusCalamus.jpg",
+  "file": "AcorusCalamus.jpg",
+  "h": 1300,
+  "h500": 677,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:AcorusCalamus.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "ejderkani": {
   "artist": "Manuel Schwarz",
   "auto": false,
@@ -1359,6 +1385,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Basil_plant_in_a_pot_01.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "filiskin": {
+  "artist": "yakovlev.alexey from Moscow, Russia",
+  "auto": true,
+  "b1280": "Ziziphora tenuior (Lamiaceae) (33134780696).jpg",
+  "file": "Ziziphora tenuior (Lamiaceae) (33134780696).jpg",
+  "h": 1440,
+  "h500": 750,
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ziziphora_tenuior_(Lamiaceae)_(33134780696).jpg",
   "w": 960,
   "w500": 500
  },
@@ -1995,6 +2034,19 @@
   "w": 960,
   "w500": 500
  },
+ "ispanak": {
+  "artist": "Rehman Abubakr",
+  "auto": true,
+  "b1280": "Flowers of Passiflora edulis.jpg",
+  "file": "Flowers of Passiflora edulis.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Flowers_of_Passiflora_edulis.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "itir": {
   "artist": "— DerHexer (Talk)",
   "auto": true,
@@ -2005,6 +2057,19 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Pelargonium_graveolens_in_Hel.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "izmirkekigi": {
+  "artist": "Patrice78500",
+  "auto": true,
+  "b1280": "Origanum onites à Monemvassia inflorescence 01.jpg",
+  "file": "Origanum onites à Monemvassia inflorescence 01.jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Origanum_onites_%C3%A0_Monemvassia_inflorescence_01.jpg",
   "w": 960,
   "w500": 500
  },
@@ -2224,6 +2289,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Piper_nigrum_04236.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "karabugday": {
+  "artist": "SAplants",
+  "auto": true,
+  "b1280": "Fagopyrum esculentum 1DS-II 3-0312.jpg",
+  "file": "Fagopyrum esculentum 1DS-II 3-0312.jpg",
+  "h": 640,
+  "h500": 333,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Fagopyrum_esculentum_1DS-II_3-0312.jpg",
   "w": 960,
   "w500": 500
  },
@@ -2832,6 +2910,19 @@
   "w": 960,
   "w500": 500
  },
+ "limon": {
+  "artist": "Hans Hillewaert",
+  "auto": true,
+  "b1280": "Citrus x limon (Outjo).jpg",
+  "file": "Citrus x limon (Outjo).jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Citrus_x_limon_(Outjo).jpg",
+  "w": 960,
+  "w500": 500
+ },
  "limonverbena": {
   "artist": "H. Zell",
   "auto": true,
@@ -3368,6 +3459,19 @@
   "w": 960,
   "w500": 500
  },
+ "peygambersupurgesi": {
+  "artist": "Rameshng",
+  "auto": true,
+  "b1280": "Sweet worm wood (Artemisia annua) from lalbagh 2281.JPG",
+  "file": "Sweet worm wood (Artemisia annua) from lalbagh 2281.JPG",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Sweet_worm_wood_(Artemisia_annua)_from_lalbagh_2281.JPG",
+  "w": 960,
+  "w500": 500
+ },
  "peyote": {
   "artist": "",
   "auto": true,
@@ -3404,6 +3508,19 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Taxus_baccata_Lviv.JPG",
+  "w": 960,
+  "w500": 500
+ },
+ "portakal": {
+  "artist": "Luis Fernández García",
+  "auto": true,
+  "b1280": "Citrus-sinensis-fruto.jpg",
+  "file": "Citrus-sinensis-fruto.jpg",
+  "h": 1515,
+  "h500": 789,
+  "license": "CC BY-SA 2.5 es",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/es/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Citrus-sinensis-fruto.jpg",
   "w": 960,
   "w500": 500
  },
@@ -3648,6 +3765,19 @@
   "w": 960,
   "w500": 500
  },
+ "sater": {
+  "artist": "Karelj",
+  "auto": true,
+  "b1280": "Satureja hortensis Prague 2011 3.jpg",
+  "file": "Satureja hortensis Prague 2011 3.jpg",
+  "h": 950,
+  "h500": 495,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Satureja_hortensis_Prague_2011_3.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "sedef": {
   "artist": "Robert Flogaus-Faust",
   "b1280": "Ruta graveolens RF.jpg",
@@ -3657,6 +3787,19 @@
   "license": "CC BY 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Ruta_graveolens_RF.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "seftali": {
+  "artist": "George Chernilevsky",
+  "auto": true,
+  "b1280": "Peach flowers 2020 G1.jpg",
+  "file": "Peach flowers 2020 G1.jpg",
+  "h": 1344,
+  "h500": 700,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Peach_flowers_2020_G1.jpg",
   "w": 960,
   "w500": 500
  },
@@ -3889,6 +4032,19 @@
   "license": "CC0",
   "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
   "page": "https://commons.wikimedia.org/wiki/File:Cinnamon_bark.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "tasnanesi": {
+  "artist": "Javier martin",
+  "auto": true,
+  "b1280": "Clinopodium serpyllifolium Habitus 2011-12-18 SierraMadrona.jpg",
+  "file": "Clinopodium serpyllifolium Habitus 2011-12-18 SierraMadrona.jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Clinopodium_serpyllifolium_Habitus_2011-12-18_SierraMadrona.jpg",
   "w": 960,
   "w500": 500
  },
@@ -4250,6 +4406,19 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Gardenology.org-IMG_2751_rbgs11jan.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "yenidunya": {
+  "artist": "Elucidate",
+  "auto": true,
+  "b1280": "Loquat leaf.JPG",
+  "file": "Loquat leaf.JPG",
+  "h": 1269,
+  "h500": 661,
+  "license": "CC BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Loquat_leaf.JPG",
   "w": 960,
   "w500": 500
  },
