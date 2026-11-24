@@ -2950,5 +2950,17 @@ if os.path.exists(_pnl):
     print('panel sayfası yazıldı')
 
 print('CSP', _csp(), 'satır içi betik özeti')
+# Türkçeye eklenen bir kısıtlama ya da miktar İngilizceye geçmemişse burada görünür.
+# Derlemeyi durdurmaz: yarım kalan site gönderilmesin diye (24 Kasım 2026 kesintisi).
+try:
+    import sys as _sys, subprocess
+    _k = subprocess.run([_sys.executable, os.path.join(HERE, 'kontrol_tr_en.py')],
+                        capture_output=True, text=True, timeout=120)
+    if _k.returncode:
+        print('UYARI — Türkçe/İngilizce eşitliği:', _k.stdout.strip().split(chr(10))[0])
+        print('  ayrıntı için: python3 kontrol_tr_en.py')
+except Exception as _e:
+    print('UYARI — tr/en kontrolü çalıştırılamadı:', _e)
+
 print('ok', len(urls), 'sayfa')
 

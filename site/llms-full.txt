@@ -116,7 +116,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Genelde güvenli
 - Muş: Yörede gezgezk denen ısırganın taze suyu saç dökülmesine karşı saç diplerine sürülür; çorbası kan hastalıklarına önerilir.
 
 ### Hazırlama
-Yaprak haşlanınca yakıcılığını kaybeder. Kuru yaprak çay olarak demlenir.
+Yaprak haşlanınca yakıcılığını kaybeder. Kuru yaprak çay olarak demlenir. EMA monografı tek dozu 2–4 g kıyılmış yaprak, günde 3–6 kez veriyor (günde toplam 8–12 g); su miktarını belirtmiyor. 12 yaşından küçüklerde önerilmiyor. Eklem ağrısında en çok 4 hafta, idrar şikâyetlerinde 2–4 hafta kullanılır.
 
 ### Araştırmalar ne gösteriyor
 EMA yaprağını eklem ağrısı ve idrar söktürücü olarak, kökünü iyi huylu prostat büyümesine bağlı idrar şikâyetleri için geleneksel kullanımda tanır. Kök için yapılmış klinik çalışmaların sonuçları orta düzeydedir.
@@ -179,7 +179,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Genelde güvenli
 - Antik Akdeniz: Antik Yunan’da cesaretin simgesiydi; tapınaklarda tütsü olarak yakılırdı.
 
 ### Hazırlama
-Çay olarak demlenir, buharı solunur, yemeğe katılır.
+Çay olarak demlenir, buharı solunur, yemeğe katılır. EMA monografı Thymus vulgaris ve T. zygis için 1–2 g kıyılmış bitkiyi 150 ml kaynar suda, günde 3–4 kez veriyor; 12 yaşından küçüklerde çay önerilmiyor ve şikâyet bir haftadan uzun sürerse hekime. ⚠️ Türkiye'de “kekik” adı Thymus, Origanum, Thymbra ve Satureja cinslerini birden kapsar; etikette hangi tür olduğu yazmıyorsa bu ölçü doğrudan uygulanamaz.
 
 ### Araştırmalar ne gösteriyor
 Timol ve karvakrol içerir; bu maddelerin güçlü antimikrobiyal etkisi laboratuvarda gösterilmiştir. EMA, kekiği (Thymus vulgaris) balgamlı öksürük için geleneksel bitkisel ilaç olarak tanır.
@@ -213,7 +213,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 - Avrupa: Latince adı “salvare” (iyileştirmek, kurtarmak) kökünden gelir; Orta Çağ Avrupa’sında her derde deva sayılırdı.
 
 ### Hazırlama
-Çay olarak 5 dakika demlenir; gargara yapılır.
+Çay olarak 5 dakika demlenir; gargara yapılır. ⚠️ Bu kayıt Salvia fruticosa'yı (Anadolu adaçayı) anlatır ve EMA bu tür için monograf kabul etmemiştir: değerlendirme tamamlanmış, sonuç monograf değil “public statement” olmuştur. Dolayısıyla bu bitki için resmî bir doz yoktur. Rafta sık bulunan Salvia officinalis'in ayrı bir monografı vardır, ama onun dozu bu türe uygulanamaz — etiketteki Latince ad belirleyicidir.
 
 ### Araştırmalar ne gösteriyor
 EMA, adaçayını (Salvia officinalis) ağız ve boğaz iltihabı ile aşırı terleme için geleneksel kullanımda tanır. Anadolu türü sineol bakımından zengindir ve genelde daha az tuyon içerir.
@@ -251,7 +251,7 @@ Bilimsel kanıt: Geleneksel · Güvenlik: Genelde güvenli
 - Anadolu: Kış akşamlarının çayıdır. Soğuk algınlığında terletmek ve rahatlamak için içilir. İstanbul’da sokak ağacı olarak yaygındır; çiçekleri Haziran’da toplanır.
 
 ### Hazırlama
-Kuru çiçek 5–10 dakika demlenir; kaynatılmaz.
+Kuru çiçek 5–10 dakika demlenir; kaynatılmaz. ⚠️ EMA bu tür için monograf kabul etmemiş, yerine bir kamuoyu açıklaması (public statement) yayımlamıştır; dolayısıyla AB düzeyinde tanımlanmış bir doz yoktur.
 
 ### Araştırmalar ne gösteriyor
 EMA, ıhlamur çiçeğini soğuk algınlığı belirtileri ve hafif zihinsel stres için geleneksel kullanımda tanır. Flavonoit ve müsilaj içerir; klinik çalışması azdır.
@@ -286,7 +286,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Genelde güvenli
 - Ağrı (Diyadin, Doğubayazıt): Yörede papatya denen Anthemis armeniaca’nın yalnızca çiçek başı kullanılır: kurutulup kaynatılır ve buharı sinüzit için solunur.
 
 ### Hazırlama
-Çiçekler 5–10 dakika kapağı kapalı demlenir.
+Çiçekler 5–10 dakika kapağı kapalı demlenir. EMA monografı yaşa göre ölçü veriyor: yetişkin ve ergende 1,5–4 g çiçek 150 ml kaynar suda, günde 3–4 kez; 6–12 yaş 1,5–3 g, 2–6 yaş 1–1,5 g, 6 ay–2 yaş 0,5–1 g, günde 2–4 kez. 6 aydan küçüklerde ağızdan kullanımı belirlenmemiştir. Buhar için 3–10 g çiçek 100 ml sıcak suda (6–12 yaş 2–5 g, günde 1–2 kez); 6 yaşından küçüklerde belirlenmemiş. Şikâyet bir haftadan uzun sürerse hekime.
 
 ### Araştırmalar ne gösteriyor
 EMA, papatyayı hafif sindirim şikâyetleri, ağız-boğaz iltihabı ve cilt tahrişi için tanır. Kaygı üzerine küçük klinik çalışmalarda olumlu sonuç alınmıştır.
@@ -363,7 +363,7 @@ Bilimsel kanıt: Geleneksel · Güvenlik: Genelde güvenli
 - Muş: Yörede tolik denen ebegümeci (Malva neglecta) kısırlığa karşı pişirilip beze sarılır ve en az üç gece sıcak sıcak kadının karnına konur; şişkin bebeklerin karnına da unla karıştırılarak sarılır.
 
 ### Hazırlama
-Kuru yaprak ve çiçek demlenir ya da soğuk suda bekletilir.
+Kuru yaprak ve çiçek demlenir ya da soğuk suda bekletilir. EMA monografı 1,8 g kıyılmış yaprağı 150 ml kaynar suda, günde 3 kez veriyor (günde toplam 5,4 g). 12 yaşından küçüklerde önerilmiyor; boğaz şikâyeti bir haftadan, mide şikâyeti iki haftadan uzun sürerse hekime.
 
 ### Araştırmalar ne gösteriyor
 Yapraklarındaki müsilaj boğaz ve mide yüzeyini kaplar. EMA, ebegümecini ağız-boğaz tahrişi ve kuru öksürük için geleneksel kullanımda tanır.
@@ -396,7 +396,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Genelde güvenli
 - Anadolu: Arıcılar kovanları oğul otuyla ovarak arı oğulunu çeker; adı buradan gelir. Çayı sinir yatıştırıcı olarak ve uyku için içilir.
 
 ### Hazırlama
-Taze ya da kuru yaprak kapağı kapalı demlenir; uçucu yağı kolay kaçar.
+Taze ya da kuru yaprak kapağı kapalı demlenir; uçucu yağı kolay kaçar. EMA monografı ölçüyü veriyor: 1,5–4,5 g kıyılmış kuru yaprak 150 ml kaynar suda, günde 1–3 kez. 12 yaşından küçüklerde önerilmiyor; şikâyet iki haftadan uzun sürerse hekime başvurulmalı.
 
 ### Araştırmalar ne gösteriyor
 EMA, hafif stres, uyku sorunları ve hafif sindirim şikâyetleri için geleneksel kullanımda tanır. Küçük klinik çalışmalarda kaygı ve uykuda iyileşme bildirilmiştir.
@@ -430,7 +430,7 @@ Bilimsel kanıt: Geleneksel · Güvenlik: Genelde güvenli
 - And: Romero, Peru’da limpia tütsülerinde ve kötü enerjiyi uzaklaştırmak için banyo suyunda kullanılır.
 
 ### Hazırlama
-Çay olarak demlenir; yağı seyreltilerek ovulur.
+Çay olarak demlenir; yağı seyreltilerek ovulur. EMA monografı çay için 1–2 g kıyılmış yaprağı 150–250 ml kaynar suda, günde 2–3 kez veriyor (günlük 2–6 g). Kas ve eklem ağrısında banyo katkısı ayrı ölçüdedir: 50 g yaprak 1 litre kaynar suda kaynatılıp banyoya katılır, 35–38 °C'de 10–20 dakika, haftada 2–3 kez. 12 yaşından küçüklerde önerilmiyor; mide şikâyeti iki haftadan, ağrı dört haftadan uzun sürerse hekime.
 
 ### Araştırmalar ne gösteriyor
 EMA, biberiyeyi hafif sindirim şikâyetleri ve haricen kas-eklem ağrısı için geleneksel kullanımda tanır. Hafıza üzerine küçük çalışmalar var; sonuçlar kesin değil.
@@ -464,7 +464,7 @@ Bilimsel kanıt: Klinik · Güvenlik: Genelde güvenli
 - Antik Akdeniz: Adının Latince “lavare” (yıkamak) kökünden geldiği düşünülür; Romalılar banyo suyuna katardı.
 
 ### Hazırlama
-Kurusu demlenir ya da yastığa konur; yağı koklanır veya seyreltilip cilde sürülür.
+Kurusu demlenir ya da yastığa konur; yağı koklanır veya seyreltilip cilde sürülür. EMA monografı çay için 1–2 g çiçeği 150 ml kaynar suda, günde 3 kez veriyor; banyo katkısı için ölçü vermiyor. 12 yaşından küçüklerde önerilmiyor.
 
 ### Araştırmalar ne gösteriyor
 Ağızdan alınan standart lavanta yağı kapsülleri (Silexan) birçok kontrollü çalışmada kaygı bozukluğunda plaseboya üstün bulunmuştur. EMA, hafif stres ve uyku için geleneksel kullanımda tanır.
@@ -531,7 +531,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Genelde güvenli
 - Anadolu: Marmelatı, çayı ve pekmezi yapılır. Kışın soğuk algınlığına karşı içilir; Gümüşhane ve Bayburt’un yöresel ürünüdür.
 
 ### Hazırlama
-Meyve ezilip demlenir ya da kaynatılır; tüylü çekirdekleri süzülür.
+Meyve ezilip demlenir ya da kaynatılır; tüylü çekirdekleri süzülür. ⚠️ Kuşburnu meyvesi için EMA monografı yoktur: elimizdeki tek gül monografı (rosae-flos) Rosa centifolia, R. gallica ve R. damascena'nın çiçeği içindir — farklı tür ve farklı kısım. Dolayısıyla bu bitki için resmî bir doz yoktur.
 
 ### Araştırmalar ne gösteriyor
 Taze meyve C vitamini bakımından çok zengindir; kurutma ve kaynatma bu vitamini büyük ölçüde azaltır. Kuşburnu tozuyla yapılan birkaç klinik çalışmada diz kireçlenmesinde ağrının hafiflediği bildirilmiştir.
@@ -702,7 +702,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 - And: And’ların yerli türü Sambucus peruviana (sauco) meyvesinden reçel ve içecek yapılır; çiçeği öksürük için demlenir.
 
 ### Hazırlama
-Çiçek demlenir; meyve mutlaka pişirilerek şurup ya da reçel yapılır.
+Çiçek demlenir; meyve mutlaka pişirilerek şurup ya da reçel yapılır. EMA monografı çiçek için iki yol veriyor: demleme, 2–5 g çiçek 150 ml kaynar suda, günde 3 kez; kaynatma, 3–6 g kıyılmış çiçek 200 ml suda, günde iki doza bölünerek. 12 yaşından küçüklerde önerilmiyor; şikâyet bir haftadan uzun sürerse hekime.
 
 ### Araştırmalar ne gösteriyor
 EMA, mürver çiçeğini soğuk algınlığının erken belirtileri için geleneksel kullanımda tanır. Meyve ekstresiyle yapılan küçük çalışmalarda grip süresinin kısaldığı bildirildi; kanıt zayıf.
@@ -734,7 +734,7 @@ Bilimsel kanıt: Geleneksel · Güvenlik: Genelde güvenli
 - Latin Amerika: Diente de león, karaciğer ve sindirim için demlenen yaygın otlardandır.
 
 ### Hazırlama
-Yaprak taze yenir; kök kurutulup demlenir ya da kavrulup kahve gibi içilir.
+Yaprak taze yenir; kök kurutulup demlenir ya da kavrulup kahve gibi içilir. EMA monografı yaprak için tek dozu 4–10 g, günde 3 kez veriyor; su miktarını belirtmiyor. 12 yaşından küçüklerde önerilmiyor; şikâyet iki haftadan uzun sürerse hekime.
 
 ### Araştırmalar ne gösteriyor
 EMA, yaprağını hafif idrar söktürücü, kökünü hafif sindirim şikâyetleri için geleneksel kullanımda tanır. İnsan çalışmaları çok azdır.
@@ -769,7 +769,7 @@ Bilimsel kanıt: Klinik · Güvenlik: Dikkat
 - Muğla (Ula): Ula’da bir kök boya ustasının ailesinde dört kuşaktır sürdürülen yanık karışımında hayıt ağacının dış kabuğu kaynatılarak kullanılır.
 
 ### Hazırlama
-Genellikle standart ekstre olarak kullanılır.
+EMA monografında çay yok — ölçüler yalnız toz ve ekstre üzerinden: kayıtlı ilaçta günde bir kez 20 mg kuru ekstre; geleneksel kullanımda günde iki kez 400 mg toz, ya da tentür/kuru ekstrelerin kendi dozları. Monograf bitkiyi yetişkin kadınlar için tanımlıyor; ergenlik çağındaki çocuklarda ve 18 yaş altında önerilmiyor. Üç aylık kullanımdan sonra şikâyet sürerse hekime.
 
 ### Araştırmalar ne gösteriyor
 Standart meyve ekstresi birkaç kontrollü çalışmada adet öncesi sendrom (PMS) belirtilerini plaseboya göre azaltmıştır. EMA bu kullanımı “iyi yerleşmiş” kabul eder.
@@ -832,7 +832,7 @@ Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 - Hititler: Hititler ardıcı dinî törenlerde tüketmiş, mezar yapımında ve ilaç hazırlamada kullanmıştır.
 
 ### Hazırlama
-Dal tütsü olarak yakılır; kozalak demlenir; katran haricen sürülür.
+Dal tütsü olarak yakılır; kozalak demlenir; katran haricen sürülür. EMA monografı yalnız Juniperus communis için geçerlidir; kaydımızdaki J. excelsa ve J. oxycedrus kapsam dışıdır. Çay için 2–2,5 g kozalak 150 ml kaynar suda: idrar yolu yıkamasında günde 1–3 kez (günlük 2,5–6 g), hazımsızlıkta günde 1–4 kez (günlük 2,5–10 g). 18 yaşından küçüklerde önerilmiyor; şikâyet iki haftadan uzun sürerse hekime. Ardıç katranı monografın konusu değildir ve yutulmaz.
 
 ### Araştırmalar ne gösteriyor
 EMA, kozalağını hafif idrar söktürücü ve sindirim için geleneksel kullanımda tanır. Laboratuvarda antimikrobiyal etkiler görülmüştür.
@@ -865,7 +865,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 - Orta Asya ve Çin: Moğol ve Sibirya halkları Artemisia dumanını arınma için kullanır. Çin tıbbında kurutulmuş Artemisia (moxa) cilt üzerinde yakılarak ısı verilir.
 
 ### Hazırlama
-Çok az miktarda demlenir; tütsü olarak yakılır.
+EMA monografı çay için 1–1,5 g kıyılmış bitkiyi 150 ml kaynar suda veriyor; günlük toplam 2–3 g. İştahsızlıkta yemekten yarım saat önce, hazımsızlıkta yemekten sonra alınır. 18 yaşından küçüklerde önerilmiyor; şikâyet iki haftadan uzun sürerse hekime. Tütsü olarak da yakılır.
 
 ### Araştırmalar ne gösteriyor
 Tatlı pelinden (A. annua) çıkarılan artemisinin bugün sıtma tedavisinin temelidir; bu keşif 2015 Nobel Tıp Ödülü’nü kazandı. EMA, acı pelini iştahsızlık ve hazımsızlık için geleneksel kullanımda tanır.
@@ -1545,7 +1545,7 @@ Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 - Amazon ve And: Peru’da yaprakları ezilip yaralara konur; çayı mide ağrısı, ishal ve öksürük için içilir.
 
 ### Hazırlama
-Taze yaprak ezilip yaraya konur; kuru yaprak demlenir.
+Taze yaprak ezilip yaraya konur; kuru yaprak demlenir. ⚠️ Matico (Piper aduncum) için EMA monografı yoktur. Aynı cinsten kava (Piper methysticum) değerlendirilmiş ama sonuç monograf değil public statement olmuştur; kavanın karaciğer uyarısı ve ölçüsü bu bitkiye uygulanamaz. Bu bitki için resmî bir doz yoktur.
 
 ### Araştırmalar ne gösteriyor
 Yaprak yağı laboratuvarda antibakteriyel ve antifungal etki gösterir. İnsan çalışması yoktur.
@@ -1636,7 +1636,7 @@ Bilimsel kanıt: Klinik · Güvenlik: Genelde güvenli
 - Antik Yunan: Yunan söylencesinde Hades’in sevgilisi su perisi Menthe, nane bitkisine dönüştürülür; bitkinin adı da buradan gelir.
 
 ### Hazırlama
-Taze ya da kuru yaprak kapağı kapalı demlenir; uçucu yağı seyreltilerek şakaklara sürülür.
+Taze ya da kuru yaprak kapağı kapalı demlenir; uçucu yağı seyreltilerek şakaklara sürülür. EMA monografı Mentha × piperita yaprağı için ölçü veriyor: yetişkinde 1,5–3 g yaprak 100–150 ml kaynar suda, günde 3 kez; 4–11 yaş ve ergenlerde 1–2 g, günde 3 kez. 4 yaşından küçüklerde önerilmiyor; şikâyet iki haftadan uzun sürerse hekime. Kaydımızdaki M. spicata (yeşil nane) monografın kapsamı dışındadır.
 
 ### Araştırmalar ne gösteriyor
 Nane yağı (Mentha × piperita) kapsülleri, birçok kontrollü çalışmada huzursuz bağırsak sendromunun belirtilerini plaseboya göre azaltmıştır. EMA nane yaprağını hazımsızlık ve gaz için geleneksel kullanımda tanır.
@@ -1670,7 +1670,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Genelde güvenli
 - Antik Akdeniz: Atina’nın kutsal ağacıdır; Olimpiyat galiplerine yabani zeytin dalından taç verilirdi.
 
 ### Hazırlama
-Kuru yaprak 10–15 dakika kaynatılır; standart yaprak ekstresi de kullanılır.
+EMA monografı iki yol veriyor. Kaynatma: 10 g taze ya da 5 g kuru yaprak 150 ml suda, yaklaşık 100 ml kalana dek kısık ateşte, sabah ve akşam. Demleme: 6–10 g kıyılmış kuru yaprak, günde 3 keze kadar. 18 yaşından küçüklerde önerilmiyor; geleneksel kullanım 2–4 hafta, şikâyet bir haftadan uzun sürerse hekime.
 
 ### Araştırmalar ne gösteriyor
 Yaprak, oleuropein adlı bir fenol bakımından zengindir. Birkaç kontrollü çalışmada yaprak ekstresi hafif yüksek tansiyonda küçük düşüşler göstermiştir. EMA zeytin yaprağını hafif sistolik hipertansiyonda geleneksel kullanımda tanır.
@@ -1760,7 +1760,7 @@ Bilimsel kanıt: Geleneksel · Güvenlik: Yüksek risk
 - Avrupa ve Latin Amerika: Tarih boyunca adet söktürücü ve düşük yaptırıcı olarak kullanılmıştır; bu kullanım ölümlere yol açmıştır.
 
 ### Hazırlama
-Çok az miktarda demlenir. Uçucu yağı kesinlikle içilmez.
+Çok az miktarda demlenir. Uçucu yağı kesinlikle içilmez. ⚠️ Yarpuz (Mentha pulegium) için EMA monografı yoktur; aynı cinsten olan nanenin (Mentha × piperita) monografı ve dozu bu bitkiye uygulanamaz, çünkü yarpuz pulegon taşır ve nane taşımaz. Bu bitki için güvenli bir ev dozu tanımlanmamıştır.
 
 ### Araştırmalar ne gösteriyor
 Uçucu yağı yüksek oranda pulegon içerir. Pulegon karaciğer ve böbrek için zehirlidir; yağın içilmesiyle ölümler bildirilmiştir.
@@ -1793,7 +1793,7 @@ Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 - Ağrı (Diyadin, Doğubayazıt): Kurutulup un gibi öğütülür ve açık yaraya serpilir; mide, karın ve adet sancısı için sıcak suda demlenip içilir.
 
 ### Hazırlama
-Çiçekli dallar demlenir; taze yaprak ezilip yaraya konur.
+Çiçekli dallar demlenir; taze yaprak ezilip yaraya konur. EMA monografı iştahsızlık ve mide şikâyetlerinde 1,5–4 g kıyılmış bitkiyi 150–250 ml kaynar suda, yemek aralarında günde 3–4 kez veriyor; regl sancısında 1–2 g, 250 ml suda, günde 2–3 kez; yara pansumanı için 3–4 g, 250 ml suda. 12 yaşından küçüklerde önerilmiyor.
 
 ### Araştırmalar ne gösteriyor
 EMA, civanperçemini iştahsızlık, hazımsızlık, adet sancısı ve küçük yaralar için geleneksel kullanımda tanır. İnsan çalışması azdır.
@@ -1826,7 +1826,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Yüksek risk
 - Avrupa: Romalı yazar Plinius, Galya druidlerinin meşe üzerindeki ökse otunu altın orakla törenle kestiğini anlatır.
 
 ### Hazırlama
-Yalnızca doktor gözetiminde standart preparatlar kullanılır.
+Yalnızca doktor gözetiminde standart preparatlar kullanılır. ⚠️ EMA bu tür için monograf kabul etmemiş, yerine bir kamuoyu açıklaması (public statement) yayımlamıştır; dolayısıyla AB düzeyinde tanımlanmış bir doz yoktur.
 
 ### Araştırmalar ne gösteriyor
 Avrupa’da ökse otu ekstreleri kanser hastalarında tamamlayıcı tedavi olarak enjeksiyonla kullanılır. Yaşam kalitesine etkisi üzerine çalışmalar vardır, ama kanser tedavisi olarak etkinliği kanıtlanmamıştır.
@@ -1889,7 +1889,7 @@ Bilimsel kanıt: Geleneksel · Güvenlik: Genelde güvenli
 - Muş: Yörede hîro denen hatmi çiçeğinin (Alcea) sapı, çiçeği ve yaprağı dövülüp ayranla karıştırılır ve yılan sokmasına yedi gün sürülür. Köpürdüğü için yoksulluk zamanlarında sabun yerine ölü yıkamada kullanılmıştır.
 
 ### Hazırlama
-Kök soğuk suda birkaç saat bekletilir; ısıtılmaz.
+Kök soğuk suda bekletilir ve hazırlanır hazırlanmaz içilir; ısıtılmaz. EMA monografı yetişkinde 0,5–3 g kökü 150 ml suda, günde birkaç kez veriyor ve günlük üst sınırı 15 g koyuyor; 3–5 yaş için 0,5–1 g, 6–11 yaş için 0,5–1,5 g, günde 3 kez. 3 yaşından küçüklerde önerilmiyor.
 
 ### Araştırmalar ne gösteriyor
 Kökü yüksek oranda müsilaj içerir; bu madde boğaz ve mide yüzeyini kaplar. EMA hatmi kökünü ağız-boğaz tahrişi ve kuru öksürük için geleneksel kullanımda tanır.
@@ -1945,7 +1945,7 @@ Bilimsel kanıt: Klinik · Güvenlik: Genelde güvenli
 - And: Peru ve Bolivya’da ajo, limpia törenlerinde ve nazara karşı yanında taşınır; soğuk algınlığına karşı yenir.
 
 ### Hazırlama
-Çiğ olarak ezilip yenir; ezildikten sonra 10 dakika bekletilmesi etken maddeyi artırır.
+Çiğ olarak ezilip yenir; ezildikten sonra 10 dakika bekletilmesi etken maddeyi artırır. EMA monografı taze sarımsak için ölçü vermiyor — dozlar toz ve ekstre üzerinden: damar sertliğinden korunmada günde 900–1.380 mg toz, 3–5 doza bölünerek; soğuk algınlığında günde 1–2 kez 100–200 mg kuru ekstre. 18 yaşından küçüklerde önerilmiyor (soğuk algınlığı kullanımında sınır 12 yaş).
 
 ### Araştırmalar ne gösteriyor
 Ezilince allisin oluşur. Meta-analizler sarımsak preparatlarının tansiyonu ve kolesterolü hafifçe düşürdüğünü gösteriyor. NCCIH bu etkilerin küçük olduğunu belirtir.
@@ -1979,7 +1979,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 - Güney Asya: Ayurveda’da sindirim ve şeker için kullanılır; köri karışımlarının bileşenidir.
 
 ### Hazırlama
-Tohum kavrulup öğütülür ya da suda bekletilir.
+EMA monografı dört yol veriyor: kıyılmış tohum 1–2 g, suyla, yemeklerden önce günde 3 kez; soğuk demleme 0,5 g kıyılmış tohum 150 ml soğuk suda 3 saat bekletilip süzülerek, günde 3 kez; çay 1–6 g tohum 250 ml kaynar suda; toz 380–1.100 mg, günde 3 kez. Cilt iltihabında ölçü bambaşka: 50 g tohum ya da tozu 250 ml suda, ılıkken lapa olarak. 18 yaşından küçüklerde önerilmiyor.
 
 ### Araştırmalar ne gösteriyor
 Tohumlarda bol lif ve saponin bulunur. Bazı çalışmalarda kan şekerinde düşüş görülmüştür; NCCIH kanıtın kesin olmadığını belirtir. EMA tohumunu iştahsızlık ve hafif cilt iltihabı için geleneksel kullanımda tanır.
@@ -2040,7 +2040,7 @@ Bilimsel kanıt: Klinik · Güvenlik: Genelde güvenli
 - And: Linaza, Peru’da mide ve kabızlık için suyu çekilerek içilir; sokaklarda sabah içeceği olarak satılır.
 
 ### Hazırlama
-Tohum öğütülüp yemeğe katılır ya da suda bekletilir; bol su ile alınmalıdır.
+Tohum öğütülüp yemeğe katılır ya da suda bekletilir; bol su ile alınmalıdır. EMA monografı bütün ya da ezilmiş tohum için 10–15 g'ı günde 2–3 kez, her dozu 150 ml su, süt ya da meyve suyuyla veriyor; sonrasında sıvı alımı sürdürülmeli. 12 yaşından küçüklerde önerilmiyor. Kabızlık üç günde geçmezse hekime ya da eczacıya danışılmalı.
 
 ### Araştırmalar ne gösteriyor
 Lif, müsilaj ve alfa-linolenik asit bakımından zengindir. EMA keten tohumunu kabızlık için iyi yerleşmiş kullanımda tanır. Bazı çalışmalarda kolesterol ve tansiyonda hafif düşüş görülmüştür.
@@ -2138,7 +2138,7 @@ Bilimsel kanıt: Geleneksel · Güvenlik: Genelde güvenli
 - Kuzey Amerika: Avrupa’dan gelen bitkinin yaprakları yerli halklarca solunum yolları için içilip tütsülendi.
 
 ### Hazırlama
-Çiçek demlenir ve ince bir bezden mutlaka süzülür.
+Çiçek demlenir ve ince bir bezden mutlaka süzülür. EMA monografı tek dozu 1,5–2 g çiçek, 150 ml kaynar suda, günde 3–4 kez veriyor (günde toplam 4,5–8 g). 12 yaşından küçüklerde önerilmiyor; şikâyet bir haftadan uzun sürerse hekime.
 
 ### Araştırmalar ne gösteriyor
 Müsilaj ve saponin içerir. EMA çiçeğini öksürük ve boğaz tahrişi için geleneksel kullanımda tanır. İnsan çalışması azdır.
@@ -2295,7 +2295,7 @@ Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 - Avrupa: Akrabası Rhamnus cathartica ve kabuk (Frangula) uzun süre müshil olarak kullanıldı.
 
 ### Hazırlama
-Meyveler kurutulup boya banyosunda kullanılır.
+Meyveler kurutulup boya banyosunda kullanılır. ⚠️ Cehri (Rhamnus petiolaris ve diğer yerli türler) için EMA monografı yoktur. Aynı cinsin monografı olan türler barut ağacı (R. frangula) ve cascara (R. purshianus) kabuğudur — farklı tür, farklı kısım ve antrakinonlu müshil dozları. Bu bitki için resmî bir doz yoktur; kayıttaki kullanım boyacılıktır.
 
 ### Araştırmalar ne gösteriyor
 Antrakinon içerir; bunlar bağırsağı uyararak müshil etkisi yapar. EMA akrabası Frangula kabuğunu kısa süreli kabızlık için tanır.
@@ -2328,7 +2328,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 - İskandinavya: Vikinglerin yorgunluğa karşı kullandığı rivayet edilir.
 
 ### Hazırlama
-Kök kurutulup demlenir ya da standart ekstre olarak alınır.
+EMA monografında çay yok — ölçü kuru ekstre üzerinden: tek doz 144–200 mg (DER 1,5–5:1), günde 1–2 kez, günlük toplam 144–400 mg. 18 yaşından küçüklerde önerilmiyor; şikâyet iki haftadan uzun sürerse hekime. Halk arasında kök kurutulup demlenir, ama monograf bu hazırlığın ölçüsünü vermez.
 
 ### Araştırmalar ne gösteriyor
 Rosavin ve salidrozit içerir. Yorgunluk ve hafif depresyon üzerine küçük kontrollü çalışmalar vardır; NCCIH kanıtın yetersiz olduğunu belirtir.
@@ -2394,7 +2394,7 @@ Bilimsel kanıt: Klinik · Güvenlik: Dikkat · Türkiye’de: Türkiye’de lis
 - Anadolu: Lifinden ip, çuval ve kumaş dokunur; tohumu kavrulup çerez olarak yenir. Kastamonu, Samsun ve Rize kendir dokumalarıyla bilinir.
 
 ### Hazırlama
-Lif için sapları suda çürütülür; tohum kavrulur ya da yağı çıkarılır.
+Lif için sapları suda çürütülür; tohum kavrulur ya da yağı çıkarılır. ⚠️ EMA bu tür için monograf kabul etmemiş, yerine bir kamuoyu açıklaması (public statement) yayımlamıştır; dolayısıyla AB düzeyinde tanımlanmış bir doz yoktur.
 
 ### Araştırmalar ne gösteriyor
 THC ve CBD gibi kannabinoidler içerir. Kannabinoid ilaçlar kemoterapi bulantısı ve bazı epilepsi türlerinde kullanılmak üzere onaylıdır. Kenevir kullanımı psikoz riski ve bağımlılıkla ilişkilidir.
@@ -2427,7 +2427,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Genelde güvenli
 - Anadolu: Rize ve Doğu Karadeniz’de 1940’lardan beri yetiştirilir. Türkiye, kişi başı çay tüketiminde dünyada ilk sıralardadır; çay misafirliğin simgesidir.
 
 ### Hazırlama
-Yaprak kaynamış suyla demlenir; yeşil çay daha düşük ısıda demlenir.
+Yaprak kaynamış suyla demlenir; yeşil çay daha düşük ısıda demlenir. EMA monografı yeşil çay (fermente olmamış yaprak) için 1,8–2,2 g yaprağı 100–150 ml kaynar suda, günde 3–5 kez veriyor; toz biçimi için tek doz 390 mg, günde 3 kez, gerekirse 5 keze kadar. 18 yaşından küçüklerde önerilmiyor.
 
 ### Araştırmalar ne gösteriyor
 Kafein, L-teanin ve kateşinler içerir. Gözlem çalışmalarında düzenli çay içimi kalp-damar hastalıklarında daha düşük riskle ilişkilidir; yeşil çay ekstresinin zayıflatıcı etkisi küçüktür.
@@ -2456,7 +2456,7 @@ Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 - Muş (Kurtik Dağı): Bir efsaneye göre ani bir rüzgârla uçan bir kadının süsü bu bitkiye takılmış; kadın bitkiye süsün adını vermiş ve o günden beri yenir. Baş ağrısı, mide ağrısı ve şeker hastalığı için kullanılır.
 
 ### Hazırlama
-Saplar soyulup çiğ yenir, turşusu ya da reçeli yapılır.
+Saplar soyulup çiğ yenir, turşusu ya da reçeli yapılır. ⚠️ Işgın (Rheum ribes) için EMA monografı yoktur. Monografı olan ravent türleri Rheum palmatum ve R. officinale'dir; onların kök dozu müshil kullanımı içindir ve bu bitkiye uygulanamaz. Kayıttaki kullanım gıdadır.
 
 ### Araştırmalar ne gösteriyor
 Kökü antrakinon içerir ve müshil etkisi vardır. EMA akrabası Çin raventi (Rheum palmatum) kökünü kısa süreli kabızlık için tanır.
@@ -2488,7 +2488,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 - Anadolu: Zerde tatlısına ve pilavlara renk vermek için safranın ucuz ikamesi olarak kullanılır.
 
 ### Hazırlama
-Kök kurutulup öğütülür; karabiber ve yağla birlikte alındığında emilimi artar.
+Kök kurutulup öğütülür; karabiber ve yağla birlikte alındığında emilimi artar. EMA monografı çay için 0,5–1 g kıyılmış rizomu 150 ml kaynar suda, günde 2–3 kez veriyor. 18 yaşından küçüklerde önerilmiyor; en çok iki hafta kullanılır.
 
 ### Araştırmalar ne gösteriyor
 Kurkumin içerir. Bazı küçük çalışmalarda diz kireçlenmesi ağrısında fayda görülmüştür; NCCIH çoğu iddia için kanıtın zayıf olduğunu belirtir. Kurkumin vücutta zayıf emilir.
@@ -2557,7 +2557,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 - Kore: Bir Kore söylencesinde dağ ruhu yoksul bir çocuğa ginsengin yerini gösterir; kökünden yapılan içecek çocuğun babasını iyileştirir.
 
 ### Hazırlama
-Kök kurutulur ya da buharda pişirilerek “kırmızı ginseng” yapılır; çay ya da ekstre olarak kullanılır.
+Kök kurutulur ya da buharda pişirilerek “kırmızı ginseng” yapılır. EMA monografı beyaz ginseng için kaynatma veriyor: 1.000–2.000 mg kıyılmış kök 150 ml suda, günde 2–3 kez. Toz ve ekstre biçimlerinin kendi dozları ayrıca listelenmiş. Yalnız yetişkinler için; 18 yaşından küçüklerde önerilmiyor. Kullanım süresi en çok 3 ay, şikâyet iki haftadan uzun sürerse hekime.
 
 ### Araştırmalar ne gösteriyor
 Ginsenozitler içerir. Bazı çalışmalarda kan şekeri ve bağışıklık üzerinde küçük etkiler bulunmuştur; NCCIH kanıtın sınırlı olduğunu belirtir.
@@ -2619,7 +2619,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 - Brezilya: Bugün Brezilya’nın en çok satılan gazlı içeceklerinden birine adını verir.
 
 ### Hazırlama
-Tohum kavrulup toz edilir ve suyla içilir.
+Tohum kavrulup toz edilir ve suyla içilir. EMA monografı tek dozu 450 mg toz guaraná tohumu, günde 5 keze kadar veriyor; günlük üst sınır 2.250 mg. 18 yaşından küçüklerde önerilmiyor; şikâyet bir haftadan uzun sürerse hekime.
 
 ### Araştırmalar ne gösteriyor
 Tohumlarında kahve çekirdeğinden daha yüksek oranda kafein bulunur. Dikkat ve yorgunluk üzerine küçük çalışmalar vardır.
@@ -3071,7 +3071,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Genelde güvenli
 - Bugün: Avrupa ve Türkiye’de soğuk algınlığı için en çok satılan bitkisel ürünlerdendir.
 
 ### Hazırlama
-Kök ya da çiçekli dallar demlenir; standart ekstreler kullanılır.
+⚠️ EMA monografı kök çayını değil, taze çiçekli dalların sıkılmış suyunu (presse suyu) kapsıyor: soğuk algınlığında tek doz 1,5–4,5 ml, günlük toplam 6–9 ml; en çok 10 gün, ilk belirtide başlanır. Yüzeysel yaralarda merhem günde 2–3 kez, en çok bir hafta. 12 yaşından küçüklerde önerilmiyor. Halk arasında kök ve çiçekli dallar demlenir, ama monograf bu hazırlığın ölçüsünü vermez.
 
 ### Araştırmalar ne gösteriyor
 NCCIH’e göre soğuk algınlığını önlemede ya da kısaltmada küçük bir etkisi olabilir, ama sonuçlar tutarsızdır. EMA E. purpurea toprak üstü kısmını soğuk algınlığının kısa süreli tedavisi için tanır.
@@ -3191,7 +3191,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Genelde güvenli
 - Anadolu: Osmanlı mutfağında ve macunlarda kullanılan baharatlardandır; bugün kış çaylarına ve kurabiyelere katılır.
 
 ### Hazırlama
-Taze rizom dilimlenip 10 dakika kaynatılır ya da rendelenip demlenir; kurusu toz olarak kullanılır.
+Taze rizom dilimlenip 10 dakika kaynatılır ya da rendelenip demlenir; kurusu toz olarak kullanılır. EMA monografında çay karşılığı yok, ölçü toz üzerinden veriliyor: taşıt tutmasında yolculuktan yarım saat önce 500–750 mg (6–12 yaş için 250–500 mg), günde en çok 2,5 g; mide kramplarında günde 3 kez 0,18–1 g, günlük üst sınır 3 g. 6 yaşından küçüklerde önerilmiyor.
 
 ### Araştırmalar ne gösteriyor
 EMA zencefili taşıt tutmasından kaynaklanan bulantıyı önlemede iyi yerleşmiş kullanımda tanır. Hamilelik bulantısında birçok küçük çalışmada fayda görülmüştür; NCCIH bu konuda kanıtı umut verici bulur. Eklem ağrısı ve kilo verme iddiaları için kanıt zayıftır.
@@ -3219,7 +3219,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Genelde güvenli
 - Avrupa: Antik Yunan’dan beri uyku ve sinir için kullanılır; iki dünya savaşı sırasında hava saldırılarının yarattığı korkuya karşı verildiği anlatılır.
 
 ### Hazırlama
-Kurutulmuş kök soğuk ya da ılık suda bekletilir; kokusu güçlüdür. Standart ekstre olarak da kullanılır.
+Kurutulmuş kök soğuk ya da ılık suda bekletilir; kokusu güçlüdür. EMA monografı 0,3–3 g kıyılmış kökü 150 ml kaynar suda veriyor: gerginlikte günde 3 keze kadar, uyku için yatmadan yarım ila bir saat önce tek doz. 12 yaşından küçüklerde önerilmiyor.
 
 ### Araştırmalar ne gösteriyor
 EMA kediotu kökünü hafif sinirsel gerginlik ve uyku sorunları için iyi yerleşmiş kullanımda tanır. Uyku üzerine çalışmaların sonuçları karışıktır; bazıları uykuya dalmada küçük bir iyileşme bulur, bazıları plasebodan fark bulmaz.
@@ -3247,7 +3247,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 - Japonya: Hiroşima’daki atom bombasından sağ kalan ginkgo ağaçları barış ve dayanıklılığın simgesidir.
 
 ### Hazırlama
-Kullanılan biçim standart yaprak ekstresidir (EGb 761 gibi). Yaprakların ev çayı olarak içilmesi önerilmez.
+Kullanılan biçim standart yaprak ekstresidir (EGb 761 gibi). EMA monografında çay hiç yok — ölçüler yalnız ekstre üzerinden: bilişsel şikâyetlerde tek doz 120–240 mg, günlük 240 mg ve tedavi en az 8 hafta sürmeli; bacaklarda ağırlık ve soğuk el-ayakta tek doz 250–360 mg, günlük 750 mg. 18 yaşından küçüklerde önerilmiyor. Yaprakların ev çayı olarak içilmesi önerilmez.
 
 ### Araştırmalar ne gösteriyor
 EMA standart ginkgo yaprağı ekstresini yaşa bağlı hafif bilişsel gerilemede tanır. Ancak büyük bir ABD çalışması (GEM) ginkgonun yaşlılarda demansı önlemediğini göstermiştir. Kulak çınlaması ve dolaşım iddiaları için kanıt zayıftır.
@@ -3313,7 +3313,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 - Anadolu: Sahlep, aşure, sütlaç ve kış çaylarının vazgeçilmezidir; Osmanlı mutfağında etli yemeklerde de kullanılırdı.
 
 ### Hazırlama
-Kabuk çubukları kaynatılır ya da toz olarak yemeğe katılır.
+Kabuk çubukları kaynatılır ya da toz olarak yemeğe katılır. EMA monografı çay için 0,5–1 g kıyılmış kabuğu günde 4 keze kadar veriyor; su miktarını belirtmiyor. 18 yaşından küçüklerde önerilmiyor. Mide şikâyeti iki haftadan, ishal iki günden uzun sürerse hekime.
 
 ### Araştırmalar ne gösteriyor
 Kan şekeri üzerine çok sayıda küçük çalışma vardır; sonuçlar tutarsızdır ve NCCIH tarçının herhangi bir hastalıkta işe yaradığına dair kanıtın yetersiz olduğunu belirtir.
@@ -3345,7 +3345,7 @@ Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 - Anadolu: Diş ağrısında ağrıyan dişin yanına bir tane karanfil konur; kış çaylarına, kompostoya ve hoşaflara katılır. Kötü kokuya karşı limon ya da portakala batırılarak odaya asılır.
 
 ### Hazırlama
-Bütün tomurcuk kaynatılır ya da öğütülür. Uçucu yağı diş hekimliğinde çok az miktarda kullanılır.
+Bütün tomurcuk kaynatılır ya da öğütülür. Uçucu yağı diş hekimliğinde çok az miktarda kullanılır. ⚠️ EMA bu tür için monograf kabul etmemiş, yerine bir kamuoyu açıklaması (public statement) yayımlamıştır; dolayısıyla AB düzeyinde tanımlanmış bir doz yoktur.
 
 ### Araştırmalar ne gösteriyor
 Karanfil yağındaki öjenol, diş hekimliğinde lokal ağrı kesici ve antiseptik olarak uzun süredir kullanılır. EMA karanfil yağını ağız ve boğaz iltihabı ile diş ağrısında geleneksel kullanımda tanır. Diğer iddialar için insan çalışması azdır.
@@ -3376,7 +3376,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 - Avustralya: Aborjin halkları yapraklarını ateş ve yara için kullanır, dallarından yapılan dumanla mekânları arındırır.
 
 ### Hazırlama
-Taze ya da kuru yaprak kaynar suya konup buharı solunur; uçucu yağı birkaç damla buhar için kullanılır.
+EMA monografı iki yol veriyor. Çay: 1,5–3 g kıyılmış yaprak 150 ml kaynar suda, günde 4 keze kadar (günlük 4,5–12 g). Buhar: 3 g yaprak kaynar suya konur, günde 3 keze kadar. Çayda 12 yaşından küçüklerde önerilmiyor. ⚠️ 30 aydan küçük çocuklarda bütün biçimleri kontrendike.
 
 ### Araştırmalar ne gösteriyor
 EMA okaliptüs yağını soğuk algınlığında öksürüğü hafifletmek için geleneksel kullanımda tanır. Yağın ana bileşeni sineol (ökaliptol) ile bronşit ve sinüzitte yapılmış kontrollü çalışmalar vardır.
@@ -3408,7 +3408,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 - Bugün: Son yıllarda stres ve uyku için dünyanın en çok satılan takviyelerinden biri hâline geldi.
 
 ### Hazırlama
-Kök tozu sütte ya da suda kaynatılır; standart ekstre kapsülleri yaygındır.
+Kök tozu sütte ya da suda kaynatılır; standart ekstre kapsülleri yaygındır. ⚠️ EMA bu tür için monograf kabul etmemiş, yerine bir kamuoyu açıklaması (public statement) yayımlamıştır; dolayısıyla AB düzeyinde tanımlanmış bir doz yoktur.
 
 ### Araştırmalar ne gösteriyor
 Birkaç küçük ve kısa süreli kontrollü çalışmada stres ve kaygı puanlarında azalma bildirilmiştir. NCCIH çalışmaların küçük ve kısa olduğunu, uzun süreli güvenliğin bilinmediğini belirtir.
@@ -3560,7 +3560,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Genelde güvenli
 - Avrupa: Yaprak ekstresi Almanya ve Fransa’da hazımsızlık için eczanelerde satılır.
 
 ### Hazırlama
-Çiçek tablası pişirilir; yaprak kurutulup demlenir ya da standart ekstre olarak alınır.
+Çiçek tablası pişirilir; yaprak kurutulup demlenir ya da standart ekstre olarak alınır. EMA monografı yaprak çayı için iki ölçü veriyor: 1,5 g yaprak 150 ml kaynar suda günde 4 keze kadar, ya da 3 g yaprak 150 ml suda günde 1–2 kez; günlük toplam 3–6 g. 12 yaşından küçüklerde önerilmiyor; şikâyet iki haftadan uzun sürerse hekime.
 
 ### Araştırmalar ne gösteriyor
 EMA enginar yaprağını hafif hazımsızlık ve şişkinlikte geleneksel kullanımda tanır. Küçük çalışmalarda hazımsızlık belirtilerinde ve kolesterolde hafif iyileşme görülmüştür.
@@ -3589,7 +3589,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Genelde güvenli
 - Hristiyan söylencesi; Türkiye: Söylenceye göre Meryem bu bitkinin altında dinlenip İsa’yı emzirirken sütünden bir damla yapraklara düşmüş; yapraklardaki beyaz damarların buradan geldiğine inanılır. Türkiye’de deve kengeri, sütlü kengel, akdiken, mübarek diken ve şevkülmeryem gibi adlarla bilinir.
 
 ### Hazırlama
-Tohum öğütülüp yenir ya da standart silimarin ekstresi olarak alınır; çayı etken maddeyi az çıkarır.
+Tohum öğütülüp yenir ya da standart silimarin ekstresi olarak alınır; çayı etken maddeyi az çıkarır. EMA monografı çay için 3–5 g kıyılmış meyveyi 100 ml kaynar suda, yemeklerden önce günde 2–3 kez veriyor. 18 yaşından küçüklerde önerilmiyor; şikâyet iki haftadan uzun sürerse hekime.
 
 ### Araştırmalar ne gösteriyor
 Tohumdaki silimarin karaciğer üzerine çok çalışılmıştır; EMA hafif hazımsızlıkta geleneksel kullanımda tanır. Karaciğer hastalıklarında kontrollü çalışmaların sonuçları tutarsızdır. Saflaştırılmış silibinin, Avrupa’da ölümcül zehirli mantar zehirlenmesinde hastanede damar yoluyla kullanılır.
@@ -3677,7 +3677,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 - Kuzey Amerika: Kurutulmuş yaprakları kinnikinnick adlı törensel içme karışımının temelidir; tütünle ya da tütün yerine pipoda içilir.
 
 ### Hazırlama
-Yaprak soğuk suda bekletilerek ya da kısa demlenerek hazırlanır; en fazla bir hafta kullanılır.
+Yaprak soğuk suda bekletilerek ya da kısa demlenerek hazırlanır. EMA monografı 1,5–4 g yaprağı 150 ml suda, günde 2–4 kez veriyor; günlük üst sınır 8 g. Bir haftadan uzun kullanılmaz ve şikâyet dört günden uzun sürerse hekime başvurulmalı. Monograf bitkiyi yetişkin kadınlar için tanımlıyor: 18 yaşından küçüklerde ve erkeklerde önerilmiyor.
 
 ### Araştırmalar ne gösteriyor
 EMA ayı üzümü yaprağını hafif idrar yolu enfeksiyonu belirtilerinde, hekim enfeksiyonu dışladıktan sonra kısa süreli geleneksel kullanımda tanır. Arbutin vücutta hidrokinona dönüşür. Almanya’da yapılan bir karşılaştırmalı çalışmada (REGATTA) antibiyotik kadar etkili bulunmamıştır.
