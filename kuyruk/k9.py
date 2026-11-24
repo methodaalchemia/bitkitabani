@@ -221,7 +221,7 @@ Q = [
                    'prolonged high-dose use. No data in pregnancy; capsaicin '
                    'crosses the placenta and may pass into breast milk, so use '
                    'only after a careful risk-benefit assessment. The culinary '
-                   'use of chilli is not the subject of these warnings.',
+                   'use of chilli is not the subject of these warnings. There is no safety data for use in pregnancy or while breastfeeding.',
             fact='In Turkish, "kırmızı biber" covers both sweet paprika and hot '
                  'chilli, but what enters the monograph is the small-fruited, '
                  'hot variety. The distinction is capsaicin — the compound that '

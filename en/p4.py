@@ -80,7 +80,7 @@ EN = {
  uses=[('Anatolia','The leaves are boiled and drunk for blood pressure and blood sugar; olive oil is dripped on wounds, burns and aching ears. The olive branch is a symbol of plenty and peace.'),('Ancient Mediterranean','The sacred tree of Athens; Olympic winners were crowned with wild olive.')],
  prep='Dried leaves are boiled for 10–15 minutes; standardised leaf extract is also used.',
  science='The leaf is rich in a phenol called oleuropein. In a few controlled trials, leaf extract gave small drops in mildly high blood pressure. The EMA recognises olive leaf for mild systolic hypertension as a traditional use.',
- safety='Generally safe. Its effect may add to blood pressure and diabetes medicines.',
+ safety='Generally safe. Its effect may add to blood pressure and diabetes medicines. The EMA monograph does not recommend use under 18.',
  fact='Some Turkish villages have olive trees more than 1,000 years old that still bear fruit.',
  season='Leaves all year; olive harvest October–January.', habitat='Aegean, Mediterranean and Marmara coasts; Kilis and Hatay in the southeast.', local='zeytin, delice (wild olive), zeytin yaprağı', confusion='Wild olive (delice) and grafted olive are the same species. Use leaves from unsprayed trees for tea.'),
 'sumak': dict(name='Sumac', other='Sicilian sumac, somak', part='Fruit',
