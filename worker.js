@@ -370,6 +370,51 @@ async function ytUpload(env, st, videoUrl, meta) {
   if (!up.ok) throw new Error('YouTube yükleme: ' + up.status + ' ' + (j.error && j.error.message || '').slice(0, 200));
   return j.id;
 }
+// Başlık kalıbı değiştiğinde yayındaki videolara da işlesin diye tazeleme adımı.
+// YT_KALIP'ı artırmak bütün kataloğu yeniden sıraya alır; günde YT_TAZELE tanesi düzelir.
+const YT_KALIP = 1;
+const YT_TAZELE = 3;   // yükleme 6x1.600 birim yiyor, günlük 10.000'den geriye bu kadar kalıyor
+const YT_SABIT = ['zencefil', 'ihlamur', 'kusburnu', 'adacayi', 'meyan', 'ardic', 'tarcin', 'okaliptus'];
+// ^ 24 Kasım'da mevsim penceresi için başlıkları elle konuldu; kalıp bunları geri almasın.
+async function ytTazele(env) {
+  const st = (await call(env, 'yt:state', 'get')) || {};
+  const day = trDay();
+  if (st.tzDay !== day) { st.tzDay = day; st.tzN = 0; }
+  if ((st.tzN || 0) >= YT_TAZELE) return { skipped: 'günlük tazeleme doldu' };
+  if (trH() < 10 || trH() > 22) return { skipped: 'sırası değil' };
+  const done = st.done || {}, tz = st.tz || {};
+  const aday = Object.keys(done).filter(k => {
+    const [on, pid] = [k.slice(0, k.indexOf(':')), k.slice(k.indexOf(':') + 1)];
+    return (on === 'cay' || on === 'yt') && !YT_SABIT.includes(pid) && tz[k] !== YT_KALIP;
+  });
+  if (!aday.length) return { skipped: 'tazelenecek video yok' };
+  try {
+    const tok = await ytToken(env, st);
+    const dizin = {};
+    for (const d of ['cay', 'yt']) dizin[d] = await (await igAsset(d + '/index.json')).json().catch(() => ({}));
+    let yapilan = 0;
+    for (const k of aday) {
+      if (yapilan >= YT_TAZELE - (st.tzN || 0)) break;
+      const on = k.slice(0, k.indexOf(':')), pid = k.slice(k.indexOf(':') + 1), c = dizin[on][pid];
+      if (!c) { tz[k] = YT_KALIP; continue; }   // kaydı kalmamış: bir daha bakma
+      const vid = done[k];
+      const meta = ytMeta(c.tr, pid, c.caption, c.tarif || null, c.yoresel || '');
+      const r = await fetch('https://www.googleapis.com/youtube/v3/videos?part=snippet&id=' + vid, { headers: { authorization: 'Bearer ' + tok } });
+      const j = await r.json().catch(() => ({}));
+      const sn = j.items && j.items[0] && j.items[0].snippet;
+      if (!sn) { tz[k] = YT_KALIP; continue; }
+      if (sn.title === meta.title) { tz[k] = YT_KALIP; continue; }   // zaten doğru
+      sn.title = meta.title;
+      const u = await fetch('https://www.googleapis.com/youtube/v3/videos?part=snippet', { method: 'PUT', headers: { authorization: 'Bearer ' + tok, 'content-type': 'application/json; charset=UTF-8' }, body: JSON.stringify({ id: vid, snippet: sn }) });
+      if (!u.ok) throw new Error('başlık güncelleme ' + u.status + ' ' + (await u.text()).slice(0, 150));
+      tz[k] = YT_KALIP; yapilan++; st.tzSon = meta.title;
+    }
+    st.tz = tz; st.tzN = (st.tzN || 0) + yapilan; st.tzHata = null;
+  } catch (e) { st.tzHata = String(e.message || e).slice(0, 300); }
+  await call(env, 'yt:state', 'put', st);
+  return { tazelenen: st.tzN || 0, son: st.tzSon || null, hata: st.tzHata || null };
+}
+
 const YT_GUNLUK = 6;   // YouTube API kotası günde 10.000 birim, her yükleme 1.600: en fazla 6
 async function ytPost(env, force) {   // günde YT_GUNLUK Shorts, 10:00–22:00 arası, yarım saat arayla
   const st = (await call(env, 'yt:state', 'get')) || {};
@@ -1064,7 +1109,7 @@ export default {
       try { const q = (await call(env, 'qr:sayac', 'get')) || {}; q[id] = (q[id] || 0) + 1; q._toplam = (q._toplam || 0) + 1; if (k) q['k:' + k] = (q['k:' + k] || 0) + 1; await call(env, 'qr:sayac', 'put', q); } catch (e) {}
       return Response.redirect(url.origin + '/' + id + '/?utm_source=qr' + (k ? '&utm_campaign=' + k : ''), 302);
     }
-    if (url.pathname === '/api/yt-durum' && req.method === 'GET') { const y = (await call(env, 'yt:state', 'get')) || {}; return json({ anahtar: !!env.YT_REFRESH_TOKEN, sayi: y.n || 0, son: y.last || null, bugun: (y.day === trDay() ? (y.dayN || 0) : 0), gunluk: YT_GUNLUK, video: y.lastVideo || null, yuklenen: Object.keys(y.done || {}), hata: y.error || null }); }
+    if (url.pathname === '/api/yt-durum' && req.method === 'GET') { const y = (await call(env, 'yt:state', 'get')) || {}; return json({ anahtar: !!env.YT_REFRESH_TOKEN, sayi: y.n || 0, son: y.last || null, bugun: (y.day === trDay() ? (y.dayN || 0) : 0), gunluk: YT_GUNLUK, video: y.lastVideo || null, yuklenen: Object.keys(y.done || {}), hata: y.error || null, tazeleme: { kalip: YT_KALIP, bugun: (y.tzDay === trDay() ? (y.tzN || 0) : 0), gunluk: YT_TAZELE, bekleyen: Object.keys(y.done || {}).filter(k => /^(cay|yt):/.test(k) && !YT_SABIT.includes(k.slice(k.indexOf(':') + 1)) && (y.tz || {})[k] !== YT_KALIP).length, son: y.tzSon || null, hata: y.tzHata || null } }); }
     if (url.pathname === '/api/qr-durum' && req.method === 'GET') return json((await call(env, 'qr:sayac', 'get')) || {});
     if (url.pathname.startsWith('/api/abone/') && (req.method === 'GET' || url.pathname === '/api/abone/cik')) return aboneApi(req, env, url);
     if (req.method !== 'GET' && req.headers.get('x-bt') !== '1') return json({ error: 'csrf' }, 403);
@@ -1151,6 +1196,6 @@ export default {
     if (env.FB_TOKEN) ctx.waitUntil(fbPost(env).catch(() => null));
     if (env.TG_TOKEN && env.TG_CHAT) ctx.waitUntil(tgPost(env).catch(() => null).then(() => tgEk(env)).catch(() => null).then(() => tgArsiv(env)).catch(() => null));
     if (env.BSKY_HANDLE && env.BSKY_PASSWORD) ctx.waitUntil(bskyPost(env).catch(() => null));
-    if (env.YT_REFRESH_TOKEN) ctx.waitUntil(ytPost(env).catch(() => null));
+    if (env.YT_REFRESH_TOKEN) ctx.waitUntil(ytPost(env).catch(() => null).then(() => ytTazele(env)).catch(() => null));
   },
 };
