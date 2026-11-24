@@ -164,9 +164,15 @@ FILES.update({'kimyon': 'Cuminum cyminum.jpg', 'yildizanason': 'Illicium verum 0
 FILES.update({
     'ispanak': 'Not harvested Spinach in garden.jpg',
     'izlandalikeni': 'Cetraria islandica 300808.jpg',
-    'mur': 'Commiphora myrrha.jpg',
     'zufaotu': 'Hyssopus officinalis 2 RF.jpg',        # Commons eski adla (Hyssopus) dosyalıyor
     'tasnanesi': 'Micromeria fruticosa Flores 2012-11-25 SierraMadrona.jpg',
     'yalanciakasya': 'Robinia pseudoacacia blossom.jpg',
-    'greyfurt': 'Citrus paradisi (Grapefruit, pink).jpg',
+})
+# 24 Kasım, ikinci tur: ilk seçimler herbaryum levhası / beyaz zemin ürün karesi çıktı.
+# Bu dördü küçük resimleri görülerek seçildi.
+FILES.update({
+    'mur': 'Myrrh.JPG',                                   # drog zaten reçine
+    'greyfurt': 'Grapefruit from Diamniadio, Senegal 07.jpg',
+    'yenidunya': 'Eriobotrya japonica, Salfit 01.jpg',
+    'suriyekekigi': "Majorana syriaca - za'atar.jpg",
 })

@@ -1596,19 +1596,6 @@
   "w": 960,
   "w500": 500
  },
- "greyfurt": {
-  "artist": "א (Aleph)",
-  "auto": false,
-  "b1280": "Citrus paradisi (Grapefruit, pink).jpg",
-  "file": "Citrus paradisi (Grapefruit, pink).jpg",
-  "h": 640,
-  "h500": 333,
-  "license": "CC BY-SA 2.5",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
-  "page": "https://commons.wikimedia.org/wiki/File:Citrus_paradisi_(Grapefruit,_pink).jpg",
-  "w": 960,
-  "w500": 500
- },
  "grindelya": {
   "artist": "Dawn Endico from Menlo Park, California",
   "auto": true,
@@ -3242,19 +3229,6 @@
   "w": 960,
   "w500": 500
  },
- "mur": {
-  "artist": "W. C. Burger",
-  "auto": false,
-  "b1280": "Commiphora myrrha.jpg",
-  "file": "Commiphora myrrha.jpg",
-  "h": 1274,
-  "h500": 663,
-  "license": "CC0",
-  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-  "page": "https://commons.wikimedia.org/wiki/File:Commiphora_myrrha.jpg",
-  "w": 960,
-  "w500": 500
- },
  "murver": {
   "artist": "Dominicus Johannes Bergsma",
   "b1280": "Sambucus Nigra 'Guincho Purple'. Locatie, Tuinen Mien Ruys 02.jpg",
@@ -4035,19 +4009,6 @@
   "w": 960,
   "w500": 500
  },
- "suriyekekigi": {
-  "artist": "איתן פרמן",
-  "auto": true,
-  "b1280": "Maniola telmessia on Wild Marjoram.jpg",
-  "file": "Maniola telmessia on Wild Marjoram.jpg",
-  "h": 1257,
-  "h500": 655,
-  "license": "CC BY-SA 3.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Maniola_telmessia_on_Wild_Marjoram.jpg",
-  "w": 960,
-  "w500": 500
- },
  "susam": {
   "artist": "Vengolis",
   "auto": true,
@@ -4445,19 +4406,6 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Gardenology.org-IMG_2751_rbgs11jan.jpg",
-  "w": 960,
-  "w500": 500
- },
- "yenidunya": {
-  "artist": "SKas",
-  "auto": true,
-  "b1280": "The leaf of Loquat.jpg",
-  "file": "The leaf of Loquat.jpg",
-  "h": 1924,
-  "h500": 1002,
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:The_leaf_of_Loquat.jpg",
   "w": 960,
   "w500": 500
  },
