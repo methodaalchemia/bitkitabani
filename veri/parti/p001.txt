@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+sater | Satureja hortensis | Sater | anadolu | besin,sifa
+dagsateri | Satureja cuneifolia | Dağ sateri | anadolu | sifa
+izmirkekigi | Origanum onites | İzmir kekiği | anadolu | besin,sifa
+suriyekekigi | Origanum syriacum | Suriye kekiği | anadolu | besin
+tasnanesi | Micromeria fruticosa | Taş nanesi | anadolu | sifa
+dagreyhani | Ziziphora clinopodioides | Dağ reyhanı | anadolu | sifa,besin
+filiskin | Ziziphora tenuior | Filiskin | anadolu | besin,sifa
+pungo | Mentha longifolia | Pungo | anadolu | sifa,besin

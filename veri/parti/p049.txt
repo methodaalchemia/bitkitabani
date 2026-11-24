@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+wuzhuyu | Evodia rutaecarpa | Wu zhu yu | asya | sifa
+shanzhuyu | Cornus officinalis | Shan zhu yu | asya | sifa
+cinyami | Dioscorea polystachya | Çin yamı | asya | besin,sifa
+gozyasiotu | Coix lacryma-jobi | Gözyaşı otu | asya | besin,sifa
+tilkicevizi | Euryale ferox | Tilki cevizi | asya | besin
+cingojisi | Lycium chinense | Çin gojisi (kök kabuğu) | asya | sifa
+cinalici | Crataegus pinnatifida | Çin alıcı | asya | besin,sifa
+cayyagiagaci | Camellia oleifera | Çay yağı ağacı | asya | besin

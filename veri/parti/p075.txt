@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+turp | Raphanus sativus | Turp | anadolu | besin,sifa
+suteresi | Nasturtium officinale | Su teresi | anadolu | besin,sifa
+tere | Lepidium sativum | Tere | anadolu | besin
+roka | Eruca vesicaria | Roka | anadolu | besin
+civitotu | Isatis tinctoria | Çivit otu | anadolu | sifa
+gobekotu | Umbilicus rupestris | Göbek otu | anadolu | besin,sifa
+cayirotu | Sanguisorba minor | Çayır otu (salata) | anadolu | besin
+bogurtlen | Rubus fruticosus | Böğürtlen | anadolu | besin,sifa

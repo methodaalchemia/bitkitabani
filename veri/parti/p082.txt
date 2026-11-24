@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+uzunbiber | Piper longum | Uzun biber | asya | besin,sifa
+betelyapragi | Piper betle | Betel yaprağı | asya | ritual,sifa
+arekacevizi | Areca catechu | Areka cevizi | asya | ritual,zehir
+katesu | Acacia catechu | Kateşu | asya | sifa
+sandalagacisantalum | Santalum album | Sandal ağacı | asya | tutsu,ritual
+odagaci | Aquilaria malaccensis | Öd ağacı | asya | tutsu,ritual
+hintsumbulu | Nardostachys jatamansi | Hint sümbülü | asya | tutsu,sifa
+kust | Saussurea costus | Kust | asya | sifa,tutsu

@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+muirapuama | Ptychopetalum olacoides | Muira puama | amazon | sifa
+catuaba | Trichilia catigua | Catuaba | amazon | sifa
+suma | Pfaffia paniculata | Suma | amazon | sifa
+keditirnagi | Uncaria guianensis | Kedi tırnağı (Guyana) | amazon | sifa
+sarilapaco | Tabebuia serratifolia | Sarı lapaço | amazon | sifa
+huamansamana | Jacaranda copaia | Huamansamana | amazon | sifa
+sarimsaksarmasigi | Mansoa hymenaea | Sarımsak sarmaşığı | amazon | sifa
+capirona | Calycophyllum spruceanum | Capirona | amazon | sifa

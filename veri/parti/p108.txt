@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+funda | Erica arborea | Funda | anadolu | sifa
+likapa | Vaccinium arctostaphylos | Likapa | anadolu | besin,sifa
+sariormangulu | Rhododendron luteum | Sarı ormangülü | anadolu | zehir
+cuhacicegiprimula | Primula vulgaris | Çuha çiçeği (bahçe) | anadolu | sifa
+siklamen | Cyclamen coum | Sıklamen | anadolu | zehir,sifa
+tesbihagaci | Styrax officinalis | Tesbih ağacı | anadolu | tutsu,ritual
+ciceklidisbudak | Fraxinus ornus | Çiçekli dişbudak | anadolu | sifa
+akcakesme | Phillyrea latifolia | Akçakesme | anadolu | sifa

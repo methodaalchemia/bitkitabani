@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+kirmizidut | Morus rubra | Kırmızı dut | kamerika | besin
+karaceviz | Juglans nigra | Kara ceviz | kamerika | sifa
+findikagaci | Jatropha curcas | Fındık ağacı (jatrofa) | kamerika | zehir,sifa
+tuylutatula | Datura innoxia | Tüylü tatula | kamerika | zehir,ritual
+mavikohos | Caulophyllum thalictroides | Mavi kohoş | kamerika | sifa,zehir
+hinttutunu | Lobelia inflata | Hint tütünü | kamerika | sifa,zehir
+kemikotu | Eupatorium perfoliatum | Kemik otu | kamerika | sifa
+plorezikoku | Asclepias tuberosa | Plörezi kökü | kamerika | sifa

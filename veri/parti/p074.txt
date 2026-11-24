@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+askyapragi | Kalanchoe pinnata | Aşk yaprağı | amazon | sifa
+yasamyapragi | Bryophyllum gastonis-bonnieri | Yaşam yaprağı | amazon | sifa
+lancetilla | Alternanthera brasiliana | Lancetilla | amazon | sifa
+amorseco | Desmodium adscendens | Amor seco | amazon | sifa
+retama | Senna reticulata | Retama | amazon | sifa
+mulungu | Erythrina mulungu | Mulungu | amazon | sifa
+mamicadecadela | Zanthoxylum rhoifolium | Mamica de cadela | amazon | sifa
+cordoncillo | Piper hispidum | Cordoncillo | amazon | sifa

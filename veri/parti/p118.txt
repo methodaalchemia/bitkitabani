@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+turkfindigi | Corylus colurna | Türk fındığı | anadolu | besin
+kizilagac | Alnus glutinosa | Kızılağaç | anadolu | sifa
+gurgen | Carpinus betulus | Gürgen | anadolu | sifa
+cinar | Platanus orientalis | Çınar | anadolu | sifa,ritual
+servi | Cupressus sempervirens | Servi | anadolu | sifa,ritual
+katranardici | Juniperus oxycedrus | Katran ardıcı | anadolu | sifa
+torossediri | Cedrus libani | Toros sediri | anadolu | sifa,ritual
+kizilcam | Pinus brutia | Kızılçam | anadolu | sifa

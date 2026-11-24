@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+bodhiagaci | Ficus religiosa | Bodhi ağacı | asya | ritual
+banyan | Ficus benghalensis | Banyan | asya | ritual,sifa
+asoka | Saraca asoca | Aşoka | asya | ritual,sifa
+palas | Butea monosperma | Palaş | asya | ritual,sifa
+kusaotu | Desmostachya bipinnata | Kuşa otu | asya | ritual
+rudraksa | Elaeocarpus ganitrus | Rudrakşa | asya | ritual
+jamun | Syzygium cumini | Jamun | asya | besin,sifa
+mango | Mangifera indica | Mango | asya | besin,ritual

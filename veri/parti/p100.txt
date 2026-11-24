@@ -1,0 +1,6 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+pelesenkkavagi | Populus balsamifera | Pelesenk kavağı | kamerika | sifa
+balsamgoknari | Abies balsamea | Balsam göknarı | kamerika | sifa
+kanadacami | Tsuga canadensis | Kanada çamı | kamerika | sifa
+karaladin | Picea mariana | Kara ladin | kamerika | sifa,besin
+tatliegrelti | Comptonia peregrina | Tatlı eğrelti | kamerika | sifa

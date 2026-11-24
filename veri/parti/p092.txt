@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+sekerelmasi | Annona squamosa | Şeker elması | kamerika | besin
+mamey | Pouteria sapota | Mamey | kamerika | besin
+sapodilla | Manilkara zapota | Sapodilla | kamerika | besin
+daryaprakliekinezya | Echinacea angustifolia | Dar yapraklı ekinezya | kamerika | sifa
+solukekinezya | Echinacea pallida | Soluk ekinezya | kamerika | sifa
+kanadaaltinbasagi | Solidago canadensis | Kanada altınbaşağı | kamerika | sifa
+zamkotu | Grindelia squarrosa | Zamk otu | kamerika | sifa
+mavimine | Verbena hastata | Mavi mine | kamerika | sifa

@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+kesismeyvesi | Siraitia grosvenorii | Keşiş meyvesi | asya | besin
+gac | Momordica cochinchinensis | Gac | asya | besin
+wasabi | Wasabia japonica | Wasabi | asya | besin
+mitsuba | Cryptotaenia japonica | Mitsuba | asya | besin
+japonanjeligi | Aralia elata | Japon anjeliği | asya | besin,sifa
+fuki | Petasites japonicus | Fuki | asya | besin,zehir
+yuzu | Citrus junos | Yuzu | asya | besin,ritual
+japonkayisisi | Prunus mume | Japon kayısısı (ume) | asya | besin,sifa

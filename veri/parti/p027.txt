@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+kusotu | Stellaria media | Kuş otu | avrupa | besin,sifa
+sabunotu | Saponaria officinalis | Sabun otu | avrupa | sifa
+kurtpencesi | Bistorta officinalis | Kurt pençesi | avrupa | sifa
+kucukkuzukulagi | Rumex acetosella | Küçük kuzukulağı | avrupa | besin
+sapraventi | Rheum rhabarbarum | Sap raventi | avrupa | besin
+ayisarimsagi | Allium ursinum | Ayı sarımsağı | avrupa | besin,sifa
+frenksogani | Allium schoenoprasum | Frenk soğanı | avrupa | besin
+copleme | Veratrum album | Çöpleme | avrupa | zehir

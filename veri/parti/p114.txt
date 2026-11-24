@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+guveyfeneri | Physalis alkekengi | Güveyfeneri | anadolu | sifa
+beyazbanotu | Hyoscyamus albus | Beyaz banotu | anadolu | zehir
+aglibanotu | Hyoscyamus reticulatus | Ağlı banotu | anadolu | zehir
+sigirkuyruguverbascum | Verbascum speciosum | Sığırkuyruğu (gösterişli) | anadolu | sifa
+buyuksinirotu | Plantago major | Büyük sinirotu | anadolu | sifa,besin
+geyikboynuzu | Plantago coronopus | Geyik boynuzu | anadolu | besin
+ayipencesi | Acanthus mollis | Ayı pençesi | anadolu | sifa
+canavarotu | Orobanche ramosa | Canavar otu | anadolu | sifa

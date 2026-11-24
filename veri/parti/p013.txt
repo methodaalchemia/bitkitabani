@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+rooibos | Aspalathus linearis | Rooibos | afrika | besin,sifa
+balcalisicayi | Cyclopia intermedia | Bal çalısı çayı | afrika | besin
+bucu | Agathosma betulina | Buçu | afrika | sifa
+kansercalisi | Sutherlandia frutescens | Kanser çalısı | afrika | sifa
+hoodia | Hoodia gordonii | Hoodia | afrika | sifa
+kanna | Sceletium tortuosum | Kanna | afrika | ritual,sifa
+afrikapatatesi | Hypoxis hemerocallidea | Afrika patatesi | afrika | sifa
+afrikazencefili | Siphonochilus aethiopicus | Afrika zencefili | afrika | sifa

@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+japonsophorasi | Styphnolobium japonicum | Japon sophorası | asya | sifa
+yanhusuo | Corydalis yanhusuo | Yan hu suo | asya | sifa
+fuzi | Aconitum carmichaelii | Fu zi | asya | zehir,sifa
+yildirimtanrisiasmasi | Tripterygium wilfordii | Yıldırım tanrısı asması | asya | zehir,sifa
+guangfangji | Aristolochia fangchi | Guang fang ji | asya | zehir
+fangji | Stephania tetrandra | Fang ji | asya | sifa
+xinyi | Magnolia biondii | Xin yi | asya | sifa
+sicuanbiberi | Zanthoxylum bungeanum | Siçuan biberi | asya | besin,sifa

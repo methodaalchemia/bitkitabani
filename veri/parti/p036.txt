@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+yuka | Yucca schidigera | Yuka | kamerika | sifa,besin
+agav | Agave americana | Agav | kamerika | besin,sifa
+frenkinciri | Opuntia ficus-indica | Frenk inciri | kamerika | besin,sifa
+jojoba | Simmondsia chinensis | Jojoba | kamerika | sifa
+damiana | Turnera diffusa | Damiana | kamerika | sifa
+yerbasanta | Eriodictyon californicum | Yerba santa | kamerika | sifa
+kaliforniyadefnesi | Umbellularia californica | Kaliforniya defnesi | kamerika | sifa
+manzanita | Arctostaphylos pungens | Manzanita | kamerika | besin,sifa

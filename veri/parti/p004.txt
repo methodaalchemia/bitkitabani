@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+chia | Salvia hispanica | Chia | kamerika | besin
+amerikankasidesi | Scutellaria lateriflora | Amerikan kasidesi | kamerika | sifa
+ananaspapatyasi | Matricaria discoidea | Ananas papatyası | kamerika | sifa
+aycicegi | Helianthus annuus | Ayçiçeği | kamerika | besin
+mahonya | Mahonia aquifolium | Mahonya | kamerika | sifa
+yalanciakasya | Robinia pseudoacacia | Yalancı akasya | kamerika | besin,zehir
+greyfurt | Citrus paradisi | Greyfurt | kamerika | besin
+arnavutbiberi | Capsicum frutescens | Arnavut biberi | kamerika | besin,sifa

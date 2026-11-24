@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+muz | Musa paradisiaca | Muz | asya | besin
+hindistancevizi | Cocos nucifera | Hindistan cevizi | asya | besin,ritual
+palmirapalmiyesi | Borassus flabellifer | Palmira palmiyesi | asya | besin
+jackfruit | Artocarpus heterophyllus | Jackfruit | asya | besin
+moringa | Moringa oleifera | Moringa | asya | besin,sifa
+koriyapragi | Murraya koenigii | Köri yaprağı | asya | besin,sifa
+ajvan | Trachyspermum ammi | Ajvan | asya | besin,sifa
+garsinya | Garcinia gummi-gutta | Garsinya | asya | besin,sifa

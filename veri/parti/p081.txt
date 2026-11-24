@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+karabogurtlen | Rubus sanctus | Kara böğürtlen | anadolu | besin,sifa
+cakalerigi | Prunus spinosa | Çakal eriği | anadolu | besin,sifa
+karayemis | Prunus laurocerasus | Karayemiş | anadolu | besin,sifa
+kayisi | Prunus armeniaca | Kayısı | anadolu | besin
+erik | Prunus domestica | Erik | anadolu | besin,sifa
+visne | Prunus cerasus | Vişne | anadolu | besin
+kiraz | Prunus avium | Kiraz | anadolu | besin,sifa
+ayva | Cydonia oblonga | Ayva | anadolu | besin,sifa

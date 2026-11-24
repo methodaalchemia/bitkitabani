@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+wattleseed | Acacia victoriae | Wattleseed | okyanusya | besin
+avustralyasandali | Santalum spicatum | Avustralya sandalı | okyanusya | tutsu,ritual
+quandong | Santalum acuminatum | Quandong | okyanusya | besin
+pituri | Duboisia hopwoodii | Pituri | okyanusya | ritual,zehir
+mantaragaci | Duboisia myoporoides | Mantar ağacı | okyanusya | zehir,sifa
+emucalisi | Eremophila longifolia | Emu çalısı | okyanusya | ritual,sifa
+yasliadamotu | Centipeda cunninghamii | Yaşlı adam otu | okyanusya | sifa
+makadamya | Macadamia integrifolia | Makadamya | okyanusya | besin

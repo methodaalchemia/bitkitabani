@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+patates | Solanum tuberosum | Patates | and | besin
+domates | Solanum lycopersicum | Domates | and | besin
+balkabagi | Cucurbita maxima | Bal kabağı | and | besin
+limafasulyesi | Phaseolus lunatus | Lima fasulyesi | and | besin,zehir
+rocoto | Capsicum pubescens | Rocoto | and | besin
+huacatay | Tagetes minuta | Huacatay | and | besin,sifa
+cerimoya | Annona cherimola | Çerimoya | and | besin
+kirmizimelekborazani | Brugmansia sanguinea | Kırmızı melek borazanı | and | zehir,ritual

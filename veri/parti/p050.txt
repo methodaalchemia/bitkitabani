@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+meryemanaotu | Geum urbanum | Meryemana otu | avrupa | sifa
+cayirdugmesi | Sanguisorba officinalis | Çayır düğmesi | avrupa | sifa
+cilek | Fragaria × ananassa | Çilek | avrupa | besin
+kirmizigul | Rosa gallica | Kırmızı gül | avrupa | sifa
+aktasyoncasi | Melilotus albus | Ak taş yoncası | avrupa | sifa
+supurgecalisi | Cytisus scoparius | Süpürge çalısı | avrupa | sifa,zehir
+boyacikatirtirnagi | Genista tinctoria | Boyacı katırtırnağı | avrupa | sifa
+kecisedefi | Galega officinalis | Keçi sedefi | avrupa | sifa

@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+mahmudeotu | Convolvulus scammonia | Mahmude otu | anadolu | sifa,zehir
+kabakarakafes | Symphytum asperum | Kaba karakafes | anadolu | sifa
+sigirdili | Anchusa azurea | Sığırdili | anadolu | besin,sifa
+havaciva | Alkanna tinctoria | Havacıva | anadolu | sifa
+engerekotu | Echium italicum | Engerek otu | anadolu | sifa
+sigilotu | Heliotropium europaeum | Siğil otu | anadolu | zehir
+hayitvitex | Vitex pseudo-negundo | Hayıt (doğu) | anadolu | sifa
+tekedikeni | Lycium europaeum | Teke dikeni | anadolu | besin

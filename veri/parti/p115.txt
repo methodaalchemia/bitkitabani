@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+tangutraventi | Rheum tanguticum | Tangut raventi | asya | sifa
+cinaslankuyrugu | Leonurus japonicus | Çin aslankuyruğu | asya | sifa
+cangerzi | Xanthium sibiricum | Cang er zi | asya | sifa,zehir
+cinkarahindibasi | Taraxacum mongolicum | Çin karahindibası | asya | sifa
+moksaotu | Artemisia argyi | Moksa otu | asya | sifa,ritual
+yinchen | Artemisia capillaris | Yin chen | asya | sifa
+banlangen | Isatis indigotica | Ban lan gen | asya | sifa
+xuanshen | Scrophularia ningpoensis | Xuan shen | asya | sifa

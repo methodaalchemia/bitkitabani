@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+tasanasonu | Pimpinella saxifraga | Taş anasonu | avrupa | sifa
+subaldirani | Cicuta virosa | Su baldıranı | avrupa | zehir
+zehirlimaydanoz | Oenanthe crocata | Zehirli maydanoz | avrupa | zehir
+keciayagi | Aegopodium podagraria | Keçi ayağı | avrupa | besin,sifa
+sanikul | Sanicula europaea | Sanikül | avrupa | sifa
+supurgeotu | Calluna vulgaris | Süpürge otu | avrupa | sifa
+kirmiziyabanmersini | Vaccinium vitis-idaea | Kırmızı yaban mersini | avrupa | besin,sifa
+farekulagi | Anagallis arvensis | Fare kulağı | avrupa | zehir,sifa

@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+logusaotu | Aristolochia clematitis | Loğusa otu | avrupa | zehir
+cobandudugu | Asarum europaeum | Çoban düdüğü | avrupa | zehir
+titrekkavak | Populus tremula | Titrek kavak | avrupa | sifa
+sabinardici | Juniperus sabina | Sabin ardıcı | avrupa | zehir
+saricam | Pinus sylvestris | Sarıçam | avrupa | sifa
+erkekegrelti | Dryopteris filix-mas | Erkek eğrelti | avrupa | sifa,zehir
+geyikdili | Asplenium scolopendrium | Geyik dili | avrupa | sifa
+kartalegreltisi | Pteridium aquilinum | Kartal eğreltisi | avrupa | zehir,besin

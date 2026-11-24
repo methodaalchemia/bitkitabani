@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+yaraotu | Anthyllis vulneraria | Yara otu | avrupa | sifa
+sarisalkim | Laburnum anagyroides | Sarısalkım | avrupa | zehir
+turnagagasi | Geranium robertianum | Turnagagası | avrupa | sifa
+geyikotu | Dictamnus albus | Geyik otu | avrupa | sifa,zehir
+bergamot | Citrus bergamia | Bergamot | avrupa | sifa,tutsu
+dagakcaagaci | Acer pseudoplatanus | Dağ akçaağacı | avrupa | besin
+papazkulahi | Euonymus europaeus | Papaz külahı | avrupa | zehir
+cobanpuskulu | Ilex aquifolium | Çoban püskülü | avrupa | ritual,zehir

@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+ginebiberi | Piper guineense | Gine biberi | afrika | besin
+afrikamuskati | Monodora myristica | Afrika muskatı | afrika | besin
+aciyaprak | Vernonia amygdalina | Acı yaprak | afrika | besin,sifa
+afrikafeslegeni | Ocimum gratissimum | Afrika fesleğeni | afrika | besin,sifa
+baobab | Adansonia digitata | Baobab | afrika | besin,sifa
+sheaagaci | Vitellaria paradoxa | Shea ağacı | afrika | besin,sifa
+yagpalmiyesi | Elaeis guineensis | Yağ palmiyesi | afrika | besin,ritual
+nere | Parkia biglobosa | Néré | afrika | besin

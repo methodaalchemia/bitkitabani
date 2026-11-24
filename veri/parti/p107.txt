@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+kelebekbezelyesi | Clitoria ternatea | Kelebek bezelyesi | asya | besin,sifa
+pandan | Pandanus amaryllifolius | Pandan | asya | besin
+endonezyatarcini | Cinnamomum burmanni | Endonezya tarçını | asya | besin
+endonezyadefnesi | Syzygium polyanthum | Endonezya defnesi | asya | besin
+yildizmeyvesi | Averrhoa carambola | Yıldız meyvesi | asya | besin,zehir
+duryan | Durio zibethinus | Duryan | asya | besin
+rambutan | Nephelium lappaceum | Rambutan | asya | besin
+lici | Litchi chinensis | Liçi | asya | besin

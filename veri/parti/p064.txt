@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+akdiken | Rhamnus cathartica | Akdiken | avrupa | sifa,zehir
+kokulumenekse | Viola odorata | Kokulu menekşe | avrupa | sifa,besin
+defnedaphne | Daphne mezereum | Defne (mezeryon) | avrupa | zehir
+hevhulma | Lythrum salicaria | Hevhulma | avrupa | sifa
+kucukcicekliyakiotu | Epilobium parviflorum | Küçük çiçekli yakı otu | avrupa | sifa
+kizilcikcornus | Cornus sanguinea | Kızılcık (kan) | avrupa | sifa
+frenkmaydanozu | Anthriscus cerefolium | Frenk maydanozu | avrupa | besin
+yabanihavuc | Pastinaca sativa | Yabani havuç (kara kavza) | avrupa | besin

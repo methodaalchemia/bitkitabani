@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+cintarcini | Cinnamomum cassia | Çin tarçını | asya | besin,sifa
+cinmeyani | Glycyrrhiza uralensis | Çin meyanı | asya | sifa
+sanqi | Panax notoginseng | San qi | asya | sifa
+maidong | Ophiopogon japonicus | Mai dong | asya | sifa
+shihu | Dendrobium nobile | Shi hu | asya | sifa
+tianma | Gastrodia elata | Tian ma | asya | sifa
+duzhong | Eucommia ulmoides | Du zhong | asya | sifa
+heshouwu | Polygonum multiflorum | He shou wu | asya | sifa,zehir

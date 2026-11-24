@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+agackavunu | Citrus medica | Ağaç kavunu | asya | besin,ritual
+mandalina | Citrus reticulata | Mandalina | asya | besin,sifa
+pamuk | Gossypium herbaceum | Pamuk | asya | sifa
+dagkimyonu | Bunium persicum | Dağ kimyonu | asya | besin
+yasemin | Jasminum officinale | Yasemin | asya | tutsu,ritual
+hinttatulasi | Datura metel | Hint tatulası | asya | zehir,ritual
+salkimsogut | Salix babylonica | Salkım söğüt | asya | ritual
+dari | Panicum miliaceum | Darı | asya | besin

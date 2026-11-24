@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+hanimeli | Lonicera caprifolium | Hanımeli | avrupa | sifa,zehir
+fescitaragi | Dipsacus fullonum | Fesçi tarağı | avrupa | sifa
+uyuzotu | Scabiosa columbaria | Uyuz otu | avrupa | sifa
+esekkulagi | Knautia arvensis | Eşek kulağı | avrupa | sifa
+citsarmasigi | Calystegia sepium | Çit sarmaşığı | avrupa | sifa
+kuskut | Cuscuta europaea | Küsküt | avrupa | sifa
+cigerotu | Pulmonaria officinalis | Ciğer otu | avrupa | sifa
+taskesen | Lithospermum officinale | Taş kesen | avrupa | sifa

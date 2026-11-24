@@ -1,0 +1,3 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+domalan | Terfezia boudieri | Domalan | anadolu | besin
+caksirmantari | Pleurotus eryngii | Çakşır mantarı | anadolu | besin

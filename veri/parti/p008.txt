@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+limonokaliptusu | Eucalyptus citriodora | Limon okaliptüsü | okyanusya | sifa
+daryaprakliokaliptus | Eucalyptus radiata | Dar yapraklı okaliptüs | okyanusya | sifa
+niaouli | Melaleuca quinquenervia | Niaouli | okyanusya | sifa
+limoncayagaci | Leptospermum petersonii | Limon çay ağacı | okyanusya | sifa
+limonmersini | Backhousia citriodora | Limon mersini | okyanusya | besin,sifa
+anasonmersini | Syzygium anisatum | Anason mersini | okyanusya | besin
+dagbiberi | Tasmannia lanceolata | Dağ biberi | okyanusya | besin
+kakaduerigi | Terminalia ferdinandiana | Kakadu eriği | okyanusya | besin

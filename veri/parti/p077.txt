@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+kargaotu | Lysimachia vulgaris | Karga otu | avrupa | sifa
+kurtbagri | Ligustrum vulgare | Kurtbağrı | avrupa | zehir
+leylak | Syringa vulgaris | Leylak | avrupa | ritual
+cezayirmeneksesi | Vinca minor | Cezayir menekşesi | avrupa | sifa,zehir
+panzehirotu | Vincetoxicum hirundinaria | Panzehir otu | avrupa | zehir
+yogurtotu | Galium verum | Yoğurt otu | avrupa | sifa,besin
+yapiskanot | Galium aparine | Yapışkan ot | avrupa | sifa
+kokuluyogurtotu | Asperula odorata | Kokulu yoğurt otu | avrupa | sifa

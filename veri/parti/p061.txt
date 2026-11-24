@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+kirmizikinakina | Cinchona pubescens | Kırmızı kınakına | and | sifa
+amorsecobidens | Bidens pilosa | Amor seco (cadillo) | and | sifa
+llanten | Plantago australis | Llantén | and | sifa
+culen | Otholobium pubescens | Culén | and | sifa
+maticobuddleja | Buddleja globosa | Matico (Şili) | and | sifa
+maqui | Aristotelia chilensis | Maqui | and | besin,sifa
+murta | Ugni molinae | Murta | and | besin
+sabunagaci | Quillaja saponaria | Sabun ağacı | and | sifa

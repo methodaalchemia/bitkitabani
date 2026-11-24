@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+yabaniyam | Dioscorea villosa | Yabani yam | kamerika | sifa
+yalancitekboynuz | Chamaelirium luteum | Yalancı tekboynuz | kamerika | sifa
+bethkoku | Trillium erectum | Beth kökü | kamerika | sifa
+amerikansumbulu | Aralia racemosa | Amerikan sümbülü | kamerika | sifa
+yabanisaparna | Aralia nudicaulis | Yabani saparna | kamerika | sifa
+keklikuzumu | Gaultheria procumbens | Keklik üzümü | kamerika | sifa,besin
+keklikasmasi | Mitchella repens | Keklik asması | kamerika | sifa
+yabanibergamot | Monarda fistulosa | Yabani bergamot | kamerika | sifa,besin

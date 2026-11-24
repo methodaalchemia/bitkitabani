@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+kolsiksarmasigi | Hedera colchica | Kolşik sarmaşığı | anadolu | sifa
+bogadikeni | Eryngium campestre | Boğa dikeni | anadolu | sifa,besin
+kumdikeni | Eryngium maritimum | Kum dikeni | anadolu | sifa
+caksirotu | Ferula communis | Çakşır otu | anadolu | zehir,sifa
+casir | Ferula orientalis | Çaşır | anadolu | besin,sifa
+caksir | Ferulago trachycarpa | Çakşır (kişniş) | anadolu | besin
+heliz | Prangos ferulacea | Heliz | anadolu | besin,sifa
+tavsancilotu | Heracleum persicum | Tavşancıl otu (sov) | anadolu | besin

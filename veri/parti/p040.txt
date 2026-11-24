@@ -1,0 +1,8 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+sekerkamisi | Saccharum officinarum | Şeker kamışı | okyanusya | besin
+sagopalmiyesi | Metroxylon sagu | Sago palmiyesi | okyanusya | besin
+galipcevizi | Canarium indicum | Galip cevizi | okyanusya | besin
+tahitikestanesi | Inocarpus fagifer | Tahiti kestanesi | okyanusya | besin
+balikzehiriagaci | Barringtonia asiatica | Balık zehiri ağacı | okyanusya | zehir
+denizhibiskusu | Hibiscus tiliaceus | Deniz hibiskusu | okyanusya | sifa
+tiare | Gardenia taitensis | Tiare | okyanusya | tutsu,ritual

@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+argan | Argania spinosa | Argan | afrika | besin,sifa
+sandarak | Tetraclinis articulata | Sandarak | afrika | tutsu
+sendgura | Ajuga iva | Şendgura | afrika | sifa
+colbozotu | Marrubium deserti | Çöl bozotu | afrika | sifa
+faskekigi | Thymus saturejoides | Fas kekiği | afrika | sifa
+tarlacorekotu | Nigella arvensis | Tarla çörekotu | afrika | besin
+arapmoringasi | Moringa peregrina | Arap moringası | afrika | sifa
+deveotu | Cymbopogon schoenanthus | Deve otu | afrika | sifa

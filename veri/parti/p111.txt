@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+sumbulkoku | Ferula moschata | Sümbül kökü | asya | tutsu
+usak | Dorema ammoniacum | Uşak | asya | sifa
+masfasulyesi | Vigna radiata | Maş fasulyesi | asya | besin
+azuki | Vigna angularis | Azuki | asya | besin
+guvercinbezelyesi | Cajanus cajan | Güvercin bezelyesi | asya | besin
+kamelya | Camellia japonica | Kamelya | asya | ritual
+tibetrodyolasi | Rhodiola crenulata | Tibet rodyolası | asya | sifa
+tibetdenizigdesi | Hippophae tibetana | Tibet deniz iğdesi | asya | besin

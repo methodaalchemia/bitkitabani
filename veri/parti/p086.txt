@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+vetiver | Vetiveria zizanioides | Vetiver | asya | tutsu,sifa
+limonotu | Cymbopogon citratus | Limon otu | asya | besin,sifa
+sitronella | Cymbopogon nardus | Sitronella | asya | sifa
+paculi | Pogostemon cablin | Paçuli | asya | tutsu
+ylangylang | Cananga odorata | Ylang ylang | asya | tutsu
+campaka | Michelia champaca | Çampaka | asya | ritual,tutsu
+geceyasemini | Nyctanthes arbor-tristis | Gece yasemini | asya | ritual,sifa
+bael | Aegle marmelos | Bael | asya | besin,ritual,sifa

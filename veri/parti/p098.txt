@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+mangostan | Garcinia mangostana | Mangostan | asya | besin
+bhumiamla | Phyllanthus amarus | Bhumi amla | asya | sifa
+citrak | Plumbago zeylanica | Çitrak | asya | sifa,zehir
+taccicegi | Calotropis gigantea | Taç çiçeği | asya | zehir,ritual
+tespihfasulyesi | Abrus precatorius | Tespih fasulyesi | asya | zehir
+kargabuken | Strychnos nux-vomica | Kargabüken | asya | zehir
+alevzambagi | Gloriosa superba | Alev zambağı | asya | zehir
+hintkeneviri | Cannabis indica | Hint keneviri (bhang) | asya | ritual

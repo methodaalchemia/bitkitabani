@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+jabuticaba | Myrciaria cauliflora | Jabuticaba | amazon | besin
+pitanga | Eugenia uniflora | Pitanga | amazon | besin,sifa
+araza | Eugenia stipitata | Arazá | amazon | besin
+ubos | Spondias mombin | Ubos | amazon | besin,sifa
+jatoba | Hymenaea courbaril | Jatobá | amazon | sifa,besin
+tonkafasulyesi | Dipteryx odorata | Tonka fasulyesi | amazon | tutsu,zehir
+perubalsami | Myroxylon balsamum | Peru balsamı | amazon | sifa,tutsu
+breubranco | Protium heptaphyllum | Breu branco | amazon | tutsu,ritual

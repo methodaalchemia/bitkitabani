@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+bitotu | Delphinium staphisagria | Bit otu | anadolu | zehir
+hezaren | Consolida orientalis | Hezaren | anadolu | zehir
+manisalalesi | Anemone coronaria | Manisa lalesi | anadolu | ritual,zehir
+samcorekotu | Nigella damascena | Şam çörekotu | anadolu | besin
+karamukberberis | Berberis crataegina | Karamuk (Anadolu) | anadolu | besin,sifa
+boynuzlugelincik | Glaucium flavum | Boynuzlu gelincik | anadolu | sifa,zehir
+beyazhardal | Sinapis alba | Beyaz hardal | anadolu | besin,sifa
+siyahhardal | Brassica nigra | Siyah hardal | anadolu | besin,sifa

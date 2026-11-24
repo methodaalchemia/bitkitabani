@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+golsogani | Leucojum aestivum | Göl soğanı | anadolu | sifa,zehir
+nergis | Narcissus tazetta | Nergis | anadolu | ritual,zehir
+sumbul | Hyacinthus orientalis | Sümbül | anadolu | ritual
+lale | Tulipa gesneriana | Lale | anadolu | ritual
+akzambak | Lilium candidum | Ak zambak | anadolu | sifa,ritual
+aglayangelin | Fritillaria imperialis | Ağlayan gelin | anadolu | ritual,zehir
+ayigulu | Paeonia mascula | Ayı gülü | anadolu | sifa
+coplemehelleborus | Helleborus orientalis | Çöpleme (bohça otu) | anadolu | zehir

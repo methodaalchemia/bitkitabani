@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+pincopinco | Ephedra americana | Pinco pinco | and | sifa
+yareta | Azorella compacta | Yareta | and | sifa
+olluco | Ullucus tuberosus | Olluco | and | besin
+oca | Oxalis tuberosa | Oca | and | besin
+mashua | Tropaeolum tuberosum | Mashua | and | besin,sifa
+latincicegi | Tropaeolum majus | Latin çiçeği | and | besin,sifa
+arracacha | Arracacia xanthorrhiza | Arracacha | and | besin
+mauka | Mirabilis expansa | Mauka | and | besin

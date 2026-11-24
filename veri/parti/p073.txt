@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+mavinilufer | Nymphaea caerulea | Mavi nilüfer | afrika | ritual
+papirus | Cyperus papyrus | Papirüs | afrika | ritual
+seytanpencesiharpagophytum | Harpagophytum zeyheri | Şeytan pençesi (Zeyher) | afrika | sifa
+umckaloabo | Pelargonium reniforme | Umckaloabo (böbrek yapraklı) | afrika | sifa
+kinkeliba | Combretum micranthum | Kinkeliba | afrika | besin,sifa
+ganakinini | Cryptolepis sanguinolenta | Gana kinini | afrika | sifa
+taburecikagaci | Alstonia boonei | Taburecik ağacı | afrika | sifa
+menekseagaci | Securidaca longepedunculata | Menekşe ağacı | afrika | sifa,zehir

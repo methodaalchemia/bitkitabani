@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+tibetmavigelincigi | Meconopsis horridula | Tibet mavi gelinciği | asya | sifa
+himalayaardici | Juniperus indica | Himalaya ardıcı | asya | tutsu,ritual
+sunpati | Rhododendron anthopogon | Sunpati | asya | tutsu,ritual
+himalayahusu | Betula utilis | Himalaya huşu | asya | ritual
+tibetkutkisi | Picrorhiza scrophulariiflora | Tibet kutkisi | asya | sifa
+cirata | Swertia chirayita | Çirata | asya | sifa
+hintkaramugu | Berberis aristata | Hint karamuğu | asya | sifa
+dogumazisi | Thuja orientalis | Doğu mazısı | asya | sifa

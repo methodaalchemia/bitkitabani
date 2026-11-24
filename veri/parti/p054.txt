@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+achira | Canna edulis | Achira | and | besin
+canihua | Chenopodium pallidicaule | Cañihua | and | besin
+tarwi | Lupinus mutabilis | Tarwi | and | besin,zehir
+pepino | Solanum muricatum | Pepino | and | besin
+capuli | Physalis pubescens | Capulí | and | besin
+andmurveri | Sambucus peruviana | And mürveri | and | besin,sifa
+tara | Caesalpinia spinosa | Tara | and | sifa
+ratanya | Krameria lappacea | Ratanya | and | sifa

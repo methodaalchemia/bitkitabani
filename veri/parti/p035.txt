@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+batakliksuseni | Iris pseudacorus | Bataklık süseni | avrupa | sifa
+kurtbogan | Aconitum napellus | Kurtboğan | avrupa | zehir
+kanavciotu | Adonis vernalis | Kanavcı otu | avrupa | sifa,zehir
+basurotu | Ranunculus ficaria | Basur otu | avrupa | sifa,zehir
+akasma | Clematis vitalba | Akasma | avrupa | zehir,sifa
+kazgagasi | Corydalis cava | Kazgagası | avrupa | sifa
+lahana | Brassica oleracea | Lahana | avrupa | besin,sifa
+bayirturpu | Armoracia rusticana | Bayır turpu | avrupa | besin,sifa

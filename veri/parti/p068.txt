@@ -1,0 +1,7 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+canelo | Drimys winteri | Canelo | and | ritual,sifa
+latue | Latua pubiflora | Latué | and | zehir,ritual
+pehuen | Araucaria araucana | Pehuén | and | besin,ritual
+copihue | Lapageria rosea | Copihue | and | ritual
+pichi | Fabiana imbricata | Pichi | and | sifa
+bailahuen | Haplopappus baylahuen | Bailahuén | and | sifa

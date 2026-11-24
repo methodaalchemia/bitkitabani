@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+hintkoleusu | Coleus forskohlii | Hint koleusu | asya | sifa
+bala | Sida cordifolia | Bala | asya | sifa
+hintsaparnasi | Hemidesmus indicus | Hint saparnası | asya | sifa
+bhringraj | Eclipta prostrata | Bhringraj | asya | sifa
+japonegiri | Acorus gramineus | Japon eğiri | asya | sifa
+havlican | Alpinia galanga | Havlıcan | asya | besin,sifa
+kucukhavlican | Alpinia officinarum | Küçük havlıcan | asya | sifa
+kokuluzencefil | Kaempferia galanga | Kokulu zencefil | asya | besin,sifa

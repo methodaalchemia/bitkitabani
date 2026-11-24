@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+yenibahar | Pimenta dioica | Yenibahar | kamerika | besin,sifa
+chayote | Sechium edule | Chayote | kamerika | besin
+jicama | Pachyrhizus erosus | Jicama | kamerika | besin,zehir
+tomatillo | Physalis philadelphica | Tomatillo | kamerika | besin
+huauzontle | Chenopodium berlandieri | Huauzontle | kamerika | besin
+meksikaamaranti | Amaranthus cruentus | Meksika amarantı | kamerika | besin,ritual
+kadifecicegi | Tagetes erecta | Kadife çiçeği (cempasúchil) | kamerika | ritual,sifa
+meksikatarhunu | Tagetes lucida | Meksika tarhunu | kamerika | ritual,besin

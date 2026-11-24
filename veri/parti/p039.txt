@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+arashmuna | Minthostachys setosa | Arash muña | and | sifa
+incamuna | Satureja brevicalyx | Inca muña | and | sifa
+salviareal | Salvia sagittata | Salvia real | and | sifa
+canchalagua | Schkuhria pinnata | Canchalagua | and | sifa
+chinchircuma | Mutisia acuminata | Chinchircuma | and | sifa
+huamanpinta | Chuquiraga spinosa | Huamanpinta | and | sifa
+juanalonso | Xanthium spinosum | Juan alonso | and | sifa
+coladecaballo | Equisetum giganteum | Cola de caballo | and | sifa

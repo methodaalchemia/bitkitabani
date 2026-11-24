@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+vilca | Anadenanthera colubrina | Vilca | and | ritual
+kolombiyakokasi | Erythroxylum novogranatense | Kolombiya kokası | and | ritual
+perumesalesi | Trichocereus peruvianus | Peru meşalesi | and | ritual
+achuma | Trichocereus bridgesii | Achuma | and | ritual
+lucuma | Pouteria lucuma | Lucuma | and | besin
+agacdomatesi | Solanum betaceum | Ağaç domatesi | and | besin
+naranjilla | Solanum quitoense | Naranjilla | and | besin
+granadilla | Passiflora ligularis | Granadilla | and | besin

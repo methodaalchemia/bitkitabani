@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+oswegocayi | Monarda didyma | Oswego çayı | kamerika | besin,sifa
+anasoncordugu | Agastache foeniculum | Anason çördüğü | kamerika | besin,sifa
+altinchia | Salvia columbariae | Altın chia | kamerika | besin
+buyukyavsan | Artemisia tridentata | Büyük yavşan | kamerika | tutsu,ritual
+cayiryavsani | Artemisia ludoviciana | Çayır yavşanı | kamerika | tutsu,ritual
+virjinyaardici | Juniperus virginiana | Virjinya ardıcı | kamerika | tutsu,ritual
+kirmizisedir | Thuja plicata | Kırmızı sedir | kamerika | ritual
+kreozotcalisi | Larrea tridentata | Kreozot çalısı | kamerika | sifa,zehir

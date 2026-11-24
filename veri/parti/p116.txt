@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+meseburcu | Loranthus europaeus | Meşe burcu | anadolu | sifa
+citlembik | Celtis australis | Çitlembik | anadolu | besin
+karaagac | Ulmus minor | Karaağaç | anadolu | sifa
+kestane | Castanea sativa | Kestane | anadolu | besin,sifa
+kayin | Fagus orientalis | Kayın | anadolu | sifa
+palamutmesesi | Quercus ithaburensis | Palamut meşesi | anadolu | sifa
+kermesmesesi | Quercus coccifera | Kermes meşesi | anadolu | sifa
+mazimesesi | Quercus infectoria | Mazı meşesi | anadolu | sifa

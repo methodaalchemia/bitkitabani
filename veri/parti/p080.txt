@@ -1,0 +1,2 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+pembebiber | Schinus terebinthifolia | Pembe biber | amazon | besin,sifa

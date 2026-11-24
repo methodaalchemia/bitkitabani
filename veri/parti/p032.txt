@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+horopito | Pseudowintera colorata | Horopito | okyanusya | besin,sifa
+karamu | Coprosma robusta | Karamu | okyanusya | ritual,sifa
+ekmekagaci | Artocarpus altilis | Ekmek ağacı | okyanusya | besin
+hala | Pandanus tectorius | Hala | okyanusya | besin,ritual
+tibitkisi | Cordyline fruticosa | Ti bitkisi | okyanusya | ritual
+kukui | Aleurites moluccanus | Kukui | okyanusya | ritual,sifa
+tamanu | Calophyllum inophyllum | Tamanu | okyanusya | sifa
+maile | Alyxia stellata | Maile | okyanusya | ritual

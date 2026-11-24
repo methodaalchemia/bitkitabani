@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+chaya | Cnidoscolus aconitifolius | Chaya | kamerika | besin,zehir
+epazotedezorrillo | Dysphania graveolens | Epazote de zorrillo | kamerika | sifa
+meksikakekigi | Lippia graveolens | Meksika kekiği | kamerika | besin,sifa
+papalo | Porophyllum ruderale | Papalo | kamerika | besin
+hojasanta | Piper auritum | Hoja santa | kamerika | besin
+meksikasaparnasi | Smilax aristolochiifolia | Meksika saparnası | kamerika | sifa
+peygamberagaci | Guaiacum officinale | Peygamber ağacı (guayak) | kamerika | sifa
+jamaikakuasyasi | Picrasma excelsa | Jamaika kuasyası | kamerika | sifa

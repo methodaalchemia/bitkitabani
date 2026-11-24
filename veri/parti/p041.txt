@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+karapazi | Atriplex hortensis | Karapazı | anadolu | besin
+pancar | Beta vulgaris | Pancar | anadolu | besin
+horozibigi | Amaranthus retroflexus | Horoz ibiği | anadolu | besin
+denizborulcesi | Salicornia europaea | Deniz börülcesi | anadolu | besin
+denizrezenesi | Crithmum maritimum | Deniz rezenesi | anadolu | besin
+saparnasmilax | Smilax aspera | Saparna (Akdeniz) | anadolu | besin,sifa
+sarmasiktamus | Tamus communis | Sarmaşık (acı ot) | anadolu | besin,zehir
+yabanikuskonmaz | Asparagus acutifolius | Yabani kuşkonmaz | anadolu | besin

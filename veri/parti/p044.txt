@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+osa | Ligusticum porteri | Oşa | kamerika | sifa,ritual
+colmaydanozu | Lomatium dissectum | Çöl maydanozu | kamerika | sifa
+seytansopasi | Oplopanax horridus | Şeytan sopası | kamerika | sifa,ritual
+duzsumak | Rhus glabra | Düz sumak | kamerika | besin,sifa
+yabanikirazkabugu | Prunus serotina | Yabani kiraz kabuğu | kamerika | sifa
+bogankiraz | Prunus virginiana | Boğan kiraz | kamerika | besin
+saskatoon | Amelanchier alnifolia | Saskatoon | kamerika | besin
+kirmiziaronya | Aronia arbutifolia | Kırmızı aronya | kamerika | besin

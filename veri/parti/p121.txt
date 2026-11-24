@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+taro | Colocasia esculenta | Taro | asya | besin,zehir
+konjak | Amorphophallus konjac | Konjak | asya | besin,sifa
+japongulu | Rosa rugosa | Japon gülü | asya | besin,sifa
+jinyingzi | Rosa laevigata | Jin ying zi | asya | sifa
+japonayvasi | Chaenomeles speciosa | Japon ayvası | asya | sifa
+kagitdutu | Broussonetia papyrifera | Kâğıt dutu | asya | sifa
+ambercicegi | Abelmoschus moschatus | Amber çiçeği | asya | tutsu
+kavun | Cucumis melo | Kavun | asya | besin

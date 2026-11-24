@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+satavari | Asparagus racemosus | Şatavari | asya | sifa
+guduci | Tinospora cordifolia | Guduçi | asya | sifa
+bibhitaki | Terminalia bellirica | Bibhitaki | asya | sifa
+arjuna | Terminalia arjuna | Arjuna | asya | sifa
+gurmar | Gymnema sylvestre | Gurmar | asya | sifa
+punarnava | Boerhavia diffusa | Punarnava | asya | sifa
+goksura | Tribulus cistoides | Gokşura (sahil) | asya | sifa
+kadifefasulyesi | Mucuna pruriens | Kadife fasulyesi | asya | sifa

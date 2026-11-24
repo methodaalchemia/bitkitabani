@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+tukurukotu | Ornithogalum umbellatum | Tükürük otu | anadolu | besin,zehir
+arapsumbulu | Muscari comosum | Arap sümbülü | anadolu | besin
+pirasa | Allium ampeloprasum | Pırasa | anadolu | besin
+kormen | Allium scorodoprasum | Körmen | anadolu | besin
+tuncelisarimsagi | Allium tuncelianum | Tunceli sarımsağı | anadolu | besin,sifa
+ciris | Eremurus spectabilis | Çiriş | anadolu | besin,sifa
+cirisotu | Asphodelus aestivus | Çiriş otu (kirgiç) | anadolu | sifa
+adasogani | Urginea maritima | Adasoğanı | anadolu | sifa,zehir

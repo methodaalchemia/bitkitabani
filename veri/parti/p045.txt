@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+colhurmasi | Balanites aegyptiaca | Çöl hurması | afrika | besin,sifa
+marula | Sclerocarya birrea | Marula | afrika | besin
+sosisagaci | Kigelia africana | Sosis ağacı | afrika | sifa
+afrikamaunu | Khaya senegalensis | Afrika maunu | afrika | sifa
+arapzamkiagaci | Acacia senegal | Arap zamkı ağacı | afrika | besin,sifa
+misirakasyasi | Acacia nilotica | Mısır akasyası | afrika | sifa
+kahvesinamekisi | Cassia occidentalis | Kahve sinamekisi | afrika | sifa
+senegalsinamekisi | Senna italica | Senegal sinamekisi | afrika | sifa

@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+yilanotu | Gentiana asclepiadea | Yılan otu (centiyane) | anadolu | sifa
+ipeksarmasigi | Periploca graeca | İpek sarmaşığı | anadolu | zehir
+yabanikokboya | Rubia peregrina | Yabani kökboya | anadolu | sifa
+yermurveri | Sambucus ebulus | Yer mürveri | anadolu | sifa,zehir
+germisek | Viburnum lantana | Germişek | anadolu | besin
+kediotuvaleriana | Valeriana dioscoridis | Kedi otu (Anadolu) | anadolu | sifa
+kirmizikediotu | Centranthus ruber | Kırmızı kediotu | anadolu | sifa
+tarlasarmasigi | Convolvulus arvensis | Tarla sarmaşığı | anadolu | sifa

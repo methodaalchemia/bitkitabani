@@ -1,0 +1,8 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+astimotu | Euphorbia hirta | Astım otu | afrika | sifa
+beyazyam | Dioscorea rotundata | Beyaz yam | afrika | besin
+borulce | Vigna unguiculata | Börülce | afrika | besin
+bambarafistigi | Vigna subterranea | Bambara fıstığı | afrika | besin
+fonyo | Digitaria exilis | Fonyo | afrika | besin
+incidari | Pennisetum glaucum | İnci darı | afrika | besin
+liberyakahvesi | Coffea liberica | Liberya kahvesi | afrika | besin

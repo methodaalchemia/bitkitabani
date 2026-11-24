@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+geso | Rhamnus prinoides | Geşo | afrika | besin
+habesgunlugu | Boswellia papyrifera | Habeş günlüğü | afrika | tutsu
+maydi | Boswellia frereana | Maydi | afrika | tutsu
+mekkepelesengi | Commiphora gileadensis | Mekke pelesengi | afrika | tutsu,sifa
+misvak | Salvadora persica | Misvak | afrika | sifa,ritual
+sidr | Ziziphus spina-christi | Sidr | afrika | sifa,ritual
+sodomelmasi | Calotropis procera | Sodom elması | afrika | zehir,sifa
+meryemeli | Anastatica hierochuntica | Meryem eli | afrika | ritual,sifa

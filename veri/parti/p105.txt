@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+siyahzencefil | Kaempferia parviflora | Siyah zencefil | asya | sifa
+parmakkoku | Boesenbergia rotunda | Parmak kökü | asya | besin,sifa
+karakakule | Amomum subulatum | Kara kakule | asya | besin
+yabanizerdecal | Curcuma aromatica | Yabani zerdeçal | asya | sifa
+acizencefil | Zingiber zerumbet | Acı zencefil | asya | sifa
+kratom | Mitragyna speciosa | Kratom | asya | zehir,sifa
+tongkatali | Eurycoma longifolia | Tongkat ali | asya | sifa
+bajitian | Morinda officinalis | Ba ji tian | asya | sifa

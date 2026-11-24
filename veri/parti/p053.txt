@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+topgullesiagaci | Couroupita guianensis | Top güllesi ağacı | amazon | sifa,ritual
+lupuna | Ceiba pentandra | Lupuna | amazon | ritual
+ispanyolsediri | Cedrela odorata | İspanyol sediri | amazon | sifa,ritual
+maun | Swietenia macrophylla | Maun | amazon | sifa
+bellacocaspi | Himatanthus sucuuba | Bellaco caspi | amazon | sifa
+kebrako | Aspidosperma quebracho-blanco | Kebrako | amazon | sifa
+paopereira | Geissospermum reticulatum | Pao pereira | amazon | sifa
+uchusanango | Tabernaemontana sananho | Uchu sanango | amazon | sifa,ritual

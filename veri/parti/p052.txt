@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+kenaf | Hibiscus cannabinus | Kenaf | afrika | besin
+mulhiye | Corchorus olitorius | Mülhiye | afrika | besin
+boynuzlukavun | Cucumis metuliferus | Boynuzlu kavun | afrika | besin
+ebucehilkarpuzu | Citrullus colocynthis | Ebucehil karpuzu | afrika | zehir,sifa
+karpuz | Citrullus lanatus | Karpuz | afrika | besin
+tef | Eragrostis tef | Tef | afrika | besin
+yalancimuz | Ensete ventricosum | Yalancı muz | afrika | besin
+kosso | Hagenia abyssinica | Kosso | afrika | sifa

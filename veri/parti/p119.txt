@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+gulibrisim | Albizia julibrissin | Gülibrişim | asya | sifa
+gouteng | Uncaria rhynchophylla | Gou teng | asya | sifa
+dansen | Salvia miltiorrhiza | Dan şen | asya | sifa
+banzhilian | Scutellaria barbata | Ban zhi lian | asya | sifa
+yilandiliotu | Oldenlandia diffusa | Yılan dili otu | asya | sifa
+kiskavunu | Benincasa hispida | Kış kavunu | asya | besin
+lifkabagi | Luffa cylindrica | Lif kabağı | asya | besin
+gualou | Trichosanthes kirilowii | Gua lou | asya | sifa

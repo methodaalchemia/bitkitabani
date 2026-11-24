@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+amerikanhurmasi | Diospyros virginiana | Amerikan hurması | kamerika | besin
+maviyemis | Vaccinium corymbosum | Maviyemiş | kamerika | besin
+yabanimaviyemis | Vaccinium angustifolium | Yabani maviyemiş | kamerika | besin
+siyahahududu | Rubus occidentalis | Siyah ahududu | kamerika | besin
+virjinyacilegi | Fragaria virginiana | Virjinya çileği | kamerika | besin
+helvacikabagi | Cucurbita moschata | Helvacı kabağı | kamerika | besin
+atesfasulyesi | Phaseolus coccineus | Ateş fasulyesi | kamerika | besin
+vanilya | Vanilla planifolia | Vanilya | kamerika | besin,ritual

@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+japonkargiotu | Reynoutria japonica | Japon kargı otu | asya | sifa,besin
+japonhanimeli | Lonicera japonica | Japon hanımeli | asya | sifa
+lianqiao | Forsythia suspensa | Lian qiao | asya | sifa
+kasimpati | Chrysanthemum morifolium | Kasımpatı | asya | sifa,besin
+baliknanesi | Houttuynia cordata | Balık nanesi | asya | besin,sifa
+siso | Perilla frutescens | Şiso | asya | besin,sifa
+kudzu | Pueraria montana | Kudzu | asya | sifa,besin
+kushen | Sophora flavescens | Ku shen | asya | sifa

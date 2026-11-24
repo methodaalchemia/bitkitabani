@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+longan | Dimocarpus longan | Longan | asya | besin,sifa
+agati | Sesbania grandiflora | Agati | asya | besin
+sentang | Azadirachta excelsa | Sentang | asya | sifa
+aselbent | Styrax benzoin | Aselbent | asya | tutsu
+borneokafuru | Dryobalanops aromatica | Borneo kafuru | asya | tutsu,sifa
+ejderkanipalmiyesi | Daemonorops draco | Ejder kanı palmiyesi | asya | sifa
+salagaci | Shorea robusta | Sal ağacı | asya | ritual,tutsu
+kasni | Ferula gummosa | Kasnı | asya | tutsu,sifa

@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+sariyasemin | Gelsemium sempervirens | Sarı yasemin | kamerika | zehir
+ohioatkestanesi | Aesculus glabra | Ohio at kestanesi | kamerika | zehir
+yaupon | Ilex vomitoria | Yaupon | kamerika | ritual,besin
+sekerakcaagaci | Acer saccharum | Şeker akçaağacı | kamerika | besin
+pekancevizi | Carya illinoinensis | Pekan cevizi | kamerika | besin
+yabanipirinc | Zizania palustris | Yabani pirinç | kamerika | besin
+yerfistigisarmasigi | Apios americana | Yer fıstığı sarmaşığı | kamerika | besin
+pawpaw | Asimina triloba | Pawpaw | kamerika | besin

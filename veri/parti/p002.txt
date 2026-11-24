@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+peygambersupurgesi | Artemisia annua | Peygamber süpürgesi | asya | sifa
+karabugday | Fagopyrum esculentum | Karabuğday | asya | besin,sifa
+ispanak | Spinacia oleracea | Ispanak | asya | besin
+egirkoku | Acorus calamus | Eğir kökü | asya | sifa,ritual
+seftali | Prunus persica | Şeftali | asya | besin
+yenidunya | Eriobotrya japonica | Yenidünya | asya | besin,sifa
+limon | Citrus limon | Limon | asya | besin,sifa
+portakal | Citrus sinensis | Portakal | asya | besin

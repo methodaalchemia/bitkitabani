@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+musmula | Mespilus germanica | Muşmula | anadolu | besin,sifa
+armut | Pyrus communis | Armut | anadolu | besin
+ahlat | Pyrus elaeagnifolia | Ahlat | anadolu | besin,sifa
+elma | Malus domestica | Elma | anadolu | besin
+uvez | Sorbus domestica | Üvez | anadolu | besin
+sarialic | Crataegus azarolus | Sarı alıç | anadolu | besin,sifa
+atesdikeni | Pyracantha coccinea | Ateş dikeni | anadolu | besin
+dagmusmulasi | Cotoneaster nummularius | Dağ muşmulası | anadolu | besin

@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+chilca | Baccharis latifolia | Chilca | and | sifa
+chachacoma | Senecio nutans | Chachacoma | and | sifa
+escorzonera | Perezia multiflora | Escorzonera | and | sifa
+pupusa | Werneria nubigena | Pupusa | and | sifa
+viravira | Culcitium canescens | Vira vira | and | sifa
+hercampuri | Gentianella alborosea | Hercampuri | and | sifa
+andkediotu | Valeriana pilosa | And kediotu | and | sifa
+khoa | Clinopodium bolivianum | Khoa | and | sifa,tutsu

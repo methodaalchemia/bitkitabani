@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+sedefotu | Ruta chalepensis | Sedef otu (Akdeniz) | anadolu | sifa,ritual
+buttum | Pistacia atlantica | Buttum | anadolu | besin,sifa
+boyacisumagi | Cotinus coggygria | Boyacı sumağı | anadolu | sifa
+simsir | Buxus sempervirens | Şimşir | anadolu | ritual,zehir
+karacali | Paliurus spina-christi | Karaçalı | anadolu | sifa,ritual
+yabaniasma | Vitis sylvestris | Yabani asma | anadolu | besin
+yabanibamya | Hibiscus trionum | Yabani bamya | anadolu | sifa
+mayasilotuhypericum | Hypericum scabrum | Mayasıl otu (sarı) | anadolu | sifa

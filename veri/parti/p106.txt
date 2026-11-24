@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+mendi | Chaerophyllum macropodum | Mendi | anadolu | besin
+maydanoz | Petroselinum crispum | Maydanoz | anadolu | besin,sifa
+kereviz | Apium graveolens | Kereviz | anadolu | besin,sifa
+havuc | Daucus carota | Havuç | anadolu | besin,sifa
+cortuk | Echinophora tenuifolia | Çörtük | anadolu | besin
+yabanikereviz | Smyrnium olusatrum | Yabani kereviz (baldıran kerevizi) | anadolu | besin
+kocayemis | Arbutus unedo | Kocayemiş | anadolu | besin,sifa
+sandalagaci | Arbutus andrachne | Sandal ağacı (Anadolu) | anadolu | besin

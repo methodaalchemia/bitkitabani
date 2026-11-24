@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+gulagaci | Aniba rosaeodora | Gül ağacı | amazon | tutsu
+ishpingo | Ocotea quixos | Ishpingo | amazon | besin,ritual
+pinoncolorado | Jatropha gossypiifolia | Piñón colorado | amazon | sifa,ritual
+catahua | Hura crepitans | Catahua | amazon | zehir,ritual
+oje | Ficus insipida | Ojé | amazon | sifa,zehir
+tamamuri | Brosimum acutifolium | Tamamuri | amazon | sifa
+espinheirasanta | Maytenus ilicifolia | Espinheira santa | amazon | sifa
+clavohuasca | Tynanthus panurensis | Clavo huasca | amazon | sifa

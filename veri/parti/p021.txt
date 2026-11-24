@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+biberkabuguagaci | Warburgia salutaris | Biber kabuğu ağacı | afrika | sifa
+afrikapelini | Artemisia afra | Afrika pelini | afrika | sifa
+aslankulagi | Leonotis leonurus | Aslan kulağı | afrika | sifa,ritual
+ruyakoku | Silene undulata | Rüya kökü | afrika | ritual
+zehirsogani | Boophone disticha | Zehir soğanı | afrika | zehir,ritual
+kat | Catha edulis | Kat | afrika | ritual,zehir
+robustakahve | Coffea canephora | Robusta kahve | afrika | besin
+iboga | Tabernanthe iboga | İboga | afrika | ritual,zehir

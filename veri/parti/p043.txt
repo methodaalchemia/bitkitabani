@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+kasikotucochlearia | Cochlearia officinalis | Kaşık otu | avrupa | sifa
+cayirteresi | Cardamine pratensis | Çayır teresi | avrupa | besin
+damkorugu | Sedum acre | Damkoruğu | avrupa | sifa,zehir
+damkorugusempervivum | Sempervivum tectorum | Dam koruğu (kaya güzeli) | avrupa | sifa,ritual
+kirmizifrenkuzumu | Ribes rubrum | Kırmızı frenk üzümü | avrupa | besin
+bektasiuzumu | Ribes uva-crispa | Bektaşi üzümü | avrupa | besin
+aslanpencesi | Alchemilla vulgaris | Aslan pençesi | avrupa | sifa
+kazotu | Potentilla anserina | Kaz otu | avrupa | sifa

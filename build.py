@@ -110,11 +110,13 @@ if os.environ.get('BT_DAY'): LOCAL_DAY = datetime.date.fromisoformat(os.environ[
 # ---------- yayın kuyruğu: her gün bir yeni bitki (kuyruk/ klasörü) ----------
 import kuyruk as _K
 YENI, EN_NEW, ETK_EN_NEW, KUYRUK_LEFT = {}, {}, {}, []
+ARSIV = set()
 for _q in _K.Q:
     _d = datetime.date.fromisoformat(_q['yayin'])
     if _q['id'] in byId: continue
     if _d > LOCAL_DAY: KUYRUK_LEFT.append(_q); continue
     _q = dict(_q); _id = _q['id']; YENI[_id] = _d
+    if _q.pop('arsiv', None): ARSIV.add(_id)   # toplu eklenen kayıt: yayında, ama "günün yeni bitkisi" akışına girmez
     # Vurgu yıldızları yalnızca gövde metninde anlamlı (bkz. ev()). `diger`,
     # `ek` ve `ilginc` alanları JSON-LD'ye, RSS'e, veri dosyalarına ve
     # llms-full.txt'ye de gidiyor; oralarda yıldız düz metin olarak
@@ -170,7 +172,7 @@ for p in P:
     if _ftr: FAM_TR_VERI.setdefault(_lat, _ftr)
     if _fnot: p['fam_not'] = _fnot
     p['fam'] = _lat
-NEWEST = sorted(YENI, key=lambda k: YENI[k], reverse=True)
+NEWEST = sorted((k for k in YENI if k not in ARSIV), key=lambda k: YENI[k], reverse=True)
 def is_new(pid, days=7): return pid in YENI and (LOCAL_DAY - YENI[pid]).days < days
 AYLAR =['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık']
 GUNLER = ['Pazartesi','Salı','Çarşamba','Perşembe','Cuma','Cumartesi','Pazar']
@@ -2772,7 +2774,7 @@ open(os.path.join(OUT, '_headers'), 'w').write('''/*
 ''')
 # ---------- Instagram postları için veri (tools/ig.py okur; yayımlanmaz) ----------
 os.makedirs(os.path.join(HERE, '.cache'), exist_ok=True)
-json.dump({'day': LOCAL_DAY.isoformat(), 'yeni': {k: v.isoformat() for k, v in YENI.items()},
+json.dump({'day': LOCAL_DAY.isoformat(), 'yeni': {k: v.isoformat() for k, v in YENI.items() if k not in ARSIV},
            'kuyruk': [[q['id'], q['yayin']] for q in _K.Q],
            'kanit': {k: v['ad'] for k, v in KANIT.items()}, 'guv': GUV, 'reg': {k: v['ad'] for k, v in REG.items()}, 'takvim': {m: [q['id'] for q in sorted(_cal[m], key=lambda q: _trkey(q['tr']))] for m in _cal}, 'derin': {k: [list(x) for x in v['iddia']] for k, v in DERIN.items() if k in byId}, 'karisma': {k: v.get('karisma', '') for k, v in EK.items() if k in byId and v.get('karisma')}, 'kanad': KAN_AD,
            'p': [dict(id=p['id'], no=p['no'], tr=p['tr'], la=short_la(p), fam=p['fam'], kisim=p['kisim'], yoresel=EK.get(p['id'], {}).get('yoresel', ''), bolge=p['bolge'], kat=p['kat'], kul=p['kul'], bilim=p['bilim'], kanit=p['kanit'],

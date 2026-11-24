@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+mayakopali | Protium copal | Maya kopalı | kamerika | tutsu,ritual
+pinyoncami | Pinus edulis | Pinyon çamı | kamerika | besin,tutsu
+kirmizisogut | Cornus sericea | Kırmızı söğüt (kızılcık) | kamerika | ritual
+meskalfasulyesi | Sophora secundiflora | Meskal fasulyesi | kamerika | zehir,ritual
+yalancipeyote | Ariocarpus fissuratus | Yalancı peyote | kamerika | ritual
+maviagav | Agave tequilana | Mavi agav | kamerika | besin
+pataxte | Theobroma bicolor | Pataxte | kamerika | besin,ritual
+ramon | Brosimum alicastrum | Ramón | kamerika | besin

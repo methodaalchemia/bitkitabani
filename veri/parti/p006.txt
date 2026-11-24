@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+manyok | Manihot esculenta | Manyok | amazon | besin,zehir
+yerfistigi | Arachis hypogaea | Yer fıstığı | amazon | besin
+habanero | Capsicum chinense | Habanero | amazon | besin
+prontoalivio | Lippia alba | Pronto alivio | amazon | sifa
+kuasya | Quassia amara | Kuasya | amazon | sifa
+ananas | Ananas comosus | Ananas | amazon | besin,sifa
+carkifelekmeyvesi | Passiflora edulis | Çarkıfelek meyvesi | amazon | besin
+chaliponga | Diplopterys cabrerana | Chaliponga | amazon | ritual

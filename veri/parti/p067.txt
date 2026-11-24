@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+canaagria | Costus spicatus | Caña agria | amazon | sifa
+mishquipanga | Renealmia alpinia | Mishquipanga | amazon | besin,sifa
+daledale | Calathea allouia | Dale dale | amazon | besin
+pituca | Xanthosoma sagittifolium | Pituca | amazon | besin
+sachapapa | Dioscorea trifida | Sachapapa | amazon | besin
+ararot | Maranta arundinacea | Ararot | amazon | besin,sifa
+piripiricyperus | Cyperus prolixus | Piripiri (iri) | amazon | ritual
+nunupichana | Scoparia dulcis | Ñuñu pichana | amazon | sifa

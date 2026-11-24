@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+gernik | Triticum dicoccon | Gernik | anadolu | besin
+cavdar | Secale cereale | Çavdar | anadolu | besin
+kamis | Phragmites australis | Kamış | anadolu | sifa
+kargi | Arundo donax | Kargı | anadolu | sifa
+kopekdisiayrigi | Cynodon dactylon | Köpek dişi ayrığı | anadolu | sifa
+erkeksalep | Orchis mascula | Erkek salep | anadolu | besin
+kuzugobegi | Morchella esculenta | Kuzugöbeği | anadolu | besin
+kanlica | Lactarius deliciosus | Kanlıca | anadolu | besin

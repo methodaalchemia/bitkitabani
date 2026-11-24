@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+sinicuichi | Heimia salicifolia | Sinicuichi | kamerika | ritual
+ruyaotu | Calea ternifolia | Rüya otu | kamerika | ritual
+ololiuqui | Turbina corymbosa | Ololiuqui | kamerika | ritual,zehir
+gunduzsefasi | Ipomoea tricolor | Gündüzsefası (tlitliltzin) | kamerika | ritual,zehir
+sihirlimantar | Psilocybe cubensis | Sihirli mantar | kamerika | ritual,zehir
+teonanacatl | Psilocybe mexicana | Teonanácatl | kamerika | ritual,zehir
+meksikagelincigi | Argemone mexicana | Meksika gelinciği | kamerika | zehir,sifa
+kopal | Bursera bipinnata | Kopal | kamerika | tutsu,ritual

@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+betonika | Betonica officinalis | Betonika | avrupa | sifa
+ayvadana | Artemisia vulgaris | Ayvadana | avrupa | sifa,ritual
+karapelin | Artemisia abrotanum | Kara pelin | avrupa | sifa
+solucanotu | Tanacetum vulgare | Solucan otu | avrupa | sifa,zehir
+oksurukotu | Tussilago farfara | Öksürük otu | avrupa | sifa
+kabalak | Petasites hybridus | Kabalak | avrupa | sifa
+koyungozu | Bellis perennis | Koyungözü | avrupa | sifa
+peygambercicegi | Centaurea cyanus | Peygamber çiçeği | avrupa | sifa

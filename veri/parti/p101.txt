@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+kilicotu | Hypericum triquetrifolium | Kılıç otu | anadolu | sifa
+purenkantaronu | Hypericum empetrifolium | Püren kantaronu | anadolu | sifa
+defneyaprakliladen | Cistus laurifolius | Defne yapraklı laden | anadolu | sifa
+adacayiyaprakliladen | Cistus salviifolius | Adaçayı yapraklı laden | anadolu | sifa
+ilgin | Tamarix smyrnensis | Ilgın | anadolu | sifa,ritual
+govcek | Daphne oleoides | Gövçek | anadolu | zehir,sifa
+igde | Elaeagnus angustifolia | İğde | anadolu | besin,sifa
+sukestanesi | Trapa natans | Su kestanesi | anadolu | besin

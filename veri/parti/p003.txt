@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+yabanikekik | Thymus serpyllum | Yabani kekik | avrupa | sifa
+sunanesi | Mentha aquatica | Su nanesi | avrupa | sifa
+zufaotu | Hyssopus officinalis | Zufa otu | avrupa | sifa
+kedinanesi | Nepeta cataria | Kedi nanesi | avrupa | sifa
+yersarmasigi | Glechoma hederacea | Yer sarmaşığı | avrupa | sifa
+gelinotu | Prunella vulgaris | Gelin otu | avrupa | sifa
+karayerpirasasi | Ballota nigra | Kara yer pırasası | avrupa | sifa
+kurtayagi | Lycopus europaeus | Kurt ayağı | avrupa | sifa

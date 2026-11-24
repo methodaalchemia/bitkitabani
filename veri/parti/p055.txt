@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+vargitcicegi | Colchicum speciosum | Vargit çiçeği | anadolu | zehir
+yilanyastigi | Arum maculatum | Yılan yastığı | anadolu | besin,zehir
+nivik | Arum italicum | Nivik | anadolu | besin,zehir
+yilanbicagi | Dracunculus vulgaris | Yılan bıçağı | anadolu | zehir
+susen | Iris germanica | Süsen | anadolu | sifa,ritual
+yabanicigdem | Crocus cancellatus | Yabani çiğdem | anadolu | besin
+karacigdem | Sternbergia lutea | Karaçiğdem | anadolu | zehir
+kardelen | Galanthus woronowii | Kardelen | anadolu | sifa,zehir

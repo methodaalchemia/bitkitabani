@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+hanimterligi | Cypripedium parviflorum | Hanım terliği | kamerika | sifa
+pipsissewa | Chimaphila umbellata | Pipsissewa | kamerika | sifa
+taskoku | Collinsonia canadensis | Taş kökü | kamerika | sifa
+kralicekoku | Stillingia sylvatica | Kraliçe kökü | kamerika | sifa,zehir
+mavibayrak | Iris versicolor | Mavi bayrak | kamerika | sifa,zehir
+wahoo | Euonymus atropurpureus | Wahoo | kamerika | sifa,zehir
+sacakagaci | Chionanthus virginicus | Saçak ağacı | kamerika | sifa
+disagrisiagaci | Xanthoxylum americanum | Diş ağrısı ağacı | kamerika | sifa

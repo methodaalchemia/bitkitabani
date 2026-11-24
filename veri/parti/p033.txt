@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+pitrak | Xanthium strumarium | Pıtrak | anadolu | sifa,zehir
+kucukisirgan | Urtica urens | Küçük ısırgan | anadolu | sifa,besin
+cobancoregi | Malva neglecta | Çobançöreği | anadolu | besin,sifa
+gulhatmi | Alcea rosea | Gül hatmi | anadolu | sifa
+semizotu | Portulaca oleracea | Semizotu | anadolu | besin,sifa
+coven | Gypsophila arrostii | Çöven | anadolu | besin
+madimak | Polygonum cognatum | Madımak | anadolu | besin
+sirken | Chenopodium album | Sirken | anadolu | besin

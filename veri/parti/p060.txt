@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+chiricaspi | Brunfelsia chiricaspi | Chiricaspi | amazon | ritual,zehir
+lechecaspi | Couma macrocarpa | Leche caspi | amazon | besin,sifa
+kurar | Chondrodendron tomentosum | Kürar | amazon | zehir
+kurarsarmasigi | Strychnos toxifera | Kürar sarmaşığı | amazon | zehir
+barbasco | Lonchocarpus utilis | Barbasco | amazon | zehir
+balikzehiricalisi | Phyllanthus acuminatus | Balık zehiri çalısı | amazon | zehir
+difenbahya | Dieffenbachia seguine | Difenbahya | amazon | zehir
+jergonsacha | Dracontium loretense | Jergón sacha | amazon | sifa

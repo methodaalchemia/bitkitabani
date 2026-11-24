@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+manaca | Brunfelsia uniflora | Manacá | amazon | sifa,zehir
+epena | Virola theiodora | Epená | amazon | ritual
+tilo | Justicia pectoralis | Tilo (mashi-hiri) | amazon | ritual,sifa
+jurema | Mimosa tenuiflora | Jurema | amazon | ritual,sifa
+yoco | Paullinia yoco | Yoco | amazon | ritual,besin
+cupuacu | Theobroma grandiflorum | Cupuaçu | amazon | besin
+brezilyacevizi | Bertholletia excelsa | Brezilya cevizi | amazon | besin
+kaju | Anacardium occidentale | Kaju | amazon | besin,sifa

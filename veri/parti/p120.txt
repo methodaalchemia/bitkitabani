@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+fistikcami | Pinus pinea | Fıstık çamı | anadolu | besin
+karacam | Pinus nigra | Karaçam | anadolu | sifa
+goknar | Abies nordmanniana | Göknar | anadolu | sifa
+doguladini | Picea orientalis | Doğu ladini | anadolu | sifa
+buyukdenizuzumu | Ephedra major | Büyük deniz üzümü | anadolu | sifa,zehir
+devatkuyrugu | Equisetum telmateia | Dev atkuyruğu | anadolu | sifa
+baldirikara | Adiantum capillus-veneris | Baldırıkara | anadolu | sifa
+siyez | Triticum monococcum | Siyez | anadolu | besin

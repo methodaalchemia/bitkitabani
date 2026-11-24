@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+parmaklimonu | Citrus australasica | Parmak limonu | okyanusya | besin
+colkuruuzumu | Solanum centrale | Çöl kuru üzümü | okyanusya | besin
+avustralyananesi | Prostanthera rotundifolia | Avustralya nanesi | okyanusya | sifa
+otagaci | Xanthorrhoea australis | Ot ağacı | okyanusya | ritual
+kawakawa | Macropiper excelsum | Kawakawa | okyanusya | sifa,ritual
+harakeke | Phormium tenax | Harakeke | okyanusya | sifa
+lahanaagaci | Cordyline australis | Lahana ağacı | okyanusya | besin
+kanuka | Kunzea ericoides | Kanuka | okyanusya | sifa

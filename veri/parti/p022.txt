@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+huasai | Euterpe precatoria | Huasaí | amazon | besin
+aguaje | Mauritia flexuosa | Aguaje | amazon | besin
+seftalipalmiyesi | Bactris gasipaes | Şeftali palmiyesi | amazon | besin
+ungurahui | Oenocarpus bataua | Ungurahui | amazon | besin,sifa
+chambira | Astrocaryum chambira | Chambira | amazon | ritual
+babassu | Attalea speciosa | Babassu | amazon | besin
+guaba | Inga edulis | Guaba (dondurma fasulyesi) | amazon | besin
+cocona | Solanum sessiliflorum | Cocona | amazon | besin

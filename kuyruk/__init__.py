@@ -18,5 +18,6 @@ assert len(_ids) == len(set(_ids)), 'kuyrukta tekrar eden id var'
 # 16 Kasım 2026'da bekleyen 104 kayıt tek seferde yayımlandı (aynı tarih),
 # 19 Kasım 2026'da ise kuyruğun tamamı bir gün öne alındı; o gün iki bitki yayımlandı.
 import datetime as _dt
-_days = [q['yayin'] for q in Q if _dt.date.fromisoformat(q['yayin']) > _dt.date(2026, 11, 19)]
+# 'arsiv': True olan kayıtlar toplu eklenir (1000 bitki hedefi); günlük sıraya girmez, tarih kuralı onlara uygulanmaz.
+_days = [q['yayin'] for q in Q if not q.get('arsiv') and _dt.date.fromisoformat(q['yayin']) > _dt.date(2026, 11, 19)]
 assert len(_days) == len(set(_days)), 'aynı güne iki bitki yazılmış'

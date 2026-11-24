@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+kopekdili | Cynoglossum officinale | Köpek dili | avrupa | zehir,sifa
+skopolya | Scopolia carniolica | Skopolya | avrupa | zehir
+siracaotu | Scrophularia nodosa | Sıraca otu | avrupa | sifa
+yavsanotu | Veronica officinalis | Yavşan otu | avrupa | sifa
+atteresi | Veronica beccabunga | At teresi | avrupa | besin,sifa
+nevruzotu | Linaria vulgaris | Nevruz otu | avrupa | sifa
+gozotu | Euphrasia officinalis | Göz otu | avrupa | sifa
+sitmaotu | Gratiola officinalis | Sıtma otu | avrupa | zehir

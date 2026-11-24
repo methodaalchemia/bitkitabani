@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+acibakla | Lupinus albus | Acı bakla | anadolu | besin,zehir
+burcak | Vicia ervilia | Burçak | anadolu | besin
+katirtirnagi | Spartium junceum | Katır tırnağı | anadolu | zehir,sifa
+erguvan | Cercis siliquastrum | Erguvan | anadolu | besin,ritual
+zivircik | Anagyris foetida | Zivircik | anadolu | zehir
+yabaniketen | Linum bienne | Yabani keten | anadolu | sifa
+donbaba | Erodium cicutarium | Dönbaba | anadolu | besin,sifa
+devedili | Zygophyllum fabago | Deve dili | anadolu | sifa

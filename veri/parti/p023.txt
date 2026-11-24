@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+tumbo | Passiflora tripartita | Tumbo | and | besin
+quinaquina | Myroxylon peruiferum | Quina-quina | and | sifa
+verbena | Verbena litoralis | Verbena (And) | and | sifa
+pisonay | Erythrina falcata | Pisonay | and | ritual
+congona | Peperomia inaequalifolia | Congona | and | sifa,ritual
+quenua | Polylepis racemosa | Queñua | and | sifa
+colle | Buddleja coriacea | Colle | and | sifa
+carqueja | Baccharis genistelloides | Carqueja | and | sifa

@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+mayasilotu | Ajuga chamaepitys | Mayasıl otu | anadolu | sifa
+dagnanesi | Cyclotrichium niveum | Dağ nanesi | anadolu | sifa
+saricivanpercemi | Achillea biebersteinii | Sarı civanperçemi | anadolu | sifa
+tarhun | Artemisia dracunculus | Tarhun | anadolu | besin
+marsuvanotu | Tanacetum balsamita | Marsuvan otu | anadolu | sifa,besin
+andizotu | Inula helenium | Andız otu | anadolu | sifa
+yapiskanandiz | Inula viscosa | Yapışkan andız | anadolu | sifa
+kenger | Gundelia tournefortii | Kenger | anadolu | besin,sifa

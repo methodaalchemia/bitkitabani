@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+yohimbe | Pausinystalia johimbe | Yohimbe | afrika | sifa,zehir
+grifonya | Griffonia simplicifolia | Grifonya | afrika | sifa
+voakanga | Voacanga africana | Voakanga | afrika | sifa,zehir
+kalabarfasulyesi | Physostigma venenosum | Kalabar fasulyesi | afrika | zehir,ritual
+okzehirisarmasigi | Strophanthus gratus | Ok zehiri sarmaşığı | afrika | zehir
+acikola | Garcinia kola | Acı kola | afrika | sifa,ritual
+cennettanesi | Aframomum melegueta | Cennet tanesi | afrika | besin,sifa
+habesbiberi | Xylopia aethiopica | Habeş biberi | afrika | besin,sifa

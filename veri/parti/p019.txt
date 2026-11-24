@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+iskorcina | Scorzonera hispanica | İskorçina | avrupa | besin
+yabanimarul | Lactuca virosa | Yabani marul | avrupa | sifa,zehir
+kanaryaotu | Senecio vulgaris | Kanarya otu | avrupa | zehir
+koyunpitragi | Eupatorium cannabinum | Koyun pıtrağı | avrupa | sifa
+sukeneviri | Bidens tripartita | Su keneviri | avrupa | sifa
+domuzdikeni | Carlina acaulis | Domuz dikeni | avrupa | sifa
+kucukdulavratotu | Arctium minus | Küçük dulavratotu | avrupa | sifa
+duvarfeslegeni | Parietaria officinalis | Duvar fesleğeni | avrupa | sifa

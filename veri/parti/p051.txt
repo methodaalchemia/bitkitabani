@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+amerikanmurveri | Sambucus canadensis | Amerikan mürveri | kamerika | besin,sifa
+newjerseycayi | Ceanothus americanus | New Jersey çayı | kamerika | sifa
+mummersini | Myrica cerifera | Mum mersini | kamerika | sifa
+benekliturnagagasi | Geranium maculatum | Benekli turnagagası | kamerika | sifa
+sapkoku | Heuchera americana | Şap kökü | kamerika | sifa
+kizilderilikeneviri | Apocynum cannabinum | Kızılderili keneviri | kamerika | zehir,sifa
+yesilcopleme | Veratrum viride | Yeşil çöpleme | kamerika | zehir
+zehirlisarmasik | Toxicodendron radicans | Zehirli sarmaşık | kamerika | zehir

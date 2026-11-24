@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+bahcenanesi | Mentha spicata | Bahçe nanesi | anadolu | besin,sifa
+aciyavsan | Teucrium polium | Acı yavşan | anadolu | sifa
+kisamahmutotu | Teucrium chamaedrys | Kısamahmut otu | anadolu | sifa,zehir
+dagcayistachys | Stachys lavandulifolia | Dağ çayı (tüylü) | anadolu | sifa
+calba | Phlomis grandiflora | Çalba | anadolu | sifa
+miskadacayi | Salvia sclarea | Misk adaçayı | anadolu | sifa,tutsu
+buyukcicekliadacayi | Salvia tomentosa | Büyük çiçekli adaçayı | anadolu | sifa
+kurtreyhani | Salvia multicaulis | Kürt reyhanı | anadolu | sifa

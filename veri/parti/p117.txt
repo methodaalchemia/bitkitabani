@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+zhimu | Anemarrhena asphodeloides | Zhi mu | asya | sifa
+chuanbeimu | Fritillaria cirrhosa | Chuan bei mu | asya | sifa
+baihe | Lilium brownii | Bai he | asya | besin,sifa
+huangjing | Polygonatum sibiricum | Huang jing | asya | sifa,besin
+keciotu | Epimedium brevicornum | Keçi otu | asya | sifa
+cinkuskutu | Cuscuta chinensis | Çin küskütü | asya | sifa
+colginsengi | Cistanche deserticola | Çöl ginsengi | asya | sifa
+suoyang | Cynomorium songaricum | Suo yang | asya | sifa

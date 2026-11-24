@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+karahurma | Diospyros lotus | Kara hurma | asya | besin
+japonanasonu | Illicium anisatum | Japon anasonu (şikimi) | asya | zehir,ritual
+japonsediri | Cryptomeria japonica | Japon sediri | asya | ritual
+sakaki | Cleyera japonica | Sakaki | asya | ritual
+bambu | Bambusa vulgaris | Bambu | asya | besin,sifa
+mosobambusu | Phyllostachys edulis | Moso bambusu | asya | besin
+peynirmayasiotu | Withania coagulans | Peynir mayası otu | asya | sifa
+brahmi | Bacopa monnieri | Brahmi | asya | sifa

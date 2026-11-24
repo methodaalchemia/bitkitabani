@@ -1,0 +1,9 @@
+# id | Latince ad | önerilen Türkçe ad | bölge | kategori
+yabanibadem | Amygdalus orientalis | Yabani badem | anadolu | besin
+dikenlimeyan | Glycyrrhiza echinata | Dikenli meyan | anadolu | sifa
+cementrigonella | Trigonella caerulea | Çemen (mavi) | anadolu | besin
+yonca | Medicago sativa | Yonca | anadolu | besin,sifa
+nohut | Cicer arietinum | Nohut | anadolu | besin
+bakla | Vicia faba | Bakla | anadolu | besin,zehir
+bezelye | Pisum sativum | Bezelye | anadolu | besin
+murdumuk | Lathyrus sativus | Mürdümük | anadolu | besin,zehir
