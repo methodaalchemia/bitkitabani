@@ -55,7 +55,7 @@ Bir ağaç, üç ayrı iş.
 
 bitkitabani.com/ardic"""),
 
-dict(yayin='2026-11-27', yuva='ogle', bitki='meyan',
+dict(yayin='2026-11-26', yuva='ogle', bitki='meyan',
  metin="""Meyan kökünün dünyadaki en büyük alıcılarından biri tütün sanayisi.
 
 Sigaraya tat vermek için kullanılıyor. Oysa Güneydoğu'da Ramazan'da şerbeti içilir, öksürüğe ve mide yanmasına karşı kökü çiğnenir. Çin tıbbında ise en sık kullanılan bitkilerden biridir — diğer otları "uyumlu hâle getirdiği" için neredeyse her reçeteye eklenir.
@@ -71,7 +71,7 @@ Oysa Güneydoğu'da Ramazan'da şerbeti içilir. Çin tıbbında ise en sık kul
 
 bitkitabani.com/meyan"""),
 
-dict(yayin='2026-11-28', yuva='soru', bitki='kusburnu',
+dict(yayin='2026-11-27', yuva='soru', bitki='kusburnu',
  metin="""İkinci Dünya Savaşı'nda İngiltere'ye portakal girmiyordu.
 
 C vitamini açığını kapatmak için çocuklar çalılıklara gönderildi: kuşburnu toplamaya.
@@ -109,7 +109,7 @@ Ihlamurdan bahsediyorum.
 
 bitkitabani.com/ihlamur"""),
 
-dict(yayin='2026-12-02', yuva='ogle', bitki='kusburnu',
+dict(yayin='2026-12-01', yuva='ogle', bitki='kusburnu',
  metin="""İngiltere'de çocuklar neden kuşburnu toplamaya seferber edildi?
 
 İkinci Dünya Savaşı'nda ülkeye narenciye girmiyordu. C vitamini açığını kapatmak için çocuklar çalılıklara gönderildi.
@@ -127,7 +127,7 @@ Ama kurutmak ve kaynatmak bu vitamini büyük ölçüde azaltıyor. Yani kış �
 
 bitkitabani.com/kusburnu"""),
 
-dict(yayin='2026-12-04', yuva='ogle', bitki='ardic',
+dict(yayin='2026-12-02', yuva='ogle', bitki='ardic',
  metin="""Cin içkisinin adı nereden geliyor?
 
 Ardıç kozalağından. Felemenkçe "jenever" — tadı da oradan.
@@ -145,7 +145,7 @@ Kozalağın uzun süreli ya da yüksek dozda alınması böbreği tahriş edebil
 
 bitkitabani.com/ardic"""),
 
-dict(yayin='2026-12-05', yuva='soru', bitki='meyan',
+dict(yayin='2026-11-28', yuva='soru', bitki='meyan',
  metin="""Çin tıbbında meyan kökü neredeyse her reçetede var.
 
 Tek başına bir derde deva olduğu için değil — diğer otları "uyumlu hâle getirdiği" için ekleniyor. Reçetenin arabulucusu gibi.
@@ -165,7 +165,7 @@ Güneydoğu'da ise Ramazan'da şerbeti içilir.
 
 bitkitabani.com/meyan"""),
 
-dict(yayin='2026-12-07', yuva='ogle', bitki='ihlamur',
+dict(yayin='2026-11-27', yuva='ogle', bitki='ihlamur',
  metin="""Kış çayı dediğimiz ıhlamurun çiçekleri haziranda toplanır.
 
 Ağacın kendisi birkaç yüz yıl yaşayabiliyor; Avrupa'da köy meydanlarının, buluşmaların ağacı. İstanbul'da da sokak ağacı olarak yaygın — yazın altından geçtiğiniz ağaç, kışın bardağınızda.
@@ -183,7 +183,7 @@ EMA soğuk algınlığı belirtileri ve hafif zihinsel stres için geleneksel ku
 
 bitkitabani.com/ihlamur"""),
 
-dict(yayin='2026-12-09', yuva='ogle', bitki='adacayi',
+dict(yayin='2026-11-28', yuva='ogle', bitki='adacayi',
  metin="""Bardağınızdaki adaçayı nereden geldi?
 
 Türkiye'de satılan adaçayının çoğu tarladan değil, yabandan toplanıyor. Aşırı toplama bazı bölgelerde popülasyonları azaltıyor.
