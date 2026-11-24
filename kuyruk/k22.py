@@ -571,7 +571,7 @@ Q = [
                'belirlenmemiş; gebelikte ve emzirirken kullanılması '
                'önerilmiyor. Tentürlerde etanol bulunabilir. '
                'Belirtiler kötüleşirse hekim ya da eczacıya '
-               'danışılmalı.',
+               'danışılmalı.' ' TİTCK monografı kanama riski nedeniyle planlanmış ameliyatlardan iki hafta önce bırakılmasını yazıyor.',
         etk=[
             ['Monograflarda bildirilmiş ilaç etkileşimi yok',
              'Hem AB hem TİTCK monografı etkileşim bölümünde bir şey '

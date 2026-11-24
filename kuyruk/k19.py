@@ -92,7 +92,7 @@ Q = [
                'görülenler kullanmamalı. 18 yaş altında kullanılması '
                'önerilmiyor; gebelikte ve emzirirken kullanılmamalı — '
                'gebelikte iyot dengesi ayrıca hassastır. Belirtiler '
-               'kötüleşirse hekim ya da eczacıya danışılmalı.',
+               'kötüleşirse hekim ya da eczacıya danışılmalı.' ' TİTCK monografı ameliyattan iki hafta önce bırakılmasını yazıyor; tiroit ilaçları, kan sulandırıcılar, antiplateletler, şeker ilaçları, lityum ve karaciğerde CYP2C8, CYP2C9, CYP2D6, CYP3A4 enzimleriyle metabolize olan ilaçlarla etkileşir.',
         etk=[
             ['Tiroit ilaçları ve iyot içeren ürünler',
              'Hem AB hem TİTCK monografı bunu açıkça yazıyor: Fucus '
@@ -612,7 +612,7 @@ Q = [
                'Türkiye’de çay ve kahve için de geçerlidir. 18 yaş '
                'altında, gebelikte ve emzirirken kullanılması '
                'önerilmiyor. Ateş, idrar yanması, kasılmalar ya da '
-               'idrarda kan görülürse hekime danışılmalı.',
+               'idrarda kan görülürse hekime danışılmalı.' ' TİTCK monografı MAO inhibitörleri, sempatomimetikler, yatıştırıcılar, kinolon antibiyotikleri, östrojenler, lityum, kan sulandırıcılar ve antiplatelet ilaçlar dâhil geniş bir ilaç listesiyle etkileştiğini yazıyor.',
         etk=[
             ['MAO inhibitörleri',
              'AB monografı MAO inhibitörü kullananların mateyi dikkatli '

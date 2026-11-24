@@ -24,7 +24,7 @@ ANAHTAR = [
     ('böbrek',          r'böbrek',                      r'böbrek|renal|idrar yolu'),
     ('tiroit',          r'tiroit|tiroid',               r'tiroit|tiroid|guatr'),
     ('diyabet',         r'diyabet|hipoglisem',          r'diyabet|şeker|kan şekeri|hipoglisem|insülin'),
-    ('tansiyon',        r'tansiyon|hipertansi',         r'tansiyon|hipertansi|kan basınc'),
+    ('tansiyon',        r'\btansiyon|hipertansi|hipotansi', r'tansiyon|hipertansi|kan basınc'),  # 'idrar retansiyonu' eşleşmesin
     ('glokom',          r'glokom',                      r'glokom|göz tansiyon'),
     ('ameliyat',        r'ameliyat|cerrahi',            r'ameliyat|cerrahi|operasyon|anestezi'),
     ('kısırlık',        r'infertil|kısır',              r'infertil|kısır|doğurganl'),

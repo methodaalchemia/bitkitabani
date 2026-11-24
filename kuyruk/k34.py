@@ -73,7 +73,7 @@ Q = [
                'bağışıklık baskılayıcı ilaç kullananlar** hekime sormadan '
                'kullanmamalı — kuramsal ama yerleşik bir uyarı. Türkiye’deki '
                'yabani gevenlerin kökü toplanıp kullanılmamalı: tür ayrımı '
-               'uzman işidir ve bazı Astragalus türleri hayvanlarda zehirlidir.',
+               'uzman işidir ve bazı Astragalus türleri hayvanlarda zehirlidir.' ' TİTCK monografı asiklovir ve siklofosfamit gibi bağışıklığı baskılayan ilaçlarla ve kan sulandırıcılarla etkileştiğini yazıyor.',
         etk=[
             ['DSÖ monografında bildirilmiş etkileşim yok',
              'Monograf etkileşim bilgisi vermiyor. Kuramsal notlar: bağışıklık '

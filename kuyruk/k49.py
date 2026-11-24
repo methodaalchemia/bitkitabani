@@ -494,7 +494,7 @@ Q = [
                '**Fototoksik** — güneşten kaçınılmalı. Uzun süreli kullanımda '
                'kanser riski uyarısı (TİTCK). İshalde kullanılmaz (DSÖ). '
                'Çocuklarda kullanılmaz. Yan etki: duyarlı kişide baş ağrısı. '
-               'Güvenlik düzeyi "düşük".',
+               'Güvenlik düzeyi "düşük".' ' TİTCK monografı yeterli veri olmadığı için emzirirken kullanılmasını önermiyor.',
         etk=[
             ['Varfarin ve diğer antikoagülanlar',
              'DSÖ (hayvan) ve TİTCK; insanda varfarinle INR yükselmesi ve '

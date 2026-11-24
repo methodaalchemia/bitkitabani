@@ -122,7 +122,7 @@ Yaprak haşlanınca yakıcılığını kaybeder. Kuru yaprak çay olarak demleni
 EMA yaprağını eklem ağrısı ve idrar söktürücü olarak, kökünü iyi huylu prostat büyümesine bağlı idrar şikâyetleri için geleneksel kullanımda tanır. Kök için yapılmış klinik çalışmaların sonuçları orta düzeydedir.
 
 ### Güvenlik
-Taze bitki ciltte kaşıntı ve kabarıklık yapar. İdrar söktürücü etkisi nedeniyle tansiyon ve şeker ilacı kullananlar dikkatli olmalı.
+Taze bitki ciltte kaşıntı ve kabarıklık yapar. İdrar söktürücü etkisi nedeniyle tansiyon ve şeker ilacı kullananlar dikkatli olmalı. TİTCK monografı kalp ya da böbrek yetmezliğine bağlı sıvı tutulumu varsa kullanılmamasını yazıyor; hamilelikte ve emzirirken kullanılmamalı. Demir, lityum, diklofenak, şeker, kan sulandırıcı ve tansiyon ilaçları, merkezi sinir sistemi baskılayıcıları ve idrar söktürücülerle etkileşir.
 
 ### İddialar ve kanıt
 - Prostat büyümesine bağlı idrar şikâyetlerini hafifletir (kök): Sınırlı kanıt. Bazı kontrollü çalışmalarda orta düzeyde fayda; EMA geleneksel kullanımda tanır. Prostat kanseri olasılığı önce hekimce dışlanmalı.
@@ -185,7 +185,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Genelde güvenli
 Timol ve karvakrol içerir; bu maddelerin güçlü antimikrobiyal etkisi laboratuvarda gösterilmiştir. EMA, kekiği (Thymus vulgaris) balgamlı öksürük için geleneksel bitkisel ilaç olarak tanır.
 
 ### Güvenlik
-Mutfak miktarında güvenlidir. Saf kekik yağı yakıcıdır; seyreltilmeden cilde sürülmemeli ve yutulmamalıdır.
+Mutfak miktarında güvenlidir. Saf kekik yağı yakıcıdır; seyreltilmeden cilde sürülmemeli ve yutulmamalıdır. TİTCK monografı geniş deri yaralanmalarında, açık yaralarda, yüksek ateşte, dolaşım bozukluklarında, hormona duyarlı kanser türlerinde, endometriyoziste, kanamalı ağır enfeksiyonlarda ve kalp yetmezliğinde kullanılmamasını yazıyor; uçucu yağıyla tam banyo yüksek tansiyonu olanlara önerilmiyor. Ameliyattan iki hafta önce bırakılmalı. Hamilelikte ve emzirirken kullanılmamalı; kan sulandırıcılarla etkileşir.
 
 ### İddialar ve kanıt
 - Balgamlı öksürükte yararlıdır: Sınırlı kanıt. EMA geleneksel kullanımda tanır; sarmaşıkla birlikte kullanıldığı bir çalışmada öksürük süresi kısalmıştır.
@@ -219,7 +219,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 EMA, adaçayını (Salvia officinalis) ağız ve boğaz iltihabı ile aşırı terleme için geleneksel kullanımda tanır. Anadolu türü sineol bakımından zengindir ve genelde daha az tuyon içerir.
 
 ### Güvenlik
-Tuyon içerdiği için uzun süre ve yüksek dozda kullanılmamalı. Gebelik, emzirme ve epilepside önerilmez.
+Tuyon içerdiği için uzun süre ve yüksek dozda kullanılmamalı. Gebelik, emzirme ve epilepside önerilmez. TİTCK monografı 18 yaşından küçüklerde kullanılmasını önermiyor; kan şekerini düşürdüğü için şeker ilacı kullananlarda ilaç dozunun yeniden ayarlanması gerekir.
 
 ### İlaç etkileşimleri
 - Nöbet ilaçları (antiepileptikler): Tuyon nöbet eşiğini düşürebilir; yüksek dozda ilacın etkisini zayıflatabilir.
@@ -292,7 +292,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Genelde güvenli
 EMA, papatyayı hafif sindirim şikâyetleri, ağız-boğaz iltihabı ve cilt tahrişi için tanır. Kaygı üzerine küçük klinik çalışmalarda olumlu sonuç alınmıştır.
 
 ### Güvenlik
-Papatyagillere alerjisi olanlarda alerji yapabilir. Kan sulandırıcı kullananlar dikkatli olmalı.
+Papatyagillere alerjisi olanlarda alerji yapabilir. Kan sulandırıcı kullananlar dikkatli olmalı. TİTCK monografı hamilelikte ve emzirirken güvenliliğinin belirlenmediğini ve yeterli veri olmadığı için bu dönemlerde kullanılmasının önerilmediğini yazıyor; böbrek nakli sonrası uzun süreli kullanımı için ayrıca uyarı veriyor.
 
 ### İddialar ve kanıt
 - Hafif mide şikâyetleri ve gazda yararlıdır: Yalnızca geleneksel. EMA geleneksel kullanımda tanır.
@@ -326,7 +326,7 @@ Yağ için çiçekler zeytinyağında 4–6 hafta güneşte bekletilir. Çay ya 
 Cochrane derlemesine göre standart ekstreler hafif ve orta depresyonda plaseboya üstün ve bazı antidepresanlara yakın etkilidir. Almanya’da depresyon için ilaç olarak kullanılır.
 
 ### Güvenlik
-Çok sayıda ilacın etkisini azaltır: doğum kontrol hapı, kan sulandırıcılar, bazı kalp ve organ nakli ilaçları. Antidepresanlarla birlikte serotonin sendromuna yol açabilir. Güneşe duyarlılık yapabilir.
+Çok sayıda ilacın etkisini azaltır: doğum kontrol hapı, kan sulandırıcılar, bazı kalp ve organ nakli ilaçları. Antidepresanlarla birlikte serotonin sendromuna yol açabilir. Güneşe duyarlılık yapabilir. TİTCK monografı 12 yaşından küçüklerde cilt üzerine, 18 yaşından küçüklerde ağızdan kullanımını önermiyor; gebelikte ve emzirirken kullanılmamalı.
 
 ### İlaç etkileşimleri
 - Doğum kontrol hapları: Karaciğer enzimlerini (CYP3A4) hızlandırarak hapın etkisini azaltır; istenmeyen gebelik bildirilmiştir.
@@ -369,7 +369,7 @@ Kuru yaprak ve çiçek demlenir ya da soğuk suda bekletilir. EMA monografı 1,8
 Yapraklarındaki müsilaj boğaz ve mide yüzeyini kaplar. EMA, ebegümecini ağız-boğaz tahrişi ve kuru öksürük için geleneksel kullanımda tanır.
 
 ### Güvenlik
-Genelde güvenlidir. Müsilaj diğer ilaçların emilimini geciktirebilir; ilaçla arasında bir saat bırakılmalı.
+Genelde güvenlidir. Müsilaj diğer ilaçların emilimini geciktirebilir; ilaçla arasında bir saat bırakılmalı. TİTCK monografı yeterli veri olmadığı için hamilelikte ve emzirirken kullanılmamasını yazıyor.
 
 ### İddialar ve kanıt
 - Boğaz tahrişi ve kuru öksürükte yatıştırır: Yalnızca geleneksel. EMA geleneksel kullanımda tanır; müsilaj boğaz yüzeyini kaplar.
@@ -402,7 +402,7 @@ Taze ya da kuru yaprak kapağı kapalı demlenir; uçucu yağı kolay kaçar. EM
 EMA, hafif stres, uyku sorunları ve hafif sindirim şikâyetleri için geleneksel kullanımda tanır. Küçük klinik çalışmalarda kaygı ve uykuda iyileşme bildirilmiştir.
 
 ### Güvenlik
-Genelde güvenlidir. Tiroit ilacı kullananlar dikkatli olmalı.
+Genelde güvenlidir. Tiroit ilacı kullananlar dikkatli olmalı. TİTCK monografı hamilelikte ve emzirirken kullanılmamasını yazıyor; alkol, yatıştırıcı ilaçlar, şeker ilaçları ve tiroit ilaçlarıyla etkileşir.
 
 ### İddialar ve kanıt
 - Hafif stres ve kaygıyı azaltır: Sınırlı kanıt. Küçük kontrollü çalışmalarda iyileşme; EMA geleneksel kullanımda tanır.
@@ -470,7 +470,7 @@ Kurusu demlenir ya da yastığa konur; yağı koklanır veya seyreltilip cilde s
 Ağızdan alınan standart lavanta yağı kapsülleri (Silexan) birçok kontrollü çalışmada kaygı bozukluğunda plaseboya üstün bulunmuştur. EMA, hafif stres ve uyku için geleneksel kullanımda tanır.
 
 ### Güvenlik
-Genelde güvenlidir. Kapsül formu geğirme ve bulantı yapabilir; sakinleştirici ilaçların etkisini artırabilir.
+Genelde güvenlidir. Kapsül formu geğirme ve bulantı yapabilir; sakinleştirici ilaçların etkisini artırabilir. TİTCK monografı hamilelikte ve emzirirken kullanılmamasını yazıyor; aspirin ve varfarin gibi kan sulandırıcılarla ve antiplatelet ilaçlarla birlikte alınmaması öneriliyor, bu ilaçların etkisini artırabilir.
 
 ### İddialar ve kanıt
 - Kaygıyı azaltır (ağızdan alınan standart yağ kapsülü): Klinik kanıt. Silexan ile yapılan birçok kontrollü çalışmada plaseboya üstün.
@@ -504,7 +504,7 @@ Tohum yemeğe katılır; soğuk sıkım yağı kaşıkla alınır.
 Etken maddesi timokinondur. Küçük klinik çalışmalarda kolesterol, kan şekeri ve tansiyonda hafif düşüş görülmüştür; çalışmaların kalitesi düşük ve süreleri kısadır.
 
 ### Güvenlik
-Yemek miktarında güvenlidir. Yüksek doz yağ, kan şekeri ve tansiyon ilaçlarının etkisini artırabilir. TİTCK monografı karaciğer ve böbrek yetmezliğinde kullanılmamasını, altı yaşından küçüklerde önerilmediğini, hamilelikte kullanılmamasını ve emzirirken önerilmediğini yazıyor; tansiyon ilaçları ve kan sulandırıcılarla etkileşebilir.
+Yemek miktarında güvenlidir. Yüksek doz yağ, kan şekeri ve tansiyon ilaçlarının etkisini artırabilir. TİTCK monografı karaciğer ve böbrek yetmezliğinde kullanılmamasını, altı yaşından küçüklerde önerilmediğini, hamilelikte kullanılmamasını ve emzirirken önerilmediğini yazıyor; tansiyon ilaçları ve kan sulandırıcılarla etkileşebilir. TİTCK monografı altı yaşından küçük çocuklarda kullanılmasını önermiyor.
 
 ### İddialar ve kanıt
 - Kolesterolü ve kan şekerini düşürür: Sınırlı kanıt. Küçük ve kısa çalışmalarda hafif düşüş; çalışmaların kalitesi düşük.
@@ -570,7 +570,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 EMA, alıç yaprağı ve çiçeğini geçici, sinirsel kalp şikâyetleri için geleneksel kullanımda tanır. Hafif kalp yetmezliğinde egzersiz kapasitesinde küçük iyileşmeler görülmüş, ancak büyük bir çalışma (SPICE) ölüm oranında anlamlı fark bulmamıştır.
 
 ### Güvenlik
-Digoksin, beta bloker ve nitrat gibi kalp ilaçlarıyla etkileşebilir. Kalp hastalığında doktor bilgisi olmadan kullanılmamalı.
+Digoksin, beta bloker ve nitrat gibi kalp ilaçlarıyla etkileşebilir. Kalp hastalığında doktor bilgisi olmadan kullanılmamalı. TİTCK monografı ameliyattan iki hafta önce bırakılmasını yazıyor; yüksek miktarda kullanıldığında uyuşukluk, aritmi, titreme, nefes darlığı ve tansiyon düşüklüğü yapabilir. Hamilelikte ve emzirirken önerilmiyor.
 
 ### İlaç etkileşimleri
 - Digoksin ve diğer kalp glikozitleri: Etkiyi artırabilir.
@@ -603,7 +603,7 @@ Kök suda bekletilir ya da kaynatılır. EMA monografisinin sindirim şikâyetle
 Şekerden 50 kat tatlı glisirizin içerir. EMA, öksürük ve hafif mide şikâyetleri için geleneksel kullanımda tanır. Glisirizinden arındırılmış formu (DGL) mide ülseri için çalışılmıştır.
 
 ### Güvenlik
-Düzenli ve yüksek miktarda tüketim tansiyonu yükseltir, potasyumu düşürür, kalp ritmi bozukluğuna yol açabilir. Tansiyon, kalp ve böbrek hastaları ile gebeler kaçınmalı.
+Düzenli ve yüksek miktarda tüketim tansiyonu yükseltir, potasyumu düşürür, kalp ritmi bozukluğuna yol açabilir. Tansiyon, kalp ve böbrek hastaları ile gebeler kaçınmalı. TİTCK monografı hipertansiyon, böbrek rahatsızlıkları, karaciğer hastalıkları, kalp-damar bozuklukları ve kanda potasyum düşüklüğü durumlarında kullanılmasını önermiyor.
 
 ### İlaç etkileşimleri
 - Tansiyon ilaçları: Tansiyonu yükselterek ilacın etkisini azaltır.
@@ -642,7 +642,7 @@ Tohum hafifçe ezilip demlenir — ezilmeden uçucu yağ suya geçmez. EMA’nı
 EMA, rezene tohumunu hafif sindirim şikâyetleri, gaz ve adet sancısı için tanır. Bebek koliği için küçük çalışmalar vardır.
 
 ### Güvenlik
-Estragol içerdiği için EMA, küçük çocuklarda ve gebelikte uzun süreli kullanımı önermez. Kereviz ve havuç alerjisi olanlarda çapraz alerji görülebilir.
+Estragol içerdiği için EMA, küçük çocuklarda ve gebelikte uzun süreli kullanımı önermez. Kereviz ve havuç alerjisi olanlarda çapraz alerji görülebilir. TİTCK monografı yeterli veri olmadığı için emzirirken kullanılmasını önermiyor.
 
 ### İlaç etkileşimleri
 - Bazı antibiyotikler (siprofloksasin): Aynı anda alındığında emilimi azaltabilir.
@@ -708,7 +708,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
 EMA, mürver çiçeğini soğuk algınlığının erken belirtileri için geleneksel kullanımda tanır. Meyve ekstresiyle yapılan küçük çalışmalarda grip süresinin kısaldığı bildirildi; kanıt zayıf.
 
 ### Güvenlik
-Çiğ meyve, yaprak, kabuk ve sap siyanür oluşturan maddeler içerir; bulantı ve kusma yapar. Meyve mutlaka pişirilmeli.
+Çiğ meyve, yaprak, kabuk ve sap siyanür oluşturan maddeler içerir; bulantı ve kusma yapar. Meyve mutlaka pişirilmeli. TİTCK monografı yeterli veri olmadığı için hamilelikte ve emzirirken kullanılmamasını yazıyor.
 
 ### İlaç etkileşimleri
 - İdrar söktürücüler: Çiçeğin hafif idrar söktürücü etkisi eklenebilir.
@@ -740,7 +740,7 @@ Yaprak taze yenir; kök kurutulup demlenir ya da kavrulup kahve gibi içilir. EM
 EMA, yaprağını hafif idrar söktürücü, kökünü hafif sindirim şikâyetleri için geleneksel kullanımda tanır. İnsan çalışmaları çok azdır.
 
 ### Güvenlik
-Genelde güvenlidir. Safra yolu tıkanıklığında ve papatyagil alerjisinde kullanılmamalı; idrar söktürücü ilaçların etkisini artırabilir.
+Genelde güvenlidir. Safra yolu tıkanıklığında ve papatyagil alerjisinde kullanılmamalı; idrar söktürücü ilaçların etkisini artırabilir. TİTCK monografı aktif peptik ülseri ve karaciğer rahatsızlığı olanların kullanmamasını, diyabet hastalarının dikkatli kullanmasını yazıyor; karaciğer üzerinde zararlı etki ve bazı ilaçların yarılanma süresinde uzama beklenebilir. Hamilelikte ve emzirirken kullanılmamalı. Lityum, potasyum, tiazid grubu idrar söktürücüler ve kinolon antibiyotiklerle etkileşir.
 
 ### İddialar ve kanıt
 - Hafif idrar söktürür (yaprak): Yalnızca geleneksel. EMA geleneksel kullanımda tanır; tek bir küçük insan çalışması var.
@@ -775,7 +775,7 @@ EMA monografında çay yok — ölçüler yalnız toz ve ekstre üzerinden: kay�
 Standart meyve ekstresi birkaç kontrollü çalışmada adet öncesi sendrom (PMS) belirtilerini plaseboya göre azaltmıştır. EMA bu kullanımı “iyi yerleşmiş” kabul eder.
 
 ### Güvenlik
-Hormonal etkisi vardır: doğum kontrol hapı, hormon tedavisi ve dopaminle ilgili ilaçlarla etkileşebilir. Gebelik ve emzirmede kullanılmamalı.
+Hormonal etkisi vardır: doğum kontrol hapı, hormon tedavisi ve dopaminle ilgili ilaçlarla etkileşebilir. Gebelik ve emzirmede kullanılmamalı. TİTCK monografı östrojene duyarlı kanser geçirmiş ya da geçirmekte olanların hekime danışmadan kullanmamasını yazıyor.
 
 ### İlaç etkileşimleri
 - Doğum kontrol hapları ve hormon tedavisi: Hormon dengesine etki eder; etkiyi değiştirebilir.
@@ -871,7 +871,7 @@ EMA monografı çay için 1–1,5 g kıyılmış bitkiyi 150 ml kaynar suda veri
 Tatlı pelinden (A. annua) çıkarılan artemisinin bugün sıtma tedavisinin temelidir; bu keşif 2015 Nobel Tıp Ödülü’nü kazandı. EMA, acı pelini iştahsızlık ve hazımsızlık için geleneksel kullanımda tanır.
 
 ### Güvenlik
-Acı pelin tuyon içerir; yüksek doz ya da uzun süreli kullanım nöbet ve böbrek hasarı yapabilir. Gebelikte ve epilepside kullanılmamalı. Pelin çayı sıtma tedavisinin yerine geçmez.
+Acı pelin tuyon içerir; yüksek doz ya da uzun süreli kullanım nöbet ve böbrek hasarı yapabilir. Gebelikte ve epilepside kullanılmamalı. Pelin çayı sıtma tedavisinin yerine geçmez. TİTCK monografı safra taşı ve safra salgısı sorunu olanlarda, safra kanalı tıkanıklığında, kolanjitte ve karaciğer hastalıklarında kullanımının kontrendike olduğunu; emzirirken kullanılmamasını yazıyor.
 
 ### İlaç etkileşimleri
 - Nöbet ilaçları: Tuyon nöbet eşiğini düşürür.
@@ -1164,7 +1164,7 @@ Kök kurutulur, kaynatılarak ya da toz hâlinde yenir. Gelenekte çiğ yenmez.
 Küçük klinik çalışmalarda cinsel istek ve menopoz belirtilerinde hafif iyileşme görülmüştür. Çalışmalar küçük ve bir kısmı üretici destekli.
 
 ### Güvenlik
-Gıda olarak güvenlidir. Çiğ ya da çok yüksek miktarda tüketim mideyi rahatsız edebilir. Tiroit sorunu olanlar dikkatli olmalı. TİTCK monografı tiroit rahatsızlığı olanlarda kullanılmamasını yazıyor; meme, rahim ve yumurtalık kanseri, endometriyozis ve rahim miyomu gibi hormona bağlı hastalıklarda ve hormon replasman tedavisinde kullanılmaz. Hipertansiyonda kullanılmaz. 12 yaşından küçüklerde, hamilelikte ve emzirirken önerilmiyor.
+Gıda olarak güvenlidir. Çiğ ya da çok yüksek miktarda tüketim mideyi rahatsız edebilir. Tiroit sorunu olanlar dikkatli olmalı. TİTCK monografı tiroit rahatsızlığı olanlarda kullanılmamasını yazıyor; meme, rahim ve yumurtalık kanseri, endometriyozis ve rahim miyomu gibi hormona bağlı hastalıklarda ve hormon replasman tedavisinde kullanılmaz. Hipertansiyonda kullanılmaz. 12 yaşından küçüklerde, hamilelikte ve emzirirken önerilmiyor. TİTCK monografı ayrıca kan sulandırıcı, antiplatelet ve steroit olmayan iltihap giderici ilaçlarla, doğum kontrol haplarıyla ve kan basıncını yükselten ya da hormonal etkili takviyelerle etkileştiğini yazıyor.
 
 ### Doğada
 Nerede yetişir: Peru’nun Junín platosunda 3.800–4.500 metre yükseklikte.
@@ -1280,7 +1280,7 @@ Kabuk 20–30 dakika kaynatılır. Literatürdeki geleneksel ölçüler birbirin
 Oksindol alkaloitleri içerir. Diz kireçlenmesi ve romatoid artritte yapılmış birkaç küçük çalışma hafif fayda bildirmiştir; daha büyük çalışmalara ihtiyaç var.
 
 ### Güvenlik
-Bağışıklığı baskılayan ilaçlar, kan sulandırıcılar ve tansiyon ilaçlarıyla etkileşebilir. Gebelikte kullanılmamalı.
+Bağışıklığı baskılayan ilaçlar, kan sulandırıcılar ve tansiyon ilaçlarıyla etkileşebilir. Gebelikte kullanılmamalı. TİTCK monografı hamilelikte ve emzirirken kullanılmamasını yazıyor.
 
 ### İlaç etkileşimleri
 - Bağışıklığı baskılayan ilaçlar: Bağışıklığı uyarabileceği için etkiyi azaltabilir.
@@ -1642,7 +1642,7 @@ Taze ya da kuru yaprak kapağı kapalı demlenir; uçucu yağı seyreltilerek ş
 Nane yağı (Mentha × piperita) kapsülleri, birçok kontrollü çalışmada huzursuz bağırsak sendromunun belirtilerini plaseboya göre azaltmıştır. EMA nane yaprağını hazımsızlık ve gaz için geleneksel kullanımda tanır.
 
 ### Güvenlik
-Genelde güvenlidir. Reflüyü artırabilir. Saf nane yağı bebeklerin ve küçük çocukların yüzüne sürülmemelidir; solunum durmasına yol açabilir.
+Genelde güvenlidir. Reflüyü artırabilir. Saf nane yağı bebeklerin ve küçük çocukların yüzüne sürülmemelidir; solunum durmasına yol açabilir. TİTCK monografı yeterli veri olmadığı için hamilelikte ve emzirirken kullanılmamasını yazıyor.
 
 ### İddialar ve kanıt
 - Huzursuz bağırsak sendromu belirtilerini azaltır (nane yağı kapsülü): Klinik kanıt. Birçok kontrollü çalışma ve meta-analiz plaseboya üstün bulmuştur.
@@ -1676,7 +1676,7 @@ EMA monografı iki yol veriyor. Kaynatma: 10 g taze ya da 5 g kuru yaprak 150 ml
 Yaprak, oleuropein adlı bir fenol bakımından zengindir. Birkaç kontrollü çalışmada yaprak ekstresi hafif yüksek tansiyonda küçük düşüşler göstermiştir. EMA zeytin yaprağını hafif sistolik hipertansiyonda geleneksel kullanımda tanır.
 
 ### Güvenlik
-Genelde güvenlidir. Tansiyon ve şeker ilaçlarıyla birlikte etkisi artabilir.
+Genelde güvenlidir. Tansiyon ve şeker ilaçlarıyla birlikte etkisi artabilir. TİTCK monografı kalp hastalığı ya da böbrek yetmezliği olanların kullanmamasını yazıyor; hamilelikte ve emzirirken önerilmiyor. Yaprak ekstresi tansiyon, şeker, antiplatelet ve kan sulandırıcı ilaçlarla etkileşebilir.
 
 ### İddialar ve kanıt
 - Hafif yüksek tansiyonu düşürür (yaprak): Sınırlı kanıt. EMA geleneksel kullanımda tanır; birkaç kontrollü çalışmada küçük düşüş.
@@ -1799,7 +1799,7 @@ Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
 EMA, civanperçemini iştahsızlık, hazımsızlık, adet sancısı ve küçük yaralar için geleneksel kullanımda tanır. İnsan çalışması azdır.
 
 ### Güvenlik
-Papatyagil alerjisi olanlarda alerji yapabilir. Gebelikte kullanılmamalıdır.
+Papatyagil alerjisi olanlarda alerji yapabilir. Gebelikte kullanılmamalıdır. TİTCK monografı ameliyattan iki hafta önce bırakılmasını, hamilelikte ve emzirirken önerilmediğini yazıyor; antiplatelet ilaçlar, kan sulandırıcılar ve lityumla etkileşir.
 
 ### İlaç etkileşimleri
 - Kan sulandırıcılar: Kanama riskini artırabilir.
@@ -1832,7 +1832,7 @@ Yalnızca doktor gözetiminde standart preparatlar kullanılır. ⚠️ EMA bu t
 Avrupa’da ökse otu ekstreleri kanser hastalarında tamamlayıcı tedavi olarak enjeksiyonla kullanılır. Yaşam kalitesine etkisi üzerine çalışmalar vardır, ama kanser tedavisi olarak etkinliği kanıtlanmamıştır.
 
 ### Güvenlik
-Meyveleri ve yüksek dozları zehirlidir; özellikle çocuklar için tehlikelidir. Tansiyonu düşürebilir.
+Meyveleri ve yüksek dozları zehirlidir; özellikle çocuklar için tehlikelidir. Tansiyonu düşürebilir. TİTCK monografı yeterli veri olmadığı için hamilelikte ve emzirirken kullanılmamasını yazıyor.
 
 ### İlaç etkileşimleri
 - Tansiyon ilaçları: Tansiyonu düşürerek etkiyi artırabilir.
@@ -1895,7 +1895,7 @@ Kök soğuk suda bekletilir ve hazırlanır hazırlanmaz içilir; ısıtılmaz. 
 Kökü yüksek oranda müsilaj içerir; bu madde boğaz ve mide yüzeyini kaplar. EMA hatmi kökünü ağız-boğaz tahrişi ve kuru öksürük için geleneksel kullanımda tanır.
 
 ### Güvenlik
-Genelde güvenlidir. Müsilaj diğer ilaçların emilimini geciktirebilir; araya bir saat konmalıdır.
+Genelde güvenlidir. Müsilaj diğer ilaçların emilimini geciktirebilir; araya bir saat konmalıdır. TİTCK monografı hamilelikte ve emzirirken önerilmediğini, ameliyattan iki hafta önce bırakılmasını ve kan pıhtılaşmasını azaltan ilaçlarla etkileştiğini yazıyor.
 
 ### Doğada
 Nerede yetişir: Nemli ve tuzlu topraklar, dere ve göl kenarları; Türkiye genelinde.
@@ -1951,7 +1951,7 @@ Bilimsel kanıt: Klinik · Güvenlik: Genelde güvenli
 Ezilince allisin oluşur. Meta-analizler sarımsak preparatlarının tansiyonu ve kolesterolü hafifçe düşürdüğünü gösteriyor. NCCIH bu etkilerin küçük olduğunu belirtir.
 
 ### Güvenlik
-Yiyecek olarak güvenlidir. Yüksek doz kan sulandırıcıların etkisini artırabilir; ameliyattan önce bırakılmalıdır.
+Yiyecek olarak güvenlidir. Yüksek doz kan sulandırıcıların etkisini artırabilir; ameliyattan önce bırakılmalıdır. TİTCK monografı yeterli veri olmadığı için hamilelikte ve emzirirken kullanılmamasını yazıyor. Proteaz inhibitörleri, statinler, izoniyazit, indometazin, kan sulandırıcılar, şeker ve tansiyon ilaçları, siklosporin ve karaciğerde CYP2E1, CYP3A4, CYP2D6 enzimleriyle metabolize olan ilaçlarla etkileşir.
 
 ### İddialar ve kanıt
 - Tansiyonu hafifçe düşürür: Klinik kanıt. Meta-analizlerde küçük ama anlamlı düşüş.
@@ -2046,7 +2046,7 @@ Tohum öğütülüp yemeğe katılır ya da suda bekletilir; bol su ile alınmal
 Lif, müsilaj ve alfa-linolenik asit bakımından zengindir. EMA keten tohumunu kabızlık için iyi yerleşmiş kullanımda tanır. Bazı çalışmalarda kolesterol ve tansiyonda hafif düşüş görülmüştür.
 
 ### Güvenlik
-Az su ile alınırsa bağırsak tıkanıklığı yapabilir. Çiğ tohum az miktarda siyanür oluşturan madde içerir; ölçülü tüketilmelidir.
+Az su ile alınırsa bağırsak tıkanıklığı yapabilir. Çiğ tohum az miktarda siyanür oluşturan madde içerir; ölçülü tüketilmelidir. TİTCK monografı hamilelikte ve emzirirken önerilmediğini, şeker ilaçları ve kan sulandırıcılarla etkileştiğini yazıyor.
 
 ### İddialar ve kanıt
 - Kabızlığı giderir: Klinik kanıt. EMA iyi yerleşmiş kullanım olarak tanır.
@@ -2144,7 +2144,7 @@ Bilimsel kanıt: Geleneksel · Güvenlik: Genelde güvenli
 Müsilaj ve saponin içerir. EMA çiçeğini öksürük ve boğaz tahrişi için geleneksel kullanımda tanır. İnsan çalışması azdır.
 
 ### Güvenlik
-Genelde güvenlidir. Yaprak ve çiçek tüyleri boğazı tahriş eder; çay süzülmeden içilmemelidir.
+Genelde güvenlidir. Yaprak ve çiçek tüyleri boğazı tahriş eder; çay süzülmeden içilmemelidir. TİTCK monografı yeterli veri olmadığı için hamilelikte ve emzirirken kullanılmamasını yazıyor. Kan sulandırıcı, antiplatelet ve steroit olmayan iltihap giderici ilaçlarla etkileşir.
 
 ### Doğada
 Nerede yetişir: Kuru yamaçlar, yol kenarları ve kayalıklar; Türkiye genelinde.
@@ -2334,7 +2334,7 @@ EMA monografında çay yok — ölçü kuru ekstre üzerinden: tek doz 144–200
 Rosavin ve salidrozit içerir. Yorgunluk ve hafif depresyon üzerine küçük kontrollü çalışmalar vardır; NCCIH kanıtın yetersiz olduğunu belirtir.
 
 ### Güvenlik
-Uykusuzluk ve huzursuzluk yapabilir. Antidepresanlarla birlikte kullanımı konusunda yeterli veri yoktur.
+Uykusuzluk ve huzursuzluk yapabilir. Antidepresanlarla birlikte kullanımı konusunda yeterli veri yoktur. TİTCK monografı yeterli veri olmadığı için hamilelikte ve emzirirken kullanılmamasını yazıyor.
 
 ### İlaç etkileşimleri
 - Antidepresanlar: Serotonin üzerinden etki ettiği öne sürülür; birlikte kullanım verisi yetersiz.
@@ -2433,7 +2433,7 @@ Yaprak kaynamış suyla demlenir; yeşil çay daha düşük ısıda demlenir. EM
 Kafein, L-teanin ve kateşinler içerir. Gözlem çalışmalarında düzenli çay içimi kalp-damar hastalıklarında daha düşük riskle ilişkilidir; yeşil çay ekstresinin zayıflatıcı etkisi küçüktür.
 
 ### Güvenlik
-İçecek olarak güvenlidir. Yüksek doz yeşil çay ekstresi kapsülleri karaciğer hasarı vakalarıyla ilişkilendirilmiştir. Çok sıcak içilmesi yemek borusu için risklidir.
+İçecek olarak güvenlidir. Yüksek doz yeşil çay ekstresi kapsülleri karaciğer hasarı vakalarıyla ilişkilendirilmiştir. Çok sıcak içilmesi yemek borusu için risklidir. TİTCK monografı mide ve on iki parmak bağırsağı ülserinde, hipertansiyon ve aritmi gibi kalp-damar bozukluklarında, hipertiroidide, böbrek iltihabında, uykusuzlukta ve göz içi basıncı artışında kullanılmamasını yazıyor. Kafein plasentaya ve anne sütüne geçtiği için hamilelikte ve emzirirken önerilmiyor. MAO inhibitörleriyle birlikte yüksek miktarda kullanımı hipertansif krize yol açabilir.
 
 ### Doğada
 Nerede yetişir: Doğu Karadeniz’in yağışlı yamaçları; Çin, Hindistan ve Sri Lanka.
@@ -2494,7 +2494,7 @@ Kök kurutulup öğütülür; karabiber ve yağla birlikte alındığında emili
 Kurkumin içerir. Bazı küçük çalışmalarda diz kireçlenmesi ağrısında fayda görülmüştür; NCCIH çoğu iddia için kanıtın zayıf olduğunu belirtir. Kurkumin vücutta zayıf emilir.
 
 ### Güvenlik
-Baharat olarak güvenlidir. Yüksek doz kapsüllerle karaciğer hasarı vakaları bildirilmiştir. Kan sulandırıcılarla etkileşebilir; safra taşı olanlar dikkatli olmalıdır.
+Baharat olarak güvenlidir. Yüksek doz kapsüllerle karaciğer hasarı vakaları bildirilmiştir. Kan sulandırıcılarla etkileşebilir; safra taşı olanlar dikkatli olmalıdır. TİTCK monografı yeterli veri olmadığı için hamilelikte ve emzirirken kullanılmamasını yazıyor.
 
 ### İlaç etkileşimleri
 - Kan sulandırıcılar ve kan pulcuğu ilaçları: Kanama riskini artırabilir.
@@ -2563,7 +2563,7 @@ Kök kurutulur ya da buharda pişirilerek “kırmızı ginseng” yapılır. EM
 Ginsenozitler içerir. Bazı çalışmalarda kan şekeri ve bağışıklık üzerinde küçük etkiler bulunmuştur; NCCIH kanıtın sınırlı olduğunu belirtir.
 
 ### Güvenlik
-Uykusuzluk yapabilir. Kan sulandırıcılar ve şeker ilaçlarıyla etkileşebilir.
+Uykusuzluk yapabilir. Kan sulandırıcılar ve şeker ilaçlarıyla etkileşebilir. TİTCK monografı ameliyattan yedi gün önce bırakılmasını yazıyor; yüksek dozda uzun süre kullanıldığında hipertansiyon, uykusuzluk, sinirlilik, çökkünlük, kas sertliği ve ödem görülebilir. Hamilelikte ve emzirirken önerilmiyor.
 
 ### İlaç etkileşimleri
 - Kan sulandırıcılar (varfarin): Varfarinin etkisini azaltabilir.
@@ -2625,7 +2625,7 @@ Tohum kavrulup toz edilir ve suyla içilir. EMA monografı tek dozu 450 mg toz g
 Tohumlarında kahve çekirdeğinden daha yüksek oranda kafein bulunur. Dikkat ve yorgunluk üzerine küçük çalışmalar vardır.
 
 ### Güvenlik
-Yüksek kafein içerir; kalp ritmi sorunları, kaygı ve uykusuzluk yaşayanlar dikkatli olmalıdır. Enerji içeceklerinde başka uyarıcılarla birleşebilir.
+Yüksek kafein içerir; kalp ritmi sorunları, kaygı ve uykusuzluk yaşayanlar dikkatli olmalıdır. Enerji içeceklerinde başka uyarıcılarla birleşebilir. TİTCK monografı mide ve on iki parmak bağırsağı ülserinde, hipertansiyon ve aritmi gibi kalp-damar hastalıklarında ve hipertiroidide kullanılmamasını yazıyor; diyabet ve glokom hastaları dikkatli kullanmalı. Hamilelikte ve emzirirken önerilmiyor. MAO inhibitörleri, kan sulandırıcılar, antidepresanlar, şeker ilaçları ve lityum dâhil geniş bir ilaç listesiyle etkileşiyor.
 
 ### İlaç etkileşimleri
 - Kafein ve diğer uyarıcılar: Kafein dozu üst üste biner.
@@ -3077,7 +3077,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Genelde güvenli
 NCCIH’e göre soğuk algınlığını önlemede ya da kısaltmada küçük bir etkisi olabilir, ama sonuçlar tutarsızdır. EMA E. purpurea toprak üstü kısmını soğuk algınlığının kısa süreli tedavisi için tanır.
 
 ### Güvenlik
-Papatyagil alerjisi olanlarda alerji yapabilir. Otoimmün hastalığı olanlar dikkatli olmalıdır.
+Papatyagil alerjisi olanlarda alerji yapabilir. Otoimmün hastalığı olanlar dikkatli olmalıdır. TİTCK monografı sindirim şikâyetleri ve tansiyon düşüklüğü gibi istenmeyen etkilere yol açabildiğini; hamilelikte ve emzirirken önerilmediğini yazıyor.
 
 ### Doğada
 Nerede yetişir: Kuzey Amerika’nın çayır ve bozkırları; bugün Türkiye dahil birçok yerde yetiştirilir.
@@ -3137,7 +3137,7 @@ Standart kök ekstresi olarak kullanılır.
 EMA, kök ekstresini sıcak basması gibi menopoz belirtileri için iyi yerleşmiş kullanımda tanır. NCCIH çalışmaların sonuçlarının tutarsız olduğunu belirtir.
 
 ### Güvenlik
-Nadir de olsa karaciğer hasarı vakaları bildirilmiştir; karaciğer hastalığı olanlar kullanmamalıdır. TİTCK monografı hamilelikte ve emzirirken kullanılmamasını, meme kanseri olanların ancak hekim denetiminde kullanmasını yazıyor; seyrek de olsa karaciğer toksisitesi, alerjik deri tepkimeleri ve yüzde, kol ve bacaklarda şişme bildirilmiş.
+Nadir de olsa karaciğer hasarı vakaları bildirilmiştir; karaciğer hastalığı olanlar kullanmamalıdır. TİTCK monografı hamilelikte ve emzirirken kullanılmamasını, meme kanseri olanların ancak hekim denetiminde kullanmasını yazıyor; seyrek de olsa karaciğer toksisitesi, alerjik deri tepkimeleri ve yüzde, kol ve bacaklarda şişme bildirilmiş. TİTCK monografı ayrıca östrojen preparatları, doğum kontrol ilaçları, azatiyoprin, siklosporin, tansiyon ilaçları, amiodaron gibi ritim ilaçları, kan sulandırıcılar, karbamazepin, tamoksifen ve demir içeren ürünlerle etkileştiğini yazıyor.
 
 ### İlaç etkileşimleri
 - Karaciğere yük getiren ilaçlar: Nadir karaciğer hasarı vakaları bildirilmiştir.
@@ -3169,7 +3169,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Genelde güvenli
 Büyük ve iyi tasarlanmış çalışmalar, cüce palmiye ekstresinin prostat büyümesine bağlı idrar belirtilerinde plasebodan üstün olmadığını göstermiştir. EMA bazı ekstreler için bu kullanımı tanır.
 
 ### Güvenlik
-Genelde güvenlidir; mide şikâyetleri yapabilir.
+Genelde güvenlidir; mide şikâyetleri yapabilir. TİTCK monografı karaciğer hastalarında kullanılmamasını, ameliyattan iki hafta önce bırakılmasını ve katarakt ameliyatında kullanılmamasını yazıyor. 18 yaşından küçüklerde, hamilelikte ve emzirirken kullanılmamalı. Ateş, spazm, idrarda kan, ağrılı idrara çıkma ya da idrar yapamama olursa hekime başvurulmalı. TİTCK monografı iki aydan uzun kullanılmamasını yazıyor.
 
 ### Doğada
 Nerede yetişir: ABD’nin güneydoğusu, özellikle Florida’nın kumlu çam ormanları.
@@ -3197,7 +3197,7 @@ Taze rizom dilimlenip 10 dakika kaynatılır ya da rendelenip demlenir; kurusu t
 EMA zencefili taşıt tutmasından kaynaklanan bulantıyı önlemede iyi yerleşmiş kullanımda tanır. Hamilelik bulantısında birçok küçük çalışmada fayda görülmüştür; NCCIH bu konuda kanıtı umut verici bulur. Eklem ağrısı ve kilo verme iddiaları için kanıt zayıftır.
 
 ### Güvenlik
-Yemekteki miktarda güvenlidir. Yüksek doz mide yanması yapabilir. Kan sulandırıcı kullananlar ve safra taşı olanlar takviye almadan önce hekime danışmalıdır.
+Yemekteki miktarda güvenlidir. Yüksek doz mide yanması yapabilir. Kan sulandırıcı kullananlar ve safra taşı olanlar takviye almadan önce hekime danışmalıdır. TİTCK monografı yeterli veri olmadığı için hamilelikte ve emzirirken kullanılmamasını yazıyor. Kan sulandırıcılar, antiplateletler, şeker ilaçları, kalsiyum kanal blokerleri ve sülfaguanidinle etkileşir.
 
 ### Doğada
 Nerede yetişir: Tropik iklim ister; Türkiye’de saksıda ve seralarda yetiştirilebilir.
@@ -3225,7 +3225,7 @@ Kurutulmuş kök soğuk ya da ılık suda bekletilir; kokusu güçlüdür. EMA m
 EMA kediotu kökünü hafif sinirsel gerginlik ve uyku sorunları için iyi yerleşmiş kullanımda tanır. Uyku üzerine çalışmaların sonuçları karışıktır; bazıları uykuya dalmada küçük bir iyileşme bulur, bazıları plasebodan fark bulmaz.
 
 ### Güvenlik
-Genelde güvenlidir; sabah sersemliği ve baş ağrısı yapabilir. Alkol, uyku ilaçları ve yatıştırıcılarla birlikte kullanılmamalı. Nadir karaciğer hasarı vakaları bildirilmiştir. Araç kullanmadan önce alınmamalıdır.
+Genelde güvenlidir; sabah sersemliği ve baş ağrısı yapabilir. Alkol, uyku ilaçları ve yatıştırıcılarla birlikte kullanılmamalı. Nadir karaciğer hasarı vakaları bildirilmiştir. Araç kullanmadan önce alınmamalıdır. TİTCK monografı hamilelikte ve emzirirken güvenliliğinin belirlenmediğini, yeterli veri olmadığı için bu dönemlerde kullanılmasının önerilmediğini yazıyor.
 
 ### Doğada
 Nerede yetişir: Kuzey ve Doğu Anadolu’nun nemli çayırları ve dere kenarları.
@@ -3253,7 +3253,7 @@ Kullanılan biçim standart yaprak ekstresidir (EGb 761 gibi). EMA monografında
 EMA standart ginkgo yaprağı ekstresini yaşa bağlı hafif bilişsel gerilemede tanır. Ancak büyük bir ABD çalışması (GEM) ginkgonun yaşlılarda demansı önlemediğini göstermiştir. Kulak çınlaması ve dolaşım iddiaları için kanıt zayıftır.
 
 ### Güvenlik
-Kanama riskini artırabilir; ameliyattan önce bırakılmalıdır. Çiğ ya da çok miktarda yenen tohumlar zehirlidir ve nöbete yol açabilir. Nöbet geçirenler dikkatli olmalıdır.
+Kanama riskini artırabilir; ameliyattan önce bırakılmalıdır. Çiğ ya da çok miktarda yenen tohumlar zehirlidir ve nöbete yol açabilir. Nöbet geçirenler dikkatli olmalıdır. TİTCK monografı yeterli veri olmadığı için hamilelikte ve emzirirken kullanılmamasını yazıyor.
 
 ### İlaç etkileşimleri
 - Kan sulandırıcılar ve kan pulcuğu ilaçları (varfarin, aspirin, klopidogrel): Kanama riskini artırabilir.
@@ -3286,7 +3286,7 @@ Yaprağın içindeki saydam jel çıkarılıp cilde sürülür. Sarı özsu (lat
 Jelin hafif yanıklarda ve güneş yanığında iyileşmeyi hızlandırabileceğine dair küçük çalışmalar vardır. Ağızdan alınan yaprak özsuyu güçlü bir müshildir; ABD’de 2002’den beri reçetesiz müshil ürünlerinde kullanılmaz. Hayvan çalışmalarında yaprak ekstresinin kanser yaptığı gösterilmiştir.
 
 ### Güvenlik
-Jel cilde sürüldüğünde genelde güvenlidir. Yaprak özsuyu ishal, kramp ve potasyum kaybına yol açar; içilmesi önerilmez. Gebelikte ağızdan kullanılmamalıdır.
+Jel cilde sürüldüğünde genelde güvenlidir. Yaprak özsuyu ishal, kramp ve potasyum kaybına yol açar; içilmesi önerilmez. Gebelikte ağızdan kullanılmamalıdır. TİTCK monografı hamilelikte ve emzirirken kullanılmamasını, 12 yaşından küçüklerde kullanılmamasını yazıyor; böbrek bozukluğu olanlar olası elektrolit dengesizliğine karşı dikkatli olmalı.
 
 ### İlaç etkileşimleri
 - İdrar söktürücüler, kortizon, meyan kökü: Yaprak özsuyu potasyum kaybını artırır.
@@ -3319,7 +3319,7 @@ Kabuk çubukları kaynatılır ya da toz olarak yemeğe katılır. EMA monograf�
 Kan şekeri üzerine çok sayıda küçük çalışma vardır; sonuçlar tutarsızdır ve NCCIH tarçının herhangi bir hastalıkta işe yaradığına dair kanıtın yetersiz olduğunu belirtir.
 
 ### Güvenlik
-Yemekteki miktarda güvenlidir. Marketlerde en çok satılan kasya tarçını yüksek kumarin içerir; her gün çay kaşıklarıyla tüketilirse karaciğere zarar verebilir. Seylan tarçınında kumarin çok azdır.
+Yemekteki miktarda güvenlidir. Marketlerde en çok satılan kasya tarçını yüksek kumarin içerir; her gün çay kaşıklarıyla tüketilirse karaciğere zarar verebilir. Seylan tarçınında kumarin çok azdır. TİTCK monografı ameliyattan iki hafta önce bırakılmasını ve şeker ilaçlarıyla etkileştiğini yazıyor; hamilelikte ve emzirirken önerilmiyor.
 
 ### İlaç etkileşimleri
 - Şeker ilaçları ve insülin: Kan şekerini düşürebilir.
@@ -3351,7 +3351,7 @@ Bütün tomurcuk kaynatılır ya da öğütülür. ⚠️ EMA monografı tomurcu
 Karanfil yağındaki öjenol, diş hekimliğinde lokal ağrı kesici ve antiseptik olarak uzun süredir kullanılır. EMA karanfil yağını ağız ve boğaz iltihabı ile diş ağrısında geleneksel kullanımda tanır. Diğer iddialar için insan çalışması azdır.
 
 ### Güvenlik
-Baharat olarak güvenlidir. Saf uçucu yağı yutulursa, özellikle çocuklarda karaciğer hasarı ve nöbete yol açabilir. Diş etine sık sürülürse dokuyu tahriş eder. Kan sulandırıcılarla etkileşebilir.
+Baharat olarak güvenlidir. Saf uçucu yağı yutulursa, özellikle çocuklarda karaciğer hasarı ve nöbete yol açabilir. Diş etine sık sürülürse dokuyu tahriş eder. Kan sulandırıcılarla etkileşebilir. TİTCK monografı yüksek miktarda kullanımın genotoksik ve kanserojen etki gösterebileceğini; merkezi sinir sistemi baskılanması, idrar yolu bozuklukları, asidoz, karaciğer işlev bozukluğu, koma, nöbet ve kan şekeri düşüklüğüne yol açabileceğini yazıyor. Hamilelikte ve emzirirken önerilmiyor.
 
 ### İlaç etkileşimleri
 - Kan sulandırıcılar: Öjenol kan pulcuklarını etkileyerek kanama riskini artırabilir.
@@ -3382,7 +3382,7 @@ EMA monografı iki yol veriyor. Çay: 1,5–3 g kıyılmış yaprak 150 ml kayna
 EMA okaliptüs yağını soğuk algınlığında öksürüğü hafifletmek için geleneksel kullanımda tanır. Yağın ana bileşeni sineol (ökaliptol) ile bronşit ve sinüzitte yapılmış kontrollü çalışmalar vardır.
 
 ### Güvenlik
-Uçucu yağ yutulursa birkaç mililitresi bile çocuklarda nöbet ve bilinç kaybına yol açabilir. Bebeklerin ve küçük çocukların yüzüne, burnuna sürülmemeli. Astımlılarda buhar krize yol açabilir.
+Uçucu yağ yutulursa birkaç mililitresi bile çocuklarda nöbet ve bilinç kaybına yol açabilir. Bebeklerin ve küçük çocukların yüzüne, burnuna sürülmemeli. Astımlılarda buhar krize yol açabilir. TİTCK monografı sindirim yolu ve safra kesesi iltihaplarında ve ciddi karaciğer hastalığında içten kullanılmamasını; hamilelikte, emzirirken ve 12 yaşından küçüklerde içten kullanılmamasını yazıyor. Yaprakları şeker ilaçlarıyla ve karaciğerde CYP1A2, CYP3A4, CYP2C19, CYP2C9 enzimleriyle metabolize olan ilaçlarla etkileşir.
 
 ### İlaç etkileşimleri
 - Karaciğerde yıkılan ilaçlar: Sineol karaciğer enzimlerini hızlandırarak bazı ilaçların düzeyini düşürebilir.
@@ -3566,7 +3566,7 @@ Bilimsel kanıt: Sınırlı · Güvenlik: Genelde güvenli
 EMA enginar yaprağını hafif hazımsızlık ve şişkinlikte geleneksel kullanımda tanır. Küçük çalışmalarda hazımsızlık belirtilerinde ve kolesterolde hafif iyileşme görülmüştür.
 
 ### Güvenlik
-Yemek olarak güvenlidir. Safra yolu tıkanıklığı ya da safra taşı olanlar yaprak ekstresi kullanmamalıdır. Papatyagil alerjisi olanlarda alerji yapabilir.
+Yemek olarak güvenlidir. Safra yolu tıkanıklığı ya da safra taşı olanlar yaprak ekstresi kullanmamalıdır. Papatyagil alerjisi olanlarda alerji yapabilir. TİTCK monografı safra kanalı tıkanıklığı, kolanjit, safra taşı ve karaciğer hastalığı olanların hekim denetiminde kullanmasını yazıyor; hamilelikte ve emzirirken önerilmiyor. Karaciğerde metabolize olan ilaçların hızını değiştirebilir; varfarin gibi kumarin tipi kan sulandırıcılarla, şeker ve tansiyon ilaçlarıyla etkileşebilir.
 
 ### Doğada
 Nerede yetişir: İzmir, Bursa ve Muğla’da yetiştirilir; yabani atası Akdeniz’de doğal yetişir.
@@ -3595,7 +3595,7 @@ Tohum öğütülüp yenir ya da standart silimarin ekstresi olarak alınır; ça
 Tohumdaki silimarin karaciğer üzerine çok çalışılmıştır; EMA hafif hazımsızlıkta geleneksel kullanımda tanır. Karaciğer hastalıklarında kontrollü çalışmaların sonuçları tutarsızdır. Saflaştırılmış silibinin, Avrupa’da ölümcül zehirli mantar zehirlenmesinde hastanede damar yoluyla kullanılır.
 
 ### Güvenlik
-Genelde güvenlidir; ishal ve mide şikâyetleri yapabilir. Papatyagil alerjisi olanlarda alerji yapabilir. Karaciğer hastalığı olanlar tedavilerini değiştirmeden önce hekime danışmalı.
+Genelde güvenlidir; ishal ve mide şikâyetleri yapabilir. Papatyagil alerjisi olanlarda alerji yapabilir. Karaciğer hastalığı olanlar tedavilerini değiştirmeden önce hekime danışmalı. TİTCK monografı yeterli veri olmadığı için hamilelikte ve emzirirken kullanılmamasını yazıyor. Glukuronidasyona uğrayan ilaçlar (parasetamol, oksazepam, haloperidol, lamotrijin, morfin, zidovudin), tamoksifen, şeker ilaçları, sirolimus, raloksifen ve P-glikoprotein substratlarıyla etkileşir.
 
 ### Doğada
 Nerede yetişir: Türkiye genelinde tarla kenarları, yol kenarları ve boş araziler.
@@ -6604,7 +6604,7 @@ Monograf tallustan hazırlanan biçimleri tarif ediyor. Burada hazırlığın st
 Monografın endikasyonu kilo vermeye yardım etmek ve bu endikasyonu doğrudan sınayan bir randomize çalışma var. 2022’de Marine Drugs dergisinde yayımlanan randomize, plasebo kontrollü, çift kör çalışmada fazla kilolu, kan şekeri bozuk ve insülin direnci olan 56 kişi 12 hafta boyunca günde 500 mg kahverengi alg ekstresi (Ascophyllum nodosum ve Fucus vesiculosus) ya da plasebo almış; her iki grup kişiye özel beslenme önerisiyle ılımlı kilo verme programındaymış. Sonuç net: alg ekstresinin vücut ağırlığı üzerinde etkisi olmamış, kan şekeri üzerinde de etkisi görülmemiş. Yazarlar iltihap yanıtında erken bir yatışma ve birkaç metabolik ölçütte küçük değişiklikler bildiriyor, ama çalışmanın başlığı bulguyu kendisi özetliyor: etki sınırda. İki not gerekiyor: çalışma iki algin karışımını sınadı, tek başına Fucus’u değil; ve bir çalışma bir sistematik derleme değildir. AB monografı da endikasyonu uzun kullanıma dayandırıyor. Kanıt düzeyi "geleneksel": endikasyonu sınayan çalışma var ve kilo üzerinde etki bulamamış.
 
 ### Güvenlik
-Bu kayıttaki uyarıların neredeyse tamamı tek bir nedenden, iyottan geliyor. TİTCK monografı şu durumlarda kullanılmamasını yazıyor: hipertiroidizm, Graves ya da Basedow hastalığı, Hashimoto tiroiditi, tiroit bezinin kısmen alınmış olması, iyot fazlalığı, halojen duyarlılığı, kanser ve tüberküloz; ayrıca kalp-damar ve koroner hastalıklar, böbrek yetmezliği ve menopoz sonrası osteoporoz. Monografın gerekçesi tek cümlede: günlük iyot limitinin aşılması hipertiroidizmi tetikler ya da tiroit hastalıklarını kötüleştirir. Yüksek iyot içeriği duyarlı kişilerde alerjiye de yol açabilir. Fucus içeren başka preparatlarla, iyot içeren preparatlarla ya da tiroit ilaçlarıyla birlikte alınmamalı. Etkin maddeye aşırı duyarlılık görülenler kullanmamalı. 18 yaş altında kullanılması önerilmiyor; gebelikte ve emzirirken kullanılmamalı — gebelikte iyot dengesi ayrıca hassastır. Belirtiler kötüleşirse hekim ya da eczacıya danışılmalı.
+Bu kayıttaki uyarıların neredeyse tamamı tek bir nedenden, iyottan geliyor. TİTCK monografı şu durumlarda kullanılmamasını yazıyor: hipertiroidizm, Graves ya da Basedow hastalığı, Hashimoto tiroiditi, tiroit bezinin kısmen alınmış olması, iyot fazlalığı, halojen duyarlılığı, kanser ve tüberküloz; ayrıca kalp-damar ve koroner hastalıklar, böbrek yetmezliği ve menopoz sonrası osteoporoz. Monografın gerekçesi tek cümlede: günlük iyot limitinin aşılması hipertiroidizmi tetikler ya da tiroit hastalıklarını kötüleştirir. Yüksek iyot içeriği duyarlı kişilerde alerjiye de yol açabilir. Fucus içeren başka preparatlarla, iyot içeren preparatlarla ya da tiroit ilaçlarıyla birlikte alınmamalı. Etkin maddeye aşırı duyarlılık görülenler kullanmamalı. 18 yaş altında kullanılması önerilmiyor; gebelikte ve emzirirken kullanılmamalı — gebelikte iyot dengesi ayrıca hassastır. Belirtiler kötüleşirse hekim ya da eczacıya danışılmalı. TİTCK monografı ameliyattan iki hafta önce bırakılmasını yazıyor; tiroit ilaçları, kan sulandırıcılar, antiplateletler, şeker ilaçları, lityum ve karaciğerde CYP2C8, CYP2C9, CYP2D6, CYP3A4 enzimleriyle metabolize olan ilaçlarla etkileşir.
 
 ### İlaç etkileşimleri
 - Tiroit ilaçları ve iyot içeren ürünler: Hem AB hem TİTCK monografı bunu açıkça yazıyor: Fucus içeren başka preparatlar, iyot içeren preparatlar ve tiroit bezi için kullanılan ilaçlar bu alg ile birlikte alınmamalıdır. Gerekçe toplamdır: her biri iyot yüklüyor ve günlük sınırın aşılması tiroidi etkiliyor.
@@ -6672,7 +6672,7 @@ Monograf yapraktan hazırlanan biçimleri tarif ediyor. İki pratik not: AB mono
 Mate, bu partideki üç kayıt arasında havuzlanmış klinik kanıtı olan tek organizma. 2025’te Frontiers in Endocrinology dergisinde yayımlanan sistematik derleme ve meta-analiz 13 randomize kontrollü çalışmayı topluyor (dislipidemili, fazla kilolu ve normal kilolu gönüllüler). Bulgular ikiye ayrılıyor. Olumlu taraf: prediyabetli hastalarda yemek sonrası kan şekerinde (ortalama fark −12,76), HbA1c’de (−0,37) ve HOMA indeksinde (−0,24) anlamlı düşüşler — ama her biri yalnızca iki çalışmadan geliyor ve derleme bunların doğrulanması gerektiğini yazıyor. Olumsuz taraf: trigliserit, toplam kolesterol, HDL, LDL, açlık kan şekeri, açlık insülini, bel çevresi ve vücut kitle indeksinde anlamlı etki yok. Derlemenin kendi sonucu ölçülü: mate tüketimi kan şekeri kontrolünde olumlu etkiler gösterebilir, ama lipit profili ve kilo yönetimi üzerindeki etkisi sınırlı görünüyor. Derleme istenmeyen etkileri de sayıyor: mukoza tahrişi, uykusuzluk, taşikardi, anjina, baş ağrısı ve mide-bağırsak rahatsızlığı. Bir not gerekiyor: ölçülen şey kan şekeri, AB monografının endikasyonları ise yorgunluk ve idrar yolu — yani kanıt onaylı kullanımın alanında değil. Kanıt düzeyi "sınırlı".
 
 ### Güvenlik
-Mide-bağırsak ülserinde, hipertansiyon ve aritmi gibi kalp rahatsızlıklarında ve tiroit bezinin aşırı çalışması durumunda kullanılmamalı — bunlar kafeinli bir drogun klasik kontrendikasyonlarıdır. AB monografı buna bir tane daha ekliyor: sıvı alımının azaltılmasının önerildiği durumlar, örneğin idrar yolu tıkanıklığı. Fazla tüketildiğinde uykusuzluk, sıkıntı, gerginlik ve çarpıntı görülüyor; meta-analiz ayrıca mukoza tahrişi, taşikardi, anjina ve baş ağrısı bildiriyor. Yatmadan önce alınması önerilmiyor. İçeceğin sıcaklığı ayrı bir konudur ve bu bitkide özellikle önemli: Uluslararası Kanser Araştırmaları Ajansı (IARC) 2016’da çok sıcak içecek içmeyi "insanlar için muhtemelen kanserojen" (Grup 2A) sınıfına aldı ve "çok sıcak"ı 65 °C’nin üzeri diye tanımladı; aynı değerlendirmede çok sıcak olmayan sıcaklıkta mate içmek sınıflandırılamaz (Grup 3) bulundu. Yani sorun matenin kendisinde değil, sıcaklıkta — ve bu Türkiye’de çay ve kahve için de geçerlidir. 18 yaş altında, gebelikte ve emzirirken kullanılması önerilmiyor. Ateş, idrar yanması, kasılmalar ya da idrarda kan görülürse hekime danışılmalı.
+Mide-bağırsak ülserinde, hipertansiyon ve aritmi gibi kalp rahatsızlıklarında ve tiroit bezinin aşırı çalışması durumunda kullanılmamalı — bunlar kafeinli bir drogun klasik kontrendikasyonlarıdır. AB monografı buna bir tane daha ekliyor: sıvı alımının azaltılmasının önerildiği durumlar, örneğin idrar yolu tıkanıklığı. Fazla tüketildiğinde uykusuzluk, sıkıntı, gerginlik ve çarpıntı görülüyor; meta-analiz ayrıca mukoza tahrişi, taşikardi, anjina ve baş ağrısı bildiriyor. Yatmadan önce alınması önerilmiyor. İçeceğin sıcaklığı ayrı bir konudur ve bu bitkide özellikle önemli: Uluslararası Kanser Araştırmaları Ajansı (IARC) 2016’da çok sıcak içecek içmeyi "insanlar için muhtemelen kanserojen" (Grup 2A) sınıfına aldı ve "çok sıcak"ı 65 °C’nin üzeri diye tanımladı; aynı değerlendirmede çok sıcak olmayan sıcaklıkta mate içmek sınıflandırılamaz (Grup 3) bulundu. Yani sorun matenin kendisinde değil, sıcaklıkta — ve bu Türkiye’de çay ve kahve için de geçerlidir. 18 yaş altında, gebelikte ve emzirirken kullanılması önerilmiyor. Ateş, idrar yanması, kasılmalar ya da idrarda kan görülürse hekime danışılmalı. TİTCK monografı MAO inhibitörleri, sempatomimetikler, yatıştırıcılar, kinolon antibiyotikleri, östrojenler, lityum, kan sulandırıcılar ve antiplatelet ilaçlar dâhil geniş bir ilaç listesiyle etkileştiğini yazıyor.
 
 ### İlaç etkileşimleri
 - MAO inhibitörleri: AB monografı MAO inhibitörü kullananların mateyi dikkatli kullanması gerektiğini yazıyor. Bu ilaçlar kafein gibi uyarıcı maddelerle birlikte tansiyon ve kalp hızı üzerinde beklenmedik etkilere yol açabilir.
@@ -6977,7 +6977,7 @@ Monograf yapraktan hazırlanan biçimleri tarif ediyor; acı droglarda olduğu g
 Acı yoncanın insanda yapılmış bir klinik çalışması yok. Güncel yayınlar laboratuvar düzeyinde ya da bitkinin kendisiyle değil yetiştiği ortamla ilgili: fenolik bileşik ve metal içeriği ölçümleri, farelerde sakinleştirici etki çalışması, turbalık ekolojisi üzerine araştırmalar. Bunlar bir hastada iştahsızlığı ya da şişkinliği geçirip geçirmediğini göstermiyor. AB monografı da üç endikasyonu uzun kullanıma dayandırıyor. Bilinen mekanizma acılıktan geliyor: yapraktaki sekoiridoit acı maddeleri tat yoluyla sindirim salgılarını uyarıyor. Bu mekanizma hem ilk iki endikasyonu hem ülser kontrendikasyonunu açıklıyor; üçüncü endikasyonun (eklem ve kas ağrısı) mekanizması ise monografta verilmiyor. Kanıt düzeyi "geleneksel".
 
 ### Güvenlik
-Aktif mide ya da oniki parmak bağırsağı ülseri olanlar kullanmamalı — hem AB hem TİTCK monografı bunu yazıyor ve gerekçe doğrudan: bitki acı tadıyla mide salgısını uyararak çalışıyor. Etkin maddeye aşırı duyarlılık gösterenler kullanmamalı. Eklem ağrısı endikasyonunda AB monografı bir sınır koyuyor: eklemlerde şişlik, kızarıklık ya da ateşle birlikte olan eklem ağrısı hekim tarafından incelenmelidir — bunlar iltihaplı bir eklem hastalığının belirtisi olabilir ve bitkisel ürünle geçiştirilmemeli. 18 yaş altında kullanımı belirlenmemiş; gebelikte ve emzirirken kullanılması önerilmiyor. Tentürlerde etanol bulunabilir. Belirtiler kötüleşirse hekim ya da eczacıya danışılmalı.
+Aktif mide ya da oniki parmak bağırsağı ülseri olanlar kullanmamalı — hem AB hem TİTCK monografı bunu yazıyor ve gerekçe doğrudan: bitki acı tadıyla mide salgısını uyararak çalışıyor. Etkin maddeye aşırı duyarlılık gösterenler kullanmamalı. Eklem ağrısı endikasyonunda AB monografı bir sınır koyuyor: eklemlerde şişlik, kızarıklık ya da ateşle birlikte olan eklem ağrısı hekim tarafından incelenmelidir — bunlar iltihaplı bir eklem hastalığının belirtisi olabilir ve bitkisel ürünle geçiştirilmemeli. 18 yaş altında kullanımı belirlenmemiş; gebelikte ve emzirirken kullanılması önerilmiyor. Tentürlerde etanol bulunabilir. Belirtiler kötüleşirse hekim ya da eczacıya danışılmalı. TİTCK monografı kanama riski nedeniyle planlanmış ameliyatlardan iki hafta önce bırakılmasını yazıyor.
 
 ### İlaç etkileşimleri
 - Monograflarda bildirilmiş ilaç etkileşimi yok: Hem AB hem TİTCK monografı etkileşim bölümünde bir şey saymıyor. "Bildirilmemiş", etkileşim olmadığının kanıtı değil, araştırılmadığının ifadesi.
@@ -8245,7 +8245,7 @@ DSÖ monografı günlük 9–30 g kurutulmuş kök veriyor, ağızdan (dekoksiyo
 Gevenin güncel kanıtı DSÖ’nün 1999’da "yok" dediği yerde değil, onkolojide. 2025’te Integrative Cancer Therapies dergisinde yayımlanan sistematik derleme ve meta-analiz, kanserle ilişkili yorgunlukta geven eklenen tedaviyi inceleyen 8 randomize çalışmayı birleştirdi: yorgunluk skorunda büyük bir fark (SMD −1,63; %95 GA −1,90 ile −1,36) ve yaşam kalitesinde iyileşme bildirildi — ama yazarlar çalışmaların küçük ve düşük kaliteli olduğunu, sonucun bu nedenle dikkatle okunması gerektiğini yazıyor. Öteki meta-analizler (membranöz nefropati, kalp yetmezliğinde sol ventrikül yeniden biçimlenmesi, kemoradyoterapi ile birlikte polisakkaritler) aynı deseni paylaşıyor: hepsi Çin’de, hepsi standart tedaviye ek olarak, çoğu çok bileşenli formül ya da enjeksiyon biçiminde. Bu kanıt, Batı’da kapsül olarak satılan "bağışıklık gevenine" doğrudan aktarılamaz. Kanıt düzeyi "sınırlı".
 
 ### Güvenlik
-DSÖ monografı kontrendikasyon, uyarı ve istenmeyen etki için "bilgi yok" yazıyor — bu, güvenli olduğu değil, 1999’da verinin bulunmadığı anlamına gelir. Gebelikte ve emzirirken önerilmiyor; çocuklarda veri yok. Bağışıklık üzerine etki atfedilen bir bitki olarak otoimmün hastalığı olanlar ve bağışıklık baskılayıcı ilaç kullananlar hekime sormadan kullanmamalı — kuramsal ama yerleşik bir uyarı. Türkiye’deki yabani gevenlerin kökü toplanıp kullanılmamalı: tür ayrımı uzman işidir ve bazı Astragalus türleri hayvanlarda zehirlidir.
+DSÖ monografı kontrendikasyon, uyarı ve istenmeyen etki için "bilgi yok" yazıyor — bu, güvenli olduğu değil, 1999’da verinin bulunmadığı anlamına gelir. Gebelikte ve emzirirken önerilmiyor; çocuklarda veri yok. Bağışıklık üzerine etki atfedilen bir bitki olarak otoimmün hastalığı olanlar ve bağışıklık baskılayıcı ilaç kullananlar hekime sormadan kullanmamalı — kuramsal ama yerleşik bir uyarı. Türkiye’deki yabani gevenlerin kökü toplanıp kullanılmamalı: tür ayrımı uzman işidir ve bazı Astragalus türleri hayvanlarda zehirlidir. TİTCK monografı asiklovir ve siklofosfamit gibi bağışıklığı baskılayan ilaçlarla ve kan sulandırıcılarla etkileştiğini yazıyor.
 
 ### İlaç etkileşimleri
 - DSÖ monografında bildirilmiş etkileşim yok: Monograf etkileşim bilgisi vermiyor. Kuramsal notlar: bağışıklık baskılayıcılar (siklofosfamid, siklosporin) ile ters yönde etki olasılığı; lityum ve diüretiklerle idrar söktürücü etki nedeniyle düzey değişikliği. Hiçbiri klinik çalışmada gösterilmiş değil.
