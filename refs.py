@@ -159,3 +159,14 @@ for _k, _v in {
     OTHER.setdefault(_k, []).append(_v)
 # Elle seçildi (22 Kasım): otomatik seçici ürün/stüdyo fotoğrafı getiriyordu; canlı bitki
 FILES.update({'kimyon': 'Cuminum cyminum.jpg', 'yildizanason': 'Illicium verum 0zz.jpg', 'fasulye': 'Strąki fasoli - 2023.08.08.jpg'})
+# Elle seçildi (24 Kasım): otomatik seçici ıspanak için çarkıfelek çiçeği getirmişti,
+# birkaç kayıtta da siyah-beyaz, bulanık ya da bitkiyi göstermeyen kare seçilmişti.
+FILES.update({
+    'ispanak': 'Not harvested Spinach in garden.jpg',
+    'izlandalikeni': 'Cetraria islandica 300808.jpg',
+    'mur': 'Commiphora myrrha.jpg',
+    'zufaotu': 'Hyssopus officinalis 2 RF.jpg',        # Commons eski adla (Hyssopus) dosyalıyor
+    'tasnanesi': 'Micromeria fruticosa Flores 2012-11-25 SierraMadrona.jpg',
+    'yalanciakasya': 'Robinia pseudoacacia blossom.jpg',
+    'greyfurt': 'Citrus paradisi (Grapefruit, pink).jpg',
+})

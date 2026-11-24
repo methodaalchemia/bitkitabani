@@ -34,6 +34,9 @@ RED = {
     'kimyon': ['Seeds of Cumin.jpg', 'Dried cumin seeds.jpg', 'Jeragam.jpg'],  # Jeragam aslında rezene
     'fasulye': ['Pinto Beans Seeds.jpg', 'Black Turtle Bean.jpg', 'Haricot rouge cultivé au Bénin.jpg'],
     'kakule': ['Cardamom pods - Green BNC.jpg'],
+    # 24 Kasım: yaprak damarı makrosu bitkiyi tanıtmıyor, seçici başkasını bulsun
+    'yenidunya': ['Loquat leaf.JPG'],
+    'suriyekekigi': ['Satyrid butterfly on Origanum syriacum.jpg'],
 }
 
 UA = 'BitkiTabani/1.0 (https://bitkitabani.com; image sync)'

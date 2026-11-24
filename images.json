@@ -1596,19 +1596,6 @@
   "w": 960,
   "w500": 500
  },
- "greyfurt": {
-  "artist": "Syrio",
-  "auto": true,
-  "b1280": "Trauttmansdorff gardens - Citrus x paradisi 02.JPG",
-  "file": "Trauttmansdorff gardens - Citrus x paradisi 02.JPG",
-  "h": 720,
-  "h500": 375,
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Trauttmansdorff_gardens_-_Citrus_x_paradisi_02.JPG",
-  "w": 960,
-  "w500": 500
- },
  "grindelya": {
   "artist": "Dawn Endico from Menlo Park, California",
   "auto": true,
@@ -2031,19 +2018,6 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Br%C3%A4nn%C3%A4ssla_(Urtica_Dioica).jpg",
-  "w": 960,
-  "w500": 500
- },
- "ispanak": {
-  "artist": "Rehman Abubakr",
-  "auto": true,
-  "b1280": "Flowers of Passiflora edulis.jpg",
-  "file": "Flowers of Passiflora edulis.jpg",
-  "h": 720,
-  "h500": 375,
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Flowers_of_Passiflora_edulis.jpg",
   "w": 960,
   "w500": 500
  },
@@ -4035,19 +4009,6 @@
   "w": 960,
   "w500": 500
  },
- "tasnanesi": {
-  "artist": "Javier martin",
-  "auto": true,
-  "b1280": "Clinopodium serpyllifolium Habitus 2011-12-18 SierraMadrona.jpg",
-  "file": "Clinopodium serpyllifolium Habitus 2011-12-18 SierraMadrona.jpg",
-  "h": 1280,
-  "h500": 667,
-  "license": "CC BY-SA 3.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Clinopodium_serpyllifolium_Habitus_2011-12-18_SierraMadrona.jpg",
-  "w": 960,
-  "w500": 500
- },
  "tatliot": {
   "artist": "Agnieszka Kwiecień, Nova",
   "auto": false,
@@ -4383,19 +4344,6 @@
   "w": 960,
   "w500": 500
  },
- "yalanciakasya": {
-  "artist": "Agnes Monkelbaan",
-  "auto": true,
-  "b1280": "Hortus Haren (Groningen) 20-04-2025. (actm.) 21.jpg",
-  "file": "Hortus Haren (Groningen) 20-04-2025. (actm.) 21.jpg",
-  "h": 1019,
-  "h500": 531,
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Hortus_Haren_(Groningen)_20-04-2025._(actm.)_21.jpg",
-  "w": 960,
-  "w500": 500
- },
  "yarpuz": {
   "artist": "Raffi Kojian",
   "auto": true,
@@ -4406,19 +4354,6 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Gardenology.org-IMG_2751_rbgs11jan.jpg",
-  "w": 960,
-  "w500": 500
- },
- "yenidunya": {
-  "artist": "Elucidate",
-  "auto": true,
-  "b1280": "Loquat leaf.JPG",
-  "file": "Loquat leaf.JPG",
-  "h": 1269,
-  "h500": 661,
-  "license": "CC BY 3.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Loquat_leaf.JPG",
   "w": 960,
   "w500": 500
  },
