@@ -38,7 +38,7 @@ EN = {
  uses=[('Anatolia','In the southeast, licorice sherbet is drunk during Ramadan as a cooling, stomach-friendly drink. The root is chewed for coughs and heartburn.'),('Asia','One of the most used plants in Chinese medicine, added to formulas to “harmonise” the other herbs.')],
  prep='The root is soaked or boiled in water.',
  science='It contains glycyrrhizin, 50 times sweeter than sugar. The EMA recognises it for coughs and mild stomach complaints as traditional uses. A glycyrrhizin-free form (DGL) has been studied for stomach ulcers.',
- safety='Regular, heavy use raises blood pressure, lowers potassium and can cause heart rhythm problems. People with high blood pressure, heart or kidney disease and pregnant women should avoid it.',
+ safety='Regular, heavy use raises blood pressure, lowers potassium and can cause heart rhythm problems. People with high blood pressure, heart or kidney disease and pregnant women should avoid it. The EMA monograph does not recommend use under 18, in pregnancy or while breastfeeding. For digestive complaints it gives 1.5–2 g of chopped root in 150 ml of boiling water, 2–4 cups a day after meals (3–8 g a day), for no more than four weeks.',
  fact='One of the world’s biggest licorice buyers is the tobacco industry, which uses it to flavour cigarettes.',
  season='Roots are dug in autumn or spring.', habitat='River banks and wet lowland fields in Southeastern Anatolia and the Aegean; mostly wild-harvested.', local='meyan, meyan kökü, biyan, piyan', confusion='Recognised by its sweet taste and yellow inside. Both its effects and its risks come from glycyrrhizin.'),
 'rezene': dict(name='Fennel', other='Hinojo, rezene (Turkish)', part='Seeds, bulb',

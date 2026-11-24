@@ -59,7 +59,7 @@ EN = {
  uses=[('Anatolia','Drunk for stomach ache, gas and sleeplessness; used for eye washes and baby care.'),('Andes','Manzanilla is one of the most common herbal teas in Peru and Bolivia, the first remedy for stomach upsets.')],
  prep='Flowers are steeped covered for 5–10 minutes.',
  science='The EMA recognises chamomile for mild digestive complaints, mouth and throat inflammation and skin irritation. Small clinical trials on anxiety have had positive results.',
- safety='Can cause allergy in people allergic to the daisy family. People on blood thinners should be careful. Oral use has not been established in children under 6.',
+ safety='Can cause allergy in people allergic to the daisy family. People on blood thinners should be careful. The EMA monograph gives doses by age, down to 6 months; oral use has not been established under 6 months, and steam inhalation not under 6 years.',
  fact='Its apigenin binds to GABA receptors in the brain, which may explain its calming effect.',
  season='Picked May–July when the flowers are fully open.', habitat='Field edges, fallow land and roadsides throughout Türkiye.', local='papatya, mayıs papatyası, ak papatya', confusion='Dog fennel (Anthemis) and scentless mayweed (Tripleurospermum) look very similar. Cut true chamomile’s flower head in half: it is hollow inside and smells of apple.'),
 'kantaron': dict(name='St John’s wort', other='Kantaron, sarı kantaron (Turkish)', part='Flowering tops',

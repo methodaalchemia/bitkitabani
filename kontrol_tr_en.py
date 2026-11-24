@@ -1,0 +1,80 @@
+# -*- coding: utf-8 -*-
+"""Türkçe–İngilizce güvenlik eşitliği kontrolü.
+
+Neden var: Türkçe kayıtlara sonradan eklenen bir kısıtlama (yaş sınırı,
+kontrendikasyon, günlük üst sınır) İngilizce kayda yansımazsa İngilizce
+sayfa Türkçeden daha az güvenli hâle gelir ve bu hiçbir yerde hata
+vermez. 24 Kasım 2026'da 45 kaydın 33'ünde bu olmuştu.
+
+Kullanım:  python3 kontrol_tr_en.py
+Çıkış kodu 1 ise Türkçede olup İngilizcede karşılığı olmayan kısıtlama var.
+Bulgular uyarıdır, kesin hüküm değil: kalıp eşleşmesiyle çalışır, elle
+okunması gerekir.
+"""
+import json, re, sys, os, glob, importlib, datetime
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+sys.path.insert(0, os.path.join(HERE, 'en'))
+
+# Türkçede aranan kısıtlama kalıpları -> İngilizcede beklenen karşılık
+KURAL = [
+    (r'kontrendike',              r'contraindicat|must not|never',        'kontrendikasyon'),
+    (r'(\d+)\s*aydan küçük',      r'\d+\s*months',                        'ay sınırı'),
+    (r'(\d+)\s*yaşından küçük',   r'under[ -]\d+|aged \d+|children',      'yaş sınırı'),
+    (r'erkeklerde',               r'\bmen\b|\bmale',                      'erkek kısıtlaması'),
+    (r'gebeli|hamileli',          r'pregnan|miscarriage',                 'gebelik'),
+    (r'emzir',                    r'breastfeed|nursing|lactat',           'emzirme'),
+    (r'günlük (?:üst sınır|toplam)', r'\ba day\b|daily|per day',          'günlük sınır'),
+]
+
+
+def kayitlar():
+    """Yayında olan bütün kayıtları (çekirdek + tarihi gelmiş kuyruk) döndürür."""
+    D = json.load(open(os.path.join(HERE, 'data.json'), encoding='utf-8'))
+    out = {p['id']: p for p in D['P']}
+    bugun = datetime.date.today()
+    for f in sorted(glob.glob(os.path.join(HERE, 'kuyruk', 'k*.py'))):
+        mod = importlib.import_module('kuyruk.' + os.path.basename(f)[:-3])
+        for q in getattr(mod, 'Q', []):
+            if q['id'] in out:
+                continue
+            if datetime.date.fromisoformat(q['yayin']) <= bugun:
+                out[q['id']] = q
+    return out
+
+
+def ingilizce():
+    EN = {}
+    for n in range(1, 9):
+        EN.update(importlib.import_module(f'p{n}').EN)
+    for p in kayitlar().values():          # kuyruk kayıtları İngilizcesini kendi taşıyor
+        if 'en' in p:
+            EN.setdefault(p['id'], p['en'])
+    return EN
+
+
+def main():
+    EN, bulgu = ingilizce(), []
+    for pid, p in sorted(kayitlar().items()):
+        if pid not in EN:
+            continue
+        tr = ' '.join(str(p.get(k, '')) for k in ('haz', 'guvNot')).lower()
+        en = ' '.join(str(EN[pid].get(k, '')) for k in ('safety', 'prep', 'part')).lower()
+        for tr_rx, en_rx, ad in KURAL:
+            m = re.search(tr_rx, tr)
+            if m and not re.search(en_rx, en):
+                detay = m.group(1) if m.groups() and m.group(1) else ''
+                bulgu.append((pid, ad, detay))
+    if not bulgu:
+        print('Türkçe–İngilizce güvenlik eşitliği: eksik kısıtlama yok.')
+        return 0
+    print(f'Türkçede olup İngilizcede karşılığı bulunamayan kısıtlama: {len(bulgu)}\n')
+    for pid, ad, detay in bulgu:
+        print(f'  {pid:18s} {ad}{" " + detay if detay else ""}')
+    print('\nHer biri elle okunmalı; kalıp eşleşmesi yanlış pozitif verebilir.')
+    return 1
+
+
+if __name__ == '__main__':
+    sys.exit(main())
