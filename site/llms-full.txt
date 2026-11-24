@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 293 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 294 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -9341,3 +9341,36 @@ Karıştırma riski: Turunç (acı portakal) Kew kaydında aynı melez adın alt
 
 ### İlginç bilgi
 Portakal bir tür değil, şadok ile mandalinanın geri melezidir (*Nature Genetics*, 2013). Kew kaydı bu yüzden tatlı portakalı ayrı bir tür olarak değil, turunçla aynı melez adın altında listeliyor.
+
+## Baykal takke otu (Scutellaria baicalensis Georgi)
+
+URL: https://bitkitabani.com/baykaltakkesi/
+Familya: Lamiaceae · Bölge: Asya ve Sibirya · Kullanılan kısım: Kurutulmuş kökleri
+Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
+
+### Geleneksel kullanım
+- DSÖ monografı — kök: Dünya Sağlık Örgütü monografı (Cilt 3, 2007): klinik veriyle desteklenen kullanım yok — olgu bildirimleri bağışıklığı uyardığını düşündürse de kontrollü çalışma verisi eksik. Farmakopelerde tanımlanan kullanım: ateş, bulantı ve kusma, akut dizanteri, sarılık, öksürük, çıban ve yaralar, düşük tehdidi. Geleneksel tıpta: alerji, ateroskleroz, ishal, dermatit, hipertansiyon. Günlük doz 3–9 g kök, infüzyon ya da dekoksiyon.
+- Türkiye: TİTCK Tıbbi Bitki Listesi’nde bu bitki için monograf yok; Türkiye’de yetişmiyor. Anadolu’da Scutellaria cinsinin yerli türleri (S. orientalis, S. salviifolia) bulunur ama onlar ayrı türlerdir ve bu monografın kapsamında değildir.
+- Çin — huáng qín: Çin tıbbının en eski "ısı temizleyen" acı-soğuk droglarından; Shennong Bencao Jing’de yer alır. Sarı kökü baikalin, baikalein ve wogonin adlı flavonları taşır; bugün Çin’de yüzlerce bileşik formülün (Tanreqing enjeksiyonu dahil) bileşenidir.
+
+### Hazırlama
+DSÖ monografı günlük doz olarak 3–9 g kurutulmuş kök veriyor, infüzyon ya da dekoksiyon. Kök, özüt, infüzyon ve dekoksiyon biçimleri. Gebelikte, emzirirken ve 12 yaş altında kontrendike.
+
+### Araştırmalar ne gösteriyor
+Baykal takke otunun tek başına, monograf endikasyonunda sınandığı bir klinik çalışma yok. Son yıllardaki insan çalışmaları hep karışımlarla: 2025’te Journal of Psychopharmacology dergisinde takke otu + alıç + magnezyum + krom karışımı stresli kişilerde; Nutritional Neuroscience dergisinde Acacia catechu ile birleşik özüt bilişsel işlevde; Nutrients dergisinde safranla birleşik özüt depresif belirtilerde. Hepsi karışımı ölçüyor, takke otunu değil. Çin’deki çalışmalar ise çok bileşenli formüllerle (Tanreqing enjeksiyonu için 2024 meta-analizi gibi). DSÖ monografı 2007’de "kontrollü çalışma verisi eksik" demişti; tek bileşenli kanıt açısından durum değişmedi. Kanıt düzeyi "geleneksel".
+
+### Güvenlik
+Gebelikte, emzirirken ve 12 yaş altında kontrendike — DSÖ monografı olası teratojen ve mutajen etkiler ile veri yokluğu nedeniyle. Monograf hayvan verisindeki çelişkiyi de aktarıyor: bir çalışmada sulu özüt gebe sıçanlarda teratojen bulunmuş, başka bir çalışmada metanol özütü bulunmamış. Ağızdan kullanımda seyrek mide-bağırsak rahatsızlığı ve ishal bildirilmiş. Karaciğer: monograf kökün karaciğer hasarı yapabileceğinin öne sürüldüğünü, ama yayımlanmış olgularla doğrudan bağ kurulamadığını yazıyor; takke otu içeren karışımlar için sonradan bildirilen karaciğer olguları nedeniyle, kullanırken sarılık ya da koyu idrar görülürse bırakıp hekime gidilmeli. Etkileşim verisi yok.
+
+### İlaç etkileşimleri
+- DSÖ: etkileşim verisi yok: Monograf ilaç etkileşimleri konusunda bilgi bulunmadığını yazıyor. Flavonlarının laboratuvarda CYP enzimlerini etkilediği bilindiğinden, düzenli ilaç kullananların hekimine söylemesi kuramsal olarak doğrudur.
+- Karışım ürünleri: Takke otu Batı’da neredeyse hiç tek başına satılmıyor; çalışmaların tamamı karışımlarla. Bir karışımın verisi bu bitkiye ait sayılamaz.
+
+### Doğada
+Nerede yetişir: Kore Yarımadası, Çin, Japonya, Moğolistan ve Rusya; kuru yamaçlar. Türkiye’de yetişmiyor.
+Toplama mevsimi: Yazın mavi-mor takke biçimli çiçekler; kökler sonbaharda ya da ilkbaharda sökülür, kurutulunca sarıdır.
+Yöresel adlar: Türkçe adı yok; Çince huáng qín, Japonca ōgon.
+Karıştırma riski: ⚠️ Amerikan takke otu (Scutellaria lateriflora) ayrı tür, ayrı gelenek (sinir yatıştırıcı); ikisi "skullcap" adıyla karışır ve ürünlerde birbirinin yerine geçebilir. Anadolu’nun yerli takke otları da bu monografın kapsamında değildir.
+
+### İlginç bilgi
+Türkçede bu bitkinin adı yok ama cinsinin var: Anadolu’da yetişen yerli Scutellaria türlerine takke otu ya da kaside otu denir — çiçeğin takkeye benzeyen çanağından. Çin tıbbının binlerce yıllık "sarı altın"ı bu yüzden Türkçeye bir akrabasının adıyla girebiliyor. Ama kanıt tarafında durum tersine: DSÖ 2007’de "kontrollü çalışma yok" dedi ve o günden beri yapılan bütün insan çalışmaları başka bitkilerle karışık. Bir bitkinin iki bin yıllık kullanımı ile tek başına sınanmış olmaması aynı anda doğru olabiliyor.

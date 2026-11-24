@@ -67,6 +67,8 @@ jobs:
       - name: Dış kimlikler (yeni bitkiler için Wikidata ve GBIF)
         continue-on-error: true
         run: python3 build.py >/dev/null && python3 tools/dis_kimlik_ekle.py
+      - name: Görsel tutarlılığı (images.json ile refs.py aynı dosyayı mı gösteriyor)
+        run: python3 tools/gorsel_tutarlilik.py
       - run: python3 build.py
       - name: ffmpeg (Reels videoları için)
         continue-on-error: true
@@ -146,6 +148,14 @@ jobs:
             if git push; then exit 0; fi
             sleep $(( (RANDOM % 30) + 15 ))    # araya giren push'la yarışmayalım
             git pull --rebase -X ours || { git rebase --abort || true; exit 1; }
+            # ⚠️ Üçüncü tuzak (24 Kasım 2026): `-X ours` çakışmada karşı tarafı
+            # koruduğu için botun yazdığı images.json geri alınabiliyor; img/
+            # dosyaları yeni, images.json eski kalıyor ve sayfadaki fotoğraf ile
+            # altındaki kaynak satırı farklı dosyaları gösteriyor. Rebase'den
+            # sonra fetch_images yeniden çalıştırılıyor: önbellek sayesinde
+            # yalnızca uyuşmayanları indiriyor.
+            python3 tools/fetch_images.py && python3 tools/webp.py
+            python3 tools/gorsel_tutarlilik.py || exit 1
             python3 build.py
             ekle
             if git diff --cached --quiet; then
