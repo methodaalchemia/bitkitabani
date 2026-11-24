@@ -3242,5 +3242,140 @@
   "license": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Okra_flower_extreme_closeup_pentagonal.jpg"
  },
- "bamya:kuru": "yok"
+ "bamya:kuru": "yok",
+ "yabanikekik:cizim": {
+  "file": "Thymus serpyllum - Köhler–s Medizinal-Pflanzen-138.jpg",
+  "artist": "Walther Otto Müller",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Thymus_serpyllum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-138.jpg"
+ },
+ "yabanikekik:cicek": {
+  "file": "Thymus serpillum.JPG",
+  "artist": "Szabi237",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Thymus_serpillum.JPG"
+ },
+ "yabanikekik:kuru": "yok",
+ "sunanesi:cizim": "yok",
+ "sunanesi:cicek": {
+  "file": "Flower of the Water Mint - geograph.org.uk - 2006379.jpg",
+  "artist": "Jonathan Kington",
+  "license": "CC BY-SA 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Flower_of_the_Water_Mint_-_geograph.org.uk_-_2006379.jpg"
+ },
+ "sunanesi:kuru": "yok",
+ "zufaotu:cizim": "yok",
+ "zufaotu:cicek": "yok",
+ "zufaotu:kuru": "yok",
+ "kedinanesi:cizim": "yok",
+ "kedinanesi:cicek": {
+  "file": "Catnip flowers.jpg",
+  "artist": "D. Gordon E. Robertson",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Catnip_flowers.jpg"
+ },
+ "kedinanesi:kuru": "yok",
+ "yersarmasigi:cizim": {
+  "file": "Illustration Glechoma hederacea0.jpg",
+  "artist": "Wikimedia Commons",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Glechoma_hederacea0.jpg"
+ },
+ "yersarmasigi:cicek": {
+  "file": "Glechoma hederacea 638827278.jpg",
+  "artist": "Alex Abair",
+  "license": "CC BY 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Glechoma_hederacea_638827278.jpg"
+ },
+ "yersarmasigi:kuru": "yok",
+ "gelinotu:cizim": {
+  "file": "Illustration Prunella vulgaris Thomè DESC.jpg",
+  "artist": "Prof. Dr. Otto Wilhelm Thomé",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Prunella_vulgaris_Thom%C3%A8_DESC.jpg"
+ },
+ "gelinotu:cicek": {
+  "file": "Prunella vulgaris dissected inflorescence 395877157.jpg",
+  "artist": "Alex Abair",
+  "license": "CC BY 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Prunella_vulgaris_dissected_inflorescence_395877157.jpg"
+ },
+ "gelinotu:kuru": "yok",
+ "karayerpirasasi:cizim": "yok",
+ "karayerpirasasi:cicek": {
+  "file": "-Violet Flower 20230627-A7201669.JPG- (53006353098).jpg",
+  "artist": "Tero Karppinen from Finland",
+  "license": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:-Violet_Flower_20230627-A7201669.JPG-_%2853006353098%29.jpg"
+ },
+ "karayerpirasasi:kuru": "yok",
+ "kurtayagi:cizim": {
+  "file": "Illustration Lycopus europaeus0.jpg",
+  "artist": "Wikimedia Commons",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Illustration_Lycopus_europaeus0.jpg"
+ },
+ "kurtayagi:cicek": {
+  "file": "Lycopus europaeus 003.jpg",
+  "artist": "H. Zell",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Lycopus_europaeus_003.jpg"
+ },
+ "kurtayagi:kuru": "yok",
+ "chia:cizim": "yok",
+ "chia:cicek": {
+  "file": "Chia Sage Flowers.jpg",
+  "artist": "Gaurav Dhwaj Khadka",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Chia_Sage_Flowers.jpg"
+ },
+ "chia:kuru": "yok",
+ "amerikankasidesi:cizim": "yok",
+ "amerikankasidesi:cicek": {
+  "file": "Scutellaria lateriflora 419924287.jpg",
+  "artist": "Alex Abair",
+  "license": "CC BY 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Scutellaria_lateriflora_419924287.jpg"
+ },
+ "amerikankasidesi:kuru": "yok",
+ "ananaspapatyasi:cizim": "yok",
+ "ananaspapatyasi:cicek": {
+  "file": "Matricaria discoidea flower (15).jpg",
+  "artist": "Julia Kruse",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Matricaria_discoidea_flower_%2815%29.jpg"
+ },
+ "ananaspapatyasi:kuru": "yok",
+ "aycicegi:cizim": "yok",
+ "aycicegi:cicek": {
+  "file": "Merfeld, Sonnenblumen -- 2021 -- 6502.jpg",
+  "artist": "Dietmar Rabich",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Merfeld%2C_Sonnenblumen_--_2021_--_6502.jpg"
+ },
+ "aycicegi:kuru": "yok",
+ "mahonya:cizim": "yok",
+ "mahonya:cicek": {
+  "file": "20180414Mahonia aquifolium2.jpg",
+  "artist": "AnRo0002",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:20180414Mahonia_aquifolium2.jpg"
+ },
+ "mahonya:kuru": "yok",
+ "yalanciakasya:cizim": "yok",
+ "yalanciakasya:cicek": {
+  "file": "Flower 115.jpg",
+  "artist": "kash",
+  "license": "CC BY 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Flower_115.jpg"
+ },
+ "yalanciakasya:kuru": "yok",
+ "greyfurt:cizim": "yok",
+ "greyfurt:cicek": {
+  "file": "Citrus-x-paradisi-20080322.JPG",
+  "artist": "Miwasatoshi",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Citrus-x-paradisi-20080322.JPG"
+ },
+ "greyfurt:kuru": "yok"
 }
