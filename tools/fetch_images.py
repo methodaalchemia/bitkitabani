@@ -217,7 +217,12 @@ for pid, fname in WANT.items():
     except Exception as e:
         print('1280 alınamadı:', pid, e)
 
-for pid in list(meta):
-    if pid not in WANT: meta.pop(pid)
+# Artık kullanılmayan kayıtları temizle — YALNIZCA bütün katalog taranmışsa.
+# ⚠️ 24 Kasım 2026: komut satırında id verildiğinde WANT yalnız o id'leri
+# tutuyor; bu döngü images.json'daki diğer 357 kaydı siliyordu ve bütün
+# sitenin görselleri kayıp bir derleme yayına çıktı. Seçmeli koşuda silme yok.
+if not _SEC:
+    for pid in list(meta):
+        if pid not in WANT: meta.pop(pid)
 json.dump(meta, open(META, 'w', encoding='utf-8'), ensure_ascii=False, indent=1, sort_keys=True)
 print('bitti; güncellenen:', changed, 'toplam:', len(meta))

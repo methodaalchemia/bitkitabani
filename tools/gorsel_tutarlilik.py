@@ -29,6 +29,17 @@ for pid, dosya in FILES.items():
         if not os.path.exists(os.path.join(KOK, 'img', f'{pid}-{boy}.jpg')):
             hata.append(f'{pid}: img/{pid}-{boy}.jpg yok')
 
+# Toptan kayıp koruması: images.json yayındaki kayıtların çok altına düşmemeli.
+# 24 Kasım 2026'da seçmeli bir indirme koşusu 361 kaydı 4'e düşürdü ve bütün
+# sitenin görselleri kayıp bir derleme yayına çıktı.
+import kuyruk as _K
+_veri = json.load(open(os.path.join(KOK, 'data.json'), encoding='utf-8'))
+_kayit = {p['id'] for p in _veri['P']} | {q['id'] for q in _K.Q}
+_taban = int(len(_kayit) * 0.8)
+if len(meta) < _taban:
+    hata.append(f'images.json yalnız {len(meta)} kayıt tutuyor; {len(_kayit)} kaydın '
+                f'en az {_taban} tanesi beklenir — toptan kayıp olmuş olabilir')
+
 for h in hata:
     print('UYUŞMAZLIK', h)
 print(f'{len(FILES)} elle seçim denetlendi, {len(hata)} uyuşmazlık')
