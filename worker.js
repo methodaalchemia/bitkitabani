@@ -455,7 +455,7 @@ async function fbPost(env) {   // günde en fazla 3 post: 12:30 günün kavramı
       const ritual = plan.sabah && /^Bugün /.test(plan.sabah.text);
       const p = job === 'oglen' ? (ritual ? plan.sabah : (plan.kavram || plan.sabah)) : plan.ogle;
       if (!p) throw new Error('bugün için ' + job + ' metni yok');
-      const text = linkify(p.text);
+      const text = linkify(p.fb || p.text);   // editoryal gönderilerde Facebook tam metni alır (Threads 495 ile sınırlı)
       // Görselsiz gönderi çıkmasın: görsel yoksa site kapağı kullanılır.
       st.lastId = (await igJson(await fetch(FB + '/' + st.page + '/photos', form({ url: p.image || TH_YEDEK_GORSEL, caption: text })))).id;
       if (!p.image) st.gorselYedek = trDay();

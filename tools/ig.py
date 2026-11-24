@@ -225,6 +225,27 @@ PAGE_CSS = 'body{margin:0;padding:16px;background:#F1EADD;color:#1C2140;font-fam
 
 PAUSED = False   # True yapılırsa post dosyası üretilmez ve worker paylaşamaz
 
+def _editoryal_bindir(plan, data):
+    """Elle yazılan gönderiler: belirtilen günde belirtilen yuvanın metnini değiştirir.
+    Otomasyon olduğu gibi kalır; editoryal kaydı olmayan günlere dokunulmaz.
+    `fb` alanı Facebook'a giden tam metni taşır (Threads 495 karakterle sınırlı)."""
+    try:
+        sys.path.insert(0, ROOT)
+        from editoryal import EDITORYAL
+    except Exception as ex:
+        print('ig: editoryal kuyruk okunamadı:', str(ex)[:100]); return
+    P = {q['id']: q for q in data['p']}
+    n = 0
+    for e in EDITORYAL:
+        gun = e.get('yayin')
+        if gun not in plan: continue          # yalnızca planın kapsadığı günler
+        yuva = e.get('yuva') or 'ogle'
+        q = P.get(e.get('bitki') or '')
+        gorsel = e.get('gorsel') or (f'https://bitkitabani.com/img/{q["id"]}-960.jpg' if q and q.get('img') else None)
+        plan[gun][yuva] = dict(text=(e.get('threads') or e['metin'])[:495], image=gorsel, fb=e['metin'], editoryal=True)
+        n += 1
+    if n: print('ig: %d editoryal gönderi plana bindirildi' % n)
+
 def threads_plan(data, day, days=4):
     """Threads için günde iki ek metin: sabah 'Biliyor muydunuz?', öğleden sonra rehber/tarif/karşılaştırma."""
     sys.path.insert(0, ROOT)
@@ -600,7 +621,10 @@ def main():
     if os.path.isdir(out_root): shutil.rmtree(out_root)
     os.makedirs(out_root)
     json.dump({'n': n0, 'day': day.isoformat()}, open(os.path.join(out_root, 'state.json'), 'w'))
-    try: json.dump(threads_plan(data, day), open(os.path.join(out_root, 'threads.json'), 'w', encoding='utf-8'), ensure_ascii=False)
+    try:
+        _plan = threads_plan(data, day)
+        _editoryal_bindir(_plan, data)
+        json.dump(_plan, open(os.path.join(out_root, 'threads.json'), 'w', encoding='utf-8'), ensure_ascii=False)
     except Exception as ex: print('threads planı yazılamadı:', ex)
     try: ek_postlar(data, day, out_root)
     except Exception as ex: print('ek postlar yazılamadı:', ex)
