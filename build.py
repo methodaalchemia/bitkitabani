@@ -45,6 +45,15 @@ GUV['yuksek'] = 'Yüksek risk'
 byId = {p['id']: p for p in P}
 INAT = json.load(open(os.path.join(HERE, 'inat.json'), encoding='utf-8')) if os.path.exists(os.path.join(HERE, 'inat.json')) else {}
 AYLAR = ['ocak', 'şubat', 'mart', 'nisan', 'mayıs', 'haziran', 'temmuz', 'ağustos', 'eylül', 'ekim', 'kasım', 'aralık']
+def kar_blok(ek, pid):
+    """Karıştırma riski bölümü: yalnızca kaynakta karışma riski varsa yazılır."""
+    k = (ek.get('karisma') or '').strip()
+    b = BKAR.get(pid, '')
+    if not k and not b: return ''
+    return ('<h3 class="alt-h">Karıştırma riski</h3><div class="callout orta">'
+            + (f'<p>{e(k)}</p>' if k else '') + (f'<p>{e(b)}</p>' if b else '') + '</div>')
+
+
 def inat_satir(pid):
     x = INAT.get(pid) or {}
     if not x.get('toplam') or x['toplam'] < 5: return ''
@@ -1025,7 +1034,7 @@ for i, p in enumerate(P):
       <div><dt>Toplama mevsimi</dt><dd>{e(ek["mevsim"])}</dd></div>
       <div><dt>Yöresel adlar</dt><dd>{e(ek["yoresel"])}</dd></div>
       {inat_satir(pid)}
-    </dl><h3 class="alt-h">Karıştırma riski</h3><div class="callout orta"><p>{e(ek["karisma"])}</p>{('<p>' + e(BKAR[pid]) + '</p>') if pid in BKAR else ''}</div></section>'''
+    </dl>{kar_blok(ek, pid)}</section>'''
     body = f'''
 <nav class="crumbs" aria-label="Konum"><a href="/">Ana sayfa</a><span>/</span><a href="/katalog/">Katalog</a><span>/</span><span>{e(p["tr"])}</span></nav>
 <article class="sheet">

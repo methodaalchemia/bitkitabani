@@ -289,7 +289,9 @@ def run(G):
         body_s = sec('Traditional use', f'<div class="uses">{uses}</div>')
         if ek:
             body_s += sec('In nature', f'<dl class="meta wide"><div><dt>Where it grows</dt><dd>{e(x["habitat"])}</dd></div><div><dt>Harvest season</dt><dd>{e(x["season"])}</dd></div><div><dt>Local names</dt><dd>{e(x["local"])}</dd></div></dl>')
-            body_s += sec('Mix-up risk', f'<div class="callout orta"><p>{e(x["confusion"])}</p>' + (f'<p>{e(BKAR_EN[pid])}</p>' if pid in BKAR_EN else '') + '</div>')
+            _cf = (x.get('confusion') or '').strip(); _cb = BKAR_EN.get(pid, '')
+            if _cf or _cb:
+                body_s += sec('Mix-up risk', '<div class="callout orta">' + (f'<p>{e(_cf)}</p>' if _cf else '') + (f'<p>{e(_cb)}</p>' if _cb else '') + '</div>')
         body_s += sec('Preparation', f'<p>{ev(x["prep"])}</p>') + sec('What science says', f'<p>{ev(x["science"])}</p>')
         faq = []
         if pid in D_EN:

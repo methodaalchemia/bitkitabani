@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>İçerik paneli — Bitki Tabanı</title>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:"Alegreya";src:url(/assets/fonts/alegreya.woff2) format("woff2");font-weight:400 900;font-style:normal;font-display:swap}
+@font-face{font-family:"Alegreya Sans";src:url(/assets/fonts/alegreya-sans.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Alegreya Sans";src:url(/assets/fonts/alegreya-sans-bold.woff2) format("woff2");font-weight:700;font-style:normal;font-display:swap}
+/* Panel kendi paletini taşır: sitenin değişkenleri JS ile ayarlandığı için
+   buradan güvenilir okunamıyor. Açık/karanlık modu kendi başına takip eder. */
+:root{--p-paper:#F2EDE3;--p-kart:#FBF8F2;--p-ink:#16202B;--p-mut:#6B6559;--p-acc:#9C3A24;--p-cizgi:#E2D9C8}
+@media (prefers-color-scheme: dark){
+ :root{--p-paper:#15131E;--p-kart:#1E1A29;--p-ink:#F0E7D8;--p-mut:#A9A0B0;--p-acc:#E3654F;--p-cizgi:#3A3247}
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--p-paper);color:var(--p-ink);font-family:'Alegreya Sans',system-ui,sans-serif;font-size:16px;line-height:1.5}
+.sar{max-width:900px;margin:0 auto;padding:22px 16px 80px}
+h1{font-family:Alegreya,Georgia,serif;font-size:30px;line-height:1.15;margin:0 0 6px;letter-spacing:-.01em}
+.alt{color:var(--p-mut);margin:0 0 18px;font-size:15px}
+.araclar{position:sticky;top:0;z-index:5;background:var(--p-paper);padding:10px 0 12px;border-bottom:1px solid var(--p-cizgi);margin-bottom:16px}
+input[type=search]{width:100%;padding:11px 14px;border:1px solid var(--p-cizgi);border-radius:10px;background:var(--p-kart);font:inherit;color:var(--p-ink)}
+input[type=search]:focus{outline:2px solid var(--p-acc);outline-offset:-1px}
+.sekme{display:flex;gap:7px;margin-top:10px;flex-wrap:wrap}
+.sekme button{flex:0 0 auto;padding:7px 13px;border:1px solid var(--p-cizgi);border-radius:999px;background:var(--p-kart);font:inherit;font-size:14px;color:var(--p-mut);cursor:pointer}
+.sekme button[aria-pressed=true]{background:var(--p-acc);border-color:var(--p-acc);color:#fff}
+.sayac{font-size:13px;color:var(--p-mut);margin:10px 2px 0}
+.kart{background:var(--p-kart);border:1px solid var(--p-cizgi);border-radius:14px;padding:14px;margin-bottom:14px;display:grid;grid-template-columns:150px 1fr;gap:14px}
+@media(max-width:560px){.kart{grid-template-columns:1fr}}
+.gor{width:100%;border-radius:10px;background:var(--p-cizgi);aspect-ratio:9/16;object-fit:cover;display:block}
+.gor.kare{aspect-ratio:4/5}
+.bas{font-family:Alegreya,Georgia,serif;font-weight:700;font-size:19px;margin:0 0 2px}
+.etik{font-size:12px;color:var(--p-mut);letter-spacing:.04em;text-transform:uppercase;margin:0 0 8px}
+.cap{white-space:pre-wrap;font-size:14.5px;background:var(--p-paper);border:1px solid var(--p-cizgi);border-radius:9px;padding:10px 11px;max-height:168px;overflow:auto;margin:0 0 9px}
+.dug{display:flex;gap:7px;flex-wrap:wrap;align-items:center}
+.dug button,.dug a{padding:6px 12px;border:1px solid var(--p-cizgi);border-radius:8px;background:var(--p-paper);font:inherit;font-size:13.5px;color:var(--p-ink);cursor:pointer;text-decoration:none}
+.dug button:hover,.dug a:hover{border-color:var(--p-acc);color:var(--p-acc)}
+.dug .ok{color:#2E6A45;border-color:#2E6A45}
+.pay{margin-left:auto;font-size:13px;color:var(--p-mut);display:flex;gap:6px;align-items:center;cursor:pointer}
+.yok{color:var(--p-mut);padding:30px 4px}
+</style>
+</head>
+<body>
+<div class="sar">
+<h1>İçerik paneli</h1>
+<p class="alt">Yayımlanan bütün görsel, video ve metinler tek yerde. Caption'ı kopyala, dosyayı indir, elle paylaş. İşaretlediklerin bu tarayıcıda saklanır.</p>
+
+<div class="araclar">
+  <input type="search" id="ara" placeholder="Bitki, konu ya da caption içinde ara…" autocomplete="off">
+  <div class="sekme" id="sekme"></div>
+  <p class="sayac" id="sayac"></p>
+</div>
+
+<div id="liste"><p class="yok">Yükleniyor…</p></div>
+</div>
+
+<script>
+const IG = '/ig/';
+const AN = 'bt-panel-paylasildi';
+function oku(){ try{ return JSON.parse(localStorage.getItem(AN)||'{}'); }catch(e){ return {}; } }
+function yaz(o){ try{ localStorage.setItem(AN, JSON.stringify(o)); }catch(e){} }
+
+async function jget(yol){
+  const tam = yol.startsWith('/') ? yol : IG + yol;
+  try{ const r = await fetch(tam, {cache:'no-cache'}); if(!r.ok) return null; return await r.json(); }
+  catch(e){ return null; }
+}
+
+function kartYap(k){
+  const pay = oku();
+  const el = document.createElement('div'); el.className = 'kart';
+  const sol = document.createElement('div');
+  if (k.video){
+    const v = document.createElement('video');
+    v.className = 'gor'; v.src = k.video; v.controls = true; v.preload = 'none';
+    if (k.kapak) v.poster = k.kapak;
+    sol.appendChild(v);
+  } else if (k.gorsel){
+    const i = document.createElement('img');
+    i.className = 'gor kare'; i.src = k.gorsel; i.loading = 'lazy'; i.alt = k.alt || k.baslik || '';
+    sol.appendChild(i);
+  } else {
+    const d = document.createElement('div'); d.className = 'gor kare'; sol.appendChild(d);
+  }
+  const sag = document.createElement('div');
+  const h = document.createElement('p'); h.className='bas'; h.textContent = k.baslik || '—'; sag.appendChild(h);
+  const e = document.createElement('p'); e.className='etik'; e.textContent = k.etiket || ''; sag.appendChild(e);
+  if (k.caption){ const c = document.createElement('div'); c.className='cap'; c.textContent = k.caption; sag.appendChild(c); }
+  const d = document.createElement('div'); d.className='dug';
+  if (k.caption){
+    const b = document.createElement('button'); b.textContent = 'Caption kopyala';
+    b.onclick = async () => { try{ await navigator.clipboard.writeText(k.caption); b.textContent='Kopyalandı'; b.classList.add('ok');
+      setTimeout(()=>{b.textContent='Caption kopyala'; b.classList.remove('ok');}, 1400);}catch(err){ b.textContent='Kopyalanamadı'; } };
+    d.appendChild(b);
+  }
+  if (k.kuyruk){ const n = document.createElement('span'); n.className='etik'; n.style.marginLeft='0';
+    n.textContent = 'henüz yayımlanmadı'; d.appendChild(n); }
+  const dosya = k.video || k.gorsel;
+  if (dosya){ const a = document.createElement('a'); a.href = dosya; a.download = ''; a.textContent = 'İndir'; a.target='_blank'; d.appendChild(a); }
+  if (k.sayfa){ const a = document.createElement('a'); a.href = k.sayfa; a.textContent = 'Sayfası'; a.target='_blank'; d.appendChild(a); }
+  const lab = document.createElement('label'); lab.className='pay';
+  const cb = document.createElement('input'); cb.type='checkbox'; cb.checked = !!pay[k.id];
+  cb.onchange = () => { const o = oku(); if (cb.checked) o[k.id]=1; else delete o[k.id]; yaz(o); };
+  lab.appendChild(cb); lab.appendChild(document.createTextNode('paylaştım'));
+  d.appendChild(lab);
+  sag.appendChild(d);
+  el.appendChild(sol); el.appendChild(sag);
+  return el;
+}
+
+let KAYIT = [], SEKME = 'hepsi';
+
+async function topla(){
+  const out = [];
+  const tan = await jget('tanitim/index.json');
+  if (tan) for (const v of tan) out.push({
+    id:'tan:'+v.dosya, grup:'Tanıtım', etiket:'TANITIM VİDEOSU', baslik:v.baslik,
+    caption:v.caption||'', video: IG+'tanitim/'+v.dosya, sayfa:v.sayfa||''
+  });
+  const cay = await jget('cay/index.json');
+  if (cay) for (const [slug, v] of Object.entries(cay)) out.push({
+    id:'cay:'+slug, grup:'Çay videoları', etiket:'ÇAY REELS', baslik:v.tr||slug,
+    caption:v.caption||'', video:v.reel, sayfa: v.tarif ? 'https://bitkitabani.com/tarif/'+v.tarif+'/' : ''
+  });
+  const ek = await jget('ek.json');
+  if (ek) for (const [gun, v] of Object.entries(ek)) out.push({
+    id:'ek:'+gun, grup:'Ek gönderiler', etiket:(v.tur||'EK')+' · '+gun, baslik:v.id||gun,
+    caption:v.caption||'', gorsel: (v.images&&v.images[0])||'', alt:(v.alts&&v.alts[0])||''
+  });
+  const th = await jget('threads.json');
+  if (th) for (const [gun, v] of Object.entries(th)){
+    for (const anahtar of ['sabah','ogle','soru']){
+      if (v[anahtar]) out.push({ id:'th:'+gun+':'+anahtar, grup:'Threads', etiket:'THREADS · '+gun+' · '+anahtar,
+        baslik:v.ad||v.kavram||gun, caption: typeof v[anahtar]==='string' ? v[anahtar] : JSON.stringify(v[anahtar]) });
+    }
+  }
+  const ay = await jget('aylik.json');
+  if (ay && ay.caption) out.push({ id:'ay:'+(ay.ay||''), grup:'Aylık', etiket:'AYLIK · '+(ay.ay||''),
+    baslik:'Ayın gönderisi', caption:ay.caption, gorsel:ay.image||'' });
+
+  // Dosyaları igmedia'dan düşmüş eski YouTube videoları: caption'ları duruyor
+  const ars = await jget('/veri/arsiv.json');
+  if (ars) for (const v of ars) out.push({
+    id:'ars:'+v.id, grup:'YouTube arşivi', etiket:'YOUTUBE · DOSYA YOK', baslik:v.tr||v.id,
+    caption:v.caption||'', sayfa:'https://bitkitabani.com/'+v.id+'/'
+  });
+
+  // Kuyruk: hazır ama henüz yayımlanmamış kayıtlar, çıkacakları günle
+  const kuy = await jget('/veri/kuyruk.json');
+  if (kuy) for (const q of kuy) out.push({
+    id:'kuy:'+q.id, grup:'Kuyruk', etiket:'KUYRUK · '+q.yayin, baslik:q.tr||q.id,
+    caption:[q.la, q.fam, q.ozet].filter(Boolean).join('\n\n'),
+    sayfa:'', kuyruk:true, tarih:q.yayin
+  });
+  return out;
+}
+
+function ciz(){
+  const q = document.getElementById('ara').value.trim().toLocaleLowerCase('tr');
+  const liste = document.getElementById('liste'); liste.innerHTML = '';
+  const sec = KAYIT.filter(k => (SEKME==='hepsi' || k.grup===SEKME) &&
+    (!q || ((k.baslik||'')+' '+(k.caption||'')+' '+(k.etiket||'')).toLocaleLowerCase('tr').includes(q)));
+  if (!sec.length){ liste.innerHTML = '<p class="yok">Eşleşen içerik yok.</p>'; }
+  else { const f = document.createDocumentFragment(); sec.forEach(k => f.appendChild(kartYap(k))); liste.appendChild(f); }
+  const pay = oku(); const isar = sec.filter(k => pay[k.id]).length;
+  document.getElementById('sayac').textContent = sec.length + ' içerik · ' + isar + ' paylaşıldı olarak işaretli';
+}
+
+(async () => {
+  KAYIT = await topla();
+  if (!KAYIT.length){ document.getElementById('liste').innerHTML = '<p class="yok">İçerik alınamadı. Yayın hattı bir sonraki koşuda dosyaları yenileyecek.</p>'; return; }
+  const gruplar = ['hepsi', ...Array.from(new Set(KAYIT.map(k => k.grup)))];
+  const s = document.getElementById('sekme');
+  gruplar.forEach(g => { const b = document.createElement('button'); b.textContent = g==='hepsi' ? 'Hepsi' : g;
+    b.setAttribute('aria-pressed', String(g===SEKME));
+    b.onclick = () => { SEKME = g; [...s.children].forEach(x => x.setAttribute('aria-pressed', String(x===b))); ciz(); };
+    s.appendChild(b); });
+  document.getElementById('ara').addEventListener('input', ciz);
+  ciz();
+})();
+</script>
+</body>
+</html>

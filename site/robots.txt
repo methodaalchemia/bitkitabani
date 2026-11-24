@@ -1,0 +1,33 @@
+# Bitki Tabanı arama motorlarına ve yapay zekâ asistanlarına açıktır; alıntı yaparken kaynak göster.
+# Özet: https://bitkitabani.com/llms.txt
+
+User-agent: Googlebot
+User-agent: Google-Extended
+User-agent: Bingbot
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: Applebot
+User-agent: Applebot-Extended
+User-agent: DuckAssistBot
+User-agent: meta-externalagent
+User-agent: CCBot
+Allow: /
+Disallow: /secim/
+Disallow: /api/
+Disallow: /hesap/
+Disallow: /*?
+
+User-agent: *
+Allow: /
+Disallow: /secim/
+Disallow: /api/
+Disallow: /hesap/
+Disallow: /*?
+
+Sitemap: https://bitkitabani.com/sitemap.xml
