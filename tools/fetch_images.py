@@ -14,6 +14,13 @@ for _q in _K.Q:
     if _q.get('foto'): FILES[_q['id']] = _q['foto']
     POWO.setdefault(_q['id'], _q['taxon'])
     if _q['id'] not in _have: _D['P'].append({'id': _q['id'], 'la': _q['la']})
+# Komut satırında id verilirse yalnız onlar işlenir: 32 eksik görsel için
+# bütün katalogu baştan doğrulamak gereksiz (24 Kasım 2026).
+_SEC = [a for a in sys.argv[1:] if not a.startswith('-')]
+if _SEC:
+    _D['P'] = [p for p in _D['P'] if p['id'] in _SEC]
+    FILES = {k: v for k, v in FILES.items() if k in _SEC}
+
 BAD = re.compile(r'illustrat|drawing|k[öo]e?hler|medizinal-pflanzen|botanical (art|plate|print)|\bplate\b|tafel|lithograph|engraving|woodcut|painting|watercolou?r|herbari|exsiccat|\bmaps?\b|distribution|diagram|molecule|stamp|coin|logo|bottle|drink|beverage|powder|capsule|svg|specimen|museum|montage|collage|mhnt|landscape|panorama|habitat|forest|plantation|market|óleo|\\boil\\b|bowl|bottle', re.I)
 GOOD = re.compile(r'flower|flor|blüte|fleur|fruit|fruto|frucht|leaf|leaves|hoja|blatt|blossom|close|macro|inflorescence|bloom|berries|berry', re.I)
 
