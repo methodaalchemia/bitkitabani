@@ -328,12 +328,34 @@ async function ytToken(env, st) {
   st.at = j.access_token; st.exp = Date.now() + (j.expires_in || 3600) * 1e3; st.seed = env.YT_REFRESH_TOKEN;
   return st.at;
 }
-function ytMeta(tr, pid, caption, tarif) {
+// Başlık testi (24 Kasım). 347 YouTube sorgusunun analizi: "faydaları" ~35 sorguda
+// geçiyor, "neye iyi gelir" 2'sinde, "kimler dikkat etmeli" hiçbirinde. Ayrıca
+// yöresel adla arayanlar en uzun izleyen kesim. Kalıbı tamamen değiştirmek yerine
+// videolar üç gruba ayrılıyor; "kimler dikkat etmeli" her grupta korunuyor, çünkü
+// arama görüntülemenin %18'i ama izleme süresinin %23,8'i oradan geliyor.
+//   A (kontrol) mevcut kalıp · B "faydaları" · C yöresel ad başlıkta
+// Grup pid'den belirleniyor, yani bir video hep aynı grupta kalır ve ölçüm
+// tekrarlanabilir. Yöresel adı olmayan C videosu A'ya düşer.
+function ytGrup(pid) {
+  let h = 0;
+  for (const ch of String(pid)) h = (h * 31 + ch.codePointAt(0)) >>> 0;
+  return 'ABC'[h % 3];
+}
+function ytMeta(tr, pid, caption, tarif, yoresel) {
   const paras = String(caption || '').split('\n\n').filter(x => !x.startsWith('#') && !/profilde/i.test(x) && !x.startsWith('Kaydırarak'));
   const tag = tr.toLowerCase().replace(/[^a-zçğıöşü]/g, '');
-  const title = (tarif ? `${tr} çayı nasıl demlenir, neye iyi gelir? | Bitki Tabanı` : `${tr}: neye iyi gelir, kimler dikkat etmeli? | Bitki Tabanı`).slice(0, 100);
+  const yor = String(yoresel || '').trim();
+  let grup = ytGrup(pid);
+  if (grup === 'C' && !yor) grup = 'A';
+  let title;
+  if (grup === 'B') title = tarif ? `${tr} çayı faydaları: nasıl demlenir? | Bitki Tabanı` : `${tr} faydaları: kimler dikkat etmeli? | Bitki Tabanı`;
+  else if (grup === 'C') title = tarif ? `${tr} (${yor}) çayı: nasıl demlenir, neye iyi gelir? | Bitki Tabanı` : `${tr} (${yor}): neye iyi gelir, kimler dikkat etmeli? | Bitki Tabanı`;
+  else title = tarif ? `${tr} çayı nasıl demlenir, neye iyi gelir? | Bitki Tabanı` : `${tr}: neye iyi gelir, kimler dikkat etmeli? | Bitki Tabanı`;
+  title = title.slice(0, 100);
   const desc = paras.slice(0, 3).join('\n\n') + (tarif ? `\n\nÇay tarifi: https://bitkitabani.com/tarif/${tarif}/` : '') + `\nBitkinin sayfası: https://bitkitabani.com/${pid}/\n\nBilgilendirme amaçlıdır; tıbbi tavsiye yerine geçmez.\n\n#Shorts #şifalıbitkiler #${tag} #bitkiçayı #bitkitabani`;
-  return { title, desc, tags: ['Shorts', 'şifalı bitkiler', tr, 'bitki çayı', 'Bitki Tabanı', 'etnobotanik'] };
+  const tags = ['Shorts', 'şifalı bitkiler', tr, 'bitki çayı', 'Bitki Tabanı', 'etnobotanik'];
+  if (yor) tags.push(yor);   // yöresel ad her videoda etikete girer, başlığa yalnız C'de
+  return { title, desc, tags, ytGrup: grup };
 }
 async function ytUpload(env, st, videoUrl, meta) {
   const tok = await ytToken(env, st);
@@ -361,11 +383,11 @@ async function ytPost(env, force) {   // günde YT_GUNLUK Shorts, 10:00–22:00 
     const bekleyen = Object.keys(cay).filter(k => !(st.done || {})['cay:' + k]);
     if (bekleyen.length) {
       const pid = bekleyen[0], c = cay[pid];
-      key = 'cay:' + pid; videoUrl = c.reel; sesYol = 'cay/' + pid + '/reel.ses.json'; sesSlug = pid; meta = ytMeta(c.tr, pid, c.caption, c.tarif || null);
+      key = 'cay:' + pid; videoUrl = c.reel; sesYol = 'cay/' + pid + '/reel.ses.json'; sesSlug = pid; meta = ytMeta(c.tr, pid, c.caption, c.tarif || null, c.yoresel || '');
     } else if (Object.keys(await (await igAsset('yt/index.json')).json().catch(() => ({}))).some(k => !(st.done || {})['yt:' + k])) {
       const ytx = await (await igAsset('yt/index.json')).json();
       const pid = Object.keys(ytx).find(k => !(st.done || {})['yt:' + k]), c = ytx[pid];
-      key = 'yt:' + pid; videoUrl = c.reel; sesYol = 'yt/' + pid + '/reel.ses.json'; sesSlug = pid; meta = ytMeta(c.tr, pid, c.caption, c.tarif || null);
+      key = 'yt:' + pid; videoUrl = c.reel; sesYol = 'yt/' + pid + '/reel.ses.json'; sesSlug = pid; meta = ytMeta(c.tr, pid, c.caption, c.tarif || null, c.yoresel || '');
     } else {
       const ig = (await call(env, 'ig:state', 'get')) || {};
       if (!ig.lastPlant || ig.last !== day) return { skipped: 'günün videosu yok' };
@@ -374,7 +396,7 @@ async function ytPost(env, force) {   // günde YT_GUNLUK Shorts, 10:00–22:00 
       if (!post.reel) return { skipped: 'reel yok' };
       key = 'gun:' + post.id; if ((st.done || {})[key]) return { skipped: 'zaten yüklendi' };
       const tr = (post.caption || '').split(/[:\n]/)[0].replace(/[^\p{L}\s]/gu, '').trim() || post.id;
-      videoUrl = post.reel; sesYol = 'p/' + (ig.n - 1) + '/reel.ses.json'; sesSlug = post.id; meta = ytMeta(tr, post.id, post.caption, null);
+      videoUrl = post.reel; sesYol = 'p/' + (ig.n - 1) + '/reel.ses.json'; sesSlug = post.id; meta = ytMeta(tr, post.id, post.caption, null, post.yoresel || '');
     }
     const g = await sesKapi(sesYol, sesSlug);   // yayın kapısı
     if (!g.ok) throw new Error('kapı: ' + g.sebep);

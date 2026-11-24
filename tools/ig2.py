@@ -18,7 +18,7 @@ def auto(p):
         kisaca=[('Kökeni', ', '.join(x[0] for x in p['kul'][:2])), ('Geleneksel kullanımı', sentences(k[1])[0][:90]), ('Bilimsel kanıt', KAN.get(p['kanit'], ''))],
         hikaye=('Az bilinen bir gerçek', p['ilginc']),
         gelenek=(k[0], ' '.join(sentences(k[1])[:2])),
-        bilim=(KAN.get(p['kanit'], 'Bilim ne diyor?'), ' '.join(sentences(p['bilim'])[:2])),
+        bilim=(KAN.get(p['kanit'], 'Araştırmalar ne gösteriyor'), ' '.join(sentences(p['bilim'])[:2])),
         dikkat=g[:3] or ['Bilinen önemli bir riski yoktur'], dikkat_not='',
         nasil=('Ayrıntılar sitede', 'Hazırlanışı, kaynakları ve ilaç etkileşimleri bitkitabani.com’da yer alıyor.'),
         kaydet='Daha sonra okumak için kaydedin.', soru=f'{p["tr"]} hakkında neler biliyorsunuz?')
@@ -104,7 +104,7 @@ def slides2(p, img_path, label):
     wrap_block(d, (PAD, y + h + 40), m['hikaye'][1], [sans(48), sans(44), sans(40)], W - 2 * PAD, 420, (236, 230, 218), gap=1.38)
     out.append(im)
     # 4. gelenek, 5. bilim
-    for n, key, eb in ((4, 'gelenek', 'Geleneksel kullanım'), (5, 'bilim', 'Bilim ne diyor?')):
+    for n, key, eb in ((4, 'gelenek', 'Geleneksel kullanım'), (5, 'bilim', 'Araştırmalar ne gösteriyor')):
         def draw(d, y0):
             y = eyebrow(d, y0, eb, LEAF if key == 'bilim' else CLAY)
             h = wrap_block(d, (PAD, y), m[key][0], [serif(88, 800), serif(76, 800), serif(66, 800)], W - 2 * PAD, 300, INK, gap=1.1)
@@ -160,7 +160,7 @@ def alts2(p):
     return [f'{p["tr"]} ({p["la"]}) fotoğrafı. {m["kapak"]}',
             f'{p["tr"]} kısaca: ' + '; '.join(f'{a}: {b}' for a, b in m['kisaca']),
             f'{m["hikaye"][0]}. {m["hikaye"][1]}', f'Geleneksel kullanım: {m["gelenek"][0]}. {m["gelenek"][1]}',
-            f'Bilim ne diyor: {m["bilim"][0]}. {m["bilim"][1]}', 'Dikkat: ' + '; '.join(m['dikkat']) + '. ' + m.get('dikkat_not', ''),
+            f'Araştırmalar ne gösteriyor: {m["bilim"][0]}. {m["bilim"][1]}', 'Dikkat: ' + '; '.join(m['dikkat']) + '. ' + m.get('dikkat_not', ''),
             f'{m["nasil"][0]}: {m["nasil"][1]}', f'{m["kaydet"]} Her gün yeni bir bitki: bitkitabani.com/{p["id"]}']
 
 def story(p, cover):

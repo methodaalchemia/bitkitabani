@@ -137,7 +137,7 @@ def slides(p, photo, label):
         d.text((80, y), where, font=sans_b(40), fill=C['indigo']); y += 60
         y += block(d, (80, y), txt, [sans(46), sans(42), sans(38), sans(34), sans(30)], W - 160, 400, C['ink'], gap=1.4) + 40
     out.append(im)
-    im, d = frame(p, 4, T); y = heading(d, 190, 'Bilim ne diyor?', f'Kanıt: {K[p["kanit"]]}')
+    im, d = frame(p, 4, T); y = heading(d, 190, 'Araştırmalar ne gösteriyor', f'Kanıt: {K[p["kanit"]]}')
     n = {'klinik': 3, 'sinirli': 2, 'geleneksel': 1}.get(p['kanit'], 1)
     for i in range(3):
         d.ellipse([80 + i * 46, y, 80 + i * 46 + 30, y + 30], fill=C['ink'] if i < n else None, outline=C['ink'], width=3)
@@ -468,7 +468,7 @@ def ek_postlar(data, day, out_root, days=7):
             pid, (iddia, k, note) = claims[(wk * 7) % len(claims)]; p = P[pid]; tur = 'efsane'
             verdict = data['kanad'].get(k, k)
             ims = [photo_slide(pid, f'{p["tr"]} · Doğru mu, efsane mi?', f'“{iddia}”', 'Sizce doğru mu? Kaydırın. 👉'),
-                   paper_slide(p, 'Bilim ne diyor?', verdict, f'İddia: “{iddia}”\n\n{note}', 2, 3), cta_slide(p, 3, 3)]
+                   paper_slide(p, 'Araştırmalar ne gösteriyor', verdict, f'İddia: “{iddia}”\n\n{note}', 2, 3), cta_slide(p, 3, 3)]
             cap = (f'“{p["tr"]}: {iddia[0].lower() + iddia[1:]}.” Doğru mu, efsane mi? 🤔\n\nBilimin cevabı: {verdict.lower()}. {note}\n\n'
                    f'Bu iddiayı daha önce duymuş muydunuz? Yorumlarda buluşalım. 👇\n\nKaynaklarıyla birlikte tamamı: bitkitabani.com/{pid} (bağlantı profilde)\n\nBilgilendirme amaçlıdır; tıbbi tavsiye yerine geçmez.\n\n#doğrumuefsanemi #şifalıbitkiler #{re.sub(r"[^a-zçğıöşü]", "", p["tr"].lower())} #bilim')
         elif wd == 2 and kar:
@@ -656,7 +656,9 @@ def main():
                     extra['ses'] = f'{BASE}/ig/p/{n}/reel.ses.json'
                 else:
                     print('ig: KAPI DURDURDU —', pid, '—', sebep)
-        json.dump({'n': n, 'id': pid, 'caption': cap, 'images': urls, 'alts': ig2.alts2(p), **extra}, open(os.path.join(od, 'post.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+        _yor = re.split(r'[,;]', str(p.get('diger') or ''))[0].strip()
+        if _yor.lower() == p['tr'].lower() or len(_yor) < 3: _yor = ''
+        json.dump({'n': n, 'id': pid, 'caption': cap, 'images': urls, 'alts': ig2.alts2(p), 'yoresel': _yor, **extra}, open(os.path.join(od, 'post.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
         thumbs = ''.join(f'<a href="p/{n}/{i}.jpg" download><img src="p/{n}/{i}.jpg" alt="Slayt {i}" width="216" height="270" loading="lazy"></a>' for i in range(1, len(ims) + 1))
         when = f'Açılış postu {n - 1}/{LAUNCH}' if 2 <= n < LAUNCH + len(REPOST) else ('Sıradaki' if n == n0 else 'Sonra')
         cards.append(f'<section class="post"><h2>{n + 1}. post: {html.escape(p["tr"])}</h2><p class="when">{when}</p><div class="strip">{thumbs}</div>'

@@ -6,7 +6,7 @@ Hizalama: altyazı zamanları artık üretilen sesin kendisinden okunuyor
 başına tek Gemini isteği yetiyor. Koşu başına sayılı video yenilenir: önce hiç
 videosu olmayanlar (bugün yayımlanacak olanlar), sonra kaydında `ses-hizasi`
 bulunmayan eskiler."""
-import os, sys, json, shutil
+import os, sys, json, shutil, re
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE); sys.path.insert(0, ROOT)
 import ig2, reel
@@ -71,7 +71,14 @@ def main():
             ok, sebep = reel.kapi(hedef, pid)
             if not ok: print('cay reel: KAPI DURDURDU —', pid, '—', sebep)
         print('cay reel:', pid, 'hazır' if ok else 'HATA', '· hiza=%s' % (_yontem(od) or 'tahmin'))
-        if ok: done[pid] = {'reel': f'https://bitkitabani.com/ig/cay/{pid}/reel.mp4', 'caption': ig2.caption2(p, 'Çay tarifi'), 'tr': p['tr'], 'tarif': next(t['slug'] for t in TARIFLER if t['bitki'] == pid)}
+        if ok:
+            # Yöresel ad başlık testine girsin: YouTube'da yöresel adla arayan
+            # bulduğunu sonuna kadar izliyor (24 Kasım veri notu).
+            yor = re.split(r'[,;]', str(p.get('diger') or ''))[0].strip()
+            if yor.lower() == p['tr'].lower() or len(yor) < 3: yor = ''
+            done[pid] = {'reel': f'https://bitkitabani.com/ig/cay/{pid}/reel.mp4', 'caption': ig2.caption2(p, 'Çay tarifi'),
+                         'tr': p['tr'], 'yoresel': yor,
+                         'tarif': next(t['slug'] for t in TARIFLER if t['bitki'] == pid)}
     json.dump(done, open(os.path.join(out_root, 'index.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     kalan = sum(1 for pid in pidler if _yontem(os.path.join(out_root, pid)) not in ('cumle', 'ses-hizasi'))
     print('cay reel: %d video hazır · hizası hâlâ tahmin olan: %d' % (len(done), kalan))
