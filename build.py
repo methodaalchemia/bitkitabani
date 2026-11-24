@@ -2469,6 +2469,22 @@ _pfeed('pinterest-katalog.xml', 'Bitki Tabanı: şifalı bitkiler kataloğu', 'H
 _pfeed('pinterest-cizim.xml', 'Bitki Tabanı: botanik çizimler', 'Köhler ve Thomé’nin 19. yüzyıl tıbbi bitki levhaları.',
        [_pimg(f'{byId[k.split(":")[0]]["tr"]} botanik çizimi ({short_la(byId[k.split(":")[0]])})', f'/{k.split(":")[0]}/', (v.get('artist') or '') + '. ' + byId[k.split(":")[0]]['ilginc'], f'/img/tanima/{k.split(":")[0]}-cizim.jpg', _d0)
         for k, v in sorted(TANIMA.items()) if k.endswith(':cizim') and isinstance(v, dict) and k.split(':')[0] in byId])
+# kültür köprüleri (iki bitkinin fotoğrafı yan yana)
+def _kop_dosya(br):
+    return '%s-%s' % (br['a'], br['b']) if br.get('b') else br['a']
+_pfeed('pinterest-kopru.xml', 'Bitki Tabanı: kültür köprüleri',
+       'Birbirinden uzak kültürler, aynı bitki ya da aynı molekül etrafında.',
+       [_pimg(br['t'], '/kopruler/', duz(br['d']), f'/img/kopru-pin/{_kop_dosya(br)}.jpg', _d0)
+        for br in BR if os.path.exists(os.path.join(HERE, 'img', 'kopru-pin', _kop_dosya(br) + '.jpg'))])
+
+# bitki tanıma (çiçek fotoğrafıyla dikey kart; fotoğrafçı ve lisans kartın üstünde)
+_pfeed('pinterest-tanima.xml', 'Bitki Tabanı: bitkiler çiçeğiyle nasıl tanınır',
+       'Her bitkinin çiçeği, Latincesi ve familyası; kaynaklı kayda bağlı.',
+       [_pimg(f'{q["tr"]} nasıl tanınır? ({short_la(q)})', f'/{q["id"]}/',
+              re.sub(r'\s*\[\d+\]', '', duz(q.get('ilginc') or '')),
+              f'/img/cicek-pin/{q["id"]}.jpg', _d0)
+        for q in P if os.path.exists(os.path.join(HERE, 'img', 'cicek-pin', q['id'] + '.jpg'))])
+
 # tarifler (dikey kart: tarifler zaten pinterest.xml'de ama yatay bitki fotoğrafıyla;
 # bu besleme ölçü, süre ve adımların okunduğu dikey kartı veriyor)
 _pfeed('pinterest-tarif.xml', 'Bitki Tabanı: bitki çayı ve şifalı bitki tarifleri',
