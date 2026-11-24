@@ -120,6 +120,11 @@ async function topla(){
     id:'tan:'+v.dosya, grup:'Tanıtım', etiket:'TANITIM VİDEOSU', baslik:v.baslik,
     caption:v.caption||'', video: IG+'tanitim/'+v.dosya, sayfa:v.sayfa||''
   });
+  const onc = await jget('oncelikli/index.json');
+  if (onc) for (const v of onc) out.push({
+    id:'onc:'+v.dosya, grup:'Öncelikli', etiket:'ÖNCELİKLİ · '+(v.etiket||'VERİ HATTI'), baslik:v.baslik,
+    caption:v.caption||'', video: IG+'oncelikli/'+v.dosya, sayfa:v.sayfa||''
+  });
   const cay = await jget('cay/index.json');
   if (cay) for (const [slug, v] of Object.entries(cay)) out.push({
     id:'cay:'+slug, grup:'Çay videoları', etiket:'ÇAY REELS', baslik:v.tr||slug,
