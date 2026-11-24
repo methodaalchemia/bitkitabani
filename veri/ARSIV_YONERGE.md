@@ -14,7 +14,7 @@ Her kayıtta şu alanlar olmalı:
 - `la`: Kabul edilen bilimsel ad, yazar kısaltmasıyla (POWO'ya göre: https://powo.science.kew.org). Parti dosyasındaki ad eş adsa kabul edilen adı yaz, eski adı `diger` içinde an.
 - `taxon`: Yazar kısaltması olmadan kabul edilen ad (POWO bağlantısı için).
 - `fam`: `Latince (Türkçe)` biçiminde; Türkçe karşılık için `veri/familya_tr.json` dosyasına bak, orada yoksa yalnızca Latince yaz.
-- `diger`: diğer adlar, eş adlar, İngilizce ad (düz metin, `**` yok).
+- `diger`: yalnızca adlar: eş ad(lar), İngilizce ad, kaynakta geçen başka adlar; virgülle ayrılmış kısa bir satır, en çok 200 karakter (düz metin, `**` yok). Açıklama ve tarihçe buraya değil `ilginc` ya da `kul` içine.
 - `bolge`: liste; yalnızca şunlar: anadolu, avrupa, asya, afrika, kamerika, amazon, and, okyanusya
 - `kat`: liste; yalnızca şunlar: sifa, besin, ritual, zehir, tutsu
 - `kisim`: kullanılan kısım.

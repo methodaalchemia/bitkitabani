@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 264 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 272 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -8419,3 +8419,258 @@ Karıştırma riski: ⚠️ "Yonca" adı Türkçede Medicago, Melilotus ve Menya
 
 ### İlginç bilgi
 DSÖ monografı 2009’da "çok çalışma var ama veri yetmiyor" yazdı; 2026 tarihli GRADE değerlendirmeli meta-analiz sıcak basmasında küçük ama anlamlı bir etki buldu. Kataloğumuzda soyanın tersi bir hikâye: soyada en ünlü iddia (sıcak basması) çıkmamış, çayır üçgülünde çıkmıştı. İki bitki aynı sınıftan izoflavon taşıyor; farkın bileşimden mi, çalışmalardan mı geldiği açık değil. Ve monografın ikinci dersi: "yonca" adını taşıyan üç bitki (çayır üçgülü, kokulu yonca, acı yonca) birbirine karıştırılınca, kumarin taşımayan bitkiye kan sulandırma uyarısı yapıştırılabiliyor.
+
+## Yabani kekik (Thymus serpyllum L.)
+
+URL: https://bitkitabani.com/yabanikekik/
+Familya: Lamiaceae · Bölge: Avrupa, Asya ve Sibirya · Kullanılan kısım: Çiçekli toprak üstü kısımları (taze ya da kurutulmuş); uçucu yağı
+Bilimsel kanıt: Sınırlı · Güvenlik: Genelde güvenli
+
+### Geleneksel kullanım
+- Avrupa — öksürük ve soğuk algınlığı otu: Yabani kekiğin çiçekli dalları Avrupa halk hekimliğinde en çok solunum ve sindirim yakınmalarında kullanılmıştır. 2015 tarihli bir derleme (Jarić ve ark.), British Herbal Pharmacopoeia’nın bitki için bronşit, bronş nezlesi, boğaz ağrısı ve özellikle boğmaca endikasyonlarını saydığını aktarır. Aynı derlemeye göre bitki, öksürük kesici hazır karışımların ve soğuk algınlığı damlalarının bileşenidir. Bunlar geleneksel kullanımlardır; kanıtlanmış etki anlamına gelmez.
+- Balkanlar ve Alpler — sakinleştirici çay, romatizma: Jarić ve arkadaşlarının derlemesi, Batı Balkanlar’da bitkinin sakinleştirici olarak ve kan dolaşımını desteklemek için kullanıldığını bildirir. Kuzeydoğu İtalya’nın Alp kesiminde çiçekli toprak üstü kısımlarının demlemesi ya da kaynatması romatizmada içilir. Dıştan kullanımda yara, egzama ve şişlik için antiseptik olarak geçer. İtalya’nın bazı yörelerinde et ve balık yemeklerine koku vermek için de kullanılır.
+- Orta Çağ ve Rönesans — yazılı kayıtlar: Aynı derlemeye göre 15.–16. yüzyıla tarihlenen Hilandar Tıp Kodeksi yabani kekiği soğuk algınlığına bağlı baş ağrısı, gırtlak iltihabı ve sindirim hastalıkları için ve öksürük kesici olarak anar. Orta Çağ Avrupa’sında uykuya yardım etsin ve kâbusları uzak tutsun diye yastık altına konmuştur. Rönesans döneminde sıtma ve sara için içten kullanıldığı da kayıtlıdır; bu kullanımların bugün bir dayanağı yoktur.
+- Himalaya etekleri — aynı adla anılan kekik: 2023 tarihli bir derleme (Salaria ve ark.), bitkinin Hindistan’ın yüksek kesimlerinde solunum ve sindirim yakınmalarında geleneksel olarak kullanıldığını yazar. Jarić ve arkadaşları Hindistan’ın bazı bölgelerinde adet düzensizliklerinde, Kuzey Pakistan’da bağırsak kurtlarına karşı kullanıldığını aktarır. Bu yayınlardaki bitkilerin Avrupa’daki türle aynı olup olmadığı botanik açıdan tartışmalıdır.
+
+### Hazırlama
+Geleneksel biçimi çiçekli dalların demlemesi (çay), kaynatması, şurubu ve tentürüdür. EMA’nın bitkisel ürünler komitesinin (HMPC) yabani kekik için bir monografı yoktur; bu nedenle resmî bir monografla kabul edilmiş bir doz yoktur. Jarić ve arkadaşlarının derlemesi, PDR for Herbal Medicines adlı başvuru kitabının günlük 4–6 g drog önerdiğini aktarır; bu bir el kitabı bilgisidir, resmî monograf dozu değildir. Aynı derlemeye göre Avrupa Farmakopesi drogda en az %1,2 uçucu yağ ve yağda toplam en az %40 karvakrol ile timol arar. Uçucu yağ ağızdan kullanılmaz.
+
+### Araştırmalar ne gösteriyor
+Yabani kekik üzerindeki çalışmaların çoğu hücre ve hayvan düzeyindedir. Jarić ve arkadaşlarının 2015 derlemesi uçucu yağın bakteri ve küflere karşı laboratuvar etkisini karvakrol ve timole bağlar; yağ oranı kaynağa göre %0,1–1 arasında değişir ve birçok kemotip vardır. Aynı derlemede aktarılan bir sıçan çalışmasında sulu ekstre (100 mg/kg) yüksek tansiyonlu sıçanlarda kan basıncını düşürmüş, normal sıçanlarda etkilememiştir. 2024 tarihli bir sistematik derleme (Jalil ve ark.) bağırsak iltihabı, karaciğer koruma ve metabolik etkilerin ağırlıkla kemirgen modellerinde görüldüğünü, klinik çalışmaların az olduğunu ve ekstrelerin çoğunda bileşimin iyi tanımlanmadığını belirtir. 2026’da yayımlanan çok merkezli, çift kör, plasebo kontrollü bir çalışmada sindirim rahatsızlığı olan 178 yetişkin 8 hafta standart yabani kekik ekstresi ya da plasebo almış; ekstre grubunda toplam belirti puanı plaseboya göre daha fazla azalmıştır. Bu tek bir çalışmadır ve yazarlarının bir kısmı ekstre üreticisiyle bağlantılıdır; sonucun bağımsız çalışmalarla doğrulanması gerekir.
+
+### Güvenlik
+Baharat ve çay olarak kullanıldığı miktarlarda iyi tolere edilir. 2024 tarihli sistematik derleme bilinen bir kontrendikasyon, yan etki ya da ilaç etkileşimi bulunmadığını; DSÖ’nün yan etki veritabanında yalnızca bir bildirim (2011, 75 yaş üstü bir kadında akut böbrek hasarı) olduğunu yazar. 2026 tarihli klinik çalışmada 8 hafta boyunca ürüne bağlı yan etki bildirilmemiştir. Hamilelik, emzirme ve çocuklarda tıbbi dozda kullanımına ilişkin güvenlik verisi yoktur; bu dönemlerde yemeklik miktarın ötesine geçilmemelidir. Uçucu yağ derişik bir üründür: ağızdan alınmaz, seyreltilmeden cilde sürülmez. Ballıbabagillere (kekik, nane, adaçayı) alerjisi olanlar dikkatli olmalıdır. Düzenli ilaç kullananlar hekimine ya da eczacısına danışmalıdır.
+
+### Doğada
+Nerede yetişir: Kuru, taşlı zeminler, kumluk fundalıklar ve çayırlar. Yere yatık, tabanda odunsu gövdeli, çok yıllık küçük bir çalıdır; yaprakları 4–6 mm uzunluğundadır. Doğal yayılışı Kuzey ve Orta Avrupa ile Batı Sibirya’dır.
+Toplama mevsimi: Mayıstan eylüle kadar çiçek açar; çiçekli dallar bu dönemde toplanır.
+Yöresel adlar: Türkçede yerleşik bir yöresel adı yok.
+Karıştırma riski: Bahçe kekiği (Thymus vulgaris) ayrı bir türdür ve EMA monografı o türe aittir; yabani kekik yere yayılır. Thymus cinsi sınıflandırması güç bir cinstir; farklı ülkelerde “yabani kekik” adıyla satılan ürünler başka Thymus türleri olabilir.
+
+### İlginç bilgi
+Tür adı serpyllum, Jarić ve arkadaşlarının derlemesine göre Yunanca “sürünmek” anlamındaki sözcükten gelir; bitkinin yere yayılan gövdelerine gönderme yapar. Aynı derleme, Orta Çağ’da kadınların şövalyelere cesaret versin diye kekik yaprağı hediye ettiğini aktarır.
+
+## Su nanesi (Mentha aquatica L.)
+
+URL: https://bitkitabani.com/sunanesi/
+Familya: Lamiaceae · Bölge: Avrupa, Anadolu ve Akdeniz, Asya ve Sibirya, Afrika · Kullanılan kısım: Toprak üstü kısımları (yaprak ve çiçekli dallar); uçucu yağı
+Bilimsel kanıt: Sınırlı · Güvenlik: Genelde güvenli
+
+### Geleneksel kullanım
+- Avrupa ve Akdeniz — soğuk algınlığı ve mide için nane: 2024 tarihli eleştirel bir derleme (Pires ve ark.), su nanesinin halk hekimliğinde uzun süredir, en çok soğuk algınlığı gibi solunum yolu rahatsızlıklarında kullanıldığını yazar. Cezayir kaynaklı 2024 tarihli bir çalışma, bitkinin dünyada sindirim ve akciğer yakınmaları ile sara ve depresyon gibi bazı ruhsal ve sinirsel durumlar için halk ilacı ve işlevsel gıda olarak kullanıldığını aktarır. Bunlar geleneksel kullanımlardır.
+- İran — yabani sebze ve mutfak otu: 2021 tarihli bir derleme (Asadollah-Pour ve ark.) su nanesini yabani sebze ve mutfak otu olarak tanımlar. Aynı derlemeye göre bitki halk arasında güçlendirici ve yatıştırıcı olarak; kabızlık, ishal, mide ve karaciğer yakınmaları, safra şikâyetleri, tansiyon sorunları ve çocuklarda bağırsak kurtlarını düşürmek için kullanılmıştır. Derleme bu kullanımları kayıt altına alır; etkinliklerini doğrulamaz.
+- Brezilya ve Fas — sindirim ve ağrı: Brezilya’da yürütülen 2022 tarihli bir çalışma, bitkinin halk arasında sindirim sorunlarında kullanıldığını belirtir ve bu kullanımı hayvan modellerinde sınar. Fas kaynaklı 2026 tarihli bir çalışma ise toprak üstü kısımlarının kaynatılarak hazırlanan ekstresini geleneksel kullanıma dayanarak iltihap ve ağrı modellerinde inceler.
+
+### Hazırlama
+Geleneksel biçimi taze ya da kurutulmuş yaprakların demlemesi (çay) ve kaynatmasıdır; yapraklar mutfakta nane gibi kullanılır. EMA, DSÖ ya da TİTCK monografı bulunmadığı için kabul edilmiş bir doz yoktur. Uçucu yağ buharla damıtmayla elde edilir; Brezilya çalışmasında verim %0,17 bulunmuştur. Uçucu yağ ağızdan kullanılmaz.
+
+### Araştırmalar ne gösteriyor
+Su nanesi üzerine insanlarda yapılmış klinik çalışma yoktur; veriler hücre ve hayvan düzeyindedir. Brezilya’da yapılan 2022 tarihli çalışmada ana bileşeni karvon olan uçucu yağ (75 mg/kg) sıçanlarda alkolle oluşturulan mide ülserine karşı %90’ın üzerinde koruma sağlamış, mide salgısının hacmini ve asitliğini azaltmıştır; farelerde akut kolite karşı ise koruyucu olmamıştır. Fas kaynaklı 2026 çalışmasında kaynatma ekstresi sıçanlarda 200 ve 400 mg/kg dozlarında doza bağlı iltihap ve ağrı azaltıcı etki göstermiştir. 2019 tarihli bir hücre çalışmasında ekstre (50 μg/mL) insan karaciğer kanseri hücrelerini oksidatif hasara karşı korumuş; Cezayir çalışmasında 57 bileşik tanımlanmış ve ekstreler deney tüpünde antioksidan etki ile α-glukozidaz baskılaması göstermiştir. Pires ve arkadaşlarının derlemesi, piyasada bitkiyi içeren çok sayıda kozmetik ürün bulunduğunu, tıbbi kullanım için ise çalışmaların henüz yetersiz olduğunu vurgular.
+
+### Güvenlik
+Yemeklik ve çaylık miktarlarda bilinen ciddi bir sakıncası bildirilmemiştir. Fas kaynaklı 2026 çalışmasında kaynatma ekstresi farelere ağızdan 8 g/kg’a kadar verildiğinde ölüm ya da zehirlenme belirtisi görülmemiş; 28 gün boyunca günde 1 g/kg’a kadar verilen dozlarda kan, biyokimya ve doku bulgularında değişiklik olmamıştır. Bu bir hayvan verisidir; insanlarda güvenlik çalışması yoktur. Hamilelik, emzirme ve çocuklarda tıbbi amaçla kullanımına ilişkin veri yoktur; bu dönemlerde yemeklik miktarın ötesine geçilmemelidir. Uçucu yağ derişik bir üründür; ağızdan alınmaz, seyreltilmeden cilde sürülmez. Su kıyısından toplanan bitkiler kirli sudan gelen mikrop ve ağır metal taşıyabilir; temiz kaynaktan toplanmalı ve iyi yıkanmalıdır. Düzenli ilaç kullananlar hekimine danışmalıdır.
+
+### Doğada
+Nerede yetişir: Derelerin, ırmakların ve kanalların sığ kıyıları, ıslak çayırlar. Çok yıllıktır. Doğal yayılışı Avrupa, Türkiye, Kafkasya, İran, Kuzey Afrika ile Doğu ve Güney Afrika’dır; Amerika kıtasına sonradan taşınmıştır.
+Toplama mevsimi: Yaz aylarında çiçek açar; Cezayir’de yürütülen çalışmada çiçekli bitki ağustosta toplanmıştır.
+Yöresel adlar: Türkçede yerleşik bir yöresel adı yok.
+Karıştırma riski: Öbür nane türleriyle (Mentha) karışır; cins içinde türler birbirine benzer ve uçucu yağ bileşimi kaynağa göre değişir. Brezilya’da karvon ağırlıklı, bir başka çalışmada linalol ve linalil asetat ağırlıklı kemotipler bildirilmiştir. Su kıyısında yetişen ve nane kokmayan bitkiler toplanmamalıdır.
+
+### İlginç bilgi
+Su nanesi kirli suyu temizlemekte de denenmiştir: 2019 tarihli bir çalışmanın başlığına göre bitki, Bosna Irmağı’nın suyundan dışkı kaynaklı mikropları ve ağır metalleri uzaklaştırmak için kullanılmıştır.
+
+## Zufa otu (Dracocephalum officinale (L.) Y.P.Chen & B.T.Drew)
+
+URL: https://bitkitabani.com/zufaotu/
+Familya: Lamiaceae · Bölge: Avrupa, Anadolu ve Akdeniz, Asya ve Sibirya · Kullanılan kısım: Çiçekli toprak üstü kısımları (yaprak ve çiçek); uçucu yağı
+Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
+
+### Geleneksel kullanım
+- Avrupa — göğüs yumuşatıcı ot: 2024 tarihli bir derleme (Atazhanova ve ark.), zufa otunun halk hekimliğinde demleme hâlinde süreğen bronşit ve astımda balgam söktürücü olarak, ayrıca süreğen gastritte, yara iyileştirmede ve terlemeyi azaltmak için kullanıldığını yazar. Kaynatması göz ve ağız iltihaplarında yıkama suyu olarak, lapası çürük ve romatizmada kompres olarak geçer. Aynı derlemeye göre bitki Fransa, Portekiz, Romanya, İsveç ve Almanya farmakopelerinde yer almıştır. Bunlar geleneksel kullanımlardır.
+- Mutfak ve koku — baharat ve katkı: Atazhanova ve arkadaşları bitkinin yemeklerde ve parfümeride de kullanıldığını, yeşil kısımlarının sindirimi ve iştahı desteklediğine inanıldığını aktarır. 2002 tarihli bir toksikoloji çalışması zufa yağını “önemli bir gıda katkısı ve bitkisel ilaç” olarak tanımlar. ABD Ulusal Sağlık Enstitülerinin LiverTox kaydı bitkinin sindirim ve solunum yolu enfeksiyonlarının ve soğuk algınlığının belirtilerini hafifletmek için yaygın kullanıldığını belirtir.
+- ⚠️ Uçucu yağ — zehirlenme kayıtları: 1981 tarihli bir klinik ve deneysel çalışma (Millet ve ark.), piyasada satılan adaçayı, zufa, mazı ve sedir yağlarının sekiz insanda zehirlenmeye yol açtığını, başlıca belirtinin tonik-klonik nöbet olduğunu bildirmiştir. Aynı ekip sıçanlarda zufa yağının adaçayı yağından daha güçlü nöbet yaptırıcı olduğunu göstermiştir. Bu nedenle geleneksel ot çayı ile damıtılmış uçucu yağ aynı ürün sayılmaz.
+
+### Hazırlama
+Geleneksel biçimi yaprak ve çiçekli dalların demlemesi ya da kaynatmasıdır; Atazhanova ve arkadaşlarının derlemesine göre tıbbi amaçla yeşil sürgünler çiçeklenmeden önce kesilir. EMA, DSÖ ya da TİTCK monografı bulunmadığı için kabul edilmiş bir doz yoktur. ⚠️ Uçucu yağ ağızdan alınmaz; nöbete yol açtığı hem insanlarda hem hayvanlarda kayıtlıdır ve bu sayfa uçucu yağın içten kullanımı için bilerek tarif vermiyor. Uçucu yağın bileşimi kaynağa göre çok değişir, bu yüzden bir üründeki pinokamfon miktarı önceden bilinemez.
+
+### Araştırmalar ne gösteriyor
+Zufa otu için insanlarda klinik çalışma yoktur; 2024 tarihli derleme insan çalışmalarının, yan etki araştırmalarının ve klinik denemelerin eksik olduğunu açıkça yazar. 2022 tarihli bir derleme (Sharifi-Rad ve ark.) uçucu yağın deney tüpünde bakteri ve Candida mayalarına karşı etkili olduğunu, antioksidan ve hücre öldürücü etkilerin de yalnızca hücre düzeyinde gösterildiğini aktarır. Aynı derlemeye göre yağdaki pinokamfon ve izopinokamfon oranı kökene göre büyük fark gösterir: Polonya’da izopinokamfon %22,53–28,74, Türkiye’de pinokamfon %19,6 bulunmuştur. Sinir sistemi üzerindeki veriler çelişkili görünür ama farklı ürünlere aittir: uçucu yağ sıçanlarda nöbet yaptırır; 2020 tarihli bir sıçan çalışmasında ise sulu ekstre (100 mg/kg) kimyasal yolla oluşturulan nöbetin başlamasını geciktirmiştir. 2002 tarihli bir çalışma, pinokamfon izomerlerinin ve zufa yağının beyindeki GABA-A almacını engellediğini ve farelerdeki nöbetlerin diazepamla hafiflediğini göstermiştir.
+
+### Güvenlik
+⚠️ Uçucu yağı nöbet yaptırıcıdır. Millet ve arkadaşlarının sıçan çalışmalarında zufa yağı 0,08 g/kg’da beyin elektrosunda belirtisiz değişikliklere, 0,13 g/kg’ın üzerinde nöbete, 1,25 g/kg’ın üzerinde ölüme yol açmış; belirtisiz dozların her gün yinelenmesi birikici etki göstermiştir. Aynı ekip insanlarda uçucu yağ zehirlenmeleri bildirmiştir. Sara (epilepsi) hastaları, nöbet öyküsü olanlar, çocuklar, hamileler ve emzirenler zufa yağını ve derişik ürünlerini kullanmamalıdır. 2022 tarihli derleme hamilelikte çok az araştırma bulunduğunu ve rahim kasılması ya da adet üzerine olası bir etkiden söz edildiğini yazar. Ot çayının güvenliği insanlarda incelenmemiştir; kısa süreli ve az miktarda kullanımın ötesine geçilmemelidir. LiverTox kaydına göre zufa otu karaciğer hasarıyla ilişkilendirilmemiştir. Uçucu yağ yutulduysa ya da kasılma, titreme, bilinç bulanıklığı görülürse 114 (Ulusal Zehir Danışma Merkezi) ya da 112 aranmalıdır.
+
+### İlaç etkileşimleri
+- Sara (epilepsi) ilaçları: Uçucu yağdaki pinokamfon GABA-A almacını engeller ve nöbet eşiğini düşürebilir; nöbet ilaçlarının koruyucu etkisine karşı çalışır. Nöbet ilacı kullananlar zufa yağından ve derişik ürünlerinden uzak durmalıdır.
+- Antidepresanlar ve sinir sistemini baskılayan ilaçlar: 2022 tarihli derleme (Sharifi-Rad ve ark.) bu ilaç gruplarıyla olası bitki-ilaç etkileşimine dikkat çeker; insanlarda yapılmış bir etkileşim çalışması yoktur.
+- Nöbet eşiğini düşüren öbür uçucu yağlar (adaçayı, mazı, kâfur): Millet ve arkadaşları bu yağlardaki tuyon ve kâfurun da nöbet yaptırıcı olduğunu göstermiştir; birlikte kullanım riski artırabilir.
+
+### Doğada
+Nerede yetişir: Kurak dağ yamaçları ve bozkırlar, kayalık ya da kumlu topraklar. Doğal yayılışı Güney ve Orta Avrupa’dan Türkiye, Kafkasya ve İran’a, Kuzey Afrika’da Fas ve Cezayir’e uzanır; bahçelerde yetiştirilir ve Kuzey Avrupa ile Kuzey Amerika’ya sonradan taşınmıştır.
+Toplama mevsimi: Yazın çiçek açar; tıbbi amaçla yeşil sürgünler çiçeklenmeden önce kesilir.
+Yöresel adlar: Türkçede yerleşik bir yöresel adı yok.
+Karıştırma riski: Mavi, pembe ve beyaz çiçekli biçimleri vardır ve yağlarındaki pinokamfon oranı birbirinden farklıdır (derlemede beyaz çiçeklide %44,99, mavi çiçeklide %20,85). Orta Asya’da kullanılan Hyssopus cuspidatus ayrı bir türdür. Kutsal metinlerde geçen “zufa”nın bu bitki olup olmadığı bu sayfanın kaynaklarında ele alınmamıştır.
+
+### İlginç bilgi
+Atazhanova ve arkadaşlarının derlemesine göre zufa otunu Hipokrat (yaklaşık MÖ 460–377) anmıştır. Bitki 1753’ten beri Hyssopus officinalis adını taşıyordu; 2022’de yayımlanan bir filogeni çalışmasıyla Dracocephalum cinsine aktarıldı.
+
+## Kedi nanesi (Nepeta cataria L.)
+
+URL: https://bitkitabani.com/kedinanesi/
+Familya: Lamiaceae · Bölge: Avrupa, Anadolu ve Akdeniz, Asya ve Sibirya · Kullanılan kısım: Yaprakları ve çiçekli dalları; uçucu yağı
+Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
+
+### Geleneksel kullanım
+- Avrupa ve Güneybatı Asya — sancı ve öksürük otu: 1995 tarihli bir farmakognozi çalışması (Sarkar ve ark.) yaprak ve çiçekli dalların gaz söktürücü, terletici, güçlendirici ve adet söktürücü sayıldığını, bebek sancısında ve sinirsel yakınmalarda kullanıldığını yazar. 2009 tarihli bir çalışma (Gilani ve ark.) bitkinin geleneksel olarak sancı, ishal, öksürük ve astımda kullanıldığını belirtir. Bunlar geleneksel kullanımlardır; bebeklerde kullanımı bugün önerilmez.
+- Himalaya, İran ve Türkiye — cinsin halk hekimliğindeki yeri: 2021 tarihli bir derleme (Sharma ve ark.), Nepeta türlerinin Hindistan, Pakistan ve Nepal’in Himalaya kesiminde, Çin’de ve Türkiye ile İran’ın dağlık bölgelerinde soğuk algınlığı, öksürük, astım, mide rahatsızlıkları ve ateşli hastalıklar için yaygın kullanıldığını bildirir. Bu bilgi cinsin tamamı içindir; her kullanım kedi nanesine ait değildir.
+- Kediler ve böcekler — bitkinin asıl ünü: Kedi nanesi en çok kedilerde yarattığı tepkiyle tanınır: kediler bitkiye yüzünü ve başını sürter, yerde yuvarlanır. 2021 tarihli bir çalışma (Uenoyama ve ark.) bu davranışın bitkideki iridoitleri kedinin tüylerine bulaştırdığını ve kediyi sivrisinek ısırığından koruduğunu göstermiştir. Bitki evcil hayvan oyuncaklarında yaygın kullanılır. 2023 tarihli bir derleme, kedi nanesi yağını ABD Çevre Koruma Ajansı’na kayıtlı böcek kovucu bileşenler arasında sayar.
+- ⚠️ Keyif verici olarak kullanım iddiası: 1969’da tıp dergisi JAMA’da kedi nanesinin bilinci değiştirdiğini öne süren bir yazı yayımlanmıştır. 1997 tarihli bir vaka bildirimi (Osterhoudt ve ark.) bu iddianın tartışmalı olduğunu, bitkinin insan bilincini etkileyip etkilemediğinin belirsizliğini koruduğunu yazar. Aynı yazı, çok miktarda kedi nanesi yiyen küçük bir çocukta merkezî sinir sistemi baskılanması bildirmiştir.
+
+### Hazırlama
+Geleneksel biçimi kurutulmuş yaprak ve çiçekli dalların demlemesidir (çay). EMA, DSÖ ya da TİTCK monografı bulunmadığı için kabul edilmiş bir doz yoktur ve insanlarda doz belirleyen bir çalışma yapılmamıştır. Uçucu yağ ağızdan alınmaz. Bitkinin tütün gibi içilmesi ya da keyif amacıyla kullanılması için bu sayfa bilerek tarif vermiyor; bu kullanımın etkisi kanıtlanmamıştır ve güvenliği bilinmemektedir.
+
+### Araştırmalar ne gösteriyor
+Kedi nanesi için insanlarda klinik çalışma yoktur; 2018 tarihli bir derleme (Süntar ve ark.) Nepeta cinsindeki bulguların klinik öncesi düzeyde kaldığını ve klinik çalışmalara gerek olduğunu belirtir. Gilani ve arkadaşlarının 2009 çalışmasında uçucu yağ, tavşan bağırsağı ve kobay soluk borusu dokularında kasılmaları gevşetmiş; yazarlar bunu kalsiyum kanalı ve fosfodiesteraz baskılamasına bağlamıştır. Hayvan davranışı çalışmaları birbirini tutmaz: 1978 tarihli bir çalışmada uçucu yağ (500 mg/kg) farelerde barbitürat uykusunu uzatmış, 1995 tarihli bir çalışmada ise yeme %10 oranında katılan bitki farelerde hareketliliği artırmış, barbitürat uykusunu kısaltmış ve nöbete yatkınlığı yükseltmiştir. Türkiye’de yapılan 2009 tarihli bir laboratuvar çalışmasında yağın ana bileşeni %70,4 oranında nepetalakton bulunmuş ve yağ deney tüpünde on bir bakteriye karşı etkili olmuştur. Uçucu yağın bileşimi kaynağa göre çok değişir: Gilani’nin örneğinde ana bileşen %21,00 ile 1,8-sineoldür. Kanıt düzeyi "sınırlı": yalnızca laboratuvar ve hayvan verisi.
+
+### Güvenlik
+İnsanlarda güvenliği sistemli biçimde incelenmemiştir. ⚠️ Bebeklere ve küçük çocuklara verilmemelidir: 1997 tarihli vaka bildiriminde çok miktarda kedi nanesi yiyen küçük bir çocukta, başka bir nedenle açıklanamayan bilinç bulanıklığı ve merkezî sinir sistemi baskılanması görülmüştür. Sarkar ve arkadaşları bitkinin adet söktürücü sayıldığını yazar; hamilelikte kullanılmamalıdır, emzirme dönemi için veri yoktur. Fare çalışmalarında nöbete yatkınlığı artırdığı ve barbitürat uykusunu değiştirdiği görülmüştür; sara hastaları ile yatıştırıcı ya da uyku ilacı kullananlar hekimine danışmadan kullanmamalıdır. Farelerde uçucu yağın öldürücü dozu (LD50) 1300 mg/kg bulunmuştur; uçucu yağ ağızdan alınmaz. Çok miktarda yutulduktan sonra uyuşukluk ya da bilinç değişikliği olursa 114 (Ulusal Zehir Danışma Merkezi) ya da 112 aranmalıdır.
+
+### İlaç etkileşimleri
+- Yatıştırıcılar, uyku ilaçları ve alkol: 1978 tarihli fare çalışmasında uçucu yağ barbitürat uykusunu uzatmıştır; yatıştırıcı etkinin artması olasıdır. İnsanlarda yapılmış bir etkileşim çalışması yoktur.
+- Sara (epilepsi) ilaçları: 1995 tarihli fare çalışmasında bitki, pikrotoksin ve striknin ile oluşturulan nöbetlere yatkınlığı artırmıştır. Nöbet öyküsü olanlar kullanmamalıdır.
+
+### Doğada
+Nerede yetişir: Çok yıllık, otsu bir bitkidir; gövdesi içi boş, yaprakları üçgenimsi-oval ve tüylüdür. Doğal yayılışı Güney ve Doğu Avrupa, Türkiye, Kafkasya, İran, Orta Asya ve Himalaya’dır; Kuzey Amerika’da yaygın biçimde yabanileşmiştir.
+Toplama mevsimi: Yazın çiçek açar; yaprak ve çiçekli dallar çiçeklenme döneminde toplanır.
+Yöresel adlar: Türkçede yerleşik bir yöresel adı yok.
+Karıştırma riski: Bahçelerde “kedi nanesi” (catmint) adıyla satılan süs bitkilerinin çoğu başka Nepeta türleri ve melezleridir. Kedilerde benzer tepki yaratan gümüş asması (Actinidia polygama) ayrı bir familyadan, ayrı bir bitkidir.
+
+### İlginç bilgi
+1964’te Science dergisinde yayımlanan bir yazı, nepetalaktonun böcekleri kovduğunu ve bitkideki asıl işlevinin kedileri çekmek değil, bitkiyi yiyen böceklerden korunmak olduğunu öne sürmüştür. 2020 tarihli bir genom çalışmasına göre iridoit üretimi bu bitkinin atalarında kaybolmuş, Nepeta soyunda yeniden evrilmiştir.
+
+## Yer sarmaşığı (Glechoma hederacea L.)
+
+URL: https://bitkitabani.com/yersarmasigi/
+Familya: Lamiaceae · Bölge: Avrupa, Anadolu ve Akdeniz, Asya ve Sibirya · Kullanılan kısım: Çiçekli toprak üstü kısımları
+Bilimsel kanıt: Sınırlı · Güvenlik: Genelde güvenli
+
+### Geleneksel kullanım
+- Avrupa — soğuk algınlığı ve mide için halk otu: Letonya’da yürütülen 2022 tarihli bir çalışma (Sile ve ark.), bitkinin toprak üstü kısımlarının halk hekimliğinde yüzyıllardır soğuk algınlığı, astım, bronşit, mide hastalıkları, şeker hastalığı ve iltihaplı durumlarda kullanıldığını aktarır. Hırvatistan kaynaklı çalışmalar (Šeremet ve ark.) bitkiyi kuşaklardır kullanılan “geleneksel bir bitki” olarak tanımlar. Bunlar geleneksel kullanımlardır; insanlarda sınanmamıştır.
+- Çin tıbbı — safra taşı ve sarılık: 2017 tarihli bir çalışma (Wang ve ark.), geleneksel Çin tıbbında bitkinin safra taşı, ödem, apse, şeker hastalığı, iltihap ve sarılığı olan hastalara sıkça yazıldığını belirtir. Çin kaynaklı çalışmalarda kullanılan malzeme çoğunlukla bitkinin Doğu Asya’daki yakın akrabasıdır (Glechoma hederacea var. longituba adıyla da geçer); Avrupa’daki bitkiyle birebir aynı sayılmamalıdır.
+- Gıda — besin değeri ve katkı adayı: Hırvatistan’da doğadan toplanan örnekleri inceleyen 2022 tarihli çalışma, bitkiyi çözünmeyen lif, protein, kalsiyum ve potasyum bakımından zengin bulmuş; işlevsel gıda bileşeni olarak değerlendirilmesini önermiştir. Sile ve arkadaşları bitkinin gıda katkısı olarak kullanımının da araştırıldığını yazar.
+
+### Hazırlama
+Geleneksel biçimi çiçekli toprak üstü kısımlarının demlemesi (çay) ya da kaynatmasıdır. EMA, DSÖ ya da TİTCK monografı bulunmadığı için kabul edilmiş bir doz yoktur. Letonya çalışmasına göre fenolik bileşikler bakımından en uygun toplama zamanı çiçeklenme dönemidir. Uçucu yağ oranı düşüktür (kuru ağırlığın kilogramı başına 0,32–2,98 mL).
+
+### Araştırmalar ne gösteriyor
+Yer sarmaşığı için insanlarda klinik çalışma yoktur; veriler hücre ve hayvan düzeyindedir. 2017 tarihli sıçan çalışmasında sıcak su ekstresi, safra kanalı bağlanarak oluşturulan karaciğer hasarında kan değerlerini, iltihabı ve bağ dokusu artışını azaltmıştır. 2021 tarihli bir çalışmada (Xiao ve ark.) ticari bir ekstre, safra taşı oluşturan diyetle beslenen farelerde günde üç kez verildiğinde safra taşı kristallerinin boyutunu ve sayısını ve toplam kolesterolü düşürmüş; safra akış hızını ise değiştirmemiştir. Letonya çalışmasında ekstreler bağışıklık hücrelerinde iltihap azaltıcı etki göstermiş, 50–750 μg/mL arasında bu hücrelere zarar vermemiştir. 2023 tarihli bir çalışma (Sławińska ve ark.) insan kan hücrelerinde ekstrelerin oksidatif DNA hasarını azalttığını, ancak 24 saatte hücre canlılığını en çok %65’e kadar düşürdüğünü bildirmiştir. Başlıca bileşikler rozmarinik ve klorojenik asit ile rutin, apigenin ve luteolin türevleridir.
+
+### Güvenlik
+İnsanlarda güvenliği incelenmemiştir. Eldeki veriler laboratuvar düzeyindedir: 2002 tarihli bir çalışmada ve Letonya çalışmasında ekstreler tuzla karidesi testinde sınanan derişimlerde (en çok 10 mg/mL) zehirli bulunmamış; Hırvatistan’da toplanan örneklerde ağır metaller izin verilen düzeylerin altında çıkmıştır. Bu bulgular insanlarda uzun süreli kullanımın güvenli olduğunu göstermez. Hamilelik, emzirme ve çocuklarda kullanımına ilişkin veri yoktur; bu dönemlerde kullanılmamalıdır. Safra taşı, sarılık ya da karaciğer hastalığı olanlar hayvan çalışmalarına dayanarak kendi kendine tedaviye girişmemeli, hekime başvurmalıdır. Yol kenarından toplanan bitkiler kirlilik taşıyabilir. Düzenli ilaç kullananlar hekimine danışmalıdır.
+
+### Doğada
+Nerede yetişir: Ormanlar, çalılıklar ve yol kenarları. Çok yıllıktır; yerde sürünen gövdelerle yayılır, çiçekli sürgünleri dik büyür (Letonya çalışmasında ortalama 17,6 cm). Doğal yayılışı Avrupa, Türkiye, Kafkasya, Orta Asya ve Sibirya’dır.
+Toplama mevsimi: İlkbaharda çiçekli sürgün verir; fenolik bileşikler için çiçeklenme döneminde toplanır.
+Yöresel adlar: Türkçede yerleşik bir yöresel adı yok.
+Karıştırma riski: Gerçek sarmaşık (Hedera helix) ayrı familyadan, odunsu ve tırmanıcı bir bitkidir; adı benzese de kullanımı ve güvenliği farklıdır. Çin tıbbında kullanılan Doğu Asya bitkisi (Glechoma hederacea var. longituba) ile Avrupa’daki bitki aynı sayılmamalıdır.
+
+### İlginç bilgi
+Letonya’da yapılan çalışma bu yabani otun organik tarımda yetiştirilebildiğini göstermiştir: en yüksek kuru ot verimi hektar başına 565,8 kg olmuş, yetiştirme bitkinin kimyasal bileşimini yabani bitkiye göre belirgin biçimde değiştirmemiştir.
+
+## Gelin otu (Prunella vulgaris L.)
+
+URL: https://bitkitabani.com/gelinotu/
+Familya: Lamiaceae · Bölge: Avrupa, Anadolu ve Akdeniz, Asya ve Sibirya, Kuzey Amerika · Kullanılan kısım: Çin tıbbında kurutulmuş meyveli başak; Avrupa’da çiçekli toprak üstü kısımları
+Bilimsel kanıt: Sınırlı · Güvenlik: Genelde güvenli
+
+### Geleneksel kullanım
+- Çin tıbbı — xiakucao: 2022 tarihli bir derleme (Pan ve ark.), bitkinin ilk kez Doğu Han dönemine (MS 25–220) tarihlenen Shennong materia medica’sında anıldığını ve sıraca, guatr ile baş yaraları için önerildiğini aktarır. Çin Farmakopesi’nin 2020 baskısı drogu göz kızarıklığı ve ağrısı, baş ağrısı ve baş dönmesi, meme apsesi, sıraca ve yüksek tansiyon için sayar. Bunlar geleneksel Çin tıbbının kendi kavramlarına dayanan kullanımlardır.
+- Avrupa, Türkiye, İran ve Japonya — halk hekimliği: Pan ve arkadaşlarının derlemesine göre 17. yüzyıl Avrupa halk hekimliğinde bitki “kendi kendini iyileştiren” adıyla anılmış; boğaz ağrısını yatıştırmak, ateş düşürmek ve yara iyileşmesini hızlandırmak için kullanılmıştır. Aynı derleme bitkinin Türk halk hekimliğinde romatizma, soğuk algınlığı ve kalp rahatsızlıklarında; İran’da boğaz ağrısı, kanama, baş ağrısı, dizanteri ve göz iltihabında; Japonya’da idrar söktürücü olarak kullanıldığını yazar.
+- Güney Çin — serinletici bitki çayı: Derlemeye göre sıcak ve nemli Guangdong eyaletinde bitki çayı içmek gündelik beslenmenin parçasıdır ve gelin otu, piyasadaki hazır bitki çaylarının bileşenleri arasındadır. Çin Ulusal Sağlık Komisyonu bitkiyi Mart 2010’da “hem ilaç hem gıda” sayılan bitkiler listesine, sınırlı miktar ve kullanım alanıyla eklemiştir.
+
+### Hazırlama
+Geleneksel biçimi kurutulmuş başakların ya da toprak üstü kısımlarının kaynatması ve demlemesidir (çay). Çin tıbbında başaklar yazın, kahverengi-kırmızıya döndüğünde toplanır ve güneşte kurutulur. Pan ve arkadaşlarının derlemesi, Çin Farmakopesi’ndeki tıbbi dozun genellikle 9–15 g olduğunu aktarır. EMA, DSÖ ya da TİTCK monografı yoktur; bu nedenle Avrupa’da ve Türkiye’de kabul edilmiş bir doz yoktur. Klinik çalışmalarda kullanılanlar çay değil, Çin’de üretilen hazır preparatlardır.
+
+### Araştırmalar ne gösteriyor
+Gelin otu üzerindeki insan çalışmaları tiroit hastalıklarında toplanır ve hepsinde bitki tek başına değil, standart ilacın yanında verilmiştir. 2021 tarihli bir meta-analiz (Han ve ark.) tiroit nodüllerinde 13 rastgele kontrollü çalışmayı ve 1468 hastayı birleştirmiş; levotiroksinle birlikte verilen preparatın klinik etkinlik oranını artırdığını (risk oranı 1,22) ve nodül çapını küçülttüğünü bulmuştur. 2025 tarihli bir sistematik derleme ve meta-analiz (Wei ve ark.) hipertiroidide 17 çalışmayı ve 1366 hastayı incelemiş; tiroit ilacına eklenen preparatın hormon düzeylerini ve yan etki sıklığını yalnız ilaca göre daha fazla düşürdüğünü, ancak kanıt gücünün düşük olduğunu ve sonucun daha nitelikli çalışmalarla doğrulanması gerektiğini bildirmiştir. Çalışmaların tamamı Çin’de yapılmıştır. Pan ve arkadaşlarının derlemesi bitkiden 250’den fazla bileşik tanımlandığını; iltihap, tümör, virüs ve tansiyon üzerindeki etkilerin ise hücre ve hayvan düzeyinde gösterildiğini aktarır.
+
+### Güvenlik
+Pan ve arkadaşlarının derlemesine göre bitki zehirli sayılmaz ve yan etki bildirimi azdır; bir temas dermatiti vakası kayıtlıdır. Aynı derleme aşırı kullanımın mide ve bağırsağı uyararak ishal ve karın ağrısına yol açabileceğini yazar. Tiroit çalışmalarında bitki hormon düzeylerini etkilemiştir; tiroit hastalığı olanlar ve tiroit ilacı kullananlar hekimine danışmadan kullanmamalıdır. Hamilelik, emzirme ve çocuklarda kullanımına ilişkin güvenlik verisi yoktur; bu dönemlerde kullanılmamalıdır. Derleme, yan etkilerin klinikte daha dikkatli izlenmesi gerektiğini de belirtir. Düzenli ilaç kullananlar hekimine ya da eczacısına danışmalıdır.
+
+### İlaç etkileşimleri
+- Tiroit ilaçları (levotiroksin, antitiroit ilaçlar): Meta-analizlerde bitki preparatları bu ilaçlarla birlikte verildiğinde tiroit hormon düzeylerini değiştirmiştir. Kendi başına eklenmesi ilaç dozunun ayarını bozabilir; hekim izlemi gerekir.
+- Tansiyon ve şeker ilaçları (kuramsal): Derleme hayvan ve hücre çalışmalarında tansiyon ve kan şekeri düşürücü etkiler bildirir; insanlarda yapılmış bir etkileşim çalışması yoktur.
+
+### Doğada
+Nerede yetişir: Güneşli, iyi süzülen kumlu-tınlı topraklar; kuru yamaçlar, çayırlar, yol ve tarla kenarları. 5–30 cm boyunda, dört köşe gövdeli, alçak, sürünücü, kokusuz, çok yıllık bir ottur; yaprakları karşılıklı dizilir. Kuzey yarımkürenin ılıman kuşağında yaygındır.
+Toplama mevsimi: İlkbahar ve yaz başında çiçek açar; Çin tıbbında başaklar yazın, kahverengi-kırmızıya döndüğünde toplanır.
+Yöresel adlar: Türkçede yerleşik bir yöresel adı yok.
+Karıştırma riski: Derlemeye göre beyaz çiçekli (var. leucantha) ve dar yapraklı (var. lanceolata) varyeteleri asıl bitkiyle kolayca karıştırılır. Ballıbabagillerin çoğundan farklı olarak kokusuzdur.
+
+### İlginç bilgi
+Çince adı xiakucao, Pan ve arkadaşlarının derlemesine göre bitkinin ilkbaharda çiçek açıp yazdan sonra kurumasından gelir. Batı dillerindeki self-heal ve heal-all adları ise Avrupa halk hekimliğindeki yara otu ününe dayanır.
+
+## Kara yer pırasası (Ballota nigra L.)
+
+URL: https://bitkitabani.com/karayerpirasasi/
+Familya: Lamiaceae · Bölge: Avrupa, Anadolu ve Akdeniz, Afrika · Kullanılan kısım: Kurutulmuş çiçekli dal uçları
+Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
+
+### Geleneksel kullanım
+- Avrupa — yatıştırıcı ot: 2000 tarihli bir çalışma (Daels-Rakotoarison ve ark.) kara yer pırasasını “sinir yatıştırıcı özellikleriyle bilinen bir Avrupa bitkisi” olarak tanımlar. Avrupa Fitoterapi Bilimsel Kooperatifi’nin (ESCOP) 2015 tarihli monografı drogun kullanım alanını gerginlik, huzursuzluk ve sinirlilik ile uykuya dalma güçlüğü olarak verir. Bu, geleneksel kullanıma ve sınırlı sayıda çalışmaya dayanan bir endikasyondur.
+- Akdeniz ve Orta Doğu — cinsin halk hekimliğindeki yeri: 2019 tarihli bir derleme (Morteza-Semnani ve Ghanbarimasir), Ballota türlerinin halk hekimliğinde bulantı kesici, kasılma çözücü, yatıştırıcı, kurt düşürücü ve basur giderici olarak ve öksürükte kullanıldığını bildirir. Bu bilgi 33–35 türlük cinsin tamamı içindir; her kullanım kara yer pırasasına ait değildir.
+- Türkiye — Ballota türleri üzerine çalışmalar: Türkiye’de yetişen 16 Ballota türü, aralarında Ballota nigra subsp. anatolica da olmak üzere, 2004 tarihli bir çalışmada (Citoğlu ve ark.) antioksidan özellikleri bakımından incelenmiştir. Bu çalışma laboratuvar verisidir; Türkiye’deki halk kullanımına ilişkin bir kayıt bu sayfanın kaynaklarında yer almaz.
+
+### Hazırlama
+Kullanılan kısım, çiçeklenme döneminde toplanıp kurutulan dal uçlarıdır; geleneksel biçimi demleme (çay) ve sulu-alkollü ekstredir. EMA, DSÖ ya da TİTCK monografı yoktur; ESCOP monografı doz bilgisi içerir, ancak bu bilgi açık erişimli özetinde yer almaz. Bu nedenle bu sayfada doz verilmiyor; doz uydurulmaz. 2015 tarihli bir çalışmaya göre çiçeklenme döneminde toplanan sürgünlerde fenolik bileşik ve flavonoit miktarı, olgunlaşmamış bitkilere göre daha yüksektir.
+
+### Araştırmalar ne gösteriyor
+Kanıt ağırlıkla laboratuvar ve hayvan düzeyindedir. Daels-Rakotoarison ve arkadaşlarının 2000 çalışmasında bitkiden ayrılan beş fenilpropanoitten dördü deney tüpünde benzodiazepin, dopamin ve opioit almaçlarına bağlanmıştır (yarı etkili derişim 0,4–4,7 mg/mL); yazarlar bunu bitkinin bilinen yatıştırıcı etkisiyle ilişkilendirir. ESCOP monografı özeti kemirgenlerde yatıştırıcı, kaygı azaltıcı ve barbitürat uykusunu uzatıcı etkiler bildirir. İnsanlarda tek veri, yaygın kaygı bozukluğu olan hastalarda yapılan açık (kontrolsüz) bir çalışmadır: 60 günlük kullanım sonunda yanıt oranı %65 bulunmuştur; plasebo grubu olmadığı için bu sonuç etkinliği kanıtlamaz. 2007 tarihli bir sıçan çalışmasında (Nusier ve ark.) ekstre (7 gün, 400 mg/kg) kan şekerini ve toplam kolesterolü düşürmüş, insülin düzeyini yükseltmiştir. Ayrıca fenilpropanoitleri deney tüpünde LDL oksidasyonunu baskılamış ve Staphylococcus aureus’a karşı orta düzeyde etki göstermiştir.
+
+### Güvenlik
+İnsanlarda güvenliği sistemli biçimde incelenmemiştir; ESCOP monografı kontrendikasyon, etkileşim ve yan etki başlıklarını ele alır, ancak ayrıntılar açık erişimli özetinde yoktur. Yatıştırıcı etkisi nedeniyle uyuşukluk yapabilir; araç ve makine kullanırken dikkatli olunmalıdır. Hayvanlarda kan şekerini düşürdüğü ve insülini artırdığı gösterilmiştir; şeker hastaları dikkatli olmalıdır. Hamilelik, emzirme ve çocuklarda kullanımına ilişkin güvenlik verisi yoktur; bu dönemlerde kullanılmamalıdır. Pakistan’da toplanan örnekleri inceleyen 2014 tarihli bir çalışmada bitkinin bütün kısımlarında krom izin verilen değerin (1,5 mg/kg) üzerinde bulunmuştur; kirli alanlardan toplanan bitki ağır metal taşıyabilir. Süregelen kaygı ya da uykusuzlukta hekime başvurulmalıdır.
+
+### İlaç etkileşimleri
+- Yatıştırıcılar, uyku ilaçları, kaygı ilaçları ve alkol: Bitkinin bileşikleri deney tüpünde benzodiazepin almacına bağlanır ve kemirgenlerde barbitürat uykusunu uzatır; yatıştırıcı etkinin artması olasıdır. İnsanlarda yapılmış bir etkileşim çalışması yoktur.
+- Şeker ilaçları ve insülin: 2007 tarihli sıçan çalışmasında ekstre kan şekerini düşürmüş ve insülin salımını artırmıştır; birlikte kullanımda kan şekeri fazla düşebilir. Veri hayvan çalışmasına dayanır.
+
+### Doğada
+Nerede yetişir: Çok yıllık, otsu bir bitkidir. Doğal yayılışı Avrupa, Türkiye, Kafkasya, İran, Doğu Akdeniz ve Kuzey Afrika’dır; Britanya’ya ve Kuzey Amerika’ya sonradan taşınmıştır.
+Toplama mevsimi: Yazın çiçek açar; dal uçları çiçeklenme döneminde toplanır.
+Yöresel adlar: Türkçede yerleşik bir yöresel adı yok.
+Karıştırma riski: Marrubium vulgare (İngilizce white horehound) ayrı bir cinstir; EMA monografı (Marrubii herba) o bitkiye aittir ve kullanım alanı öksürük ile sindirimdir, yatıştırıcı değildir. İki bitkinin ürünleri birbirinin yerine kullanılmamalıdır.
+
+### İlginç bilgi
+Bitkinin en çok incelenen bileşikleri arasında adını cinsten alan iki madde vardır: fenilpropanoit glikoziti ballotetrozit ve diterpen ballonigrin. İkisi de Ballota türlerinden ayrılıp tanımlanmıştır.
+
+## Kurt ayağı (Lycopus europaeus L.)
+
+URL: https://bitkitabani.com/kurtayagi/
+Familya: Lamiaceae · Bölge: Avrupa, Anadolu ve Akdeniz, Asya ve Sibirya · Kullanılan kısım: Çiçekli toprak üstü kısımları
+Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
+
+### Geleneksel kullanım
+- Orta Avrupa — hafif tiroit fazlalığında halk ilacı: 1994 tarihli bir çalışma (Winterhoff ve ark.), kurt ayağı ekstrelerinin halk hekimliğinde tiroit bezinin fazla çalışmasına bağlı belirtilerde kullanıldığını yazar. 2006 tarihli bir çalışma (Vonhoff ve ark.) bu kullanımı “hafif hipertiroidi biçimleri” olarak tanımlar. Bu, bitkinin geleneksel kullanım alanıdır; tiroit hastalığının tedavisi hekim işidir.
+- Almanya ve Avusturya — hazır bitkisel ilaç: 2013 tarihli bir çalışmaya (Eiling ve ark.) göre kurt ayağı ekstreleri klinikte hafif hipertiroidideki otonom ve uyarılma belirtilerini denetlemek için kullanılır; ekstre tablet ve damla biçiminde hazır ilaç olarak satılır. Bitkinin tiroit üzerindeki etkisine ilişkin deneysel çalışmalar 1954’e kadar uzanır.
+
+### Hazırlama
+Geleneksel biçimi çiçekli toprak üstü kısımlarının sulu-alkollü ekstresidir; klinik çalışmalarda eczane ürünü olan standart tablet ve damlalar kullanılmıştır. EMA, DSÖ ya da TİTCK monografı bulunmadığı için bu sayfada kabul edilmiş bir doz verilmiyor. ⚠️ Tiroit hormonlarını etkileyen bir bitkidir; evde çay ya da ekstre hazırlayarak tiroit hastalığını kendi kendine tedavi etmek için kullanılmaz. Tiroit değerleri ölçülmeden ve hekim izlemi olmadan kullanılmamalıdır.
+
+### Araştırmalar ne gösteriyor
+İnsan verisi iki açık çalışmadan gelir; ikisinde de plasebo grubu yoktur. 2008 tarihli ileriye dönük, iki kollu açık çalışmada (Beer ve ark.) TSH düzeyi düşük ve hipertiroidi belirtileri olan hastalar 3 ay izlenmiş; bitkiyi alanlarda idrarla T4 atılımı anlamlı biçimde artmış (p=0,032), sabah kalp hızı gibi belirtiler azalmıştır. 2013 tarihli pazarlama sonrası gözlem çalışmasında 403 hasta izlenmiş; yanıt oranı ileriye dönük kolda %72,6, geriye dönük kolda %96,5, tedavi almayan kontrol kolunda %41,2 bulunmuş ve yan etki bildirilmemiştir. Sıçanlarda ağızdan verilen ekstre T3, T4 ve TSH düzeylerini 24 saat içinde düşürmüş, LH hormonunu da azaltmıştır (Winterhoff ve ark.). Tiroksinle hipertiroidi oluşturulan sıçanlarda ise ekstre hormon düzeylerini değiştirmeden kalp hızını, kan basıncını ve kalp büyümesini azaltmış; etkisi beta bloker atenolole yakın bulunmuştur (Vonhoff ve ark.). Rastgele, plasebo kontrollü bir çalışma yoktur; etki mekanizması da açık değildir.
+
+### Güvenlik
+⚠️ Tiroit hormonlarını etkiler. Sıçan çalışmalarında T3, T4 ve TSH düzeylerini düşürmüştür; bu nedenle tiroit bezi az çalışanlar (hipotiroidi), tiroit ilacı kullananlar ve tiroit hastalığı tanısı konmamış kişiler hekime danışmadan kullanmamalıdır. Çarpıntı, kilo kaybı, titreme gibi belirtiler ciddi bir tiroit ya da kalp hastalığının işareti olabilir; bitkiyle oyalanmak tanıyı geciktirir. Aynı sıçan çalışmasında üreme hormonu LH de azalmıştır; hamilelikte ve emzirme döneminde kullanılmamalıdır, çocuklar için veri yoktur. İki açık çalışmada (4 hafta ve 3 ay) ürün iyi tolere edilmiş, yan etki bildirilmemiştir; daha uzun süreli kullanımın güvenliği bilinmemektedir.
+
+### İlaç etkileşimleri
+- Tiroit hormonu ilaçları (levotiroksin): Bitki hayvan çalışmalarında tiroit hormon düzeylerini düşürür ve insanlarda idrarla T4 atılımını artırır; ilacın etkisine karşı çalışabilir.
+- Antitiroit ilaçlar (metimazol, propiltiyourasil): Aynı yönde etki ederek tiroit hormonlarının fazla düşmesine yol açabilir; birlikte kullanım yalnızca hekim izlemiyle düşünülür. İnsanlarda yapılmış bir etkileşim çalışması yoktur.
+- Beta blokerler ve kalp hızını yavaşlatan ilaçlar: Sıçanlarda ekstre kalp hızını ve kan basıncını atenolole yakın ölçüde düşürmüştür; etkinin toplanması olasıdır.
+
+### Doğada
+Nerede yetişir: Çok yıllık, otsu bir bitkidir. Doğal yayılışı Avrupa, Türkiye, Kuzey Afrika, Kafkasya, İran, Orta Asya ve Sibirya’dır; Kuzey Amerika’nın doğusuna sonradan taşınmıştır.
+Toplama mevsimi: Yazın çiçek açar; çiçekli toprak üstü kısımları bu dönemde toplanır.
+Yöresel adlar: Türkçede yerleşik bir yöresel adı yok.
+Karıştırma riski: Kew’in bitki listesine göre Kuzey Amerika’da geçmişte Lycopus europaeus adıyla kaydedilen bazı bitkiler aslında ayrı bir tür olan Lycopus americanus’tur. Cins içindeki türler birbirine benzer; çalışmalardaki sonuçlar yalnızca incelenen standart ekstreler için geçerlidir.
+
+### İlginç bilgi
+Kurt ayağının tiroit üzerindeki etkisi 70 yılı aşkın süredir araştırılıyor: 1954’te Almanya’da yayımlanan deneysel bir çalışma, bitki derişiklerinin tiroit bezine ve iyot metabolizmasına etkisini incelemiştir. 2008 tarihli çalışma ise 24 saatlik idrarda T3 ve T4 atılımını ilk kez ölçüt olarak kullanmıştır.

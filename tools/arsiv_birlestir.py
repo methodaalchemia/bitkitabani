@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 """Biten toplu kayıt dosyalarını (kuyruk/aNNN.py) kuyruğa bağlar.
 Yalnızca tools/arsiv_denetle.py denetiminden hatasız geçen dosyalar eklenir; yayin tarihi bugüne çekilir.
-Çalıştırma: python3 tools/arsiv_birlestir.py"""
+Çalıştırma: python3 tools/arsiv_birlestir.py a003 [a004 ...]"""
 import glob, os, re, subprocess, sys, datetime
 KOK = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 init = os.path.join(KOK, 'kuyruk', '__init__.py'); s = open(init, encoding='utf-8').read()
 m = re.search(r"FILES = \[(.*?)\]", s); var = re.findall(r"'(\w+)'", m.group(1))
 bugun = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=3))).date().isoformat()
 yeni = []
-for f in sorted(glob.glob(os.path.join(KOK, 'kuyruk', 'a[0-9]*.py'))):
+# Yalnızca adı verilen partiler eklenir (yazımı süren dosyalar yarım hâlde bağlanmasın): python3 tools/arsiv_birlestir.py a003 a007
+for f in [os.path.join(KOK, 'kuyruk', a + '.py') for a in sys.argv[1:]]:
     ad = os.path.basename(f)[:-3]
     if ad in var: continue
     r = subprocess.run([sys.executable, os.path.join(KOK, 'tools', 'arsiv_denetle.py'), f], capture_output=True, text=True)
