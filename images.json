@@ -1596,6 +1596,19 @@
   "w": 960,
   "w500": 500
  },
+ "greyfurt": {
+  "artist": "א (Aleph)",
+  "auto": false,
+  "b1280": "Citrus paradisi (Grapefruit, pink).jpg",
+  "file": "Citrus paradisi (Grapefruit, pink).jpg",
+  "h": 640,
+  "h500": 333,
+  "license": "CC BY-SA 2.5",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:Citrus_paradisi_(Grapefruit,_pink).jpg",
+  "w": 960,
+  "w500": 500
+ },
  "grindelya": {
   "artist": "Dawn Endico from Menlo Park, California",
   "auto": true,
@@ -2021,6 +2034,19 @@
   "w": 960,
   "w500": 500
  },
+ "ispanak": {
+  "artist": "Dennis Lamczak",
+  "auto": false,
+  "b1280": "Not harvested Spinach in garden.jpg",
+  "file": "Not harvested Spinach in garden.jpg",
+  "h": 1536,
+  "h500": 800,
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Not_harvested_Spinach_in_garden.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "itir": {
   "artist": "— DerHexer (Talk)",
   "auto": true,
@@ -2031,6 +2057,19 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Pelargonium_graveolens_in_Hel.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "izlandalikeni": {
+  "artist": "Bernd Haynold",
+  "auto": false,
+  "b1280": "Cetraria islandica 300808.jpg",
+  "file": "Cetraria islandica 300808.jpg",
+  "h": 714,
+  "h500": 372,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Cetraria_islandica_300808.jpg",
   "w": 960,
   "w500": 500
  },
@@ -3203,6 +3242,19 @@
   "w": 960,
   "w500": 500
  },
+ "mur": {
+  "artist": "W. C. Burger",
+  "auto": false,
+  "b1280": "Commiphora myrrha.jpg",
+  "file": "Commiphora myrrha.jpg",
+  "h": 1274,
+  "h500": 663,
+  "license": "CC0",
+  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Commiphora_myrrha.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "murver": {
   "artist": "Dominicus Johannes Bergsma",
   "b1280": "Sambucus Nigra 'Guincho Purple'. Locatie, Tuinen Mien Ruys 02.jpg",
@@ -3983,6 +4035,19 @@
   "w": 960,
   "w500": 500
  },
+ "suriyekekigi": {
+  "artist": "איתן פרמן",
+  "auto": true,
+  "b1280": "Maniola telmessia on Wild Marjoram.jpg",
+  "file": "Maniola telmessia on Wild Marjoram.jpg",
+  "h": 1257,
+  "h500": 655,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Maniola_telmessia_on_Wild_Marjoram.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "susam": {
   "artist": "Vengolis",
   "auto": true,
@@ -4006,6 +4071,19 @@
   "license": "CC0",
   "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
   "page": "https://commons.wikimedia.org/wiki/File:Cinnamon_bark.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "tasnanesi": {
+  "artist": "Javier martin",
+  "auto": false,
+  "b1280": "Micromeria fruticosa Flores 2012-11-25 SierraMadrona.jpg",
+  "file": "Micromeria fruticosa Flores 2012-11-25 SierraMadrona.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Micromeria_fruticosa_Flores_2012-11-25_SierraMadrona.jpg",
   "w": 960,
   "w500": 500
  },
@@ -4344,6 +4422,19 @@
   "w": 960,
   "w500": 500
  },
+ "yalanciakasya": {
+  "artist": "Ввласенко",
+  "auto": false,
+  "b1280": "Robinia pseudoacacia blossom.jpg",
+  "file": "Robinia pseudoacacia blossom.jpg",
+  "h": 1204,
+  "h500": 627,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Robinia_pseudoacacia_blossom.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "yarpuz": {
   "artist": "Raffi Kojian",
   "auto": true,
@@ -4354,6 +4445,19 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Gardenology.org-IMG_2751_rbgs11jan.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "yenidunya": {
+  "artist": "SKas",
+  "auto": true,
+  "b1280": "The leaf of Loquat.jpg",
+  "file": "The leaf of Loquat.jpg",
+  "h": 1924,
+  "h500": 1002,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:The_leaf_of_Loquat.jpg",
   "w": 960,
   "w500": 500
  },
@@ -4523,6 +4627,19 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Olive_fruit_on_the_branch_(2007).jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "zufaotu": {
+  "artist": "Robert Flogaus-Faust",
+  "auto": false,
+  "b1280": "Hyssopus officinalis 2 RF.jpg",
+  "file": "Hyssopus officinalis 2 RF.jpg",
+  "h": 1394,
+  "h500": 726,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Hyssopus_officinalis_2_RF.jpg",
   "w": 960,
   "w500": 500
  }
