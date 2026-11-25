@@ -631,7 +631,11 @@ def credit(p):
     if not m: return ''
     lic = f'<a href="{e(m["licenseUrl"])}" target="_blank" rel="noopener">{e(m["license"])}</a>' if m.get('licenseUrl') else e(m.get('license', ''))
     parts = [x for x in [e(m.get('artist', '')), lic] if x]
-    return 'Fotoğraf: ' + ' · '.join(parts) + f' · <a href="{e(m["page"])}" target="_blank" rel="noopener">Wikimedia Commons</a>'
+    # Kaynak Commons olmayabilir (ör. iNaturalist); 'not' alanı türü yazar —
+    # cins düzeyinde bir kayda tek bir türün fotoğrafı konduğunda gerekli.
+    kaynak = m.get('kaynak') or 'Wikimedia Commons'
+    satir = 'Fotoğraf: ' + ' · '.join(parts) + f' · <a href="{e(m["page"])}" target="_blank" rel="noopener">{e(kaynak)}</a>'
+    return satir + (f' · {e(m["not"])}' if m.get('not') else '')
 
 def tags(p, small=False):
     out = []

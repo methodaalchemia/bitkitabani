@@ -41,6 +41,8 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: '3.12' }
       - run: pip install -q pillow && python3 tools/fetch_images.py
+      - name: Commons dışı görseller (iNaturalist)
+        run: python3 tools/dis_gorsel.py
       - run: pip install pillow && python3 tools/webp.py
       - name: Yazı tipleri (Instagram slaytları için, OFL lisanslı)
         run: |
@@ -160,7 +162,7 @@ jobs:
             # altındaki kaynak satırı farklı dosyaları gösteriyor. Rebase'den
             # sonra fetch_images yeniden çalıştırılıyor: önbellek sayesinde
             # yalnızca uyuşmayanları indiriyor.
-            python3 tools/fetch_images.py && python3 tools/webp.py
+            python3 tools/fetch_images.py && python3 tools/dis_gorsel.py && python3 tools/webp.py
             python3 tools/gorsel_tutarlilik.py || true
             python3 build.py
             ekle

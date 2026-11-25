@@ -16,6 +16,13 @@ for _q in _K.Q:
     if _q['id'] not in _have: _D['P'].append({'id': _q['id'], 'la': _q['la']})
 # Komut satırında id verilirse yalnız onlar işlenir: 32 eksik görsel için
 # bütün katalogu baştan doğrulamak gereksiz (24 Kasım 2026).
+# Commons dışı kaynaktan gelen görseller bu betiğin işi değil; tools/dis_gorsel.py
+# indiriyor. Burada dokunulmazsa Commons'tan yanlış dosya çekilip üstüne yazılmaz.
+try:
+    from refs import DIS as _DIS
+except Exception:
+    _DIS = {}
+
 _SEC = [a for a in sys.argv[1:] if not a.startswith('-')]
 if _SEC:
     _D['P'] = [p for p in _D['P'] if p['id'] in _SEC]
@@ -155,6 +162,7 @@ def auto_pick(taxon, haric=(), siki=False):
     return None
 
 WANT = dict(FILES)
+for _d in _DIS: WANT.pop(_d, None); FILES.pop(_d, None)
 for p in _D['P']:
     if p['id'] in WANT: continue
     _kucuk = os.path.join(OUT, f"{p['id']}-500.jpg")

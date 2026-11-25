@@ -182,7 +182,9 @@ def run(G):
         if not m: return ''
         lic = f'<a href="{e(m["licenseUrl"])}" target="_blank" rel="noopener">{e(m["license"])}</a>' if m.get('licenseUrl') else e(m.get('license', ''))
         parts = [x for x in [e(m.get('artist', '')), lic] if x]
-        return 'Photo: ' + ' · '.join(parts) + f' · <a href="{e(m["page"])}" target="_blank" rel="noopener">Wikimedia Commons</a>'
+        kaynak = m.get('kaynak') or 'Wikimedia Commons'
+        satir = 'Photo: ' + ' · '.join(parts) + f' · <a href="{e(m["page"])}" target="_blank" rel="noopener">{e(kaynak)}</a>'
+        return satir + (f' · {e(m.get("notEn") or m.get("not", ""))}' if (m.get('notEn') or m.get('not')) else '')
     def tags(p):
         out = []
         y = YASAL_EN.get(p['id'])

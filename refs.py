@@ -176,3 +176,23 @@ FILES.update({
     'yenidunya': 'Eriobotrya japonica, Salfit 01.jpg',
     'suriyekekigi': "Majorana syriaca - za'atar.jpg",
 })
+
+# ── Commons dışı görseller ────────────────────────────────────────────────
+# Bazı bitkilerin Wikimedia Commons'ta kullanılabilir fotoğrafı yok. iNaturalist'te
+# CC0/CC BY lisanslı gözlem fotoğrafları var; onlar buraya elle yazılır.
+# fetch_images.py bu id'lere dokunmaz, tools/dis_gorsel.py indirir.
+# Kural: yalnız CC0, CC BY ve CC BY-SA. NC (ticari olmayan) lisans alınmaz —
+# site ticari değil ama lisansı daraltmak ileride elimizi bağlar.
+DIS = {
+    'huayruro': {
+        'url':     'https://inaturalist-open-data.s3.amazonaws.com/photos/81573154/original.jpg',
+        'page':    'https://www.inaturalist.org/observations/51349588',
+        'kaynak':  'iNaturalist',
+        'artist':  'William Stephens',
+        'license': 'CC BY 4.0',
+        'licenseUrl': 'https://creativecommons.org/licenses/by/4.0',
+        # Kayıt cins düzeyinde (Ormosia spp.); fotoğraftaki tür yazılmalı.
+        'not':     'Fotoğraftaki tür Ormosia macrocalyx (Kosta Rika)',
+        'notEn':   'The species shown is Ormosia macrocalyx (Costa Rica)',
+    },
+}
