@@ -6,4 +6,4 @@ kralicekoku | Stillingia sylvatica | Kraliçe kökü | kamerika | sifa,zehir
 mavibayrak | Iris versicolor | Mavi bayrak | kamerika | sifa,zehir
 wahoo | Euonymus atropurpureus | Wahoo | kamerika | sifa,zehir
 sacakagaci | Chionanthus virginicus | Saçak ağacı | kamerika | sifa
-disagrisiagaci | Xanthoxylum americanum | Diş ağrısı ağacı | kamerika | sifa
+disagrisiagaci | Zanthoxylum americanum | Diş ağrısı ağacı | kamerika | sifa

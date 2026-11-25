@@ -59,12 +59,23 @@ def yukle():
 def coz(latin):
     d = yukle()
     anahtar = latin.strip().lower()
-    ids = d['ad'].get(anahtar)
+    def dene(a):
+        return d['ad'].get(a)
+    ids = dene(anahtar)
     if not ids:
         # Tür altı ek olmadan dene (ör. "Thymus vulgaris L." → "Thymus vulgaris")
-        kisa = ' '.join(latin.split()[:2]).lower()
-        ids = d['ad'].get(kisa)
-        if not ids: return {'bulunamadi': latin}
+        anahtar = ' '.join(latin.split()[:2]).lower()
+        ids = dene(anahtar)
+    if not ids:
+        # Melez işareti: WCVP kültür bitkilerinin çoğunu melez olarak yazıyor
+        # (Citrus × limon, Musa × paradisiaca, Chrysanthemum × morifolium).
+        # Bizdeki listelerde işaret yok; iki yönde de dene.
+        par = anahtar.split()
+        if len(par) >= 2 and '×' not in anahtar:
+            ids = dene(f'{par[0]} × {par[1]}') or dene(f'{par[0]} x {par[1]}')
+        if not ids and '×' in anahtar:
+            ids = dene(anahtar.replace('× ', '').replace('×', ''))
+    if not ids: return {'bulunamadi': latin}
     # Aynı ad birden çok kayıtla eşleşebilir (eş adlar, gayrimeşru adlar).
     # Sıra: kabul edilen ad > kabul adı aynı cinste olan eş ad > kalanı.
     # Bu olmadan "Sorghum bicolor" gayrimeşru bir kayda düşüp

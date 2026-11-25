@@ -1,5 +1,5 @@
 # id | Latince ad | önerilen Türkçe ad | bölge | kategori
-wuzhuyu | Evodia rutaecarpa | Wu zhu yu | asya | sifa
+wuzhuyu | Tetradium ruticarpum | Wu zhu yu | asya | sifa
 shanzhuyu | Cornus officinalis | Shan zhu yu | asya | sifa
 cinyami | Dioscorea polystachya | Çin yamı | asya | besin,sifa
 gozyasiotu | Coix lacryma-jobi | Gözyaşı otu | asya | besin,sifa

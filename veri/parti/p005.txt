@@ -2,7 +2,6 @@
 beyazpelin | Artemisia herba-alba | Beyaz pelin | afrika | sifa
 yabanihunnap | Ziziphus lotus | Yabani hünnap | afrika | besin
 firavuninciri | Ficus sycomorus | Firavun inciri | afrika | besin,ritual
-spirulina | Arthrospira platensis | Spirulina | afrika | besin
 supurgedarisi | Sorghum bicolor | Süpürge darısı | afrika | besin
 yerbademi | Cyperus esculentus | Yer bademi | afrika | besin
 karasusam | Sesamum radiatum | Kara susam | afrika | besin
