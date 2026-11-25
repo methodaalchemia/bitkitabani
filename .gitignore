@@ -5,3 +5,6 @@ igout/
 .ema_ham/
 tanitim/
 veri/onbellek/
+
+# uzun video çıktıları (render ürünü, depoda tutulmaz)
+kopru-video/
