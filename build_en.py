@@ -583,6 +583,21 @@ def run(G):
         if m < 1440: return f'{m // 60} h' + (f' {m % 60} min' if m % 60 else '')
         g = m // 1440
         return (f'{g // 7} week' + ('s' if g // 7 > 1 else '')) if g % 7 == 0 and g >= 7 else f'{g} day' + ('s' if g > 1 else '')
+    # Adım başlıkları (schema.org HowToStep.name) — elle yazıldı, bkz veri/adim_adlari_en.tsv
+    ADIM_AD_EN = {}
+    with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'veri', 'adim_adlari_en.tsv'), encoding='utf-8') as _f:
+        for _s in _f:
+            if _s.startswith('#') or '\t' not in _s: continue
+            _ad, _metin = _s.rstrip('\n').split('\t', 1)
+            ADIM_AD_EN[_metin] = _ad
+
+    def adim_ld(a, yol, i):
+        """HowToStep: text, an anchor link to the step on the page, and a hand-written
+        title where one exists. No title means the field is simply left out."""
+        d = {"@type": "HowToStep", "text": a, "url": f'{BASE}{yol}#step-{i}'}
+        if ADIM_AD_EN.get(a): d["name"] = ADIM_AD_EN[a]
+        return d
+
     for t in TL:
         r = T_EN[t['slug']]; p = byId[t['bitki']]; path = f'/en/recipes/{r["slug"]}/'; x = EN[p['id']]
         img = f'<figure class="tarif-img">{ph(p, 960)}<figcaption>{credit(p)}</figcaption></figure>' if p['id'] in IMG else ''
@@ -596,7 +611,7 @@ def run(G):
 </div>
 <div class="tarif-govde">
 <section class="sec malz-kut"><h2>Ingredients</h2><ul class="malz">{"".join(f"<li>{e(m)}</li>" for m in r["malzeme"])}</ul></section>
-<section class="sec"><h2>Method</h2><ol class="adim">{"".join(f"<li>{e(a)}</li>" for a in r["adim"])}</ol></section>
+<section class="sec"><h2>Method</h2><ol class="adim">{"".join(f'<li id="step-{i}">{e(a)}</li>' for i, a in enumerate(r["adim"], 1))}</ol></section>
 </div>
 <div class="tarif-not"><p class="fact">{e(r["ipucu"])}</p>
 <aside class="warnbox" role="note"><b>Who should be careful?</b> {ev(x["safety"])}</aside></div>
@@ -605,7 +620,7 @@ def run(G):
 <section class="sec"><h2>More recipes</h2><ul class="otherlist">{others}</ul></section>
 </article>'''
         rl = {"@context":"https://schema.org","@type":"Recipe","name":r['ad'],"description":r['kisa'],"inLanguage":"en","author":AUTHOR,"datePublished":CONTENT_DATE,"prepTime":f'PT{t["hazirlik"]}M',"totalTime":f'PT{t["toplam"]}M',
-              "recipeYield":r['verim'],"recipeCategory":"Soup" if 'soup' in r['slug'] else "Drink","keywords":f'{name(p)}, {short_la(p)}, herbal tea',"recipeIngredient":r['malzeme'],"recipeInstructions":[{"@type":"HowToStep","text":a} for a in r['adim']]}
+              "recipeYield":r['verim'],"recipeCategory":"Soup" if 'soup' in r['slug'] else "Drink","keywords":f'{name(p)}, {short_la(p)}, herbal tea',"recipeIngredient":r['malzeme'],"recipeInstructions":[adim_ld(a, path, i) for i, a in enumerate(r['adim'], 1)]}
         if p['id'] in IMG: rl['image'] = [f'{BASE}/img/{p["id"]}-960.jpg']
         write(path, page(f'How to make {r["ad"].lower() if not r["ad"].startswith(("Mountain","Cardamom")) else r["ad"]} | Bitki Tabanı', (r['kisa'] + ' Ingredients, amounts and who should be careful.')[:158], path, f'/tarif/{t["slug"]}/', body, 'recipes', narrow=True, extra=ld(rl), image=(f'{BASE}/img/{p["id"]}-960.jpg' if p['id'] in IMG else None)))
     if TL:

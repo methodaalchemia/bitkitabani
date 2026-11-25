@@ -1,0 +1,259 @@
+# Tarif adımlarının kısa başlıkları (schema.org HowToStep.name).
+# Google Search Console 25 Kasım 2026'da 'Missing field name (in recipeInstructions)'
+# uyarısı verdi. Başlıklar elle yazıldı; mekanik kısaltma yanlış özet üretiyordu
+# ("Yaprakları çıkarıp ya da süzüp iç" → "Yaprakları iç" gibi).
+# Biçim: başlık <TAB> adımın tam metni. Metin değişirse eşleşme düşer ve
+# o adım başlıksız kalır — yanlış başlık yayına çıkmaz.
+Zencefili dilimle	Zencefili yıkayıp kabuğuyla birlikte ince dilimle.
+Suyla kaynamaya bırak	Dilimleri suyla birlikte küçük bir cezveye ya da tencereye koy ve kaynamaya bırak.
+Kısık ateşte 10 dakika tut	Kaynayınca altını kıs ve 10 dakika hafif ateşte tut.
+Süz ve tatlandır	Süzüp bardağa al; ılıyınca dilersen limon ve bal ekle.
+Sütü ılıt	Sütü küçük bir cezvede ılıt; kaynatma.
+Baharatları çırp	Zerdeçalı, karabiberi ve dilersen tarçını ekleyip çırpıcıyla iyice karıştır.
+Kısık ateşte ısıt	2–3 dakika kısık ateşte karıştırarak ısıt.
+Bardağa al, bal ekle	Bardağa al, biraz ılıyınca balı ekle.
+Suyu kaynat	Suyu kaynat ve ocaktan al.
+Ihlamurun üzerine su dök	Ihlamuru bir demliğe ya da bardağa koy, üzerine suyu dök.
+5–10 dakika demle	Ağzını kapatıp 5–10 dakika demlenmeye bırak.
+Süz ve iç	Süzüp dilersen bal ya da limonla iç.
+Papatyayı bardağa koy	Papatyayı bir bardağa ya da demliğe koy.
+Suyu dök, ağzını kapat	Üzerine kaynamış suyu dök ve ağzını bir tabakla kapat.
+5–10 dakika demle	5–10 dakika demlenmeye bırak.
+Süz ve sıcak iç	Süzüp sıcak iç.
+Naneyi yıkayıp bardağa koy	Nane yapraklarını yıka ve bardağa koy.
+Suyu dök, ağzını kapat	Üzerine kaynamış suyu dök, bardağın ağzını kapat.
+5 dakika bekle	5 dakika bekle.
+Süz ve iç	Yaprakları çıkarıp ya da süzüp iç.
+Kekiği bardağa koy	Kekiği bardağa ya da demliğe koy.
+Suyu dök, ağzını kapat	Üzerine kaynamış suyu dök ve ağzını kapat.
+Süz, ılıyınca bal ekle	Süzüp ılıyınca dilersen bal ekle.
+Dalları kır	Dalları demliğe sığacak boyda kır.
+Üzerine kaynar su dök	Üzerine kaynamış suyu dök.
+Süz ve iç	Süzüp dilersen limon ve balla iç.
+Tohumları ez	Tohumları havanda ya da bıçağın yan yüzüyle hafifçe ez.
+Bardağa koy, suyu dök	Bardağa koyup üzerine kaynamış suyu dök.
+10 dakika demle	Ağzını kapatıp 10 dakika demle.
+Süz ve iç	Süzüp iç.
+Anasonu ez	Anasonu hafifçe ez.
+Suyu kaynat, biraz soğut	Suyu kaynat ve 2–3 dakika soğumaya bırak.
+Kuşburnunu demliğe koy	Ezilmiş kuşburnunu demliğe koy, üzerine suyu dök.
+10 dakika demle	10 dakika demlenmeye bırak.
+Tülbentten süz	Çekirdeklerin çevresindeki tüyler kalmasın diye tülbentten ya da çok ince bir süzgeçten süz.
+Yaprakları bardağa koy	Yaprakları bardağa ya da demliğe koy.
+Tarçını kırıp cezveye koy	Tarçın çubuğunu ikiye kırıp suyla birlikte cezveye koy.
+5 dakika dinlendir	Ocaktan alıp 5 dakika dinlendir.
+Suyu kaynat	Suyu kaynatıp ocaktan al.
+Reyhanı 15 dakika demle	Yıkadığın reyhanı sapıyla birlikte suya at, ağzını kapatıp 15 dakika demle.
+Süz ve şekeri erit	Süz; sıcakken şekeri ekleyip eriyene kadar karıştır.
+Limonu ekleyip soğut	Soğuyunca limon suyunu ekle; limonla birlikte rengi pembeye döner. Buzdolabında soğutup servis et.
+Kakuleyi ez	Kakule tanelerini bıçağın yan yüzüyle hafifçe ez.
+Cezvede karıştır	Kahveyi, suyu, kakuleyi ve dilersen şekeri cezvede karıştır.
+Köpürene kadar pişir	Kısık ateşte, köpürüp kabarana kadar karıştırmadan pişir.
+Köpüğü fincana paylaştır	Köpüğü fincana paylaştır, kalanını bir kez daha kabartıp fincana dök.
+Isırganı ayıkla	Isırganı eldivenle yıkayıp sert saplarını ayıkla.
+Soğanı kavur, unu ekle	Soğanı zeytinyağında pembeleşene kadar kavur; pirinci ya da unu ekleyip bir dakika çevir.
+Isırganla 20 dakika pişir	Suyu ve ısırganı ekle; kaynayınca altını kısıp 20 dakika pişir.
+Blenderdan geçir, tatlandır	İstersen blenderdan geçir; tuz ve pul biberle tatlandır.
+Biberiyeyi bardağa koy	Biberiyeyi bardağa koy.
+Çiçekleri demliğe koy	Çiçekleri demliğe ya da süzgeçli bir bardağa koy.
+Suyu dök, kapağı kapat	Üzerine kaynar suyu dök ve kapağını kapat; uçucu yağlar buharla kaçmasın.
+Demle, süz ve iç	5–10 dakika demle, süz. Yatmadan yarım saat önce iç.
+Kökü demliğe koy	Kökü demliğe koy, üzerine kaynar suyu dök.
+10–15 dakika demle	Kapağı kapalı olarak 10–15 dakika demle.
+Süz ve iç	Süz; yatmadan 30–60 dakika önce iç.
+Yaprak ve çiçekleri koy	Yaprak ve çiçekleri bardağa ya da demliğe koy.
+Suyu dök, ağzını kapat	Üzerine kaynamış suyu dök, ağzını kapat.
+Kökü kavanoza koy	Kökü bir kavanoza ya da bardağa koy, üzerine suyu dök.
+2–3 saat beklet	Ağzını kapatıp oda sıcaklığında 2–3 saat beklet; ara sıra karıştır.
+İnce süzgeçten süz	İnce bir süzgeçten süz.
+Isıtmadan iç	Isıtmadan, yudum yudum iç.
+Kökü tavada kavur	Kökü kuru bir tavada, kısık ateşte karıştırarak koyu kahverengi olana kadar 5–8 dakika kavur.
+Soğuyunca iri çek	Soğuyunca havanda ya da kahve değirmeninde iri çek.
+Cezvede 5 dakika kaynat	Suyla birlikte cezveye koy, kaynayınca altını kısıp 5 dakika hafif ateşte tut.
+Süz, dilersen süt ekle	İnce süzgeçten süz; dilersen süt ekle.
+Sumağı soğukta beklet	Sumağı soğuk suya koy, ağzını kapatıp buzdolabında 4–6 saat (ya da bir gece) beklet.
+Tülbentten süz	Suyu tülbentten süz; sumağı hafifçe sıkarak suyunu al.
+Tatlandırıcıyı erit	Şekeri ya da balı ekleyip eriyene kadar karıştır.
+Soğuk servis et	Soğuk servis et.
+Kızılcığı tencereye koy	Kızılcıkları yıkayıp suyla birlikte tencereye koy.
+15–20 dakika pişir	Kaynayınca altını kısıp meyveler yumuşayıp kabukları çatlayana kadar 15–20 dakika pişir.
+Süzüp suyunu al	Süzgeçten geçir; meyveleri hafifçe ezerek suyunu al, çekirdekleri at.
+Şekerle kaynat ve sakla	Sıcakken şekeri (ve karanfili) ekle, 5 dakika daha kaynat; soğutup buzdolabında sakla.
+Hibiskusu sürahiye koy	Hibiskusu bir sürahiye koy, üzerine soğuk suyu dök.
+Bir gece buzdolabında beklet	Ağzını kapatıp buzdolabında 6–8 saat (bir gece) beklet.
+Süz, bal ve nane ekle	Süz; dilersen bal ve nane ekle.
+Soğuk iç	Soğuk iç.
+Gül yapraklarını koy	Gül yapraklarını bardağa koy.
+5–10 dakika demle	5–10 dakika demle.
+Tahini kaseye al	Tahini küçük bir kaseye al.
+Pekmezi ekle	Pekmezi ekle.
+Çatalla karıştır	Koyu ve parlak bir karışım olana kadar çatalla karıştır.
+Ekmekle servis et	Ekmekle servis et.
+Hünnapları çiz	Hünnapları yıkayıp hafifçe bıçakla çiz ya da ikiye böl.
+Suyla kaynamaya bırak	Suyla birlikte tencereye koy ve kaynamaya bırak.
+15–20 dakika kaynat	Altını kısıp 15–20 dakika hafif ateşte kaynat.
+Süz ve sıcak iç	Süzüp sıcak iç; yumuşamış meyveleri çekirdeklerini ayıklayarak yiyebilirsin.
+Kimyonu tavada kavur	Kimyonu kuru bir tavada 1–2 dakika, kokusu çıkana kadar kavur.
+Ez ve bardağa koy	Havanda hafifçe ez ve bardağa koy.
+Suyu dök, 10 dakika demle	Üzerine kaynamış suyu dök, ağzını kapatıp 10 dakika demle.
+Çörek otunu ısıt	Çörek otunu kuru tavada 1 dakika hafifçe ısıt; kokusu çıkınca ocaktan al.
+Havanda ez	Havanda kabaca ez.
+Balla karıştır	Bal ile karıştır.
+Tüket ya da sakla	Hemen tüket ya da küçük bir kavanozda sakla.
+Yaprakları cezveye koy	Yaprakları ufala ve suyla birlikte cezveye koy.
+Kaynayınca ocaktan al	Kaynayınca ocaktan al.
+Mahlebi havanda döv	Mahlep tanelerini kullanmadan hemen önce havanda dövüp un gibi yap.
+Hamuru yoğur	Unu, mayayı, şekeri, tuzu ve mahlebi karıştır; süt, tereyağı ve bir yumurtayı ekleyip yumuşak bir hamur yoğur.
+Bir saat mayalandır	Üzerini örtüp ılık yerde 1 saat, iki katına çıkana kadar mayalandır.
+Örgü yapıp dinlendir	Hamuru üçe böl, örgü yap; tepsiye alıp 20 dakika daha dinlendir.
+Fırında 25–30 dakika pişir	Üzerine yumurta sarısı sür, çörek otu serp; 180 °C fırında 25–30 dakika pişir.
+Yaprakları bardağa koy	Yaprakları bardağa koy.
+Yaprakları cezveye koy	Yaprakları ikiye kır ve suyla birlikte cezveye koy.
+3–5 dakika kaynat	Kaynayınca altını kıs, 3–5 dakika hafif ateşte tut.
+Yaprakları çıkarıp iç	Yaprakları çıkarıp iç.
+Sakızı şekerle döv	Damla sakızını bir tutam şekerle havanda döverek toz hâline getir.
+Nişastayı sütle aç	Pirinç unu ve nişastayı bir bardak soğuk sütle pürüzsüz olana kadar karıştır.
+Koyulaşana kadar pişir	Kalan sütü ve şekeri tencerede ısıt; nişastalı karışımı ekleyip sürekli karıştırarak koyulaşana kadar 10–12 dakika pişir.
+Sakızı ekleyip soğut	Ocaktan almadan önce sakızı ekle, 1 dakika daha karıştır; kaselere paylaştırıp soğut.
+Yaprakları cezveye koy	Yaprakları suyla birlikte cezveye koy.
+10–15 dakika kaynat	Kaynayınca altını kıs ve 10–15 dakika hafif ateşte kaynat.
+Süz	Süz.
+Ilıyınca iç	Ilıyınca iç; acı gelirse biraz bal ekleyebilirsin.
+Nar suyunu çıkar	Narları ayıklayıp tanelerini sık ya da blenderden geçirip tülbentten süz; yaklaşık 2–2,5 litre su çıkar.
+Kaynat ve köpüğünü al	Suyu geniş ağızlı bir tencereye al ve kaynamaya bırak; köpüğünü al.
+Koyulaşana kadar kaynat	Kısık ateşte, ara sıra karıştırarak 2–3 saat, hacmi dörtte birine inip koyu bir şurup olana kadar kaynat.
+Sıcakken şişelere doldur	Kaşığın arkasını kaplayan kıvama gelince (dilersen tuzu ekleyip) ocaktan al, sıcakken cam şişelere doldur.
+Tomurcukları soldur	Tomurcukları ayıkla, yıka ve gölgede yarım gün soldur.
+Tuzla 7–10 gün beklet	Bir kavanoza tuzla kat kat yerleştir; 7–10 gün beklet, her gün çalkalayıp çıkan acı suyu dök.
+Yıkayıp tuzunu al	Tomurcukları bol suyla yıkayıp tuzunu al.
+Sirkeli suda beklet	Sirke ile suyu karıştır, kapariyi temiz bir kavanoza koyup üzerini sirkeli suyla tamamen kapat; serin yerde 2–3 hafta bekletince yenmeye hazırdır.
+Sarımsağı tuzla ez	Sarımsağı havanda tuzla birlikte ez.
+10 dakika beklet	Ezilmiş sarımsağı 10 dakika beklet.
+Yoğurtla karıştır	Yoğurtla iyice karıştır.
+Naneyle servis et	Dilersen üzerine kuru nane ve birkaç damla zeytinyağı gezdirip servis et.
+Keten tohumunu çek	Keten tohumunu kahve değirmeninde çek (bütün tohum sindirilmeden geçer).
+Yulafı pişir	Yulafı süt ya da suyla tencereye koy, karıştırarak 4–5 dakika pişir.
+Keten tohumunu karıştır	Ocaktan alıp keten tohumunu karıştır.
+Meyveyle servis et	Meyve ya da tarçınla servis et ve yanında bir bardak su iç.
+Suyu kaynat, çayı koy	Alt demlikte suyu kaynat; çayı üst demliğe koy.
+Üst demliğe su dök	Kaynamış sudan bir bardak kadar üst demliğe dök.
+10–15 dakika demle	Altını en kısığa al, üst demliği alt demliğin üzerinde 10–15 dakika demle.
+Dem ve suyla bardağa koy	Bardağa önce demi, sonra sıcak suyu koyarak açık ya da koyu iç.
+Meyveleri ez	Meyveleri havanda hafifçe ez.
+Cezveye koyup kaynat	Suyla birlikte cezveye koy ve kaynamaya bırak.
+10 dakika kaynat	Altını kısıp 10 dakika hafif ateşte kaynat.
+Süzüp ılıyınca iç	Süzüp ılıyınca iç.
+Taç yapraklarını koy	Taç yapraklarını bardağa koy.
+10 dakika demle	10 dakika demle.
+İncirleri kaseye koy	İncirleri yıka ve bir kaseye koy.
+Suyu dök, ağzını kapat	Üzerine suyu dök, ağzını kapat.
+Bir gece beklet	Bir gece oda sıcaklığında beklet.
+Sabah aç karnına iç	Sabah aç karnına incirleri ye, suyunu iç.
+Meyveleri dondurucuda tut	Meyveleri saplarından ayıkla, yıka; acılığını azaltmak için bir gece dondurucuda tut.
+Elmayla 15 dakika pişir	Meyveleri ve elmayı suyla birlikte 15 dakika yumuşayana kadar pişir.
+Süzgeçten bastırarak geçir	Süzgeçten bastırarak geçir; çekirdekler ve kabuklar süzgeçte kalsın.
+Şekerle kaynatıp kavanozla	Püreyi şekerle birlikte koyulaşana kadar 20–25 dakika kaynat, limon suyunu ekle ve sıcakken kavanozlara doldur.
+Çekirdekleri ayıkla	Çekirdekleri kabak liflerinden ayıklayıp yıka.
+Bezle kurula	Temiz bir bezle iyice kurula.
+Yağ ve tuzla yay	Zeytinyağı ve tuzla karıştırıp fırın tepsisine tek kat yay.
+Fırında kavur	160 °C fırında, ara sıra karıştırarak 15–20 dakika hafifçe kızarana kadar kavur.
+Kökü 10 dakika kaynat	Kök kullanıyorsan suyla birlikte cezveye koy, kaynayınca altını kısıp 10 dakika kaynat.
+Çiçekli dalı demle	Çiçekli dal kullanıyorsan kaynamış suyun üzerine dök ve ağzı kapalı 10 dakika demle.
+Ilıyınca iç	Ilıyınca iç.
+Enginarı limonlu suda beklet	Enginar çanaklarını kararmasınlar diye limonlu suda beklet.
+Sebzeyi kavur	Soğanı zeytinyağında yumuşat; havucu ve bezelyeyi ekleyip 3–4 dakika çevir.
+Enginarları doldurup diz	Enginarları tencereye diz, ortalarına sebzeyi paylaştır; şeker, tuz, limon suyu ve sıcak suyu ekle.
+30–35 dakika pişir	Kapağı kapalı, kısık ateşte enginarlar yumuşayana kadar 30–35 dakika pişir; soğuyunca dereotuyla servis et.
+Kakaoyu macun yap	Kakao ve şekeri birkaç kaşık sütle cezvede macun kıvamına getir.
+Sütü ekleyip ısıt	Kalan sütü ekleyip kısık ateşte karıştırarak ısıt; kaynatma.
+Tarçını ekle	Tarçını ekle.
+Köpürtüp sıcak iç	Köpürtüp sıcak iç.
+Sütü ılıt	Sütü cezvede ılıt.
+Maca ve tarçını çırp	Maca tozunu ve tarçını ekleyip çırp.
+Kısık ateşte ısıt	Kısık ateşte 2–3 dakika karıştırarak ısıt.
+Ilıyınca bal ekle	Ilıyınca bal ekle.
+Meyveleri yıka	Meyveleri yıka; dondurulmuşsa çözülmesini bekle.
+Blenderden geçir	Bir su bardağı suyla blenderden geçir.
+Süzüp çekirdekleri ayır	İnce süzgeçten süzerek çekirdek ve kabukları ayır.
+Su ve balla karıştır	Kalan suyu ve balı ekleyip karıştır; soğuk ya da oda sıcaklığında iç.
+Püskülü bardağa koy	Püskülü kesip bardağa koy.
+Süz ve iç	Süzüp iç; gün içinde bol su içmeyi sürdür.
+Çiçekleri bardağa koy	Çiçekleri bardağa koy.
+Süz, dilersen bal ekle	Çayı tülbentten ya da kahve filtresinden süz; dilersen bal ekle.
+Otu bardağa koy	Otu bardağa koy.
+Süz ve akşam iç	Süz; akşam, yatmadan önce iç.
+Süz ve iç	Süzüp iç; gün içinde bol su iç.
+En fazla 5 dakika demle	En fazla 5 dakika demle; uzun demlemek acılaştırır.
+Dalları bardağa koy	Kıyılmış dalları bardağa koy.
+Kökü soğukta beklet	Kökü soğuk suya koy, ağzını kapatıp buzdolabında 6–8 saat beklet.
+Tülbentten süz	Tülbentten süz.
+Yüksekten dökerek köpürt	Sürahiden sürahiye yüksekten dökerek köpürt.
+Soğuk iç	Soğuk iç; şeker eklemene gerek yok, kök zaten tatlıdır.
+Çiçekleri silkele	Çiçekleri böceklerden ayıklamak için hafifçe silkele; yıkama, kokusu gider. Kalın sapları kes.
+Şurup yapıp soğut	Suyu şekerle kaynatıp şurup yap ve soğumaya bırak.
+Çiçekleri 24–48 saat beklet	Çiçekleri ve limon dilimlerini şuruba koy, ağzını kapatıp serin yerde 24–48 saat beklet.
+Süzüp şişelere doldur	Tülbentten süz, cam şişelere doldur; 1 ölçü şurubu 5–6 ölçü soğuk suyla inceltip iç.
+Bitkiyi bardağa koy	Bitkiyi bardağa koy.
+Süzüp yemekten önce iç	Süzüp yemekten önce iç.
+Tohumları ez	Tohumları havanda hafifçe ez.
+Cezvede 5 dakika kaynat	Suyla birlikte cezveye koy, kaynayınca altını kısıp 5 dakika kaynat.
+Safranı suda beklet	Safranı yarım çay bardağı ılık suda en az 1 saat beklet.
+Pirinci şekerle pişir	Pirinci suyla, tanesi dağılana kadar 25–30 dakika pişir; şekeri ekle.
+Nişastayla koyulaştır	Nişastayı biraz soğuk suyla açıp safranlı suyla birlikte tencereye ekle; koyulaşana kadar 5 dakika karıştır.
+Kaselere paylaştır, süsle	Kaselere paylaştır, soğuyunca fıstık, kuş üzümü ve narla süsle.
+Baharatları cezveye koy	Karanfil, tarçın ve portakal kabuğunu suyla birlikte cezveye koy.
+10 dakika kaynat	Kaynayınca altını kıs, 10 dakika hafif ateşte tut.
+Ilıyınca bal ekle	Ilıyınca dilersen bal ekle.
+Mateyi nemlendir	Mateyi demliğe ya da bardağa koy, önce birkaç kaşık soğuk suyla nemlendir.
+Sıcak suyu dök	Üzerine sıcak (kaynar olmayan) suyu dök.
+5 dakika demle	5 dakika demle.
+Süzüp ılıkken iç	Süzüp ılıkken iç.
+Muñayı bardağa koy	Muñayı bardağa koy.
+Süzüp yemekten sonra iç	Süzüp yemekten sonra iç.
+Yaprakları ayıkla	Yaprakları tamamen ayıkla ve at; yalnızca sap kullanılır.
+Sapları soyup kes	Sapların dış lifli kabuğunu soy, parmak boyunda kes.
+Kavanoza sarımsakla diz	Kavanoza sarımsakla birlikte sık sık diz.
+Sirkeli suda 7–10 gün beklet	Su, sirke ve tuzu karıştırıp üzerini tamamen kapat; serin yerde 7–10 gün beklet.
+Turunç kabuklarını soy	Turunçların kabuğunu rendenin kaba yüzüyle hafifçe rendele; kabukları dilimler hâlinde soy.
+Rulo yapıp suda beklet	Kabukları rulo yapıp ipe diz; acısı çıksın diye 2 gün boyunca, günde 2–3 kez suyunu değiştirerek suda beklet.
+Haşlayıp süz	Ruloları kaynar suda 10 dakika haşla, süz.
+Şurupta kaynat ve kavanozla	Şeker ve suyla şurup yap, ruloları ekleyip 30–40 dakika koyulaşana kadar kaynat; limon suyunu ekleyip sıcakken kavanozlara doldur.
+Gojiyi ılık suda yumuşat	Gojiyi 10 dakika ılık suda bekletip yumuşat, süz.
+Yoğurdu kaseye al	Yoğurdu kaseye al.
+Goji ve cevizi serp	Gojiyi ve kırılmış cevizi üzerine serp.
+Balı gezdir	Balı gezdirip servis et.
+Bademleri bir gece beklet	Bademleri bol suda bir gece beklet; sabah suyunu dök ve bademleri yıka.
+Bademleri blenderde çek	Bademleri 4 su bardağı suyla blenderde 1–2 dakika çek.
+Sıkarak süz	Tülbentten ya da süt torbasından sıkarak süz.
+Hurmayla tatlandır	Dilersen hurmayla tekrar çekip tatlandır; buzdolabında 3 gün içinde tüket.
+Arpayı yıka	Arpayı birkaç kez yıka.
+Limon kabuğuyla pişir	Suyla ve limon kabuğuyla birlikte tencereye koy, kaynayınca altını kısıp 30 dakika pişir.
+Süz	Süz; arpa tanelerini çorba ya da salatada kullanabilirsin.
+Bal ve limonla tatlandır	Sıcakken bal ya da şekeri, soğuyunca limon suyunu ekle; soğuk iç.
+Yaprakları hazırla	Salamura yaprakları birkaç kez yıkayıp tuzunu al; taze yaprakları kaynar suda 1–2 dakika haşla.
+Harcı hazırla	Soğanı zeytinyağında pembeleştir, fıstığı ekle; yıkanmış pirinci, üzümü ve baharatları katıp 5 dakika çevir.
+Yaprakları sarıp diz	Yaprakların damarlı yüzüne birer tatlı kaşığı harç koyup sıkıca sar ve tencereye diz.
+40–45 dakika pişir	Üzerine limon suyu ve sıcak suyu ekle, ters bir tabakla bastır; kısık ateşte 40–45 dakika pişir, soğuyunca servis et.
+Yulaf samanını bardağa koy	Yulaf samanını bardağa koy.
+Tohumları ez	Tohumları havanda ez.
+Bardağa koy, suyu dök	Bardağa koyup üzerine kaynamış suyu dök, ağzını kapat.
+Süzüp yemek aralarında iç	Süzüp yemek aralarında iç.
+Hindibayı yıka	Hindibayı ayıkla, bol suda yıka ve süzdür.
+Yaprak ve soğanı doğra	Yaprakları iri doğra; soğanı ince halka kes.
+Sosu çırp	Zeytinyağı, limon suyu ve tuzu çırp.
+Sosla karıştırıp servis et	Hindiba ve soğanı sosla karıştırıp hemen servis et.
+Yaprakları yıka ve kurula	Yaprakları yıka ve iyice kurula.
+Yaprakları ince kıy	Sapları ayıklayıp yaprakları çok ince kıy.
+Hindistancevizi ve soğanla karıştır	Hindistancevizi, soğan, tuz ve pul biberle karıştır.
+Limon suyunu ekle	Servis etmeden hemen önce limon suyunu ekle.
+Kozalakları bardağa koy	Kozalakları bardağa koy.
+10–15 dakika demle	10–15 dakika demle.
+Süz ve yatmadan iç	Süz; yatmadan yarım saat önce iç.
+Meyveleri ayıkla ve yıka	Meyveleri kağıt kılıflarından çıkar ve yıka; yeşil ve olgunlaşmamış olanları ayır.
+Şekerle 2 saat beklet	Meyveleri şekerle karıştırıp 2 saat beklet.
+20–25 dakika pişir	Suyu ekleyip kaynat, altını kısıp 20–25 dakika koyulaşana kadar pişir.
+Limonla kavanozlara doldur	Limon suyunu ekle, sıcakken kavanozlara doldur.
+Tohumları ayıkla	Kabukluysa kabuklarını kır ve tohumları ayıkla.
+Tepsiye tek kat yay	Tohumları fırın tepsisine tek kat yay.
+Fırında kavur	160 °C fırında, ara sıra karıştırarak 15–20 dakika kavur.
+Tuz serpip sakla	Sıcakken tuz serp, soğuyunca kapalı kavanozda sakla.

@@ -1765,6 +1765,14 @@ _K_HAZIR = [k for k in KONULAR if sum(1 for pid, _ in k['bitkiler'] if pid in by
 LIVE_K = [k for k in _K_HAZIR if not k.get('blog')]      # "derde göre" rehber listelerinde görünenler
 BLOG_K = [k for k in _K_HAZIR if k.get('blog')]          # rehber değil: blogun altında duran uzun yazılar
 LIVE_T = [t for t in TARIFLER if t['bitki'] in byId]
+
+# Adım başlıkları (schema.org HowToStep.name). Elle yazıldı, bkz veri/adim_adlari.tsv.
+ADIM_AD = {}
+with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'veri', 'adim_adlari.tsv'), encoding='utf-8') as _f:
+    for _s in _f:
+        if _s.startswith('#') or '\t' not in _s: continue
+        _ad, _metin = _s.rstrip('\n').split('\t', 1)
+        ADIM_AD[_metin] = _ad
 LIVE_C = [c for c in KARS if c['a'] in byId and c['b'] in byId]
 # 23 Kasım (Eda): bitkilerinden biri henüz kuyrukta olan karşılaştırmalar da yayında; o bitkinin adı
 # yayımlandığı gün kendiliğinden bağlantıya dönüşür (site her gün yeniden derleniyor).
@@ -1991,6 +1999,14 @@ def sure(m):
     if m < 1440: return f'{m // 60} saat' + (f' {m % 60} dk' if m % 60 else '')
     g = m // 1440
     return f'{g // 7} hafta' if g % 7 == 0 and g >= 7 else f'{g} gün'
+def adim_ld(a, yol, i):
+    """HowToStep: metin, sayfadaki adıma çapa bağlantısı ve varsa elle yazılmış başlık.
+
+    Başlık yoksa alan hiç yazılmaz — uydurma özet yayına çıkmasın."""
+    d = {"@type": "HowToStep", "text": a, "url": f'{BASE}{yol}#adim-{i}'}
+    if ADIM_AD.get(a): d["name"] = ADIM_AD[a]
+    return d
+
 for t in LIVE_T:
     p = byId[t['bitki']]; path = f'/tarif/{t["slug"]}/'
     others = [x for x in LIVE_T if x is not t][:8]
@@ -2010,7 +2026,7 @@ for t in LIVE_T:
 </div>
 <div class="tarif-govde">
 <section class="sec malz-kut"><h2>Malzemeler</h2><ul class="malz">{"".join(f'<li>{e(m)}</li>' for m in t["malzeme"])}</ul></section>
-<section class="sec"><h2>Hazırlanışı</h2><ol class="adim">{"".join(f'<li>{e(a)}</li>' for a in t["adim"])}</ol></section>
+<section class="sec"><h2>Hazırlanışı</h2><ol class="adim">{"".join(f'<li id="adim-{i}">{e(a)}</li>' for i, a in enumerate(t["adim"], 1))}</ol></section>
 </div>
 <div class="tarif-not">
 <p class="fact">{e(t["ipucu"])}</p>
@@ -2022,7 +2038,7 @@ for t in LIVE_T:
 </article>'''
     ld = {"@context":"https://schema.org","@type":"Recipe","name":t['ad'],"description":t['kisa'],"inLanguage":"tr","author":AUTHOR,"datePublished":CONTENT_DATE,
           "prepTime":iso_min(t['hazirlik']),"totalTime":iso_min(t['toplam']),"recipeYield":t['verim'],"recipeCategory":"İçecek" if 'corba' not in t['slug'] else 'Çorba',"recipeCuisine":"Türk",
-          "keywords":f'{p["tr"]}, {short_la(p)}, bitki çayı',"recipeIngredient":t['malzeme'],"recipeInstructions":[{"@type":"HowToStep","text":a} for a in t['adim']]}
+          "keywords":f'{p["tr"]}, {short_la(p)}, bitki çayı',"recipeIngredient":t['malzeme'],"recipeInstructions":[adim_ld(a, path, i) for i, a in enumerate(t['adim'], 1)]}
     if p['id'] in IMG: ld['image'] = [f'{BASE}/img/{p["id"]}-960.jpg']
     write(path, page(f'{t["ad"]} nasıl yapılır? | Bitki Tabanı', (t['kisa'] + f' Malzemeler, ölçüler ve kimlerin dikkat etmesi gerektiği.')[:158], path, body, 'tarif', narrow=True,
           extra=lds(ld, crumb_ld(('/tarif/', 'Tarifler'), (path, t['ad']))), image=gimage([p['id']])))
