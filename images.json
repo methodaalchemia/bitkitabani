@@ -706,6 +706,22 @@
   "w": 960,
   "w500": 500
  },
+ "beyazpelin": {
+  "artist": "Katrin Simon",
+  "auto": false,
+  "b1280": "original.jpg",
+  "file": "original.jpg",
+  "h": 720,
+  "h500": 375,
+  "kaynak": "iNaturalist",
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "not": "Granada, İspanya",
+  "notEn": "Granada, Spain",
+  "page": "https://www.inaturalist.org/observations/346856123",
+  "w": 960,
+  "w500": 500
+ },
  "biberiye": {
   "artist": "Christian Ferrer",
   "b1280": "Rosmarinus officinalis in Vieussan.jpg",
@@ -1411,6 +1427,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:P%C3%B6rtschach_Johannes-Brahms-Promenade_Werzers_Bootshaus_Haselbusch_02032019_6087.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "firavuninciri": {
+  "artist": "Roger Culos",
+  "auto": false,
+  "b1280": "Ficus sycomorus fruits MHNT.jpg",
+  "file": "Ficus sycomorus fruits MHNT.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ficus_sycomorus_fruits_MHNT.jpg",
   "w": 960,
   "w500": 500
  },
@@ -2395,6 +2424,19 @@
   "license": "Public domain",
   "licenseUrl": "",
   "page": "https://commons.wikimedia.org/wiki/File:Syzygium_aromaticum_on_tree.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "karasusam": {
+  "artist": "Nativeplants garden",
+  "auto": false,
+  "b1280": "Sesamum radiatum 2.jpg",
+  "file": "Sesamum radiatum 2.jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Sesamum_radiatum_2.jpg",
   "w": 960,
   "w500": 500
  },
@@ -4012,6 +4054,22 @@
   "w": 960,
   "w500": 500
  },
+ "sukabagi": {
+  "artist": "Yi CHEN",
+  "auto": false,
+  "b1280": "original.jpg",
+  "file": "original.jpg",
+  "h": 640,
+  "h500": 333,
+  "kaynak": "iNaturalist",
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "not": "Dalian, Çin",
+  "notEn": "Dalian, China",
+  "page": "https://www.inaturalist.org/observations/401520092",
+  "w": 960,
+  "w500": 500
+ },
  "sumak": {
   "artist": "No machine-readable author provided. BourrinOman assumed (based on copyright claims).",
   "auto": true,
@@ -4035,6 +4093,22 @@
   "license": "CC BY-SA 3.0 de",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
   "page": "https://commons.wikimedia.org/wiki/File:Mentha_aquatica_LC0169.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "supurgedarisi": {
+  "artist": "zx3lvta7us (iNaturalist)",
+  "auto": false,
+  "b1280": "original.jpg",
+  "file": "original.jpg",
+  "h": 1280,
+  "h500": 667,
+  "kaynak": "iNaturalist",
+  "license": "CC0 1.0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "not": "Chattanooga, ABD",
+  "notEn": "Chattanooga, USA",
+  "page": "https://www.inaturalist.org/observations/414594025",
   "w": 960,
   "w500": 500
  },
@@ -4474,6 +4548,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Eriobotrya_japonica,_Salfit_01.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "yerbademi": {
+  "artist": "User:Blahedo",
+  "auto": false,
+  "b1280": "Cyperus esculentus.jpg",
+  "file": "Cyperus esculentus.jpg",
+  "h": 718,
+  "h500": 374,
+  "license": "CC BY-SA 2.5",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:Cyperus_esculentus.jpg",
   "w": 960,
   "w500": 500
  },

@@ -1569,6 +1569,18 @@ DESCRIPTION:Meyve salkımları Ağustos–Eylül’de kızarınca toplan
 URL:https://bitkitabani.com/sumak/
 END:VEVENT
 BEGIN:VEVENT
+UID:toplama-supurgedarisi@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260602
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Süpürge darısı toplama mevsimi
+DESCRIPTION:Türkiye’de yazlık olarak ekilir ve salkımlar yaz sonunda
+  olgunlaşır\; dayanak alınan kaynaklarda Türkiye için kesin bir hasa
+ t takvimi verilmiyor. https://bitkitabani.com/supurgedarisi/
+URL:https://bitkitabani.com/supurgedarisi/
+END:VEVENT
+BEGIN:VEVENT
 UID:toplama-sahtere@bitkitabani.com
 DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260301

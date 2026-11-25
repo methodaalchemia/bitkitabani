@@ -173,6 +173,9 @@ FILES.update({
 FILES.update({
     # 25 Kasım 2026: Eda görsel adayları sayfasından seçti (veri/gorsel_secimleri.json).
     'yabanihunnap': 'Ziziphus lotus sept.jpg',
+    'firavuninciri': 'Ficus sycomorus fruits MHNT.jpg',
+    'karasusam': 'Sesamum radiatum 2.jpg',
+    'yerbademi': 'Cyperus esculentus.jpg',
     'mur': 'Myrrh.JPG',                                   # drog zaten reçine
     'greyfurt': 'Grapefruit from Diamniadio, Senegal 07.jpg',
     'yenidunya': 'Eriobotrya japonica, Salfit 01.jpg',
@@ -186,6 +189,28 @@ FILES.update({
 # Kural: yalnız CC0, CC BY ve CC BY-SA. NC (ticari olmayan) lisans alınmaz —
 # site ticari değil ama lisansı daraltmak ileride elimizi bağlar.
 DIS = {
+    # 25 Kasım 2026: Eda görsel adayları sayfasından seçti.
+    'beyazpelin': {
+        'url':     'https://inaturalist-open-data.s3.amazonaws.com/photos/632330549/original.jpg',
+        'page':    'https://www.inaturalist.org/observations/346856123',
+        'kaynak':  'iNaturalist', 'artist': 'Katrin Simon',
+        'license': 'CC BY 4.0', 'licenseUrl': 'https://creativecommons.org/licenses/by/4.0',
+        'not': 'Granada, İspanya', 'notEn': 'Granada, Spain',
+    },
+    'sukabagi': {
+        'url':     'https://inaturalist-open-data.s3.amazonaws.com/photos/736963595/original.jpg',
+        'page':    'https://www.inaturalist.org/observations/401520092',
+        'kaynak':  'iNaturalist', 'artist': 'Yi CHEN',
+        'license': 'CC BY 4.0', 'licenseUrl': 'https://creativecommons.org/licenses/by/4.0',
+        'not': 'Dalian, Çin', 'notEn': 'Dalian, China',
+    },
+    'supurgedarisi': {
+        'url':     'https://inaturalist-open-data.s3.amazonaws.com/photos/763261333/original.jpg',
+        'page':    'https://www.inaturalist.org/observations/414594025',
+        'kaynak':  'iNaturalist', 'artist': 'zx3lvta7us (iNaturalist)',
+        'license': 'CC0 1.0', 'licenseUrl': 'https://creativecommons.org/publicdomain/zero/1.0/',
+        'not': 'Chattanooga, ABD', 'notEn': 'Chattanooga, USA',
+    },
     'huayruro': {
         'url':     'https://inaturalist-open-data.s3.amazonaws.com/photos/81573154/original.jpg',
         'page':    'https://www.inaturalist.org/observations/51349588',

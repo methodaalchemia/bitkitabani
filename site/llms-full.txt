@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 295 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 301 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -9403,3 +9403,171 @@ Karıştırma riski: Hünnapla (Ziziphus jujuba) aynı cinstendir ama ayrı tür
 
 ### İlginç bilgi
 Homeros’un Odysseia’sında gemicilerin yiyince yurdunu unuttuğu "lotus", 2020 tarihli bir botanik çalışmasına göre büyük olasılıkla bu çalının meyvesidir. Aynı çalışma, antikçağda "lotus" adının birbirinden çok farklı bitkilere verildiğini ve her birinin ayrı ayrı çözülmesi gerektiğini gösterir.
+
+## Beyaz pelin (Artemisia herba-alba Asso)
+
+URL: https://bitkitabani.com/beyazpelin/
+Familya: Asteraceae · Bölge: Afrika · Kullanılan kısım: Toprak üstü kısımları (yaprak ve çiçekli dallar)
+Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
+
+### Geleneksel kullanım
+- Fas ve Cezayir — şeker hastalığı: Journal of Ethnopharmacology’de 2019’da yayımlanan derleme, Cezayir’de şeker hastalığında kullanılan bitkileri taramış ve Artemisia herba-alba’yı en sık adı geçenler arasında bildirmiştir. Diseases dergisinde 2024’te yayımlanan Fas derlemesi de aynı kullanımı kaydeder. Her iki derleme de kullanımı belgelemekte, etkililiğini göstermemektedir.
+- Kuzeydoğu Fas — halk hekimliğinde yaygınlık: Evidence-Based Complementary and Alternative Medicine’de 2021’de yayımlanan saha çalışması, Fas’ın kuzeydoğusunda derlenen geleneksel bilgide bu türün sık geçtiğini bildirir. Bitkinin kaynatılıp içilmesi ve çay olarak hazırlanması anlatılan başlıca kullanım biçimleridir.
+
+### Hazırlama
+Resmî bir monografta kabul edilmiş doz yoktur. Dayanak alınan derlemelerde toprak üstü kısımlarının kaynatılarak ya da demlenerek içildiği anlatılır; ölçü verilmez. Uçucu yağ ayrı bir üründür ve gıda değildir.
+
+### Araştırmalar ne gösteriyor
+Elimizdeki kaynaklarda insanda yapılmış kontrollü bir çalışma yoktur. Derlemelerin bildirdiği şeker düşürücü etkiler hücre ve hayvan çalışmalarındandır. PLoS One’da 2015’te yayımlanan çalışma bitkinin farklı kısımlarından elde edilen uçucu yağların bileşiminin birbirinden belirgin biçimde farklı olduğunu göstermiştir: yaprak ve toprak üstü karışımında oksijenli seskiterpenler, çiçek başlarında monoterpenler, sapta esterler baskındır. Bu, "Artemisia herba-alba yağı" denen şeyin tek bir madde olmadığı anlamına gelir — hangi kısımdan, nerede ve ne zaman toplandığına göre değişir. Aynı çalışma yağların tümör hücre hatlarında bölünmeyi azalttığını bildirir; bu bir tüp içi ölçümdür ve tedavi anlamına gelmez.
+
+### Güvenlik
+Bu tür için monograf olmadığından resmî bir kontrendikasyon listesi de yoktur; aşağıdakiler kaynaklardan çıkan uyarılardır. Bileşimi toplandığı yere ve bitkinin hangi kısmının kullanıldığına göre belirgin biçimde değişiyor, bu yüzden "ne kadarı güvenli" sorusunun ölçülmüş bir yanıtı yok. Papatyagiller familyasına duyarlılığı olanlar dikkatli olmalıdır. Gebelik, emzirme, çocuklar ve ilaç etkileşimleri için veri bulunmuyor. Şeker hastalığında geleneksel kullanımı yaygın olduğu için özellikle önemli: kan şekerini etkileyen bir bitkiyi şeker ilacıyla birlikte almak ölçülmemiş bir risktir; böyle bir kullanım hekime söylenmelidir. Pelin için yazılan tuyon kısıtlamaları *Artemisia absinthium*’a aittir; bu türe aynen uygulanamaz, ama uçucu yağın gıda gibi tüketilmemesi gerektiği her iki tür için de geçerlidir.
+
+### Doğada
+Nerede yetişir: Kew’in kayıtlarına göre doğal yayılışı Fas, Cezayir, Tunus, İspanya ve Kanarya Adaları’dır. Yarı çöl bozkırlarında, kurak ve tuzlu topraklarda yetişen bodur, gümüşi tüylü bir çalıdır.
+Toplama mevsimi: Dayanak alınan kaynaklarda Türkiye için bir toplama takvimi yoktur; bitki Türkiye’de yetişmez.
+Yöresel adlar: Türkçede yerleşik bir yöresel adı yok. Kuzey Afrika’da "chih" (شيح) adıyla bilinir.
+Karıştırma riski: Pelin (*Artemisia absinthium*) ve peygamber süpürgesi (*Artemisia*) ile aynı cinstendir ama ayrı türdür. EMA ve TİTCK monografları *A. absinthium* içindir ve bu türe uygulanmaz; tuyon kısıtlamaları da öyle. Bir türün monografı akrabasına ait değildir.
+
+### İlginç bilgi
+Kuzey Afrika’nın yarı çöl bozkırlarında kilometrelerce uzanan gümüşi gri örtüyü büyük ölçüde bu bitki oluşturur; Arapça adı "chih" ile anılan bu bozkırlara doğrudan onun adı verilir.
+
+## Firavun inciri (Ficus sycomorus L.)
+
+URL: https://bitkitabani.com/firavuninciri/
+Familya: Moraceae · Bölge: Afrika, Anadolu ve Akdeniz · Kullanılan kısım: Meyve; geleneksel kullanımda ayrıca yaprak, kabuk ve sütü
+Bilimsel kanıt: Geleneksel · Güvenlik: Genelde güvenli
+
+### Geleneksel kullanım
+- Eski Mısır — tapınaktan tabuta: Aswan Edebiyat Fakültesi Dergisi’nde 2024’te yayımlanan çalışmaya göre firavun inciri eski Mısır’ın en önemli ağaçlarından biriydi. Tanrıça Hathor "fıravun incirinin hanımı" diye anılır. Ağacın odunu tabut yapımında kullanılmış, meyvesi sunu masalarının başlıca öğelerinden olmuş ve kalıntıları Mısır kazı alanlarında bulunmuştur. Aynı çalışma meyvenin olgunlaşması ve böceklerden korunması için çizilmesi gerektiğini de kaydeder.
+- Etiyopya — çok amaçlı ağaç: Frontiers in Pharmacology’de 2025’te yayımlanan saha çalışması, kuzeybatı Etiyopya’nın Metema ilçesinde 110 kaynak kişiyle yapılmış ve firavun incirini yörenin en çok amaçlı kullanılan üç bitkisinden biri olarak sıralamıştır. Journal of Ethnobiology and Ethnomedicine’de 2024’te yayımlanan Arsi Robe çalışması da onu birden çok kullanımı olan yabani yenebilir bitkiler arasında sayar. Her iki çalışma da kullanımı belgeler, etkililik ölçmez.
+
+### Hazırlama
+Resmî bir monografta kabul edilmiş doz yoktur; meyve bir gıdadır ve taze yenir. Dayanak alınan kaynaklarda ev yapımı bir hazırlık için ölçü verilmez. Yaprak, kabuk ve sütten hazırlanan yoğun ekstreler besin değildir ve bu kaynaklarda insanda kullanımına ilişkin bir doz yoktur.
+
+### Araştırmalar ne gösteriyor
+Elimizdeki kaynaklarda insanda yapılmış kontrollü bir çalışma yoktur. Dayanak alınan iki çalışma da etnobotanik saha araştırmasıdır: kimin neyi ne için kullandığını kaydederler, etkili olup olmadığını ölçmezler. Metema çalışması kendi sonuç bölümünde belgelenen bitkiler için "farmakolojik araştırmaların sürdürülmesi" gerektiğini yazar — yani bu bitkilerin etkisi henüz araştırılmamıştır.
+
+### Güvenlik
+Meyve bir gıdadır ve binlerce yıldır yenmektedir; dayanak alınan kaynaklarda meyveye bağlı bir zarar bildirilmiyor. Monograf olmadığı için resmî bir kontrendikasyon listesi de yok. İncir ve dutgiller familyasının sütü deriyi tahriş edebilir ve güneşte deride leke yapabilir; ağaçtan toplarken bu akılda tutulmalıdır. Gebelik, emzirme, çocuklar ve ilaç etkileşimleri için veri bulunmuyor; meyve dışındaki kısımlardan hazırlanan yoğun ürünler bu nedenle önerilmez.
+
+### Doğada
+Nerede yetişir: Kew’in kayıtlarına göre yayılışı 48 bölgeyi kapsar: Afrika’nın büyük bölümü ile Mısır ve Doğu Akdeniz kıyısı. Sıcak ve kurak iklimde, su kenarlarında yetişen, geniş gövdeli ve geniş taçlı bir ağaçtır.
+Toplama mevsimi: Dayanak alınan kaynaklarda Türkiye için bir toplama takvimi yoktur; ağaç Türkiye’de doğal olarak yetişmez.
+Yöresel adlar: Türkçede firavun inciri ve yabani incir; Arapça "cümmeyz".
+Karıştırma riski: İncir (*Ficus carica*) ile aynı cinstendir ama ayrı türdür: incirin meyvesi dal uçlarında tek tek, firavun incirininki gövdenin kendisinde salkım salkım durur. Bir türün monografı ve kısıtlamaları akrabasına ait değildir.
+
+### İlginç bilgi
+Meyvenin olgunlaşması için çizilmesi gerekir — bu iş o kadar ayrı bir uğraştı ki Tevrat’ta Amos kendini "firavun inciri çizicisi" diye tanıtır.
+
+## Süpürge darısı (Sorghum bicolor (L.) Moench)
+
+URL: https://bitkitabani.com/supurgedarisi/
+Familya: Poaceae · Bölge: Afrika, Anadolu ve Akdeniz · Kullanılan kısım: Tane (besin); süpürge için çiçek salkımı
+Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
+
+### Geleneksel kullanım
+- Afrika ve Asya — temel tahıl: Journal of Agricultural and Food Chemistry’de 2023’te yayımlanan derleme, sorgumun üretim ve ekim alanı bakımından dünyanın ilk beş tahılı arasında olduğunu ve kuraklık ile tuzlu toprağa dayanıklılığı sayesinde başka tahılların yetişmediği yerlerde yetiştirildiğini yazar. Aynı derleme bitkinin evcilleştirme yönüne göre tane, enerji ve silaj sorgumu diye ayrıldığını belirtir.
+- Anadolu — süpürgenin kendisi: Türkçe adı doğrudan kullanımından gelir: çiçek salkımının kuruyup sertleşen sapları demet yapılarak süpürge örülür. Bu kullanım için yetiştirilen biçim tane sorgumundan farklı bir çeşittir; uzun ve esnek salkım için seçilmiştir.
+
+### Hazırlama
+Resmî bir monografta kabul edilmiş doz yoktur; sorgum bir tahıldır. Tane un yapılır, lapa ve ekmek olarak pişirilir, Afrika’da mayalanarak içecek yapılır. Dayanak alınan kaynaklarda tıbbi bir hazırlık ya da ölçü verilmez.
+
+### Araştırmalar ne gösteriyor
+Elimizdeki kaynaklarda bu bitkinin bir hastalıkta kullanımını sınayan insan çalışması yoktur; sorgum literatürü tarım ve ıslah literatürüdür. 2023 tarihli derleme bitkinin agronomik özelliklerini ve bunları düzenleyen genleri ele alır. Genes dergisinde 2022’de yayımlanan çalışma ise bitkinin siyanojenik olduğunu, yani yapraklarında hidrojen siyanür açığa çıkarabilen durrin adlı bir bileşik taşıdığını doğrular; bu çalışma yabani Sorghum türlerini de taramıştır.
+
+### Güvenlik
+Tane güvenlidir ve dünyanın büyük bölümünde temel besindir. Asıl uyarı bitkinin yeşil aksamıyla ilgilidir: Sorghum bicolor siyanojeniktir. Yapraklarında durrin bulunur ve bu bileşik parçalandığında hidrojen siyanür açığa çıkar. Genç sürgünlerde, kuraklık ya da don sonrası yeniden süren bitkide miktar yükselir; hayvanlarda ölümcül zehirlenmeler bu yüzden olur. Yaprak ve genç sürgünden çay ya da suyu yapılmaz. Tanenin işlenmesi ve pişirilmesi bu sorunu ortadan kaldırır. Monograf olmadığı için resmî bir kontrendikasyon listesi yoktur; gebelik, emzirme ve ilaç etkileşimleri için de ayrı bir değerlendirme bulunmuyor — gıda olarak tüketimi bu uyarıların konusu değildir.
+
+### Doğada
+Nerede yetişir: Kew’in kayıtlarına göre yayılışı 243 bölgeyi kapsar — Afrika kökenlidir, bugün dünyanın her sıcak bölgesinde ekilir. Kuraklığa ve tuzlu toprağa dayanıklılığı, başka tahılların yetişmediği yerlerde yetişmesini sağlar.
+Toplama mevsimi: Türkiye’de yazlık olarak ekilir ve salkımlar yaz sonunda olgunlaşır; dayanak alınan kaynaklarda Türkiye için kesin bir hasat takvimi verilmiyor.
+Yöresel adlar: Süpürge darısı, koca darı, akdarı.
+Karıştırma riski: Darı adı Türkçede birden çok bitkiyi karşılar: cin darısı (*Panicum miliaceum*) ve kuş darısı (*Setaria italica*) ayrı türlerdir. Bu kayıt yalnız *Sorghum bicolor* içindir.
+
+### İlginç bilgi
+Yere değen her süpürge aslında bir tahıl bitkisinin çiçek salkımıdır: süpürge darısının adı da, biçimi de bu kullanımdan gelir.
+
+## Yer bademi (Cyperus esculentus L.)
+
+URL: https://bitkitabani.com/yerbademi/
+Familya: Cyperaceae · Bölge: Afrika, Avrupa · Kullanılan kısım: Toprak altı yumruları
+Bilimsel kanıt: Geleneksel · Güvenlik: Genelde güvenli
+
+### Geleneksel kullanım
+- Valensiya — horchata de chufa: İspanya’nın Valensiya bölgesinde yumrular suda ıslatılıp ezilerek "horchata de chufa" adlı sütümsü içecek yapılır. Foods dergisinde 2022’de yayımlanan derleme, yumrudan süt, atıştırmalık, içecek ve glutensiz ekmek üretildiğini kaydeder.
+- Batı Afrika ve Kuzey Afrika — çiğ yenen yumru: Aynı derleme bitkinin yağ, nişasta, protein, lif, vitamin ve mineral bakımından zengin bir ürün olduğunu ve yem ile gıda olarak çok eski bir kullanımı bulunduğunu yazar. Yumrular ıslatıldıktan sonra çiğ yenir ya da kurutularak saklanır.
+
+### Hazırlama
+Resmî bir monografta kabul edilmiş doz yoktur; yer bademi bir gıdadır. Sert olduğu için yumrular yenmeden ya da ezilmeden önce birkaç saat suda bekletilir. Dayanak alınan kaynaklarda tıbbi bir hazırlık ya da ölçü verilmez.
+
+### Araştırmalar ne gösteriyor
+Elimizdeki kaynaklarda insanda yapılmış kontrollü bir çalışma yoktur. Foods dergisindeki 2022 tarihli derleme yumrunun serbest radikal süpürücü etkisini, tüp içinde lipit peroksidasyonunu baskılamasını ve iltihap önleyici özelliklerini bildirir — bunlar laboratuvar ölçümleridir. Plants dergisinde aynı yıl yayımlanan derleme de bileşimi, tıbbi etkinliği ve antibakteriyel özellikleri derler. Her iki derleme de bitkinin asıl olarak bir gıda maddesi olarak incelendiğini gösterir.
+
+### Güvenlik
+Yumru bir gıdadır ve yüzyıllardır yenmektedir; dayanak alınan derlemelerde ciddi bir güvenlik sorunu bildirilmiyor. Monograf olmadığı için resmî bir kontrendikasyon listesi de yoktur. Yağ ve lif oranı yüksektir; alışık olmayanlarda fazla miktarda yendiğinde şişkinlik yapabilir. Gebelik, emzirme, çocuklar ve ilaç etkileşimleri için ayrı bir değerlendirme bulunmuyor; yumrudan hazırlanan yoğun ekstreler bu nedenle önerilmez.
+
+### Doğada
+Nerede yetişir: Kew’in kayıtlarına göre yayılışı 194 bölgeyi kapsar; ılıman ve sıcak kuşağın hemen her yerine yayılmıştır. Nemli, gevşek ve kumlu topraklarda yetişen bir saz bitkisidir; yumrularını toprağın birkaç santim altında yapar.
+Toplama mevsimi: Dayanak alınan kaynaklarda Türkiye için bir toplama takvimi yoktur.
+Yöresel adlar: Yer bademi, topalak bademi.
+Karıştırma riski: Piri piri (*Cyperus articulatus*) ile aynı cinstendir ama ayrı türdür; bir türün kullanımı ve kısıtlamaları akrabasına ait değildir. Adındaki "badem" de yanıltıcıdır: bademle (*Prunus dulcis*) hiçbir akrabalığı yoktur, badem alerjisi olanlar için yumru bir badem ürünü değildir.
+
+### İlginç bilgi
+Aynı yumru hem aranan bir besin hem de dünyanın en zor yok edilen tarla yabani otlarından biridir: toprağın altında kalan tek bir yumru bütün bir tarlayı yeniden kaplayabilir.
+
+## Kara susam (Sesamum radiatum Thonn. ex Hornem.)
+
+URL: https://bitkitabani.com/karasusam/
+Familya: Pedaliaceae · Bölge: Afrika · Kullanılan kısım: Yaprak (sebze olarak); tohum
+Bilimsel kanıt: Geleneksel · Güvenlik: Genelde güvenli
+
+### Geleneksel kullanım
+- Batı ve Orta Afrika — sümüksü yaprak sebzesi: Economic Botany’de 2018’de yayımlanan derleme, Afrika’da susamgillerin yabani ve kültür türlerinin yapraklarının sebze olarak toplandığını ve bu yaprakların protein, yağ, kalsiyum ve demir içeriğiyle kuru tahıl yemeklerinin yanında tüketildiğini yazar. Aynı derleme yaprakların suda çözünen müsilajını bir lif kaynağı olarak tanımlar ve çok sayıda Afrika yerel adının doğrudan yaprağın sümüksü dokusuna gönderme yaptığını kaydeder. Derleme, bu yaprakların kullanımını keşfedenlerin tahıl yemeğinin yanına yeşillik toplayan kadınlar olduğunu belirtir.
+- Benin — evcilleştirilme sürecindeki bir sebze: Aynı derlemenin kaynakçası, türün Benin’de yaprak sebzesi olarak yetiştirildiğini ve evcilleştirilmesi üzerine çalışma yapıldığını gösterir. Yani bu, yabaniden kültüre geçiş sürecinde olan bir bitkidir.
+
+### Hazırlama
+Resmî bir monografta kabul edilmiş doz yoktur; yaprak bir sebzedir ve pişirilerek yenir. Dayanak alınan kaynaklarda tıbbi bir hazırlık ya da ölçü verilmez.
+
+### Araştırmalar ne gösteriyor
+Bu tür üzerine yayımlanmış literatür incedir ve elimizdeki kaynaklarda insanda yapılmış hiçbir çalışma yoktur. Polymers dergisinde 2021’de yayımlanan çalışma bitkinin yağını altın nanoparçacıklı bir polimer filme katmış ve bu filmin hücre kültüründe iltihap belirteçlerini azalttığını, Leishmania ve Trypanosoma kültürlerinin üremesini baskıladığını bildirmiştir. Bu bir malzeme bilimi çalışmasıdır: incelenen şey bitkinin kendisi ya da geleneksel bir hazırlığı değil, laboratuvarda üretilmiş bir kompozit filmdir. Sonuçları yaprağın ya da tohumun yenmesine uygulanamaz.
+
+### Güvenlik
+Yaprak bir sebzedir ve Batı Afrika’da düzenli olarak yenmektedir; dayanak alınan kaynaklarda yaprağa bağlı bir zarar bildirilmiyor. Monograf olmadığı için resmî bir kontrendikasyon listesi de yoktur. Susam alerjisi olanlar dikkatli olmalıdır: bu tür susamla aynı cinstendir ve çapraz tepkime olasılığı ölçülmüş değildir. Gebelik, emzirme, çocuklar ve ilaç etkileşimleri için veri bulunmuyor; yağından ya da tohumundan hazırlanan yoğun ürünler bu nedenle önerilmez.
+
+### Doğada
+Nerede yetişir: Kew’in kayıtlarına göre yayılışı 28 bölgeyi kapsar: Batı ve Orta Afrika’nın büyük bölümü ile Cape Verde ve Borneo. Sıcak ve nemli iklimde, tarla kenarlarında ve köy yakınlarında yetişen otsu bir bitkidir.
+Toplama mevsimi: Dayanak alınan kaynaklarda Türkiye için bir toplama takvimi yoktur; bitki Türkiye’de yetişmez.
+Yöresel adlar: Türkçede yerleşik bir yöresel adı yok.
+Karıştırma riski: Susam (*Sesamum indicum*) ile aynı cinstendir ama ayrı türdür: susamda yenen tohumdur, bu türde asıl kullanılan yapraktır. Bir türün kullanımı ve kısıtlamaları akrabasına ait değildir.
+
+### İlginç bilgi
+Afrika dillerindeki adlarının çoğu bitkinin tadını ya da görünüşünü değil, yaprağının ağızdaki sümüksü dokusunu anlatır — mutfakta aranan şey de tam olarak budur.
+
+## Su kabağı (Lagenaria siceraria (Molina) Standl.)
+
+URL: https://bitkitabani.com/sukabagi/
+Familya: Cucurbitaceae · Bölge: Afrika, Asya ve Sibirya, Anadolu ve Akdeniz · Kullanılan kısım: Meyve (sebze olarak); kurutulmuş kabuk (kap ve çalgı)
+Bilimsel kanıt: Geleneksel · Güvenlik: Yüksek risk
+
+### Geleneksel kullanım
+- Dünya geneli — kap, çalgı ve sebze: Frontiers in Nutrition’da 2022’de yayımlanan derleme, kabakgiller familyasının eski çağlardan beri tedavi amacıyla kullanıldığını ve Lagenaria siceraria’nın bu familyanın en çok incelenen türlerinden biri olduğunu yazar. Meyvesi düşük kalorili bir sebze olarak yenir. Kuruyup sertleşen kabuğu su kabı, kaşık ve çalgı gövdesi olarak kullanılır — bitkiye Türkçede adını veren de bu kullanımdır.
+- Hindistan ve Güney Asya — halk hekimliği: Hindistan Tıbbi Araştırma Konseyi’nin (ICMR) 2012 tarihli raporu, su kabağı suyunun geleneksel şifacılar tarafından şeker hastalığı, tansiyon, karaciğer hastalıkları ve kilo verme için önerildiğini kaydeder. Aşağıdaki güvenlik notu doğrudan bu kullanımla ilgilidir.
+
+### Hazırlama
+Resmî bir monografta kabul edilmiş doz yoktur; meyve bir sebzedir ve pişirilerek yenir. Suyunun sıkılıp içilmesi ayrı bir konudur ve güvenlik notundaki uyarı okunmadan yapılmamalıdır.
+
+### Araştırmalar ne gösteriyor
+Elimizdeki kaynaklarda bitkinin tek başına sınandığı insan çalışması yoktur. 2022 tarihli derleme antioksidan, idrar söktürücü, karaciğer koruyucu, ağrı kesici ve tansiyon düşürücü etkiler sıralar; bunlar hücre ve hayvan çalışmalarındandır. 2025’te yayımlanan randomize bir çalışma su kabağının da içinde bulunduğu çok bitkili bir Unani formülasyonunu sınamıştır — çok bitkili bir karışımın sonucu tek bir bitkinin kanıtı sayılmaz.
+
+### Güvenlik
+Pişirilerek yenen sebze güvenlidir. Asıl tehlike acı meyvenin suyundadır. Hindistan Tıbbi Araştırma Konseyi’nin 2012 tarihli görev gücü raporu, çok acı su kabağı suyu içtikten sonra üç ölüm ve 26 hastaneye yatış bildirmiştir. Hastaneye yatanlarda karın ağrısı, kusma, ishal ve kan kusma görülmüş; endoskopide mide, yemek borusu ve onikiparmak bağırsağında yaygın ülser ve kanama saptanmış; yarısından fazlasında tansiyon düşmüştür. Ölen üç kişi de 59 yaş üstünde ve uzun süredir şeker hastasıydı ve üçü de suyu aşırı acı bulduklarını söylemişti. Sorumlu bileşikler kabakgillerin acılığını veren kukurbitasinlerdir ve bilinen bir panzehiri yoktur. Raporun önerisi açıktır: acı tadan su kabağı suyu içilmemeli, içildikten sonra rahatsızlık, bulantı, kusma ya da ishal olursa vakit kaybetmeden hastaneye gidilmelidir. Monograf olmadığı için başka resmî kontrendikasyon yoktur; gebelik, emzirme ve ilaç etkileşimleri için veri bulunmuyor.
+
+### Doğada
+Nerede yetişir: Kew’in kayıtlarına göre yayılışı 119 bölgeyi kapsar; tropik ve ılıman kuşakta her yerde yetiştirilir. Sarılıcı, hızlı büyüyen tek yıllık bir bitkidir.
+Toplama mevsimi: Türkiye’de yazlık olarak yetiştirilir; sebze olarak yenecek meyveler körpeyken, kap yapılacaklar ise dalda tamamen kuruyunca toplanır.
+Yöresel adlar: Su kabağı, asma kabağı, sukabağı.
+Karıştırma riski: Bal kabağı, kabak ve sakız kabağı (*Cucurbita* türleri) ayrı cinstendir; su kabağının kurumuş kabuğundan yapılan kaplar onlarda olmaz. Acı tat her kabakgilde uyarıdır: acı bir kabak ya da kabak suyu, hangi tür olursa olsun, yenmez ve içilmez.
+
+### İlginç bilgi
+İnsanın evcilleştirdiği ilk bitkilerden biridir ve bunu yemek için değil, taşımak için yapmıştır: kuruyan kabuğu su geçirmez bir kap olur. Meyvesi tuzlu suda aylarca yüzebildiği için okyanusları kendi başına geçmiştir.
