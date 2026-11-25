@@ -1303,7 +1303,7 @@ VERI = f'''<section class="sec" id="veri-seti"><h2>Veri setini indir</h2><p>Site
 <section class="sec"><h2>Veri setini kullanırsan</h2><p>Veri setinin künyesi:</p><p class="muted-s">Tınmazlar, E. ({CONTENT_DATE[:4]}). <i>Bitki Tabanı: şifalı ve ritüel bitkiler veri seti</i>. Zenodo. https://doi.org/10.5281/zenodo.23972634. CC BY-SA 4.0.</p>
 <p>Veriyi kullanıp bir şey ürettiysen <a href="mailto:iletisim@bitkitabani.com">iletisim@bitkitabani.com</a> adresine yazmanı çok isterim; nerede kullanıldığını bilmek işin en keyifli tarafı.</p></section>'''
 
-write('/katalog/', page(f'Bitki kataloğu: {len(P)} şifalı ve ritüel bitki | Bitki Tabanı', f'{len(P)} şifalı ve ritüel bitkiyi bölgeye, kullanıma, bilimsel kanıta, güvenliğe ve Türkiye’deki yasal duruma göre süz.', '/katalog/', katalog, 'kat', '<script src="/assets/catalog.js" defer></script>', extra=''.join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>' for x in ld_kat)))
+write('/katalog/', page(f'Bitki çayı ve şifalı bitkiler: {len(P)} bitkilik katalog | Bitki Tabanı', f'Bitki çayı olarak demlenenler dâhil {len(P)} şifalı ve ritüel bitki: bölgeye, kullanıma, bilimsel kanıta, güvenliğe ve Türkiye’deki yasal duruma göre süz.', '/katalog/', katalog, 'kat', '<script src="/assets/catalog.js" defer></script>', extra=''.join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>' for x in ld_kat)))
 
 # ---------- köprüler ----------
 def mini(p):
@@ -1987,7 +1987,7 @@ body = f'''{crumbs((path, 'Bitki bulucu'))}
 <section class="sec"><h2>{UI.DIGER_REHBER}</h2>{other_guides("")}</section>
 </article>
 <script id="bbdata" type="application/json">{json.dumps(_BB, ensure_ascii=False).replace("</", "<\\/")}</script>'''
-write(path, page('Bana uygun bitki hangisi? Derde göre bitki bulucu | Bitki Tabanı', 'Derdini seç, hamilelik ve ilaç durumunu belirt: katalogdan sana uygun şifalı bitkiler, kanıtı en güçlü olandan başlayarak. Riskli olanlar kendiliğinden elenir.', path, body, 'bul', scripts='<script src="/assets/bitkibul.js" defer></script>',
+write(path, page('Derde göre bitki çayı bulucu: bana uygun hangisi? | Bitki Tabanı', 'Derdini seç, hamilelik ve ilaç durumunu belirt: katalogdan sana uygun bitki çayları ve şifalı bitkiler, kanıtı en güçlü olandan başlayarak. Riskli olanlar kendiliğinden elenir.', path, body, 'bul', scripts='<script src="/assets/bitkibul.js" defer></script>',
       extra=lds({"@context":"https://schema.org","@type":"WebPage","name":"Bitki bulucu","inLanguage":"tr","url":BASE+path,"author":AUTHOR,"dateModified":CONTENT_DATE})))
 GUIDE_URLS.append(path)
 
@@ -2463,7 +2463,7 @@ hub = f'''{crumbs(('/rehber/', 'Rehberler'))}
 <section class="sec"><h2>Karşılaştırmalar</h2><ul class="otherlist">{"".join(f'<li><a href="/karsilastirma/{c["a"]}-ve-{c["b"]}/">{e(c["baslik"])}</a></li>' for c in ALL_C)}</ul></section>
 <section class="sec"><h2>Tarifler</h2><ul class="otherlist">{"".join(f'<li><a href="/tarif/{t["slug"]}/">{e(t["ad"])}</a></li>' for t in LIVE_T)}</ul></section>
 {DISCL}'''
-write('/rehber/', page('Hangi derde hangi bitki? Şifalı bitki bulucu ve rehberler | Bitki Tabanı', 'Uyku, öksürük, mide, soğuk algınlığı, kaygı ve daha fazlası için şifalı bitkiler: kanıt düzeyleri, güvenlik notları, ilaç etkileşimleri ve tarifler.', '/rehber/', hub, 'rehber', '<script src="/assets/ara.js" defer></script>', narrow=True,
+write('/rehber/', page('Hangi derde hangi bitki çayı? Bulucu ve rehberler | Bitki Tabanı', 'Uyku, öksürük, mide, soğuk algınlığı, kaygı ve daha fazlası için bitki çayları ve şifalı bitkiler: kanıt düzeyleri, güvenlik notları, ilaç etkileşimleri ve tarifler.', '/rehber/', hub, 'rehber', '<script src="/assets/ara.js" defer></script>', narrow=True,
       extra=lds(crumb_ld(('/rehber/', 'Rehberler')))))
 GUIDE_URLS.insert(0, '/rehber/')
 
@@ -2912,7 +2912,7 @@ home += ('<section class="sec"><h2>Son hikâyeler</h2>'
          'her hikâyenin altında dayandığı kaynak var.</p>'
          f'<ul class="hklist dort">{"".join(_hik_kart(h, _ET[k]) for h, k in _son_hik)}</ul>'
          f'<p><a class="cta" href="/blog/">{len(HIK)} hikâyenin tamamı →</a></p></section>')
-write('/index.html', page('Bitki Tabanı: şifalı ve ritüel bitkiler veri tabanı', f'{REG_LIST}’dan {len(P)} şifalı ve ritüel bitkisi: geleneksel kullanım, bilimsel kanıt, güvenlik ve kaynaklar.', '/', home, 'home', '<script src="/assets/streak.js" defer></script><script src="/assets/home.js" defer></script><script src="/assets/kopru-ipucu.js" defer></script>', extra=f'<script type="application/ld+json">{json.dumps(ldsite, ensure_ascii=False)}</script>'))
+write('/index.html', page('Bitki Tabanı: bitki çayı ve şifalı bitkiler veri tabanı', f'{REG_LIST}’dan {len(P)} bitki — bitki çayı olarak demlenenler dâhil: geleneksel kullanım, bilimsel kanıt, güvenlik ve kaynaklar.', '/', home, 'home', '<script src="/assets/streak.js" defer></script><script src="/assets/home.js" defer></script><script src="/assets/kopru-ipucu.js" defer></script>', extra=f'<script type="application/ld+json">{json.dumps(ldsite, ensure_ascii=False)}</script>'))
 # ---------- akıllı arama verisi ve sayfası ----------
 import hashlib as _hl
 def _cumleler(p):   # aramada gösterilecek cümleler: (etiket, sayfadaki bölüm, cümle)
