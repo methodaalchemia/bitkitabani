@@ -140,7 +140,10 @@ def yaz(s):
     print(f'  familya : {s["familya"]}' + (f' ({fam_tr})' if fam_tr else '  ← Türkçesi tabloda yok'))
     y = s['yayilis']
     print(f'  yayılış : {len(y)} bölge' + (f' — {", ".join(y[:10])}' + ('…' if len(y) > 10 else '') if y else ' (kayıt yok)'))
-    print(f'  Türkiye : {"evet" if s["turkiyede"] else "hayır"}')
+    # WCVP yayılışı doğal ve yabanileşmiş alanları verir, tarımını değil.
+    # "hayır" demek "Türkiye'de yetiştirilmiyor" demek değildir — buğday da
+    # listede Türkiye'yi doğal alan olarak taşımaz.
+    print(f'  Türkiye : {"evet" if s["turkiyede"] else "hayır (doğal yayılış; tarımı ayrı)"}')
     if s['eslesme_sayisi'] > 1:
         print(f'  ⚠️  bu ad {s["eslesme_sayisi"]} kayıtla eşleşti — eş adlı taksonlar olabilir')
 
