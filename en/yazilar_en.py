@@ -2,6 +2,82 @@
 # Keys are the Turkish slugs; sources and plant lists come from yazilar.py. Plant links are written {id}.
 
 Y_EN = {
+'sindirim-sikayetleri-aci-ve-kokulu-bitkiler': {
+'slug': 'digestive-complaints-bitter-and-aromatic-plants',
+'baslik': 'Plants used for digestive complaints: two groups, two mechanisms',
+'aciklama': 'The plants reached for against indigestion and gas across unrelated cultures fall into two groups: the markedly bitter ones and the aromatic ones rich in '
+            'volatile oils. Bitters, carminatives, the clinical evidence for peppermint, the systemic effects of liquorice root, and the difference between EMA monograph '
+            'types — with sources.',
+'giris': 'The plants used for indigestion and gas across different cultures fall into two sensory groups: the markedly bitter ones and the aromatic ones rich in volatile '
+         'oils. The distinction corresponds to the amara and carminative classes of traditional pharmacy and is explained by two different mechanisms of action. This '
+         'review covers both groups, their standing in European Medicines Agency monographs and the current level of clinical evidence; it contains no dosage information.',
+'bolumler': [
+ ('Scope and method',
+  ['The plants in this review were selected on two criteria: either the relevant indication is covered by a European Medicines Agency (EMA) herbal monograph, or the '
+   'catalogue holds a recorded traditional use for this complaint [1]. The parts used, the safety information and the restrictions for each plant are given on its own '
+   'record page. Dosage and preparation have deliberately been left out of this review; that information should not be read apart from the safety restrictions.']),
+ ('Two groups, two mechanisms',
+  ['Indigestion is among the oldest complaints in recorded medical history, and every independently developed medical tradition has an answer to it. The plants those '
+   'traditions reach for are not randomly distributed; they cluster around two sensory properties.',
+   'The first group consists of plants with a marked bitterness. The view that bitter compounds stimulate digestive secretions formed the basis of the amara class in '
+   'European pharmacy. The second group comprises aromatic plants rich in volatile oils; the relaxing effect of these oils on intestinal smooth muscle is the ground of '
+   'the carminative classification. The first group answers to sluggish digestion, the second to tension and bloating.']),
+ ('Bitter plants',
+  ['The clearest European example of this group is {pelin}, wormwood (Artemisia absinthium); the species name points directly to the bitterness. The EMA monograph for '
+   'Absinthii herba covers loss of appetite and mild digestive complaints [1]. Gentler members of the same class are {karahindiba}, dandelion (Taraxacum officinale), '
+   'and {civanpercemi}, yarrow (Achillea millefolium); both have monographs, and both were accepted on the basis of traditional use [1].',
+   '{devedikeni}, milk thistle (Silybum marianum), holds a separate position in this group. It is better known for the liver studies conducted on the silymarin in its '
+   'seeds, yet its monograph covers digestive complaints as well [1].',
+   'The evidence for the bitter group can be summarised as follows: the mechanism is defensible, the clinical evidence limited. Experimental data exist on the effect of '
+   'bitter compounds on secretion; for most of these plants, however, there are no controlled trials on the scale required for a claim of efficacy. That the monographs '
+   'were issued on a traditional-use basis reflects this.']),
+ ('Aromatic plants',
+  ['The second group has a far wider geographical distribution. In Anatolia {nane}, peppermint (Mentha × piperita), {rezene}, fennel (Foeniculum vulgare), {papatya}, '
+   'chamomile (Matricaria chamomilla), {melisa}, lemon balm (Melissa officinalis), {kimyon}, cumin (Cuminum cyminum), and {biberiye}, rosemary (Salvia rosmarinus), are '
+   'used for this purpose. In the Andes, around Cusco, {muna} (Minthostachys mollis) is recorded for the same function, and in the Amazon basin {matico} '
+   '(Piper aduncum).',
+   'There is no close kinship among these species, and no data indicating transmission between the communities that use them. What they share is chemical: all are rich '
+   'in volatile oils, and the relaxing effect of these compounds on smooth muscle is common to them. This constitutes a case of convergence, in which separate '
+   'traditions arrived at the same group of plants independently of any knowledge of the mechanism.']),
+ ('Peppermint: the strongest clinical evidence in the group',
+  ['While most of the aromatic plants remain at the level of traditional use, peppermint oil has been the subject of controlled clinical trials. A meta-analysis '
+   'published in 2019 pooled twelve randomised trials covering 835 patients and found enteric-coated peppermint oil significantly superior to placebo for the symptoms '
+   'of irritable bowel syndrome [2].',
+   'An update published in 2022 renewed the analysis, noting that trials published in the interval had called the result into question. The updated finding again '
+   'favours peppermint oil; the effect size is stated more cautiously [3]. The catalogue therefore records peppermint at the clinical level of evidence, the only such '
+   'case in the digestive group.',
+   'The same mechanism carries a limitation. Peppermint oil also relaxes the lower oesophageal sphincter, and may worsen symptoms in people with gastro-oesophageal '
+   'reflux. An effect that benefits one group constitutes a contraindication in another.']),
+ ('Ginger and turmeric',
+  ['{zencefil}, ginger (Zingiber officinale), does not fall squarely into either group; its pungency comes from gingerol derivatives and its effect is discussed in '
+   'terms of gastric emptying rate. The EMA monograph for Zingiberis rhizoma covers digestive complaints [1]. The monograph for {zerdecal}, turmeric (Curcuma longa), '
+   'carries the same indication [1].',
+   'For both plants the difference between culinary and supplement use is decisive. The amounts consumed as a spice are not comparable to those in capsules containing '
+   'standardised extract; cases of liver injury associated with high-dose turmeric capsules have been reported. It cannot therefore be assumed that a plant in common '
+   'kitchen use carries the same safety profile in supplement form.']),
+ ('Liquorice root and its systemic effects',
+  ['{meyan}, liquorice root (Glycyrrhiza glabra), falls outside both sensory groups; it is sweet rather than bitter. The EMA monograph for Liquiritiae radix covers '
+   'digestive complaints [1].',
+   'The plant differs from the other records in this review in its systemic effects. Regular consumption in high amounts raises blood pressure, lowers serum potassium '
+   'and can lead to cardiac arrhythmia. It is not recommended for people with hypertension, heart failure or kidney disease, or during pregnancy. Assessing liquorice '
+   'root in the same category as the other digestive plants is therefore not appropriate.']),
+ ('The difference between monograph types',
+  ['The phrase “the EMA monograph covers”, repeated above, does not by itself amount to a claim of efficacy. A herbal product reaches the market in the European Union '
+   'by different regulatory routes, two of which diverge at the level of the monograph [1].',
+   'On the well-established use route (Directive 2001/83/EC, Article 10a), scientific literature must establish that the active substances have been in well-established '
+   'medicinal use within the European Union for at least ten years, with recognised efficacy and an acceptable level of safety [1].',
+   'On traditional use registration (Directive 2001/83/EC, Article 16a(1)), the plant must have been in use for at least thirty years, of which at least fifteen within '
+   'the European Union. No clinical trials on safety and efficacy are required; sufficient safety data and plausible efficacy are enough [1].',
+   'Most of the plants in this review fall into the second category. That a plant has a monograph therefore shows that its use rests on a regulatory framework; it does '
+   'not show that its effect has been clinically demonstrated. Keeping the two categories apart is decisive for transmitting knowledge in this field accurately.']),
+ ('When to see a doctor',
+  ['The great majority of indigestion complaints resolve on their own. This is one of the factors that explains how widespread traditional uses are: when a complaint '
+   'resolves by itself, there is a tendency to associate the recovery with whatever was last applied.',
+   'The following findings are not assessed as indigestion and must not be deferred by herbal use: difficulty swallowing, haematemesis (blood in vomit), melaena (black '
+   'stools), unintentional weight loss, a complaint lasting more than two weeks without remission, pain radiating to the chest, and a complaint beginning for the first '
+   'time after the age of fifty.',
+   'For people on regular medication, pregnant women and those breastfeeding, some of the plants in this review carry drug interactions and restrictions on use. The '
+   'interaction information is given on each plant’s own record page.'])]},
 'tarih-oncesinde-bitkiler-arkeoloji': {'slug': 'plants-in-prehistory-archaeology',
  'baslik': 'Plants in prehistory: how archaeology reveals our bond with plants',
  'aciklama': 'Traces of datura and ephedra in 3,000-year-old locks of hair from Menorca, braziers of burned cannabis in the Pamirs, a thousand-year-old shaman’s bundle in the Andes and the domestication of the poppy in '

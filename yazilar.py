@@ -2,6 +2,89 @@
 # Metindeki [1], [2]… işaretleri kaynak listesindeki sıraya karşılık gelir. Bitki bağlantıları {id} biçiminde yazılır.
 
 YAZILAR = [
+{
+'slug': 'sindirim-sikayetleri-aci-ve-kokulu-bitkiler',
+'tarih': '2026-11-25',
+'baslik': 'Sindirim şikâyetlerinde kullanılan bitkiler: iki grup, iki mekanizma',
+'aciklama': 'Hazımsızlık ve gaz için farklı kültürlerde kullanılan bitkiler iki grupta toplanır: belirgin acı olanlar ve uçucu yağ bakımından zengin kokulu olanlar. '
+            'Acı bitkiler, karminatifler, nanenin klinik kanıtı, meyan kökünün sistemik etkileri ve EMA monograf türleri arasındaki fark — kaynaklarıyla.',
+'giris': 'Hazımsızlık ve gaz için farklı kültürlerde kullanılan bitkiler iki duyusal grupta toplanır: belirgin acı olanlar ve uçucu yağ bakımından zengin kokulu olanlar. '
+         'Bu ayrım geleneksel eczacılıkta amara ve karminatif sınıflandırmasına karşılık gelir ve iki farklı etki mekanizmasıyla açıklanır. Bu derleme her iki grubu, '
+         'Avrupa İlaç Ajansı monograflarındaki konumlarını ve mevcut klinik kanıt düzeylerini ele alır; dozaj bilgisi içermez.',
+'bolumler': [
+ ('Kapsam ve yöntem',
+  ['Bu derlemedeki bitkiler iki ölçüte göre seçilmiştir: Avrupa İlaç Ajansı (EMA) bitkisel monografının ilgili endikasyonu kapsaması ya da katalogda bu şikâyete ilişkin '
+   'kayıtlı bir geleneksel kullanımın bulunması [1]. Bitkilerin kullanılan kısımları, güvenlik bilgileri ve kısıtlamaları kendi kayıt sayfalarında yer alır. Dozaj ve '
+   'hazırlanış bilgisi bu derlemeye bilinçli olarak alınmamıştır; bu bilgilerin güvenlik kısıtlamalarından ayrı okunmaması gerekir.']),
+ ('İki grup, iki mekanizma',
+  ['Hazımsızlık, kayıtlı tıp tarihinin en eski şikâyetlerinden biridir ve birbirinden bağımsız gelişmiş tıp geleneklerinin tamamında karşılığı bulunur. Bu geleneklerin '
+   'başvurduğu bitkiler rastgele dağılmaz; iki duyusal özellik etrafında kümelenir.',
+   'Birinci grup, belirgin acılığı olan bitkilerden oluşur. Acı bileşiklerin sindirim salgılarını uyardığı görüşü Avrupa eczacılığında amara sınıfının temelini '
+   'oluşturmuştur. İkinci grup, uçucu yağ bakımından zengin kokulu bitkilerdir; bu yağların bağırsak düz kasını gevşetici etkisi karminatif sınıflandırmasının '
+   'dayanağıdır. Birinci grup sindirimin yavaşlığına, ikinci grup gerginlik ve şişkinliğe karşılık gelir.']),
+ ('Acı bitkiler',
+  ['Bu grubun Avrupa’daki en belirgin örneği {pelin}dir (Artemisia absinthium); tür adı doğrudan acılığa işaret eder. EMA monografı Absinthii herba için iştahsızlık ve '
+   'hafif sindirim şikâyetlerini kapsar [1]. Aynı sınıfın daha yumuşak örnekleri {karahindiba} (Taraxacum officinale) ve {civanpercemi}dir (Achillea millefolium); her '
+   'ikisinin de monografı bulunur ve her ikisi de geleneksel kullanım dayanağıyla kabul edilmiştir [1].',
+   '{devedikeni} (Silybum marianum) bu grupta ayrı bir konumdadır. Tohumundaki silimarin üzerine yürütülen karaciğer çalışmaları nedeniyle daha çok o bağlamda bilinirse '
+   'de monografı sindirim şikâyetlerini de kapsar [1].',
+   'Acı grubunun kanıt durumu şöyle özetlenebilir: mekanizma savunulabilir, klinik kanıt sınırlıdır. Acı bileşiklerin salgı üzerindeki etkisine dair deneysel veri '
+   'mevcuttur; ancak bu bitkilerin çoğunda, etkililik beyanı için gereken ölçekte kontrollü çalışma bulunmamaktadır. Monografların geleneksel kullanım dayanağıyla '
+   'düzenlenmiş olması bu durumu yansıtır.']),
+ ('Kokulu bitkiler',
+  ['İkinci grup coğrafi olarak çok daha geniş bir dağılım gösterir. Anadolu’da {nane} (Mentha × piperita), {rezene} (Foeniculum vulgare), {papatya} '
+   '(Matricaria chamomilla), {melisa} (Melissa officinalis), {kimyon} (Cuminum cyminum) ve {biberiye} (Salvia rosmarinus) bu amaçla kullanılır. And bölgesinde, Cusco '
+   'çevresinde {muna} (Minthostachys mollis), Amazon havzasında {matico} (Piper aduncum) aynı işlev için kayıtlıdır.',
+   'Bu türler arasında yakın akrabalık ilişkisi yoktur ve kullanan topluluklar arasında aktarım bulunduğuna dair veri bulunmamaktadır. Ortak nokta kimyasaldır: tamamı '
+   'uçucu yağ bakımından zengindir ve bu bileşiklerin düz kas üzerindeki gevşetici etkisi ortaktır. Bu, farklı geleneklerin mekanizmadan bağımsız olarak aynı bitki '
+   'grubuna ulaştığı bir yakınsama örneği oluşturur.']),
+ ('Nane: grubun klinik kanıtı en güçlü bitkisi',
+  ['Kokulu bitkilerin çoğu geleneksel kullanım düzeyinde kalırken nane yağı kontrollü klinik çalışmalara konu olmuştur. 2019’da yayımlanan bir meta-analiz, 835 hastayı '
+   'kapsayan on iki randomize çalışmayı birleştirmiş ve bağırsakta çözünen kapsül formundaki nane yağını huzursuz bağırsak sendromu belirtilerinde plaseboya göre '
+   'anlamlı derecede üstün bulmuştur [2].',
+   '2022’de yayımlanan güncelleme, aradaki dönemde yayımlanan bazı çalışmaların bu sonucu tartışmaya açtığını belirterek analizi yenilemiştir. Güncellenen sonuç yine '
+   'nane yağı lehinedir; etki büyüklüğü daha ölçülü ifade edilmiştir [3]. Katalogda nanenin kanıt düzeyi bu nedenle klinik olarak kayıtlıdır ve bu, sindirim grubundaki '
+   'tek örnektir.',
+   'Aynı mekanizmanın bir sınırlaması vardır. Nane yağı alt özofagus sfinkterini de gevşetir; gastroözofageal reflüsü bulunan kişilerde şikâyetleri artırabilir. Bir '
+   'grupta yarar sağlayan etki, başka bir grupta kontrendikasyon oluşturur.']),
+ ('Zencefil ve zerdeçal',
+  ['{zencefil} (Zingiber officinale) her iki gruba da tam olarak girmez; keskinliği gingerol türevlerinden kaynaklanır ve etkisi mide boşalma hızı üzerinden tartışılır. '
+   'EMA monografı Zingiberis rhizoma için sindirim şikâyetlerini kapsar [1]. {zerdecal} (Curcuma longa) için de monograf aynı endikasyonu içerir [1].',
+   'Her iki bitki için de mutfak kullanımı ile takviye kullanımı arasındaki fark belirleyicidir. Baharat olarak tüketilen miktarlar ile standardize ekstre içeren '
+   'kapsüllerdeki miktarlar karşılaştırılabilir değildir; zerdeçalda yüksek doz kapsül kullanımına bağlı karaciğer hasarı vakaları bildirilmiştir. Bu nedenle mutfakta '
+   'yaygın olarak kullanılan bir bitkinin takviye formunda da aynı güvenlik profiline sahip olduğu varsayılamaz.']),
+ ('Meyan kökü ve sistemik etkileri',
+  ['{meyan} (Glycyrrhiza glabra) duyusal olarak bu iki grubun dışında kalır; acı değil tatlıdır. EMA monografı Liquiritiae radix için sindirim şikâyetlerini kapsar [1].',
+   'Bitki, sistemik etkileri bakımından bu derlemedeki diğer kayıtlardan ayrışır. Düzenli ve yüksek miktarda tüketim kan basıncını yükseltir, serum potasyum düzeyini '
+   'düşürür ve kalp ritmi bozukluğuna yol açabilir. Hipertansiyon, kalp yetmezliği ve böbrek hastalığı bulunanlar ile gebelerde kullanımı önerilmez. Bu nedenle meyan '
+   'kökünün diğer sindirim bitkileriyle aynı kategoride değerlendirilmesi uygun değildir.']),
+ ('Monograf türleri arasındaki fark',
+  ['Yukarıda tekrarlanan “EMA monografı kapsar” ifadesi, tek başına etkililik beyanı anlamına gelmez. Bir bitkisel ürünün Avrupa Birliği’nde piyasaya çıkışı farklı '
+   'düzenleyici yollardan geçer; bunların ikisi monograf düzeyinde ayrışır [1].',
+   'Yerleşik tıbbi kullanım yolunda (Direktif 2001/83/EC, madde 10a) etkin maddelerin Avrupa Birliği içinde en az on yıl yerleşik tıbbi kullanımda olduğu, kabul görmüş '
+   'etkililik ve kabul edilebilir güvenlik düzeyiyle birlikte bilimsel literatürle ortaya konmalıdır [1].',
+   'Geleneksel kullanım kaydında (Direktif 2001/83/EC, madde 16a(1)) ise bitkinin en az otuz yıl, bunun en az on beş yılı Avrupa Birliği içinde olmak üzere kullanılmış '
+   'olması gerekir. Güvenlik ve etkililik için klinik çalışma istenmez; yeterli güvenlik verisi ve makul düzeyde etkililik gösterilmesi yeterlidir [1].',
+   'Bu derlemedeki bitkilerin çoğu ikinci kategoride yer alır. Dolayısıyla bir bitkinin monografının bulunması, kullanımının düzenleyici bir çerçeveye oturduğunu '
+   'gösterir; etkisinin klinik olarak kanıtlandığını göstermez. İki kategori arasındaki ayrımın korunması, bu alandaki bilginin doğru aktarılması bakımından '
+   'belirleyicidir.']),
+ ('Hekime başvurulması gereken durumlar',
+  ['Hazımsızlık şikâyetlerinin büyük bölümü kendiliğinden geriler. Bu durum, geleneksel kullanımların yaygınlığını açıklayan etkenlerden biridir: şikâyet kendiliğinden '
+   'geçtiğinde, son uygulanan yöntemle ilişkilendirilme eğilimi görülür.',
+   'Aşağıdaki bulgular hazımsızlık kapsamında değerlendirilmez ve bitkisel kullanımla ertelenmemelidir: yutma güçlüğü, hematemez (kusmada kan), melena (siyah dışkı), '
+   'istem dışı kilo kaybı, iki haftadan uzun süren ve gerilemeyen şikâyet, göğse yayılan ağrı, elli yaşından sonra ilk kez başlayan şikâyet.',
+   'Düzenli ilaç kullananlar, gebeler ve emziren kişiler için bu derlemedeki bitkilerin bir bölümünde ilaç etkileşimi ve kullanım kısıtlaması bulunmaktadır. Etkileşim '
+   'bilgileri her bitkinin kendi kayıt sayfasında yer alır.'])],
+'kaynaklar': [
+ ('European Medicines Agency, “Herbal medicinal products” ve Avrupa Birliği bitkisel monografları',
+  'https://www.ema.europa.eu/en/human-regulatory-overview/herbal-medicinal-products'),
+ ('N. Alammar, L. Wang, B. Saberi, J. Nanavati, G. Holtmann, R. T. Shinohara, G. E. Mullin, “The impact of peppermint oil on the irritable bowel syndrome: a '
+  'meta-analysis of the pooled clinical data”, BMC Complementary and Alternative Medicine 19:21, 2019', 'https://doi.org/10.1186/s12906-018-2409-0'),
+ ('“Systematic review and meta-analysis: efficacy of peppermint oil in irritable bowel syndrome”, Alimentary Pharmacology & Therapeutics 56(6), 2022',
+  'https://doi.org/10.1111/apt.17179')],
+'bitkiler': ['pelin', 'karahindiba', 'civanpercemi', 'devedikeni', 'nane', 'rezene', 'papatya', 'melisa', 'kimyon', 'biberiye', 'muna', 'matico', 'zencefil',
+             'zerdecal', 'meyan'],
+'semboller': []},
 {'slug': 'tarih-oncesinde-bitkiler-arkeoloji',
  'tarih': '2026-11-04',
  'baslik': 'Tarih öncesinde bitkiler: arkeoloji bitkilerle bağımızı nasıl ortaya çıkarıyor?',
