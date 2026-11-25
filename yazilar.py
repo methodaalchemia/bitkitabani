@@ -3,6 +3,106 @@
 
 YAZILAR = [
 {
+'slug': 'soguk-alginligi-icin-kullanilan-bitkiler-ne-yapar-ne-yapmaz',
+'tarih': '2026-11-25',
+'baslik': 'Soğuk algınlığı için kullanılan bitkiler: ne yaparlar, ne yapmazlar',
+'aciklama': 'Soğuk algınlığı kendiliğinden geçer; bu, hem geleneksel çarelerin en etkili göründüğü hem de kanıtın en zor kurulduğu yerdir. Kaplayıcı bitkiler, öksürük ve '
+            'boğaz kayıtları, ekinezya ve mürverin tutarsız kanıtı, kuşburnu ile C vitamini meselesi — kaynaklarıyla.',
+'giris': 'Soğuk algınlığı kendiliğinden geçen bir hastalıktır ve bu tek özellik, bu alandaki bitkisel kullanımların hem yaygınlığını hem de kanıt sorununu açıklar. Bu '
+         'derlemedeki bitkilerin çoğu hastalığın seyrine dokunmaz; boğaz yüzeyini kaplar, balgamı yumuşatır ya da öksürüğü hafifletir. Yalnız birkaçı hastalığın '
+         'kendisine dair bir iddia taşır ve kanıtları orada en tartışmalıdır. Derleme bu ayrımı, bitkilerin monograf konumlarını ve dikkat gerektiren kayıtları ele '
+         'alır; dozaj bilgisi içermez.',
+'bolumler': [
+ ('Kapsam ve yöntem',
+  ['Bu derlemedeki bitkiler iki ölçüte göre seçilmiştir: Avrupa İlaç Ajansı (EMA) bitkisel monografının soğuk algınlığı, öksürük ya da boğaz şikâyetlerine ilişkin bir '
+   'endikasyonu kapsaması, ya da katalogda bu amaca ilişkin kayıtlı bir geleneksel kullanımın bulunması [1]. Kullanılan kısımlar, güvenlik bilgileri ve kısıtlamalar '
+   'her bitkinin kendi kayıt sayfasında yer alır; dozaj ve hazırlanış bilgisi bilinçli olarak alınmamıştır.']),
+ ('Kendiliğinden geçen bir hastalık',
+  ['Soğuk algınlığı birkaç yüz farklı virüsün yol açtığı, bağışıklık sistemi tarafından kendiliğinden temizlenen bir üst solunum yolu enfeksiyonudur. Tedavi edilsin ya '
+   'da edilmesin bir hafta ile on gün içinde geçer.',
+   'Bu özellik, bu alandaki bitkisel kullanımlar üzerinde iki yönlü bir etki yaratır. Birincisi, hastalık geçtiğinde en son uygulanan yöntemle ilişkilendirilme '
+   'eğilimi burada en güçlüdür; bu nedenle soğuk algınlığı, geleneksel çarelerin en etkili göründüğü alandır. İkincisi ve daha önemlisi, bir müdahalenin işe yaradığını '
+   'göstermek burada en zordur: plasebo grubundaki herkes de iyileşir, dolayısıyla bir farkın ortaya çıkması için büyük ve iyi kurulmuş çalışmalar gerekir.',
+   'Aşağıdaki bitkilerin büyük çoğunluğu zaten hastalığın seyrine dair bir iddia taşımaz. Belirtiyi hafifletirler ve bunu çoğu zaman mekanik bir yolla yaparlar.']),
+ ('Kaplayıcı bitkiler: müsilaj',
+  ['Bu grubun etkisi kimyasal değil fizikseldir. İçerdikleri müsilaj, suyla jöle kıvamına gelen bir polisakkarittir ve boğaz yüzeyini kaplayarak tahrişi azaltır. Kuru '
+   'öksürükte kullanılmalarının nedeni budur.',
+   '{hatmi} (Althaea officinalis) kökü yüksek oranda müsilaj içerir; EMA hatmi kökünü ağız-boğaz tahrişi ve kuru öksürük için geleneksel kullanımda tanır [1]. '
+   '{ebegumeci} (Malva sylvestris) için EMA aynı endikasyonları tanır. {sigirkuyrugu} (Verbascum spp.) çiçeği öksürük ve boğaz tahrişi için geleneksel kullanımda '
+   'kayıtlıdır; insan çalışması azdır. {kirmizikaraagac} (Ulmus rubra) iç kabuğunu ABD FDA reçetesiz boğaz yatıştırıcısı olarak kabul eder [2]. {salep} (Orchis spp.) '
+   'yumrusundaki glukomannan da boğazı yumuşatır; tıbbi iddialar için klinik çalışma yoktur.',
+   'Bu grubun ortak ve kolayca gözden kaçan kısıtlaması şudur: müsilaj diğer ilaçların emilimini geciktirir. Düzenli ilaç kullananların bu bitkilerle ilaçları arasında '
+   'bir-iki saat bırakması gerekir. Sığırkuyruğunun ayrı bir kısıtlaması vardır: yaprak ve çiçek tüyleri boğazı tahriş eder, çayı süzülmeden içilmemelidir.',
+   'Salebin kendi tüketimi güvenlidir, ancak asıl risk bitkinin kendisindedir: bir kilogram salep için binlerce orkide yumrusu sökülür.']),
+ ('Öksürük ve solunum yolu',
+  ['{kekik} (Thymus vulgaris) timol ve karvakrol içerir; bu maddelerin antimikrobiyal etkisi laboratuvarda gösterilmiştir. EMA kekiği balgamlı öksürük için geleneksel '
+   'bitkisel ilaç olarak tanır [1]. Mutfak miktarında güvenlidir, ancak saf kekik yağı yakıcıdır: seyreltilmeden cilde sürülmemeli ve yutulmamalıdır.',
+   '{okaliptus} (Eucalyptus globulus) yağını EMA soğuk algınlığında öksürüğü hafifletmek için geleneksel kullanımda tanır; ana bileşeni sineol ile bronşit ve '
+   'sinüzitte kontrollü çalışmalar yapılmıştır [1]. Bu derlemedeki en ciddi güvenlik kısıtlaması buradadır: uçucu yağın birkaç mililitresi bile yutulduğunda '
+   'çocuklarda nöbet ve bilinç kaybına yol açabilir, bebeklerin ve küçük çocukların yüzüne ya da burnuna sürülmemelidir, astımlılarda buhar krize yol açabilir.',
+   '{meyan} (Glycyrrhiza glabra) kökünü EMA öksürük ve hafif mide şikâyetleri için geleneksel kullanımda tanır [1]. Düzenli ve yüksek miktarda tüketim tansiyonu '
+   'yükseltir, potasyumu düşürür ve kalp ritmi bozukluğuna yol açabilir; tansiyon, kalp ve böbrek hastaları ile gebeler kaçınmalıdır.']),
+ ('Boğaz iltihabı',
+  ['{adacayi} (Salvia officinalis) için EMA ağız ve boğaz iltihabını geleneksel kullanımda tanır [1]. Tuyon içerdiği için uzun süre ve yüksek dozda kullanılmamalı; '
+   'gebelik, emzirme ve epilepside önerilmez. TİTCK monografı on sekiz yaşından küçüklerde kullanılmasını önermez ve kan şekerini düşürdüğü için şeker ilacı '
+   'kullananlar için uyarı içerir.',
+   '{papatya} (Matricaria chamomilla) için EMA monografının kapsadığı endikasyonlar arasında ağız-boğaz iltihabı bulunur [1]. Papatyagil alerjisi olanlarda alerji '
+   'yapabilir.',
+   '{karanfil} (Syzygium aromaticum) yağındaki öjenol diş hekimliğinde lokal ağrı kesici ve antiseptik olarak uzun süredir kullanılır; EMA karanfil yağını ağız ve '
+   'boğaz iltihabı ile diş ağrısında geleneksel kullanımda tanır [1]. Baharat olarak güvenlidir, ancak saf uçucu yağı yutulursa özellikle çocuklarda karaciğer hasarı '
+   've nöbete yol açabilir.']),
+ ('Hastalığın seyrine dair iddia taşıyan iki kayıt',
+  ['Yukarıdaki bitkiler belirti hafifletir. İki kayıt ise hastalığın kendisine — süresine ya da ortaya çıkışına — dair bir iddia taşır, ve beklentinin en yüksek '
+   'olduğu yer tam da kanıtın en tartışmalı olduğu yerdir.',
+   '{ekinezya} (Echinacea purpurea) için EMA toprak üstü kısmını soğuk algınlığının kısa süreli tedavisinde tanır. NCCIH’e göre soğuk algınlığını önlemede ya da '
+   'kısaltmada küçük bir etkisi olabilir, ancak sonuçlar tutarsızdır [1][3]. Papatyagil alerjisi olanlarda alerji yapabilir; otoimmün hastalığı olanların dikkatli '
+   'olması gerekir.',
+   '{murver} (Sambucus nigra) çiçeğini EMA soğuk algınlığının erken belirtileri için geleneksel kullanımda tanır. Meyve ekstresiyle yapılan küçük çalışmalarda grip '
+   'süresinin kısaldığı bildirilmiştir; kanıt zayıftır [1]. Mürverin ayrı ve kesin bir hazırlanış kısıtlaması vardır: çiğ meyve, yaprak, kabuk ve sap siyanür '
+   'oluşturan maddeler içerir ve bulantı ile kusmaya yol açar. Meyve mutlaka pişirilmelidir.',
+   'Bu iki kayıt için söylenebilecek en doğru cümle şudur: etkisizlikleri gösterilmemiştir, ama etkili oldukları da gösterilmemiştir. Kendiliğinden geçen bir hastalıkta '
+   'bu belirsizlik şaşırtıcı değildir.']),
+ ('Kuşburnu ve C vitamini',
+  ['{kusburnu} (Rosa canina) Anadolu’da soğuk algınlığının en yaygın çayıdır ve gerekçesi genellikle C vitaminidir. Katalog kaydı bu gerekçeyi olduğu gibi '
+   'doğrulamaz: taze meyve C vitamini bakımından gerçekten çok zengindir, ancak kurutma ve kaynatma bu vitamini büyük ölçüde azaltır [2].',
+   'Yani kurutulmuş kuşburnudan demlenen çayın C vitamini içeriği, taze meyveninkiyle karşılaştırılabilir değildir. Bu, çayın içilmemesi gerektiği anlamına gelmez; '
+   'sıcak sıvı almanın boğaz şikâyetinde kendi başına bir rahatlatıcı etkisi vardır. Ancak bu etki C vitamininden gelmez ve kuşburnunun soğuk algınlığının seyrini '
+   'değiştirdiğine dair bir kayıt yoktur.',
+   'Çekirdeklerin çevresindeki tüyler ağzı ve bağırsağı tahriş eder; süzülmeden tüketilmemelidir. TİTCK monografı diyabet, G6PD eksikliği, hemokromatoz, talasemi ve '
+   'anemi gibi demir metabolizması bozukluklarında uyarı içerir.']),
+ ('Dikkat gerektiren iki kayıt',
+  ['{efedra} (Ephedra sinica) efedrin ve psödoefedrin içerir; bunlar bronşları açar ve kalbi uyarır. Bu derlemedeki en yüksek riskli kayıttır: tansiyonu ve kalp hızını '
+   'tehlikeli biçimde artırabilir, inme, kalp krizi ve ölümler bildirilmiştir. ABD’de efedralı zayıflama ürünleri ciddi kalp sorunları nedeniyle 2004’te yasaklanmıştır '
+   '[2]. Burada yer alması bir seçenek olduğu için değil, soğuk algınlığı ilaçlarındaki psödoefedrinin kaynağı olması ve bitki hâlinin ölçülemez olmasıdır.',
+   '{altinmuhur} (Hydrastis canadensis) soğuk algınlığı için satılan takviyelerde sık geçer. NCCIH, soğuk algınlığı dahil hiçbir kullanım için güvenilir kanıt '
+   'olmadığını belirtir [3]. Etkileşim tarafı ise belirgindir: birçok ilacın karaciğerde yıkımını yavaşlatır. Gebelikte, emzirmede ve yenidoğanlarda '
+   'kullanılmamalıdır.']),
+ ('Monograf türleri arasındaki fark',
+  ['Yukarıda sık geçen “EMA geleneksel kullanımda tanır” ifadesi bir etkililik beyanı değildir. Bir bitkisel ürünün Avrupa Birliği’nde piyasaya çıkışı farklı '
+   'düzenleyici yollardan geçer; bunların ikisi monograf düzeyinde ayrışır [1].',
+   'Yerleşik tıbbi kullanım yolunda (Direktif 2001/83/EC, madde 10a) etkin maddelerin Avrupa Birliği içinde en az on yıl yerleşik tıbbi kullanımda olduğu, kabul görmüş '
+   'etkililik ve kabul edilebilir güvenlik düzeyiyle birlikte bilimsel literatürle ortaya konmalıdır [1].',
+   'Geleneksel kullanım kaydında (madde 16a(1)) ise bitkinin en az otuz yıl, bunun en az on beş yılı Avrupa Birliği içinde olmak üzere kullanılmış olması gerekir. '
+   'Klinik çalışma istenmez; yeterli güvenlik verisi ve makul düzeyde etkililik gösterilmesi yeterlidir [1].',
+   'Bu derlemedeki kayıtların tamamına yakını ikinci kategoridedir. Soğuk algınlığı alanında bu durum beklenen bir sonuçtur: kendiliğinden geçen bir hastalıkta '
+   'etkililiği göstermek için gereken çalışma ölçeği, bu bitkilerin çoğunda ulaşılmamıştır.']),
+ ('Hekime başvurulması gereken durumlar',
+  ['Soğuk algınlığı kendiliğinden geçer, ancak her üst solunum yolu şikâyeti soğuk algınlığı değildir ve bir kısmı tedavi gerektirir. Bitkisel kullanım bunu '
+   'geciktirmemelidir.',
+   'Aşağıdaki durumlar bitkisel ürünle ertelenmemelidir: nefes darlığı ya da hızlı nefes alıp verme, göğüs ağrısı, üç günden uzun süren yüksek ateş ya da düşüp '
+   'yeniden yükselen ateş, on günden sonra düzelmeyen ya da düzeldikten sonra yeniden kötüleşen şikâyetler, tek taraflı ve şiddetli boğaz ağrısıyla yutma güçlüğü, '
+   'boyunda belirgin şişlik, kulak ağrısı, şiddetli baş ağrısı ve ense sertliği, bebeklerde beslenme güçlüğü ve belirgin halsizlik.',
+   'Astım, kalp hastalığı, bağışıklık sistemi baskılanması ya da gebelik söz konusuysa eşik daha düşüktür. Düzenli ilaç kullananlar için bu derlemedeki bitkilerin bir '
+   'bölümünde emilim gecikmesi ve etkileşim kayıtlıdır; etkileşim bilgileri her bitkinin kendi kayıt sayfasında yer alır.'])],
+'kaynaklar': [
+ ('European Medicines Agency, “Herbal medicinal products” ve Avrupa Birliği bitkisel monografları',
+  'https://www.ema.europa.eu/en/human-regulatory-overview/herbal-medicinal-products'),
+ ('Bitki Tabanı katalog kayıtları ve kaynakçaları (bitki sayfalarındaki kaynaklar)', 'https://bitkitabani.com/yontem/'),
+ ('National Center for Complementary and Integrative Health (NCCIH), bitkisel ürünler bilgi sayfaları', 'https://www.nccih.nih.gov/health/herbsataglance')],
+'bitkiler': ['hatmi', 'ebegumeci', 'sigirkuyrugu', 'kirmizikaraagac', 'salep', 'kekik', 'okaliptus', 'meyan', 'adacayi', 'papatya', 'karanfil', 'ekinezya', 'murver',
+             'kusburnu', 'efedra', 'altinmuhur'],
+'semboller': []},
+{
 'slug': 'uyku-icin-kullanilan-bitkiler-monograf-ve-kanit',
 'tarih': '2026-11-25',
 'baslik': 'Uyku için kullanılan bitkiler: monograf düzeyi ile çalışma sonuçları neden örtüşmüyor',

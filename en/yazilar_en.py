@@ -2,6 +2,102 @@
 # Keys are the Turkish slugs; sources and plant lists come from yazilar.py. Plant links are written {id}.
 
 Y_EN = {
+'soguk-alginligi-icin-kullanilan-bitkiler-ne-yapar-ne-yapmaz': {
+'slug': 'plants-used-for-the-common-cold-what-they-do-and-do-not-do',
+'baslik': 'Plants used for the common cold: what they do and what they do not',
+'aciklama': 'The common cold resolves on its own, which makes it both the place where traditional remedies look most effective and the place where evidence is hardest to '
+            'establish. Demulcent plants, cough and throat records, the inconsistent evidence for echinacea and elder, and the rosehip vitamin C question — with sources.',
+'giris': 'The common cold is a self-limiting illness, and that single property accounts for both the prevalence of herbal use in this area and its evidence problem. Most '
+         'of the plants in this review do not touch the course of the illness; they coat the surface of the throat, loosen phlegm or ease a cough. Only a few carry a '
+         'claim about the illness itself, and it is there that the evidence is most contested. This review covers that distinction, the standing of these plants in the '
+         'monographs, and the records that call for caution; it contains no dosage information.',
+'bolumler': [
+ ('Scope and method',
+  ['The plants in this review were selected on two criteria: either an indication relating to the common cold, cough or throat complaints is covered by a European '
+   'Medicines Agency (EMA) herbal monograph, or the catalogue holds a recorded traditional use for that purpose [1]. Parts used, safety information and restrictions '
+   'are given on each plant’s own record page; dosage and preparation have deliberately been left out.']),
+ ('A self-limiting illness',
+  ['The common cold is an upper respiratory infection caused by several hundred different viruses and cleared by the immune system on its own. Treated or untreated, it '
+   'passes within a week to ten days.',
+   'This property acts on herbal use here in two ways. First, the tendency to associate recovery with whatever was last applied is strongest here; the common cold is '
+   'accordingly the area in which traditional remedies appear most effective. Second, and more importantly, it is hardest here to show that an intervention works: '
+   'everyone in the placebo arm recovers too, so large and well-constructed trials are needed for any difference to emerge.',
+   'The great majority of the plants below make no claim about the course of the illness in any case. They relieve a symptom, and often they do so mechanically.']),
+ ('Demulcents: mucilage',
+  ['The effect of this group is physical rather than chemical. The mucilage they contain is a polysaccharide that forms a gel with water and reduces irritation by '
+   'coating the surface of the throat. This is why they are used for dry cough.',
+   'The root of {hatmi}, marshmallow (Althaea officinalis), is high in mucilage; the EMA recognises it for irritation of the mouth and throat and for dry cough under '
+   'traditional use [1]. For {ebegumeci}, common mallow (Malva sylvestris), the EMA recognises the same indications. The flower of {sigirkuyrugu}, mullein (Verbascum '
+   'spp.), is recorded under traditional use for cough and throat irritation; human studies are few. The inner bark of {kirmizikaraagac}, slippery elm (Ulmus rubra), '
+   'is accepted by the US FDA as an over-the-counter throat demulcent [2]. The glucomannan in the tuber of {salep} (Orchis spp.) also soothes the throat; there are no '
+   'clinical studies for medicinal claims.',
+   'This group shares a restriction that is easily overlooked: mucilage delays the absorption of other medicines. People on regular medication need to leave one to '
+   'two hours between these plants and their medicines. Mullein carries a further restriction: the hairs on its leaves and flowers irritate the throat, and its tea '
+   'should not be drunk unstrained.',
+   'Consuming salep is safe, but the real risk lies with the plant itself: thousands of orchid tubers are dug up for a single kilogram of it.']),
+ ('Cough and the airways',
+  ['{kekik}, thyme (Thymus vulgaris), contains thymol and carvacrol, whose antimicrobial effect has been shown in the laboratory. The EMA recognises thyme as a '
+   'traditional herbal medicine for productive cough [1]. It is safe in culinary amounts, but pure thyme oil is caustic: it must not be applied undiluted to the skin '
+   'or swallowed.',
+   'The oil of {okaliptus}, eucalyptus (Eucalyptus globulus), is recognised by the EMA under traditional use for relieving cough in the common cold; controlled trials '
+   'have been carried out in bronchitis and sinusitis with its principal constituent, cineole [1]. The most serious safety restriction in this review sits here: even '
+   'a few millilitres of the volatile oil, if swallowed, can cause seizures and loss of consciousness in children; it must not be applied to the face or nose of '
+   'infants and small children; and in people with asthma the vapour can trigger an attack.',
+   'The root of {meyan}, liquorice (Glycyrrhiza glabra), is recognised by the EMA under traditional use for cough and mild stomach complaints [1]. Regular consumption '
+   'in high amounts raises blood pressure, lowers potassium and can cause cardiac arrhythmia; people with hypertension, heart or kidney disease, and pregnant women, '
+   'should avoid it.']),
+ ('Inflammation of the throat',
+  ['For {adacayi}, sage (Salvia officinalis), the EMA recognises inflammation of the mouth and throat under traditional use [1]. Because it contains thujone it must '
+   'not be used at high doses or over long periods; it is not recommended in pregnancy, breastfeeding or epilepsy. The TİTCK monograph advises against use in people '
+   'under eighteen and carries a warning for people on diabetes medication, since it lowers blood sugar.',
+   'For {papatya}, chamomile (Matricaria chamomilla), inflammation of the mouth and throat is among the indications the EMA monograph covers [1]. It can cause allergy '
+   'in people allergic to the daisy family.',
+   'The eugenol in the oil of {karanfil}, clove (Syzygium aromaticum), has long been used in dentistry as a local anaesthetic and antiseptic; the EMA recognises clove '
+   'oil under traditional use for inflammation of the mouth and throat and for toothache [1]. It is safe as a spice, but the pure volatile oil, if swallowed, can '
+   'cause liver injury and seizures, particularly in children.']),
+ ('The two records that make a claim about the illness',
+  ['The plants above relieve symptoms. Two records make a claim about the illness itself — about its duration or its onset — and it is precisely where expectation is '
+   'highest that the evidence is most contested.',
+   'For {ekinezya}, echinacea (Echinacea purpurea), the EMA recognises the aerial parts for the short-term treatment of the common cold. NCCIH holds that it may have '
+   'a small effect in preventing or shortening a cold, but that results are inconsistent [1][3]. It can cause allergy in people allergic to the daisy family, and '
+   'people with autoimmune disease need to be careful.',
+   'The flower of {murver}, elder (Sambucus nigra), is recognised by the EMA under traditional use for the early symptoms of a cold. Small studies with the fruit '
+   'extract have reported a shortened duration of influenza; the evidence is weak [1]. Elder carries a separate and firm preparation restriction: the raw fruit, '
+   'leaves, bark and stems contain cyanogenic compounds and cause nausea and vomiting. The fruit must always be cooked.',
+   'The most accurate sentence available for these two records is this: they have not been shown to be ineffective, but neither have they been shown to be effective. '
+   'In a self-limiting illness that uncertainty is unsurprising.']),
+ ('Rosehip and vitamin C',
+  ['{kusburnu}, rosehip (Rosa canina), is the most widespread cold-season tea in Anatolia, and the reason given is usually vitamin C. The catalogue record does not '
+   'confirm that reason as it stands: the fresh fruit really is very rich in vitamin C, but drying and boiling reduce it substantially [2].',
+   'The vitamin C content of a tea brewed from dried rosehip is therefore not comparable to that of the fresh fruit. This does not mean the tea should not be drunk; '
+   'taking warm fluids has a soothing effect of its own in a throat complaint. But that effect does not come from vitamin C, and there is no record of rosehip '
+   'altering the course of a cold.',
+   'The hairs around the seeds irritate the mouth and the intestine and should not be consumed unstrained. The TİTCK monograph carries warnings for diabetes, G6PD '
+   'deficiency, and disorders of iron metabolism such as haemochromatosis, thalassaemia and anaemia.']),
+ ('Two records that call for caution',
+  ['{efedra} (Ephedra sinica) contains ephedrine and pseudoephedrine, which open the bronchi and stimulate the heart. It is the highest-risk record in this review: it '
+   'can raise blood pressure and heart rate dangerously, and strokes, heart attacks and deaths have been reported. Ephedra-containing weight-loss products were banned '
+   'in the United States in 2004 over serious cardiac events [2]. Its place here is not as an option, but because it is the source of the pseudoephedrine in cold '
+   'medicines and because the plant form cannot be dosed with any precision.',
+   '{altinmuhur}, goldenseal (Hydrastis canadensis), appears frequently in supplements sold for colds. NCCIH states that there is no reliable evidence for any use, '
+   'the common cold included [3]. The interaction side, by contrast, is clear: it slows the hepatic breakdown of many medicines. It must not be used in pregnancy, '
+   'during breastfeeding, or in newborns.']),
+ ('The difference between monograph types',
+  ['The phrase “the EMA recognises it under traditional use”, frequent above, is not a claim of efficacy. A herbal product reaches the market in the European Union by '
+   'different regulatory routes, two of which diverge at the level of the monograph [1].',
+   'On the well-established use route (Directive 2001/83/EC, Article 10a), scientific literature must establish that the active substances have been in '
+   'well-established medicinal use within the European Union for at least ten years, with recognised efficacy and an acceptable level of safety [1].',
+   'On traditional use registration (Article 16a(1)), the plant must have been in use for at least thirty years, of which at least fifteen within the European Union. '
+   'No clinical trials are required; sufficient safety data and plausible efficacy are enough [1].',
+   'Almost all the records in this review fall into the second category. In the field of the common cold this is an expected outcome: for a self-limiting illness, the '
+   'scale of trial needed to demonstrate efficacy has not been reached for most of these plants.']),
+ ('When to see a doctor',
+  ['A cold resolves on its own, but not every upper respiratory complaint is a cold, and some require treatment. Herbal use should not delay this.',
+   'The following should not be deferred by a herbal product: shortness of breath or rapid breathing, chest pain, a high fever lasting more than three days or one '
+   'that falls and rises again, complaints that fail to improve after ten days or that worsen again after improving, severe one-sided sore throat with difficulty '
+   'swallowing, marked swelling in the neck, earache, severe headache with neck stiffness, and difficulty feeding with marked lethargy in infants.',
+   'Where asthma, heart disease, immunosuppression or pregnancy is involved, the threshold is lower. For people on regular medication, some of the plants in this '
+   'review carry recorded absorption delays and interactions; the interaction information is given on each plant’s own record page.'])]},
 'uyku-icin-kullanilan-bitkiler-monograf-ve-kanit': {
 'slug': 'plants-used-for-sleep-monographs-and-evidence',
 'baslik': 'Plants used for sleep: why monograph level and trial results do not line up',
