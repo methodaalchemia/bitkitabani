@@ -2,6 +2,158 @@
 # Keys are the Turkish slugs; sources and plant lists come from yazilar.py. Plant links are written {id}.
 
 Y_EN = {
+'uyku-icin-kullanilan-bitkiler-monograf-ve-kanit': {
+'slug': 'plants-used-for-sleep-monographs-and-evidence',
+'baslik': 'Plants used for sleep: why monograph level and trial results do not line up',
+'aciklama': 'Valerian holds the stronger monograph but its sleep trials are mixed. Lavender has the sounder trials — but for anxiety, not sleep. The evidence behind the '
+            'sleep shelf, the plants that disrupt sleep, and the one interaction they all share — with sources.',
+'giris': 'In the plants used for sleep, the level of regulatory acceptance and the results of clinical trials line up the opposite way to what one might expect. The plant '
+         'with the stronger monograph has mixed sleep trials; the plant with the sounder trials has evidence for anxiety rather than sleep. This review covers that '
+         'mismatch, the evidence for each plant on the sleep shelf, the plants that disrupt sleep, and the interaction the group shares; it contains no dosage '
+         'information.',
+'bolumler': [
+ ('Scope and method',
+  ['The plants in this review were selected on two criteria: either an indication related to sleep or nervous tension is covered by a European Medicines Agency (EMA) '
+   'herbal monograph, or the catalogue holds a recorded traditional use for that purpose [1]. In addition, plants not used for sleep but recorded as causing insomnia '
+   'are treated in a separate section. Parts used, safety information and restrictions are given on each plant’s own record page. Dosage and preparation have '
+   'deliberately been left out.']),
+ ('Valerian: the stronger monograph, mixed results',
+  ['{kediotu}, valerian (Valeriana officinalis), stands highest in this group in regulatory terms. The EMA recognises valerian root for mild nervous tension and sleep '
+   'disorders under well-established use [1]. This is the upper tier of the monograph categories and requires clinical data.',
+   'The trials, however, are mixed: some find a small improvement in time to fall asleep, others find no difference from placebo [1]. The plant’s regulatory standing '
+   'is therefore clearer than the picture drawn by the individual studies.',
+   'Its restrictions are mild but definite: it can cause morning drowsiness and headache, it should not be combined with alcohol or sedatives, rare cases of liver '
+   'injury have been reported, and it should not be taken before driving.']),
+ ('Lavender: the sounder trials, but not for sleep',
+  ['{lavanta}, lavender (Lavandula angustifolia), occupies a particular place in this review and is easily misread. Standardised oral lavender oil capsules have been '
+   'found superior to placebo in a number of controlled trials — but those trials concern anxiety disorder [1].',
+   'The EMA, for its part, recognises lavender for mild stress and sleep under traditional use only [1]. The statement “lavender has clinical evidence” is therefore '
+   'accurate, but its subject is not sleep. Where anxiety is what disturbs sleep an indirect connection can be drawn; that is not the same as an effect demonstrated '
+   'on sleep itself.',
+   'The capsule form can cause belching and nausea and may increase the effect of sedative medicines. The Turkish Medicines Agency (TİTCK) monograph advises against '
+   'use during pregnancy and breastfeeding, and caution alongside blood thinners and antiplatelet medicines.']),
+ ('Lemon balm, chamomile and linden',
+  ['For {melisa}, lemon balm (Melissa officinalis), the EMA recognises mild stress, sleep disorders and mild digestive complaints under traditional use; small clinical '
+   'trials have reported improvement in anxiety and sleep [1]. There is a restriction for people taking thyroid medication.',
+   '{papatya}, chamomile (Matricaria chamomilla), is widely used for insomnia in folk practice, yet the indications its EMA monograph covers are digestive complaints, '
+   'inflammation of the mouth and throat, and skin irritation; sleep is not among them. Small trials on anxiety have been positive [1]. It can cause allergy in people '
+   'allergic to the daisy family.',
+   'For {ihlamur}, linden (Tilia spp.), the EMA recognises symptoms of the common cold and mild mental stress under traditional use; clinical studies are few [1]. It '
+   'has no known side effects, the only firm bar being allergy to the flower; the TİTCK monograph reports an interaction with lithium.']),
+ ('Plants that disrupt sleep',
+  ['In a complaint of insomnia, what is being taken for other purposes matters as much as what is being taken for sleep. Several plants recorded as causing insomnia '
+   'are sold as herbal supplements on the same shelves as the sleep ones.',
+   'For {ginseng} (Panax ginseng), insomnia is among the recorded adverse effects; prolonged use at high doses may produce hypertension, insomnia, irritability and '
+   'muscle stiffness. {altinkok}, roseroot (Rhodiola rosea), can cause insomnia and restlessness.',
+   'Caffeine-bearing plants form a separate cluster: {cay}, tea (Camellia sinensis), {guarana} (Paullinia cupana) and {guayusa} (Ilex guayusa). Guaraná seeds carry a '
+   'higher proportion of caffeine than coffee beans, and in energy drinks it may be combined with other stimulants. All three carry restrictions for people with '
+   'cardiac rhythm problems, anxiety or insomnia.',
+   'The first place to look in a complaint of insomnia may therefore not be a sleep plant but the list of what is already being taken.']),
+ ('Ashwagandha: sold on the sleep shelf, evidenced elsewhere',
+  ['{ashwagandha} (Withania somnifera) has in recent years become one of the world’s best-selling supplements for stress and sleep. A few small, short controlled '
+   'trials have reported reductions in stress and anxiety scores; NCCIH notes that these trials were small and short and that long-term safety is unknown [2].',
+   'The safety side is clearer than that uncertainty and runs counter to the sales volume: cases of liver injury have been reported, it may raise thyroid hormones, '
+   'and it must not be used in pregnancy because of the risk of miscarriage. Some European countries have restricted its supplements over safety concerns.']),
+ ('The one interaction the group shares',
+  ['The sedative plants in this review come from different families and contain different compounds, yet they converge on a single line in the interaction tables: for '
+   'valerian, lemon balm and lavender alike, a restriction on use alongside alcohol and sedative medicines is recorded.',
+   'The practical consequence of this cannot be read off any one plant’s safety profile. Taking several herbal products for sleep together, or adding them to a '
+   'prescribed sleep medicine, compounds effects that run in the same direction. The warning on valerian’s record against taking it before driving has the same '
+   'ground.']),
+ ('Opium poppy and a practice that kills children',
+  ['{hashas}, the opium poppy (Papaver somniferum), owes its species name to sleep, and the latex of its capsule contains morphine and codeine. A significant part of '
+   'modern analgesics is still derived from the poppy; Türkiye is one of the few countries licensed to produce this raw material [2].',
+   'Using the plant as a home remedy for sleep is lethal, particularly in children. The capsule and its latex are addictive and can arrest breathing. Its place in '
+   'this review is not as an option that may be reached for, but because it has been used for this purpose throughout history and because that use kills.']),
+ ('The difference between monograph types',
+  ['The phrases “well-established use” and “traditional use” above are not synonyms. A herbal product reaches the market in the European Union by different regulatory '
+   'routes, two of which diverge at the level of the monograph [1].',
+   'On the well-established use route (Directive 2001/83/EC, Article 10a), scientific literature must establish that the active substances have been in '
+   'well-established medicinal use within the European Union for at least ten years, with recognised efficacy and an acceptable level of safety [1].',
+   'On traditional use registration (Article 16a(1)), the plant must have been in use for at least thirty years, of which at least fifteen within the European Union. '
+   'No clinical trials are required; sufficient safety data and plausible efficacy are enough [1].',
+   'This distinction is also the source of the mismatch this review is about. Valerian sits in the upper category while its individual sleep trials are mixed; '
+   'lavender has the sounder trials but holds only a traditional-use registration on the sleep side. A monograph category and the strength of evidence for a single '
+   'indication are not the same thing.']),
+ ('When to see a doctor',
+  ['Insomnia is less often a condition in itself than a symptom of something else. Herbal use should not delay the investigation of that something else.',
+   'The following should not be deferred by a herbal product: insomnia lasting more than three months and present on most nights of the week, sleep deprivation severe '
+   'enough to impair daytime functioning, pauses in breathing during sleep or loud snoring and choking reported by a bed partner, waking regularly with a morning '
+   'headache, a sleep disturbance accompanied by low mood and loss of interest, and restless legs.',
+   'For people taking prescribed sleep medicines or sedatives, some of the plants in this review carry compounding interactions; these products should not be combined '
+   'without the knowledge of a physician. The interaction information is given on each plant’s own record page.'])]},
+'adet-sikayetleri-ve-menopoz-icin-kullanilan-bitkiler': {
+'slug': 'menstrual-complaints-and-menopause-plants-evidence-and-risk',
+'baslik': 'Plants used for menstrual complaints and menopause: evidence, restrictions, and a lethal tradition',
+'aciklama': 'Chaste tree’s well-established use in premenstrual syndrome, traditional records for period pain, black cohosh in menopause — and the plants recorded as '
+            '“bringing on a period” that have ended in death. With sources; no dosage information.',
+'giris': 'Some of the plants used for menstrual complaints also appear in folk records as means of “bringing on a period” or of ending a pregnancy. Those plants are '
+         'included in this review — not as an option, but because deaths have been reported. For someone seeking to end a pregnancy these plants are not a route; in '
+         'Türkiye that is a procedure carried out by a physician within the legal period. This review covers recorded uses for period pain, premenstrual syndrome and '
+         'menopausal symptoms, and the level of evidence behind them; it contains no dosage information.',
+'bolumler': [
+ ('Scope and method',
+  ['The plants in this review were selected on two criteria: either the relevant indication is covered by a European Medicines Agency (EMA) herbal monograph, or the '
+   'catalogue holds a recorded traditional use in this area [1]. In addition, plants that appear in folk records here but must not be used because of their toxicity '
+   'are treated in a separate section.',
+   'Three distinct conditions appear together here and should not be conflated: period pain (dysmenorrhoea), premenstrual syndrome (PMS) and menopausal symptoms. '
+   'These are different presentations and their recorded uses differ accordingly. Parts used, safety information and restrictions are given on each plant’s own record '
+   'page; dosage and preparation have deliberately been left out.']),
+ ('Chaste tree: well-established use in premenstrual syndrome',
+  ['{hayit}, chaste tree (Vitex agnus-castus), is the highest-evidence record in this review. Standardised fruit extract has reduced premenstrual syndrome symptoms '
+   'relative to placebo in several controlled trials, and the EMA regards this use as well established [1].',
+   'The limit of that scope matters: the well-established use is for premenstrual syndrome, not for period pain itself. The two are not the same, and the plant’s '
+   'record covers one and not the other.',
+   'Chaste tree has a hormonal effect, and this is the source of its restrictions: it may interact with oral contraceptives, hormone therapy and medicines acting on '
+   'dopamine. It must not be used during pregnancy or breastfeeding. The TİTCK monograph advises that people who have had, or currently have, an oestrogen-sensitive '
+   'cancer should not use it without consulting a physician.']),
+ ('Traditional records for period pain',
+  ['The level of evidence for the plants recorded for period pain itself is markedly lower than for chaste tree. For {civanpercemi}, yarrow (Achillea millefolium), '
+   'the EMA recognises loss of appetite, dyspepsia, period pain and minor wounds under traditional use; human studies are few [1]. Anatolian records note that it is '
+   'infused for stomach and period pain.',
+   'Yarrow’s restrictions are not slight: it can cause allergy in people allergic to the daisy family, it must not be used in pregnancy, and the TİTCK monograph '
+   'advises stopping it two weeks before surgery; it interacts with antiplatelet medicines, blood thinners and lithium.',
+   '{abuta} (Abuta grandifolia) is used in Amazonian records for period pain, post-partum bleeding and women’s health. Muscle-relaxant and anti-inflammatory effects '
+   'have been seen in laboratory and animal studies; there are no human studies [2]. Because it may act on the uterus it must not be used in pregnancy, and it can '
+   'lower blood pressure.']),
+ ('Menopause is a separate matter',
+  ['Menopausal symptoms do not sit comfortably under the same heading as menstrual complaints; they are a different presentation and a different group of records.',
+   '{karayilan}, black cohosh (Actaea racemosa), is this area’s well-established use record: the EMA recognises the root extract for menopausal symptoms such as hot '
+   'flushes. NCCIH, for its part, notes that trial results are inconsistent [1][3]. In North America the Cherokee and other indigenous peoples used the root for '
+   'women’s health, rheumatism and snakebite.',
+   'Rare cases of liver injury have been reported; people with liver disease should not use it. The TİTCK monograph advises against use in pregnancy and '
+   'breastfeeding, and that people with breast cancer should use it only under medical supervision.']),
+ ('Plants recorded as “bringing on a period”, and the deaths reported',
+  ['In folk medicine records some plants appear as means of bringing on a period or of ending a pregnancy. These records are real and belong in an ethnobotanical '
+   'catalogue; but being recorded is not the same as being usable. The two highest safety risks in this review are in this group.',
+   '{yarpuz}, pennyroyal (Mentha pulegium), carries a high proportion of pulegone in its volatile oil. Pulegone is toxic to the liver and kidneys, and deaths have '
+   'been reported from ingestion of the oil [2]. It has been used throughout history in Europe and Latin America to bring on a period and to end a pregnancy. The '
+   'decisive point here is this: the toxicity arrives before, or together with, any intended effect. It is not a plant that works but carries risk; it is a poisoning '
+   'that can end in liver failure. Nor should it be drunk as a tea heavily or over long periods.',
+   '{sedef}, rue (Ruta graveolens), is known in folk medicine as a means of bringing on a period, and in Andean markets it is the central plant of limpia cleansing '
+   'rituals under the name ruda. It can cause miscarriage in pregnancy, and at high doses it is toxic to the liver and kidneys. Touching the fresh plant and then '
+   'going into sunlight causes severe skin burns (phytophotodermatitis) — its furanocoumarins make skin hypersensitive to sunlight. There is no clinical evidence for '
+   'the plant itself [2].',
+   'For someone seeking to end a pregnancy, these plants are not a route. In Türkiye the termination of pregnancy is governed by Article 5 of Law no. 2827 on '
+   'Population Planning; it is a procedure that may be carried out within ten weeks of the beginning of the pregnancy, with the person’s consent and without their '
+   'having to give a reason [4]. The place to go is not a plant but an obstetrician and gynaecologist.']),
+ ('The difference between monograph types',
+  ['The phrases “well-established use” and “traditional use” above are not synonyms. A herbal product reaches the market in the European Union by different regulatory '
+   'routes, two of which diverge at the level of the monograph [1].',
+   'On the well-established use route (Directive 2001/83/EC, Article 10a), scientific literature must establish that the active substances have been in '
+   'well-established medicinal use within the European Union for at least ten years, with recognised efficacy and an acceptable level of safety [1].',
+   'On traditional use registration (Article 16a(1)), the plant must have been in use for at least thirty years, of which at least fifteen within the European Union. '
+   'No clinical trials are required; sufficient safety data and plausible efficacy are enough [1].',
+   'Two records in this review sit in the upper category, and neither is for period pain: chaste tree for premenstrual syndrome, black cohosh for menopausal symptoms. '
+   'The plants recorded for period pain itself remain at the level of traditional use.']),
+ ('When to see a doctor',
+  ['Period pain is common, but not all pain is the same and some of it has a cause that needs investigating. Herbal use should not delay that investigation.',
+   'The following should not be deferred by a herbal product: pain severe enough to prevent daily activity and unresponsive to painkillers, pain that worsens markedly '
+   'over time, pain during intercourse or persisting outside the menstrual period, bleeding that requires changing a pad or tampon every one to two hours, bleeding '
+   'lasting more than seven days, bleeding between periods, any bleeding after menopause, absence of periods for more than three months (pregnancy aside), and pelvic '
+   'pain with fever.',
+   'For people taking oral contraceptives, hormone therapy, blood thinners or antidepressants, some of the plants in this review carry interactions and restrictions. '
+   'This holds particularly for chaste tree, which has a hormonal effect. The interaction information is given on each plant’s own record page.'])]},
 'sindirim-sikayetleri-aci-ve-kokulu-bitkiler': {
 'slug': 'digestive-complaints-bitter-and-aromatic-plants',
 'baslik': 'Plants used for digestive complaints: two groups, two mechanisms',

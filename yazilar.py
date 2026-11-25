@@ -3,6 +3,171 @@
 
 YAZILAR = [
 {
+'slug': 'uyku-icin-kullanilan-bitkiler-monograf-ve-kanit',
+'tarih': '2026-11-25',
+'baslik': 'Uyku için kullanılan bitkiler: monograf düzeyi ile çalışma sonuçları neden örtüşmüyor',
+'aciklama': 'Kediotunun monografı en güçlü düzeyde, uyku çalışmalarının sonuçları karışık. Lavantanın çalışmaları en sağlam, ama uyku için değil kaygı için. '
+            'Uyku rafındaki bitkilerin kanıt durumu, uykuyu bozan bitkiler ve hepsinin paylaştığı tek etkileşim — kaynaklarıyla.',
+'giris': 'Uyku için kullanılan bitkilerde düzenleyici onay düzeyi ile klinik çalışma sonuçları beklenenin tersine örtüşmez. Monografı en güçlü kategoride olan bitkinin '
+         'uyku çalışmaları karışık sonuç verir; çalışmaları en sağlam olan bitkinin kanıtı ise uykuya değil kaygıya ilişkindir. Bu derleme bu uyuşmazlığı, uyku rafındaki '
+         'bitkilerin tek tek kanıt durumunu, uykuyu bozan bitkileri ve grubun paylaştığı ortak etkileşimi ele alır; dozaj bilgisi içermez.',
+'bolumler': [
+ ('Kapsam ve yöntem',
+  ['Bu derlemedeki bitkiler iki ölçüte göre seçilmiştir: Avrupa İlaç Ajansı (EMA) bitkisel monografının uyku ya da gerginlikle ilgili bir endikasyonu kapsaması, ya da '
+   'katalogda bu amaca ilişkin kayıtlı bir geleneksel kullanımın bulunması [1]. Ayrıca, uyku için kullanılmadığı hâlde uykusuzluğa yol açtığı kayıtlı olan bitkiler ayrı '
+   'bir bölümde ele alınmıştır. Kullanılan kısımlar, güvenlik bilgileri ve kısıtlamalar her bitkinin kendi kayıt sayfasında yer alır. Dozaj ve hazırlanış bilgisi '
+   'bilinçli olarak alınmamıştır.']),
+ ('Kediotu: en güçlü monograf, karışık sonuçlar',
+  ['{kediotu} (Valeriana officinalis) bu grupta düzenleyici bakımdan en yukarıda duran bitkidir. EMA, kediotu kökünü hafif sinirsel gerginlik ve uyku sorunları için '
+   'iyi yerleşmiş kullanımda tanır [1]. Bu, monograf kategorilerinin üst basamağıdır ve klinik veriye dayanmasını gerektirir.',
+   'Buna karşın uyku üzerine yapılan çalışmaların sonuçları karışıktır: bir kısmı uykuya dalma süresinde küçük bir iyileşme bulurken bir kısmı plasebodan fark '
+   'bulmamıştır [1]. Yani bitkinin düzenleyici konumu, tek tek çalışmaların tablosundan daha nettir.',
+   'Kısıtlamaları hafif ama belirgindir: sabah sersemliği ve baş ağrısı yapabilir, alkol ve yatıştırıcılarla birlikte kullanılmamalıdır, nadir karaciğer hasarı vakaları '
+   'bildirilmiştir, araç kullanmadan önce alınmamalıdır.']),
+ ('Lavanta: en sağlam çalışmalar, ama uyku için değil',
+  ['{lavanta} (Lavandula angustifolia) bu derlemede kanıt bakımından özel bir yerde durur ve kolayca yanlış okunur. Ağızdan alınan standart lavanta yağı kapsülleri '
+   'birçok kontrollü çalışmada plaseboya üstün bulunmuştur — ancak bu çalışmalar kaygı bozukluğu üzerinedir [1].',
+   'EMA ise lavantayı hafif stres ve uyku için yalnızca geleneksel kullanımda tanır [1]. Dolayısıyla “lavantanın klinik kanıtı var” ifadesi doğrudur ama konusu uyku '
+   'değildir. Kaygının uykuyu bozduğu durumlarda dolaylı bir bağ kurulabilir; bu, uyku üzerinde doğrudan gösterilmiş bir etkiyle aynı şey değildir.',
+   'Kapsül formu geğirme ve bulantı yapabilir, sakinleştirici ilaçların etkisini artırabilir. TİTCK monografı hamilelikte ve emzirirken kullanılmamasını yazar; kan '
+   'sulandırıcılar ve antiplatelet ilaçlarla birlikte dikkat gerektirir.']),
+ ('Melisa, papatya ve ıhlamur',
+  ['{melisa} (Melissa officinalis) için EMA, hafif stres, uyku sorunları ve hafif sindirim şikâyetlerini geleneksel kullanımda tanır; küçük klinik çalışmalarda kaygı ve '
+   'uykuda iyileşme bildirilmiştir [1]. Tiroit ilacı kullananlar için kısıtlaması vardır.',
+   '{papatya} (Matricaria chamomilla) halk kullanımında uykusuzluk için yaygın olmakla birlikte EMA monografının kapsadığı endikasyonlar sindirim şikâyetleri, '
+   'ağız-boğaz iltihabı ve cilt tahrişidir; uyku bunların arasında yer almaz. Kaygı üzerine küçük çalışmalarda olumlu sonuç alınmıştır [1]. Papatyagil alerjisi '
+   'olanlarda alerji yapabilir.',
+   '{ihlamur} (Tilia spp.) için EMA, soğuk algınlığı belirtileri ve hafif zihinsel stresi geleneksel kullanımda tanır; klinik çalışması azdır [1]. Bilinen bir yan '
+   'etkisi yoktur, tek kesin engel çiçeğine alerjidir; TİTCK monografı lityumla etkileşim bildirir.']),
+ ('Uykuyu bozan bitkiler',
+  ['Uykusuzluk şikâyetinde, uyku için ne alındığı kadar başka amaçla ne alındığı da belirleyicidir. Katalogda uykusuzluğa yol açtığı kayıtlı birkaç bitki, uyku '
+   'rafındakilerle aynı dolaplarda, bitkisel takviye olarak satılır.',
+   '{ginseng} (Panax ginseng) için kayıtlı yan etkiler arasında uykusuzluk bulunur; yüksek dozda uzun süre kullanıldığında hipertansiyon, uykusuzluk, sinirlilik ve kas '
+   'sertliği görülebilir. {altinkok} (Rhodiola rosea) uykusuzluk ve huzursuzluk yapabilir.',
+   'Kafein içeren bitkiler ayrı bir kümedir: {cay} (Camellia sinensis), {guarana} (Paullinia cupana) ve {guayusa} (Ilex guayusa). Guaraná tohumlarında kahve '
+   'çekirdeğinden daha yüksek oranda kafein bulunur ve enerji içeceklerinde başka uyarıcılarla birleşebilir. Kalp ritmi sorunu, kaygı ve uykusuzluk yaşayanlar için '
+   'üçünde de kısıtlama kayıtlıdır.',
+   'Bu nedenle uykusuzluk şikâyetinde ilk bakılacak yer bir uyku bitkisi değil, hâlihazırda alınanların listesi olabilir.']),
+ ('Ashwagandha: uyku rafında satılan, kanıtı başka yerde olan',
+  ['{ashwagandha} (Withania somnifera) son yıllarda stres ve uyku için dünyanın en çok satılan takviyelerinden biri hâline gelmiştir. Birkaç küçük ve kısa süreli '
+   'kontrollü çalışmada stres ve kaygı puanlarında azalma bildirilmiştir; NCCIH bu çalışmaların küçük ve kısa olduğunu, uzun süreli güvenliğin bilinmediğini belirtir '
+   '[1].',
+   'Güvenlik tarafı bu belirsizlikten daha nettir ve satış hacmiyle ters yönde durur: karaciğer hasarı vakaları bildirilmiştir, tiroit hormonlarını artırabilir, '
+   'gebelikte düşük riski nedeniyle kullanılmamalıdır. Bazı Avrupa ülkeleri güvenlik endişesiyle takviyelerini kısıtlamıştır.']),
+ ('Grubun paylaştığı tek etkileşim',
+  ['Bu derlemedeki yatıştırıcı bitkiler farklı familyalardan gelir ve farklı bileşikler içerir, ancak etkileşim tablolarında aynı satırda birleşirler: kediotu, melisa '
+   've lavanta için alkol ve yatıştırıcı ilaçlarla birlikte kullanım kısıtlaması kayıtlıdır.',
+   'Bunun pratik sonucu, tek tek bitkilerin güvenlik profillerinden okunmaz. Uyku için birden fazla bitkisel ürünün birlikte alınması ya da bunların reçeteli bir uyku '
+   'ilacına eklenmesi, aynı yöndeki etkileri toplar. Kediotunun kaydında araç kullanmadan önce alınmaması uyarısının bulunması da bu nedenledir.']),
+ ('Haşhaş ve çocuklarda ölümcül bir uygulama',
+  ['{hashas} (Papaver somniferum) tür adını uykuya borçludur ve kapsül sütü morfin ile kodein içerir. Modern ağrı kesicilerin önemli bir kısmı hâlâ haşhaştan elde '
+   'edilir; Türkiye bu ham madde için lisanslı az sayıdaki üretici ülkeden biridir [1].',
+   'Bitkinin ev ilacı olarak uyku amacıyla kullanılması, özellikle çocuklarda ölümcüldür. Kapsül ve sütü bağımlılık yapar ve solunumu durdurabilir. Bu derlemede yer '
+   'alması, uyku için başvurulabilecek bir seçenek olduğu için değil, tarih boyunca bu amaçla kullanılmış olması ve kullanımının öldürücü olmasıdır.']),
+ ('Monograf türleri arasındaki fark',
+  ['Yukarıda geçen “iyi yerleşmiş kullanım” ve “geleneksel kullanım” ifadeleri birbirinin eşanlamlısı değildir. Bir bitkisel ürünün Avrupa Birliği’nde piyasaya çıkışı '
+   'farklı düzenleyici yollardan geçer; bunların ikisi monograf düzeyinde ayrışır [1].',
+   'Yerleşik tıbbi kullanım yolunda (Direktif 2001/83/EC, madde 10a) etkin maddelerin Avrupa Birliği içinde en az on yıl yerleşik tıbbi kullanımda olduğu, kabul görmüş '
+   'etkililik ve kabul edilebilir güvenlik düzeyiyle birlikte bilimsel literatürle ortaya konmalıdır [1].',
+   'Geleneksel kullanım kaydında (madde 16a(1)) ise bitkinin en az otuz yıl, bunun en az on beş yılı Avrupa Birliği içinde olmak üzere kullanılmış olması gerekir. '
+   'Klinik çalışma istenmez; yeterli güvenlik verisi ve makul düzeyde etkililik gösterilmesi yeterlidir [1].',
+   'Bu ayrım, bu derlemenin konusu olan uyuşmazlığın da kaynağıdır. Kediotu üst kategoridedir ama tek tek uyku çalışmaları karışıktır; lavantanın çalışmaları daha '
+   'sağlamdır ama uyku tarafında yalnızca geleneksel kullanım kaydı vardır. Monograf kategorisi ile tek bir endikasyondaki kanıt gücü aynı şey değildir.']),
+ ('Hekime başvurulması gereken durumlar',
+  ['Uykusuzluk tek başına bir hastalık olmaktan çok, çoğu zaman başka bir durumun belirtisidir. Bitkisel kullanım bu durumun araştırılmasını geciktirmemelidir.',
+   'Aşağıdaki durumlar bitkisel ürünle ertelenmemelidir: üç aydan uzun süren ve haftanın çoğu gecesi devam eden uykusuzluk, gündüz işlevini bozacak düzeyde uyku '
+   'yoksunluğu, uykuda nefes durması ya da yatak partneri tarafından bildirilen yüksek horlama ve soluk kesilmesi, sabahları düzenli baş ağrısıyla kalkmak, çökkünlük '
+   've ilgi kaybıyla birlikte giden uyku bozukluğu, huzursuz bacak şikâyeti.',
+   'Reçeteli uyku ilacı ya da yatıştırıcı kullananlar için bu derlemedeki bitkilerin bir bölümünde etkileri toplayıcı etkileşim bulunmaktadır; bu ürünler hekim '
+   'bilgisi olmadan birlikte alınmamalıdır. Etkileşim bilgileri her bitkinin kendi kayıt sayfasında yer alır.'])],
+'kaynaklar': [
+ ('European Medicines Agency, “Herbal medicinal products” ve Avrupa Birliği bitkisel monografları',
+  'https://www.ema.europa.eu/en/human-regulatory-overview/herbal-medicinal-products'),
+ ('National Center for Complementary and Integrative Health (NCCIH), bitkisel ürünler bilgi sayfaları', 'https://www.nccih.nih.gov/health/herbsataglance'),
+ ('T.C. Sağlık Bakanlığı TİTCK, geleneksel bitkisel tıbbi ürün monografları', 'https://www.titck.gov.tr/')],
+'bitkiler': ['kediotu', 'lavanta', 'melisa', 'papatya', 'ihlamur', 'ginseng', 'altinkok', 'cay', 'guarana', 'guayusa', 'ashwagandha', 'hashas'],
+'semboller': []},
+{
+'slug': 'adet-sikayetleri-ve-menopoz-icin-kullanilan-bitkiler',
+'tarih': '2026-11-25',
+'baslik': 'Adet şikâyetleri ve menopoz için kullanılan bitkiler: kanıt, kısıtlama ve ölümcül bir gelenek',
+'aciklama': 'Hayıtın adet öncesi sendromda iyi yerleşmiş kullanımı, adet sancısı için geleneksel kayıtlar, menopozda karayılan otu — ve halk kayıtlarında '
+            '“adet söktürücü” olarak geçen, ölümle sonuçlanmış bitkiler. Kaynaklarıyla; dozaj bilgisi içermez.',
+'giris': 'Adet şikâyetleri için kullanılan bitkilerin bir kısmı halk kayıtlarında aynı zamanda “adet söktürücü” ya da düşük yaptırıcı olarak geçer. Bu derlemede o '
+         'bitkiler de yer alıyor — bir seçenek olarak değil, bildirilmiş ölümler nedeniyle. Gebeliğini sonlandırmak isteyen biri için bu bitkiler bir yol değildir; '
+         'Türkiye’de bu, yasal süre içinde hekim denetiminde yapılan bir işlemdir. Derleme, adet ağrısı, adet öncesi sendrom ve menopoz belirtileri için kayıtlı '
+         'kullanımları ve bunların kanıt düzeylerini ele alır; dozaj bilgisi içermez.',
+'bolumler': [
+ ('Kapsam ve yöntem',
+  ['Bu derlemedeki bitkiler iki ölçüte göre seçilmiştir: Avrupa İlaç Ajansı (EMA) bitkisel monografının ilgili endikasyonu kapsaması ya da katalogda bu alana ilişkin '
+   'kayıtlı bir geleneksel kullanımın bulunması [1]. Ayrıca, bu alanda halk kayıtlarında geçmekle birlikte zehirliliği nedeniyle kullanılmaması gereken bitkiler ayrı '
+   'bir bölümde ele alınmıştır.',
+   'Burada üç ayrı durum bir arada geçiyor ve karıştırılmamaları gerekir: adet ağrısı (dismenore), adet öncesi sendrom (PMS) ve menopoz belirtileri. Bunlar farklı '
+   'tablolardır ve kayıtlı kullanımları da farklıdır. Kullanılan kısımlar, güvenlik bilgileri ve kısıtlamalar her bitkinin kendi kayıt sayfasında yer alır; dozaj ve '
+   'hazırlanış bilgisi bu derlemeye bilinçli olarak alınmamıştır.']),
+ ('Hayıt: adet öncesi sendromda iyi yerleşmiş kullanım',
+  ['{hayit} (Vitex agnus-castus) bu derlemede kanıt bakımından en yukarıda duran kayıttır. Standart meyve ekstresi birkaç kontrollü çalışmada adet öncesi sendrom '
+   'belirtilerini plaseboya göre azaltmıştır ve EMA bu kullanımı iyi yerleşmiş kabul eder [1].',
+   'Kapsamın sınırı burada önemlidir: iyi yerleşmiş kullanım adet öncesi sendrom içindir, adet ağrısının kendisi için değil. İkisi aynı şey değildir ve bitkinin '
+   'kaydı birini kapsayıp diğerini kapsamaz.',
+   'Hayıtın hormonal etkisi vardır ve bu, kısıtlamalarının kaynağıdır: doğum kontrol hapı, hormon tedavisi ve dopaminle ilgili ilaçlarla etkileşebilir. Gebelikte ve '
+   'emzirirken kullanılmamalıdır. TİTCK monografı östrojene duyarlı kanser geçirmiş ya da geçirmekte olanların hekime danışmadan kullanmamasını yazar.']),
+ ('Adet sancısı için geleneksel kayıtlar',
+  ['Adet ağrısının kendisi için kayıtlı bitkilerin kanıt düzeyi hayıttan belirgin biçimde düşüktür. {civanpercemi} (Achillea millefolium) için EMA, iştahsızlık, '
+   'hazımsızlık, adet sancısı ve küçük yaraları geleneksel kullanımda tanır; insan çalışması azdır [1]. Anadolu kayıtlarında mide ve adet sancısı için demlendiği '
+   'geçer.',
+   'Civanperçeminin kısıtlamaları hafif değildir: papatyagil alerjisi olanlarda alerji yapabilir, gebelikte kullanılmamalıdır, TİTCK monografı ameliyattan iki hafta '
+   'önce bırakılmasını yazar; antiplatelet ilaçlar, kan sulandırıcılar ve lityumla etkileşir.',
+   '{abuta} (Abuta grandifolia) Amazon kayıtlarında adet sancısı, doğum sonrası kanama ve kadın sağlığı için kullanılır. Laboratuvar ve hayvan çalışmalarında kas '
+   'gevşetici ve iltihap giderici etkiler görülmüştür; insan çalışması yoktur [2]. Rahim üzerinde etkili olabileceği için gebelikte kullanılmamalıdır ve tansiyonu '
+   'düşürebilir.']),
+ ('Menopoz ayrı bir konudur',
+  ['Menopoz belirtileri adet şikâyetleriyle aynı başlık altında ele alınmaya elverişli değildir; farklı bir tablo ve farklı bir kayıt grubudur.',
+   '{karayilan} (Actaea racemosa) bu alanın iyi yerleşmiş kullanım düzeyindeki kaydıdır: EMA kök ekstresini sıcak basması gibi menopoz belirtileri için tanır. Buna '
+   'karşılık NCCIH çalışmaların sonuçlarının tutarsız olduğunu belirtir [1][3]. Kuzey Amerika’da Cherokee ve diğer yerli halklar kökünü kadın sağlığı, romatizma ve '
+   'yılan ısırığı için kullanırdı.',
+   'Nadir de olsa karaciğer hasarı vakaları bildirilmiştir; karaciğer hastalığı olanlar kullanmamalıdır. TİTCK monografı hamilelikte ve emzirirken kullanılmamasını, '
+   'meme kanseri olanların ancak hekim denetiminde kullanmasını yazar.']),
+ ('“Adet söktürücü” denen bitkiler ve bildirilen ölümler',
+  ['Halk hekimliği kayıtlarında bazı bitkiler adeti getirme ya da gebeliği sonlandırma amacıyla geçer. Bu kayıtlar gerçektir ve etnobotanik bir katalogda yer almaları '
+   'gerekir; ancak kayıtlı olmak, kullanılabilir olmak anlamına gelmez. Bu derlemedeki en yüksek güvenlik riskine sahip iki kayıt bu gruptadır.',
+   '{yarpuz} (Mentha pulegium) uçucu yağında yüksek oranda pulegon içerir. Pulegon karaciğer ve böbrek için zehirlidir ve yağın içilmesiyle ölümler bildirilmiştir [2]. '
+   'Avrupa ve Latin Amerika’da tarih boyunca adet söktürücü ve düşük yaptırıcı olarak kullanılmıştır. Burada belirleyici olan nokta şudur: zehirlilik, amaçlanan '
+   'etkiden önce ya da onunla birlikte ortaya çıkar. Yani “işe yarayan ama riskli” bir bitki değildir; karaciğer yetmezliği ile sonuçlanabilen bir zehirlenmedir. Çay '
+   'olarak da uzun süre ve yoğun içilmemelidir.',
+   '{sedef} (Ruta graveolens) halk hekimliğinde adet söktürücü olarak bilinir ve And pazarlarında ruda adıyla arınma törenlerinin temel bitkisidir. Gebelikte düşük '
+   'yaptırabilir; yüksek dozda karaciğer ve böbrek için zehirlidir. Ayrıca taze bitkiye dokunup güneşe çıkmak ağır deri yanıklarına (fitofotodermatit) yol açar — '
+   'furanokumarinler deriyi güneşe karşı aşırı duyarlı hâle getirir. Bitkinin kendisi için klinik kanıt yoktur [2].',
+   'Gebeliğini sonlandırmak isteyen biri için bu bitkiler bir yol değildir. Türkiye’de gebeliğin sona erdirilmesi 2827 sayılı Nüfus Planlaması Hakkında Kanun’un 5. '
+   'maddesiyle düzenlenmiştir; gebeliğin başladığı tarihten itibaren on hafta içinde, kişinin rızasıyla ve gerekçe göstermeksizin yapılabilen bir işlemdir [4]. '
+   'Başvurulacak yer bir bitki değil, bir kadın hastalıkları ve doğum hekimidir.']),
+ ('Monograf türleri arasındaki fark',
+  ['Yukarıda geçen “iyi yerleşmiş kullanım” ve “geleneksel kullanım” ifadeleri birbirinin eşanlamlısı değildir. Bir bitkisel ürünün Avrupa Birliği’nde piyasaya çıkışı '
+   'farklı düzenleyici yollardan geçer; bunların ikisi monograf düzeyinde ayrışır [1].',
+   'Yerleşik tıbbi kullanım yolunda (Direktif 2001/83/EC, madde 10a) etkin maddelerin Avrupa Birliği içinde en az on yıl yerleşik tıbbi kullanımda olduğu, kabul '
+   'görmüş etkililik ve kabul edilebilir güvenlik düzeyiyle birlikte bilimsel literatürle ortaya konmalıdır [1].',
+   'Geleneksel kullanım kaydında (madde 16a(1)) ise bitkinin en az otuz yıl, bunun en az on beş yılı Avrupa Birliği içinde olmak üzere kullanılmış olması gerekir. '
+   'Klinik çalışma istenmez; yeterli güvenlik verisi ve makul düzeyde etkililik gösterilmesi yeterlidir [1].',
+   'Bu derlemede iki kayıt üst kategoridedir ve ikisi de adet ağrısı için değildir: hayıt adet öncesi sendrom için, karayılan otu menopoz belirtileri için. Adet '
+   'ağrısının kendisi için kayıtlı bitkiler geleneksel kullanım düzeyinde kalır.']),
+ ('Hekime başvurulması gereken durumlar',
+  ['Adet ağrısı yaygındır, ancak her ağrı aynı şey değildir ve bir kısmı araştırılması gereken bir nedene bağlıdır. Bitkisel kullanım bu araştırmayı '
+   'geciktirmemelidir.',
+   'Aşağıdaki durumlar bitkisel ürünle ertelenmemelidir: gündelik işleri yapmayı engelleyecek ve ağrı kesiciye yanıt vermeyen ağrı, zamanla belirgin biçimde '
+   'şiddetlenen ağrı, cinsel ilişki sırasında ya da adet dönemi dışında süren ağrı, ped ya da tamponu bir-iki saatte bir değiştirmeyi gerektiren kanama, yedi günden '
+   'uzun süren kanama, adet dönemleri arasında kanama, menopozdan sonra görülen her türlü kanama, üç aydan uzun süren adet görmeme (gebelik dışı), ateşle birlikte '
+   'giden pelvik ağrı.',
+   'Doğum kontrol hapı, hormon tedavisi, kan sulandırıcı ya da antidepresan kullananlar için bu derlemedeki bitkilerin bir bölümünde etkileşim ve kullanım '
+   'kısıtlaması bulunmaktadır. Hayıtın hormonal etkisi olduğu için bu özellikle geçerlidir. Etkileşim bilgileri her bitkinin kendi kayıt sayfasında yer alır.'])],
+'kaynaklar': [
+ ('European Medicines Agency, “Herbal medicinal products” ve Avrupa Birliği bitkisel monografları',
+  'https://www.ema.europa.eu/en/human-regulatory-overview/herbal-medicinal-products'),
+ ('Bitki Tabanı katalog kayıtları ve kaynakçaları (bitki sayfalarındaki kaynaklar)', 'https://bitkitabani.com/yontem/'),
+ ('National Center for Complementary and Integrative Health (NCCIH), bitkisel ürünler bilgi sayfaları', 'https://www.nccih.nih.gov/health/herbsataglance'),
+ ('2827 sayılı Nüfus Planlaması Hakkında Kanun, madde 5 (Resmî Gazete, 27 Mayıs 1983)', 'https://www.mevzuat.gov.tr/mevzuatmetin/1.5.2827.pdf')],
+'bitkiler': ['hayit', 'civanpercemi', 'abuta', 'karayilan', 'yarpuz', 'sedef'],
+'semboller': []},
+{
 'slug': 'sindirim-sikayetleri-aci-ve-kokulu-bitkiler',
 'tarih': '2026-11-25',
 'baslik': 'Sindirim şikâyetlerinde kullanılan bitkiler: iki grup, iki mekanizma',
