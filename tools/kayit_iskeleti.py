@@ -30,11 +30,31 @@ def al(adres):
     except Exception: return None
 
 
-# ── 1. Ad ve familya: GBIF (Kew/WCVP kopyası) ────────────────────────────────
+# ── 1. Ad ve familya: Kew WCVP'nin yerel kopyası (ağa çıkmaz) ───────────────
 def ad_dogrula(latin):
+    """Önce yerel WCVP; bulamazsa GBIF'e tek sorgu.
+
+    WCVP Kew'in kendi kontrol listesi ve 1,4 milyon adı kapsıyor; kabul edilen
+    adı, eş adı, familyayı ve yayılışı ağa çıkmadan veriyor.
+    """
+    try:
+        import importlib.util
+        yol = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'ad_bul.py')
+        sp = importlib.util.spec_from_file_location('ad_bul', yol)
+        m = importlib.util.module_from_spec(sp); sp.loader.exec_module(m)
+        w = m.coz(latin)
+        if not w.get('bulunamadi'):
+            return {'kabul_ad': w.get('kabul_ad') or w['ad'],
+                    'yazar': f"{w.get('kabul_ad') or w['ad']} {w.get('kabul_yazar') or w['yazar']}".strip(),
+                    'familya': w['familya'], 'cins': w['ad'].split()[0],
+                    'durum': w['durum'], 'guven': 'WCVP',
+                    'yayilis': w['yayilis'], 'turkiyede': w['turkiyede'],
+                    'gbif': 'Kew WCVP (yerel kopya) · https://powo.science.kew.org/'}
+    except Exception as e:
+        print('  (WCVP okunamadı, GBIF’e düşülüyor:', e, ')')
     d = al('https://api.gbif.org/v1/species/match?strict=false&name=' + urllib.parse.quote(latin))
     if not d or d.get('matchType') == 'NONE':
-        return {'uyari': f'GBIF {latin} adını tanımadı — ad elle doğrulanmalı'}
+        return {'uyari': f'Ne WCVP ne GBIF {latin} adını tanıdı — ad elle doğrulanmalı'}
     return {
         'kabul_ad': d.get('canonicalName'), 'yazar': d.get('scientificName'),
         'familya': d.get('family'), 'cins': d.get('genus'),
@@ -139,7 +159,14 @@ def yaz(k):
     print(f"{k['id']}  ·  {k['tur_sorgu']}")
     print('-' * 72)
     if a.get('uyari'): print('⚠️ ', a['uyari'])
-    else: print(f"kabul ad : {a['yazar']}  [{a['durum']}, güven {a['guven']}]\nfamilya  : {k['familya_tr']}\ngbif     : {a['gbif']}")
+    else:
+        print(f"kabul ad : {a['yazar']}  [{a['durum']}, kaynak {a['guven']}]")
+        print(f"familya  : {k['familya_tr']}")
+        if 'yayilis' in a:
+            y = a['yayilis']
+            print(f"yayılış  : {len(y)} bölge — {', '.join(y[:8])}{'…' if len(y) > 8 else ''}")
+            print(f"Türkiye  : {'evet' if a['turkiyede'] else 'hayır'}")
+        print(f"kaynak   : {a['gbif']}")
     if k['mukerrer_adaylari']:
         print('⚠️  aynı cinsten kayıt var:', ', '.join(k['mukerrer_adaylari']), '— tür düzeyinde kontrol et')
     print(f"\nEMA  : {len(k['ema'])} eşleşme")
