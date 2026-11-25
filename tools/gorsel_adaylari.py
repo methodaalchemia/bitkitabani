@@ -14,7 +14,7 @@ Bakan kişi "yabanihunnap: 3" der, numaralar refs.py'ye yazılır.
 
 Çıktı: /tmp/.../gorsel_adaylari.html (Artifact ile yayımlanır).
 """
-import base64, html, io, json, os, subprocess, sys, urllib.parse
+import base64, html, io, json, os, re, subprocess, sys, urllib.parse
 
 KOK = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 UA = 'BitkiTabani/1.0 (https://bitkitabani.com; iletisim@bitkitabani.com)'
@@ -53,7 +53,10 @@ def commons(latin, adet=14):
         if 'NC' in lis or 'ND' in lis: continue       # ticari olmayan / türetilemez alınmaz
         out.append({'kaynak': 'Commons', 'dosya': v['title'][5:],
                     'kucuk': ii.get('thumburl'), 'lisans': lis,
-                    'yazar': html.unescape(((em.get('Artist') or {}).get('value', '') or ''))[:80],
+                    # Commons yazar alanı HTML döndürüyor (<a href=...>); etiketler
+                    # ayıklanmazsa künyeye ham işaretleme giriyor.
+                    'yazar': html.unescape(re.sub(r'<[^>]+>', '',
+                             (em.get('Artist') or {}).get('value', '') or '')).strip()[:80],
                     'sayfa': ii.get('descriptionurl', '')})
     return out
 
@@ -72,6 +75,16 @@ def inat(latin, adet=10):
                     'sayfa': f"https://www.inaturalist.org/observations/{o['id']}",
                     'tam': (ph.get('url') or '').replace('square', 'original')})
     return out
+
+
+# Latince ad tek başına işe yaramayan kayıtlar. Spirulina mikroskobik bir
+# siyanobakteri: gözle görülecek bir bitkisi yok, tür adıyla arayınca da
+# neredeyse hiçbir şey çıkmıyor. Böyle kayıtlarda neyin fotoğraflanabileceği
+# elle yazılır — üretim havuzu, mikroskop görüntüsü, kurutulmuş hâli.
+EK_TERIM = {
+    'spirulina': ['Spirulina microscope', 'Arthrospira', 'Spirulina powder',
+                  'Spirulina cultivation pond', 'Spirulina harvest'],
+}
 
 
 def kart(a, n, pid):
@@ -189,6 +202,14 @@ def uret(cift, cikti):
     for pid, latin in cift:
         import time
         a = commons(latin) + inat(latin)
+        for t in EK_TERIM.get(pid, []):
+            a += commons(t, adet=6)
+            time.sleep(1)
+        gorulen, tekil = set(), []
+        for x in a:                       # aynı dosya iki aramadan da gelebilir
+            if x['dosya'] in gorulen: continue
+            gorulen.add(x['dosya']); tekil.append(x)
+        a = tekil
         gruplar.append((pid, latin, a))
         print(f'{pid}: {len(a)} aday')
         time.sleep(2)

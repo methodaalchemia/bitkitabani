@@ -171,6 +171,8 @@ FILES.update({
 # 24 Kasım, ikinci tur: ilk seçimler herbaryum levhası / beyaz zemin ürün karesi çıktı.
 # Bu dördü küçük resimleri görülerek seçildi.
 FILES.update({
+    # 25 Kasım 2026: Eda görsel adayları sayfasından seçti (veri/gorsel_secimleri.json).
+    'yabanihunnap': 'Ziziphus lotus sept.jpg',
     'mur': 'Myrrh.JPG',                                   # drog zaten reçine
     'greyfurt': 'Grapefruit from Diamniadio, Senegal 07.jpg',
     'yenidunya': 'Eriobotrya japonica, Salfit 01.jpg',
@@ -184,16 +186,6 @@ FILES.update({
 # Kural: yalnız CC0, CC BY ve CC BY-SA. NC (ticari olmayan) lisans alınmaz —
 # site ticari değil ama lisansı daraltmak ileride elimizi bağlar.
 DIS = {
-    'yabanihunnap': {
-        'url':     'https://inaturalist-open-data.s3.amazonaws.com/photos/28647895/original.jpeg',
-        'page':    'https://www.inaturalist.org/observations/18709728',
-        'kaynak':  'iNaturalist',
-        'artist':  'Daniel Cahen',
-        'license': 'CC BY 4.0',
-        'licenseUrl': 'https://creativecommons.org/licenses/by/4.0',
-        'not':     'Gazimağusa, Kuzey Kıbrıs',
-        'notEn':   'Famagusta, Northern Cyprus',
-    },
     'huayruro': {
         'url':     'https://inaturalist-open-data.s3.amazonaws.com/photos/81573154/original.jpg',
         'page':    'https://www.inaturalist.org/observations/51349588',
