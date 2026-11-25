@@ -28,6 +28,15 @@ if _SEC:
     _D['P'] = [p for p in _D['P'] if p['id'] in _SEC]
     FILES = {k: v for k, v in FILES.items() if k in _SEC}
 
+# Konusu hayvan olan kare bitki kaydına girmez. 25 Kasım 2026: dereotu kaydına
+# Papilio machaon tırtılının fotoğrafı seçilmişti — tırtıl dereotuyla besleniyor,
+# bu yüzden Commons kategorileri ikisini birbirine bağlıyor ve seçici bitki sanıyor.
+# Sözcük sınırı şart: sınırsız "moth" kalıbı "Motherwort"u (aslankuyruğu) eliyordu.
+HAYVAN = re.compile(r'\b(papilio|lepidoptera|raupe|caterpillar|butterfly|moths?|larvae?|'
+                    r'bee|bees|apis\s+mellifera|bombus|hoverfl(?:y|ies)|syrphid|beetles?|'
+                    r'coleoptera|insects?|spiders?|araneae|snails?|birds?|wasps?|'
+                    r'hummingbirds?|kelebek|t\u0131rt\u0131l|b\u00f6cek)\b', re.I)
+
 BAD = re.compile(r'illustrat|drawing|k[öo]e?hler|medizinal-pflanzen|botanical (art|plate|print)|\bplate\b|tafel|lithograph|engraving|woodcut|painting|watercolou?r|herbari|exsiccat|\bmaps?\b|distribution|diagram|molecule|stamp|coin|logo|bottle|drink|beverage|powder|capsule|svg|specimen|museum|montage|collage|mhnt|landscape|panorama|habitat|forest|plantation|market|óleo|\\boil\\b|bowl|bottle', re.I)
 GOOD = re.compile(r'flower|flor|blüte|fleur|fruit|fruto|frucht|leaf|leaves|hoja|blatt|blossom|close|macro|inflorescence|bloom|berries|berry', re.I)
 
@@ -141,6 +150,8 @@ def auto_pick(taxon, haric=(), siki=False):
         m = ii.get('extmetadata', {})
         text = ' '.join([f, m.get('Categories', {}).get('value', ''), m.get('ImageDescription', {}).get('value', '')])
         if BAD.search(text): continue
+        if HAYVAN.search(text):
+            print('  konusu hayvan, geçildi:', f); continue
         if taxon.split()[0].lower() not in text.lower(): continue
         canli = bool(CANLI.search(text))
         if siki and (not canli or URUN.search(f) or any(f.startswith(h.rsplit(' ',1)[0]) for h in haric if h[-4:]=='.jpg' and re.search(r'\d{8} \d+\.jpg$', h))): continue

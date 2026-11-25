@@ -173,6 +173,9 @@ FILES.update({
 FILES.update({
     # 25 Kasım 2026: Eda görsel adayları sayfasından seçti (veri/gorsel_secimleri.json).
     'yabanihunnap': 'Ziziphus lotus sept.jpg',
+    # Otomatik seçici Papilio machaon tırtılının fotoğrafını koymuştu (tırtıl
+    # dereotuyla beslendiği için Commons kategorileri ikisini bağlıyor).
+    'dereotu': 'Anethum graveolens - Dill 01.jpg',
     'firavuninciri': 'Ficus sycomorus fruits MHNT.jpg',
     'karasusam': 'Sesamum radiatum 2.jpg',
     'yerbademi': 'Cyperus esculentus.jpg',

@@ -1198,15 +1198,15 @@
   "w500": 500
  },
  "dereotu": {
-  "artist": "Reinhold Möller Ermell",
-  "auto": true,
-  "b1280": "Schwalbenschwanz (Papilio machaon) Raupe-20250724-RM-101941.jpg",
-  "file": "Schwalbenschwanz (Papilio machaon) Raupe-20250724-RM-101941.jpg",
-  "h": 1280,
-  "h500": 667,
+  "artist": "Zeynel Cebeci",
+  "auto": false,
+  "b1280": "Anethum graveolens - Dill 01.jpg",
+  "file": "Anethum graveolens - Dill 01.jpg",
+  "h": 686,
+  "h500": 357,
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Schwalbenschwanz_(Papilio_machaon)_Raupe-20250724-RM-101941.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Anethum_graveolens_-_Dill_01.jpg",
   "w": 960,
   "w500": 500
  },
