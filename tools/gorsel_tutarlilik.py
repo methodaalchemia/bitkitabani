@@ -14,7 +14,7 @@ import json, os, sys
 
 KOK = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, KOK)
-from refs import FILES
+from refs import FILES, DIS
 
 meta = json.load(open(os.path.join(KOK, 'images.json'), encoding='utf-8'))
 hata = []
@@ -28,6 +28,17 @@ for pid, dosya in FILES.items():
     for boy in (500, 960):
         if not os.path.exists(os.path.join(KOK, 'img', f'{pid}-{boy}.jpg')):
             hata.append(f'{pid}: img/{pid}-{boy}.jpg yok')
+
+# Commons dışı görseller: künye refs.DIS'ten gelir, images.json'daki kayıt
+# onunla aynı sayfayı göstermeli. Derleme sırasındaki rebase bu kaydı geri
+# alabiliyor (24 Kasım'daki images.json olayının aynısı).
+for pid, k in DIS.items():
+    m = meta.get(pid)
+    if not m: continue
+    if m.get('page') != k['page']:
+        hata.append(f'{pid}: images.json "{m.get("page")}" diyor, refs.DIS "{k["page"]}" diyor')
+    elif m.get('artist') != k['artist']:
+        hata.append(f'{pid}: fotoğrafçı adı uyuşmuyor ({m.get("artist")} / {k["artist"]})')
 
 # Toptan kayıp koruması: images.json yayındaki kayıtların çok altına düşmemeli.
 # 24 Kasım 2026'da seçmeli bir indirme koşusu 361 kaydı 4'e düşürdü ve bütün

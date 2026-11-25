@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 294 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 295 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 
@@ -306,6 +306,7 @@ Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 - [Limon (Citrus × limon (L.) Osbeck)](https://bitkitabani.com/limon/): Genelde güvenli, kanıt: sınırlı
 - [Portakal (Citrus × sinensis (L.) Osbeck)](https://bitkitabani.com/portakal/): Genelde güvenli, kanıt: sınırlı
 - [Baykal takke otu (Scutellaria baicalensis Georgi)](https://bitkitabani.com/baykaltakkesi/): Dikkat, kanıt: geleneksel
+- [Yabani hünnap (Ziziphus lotus (L.) Lam.)](https://bitkitabani.com/yabanihunnap/): Genelde güvenli, kanıt: geleneksel
 
 ## Kültür köprüleri
 - [Aynı molekül, iki ayrı ritüel](https://bitkitabani.com/kopruler/uzerlik-ayahuasca/): İkisi de harmin ve harmalin taşır. Anadolu’da bu alkaloitler nazar dumanında yanar; Amazon’da tören içeceğinin omurgasını oluşturur.

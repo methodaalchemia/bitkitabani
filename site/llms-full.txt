@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 294 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 295 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -5024,7 +5024,7 @@ Meyve olarak güvenlidir. Kurusu çok yendiğinde şeker yükü yüksektir; diya
 Nerede yetişir: Çin kökenlidir; Anadolu’da Ege’den Güneydoğu’ya kadar bahçelerde ve bağ kenarlarında yetişir, kurağa ve soğuğa dayanıklıdır.
 Toplama mevsimi: Meyveler Eylül–Ekim’de kızarınca toplanır.
 Yöresel adlar: hünnap, unnap
-Karıştırma riski: Akdeniz’de yetişen karaçalı (Paliurus spina-christi) ve Ziziphus spina-christi aynı ailedendir; bunların meyveleri farklıdır. İğde (Elaeagnus) ile de karıştırılır.
+Karıştırma riski: Akdeniz’de yetişen karaçalı (Paliurus spina-christi) ve Ziziphus spina-christi aynı ailedendir; bunların meyveleri farklıdır. Akdeniz’in kurak topraklarında kendiliğinden yetişen yabani hünnap (Ziziphus lotus) aynı cinstendir ama ayrı türdür; hünnap için yazılanlar ona uygulanmaz. İğde (Elaeagnus) ile de karıştırılır.
 
 ### İlginç bilgi
 Hünnap, olgunlaştıkça yeşilden kızıl kahverengiye döner ve dalında kuruyarak buruşur; tadı elmadan hurmaya doğru değişir.
@@ -9374,3 +9374,32 @@ Karıştırma riski: ⚠️ Amerikan takke otu (Scutellaria lateriflora) ayrı t
 
 ### İlginç bilgi
 Türkçede bu bitkinin adı yok ama cinsinin var: Anadolu’da yetişen yerli Scutellaria türlerine takke otu ya da kaside otu denir — çiçeğin takkeye benzeyen çanağından. Çin tıbbının binlerce yıllık "sarı altın"ı bu yüzden Türkçeye bir akrabasının adıyla girebiliyor. Ama kanıt tarafında durum tersine: DSÖ 2007’de "kontrollü çalışma yok" dedi ve o günden beri yapılan bütün insan çalışmaları başka bitkilerle karışık. Bir bitkinin iki bin yıllık kullanımı ile tek başına sınanmış olmaması aynı anda doğru olabiliyor.
+
+## Yabani hünnap (Ziziphus lotus (L.) Lam.)
+
+URL: https://bitkitabani.com/yabanihunnap/
+Familya: Rhamnaceae · Bölge: Afrika, Anadolu ve Akdeniz · Kullanılan kısım: Meyve; geleneksel kullanımda ayrıca yaprak, kök ve kök kabuğu
+Bilimsel kanıt: Geleneksel · Güvenlik: Genelde güvenli
+
+### Geleneksel kullanım
+- Kuzey Afrika — meyve ve halk hekimliği: Pharmaceuticals dergisinde 2023’te yayımlanan kapsamlı derleme, Ziziphus lotus’un Akdeniz kuşağında yayılan bir tür olduğunu ve geleneksel olarak şeker hastalığı, sindirim sorunları, idrar yolu şikâyetleri, enfeksiyonlar, kalp-damar rahatsızlıkları, sinir sistemi hastalıkları ve deri sorunlarında kullanıldığını yazar. Derleme bu kullanımları literatür taramasıyla toplamıştır; etkililik iddiası taşımaz.
+- Cezayir ve çevresi — "sedra" ve "nbeg": Journal of Medicinal Food’da 2025’te yayımlanan kısa derlemeye göre bitki Kuzey Afrika’da "sedra", meyvesi "nbeg" adıyla bilinir. Aynı derleme meyvenin halk hekimliğinde verem, bronşit, karaciğer rahatsızlıkları ve mide-bağırsak şikâyetlerinde kullanıldığını kaydeder ve meyvenin ihmal edilmiş bir besin kaynağı olduğunu savunur.
+- Antik Akdeniz — Lotofagların "lotus"u: Harvard Papers in Botany’de 2020’de yayımlanan çalışma, antikçağda "lotus" denen bitkileri tarih yazımı, biyocoğrafya ve etnobotanik açısından karşılaştırmış ve Lotofagların (lotus yiyenlerin) lotusunun en iyi Ziziphus lotus ile açıklandığı sonucuna varmıştır. Yazarlar Herodotos, Theophrastos, Polybios ve Plinius’un meyve tariflerini dayanak alır. Aynı çalışma, Kyrenaika’nın lotusunun ise Ziziphus spina-christi olduğunu ve bu ayrımın güvenilir olduğunu belirtir.
+
+### Hazırlama
+Resmî bir monografta kabul edilmiş doz yoktur; meyve bir gıdadır ve taze ya da kurutularak yenir. Dayanak alınan kaynaklarda ev yapımı bir hazırlık için ölçü verilmez. Bitkinin kökü, kök kabuğu ve yaprağından hazırlanan yoğun ekstreler besin değil, araştırma malzemesidir; bu kaynaklarda insanda kullanımına ilişkin bir doz bulunmaz.
+
+### Araştırmalar ne gösteriyor
+Elimizdeki kaynaklarda insanda yapılmış kontrollü bir çalışma yoktur. 2023 tarihli derleme, bitki ekstrelerinin hücre ve hayvan çalışmalarında şeker düşürücü, antioksidan, antimikrobiyal, iltihap giderici ve ağrı kesici etkiler gösterdiğini bildirir; aynı derleme 181’den fazla bileşen saptandığını ve bunların terpenoitler, polifenoller, flavonoitler, alkaloitler ve yağ asitleri olduğunu yazar. Yazarlar sonuç bölümünde etkililiğin kanıtlanması için klinik çalışma gerektiğini açıkça belirtir. Journal of Medicinal Food’da 2026’da yayımlanan çalışma sulu ekstreyi sıçanlarda incelemiş; nitrik oksit üretimiyle ilgili genlerin ifadesinin arttığını ve sistolik, diyastolik ve ortalama kan basıncının düştüğünü bildirmiştir. Bu bir hayvan çalışmasıdır; insanda aynı etkinin görüleceğini göstermez. Chemistry & Biodiversity’de 2022’de yayımlanan çalışma ise Sicilya’da yetişen bitkinin gövde kabuğu ekstresini incelemiş, yüksek fenol ve flavonoit içeriği ile tüp içinde tirozinaz baskılayıcı ve antioksidan etkinlik saptamıştır — bunlar laboratuvar ölçümleridir.
+
+### Güvenlik
+Meyve bir gıdadır ve geleneksel olarak yenir. 2023 tarihli derleme, toksisite çalışmalarında bitki ekstrelerinin güvenli ve toksik etkiden uzak bulunduğunu bildirir; bu çalışmalar hayvanlarda yapılmıştır, insanda güvenlilik ölçülmüş değildir. Dayanak alınan kaynaklarda gebelik, emzirme, çocuklar ve ilaç etkileşimleri için ayrı bir değerlendirme yoktur; bu konularda veri bulunmadığı için yoğun ekstrelerin bu gruplarda kullanılmaması uygun olur. Hayvan çalışmasında kan basıncının düştüğü bildirildiğinden, tansiyon ilacı kullananların düzenli tüketimi hekimine söylemesi yerinde olur; bu konuda bir etkileşim çalışması yapılmamıştır. Bitkinin gövde ve kök kabuğunda siklopeptit alkaloitler saptanmıştır; kabuktan hazırlanan yoğun ekstreler meyveyle aynı şey değildir.
+
+### Doğada
+Nerede yetişir: GBIF’teki gözlem kayıtlarına göre tür Akdeniz kuşağında yayılır: en çok İsrail, İspanya, Fas, Cezayir, Kıbrıs, Tunus, İtalya, Suriye ve Ürdün’den kayıt vardır. Türkiye’den kayıt yoktur. Kurak ve taşlı topraklarda yetişen dikenli bir çalıdır.
+Toplama mevsimi: Dayanak alınan kaynaklarda Türkiye için bir toplama takvimi yoktur; bitki Türkiye’de doğal olarak yetişmez.
+Yöresel adlar: Türkçede yerleşik bir yöresel adı yok. Kuzey Afrika’da bitki "sedra", meyvesi "nbeg" adıyla bilinir.
+Karıştırma riski: Hünnapla (Ziziphus jujuba) aynı cinstendir ama ayrı türdür: hünnap Çin kökenlidir, bahçelerde yetiştirilir ve meyvesi iridir; Ziziphus lotus Akdeniz’in kurak topraklarında kendiliğinden yetişen dikenli bir çalıdır ve meyvesi küçüktür. Hünnap için yazılanlar bu türe, bu tür için yazılanlar hünnaba uygulanmaz. Kyrenaika’nın "lotus"u sayılan Ziziphus spina-christi de ayrı bir türdür.
+
+### İlginç bilgi
+Homeros’un Odysseia’sında gemicilerin yiyince yurdunu unuttuğu "lotus", 2020 tarihli bir botanik çalışmasına göre büyük olasılıkla bu çalının meyvesidir. Aynı çalışma, antikçağda "lotus" adının birbirinden çok farklı bitkilere verildiğini ve her birinin ayrı ayrı çözülmesi gerektiğini gösterir.

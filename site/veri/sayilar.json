@@ -1,6 +1,6 @@
 {
  "tarih": "2026-11-25",
- "bitki": 294,
+ "bitki": 295,
  "kuyrukta_bekleyen": 68,
  "kuyruk_son_tarih": "2027-02-01",
  "sembol": 48,
@@ -9,10 +9,10 @@
  "kanit": {
   "Klinik": 28,
   "Sınırlı": 130,
-  "Geleneksel": 136
+  "Geleneksel": 137
  },
  "guvenlik": {
-  "Genelde güvenli": 103,
+  "Genelde güvenli": 104,
   "Dikkat": 150,
   "Yüksek risk": 41
  },
