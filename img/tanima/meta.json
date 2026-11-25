@@ -3502,5 +3502,51 @@
   "license": "CC BY 2.5",
   "page": "https://commons.wikimedia.org/wiki/File:Flower_fleur_%D8%B2%D9%87%D8%B1%D8%A9.JPG"
  },
- "portakal:kuru": "yok"
+ "portakal:kuru": "yok",
+ "yabanihunnap:cizim": "yok",
+ "yabanihunnap:cicek": {
+  "file": "شجيرة السدر.jpg",
+  "artist": "Kadimi hasna",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%D8%B4%D8%AC%D9%8A%D8%B1%D8%A9_%D8%A7%D9%84%D8%B3%D8%AF%D8%B1.jpg"
+ },
+ "yabanihunnap:kuru": "yok",
+ "beyazpelin:cizim": "yok",
+ "beyazpelin:cicek": "yok",
+ "beyazpelin:kuru": "yok",
+ "firavuninciri:cizim": "yok",
+ "firavuninciri:cicek": "yok",
+ "firavuninciri:kuru": "yok",
+ "supurgedarisi:cizim": "yok",
+ "supurgedarisi:cicek": {
+  "file": "Sorghum bicolor flower (05).jpg",
+  "artist": "Rasbak",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Sorghum_bicolor_flower_%2805%29.jpg"
+ },
+ "supurgedarisi:kuru": "yok",
+ "yerbademi:cizim": "yok",
+ "yerbademi:cicek": {
+  "file": "Yellow Nutsedge (18834832472).jpg",
+  "artist": "NY State IPM Program at Cornell University from New York, US",
+  "license": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Yellow_Nutsedge_%2818834832472%29.jpg"
+ },
+ "yerbademi:kuru": "yok",
+ "karasusam:cizim": "yok",
+ "karasusam:cicek": {
+  "file": "Sesamum radiatum flower front view.jpg",
+  "artist": "Nativeplants garden",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Sesamum_radiatum_flower_front_view.jpg"
+ },
+ "karasusam:kuru": "yok",
+ "sukabagi:cizim": "yok",
+ "sukabagi:cicek": {
+  "file": "Calabash flower 22.jpg",
+  "artist": "Yahya",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Calabash_flower_22.jpg"
+ },
+ "sukabagi:kuru": "yok"
 }
