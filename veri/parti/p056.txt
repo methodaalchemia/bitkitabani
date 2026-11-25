@@ -1,9 +1,7 @@
 # id | Latince ad | önerilen Türkçe ad | bölge | kategori
-tirtilmantari | Cordyceps sinensis | Tırtıl mantarı | asya | sifa
+tirtilmantari | Ophiocordyceps sinensis | Tırtıl mantarı | asya | sifa
 sitaki | Lentinula edodes | Şitaki | asya | besin,sifa
-maitake | Grifola frondosa | Maitake | asya | besin,sifa
 hindikuyrugumantari | Trametes versicolor | Hindi kuyruğu mantarı | asya | sifa
-aslanyelesimantari | Hericium erinaceus | Aslan yelesi mantarı | asya | besin,sifa
 gumuskulakmantari | Tremella fuciformis | Gümüş kulak mantarı | asya | besin
 kulakmantari | Auricularia auricula-judae | Kulak mantarı | asya | besin
 jiaogulan | Gynostemma pentaphyllum | Jiaogulan | asya | sifa

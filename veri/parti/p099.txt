@@ -1,9 +1,7 @@
 # id | Latince ad | önerilen Türkçe ad | bölge | kategori
 kofa | Juncus effusus | Kofa | avrupa | sifa
-kulturmantari | Agaricus bisporus | Kültür mantarı | avrupa | besin
-ayimantari | Boletus edulis | Ayı mantarı | avrupa | besin
 koygocuren | Amanita phalloides | Köygöçüren | avrupa | zehir
 pantermantari | Amanita pantherina | Panter mantarı | avrupa | zehir
 kavmantari | Fomes fomentarius | Kav mantarı | avrupa | sifa,ritual
-husmantari | Piptoporus betulinus | Huş mantarı | avrupa | sifa
+husmantari | Fomitopsis betulina | Huş mantarı | avrupa | sifa
 caga | Inonotus obliquus | Çaga | avrupa | sifa

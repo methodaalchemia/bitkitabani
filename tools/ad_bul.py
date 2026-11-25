@@ -56,6 +56,28 @@ def yukle():
     return _D
 
 
+def gbif(latin):
+    """WCVP yalnız damarlı bitkileri kapsar. Mantar, liken, alg ve kara yosunu
+    orada yoktur — onlar için GBIF'e tek sorgu. Dönen 'alem' alanı aynı zamanda
+    "bu bitki değil" bilgisini verir."""
+    import json as _j, subprocess as _sp, urllib.parse as _u
+    r = _sp.run(['curl', '-sL', '-m', '45', '-A', 'BitkiTabani/1.0 (https://bitkitabani.com)',
+                 'https://api.gbif.org/v1/species/match?strict=false&name=' + _u.quote(latin)],
+                capture_output=True, text=True, errors='replace')
+    try: d = _j.loads(r.stdout)
+    except Exception: d = None
+    if not d or d.get('matchType') == 'NONE':
+        return {'bulunamadi': latin}
+    o = {'sorgu': latin, 'ad': d.get('canonicalName') or latin,
+         'yazar': d.get('scientificName', ''), 'familya': d.get('family', ''),
+         'durum': d.get('status', ''), 'rank': d.get('rank', ''),
+         'alem': d.get('kingdom', ''), 'kaynak': 'GBIF', 'taxonid': str(d.get('usageKey', '')),
+         'eslesme_sayisi': 1, 'yayilis': [], 'turkiyede': None}
+    if (d.get('status') or '').upper() == 'SYNONYM' and d.get('species'):
+        o['kabul_ad'] = d['species']; o['kabul_yazar'] = ''
+    return o
+
+
 def coz(latin):
     d = yukle()
     anahtar = latin.strip().lower()
@@ -75,7 +97,7 @@ def coz(latin):
             ids = dene(f'{par[0]} × {par[1]}') or dene(f'{par[0]} x {par[1]}')
         if not ids and '×' in anahtar:
             ids = dene(anahtar.replace('× ', '').replace('×', ''))
-    if not ids: return {'bulunamadi': latin}
+    if not ids: return gbif(latin)
     # Aynı ad birden çok kayıtla eşleşebilir (eş adlar, gayrimeşru adlar).
     # Sıra: kabul edilen ad > kabul adı aynı cinste olan eş ad > kalanı.
     # Bu olmadan "Sorghum bicolor" gayrimeşru bir kayda düşüp
@@ -113,6 +135,8 @@ def yaz(s):
         print(f'  ⚠️  {s["durum"]} — kabul edilen ad: {s["kabul_ad"]} {s["kabul_yazar"]}')
     else:
         print(f'  {s["ad"]} {s["yazar"]}  [{s["durum"]}, {s["rank"]}]')
+    if s.get('alem') and s['alem'] != 'Plantae':
+        print(f'  ⚠️  ALEM: {s["alem"]} — damarlı bitki değil (kaynak GBIF)')
     print(f'  familya : {s["familya"]}' + (f' ({fam_tr})' if fam_tr else '  ← Türkçesi tabloda yok'))
     y = s['yayilis']
     print(f'  yayılış : {len(y)} bölge' + (f' — {", ".join(y[:10])}' + ('…' if len(y) > 10 else '') if y else ' (kayıt yok)'))

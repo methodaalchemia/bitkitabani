@@ -3,7 +3,7 @@ pirinc | Oryza sativa | Pirinç | asya | besin
 topalak | Cyperus rotundus | Topalak | asya | sifa
 dangshen | Codonopsis pilosula | Dang shen | asya | sifa
 baizhu | Atractylodes macrocephala | Bai zhu | asya | sifa
-fuling | Poria cocos | Fu ling | asya | sifa
+fuling | Wolfiporia cocos | Fu ling | asya | sifa
 chuanxiong | Ligusticum chuanxiong | Chuan xiong | asya | sifa
 chaihu | Bupleurum chinense | Chai hu | asya | sifa
 banxia | Pinellia ternata | Ban xia | asya | sifa,zehir

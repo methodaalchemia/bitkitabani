@@ -1,7 +1,6 @@
 # id | Latince ad | önerilen Türkçe ad | bölge | kategori
 kurtayagilycopodium | Lycopodium clavatum | Kurt ayağı (kibrit otu) | avrupa | sifa
 sakallikeni | Usnea barbata | Sakal likeni | avrupa | sifa
-meseyosunu | Evernia prunastri | Meşe yosunu | avrupa | tutsu
 turbayosunu | Sphagnum palustre | Turba yosunu | avrupa | sifa
 kelp | Laminaria digitata | Kelp | avrupa | besin,sifa
 irlandayosunu | Chondrus crispus | İrlanda yosunu | avrupa | besin
