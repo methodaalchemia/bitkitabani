@@ -130,15 +130,15 @@ Q = [
         kaynak=[
             ['Manihot esculenta Crantz, World Checklist of Vascular Plants, Royal Botanic Gardens, Kew',
              'https://powo.science.kew.org/'],
-            ['B. O. Okezie ve V. R. Kosikowski, “Cassava as a food”, Critical Reviews in Food Science and Nutrition 17(3), 1982',
+            ['B. O. Okezie ve F. V. Kosikowski, “Cassava as a food”, Critical Reviews in Food Science and Nutrition 17(3), 1982',
              'https://pubmed.ncbi.nlm.nih.gov/6756790/'],
             ['B. Adamolekun, “Etiology of Konzo, epidemic spastic paraparesis associated with cyanogenic glycosides in cassava: role of thiamine deficiency?”, Journal of the Neurological Sciences 296(1–2), 2010',
              'https://pubmed.ncbi.nlm.nih.gov/20619859/'],
-            ['D. Tshala-Katumbay ve ark., “Cyanide and the human brain: perspectives from a model of food (cassava) poisoning”, Annals of the New York Academy of Sciences, 2017',
+            ['D. Tshala-Katumbay ve ark., “Cyanide and the human brain: perspectives from a model of food (cassava) poisoning”, Annals of the New York Academy of Sciences 1378(1), 2016',
              'https://pubmed.ncbi.nlm.nih.gov/27450775/'],
-            ['E. Kashala-Abotnes ve ark., “Konzo: a distinct neurological disease associated with food (cassava) cyanogenic poisoning”, Brain Research Bulletin 145, 2020',
+            ['E. Kashala-Abotnes ve ark., “Konzo: a distinct neurological disease associated with food (cassava) cyanogenic poisoning”, Brain Research Bulletin 145, 2019',
              'https://pubmed.ncbi.nlm.nih.gov/29981837/'],
-            ['A. F. Oluwole, “Cyclical konzo epidemics and climate variability”, Annals of Neurology 77(3), 2015',
+            ['O. S. Oluwole, “Cyclical konzo epidemics and climate variability”, Annals of Neurology 77(3), 2015',
              'https://pubmed.ncbi.nlm.nih.gov/25523348/'],
             ['Í. M. Mafaldo ve ark., “Cassava (Manihot esculenta) Brazilian cultivars have different chemical compositions, present prebiotic potential, and beneficial effects on the colonic microbiota of celiac individuals”, Food Research International, 2024',
              'https://pubmed.ncbi.nlm.nih.gov/39277216/'],
@@ -908,18 +908,28 @@ Q = [
               'kaynaklarda yoktur; sıtma ve mikroplara karşı bildirilen '
               'etkiler **hayvan ve laboratuvar** çalışmalarından gelir.',
         kanit='sinirli',
-        guv='dusuk',
+        guv='orta',
         guvNot='İnsanda sınanmış olan tek kullanım biçimi haricî %4’lük '
                'jeldir; iki çalışmada da güvenlik ve tolere edilebilirlik '
-               'iyi bulunmuştur. **Ağızdan kullanım aynı şey değildir:** '
-               'Güney Amerika taramasında bitki kendi kendine en sık '
-               'kullanılanlar arasında geçer ve derleme asıl riskin bu '
-               'denetimsiz kullanım olduğunu söyler. Dayanak alınan '
-               'kaynaklarda gebelik, emzirme ve çocuklar için bir '
-               'değerlendirme yoktur; monograf bulunmadığı için resmî bir '
-               'kontrendikasyon listesi de yoktur. Odunu aşırı acı '
-               'olduğundan yüksek miktarda ağızdan alım bulantı ve kusma '
-               'yapabilir.',
+               'iyi bulunmuştur. **Ağızdan kullanım aynı şey değildir** ve '
+               'bu kaydın güvenlik düzeyini belirleyen şey odur. '
+               '**Gebelikte ve emzirirken ağızdan alınmamalıdır.** Kaydın '
+               'kullanılan kısmı olan odun ve kabuk, kuasin adlı bileşiği '
+               'taşır; bu bileşik üzerine **hayvan** çalışmalarında '
+               'tutarlı bir üreme toksisitesi bildirilmiştir. Erkek '
+               'sıçanlarda testis ağırlığı, sperm sayısı ve testosteron '
+               'düzeyinde düşüş bulunmuş (Life Sci 1997; Reprod Toxicol '
+               '2003); dişi sıçanlarda ağızdan verilen kuasinle over '
+               'ağırlığında ve yavru sayısında düşüş bildirilmiştir '
+               '(Niger J Physiol Sci 2010). **Bunlar hayvan '
+               'çalışmalarıdır; insanda üreme etkisi ölçülmemiştir** — ama '
+               'insanda bir güvenlik verisi de bulunmadığı için ihtiyat '
+               'gerekir. Çocuklarda ve doğurganlık çağında ağızdan '
+               'kullanımdan kaçınılmalıdır. Güney Amerika taramasında '
+               'bitki kendi kendine en sık kullanılanlar arasında geçer ve '
+               'derleme asıl riskin bu denetimsiz kullanım olduğunu '
+               'söyler. Monograf bulunmadığı için resmî bir '
+               'kontrendikasyon listesi yoktur.',
         ilginc='Acılığıyla tanınan bu Amazon ağacının insanda kontrollü '
                'çalışmayla sınanmış tek etkisi yüz derisindedir: '
                'randomize çift kör bir çalışmada %4’lük jeli, seboreik '
@@ -947,6 +957,12 @@ Q = [
              'https://pubmed.ncbi.nlm.nih.gov/21343346/'],
             ['A. E. Consolini ve ark., “Patterns of self-medication with medicinal plants and related adverse events — a South American survey”, Current Drug Safety 5(4), 2010',
              'https://pubmed.ncbi.nlm.nih.gov/20615178/'],
+            ['Y. Raji ve A. F. Bolarinwa, “Antifertility activity of Quassia amara in male rats — in vivo study”, Life Sciences 61(11), 1997',
+             'https://pubmed.ncbi.nlm.nih.gov/9307052/'],
+            ['S. Parveen ve ark., “A comprehensive evaluation of the reproductive toxicity of Quassia amara in male rats”, Reproductive Toxicology 17(1), 2003',
+             'https://pubmed.ncbi.nlm.nih.gov/12507657/'],
+            ['Y. Raji ve ark., “Reproductive activities of female albino rats treated with quassin, a bioactive triterpenoid from stem bark extract of Quassia amara”, Nigerian Journal of Physiological Sciences 25(2), 2010',
+             'https://pubmed.ncbi.nlm.nih.gov/22314945/'],
             ['E. O. Ajaiyeoba ve ark., “In vivo antimalarial activities of Quassia amara and Quassia undulata plant extracts in mice”, Journal of Ethnopharmacology 67(3), 1999',
              'https://pubmed.ncbi.nlm.nih.gov/10617067/'],
         ],
@@ -1003,15 +1019,25 @@ Q = [
                     'laboratory** work.',
             safety='The only form tested in humans is a topical 4% gel, and '
                    'safety and tolerability were good in both studies. '
-                   '**Oral use is not the same thing:** the South American '
+                   '**Oral use is not the same thing**, and that is what '
+                   'sets the safety level of this record. **It must not be '
+                   'taken orally during pregnancy or breastfeeding.** The '
+                   'wood and bark used here carry a compound called '
+                   'quassin, and **animal** studies report a consistent '
+                   'reproductive toxicity for it. In male rats, testis '
+                   'weight, sperm count and testosterone levels fell (Life '
+                   'Sci 1997; Reprod Toxicol 2003); in female rats, oral '
+                   'quassin lowered ovary weight and litter size (Niger J '
+                   'Physiol Sci 2010). **These are animal studies; no '
+                   'reproductive effect has been measured in humans** — but '
+                   'since there is no human safety data either, caution is '
+                   'warranted. Oral use should be avoided in children and '
+                   'by anyone of childbearing age. The South American '
                    'survey lists the plant among those most often '
                    'self-medicated, and the review holds that this '
-                   'unsupervised use is the real risk. The sources relied on '
-                   'here contain no assessment for pregnancy, lactation or '
-                   'children, and as there is no monograph there is no '
-                   'official list of contraindications. Because the wood is '
-                   'extremely bitter, large oral amounts can cause nausea '
-                   'and vomiting.',
+                   'unsupervised use is the real risk. As there is no '
+                   'monograph there is no official list of '
+                   'contraindications.',
             fact='The only effect of this famously bitter Amazonian tree '
                  'tested in humans by a controlled study is on the skin of '
                  'the face: in a randomised double-blind trial its 4% gel '
@@ -1487,7 +1513,9 @@ Q = [
                'etkinin ortaya çıkması, karışımın öteki yarısındaki '
                'monoamin oksidaz inhibitörüne bağlıdır — tehlikeli ilaç '
                'etkileşimlerinin kaynağı da aynı madde.',
-        yasal=('kisitli', 'İçerdiği DMT kontrollü maddedir.'),
+        yasal='DMT, BM 1971 Psikotrop Maddeler Sözleşmesi’nin I sayılı '
+              'listesinde kontrollü maddedir ve Türkiye’de yasa dışıdır. '
+              'Bitkinin kendisinin hukuki durumu ülkeye göre değişir.',
         etk=[
             ['Antidepresanlar (SSRI, SNRI), triptanlar, tramadol, '
              'dekstrometorfan, linezolid',
