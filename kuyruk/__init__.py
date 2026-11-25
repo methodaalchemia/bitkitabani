@@ -7,6 +7,23 @@ eklenir ve aşağıdaki listeye yazılır; tarihler birbirini izlemeli, bir tari
 import importlib
 
 FILES = ['k1', 'k2', 'k3', 'k4', 'k5', 'k6', 'k7', 'k8', 'k9', 'k10', 'k11', 'k12', 'k13', 'k14', 'k15', 'k16', 'k17', 'k18', 'k19', 'k20', 'k21', 'k22', 'k23', 'k24', 'k25', 'k26', 'k27', 'k28', 'k29', 'k30', 'k31', 'k32', 'k33', 'k34', 'k35', 'k36', 'k37', 'k38', 'k39', 'k40', 'k41', 'k42', 'k43', 'k44', 'k45', 'k46', 'k47', 'k48', 'k49', 'k50', 'k51', 'k52', 'k53', 'k54', 'k55', 'k56', 'k57', 'k58', 'a003', 'a004', 'a005', 'a001', 'a002']
+# ── Dosya denetimi ───────────────────────────────────────────────────────────
+# 25 Kasım 2026: parti 005 commit'i FILES'a 'a005' ekledi ama kuyruk/a005.py
+# depoya girmedi; sebebi .git/info/exclude içindeki 'kuyruk/a[0-9]*.py' satırıydı.
+# O dosya yerel ve depoyla taşınmaz, git status'ta da görünmez — 'git add -A'
+# dosyayı sessizce atladı. build.py import'ta patladı, derleme saatlerce koşmadı
+# ve kimse fark etmedi; canlı site eski site/ ile ayakta kaldı.
+# Bu denetim aynı hatayı okunur hâle getirir: hangi ad, hangi dosya, ne yapmalı.
+import os as _os
+_dizin = _os.path.dirname(_os.path.abspath(__file__))
+_eksik = [f for f in FILES if not _os.path.exists(_os.path.join(_dizin, f + '.py'))]
+if _eksik:
+    raise SystemExit(
+        'kuyruk: FILES listesinde olup dosyası bulunmayan kayıt(lar): '
+        + ', '.join(_eksik)
+        + '\n  Dosya commit edilmemiş ya da bir exclude kuralı gizliyor olabilir.'
+        + '\n  Bak: git check-ignore -v kuyruk/<ad>.py  ·  cat .git/info/exclude')
+
 Q = []
 for _f in FILES:
     Q.extend(importlib.import_module(f'kuyruk.{_f}').Q)
