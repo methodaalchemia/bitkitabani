@@ -2,6 +2,330 @@
 # Keys are the Turkish slugs; sources and plant lists come from yazilar.py. Plant links are written {id}.
 
 Y_EN = {
+'soguk-alginligi-icin-kullanilan-bitkiler-ne-yapar-ne-yapmaz': {
+'slug': 'plants-used-for-the-common-cold-what-they-do-and-do-not-do',
+'baslik': 'Plants used for the common cold: what they do and what they do not',
+'aciklama': 'The common cold resolves on its own, which makes it both the place where traditional remedies look most effective and the place where evidence is hardest to '
+            'establish. Demulcent plants, cough and throat records, the inconsistent evidence for echinacea and elder, and the rosehip vitamin C question — with sources.',
+'giris': 'The common cold is a self-limiting illness, and that single property accounts for both the prevalence of herbal use in this area and its evidence problem. Most '
+         'of the plants in this review do not touch the course of the illness; they coat the surface of the throat, loosen phlegm or ease a cough. Only a few carry a '
+         'claim about the illness itself, and it is there that the evidence is most contested. This review covers that distinction, the standing of these plants in the '
+         'monographs, and the records that call for caution; it contains no dosage information.',
+'bolumler': [
+ ('Scope and method',
+  ['The plants in this review were selected on two criteria: either an indication relating to the common cold, cough or throat complaints is covered by a European '
+   'Medicines Agency (EMA) herbal monograph, or the catalogue holds a recorded traditional use for that purpose [1]. Parts used, safety information and restrictions '
+   'are given on each plant’s own record page; dosage and preparation have deliberately been left out.']),
+ ('A self-limiting illness',
+  ['The common cold is an upper respiratory infection caused by several hundred different viruses and cleared by the immune system on its own. Treated or untreated, it '
+   'passes within a week to ten days.',
+   'This property acts on herbal use here in two ways. First, the tendency to associate recovery with whatever was last applied is strongest here; the common cold is '
+   'accordingly the area in which traditional remedies appear most effective. Second, and more importantly, it is hardest here to show that an intervention works: '
+   'everyone in the placebo arm recovers too, so large and well-constructed trials are needed for any difference to emerge.',
+   'The great majority of the plants below make no claim about the course of the illness in any case. They relieve a symptom, and often they do so mechanically.']),
+ ('Demulcents: mucilage',
+  ['The effect of this group is physical rather than chemical. The mucilage they contain is a polysaccharide that forms a gel with water and reduces irritation by '
+   'coating the surface of the throat. This is why they are used for dry cough.',
+   'The root of {hatmi}, marshmallow (Althaea officinalis), is high in mucilage; the EMA recognises it for irritation of the mouth and throat and for dry cough under '
+   'traditional use [1]. For {ebegumeci}, common mallow (Malva sylvestris), the EMA recognises the same indications. The flower of {sigirkuyrugu}, mullein (Verbascum '
+   'spp.), is recorded under traditional use for cough and throat irritation; human studies are few. The inner bark of {kirmizikaraagac}, slippery elm (Ulmus rubra), '
+   'is accepted by the US FDA as an over-the-counter throat demulcent [2]. The glucomannan in the tuber of {salep} (Orchis spp.) also soothes the throat; there are no '
+   'clinical studies for medicinal claims.',
+   'This group shares a restriction that is easily overlooked: mucilage delays the absorption of other medicines. People on regular medication need to leave one to '
+   'two hours between these plants and their medicines. Mullein carries a further restriction: the hairs on its leaves and flowers irritate the throat, and its tea '
+   'should not be drunk unstrained.',
+   'Consuming salep is safe, but the real risk lies with the plant itself: thousands of orchid tubers are dug up for a single kilogram of it.']),
+ ('Cough and the airways',
+  ['{kekik}, thyme (Thymus vulgaris), contains thymol and carvacrol, whose antimicrobial effect has been shown in the laboratory. The EMA recognises thyme as a '
+   'traditional herbal medicine for productive cough [1]. It is safe in culinary amounts, but pure thyme oil is caustic: it must not be applied undiluted to the skin '
+   'or swallowed.',
+   'The oil of {okaliptus}, eucalyptus (Eucalyptus globulus), is recognised by the EMA under traditional use for relieving cough in the common cold; controlled trials '
+   'have been carried out in bronchitis and sinusitis with its principal constituent, cineole [1]. The most serious safety restriction in this review sits here: even '
+   'a few millilitres of the volatile oil, if swallowed, can cause seizures and loss of consciousness in children; it must not be applied to the face or nose of '
+   'infants and small children; and in people with asthma the vapour can trigger an attack.',
+   'The root of {meyan}, liquorice (Glycyrrhiza glabra), is recognised by the EMA under traditional use for cough and mild stomach complaints [1]. Regular consumption '
+   'in high amounts raises blood pressure, lowers potassium and can cause cardiac arrhythmia; people with hypertension, heart or kidney disease, and pregnant women, '
+   'should avoid it.']),
+ ('Inflammation of the throat',
+  ['For {adacayi}, sage (Salvia officinalis), the EMA recognises inflammation of the mouth and throat under traditional use [1]. Because it contains thujone it must '
+   'not be used at high doses or over long periods; it is not recommended in pregnancy, breastfeeding or epilepsy. The TİTCK monograph advises against use in people '
+   'under eighteen and carries a warning for people on diabetes medication, since it lowers blood sugar.',
+   'For {papatya}, chamomile (Matricaria chamomilla), inflammation of the mouth and throat is among the indications the EMA monograph covers [1]. It can cause allergy '
+   'in people allergic to the daisy family.',
+   'The eugenol in the oil of {karanfil}, clove (Syzygium aromaticum), has long been used in dentistry as a local anaesthetic and antiseptic; the EMA recognises clove '
+   'oil under traditional use for inflammation of the mouth and throat and for toothache [1]. It is safe as a spice, but the pure volatile oil, if swallowed, can '
+   'cause liver injury and seizures, particularly in children.']),
+ ('The two records that make a claim about the illness',
+  ['The plants above relieve symptoms. Two records make a claim about the illness itself — about its duration or its onset — and it is precisely where expectation is '
+   'highest that the evidence is most contested.',
+   'For {ekinezya}, echinacea (Echinacea purpurea), the EMA recognises the aerial parts for the short-term treatment of the common cold. NCCIH holds that it may have '
+   'a small effect in preventing or shortening a cold, but that results are inconsistent [1][3]. It can cause allergy in people allergic to the daisy family, and '
+   'people with autoimmune disease need to be careful.',
+   'The flower of {murver}, elder (Sambucus nigra), is recognised by the EMA under traditional use for the early symptoms of a cold. Small studies with the fruit '
+   'extract have reported a shortened duration of influenza; the evidence is weak [1]. Elder carries a separate and firm preparation restriction: the raw fruit, '
+   'leaves, bark and stems contain cyanogenic compounds and cause nausea and vomiting. The fruit must always be cooked.',
+   'The most accurate sentence available for these two records is this: they have not been shown to be ineffective, but neither have they been shown to be effective. '
+   'In a self-limiting illness that uncertainty is unsurprising.']),
+ ('Rosehip and vitamin C',
+  ['{kusburnu}, rosehip (Rosa canina), is the most widespread cold-season tea in Anatolia, and the reason given is usually vitamin C. The catalogue record does not '
+   'confirm that reason as it stands: the fresh fruit really is very rich in vitamin C, but drying and boiling reduce it substantially [2].',
+   'The vitamin C content of a tea brewed from dried rosehip is therefore not comparable to that of the fresh fruit. This does not mean the tea should not be drunk; '
+   'taking warm fluids has a soothing effect of its own in a throat complaint. But that effect does not come from vitamin C, and there is no record of rosehip '
+   'altering the course of a cold.',
+   'The hairs around the seeds irritate the mouth and the intestine and should not be consumed unstrained. The TİTCK monograph carries warnings for diabetes, G6PD '
+   'deficiency, and disorders of iron metabolism such as haemochromatosis, thalassaemia and anaemia.']),
+ ('Two records that call for caution',
+  ['{efedra} (Ephedra sinica) contains ephedrine and pseudoephedrine, which open the bronchi and stimulate the heart. It is the highest-risk record in this review: it '
+   'can raise blood pressure and heart rate dangerously, and strokes, heart attacks and deaths have been reported. Ephedra-containing weight-loss products were banned '
+   'in the United States in 2004 over serious cardiac events [2]. Its place here is not as an option, but because it is the source of the pseudoephedrine in cold '
+   'medicines and because the plant form cannot be dosed with any precision.',
+   '{altinmuhur}, goldenseal (Hydrastis canadensis), appears frequently in supplements sold for colds. NCCIH states that there is no reliable evidence for any use, '
+   'the common cold included [3]. The interaction side, by contrast, is clear: it slows the hepatic breakdown of many medicines. It must not be used in pregnancy, '
+   'during breastfeeding, or in newborns.']),
+ ('The difference between monograph types',
+  ['The phrase “the EMA recognises it under traditional use”, frequent above, is not a claim of efficacy. A herbal product reaches the market in the European Union by '
+   'different regulatory routes, two of which diverge at the level of the monograph [1].',
+   'On the well-established use route (Directive 2001/83/EC, Article 10a), scientific literature must establish that the active substances have been in '
+   'well-established medicinal use within the European Union for at least ten years, with recognised efficacy and an acceptable level of safety [1].',
+   'On traditional use registration (Article 16a(1)), the plant must have been in use for at least thirty years, of which at least fifteen within the European Union. '
+   'No clinical trials are required; sufficient safety data and plausible efficacy are enough [1].',
+   'Almost all the records in this review fall into the second category. In the field of the common cold this is an expected outcome: for a self-limiting illness, the '
+   'scale of trial needed to demonstrate efficacy has not been reached for most of these plants.']),
+ ('When to see a doctor',
+  ['A cold resolves on its own, but not every upper respiratory complaint is a cold, and some require treatment. Herbal use should not delay this.',
+   'The following should not be deferred by a herbal product: shortness of breath or rapid breathing, chest pain, a high fever lasting more than three days or one '
+   'that falls and rises again, complaints that fail to improve after ten days or that worsen again after improving, severe one-sided sore throat with difficulty '
+   'swallowing, marked swelling in the neck, earache, severe headache with neck stiffness, and difficulty feeding with marked lethargy in infants.',
+   'Where asthma, heart disease, immunosuppression or pregnancy is involved, the threshold is lower. For people on regular medication, some of the plants in this '
+   'review carry recorded absorption delays and interactions; the interaction information is given on each plant’s own record page.'])]},
+'uyku-icin-kullanilan-bitkiler-monograf-ve-kanit': {
+'slug': 'plants-used-for-sleep-monographs-and-evidence',
+'baslik': 'Plants used for sleep: why monograph level and trial results do not line up',
+'aciklama': 'Valerian holds the stronger monograph but its sleep trials are mixed. Lavender has the sounder trials — but for anxiety, not sleep. The evidence behind the '
+            'sleep shelf, the plants that disrupt sleep, and the one interaction they all share — with sources.',
+'giris': 'In the plants used for sleep, the level of regulatory acceptance and the results of clinical trials line up the opposite way to what one might expect. The plant '
+         'with the stronger monograph has mixed sleep trials; the plant with the sounder trials has evidence for anxiety rather than sleep. This review covers that '
+         'mismatch, the evidence for each plant on the sleep shelf, the plants that disrupt sleep, and the interaction the group shares; it contains no dosage '
+         'information.',
+'bolumler': [
+ ('Scope and method',
+  ['The plants in this review were selected on two criteria: either an indication related to sleep or nervous tension is covered by a European Medicines Agency (EMA) '
+   'herbal monograph, or the catalogue holds a recorded traditional use for that purpose [1]. In addition, plants not used for sleep but recorded as causing insomnia '
+   'are treated in a separate section. Parts used, safety information and restrictions are given on each plant’s own record page. Dosage and preparation have '
+   'deliberately been left out.']),
+ ('Valerian: the stronger monograph, mixed results',
+  ['{kediotu}, valerian (Valeriana officinalis), stands highest in this group in regulatory terms. The EMA recognises valerian root for mild nervous tension and sleep '
+   'disorders under well-established use [1]. This is the upper tier of the monograph categories and requires clinical data.',
+   'The trials, however, are mixed: some find a small improvement in time to fall asleep, others find no difference from placebo [1]. The plant’s regulatory standing '
+   'is therefore clearer than the picture drawn by the individual studies.',
+   'Its restrictions are mild but definite: it can cause morning drowsiness and headache, it should not be combined with alcohol or sedatives, rare cases of liver '
+   'injury have been reported, and it should not be taken before driving.']),
+ ('Lavender: the sounder trials, but not for sleep',
+  ['{lavanta}, lavender (Lavandula angustifolia), occupies a particular place in this review and is easily misread. Standardised oral lavender oil capsules have been '
+   'found superior to placebo in a number of controlled trials — but those trials concern anxiety disorder [1].',
+   'The EMA, for its part, recognises lavender for mild stress and sleep under traditional use only [1]. The statement “lavender has clinical evidence” is therefore '
+   'accurate, but its subject is not sleep. Where anxiety is what disturbs sleep an indirect connection can be drawn; that is not the same as an effect demonstrated '
+   'on sleep itself.',
+   'The capsule form can cause belching and nausea and may increase the effect of sedative medicines. The Turkish Medicines Agency (TİTCK) monograph advises against '
+   'use during pregnancy and breastfeeding, and caution alongside blood thinners and antiplatelet medicines.']),
+ ('Lemon balm, chamomile and linden',
+  ['For {melisa}, lemon balm (Melissa officinalis), the EMA recognises mild stress, sleep disorders and mild digestive complaints under traditional use; small clinical '
+   'trials have reported improvement in anxiety and sleep [1]. There is a restriction for people taking thyroid medication.',
+   '{papatya}, chamomile (Matricaria chamomilla), is widely used for insomnia in folk practice, yet the indications its EMA monograph covers are digestive complaints, '
+   'inflammation of the mouth and throat, and skin irritation; sleep is not among them. Small trials on anxiety have been positive [1]. It can cause allergy in people '
+   'allergic to the daisy family.',
+   'For {ihlamur}, linden (Tilia spp.), the EMA recognises symptoms of the common cold and mild mental stress under traditional use; clinical studies are few [1]. It '
+   'has no known side effects, the only firm bar being allergy to the flower; the TİTCK monograph reports an interaction with lithium.']),
+ ('Plants that disrupt sleep',
+  ['In a complaint of insomnia, what is being taken for other purposes matters as much as what is being taken for sleep. Several plants recorded as causing insomnia '
+   'are sold as herbal supplements on the same shelves as the sleep ones.',
+   'For {ginseng} (Panax ginseng), insomnia is among the recorded adverse effects; prolonged use at high doses may produce hypertension, insomnia, irritability and '
+   'muscle stiffness. {altinkok}, roseroot (Rhodiola rosea), can cause insomnia and restlessness.',
+   'Caffeine-bearing plants form a separate cluster: {cay}, tea (Camellia sinensis), {guarana} (Paullinia cupana) and {guayusa} (Ilex guayusa). Guaraná seeds carry a '
+   'higher proportion of caffeine than coffee beans, and in energy drinks it may be combined with other stimulants. All three carry restrictions for people with '
+   'cardiac rhythm problems, anxiety or insomnia.',
+   'The first place to look in a complaint of insomnia may therefore not be a sleep plant but the list of what is already being taken.']),
+ ('Ashwagandha: sold on the sleep shelf, evidenced elsewhere',
+  ['{ashwagandha} (Withania somnifera) has in recent years become one of the world’s best-selling supplements for stress and sleep. A few small, short controlled '
+   'trials have reported reductions in stress and anxiety scores; NCCIH notes that these trials were small and short and that long-term safety is unknown [2].',
+   'The safety side is clearer than that uncertainty and runs counter to the sales volume: cases of liver injury have been reported, it may raise thyroid hormones, '
+   'and it must not be used in pregnancy because of the risk of miscarriage. Some European countries have restricted its supplements over safety concerns.']),
+ ('The one interaction the group shares',
+  ['The sedative plants in this review come from different families and contain different compounds, yet they converge on a single line in the interaction tables: for '
+   'valerian, lemon balm and lavender alike, a restriction on use alongside alcohol and sedative medicines is recorded.',
+   'The practical consequence of this cannot be read off any one plant’s safety profile. Taking several herbal products for sleep together, or adding them to a '
+   'prescribed sleep medicine, compounds effects that run in the same direction. The warning on valerian’s record against taking it before driving has the same '
+   'ground.']),
+ ('Opium poppy and a practice that kills children',
+  ['{hashas}, the opium poppy (Papaver somniferum), owes its species name to sleep, and the latex of its capsule contains morphine and codeine. A significant part of '
+   'modern analgesics is still derived from the poppy; Türkiye is one of the few countries licensed to produce this raw material [2].',
+   'Using the plant as a home remedy for sleep is lethal, particularly in children. The capsule and its latex are addictive and can arrest breathing. Its place in '
+   'this review is not as an option that may be reached for, but because it has been used for this purpose throughout history and because that use kills.']),
+ ('The difference between monograph types',
+  ['The phrases “well-established use” and “traditional use” above are not synonyms. A herbal product reaches the market in the European Union by different regulatory '
+   'routes, two of which diverge at the level of the monograph [1].',
+   'On the well-established use route (Directive 2001/83/EC, Article 10a), scientific literature must establish that the active substances have been in '
+   'well-established medicinal use within the European Union for at least ten years, with recognised efficacy and an acceptable level of safety [1].',
+   'On traditional use registration (Article 16a(1)), the plant must have been in use for at least thirty years, of which at least fifteen within the European Union. '
+   'No clinical trials are required; sufficient safety data and plausible efficacy are enough [1].',
+   'This distinction is also the source of the mismatch this review is about. Valerian sits in the upper category while its individual sleep trials are mixed; '
+   'lavender has the sounder trials but holds only a traditional-use registration on the sleep side. A monograph category and the strength of evidence for a single '
+   'indication are not the same thing.']),
+ ('When to see a doctor',
+  ['Insomnia is less often a condition in itself than a symptom of something else. Herbal use should not delay the investigation of that something else.',
+   'The following should not be deferred by a herbal product: insomnia lasting more than three months and present on most nights of the week, sleep deprivation severe '
+   'enough to impair daytime functioning, pauses in breathing during sleep or loud snoring and choking reported by a bed partner, waking regularly with a morning '
+   'headache, a sleep disturbance accompanied by low mood and loss of interest, and restless legs.',
+   'For people taking prescribed sleep medicines or sedatives, some of the plants in this review carry compounding interactions; these products should not be combined '
+   'without the knowledge of a physician. The interaction information is given on each plant’s own record page.'])]},
+'adet-sikayetleri-ve-menopoz-icin-kullanilan-bitkiler': {
+'slug': 'menstrual-complaints-and-menopause-plants-evidence-and-risk',
+'baslik': 'Plants used for menstrual complaints and menopause: evidence, restrictions, and a lethal tradition',
+'aciklama': 'Chaste tree’s well-established use in premenstrual syndrome, traditional records for period pain, black cohosh in menopause — and the plants recorded as '
+            '“bringing on a period” that have ended in death. With sources; no dosage information.',
+'giris': 'Some of the plants used for menstrual complaints also appear in folk records as means of “bringing on a period” or of ending a pregnancy. Those plants are '
+         'included in this review — not as an option, but because deaths have been reported. For someone seeking to end a pregnancy these plants are not a route; in '
+         'Türkiye that is a procedure carried out by a physician within the legal period. This review covers recorded uses for period pain, premenstrual syndrome and '
+         'menopausal symptoms, and the level of evidence behind them; it contains no dosage information.',
+'bolumler': [
+ ('Scope and method',
+  ['The plants in this review were selected on two criteria: either the relevant indication is covered by a European Medicines Agency (EMA) herbal monograph, or the '
+   'catalogue holds a recorded traditional use in this area [1]. In addition, plants that appear in folk records here but must not be used because of their toxicity '
+   'are treated in a separate section.',
+   'Three distinct conditions appear together here and should not be conflated: period pain (dysmenorrhoea), premenstrual syndrome (PMS) and menopausal symptoms. '
+   'These are different presentations and their recorded uses differ accordingly. Parts used, safety information and restrictions are given on each plant’s own record '
+   'page; dosage and preparation have deliberately been left out.']),
+ ('Chaste tree: well-established use in premenstrual syndrome',
+  ['{hayit}, chaste tree (Vitex agnus-castus), is the highest-evidence record in this review. Standardised fruit extract has reduced premenstrual syndrome symptoms '
+   'relative to placebo in several controlled trials, and the EMA regards this use as well established [1].',
+   'The limit of that scope matters: the well-established use is for premenstrual syndrome, not for period pain itself. The two are not the same, and the plant’s '
+   'record covers one and not the other.',
+   'Chaste tree has a hormonal effect, and this is the source of its restrictions: it may interact with oral contraceptives, hormone therapy and medicines acting on '
+   'dopamine. It must not be used during pregnancy or breastfeeding. The TİTCK monograph advises that people who have had, or currently have, an oestrogen-sensitive '
+   'cancer should not use it without consulting a physician.']),
+ ('Traditional records for period pain',
+  ['The level of evidence for the plants recorded for period pain itself is markedly lower than for chaste tree. For {civanpercemi}, yarrow (Achillea millefolium), '
+   'the EMA recognises loss of appetite, dyspepsia, period pain and minor wounds under traditional use; human studies are few [1]. Anatolian records note that it is '
+   'infused for stomach and period pain.',
+   'Yarrow’s restrictions are not slight: it can cause allergy in people allergic to the daisy family, it must not be used in pregnancy, and the TİTCK monograph '
+   'advises stopping it two weeks before surgery; it interacts with antiplatelet medicines, blood thinners and lithium.',
+   '{abuta} (Abuta grandifolia) is used in Amazonian records for period pain, post-partum bleeding and women’s health. Muscle-relaxant and anti-inflammatory effects '
+   'have been seen in laboratory and animal studies; there are no human studies [2]. Because it may act on the uterus it must not be used in pregnancy, and it can '
+   'lower blood pressure.']),
+ ('Menopause is a separate matter',
+  ['Menopausal symptoms do not sit comfortably under the same heading as menstrual complaints; they are a different presentation and a different group of records.',
+   '{karayilan}, black cohosh (Actaea racemosa), is this area’s well-established use record: the EMA recognises the root extract for menopausal symptoms such as hot '
+   'flushes. NCCIH, for its part, notes that trial results are inconsistent [1][3]. In North America the Cherokee and other indigenous peoples used the root for '
+   'women’s health, rheumatism and snakebite.',
+   'Rare cases of liver injury have been reported; people with liver disease should not use it. The TİTCK monograph advises against use in pregnancy and '
+   'breastfeeding, and that people with breast cancer should use it only under medical supervision.']),
+ ('Plants recorded as “bringing on a period”, and the deaths reported',
+  ['In folk medicine records some plants appear as means of bringing on a period or of ending a pregnancy. These records are real and belong in an ethnobotanical '
+   'catalogue; but being recorded is not the same as being usable. The two highest safety risks in this review are in this group.',
+   '{yarpuz}, pennyroyal (Mentha pulegium), carries a high proportion of pulegone in its volatile oil. Pulegone is toxic to the liver and kidneys, and deaths have '
+   'been reported from ingestion of the oil [2]. It has been used throughout history in Europe and Latin America to bring on a period and to end a pregnancy. The '
+   'decisive point here is this: the toxicity arrives before, or together with, any intended effect. It is not a plant that works but carries risk; it is a poisoning '
+   'that can end in liver failure. Nor should it be drunk as a tea heavily or over long periods.',
+   '{sedef}, rue (Ruta graveolens), is known in folk medicine as a means of bringing on a period, and in Andean markets it is the central plant of limpia cleansing '
+   'rituals under the name ruda. It can cause miscarriage in pregnancy, and at high doses it is toxic to the liver and kidneys. Touching the fresh plant and then '
+   'going into sunlight causes severe skin burns (phytophotodermatitis) — its furanocoumarins make skin hypersensitive to sunlight. There is no clinical evidence for '
+   'the plant itself [2].',
+   'For someone seeking to end a pregnancy, these plants are not a route. In Türkiye the termination of pregnancy is governed by Article 5 of Law no. 2827 on '
+   'Population Planning; it is a procedure that may be carried out within ten weeks of the beginning of the pregnancy, with the person’s consent and without their '
+   'having to give a reason [4]. The place to go is not a plant but an obstetrician and gynaecologist.']),
+ ('The difference between monograph types',
+  ['The phrases “well-established use” and “traditional use” above are not synonyms. A herbal product reaches the market in the European Union by different regulatory '
+   'routes, two of which diverge at the level of the monograph [1].',
+   'On the well-established use route (Directive 2001/83/EC, Article 10a), scientific literature must establish that the active substances have been in '
+   'well-established medicinal use within the European Union for at least ten years, with recognised efficacy and an acceptable level of safety [1].',
+   'On traditional use registration (Article 16a(1)), the plant must have been in use for at least thirty years, of which at least fifteen within the European Union. '
+   'No clinical trials are required; sufficient safety data and plausible efficacy are enough [1].',
+   'Two records in this review sit in the upper category, and neither is for period pain: chaste tree for premenstrual syndrome, black cohosh for menopausal symptoms. '
+   'The plants recorded for period pain itself remain at the level of traditional use.']),
+ ('When to see a doctor',
+  ['Period pain is common, but not all pain is the same and some of it has a cause that needs investigating. Herbal use should not delay that investigation.',
+   'The following should not be deferred by a herbal product: pain severe enough to prevent daily activity and unresponsive to painkillers, pain that worsens markedly '
+   'over time, pain during intercourse or persisting outside the menstrual period, bleeding that requires changing a pad or tampon every one to two hours, bleeding '
+   'lasting more than seven days, bleeding between periods, any bleeding after menopause, absence of periods for more than three months (pregnancy aside), and pelvic '
+   'pain with fever.',
+   'For people taking oral contraceptives, hormone therapy, blood thinners or antidepressants, some of the plants in this review carry interactions and restrictions. '
+   'This holds particularly for chaste tree, which has a hormonal effect. The interaction information is given on each plant’s own record page.'])]},
+'sindirim-sikayetleri-aci-ve-kokulu-bitkiler': {
+'slug': 'digestive-complaints-bitter-and-aromatic-plants',
+'baslik': 'Plants used for digestive complaints: two groups, two mechanisms',
+'aciklama': 'The plants reached for against indigestion and gas across unrelated cultures fall into two groups: the markedly bitter ones and the aromatic ones rich in '
+            'volatile oils. Bitters, carminatives, the clinical evidence for peppermint, the systemic effects of liquorice root, and the difference between EMA monograph '
+            'types — with sources.',
+'giris': 'The plants used for indigestion and gas across different cultures fall into two sensory groups: the markedly bitter ones and the aromatic ones rich in volatile '
+         'oils. The distinction corresponds to the amara and carminative classes of traditional pharmacy and is explained by two different mechanisms of action. This '
+         'review covers both groups, their standing in European Medicines Agency monographs and the current level of clinical evidence; it contains no dosage information.',
+'bolumler': [
+ ('Scope and method',
+  ['The plants in this review were selected on two criteria: either the relevant indication is covered by a European Medicines Agency (EMA) herbal monograph, or the '
+   'catalogue holds a recorded traditional use for this complaint [1]. The parts used, the safety information and the restrictions for each plant are given on its own '
+   'record page. Dosage and preparation have deliberately been left out of this review; that information should not be read apart from the safety restrictions.']),
+ ('Two groups, two mechanisms',
+  ['Indigestion is among the oldest complaints in recorded medical history, and every independently developed medical tradition has an answer to it. The plants those '
+   'traditions reach for are not randomly distributed; they cluster around two sensory properties.',
+   'The first group consists of plants with a marked bitterness. The view that bitter compounds stimulate digestive secretions formed the basis of the amara class in '
+   'European pharmacy. The second group comprises aromatic plants rich in volatile oils; the relaxing effect of these oils on intestinal smooth muscle is the ground of '
+   'the carminative classification. The first group answers to sluggish digestion, the second to tension and bloating.']),
+ ('Bitter plants',
+  ['The clearest European example of this group is {pelin}, wormwood (Artemisia absinthium); the species name points directly to the bitterness. The EMA monograph for '
+   'Absinthii herba covers loss of appetite and mild digestive complaints [1]. Gentler members of the same class are {karahindiba}, dandelion (Taraxacum officinale), '
+   'and {civanpercemi}, yarrow (Achillea millefolium); both have monographs, and both were accepted on the basis of traditional use [1].',
+   '{devedikeni}, milk thistle (Silybum marianum), holds a separate position in this group. It is better known for the liver studies conducted on the silymarin in its '
+   'seeds, yet its monograph covers digestive complaints as well [1].',
+   'The evidence for the bitter group can be summarised as follows: the mechanism is defensible, the clinical evidence limited. Experimental data exist on the effect of '
+   'bitter compounds on secretion; for most of these plants, however, there are no controlled trials on the scale required for a claim of efficacy. That the monographs '
+   'were issued on a traditional-use basis reflects this.']),
+ ('Aromatic plants',
+  ['The second group has a far wider geographical distribution. In Anatolia {nane}, peppermint (Mentha × piperita), {rezene}, fennel (Foeniculum vulgare), {papatya}, '
+   'chamomile (Matricaria chamomilla), {melisa}, lemon balm (Melissa officinalis), {kimyon}, cumin (Cuminum cyminum), and {biberiye}, rosemary (Salvia rosmarinus), are '
+   'used for this purpose. In the Andes, around Cusco, {muna} (Minthostachys mollis) is recorded for the same function, and in the Amazon basin {matico} '
+   '(Piper aduncum).',
+   'There is no close kinship among these species, and no data indicating transmission between the communities that use them. What they share is chemical: all are rich '
+   'in volatile oils, and the relaxing effect of these compounds on smooth muscle is common to them. This constitutes a case of convergence, in which separate '
+   'traditions arrived at the same group of plants independently of any knowledge of the mechanism.']),
+ ('Peppermint: the strongest clinical evidence in the group',
+  ['While most of the aromatic plants remain at the level of traditional use, peppermint oil has been the subject of controlled clinical trials. A meta-analysis '
+   'published in 2019 pooled twelve randomised trials covering 835 patients and found enteric-coated peppermint oil significantly superior to placebo for the symptoms '
+   'of irritable bowel syndrome [2].',
+   'An update published in 2022 renewed the analysis, noting that trials published in the interval had called the result into question. The updated finding again '
+   'favours peppermint oil; the effect size is stated more cautiously [3]. The catalogue therefore records peppermint at the clinical level of evidence, the only such '
+   'case in the digestive group.',
+   'The same mechanism carries a limitation. Peppermint oil also relaxes the lower oesophageal sphincter, and may worsen symptoms in people with gastro-oesophageal '
+   'reflux. An effect that benefits one group constitutes a contraindication in another.']),
+ ('Ginger and turmeric',
+  ['{zencefil}, ginger (Zingiber officinale), does not fall squarely into either group; its pungency comes from gingerol derivatives and its effect is discussed in '
+   'terms of gastric emptying rate. The EMA monograph for Zingiberis rhizoma covers digestive complaints [1]. The monograph for {zerdecal}, turmeric (Curcuma longa), '
+   'carries the same indication [1].',
+   'For both plants the difference between culinary and supplement use is decisive. The amounts consumed as a spice are not comparable to those in capsules containing '
+   'standardised extract; cases of liver injury associated with high-dose turmeric capsules have been reported. It cannot therefore be assumed that a plant in common '
+   'kitchen use carries the same safety profile in supplement form.']),
+ ('Liquorice root and its systemic effects',
+  ['{meyan}, liquorice root (Glycyrrhiza glabra), falls outside both sensory groups; it is sweet rather than bitter. The EMA monograph for Liquiritiae radix covers '
+   'digestive complaints [1].',
+   'The plant differs from the other records in this review in its systemic effects. Regular consumption in high amounts raises blood pressure, lowers serum potassium '
+   'and can lead to cardiac arrhythmia. It is not recommended for people with hypertension, heart failure or kidney disease, or during pregnancy. Assessing liquorice '
+   'root in the same category as the other digestive plants is therefore not appropriate.']),
+ ('The difference between monograph types',
+  ['The phrase “the EMA monograph covers”, repeated above, does not by itself amount to a claim of efficacy. A herbal product reaches the market in the European Union '
+   'by different regulatory routes, two of which diverge at the level of the monograph [1].',
+   'On the well-established use route (Directive 2001/83/EC, Article 10a), scientific literature must establish that the active substances have been in well-established '
+   'medicinal use within the European Union for at least ten years, with recognised efficacy and an acceptable level of safety [1].',
+   'On traditional use registration (Directive 2001/83/EC, Article 16a(1)), the plant must have been in use for at least thirty years, of which at least fifteen within '
+   'the European Union. No clinical trials on safety and efficacy are required; sufficient safety data and plausible efficacy are enough [1].',
+   'Most of the plants in this review fall into the second category. That a plant has a monograph therefore shows that its use rests on a regulatory framework; it does '
+   'not show that its effect has been clinically demonstrated. Keeping the two categories apart is decisive for transmitting knowledge in this field accurately.']),
+ ('When to see a doctor',
+  ['The great majority of indigestion complaints resolve on their own. This is one of the factors that explains how widespread traditional uses are: when a complaint '
+   'resolves by itself, there is a tendency to associate the recovery with whatever was last applied.',
+   'The following findings are not assessed as indigestion and must not be deferred by herbal use: difficulty swallowing, haematemesis (blood in vomit), melaena (black '
+   'stools), unintentional weight loss, a complaint lasting more than two weeks without remission, pain radiating to the chest, and a complaint beginning for the first '
+   'time after the age of fifty.',
+   'For people on regular medication, pregnant women and those breastfeeding, some of the plants in this review carry drug interactions and restrictions on use. The '
+   'interaction information is given on each plant’s own record page.'])]},
 'tarih-oncesinde-bitkiler-arkeoloji': {'slug': 'plants-in-prehistory-archaeology',
  'baslik': 'Plants in prehistory: how archaeology reveals our bond with plants',
  'aciklama': 'Traces of datura and ephedra in 3,000-year-old locks of hair from Menorca, braziers of burned cannabis in the Pamirs, a thousand-year-old shaman’s bundle in the Andes and the domestication of the poppy in '
