@@ -53,6 +53,10 @@ def commons(latin, adet=14):
         if 'NC' in lis or 'ND' in lis: continue       # ticari olmayan / türetilemez alınmaz
         out.append({'kaynak': 'Commons', 'dosya': v['title'][5:],
                     'kucuk': ii.get('thumburl'), 'lisans': lis,
+                    # 26 Kasım 2026: kart çözünürlük göstermediği için p008'de
+                    # limon mersinine 448x256 bir dosya seçildi; site 500/960/1280
+                    # kopya üretiyor, o kaynak en küçüğünü bile doldurmuyor.
+                    'en': ii.get('width') or 0, 'boy': ii.get('height') or 0,
                     # Commons yazar alanı HTML döndürüyor (<a href=...>); etiketler
                     # ayıklanmazsa künyeye ham işaretleme giriyor.
                     'yazar': html.unescape(re.sub(r'<[^>]+>', '',
@@ -69,6 +73,7 @@ def inat(latin, adet=10):
         ph = (o.get('photos') or [{}])[0]
         if (ph.get('license_code') or '') not in SERBEST: continue
         out.append({'kaynak': 'iNaturalist', 'dosya': str(ph.get('id')),
+                    'en': 0, 'boy': 0,       # iNaturalist bu uçta boyut vermiyor
                     'kucuk': (ph.get('url') or '').replace('square', 'small'),
                     'lisans': (ph.get('license_code') or '').upper(),
                     'yazar': (ph.get('attribution') or '')[:80],
@@ -84,6 +89,12 @@ def inat(latin, adet=10):
 EK_TERIM = {
     'spirulina': ['Spirulina microscope', 'Arthrospira', 'Spirulina powder',
                   'Spirulina cultivation pond', 'Spirulina harvest'],
+    # 26 Kasım 2026: p008'de Eucalyptus citriodora yalnız 10 aday verdi ve
+    # hiçbiri işe yaramadı. Sebep ad: Commons dosyaları büyük ölçüde kabul
+    # edilen ad (Corymbia citriodora) altında duruyor.
+    'limonokaliptusu': ['Corymbia citriodora', 'Corymbia citriodora leaves',
+                        'Corymbia citriodora bark', 'Corymbia citriodora tree',
+                        'lemon scented gum', 'Corymbia citriodora flowers'],
 }
 
 
@@ -100,8 +111,17 @@ def kart(a, n, pid):
     return (f'<button type="button" class="ad" data-pid="{html.escape(pid)}" data-no="{n}">'
             f'<span class="no">{n}</span>'
             f'<img src="data:image/jpeg;base64,{b64}" alt="" loading="lazy">'
-            f'<span class="alt"><b>{html.escape(a["kaynak"])}</b> · {html.escape(a["lisans"])}<br>'
+            f'<span class="alt"><b>{html.escape(a["kaynak"])}</b> · {html.escape(a["lisans"])}'
+            f'{olcu(a)}<br>'
             f'{html.escape(a["yazar"])}</span></button>')
+
+
+def olcu(a):
+    """Çözünürlüğü karta yazar; 1280 pikseli doldurmayanı uyarıyla işaretler."""
+    en, boy = a.get('en') or 0, a.get('boy') or 0
+    if not en or not boy: return ''
+    kucuk = ' ⚠ küçük' if max(en, boy) < 1280 else ''
+    return f' · {en}×{boy}{kucuk}'
 
 
 def sayfa(gruplar):
