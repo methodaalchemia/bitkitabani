@@ -513,6 +513,9 @@ def voice(sents, tmp, gem=None):
                 print('reel: ses alınamadı, altyazılı sessiz video:', str(e)[:120]); ok = False
         if not ok: ws, d = _estimate(s); mp3 = None
         segs.append((t, d, mp3, [[a + t, b + t, w] for a, b, w in ws])); t += d + GAP
+    # edge-tts WordBoundary olayı gerçek kelime sınırı veriyor — Gemini'de olmayan şey.
+    # Yol kendini etiketlemeyince cay_reel geri-alma koruması iyi videoyu da atıyordu.
+    if ok: _SON_YONTEM, _SON_HIZA = 'edge-kelime', 0.0
     return segs, ok, t
 
 # ---------- altyazı ----------
