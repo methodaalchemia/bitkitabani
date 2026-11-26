@@ -193,10 +193,12 @@ FILES.update({
 # site ticari değil ama lisansı daraltmak ileride elimizi bağlar.
 # 26 Kasım 2026 · parti 008 (Okyanusya): Eda görsel adayları sayfasından seçti.
 FILES.update({
-    'limonmersini':  'Backhousia citriodora.jpg',
-    'anasonmersini': 'Syzygium anisatum flowers 1259.jpg',
-    'dagbiberi':     'Tasmannia lanceolata (12994683473).jpg',
-    'kakaduerigi':   'Terminalia ferdinandiana fruit.jpg',
+    # Commons dosyası kabul edilen ad (Corymbia) altında; kayıttaki eş ad değil.
+    'limonokaliptusu': 'Corymbia citriodora (lemon-scented gum), flowers, view 2 (SaatPilot).jpg',
+    'limonmersini':    'Backhousia citriodora flowers and foliage.jpg',
+    'anasonmersini':   'Syzygium anisatum flowers 1259.jpg',
+    'dagbiberi':       'Tasmannia lanceolata (12994683473).jpg',
+    'kakaduerigi':     'Terminalia ferdinandiana fruit.jpg',
 })
 
 DIS = {
@@ -244,6 +246,12 @@ DIS = {
         'url':     'https://inaturalist-open-data.s3.amazonaws.com/photos/758807933/original.jpg',
         'page':    'https://www.inaturalist.org/observations/412386929',
         'kaynak':  'iNaturalist', 'artist': 'Mark Ooi',
+        'license': 'CC BY 4.0', 'licenseUrl': 'https://creativecommons.org/licenses/by/4.0',
+    },
+    'limoncayagaci': {
+        'url':     'https://inaturalist-open-data.s3.amazonaws.com/photos/654092871/original.jpg',
+        'page':    'https://www.inaturalist.org/observations/358550475',
+        'kaynak':  'iNaturalist', 'artist': 'unmotivated_frog (iNaturalist)',
         'license': 'CC BY 4.0', 'licenseUrl': 'https://creativecommons.org/licenses/by/4.0',
     },
 }
