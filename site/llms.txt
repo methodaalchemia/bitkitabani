@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 301 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 302 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 
@@ -313,6 +313,7 @@ Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 - [Yer bademi (Cyperus esculentus L.)](https://bitkitabani.com/yerbademi/): Genelde güvenli, kanıt: geleneksel
 - [Kara susam (Sesamum radiatum Thonn. ex Hornem.)](https://bitkitabani.com/karasusam/): Genelde güvenli, kanıt: geleneksel
 - [Su kabağı (Lagenaria siceraria (Molina) Standl.)](https://bitkitabani.com/sukabagi/): Yüksek risk, kanıt: geleneksel
+- [Beş tat meyvesi (Schisandra chinensis (Turcz.) Baill.)](https://bitkitabani.com/bestatmeyvesi/): Dikkat, kanıt: sınırlı
 
 ## Kültür köprüleri
 - [Aynı molekül, iki ayrı ritüel](https://bitkitabani.com/kopruler/uzerlik-ayahuasca/): İkisi de harmin ve harmalin taşır. Anadolu’da bu alkaloitler nazar dumanında yanar; Amazon’da tören içeceğinin omurgasını oluşturur.

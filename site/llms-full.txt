@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 301 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 302 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -9571,3 +9571,36 @@ Karıştırma riski: Bal kabağı, kabak ve sakız kabağı (*Cucurbita* türler
 
 ### İlginç bilgi
 İnsanın evcilleştirdiği ilk bitkilerden biridir ve bunu yemek için değil, taşımak için yapmıştır: kuruyan kabuğu su geçirmez bir kap olur. Meyvesi tuzlu suda aylarca yüzebildiği için okyanusları kendi başına geçmiştir.
+
+## Beş tat meyvesi (Schisandra chinensis (Turcz.) Baill.)
+
+URL: https://bitkitabani.com/bestatmeyvesi/
+Familya: Schisandraceae · Bölge: Asya ve Sibirya · Kullanılan kısım: Kurutulmuş olgun meyveleri
+Bilimsel kanıt: Sınırlı · Güvenlik: Dikkat
+
+### Geleneksel kullanım
+- DSÖ monografı — meyve: Dünya Sağlık Örgütü monografı (Cilt 3, 2007): klinik veriyle desteklenen kullanım yok — psikoz, gastrit, hepatit ve yorgunlukta bazı klinik kanıtlar olsa da kontrollü çalışma eksik. Farmakopelerde tanımlanan kullanım: kronik öksürük ve astım, diyabet, idrar yolu bozuklukları; hastalığa bağlı yorgunlukta genel tonik. Geleneksel tıpta: büzücü, öksürük kesici, ishal kesici, balgam söktürücü, yatıştırıcı. Günlük 1,5–6 g kuru meyve.
+- Türkiye: TİTCK Tıbbi Bitki Listesi’nde bu bitki için monograf yok; Türkiye’de yetişmiyor. Adaptojen takviyesi olarak ithal kapsül ve meyve hâlinde satılıyor.
+- Kore ve Çin — omija çayı: Kore’de omija (beş tat) meyvesinden soğuk çay ve şurup yapılır; Çin tıbbında ciğer ve böbrek tonikidir. 20. yüzyılda Sovyet araştırmacıları Sibirya ginsengiyle birlikte "adaptojen" olarak inceledi; Batı pazarındaki ünü buradan geliyor.
+
+### Hazırlama
+DSÖ monografı ortalama günlük doz olarak 1,5–6,0 g kuru meyve veriyor. Yatmadan önce alınmamalı (uykusuzluk yapabilir); sakinleştirici ilaçlarla ve alkolle birlikte kullanılmamalı. Gebelikte kullanılmamalı.
+
+### Araştırmalar ne gösteriyor
+Beş tat meyvesinin monograf endikasyonlarında kanıtı yok, ama tek bileşenli, plasebo kontrollü iki randomize çalışma var — ikisi de başka alanlarda. 2016’da Climacteric dergisinde yayımlanan çift kör çalışma 36 menopoz dönemindeki kadında 6 haftalık standardize özütün Kupperman indeksini plaseboya göre anlamlı düşürdüğünü bildirdi (p=0,042) — özellikle sıcak basması, terleme ve çarpıntıda; 36 kişi, tek merkez. 2021’de American Journal of Clinical Nutrition dergisinde yayımlanan çift kör çalışma 50 yaş üstü 54 kişide 12 hafta günde 1 g özüt + hafif yürüyüşün diz ekstansör kas gücünü plaseboya göre artırdığını (sağ 10,2 Nm; %95 GA 3,7–16,8), ama kas kütlesinde, iltihap ve antioksidan belirteçlerinde ve yaşam kalitesinde fark olmadığını buldu; yan etki yok. İki küçük çalışma, iki ayrı sonlanım, ikisi de monograf dışı — kanıt düzeyi "sınırlı". Monografın "yorgunlukta tonik" endikasyonunu doğrudan sınayan çalışma yok.
+
+### Güvenlik
+Doz aşımında huzursuzluk, uykusuzluk ve nefes darlığı — DSÖ monografının uyarısı. Gebelikte kullanılmamalı: monograf, tentürün gebelere verildiği kontrolsüz bir çalışmada ikinci dozdan sonra doğumun başladığını ve tavşanlarda rahim kasılmalarının arttığını aktarıyor — bitki rahmi uyarıyor. Mide ekşimesi, mide ağrısı, iştahsızlık, alerjik deri tepkileri ve ürtiker bildirilmiş. Monograf kontrendikasyon vermiyor; ama etkileşim bölümü (aşağıda) kataloğumuzdaki en kapsamlılardan.
+
+### İlaç etkileşimleri
+- Sakinleştirici ilaçlar ve alkol: DSÖ monografı meyvenin merkezi sinir sistemini baskılayıcı etkisi olabileceğini ve sedatiflerle ya da alkolle birlikte kullanılmaması gerektiğini yazıyor.
+- CYP450 ile metabolize olan ilaçlar — siklosporin, varfarin, proteaz inhibitörleri, hormonlar: Monografın en önemli satırı: meyve karaciğerde sitokrom P450 etkinliğini uyarıyor (faz I ve II enzimlerini indükliyor). Bildirilmiş etkileşim olmasa da, bu enzimlerle işlenen ilaçların — siklosporin, varfarin, HIV proteaz inhibitörleri, östrojen-progesteron birleşimleri — düzeyini düşürebilir; monograf birlikte kullanımı ancak hekim gözetiminde uygun görüyor. Sarı kantaronla aynı mantık ve aynı liste.
+
+### Doğada
+Nerede yetişir: Rusya’nın Uzak Doğusu, Kuzeydoğu Çin, Kore, Japonya; nemli ormanlarda tırmanıcı. Çin ve Kore’de kültürü yapılıyor. Türkiye’de yetişmiyor.
+Toplama mevsimi: Sonbaharda parlak kırmızı üzümsü salkımlar; meyve olgunken toplanıp kurutulur.
+Yöresel adlar: Türkçe adı yok; Çince wǔ wèi zi, Korece omija.
+Karıştırma riski: Güney şisandrası (Schisandra sphenanthera) Çin farmakopesinde ayrı bir drogdur ve ürünlerde S. chinensis yerine geçebilir; monograf yalnızca S. chinensis içindir.
+
+### İlginç bilgi
+Adı bir tat deneyidir: Çince wǔ wèi zi, "beş tat tohumu" — tatlı, ekşi, acı, tuzlu ve keskin tatları tek meyvede taşıdığına inanılır. DSÖ monografındaki en dikkat çekici bulgu ise tat değil enzim: bitki karaciğerin ilaç işleyen enzimlerini sarı kantaron gibi uyarıyor ve monograf, "bildirilmiş etkileşim yok" demesine rağmen varfarinden siklosporine uzanan bir listeyi hekim gözetimine bağlıyor. Takviye rafında "adaptojen" diye satılan meyvenin arkasında, doğum başlatan tentür ve enzim indükleyen lignanlar var.
