@@ -11,7 +11,12 @@ familya, eş ad ve "Türkiye'de yetişir mi" sorusu ağa hiç çıkmadan yanıtl
   python3 tools/ad_bul.py --dizin             # aramayı hızlandıran dizini kurar
 
 Veri: veri/onbellek/wcvp/ (git'e girmez; Kew'in, yeniden inebilir).
-Kaynak: https://sftp.kew.org/pub/data-repositories/WCVP/
+Kaynak: https://sftp.kew.org/pub/data-repositories/WCVP/wcvp_dwca.zip
+
+  DİKKAT: Kew'in dizininde iki zip var ve sütun adları farklı.
+  Gereken wcvp_dwca.zip'tir (Darwin Core; wcvp_taxon.csv içerir).
+  wcvp.zip içindeki wcvp_names.csv'nin sütunları tutmaz.
+  Önbellek yoksa bu dosya kendiliğinden iner — elle kurulum gerekmez.
 """
 import csv, json, os, pickle, sys
 
@@ -21,6 +26,32 @@ TAKSON = os.path.join(WCVP, 'wcvp_taxon.csv')
 DAGILIM = os.path.join(WCVP, 'wcvp_distribution.csv')
 DIZIN = os.path.join(WCVP, 'ad_dizin.pkl')
 csv.field_size_limit(10_000_000)
+
+
+ZIP = 'https://sftp.kew.org/pub/data-repositories/WCVP/wcvp_dwca.zip'
+
+
+def indir():
+    """Önbellek yoksa Kew'in Darwin Core arşivini indirir.
+
+    Neden var (26 Kasım 2026): veri/onbellek/ git'e girmiyor, dolayısıyla her
+    yeni oturum bu araca önbelleksiz başlıyordu ve çağrı FileNotFoundError ile
+    düşüyordu. Parti yordamı her partiyi yeni oturumda yazdığı için bu, aracı
+    pratikte kullanılamaz kılıyordu; 25 Kasım kapı turunda ikinci göz Kew bölge
+    sayılarını bu yüzden doğrulayamadı.
+    """
+    import urllib.request, zipfile, tempfile
+    os.makedirs(WCVP, exist_ok=True)
+    print(f'WCVP önbelleği yok, indiriliyor (~100 MB): {ZIP}', file=sys.stderr)
+    with tempfile.TemporaryDirectory() as g:
+        p = os.path.join(g, 'wcvp_dwca.zip')
+        urllib.request.urlretrieve(ZIP, p)
+        with zipfile.ZipFile(p) as z:
+            for ad in ('wcvp_taxon.csv', 'wcvp_distribution.csv'):
+                if ad not in z.namelist():
+                    raise SystemExit(f'{ad} arşivde yok — Kew dosya düzenini değiştirmiş olabilir.')
+                z.extract(ad, WCVP)
+    print('indirildi.', file=sys.stderr)
 
 
 def dizin_kur():
@@ -51,7 +82,9 @@ _D = None
 def yukle():
     global _D
     if _D is None:
-        if not os.path.exists(DIZIN): dizin_kur()
+        if not os.path.exists(DIZIN):
+            if not os.path.exists(TAKSON): indir()
+            dizin_kur()
         _D = pickle.load(open(DIZIN, 'rb'))
     return _D
 
@@ -150,7 +183,9 @@ def yaz(s):
 
 if __name__ == '__main__':
     a = sys.argv[1] if len(sys.argv) > 1 else ''
-    if a == '--dizin': dizin_kur()
+    if a == '--dizin':
+        if not os.path.exists(TAKSON): indir()
+        dizin_kur()
     elif a == '--parti':
         f = os.path.join(KOK, 'veri', 'parti', sys.argv[2] + '.txt')
         for s in open(f, encoding='utf-8'):
