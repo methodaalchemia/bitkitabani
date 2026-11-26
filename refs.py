@@ -182,6 +182,16 @@ FILES.update({
     'suriyekekigi': "Majorana syriaca - za'atar.jpg",
 })
 
+# 26 Kasım 2026: parti 007 — Eda görsel adayları sayfasından seçti.
+FILES.update({
+    'domates':      '2012 07 26 016 Cocktailtomaten.jpg',
+    'balkabagi':    'Cucurbita maxima 2016 G1.jpg',
+    'limafasulyesi': 'Phaseolus lunatus (gousse).jpg',
+    'rocoto':       'Capsicum pubescens flower and stem.jpeg',
+    'cerimoya':     'Starr 071024-0255 Annona cherimola.jpg',
+    'kirmizimelekborazani': 'Brugmansia sanguinea flowers, Bogotá, Colombia.jpg',
+})
+
 # ── Commons dışı görseller ────────────────────────────────────────────────
 # Bazı bitkilerin Wikimedia Commons'ta kullanılabilir fotoğrafı yok. iNaturalist'te
 # CC0/CC BY lisanslı gözlem fotoğrafları var; onlar buraya elle yazılır.
@@ -221,5 +231,21 @@ DIS = {
         # Kayıt cins düzeyinde (Ormosia spp.); fotoğraftaki tür yazılmalı.
         'not':     'Fotoğraftaki tür Ormosia macrocalyx (Kosta Rika)',
         'notEn':   'The species shown is Ormosia macrocalyx (Costa Rica)',
+    },
+    # 26 Kasım 2026: parti 007 — Eda seçti.
+    'patates': {
+        'url':     'https://inaturalist-open-data.s3.amazonaws.com/photos/762186294/original.jpg',
+        'page':    'https://www.inaturalist.org/observations/414064060',
+        'kaynak':  'iNaturalist', 'artist': 'Jacob Mullin',
+        'license': 'CC0 1.0', 'licenseUrl': 'https://creativecommons.org/publicdomain/zero/1.0/',
+        'not': 'Pepperell, Massachusetts, ABD', 'notEn': 'Pepperell, Massachusetts, USA',
+    },
+    'huacatay': {
+        'url':     'https://inaturalist-open-data.s3.amazonaws.com/photos/765947064/original.jpg',
+        'page':    'https://www.inaturalist.org/observations/415938539',
+        'kaynak':  'iNaturalist', 'artist': 'rmjb (iNaturalist)',
+        'license': 'CC BY 4.0', 'licenseUrl': 'https://creativecommons.org/licenses/by/4.0',
+        # And kökenli bitki; fotoğraf doğallaşmış bir popülasyondan.
+        'not': 'Sti Fadma, Marakeş, Fas', 'notEn': 'Sti Fadma, Marrakesh, Morocco',
     },
 }
