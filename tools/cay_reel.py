@@ -13,6 +13,10 @@ import ig2, reel
 from tarif import TARIFLER
 
 BUTCE = int(os.environ.get('CAY_HIZA_BUTCE', '12'))   # koşu başına yeniden üretilecek video sayısı (video başına 1 Gemini isteği)
+# Altyazısı tahmin değil ölçüm olan yöntemler. 'edge-kelime' edge-tts'in
+# WordBoundary olayından geliyor; Gemini kotası dolduğunda ses oraya düşüyor
+# ve o yol da gerçek kelime zamanı veriyor, yani video geri alınmamalı.
+SAGLAM = ('cumle', 'ses-hizasi', 'edge-kelime')
 
 
 def _yontem(od):
@@ -35,7 +39,7 @@ def main():
     for pid in pidler:
         od = os.path.join(out_root, pid)
         if not os.path.exists(os.path.join(od, 'reel.mp4')): yeni.append(pid)
-        elif _yontem(od) not in ('cumle', 'ses-hizasi'): eski.append(pid)
+        elif _yontem(od) not in SAGLAM: eski.append(pid)
     tam_hiza = set((yeni + eski)[:BUTCE])
     print('cay reel: cümle-başına hizalama →', ', '.join(sorted(tam_hiza)) or '(yok)',
           '· yeni %d, düzeltilecek eski %d' % (len(yeni), len(eski)))
@@ -61,7 +65,7 @@ def main():
                     y = os.path.join(od, ad)
                     if os.path.exists(y): shutil.copy2(y, y + '.yedek'); yedek.append(y)
             ok = reel.make(p, ig2.text_for(p), img, hedef)
-            if yenile and (not ok or _yontem(od) not in ('cumle', 'ses-hizasi')):
+            if yenile and (not ok or _yontem(od) not in SAGLAM):
                 for y in yedek: shutil.copy2(y + '.yedek', y)
                 ok = True
                 print('cay reel: %s yenilenemedi, eski video geri kondu' % pid)
@@ -86,7 +90,7 @@ def main():
                          'tr': p['tr'], 'yoresel': yor,
                          'tarif': next(t['slug'] for t in TARIFLER if t['bitki'] == pid)}
     json.dump(done, open(os.path.join(out_root, 'index.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
-    kalan = sum(1 for pid in pidler if _yontem(os.path.join(out_root, pid)) not in ('cumle', 'ses-hizasi'))
+    kalan = sum(1 for pid in pidler if _yontem(os.path.join(out_root, pid)) not in SAGLAM)
     print('cay reel: %d video hazır · hizası hâlâ tahmin olan: %d' % (len(done), kalan))
 
 
