@@ -78,14 +78,8 @@ def main():
         if ok:
             # Yöresel ad başlık testine girsin: YouTube'da yöresel adla arayan
             # bulduğunu sonuna kadar izliyor (24 Kasım veri notu).
-            # Kayıtta yöresel adlar 'yoresel' alanında ve ilki her zaman bitkinin
-            # kendi adı; ig.py'deki okuyucuyla aynı biçimde ilk FARKLI ad alınır.
-            _adlar = [re.sub(r'\([^)]*\)', '', x).strip() for x in re.split(r'[,;]', str(p.get('yoresel') or ''))]
-            def _sade(x): return x.lower().translate(str.maketrans('ıİIçğöşü', 'iiicgosu'))
-            _tr = _sade(p['tr'])
-            # Adın kendisi, çekimi ya da tür adı ('boylu ardıç') yöresel ad değildir:
-            # biri ötekini içeriyorsa elenir. Eleyince kalan yoksa C kolu A'ya düşer.
-            yor = next((a for a in _adlar if len(a) >= 3 and _sade(a) not in _tr and _tr not in _sade(a)), '')
+            yor = re.split(r'[,;]', str(p.get('diger') or ''))[0].strip()
+            if yor.lower() == p['tr'].lower() or len(yor) < 3: yor = ''
             done[pid] = {'reel': f'https://bitkitabani.com/ig/cay/{pid}/reel.mp4', 'caption': ig2.caption2(p, 'Çay tarifi'),
                          'tr': p['tr'], 'yoresel': yor,
                          'tarif': next(t['slug'] for t in TARIFLER if t['bitki'] == pid)}
