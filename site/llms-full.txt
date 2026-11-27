@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 302 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 303 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -9604,3 +9604,36 @@ Karıştırma riski: Güney şisandrası (Schisandra sphenanthera) Çin farmakop
 
 ### İlginç bilgi
 Adı bir tat deneyidir: Çince wǔ wèi zi, "beş tat tohumu" — tatlı, ekşi, acı, tuzlu ve keskin tatları tek meyvede taşıdığına inanılır. DSÖ monografındaki en dikkat çekici bulgu ise tat değil enzim: bitki karaciğerin ilaç işleyen enzimlerini sarı kantaron gibi uyarıyor ve monograf, "bildirilmiş etkileşim yok" demesine rağmen varfarinden siklosporine uzanan bir listeyi hekim gözetimine bağlıyor. Takviye rafında "adaptojen" diye satılan meyvenin arkasında, doğum başlatan tentür ve enzim indükleyen lignanlar var.
+
+## Çin yüksükotu (Rehmannia glutinosa Libosch.)
+
+URL: https://bitkitabani.com/cinyuksukotu/
+Familya: Orobanchaceae · Bölge: Asya ve Sibirya · Kullanılan kısım: Kurutulmuş kök ve rizomları
+Bilimsel kanıt: Geleneksel · Güvenlik: Dikkat
+
+### Geleneksel kullanım
+- DSÖ monografı — kök: Dünya Sağlık Örgütü monografı (Cilt 3, 2007): klinik veriyle desteklenen kullanım yok — romatoid artrit ve hipertansiyonda olgu bildirimleri var, kontrollü çalışma eksik. Farmakopelerde tanımlanan kullanım: ateş, diyabet, hipertansiyon, deri döküntüleri, boğaz ağrısı, aşırı ve sık adet kanaması; bağışıklığı uyaran tonik. Geleneksel tıpta: spazm çözücü, idrar söktürücü; yanık, ishal, dizanteri. Günlük 9–15 g kök.
+- Türkiye: TİTCK Tıbbi Bitki Listesi’nde bu bitki için monograf yok; Türkiye’de yetişmiyor ve Türk takviye pazarında da nadirdir. Kataloğumuza girmesinin nedeni DSÖ monografı ve Çin tıbbındaki merkezi yeri.
+- Çin — dì huáng ve Altı Bileşenli Rehmannia: Çin tıbbının en çok kullanılan köklerinden; çiğ (shēng), kurutulmuş ve şarapla pişirilmiş (shú) biçimleri ayrı droglar sayılır. Dünyaca ünlü "Liu Wei Di Huang Wan" (Altı Bileşenli Rehmannia Hapı) formülünün baş bileşenidir — kanıt tartışmasının çoğu da bu formülle ilgili, bitkiyle değil.
+
+### Hazırlama
+DSÖ monografı günlük doz olarak 9–15 g kurutulmuş kök ve rizom veriyor, infüzyon ya da dekoksiyon. Kronik karaciğer ve mide-bağırsak hastalığında, ishalde ve gebelikte kontrendike. Emzirirken ve çocuklarda hekim gözetimi olmadan önerilmiyor.
+
+### Araştırmalar ne gösteriyor
+Çin yüksükotunun tek başına sınandığı bir klinik çalışma yok; bütün insan verisi onu baş bileşen yapan çok bileşenli formüllerden. 2023’te Clinical Journal of the American Society of Nephrology dergisinde yayımlanan çok merkezli randomize çalışma (148 hasta, 48 hafta), tip 2 diyabet ve böbrek hastalığında standart tedaviye eklenen Rehmannia-6 temelli granüllerin eGFR düşüşünü yılda 2,7 ml/dk yavaşlattığını buldu — ama albüminüride anlamlı fark yoktu ve çalışma değerlendirici-kör, plasebosuz. 2025’te Saudi Medical Journal dergisinde yayımlanan meta-analiz (17 RKÇ, 1.139 hasta) meme kanseri hastalarında perimenopozal belirtilerde Rehmannia’yı "hükümdar drog" yapan formülleri inceliyor ve yöntem kusurlarını vurguluyor. Her ikisi de formülü ölçüyor; Rehmannia’nın payı ayrıştırılmış değil. Kanıt düzeyi "geleneksel".
+
+### Güvenlik
+Kronik karaciğer ve mide-bağırsak hastalığında ve ishalde kontrendike — DSÖ monografı Çin farmakopesinden aktarıyor. Gebelikte kontrendike: farelerde embriyo yerleşimini engellediği gösterilmiş (olası anti-implantasyon etkisi). İshal, karın ağrısı, ödem, yorgunluk, baş dönmesi ve çarpıntı bildirilmiş; monograf bunların geçici olduğunu ve birkaç günde kaybolduğunu yazıyor. Emzirirken ve çocuklarda hekim gözetimi olmadan önerilmiyor. Adındaki "yüksükotu" yanıltmasın: kalp glikoziti taşımaz.
+
+### İlaç etkileşimleri
+- DSÖ: etkileşim verisi yok: Monograf ilaç etkileşimleri konusunda bilgi bulunmadığını yazıyor. Kan şekerini etkilediği öne sürülen bir bitki olarak antidiyabetiklerle üst üste binme kuramsal bir nottur; diyabet-böbrek çalışmasında hastalar ilaçlarına devam etti ve ciddi etkileşim bildirilmedi.
+- Formül verisini bitkiye mal etmemek: Rehmannia-6 ve benzeri formüller beş-yedi bitki içerir; onların sonuçları bu kökün kanıtı sayılamaz.
+
+### Doğada
+Nerede yetişir: Çin kökenli; Çin, Japonya ve Kore’de kültürü yapılıyor. Türkiye’de yetişmiyor.
+Toplama mevsimi: İlkbaharda mor-kahverengi yüksük biçimli çiçekler; kökler sonbaharda sökülür ve ya kurutulur ya da şarapla buharda pişirilir.
+Yöresel adlar: Türkçe adı yok; Çince dì huáng, shēng dì (çiğ), shú dì (pişmiş).
+Karıştırma riski: ⚠️ Yüksükotu (Digitalis) ile adı ve çiçeği karışır; yüksükotu ölümcül kalp glikozitleri taşır, bu bitki taşımaz. Çin farmakopesinde çiğ ve pişmiş kök ayrı droglardır ve ayrı amaçlarla kullanılır.
+
+### İlginç bilgi
+Adı ile akrabalığı birbirini tutmuyor: "Çin yüksükotu" denir, eski sınıflamada yüksükotuyla aynı familyaya (Scrophulariaceae) konmuştu — DSÖ monografı hâlâ öyle yazar — ama modern sınıflama onu canavarotugillere (Orobanchaceae) taşıdı ve kalp glikoziti taşımaz. Çin tıbbında ise aynı kökün üç hâli üç ayrı drogdur: çiğ, kuru ve şarapla pişirilmiş. Bir bitkinin hazırlanış biçiminin onu başka bir ilaç yapabildiğinin kataloğumuzdaki en açık örneği.
