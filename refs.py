@@ -201,6 +201,16 @@ FILES.update({
 # fetch_images.py bu id'lere dokunmaz, tools/dis_gorsel.py indirir.
 # Kural: yalnız CC0, CC BY ve CC BY-SA. NC (ticari olmayan) lisans alınmaz —
 # site ticari değil ama lisansı daraltmak ileride elimizi bağlar.
+# 26 Kasım 2026 · parti 008 (Okyanusya): Eda görsel adayları sayfasından seçti.
+FILES.update({
+    # Commons dosyası kabul edilen ad (Corymbia) altında; kayıttaki eş ad değil.
+    'limonokaliptusu': 'Corymbia citriodora (lemon-scented gum), flowers, view 2 (SaatPilot).jpg',
+    'limonmersini':    'Backhousia citriodora flowers and foliage.jpg',
+    'anasonmersini':   'Syzygium anisatum flowers 1259.jpg',
+    'dagbiberi':       'Tasmannia lanceolata (12994683473).jpg',
+    'kakaduerigi':     'Terminalia ferdinandiana fruit.jpg',
+})
+
 DIS = {
     # 25 Kasım 2026: Eda görsel adayları sayfasından seçti.
     'beyazpelin': {
@@ -250,6 +260,25 @@ DIS = {
         'license': 'CC BY 4.0', 'licenseUrl': 'https://creativecommons.org/licenses/by/4.0',
         # And kökenli bitki; fotoğraf doğallaşmış bir popülasyondan.
         'not': 'Sti Fadma, Marakeş, Fas', 'notEn': 'Sti Fadma, Marrakesh, Morocco',
+    },
+    # 26 Kasım 2026 · parti 008: Eda görsel adayları sayfasından seçti.
+    'daryaprakliokaliptus': {
+        'url':     'https://inaturalist-open-data.s3.amazonaws.com/photos/759625667/original.jpg',
+        'page':    'https://www.inaturalist.org/observations/412795785',
+        'kaynak':  'iNaturalist', 'artist': 'Tom Field',
+        'license': 'CC BY 4.0', 'licenseUrl': 'https://creativecommons.org/licenses/by/4.0',
+    },
+    'niaouli': {
+        'url':     'https://inaturalist-open-data.s3.amazonaws.com/photos/758807933/original.jpg',
+        'page':    'https://www.inaturalist.org/observations/412386929',
+        'kaynak':  'iNaturalist', 'artist': 'Mark Ooi',
+        'license': 'CC BY 4.0', 'licenseUrl': 'https://creativecommons.org/licenses/by/4.0',
+    },
+    'limoncayagaci': {
+        'url':     'https://inaturalist-open-data.s3.amazonaws.com/photos/654092871/original.jpg',
+        'page':    'https://www.inaturalist.org/observations/358550475',
+        'kaynak':  'iNaturalist', 'artist': 'unmotivated_frog (iNaturalist)',
+        'license': 'CC BY 4.0', 'licenseUrl': 'https://creativecommons.org/licenses/by/4.0',
     },
 }
 
