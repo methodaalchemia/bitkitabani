@@ -241,6 +241,7 @@ YASAL = {
 'koka': ('yasak', 'Koka yaprağı uyuşturucu madde kapsamındadır. Yaprak ya da koka çayı Türkiye’ye getirilemez.'),
 'ayahuasca': ('yasak', 'DMT içeren içecek uyuşturucu madde kapsamındadır.'),
 'chacruna': ('kisitli', 'İçerdiği DMT kontrollü maddedir. Bitkinin kendisinin durumu ayrıca düzenlenmemiş olabilir.'),
+'chaliponga': ('kisitli', 'İçerdiği DMT kontrollü maddedir. Bitkinin kendisinin durumu ayrıca düzenlenmemiş olabilir.'),
 'sanpedro': ('kisitli', 'İçerdiği meskalin kontrollü maddedir. Kaktüs süs bitkisi olarak satılır; tüketmek için hazırlamak yasa dışı sayılabilir.'),
 'salep': ('kisitli', 'Yabandan toplama izne tabidir; salep yumrusu ihracatı yasaktır.'),
 'mapacho': ('kisitli', 'Maraş otu gibi ürünlerin satışı tütün mevzuatına tabidir.'),
