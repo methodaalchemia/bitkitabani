@@ -110,7 +110,13 @@ def main():
             bulgu.append((_pid, 'yasal durum: extra.YASAL\'da var, en/misc_en.py YASAL_EN\'de yok '
                                 '— İngilizce sayfada yasal bölüm hiç basılmaz', ''))
     except Exception as _e:
-        print('uyarı: yasal durum eşitliği denetlenemedi:', _e)
+        # 27 Kasım 2026 (akşam turu): burada yalnız print vardı ve bulgu
+        # eklenmiyordu — extra.py ya da en/misc_en.py'de bir ad değişikliği,
+        # sözdizimi hatası veya döngüsel import denetimi sessizce atlatıyor,
+        # betik çıkış kodu 0 veriyor ve kapı yeşil geçiyordu. Denetimin
+        # koşamaması da bir bulgudur: fail-loud.
+        bulgu.append(('(denetim)', 'yasal durum eşitliği KOŞULAMADI — '
+                                   f'extra.YASAL / YASAL_EN karşılaştırması yapılmadı: {_e}', ''))
 
     if not bulgu:
         print('Türkçe–İngilizce güvenlik eşitliği: eksik kısıtlama yok.')

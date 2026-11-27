@@ -94,66 +94,52 @@ def ema_kontrol(p, hata):
 
 
 def titck_kontrol(p, uyari):
-    """TİTCK metinlerinde cins geçiyorsa iki ayrı duruma bakar.
+    """TİTCK metinlerinde yalnız cins geçiyorsa işaretle — insan baksın.
 
-    27 Kasım 2026: eski hâli her cins eşleşmesinde uyarı veriyordu ve üç
-    partinin ikinci göz denetiminde **sekiz uyarının sekizi de yanlış
-    pozitif** çıktı: önbellekte o türün monografı hiç yoktu, kayıtlar o
-    monograflara hiç atıf yapmıyordu ve üçü de "bu tür için monograf
-    yoktur" diyordu. Yanlış uyarı gerçek uyarının arasında kaybolduğu için
-    kendisi bir arıza.
+    27 Kasım 2026 (akşam turu): bu denetim sabah turunda iki kola
+    daraltılmıştı — (a) kaydın monografa fiilen atıf yapması, (b) monografın
+    cinsi çapraz duyarlılık gerekçesiyle sayması. **Daraltma geri alındı**,
+    çünkü ikinci göz denetiminde ölçüldü ki daraltma kendi gerekçesini
+    susturuyor.
 
-    Uyarının asıl yararı başka yerde çıktı: huacatay bir Asteraceae kaydı ve
-    TİTCK'in aynisefa, dulavratotu, enginar monografları *Tagetes* cinsini
-    adıyla ve **çapraz duyarlılık** gerekçesiyle sayıyor — kaydın güvenlik
-    alanında bu uyarı hiç yoktu. Denetim artık bu iki durumu ayırıyor.
+    huacatay (*Tagetes minuta*) için eski hâl 3 uyarı veriyordu, daraltılmış
+    hâl 0. Oysa TİTCK'in `dulavratotu` monografı birebir şöyle diyor:
+    "Asteraceae familyası bitkilerine (… ve **Tagetes L.** cinslerine ait
+    türler) karşı aşırı duyarlılık görülebilir. **Anafilaktik şok
+    görülebilir.**" `enginar` monografı da Tagetes'i adıyla sayıyor.
+    huacatay'ın `guvNot` alanında ise "duyarl", "alerj" ve "anafila"
+    sözcüklerinin **hiçbiri geçmiyor** (sayım 0/0/0); alan tamamen
+    fototoksisite üzerine. Kol (b)'nin muafiyet listesi "compositae" ve
+    "familyas" sözcüklerini o **fototoksisite** cümlesinde bulup uyarıyı
+    susturuyordu — bir fototoksisite cümlesi bir anafilaksi boşluğunu
+    kapatıyordu. Kuyruk genelinde muafiyet 250 kaydın 66'sını (%26) toptan
+    muaf kılıyor ve "aşırı duyarl" tek başına yetiyor.
+
+    Kol (a) de ölçüldü: kuyruktaki 99 TİTCK monograf atıfının yalnız 3'ünü
+    saptıyor. Önbellek dosya adları ASCII'leştirilmiş ("seytanpencesi"),
+    kayıt metni aksanlı ("şeytanpençesi") ve karşılaştırma `sade()`'den
+    geçmiyor.
+
+    Korunan düzeltme: cins adı **sözcük sınırıyla** aranıyor. Alt dizgi
+    araması 29 doğrulanmış yanlış pozitif üretiyordu — "Rosa" (gül)
+    "Rosaceae" içinde, "Ananas" (comosus) "Fragaria × ananassa" içinde
+    eşleşiyordu.
+
+    Denetim gürültülü ama fail-loud: kararı ikinci göz verir. Doğru bir
+    çapraz duyarlılık saptayıcısı yazılana kadar bu hâlde bırakıldı;
+    tasarım notu `claude/yayin-gunlugu.md` içinde.
     """
     if not os.path.isdir(TITCK): return
     tur = (p.get('taxon') or p.get('la') or '').strip()
     if not tur: return
     cins = tur.split()[0]
     cins_kalip = re.compile(r'\b' + re.escape(cins.lower()) + r'\b')
-    # kaydın kendi metni ve kaynakları: bir monografa fiilen atıf var mı
-    govde = ' '.join(str(p.get(a) or '') for a in ('bilim', 'guvNot', 'haz', 'diger')).lower()
-    govde += ' ' + ' '.join((a or '') + ' ' + (u or '') for a, u in (p.get('kaynak') or [])).lower()
-    guv = str(p.get('guvNot') or '').lower()
-
     for f in sorted(os.listdir(TITCK)):
         if not f.endswith('.txt'): continue
-        ad = f[:-4]
         m = open(os.path.join(TITCK, f), encoding='utf-8', errors='replace').read().lower()
-        if not cins_kalip.search(m) or tur.lower() in m:
-            continue
-
-        # (a) Kayıt bu monografa fiilen atıf yapıyor mu? Yapıyorsa tür
-        #     düzeyinde olmadığı için kısıtlamaları buraya taşınamaz.
-        if re.search(r'\b' + re.escape(ad) + r'\b', govde):
-            uyari.append(f'{p["id"]}: TİTCK "{ad}" monografına atıf var ama monografta yalnız CİNS '
-                         f'geçiyor, tür geçmiyor — o monografın kısıtlamaları bu türe uygulanamaz')
-            continue
-
-        # (b) Monograf bu cinsi çapraz duyarlılık gerekçesiyle sayıyor mu, ve
-        #     kaydın güvenlik alanında buna karşılık gelen bir uyarı var mı?
-        # Satır değil pencere: monograf metinleri satır başlarında kırılıyor,
-        # "Tagetes L. cinslerine ait türler) karşı aşırı duyarlılık" cümlesi
-        # iki satıra bölündüğü için satır bazlı arama kaçırıyordu.
-        for eş in cins_kalip.finditer(m):
-            pencere = m[max(0, eş.start() - 250): eş.end() + 250]
-            if 'duyarl' not in pencere: continue
-            # Ölçüt, aileye ya da çapraz duyarlılığa dair bir uyarı olmalı.
-            # Yalnız "duyarl" aramak huacatay'ı kaçırıyordu: o kaydın bütün
-            # güvenlik hikâyesi ışığa duyarlılık, aile duyarlılığı değil.
-            if any(x in guv for x in ('asteraceae', 'compositae', 'bileşikgiller', 'papatya',
-                                      'çapraz duyarl', 'aşırı duyarl', 'aynı aile', 'familyas')):
-                # Bilinen sınır: aileyi BAŞKA bir gerekçeyle anan kayıt da
-                # muaf kalıyor. huacatay Compositae'yi fototoksisite için
-                # anıyor, TİTCK ise aynı aileyi aşırı duyarlılık için sayıyor
-                # — ikisi ayrı uyarı ve makine bunu ayırt edemiyor. Bu yüzden
-                # denetim daraltır, kararı ikinci göz verir.
-                break
-            uyari.append(f'{p["id"]}: TİTCK "{ad}" monografı bu cinsi ÇAPRAZ DUYARLILIK gerekçesiyle '
-                         f'adıyla sayıyor, kaydın guvNot alanında buna karşılık bir uyarı yok')
-            break
+        if cins_kalip.search(m) and tur.lower() not in m:
+            uyari.append(f'{p["id"]}: TİTCK "{f[:-4]}" monografında yalnız CİNS geçiyor, tür geçmiyor — '
+                         f'o monografın kısıtlamaları bu türe uygulanamaz')
 
 
 def kaynak_kontrol(p, hata):
