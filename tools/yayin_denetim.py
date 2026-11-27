@@ -102,7 +102,11 @@ def titck_kontrol(p, uyari):
     for f in sorted(os.listdir(TITCK)):
         if not f.endswith('.txt'): continue
         m = open(os.path.join(TITCK, f), encoding='utf-8', errors='replace').read().lower()
-        if cins.lower() in m and tur.lower() not in m:
+        # 27 Kasım 2026: cins adı ALT DİZGİ olarak aranıyordu, bu yüzden
+        # "Ananas" (comosus) çilek monografındaki "Fragaria × ananassa"
+        # içinde eşleşiyor ve yanlış uyarı veriyordu. Aynı kusur parti
+        # 008'de dört yanlış uyarı üretti. Sözcük sınırıyla aranıyor.
+        if re.search(r'\b' + re.escape(cins.lower()) + r'\b', m) and tur.lower() not in m:
             uyari.append(f'{p["id"]}: TİTCK "{f[:-4]}" monografında yalnız CİNS geçiyor, tür geçmiyor — '
                          f'o monografın kısıtlamaları bu türe uygulanamaz')
 
