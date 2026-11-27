@@ -94,21 +94,66 @@ def ema_kontrol(p, hata):
 
 
 def titck_kontrol(p, uyari):
-    """TİTCK metinlerinde yalnız cins geçiyorsa işaretle — insan baksın."""
+    """TİTCK metinlerinde cins geçiyorsa iki ayrı duruma bakar.
+
+    27 Kasım 2026: eski hâli her cins eşleşmesinde uyarı veriyordu ve üç
+    partinin ikinci göz denetiminde **sekiz uyarının sekizi de yanlış
+    pozitif** çıktı: önbellekte o türün monografı hiç yoktu, kayıtlar o
+    monograflara hiç atıf yapmıyordu ve üçü de "bu tür için monograf
+    yoktur" diyordu. Yanlış uyarı gerçek uyarının arasında kaybolduğu için
+    kendisi bir arıza.
+
+    Uyarının asıl yararı başka yerde çıktı: huacatay bir Asteraceae kaydı ve
+    TİTCK'in aynisefa, dulavratotu, enginar monografları *Tagetes* cinsini
+    adıyla ve **çapraz duyarlılık** gerekçesiyle sayıyor — kaydın güvenlik
+    alanında bu uyarı hiç yoktu. Denetim artık bu iki durumu ayırıyor.
+    """
     if not os.path.isdir(TITCK): return
     tur = (p.get('taxon') or p.get('la') or '').strip()
     if not tur: return
     cins = tur.split()[0]
+    cins_kalip = re.compile(r'\b' + re.escape(cins.lower()) + r'\b')
+    # kaydın kendi metni ve kaynakları: bir monografa fiilen atıf var mı
+    govde = ' '.join(str(p.get(a) or '') for a in ('bilim', 'guvNot', 'haz', 'diger')).lower()
+    govde += ' ' + ' '.join((a or '') + ' ' + (u or '') for a, u in (p.get('kaynak') or [])).lower()
+    guv = str(p.get('guvNot') or '').lower()
+
     for f in sorted(os.listdir(TITCK)):
         if not f.endswith('.txt'): continue
+        ad = f[:-4]
         m = open(os.path.join(TITCK, f), encoding='utf-8', errors='replace').read().lower()
-        # 27 Kasım 2026: cins adı ALT DİZGİ olarak aranıyordu, bu yüzden
-        # "Ananas" (comosus) çilek monografındaki "Fragaria × ananassa"
-        # içinde eşleşiyor ve yanlış uyarı veriyordu. Aynı kusur parti
-        # 008'de dört yanlış uyarı üretti. Sözcük sınırıyla aranıyor.
-        if re.search(r'\b' + re.escape(cins.lower()) + r'\b', m) and tur.lower() not in m:
-            uyari.append(f'{p["id"]}: TİTCK "{f[:-4]}" monografında yalnız CİNS geçiyor, tür geçmiyor — '
-                         f'o monografın kısıtlamaları bu türe uygulanamaz')
+        if not cins_kalip.search(m) or tur.lower() in m:
+            continue
+
+        # (a) Kayıt bu monografa fiilen atıf yapıyor mu? Yapıyorsa tür
+        #     düzeyinde olmadığı için kısıtlamaları buraya taşınamaz.
+        if re.search(r'\b' + re.escape(ad) + r'\b', govde):
+            uyari.append(f'{p["id"]}: TİTCK "{ad}" monografına atıf var ama monografta yalnız CİNS '
+                         f'geçiyor, tür geçmiyor — o monografın kısıtlamaları bu türe uygulanamaz')
+            continue
+
+        # (b) Monograf bu cinsi çapraz duyarlılık gerekçesiyle sayıyor mu, ve
+        #     kaydın güvenlik alanında buna karşılık gelen bir uyarı var mı?
+        # Satır değil pencere: monograf metinleri satır başlarında kırılıyor,
+        # "Tagetes L. cinslerine ait türler) karşı aşırı duyarlılık" cümlesi
+        # iki satıra bölündüğü için satır bazlı arama kaçırıyordu.
+        for eş in cins_kalip.finditer(m):
+            pencere = m[max(0, eş.start() - 250): eş.end() + 250]
+            if 'duyarl' not in pencere: continue
+            # Ölçüt, aileye ya da çapraz duyarlılığa dair bir uyarı olmalı.
+            # Yalnız "duyarl" aramak huacatay'ı kaçırıyordu: o kaydın bütün
+            # güvenlik hikâyesi ışığa duyarlılık, aile duyarlılığı değil.
+            if any(x in guv for x in ('asteraceae', 'compositae', 'bileşikgiller', 'papatya',
+                                      'çapraz duyarl', 'aşırı duyarl', 'aynı aile', 'familyas')):
+                # Bilinen sınır: aileyi BAŞKA bir gerekçeyle anan kayıt da
+                # muaf kalıyor. huacatay Compositae'yi fototoksisite için
+                # anıyor, TİTCK ise aynı aileyi aşırı duyarlılık için sayıyor
+                # — ikisi ayrı uyarı ve makine bunu ayırt edemiyor. Bu yüzden
+                # denetim daraltır, kararı ikinci göz verir.
+                break
+            uyari.append(f'{p["id"]}: TİTCK "{ad}" monografı bu cinsi ÇAPRAZ DUYARLILIK gerekçesiyle '
+                         f'adıyla sayıyor, kaydın guvNot alanında buna karşılık bir uyarı yok')
+            break
 
 
 def kaynak_kontrol(p, hata):
