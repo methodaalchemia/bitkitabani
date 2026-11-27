@@ -34,7 +34,12 @@ def kayitlar():
     D = json.load(open(os.path.join(HERE, 'data.json'), encoding='utf-8'))
     out = {p['id']: p for p in D['P']}
     bugun = datetime.date.today()
-    for f in sorted(glob.glob(os.path.join(HERE, 'kuyruk', 'k*.py'))):
+    # 27 Kasım 2026: kalıp 'k*.py' idi, yani toplu eklenen a001–a008 partileri
+    # (64 kayıt) TR–EN güvenlik eşitliği denetiminden hiç geçmiyordu. Parti
+    # 006'da iki eşitsizlik bu yüzden makineye görünmedi: yer fıstığında çalışma
+    # dönemi TR'de yanlış EN'de doğru, chaliponga'da İngilizce sayfada yasal
+    # bölüm hiç yok. Kuyruktaki bütün kayıt dosyaları taranıyor.
+    for f in sorted(glob.glob(os.path.join(HERE, 'kuyruk', '[ak]*.py'))):
         mod = importlib.import_module('kuyruk.' + os.path.basename(f)[:-3])
         for q in getattr(mod, 'Q', []):
             if q['id'] in out:
@@ -90,6 +95,23 @@ def main():
         for alan_tr, alan_en in (('haz', 'prep'), ('guvNot', 'safety')):
             if str(p.get(alan_tr, '')).count('⚠️') > str(EN[pid].get(alan_en, '')).count('⚠️'):
                 bulgu.append((pid, f'{alan_tr}: İngilizcede eksik ⚠️ uyarısı', ''))
+    # 27 Kasım 2026: yasal durum eşitliği. extra.YASAL'da olup en/misc_en.py
+    # YASAL_EN'de olmayan kayıtta İngilizce sayfada "Legal status" bölümü hiç
+    # basılmıyor, rozet görünmüyor ve İngilizce katalog kartı data-durum
+    # taşıdığı hâlde tabloda "No specific restriction" yazıyor. Parti 006'da
+    # DMT içeren chaliponga böyle geçti: Türkçe sayfada "kısıtlı", İngilizce
+    # sayfada hiçbir yasal uyarı yok. Metni insan yazar; eksikliği makine söyler.
+    try:
+        from extra import YASAL as _Y_TR
+        _p = os.path.join(HERE, 'en')
+        if _p not in sys.path: sys.path.insert(0, _p)
+        from misc_en import YASAL_EN as _Y_EN
+        for _pid in sorted(set(_Y_TR) - set(_Y_EN)):
+            bulgu.append((_pid, 'yasal durum: extra.YASAL\'da var, en/misc_en.py YASAL_EN\'de yok '
+                                '— İngilizce sayfada yasal bölüm hiç basılmaz', ''))
+    except Exception as _e:
+        print('uyarı: yasal durum eşitliği denetlenemedi:', _e)
+
     if not bulgu:
         print('Türkçe–İngilizce güvenlik eşitliği: eksik kısıtlama yok.')
         return 0
