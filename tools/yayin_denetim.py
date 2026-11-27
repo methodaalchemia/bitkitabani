@@ -38,8 +38,17 @@ HAYVAN = re.compile(r'\b(sıçan|fare|tavşan|hayvan|in vitro|tüp içi|hücre k
 INSAN = re.compile(r'\b(insanda|klinik|randomize|katılımcı|gönüllü|hasta)', re.I)
 
 
+# 27 Kasım 2026: kesme işareti yanlış HATA üretiyordu. Künyede tipografik
+# kesme (D’Addabbo), NCBI'de düz kesme (D'Addabbo) var. NFKD tipografik
+# kesmeyi ayrıştırmıyor, ascii süzgeci onu atıyor: "daddabbo" ile "d'addabbo"
+# karşılaştırılıyor ve tutmuyor. Yanlış HATA birleştirmeyi durdurduğu için
+# kendisi bir arıza — her iki biçimi de baştan düşürüyoruz.
+_KESME = str.maketrans('', '', "'\u2019\u2018\u02bc`\u00b4")
+
+
 def sade(t):
-    return unicodedata.normalize('NFKD', t or '').encode('ascii', 'ignore').decode().lower()
+    t = unicodedata.normalize('NFKD', t or '').encode('ascii', 'ignore').decode().lower()
+    return t.translate(_KESME)
 
 
 def kayitlar():
