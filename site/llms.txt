@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 304 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 328 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 
@@ -275,21 +275,6 @@ Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 - [Balon çiçeği (Platycodon grandiflorus (Jacq.) A. DC.)](https://bitkitabani.com/baloncicegi/): Dikkat, kanıt: sınırlı
 - [Karamuk (Berberis vulgaris L.)](https://bitkitabani.com/karamuk/): Dikkat, kanıt: sınırlı
 - [Dereotu (Anethum graveolens L.)](https://bitkitabani.com/dereotu/): Dikkat, kanıt: sınırlı
-- [Yabani kekik (Thymus serpyllum L.)](https://bitkitabani.com/yabanikekik/): Genelde güvenli, kanıt: sınırlı
-- [Su nanesi (Mentha aquatica L.)](https://bitkitabani.com/sunanesi/): Genelde güvenli, kanıt: sınırlı
-- [Zufa otu (Dracocephalum officinale (L.) Y.P.Chen & B.T.Drew)](https://bitkitabani.com/zufaotu/): Dikkat, kanıt: sınırlı
-- [Kedi nanesi (Nepeta cataria L.)](https://bitkitabani.com/kedinanesi/): Dikkat, kanıt: sınırlı
-- [Yer sarmaşığı (Glechoma hederacea L.)](https://bitkitabani.com/yersarmasigi/): Genelde güvenli, kanıt: sınırlı
-- [Gelin otu (Prunella vulgaris L.)](https://bitkitabani.com/gelinotu/): Genelde güvenli, kanıt: sınırlı
-- [Kara yer pırasası (Ballota nigra L.)](https://bitkitabani.com/karayerpirasasi/): Dikkat, kanıt: sınırlı
-- [Kurt ayağı (Lycopus europaeus L.)](https://bitkitabani.com/kurtayagi/): Dikkat, kanıt: sınırlı
-- [Chia (Salvia hispanica L.)](https://bitkitabani.com/chia/): Genelde güvenli, kanıt: sınırlı
-- [Amerikan kasidesi (Scutellaria lateriflora L.)](https://bitkitabani.com/amerikankasidesi/): Dikkat, kanıt: sınırlı
-- [Ananas papatyası (Matricaria discoidea DC.)](https://bitkitabani.com/ananaspapatyasi/): Genelde güvenli, kanıt: sınırlı
-- [Ayçiçeği (Helianthus annuus L.)](https://bitkitabani.com/aycicegi/): Genelde güvenli, kanıt: sınırlı
-- [Mahonya (Berberis aquifolium Pursh)](https://bitkitabani.com/mahonya/): Dikkat, kanıt: sınırlı
-- [Yalancı akasya (Robinia pseudoacacia L.)](https://bitkitabani.com/yalanciakasya/): Yüksek risk, kanıt: geleneksel
-- [Greyfurt (Citrus × paradisi Macfad.)](https://bitkitabani.com/greyfurt/): Dikkat, kanıt: sınırlı
 - [Sater (Satureja hortensis L.)](https://bitkitabani.com/sater/): Genelde güvenli, kanıt: sınırlı
 - [Dağ sateri (Satureja cuneifolia Ten.)](https://bitkitabani.com/dagsateri/): Genelde güvenli, kanıt: sınırlı
 - [İzmir kekiği (Origanum onites L.)](https://bitkitabani.com/izmirkekigi/): Genelde güvenli, kanıt: sınırlı
@@ -305,6 +290,21 @@ Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 - [Yenidünya (Eriobotrya japonica (Thunb.) Lindl.)](https://bitkitabani.com/yenidunya/): Genelde güvenli, kanıt: geleneksel
 - [Limon (Citrus × limon (L.) Osbeck)](https://bitkitabani.com/limon/): Genelde güvenli, kanıt: sınırlı
 - [Portakal (Citrus × sinensis (L.) Osbeck)](https://bitkitabani.com/portakal/): Genelde güvenli, kanıt: sınırlı
+- [Yabani kekik (Thymus serpyllum L.)](https://bitkitabani.com/yabanikekik/): Genelde güvenli, kanıt: sınırlı
+- [Su nanesi (Mentha aquatica L.)](https://bitkitabani.com/sunanesi/): Genelde güvenli, kanıt: sınırlı
+- [Zufa otu (Dracocephalum officinale (L.) Y.P.Chen & B.T.Drew)](https://bitkitabani.com/zufaotu/): Dikkat, kanıt: sınırlı
+- [Kedi nanesi (Nepeta cataria L.)](https://bitkitabani.com/kedinanesi/): Dikkat, kanıt: sınırlı
+- [Yer sarmaşığı (Glechoma hederacea L.)](https://bitkitabani.com/yersarmasigi/): Genelde güvenli, kanıt: sınırlı
+- [Gelin otu (Prunella vulgaris L.)](https://bitkitabani.com/gelinotu/): Genelde güvenli, kanıt: sınırlı
+- [Kara yer pırasası (Ballota nigra L.)](https://bitkitabani.com/karayerpirasasi/): Dikkat, kanıt: sınırlı
+- [Kurt ayağı (Lycopus europaeus L.)](https://bitkitabani.com/kurtayagi/): Dikkat, kanıt: sınırlı
+- [Chia (Salvia hispanica L.)](https://bitkitabani.com/chia/): Genelde güvenli, kanıt: sınırlı
+- [Amerikan kasidesi (Scutellaria lateriflora L.)](https://bitkitabani.com/amerikankasidesi/): Dikkat, kanıt: sınırlı
+- [Ananas papatyası (Matricaria discoidea DC.)](https://bitkitabani.com/ananaspapatyasi/): Genelde güvenli, kanıt: sınırlı
+- [Ayçiçeği (Helianthus annuus L.)](https://bitkitabani.com/aycicegi/): Genelde güvenli, kanıt: sınırlı
+- [Mahonya (Berberis aquifolium Pursh)](https://bitkitabani.com/mahonya/): Dikkat, kanıt: sınırlı
+- [Yalancı akasya (Robinia pseudoacacia L.)](https://bitkitabani.com/yalanciakasya/): Yüksek risk, kanıt: geleneksel
+- [Greyfurt (Citrus × paradisi Macfad.)](https://bitkitabani.com/greyfurt/): Dikkat, kanıt: sınırlı
 - [Baykal takke otu (Scutellaria baicalensis Georgi)](https://bitkitabani.com/baykaltakkesi/): Dikkat, kanıt: geleneksel
 - [Yabani hünnap (Ziziphus lotus (L.) Lam.)](https://bitkitabani.com/yabanihunnap/): Genelde güvenli, kanıt: geleneksel
 - [Beyaz pelin (Artemisia herba-alba Asso)](https://bitkitabani.com/beyazpelin/): Dikkat, kanıt: geleneksel
@@ -314,8 +314,32 @@ Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 - [Kara susam (Sesamum radiatum Thonn. ex Hornem.)](https://bitkitabani.com/karasusam/): Genelde güvenli, kanıt: geleneksel
 - [Su kabağı (Lagenaria siceraria (Molina) Standl.)](https://bitkitabani.com/sukabagi/): Yüksek risk, kanıt: geleneksel
 - [Beş tat meyvesi (Schisandra chinensis (Turcz.) Baill.)](https://bitkitabani.com/bestatmeyvesi/): Dikkat, kanıt: sınırlı
+- [Manyok (Manihot esculenta Crantz)](https://bitkitabani.com/manyok/): Dikkat, kanıt: geleneksel
+- [Yer fıstığı (Arachis hypogaea L.)](https://bitkitabani.com/yerfistigi/): Genelde güvenli, kanıt: klinik
+- [Habanero (Capsicum chinense Jacq.)](https://bitkitabani.com/habanero/): Dikkat, kanıt: geleneksel
+- [Pronto alivio (Lippia alba (Mill.) N.E.Br. ex Britton & P.Wilson)](https://bitkitabani.com/prontoalivio/): Dikkat, kanıt: sınırlı
+- [Kuasya (Quassia amara L.)](https://bitkitabani.com/kuasya/): Dikkat, kanıt: sınırlı
+- [Ananas (Ananas comosus (L.) Merr.)](https://bitkitabani.com/ananas/): Genelde güvenli, kanıt: klinik
+- [Çarkıfelek meyvesi (Passiflora edulis Sims)](https://bitkitabani.com/carkifelekmeyvesi/): Genelde güvenli, kanıt: sınırlı
+- [Chaliponga (Diplopterys cabrerana (Cuatrec.) B.Gates)](https://bitkitabani.com/chaliponga/): Yüksek risk, kanıt: geleneksel
 - [Çin yüksükotu (Rehmannia glutinosa Libosch.)](https://bitkitabani.com/cinyuksukotu/): Dikkat, kanıt: geleneksel
+- [Patates (Solanum tuberosum L.)](https://bitkitabani.com/patates/): Dikkat, kanıt: geleneksel
+- [Domates (Solanum lycopersicum L.)](https://bitkitabani.com/domates/): Genelde güvenli, kanıt: sınırlı
+- [Bal kabağı (Cucurbita maxima Duchesne)](https://bitkitabani.com/balkabagi/): Dikkat, kanıt: geleneksel
+- [Lima fasulyesi (Phaseolus lunatus L.)](https://bitkitabani.com/limafasulyesi/): Dikkat, kanıt: geleneksel
+- [Rocoto (Capsicum pubescens Ruiz & Pav.)](https://bitkitabani.com/rocoto/): Dikkat, kanıt: geleneksel
+- [Huacatay (Tagetes minuta L.)](https://bitkitabani.com/huacatay/): Dikkat, kanıt: geleneksel
+- [Çerimoya (Annona cherimola Mill.)](https://bitkitabani.com/cerimoya/): Genelde güvenli, kanıt: geleneksel
+- [Kırmızı melek borazanı (Brugmansia sanguinea (Ruiz & Pav.) D.Don)](https://bitkitabani.com/kirmizimelekborazani/): Yüksek risk, kanıt: geleneksel
 - [Büyük hıltan (Ammi majus L.)](https://bitkitabani.com/buyukhiltan/): Genelde güvenli, kanıt: klinik
+- [Limon okaliptüsü (Corymbia citriodora (Hook.) K.D.Hill & L.A.S.Johnson)](https://bitkitabani.com/limonokaliptusu/): Dikkat, kanıt: geleneksel
+- [Dar yapraklı okaliptüs (Eucalyptus radiata Sieber ex DC.)](https://bitkitabani.com/daryaprakliokaliptus/): Dikkat, kanıt: geleneksel
+- [Niaouli (Melaleuca quinquenervia (Cav.) S.T.Blake)](https://bitkitabani.com/niaouli/): Dikkat, kanıt: geleneksel
+- [Limon çay ağacı (Leptospermum petersonii F.M.Bailey)](https://bitkitabani.com/limoncayagaci/): Dikkat, kanıt: geleneksel
+- [Limon mersini (Backhousia citriodora F.Muell.)](https://bitkitabani.com/limonmersini/): Dikkat, kanıt: geleneksel
+- [Anason mersini (Syzygium anisatum (Vickery) Craven & Biffin)](https://bitkitabani.com/anasonmersini/): Dikkat, kanıt: geleneksel
+- [Dağ biberi (Tasmannia lanceolata (Poir.) A.C.Sm.)](https://bitkitabani.com/dagbiberi/): Dikkat, kanıt: geleneksel
+- [Kakadu eriği (Terminalia ferdinandiana Exell)](https://bitkitabani.com/kakaduerigi/): Genelde güvenli, kanıt: geleneksel
 
 ## Kültür köprüleri
 - [Aynı molekül, iki ayrı ritüel](https://bitkitabani.com/kopruler/uzerlik-ayahuasca/): İkisi de harmin ve harmalin taşır. Anadolu’da bu alkaloitler nazar dumanında yanar; Amazon’da tören içeceğinin omurgasını oluşturur.
