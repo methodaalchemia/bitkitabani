@@ -1,6 +1,6 @@
 # Bitki Tabanı
 
-> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 303 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
+> Şifalı ve ritüel bitkiler için Türkçe, kaynaklı ve ticari olmayan bir etnobotanik veri tabanı: 304 bitki; Anadolu, Asya, And Dağları, Amazon ve Kuzey Amerika. Her kayıtta geleneksel kullanım, bilimsel kanıt düzeyi, güvenlik ve ilaç etkileşimleri, Türkiye’deki yasal durum ve kaynaklar yer alır. Hazırlayan: Edanaz Tınmazlar. Tıbbi tavsiye değildir.
 
 Alıntı yaparken lütfen bitkinin sayfasını kaynak olarak göster.
 Tıbbi tavsiye değildir. Zehirlenme şüphesinde Türkiye’de Ulusal Zehir Danışma Merkezi: 114.
@@ -9637,3 +9637,36 @@ Karıştırma riski: ⚠️ Yüksükotu (Digitalis) ile adı ve çiçeği karı�
 
 ### İlginç bilgi
 Adı ile akrabalığı birbirini tutmuyor: "Çin yüksükotu" denir, eski sınıflamada yüksükotuyla aynı familyaya (Scrophulariaceae) konmuştu — DSÖ monografı hâlâ öyle yazar — ama modern sınıflama onu canavarotugillere (Orobanchaceae) taşıdı ve kalp glikoziti taşımaz. Çin tıbbında ise aynı kökün üç hâli üç ayrı drogdur: çiğ, kuru ve şarapla pişirilmiş. Bir bitkinin hazırlanış biçiminin onu başka bir ilaç yapabildiğinin kataloğumuzdaki en açık örneği.
+
+## Büyük hıltan (Ammi majus L.)
+
+URL: https://bitkitabani.com/buyukhiltan/
+Familya: Apiaceae · Bölge: Anadolu ve Akdeniz, Afrika, Avrupa · Kullanılan kısım: Kurutulmuş olgun meyveleri
+Bilimsel kanıt: Klinik · Güvenlik: Genelde güvenli
+
+### Geleneksel kullanım
+- DSÖ monografı — klinik veriyle desteklenen kullanım: Dünya Sağlık Örgütü monografı (Cilt 3, 2007) bu bitkiyi kataloğumuzda nadir görülen bir yere koyuyor: klinik veriyle desteklenen kullanım: sedef ve vitiligo gibi deri hastalıklarının tedavisi. Nedeni meyvedeki furanokumarinler — başta ksantotoksin (8-metoksipsoralen) — ve bunların UVA ışığıyla birlikte kullanıldığı fotokemoterapi (PUVA). Geleneksel tıpta: adet düzenleyici, idrar söktürücü; cüzzam, böbrek taşı, idrar yolu enfeksiyonu.
+- Türkiye: TİTCK Tıbbi Bitki Listesi’nde hıltan için monograf yok. Bitki Türkiye’nin batı ve güneyinde tarla kenarlarında yetişir. Mısır kökenli olan bu tür, Mısır halk hekimliğinde vitiligo için yüzyıllardır kullanılıyordu; modern PUVA tedavisi 1940’larda Mısır’da bu gelenekten çıktı.
+- Mısır’dan dermatoloji kliniğine: DSÖ monografı doz olarak günde 0,02–0,04 g meyve ya da kilo başına 0,25–0,7 mg ksantotoksin veriyor ve ekliyor: klinik tedavi bir sağlık uzmanının yönetimini gerektirir. Bu, kataloğumuzda doğrudan "evde kullanılmaz" anlamına gelen tek monograf cümlesi.
+
+### Hazırlama
+Bu kayıt ev kullanımı için doz vermiyor. DSÖ monografının dozu (günde 0,02–0,04 g meyve; ksantotoksin 0,25–0,7 mg/kg) fotokemoterapi içindir ve monograf tedavinin hekim yönetiminde olmasını şart koşuyor. Losyonlar yalnızca hekim gözetiminde uygulanır, hastaya verilmez.
+
+### Araştırmalar ne gösteriyor
+Büyük hıltan, kataloğumuzda etkin maddesi modern tıbba geçmiş bitkilerden: meyvedeki ksantotoksin (8-MOP), UVA ışığıyla birlikte uygulanan PUVA fotokemoterapisinin ilacıdır ve sedef ile vitiligoda onlarca yıldır kullanılır. 2015 Cochrane derlemesi (vitiligo müdahaleleri; 96 çalışma, 4.512 katılımcı) PUVA’yı karşılaştırma standardı olarak alıyor: üç çalışmanın meta-analizinde dar bant UVB, PUVA’ya kıyasla %75’ten fazla repigmentasyon oranında anlamlı olmayan bir üstünlük gösterdi (RR 1,60; %95 GA 0,74–3,45) ve daha az bulantı ve kızarıklık yaptı — yani PUVA etkili ama yerini büyük ölçüde daha güvenli UVB’ye bıraktı. Çalışmaların çoğu küçük, birleşik tedaviler daha iyi sonuç veriyor. Kanıt düzeyi "klinik" — ama bu kanıt bitkinin çayına değil, saflaştırılmış psoralen ve ölçülü ışık dozuna aittir.
+
+### Güvenlik
+Işığa duyarlılık yapan hastalıklarda, kataraktta, invaziv skuamöz hücreli kanserde, psoralen duyarlılığında ve 12 yaş altında kontrendike; gebelikte, emzirirken, tüberkülozda, karaciğer ve böbrek hastalığında, HIV ve otoimmün hastalıklarda da kontrendike — DSÖ monografı. Doz ve ışık programı doğru tutulmazsa cam arkasından bile ciddi yanıklar olabilir. Ağızdan tedaviden sonra 8 saat, cilt üstü tedaviden sonra 12–48 saat güneşten kaçınılmalı; 24 saat güneş gözlüğü. Meyveye dokunup güneşe çıkanlarda 48–72 saat içinde kızarıklık başlamış ve günlerce sürmüş — bitkiyi toplamak bile fototoksiktir. Uzun kullanım ya da doz aşımı bulantı, baş dönmesi, kabızlık, uykusuzluk yapabilir. Tedavi sırasında furanokumarin içeren gıdalardan (misket limonu, incir, maydanoz, kereviz, havuç, hardal) kaçınılmalı. Güvenlik düzeyi "düşük": bu bir ev bitkisi değil, klinik bir ilaçtır.
+
+### İlaç etkileşimleri
+- Diğer ışığa duyarlılaştırıcılar: DSÖ monografı: kömür katranı, ditranol, griseofulvin, nalidiksik asit, fenotiyazinler, sülfonamidler ve tetrasiklinlerle birlikte toksisite artar. Bu ilaçların çoğu da ışığa duyarlılık yapar.
+- Furanokumarinli gıdalar: Monografın gıda uyarısı bir etkileşim listesidir: misket limonu, incir, maydanoz, kereviz, karanfil, limon, hardal ve havuç psoralen yükünü artırır.
+
+### Doğada
+Nerede yetişir: Mısır kökenli; Akdeniz, Avrupa ve Batı Asya’da yaygın. Türkiye’nin batı ve güneyinde tarla kenarları.
+Toplama mevsimi: Yazın beyaz şemsiye çiçekler; meyveler yaz sonunda olgunlaşır.
+Yöresel adlar: Hıltan, büyük hıltan — yaygın Türkçe adlar; Arapça khella.
+Karıştırma riski: ⚠️ Dişotu (Ammi visnaga) ile hem Türkçe "hıltan" hem Arapça "khella" adını paylaşır; ikisinin etkin maddeleri (psoralen / kellin) ve kullanımları tamamen farklıdır. Maydanozgillerin tohumu doğadan toplanmamalı; familyada baldıran gibi ölümcül türler var.
+
+### İlginç bilgi
+Vitiligo için PUVA tedavisi bir laboratuvarda değil, Mısır’da bir halk geleneğinde başladı: Nil kıyısında yüzyıllardır vitiligo için yenen hıltan tohumu, 1940’larda Kahire’de ksantotoksinin saflaştırılmasıyla fotokemoterapinin ilacı oldu. DSÖ monografı bu bitkiyi "klinik veriyle desteklenen kullanım" sınıfına koyuyor ve aynı nefeste "tedavi hekim yönetimi gerektirir" diyor. Kataloğumuzda klinik kanıt düzeyi ile düşük güvenlik düzeyinin bir arada durduğu nadir kayıtlardan: etkili olduğu için tehlikeli.
