@@ -39,12 +39,21 @@ Q = [
              'kalitesinin zayıf** olduğunu ve sökülen köklerin birkaç günde '
              'bozulduğunu yazar.'],
             ['Afrika — acı çeşidin işlenmesi ve konzo',
-             'Journal of the Neurological Sciences’taki derleme, konzo '
-             'denen felç tablosunun her seferinde **yetersiz işlenmiş acı '
-             'manyok köklerinin** tek düze tüketimiyle ve çok az protein '
-             'desteğiyle birlikte görüldüğünü kaydeder. Geleneksel '
-             'işleme — ıslatma, fermente etme ve pişirme — bu yüzden bir '
-             'mutfak tercihi değil, zorunlu bir adımdır.'],
+             'Journal of the Neurological Sciences’ta yayımlanan Adamolekun '
+             '(2010) yazısı — PubMed’de yayın türü "Journal Article"dır, '
+             'derleme değil; konzonun nedeni için bir **tiyamin eksikliği '
+             'hipotezi** önerir — konzo denen felç tablosunun her seferinde '
+             '**yetersiz işlenmiş acı manyok köklerinin** tek düze '
+             'tüketimiyle ve çok az protein desteğiyle birlikte '
+             'görüldüğünü kaydeder. Aynı yazı buna karşılık **siyanür '
+             'tüketimiyle konzo arasında nedensel bir ilişkinin '
+             'kanıtlanmadığını** ve hastalığın nedeninin bilinmediğini '
+             'belirtir. Geleneksel işleme bir mutfak tercihi değil, '
+             'zorunlu bir adımdır: Annals of the New York Academy of '
+             'Sciences’taki 2016 derlemesi siyanojenleri gidermek için '
+             'kullanılan yöntemleri **çiğ kökü dört güne kadar suda '
+             'bekletmek** ya da **kökü rendeleyip güneşte kurutmak veya '
+             'ısıtmak** olarak sayar.'],
             ['Brezilya — çeşide göre değişen bileşim',
              'Food Research International’da 2024’te yayımlanan çalışma '
              'Brezilya’nın kuzeydoğu ve güneyinden dört manyok çeşidini '
@@ -55,14 +64,18 @@ Q = [
         ],
         haz='Resmî bir monografta kabul edilmiş bir doz yoktur; manyok bir '
             'gıdadır. Dayanak alınan kaynaklarda **ev yapımı bir ilaç '
-            'hazırlığı tarif edilmez.** Acı çeşidin kökleri ıslatma, '
-            'fermente etme ve pişirme basamaklarından geçmeden yenmez; '
-            'konzo tablosunun bildirildiği her yerde ortak nokta bu '
-            'basamakların eksik kalmasıdır. Köklerin proteini zayıf '
-            'olduğundan dayanak alınan derleme yanında protein kaynağı '
-            'bulunmasının önemine dikkat çeker. Türkiye’de satılan tapyoka, '
+            'hazırlığı tarif edilmez.** Acı çeşidin kökleri işlenmeden '
+            'yenmez; Annals of the New York Academy of Sciences’taki 2016 '
+            'derlemesine göre siyanojenleri gidermek için kullanılan '
+            'geleneksel yöntemler çiğ kökü dört güne kadar suda bekletmek '
+            'ya da kökü rendeleyip güneşte kurutmak veya ısıtmaktır. Konzo '
+            'tablosunun bildirildiği her yerde ortak nokta bu işlemenin '
+            'eksik kalmasıdır. Köklerin proteini zayıftır ve aynı 2016 '
+            'derlemesi proteinden yoksul beslenmeyi duyarlılığı artıran '
+            'etkenler arasında sayar; bu yüzden yanında bir protein '
+            'kaynağı bulunması önemlidir. Türkiye’de satılan tapyoka, '
             'kökten ayrılmış nişastadır.',
-        bilim='Annals of the New York Academy of Sciences’taki 2017 tarihli '
+        bilim='Annals of the New York Academy of Sciences’taki 2016 tarihli '
               'derleme, manyoğa dayanan topluluklarda kanda **litrede 80 '
               'mikromole varan** siyanür düzeylerinin olağan olduğunu ve '
               'akut zehirlenme belirtilerine yol açtığını bildirir. Uzun '
@@ -140,7 +153,7 @@ Q = [
              'https://pubmed.ncbi.nlm.nih.gov/29981837/'],
             ['O. S. Oluwole, “Cyclical konzo epidemics and climate variability”, Annals of Neurology 77(3), 2015',
              'https://pubmed.ncbi.nlm.nih.gov/25523348/'],
-            ['Í. M. Mafaldo ve ark., “Cassava (Manihot esculenta) Brazilian cultivars have different chemical compositions, present prebiotic potential, and beneficial effects on the colonic microbiota of celiac individuals”, Food Research International, 2024',
+            ['Í. M. Mafaldo ve ark., “Cassava (Manihot esculenta) Brazilian cultivars have different chemical compositions, present prebiotic potential, and beneficial effects on the colonic microbiota of celiac individuals”, Food Research International 195, 2024',
              'https://pubmed.ncbi.nlm.nih.gov/39277216/'],
         ],
         rel=['kinoa', 'acai'],
@@ -166,13 +179,22 @@ Q = [
                  'carbohydrate, while its **protein content and quality are '
                  'poor** and the lifted roots spoil within a few days.'],
                 ['Africa — processing the bitter variety, and konzo',
-                 'A review in the Journal of the Neurological Sciences records '
+                 'A 2010 paper by Adamolekun in the Journal of the '
+                 'Neurological Sciences — typed in PubMed as a Journal '
+                 'Article, not a review, and putting forward a **thiamine '
+                 'deficiency hypothesis** for the cause of konzo — records '
                  'that the paralytic condition called konzo has invariably '
                  'been seen alongside the monotonous consumption of '
                  '**inadequately processed bitter cassava roots** with very '
-                 'little protein in the diet. Traditional processing — '
-                 'soaking, fermenting and cooking — is therefore not a '
-                 'culinary preference but a required step.'],
+                 'little protein in the diet. The same paper states, on the '
+                 'other hand, that **there has been no evidence of a causal '
+                 'association between cyanide consumption and konzo** and '
+                 'that the aetiology remains unknown. Traditional processing '
+                 'is not a culinary preference but a required step: the 2016 '
+                 'review in the Annals of the New York Academy of Sciences '
+                 'lists the methods used to remove cyanogens as **soaking '
+                 'raw cassava in water for up to four days** or **grating '
+                 'the tuber and then sun-drying or heating it.**'],
                 ['Brazil — composition that differs by cultivar',
                  'A 2024 study in Food Research International compared four '
                  'cassava cultivars from north-eastern and southern Brazil '
@@ -184,13 +206,18 @@ Q = [
             prep='No official monograph sets an accepted dose; cassava is a '
                  'food. The sources relied on here **describe no home '
                  'medicinal preparation.** Roots of the bitter variety are '
-                 'not eaten without soaking, fermenting and cooking; '
-                 'wherever konzo has been reported, the common factor is '
-                 'that these steps were left incomplete. Because the roots '
-                 'are poor in protein, the review relied on here stresses '
-                 'the importance of a protein source alongside them. '
+                 'not eaten unprocessed; according to the 2016 review in the '
+                 'Annals of the New York Academy of Sciences, the '
+                 'traditional methods used to remove cyanogens are soaking '
+                 'the raw root in water for up to four days or grating it '
+                 'and then sun-drying or heating it. Wherever konzo has been '
+                 'reported, the common factor is that this processing was '
+                 'left incomplete. The roots are poor in protein, and the '
+                 'same 2016 review counts a protein-deficient diet among '
+                 'the factors of susceptibility; a protein source '
+                 'alongside them therefore matters. '
                  'Tapioca sold in Turkey is starch separated from the root.',
-            science='A 2017 review in the Annals of the New York Academy of '
+            science='A 2016 review in the Annals of the New York Academy of '
                     'Sciences reports that in communities relying on cassava, '
                     'blood cyanide concentrations of **up to 80 micromoles '
                     'per litre** are commonplace and produce signs of acute '
@@ -273,8 +300,13 @@ Q = [
              'Bu tür için bulunan insan çalışmalarının neredeyse tamamı '
              'bitkinin faydasını değil, **fıstık alerjisinin tedavisini** '
              'inceliyor. Ağızdan immünoterapide kullanılan şey ölçülü '
-             'miktarda fıstık proteininin kendisidir; Avrupa ve ABD’de bu '
-             'amaçla ruhsatlanmış bir ürün vardır. Yani fıstık burada '
+             'miktarda fıstık proteininin kendisidir. Avrupa İlaç '
+             'Ajansı’nın ürün sayfasına göre **Palforzia** (yağı alınmış '
+             'Arachis hypogaea L., semen tozu) 21 Aralık 2020’de Avrupa '
+             'Birliği’nde ruhsatlandırılmıştır; 1–17 yaş arası çocuklarda '
+             'fıstık alerjisinin tedavisinde kullanılır, yalnız reçeteyle '
+             'verilir ve tedavinin ilk basamağı ağır alerjik tepkiye '
+             'hazırlıklı bir klinikte yapılır. Yani fıstık burada '
              'şifalı bitki değil, alerjisi olan kişide bağışıklığı '
              'alıştırmak için kullanılan maddedir.'],
         ],
@@ -294,27 +326,35 @@ Q = [
               'kümelerde duyarsızlaşma oranı günaşırı alanlardan yüksek '
               'çıkmış, katılımcıların **%83’ünde hafif ya da orta şiddette '
               'istenmeyen etki** görülmüştür. Annals of Allergy, Asthma and '
-              'Immunology’deki RAMSES çalışmasında 506 çocukta doz artırma '
-              'döneminde istenmeyen etki oranı ilaç kolunda %55, plasebo '
-              'kolunda %33,9; sürdürme döneminde %98,8’e karşı %94 '
-              'bulunmuştur; en sık görülenler sindirim sistemi '
+              'Immunology’deki RAMSES çalışmasında 506 çocukta **ilk doz '
+              'yükseltme** sırasında istenmeyen etki oranı ilaç kolunda '
+              '%55, plasebo kolunda %33,9; **doz yükseltme döneminin '
+              'bütününde** %98,8’e karşı %94 bulunmuştur — iki oran da doz '
+              'yükseltme dönemine aittir, sürdürme dönemine değil. En sık '
+              'görülenler sindirim sistemi '
               'yakınmalarıdır. Bu çalışmaların hiçbiri fıstığın bir '
               'hastalığı iyileştirdiğini göstermez; **ölçtükleri şey '
               'alerjik kişinin fıstığa dayanma eşiğidir.**',
         kanit='klinik',
         guv='dusuk',
         guvNot='Yer fıstığı yaygın bir gıdadır ve çoğu kişide sorun '
-               'çıkarmaz. Asıl konu **alerjidir:** derlemeye göre fıstıkta '
-               'resmen tanınmış 16 alerjen bulunur ve duyarlı kişilerde '
-               'tepki anafilaksiye kadar gidebilir; bu, az miktarda '
-               'temasla da olabilir. Alerjisi olan kişi için güvenli miktar '
+               'çıkarmaz. Asıl konu **alerjidir:** Molecular Immunology’deki '
+               'derlemeye göre fıstıkta resmen tanınmış 16 alerjen bulunur; '
+               'aynı derleme belirtilerin **çok küçük miktarda alerjenle '
+               'tetiklenebildiğini ve ağır anafilaksi olarak ortaya '
+               'çıkabildiğini** yazar. Alerjisi olan kişi için güvenli miktar '
                'diye bir şey kendi başına belirlenemez. Ağızdan '
                'immünoterapi yalnızca hekim gözetiminde yürütülür ve '
                'çalışmalarda katılımcıların büyük kısmında istenmeyen etki '
                'bildirilmiştir. Gebelik ve emzirmede gıda miktarının '
                'üzerinde kullanımı değerlendiren bir kaynak yoktur. '
-               'Küflenmiş fıstıkta aflatoksin birikebildiği için '
-               'kararmış, buruşmuş taneler yenmez.',
+               'Dünya Sağlık Örgütü’nün "Mycotoxins" bilgi notu, yer '
+               'fıstığı dahil kabuklu yemişlerin düzenli olarak '
+               'aflatoksinle bulaştığını yazar; küf izi aranarak gözden '
+               'geçirilmesini ve **küflü, rengi değişmiş ya da buruşmuş '
+               'görünenlerin atılmasını** önerir. Aynı bilgi notu küfün '
+               'yalnız yüzeyde kalmayıp gıdanın derinine işleyebildiğini '
+               'belirtir.',
         ilginc='Yer fıstığının insanda en çok çalışılmış etkisi bir faydası '
                'değil: bu tür için bulunan klinik çalışmaların neredeyse '
                'tamamı, fıstığa alerjisi olan çocukları yine fıstıkla '
@@ -329,9 +369,19 @@ Q = [
                     'toprağın içinde olgunlaşır.',
             yoresel='yer fıstığı, Amerikan fıstığı, çerez fıstığı.',
             karisma='Antep fıstığı (Pistacia vera) ve kaju bambaşka '
-                    'bitkilerdir; alerjileri de ayrıdır. Fıstık alerjisi '
-                    'olan kişilerde susam ve bazı baklagillerle çapraz '
-                    'tepkime bildirilmiştir.',
+                    'bitkilerdir; alerjileri de ayrıdır. Current Allergy '
+                    'and Asthma Reports’taki çapraz tepkime derlemesine '
+                    'göre fıstık alerjisi olanlarda soya, acı bakla '
+                    '(lüpen), mercimek ve bezelye gibi **başka '
+                    'baklagillere** klinik olarak anlamlı duyarlılık '
+                    'görülebilir: fıstığa duyarlı 39 hastanın %82’si acı '
+                    'baklaya, %55’i bezelyeye, %87’si soyaya duyarlı '
+                    'bulunmuş, ama çift kör plasebo kontrollü gıda '
+                    'yüklemesinde bunlara belirti verenlerin oranı '
+                    '%29–35’te kalmıştır. **Susam** için aynı derleme '
+                    'ortak alerjen ailelerinden (oleosinler) söz eder, '
+                    'ancak bunların klinik anlamının ve IgE çapraz '
+                    'tepkimesinin **bilinmediğini** söyler.',
         ),
         kaynak=[
             ['Arachis hypogaea L., World Checklist of Vascular Plants, Royal Botanic Gardens, Kew',
@@ -342,6 +392,12 @@ Q = [
              'https://pubmed.ncbi.nlm.nih.gov/33359589/'],
             ['C. Ciaccio ve ark., “Participant characteristics and safety outcomes of peanut oral immunotherapy in the RAMSES and ARC011 trials”, Annals of Allergy, Asthma and Immunology, 2022',
              'https://pubmed.ncbi.nlm.nih.gov/35973655/'],
+            ['M. Bublin ve H. Breiteneder, “Cross-reactivity of peanut allergens”, Current Allergy and Asthma Reports 14(4), 2014',
+             'https://pubmed.ncbi.nlm.nih.gov/24554241/'],
+            ['“Mycotoxins”, bilgi notu, Dünya Sağlık Örgütü (WHO), 2 Ekim 2023',
+             'https://www.who.int/news-room/fact-sheets/detail/mycotoxins'],
+            ['“Palforzia (defatted powder of Arachis hypogaea L., semen)”, ürün sayfası, Avrupa İlaç Ajansı (EMA); Avrupa Birliği ruhsat tarihi 21 Aralık 2020',
+             'https://www.ema.europa.eu/en/medicines/human/EPAR/palforzia'],
         ],
         rel=['sachainchi', 'susam'],
         en=dict(
@@ -363,9 +419,15 @@ Q = [
                  'Almost every human study found for this species examines '
                  'not a benefit of the plant but **the treatment of peanut '
                  'allergy.** What is used in oral immunotherapy is measured '
-                 'amounts of peanut protein itself, and a product licensed '
-                 'for this purpose exists in Europe and the United States. '
-                 'Here the peanut is not a healing herb but the substance '
+                 'amounts of peanut protein itself. According to the '
+                 'European Medicines Agency’s product page, **Palforzia** '
+                 '(defatted powder of Arachis hypogaea L., semen) was '
+                 'authorised in the European Union on 21 December 2020; it '
+                 'is used to treat peanut allergy in children aged 1 to 17, '
+                 'is available on prescription only, and the first phase of '
+                 'treatment is carried out in a clinic equipped to treat '
+                 'severe allergic reactions. Here the peanut is not a '
+                 'healing herb but the substance '
                  'used to accustom an allergic person’s immune system.'],
             ],
             prep='No official monograph sets an accepted dose; the peanut is '
@@ -386,25 +448,33 @@ Q = [
                     'non-daily ones, and **83% of participants had mild or '
                     'moderate adverse events.** In the RAMSES trial in '
                     'Annals of Allergy, Asthma and Immunology, among 506 '
-                    'children the adverse-event rate during initial dose '
-                    'escalation was 55% on treatment against 33.9% on '
-                    'placebo, and 98.8% against 94% during updosing; the '
+                    'children the adverse-event rate during **initial dose '
+                    'escalation** was 55% on treatment against 33.9% on '
+                    'placebo, and 98.8% against 94% **during updosing** — '
+                    'both figures belong to the dose-raising period, not to '
+                    'maintenance; the '
                     'commonest were gastrointestinal. None of these studies '
                     'shows the peanut curing a disease; **what they measure '
                     'is an allergic person’s threshold of tolerance to '
                     'peanut.**',
             safety='The peanut is a common food and causes no trouble for '
                    'most people. The issue is **allergy:** according to the '
-                   'review there are 16 officially recognised allergens in '
-                   'peanut, and in sensitised people the reaction can go as '
-                   'far as anaphylaxis, including after contact with small '
-                   'amounts. For an allergic person no safe amount can be '
+                   'review in Molecular Immunology there are 16 officially '
+                   'recognised allergens in peanut, and the same review '
+                   'states that symptoms **can be triggered by tiny amounts '
+                   'of allergen and even manifest as severe '
+                   'anaphylaxis.** For an allergic person no safe amount can be '
                    'worked out alone. Oral immunotherapy is conducted only '
                    'under medical supervision, and most participants in the '
                    'trials reported adverse events. No source assesses use '
-                   'above food amounts in pregnancy or lactation. Because '
-                   'aflatoxin can accumulate in mouldy nuts, darkened and '
-                   'shrivelled kernels are not eaten.',
+                   'above food amounts in pregnancy or lactation. The World '
+                   'Health Organization’s "Mycotoxins" fact sheet states '
+                   'that nuts including peanuts are regularly contaminated '
+                   'with aflatoxins, advises inspecting them for evidence '
+                   'of mould and **discarding any that look mouldy, '
+                   'discoloured or shrivelled**, and notes that mould can '
+                   'penetrate deep into food rather than only growing on '
+                   'the surface.',
             fact='The most-studied effect of the peanut in humans is not a '
                  'benefit: almost every clinical trial found for this '
                  'species is an attempt to treat peanut-allergic children '
@@ -419,8 +489,18 @@ Q = [
             local='yer fıstığı, Amerikan fıstığı, çerez fıstığı.',
             confusion='The pistachio (Pistacia vera) and the cashew are '
                       'quite different plants, with different allergies. '
-                      'Cross-reactivity with sesame and some legumes has '
-                      'been reported in peanut-allergic people.',
+                      'According to the cross-reactivity review in Current '
+                      'Allergy and Asthma Reports, clinically relevant '
+                      'sensitisation to **other legumes** such as soybean, '
+                      'lupin, lentil or pea occurs in peanut-allergic '
+                      'people: of 39 peanut-sensitised patients, 82% were '
+                      'also sensitised to lupin, 55% to pea and 87% to '
+                      'soybean, yet on double-blind placebo-controlled food '
+                      'challenge only 29–35% had symptoms to those beans. '
+                      'For **sesame**, the same review notes shared '
+                      'allergen families (oleosins) but states that their '
+                      'clinical relevance and IgE cross-reactivity are '
+                      '**unknown.**',
         ),
     ),
 
@@ -493,7 +573,12 @@ Q = [
                '**kapsaisinin tahriş ediciliğidir:** dayanak alınan '
                'çalışma, özütün derişime bağlı tahrişi yüzünden hastaların '
                'tedaviyi bıraktığını, formülasyon çalışmasının da bu yüzden '
-               'yapıldığını yazar. Meyve ya da özüt göz çevresine ve '
+               'yapıldığını yazar. Avrupa İlaç Ajansı’nın Capsici fructus '
+               'monografı (4.4) haricî biber hazırlığının **göz çevresine '
+               've mukozalara uygulanmaması** gerektiğini yazar; monograf '
+               'bu türe ait olmasa da bu, kapsaisin taşıyan bütün haricî '
+               'ürünler için geçerli ortak bir uyarıdır. Buna göre meyve '
+               'ya da özüt göz çevresine ve '
                'mukozalara değdirilmez; eldeyken göze dokunulmaması ve '
                'kullanımdan sonra ellerin yıkanması gerekir. Çok acı '
                'çeşitlerin bir seferde fazla miktarda yenmesi mide ve '
@@ -506,23 +591,44 @@ Q = [
                '18. yüzyılda yanlış bir coğrafyayla kayda geçmiştir.',
         etk=[
             ['Aynı bölgeye sürülen diğer haricî ürünler (ısıtıcı merhemler, ağrı kesici jeller)',
-             'Kapsaisin tahrişi artırabileceği için aynı yere aynı anda '
-             'uygulanmaması uygun olur.'],
-            ['Sıcak uygulama, duş ve güneş',
-             'Kapsaisin sürülen bölgede sıcakla birlikte yanma şiddetlenir.'],
-            ['ACE inhibitörleri',
-             'Haricî kapsaisin kullanımıyla öksürük bildirilmiştir; bu '
-               'ilaçları kullananlarda öksürük zaten sık görülür.'],
+             'Avrupa İlaç Ajansı’nın Capsici fructus monografı, '
+             'etkileşimler bölümünde (4.5) haricî biber hazırlığının '
+             'başka haricî ürünlerle — kızartıcı merhemler ya da ağrı '
+             'kesici jeller — aynı uygulama yerine aynı anda '
+             'sürülmemesi gerektiğini, etkileşmenin bant '
+             'çıkarıldıktan sonra 12 saate kadar sürebileceğini yazar. '
+             '**Monograf bu türe ait değildir** (C. annuum var. minimum '
+             'ile C. frutescens’in küçük meyveli çeşitleri içindir), ama '
+             'bu uyarı kapsaisin taşıyan bütün haricî ürünler için '
+             'geçerli ortak bir uyarıdır.'],
+            ['Ek ısı kaynağı, sıcak su ve güneş',
+             'Aynı monograf, uyarılar bölümünde (4.4) tedavi sırasında ek '
+             'ısı kaynaklarından — güneş ya da kızılötesi ışıma, ısıtma '
+             'yastığı, sıcak su — kaçınılmasını, sıcaklığın etkisinin '
+             'terleten fiziksel etkinlikle de artabileceğini belirtir. '
+             'Bu da türe özgü bir kural değil, kapsaisinin ortak '
+             'özelliğine dayanan bir uyarıdır.'],
         ],
         etk_en=[
             ['Other topical products on the same area (warming balms, analgesic gels)',
-             'Capsaicin may increase irritation, so applying them to the '
-             'same spot at the same time is best avoided.'],
-            ['Heat, showers and sun',
-             'Burning on the treated area intensifies with heat.'],
-            ['ACE inhibitors',
-             'Cough has been reported with topical capsaicin use, and cough '
-             'is already common with these medicines.'],
+             'In its interactions section (4.5) the European Medicines '
+             'Agency’s Capsici fructus monograph states that a topical '
+             'pepper preparation is not intended to be applied at the same '
+             'time as other topical products — other rubefacients or pain '
+             'relieving gels — at the same application site, and that '
+             'interactions may occur up to 12 hours after the plaster has '
+             'been removed. **The monograph does not belong to this '
+             'species** (it covers C. annuum var. minimum and small-fruited '
+             'varieties of C. frutescens), but the warning is one common to '
+             'all topical products carrying capsaicin.'],
+            ['Additional heat, hot water and sun',
+             'In its warnings section (4.4) the same monograph says that '
+             'additional sources of heat — solar or infrared radiation, a '
+             'heating pad, warm water — should be avoided during treatment, '
+             'and that the effect of warmth can also be intensified by '
+             'physical activity causing sweating. This too is not a '
+             'species-specific rule but a warning resting on a shared '
+             'property of capsaicin.'],
         ],
         ek=dict(
             mevsim='Türkiye’de doğal olarak yetişmez; seralarda ve '
@@ -550,6 +656,8 @@ Q = [
              'https://pubmed.ncbi.nlm.nih.gov/20728519/'],
             ['K. K. Sarwa ve ark., “Topical Analgesic Nanolipid Vesicles Formulation of Capsaicinoids Extract of Bhut Jolokia (Capsicum chinense Jacq): Pharmacodynamic Evaluation in Rat Models and Acceptability studies in Human Volunteers”, Current Drug Delivery 13(8), 2016',
              'https://pubmed.ncbi.nlm.nih.gov/27306849/'],
+            ['“European Union herbal monograph on Capsicum annuum L. var. minimum (Miller) Heiser and small fruited varieties of Capsicum frutescens L., fructus”, EMA/HMPC/674139/2013, Avrupa İlaç Ajansı (HMPC), 5 Mayıs 2015 — bu türe ait değildir; yalnız kapsaisine bağlı ortak haricî kullanım uyarıları için anılmıştır',
+             'https://www.ema.europa.eu/en/medicines/herbal/capsici-fructus'],
         ],
         rel=['acibiber'],
         en=dict(
@@ -611,7 +719,13 @@ Q = [
                    'issue is **the irritancy of capsaicin:** the study '
                    'relied on here reports that concentration-dependent '
                    'irritation led patients to withdraw from therapy, which '
-                   'is why the formulation work was done. The fruit or '
+                   'is why the formulation work was done. The European '
+                   'Medicines Agency’s Capsici fructus monograph states '
+                   '(4.4) that a topical pepper preparation **should not be '
+                   'applied near the eyes or to mucous membranes**; the '
+                   'monograph does not belong to this species, but this is '
+                   'a warning common to all topical products carrying '
+                   'capsaicin. Accordingly the fruit or '
                    'extract is kept away from the area around the eyes and '
                    'from mucous membranes; the eyes should not be touched '
                    'while handling it and the hands washed afterwards. '
@@ -668,7 +782,7 @@ Q = [
              'sindirim ve solunum yolu rahatsızlıklarında, ayrıca '
              'yatıştırıcı ve tansiyon düşürücü bir çare olarak '
              'kullanıldığını kaydeder. Derleme bu kullanımlardan bir '
-             'kısmının bitkinin iltihap ve mikroba karşı etkileri ile ağrı '
+             'kısmının bitkinin mikroba karşı etkileri ile ağrı '
              'kesici özellikleriyle açıklanabileceğini belirtir.'],
             ['Kemotip sorunu — aynı adla yedi farklı bitki',
              'Aynı derleme türün uçucu yağında **yedi ayrı kemotip** '
@@ -906,7 +1020,14 @@ Q = [
               'çevresinden gelir ve küçüktür. Ağızdan kullanım için '
               'insanda yapılmış kontrollü bir çalışma dayanak alınan '
               'kaynaklarda yoktur; sıtma ve mikroplara karşı bildirilen '
-              'etkiler **hayvan ve laboratuvar** çalışmalarından gelir.',
+              'etkiler **hayvan ve laboratuvar** çalışmalarından gelir. '
+              'Üstelik farede sıtmaya karşı etki bildiren çalışma '
+              '(Ajaiyeoba ve ark., 1999, Journal of Ethnopharmacology) '
+              'Q. amara’nın **yaprak** özütleriyle yapılmıştır — en '
+              'yüksek baskılayıcı etkiyi yaprağın heksan ve metanol '
+              'özütleri göstermiştir — oysa bu kaydın kullanılan kısmı '
+              '**odun ve kabuktur;** kısım farkı yüzünden o bulgu bu '
+              'kayda doğrudan uygulanmaz.',
         kanit='sinirli',
         guv='orta',
         guvNot='İnsanda sınanmış olan tek kullanım biçimi haricî %4’lük '
@@ -915,15 +1036,48 @@ Q = [
                'bu kaydın güvenlik düzeyini belirleyen şey odur. '
                '**Gebelikte ve emzirirken ağızdan alınmamalıdır.** Kaydın '
                'kullanılan kısmı olan odun ve kabuk, kuasin adlı bileşiği '
-               'taşır; bu bileşik üzerine **hayvan** çalışmalarında '
-               'tutarlı bir üreme toksisitesi bildirilmiştir. Erkek '
-               'sıçanlarda testis ağırlığı, sperm sayısı ve testosteron '
-               'düzeyinde düşüş bulunmuş (Life Sci 1997; Reprod Toxicol '
-               '2003); dişi sıçanlarda ağızdan verilen kuasinle over '
-               'ağırlığında ve yavru sayısında düşüş bildirilmiştir '
-               '(Niger J Physiol Sci 2010). **Bunlar hayvan '
-               'çalışmalarıdır; insanda üreme etkisi ölçülmemiştir** — ama '
-               'insanda bir güvenlik verisi de bulunmadığı için ihtiyat '
+               'taşır. AB Gıda Bilimsel Komitesi’nin (SCF) 2 Temmuz 2002 '
+               'tarihinde kabul ettiği kuasin görüşü, kuasin ve Quassia '
+               'özütü üzerine yapılmış iki üreme toksisitesi '
+               'çalışmasının **toksikolojik kaygı doğurduğunu** yazar: '
+               'etkiler **denenen en düşük dozda** — kuasin eşdeğeri '
+               '0,1 mg/kg vücut ağırlığı — görülmüş, bu doz LOEL olarak '
+               'alınmış ve **NOEL belirlenemediği için tam bir risk '
+               'değerlendirmesi yapılamamıştır.** Aynı görüş kuasin için '
+               'kronik toksisite, kanserojenlik, genotoksisite ve '
+               'metabolizma çalışması bulunmadığını da belirtir. '
+               'Dayandığı iki çalışma şunlardır: Njar ve ark. (1995, '
+               'Planta Med) kuasinin sıçan Leydig hücrelerinde hem bazal '
+               'hem LH ile uyarılmış testosteron salgısını baskıladığını '
+               'bildirir; Raji ve Bolarinwa (1997, Life Sci) içme suyuyla '
+               'verilen gövde odunu özütüyle erkek sıçanlarda testis, '
+               'epididim ve seminal vezikül ağırlığında, epididim sperm '
+               'sayısında ve serum testosteron, LH ve FSH düzeyinde düşüş '
+               'bulur. **Literatürü "tutarlı" diye okumak yanlış olur:** '
+               'SCF bu çalışmada etkilerin **doza bağlı olmadığını** ve '
+               'üç doz düzeyinin hepsinde aynı biçimde çıktığını, sekiz '
+               'haftalık iyileşme döneminden sonra ölçülen bütün '
+               'değişkenlerin **geri döndüğünü** ve çalışmanın '
+               'zayıflıklarını — grup başına yalnızca beş hayvan, '
+               'histopatoloji yapılmamış olması, yavru sayısına ilişkin '
+               'bilginin yetersizliği — açıkça not eder. Reproductive '
+               'Toxicology’deki çalışma (Parveen ve ark., 2003) kabuğun '
+               'kloroform özütünü **kas içine enjeksiyonla** 15 gün '
+               'vermiş; testis ve epididim ağırlığında, sperm sayısı, '
+               'hareketliliği ve canlılığında ve epididim α-glukozidaz '
+               'etkinliğinde düşüş bildirir — **bu çalışma testosteron '
+               'ölçmemiştir;** testosteron bulgusu yalnız Life Sci '
+               '1997’den gelir. Andrologia’daki 2021 çalışması farede '
+               'kuasin/Quassia amara ile sperm kuyruğunda Dag benzeri '
+               'kusur (kamçının bükülüp kıvrılması) bildirir. Dişi '
+               'sıçanlarda ağızdan verilen kuasin (60 gün, 0,1–2,0 mg/kg) '
+               'over ve uterus ağırlığında, serum östrojeninde ve yavru '
+               'sayısı ile ağırlığında düşüş yapmış, ama bu etkiler de '
+               'kuasin kesildikten sonra hafiflemiştir (Niger J Physiol '
+               'Sci 2010). **Bunlar hayvan '
+               'çalışmalarıdır; insanda üreme etkisi ölçülmemiştir** — '
+               'SCF de kuasin için insan verisi bulunmadığını yazar; '
+               'insanda bir güvenlik verisi olmadığı için ihtiyat '
                'gerekir. Çocuklarda ve doğurganlık çağında ağızdan '
                'kullanımdan kaçınılmalıdır. Güney Amerika taramasında '
                'bitki kendi kendine en sık kullanılanlar arasında geçer ve '
@@ -965,6 +1119,12 @@ Q = [
              'https://pubmed.ncbi.nlm.nih.gov/22314945/'],
             ['E. O. Ajaiyeoba ve ark., “In vivo antimalarial activities of Quassia amara and Quassia undulata plant extracts in mice”, Journal of Ethnopharmacology 67(3), 1999',
              'https://pubmed.ncbi.nlm.nih.gov/10617067/'],
+            ['“Opinion of the Scientific Committee on Food on quassin”, SCF/CS/FLAV/FLAVOUR/29 Final, Avrupa Komisyonu Gıda Bilimsel Komitesi (SCF), 2 Temmuz 2002’de kabul edildi',
+             'https://food.ec.europa.eu/system/files/2020-12/sci-com_scf_out134_en.pdf'],
+            ['V. C. Njar ve ark., “Antifertility activity of Quassia amara: quassin inhibits the steroidogenesis in rat Leydig cells in vitro”, Planta Medica 61(2), 1995',
+             'https://pubmed.ncbi.nlm.nih.gov/7753928/'],
+            ['K. Faisal ve M. A. Akbarsha, “Observations on Dag-like defect of spermatozoa induced by treatment of the phytotherapeutic Quassia amara/quassin in the mouse model”, Andrologia 53(6), 2021',
+             'https://pubmed.ncbi.nlm.nih.gov/33756011/'],
         ],
         rel=['kinin', 'pauarco'],
         en=dict(
@@ -1016,21 +1176,65 @@ Q = [
                     'investigators. The sources relied on here contain no '
                     'controlled human study of oral use; reported effects '
                     'against malaria and microbes come from **animal and '
-                    'laboratory** work.',
+                    'laboratory** work. Moreover the study reporting '
+                    'antimalarial activity in mice (Ajaiyeoba et al., 1999, '
+                    'Journal of Ethnopharmacology) was done with **leaf** '
+                    'extracts of Q. amara — the highest suppressive '
+                    'activity was shown by the hexane and methanol extracts '
+                    'of the leaf — whereas the part used in this record is '
+                    '**wood and bark;** because the part differs, that '
+                    'finding does not carry directly to this record.',
             safety='The only form tested in humans is a topical 4% gel, and '
                    'safety and tolerability were good in both studies. '
                    '**Oral use is not the same thing**, and that is what '
                    'sets the safety level of this record. **It must not be '
                    'taken orally during pregnancy or breastfeeding.** The '
                    'wood and bark used here carry a compound called '
-                   'quassin, and **animal** studies report a consistent '
-                   'reproductive toxicity for it. In male rats, testis '
-                   'weight, sperm count and testosterone levels fell (Life '
-                   'Sci 1997; Reprod Toxicol 2003); in female rats, oral '
-                   'quassin lowered ovary weight and litter size (Niger J '
+                   'quassin. The opinion on quassin adopted by the EU '
+                   'Scientific Committee on Food (SCF) on 2 July 2002 '
+                   'states that two reproductive toxicity studies of '
+                   'quassin and Quassia extract **give rise to '
+                   'toxicological concern:** effects were noted at the '
+                   '**lowest dose tested** — a quassin equivalent of '
+                   '0.1 mg/kg body weight, taken as the LOEL — and **no '
+                   'NOEL could be established, so a proper risk assessment '
+                   'could not be performed.** The same opinion notes that '
+                   'there are no chronic toxicity, carcinogenicity, '
+                   'genotoxicity or metabolism studies for quassin. The two '
+                   'studies it rests on are these: Njar et al. (1995, '
+                   'Planta Med) report that quassin inhibited both basal '
+                   'and LH-stimulated testosterone secretion by rat Leydig '
+                   'cells; Raji and Bolarinwa (1997, Life Sci) gave stem '
+                   'wood extract in the drinking water and found falls in '
+                   'the weight of testis, epididymis and seminal vesicle, '
+                   'in epididymal sperm count and in serum testosterone, LH '
+                   'and FSH in male rats. **It would be wrong to read the '
+                   'literature as "consistent":** the SCF expressly notes '
+                   'that in that study the effects were **not '
+                   'dose-dependent** and appeared alike at all three dose '
+                   'levels, that all the parameters measured **returned to '
+                   'normal** after an eight-week recovery period, and that '
+                   'the study was weak — only five animals per group, no '
+                   'histopathology performed, and insufficient information '
+                   'on litter sizes. The study in Reproductive Toxicology '
+                   '(Parveen et al., 2003) gave a chloroform extract of the '
+                   'bark **by intramuscular injection** for 15 days and '
+                   'reports falls in testis and epididymis weight, in sperm '
+                   'count, motility and viability and in epididymal '
+                   'α-glucosidase activity — **that study did not measure '
+                   'testosterone;** the testosterone finding comes from '
+                   'Life Sci 1997 alone. A 2021 study in Andrologia reports '
+                   'a Dag-like defect of the sperm tail (angulation and '
+                   'coiling of the flagellum) in mice given '
+                   'Quassia amara/quassin. In female rats, oral quassin '
+                   '(60 days, 0.1–2.0 mg/kg) lowered ovary and uterus '
+                   'weight, serum oestrogen and litter number and weight, '
+                   'but those effects too were ameliorated after quassin '
+                   'was withdrawn (Niger J '
                    'Physiol Sci 2010). **These are animal studies; no '
-                   'reproductive effect has been measured in humans** — but '
-                   'since there is no human safety data either, caution is '
+                   'reproductive effect has been measured in humans** — the '
+                   'SCF likewise records that no human data on quassin are '
+                   'available; since there is no human safety data, caution is '
                    'warranted. Oral use should be avoided in children and '
                    'by anyone of childbearing age. The South American '
                    'survey lists the plant among those most often '
@@ -1302,11 +1506,16 @@ Q = [
               'hızında yarar bulunmamış; vücut ağırlığı, beden bileşimi, '
               'damar işlevi, kan yağları, iltihap ve oksidatif stres '
               'göstergelerinde de etki saptanmamıştır. Nutrition '
-              'Journal’da yayımlanan çalışma sarı çarkıfelek kabuğu '
-              'ununun etkisini incelemiştir. Yani insanda ölçülmüş '
-              'bulgular **tek bir alt kümeye sınırlıdır** ve meyvenin '
-              'kendisiyle değil ondan ayrılmış bileşenlerle elde '
-              'edilmiştir.',
+              'Journal’da yayımlanan çalışmada (de Queiroz ve ark., 2012) '
+              '**tip 2 diyabetli 43 hastaya** iki ay boyunca günde 30 g '
+              'sarı çarkıfelek kabuğu unu verilmiş; açlık kan şekerinde '
+              '(p=0,000), HbA1c’de (p=0,032) ve HOMA-IR’de (p=0,005) '
+              '**bütün kohortta** anlamlı düşüş bildirilmiştir. Yani '
+              'insanda ölçülmüş bulgular tek bir alt kümeye sınırlı '
+              'değildir, ama ikinci çalışmanın **kontrol kolu yoktur:** '
+              'tek gruplu, önce/sonra bir çalışmadır, plaseboyla '
+              'karşılaştırma yapılmamıştır. Her iki çalışmada da ölçülen '
+              'şey meyvenin kendisi değil, ondan ayrılmış bileşenlerdir.',
         kanit='sinirli',
         guv='dusuk',
         guvNot='Derleme, meyvenin olağan miktarlarda günlük tüketiminin '
@@ -1396,12 +1605,18 @@ Q = [
                     'pressure or heart rate was found in non-overweight men '
                     'or in any group of women, and no effect was detected on '
                     'body weight, body composition, endothelial function, '
-                    'lipids, inflammation or oxidative stress. A study in '
-                    'Nutrition Journal examined the effect of yellow passion '
-                    'fruit peel flour. The findings measured in humans are '
-                    'therefore **confined to a single subgroup** and were '
-                    'obtained not with the fruit itself but with components '
-                    'separated from it.',
+                    'lipids, inflammation or oxidative stress. In the study '
+                    'in Nutrition Journal (de Queiroz et al., 2012), **43 '
+                    'patients with type 2 diabetes** took 30 g a day of '
+                    'yellow passion fruit peel flour for two months, with '
+                    'significant falls reported **across the whole cohort** '
+                    'in fasting blood glucose (p=0.000), HbA1c (p=0.032) '
+                    'and HOMA-IR (p=0.005). The findings measured in humans '
+                    'are therefore not confined to a single subgroup, but '
+                    'the second study **had no control arm:** it was a '
+                    'single-group before-and-after study with no comparison '
+                    'against placebo. In both studies what was measured was '
+                    'not the fruit itself but components separated from it.',
             safety='The review states that daily consumption of the fruit at '
                    'common doses is non-toxic and safe. Unripe fruit is sour '
                    'and hard and is not eaten. The sources relied on here '
@@ -1445,8 +1660,12 @@ Q = [
         taxon='Diplopterys cabrerana',
         fam='Malpighiaceae',
         diger='Türkçede adı yoktur. Yerel adları chaliponga, chagropanga, '
-              'chagrupanga ve oco yagé; eski botanik yazısında '
-              'Banisteriopsis rusbyana adıyla da geçer. Amazon’un '
+              'chagrupanga ve oco yagé. Etnobotanik yazında '
+              'Banisteriopsis rusbyana adıyla da anılır, ama bu düz bir '
+              'eşad değil, **yanlış uygulamadır:** Kew’in kayıtlarına göre '
+              'Banisteriopsis rusbyana (Nied.) C.V.Morton, '
+              '*Diplopterys longialata*’nın eşadıdır; bu türün eşadı ise '
+              'Banisteriopsis cabrerana Cuatrec.’tir. Amazon’un '
               'kuzeybatısında ayahuasca kaynatmasına **katkı bitkisi** '
               'olarak girer. Bu türün ne Avrupa İlaç Ajansı’nda ne '
               'TİTCK’de monografı vardır. **İçerdiği DMT Türkiye’de '
@@ -1513,9 +1732,15 @@ Q = [
                'etkinin ortaya çıkması, karışımın öteki yarısındaki '
                'monoamin oksidaz inhibitörüne bağlıdır — tehlikeli ilaç '
                'etkileşimlerinin kaynağı da aynı madde.',
-        yasal='DMT, BM 1971 Psikotrop Maddeler Sözleşmesi’nin I sayılı '
-              'listesinde kontrollü maddedir ve Türkiye’de yasa dışıdır. '
-              'Bitkinin kendisinin hukuki durumu ülkeye göre değişir.',
+        yasal='DMT, Birleşmiş Milletler’in 1971 Psikotrop Maddeler '
+              'Sözleşmesi’ne ekli madde listelerinde **I sayılı listede** '
+              'sayılır (sözleşme metni, "List of Substances in the '
+              'Schedules"). Sözleşmenin 7. maddesine göre taraf ülkeler I '
+              'sayılı listedeki maddelerin **bilimsel ve çok sınırlı tıbbi '
+              'amaçlar dışındaki her kullanımını yasaklamak**, üretim, '
+              'ticaret, dağıtım ve bulundurmayı özel izne bağlamak '
+              'zorundadır. Bitkinin kendisi bu listelerde adıyla geçmez; '
+              'bitkinin hukuki durumu ülkeye göre değişir.',
         etk=[
             ['Antidepresanlar (SSRI, SNRI), triptanlar, tramadol, '
              'dekstrometorfan, linezolid',
@@ -1569,13 +1794,20 @@ Q = [
              'https://pubmed.ncbi.nlm.nih.gov/29955496/'],
             ['S. C. Biazatti ve ark., “Machine learning recovers folk classification of Banisteriopsis caapi from herbarium leaves of an ayahuasca liana”, iScience, 2026',
              'https://pubmed.ncbi.nlm.nih.gov/42100741/'],
+            ['“Convention on Psychotropic Substances, 1971” — 7. madde ve “List of Substances in the Schedules”, I sayılı liste (DMT); Birleşmiş Milletler, Viyana, 21 Şubat 1971 (UNODC metni)',
+             'https://www.unodc.org/pdf/convention_1971_en.pdf'],
         ],
         rel=['yopo', 'chiricsanango'],
         en=dict(
             name='Chaliponga',
             other='It has no Turkish name. Local names chaliponga, '
-                  'chagropanga, chagrupanga and oco yagé; in older botanical '
-                  'writing it also appears as Banisteriopsis rusbyana. In '
+                  'chagropanga, chagrupanga and oco yagé. In the '
+                  'ethnobotanical literature it is also called '
+                  'Banisteriopsis rusbyana, but that is not a plain synonym '
+                  'and is a **misapplied name:** according to Kew’s '
+                  'records, Banisteriopsis rusbyana (Nied.) C.V.Morton is a '
+                  'synonym of *Diplopterys longialata*, while the synonym '
+                  'of this species is Banisteriopsis cabrerana Cuatrec. In '
                   'the north-west Amazon it enters the ayahuasca brew as an '
                   '**admixture plant.** Neither the European Medicines '
                   'Agency nor the Turkish agency has a monograph for this '
@@ -1606,6 +1838,17 @@ Q = [
                  'so setting out how the brew is made would be setting out '
                  'the preparation of an illegal substance. Nor does any '
                  'official monograph set an accepted dose.',
+            legal='DMT is listed in **Schedule I** of the substance '
+                  'schedules annexed to the United Nations Convention on '
+                  'Psychotropic Substances, 1971 (the convention text, '
+                  '"List of Substances in the Schedules"). Under article 7 '
+                  'of the convention, Parties must **prohibit all use of '
+                  'Schedule I substances except for scientific and very '
+                  'limited medical purposes** and make manufacture, trade, '
+                  'distribution and possession subject to a special '
+                  'licence. The plant itself is not named in those '
+                  'schedules; its legal status varies from country to '
+                  'country.',
             science='The sources relied on here contain no efficacy study of '
                     'this species in humans; every publication found treats '
                     'the plant as a component of the ayahuasca mixture. A '
