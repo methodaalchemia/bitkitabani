@@ -20,8 +20,33 @@ import json, os, re, subprocess, sys, unicodedata, urllib.parse
 
 KOK = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, KOK)
+# 28 Kasım 2026 (p009 turu): bu iki yol depoda **yoktu** ve ema_kontrol ile
+# titck_kontrol sessizce atlanıyordu — yani denetimin en önemli kolu, cins
+# düzeyi monograf tuzağı, hiç koşmamıştı ve betik yine "0 hata" yazıyordu.
+# Sessiz atlama, yanlış HATA kadar arızadır: kapı atlanan denetimi geçmiş
+# sayıyor. Depoda duran gerçek kaynaklara düşülüyor ve atlanan her kol
+# çıktıda ATLANDI diye **yüksek sesle** bildiriliyor.
 EMA_DIZIN = os.path.join(KOK, 'veri', 'onbellek', 'ema_index.json')
+EMA_YEDEK = os.path.join(KOK, 'ema_monograf.json')
 TITCK = os.path.join(KOK, 'veri', 'onbellek', 'titck')
+ATLANDI = []
+
+
+def ema_dizin():
+    """EMA dizinini döndür: önbellek varsa o, yoksa depodaki ema_monograf.json.
+
+    İki dosyanın alan adları farklı; ema_monograf.json'da tür adı 'botanik',
+    monograf adı 'latin', sayfa 'adres'. Ortak biçime çeviriyoruz.
+    """
+    for yol in (EMA_DIZIN, EMA_YEDEK):
+        if os.path.exists(yol):
+            d = json.load(open(yol, encoding='utf-8'))
+            return {k: {'tur': v.get('tur') or v.get('botanik') or '',
+                        'latin': v.get('latin') or '',
+                        'sonuc': v.get('sonuc') or '',
+                        'sayfa': v.get('sayfa') or v.get('adres') or ''}
+                    for k, v in d.items()}
+    return None
 UA = 'BitkiTabani/1.0 (https://bitkitabani.com)'
 
 # Kendi ağzımızdan iddia kurulmaz; özne kaynaktır.
@@ -58,11 +83,22 @@ def kayitlar():
 
 
 def yeni_idler():
-    """main'e göre eklenen kuyruk dosyalarındaki kayıt id'leri."""
-    r = subprocess.run(['git', 'diff', '--name-only', 'origin/main...HEAD'],
-                       capture_output=True, text=True, cwd=KOK)
+    """main'e göre eklenen kuyruk dosyalarındaki kayıt id'leri.
+
+    28 Kasım 2026: yalnız `origin/main...HEAD` bakılıyordu. Kapı PR dalını
+    `--no-commit` ile birleştirip denetimleri koştuğu için HEAD hâlâ
+    origin/main'deydi: diff boş çıkıyor, betik "denetlenecek yeni kayıt yok"
+    deyip **0 dönüyordu.** Sekiz kayıtlık bir parti denetlenmemiş hâlde
+    temiz görünebilirdi. Çalışma ağacı ve indeks de artık okunuyor.
+    """
+    satirlar = []
+    for arg in (['diff', '--name-only', 'origin/main...HEAD'],
+                ['diff', '--name-only', '--cached'],
+                ['diff', '--name-only']):
+        r = subprocess.run(['git'] + arg, capture_output=True, text=True, cwd=KOK)
+        satirlar += r.stdout.split()
     out = []
-    for f in r.stdout.split():
+    for f in satirlar:
         if f.startswith('kuyruk/') and f.endswith('.py'):
             yol = os.path.join(KOK, f)
             if os.path.exists(yol):
@@ -72,12 +108,15 @@ def yeni_idler():
 
 def ema_kontrol(p, hata):
     """"EMA monografı yok" diyorsak EMA'da gerçekten yok mu — TÜR düzeyinde."""
-    if not os.path.exists(EMA_DIZIN): return
+    d = ema_dizin()
+    if d is None:
+        ATLANDI.append('EMA tür düzeyi monograf denetimi — ne veri/onbellek/ema_index.json '
+                       'ne ema_monograf.json bulundu')
+        return
     metin = json.dumps(p, ensure_ascii=False)
     iddia_yok = re.search(r'(EMA|Avrupa İlaç Ajansı)[^.]{0,60}(monograf[ıi]? yok|monografı bulunm)', metin)
     tur = (p.get('taxon') or p.get('la') or '').strip()
     if not tur: return
-    d = json.load(open(EMA_DIZIN, encoding='utf-8'))
     tam = [k for k in d.values()
            if tur.lower() in ((k.get('tur') or '') + ' ' + (k.get('latin') or '')).lower()
            and 'monograph' in (k.get('sonuc') or '').lower()]
@@ -129,9 +168,29 @@ def titck_kontrol(p, uyari):
     çapraz duyarlılık saptayıcısı yazılana kadar bu hâlde bırakıldı;
     tasarım notu `claude/yayin-gunlugu.md` içinde.
     """
-    if not os.path.isdir(TITCK): return
     tur = (p.get('taxon') or p.get('la') or '').strip()
     if not tur: return
+
+    # Tür düzeyi kol: TİTCK listesinde bu TÜR için monograf var mı? Bu kol
+    # PDF önbelleği olmadan da koşar, çünkü titck.py listenin kendisidir.
+    try:
+        import titck as _T
+        adlar = [a for a, _y in _T.M.values()]
+    except Exception as e:
+        ATLANDI.append(f'TİTCK tür düzeyi monograf denetimi — titck.py okunamadı ({e})')
+        adlar = None
+    if adlar is not None:
+        metin = json.dumps(p, ensure_ascii=False)
+        iddia_yok = re.search(r'(TİTCK|TITCK)[^.]{0,80}(monograf[ıi]? yok|monografı bulunm)', metin)
+        tam = [a for a in adlar if tur.lower() in sade(a) or sade(tur) in sade(a)]
+        if iddia_yok and tam:
+            uyari.append(f'{p["id"]}: "TİTCK monografı yok" diyor ama TİTCK listesinde bu tür var '
+                         f'({tam[0]}) — tür düzeyinde bakılsın')
+
+    if not os.path.isdir(TITCK):
+        ATLANDI.append(f'TİTCK cins düzeyi çapraz duyarlılık denetimi — {TITCK} yok '
+                       '(monograf metinleri indirilmemiş; tools/titck_indir.py)')
+        return
     cins = tur.split()[0]
     cins_kalip = re.compile(r'\b' + re.escape(cins.lower()) + r'\b')
     for f in sorted(os.listdir(TITCK)):
@@ -192,7 +251,11 @@ def main(idler):
     hata, uyari = [], []
     if not idler: idler = yeni_idler()
     if not idler:
-        print('denetlenecek yeni kayıt yok'); return 0
+        print('denetlenecek yeni kayıt yok')
+        print('⚠ Bu, denetimin GEÇTİĞİ anlamına gelmez — hiç koşmadı anlamına gelir.')
+        print('  Birleştirilecek bir parti varsa kayıt id\'lerini argüman olarak ver:')
+        print('  python3 tools/yayin_denetim.py <id> <id> ...')
+        return 0
     for i in idler:
         p = K.get(i)
         if not p:
@@ -203,7 +266,13 @@ def main(idler):
         dil_kontrol(p, hata, uyari)
     for u in uyari: print('UYARI  ', u)
     for h in hata: print('HATA   ', h)
-    print(f'\n{len(idler)} kayıt denetlendi · {len(hata)} hata · {len(uyari)} uyarı')
+    atlanan = list(dict.fromkeys(ATLANDI))   # kayıt başına yinelenmesin
+    for a in atlanan:
+        print('ATLANDI', a)
+    print(f'\n{len(idler)} kayıt denetlendi · {len(hata)} hata · {len(uyari)} uyarı'
+          + (f' · {len(atlanan)} denetim kolu ATLANDI' if atlanan else ''))
+    if atlanan:
+        print('→ Atlanan kol koşmadı; o konuda "temiz" denemez. İkinci göz elle baksın.')
     if hata:
         print('→ HATA varken BİRLEŞTİRME.')
     if uyari:
