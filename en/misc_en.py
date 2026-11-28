@@ -51,6 +51,11 @@ YASAL_EN = {
  'koka': ('yasak','Coca leaf counts as a narcotic. Leaves or coca tea cannot be brought into Türkiye.'),
  'ayahuasca': ('yasak','A DMT-containing brew counts as a narcotic.'),
  'chacruna': ('kisitli','Its DMT is a controlled substance. The status of the plant itself may not be separately regulated.'),
+ # 28 Kasım 2026: chaliponga extra.YASAL'a eklenmişti ama buraya eklenmemişti.
+ # Sonuç: DMT taşıyan bir bitkinin İngilizce sayfasında yasal bölüm hiç
+ # basılmıyordu, rozet görünmüyordu ve katalog tablosu "No specific
+ # restriction" yazıyordu. kontrol_tr_en.py artık bu boşluğu yakalıyor.
+ 'chaliponga': ('kisitli','Its DMT is a controlled substance. The status of the plant itself may not be separately regulated.'),
  'sanpedro': ('kisitli','Its mescaline is a controlled substance. The cactus is sold as an ornamental; preparing it for consumption may be illegal.'),
  'salep': ('kisitli','Wild collection requires a permit; export of salep tubers is banned.'),
  'mapacho': ('kisitli','Sale of products such as Maraş otu is subject to tobacco regulations.'),

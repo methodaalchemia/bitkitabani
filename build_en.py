@@ -308,7 +308,14 @@ def run(G):
             rows = ''.join(f'<tr><th scope="row">{e(g)}</th><td>{ev(w)}</td></tr>' for g, w in ETK_EN[pid])
             body_s += sec('Drug interactions', f'<div class="tablewrap"><table class="cmp etk"><thead><tr><th scope="col">Medicine or substance</th><th scope="col">Why it matters</th></tr></thead><tbody>{rows}</tbody></table></div><p class="muted-s">This list is not complete. If you take regular medication, ask your pharmacist or doctor before trying {e(x["name"])}.</p>')
         if y:
-            body_s += sec('Legal status', f'<div class="callout {"yuksek" if y[0] == "yasak" else "orta"}"><div class="lvl">{YASAL_AD_EN[y[0]]}</div><p>{e(y[1])}</p><p class="muted-s">Laws differ by country; check local rules before travelling with or buying any plant product.</p></div>')
+            body_s += sec('Legal status', f'<div class="callout {"yuksek" if y[0] == "yasak" else "orta"}"><div class="lvl">{YASAL_AD_EN[y[0]]}</div><p>{e(y[1])}</p>' + (f'<p><b>Other countries:</b> {e(x["legal"])}</p>' if x.get('legal') else '') + '<p class="muted-s">Laws differ by country; check local rules before travelling with or buying any plant product.</p></div>')
+        elif x.get('legal'):
+            # 28 Kasım 2026: kayıt düzeyi `yasal` alanı build_en'de hiç
+            # kullanılmıyordu. Türkiye rozeti olmayan ama uluslararası bir
+            # yasal notu olan kayıtta (kırmızı melek borazanı) Türkçe sayfada
+            # bölüm vardı, İngilizce sayfada hiç yoktu. İngilizce metin
+            # kaydın en['legal'] alanından gelir; Türkçe metin asla basılmaz.
+            body_s += sec('Legal status', f'<div class="callout orta"><p>{e(x["legal"])}</p><p class="muted-s">Laws differ by country; check local rules before travelling with or buying any plant product.</p></div>')
         k = KORUMA_EN.get(pid)
         if k:
             rows = ''.join(f'<div><dt>{lab}</dt><dd>{e(v)}</dd></div>' for lab, v in [('IUCN', k.get('iucn')), ('CITES', k.get('cites')), ('Note', k.get('not_')), ('Alternative', k.get('alternatif'))] if v)
