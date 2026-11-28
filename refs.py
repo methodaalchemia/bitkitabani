@@ -299,3 +299,23 @@ DIS.update({'manyok': {'url': 'https://inaturalist-open-data.s3.amazonaws.com/ph
                        'license': 'CC BY 4.0',
                        'licenseUrl': 'https://creativecommons.org/licenses/by/4.0',
                        'not': 'Vanuatu', 'notEn': 'Vanuatu'}})
+
+
+# Parti 009 (28 Kasım 2026): Eda'nın karttan seçtiği görseller.
+# Kartta bahçe nanesi ve büyük çiçekli adaçayı da vardı; o iki aday kardeş tür
+# denetiminde partiden düştüğü için seçimleri kullanılmadı. Çalba, mayasıl otu
+# ve dağ nanesi için seçim yok — bu üç kayıt fotoğrafsız yayımlanır.
+FILES.update({
+    'aciyavsan': 'Teucrium polium kz06.jpg',
+    'kisamahmutotu': 'Teucrium chamaedrys kz07.jpg',
+    'dagcayistachys': 'Stachys lavandulifolia, Nature of Iran.jpg',
+    'miskadacayi': "Salvia sclarea 'Vatican White' (clary sage) (SaatPilot).jpg",
+})
+DIS.update({
+    'kurtreyhani': {
+        'url':     'https://inaturalist-open-data.s3.amazonaws.com/photos/443112044/original.jpg',
+        'page':    'https://www.inaturalist.org/observations/248042509',
+        'kaynak':  'iNaturalist', 'artist': 'Joey Bom',
+        'license': 'CC BY 4.0', 'licenseUrl': 'https://creativecommons.org/licenses/by/4.0',
+    },
+})
