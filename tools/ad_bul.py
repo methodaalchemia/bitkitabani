@@ -155,7 +155,12 @@ def coz(latin):
         k = kabul_id
     yer = d['dag'].get(k, [])
     sonuc['yayilis'] = sorted({a for a, _ in yer})
-    sonuc['turkiyede'] = any('Turkey' in a for a, _ in yer)
+    # 28 Kasım 2026: WCVP'nin yerel kopyası bölgeyi 'Türkiye' diye yazıyor,
+    # 'Turkey' diye değil. Eski denetim hiçbir türde eşleşmiyordu; Türkiye'ye
+    # endemik Cyclotrichium niveum için de 'hayır' veriyordu ve kayit_taslak.py
+    # bu yüzden kayda "bitki Türkiye'de doğal olarak yetişmez" cümlesini
+    # yazıyordu. İki yazım da kabul edilir.
+    sonuc['turkiyede'] = any(('Türkiye' in a or 'Turkey' in a) for a, _ in yer)
     return sonuc
 
 

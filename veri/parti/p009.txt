@@ -1,9 +1,14 @@
 # id | Latince ad | önerilen Türkçe ad | bölge | kategori
-bahcenanesi | Mentha spicata | Bahçe nanesi | anadolu | besin,sifa
+# 28 Kasım 2026 — kardeş tür denetimi (3. adım) sonrası düzeltilmiş liste.
+# Düşenler: bahcenanesi (Mentha spicata) ve buyukcicekliadacayi (Salvia tomentosa).
+# Kararı Eda verdi; gerekçe PR gövdesinde ve claude/kardes-tur-denetimi.md ölçütünde.
+# Yerlerine liste sırasındaki ilk iki işaretsiz Anadolu adayı alındı (ikisi de
+# ballıbabagiller, p017'den öne çekildi; p017 iki aday eksik kaldı).
 aciyavsan | Teucrium polium | Acı yavşan | anadolu | sifa
 kisamahmutotu | Teucrium chamaedrys | Kısamahmut otu | anadolu | sifa,zehir
 dagcayistachys | Stachys lavandulifolia | Dağ çayı (tüylü) | anadolu | sifa
 calba | Phlomis grandiflora | Çalba | anadolu | sifa
 miskadacayi | Salvia sclarea | Misk adaçayı | anadolu | sifa,tutsu
-buyukcicekliadacayi | Salvia tomentosa | Büyük çiçekli adaçayı | anadolu | sifa
 kurtreyhani | Salvia multicaulis | Kürt reyhanı | anadolu | sifa
+mayasilotu | Ajuga chamaepitys | Mayasıl otu | anadolu | sifa
+dagnanesi | Cyclotrichium niveum | Dağ nanesi | anadolu | sifa

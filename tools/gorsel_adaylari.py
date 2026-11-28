@@ -95,6 +95,12 @@ EK_TERIM = {
     'limonokaliptusu': ['Corymbia citriodora', 'Corymbia citriodora leaves',
                         'Corymbia citriodora bark', 'Corymbia citriodora tree',
                         'lemon scented gum', 'Corymbia citriodora flowers'],
+    # 28 Kasım 2026: p009'da Cyclotrichium niveum sıfır aday verdi. Tür
+    # Türkiye'ye endemik ve Commons'ta kabul edilen adıyla neredeyse hiç
+    # dosyası yok; eski cins adı (Ziziphora) ve Türkçe adı denenir.
+    'dagnanesi': ['Cyclotrichium niveum', 'Cyclotrichium',
+                  'Ziziphora niveum', 'Clinopodium niveum',
+                  'dağ nanesi', 'Cyclotrichium origanifolium'],
 }
 
 

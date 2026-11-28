@@ -50,6 +50,19 @@
   "w": 960,
   "w500": 500
  },
+ "aciyavsan": {
+  "artist": "Krzysztof Ziarnek, Kenraiz",
+  "auto": false,
+  "b1280": "Teucrium polium kz06.jpg",
+  "file": "Teucrium polium kz06.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Teucrium_polium_kz06.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "aciyonca": {
   "artist": "Uoaei1",
   "auto": true,
@@ -1221,6 +1234,19 @@
   "license": "CC BY 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Mursalski_chai.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "dagcayistachys": {
+  "artist": "Ninara from Helsinki, Finland",
+  "auto": false,
+  "b1280": "Stachys lavandulifolia, Nature of Iran.jpg",
+  "file": "Stachys lavandulifolia, Nature of Iran.jpg",
+  "h": 640,
+  "h500": 333,
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Stachys_lavandulifolia,_Nature_of_Iran.jpg",
   "w": 960,
   "w500": 500
  },
@@ -2897,6 +2923,19 @@
   "w": 960,
   "w500": 500
  },
+ "kisamahmutotu": {
+  "artist": "Krzysztof Ziarnek, Kenraiz",
+  "auto": false,
+  "b1280": "Teucrium chamaedrys kz07.jpg",
+  "file": "Teucrium chamaedrys kz07.jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Teucrium_chamaedrys_kz07.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "kisnis": {
   "artist": "ShahadatHossain",
   "auto": true,
@@ -3049,6 +3088,20 @@
   "license": "CC BY 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Lycopus_europaeus_RF.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "kurtreyhani": {
+  "artist": "Joey Bom",
+  "auto": false,
+  "b1280": "original.jpg",
+  "file": "original.jpg",
+  "h": 723,
+  "h500": 377,
+  "kaynak": "iNaturalist",
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://www.inaturalist.org/observations/248042509",
   "w": 960,
   "w500": 500
  },
@@ -3501,6 +3554,18 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
   "page": "https://commons.wikimedia.org/wiki/File:Millo.Galiza_Oroso.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "miskadacayi": {
+  "artist": "Steffen Bauer ( www.saatpilot.de )",
+  "auto": false,
+  "file": "Salvia sclarea 'Vatican White' (clary sage) (SaatPilot).jpg",
+  "h": 1200,
+  "h500": 625,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Salvia_sclarea_%27Vatican_White%27_(clary_sage)_(SaatPilot).jpg",
   "w": 960,
   "w500": 500
  },
