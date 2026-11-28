@@ -2830,11 +2830,22 @@ _today = [i for i in YENI if YENI[i] == LOCAL_DAY]
 _inx = ['/', '/yeni/', '/gunun-bitkisi/', '/katalog/', '/rehber/', '/tarif/'] + [f'/{i}/' for i in _today] + [u for i in _today for u, _ in GLINKS.get(i, [])]
 json.dump({'key': INDEXNOW_KEY, 'urls': sorted(set(BASE + u for u in _inx))}, open(os.path.join(HERE, '.cache', 'indexnow.json'), 'w'))
 # ---------- QR kartlar: aktar, pazar ve atölyeler için yazdırılabilir bitki kartları ----------
+# 28 Kasım 2026: segno kurulu olmadığında bu blok **sessizce** atlanıyordu.
+# /kartlar/ altındaki 10 sayfa (dizin + aktar.py'deki her aktar) hiç
+# yazılmıyor, build.py yine 'ok N sayfa' deyip 0 dönüyordu. CI'da segno
+# kurulu (images.yml), yerelde değil — yani kapı turunda derlenen site
+# canlıdakinden 10 sayfa eksik çıkıyor ve bu hiçbir yerde görünmüyordu.
+# site_saglik.py de yakalamıyor: sayfa sayısı eşiğinin üstünde kalıyor.
+# 24 Kasım'da yarım derlenen siteyi gönderten arıza da tam bu biçimdeydi.
+# Atlanan bölüm artık ATLANAN'a yazılıyor ve sonda yüksek sesle bildiriliyor.
+ATLANAN = []
 try:
     import segno
     def _qr(u): return segno.make(u, error='m').svg_inline(scale=4, border=1, dark='#1C2140')
 except Exception:
     _qr = None
+    ATLANAN.append(('/kartlar/ (dizin + her aktar) — QR kartları',
+                    'segno kurulu değil: pip install segno'))
 if _qr:
     def _kart(p, k=''):
         im = f'<img src="/img/{p["id"]}-500.jpg" alt="">' if p['id'] in IMG else ''
@@ -2852,8 +2863,10 @@ if _qr:
     # Aktar başına kart sayfası: QR okutmaları aktar koduyla sayılır (aktar.py). Arama motorlarına kapalı.
     try:
         from aktar import AKTAR
-    except Exception:
+    except Exception as _e:
         AKTAR = {}
+        ATLANAN.append(('/kartlar/<aktar>/ — aktar başına kart sayfaları',
+                        f'aktar.py okunamadı: {_e}'))
     for _k, _ad in AKTAR.items():
         write(f'/kartlar/{_k}/index.html', page(f'{_ad} için bitki kartları | Bitki Tabanı', 'QR kodlu, yazdırılabilir şifalı bitki kartları.', f'/kartlar/{_k}/',
               _KCSS + f'<header class="page-head"><h1>{e(_ad)} için bitki kartları</h1><p>Rafınıza ya da tezgâhınıza koyabileceğiniz ücretsiz kartlar: her kartta bitkinin adı, güvenlik düzeyi, kısa bir bilgi ve okutunca bitkinin geleneksel kullanımını, bilimsel kanıtını ve güvenlik notunu gösteren bir QR kod var. A4 sayfaya dört kart sığar. İstediğiniz kartları yazdırabilirsiniz.</p><p class="noprint"><button type="button" data-yazdir>Yazdır</button></p></header><div class="kartlar">' + ''.join(_kart(p, _k) for p in P if p['guv'] != 'yuksek') + '</div>',
@@ -2995,5 +3008,13 @@ try:
 except Exception as _e:
     print('UYARI — tr/en kontrolü çalıştırılamadı:', _e)
 
-print('ok', len(urls), 'sayfa')
+if ATLANAN:
+    print()
+    for _b, _n in ATLANAN:
+        print(f'⚠ ATLANDI {_b} — {_n}')
+    print('⚠ Bu derleme EKSİKTİR: yukarıdaki sayfalar yazılmadı. Canlıda duran '
+          'sayfalar olabilir; bu çıktıyı site/ olarak commit etmek onları SİLER.')
+    print(f'eksik {len(urls)} sayfa ({len(ATLANAN)} bölüm atlandı)')
+else:
+    print('ok', len(urls), 'sayfa')
 
