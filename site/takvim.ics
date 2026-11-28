@@ -529,6 +529,17 @@ DESCRIPTION:Kışlık buğday sonbaharda ekilir\, Haziran–Temmuz’da h
 URL:https://bitkitabani.com/bugday/
 END:VEVENT
 BEGIN:VEVENT
+UID:toplama-buyukhiltan@bitkitabani.com
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260602
+RRULE:FREQ=YEARLY
+SUMMARY:🌿 Büyük hıltan toplama mevsimi
+DESCRIPTION:Yazın beyaz şemsiye çiçekler\; meyveler yaz sonunda olgun
+ laşır. https://bitkitabani.com/buyukhiltan/
+URL:https://bitkitabani.com/buyukhiltan/
+END:VEVENT
+BEGIN:VEVENT
 UID:toplama-cehri@bitkitabani.com
 DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260701
