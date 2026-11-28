@@ -38,8 +38,17 @@ HAYVAN = re.compile(r'\b(sıçan|fare|tavşan|hayvan|in vitro|tüp içi|hücre k
 INSAN = re.compile(r'\b(insanda|klinik|randomize|katılımcı|gönüllü|hasta)', re.I)
 
 
+# 27 Kasım 2026: kesme işareti yanlış HATA üretiyordu. Künyede tipografik
+# kesme (D’Addabbo), NCBI'de düz kesme (D'Addabbo) var. NFKD tipografik
+# kesmeyi ayrıştırmıyor, ascii süzgeci onu atıyor: "daddabbo" ile "d'addabbo"
+# karşılaştırılıyor ve tutmuyor. Yanlış HATA birleştirmeyi durdurduğu için
+# kendisi bir arıza — her iki biçimi de baştan düşürüyoruz.
+_KESME = str.maketrans('', '', "'\u2019\u2018\u02bc`\u00b4")
+
+
 def sade(t):
-    return unicodedata.normalize('NFKD', t or '').encode('ascii', 'ignore').decode().lower()
+    t = unicodedata.normalize('NFKD', t or '').encode('ascii', 'ignore').decode().lower()
+    return t.translate(_KESME)
 
 
 def kayitlar():
@@ -85,15 +94,50 @@ def ema_kontrol(p, hata):
 
 
 def titck_kontrol(p, uyari):
-    """TİTCK metinlerinde yalnız cins geçiyorsa işaretle — insan baksın."""
+    """TİTCK metinlerinde yalnız cins geçiyorsa işaretle — insan baksın.
+
+    27 Kasım 2026 (akşam turu): bu denetim sabah turunda iki kola
+    daraltılmıştı — (a) kaydın monografa fiilen atıf yapması, (b) monografın
+    cinsi çapraz duyarlılık gerekçesiyle sayması. **Daraltma geri alındı**,
+    çünkü ikinci göz denetiminde ölçüldü ki daraltma kendi gerekçesini
+    susturuyor.
+
+    huacatay (*Tagetes minuta*) için eski hâl 3 uyarı veriyordu, daraltılmış
+    hâl 0. Oysa TİTCK'in `dulavratotu` monografı birebir şöyle diyor:
+    "Asteraceae familyası bitkilerine (… ve **Tagetes L.** cinslerine ait
+    türler) karşı aşırı duyarlılık görülebilir. **Anafilaktik şok
+    görülebilir.**" `enginar` monografı da Tagetes'i adıyla sayıyor.
+    huacatay'ın `guvNot` alanında ise "duyarl", "alerj" ve "anafila"
+    sözcüklerinin **hiçbiri geçmiyor** (sayım 0/0/0); alan tamamen
+    fototoksisite üzerine. Kol (b)'nin muafiyet listesi "compositae" ve
+    "familyas" sözcüklerini o **fototoksisite** cümlesinde bulup uyarıyı
+    susturuyordu — bir fototoksisite cümlesi bir anafilaksi boşluğunu
+    kapatıyordu. Kuyruk genelinde muafiyet 250 kaydın 66'sını (%26) toptan
+    muaf kılıyor ve "aşırı duyarl" tek başına yetiyor.
+
+    Kol (a) de ölçüldü: kuyruktaki 99 TİTCK monograf atıfının yalnız 3'ünü
+    saptıyor. Önbellek dosya adları ASCII'leştirilmiş ("seytanpencesi"),
+    kayıt metni aksanlı ("şeytanpençesi") ve karşılaştırma `sade()`'den
+    geçmiyor.
+
+    Korunan düzeltme: cins adı **sözcük sınırıyla** aranıyor. Alt dizgi
+    araması 29 doğrulanmış yanlış pozitif üretiyordu — "Rosa" (gül)
+    "Rosaceae" içinde, "Ananas" (comosus) "Fragaria × ananassa" içinde
+    eşleşiyordu.
+
+    Denetim gürültülü ama fail-loud: kararı ikinci göz verir. Doğru bir
+    çapraz duyarlılık saptayıcısı yazılana kadar bu hâlde bırakıldı;
+    tasarım notu `claude/yayin-gunlugu.md` içinde.
+    """
     if not os.path.isdir(TITCK): return
     tur = (p.get('taxon') or p.get('la') or '').strip()
     if not tur: return
     cins = tur.split()[0]
+    cins_kalip = re.compile(r'\b' + re.escape(cins.lower()) + r'\b')
     for f in sorted(os.listdir(TITCK)):
         if not f.endswith('.txt'): continue
         m = open(os.path.join(TITCK, f), encoding='utf-8', errors='replace').read().lower()
-        if cins.lower() in m and tur.lower() not in m:
+        if cins_kalip.search(m) and tur.lower() not in m:
             uyari.append(f'{p["id"]}: TİTCK "{f[:-4]}" monografında yalnız CİNS geçiyor, tür geçmiyor — '
                          f'o monografın kısıtlamaları bu türe uygulanamaz')
 

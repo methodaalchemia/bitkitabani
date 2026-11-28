@@ -143,11 +143,20 @@ for _q in _K.Q:
     if _q.get('nccih'): NCCIH[_id] = _q['nccih']
     if _q.get('kaynak'): OTHER.setdefault(_id, []).extend(_q['kaynak'])
     if _q.get('koruma'): KORUMA[_id] = _q['koruma']
-    if _q.get('yasal'): YASAL[_id] = _q['yasal']
+    # 27 Kasım 2026: bu satır kuyruk kaydının `yasal` METNİNİ, (seviye, metin)
+    # demeti bekleyen YASAL sözlüğüne yazıyordu. tags() `y[0]`'ı seviye sanıp
+    # metnin ilk harfini okuyor ve YASAL_AD['B'] diye patlıyordu — derleme
+    # yarıda kalıyor, site 70 sayfada kesiliyor. Yayımdaki 13 kayıtta bu alan
+    # istisnasız string ve data.json'dan geldiği için bu satırdan hiç geçmiyor;
+    # hata ancak `yasal` taşıyan bir KUYRUK kaydı etkinleşince ortaya çıkıyor
+    # (kırmızı melek borazanı, yayın 27 Kasım). Üstelik extra.YASAL'da zaten
+    # doğru demeti olan bir kaydın (chaliponga) demetini de eziyordu.
+    # Kural: Türkiye rozeti yalnız extra.YASAL'dan gelir; kaydın `yasal`
+    # metni "Diğer ülkeler" paragrafıdır ve kayıtta kalır.
     EXTRA[_id] = list(_q.get('rel', []))
     for _r in _q.get('rel', []):
         if _r in byId or _r in YENI: EXTRA.setdefault(_r, []).append(_id)
-    for _k in ('etk', 'etk_en', 'ema', 'nccih', 'kaynak', 'koruma', 'yasal', 'rel', 'yayin', 'foto', 'ig'): _q.pop(_k, None)
+    for _k in ('etk', 'etk_en', 'ema', 'nccih', 'kaynak', 'koruma', 'rel', 'yayin', 'foto', 'ig'): _q.pop(_k, None)
     P.append(_q); byId[_id] = _q
 for i, p in enumerate(P): p['no'] = i + 1
 
