@@ -226,3 +226,21 @@ DIS = {
         'notEn':   'The species shown is Ormosia macrocalyx (Costa Rica)',
     },
 }
+
+
+# Parti 006 (25 Kasım 2026): Eda'nın karttan seçtiği görseller.
+FILES.update({
+    'yerfistigi': 'Arachis hypogaea 003.JPG',
+    'habanero': 'Habanero chile - fruits (aka).jpg',
+    'prontoalivio': 'Lippia alba (11627884485).jpg',
+    'kuasya': 'Quassia amara11.JPG',
+    'ananas': 'Im Palmengarten - Ananas (Ananas comosus) 02.jpg',
+    'carkifelekmeyvesi': 'Passiflora edulis flower in Hong Kong Mar 9 2013.JPG',
+    'chaliponga': 'Hojas del yagé (Diplopterys cabrerana).jpg',
+})
+DIS.update({'manyok': {'url': 'https://inaturalist-open-data.s3.amazonaws.com/photos/766001607/original.jpg',
+                       'page': 'https://www.inaturalist.org/observations/415968329',
+                       'kaynak': 'iNaturalist', 'artist': 'Bryce Watts-Parker',
+                       'license': 'CC BY 4.0',
+                       'licenseUrl': 'https://creativecommons.org/licenses/by/4.0',
+                       'not': 'Vanuatu', 'notEn': 'Vanuatu'}})
