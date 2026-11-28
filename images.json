@@ -267,6 +267,19 @@
   "w": 960,
   "w500": 500
  },
+ "ananas": {
+  "artist": "JensKunstfreund",
+  "auto": false,
+  "b1280": "Im Palmengarten - Ananas (Ananas comosus) 02.jpg",
+  "file": "Im Palmengarten - Ananas (Ananas comosus) 02.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Im_Palmengarten_-_Ananas_(Ananas_comosus)_02.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "ananaspapatyasi": {
   "artist": "Walter Siegmund (talk)",
   "auto": true,
@@ -290,6 +303,19 @@
   "license": "CC BY 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Anason_%C3%87i%C3%A7e%C4%9Fi.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "anasonmersini": {
+  "artist": "Melburnian",
+  "auto": false,
+  "b1280": "Syzygium anisatum flowers 1259.jpg",
+  "file": "Syzygium anisatum flowers 1259.jpg",
+  "h": 738,
+  "h500": 384,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Syzygium_anisatum_flowers_1259.jpg",
   "w": 960,
   "w500": 500
  },
@@ -590,6 +616,19 @@
   "w": 960,
   "w500": 500
  },
+ "balkabagi": {
+  "artist": "George Chernilevsky",
+  "auto": false,
+  "b1280": "Cucurbita maxima 2016 G1.jpg",
+  "file": "Cucurbita maxima 2016 G1.jpg",
+  "h": 600,
+  "h500": 313,
+  "license": "Public domain",
+  "licenseUrl": "",
+  "page": "https://commons.wikimedia.org/wiki/File:Cucurbita_maxima_2016_G1.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "ballibaba": {
   "artist": "Robert Flogaus-Faust",
   "auto": true,
@@ -838,6 +877,19 @@
   "w": 960,
   "w500": 500
  },
+ "carkifelekmeyvesi": {
+  "artist": "Earth100",
+  "auto": false,
+  "b1280": "Passiflora edulis flower in Hong Kong Mar 9 2013.JPG",
+  "file": "Passiflora edulis flower in Hong Kong Mar 9 2013.JPG",
+  "h": 693,
+  "h500": 361,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Passiflora_edulis_flower_in_Hong_Kong_Mar_9_2013.JPG",
+  "w": 960,
+  "w500": 500
+ },
  "cay": {
   "artist": "AxelBoldt at en.wikipedia",
   "auto": true,
@@ -916,6 +968,19 @@
   "w": 960,
   "w500": 500
  },
+ "cerimoya": {
+  "artist": "Forest & Kim Starr",
+  "auto": false,
+  "b1280": "Starr 071024-0255 Annona cherimola.jpg",
+  "file": "Starr 071024-0255 Annona cherimola.jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Starr_071024-0255_Annona_cherimola.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "ceviz": {
   "artist": "JLPC",
   "auto": false,
@@ -938,6 +1003,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Feuilles_de_Psychotria_viridis.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "chaliponga": {
+  "artist": "Gary Saucedo/Archivo Centro Takiwasi",
+  "auto": false,
+  "b1280": "Hojas del yagé (Diplopterys cabrerana).jpg",
+  "file": "Hojas del yagé (Diplopterys cabrerana).jpg",
+  "h": 640,
+  "h500": 334,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Hojas_del_yag%C3%A9_(Diplopterys_cabrerana).jpg",
   "w": 960,
   "w500": 500
  },
@@ -1120,6 +1198,19 @@
   "w": 960,
   "w500": 500
  },
+ "dagbiberi": {
+  "artist": "peganum from Henfield, England",
+  "auto": false,
+  "b1280": "Tasmannia lanceolata (12994683473).jpg",
+  "file": "Tasmannia lanceolata (12994683473).jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Tasmannia_lanceolata_(12994683473).jpg",
+  "w": 960,
+  "w500": 500
+ },
  "dagcayi": {
   "artist": "Rumen Evtimov",
   "auto": false,
@@ -1156,6 +1247,20 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:S.cuneifolia-1.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "daryaprakliokaliptus": {
+  "artist": "Tom Field",
+  "auto": false,
+  "b1280": "original.jpg",
+  "file": "original.jpg",
+  "h": 720,
+  "h500": 375,
+  "kaynak": "iNaturalist",
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://www.inaturalist.org/observations/412795785",
   "w": 960,
   "w500": 500
  },
@@ -1246,6 +1351,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Ammi_visnaga_A5.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "domates": {
+  "artist": "Friedrich Haag",
+  "auto": false,
+  "b1280": "2012 07 26 016 Cocktailtomaten.jpg",
+  "file": "2012 07 26 016 Cocktailtomaten.jpg",
+  "h": 1817,
+  "h500": 946,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:2012_07_26_016_Cocktailtomaten.jpg",
   "w": 960,
   "w500": 500
  },
@@ -1767,6 +1885,19 @@
   "w": 960,
   "w500": 500
  },
+ "habanero": {
+  "artist": "André Karwath aka Aka",
+  "auto": false,
+  "b1280": "Habanero chile - fruits (aka).jpg",
+  "file": "Habanero chile - fruits (aka).jpg",
+  "h": 726,
+  "h500": 378,
+  "license": "CC BY-SA 2.5",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:Habanero_chile_-_fruits_(aka).jpg",
+  "w": 960,
+  "w500": 500
+ },
  "hamamelis": {
   "artist": "",
   "auto": false,
@@ -1931,6 +2062,22 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Borago_officinalis_003-1.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "huacatay": {
+  "artist": "rmjb (iNaturalist)",
+  "auto": false,
+  "b1280": "original.jpg",
+  "file": "original.jpg",
+  "h": 1280,
+  "h500": 667,
+  "kaynak": "iNaturalist",
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "not": "Sti Fadma, Marakeş, Fas",
+  "notEn": "Sti Fadma, Marrakesh, Morocco",
+  "page": "https://www.inaturalist.org/observations/415938539",
   "w": 960,
   "w500": 500
  },
@@ -2219,6 +2366,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:HK_%E8%8D%83%E7%81%A3_Tsuen_Wan_%E8%8D%83%E6%99%AF%E5%9C%8D_Tsuen_King_Circuit_%E9%81%8A%E6%A8%82%E5%A0%B4_Playground_January_2021_SS2_14.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "kakaduerigi": {
+  "artist": "Allthingsnative",
+  "auto": false,
+  "b1280": "Terminalia ferdinandiana fruit.jpg",
+  "file": "Terminalia ferdinandiana fruit.jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Terminalia_ferdinandiana_fruit.jpg",
   "w": 960,
   "w500": 500
  },
@@ -2724,6 +2884,19 @@
   "w": 960,
   "w500": 500
  },
+ "kirmizimelekborazani": {
+  "artist": "janeyhenning",
+  "auto": false,
+  "b1280": "Brugmansia sanguinea flowers, Bogotá, Colombia.jpg",
+  "file": "Brugmansia sanguinea flowers, Bogotá, Colombia.jpg",
+  "h": 540,
+  "h500": 281,
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Brugmansia_sanguinea_flowers,_Bogot%C3%A1,_Colombia.jpg",
+  "w": 960,
+  "w500": 500
+ },
  "kisnis": {
   "artist": "ShahadatHossain",
   "auto": true,
@@ -2837,6 +3010,19 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
   "page": "https://commons.wikimedia.org/wiki/File:Agrimonia_eupatoria01.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "kuasya": {
+  "artist": "Forestowlet",
+  "auto": false,
+  "b1280": "Quassia amara11.JPG",
+  "file": "Quassia amara11.JPG",
+  "h": 720,
+  "h500": 375,
+  "license": "CC0",
+  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Quassia_amara11.JPG",
   "w": 960,
   "w500": 500
  },
@@ -2968,6 +3154,19 @@
   "w": 960,
   "w500": 500
  },
+ "limafasulyesi": {
+  "artist": "Filo gèn'",
+  "auto": false,
+  "b1280": "Phaseolus lunatus (gousse).jpg",
+  "file": "Phaseolus lunatus (gousse).jpg",
+  "h": 992,
+  "h500": 516,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Phaseolus_lunatus_(gousse).jpg",
+  "w": 960,
+  "w500": 500
+ },
  "limon": {
   "artist": "Hans Hillewaert",
   "auto": true,
@@ -2978,6 +3177,46 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Citrus_x_limon_(Outjo).jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "limoncayagaci": {
+  "artist": "unmotivated_frog (iNaturalist)",
+  "auto": false,
+  "b1280": "original.jpg",
+  "file": "original.jpg",
+  "h": 641,
+  "h500": 334,
+  "kaynak": "iNaturalist",
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://www.inaturalist.org/observations/358550475",
+  "w": 960,
+  "w500": 500
+ },
+ "limonmersini": {
+  "artist": "Allthingsnative",
+  "auto": false,
+  "b1280": "Backhousia citriodora flowers and foliage.jpg",
+  "file": "Backhousia citriodora flowers and foliage.jpg",
+  "h": 1280,
+  "h500": 667,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Backhousia_citriodora_flowers_and_foliage.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "limonokaliptusu": {
+  "artist": "Steffen Bauer ( www.saatpilot.de )",
+  "auto": false,
+  "b1280": "Corymbia citriodora (lemon-scented gum), flowers, view 2 (SaatPilot).jpg",
+  "file": "Corymbia citriodora (lemon-scented gum), flowers, view 2 (SaatPilot).jpg",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Corymbia_citriodora_(lemon-scented_gum),_flowers,_view_2_(SaatPilot).jpg",
   "w": 960,
   "w500": 500
  },
@@ -3068,6 +3307,22 @@
   "license": "CC0",
   "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
   "page": "https://commons.wikimedia.org/wiki/File:Leptospermum_scoparium_180802330.jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "manyok": {
+  "artist": "Bryce Watts-Parker",
+  "auto": false,
+  "b1280": "original.jpg",
+  "file": "original.jpg",
+  "h": 640,
+  "h500": 333,
+  "kaynak": "iNaturalist",
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "not": "Vanuatu",
+  "notEn": "Vanuatu",
+  "page": "https://www.inaturalist.org/observations/415968329",
   "w": 960,
   "w500": 500
  },
@@ -3364,6 +3619,20 @@
   "w": 960,
   "w500": 500
  },
+ "niaouli": {
+  "artist": "Mark Ooi",
+  "auto": false,
+  "b1280": "original.jpg",
+  "file": "original.jpg",
+  "h": 1280,
+  "h500": 667,
+  "kaynak": "iNaturalist",
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://www.inaturalist.org/observations/412386929",
+  "w": 960,
+  "w500": 500
+ },
  "noni": {
   "artist": "Vengolis",
   "auto": true,
@@ -3492,6 +3761,22 @@
   "w": 960,
   "w500": 500
  },
+ "patates": {
+  "artist": "Jacob Mullin",
+  "auto": false,
+  "b1280": "original.jpg",
+  "file": "original.jpg",
+  "h": 720,
+  "h500": 375,
+  "kaynak": "iNaturalist",
+  "license": "CC0 1.0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "not": "Pepperell, Massachusetts, ABD",
+  "notEn": "Pepperell, Massachusetts, USA",
+  "page": "https://www.inaturalist.org/observations/414064060",
+  "w": 960,
+  "w500": 500
+ },
  "patlican": {
   "artist": "Uoaei1",
   "auto": true,
@@ -3595,6 +3880,19 @@
   "w": 960,
   "w500": 500
  },
+ "prontoalivio": {
+  "artist": "Dick Culbert from Gibsons, B.C., Canada",
+  "auto": false,
+  "b1280": "Lippia alba (11627884485).jpg",
+  "file": "Lippia alba (11627884485).jpg",
+  "h": 733,
+  "h500": 382,
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Lippia_alba_(11627884485).jpg",
+  "w": 960,
+  "w500": 500
+ },
  "ravent": {
   "artist": "Nancy",
   "auto": true,
@@ -3630,6 +3928,19 @@
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Foeniculum_vulgare_flower.JPG",
+  "w": 960,
+  "w500": 500
+ },
+ "rocoto": {
+  "artist": "N-double-u",
+  "auto": false,
+  "b1280": "Capsicum pubescens flower and stem.jpeg",
+  "file": "Capsicum pubescens flower and stem.jpeg",
+  "h": 1147,
+  "h500": 597,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Capsicum_pubescens_flower_and_stem.jpeg",
   "w": 960,
   "w500": 500
  },
@@ -4574,6 +4885,19 @@
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Fleur_de_Topinambur_en_contre_jour_(Helianthus_tuberosus).jpg",
+  "w": 960,
+  "w500": 500
+ },
+ "yerfistigi": {
+  "artist": "H. Zell",
+  "auto": false,
+  "b1280": "Arachis hypogaea 003.JPG",
+  "file": "Arachis hypogaea 003.JPG",
+  "h": 720,
+  "h500": 375,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Arachis_hypogaea_003.JPG",
   "w": 960,
   "w500": 500
  },

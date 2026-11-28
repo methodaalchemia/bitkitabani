@@ -3548,5 +3548,182 @@
   "license": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Calabash_flower_22.jpg"
  },
- "sukabagi:kuru": "yok"
+ "sukabagi:kuru": "yok",
+ "manyok:cizim": {
+  "file": "Manihot esculenta - Köhler–s Medizinal-Pflanzen-090.jpg",
+  "artist": "Franz Eugen Köhler, Köhlers Medizinal-Pflanzen",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Manihot_esculenta_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-090.jpg"
+ },
+ "manyok:cicek": {
+  "file": "Cassava - male flowers.jpg",
+  "artist": "Ton Rulkens",
+  "license": "CC BY-SA 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Cassava_-_male_flowers.jpg"
+ },
+ "manyok:kuru": "yok",
+ "yerfistigi:cizim": {
+  "file": "Arachis hypogaea - Köhler–s Medizinal-Pflanzen-163.jpg",
+  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Arachis_hypogaea_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-163.jpg"
+ },
+ "yerfistigi:cicek": {
+  "file": "Ground Nut flower (cropped).jpg",
+  "artist": "SKsiddhartthan",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ground_Nut_flower_%28cropped%29.jpg"
+ },
+ "yerfistigi:kuru": "yok",
+ "habanero:cizim": "yok",
+ "habanero:cicek": {
+  "file": "Habanero chile - flower (aka).jpg",
+  "artist": "André Karwath aka Aka",
+  "license": "CC BY-SA 2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:Habanero_chile_-_flower_%28aka%29.jpg"
+ },
+ "habanero:kuru": "yok",
+ "prontoalivio:cizim": "yok",
+ "prontoalivio:cicek": {
+  "file": "Flowers of India 249.jpg",
+  "artist": "Davidvraju",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Flowers_of_India_249.jpg"
+ },
+ "prontoalivio:kuru": "yok",
+ "kuasya:cizim": {
+  "file": "Quassia amara - Köhler–s Medizinal-Pflanzen-117.jpg",
+  "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Quassia_amara_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-117.jpg"
+ },
+ "kuasya:cicek": {
+  "file": "Quassia amara, flowers of the Bitterwood Tree. (11378546985).jpg",
+  "artist": "Dick Culbert from Gibsons, B.C., Canada",
+  "license": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Quassia_amara%2C_flowers_of_the_Bitterwood_Tree._%2811378546985%29.jpg"
+ },
+ "kuasya:kuru": "yok",
+ "ananas:cizim": "yok",
+ "ananas:cicek": {
+  "file": "Ornamental pineapple flower Ananas comosus Padang Indonesia 2026.jpg",
+  "artist": "Undeka 11",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ornamental_pineapple_flower_Ananas_comosus_Padang_Indonesia_2026.jpg"
+ },
+ "ananas:kuru": "yok",
+ "carkifelekmeyvesi:cizim": "yok",
+ "carkifelekmeyvesi:cicek": {
+  "file": "Passionfruit Flower.jpg",
+  "artist": "JosephCoston",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Passionfruit_Flower.jpg"
+ },
+ "carkifelekmeyvesi:kuru": "yok",
+ "chaliponga:cizim": "yok",
+ "chaliponga:cicek": "yok",
+ "chaliponga:kuru": "yok",
+ "patates:cizim": "yok",
+ "patates:cicek": {
+  "file": "Potato flowers.jpg",
+  "artist": "Keith Weller, Source .",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Potato_flowers.jpg"
+ },
+ "patates:kuru": "yok",
+ "domates:cizim": "yok",
+ "domates:cicek": {
+  "file": "Tomato flower.JPG",
+  "artist": "Felagund",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Tomato_flower.JPG"
+ },
+ "domates:kuru": "yok",
+ "balkabagi:cizim": "yok",
+ "balkabagi:cicek": {
+  "file": "Vista lateral de flor femenina de Cucurbita maxima florecida.jpg",
+  "artist": "MistValley",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Vista_lateral_de_flor_femenina_de_Cucurbita_maxima_florecida.jpg"
+ },
+ "balkabagi:kuru": "yok",
+ "limafasulyesi:cizim": "yok",
+ "limafasulyesi:cicek": {
+  "file": "Flower of Lima beans.jpg",
+  "artist": "Ravikiran vilas jadhav",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Flower_of_Lima_beans.jpg"
+ },
+ "limafasulyesi:kuru": "yok",
+ "rocoto:cizim": "yok",
+ "rocoto:cicek": {
+  "file": "Rocoto flower back.jpg",
+  "artist": "Chapulines",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Rocoto_flower_back.jpg"
+ },
+ "rocoto:kuru": "yok",
+ "huacatay:cizim": "yok",
+ "huacatay:cicek": {
+  "file": "Tagetes minuta flower.jpg",
+  "artist": "Arthur Chapman",
+  "license": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Tagetes_minuta_flower.jpg"
+ },
+ "huacatay:kuru": "yok",
+ "cerimoya:cizim": "yok",
+ "cerimoya:cicek": {
+  "file": "Madeira Flowers, Fruits and Ferns - P13a.jpg",
+  "artist": "PENFOLD, Jane Wallas (fl. 1820-1850, artist) and William Lew",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Madeira_Flowers%2C_Fruits_and_Ferns_-_P13a.jpg"
+ },
+ "cerimoya:kuru": "yok",
+ "kirmizimelekborazani:cizim": "yok",
+ "kirmizimelekborazani:cicek": {
+  "file": "Ingapirca Ecuador393.JPG",
+  "artist": "Arabsalam",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ingapirca_Ecuador393.JPG"
+ },
+ "kirmizimelekborazani:kuru": "yok",
+ "limonokaliptusu:cizim": "yok",
+ "limonokaliptusu:cicek": "yok",
+ "limonokaliptusu:kuru": "yok",
+ "daryaprakliokaliptus:cizim": "yok",
+ "daryaprakliokaliptus:cicek": {
+  "file": "Eucalyptus radiata - inflorescence 01.jpg",
+  "artist": "Geekstreet",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Eucalyptus_radiata_-_inflorescence_01.jpg"
+ },
+ "daryaprakliokaliptus:kuru": "yok",
+ "niaouli:cizim": "yok",
+ "niaouli:cicek": {
+  "file": "Melaleuca quin flowers.jpg",
+  "artist": "Mark Marathon",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Melaleuca_quin_flowers.jpg"
+ },
+ "niaouli:kuru": "yok",
+ "limoncayagaci:cizim": "yok",
+ "limoncayagaci:cicek": "yok",
+ "limoncayagaci:kuru": "yok",
+ "limonmersini:cizim": "yok",
+ "limonmersini:cicek": {
+  "file": "Backhousia citriodora flower stamens.jpg",
+  "artist": "Allthingsnative",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Backhousia_citriodora_flower_stamens.jpg"
+ },
+ "limonmersini:kuru": "yok",
+ "anasonmersini:cizim": "yok",
+ "anasonmersini:cicek": "yok",
+ "anasonmersini:kuru": "yok",
+ "dagbiberi:cizim": "yok",
+ "dagbiberi:cicek": "yok",
+ "dagbiberi:kuru": "yok",
+ "kakaduerigi:cizim": "yok",
+ "kakaduerigi:cicek": "yok",
+ "kakaduerigi:kuru": "yok"
 }
